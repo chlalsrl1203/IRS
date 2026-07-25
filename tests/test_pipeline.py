@@ -242,3 +242,50 @@ def test_full_history_has_no_spurious_limitations():
     """12년치 정상 데이터에서는 데이터 한계 항목에 10년 CAGR 경고가 없어야 한다."""
     result = run_analysis(cdns_inputs())
     assert not any("10년 CAGR 산출 불가" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# 과거 기록 자동 대조 (v3.19) - "대조하는 습관"을 코드로 고정
+# ----------------------------------------------------------------------
+
+def test_cross_check_detects_100x_rar_scale_mismatch():
+    """트래커 감사에서 실제로 발견된 유형: 과거 RAR이 100배 작게 기록된 경우."""
+    from engine.pipeline import cross_check_prior_record
+
+    result = run_analysis(cdns_inputs())  # RAR = -0.5994
+    warnings = cross_check_prior_record(result, {"rar": -0.006})
+    assert any("RAR 스케일 경고" in w for w in warnings)
+
+
+def test_cross_check_detects_sign_flip():
+    from engine.pipeline import cross_check_prior_record
+
+    result = run_analysis(cdns_inputs())
+    warnings = cross_check_prior_record(result, {"rar": 0.55})
+    assert any("RAR 부호 반전" in w for w in warnings)
+
+
+def test_cross_check_detects_model_mismatch_ph_case():
+    """
+    PH 사례를 코드가 잡을 수 있는지 확인: 과거 내재성장률이 two_stage에 가까운데
+    single_stage로 계산하면 경고가 나와야 한다.
+    """
+    from engine.pipeline import cross_check_prior_record
+
+    result = run_analysis(cdns_inputs())  # single_stage 사용
+    # 과거 기록이 two_stage 값(19.69%)에 가까운 상황을 가정
+    warnings = cross_check_prior_record(result, {"implied_growth": 0.1950})
+    assert any("모델 불일치 의심" in w for w in warnings)
+
+
+def test_cross_check_silent_when_records_agree():
+    from engine.pipeline import cross_check_prior_record
+
+    result = run_analysis(cdns_inputs())
+    warnings = cross_check_prior_record(
+        result,
+        {"rar": result["rar"], "gap": result["expectation_gap"],
+         "drs": result["drs"]["score"],
+         "implied_growth": result["implied_growth"]["value"]},
+    )
+    assert warnings == []

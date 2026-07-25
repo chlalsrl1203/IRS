@@ -78,3 +78,27 @@ path = save_ledger(result)                    # ledger/<TICKER>_<날짜>.json
 
 메모 발행 전 `self_check_v2.run_self_check_v2(memo_text, ctx)`로 메모 원문과
 계산값을 대조할 것. "돌렸다"고 적는 것과 실제로 돌리는 것은 다르다.
+
+## 과거 기록이 있는 종목을 재검증할 때 (v3.19)
+
+이 프로젝트가 발견한 사고 대부분은 **과거 기록과 대조하다가** 잡혔다
+(PH 모델선택, RAR 100배). 그래서 대조를 습관이 아니라 코드로 만들었다.
+
+```python
+from engine.pipeline import cross_check_prior_record
+warnings = cross_check_prior_record(result, {
+    "rar": -0.456, "gap": -0.0958, "drs": 43.6, "implied_growth": 0.159,
+})
+```
+
+잡아주는 것: RAR 스케일 100배 차이 / RAR 부호 반전 / Gap 3%p 이상 괴리
+(모델선택 차이가 주원인) / 과거 내재성장률이 다른 모델에 더 가까운 경우 /
+DRS 10점 이상 차이(주관적 입력 차이).
+
+**소수 규약 의심 7종목** — 재검증 시 반드시 확인하고, 재계산값이 나오면
+트래커 RAR을 정정할 것(2026-07-25 전수감사, 상세는 CHANGELOG):
+VRSN(큐18) · WCN(큐26) · WM(큐27) · IDXX(큐25) · BRO(큐28) ·
+ZTS(v3.15판) · DVN(프로포르마)
+
+판별법: `RAR × DRS`가 함의하는 기대수익률이 |1%| 미만이면 소수 규약이다
+(정상군 59건은 1.7~110%, 중앙값 19%).

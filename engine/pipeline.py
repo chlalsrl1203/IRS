@@ -396,6 +396,76 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     }
 
 
+def cross_check_prior_record(result: dict, prior: dict) -> list:
+    """
+    v3.19 신규: 새로 계산한 결과를 **과거 기록과 자동 대조**한다.
+
+    왜 코드로 넣는가: "기존 기록이 있으면 대조하라"는 규칙을 문서로만 두면
+    지켜지지 않는다는 걸 이 프로젝트가 세 번 겪었다(self_check, confidence_score,
+    claim/lock 모두 문서에만 있다가 무력화됐다). PH 모델선택 실수도 사람이
+    우연히 대조해서 잡았을 뿐이다.
+
+    prior: 트래커에 남아있는 과거 값 {"rar":..., "drs":..., "gap":...,
+           "implied_growth":..., "engine_version":..., "analyzed_at":...}
+           (모르는 항목은 생략 가능)
+
+    반환값: 경고 문자열 리스트(문제 없으면 빈 리스트)
+    """
+    warnings = []
+
+    prior_rar, new_rar = prior.get("rar"), result["rar"]
+    if prior_rar is not None and new_rar and abs(new_rar) > 1e-9:
+        ratio = abs(prior_rar / new_rar)
+        if ratio > 20 or ratio < 0.05:
+            warnings.append(
+                f"[RAR 스케일 경고] 과거 기록 {prior_rar:.4f} vs 재계산 {new_rar:.4f} "
+                f"(배율 {ratio:.0f}x). 100배 근처면 rar() 단위 사고(v3.19)일 가능성이 크다. "
+                f"어느 쪽이 퍼센트 규약인지 확인할 것 - RARxDRS가 함의하는 기대수익률이 "
+                f"|1%| 미만이면 그쪽이 잘못된 값이다."
+            )
+        if (prior_rar >= 0) != (new_rar >= 0):
+            warnings.append(
+                f"[RAR 부호 반전] 과거 {prior_rar:+.4f} -> 재계산 {new_rar:+.4f}. "
+                f"부호가 바뀌면 5·7번 정합성 판정과 confidence가 함께 달라진다. "
+                f"입력값 차이인지 로직 변경인지 특정할 것."
+            )
+
+    prior_gap, new_gap = prior.get("gap"), result["expectation_gap"]
+    if prior_gap is not None:
+        if abs(prior_gap - new_gap) > 0.03:
+            warnings.append(
+                f"[Gap 괴리] 과거 {prior_gap*100:+.2f}%p vs 재계산 {new_gap*100:+.2f}%p "
+                f"({abs(prior_gap-new_gap)*100:.2f}%p 차이). 모델선택(single/two stage)이 "
+                f"다른 경우가 대표적 원인이다 - PH가 정확히 이 사례였다."
+            )
+
+    prior_ig = prior.get("implied_growth")
+    if prior_ig is not None:
+        models = result["implied_growth"]["models"]
+        best = min(
+            ((k, v) for k, v in (("single_stage", models["single_stage"]),
+                                 ("two_stage", models["two_stage"])) if v is not None),
+            key=lambda kv: abs(kv[1] - prior_ig), default=None,
+        )
+        if best and best[0] != result["implied_growth"]["model_used"]:
+            warnings.append(
+                f"[모델 불일치 의심] 과거 내재성장률 {prior_ig*100:.2f}%는 "
+                f"{best[0]}({best[1]*100:.2f}%)에 더 가까운데, 이번 분석은 "
+                f"{result['implied_growth']['model_used']}를 썼다. 과거 관행과 다른 모델을 "
+                f"쓰는 것이라면 model_choice_reason에 그 사실과 이유를 명시할 것."
+            )
+
+    prior_drs = prior.get("drs")
+    if prior_drs is not None and abs(prior_drs - result["drs"]["score"]) > 10:
+        warnings.append(
+            f"[DRS 괴리] 과거 {prior_drs:.2f} vs 재계산 {result['drs']['score']:.2f}. "
+            f"주관적 입력(경쟁강도/수요민감도)이 세션마다 달라진 결과일 수 있다 - "
+            f"양쪽 subjective_input_basis를 대조할 것."
+        )
+
+    return warnings
+
+
 def save_ledger(result: dict, ledger_dir: str = "ledger") -> str:
     """
     분석 결과 전체(입력값 포함)를 JSON으로 저장한다.
