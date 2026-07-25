@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "ticker": "CDNS",
+    "company_name": "Cadence Design Systems, Inc.",
+    "analyzed_at": "2026-07-25T05:00:33.986385+00:00",
+    "engine_version": "v3.19",
+    "data_sources": [
+      "Alpha Vantage (조회일 2026-07-25)",
+      "WebSearch: EDA market share / DOJ-BIS settlement"
+    ]
+  },
+  "data_limitations": [
+    "[모델 괴리 경고] single_stage(8.71%)와 two_stage(19.69%)가 10.97%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+  ],
+  "inputs": {
+    "ticker": "CDNS",
+    "company_name": "Cadence Design Systems, Inc.",
+    "revenue_by_year": {
+      "2014": 1580932000,
+      "2015": 1702091000,
+      "2016": 1816083000,
+      "2017": 1943032000,
+      "2018": 2138022000,
+      "2019": 2336319000,
+      "2020": 2682891000,
+      "2021": 2988244000,
+      "2022": 3561718000,
+      "2023": 4089986000,
+      "2024": 4641264000,
+      "2025": 5296759000
+    },
+    "operating_income_by_year": {
+      "2014": 206644000,
+      "2015": 285430000,
+      "2016": 244901000,
+      "2017": 323955000,
+      "2018": 396209000,
+      "2019": 491796000,
+      "2020": 645552000,
+      "2021": 779089000,
+      "2022": 1073686000,
+      "2023": 1251225000,
+      "2024": 1350763000,
+      "2025": 1649781000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 316722000,
+      "2015": 378200000,
+      "2016": 444879000,
+      "2017": 470740000,
+      "2018": 604751000,
+      "2019": 729600000,
+      "2020": 904922000,
+      "2021": 1100958000,
+      "2022": 1241894000,
+      "2023": 1349176000,
+      "2024": 1260551000,
+      "2025": 1728781000
+    },
+    "capex_by_year": {
+      "2014": 39810000,
+      "2015": 44808000,
+      "2016": 53712000,
+      "2017": 57901000,
+      "2018": 61503000,
+      "2019": 74605000,
+      "2020": 94813000,
+      "2021": 66881000,
+      "2022": 124215000,
+      "2023": 102503000,
+      "2024": 142542000,
+      "2025": 141871000
+    },
+    "market_cap": 92952756000,
+    "net_debt": -675380000,
+    "ebitda": 1883625000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.75,
+      0.35,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.15,
+    "subjective_input_basis": "Synopsys 0.75(2025-07 Ansys $35B 인수완료로 EDA 35~40% 점유, Cadence 30~35%), Siemens EDA 0.35, Keysight 0.15. 점유율추세 -1.0pp/년은 시장조사 기사 기반 [추정치]. 2025-07 DOJ/BIS 수출통제 유죄인정($140.6M)은 반독점/규제소송이 아니라 active_antitrust_or_regulatory_case=False로 두고 정성리스크로만 서술.",
+    "model_used": "single_stage",
+    "model_choice_reason": "성숙 stalwart(매출 CAGR 12~14%, 순현금)로 Gordon Growth 적용. two_stage(19.69%)와 11%p 괴리가 있어 v3.19 모델괴리 경고 대상이며, 메모 5번에 '모델선택에 따라 결론이 갈린다'고 명시함.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "Alpha Vantage (조회일 2026-07-25)",
+      "WebSearch: EDA market share / DOJ-BIS settlement"
+    ]
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.14143248241855333,
+    "revenue_cagr_5y": 0.1457277629468552,
+    "revenue_cagr_10y": 0.1202185081990248,
+    "fcf_cagr_5y": 0.14393610637353804,
+    "fcf0": 1586910000,
+    "fcf_by_year": {
+      "2014": 276912000,
+      "2015": 333392000,
+      "2016": 391167000,
+      "2017": 412839000,
+      "2018": 543248000,
+      "2019": 654995000,
+      "2020": 810109000,
+      "2021": 1034077000,
+      "2022": 1117679000,
+      "2023": 1246673000,
+      "2024": 1118009000,
+      "2025": 1586910000
+    },
+    "worst_yoy_revenue_growth": 0.06697174240390202,
+    "worst_yoy_year": 2016,
+    "operating_margins": [
+      0.26071800027039294,
+      0.30145171515543906,
+      0.3059240300578046,
+      0.29103343399556675,
+      0.311469900744965
+    ],
+    "net_debt_to_ebitda": -0.35855332138828055
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 2.0,
+      "cyclicality": 8.6,
+      "competition_intensity": 18.0
+    },
+    "score": 36.6
+  },
+  "lynch": {
+    "auto_classified": "stalwart",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": null
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.060980000000000006,
+    "r": 0.10568,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.08939301289023574,
+    "realistic_growth": 0.12,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.14143248241855333,
+        "5y": 0.1457277629468552,
+        "10y": 0.1202185081990248
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.13847827173313818,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.13847827173313818,
+      "structural_discount_pct": 0.08939301289023574,
+      "discounted_growth": 0.1260992818030802,
+      "lynch_type": "stalwart",
+      "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.12
+    }
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.08712043952090967,
+      "two_stage": 0.1968667984008789,
+      "errors": {},
+      "divergence": 0.10974635887996922,
+      "divergence_warning": "[모델 괴리 경고] single_stage(8.71%)와 two_stage(19.69%)가 10.97%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "single_stage",
+    "model_choice_reason": "성숙 stalwart(매출 CAGR 12~14%, 순현금)로 Gordon Growth 적용. two_stage(19.69%)와 11%p 괴리가 있어 v3.19 모델괴리 경고 대상이며, 메모 5번에 '모델선택에 따라 결론이 갈린다'고 명시함.",
+    "value": 0.08712043952090967
+  },
+  "expectation_gap": 0.032879560479090325,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12,
+      "g_bull": 0.12,
+      "g_bear": 0.06,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": -0.1992806539434946,
+      "base": -0.1992806539434946,
+      "bear": -0.3251196231096579
+    },
+    "probabilities": {
+      "bull": 0.3402,
+      "base": 0.4999999999999999,
+      "bear": 0.15980000000000003
+    },
+    "probability_rationale": "DRS=36.6 (중립점 50 대비 편차 -0.27) 기준: p_bull=34.0%, p_base=50.0%, p_bear=16.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.2193897212162475
+  },
+  "rar": -0.5994254678039549,
+  "stalwart_bias": {
+    "flagged": true,
+    "note": "[구조적 편향 플래그] lynch_type=stalwart, model=two_stage에서 RAR=-0.599(음수)이 산출됨. 이는 사업의 질이 나빠서가 아니라 two_stage 모델의 min_spread 가드가 stalwart 기본 시나리오 대부분에서 발동하는 구조적 모델 한계로 알려져 있다(v3.13). 메모 7번(RAR) 섹션에 이 사실을 반드시 명시하고, 다른 stalwart 종목과의 상대 비교로 해석할 것(절대값으로 '나쁜 종목'이라 판단 금지)."
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10568,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.1968667984008789,
+    "implied_growth_without_drs": 0.17247371673583983,
+    "gap_with_drs": -0.0768667984008789,
+    "gap_without_drs": -0.05247371673583984,
+    "judgment_with_drs": "과대평가 가능성",
+    "judgment_without_drs": "과대평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10568,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.1968667984008789,
+      "implied_growth_without_drs": 0.17247371673583983,
+      "gap_with_drs": -0.0768667984008789,
+      "gap_without_drs": -0.05247371673583984,
+      "judgment_with_drs": "과대평가 가능성",
+      "judgment_without_drs": "과대평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": false,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 0,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": -5
+    },
+    "raw_score": 69,
+    "final": 69
+  },
+  "judgment": "적정가/경계선"
+}
