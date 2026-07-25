@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v3.16 (반영일: 2026-07-25) — v3.9→v3.16 재구성 완료
+
+confidence_score()를 v3.15와 동일한 원칙으로 하드닝. robustness_check_passed/
+section_5_7_aligned 순수 bool 파라미터를 제거하고, expectation_gap_sensitivity_check()의
+실제 반환 dict(sensitivity_check_result)와 gap/rar 실수치를 직접 받아 함수
+내부에서 정합성을 계산하도록 변경. 구 방식 호출은 TypeError.
+
+claim/lock 프로토콜을 CLAUDE.md에 문서화(원 배경: VRSN/ROP 중복 분석 사고).
+
+**이번 재구성 전체 요약**: v3.9(검증된 원문 복원) → v3.13(stalwart+two_stage
+구조적 편향 플래그, 원문 그대로) → v3.14(confidence_score 최초 도입, 원본
+소실로 스펙 기반 재설계) → v3.15(self_check_v2로 장식용 검증 교체) →
+v3.16(confidence_score 하드닝 + claim/lock 프로토콜). v3.10/3.11/3.11.1/3.12는
+근거 없어 결번 처리, v3.17/3.18은 이 저장소에 어떤 형태로도 존재하지 않아
+사용 보류.
+
 ## v3.15 (반영일: 2026-07-25)
 
 run_self_check(answers: dict)가 장식용(decorative)이었음이 감사로 확인됨 —

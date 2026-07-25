@@ -116,8 +116,9 @@ def test_check_stalwart_two_stage_bias_skips_non_stalwart_or_positive_rar():
 
 def test_confidence_score_all_positive_factors():
     result = confidence_score(
-        robustness_check_passed=True,
-        section_5_7_aligned=True,
+        sensitivity_check_result={"judgment_flipped": False},
+        gap=0.02,
+        rar=0.05,
         data_completeness_pct=1.0,
         lynch_type_cap_applied=False,
         stalwart_two_stage_bias_flagged=False,
@@ -128,8 +129,9 @@ def test_confidence_score_all_positive_factors():
 
 def test_confidence_score_all_negative_factors():
     result = confidence_score(
-        robustness_check_passed=False,
-        section_5_7_aligned=False,
+        sensitivity_check_result={"judgment_flipped": True},
+        gap=0.02,
+        rar=-0.05,
         data_completeness_pct=0.0,
         lynch_type_cap_applied=True,
         stalwart_two_stage_bias_flagged=True,
@@ -143,25 +145,81 @@ def test_confidence_score_all_negative_factors():
 def test_confidence_score_rejects_out_of_range_data_completeness():
     with pytest.raises(ValueError):
         confidence_score(
-            robustness_check_passed=True,
-            section_5_7_aligned=True,
+            sensitivity_check_result={"judgment_flipped": False},
+            gap=0.02,
+            rar=0.05,
             data_completeness_pct=-0.1,
         )
     with pytest.raises(ValueError):
         confidence_score(
-            robustness_check_passed=True,
-            section_5_7_aligned=True,
+            sensitivity_check_result={"judgment_flipped": False},
+            gap=0.02,
+            rar=0.05,
             data_completeness_pct=1.1,
         )
 
 
 def test_confidence_score_stays_within_bounds_on_extreme_negative_input():
     result = confidence_score(
-        robustness_check_passed=False,
-        section_5_7_aligned=False,
+        sensitivity_check_result={"judgment_flipped": True},
+        gap=0.02,
+        rar=-0.05,
         data_completeness_pct=0.0,
         lynch_type_cap_applied=True,
         stalwart_two_stage_bias_flagged=True,
         base=0,
     )
     assert 0 <= result["final"] <= 100
+
+
+def test_confidence_score_rejects_non_sensitivity_check_dict():
+    with pytest.raises(TypeError):
+        confidence_score(
+            sensitivity_check_result={"some_other_key": True},
+            gap=0.02,
+            rar=0.05,
+            data_completeness_pct=0.5,
+        )
+
+
+def test_confidence_score_robustness_and_alignment_both_pass():
+    result = confidence_score(
+        sensitivity_check_result={"judgment_flipped": False},
+        gap=0.03,
+        rar=0.04,
+        data_completeness_pct=0.5,
+    )
+    assert result["adjustments"]["robustness_check_passed"] == 15
+    assert result["adjustments"]["section_5_7_aligned"] == 15
+    assert result["section_5_7_aligned"] is True
+
+
+def test_confidence_score_judgment_flipped_true_zeroes_robustness():
+    result = confidence_score(
+        sensitivity_check_result={"judgment_flipped": True},
+        gap=0.03,
+        rar=0.04,
+        data_completeness_pct=0.5,
+    )
+    assert result["adjustments"]["robustness_check_passed"] == 0
+
+
+def test_confidence_score_judgment_flipped_none_is_conservative():
+    result = confidence_score(
+        sensitivity_check_result={"judgment_flipped": None, "error": "Model Not Applicable"},
+        gap=0.03,
+        rar=0.04,
+        data_completeness_pct=0.5,
+    )
+    assert result["adjustments"]["robustness_check_passed"] == 0
+
+
+def test_confidence_score_sign_mismatch_zeroes_alignment():
+    result = confidence_score(
+        sensitivity_check_result={"judgment_flipped": False},
+        gap=0.03,
+        rar=-0.01,
+        data_completeness_pct=0.5,
+    )
+    assert result["adjustments"]["section_5_7_aligned"] == 0
+    assert result["section_5_7_aligned"] is False
