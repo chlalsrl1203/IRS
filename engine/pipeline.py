@@ -163,6 +163,21 @@ class AnalysisInputs:
             )
         if self.lynch_type_override is not None and not self.lynch_type_override_reason:
             raise ValueError("lynch_type을 수동 오버라이드하려면 사유 필수")
+
+        # ⚠️ v3.19에서 실제로 겪은 사고(2026-07-25 BRO 재검증): 데이터 소스마다
+        # capex 부호 규약이 다르다. Alpha Vantage는 양수(지출액), Fiscal.ai는
+        # 음수(현금유출)로 준다. 파이프라인은 fcf = ocf - capex 이므로 음수를 그대로
+        # 넣으면 capex를 빼는 대신 **더해서** FCF가 과대계상된다(BRO FY25 기준
+        # 1,382M -> 1,518M, +9.8%). RAR 100배 사고와 같은 유형의 조용한 단위 사고라
+        # 코드로 막는다.
+        negative_capex = {y: v for y, v in self.capex_by_year.items() if v < 0}
+        if negative_capex:
+            raise ValueError(
+                f"capex에 음수 값이 있다: {negative_capex}. capex는 **지출액(양수)**으로 "
+                f"넣어야 한다(fcf = ocf - capex). 데이터 소스가 현금유출을 음수로 주면"
+                f"(Fiscal.ai 등) abs()로 부호를 정규화할 것. 그대로 넣으면 FCF가 "
+                f"capex의 2배만큼 과대계상된다(v3.19 가드)."
+            )
         if self.margin_years is None:
             self.margin_years = sorted(self.revenue_by_year)[-5:]
 

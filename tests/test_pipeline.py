@@ -289,3 +289,15 @@ def test_cross_check_silent_when_records_agree():
          "implied_growth": result["implied_growth"]["value"]},
     )
     assert warnings == []
+
+
+def test_inputs_reject_negative_capex_sign_convention():
+    """
+    v3.19 실사고 회귀 방지(2026-07-25 BRO): Fiscal.ai는 capex를 음수(유출)로 준다.
+    그대로 넣으면 fcf = ocf - capex 가 capex를 더해버려 FCF가 2x capex만큼 과대계상된다.
+    """
+    negative_capex = {y: -v for y, v in CDNS_CAPEX.items()}
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(capex_by_year=negative_capex)
+    assert "capex" in str(exc.value)
+    assert "과대계상" in str(exc.value)
