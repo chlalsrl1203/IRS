@@ -5,8 +5,11 @@ from engine.expectation_gap_engine import (
     check_stalwart_two_stage_bias,
     confidence_score,
     erp_from_drs,
+    expected_return,
     implied_growth_single_stage,
     implied_growth_two_stage,
+    rar,
+    rar_from_decimal_return,
     realistic_growth_estimate,
 )
 
@@ -223,3 +226,35 @@ def test_confidence_score_sign_mismatch_zeroes_alignment():
     )
     assert result["adjustments"]["section_5_7_aligned"] == 0
     assert result["section_5_7_aligned"] is False
+
+
+def test_rar_accepts_percent_number():
+    # 기대수익률 -22.39%, DRS 40.4 -> 퍼센트 컨벤션 기준 약 -0.554
+    assert rar(-22.387, 40.4) == pytest.approx(-0.5541, abs=1e-4)
+
+
+def test_rar_rejects_decimal_passed_as_percent():
+    # v3.19 가드: 소수(-0.2239)를 퍼센트 자리에 넣으면 100배 오차가 나므로 거부
+    with pytest.raises(ValueError) as exc_info:
+        rar(-0.22387, 40.4)
+    assert "rar_from_decimal_return" in str(exc_info.value)
+
+
+def test_rar_allows_genuinely_small_return_when_explicit():
+    # 진짜로 ±1% 미만인 기대수익률은 명시적 플래그로 통과
+    assert rar(0.5, 40.0, allow_sub_one_pct=True) == pytest.approx(0.0125)
+
+
+def test_rar_from_decimal_return_matches_percent_path():
+    er_decimal = -0.22387
+    assert rar_from_decimal_return(er_decimal, 40.4) == pytest.approx(rar(-22.387, 40.4), abs=1e-9)
+
+
+def test_expected_return_to_rar_chain_is_unit_safe():
+    # expected_return()은 소수를 반환하므로 rar()에 직접 넣으면 가드에 걸려야 하고,
+    # rar_from_decimal_return()으로는 정상 동작해야 한다.
+    er = expected_return(0.33, -0.15, 0.50, -0.24, 0.17, -0.32)
+    assert abs(er) < 1.0  # 소수임을 확인
+    with pytest.raises(ValueError):
+        rar(er, 40.0)
+    assert rar_from_decimal_return(er, 40.0) == pytest.approx(er * 100 / 40.0)

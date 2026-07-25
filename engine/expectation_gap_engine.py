@@ -554,10 +554,50 @@ def expected_return(p_bull: float, r_bull: float, p_base: float, r_base: float, 
         raise ValueError(f"확률 합이 1이 아님: {total_p}")
     return p_bull * r_bull + p_base * r_base + p_bear * r_bear
 
-def rar(expected_return_pct: float, drs: float) -> float:
+def rar(expected_return_pct: float, drs: float, allow_sub_one_pct: bool = False) -> float:
+    """
+    RAR = 기대수익률(%) / DRS
+
+    ⚠️ 단위 규약 (v3.19에서 명문화): expected_return_pct는 **퍼센트 숫자**다.
+    기대수익률이 -22.39%라면 -22.39를 넣어야 하며, 소수 -0.2239를 넣으면 안 된다.
+
+    이 규약은 트래커에 축적된 과거 RAR 값들(ADBE 1.7231, CSU 1.6564, ACGL 3.003,
+    ANET 0.5895 등)이 모두 퍼센트 입력 기준으로 산출됐음이 2026-07-25 감사에서
+    확인되어 확정한 것이다.
+
+    ⚠️ 함정 주의: expected_return()과 scenario_return_from_growth()는 **소수**를
+    반환한다(-0.2239). 따라서 rar(expected_return(...), drs)로 그대로 연결하면
+    100배 작은 값이 조용히 나온다. 실제로 2026-07-25 세션에서 CDNS/MNST/PH
+    세 종목이 이 실수로 잘못 계산됐다(RAR -0.006 vs 정답 -0.599 등).
+    소수를 갖고 있다면 rar_from_decimal_return()을 쓸 것.
+
+    v3.19 가드: |expected_return_pct| < 1.0 이면 소수를 잘못 넣은 것으로 간주해
+    ValueError를 던진다. 기대수익률이 진짜로 ±1% 미만인 드문 경우에만
+    allow_sub_one_pct=True로 명시적으로 통과시킬 것.
+    """
     if drs <= 0:
         raise ValueError("DRS는 0보다 커야 함 (0이면 무위험이라는 뜻인데 현실적으로 불가)")
+    if not allow_sub_one_pct and abs(expected_return_pct) < 1.0:
+        raise ValueError(
+            f"expected_return_pct={expected_return_pct}: 절대값이 1.0 미만이라 "
+            f"소수(예: -0.2239)를 퍼센트 자리에 잘못 넣은 것으로 보인다(v3.19 가드). "
+            f"퍼센트 숫자(예: -22.39)를 넣거나, 소수를 갖고 있다면 "
+            f"rar_from_decimal_return()을 쓸 것. 기대수익률이 진짜로 ±1% 미만이면 "
+            f"allow_sub_one_pct=True를 명시할 것."
+        )
     return expected_return_pct / drs
+
+
+def rar_from_decimal_return(expected_return_decimal: float, drs: float) -> float:
+    """
+    v3.19 신규: expected_return()이 반환하는 **소수**를 그대로 받아 RAR을 계산한다.
+    내부에서 100을 곱해 퍼센트로 변환하므로 rar()의 단위 함정을 피할 수 있다.
+
+    권장 사용법:
+        er = expected_return(p_bull, r_bull, p_base, r_base, p_bear, r_bear)
+        rar_value = rar_from_decimal_return(er, drs)
+    """
+    return rar(expected_return_decimal * 100.0, drs, allow_sub_one_pct=True)
 
 # ----------------------------------------------------------------------
 # 10. Scenario 수익률(r_bull/r_base/r_bear) 산출 - v3.5 신규
