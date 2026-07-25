@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v3.15 (반영일: 2026-07-25)
+
+run_self_check(answers: dict)가 장식용(decorative)이었음이 감사로 확인됨 —
+불리언 자기신고만 받고 메모 텍스트를 전혀 검증하지 않아, 18개 호출
+인스턴스 전체에서 실질적 검증 기능을 하지 못했음. self_check_v2.py 신규
+도입: run_self_check_v2(memo_text, ctx)가 메모 원문에서 Implied
+Growth/Realistic Growth/Expectation Gap/DRS/RAR 수치를 직접 파싱해 계산
+컨텍스트와 대조하고, Bear Case 섹션·최종 결론 존재 여부까지 검증하는 7개
+실제 체크를 수행. 기존 run_self_check()는 DEPRECATED 표시 후 코드에는
+보존(과거 메모 참고용), 신규 분석에서는 사용 금지.
+
 ## v3.14 (반영일: 2026-07-25)
 
 confidence_score() 신규 도입. **주의: 이 함수의 원래 원본 코드는 세션

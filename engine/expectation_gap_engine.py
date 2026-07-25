@@ -785,13 +785,10 @@ FINAL_SELF_CHECK_ITEMS = [
 
 def run_self_check(answers: dict) -> None:
     """
-    FINAL_SELF_CHECK_ITEMS의 각 문자열을 키로, True/False를 값으로 채운 딕셔너리를 넣는다.
-    항목이 하나라도 빠졌거나 False이면 ValueError를 던져 메모 마무리를 막는다.
-
-    ⚠️ v3.15에서 self_check_v2.run_self_check_v2(memo_text, ctx)로 교체됨.
-    이 함수는 "accepted any all-True dict, never touched memo text"라는 결함이
-    확인되어 v3.16 이후 폐기 대상. 이 파일은 v3.9 기준 원문이므로 아직 남아있음 -
-    Claude Code에서 v3.15 반영 시 이 함수를 self_check_v2 모듈로 교체할 것.
+    ⚠️ DEPRECATED (v3.15) — self_check_v2.run_self_check_v2(memo_text, ctx)로
+    대체됨. 이 함수는 불리언 자기신고만 받고 메모 텍스트를 전혀 검증하지
+    않는 결함이 확인됨(18개 호출 인스턴스 전체 확인). 새 분석에서는 절대
+    사용 금지. 과거 메모 이력 참고용으로만 코드 보존.
     """
     missing = [item for item in FINAL_SELF_CHECK_ITEMS if item not in answers]
     if missing:
