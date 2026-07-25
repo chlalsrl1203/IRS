@@ -621,6 +621,32 @@ def scenario_return_from_growth(
     return price_ratio ** (1.0 / convergence_years) - 1
 
 # ----------------------------------------------------------------------
+# 10-1. Stalwart + two_stage RAR 구조적 편향 감지 - v3.13 신규
+# ----------------------------------------------------------------------
+
+def check_stalwart_two_stage_bias(lynch_type: str, rar_value: float, model_used: str) -> tuple:
+    """
+    v3.13 신규: stalwart 유형이 two_stage 모델에서 구조적으로 음수 RAR을
+    보이는 경향이 실전 데이터(CTAS, AME 등)에서 반복 확인됨. min_spread
+    가드가 거의 모든 stalwart 기본 시나리오에서 발동하기 때문.
+
+    모델을 바꾸는 대신(model="two_stage" 기본값 유지), 이 함수로 편향
+    가능성을 감지해 메모에 명시적으로 플래그하도록 강제한다.
+
+    반환값: (bias_flag_required: bool, note: str|None)
+    """
+    if lynch_type == "stalwart" and model_used == "two_stage" and rar_value < 0:
+        return True, (
+            "[구조적 편향 플래그] lynch_type=stalwart, model=two_stage에서 "
+            f"RAR={rar_value:.3f}(음수)이 산출됨. 이는 사업의 질이 나빠서가 "
+            "아니라 two_stage 모델의 min_spread 가드가 stalwart 기본 시나리오 "
+            "대부분에서 발동하는 구조적 모델 한계로 알려져 있다(v3.13). "
+            "메모 7번(RAR) 섹션에 이 사실을 반드시 명시하고, 다른 stalwart "
+            "종목과의 상대 비교로 해석할 것(절대값으로 '나쁜 종목'이라 판단 금지)."
+        )
+    return False, None
+
+# ----------------------------------------------------------------------
 # 11. DRS 이중 반영 강건성 점검 - v3.6 재설계
 # ----------------------------------------------------------------------
 
@@ -689,6 +715,7 @@ FINAL_SELF_CHECK_ITEMS = [
     "RAR의 확률 가중치(Bull/Base/Bear)를 임의로 배정하지 않고 근거를 제시했는가",
     "Implied Growth, DRS 계산을 서술형 근사가 아니라 실제 코드 실행으로 산출했는가",
     "최종 결론이 현재 가격에서의 투자 행동으로 이어지는가",
+    "stalwart+two_stage 조합에서 RAR 음수가 나왔다면 구조적 편향으로 플래그했는가",
 ]
 
 

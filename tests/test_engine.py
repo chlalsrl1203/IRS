@@ -2,6 +2,7 @@ import pytest
 
 from engine.expectation_gap_engine import (
     DRSInputs,
+    check_stalwart_two_stage_bias,
     erp_from_drs,
     implied_growth_single_stage,
     implied_growth_two_stage,
@@ -87,3 +88,26 @@ def test_realistic_growth_estimate_basic():
 def test_realistic_growth_estimate_requires_at_least_one_cagr():
     with pytest.raises(ValueError):
         realistic_growth_estimate()
+
+
+def test_check_stalwart_two_stage_bias_flags_negative_rar():
+    flag_required, note = check_stalwart_two_stage_bias(
+        lynch_type="stalwart", rar_value=-0.02, model_used="two_stage"
+    )
+    assert flag_required is True
+    assert note is not None
+    assert "구조적 편향" in note
+
+
+def test_check_stalwart_two_stage_bias_skips_non_stalwart_or_positive_rar():
+    flag_required, note = check_stalwart_two_stage_bias(
+        lynch_type="fast_grower", rar_value=-0.02, model_used="two_stage"
+    )
+    assert flag_required is False
+    assert note is None
+
+    flag_required, note = check_stalwart_two_stage_bias(
+        lynch_type="stalwart", rar_value=0.03, model_used="two_stage"
+    )
+    assert flag_required is False
+    assert note is None
