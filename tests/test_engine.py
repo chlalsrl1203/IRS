@@ -3,6 +3,7 @@ import pytest
 from engine.expectation_gap_engine import (
     DRSInputs,
     check_stalwart_two_stage_bias,
+    confidence_score,
     erp_from_drs,
     implied_growth_single_stage,
     implied_growth_two_stage,
@@ -111,3 +112,56 @@ def test_check_stalwart_two_stage_bias_skips_non_stalwart_or_positive_rar():
     )
     assert flag_required is False
     assert note is None
+
+
+def test_confidence_score_all_positive_factors():
+    result = confidence_score(
+        robustness_check_passed=True,
+        section_5_7_aligned=True,
+        data_completeness_pct=1.0,
+        lynch_type_cap_applied=False,
+        stalwart_two_stage_bias_flagged=False,
+    )
+    assert result["base"] == 50
+    assert result["final"] == 95
+
+
+def test_confidence_score_all_negative_factors():
+    result = confidence_score(
+        robustness_check_passed=False,
+        section_5_7_aligned=False,
+        data_completeness_pct=0.0,
+        lynch_type_cap_applied=True,
+        stalwart_two_stage_bias_flagged=True,
+    )
+    assert result["final"] == 40
+    assert result["adjustments"]["robustness_check_passed"] == 0
+    assert result["adjustments"]["section_5_7_aligned"] == 0
+    assert result["adjustments"]["data_completeness"] == 0
+
+
+def test_confidence_score_rejects_out_of_range_data_completeness():
+    with pytest.raises(ValueError):
+        confidence_score(
+            robustness_check_passed=True,
+            section_5_7_aligned=True,
+            data_completeness_pct=-0.1,
+        )
+    with pytest.raises(ValueError):
+        confidence_score(
+            robustness_check_passed=True,
+            section_5_7_aligned=True,
+            data_completeness_pct=1.1,
+        )
+
+
+def test_confidence_score_stays_within_bounds_on_extreme_negative_input():
+    result = confidence_score(
+        robustness_check_passed=False,
+        section_5_7_aligned=False,
+        data_completeness_pct=0.0,
+        lynch_type_cap_applied=True,
+        stalwart_two_stage_bias_flagged=True,
+        base=0,
+    )
+    assert 0 <= result["final"] <= 100

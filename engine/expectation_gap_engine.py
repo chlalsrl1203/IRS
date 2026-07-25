@@ -647,6 +647,70 @@ def check_stalwart_two_stage_bias(lynch_type: str, rar_value: float, model_used:
     return False, None
 
 # ----------------------------------------------------------------------
+# 10-2. Confidence Score - v3.14 신규
+# ----------------------------------------------------------------------
+
+def confidence_score(
+    robustness_check_passed: bool,
+    section_5_7_aligned: bool,
+    data_completeness_pct: float,
+    lynch_type_cap_applied: bool = False,
+    stalwart_two_stage_bias_flagged: bool = False,
+    base: int = 50,
+) -> dict:
+    """
+    v3.14 신규 (2026-07-25 재설계, 원본 코드 소실로 스펙 기반 재구성 — 아래
+    '원본과의 관계' 참고). 최종 메모의 Confidence(0~100%)를 서술형 판단이
+    아니라 코드로 산출하기 위한 함수.
+
+    base=50으로 시작(v3.14 확정 사항: base=70으로 두면 대부분 80~90대에
+    몰려 종목간 구분력이 사라지는 문제가 실측으로 확인됨, 근거: 프로젝트
+    기억). 각 조건 충족 시 가산/감산한다.
+
+    가산 요소:
+    - robustness_check_passed(강건성 점검 통과): +15
+    - section_5_7_aligned(5번 Expectation Gap과 7번 RAR 판정 방향 일치): +15
+    - data_completeness_pct(재무데이터 [Data Missing] 없이 확보된 비율,
+      0~1): 최대 +15 (data_completeness_pct * 15)
+
+    감산 요소:
+    - lynch_type_cap_applied(Realistic Growth가 캡에 걸림, 즉 원 계산값이
+      아니라 상/하한이 그대로 채택됨): -5 (외삽 신뢰도 저하 신호)
+    - stalwart_two_stage_bias_flagged(v3.13 구조적 편향 플래그 발동): -5
+      (RAR 해석에 추가 주의가 필요하다는 신호)
+
+    0~100 범위로 clip.
+
+    반환값: {"score": int, "base": int, "adjustments": dict, "final": int}
+
+    ⚠️ 원본과의 관계: 이 함수의 정확한 원본 코드는 세션 파일시스템 리셋으로
+    소실되었다. 남아있던 근거는 "base=50"과 "ANET에서 71 재현"이라는 스펙
+    조각뿐이며, 이 구현은 그 스펙에 맞춰 2026-07-25에 재설계된 것이다.
+    가산/감산 항목·배점은 이 재설계 과정에서 새로 정한 것이므로, 향후 실전
+    종목 재검증(예: ANET 재실행)에서 71과 다른 값이 나오더라도 "버그"로
+    단정하지 말고 재설계 배점 자체를 재검토할 것.
+    """
+    if not (0.0 <= data_completeness_pct <= 1.0):
+        raise ValueError("data_completeness_pct는 0~1 범위")
+
+    adjustments = {
+        "robustness_check_passed": 15 if robustness_check_passed else 0,
+        "section_5_7_aligned": 15 if section_5_7_aligned else 0,
+        "data_completeness": round(data_completeness_pct * 15),
+        "lynch_type_cap_applied": -5 if lynch_type_cap_applied else 0,
+        "stalwart_two_stage_bias_flagged": -5 if stalwart_two_stage_bias_flagged else 0,
+    }
+    raw_score = base + sum(adjustments.values())
+    final = max(0, min(100, raw_score))
+
+    return {
+        "base": base,
+        "adjustments": adjustments,
+        "raw_score": raw_score,
+        "final": final,
+    }
+
+# ----------------------------------------------------------------------
 # 11. DRS 이중 반영 강건성 점검 - v3.6 재설계
 # ----------------------------------------------------------------------
 
