@@ -112,6 +112,9 @@ class Candidate:
     worst_yoy_revenue: float   # 관측구간 최악 YoY 매출성장(소수, 역성장이면 음수)
     exchange: str = ""
     note: str = ""
+    # v3.20: capex 억눌림 판별용(선택). 넣으면 재검토 플래그가 정밀해진다.
+    capex_to_revenue_current: float = None
+    capex_to_revenue_avg: float = None
 
 
 @dataclass
@@ -126,6 +129,7 @@ class ScreenResult:
     tier: str                     # "S" / "A" / "B" / "-"
     drs_est: float = float("nan")
     failures: list = field(default_factory=list)
+    review_flags: list = field(default_factory=list)
 
 
 def screen(c: Candidate, drs_override: float = None,
@@ -172,6 +176,35 @@ def screen(c: Candidate, drs_override: float = None,
             f"CAGR {binding*100:.2f}%, 필요 {required_min_cagr()*100:.2f}%)"
         )
 
+    # ── v3.20: capex에 눌린 후보를 '단순 탈락'과 분리한다 ──────────────────
+    # NVO 사례: 매출 CAGR 21.7%로 최상위권인데 FCF CAGR은 4.92%뿐이었다. capex가
+    # 5년새 9.5배 폭증(GLP-1 증설)해 FCF를 눌렀기 때문이다. 이런 종목을 그냥
+    # '성장 미달'로 버리면, capex가 실제로 '성장투자'인 경우(pipeline v3.20의
+    # capex_classification="growth_investment")에 판정이 뒤집힐 후보를 놓친다.
+    # 그래서 탈락시키되 재검토 대상으로 표시한다.
+    # ⚠️ FCF CAGR이 음수면 이 플래그를 붙이지 않는다. capex에 '눌린' 것과 FCF가
+    # 절대금액으로 줄어드는 것은 다른 문제이고, 후자는 capex를 성장투자로
+    # 재분류해도 구제되지 않는다(UNH가 -5.18%로 잡혀 이 가드를 추가했다).
+    review_flags = []
+    rg_from_revenue = c.revenue_cagr_5y * (1 - STRUCTURAL_DISCOUNT_MEDIAN)
+    fcf_binds = 0 < c.fcf_cagr_5y < c.revenue_cagr_5y
+    if fcf_binds and rg < MIN_REALISTIC_GROWTH <= rg_from_revenue:
+        msg = (
+            f"[capex 재검토 대상] 매출 CAGR {c.revenue_cagr_5y*100:.2f}%만 보면 "
+            f"현실적성장률 {rg_from_revenue*100:.2f}%로 통과하는데, FCF CAGR "
+            f"{c.fcf_cagr_5y*100:.2f}%가 제약이 되어 탈락했다"
+        )
+        if c.capex_to_revenue_current is not None and c.capex_to_revenue_avg is not None:
+            delta = c.capex_to_revenue_current - c.capex_to_revenue_avg
+            msg += (f". capex/매출이 평균 대비 {delta*100:+.1f}%p"
+                    f"{' 급증' if delta > 0.03 else ''}")
+            if delta > 0.03:
+                msg += (" - v3.7 임계값(3%p) 초과이므로 growth_investment로 "
+                        "분류되면 FCF CAGR이 상향조정되어 판정이 바뀔 수 있다")
+        else:
+            msg += ". capex 시계열을 확보해 급증 여부를 확인할 것"
+        review_flags.append(msg)
+
     passed = not failures
     if not passed:
         tier = "-"
@@ -183,7 +216,8 @@ def screen(c: Candidate, drs_override: float = None,
     else:
         tier = "B"
 
-    return ScreenResult(c, fcf_yield, ig, binding, rg, gap, passed, tier, drs, failures)
+    return ScreenResult(c, fcf_yield, ig, binding, rg, gap, passed, tier, drs,
+                        failures, review_flags)
 
 
 def screen_all(candidates: list) -> list:

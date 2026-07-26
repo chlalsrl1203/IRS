@@ -29,8 +29,10 @@ from engine.expectation_gap_engine import (
     DRSInputs,
     LYNCH_TYPE_CAPS,
     bull_bear_base_growth_rates,
+    capex_intensity_from_series,
     capped_n,
     check_deceleration_double_count,
+    fcf_conservatism_adjustment,
     check_stalwart_two_stage_bias,
     classify_lynch_type,
     competition_intensity_score,
@@ -149,6 +151,12 @@ class AnalysisInputs:
     lynch_type_override_reason: str = None
     data_sources: list = field(default_factory=list)
 
+    # capex 급증 분류 - v3.20에서 배선(그 전까지는 엔진에만 있고 미사용이었다).
+    # None이면 기존 동작(realistic_growth_estimate의 기본 FCF보수원칙)을 그대로 쓴다.
+    # 값을 넣으면 capex_intensity_from_series + fcf_conservatism_adjustment 경로를 탄다.
+    capex_classification: str = None          # "growth_investment" | "margin_erosion"
+    capex_classification_basis: str = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -165,6 +173,22 @@ class AnalysisInputs:
             )
         if self.lynch_type_override is not None and not self.lynch_type_override_reason:
             raise ValueError("lynch_type을 수동 오버라이드하려면 사유 필수")
+
+        # v3.20: capex 분류는 판정을 뒤집을 수 있는 주관적 입력이므로
+        # model_choice_reason/lynch_type_override_reason과 동일하게 근거를 강제한다.
+        if self.capex_classification is not None:
+            if self.capex_classification not in ("growth_investment", "margin_erosion"):
+                raise ValueError(
+                    'capex_classification은 "growth_investment" 또는 '
+                    '"margin_erosion"만 허용'
+                )
+            if not self.capex_classification_basis or not self.capex_classification_basis.strip():
+                raise ValueError(
+                    "capex_classification_basis 필수(v3.20): capex 급증을 '성장투자'로 "
+                    "부르면 FCF CAGR이 상향조정되어 판정이 뒤집힐 수 있다. 무엇을 근거로 "
+                    "그렇게 분류했는지(증설계획 공시, 수주잔고, 가동률 등) 남기지 않으면 "
+                    "검증 불가능한 낙관이 된다."
+                )
 
         # ⚠️ v3.19에서 실제로 겪은 사고(2026-07-25 BRO 재검증): 데이터 소스마다
         # capex 부호 규약이 다르다. Alpha Vantage는 양수(지출액), Fiscal.ai는
@@ -311,6 +335,60 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         lynch_type=lynch_type,
     )
 
+    # ── v3.20: capex 급증 분류 배선 ──────────────────────────────────────
+    # v3.6/v3.7부터 엔진에 있었으나 pipeline이 import조차 하지 않아 한 번도
+    # 실행되지 않던 경로. NVO(매출CAGR 21.7% vs FCF CAGR 4.92%, capex 5년새
+    # 9.5배 폭증)가 스크리닝에서 걸리면서 실제 필요성이 실증되어 배선했다.
+    #
+    # ⚠️ 순서가 중요하다: fcf_conservatism_adjustment는 revenue_weighted_cagr을
+    # 요구하는데, 이를 여기서 다시 계산하면 realistic_growth_estimate 내부의
+    # 가중평균 로직(3y/5y/10y, 0.5/0.3/0.2)과 미묘하게 어긋나는 새 버그가 생긴다.
+    # 그래서 위에서 이미 계산된 breakdown["base_growth_before_fcf_check"]를
+    # 그대로 재사용하고, 조정된 FCF CAGR로 한 번 더 호출한다.
+    capex_adjustment = None
+    if inputs.capex_classification is not None:
+        capex_years = years[-5:]
+        capex_intensity = capex_intensity_from_series(
+            [inputs.capex_by_year[y] for y in capex_years],
+            [rev[y] for y in capex_years],
+        )
+        adjusted_fcf_cagr, capex_reason = fcf_conservatism_adjustment(
+            revenue_weighted_cagr=growth_breakdown["base_growth_before_fcf_check"],
+            fcf_cagr_5y=fcf_cagr_5y,
+            capex_to_revenue_current=capex_intensity["current"],
+            capex_to_revenue_5y_avg=capex_intensity["avg"],
+            classification=inputs.capex_classification,
+            revenue_cagr_3y=rev_cagr_3y,
+            revenue_cagr_10y=rev_cagr_10y,
+        )
+        capex_adjustment = {
+            "classification": inputs.capex_classification,
+            "basis": inputs.capex_classification_basis,
+            "capex_intensity": capex_intensity,
+            "fcf_cagr_before": fcf_cagr_5y,
+            "fcf_cagr_after": adjusted_fcf_cagr,
+            "reason": capex_reason,
+        }
+        if adjusted_fcf_cagr != fcf_cagr_5y:
+            realistic_growth, growth_breakdown = realistic_growth_estimate(
+                revenue_cagr_3y=rev_cagr_3y,
+                revenue_cagr_5y=rev_cagr_5y,
+                revenue_cagr_10y=rev_cagr_10y,
+                fcf_cagr_5y=adjusted_fcf_cagr,
+                structural_discount_pct=structural_discount,
+                lynch_type=lynch_type,
+            )
+            data_limitations.append(
+                f"[capex 분류 조정] capex/매출 비중이 "
+                f"{capex_intensity['delta']*100:+.1f}%p 변동했고 "
+                f"'{inputs.capex_classification}'로 분류해 FCF CAGR을 "
+                f"{fcf_cagr_5y*100:.2f}% -> {adjusted_fcf_cagr*100:.2f}%로 조정했다. "
+                f"이 분류는 주관적 입력이며 판정을 뒤집을 수 있으므로 근거를 "
+                f"반드시 대조할 것: {inputs.capex_classification_basis}"
+            )
+        if "정합성 경고" in (capex_reason or ""):
+            data_limitations.append(f"[capex 정합성] {capex_reason}")
+
     erp = erp_from_drs(drs)
     r = inputs.risk_free_rate + erp
     n = capped_n(inputs.n_requested)
@@ -415,6 +493,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "structural_discount_pct": structural_discount,
             "realistic_growth": realistic_growth,
             "breakdown": growth_breakdown,
+            "capex_adjustment": capex_adjustment,
         },
         "implied_growth": {
             "models": models,

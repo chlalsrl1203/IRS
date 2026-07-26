@@ -214,6 +214,11 @@ CANDIDATES.append(Candidate(
     fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
     net_debt_to_ebitda=(22.58e9 - 3.34e9) / 25.88e9,
     worst_yoy_revenue=worst_yoy(_rev),
+    capex_to_revenue_current=60140e6 / 309064e6,
+    capex_to_revenue_avg=sum(
+        {2021: 6335e6, 2022: 12146e6, 2023: 25806e6, 2024: 47164e6, 2025: 60140e6}[y]
+        / _rev[y] for y in _rev
+    ) / len(_rev),
     note="매출 CAGR 21.7%로 성장은 최상위권인데 FCF CAGR은 4.92%뿐 - capex가 "
          "5년새 6,335 -> 60,140백만DKK로 9.5배 폭증(GLP-1 증설)해 FCF를 눌렀다. "
          "min() 제약이 정확히 작동한 사례이자, 엔진의 capex_intensity_from_series/"
@@ -360,6 +365,16 @@ def main():
         print(f"  {c.ticker:11} {c.name:22} : {r.failures[0]}")
         for extra in r.failures[1:]:
             print(f"  {'':11} {'':22}   + {extra}")
+
+    review = [(c, r) for c, r in results if r.review_flags]
+    if review:
+        print("\n" + "=" * 108)
+        print("🔍 capex 재검토 대상 (탈락했으나 분류에 따라 판정이 바뀔 수 있음)")
+        print("=" * 108)
+        for c, r in review:
+            print(f"\n  {c.ticker:11} {c.name}")
+            for f in r.review_flags:
+                print(f"      {f}")
 
     print("\n" + "=" * 108)
     print("⚠️ 이 결과는 후보를 좁힌 1차 필터일 뿐 판정이 아니다.")

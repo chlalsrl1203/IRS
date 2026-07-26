@@ -438,3 +438,104 @@ def test_sensitivity_check_no_longer_emits_stale_interpretation_warning():
     """
     result = run_analysis(cdns_inputs())
     assert not any("강건성점검 해석주의" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.20: capex 급증 분류 배선 (v3.6/v3.7 함수가 그전까지 미실행이었다)
+# ----------------------------------------------------------------------
+
+def test_capex_classification_defaults_to_none_and_changes_nothing():
+    """미지정이면 기존 동작과 완전히 동일해야 한다(순수 가산적 변경)."""
+    base = run_analysis(cdns_inputs())
+    assert base["growth"]["capex_adjustment"] is None
+    explicit_none = run_analysis(cdns_inputs(capex_classification=None))
+    assert explicit_none["growth"]["realistic_growth"] == base["growth"]["realistic_growth"]
+    assert explicit_none["rar"] == base["rar"]
+
+
+def test_capex_classification_rejects_unknown_value():
+    with pytest.raises(ValueError):
+        cdns_inputs(capex_classification="capex_good",
+                    capex_classification_basis="아무말")
+
+
+def test_capex_classification_requires_basis():
+    """
+    '성장투자' 분류는 FCF CAGR을 올려 판정을 뒤집을 수 있으므로
+    model_choice_reason과 동일하게 근거를 강제한다.
+    """
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(capex_classification="growth_investment")
+    assert "capex_classification_basis" in str(exc.value)
+
+
+def _capex_spike_inputs(**overrides):
+    """
+    최근년도 capex를 인위적으로 급증시켜 capex_intensity delta가 v3.7 임계값
+    (3%p)을 넘게 만든 케이스. NVO(capex 5년새 9.5배)를 축소 재현한 것.
+    """
+    spiked = dict(CDNS_CAPEX)
+    spiked[2025] = int(CDNS_REVENUE[2025] * 0.09)   # capex/매출 9%로 급증
+    base = dict(capex_by_year=spiked)
+    base.update(overrides)
+    return cdns_inputs(**base)
+
+
+def test_growth_investment_classification_raises_fcf_cagr_and_records_limitation():
+    margin = run_analysis(_capex_spike_inputs(
+        capex_classification="margin_erosion",
+        capex_classification_basis="증설 근거 없음 - 보수적으로 마진훼손 처리",
+    ))
+    growth = run_analysis(_capex_spike_inputs(
+        capex_classification="growth_investment",
+        capex_classification_basis="증설계획 공시 및 수주잔고 확인(테스트용 가정)",
+    ))
+    adj = growth["growth"]["capex_adjustment"]
+    assert adj is not None
+    assert adj["fcf_cagr_after"] > adj["fcf_cagr_before"]
+    # 성장투자로 부르면 현실적성장률이 같거나 높아진다(캡에 걸리면 같을 수 있음)
+    assert growth["growth"]["realistic_growth"] >= margin["growth"]["realistic_growth"]
+    assert any("capex 분류 조정" in x for x in growth["data_limitations"])
+
+
+def test_margin_erosion_keeps_fcf_cagr_unchanged():
+    """마진훼손으로 분류하면 FCF CAGR을 그대로 채택(보수 유지)해야 한다."""
+    result = run_analysis(_capex_spike_inputs(
+        capex_classification="margin_erosion",
+        capex_classification_basis="가동률 하락으로 마진훼손 판단(테스트용 가정)",
+    ))
+    adj = result["growth"]["capex_adjustment"]
+    assert adj["fcf_cagr_after"] == pytest.approx(adj["fcf_cagr_before"])
+    assert not any("capex 분류 조정" in x for x in result["data_limitations"])
+
+
+def test_growth_investment_claim_inconsistency_surfaces_when_revenue_decelerating():
+    """
+    v3.7 validate_growth_investment_claim: 매출이 둔화중인데 capex 급증을
+    '성장투자'라 주장하면 정합성 경고가 data_limitations에 올라와야 한다.
+    """
+    decelerating = dict(CDNS_REVENUE)
+    for y in (2023, 2024, 2025):        # 최근 3년을 평탄하게 만들어 3y CAGR을 떨군다
+        decelerating[y] = CDNS_REVENUE[2022]
+    result = run_analysis(_capex_spike_inputs(
+        revenue_by_year=decelerating,
+        capex_classification="growth_investment",
+        capex_classification_basis="증설 주장(정합성 경고 발동 확인용)",
+    ))
+    assert any("capex 정합성" in x for x in result["data_limitations"])
+
+
+def test_capex_adjustment_reuses_weighted_average_not_recomputed():
+    """
+    CLAUDE.md 배선지침 준수 확인: fcf_conservatism_adjustment에 넘긴
+    revenue_weighted_cagr이 realistic_growth_estimate가 계산한
+    base_growth_before_fcf_check와 동일해야 한다(중복 구현 금지).
+    """
+    result = run_analysis(_capex_spike_inputs(
+        capex_classification="growth_investment",
+        capex_classification_basis="배선 검증용",
+    ))
+    adj = result["growth"]["capex_adjustment"]
+    blended = 0.7 * adj["fcf_cagr_before"] + 0.3 * result["growth"]["breakdown"]["base_growth_before_fcf_check"]
+    expected = min(blended, result["growth"]["breakdown"]["base_growth_before_fcf_check"])
+    assert adj["fcf_cagr_after"] == pytest.approx(expected, abs=1e-12)

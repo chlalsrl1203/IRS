@@ -144,3 +144,62 @@ def test_tier_s_requires_nonpositive_implied_growth():
     assert r.passed
     assert r.tier == "S"
     assert r.implied_growth_est <= 0
+
+
+# ----------------------------------------------------------------------
+# v3.20: capex에 눌린 후보를 단순 탈락과 분리 (NVO 사례에서 도출)
+# ----------------------------------------------------------------------
+
+def _nvo_like(**overrides):
+    """
+    NVO 실측 패턴을 축소 재현: 매출은 강하게 성장(21.7%)하는데 capex 폭증으로
+    FCF CAGR(4.92%)만 낮은 케이스.
+    """
+    base = dict(
+        ticker="CAPEXHEAVY", name="capex 폭증 성장주", market_cap=10_000_000_000,
+        fcf0=600_000_000,          # FCF수익률 6% - 밸류에이션은 통과권
+        revenue_cagr_5y=0.217, fcf_cagr_5y=0.0492,
+        net_debt_to_ebitda=0.74, worst_yoy_revenue=0.06,
+    )
+    base.update(overrides)
+    return Candidate(**base)
+
+
+def test_capex_suppressed_candidate_is_flagged_for_review_not_silently_dropped():
+    r = screen(_nvo_like())
+    assert not r.passed                      # 기준상 탈락은 맞다
+    assert r.review_flags                     # 그러나 재검토 대상으로 표시돼야 한다
+    assert "capex 재검토 대상" in r.review_flags[0]
+
+
+def test_capex_flag_sharpens_when_capex_series_provided():
+    r = screen(_nvo_like(capex_to_revenue_current=0.19, capex_to_revenue_avg=0.08))
+    assert r.review_flags
+    assert "growth_investment" in r.review_flags[0]   # 3%p 임계값 초과를 인지
+
+
+def test_no_capex_flag_when_revenue_growth_also_insufficient():
+    """
+    매출 자체가 부진하면 capex 문제가 아니라 그냥 성장이 없는 것이다
+    (PYPL 유형) - 재검토 플래그를 붙이면 안 된다.
+    """
+    r = screen(_nvo_like(revenue_cagr_5y=0.02, fcf_cagr_5y=0.008))
+    assert not r.passed
+    assert not r.review_flags
+
+
+def test_no_capex_flag_when_candidate_passes():
+    r = screen(_nvo_like(fcf_cagr_5y=0.20))
+    assert r.passed
+    assert not r.review_flags
+
+
+def test_no_capex_flag_when_fcf_is_outright_declining():
+    """
+    FCF가 절대금액으로 줄고 있으면 capex에 '눌린' 게 아니라 사업이 나빠지는
+    것이다. capex를 성장투자로 재분류해도 구제되지 않으므로 플래그 대상이
+    아니다(UNH: 매출 +10%인데 FCF CAGR -5.18%).
+    """
+    r = screen(_nvo_like(revenue_cagr_5y=0.10, fcf_cagr_5y=-0.0518))
+    assert not r.passed
+    assert not r.review_flags
