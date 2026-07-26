@@ -149,7 +149,94 @@ CANDIDATES.append(Candidate(
          "정식 분석시 회복기저를 제거한 재계산 필수.",
 ))
 
+# ── 3차 배치 (유럽/일본/미국 추가 확장) ──
+
+# ── Booking Holdings (NASDAQ) ──
+_rev = {2021: 10958e6, 2022: 17090e6, 2023: 21365e6, 2024: 23739e6, 2025: 26917e6}
+_fcf = {2021: 2516e6, 2022: 6186e6, 2023: 6999e6, 2024: 7894e6, 2025: 9087e6}
+CANDIDATES.append(Candidate(
+    ticker="BKNG", name="Booking Holdings", exchange="NASDAQ",
+    market_cap=137.51e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(19.18e9 - 16.02e9) / 9.63e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="P/FCF 15.22와 직접계산 6.61% 일치(정합성 양호). ⚠️TCOM과 동일한 코로나 "
+         "기저왜곡: 2021년이 짓눌린 해라 4년 CAGR이 부풀려졌다. 2022년 기준 3년 "
+         "매출CAGR은 16.3%로 여전히 양호하나, 정식 분석시 baseline_distorted_by_"
+         "recovery 플래그로 재계산할 것.",
+))
+
 # ── 이하 탈락군 (기록 보존: 왜 떨어졌는지가 기준의 판별력을 보여준다) ──
+
+# QUALCOMM: FCF수익률 7.28%로 싼 편이고 FCF CAGR 10.3%도 통과하는데,
+# 매출이 FY2022(442억)~FY2025(443억) 3년째 사실상 제자리라 매출 CAGR에서 탈락.
+_rev = {2021: 33566e6, 2022: 44200e6, 2023: 35820e6, 2024: 38962e6, 2025: 44284e6}
+_fcf = {2021: 8648e6, 2022: 6834e6, 2023: 9849e6, 2024: 11161e6, 2025: 12820e6}
+CANDIDATES.append(Candidate(
+    ticker="QCOM", name="QUALCOMM", exchange="NASDAQ",
+    market_cap=175.99e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(15.27e9 - 9.80e9) / 12.93e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="P/FCF 14.08과 직접계산 7.28% 일치. FY2023 매출 -19.0% 역성장 이력도 "
+         "있어(스마트폰 사이클) DRS cyclicality가 높게 나올 종목.",
+))
+
+# Recruit Holdings: FCF수익률 3.93%로 이미 비싸고, 매출 CAGR 6.51%도 미달 - 이중 탈락.
+_rev = {2022: 2871705e6, 2023: 3429519e6, 2024: 3416492e6, 2025: 3557478e6, 2026: 3697351e6}
+_fcf = {2022: 426477e6, 2023: 416168e6, 2024: 524225e6, 2025: 602412e6, 2026: 658729e6}
+CANDIDATES.append(Candidate(
+    ticker="6098.T", name="Recruit Holdings", exchange="TSE",
+    market_cap=16.75e12, fcf0=_fcf[2026],
+    revenue_cagr_5y=cagr(_rev[2022], _rev[2026], 4),
+    fcf_cagr_5y=cagr(_fcf[2022], _fcf[2026], 4),
+    net_debt_to_ebitda=(186.28e9 - 725.58e9) / 697.93e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="P/FCF 25.42와 직접계산 3.93% 정확히 일치(정합성 양호). 순현금이고 FCF "
+         "CAGR 11.5%로 사업은 좋으나 밸류에이션·매출성장 양쪽에서 미달.",
+))
+
+# Novo Nordisk: OCF는 견조한데 capex가 5년새 6,335 -> 60,140백만DKK로 9.5배 폭증해
+# FCF가 눌렸다. 엔진의 capex_intensity/growth_investment 분류(v3.6/v3.7, 현재
+# pipeline 미배선)가 실제로 필요한 첫 사례 - CLAUDE.md '알려진 한계' 참고.
+# Novo Nordisk: 재무제표 DKK, 시총 USD. 환율은 추정하지 않고 교차검증했다 -
+# 통계페이지 P/FCF 23.49로 역산한 DKK/USD 6.414가 유로페그(7.46 DKK/EUR ÷
+# 1.163 USD/EUR = 6.414)와 정확히 일치한다.
+USDDKK = 6.414
+_rev = {2021: 140800e6, 2022: 176954e6, 2023: 232261e6, 2024: 290403e6, 2025: 309064e6}
+_fcf = {2021: 48665e6, 2022: 66741e6, 2023: 83102e6, 2024: 73804e6, 2025: 58962e6}
+CANDIDATES.append(Candidate(
+    ticker="NVO", name="Novo Nordisk", exchange="NYSE(ADR)/CPH",
+    market_cap=215.94e9, fcf0=_fcf[2025] / USDDKK,
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(22.58e9 - 3.34e9) / 25.88e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="매출 CAGR 21.7%로 성장은 최상위권인데 FCF CAGR은 4.92%뿐 - capex가 "
+         "5년새 6,335 -> 60,140백만DKK로 9.5배 폭증(GLP-1 증설)해 FCF를 눌렀다. "
+         "min() 제약이 정확히 작동한 사례이자, 엔진의 capex_intensity_from_series/"
+         "fcf_conservatism_adjustment(v3.6/v3.7, 현재 pipeline 미배선)가 실제로 "
+         "필요해지는 첫 실사례 - CLAUDE.md '알려진 한계' 항목 참고. "
+         "'성장투자'로 분류되면 FCF CAGR을 상향조정해 판정이 바뀔 수 있다.",
+))
+
+# Cigna: FCF수익률 10.95%로 충분히 싼데 FCF CAGR 8.57%가 필요치 8.90%에 간발로 미달.
+_rev = {2021: 174069e6, 2022: 180518e6, 2023: 195265e6, 2024: 247121e6, 2025: 274900e6}
+_fcf = {2021: 6037e6, 2022: 7361e6, 2023: 10240e6, 2024: 8957e6, 2025: 8389e6}
+CANDIDATES.append(Candidate(
+    ticker="CI", name="The Cigna Group", exchange="NYSE",
+    market_cap=76.60e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(30.90e9 - 7.85e9) / 12.34e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="가장 아깝게 탈락한 종목. FCF수익률 10.95%(매우 쌈) + 매출 CAGR 12.1%인데 "
+         "FCF CAGR 8.57%가 min() 제약이 되어 현실적성장률 7.71%로 기준(8.0%)에 "
+         "0.29%p 부족. FY2023 정점 후 2년 연속 FCF 감소라 추세도 불리 - UNH(FCF "
+         "-5.18%)와 같은 미국 건강보험 업종 압박이 공통 배경으로 보인다.",
+))
 
 # NetEase: FCF는 훌륭한데(CAGR 20.8%, 매우 안정적) 매출 CAGR 6.48%가 발목을 잡는다.
 _rev = {2021: 87606e6, 2022: 96496e6, 2023: 103468e6, 2024: 105295e6, 2025: 112626e6}
@@ -268,7 +355,11 @@ def main():
     print("탈락 (기준의 판별력 기록용)")
     print("=" * 108)
     for c, r in failed:
+        # 탈락 사유를 전부 표시한다. 첫 줄만 보여주면 어떤 조건이 진짜 결정적이었는지
+        # 오해할 수 있다(NVO를 임시 시총값으로 돌렸을 때 실제로 그 혼동이 발생했다).
         print(f"  {c.ticker:11} {c.name:22} : {r.failures[0]}")
+        for extra in r.failures[1:]:
+            print(f"  {'':11} {'':22}   + {extra}")
 
     print("\n" + "=" * 108)
     print("⚠️ 이 결과는 후보를 좁힌 1차 필터일 뿐 판정이 아니다.")
