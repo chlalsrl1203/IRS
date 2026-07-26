@@ -167,6 +167,41 @@ CANDIDATES.append(Candidate(
          "recovery 플래그로 재계산할 것.",
 ))
 
+# ── 4차 배치: capex 집약 업종 집중 탐색 (v3.20 배선 후) ──
+# 기존 기준에서는 FCF CAGR만 보고 자동 탈락하던 영역이다. capex 시계열을 함께
+# 넣어 '눌린 것'인지 '나빠지는 것'인지 구분한다.
+
+# Alphabet: OCF는 CAGR 15.8%(91,652 -> 164,713)로 훌륭한데 FCF는 2.26%뿐.
+# capex가 24,640 -> 91,447로 3.7배 폭증(AI 데이터센터)해 전부 흡수했다.
+_rev = {2021: 257637e6, 2022: 282836e6, 2023: 307394e6, 2024: 350018e6, 2025: 402836e6}
+_fcf = {2021: 67012e6, 2022: 60010e6, 2023: 69495e6, 2024: 72764e6, 2025: 73266e6}
+_capex = {2021: 24640e6, 2022: 31485e6, 2023: 32251e6, 2024: 52535e6, 2025: 91447e6}
+CANDIDATES.append(Candidate(
+    ticker="GOOGL", name="Alphabet", exchange="NASDAQ",
+    market_cap=3.91e12, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(120.79e9 - 242.47e9) / 173.16e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    capex_to_revenue_current=_capex[2025] / _rev[2025],
+    capex_to_revenue_avg=sum(_capex[y] / _rev[y] for y in _rev) / len(_rev),
+    note="NVO보다 극단적인 capex 억눌림 사례. 다만 FCF수익률 1.87%로 밸류에이션도 "
+         "크게 미달이라 재분류만으로는 통과 불가 - 기존 트래커의 v3.11.1 판정"
+         "(적정가/경계선)과 방향이 일치한다.",
+))
+
+# 캐나다국철: FCF가 4,080 -> 3,391로 감소(capex는 증가). FCF 자체가 줄어드는
+# 유형이라 capex 재검토 플래그 대상이 아니다(가드가 작동하는지 확인용).
+_fcf = {2021: 4080e6, 2022: 3917e6, 2023: 3778e6, 2024: 3150e6, 2025: 3391e6}
+CANDIDATES.append(Candidate(
+    ticker="CNR.TO", name="Canadian National Railway", exchange="TSX",
+    market_cap=85e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=0.04, fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=2.0, worst_yoy_revenue=0.0,
+    note="시총·레버리지·매출CAGR [추정치] - FCF 감소로 탈락이 확정적이라 정밀화 "
+         "불필요. capex 증가 중이지만 FCF CAGR이 음수라 재검토 플래그 미대상.",
+))
+
 # ── 이하 탈락군 (기록 보존: 왜 떨어졌는지가 기준의 판별력을 보여준다) ──
 
 # QUALCOMM: FCF수익률 7.28%로 싼 편이고 FCF CAGR 10.3%도 통과하는데,
@@ -237,6 +272,11 @@ CANDIDATES.append(Candidate(
     fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
     net_debt_to_ebitda=(30.90e9 - 7.85e9) / 12.34e9,
     worst_yoy_revenue=worst_yoy(_rev),
+    capex_to_revenue_current=1212e6 / 274900e6,
+    capex_to_revenue_avg=sum(
+        {2021: 1154e6, 2022: 1295e6, 2023: 1573e6, 2024: 1406e6, 2025: 1212e6}[y]
+        / _rev[y] for y in _rev
+    ) / len(_rev),
     note="가장 아깝게 탈락한 종목. FCF수익률 10.95%(매우 쌈) + 매출 CAGR 12.1%인데 "
          "FCF CAGR 8.57%가 min() 제약이 되어 현실적성장률 7.71%로 기준(8.0%)에 "
          "0.29%p 부족. FY2023 정점 후 2년 연속 FCF 감소라 추세도 불리 - UNH(FCF "
@@ -265,8 +305,16 @@ CANDIDATES.append(Candidate(
     market_cap=49.53e9, fcf0=_fcf[2025],
     revenue_cagr_5y=0.0946, fcf_cagr_5y=cagr(_fcf[2020], _fcf[2025], 5),
     net_debt_to_ebitda=0.3250, worst_yoy_revenue=0.05,
+    capex_to_revenue_current=852e6 / 33734e6,
+    capex_to_revenue_avg=sum(
+        c / r for c, r in [
+            (866e6, 21454e6), (908e6, 25371e6), (706e6, 27518e6),
+            (623e6, 29771e6), (683e6, 31797e6), (852e6, 33734e6),
+        ]
+    ) / 6,
     note="OCF/capex=Alpha Vantage, 시총/레버리지=FMP. 전형적 밸류트랩 - "
-         "FCF수익률 11.2%로 매우 싸지만 FCF가 5년째 제자리.",
+         "FCF수익률 11.2%로 매우 싸지만 FCF가 5년째 제자리. capex는 오히려 "
+         "감소중(2.83%->2.53%)이라 capex 억눌림이 아님이 확인됨.",
 ))
 
 _rev = {2021: 560118e6, 2022: 554552e6, 2023: 609015e6, 2024: 660257e6, 2025: 751766e6}

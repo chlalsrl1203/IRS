@@ -58,6 +58,7 @@ ASSUMED_MARGIN_VOLATILITY = 8.0          # ledger 실측 중앙값
 ASSUMED_COMPETITION_INTENSITY = 12.0     # ledger 실측 중앙값
 ASSUMED_REVENUE_VOLATILITY = 4.0         # ledger 실측 중앙값(안정성장주 기준)
 ASSUMED_DEMAND_SENSITIVITY = 0.15        # ledger 실측 중앙값
+CAPEX_SPIKE_THRESHOLD = 0.03             # v3.7 growth_investment_capex_delta_threshold와 동일
 
 
 def estimate_drs(net_debt_to_ebitda: float, worst_yoy_revenue: float) -> float:
@@ -194,16 +195,40 @@ def screen(c: Candidate, drs_override: float = None,
             f"현실적성장률 {rg_from_revenue*100:.2f}%로 통과하는데, FCF CAGR "
             f"{c.fcf_cagr_5y*100:.2f}%가 제약이 되어 탈락했다"
         )
-        if c.capex_to_revenue_current is not None and c.capex_to_revenue_avg is not None:
-            delta = c.capex_to_revenue_current - c.capex_to_revenue_avg
-            msg += (f". capex/매출이 평균 대비 {delta*100:+.1f}%p"
-                    f"{' 급증' if delta > 0.03 else ''}")
-            if delta > 0.03:
-                msg += (" - v3.7 임계값(3%p) 초과이므로 growth_investment로 "
-                        "분류되면 FCF CAGR이 상향조정되어 판정이 바뀔 수 있다")
+        capex_known = (c.capex_to_revenue_current is not None
+                       and c.capex_to_revenue_avg is not None)
+        delta = (c.capex_to_revenue_current - c.capex_to_revenue_avg) if capex_known else None
+
+        if capex_known and delta <= CAPEX_SPIKE_THRESHOLD:
+            # capex를 확인해봤더니 급증이 아니었던 경우. 여기서 결론을 내려버린다 -
+            # "확인할 것"으로 열어두면 이미 해소된 항목이 계속 재검토 대상에 남는다.
+            # CI(0.64%->0.44%)와 PYPL(2.83%->2.53%)이 실제로 이 경우였다:
+            # FCF 정체의 원인이 capex가 아니라 마진/운전자본이라는 뜻이다.
+            msg += (f". 그러나 capex/매출이 평균 대비 {delta*100:+.1f}%p로 "
+                    f"급증하지 않았다(v3.7 임계값 {CAPEX_SPIKE_THRESHOLD*100:.0f}%p 미만) "
+                    f"→ capex에 눌린 게 아니라 마진/운전자본 문제이므로 "
+                    f"margin_erosion으로 분류해야 하며, 재분류로 구제되지 않는다. 해소됨.")
+            review_flags.append(msg)
         else:
-            msg += ". capex 시계열을 확보해 급증 여부를 확인할 것"
-        review_flags.append(msg)
+            if capex_known:
+                msg += (f". capex/매출이 평균 대비 {delta*100:+.1f}%p 급증 "
+                        f"- v3.7 임계값({CAPEX_SPIKE_THRESHOLD*100:.0f}%p) 초과")
+            else:
+                msg += ". capex 시계열을 확보해 급증 여부를 확인할 것"
+
+            # ⚠️ 재분류가 실제로 판정을 바꿀 수 있는지는 밸류에이션 통과 여부에 달렸다.
+            # growth_investment 분류는 FCF **CAGR**만 상향조정할 뿐 FCF0(=내재성장률의
+            # 입력)은 건드리지 않기 때문이다. 밸류에이션까지 탈락한 종목은 재분류해도
+            # 여전히 탈락한다 - 이걸 구분하지 않으면 '판정이 바뀔 수 있다'가 거짓
+            # 기대를 준다(GOOGL이 FCF수익률 1.87%로 이 경우에 해당).
+            if ig <= MAX_IMPLIED_GROWTH:
+                msg += (" → 밸류에이션은 이미 통과했으므로 growth_investment 재분류만으로 "
+                        "통과 가능. 우선 확인 대상.")
+            else:
+                msg += (f" → 단, 내재성장률 {ig*100:.2f}%로 밸류에이션도 미달이라 "
+                        f"재분류만으로는 통과 못 한다(재분류는 FCF CAGR만 올리고 FCF0는 "
+                        f"그대로라 내재성장률이 안 변한다). 가격이 더 내려와야 함.")
+            review_flags.append(msg)
 
     passed = not failures
     if not passed:

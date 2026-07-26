@@ -203,3 +203,33 @@ def test_no_capex_flag_when_fcf_is_outright_declining():
     r = screen(_nvo_like(revenue_cagr_5y=0.10, fcf_cagr_5y=-0.0518))
     assert not r.passed
     assert not r.review_flags
+
+
+def test_capex_flag_distinguishes_whether_reclassification_can_actually_flip():
+    """
+    growth_investment 재분류는 FCF CAGR만 올리고 FCF0(내재성장률의 입력)는
+    건드리지 않는다. 따라서 밸류에이션까지 탈락한 종목은 재분류해도 통과 못 한다.
+    두 경우를 구분하지 않으면 '판정이 바뀔 수 있다'가 거짓 기대를 준다.
+    """
+    # 밸류에이션 통과(FCF수익률 6%) + 성장만 미달 -> 재분류로 통과 가능
+    can_flip = screen(_nvo_like())
+    assert can_flip.review_flags
+    assert "재분류만으로 통과 가능" in can_flip.review_flags[0]
+
+    # 밸류에이션도 미달(FCF수익률 1.9%, GOOGL 유형) -> 재분류해도 불가
+    cannot_flip = screen(_nvo_like(fcf0=190_000_000))
+    assert cannot_flip.review_flags
+    assert "재분류만으로는 통과 못" in cannot_flip.review_flags[0]
+
+
+def test_capex_flag_resolves_itself_when_capex_did_not_actually_spike():
+    """
+    capex를 확인해봤더니 급증이 아니면 '해소됨'으로 결론내야 한다. 계속
+    '확인할 것'으로 열어두면 이미 해결된 항목이 재검토 목록에 쌓인다.
+    CI(0.64%->0.44%)/PYPL(2.83%->2.53%)이 실제 이 경우였다.
+    """
+    r = screen(_nvo_like(capex_to_revenue_current=0.0044,
+                         capex_to_revenue_avg=0.0064))
+    assert r.review_flags
+    assert "해소됨" in r.review_flags[0]
+    assert "margin_erosion" in r.review_flags[0]
