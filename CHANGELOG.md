@@ -1,5 +1,39 @@
 # CHANGELOG
 
+## v3.19 전면점검: 이중반영 가드 배선, CI 추가, README 작성 (2026-07-26)
+
+사용자 요청으로 프로젝트 전체를 처음부터 검토하고 필요한 개선을 직접
+판단해 진행했다. 세 가지를 실행했다:
+
+1. **`check_deceleration_double_count()` 배선**: v3.8부터 엔진에 있던 이
+   이중반영 가드가 `pipeline.py`에 한 번도 import되지 않아 실행 경로에서
+   호출된 적이 없었다. "하향 오버라이드" 여부를 `LYNCH_TYPE_CAPS`의
+   성장상한(g_max) 비교로 기계적으로 정의해 배선했다(주관적 판단 불필요).
+   결과 dict에 `lynch.overridden_down`을 노출. 9종목 전체 재실행으로
+   회귀 없음을 확인했고, BRO는 실제 하향 오버라이드 사례라
+   `overridden_down=True`로 정확히 잡히면서도 structural_discount(7.95%)가
+   10% 임계값 미만이라 경고는 뜨지 않는 것까지 실데이터로 검증됨. 테스트
+   4건 추가.
+2. **CI 추가**(`.github/workflows/tests.yml`): 모든 push에서 `pytest tests/`
+   자동 실행. 지금까지의 사고들은 테스트 실행을 깜빡해서가 아니라 애초에
+   해당 테스트가 없어서 생겼지만, 앞으로의 회귀를 막는 최소한의 자동
+   안전망으로 추가.
+3. **README.md 작성**: 기존에 "# IRS" 한 줄뿐이던 파일을 프로젝트 개요·
+   빠른 시작(`run_analysis()` 사용법)·구조·테스트·재현검증 안내로 채웠다.
+   세부 이력/사고 기록은 여전히 CLAUDE.md가 원본.
+
+**의도적으로 하지 않은 것**: `capex_intensity_from_series`/
+`validate_growth_investment_claim`/`fcf_conservatism_adjustment`(v3.6/v3.7,
+capex 급증의 성장투자 vs 마진훼손 분류)도 마찬가지로 `pipeline.py`에
+미배선 상태이지만, 이건 서둘러 넣지 않았다. 새 주관적 입력이 필요하고
+`revenue_weighted_cagr` 확보를 위해 `realistic_growth_estimate()` 내부
+가중평균 로직을 중복 구현해야 하는데, 그 중복 자체가 새로운 어긋남 버그를
+만들 위험이 있다. 지금까지 분석한 9종목 중 실제로 이 기능이 필요했던
+사례가 없어, 실증 없이 넣기보다 CLAUDE.md에 배선 방법을 기록해두고 실제
+필요한 사례가 나왔을 때 처리하기로 했다.
+
+전체 62개 테스트 통과.
+
 ## v3.19 RAR 전수감사 7종목 전건 처리 완료 (2026-07-26)
 
 2026-07-25 전수감사에서 나온 소수규약 의심 7종목(VRSN/WCN/WM/IDXX/BRO/

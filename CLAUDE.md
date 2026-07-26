@@ -140,3 +140,40 @@ WCN 5.04%→9.01~10.4%) "FY2025 10-K가 새로 나와서 그렇다"고 즉시 �
 **결론이 안 나면 "원인불명"으로 정직하게 남길 것** — WCN은 5개 조회창을
 전부 시도해도 과거값(5.04%)이 재현되지 않아 원인 미상으로 남아있다. WM도
 동일 패턴으로 재정정됨(두 종목 다 과거 ledger가 없어 대조검증 불가).
+
+## 알려진 한계 / 향후 과제 (v3.19 전면점검, 2026-07-26)
+
+**`pipeline.py`가 엔진 함수를 전부 배선하지는 않는다 — 아래는 여전히
+미배선 상태다:**
+
+- `capex_intensity_from_series()` / `validate_growth_investment_claim()` /
+  `fcf_conservatism_adjustment()`(v3.6/v3.7): capex 급증이 "성장투자"인지
+  "마진훼손"인지 분류해 FCF CAGR을 조정하는 기능. `pipeline.py`는 항상
+  `realistic_growth_estimate()`의 기본 동작(FCF CAGR < Revenue 가중평균이면
+  FCF CAGR을 그대로 채택)만 쓰고, 이 세 함수는 import조차 되지 않는다.
+
+  **의도적으로 지금 배선하지 않았다.** `check_deceleration_double_count`와
+  달리, 이 기능을 쓰려면 `classification`("growth_investment" vs
+  "margin_erosion")이라는 새로운 주관적 입력이 필요하고, `fcf_conservatism_
+  adjustment()`가 요구하는 `revenue_weighted_cagr`을 얻으려면
+  `realistic_growth_estimate()` 내부의 가중평균 로직(3y/5y/10y, 0.5/0.3/0.2)을
+  `pipeline.py`에서 중복 구현해야 한다 - 그 중복 자체가 두 계산이 미묘하게
+  어긋나는 새로운 버그를 만들 위험이 있다. 지금까지 분석한 9종목 중 이
+  기능이 실제로 필요했던(capex 급증+growth_investment 주장이 있는) 사례가
+  없어, 실증되지 않은 상태로 서둘러 넣기보다 필요한 사례가 실제로 나왔을 때
+  구체적 요구사항을 갖고 배선하는 쪽을 택했다. 필요해지면: (1) `AnalysisInputs`에
+  `capex_classification: str = None` 추가, (2) 값이 있을 때만
+  `capex_intensity_from_series` + `fcf_conservatism_adjustment` 경로를 타도록
+  분기, (3) `revenue_weighted_cagr`은 `realistic_growth_estimate`가 이미
+  계산하는 `base_growth_before_fcf_check`를 재사용하도록 순서를 조정할 것
+  (지금처럼 별도로 재계산하지 말 것).
+
+- `operating_margin_from_series()`: `pipeline.py`가 같은 계산을 인라인으로
+  직접 하고 있어(`op_margins = [...]`) 기능은 동일하지만 헬퍼를 재사용하지
+  않는다. 결과에 차이는 없어 우선순위 낮음.
+
+**CI 추가됨(2026-07-26)**: `.github/workflows/tests.yml`이 모든 push에서
+`pytest tests/`를 자동 실행한다. 이 프로젝트의 사고 대부분(RAR 100배,
+sensitivity_check 모델불일치)이 "테스트는 있었지만 실행을 깜빡함"이 아니라
+애초에 테스트가 없어서 생겼지만, 앞으로 회귀를 막으려면 매 커밋마다 자동
+실행이 최소한의 안전망이다.
