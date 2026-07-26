@@ -79,7 +79,93 @@ CANDIDATES.append(Candidate(
          "FCF 정의 차이로 보이나 확정 못함. 통과폭이 얇아 이 불일치가 판정을 뒤집을 수 있음.",
 ))
 
+# ── 2차 배치 (같은 날 확장 실행) ──
+# CNY 재무제표 기업은 시총이 USD(ADR)라 통화를 맞춰야 한다. 환율을 추정하지 않고
+# 확인했다: USD/CNY = 6.7716 (2026-07-24, federalreserve.gov H.10 등 교차확인).
+# 이 환율을 적용하니 stockanalysis 통계페이지의 P/FCF와 직접계산 FCF수익률이
+# 거의 정확히 일치해(PDD 13.28% vs 13.39%, NTES 9.57% vs 9.91%) 데이터 정합성이
+# 상호검증됐다. (처음에 7.15로 가정했을 때는 어긋났다 - 추정하지 말 것의 사례)
+USDCNY = 6.7716
+
+# ── PDD Holdings (NASDAQ ADR, CNY 재무제표) ──
+_rev = {2021: 93950e6, 2022: 130558e6, 2023: 247639e6, 2024: 393836e6, 2025: 431846e6}
+_fcf = {2021: 25496e6, 2022: 47872e6, 2023: 93579e6, 2024: 120962e6, 2025: 105794e6}
+CANDIDATES.append(Candidate(
+    ticker="PDD", name="PDD Holdings", exchange="NASDAQ(ADR)",
+    market_cap=117.66e9, fcf0=_fcf[2025] / USDCNY,
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(0.7426e9 - 63.22e9) / 14.49e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="순현금 -4.31배(현금 632억달러). FY2025 FCF가 전년比 -12.5% 꺾인 점은 "
+         "성장둔화 신호일 수 있음. 중국 규제·미중 통상 리스크는 DRS 경쟁강도/"
+         "정성리스크로 별도 반영 필요(스크리너 미반영).",
+))
+
+# ── McKesson (NYSE, FY 3월결산) ──
+_rev = {2022: 263966e6, 2023: 276711e6, 2024: 308951e6, 2025: 359051e6, 2026: 403430e6}
+_fcf = {2022: 4046e6, 2023: 4769e6, 2024: 3883e6, 2025: 5548e6, 2026: 5719e6}
+CANDIDATES.append(Candidate(
+    ticker="MCK", name="McKesson", exchange="NYSE",
+    market_cap=98.45e9, fcf0=_fcf[2026],
+    revenue_cagr_5y=cagr(_rev[2022], _rev[2026], 4),
+    fcf_cagr_5y=cagr(_fcf[2022], _fcf[2026], 4),
+    net_debt_to_ebitda=(8.79e9 - 3.98e9) / 6.94e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="P/FCF 17.21과 직접계산 5.81%가 정확히 일치(데이터 정합성 양호). "
+         "통과폭이 얇다(FCF CAGR 9.03% vs 필요 8.90%) - 의약품 유통 저마진 구조상 "
+         "매출 CAGR보다 FCF CAGR이 제약이 되는 점 유의.",
+))
+
+# ── Progressive (NYSE) ──
+_rev = {2021: 47702e6, 2022: 49611e6, 2023: 62109e6, 2024: 75372e6, 2025: 87671e6}
+_fcf = {2021: 7518e6, 2022: 6557e6, 2023: 10391e6, 2024: 14834e6, 2025: 17200e6}
+CANDIDATES.append(Candidate(
+    ticker="PGR", name="Progressive", exchange="NYSE",
+    market_cap=124.32e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(8.39e9 - 1.98e9) / 15.08e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="⚠️보험사 방법론 경고: 보험사 OCF는 보험료를 먼저 받고 보험금을 나중에 "
+         "지급하는 float 증가분을 포함해 '주주에게 귀속되는 잉여현금'과 다르다. "
+         "FCF수익률 13.84%가 과대평가일 수 있음. 단 ACGL(저평가, RAR 3.003)이 "
+         "같은 업종에서 이미 분석된 선례가 있으므로 그 방법론과 대조할 것.",
+))
+
+# ── Trip.com (NASDAQ ADR, CNY 재무제표) ──
+_rev = {2021: 20023e6, 2022: 20039e6, 2023: 44510e6, 2024: 53294e6, 2025: 62409e6}
+_fcf = {2021: 1905e6, 2022: 2144e6, 2023: 21398e6, 2024: 19034e6, 2025: 13582e6}
+CANDIDATES.append(Candidate(
+    ticker="TCOM", name="Trip.com Group", exchange="NASDAQ(ADR)",
+    market_cap=27.48e9, fcf0=_fcf[2025] / USDCNY,
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(4.55e9 - 11.75e9) / 2.39e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="⚠️기저 왜곡 심각: 2021~2022가 코로나로 짓눌린 해라 CAGR이 구조적으로 "
+         "부풀려졌다(엔진 structural_discount_rate의 baseline_distorted_by_recovery "
+         "플래그 대상). 게다가 FY2025 FCF가 전년比 -28.7%로 이미 꺾이는 중 - "
+         "정식 분석시 회복기저를 제거한 재계산 필수.",
+))
+
 # ── 이하 탈락군 (기록 보존: 왜 떨어졌는지가 기준의 판별력을 보여준다) ──
+
+# NetEase: FCF는 훌륭한데(CAGR 20.8%, 매우 안정적) 매출 CAGR 6.48%가 발목을 잡는다.
+_rev = {2021: 87606e6, 2022: 96496e6, 2023: 103468e6, 2024: 105295e6, 2025: 112626e6}
+_fcf = {2021: 23325e6, 2022: 25609e6, 2023: 33030e6, 2024: 38401e6, 2025: 49674e6}
+CANDIDATES.append(Candidate(
+    ticker="NTES", name="NetEase", exchange="NASDAQ(ADR)",
+    market_cap=76.62e9, fcf0=_fcf[2025] / USDCNY,
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4),
+    fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=(1.59e9 - 24.78e9) / 5.94e9,
+    worst_yoy_revenue=worst_yoy(_rev),
+    note="아깝게 탈락. FCF수익률 9.57%(싸다) + FCF CAGR 20.8%(5년 단조증가로 "
+         "매우 안정적)인데 매출 CAGR 6.48%가 min() 제약이 됐다. 기준을 "
+         "'FCF CAGR 단독'으로 바꾸면 통과하지만, 그건 AJG/AZO/ELV를 걸러낸 "
+         "min() 원칙 자체를 훼손하므로 바꾸지 않는다.",
+))
 
 _fcf = {2020: 5353e6, 2021: 4889e6, 2022: 5107e6, 2023: 4220e6, 2024: 6767e6, 2025: 5564e6}
 CANDIDATES.append(Candidate(
