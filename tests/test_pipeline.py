@@ -105,6 +105,101 @@ def test_cdns_stalwart_bias_flagged():
     assert "구조적 편향" in result["stalwart_bias"]["note"]
 
 
+def test_cdns_no_lynch_override_means_not_overridden_down():
+    result = run_analysis(cdns_inputs())
+    assert result["lynch"]["overridden_down"] is False
+
+
+# ----------------------------------------------------------------------
+# MNST 2025 실데이터 (Alpha Vantage, 2026-07-25 조회) - structural_discount가
+# 11.1%로 v3.8 이중반영 가드의 10% 임계값을 넘는 유일한 확보 실데이터 사례라
+# check_deceleration_double_count 배선 테스트 전용으로 쓴다.
+# ----------------------------------------------------------------------
+
+MNST_REVENUE = {
+    2014: 2464867000, 2015: 2722564000, 2016: 3049393000, 2017: 3369045000,
+    2018: 3807183000, 2019: 4200819000, 2020: 4598638000, 2021: 5541352000,
+    2022: 6311050000, 2023: 7140027000, 2024: 7492709000, 2025: 8294343000,
+}
+MNST_OPINC = {
+    2014: 747505000, 2015: 893653000, 2016: 1085338000, 2017: 1198787000,
+    2018: 1283619000, 2019: 1402939000, 2020: 1633153000, 2021: 1797467000,
+    2022: 1584721000, 2023: 1953355000, 2024: 1930294000, 2025: 2419354000,
+}
+MNST_OCF = {
+    2014: 585567000, 2015: 207986000, 2016: 701355000, 2017: 987731000,
+    2018: 1161881000, 2019: 1113762000, 2020: 1364163000, 2021: 1155741000,
+    2022: 887699000, 2023: 1717753000, 2024: 1928533000, 2025: 2098177000,
+}
+MNST_CAPEX = {
+    2014: 31363000, 2015: 42493000, 2016: 105337000, 2017: 93128000,
+    2018: 74925000, 2019: 110398000, 2020: 67272000, 2021: 57453000,
+    2022: 212153000, 2023: 234724000, 2024: 264074000, 2025: 132275000,
+}
+
+
+def mnst_inputs(**overrides):
+    base = dict(
+        ticker="MNST",
+        company_name="Monster Beverage Corporation",
+        revenue_by_year=MNST_REVENUE,
+        operating_income_by_year=MNST_OPINC,
+        operating_cashflow_by_year=MNST_OCF,
+        capex_by_year=MNST_CAPEX,
+        market_cap=91433976000,
+        net_debt=0 - (2088117000 + 677084000),
+        ebitda=2419354000 + 114441000,
+        risk_free_rate=0.0447,
+        competitor_threat_weights=[0.6, 0.4, 0.2],
+        market_share_trend_pp_per_year=-0.5,
+        active_antitrust_or_regulatory_case=False,
+        demand_sensitivity_pct=0.10,
+        subjective_input_basis=(
+            "Red Bull 0.6, Celsius 0.4, 기타 0.2. 점유율추세 -0.5pp/년은 "
+            "Celsius 잠식 관련 기사 기반 [추정치]."
+        ),
+        model_used="single_stage",
+        model_choice_reason="성숙 stalwart, 순현금 구조. 2026-07-25 최초 분석 시 사용한 모델.",
+        data_sources=["Alpha Vantage (2026-07-25)"],
+    )
+    base.update(overrides)
+    return AnalysisInputs(**base)
+
+
+def test_deceleration_double_count_silent_without_override():
+    """오버라이드가 없으면 이중반영 가능성 자체가 없으므로 경고가 없어야 한다."""
+    result = run_analysis(mnst_inputs())
+    assert result["lynch"]["auto_classified"] == "stalwart"
+    assert result["growth"]["structural_discount_pct"] > 0.10  # v3.8 가드 임계값 초과 확인
+    assert result["lynch"]["overridden_down"] is False
+    assert not any("이중 반영 경고" in x for x in result["data_limitations"])
+
+
+def test_deceleration_double_count_warns_when_override_down_and_discount_high():
+    """
+    v3.19 전면점검(2026-07-26)에서 발견: check_deceleration_double_count()가
+    pipeline.py에 배선돼 있지 않아 한 번도 호출되지 않았다. structural_discount가
+    10%를 넘고(MNST 11.1%) lynch_type을 성장상한이 더 낮은 유형으로 하향
+    오버라이드하면 이중반영 경고가 떠야 한다.
+    """
+    result = run_analysis(mnst_inputs(
+        lynch_type_override="slow_grower",  # g_max 0.05 < stalwart의 0.12
+        lynch_type_override_reason="가드 배선 테스트용 인위적 하향 오버라이드",
+    ))
+    assert result["lynch"]["overridden_down"] is True
+    assert any("이중 반영 경고" in x for x in result["data_limitations"])
+
+
+def test_deceleration_double_count_silent_when_override_up():
+    """상향 오버라이드는 이중반영 우려 대상이 아니므로 경고가 없어야 한다."""
+    result = run_analysis(mnst_inputs(
+        lynch_type_override="fast_grower",  # g_max 0.25 > stalwart의 0.12
+        lynch_type_override_reason="가드 배선 테스트용 인위적 상향 오버라이드",
+    ))
+    assert result["lynch"]["overridden_down"] is False
+    assert not any("이중 반영 경고" in x for x in result["data_limitations"])
+
+
 # ----------------------------------------------------------------------
 # 모델 비교 / 선택 강제
 # ----------------------------------------------------------------------

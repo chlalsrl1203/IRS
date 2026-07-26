@@ -27,8 +27,10 @@ from datetime import datetime, timezone
 
 from engine.expectation_gap_engine import (
     DRSInputs,
+    LYNCH_TYPE_CAPS,
     bull_bear_base_growth_rates,
     capped_n,
+    check_deceleration_double_count,
     check_stalwart_two_stage_bias,
     classify_lynch_type,
     competition_intensity_score,
@@ -283,6 +285,23 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         rev_cagr_10y if rev_cagr_10y is not None else rev_cagr_3y,
         market_cap_b,
     )
+
+    # ⚠️ v3.19 전면점검에서 발견(2026-07-26): check_deceleration_double_count()는
+    # v3.8부터 엔진에 있었지만 pipeline.py가 만들어진 이래 한 번도 import되지
+    # 않아 실행 경로에서 호출된 적이 없었다("손배선 대신 pipeline.py를 쓰라"는
+    # 원칙이 있어도 pipeline.py 자체가 엔진 안전장치를 빠뜨리면 무력화된다).
+    # "하향 오버라이드"는 lynch_type_override의 성장상한(g_max)이 자동분류보다
+    # 낮은 경우로 기계적으로 정의한다(주관적 판단 불필요, LYNCH_TYPE_CAPS만 비교).
+    lynch_type_overridden_down = (
+        inputs.lynch_type_override is not None
+        and LYNCH_TYPE_CAPS[lynch_type][1] < LYNCH_TYPE_CAPS[auto_lynch_type][1]
+    )
+    _, double_count_warning = check_deceleration_double_count(
+        structural_discount, lynch_type_overridden_down
+    )
+    if double_count_warning:
+        data_limitations.append(double_count_warning)
+
     realistic_growth, growth_breakdown = realistic_growth_estimate(
         revenue_cagr_3y=rev_cagr_3y,
         revenue_cagr_5y=rev_cagr_5y,
@@ -388,6 +407,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "auto_note": lynch_note,
             "used": lynch_type,
             "override_reason": inputs.lynch_type_override_reason,
+            "overridden_down": lynch_type_overridden_down,
         },
         "discount_rate": {"rf": inputs.risk_free_rate, "erp": erp, "r": r,
                           "n": n, "g_terminal": g_terminal},
