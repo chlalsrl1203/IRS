@@ -1,6 +1,48 @@
 # CHANGELOG
 
-## v3.19 강건성점검(sensitivity_check) 모델불일치 경고 추가 (2026-07-26)
+## v3.19 강건성점검(sensitivity_check) 모델불일치 근본 수정 (2026-07-26)
+
+같은 날 앞서 추가한 [강건성점검 해석주의] 경고문은 임시 우회책이었다("근본
+수정은... 엔진 원본 함수 시그니처를 건드리는 범위라 보류 중"). 사용자 요청으로
+근본 수정을 진행했다.
+
+**수정**: `expectation_gap_sensitivity_check()`에 `model_used` 파라미터를
+추가(기본값 `"two_stage"`로 과거 호출 하위호환 유지). 내부에서 이제
+`model_used`에 따라 `implied_growth_single_stage()` 또는
+`implied_growth_two_stage()`를 선택해서 쓴다. `pipeline.py`가
+`inputs.model_used`(Section 5가 실제로 쓴 모델)를 그대로 넘기도록 수정하고,
+더 이상 필요 없어진 [강건성점검 해석주의] 임시 경고문 블록은 제거했다.
+
+**실제 영향 확인** (9종목 전체를 저장된 ledger 입력값으로 재실행해 대조):
+RAR·Gap·판정은 9종목 모두 완전히 동일(이 부분은 애초에 sensitivity_check와
+무관한 경로였다). 그러나 **WCN/WM/IDXX 세 종목은 confidence와 강건성점검
+flip 상태가 실제로 바뀌었다** - 이는 "우연히 값이 같았다"가 아니라 이 셋이
+정확히 가설대로(single_stage + 큰 모델괴리) 영향받은 사례였다는 뜻이다:
+
+| 종목 | flip(구)→(신) | Confidence(구)→(신) |
+|---|---|---|
+| WCN | True→**False** | 59→**74** |
+| WM  | True→**False** | 64→**79** |
+| IDXX| True→**False** | 59→**74** |
+
+즉 이 세 종목의 "강건성점검 flip"은 처음부터 DRS 민감도가 아니라 순수히
+sensitivity_check가 Section 5와 다른 모델(two_stage)을 썼기 때문에 발생한
+가짜 신호였다. 근본 수정 후 셋 다 robust로 판정되고 confidence가 15점씩
+올랐다. CDNS/MNST/ZTS/PH/VRSN/BRO 6종목은 (two_stage를 쓴 PH 포함) 전혀
+영향받지 않았다.
+
+테스트: `test_engine.py`에 model_used 라우팅/기본값 하위호환/잘못된 값 거부
+3건 추가. `test_pipeline.py`의 기존 2건(임시 경고문 검증용)을 삭제하고
+sensitivity_check가 Section 5와 같은 모델을 쓰는지 직접 검증하는 3건으로
+교체. 전체 58개 테스트 통과.
+
+WCN/WM/IDXX ledger를 재생성(2026-07-26)하고 Notion 트래커의 강건성점검
+필드·Confidence·핵심노트를 정정했다.
+
+## v3.19 강건성점검(sensitivity_check) 모델불일치 경고 추가 (2026-07-26, 대체됨)
+
+**⚠️ 위 근본수정 항목으로 대체됨 - 아래는 그 전 단계의 임시 우회책 기록으로만
+남긴다.**
 
 WM/IDXX/WCN 재검증 결과를 다시 점검하다가 `expectation_gap_sensitivity_check()`가
 엔진 원본 구현상 **항상 two_stage 모델로만 판정**한다는 것을 발견했다. 이 셋은

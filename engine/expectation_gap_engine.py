@@ -767,7 +767,24 @@ def expectation_gap_sensitivity_check(
     realistic_growth: float,
     n: int,
     g_terminal: float,
+    model_used: str = "two_stage",
 ) -> dict:
+    """
+    DRS를 반영한 r과 반영하지 않은 r로 각각 Implied Growth를 구해 판정이
+    바뀌는지(judgment_flipped) 점검한다.
+
+    v3.19 근본수정(2026-07-26): model_used 파라미터 신규 추가. 이전에는
+    이 함수가 **항상 two_stage로만** 판정해서, Section 5가 single_stage를
+    쓴 종목(WCN/WM/IDXX 등)에서는 강건성점검이 Section 5와 다른 모델로
+    수행되고 있었다 - 검증하려던 것과 다른 것을 검증한 셈이다. 이제
+    Section 5와 동일한 모델로 판정하도록 고쳤다(2026-07-26 발견,
+    2026-07-25 pipeline.py의 임시 경고문 우회책을 대체).
+
+    model_used를 생략하면 기존 동작(two_stage)과 동일하게 유지된다 -
+    호출부가 반드시 Section 5에서 실제로 쓴 모델을 명시적으로 넘길 것.
+    """
+    if model_used not in ("single_stage", "two_stage"):
+        raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
     r_without_drs = rf + base_erp
 
     def _judge(gap):
@@ -779,7 +796,10 @@ def expectation_gap_sensitivity_check(
 
     def _try(r):
         try:
-            g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+            if model_used == "two_stage":
+                g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+            else:
+                g = implied_growth_single_stage(market_cap, fcf0, r)
             return g, None
         except ValueError as e:
             return None, str(e)

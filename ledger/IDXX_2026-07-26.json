@@ -2,7 +2,7 @@
   "meta": {
     "ticker": "IDXX",
     "company_name": "IDEXX Laboratories, Inc.",
-    "analyzed_at": "2026-07-26T00:23:58.580870+00:00",
+    "analyzed_at": "2026-07-26T00:35:56.953362+00:00",
     "engine_version": "v3.19",
     "data_sources": [
       "SEC EDGAR 10-K primary financial statements (as-filed R.htm, 2026-07-25 조회) - FY2025(acc 0000874716-26-000038), FY2022(acc 0000874716-23-000006), FY2019(acc 0000874716-20-000006), FY2016(acc 0000874716-17-000004)",
@@ -10,8 +10,7 @@
     ]
   },
   "data_limitations": [
-    "[모델 괴리 경고] single_stage(7.83%)와 two_stage(15.30%)가 7.47%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
-    "[강건성점검 해석주의] sensitivity_check는 항상 two_stage로 평가되는데 Section 5는 single_stage를 썼고 두 모델 괴리가 7.47%p로 크다. '강건성점검 flip'이 DRS 반영 효과가 아니라 단순 모델 불일치 때문일 수 있으니, 이 항목만으로 판정 신뢰도를 낮추지 말고 반드시 모델 괴리 경고와 함께 읽을 것."
+    "[모델 괴리 경고] single_stage(7.83%)와 two_stage(15.30%)가 7.47%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
   ],
   "inputs": {
     "ticker": "IDXX",
@@ -223,37 +222,37 @@
   "sensitivity_check": {
     "r_with_drs": 0.10483999999999999,
     "r_without_drs": 0.0947,
-    "implied_growth_with_drs": 0.15296306610107419,
-    "implied_growth_without_drs": 0.13147888183593748,
-    "gap_with_drs": -0.0705365005636349,
-    "gap_without_drs": -0.0490523162984982,
-    "judgment_with_drs": "과대평가 가능성",
+    "implied_growth_with_drs": 0.07828772366571138,
+    "implied_growth_without_drs": 0.0683914151341862,
+    "gap_with_drs": 0.004138841871727902,
+    "gap_without_drs": 0.01403515040325308,
+    "judgment_with_drs": "적정가",
     "judgment_without_drs": "적정가",
-    "judgment_flipped": true
+    "judgment_flipped": false
   },
   "confidence": {
     "base": 50,
     "sensitivity_check_result": {
       "r_with_drs": 0.10483999999999999,
       "r_without_drs": 0.0947,
-      "implied_growth_with_drs": 0.15296306610107419,
-      "implied_growth_without_drs": 0.13147888183593748,
-      "gap_with_drs": -0.0705365005636349,
-      "gap_without_drs": -0.0490523162984982,
-      "judgment_with_drs": "과대평가 가능성",
+      "implied_growth_with_drs": 0.07828772366571138,
+      "implied_growth_without_drs": 0.0683914151341862,
+      "gap_with_drs": 0.004138841871727902,
+      "gap_without_drs": 0.01403515040325308,
+      "judgment_with_drs": "적정가",
       "judgment_without_drs": "적정가",
-      "judgment_flipped": true
+      "judgment_flipped": false
     },
     "section_5_7_aligned": false,
     "adjustments": {
-      "robustness_check_passed": 0,
+      "robustness_check_passed": 15,
       "section_5_7_aligned": 0,
       "data_completeness": 14,
       "lynch_type_cap_applied": 0,
       "stalwart_two_stage_bias_flagged": -5
     },
-    "raw_score": 59,
-    "final": 59
+    "raw_score": 74,
+    "final": 74
   },
   "judgment": "적정가/경계선"
 }

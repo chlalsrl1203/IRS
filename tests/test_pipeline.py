@@ -303,22 +303,43 @@ def test_inputs_reject_negative_capex_sign_convention():
     assert "과대계상" in str(exc.value)
 
 
-def test_sensitivity_check_model_mismatch_warns_when_flip_and_divergence_coincide():
+def test_sensitivity_check_uses_same_model_as_section_5_single_stage():
     """
-    v3.19 자체감사(2026-07-25 WM/IDXX/WCN): sensitivity_check는 항상 two_stage로
-    판정하는데, Section 5가 single_stage를 쓰고 두 모델 괴리가 크면 '강건성점검
-    flip'이 DRS 효과가 아니라 모델 불일치 때문일 수 있다. 그 상황을 코드가
-    명시적으로 경고해야 한다.
+    v3.19 근본수정(2026-07-26): sensitivity_check가 더 이상 항상 two_stage로
+    판정하지 않고, Section 5(model_used)와 같은 모델로 판정해야 한다.
+    single_stage를 쓴 CDNS의 경우, 강건성점검의 implied_growth_with_drs는
+    compare_implied_growth_models()의 single_stage 값(둘 다 같은 r=r_with_drs를
+    씀)과 정확히 일치해야 한다(과거 버그였다면 대신 two_stage 값과 가까웠을 것).
     """
-    result = run_analysis(cdns_inputs())  # single_stage, divergence 10.97%p
-    if result["sensitivity_check"]["judgment_flipped"]:
-        assert any("강건성점검 해석주의" in x for x in result["data_limitations"])
+    result = run_analysis(cdns_inputs())  # model_used="single_stage"
+    models = result["implied_growth"]["models"]
+    sensitivity = result["sensitivity_check"]
+    assert sensitivity["implied_growth_with_drs"] == pytest.approx(
+        models["single_stage"], abs=1e-9
+    )
+    assert sensitivity["implied_growth_with_drs"] != pytest.approx(
+        models["two_stage"], abs=1e-4
+    )
 
 
-def test_sensitivity_check_no_warning_when_using_two_stage():
-    """Section 5가 애초에 two_stage면 sensitivity_check와 같은 모델이라 경고 불필요."""
+def test_sensitivity_check_uses_same_model_as_section_5_two_stage():
+    """Section 5가 two_stage를 쓰면 강건성점검도 two_stage로 판정해야 한다."""
     result = run_analysis(cdns_inputs(
         model_used="two_stage",
         model_choice_reason="two_stage 컨벤션 테스트용",
     ))
+    models = result["implied_growth"]["models"]
+    sensitivity = result["sensitivity_check"]
+    assert sensitivity["implied_growth_with_drs"] == pytest.approx(
+        models["two_stage"], abs=1e-9
+    )
+
+
+def test_sensitivity_check_no_longer_emits_stale_interpretation_warning():
+    """
+    v3.19 근본수정으로 [강건성점검 해석주의] 임시 우회 경고문은 제거됐다
+    (모델이 항상 일치하니 더 이상 필요 없음). data_limitations에 이 문구가
+    다시 나타나면 회귀다.
+    """
+    result = run_analysis(cdns_inputs())
     assert not any("강건성점검 해석주의" in x for x in result["data_limitations"])

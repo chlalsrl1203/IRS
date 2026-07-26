@@ -333,30 +333,17 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     bias_flag, bias_note = check_stalwart_two_stage_bias(
         lynch_type, rar_value, SCENARIO_MODEL
     )
+    # ⚠️ v3.19 근본수정(2026-07-26): 2026-07-25에는 이 함수가 항상 two_stage로만
+    # 판정해 Section 5가 single_stage를 쓴 경우 서로 다른 모델을 비교하는
+    # 오류가 있었다(WCN/WM/IDXX에서 발견, 당시엔 [강건성점검 해석주의] 경고문으로
+    # 임시 우회). 이제 engine.expectation_gap_engine.expectation_gap_sensitivity_check가
+    # model_used를 받으므로, Section 5가 실제로 쓴 모델을 그대로 넘겨 같은 모델끼리
+    # 비교되도록 근본 수정했다. 이전 경고문 우회책은 더 이상 필요 없어 제거함.
     sensitivity = expectation_gap_sensitivity_check(
         inputs.market_cap, fcf0, r, 0.05, inputs.risk_free_rate,
         realistic_growth, n, g_terminal,
+        model_used=inputs.model_used,
     )
-    # ⚠️ v3.19 자체감사에서 발견(2026-07-25, WM/IDXX/WCN 재검증 중): 이 함수는
-    # expected_return()과 마찬가지로 **항상 two_stage로 판정**한다(엔진 원본
-    # 구현이 그렇다). model_used="single_stage"이면서 동시에 두 모델 괴리가 큰
-    # 경우, "강건성점검 flip"이 DRS 반영 여부 때문이 아니라 **Section 5가 쓴
-    # 모델과 이 체크가 쓴 모델이 애초에 다르기 때문**일 수 있다 - 검증하려던
-    # 것과 다른 것을 검증하고 있는 셈이다. 판정 flip을 곧이곧대로 "DRS 민감도"로
-    # 읽지 말고 반드시 모델 괴리와 함께 해석할 것.
-    if (
-        inputs.model_used != "two_stage"
-        and models.get("divergence") is not None
-        and models["divergence"] >= MODEL_DIVERGENCE_WARNING_THRESHOLD
-        and sensitivity.get("judgment_flipped")
-    ):
-        data_limitations.append(
-            f"[강건성점검 해석주의] sensitivity_check는 항상 two_stage로 평가되는데 "
-            f"Section 5는 {inputs.model_used}를 썼고 두 모델 괴리가 "
-            f"{models['divergence']*100:.2f}%p로 크다. '강건성점검 flip'이 DRS "
-            f"반영 효과가 아니라 단순 모델 불일치 때문일 수 있으니, 이 항목만으로 "
-            f"판정 신뢰도를 낮추지 말고 반드시 모델 괴리 경고와 함께 읽을 것."
-        )
     confidence = confidence_score(
         sensitivity_check_result=sensitivity,
         gap=gap,

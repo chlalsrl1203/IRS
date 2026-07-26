@@ -79,15 +79,19 @@ path = save_ledger(result)                    # ledger/<TICKER>_<날짜>.json
 메모 발행 전 `self_check_v2.run_self_check_v2(memo_text, ctx)`로 메모 원문과
 계산값을 대조할 것. "돌렸다"고 적는 것과 실제로 돌리는 것은 다르다.
 
-**⚠️ 강건성점검(`expectation_gap_sensitivity_check`)은 항상 two_stage로만
-판정한다(엔진 원본 구현, 2026-07-26 발견).** Section 5에서 `model_used=
-"single_stage"`를 쓰고 두 모델 괴리가 크면(≥3%p), "강건성점검 flip"이 DRS
-민감도 때문이 아니라 단순히 강건성점검이 Section 5와 다른 모델을 쓴 결과일
-수 있다. `run_analysis()`가 이 조합을 감지하면 `data_limitations`에
-`[강건성점검 해석주의]` 경고를 자동으로 남기니(WCN/WM/IDXX에서 실제 발동
-확인), flip 라벨을 곧이곧대로 "판정이 불안정하다"로 읽지 말고 이 경고와
-함께 해석할 것. 근본 수정(sensitivity_check가 model_used를 인자로 받게
-하는 것)은 아직 미착수 — 엔진 원본 함수 시그니처를 건드리는 범위라 보류 중.
+**강건성점검(`expectation_gap_sensitivity_check`)은 이제 Section 5와 같은
+모델로 판정한다(v3.19 근본수정, 2026-07-26).** 이전에는 엔진 원본 구현상
+항상 two_stage로만 판정해서, Section 5가 `model_used="single_stage"`를 쓰고
+두 모델 괴리가 크면 "강건성점검 flip"이 DRS 민감도가 아니라 단순 모델
+불일치 때문에 발생했다. `model_used` 파라미터를 추가해 `pipeline.py`가
+`inputs.model_used`를 그대로 넘기도록 고쳤다(기본값은 `"two_stage"`로 과거
+호출 하위호환 유지 — 새 코드는 반드시 `model_used`를 명시할 것).
+
+실측 영향: WCN/WM/IDXX(전부 single_stage + 모델괴리 6.5~7.5%p) 3종목이 이
+가짜 flip의 실제 피해자였다 — 근본수정 후 셋 다 판정flip→통과(robust)로
+바뀌고 Confidence가 15점씩 올랐다(59→74, 64→79, 59→74). RAR·Gap·최종판정은
+불변(sensitivity_check와 무관한 경로였으므로). 9종목 전체를 저장된 ledger
+입력값으로 재실행해 이 영향 범위를 직접 확인했다(상세는 CHANGELOG).
 
 ## 과거 기록이 있는 종목을 재검증할 때 (v3.19)
 
