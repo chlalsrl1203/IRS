@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## v3.19 강건성점검(sensitivity_check) 모델불일치 경고 추가 (2026-07-26)
+
+WM/IDXX/WCN 재검증 결과를 다시 점검하다가 `expectation_gap_sensitivity_check()`가
+엔진 원본 구현상 **항상 two_stage 모델로만 판정**한다는 것을 발견했다. 이 셋은
+모두 Section 5에서 `model_used="single_stage"`를 썼고 두 모델 괴리가 6.5~7.5%p로
+큰데, 강건성점검은 그와 무관하게 항상 two_stage로 재계산해 flip 여부를 판정하고
+있었다. 즉 "강건성점검에서 flip됐다"는 라벨이 DRS 민감도 때문인지, 애초에 Section
+5와 다른 모델을 쓴 결과인지 구분되지 않는 상태였다.
+
+`run_analysis()`에 조건부 경고를 추가: `model_used != "two_stage"` AND 모델괴리
+≥3%p AND `judgment_flipped=True`이면 `data_limitations`에 `[강건성점검 해석주의]`
+문구를 남긴다. WCN/WM/IDXX 3종목 모두 이 조건에 해당해 신규 경고 1건씩 발생,
+VRSN/BRO는 flip이 아니라서 발생하지 않음을 ledger 재생성으로 확인했다(5종목
+전부 RAR·판정값은 기존과 완전히 동일 — 이번 변경은 해석 주석만 추가하는 순수
+가산적 변경).
+
+테스트 2건 추가(CDNS 골든케이스로 flip+괴리 조합 시 경고 발생, two_stage
+사용 시 경고 미발생). 전체 54개 테스트 통과.
+
+**미해결로 남긴 것**: 이 경고는 fix가 아니라 주석이다 — sensitivity_check 자체가
+model_used를 인자로 받아 같은 모델로 재계산하도록 고치는 것이 근본 해결이지만,
+엔진 원본 함수 시그니처를 건드리는 범위라 이번엔 손대지 않았다. 향후 필요시
+검토할 것.
+
 ## v3.19 VRSN/WCN/WM/IDXX/BRO 5종목 재검증 및 오류 정정 (2026-07-25)
 
 RAR 전수 감사(아래 항목)에서 나온 소수규약 의심 7종목 중 5종목을 SEC EDGAR

@@ -79,6 +79,16 @@ path = save_ledger(result)                    # ledger/<TICKER>_<날짜>.json
 메모 발행 전 `self_check_v2.run_self_check_v2(memo_text, ctx)`로 메모 원문과
 계산값을 대조할 것. "돌렸다"고 적는 것과 실제로 돌리는 것은 다르다.
 
+**⚠️ 강건성점검(`expectation_gap_sensitivity_check`)은 항상 two_stage로만
+판정한다(엔진 원본 구현, 2026-07-26 발견).** Section 5에서 `model_used=
+"single_stage"`를 쓰고 두 모델 괴리가 크면(≥3%p), "강건성점검 flip"이 DRS
+민감도 때문이 아니라 단순히 강건성점검이 Section 5와 다른 모델을 쓴 결과일
+수 있다. `run_analysis()`가 이 조합을 감지하면 `data_limitations`에
+`[강건성점검 해석주의]` 경고를 자동으로 남기니(WCN/WM/IDXX에서 실제 발동
+확인), flip 라벨을 곧이곧대로 "판정이 불안정하다"로 읽지 말고 이 경고와
+함께 해석할 것. 근본 수정(sensitivity_check가 model_used를 인자로 받게
+하는 것)은 아직 미착수 — 엔진 원본 함수 시그니처를 건드리는 범위라 보류 중.
+
 ## 과거 기록이 있는 종목을 재검증할 때 (v3.19)
 
 이 프로젝트가 발견한 사고 대부분은 **과거 기록과 대조하다가** 잡혔다

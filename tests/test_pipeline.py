@@ -301,3 +301,24 @@ def test_inputs_reject_negative_capex_sign_convention():
         cdns_inputs(capex_by_year=negative_capex)
     assert "capex" in str(exc.value)
     assert "과대계상" in str(exc.value)
+
+
+def test_sensitivity_check_model_mismatch_warns_when_flip_and_divergence_coincide():
+    """
+    v3.19 자체감사(2026-07-25 WM/IDXX/WCN): sensitivity_check는 항상 two_stage로
+    판정하는데, Section 5가 single_stage를 쓰고 두 모델 괴리가 크면 '강건성점검
+    flip'이 DRS 효과가 아니라 모델 불일치 때문일 수 있다. 그 상황을 코드가
+    명시적으로 경고해야 한다.
+    """
+    result = run_analysis(cdns_inputs())  # single_stage, divergence 10.97%p
+    if result["sensitivity_check"]["judgment_flipped"]:
+        assert any("강건성점검 해석주의" in x for x in result["data_limitations"])
+
+
+def test_sensitivity_check_no_warning_when_using_two_stage():
+    """Section 5가 애초에 two_stage면 sensitivity_check와 같은 모델이라 경고 불필요."""
+    result = run_analysis(cdns_inputs(
+        model_used="two_stage",
+        model_choice_reason="two_stage 컨벤션 테스트용",
+    ))
+    assert not any("강건성점검 해석주의" in x for x in result["data_limitations"])
