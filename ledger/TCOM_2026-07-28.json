@@ -1,0 +1,276 @@
+{
+  "meta": {
+    "ticker": "TCOM",
+    "company_name": "Trip.com Group Limited",
+    "analyzed_at": "2026-07-28T10:36:32.912222+00:00",
+    "engine_version": "v3.21",
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001193125-26-183379) R2/R3/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 20-F FY2022(0001193125-23-080422) R2/R7 (FY2020~2022)",
+      "SEC EDGAR 20-F FY2019(0001193125-20-102627) R2/R7 (FY2017~2019)",
+      "SEC EDGAR 20-F FY2016(0001104659-17-023278) R2/R7 (FY2014~2016, 당시 사명 Ctrip.com International)",
+      "stockanalysis.com 시가총액 $28.19B (2026-07-27 종가, SAMR 과징금 발표 이후)",
+      "USD/CNY 6.7716 (기존 프로젝트 검증치, PDD와 동일)",
+      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)"
+    ]
+  },
+  "data_limitations": [
+    "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2019년을 기준으로 6년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020은 코로나 직격탄을 맞은 해라 BKNG과 동일한 이유로 사용 불가하다. (1) FCF가 -RMB 43.55억(OCF -38.23억 - capex 5.32억)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -48.65% 폭락한 저점이다. 대안으로 **FY2019(코로나 이전 고점, 직전연도까지 꾸준히 증가하다 코로나로 꺾인 지점)**를 골랐다 - 저점이 아닌 고점 기준이므로 성장률을 부풀리지 않는다. 단, 이 override는 5y/FCF 창에만 적용되고 고정된 3y 창(기준연도 FY2022)은 여전히 中 제로코로나 지속기(2022년 12월까지)라 왜곡돼 있다 - 이 잔여 왜곡은 realistic_growth_estimate의 FCF보수원칙(min 채택)이 구조적으로 흡수함을 실행 결과로 확인했다(위 모듈 docstring 참고)."
+  ],
+  "inputs": {
+    "ticker": "TCOM",
+    "company_name": "Trip.com Group Limited",
+    "revenue_by_year": {
+      "2014": 7346918369.0,
+      "2015": 10897568061.0,
+      "2016": 19228439814.0,
+      "2017": 26796000000,
+      "2018": 30965000000,
+      "2019": 35666000000,
+      "2020": 18316000000,
+      "2021": 20023000000,
+      "2022": 20039000000,
+      "2023": 44510000000,
+      "2024": 53294000000,
+      "2025": 62409000000
+    },
+    "operating_income_by_year": {
+      "2014": -150797144.0,
+      "2015": 381042945.0,
+      "2016": -1568478486.0,
+      "2017": 2943000000,
+      "2018": 2605000000,
+      "2019": 5040000000,
+      "2020": -1423000000,
+      "2021": -1411000000,
+      "2022": 88000000,
+      "2023": 11324000000,
+      "2024": 14177000000,
+      "2025": 15773000000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 1958603856.0,
+      "2015": 3048809916.0,
+      "2016": 5272730491.0,
+      "2017": 7069000000,
+      "2018": 7115000000,
+      "2019": 7333000000,
+      "2020": -3823000000,
+      "2021": 2475000000,
+      "2022": 2641000000,
+      "2023": 22004000000,
+      "2024": 19625000000,
+      "2025": 14379000000
+    },
+    "capex_by_year": {
+      "2014": 4788676371.0,
+      "2015": 638133430.0,
+      "2016": 682831310.0,
+      "2017": 471000000,
+      "2018": 673000000,
+      "2019": 823000000,
+      "2020": 532000000,
+      "2021": 570000000,
+      "2022": 497000000,
+      "2023": 606000000,
+      "2024": 591000000,
+      "2025": 797000000
+    },
+    "market_cap": 190891404000.0,
+    "net_debt": -41090000000,
+    "ebitda": 16618000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.35,
+      0.25,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": true,
+    "demand_sensitivity_pct": 0.55,
+    "subjective_input_basis": "Meituan 0.35(로컬라이프서비스 슈퍼앱 트래픽으로 호텔쿠폰 교차판매 - 가장 구조적인 위협), Tongcheng-Elong 0.25(Tencent/WeChat 미니프로그램 유통망으로 저가・하위도시 공략), Fliggy 0.20(Alipay 13억 사용자 생태계와 결제 연동). 셋 다 [추정치]. 다만 2026-07 WebSearch 기준 TCOM이 여행객 선호도 68.7%(2025)로 '독보적 1위'라는 시장조사가 확인되어 위협도를 PDD(3파전, 순위 밀림)보다는 낮게 잡았다. market_share_trend=0.0: 1위 지위가 유지되고 있다는 근거는 있으나 정량적 추세치를 뒷받침할 시계열 데이터가 없어 중립 처리[추정치]. active_antitrust_or_regulatory_case=True: 근거가 이 프로젝트에서 가장 명확하고 최신이다 - 中 SAMR이 2026-01-14 조사 개시, **2026-07-25(분석일 3일 전) 52.79억위안(약 7.65억달러) 제재 확정**(불법이득몰수 16.58억+과징금 35.21억+보증금환급 1.22억). 2020년부터 이어진 배타조항・트래픽통제로 호텔사업자의 가격결정권을 제한한 혐의가 인정돼 반독점법 22조 4·5항 위반으로 **이미 확정**됐다(BKNG 스페인건은 항소심까지 집행정지 중인 것과 대조적 - TCOM 건이 법적으로 더 확정적). demand_sensitivity=0.55: 중국 내수・해외여행 재량소비 - FY2020 매출이 -48.65% 폭락한 실측 이력이 있어(BKNG -54.9%와 유사한 규모) 여행업종전형의 높은 값 채택. BKNG(0.60)보다 근소하게 낮게 잡은 이유는 TCOM이 중국 국내여행 비중이 상대적으로 높아 완전한 해외재량소비 성격의 BKNG보다는 소폭 완충 여지가 있다고 판단했기 때문[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "FY2023(회복 초입, 매출 +122% - 2022 억눌림 기저효과) 이후 FY2024 +19.7%, FY2025 +17.1%로 안정화되는 두자릿수 성장 궤적을 보인다. 1위 사업자 지위(선호도 68.7%)를 유지하며 명시적 성장기간 이후 터미널로 수렴하는 구조가 이론적으로 더 부합한다고 판단해 two_stage 채택(BKNG/PDD와 동일 논리). 이 종목은 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning 필드로 확인하고 3%p 미만이면 모델선택이 판정을 바꾸지 않는다는 뜻이므로 이 사유가 그대로 유효하다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001193125-26-183379) R2/R3/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 20-F FY2022(0001193125-23-080422) R2/R7 (FY2020~2022)",
+      "SEC EDGAR 20-F FY2019(0001193125-20-102627) R2/R7 (FY2017~2019)",
+      "SEC EDGAR 20-F FY2016(0001104659-17-023278) R2/R7 (FY2014~2016, 당시 사명 Ctrip.com International)",
+      "stockanalysis.com 시가총액 $28.19B (2026-07-27 종가, SAMR 과징금 발표 이후)",
+      "USD/CNY 6.7716 (기존 프로젝트 검증치, PDD와 동일)",
+      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": 2019,
+    "cagr_base_year_override_reason": "기본 기준연도 FY2020은 코로나 직격탄을 맞은 해라 BKNG과 동일한 이유로 사용 불가하다. (1) FCF가 -RMB 43.55억(OCF -38.23억 - capex 5.32억)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -48.65% 폭락한 저점이다. 대안으로 **FY2019(코로나 이전 고점, 직전연도까지 꾸준히 증가하다 코로나로 꺾인 지점)**를 골랐다 - 저점이 아닌 고점 기준이므로 성장률을 부풀리지 않는다. 단, 이 override는 5y/FCF 창에만 적용되고 고정된 3y 창(기준연도 FY2022)은 여전히 中 제로코로나 지속기(2022년 12월까지)라 왜곡돼 있다 - 이 잔여 왜곡은 realistic_growth_estimate의 FCF보수원칙(min 채택)이 구조적으로 흡수함을 실행 결과로 확인했다(위 모듈 docstring 참고)."
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.4603503514179359,
+    "revenue_cagr_5y": 0.09773826492419735,
+    "cagr_5y_base_year": 2019,
+    "cagr_5y_span": 6,
+    "revenue_cagr_10y": 0.19067096517292215,
+    "fcf_cagr_5y": 0.1303955944897448,
+    "fcf0": 13582000000,
+    "fcf_by_year": {
+      "2014": -2830072515.0,
+      "2015": 2410676486.0,
+      "2016": 4589899181.0,
+      "2017": 6598000000,
+      "2018": 6442000000,
+      "2019": 6510000000,
+      "2020": -4355000000,
+      "2021": 1905000000,
+      "2022": 2144000000,
+      "2023": 21398000000,
+      "2024": 19034000000,
+      "2025": 13582000000
+    },
+    "worst_yoy_revenue_growth": -0.48645769079795886,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      -0.07046896069520052,
+      0.0043914366984380455,
+      0.2544147382610649,
+      0.2660149360153113,
+      0.25273598359211014
+    ],
+    "net_debt_to_ebitda": -2.472620050547599
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 20.0,
+      "margin_volatility": 20.0,
+      "leverage": 2.0,
+      "cyclicality": 20.0,
+      "competition_intensity": 11.6
+    },
+    "score": 73.6
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.07208,
+    "r": 0.11678,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.05,
+    "realistic_growth": 0.12387581476525755,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.4603503514179359,
+        "5y": 0.09773826492419735,
+        "10y": 0.19067096517292215
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.2976308482208116,
+      "fcf_conservatism_applied": "FCF CAGR(13.04%) < Revenue 가중평균(29.76%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.1303955944897448,
+      "structural_discount_pct": 0.05,
+      "discounted_growth": 0.12387581476525755,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.12387581476525755
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.042598685152813315,
+      "two_stage": 0.048398971557617174,
+      "errors": {},
+      "divergence": 0.005800286404803859,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "FY2023(회복 초입, 매출 +122% - 2022 억눌림 기저효과) 이후 FY2024 +19.7%, FY2025 +17.1%로 안정화되는 두자릿수 성장 궤적을 보인다. 1위 사업자 지위(선호도 68.7%)를 유지하며 명시적 성장기간 이후 터미널로 수렴하는 구조가 이론적으로 더 부합한다고 판단해 two_stage 채택(BKNG/PDD와 동일 논리). 이 종목은 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning 필드로 확인하고 3%p 미만이면 모델선택이 판정을 바꾸지 않는다는 뜻이므로 이 사유가 그대로 유효하다.",
+    "value": 0.048398971557617174
+  },
+  "expectation_gap": 0.07547684320764038,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12387581476525755,
+      "g_bull": 0.18581372214788633,
+      "g_bear": 0.061937907382628776,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.462835440130259,
+      "base": 0.22929095552744583,
+      "bear": 0.036942817316316434
+    },
+    "probabilities": {
+      "bull": 0.22920000000000001,
+      "base": 0.49999999999999994,
+      "bear": 0.2708
+    },
+    "probability_rationale": "DRS=73.6 (중립점 50 대비 편차 +0.47) 기준: p_bull=22.9%, p_base=50.0%, p_bear=27.1%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.23073147557083676
+  },
+  "rar": 0.31349385267776736,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11678,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.048398971557617174,
+    "implied_growth_without_drs": 0.010890197753906235,
+    "gap_with_drs": 0.07547684320764038,
+    "gap_without_drs": 0.11298561701135132,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11678,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.048398971557617174,
+      "implied_growth_without_drs": 0.010890197753906235,
+      "gap_with_drs": 0.07547684320764038,
+      "gap_without_drs": 0.11298561701135132,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성"
+}
