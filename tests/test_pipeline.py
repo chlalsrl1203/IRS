@@ -619,4 +619,107 @@ def test_cagr_base_year_default_is_unchanged():
     result = run_analysis(cdns_inputs())
     assert result["derived"]["cagr_5y_base_year"] == 2020
     assert result["derived"]["cagr_5y_span"] == 5
+
+
+# ----------------------------------------------------------------------
+# v3.22: 보험업 FCF-DCF 교차검증 (ACGL/PGR 실사례에서 도출)
+# ----------------------------------------------------------------------
+
+def test_is_insurer_requires_three_series():
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(is_insurer=True)
+    msg = str(exc.value)
+    assert "net_income_by_year" in msg
+    assert "shareholders_equity_by_year" in msg
+    assert "dividends_paid_by_year" in msg
+
+
+def test_is_insurer_partial_series_still_rejected():
+    """세 시계열 중 일부만 있어도 거부돼야 한다(부분 데이터로 왜곡된 ROE 계산 방지)."""
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(
+            is_insurer=True,
+            net_income_by_year={2025: 1_000_000},
+            shareholders_equity_by_year={2025: 10_000_000},
+            # dividends_paid_by_year 누락
+        )
+    assert "dividends_paid_by_year" in str(exc.value)
+
+
+def _pgr_like_inputs(**overrides):
+    """
+    PGR 실사례(2026-07-28 정식분석)를 축약 재현. 5개년 ROE 평균과 3개년
+    배당성향으로 지속가능성장률을 계산하는 경로를 검증한다.
+    """
+    net_income = {2021: 3_350_900, 2022: 721_500, 2023: 3_903_000,
+                  2024: 8_480_000, 2025: 11_308_000}
+    equity = {2021: 18_231_600, 2022: 15_891_000, 2023: 20_277_000,
+              2024: 25_591_000, 2025: 30_323_000}
+    dividends = {2023: 277_000, 2024: 682_000, 2025: 2_871_000}
+    base = dict(
+        is_insurer=True,
+        net_income_by_year=net_income,
+        shareholders_equity_by_year=equity,
+        dividends_paid_by_year=dividends,
+        market_cap=125_440_000_000,
+    )
+    base.update(overrides)
+    return cdns_inputs(**base)
+
+
+def test_insurer_cross_check_matches_hand_calculation():
+    """PGR 스크립트에서 손으로 계산한 값과 파이프라인 자동계산이 일치해야 한다."""
+    result = run_analysis(_pgr_like_inputs())
+    cross = result["insurer_cross_check"]
+    assert cross is not None
+
+    net_income = {2021: 3_350_900, 2022: 721_500, 2023: 3_903_000,
+                  2024: 8_480_000, 2025: 11_308_000}
+    equity = {2021: 18_231_600, 2022: 15_891_000, 2023: 20_277_000,
+              2024: 25_591_000, 2025: 30_323_000}
+    expected_roe = sum(net_income[y] / equity[y] for y in equity) / len(equity)
+    assert cross["avg_roe"] == pytest.approx(expected_roe, abs=1e-12)
+
+    total_div = 277_000 + 682_000 + 2_871_000
+    total_ni_3y = 3_903_000 + 8_480_000 + 11_308_000
+    expected_payout = total_div / total_ni_3y
+    assert cross["payout_ratio"] == pytest.approx(expected_payout, abs=1e-12)
+    assert cross["retention_ratio"] == pytest.approx(1 - expected_payout, abs=1e-12)
+    assert cross["sustainable_growth"] == pytest.approx(
+        expected_roe * (1 - expected_payout), abs=1e-12
+    )
+    assert cross["price_to_book"] == pytest.approx(125_440_000_000 / 30_323_000, abs=1e-6)
+
+
+def test_insurer_cross_check_none_when_not_insurer():
+    result = run_analysis(cdns_inputs())
+    assert result["insurer_cross_check"] is None
+
+
+def test_insurer_cross_check_flags_large_divergence():
+    """
+    Realistic Growth와 지속가능성장률이 크게 벌어지면(ACGL 유형) 경고가
+    남아야 한다 - 낮은 ROE/보수적 배당으로 지속가능성장률을 인위적으로
+    낮게 만들어 괴리를 유발한다.
+    """
+    result = run_analysis(_pgr_like_inputs(
+        net_income_by_year={y: v * 0.1 for y, v in
+                             {2021: 3_350_900, 2022: 721_500, 2023: 3_903_000,
+                              2024: 8_480_000, 2025: 11_308_000}.items()},
+    ))
+    cross = result["insurer_cross_check"]
+    divergence = abs(result["growth"]["realistic_growth"] - cross["sustainable_growth"])
+    assert divergence >= 0.05
+    assert any("보험업 교차검증 경고" in x for x in result["data_limitations"])
+
+
+def test_insurer_cross_check_no_warning_when_growth_estimates_agree():
+    result = run_analysis(_pgr_like_inputs())
+    cross = result["insurer_cross_check"]
+    divergence = abs(result["growth"]["realistic_growth"] - cross["sustainable_growth"])
+    if divergence < 0.05:
+        assert any(
+            x.startswith("[보험업 교차검증]") for x in result["data_limitations"]
+        )
+        assert not any("보험업 교차검증 경고" in x for x in result["data_limitations"])
     assert not any("CAGR 기준연도 변경" in x for x in result["data_limitations"])

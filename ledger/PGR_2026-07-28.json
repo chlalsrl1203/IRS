@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "PGR",
     "company_name": "The Progressive Corporation",
-    "analyzed_at": "2026-07-28T10:43:43.113549+00:00",
-    "engine_version": "v3.21",
+    "analyzed_at": "2026-07-28T11:34:54.768382+00:00",
+    "engine_version": "v3.22",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000080661-26-000086) R3/R4/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 10-K FY2022(0000080661-23-000006) R3/R4/R7 (FY2020~2022)",
@@ -15,7 +15,9 @@
       "Notion 트래커 ACGL 핵심노트(2026-07-18, v3.13) - 보험업 FCF-DCF 방법론 우려 선례"
     ]
   },
-  "data_limitations": [],
+  "data_limitations": [
+    "[보험업 교차검증] Realistic Growth(16.87%)와 지속가능성장률(18.88%)이 2.01%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=4.14배는 별도로 판정 신뢰도 판단에 참고할 것."
+  ],
   "inputs": {
     "ticker": "PGR",
     "company_name": "The Progressive Corporation",
@@ -110,7 +112,27 @@
     "capex_classification": null,
     "capex_classification_basis": null,
     "cagr_base_year_override": null,
-    "cagr_base_year_override_reason": null
+    "cagr_base_year_override_reason": null,
+    "is_insurer": true,
+    "net_income_by_year": {
+      "2021": 3350900000.0,
+      "2022": 721500000.0,
+      "2023": 3903000000,
+      "2024": 8480000000,
+      "2025": 11308000000
+    },
+    "shareholders_equity_by_year": {
+      "2021": 18231600000.0,
+      "2022": 15891000000.0,
+      "2023": 20277000000.0,
+      "2024": 25591000000.0,
+      "2025": 30323000000.0
+    },
+    "dividends_paid_by_year": {
+      "2023": 277000000,
+      "2024": 682000000,
+      "2025": 2871000000
+    }
   },
   "derived": {
     "revenue_cagr_3y": 0.20900158007376457,
@@ -267,5 +289,24 @@
     "raw_score": 94,
     "final": 94
   },
-  "judgment": "저평가 가능성"
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": {
+    "roe_years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "avg_roe": 0.22519363246970361,
+    "dividend_years_used": [
+      2023,
+      2024,
+      2025
+    ],
+    "payout_ratio": 0.16166476721117723,
+    "retention_ratio": 0.8383352327888227,
+    "sustainable_growth": 0.18878775629904956,
+    "price_to_book": 4.136793852850971
+  }
 }

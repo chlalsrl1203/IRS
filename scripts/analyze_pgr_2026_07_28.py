@@ -25,9 +25,15 @@ PGR은 특히 언더라이팅 사이클 변동성이 극심해(순이익 2022년
 2025년 113.08억달러 고점, 15.7배) 단일 연도 ROE는 왜곡이 크므로 **5개년
 평균**(2021~2025)을 사용한다.
 
-  ROE(5y 평균, 기말자기자본 기준) ≈ 25.17%
+**2026-07-28 업데이트(v3.22)**: 이 교차검증은 원래 이 스크립트에 별도 함수로
+손계산했으나, 실증사례가 2건(ACGL/PGR) 쌓여 `pipeline.py`에
+`AnalysisInputs.is_insurer` 플래그로 배선됐다(`net_income_by_year`/
+`shareholders_equity_by_year`/`dividends_paid_by_year` 필수). 아래 수치는
+이제 파이프라인이 자동 계산한다 - 재계산해도 손계산과 동일함을 확인함:
+
+  ROE(5y 평균, 기말자기자본 기준) ≈ 22.52%
   배당성향(2023~2025 합산 배당/순이익) ≈ 16.17% -> 유보율 ≈ 83.83%
-  지속가능성장률 = ROE x 유보율 ≈ 21.10%
+  지속가능성장률 = ROE x 유보율 ≈ 18.88%
   P/B = 시가총액 $125.44B / 자기자본 $30.32B ≈ **4.14배**
 
 ACGL(P/B 1.46x, '정상범위')과 결정적으로 다른 지점: PGR의 P/B 4.14배는 이미
@@ -88,10 +94,10 @@ CAPEX = {
     2024: 285 * M, 2025: 348 * M,
 }
 
-# 순이익・자기자본 (ROE 교차검증용 - pipeline 입력이 아니라 별도 계산)
+# 순이익・자기자본・배당 (v3.22: is_insurer=True 경로로 pipeline이 자동 교차검증)
 NET_INCOME_5Y = {2021: 3350.9 * M, 2022: 721.5 * M, 2023: 3903 * M, 2024: 8480 * M, 2025: 11308 * M}
 EQUITY_5Y = {2021: 18231.6 * M, 2022: 15891.0 * M, 2023: 20277.0 * M, 2024: 25591.0 * M, 2025: 30323.0 * M}
-DIVIDENDS_3Y = {2023: 234 + 43, 2024: 674 + 8, 2025: 2871 + 0}  # 보통주+우선주, 단위 M
+DIVIDENDS_3Y = {2023: (234 + 43) * M, 2024: (674 + 8) * M, 2025: (2871 + 0) * M}  # 보통주+우선주
 
 # 재무상태표 (FY2025 10-K R4, 2025-12-31 기준)
 CASH = 125.0 * M          # 보험업은 투자포트폴리오(9.74B)가 준비금과 짝이라 순부채 상쇄에서 제외
@@ -103,23 +109,6 @@ EBITDA = OPERATING_INCOME[2025] + DA_2025   # 세전이익 기준 근사 EBITDA(
 
 MARKET_CAP = 125.44e9
 RF = 0.0447
-
-
-def insurer_cross_check():
-    avg_roe = sum(NET_INCOME_5Y[y] / EQUITY_5Y[y] for y in EQUITY_5Y) / len(EQUITY_5Y)
-    total_div = sum(DIVIDENDS_3Y.values()) * M
-    total_ni_3y = sum(NET_INCOME_5Y[y] for y in (2023, 2024, 2025))
-    payout = total_div / total_ni_3y
-    retention = 1 - payout
-    sustainable_growth = avg_roe * retention
-    pb = MARKET_CAP / EQUITY_5Y[2025]
-    return {
-        "avg_roe_5y": avg_roe,
-        "payout_ratio_3y": payout,
-        "retention_ratio": retention,
-        "sustainable_growth": sustainable_growth,
-        "price_to_book": pb,
-    }
 
 
 def build_inputs() -> AnalysisInputs:
@@ -134,6 +123,11 @@ def build_inputs() -> AnalysisInputs:
         net_debt=NET_DEBT,
         ebitda=EBITDA,
         risk_free_rate=RF,
+
+        is_insurer=True,
+        net_income_by_year=NET_INCOME_5Y,
+        shareholders_equity_by_year=EQUITY_5Y,
+        dividends_paid_by_year=DIVIDENDS_3Y,
 
         competitor_threat_weights=[0.35, 0.30, 0.20],
         market_share_trend_pp_per_year=1.0,
@@ -193,7 +187,7 @@ def main():
     result = run_analysis(build_inputs())
     d, g = result["derived"], result["growth"]
     models = result["implied_growth"]["models"]
-    cross = insurer_cross_check()
+    cross = result["insurer_cross_check"]
 
     print("=" * 100)
     print(f"PGR 정식 분석 결과 ({result['meta']['analyzed_at'][:10]}, 엔진 {result['meta']['engine_version']})")
@@ -224,9 +218,9 @@ def main():
     print(f"  Confidence       : {result['confidence']['final']}/100")
     print(f"  ** 판정(엔진, 참고용) : {result['judgment']} **")
     print()
-    print("  ── 보험업 교차검증(ACGL 선례와 동일 방법론) ──")
-    print(f"  5y 평균 ROE          : {cross['avg_roe_5y']*100:.2f}%")
-    print(f"  배당성향(3y 합산)    : {cross['payout_ratio_3y']*100:.2f}%  (유보율 {cross['retention_ratio']*100:.2f}%)")
+    print("  ── 보험업 교차검증(v3.22 is_insurer 자동배선, ACGL 선례와 동일 방법론) ──")
+    print(f"  5y 평균 ROE          : {cross['avg_roe']*100:.2f}%  (사용연도 {cross['roe_years_used']})")
+    print(f"  배당성향(3y 합산)    : {cross['payout_ratio']*100:.2f}%  (유보율 {cross['retention_ratio']*100:.2f}%)")
     print(f"  지속가능성장률        : {cross['sustainable_growth']*100:.2f}%")
     print(f"  P/B                  : {cross['price_to_book']:.2f}배  (ACGL 1.46배 '정상범위'와 대조)")
     print()

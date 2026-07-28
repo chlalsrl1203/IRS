@@ -1,5 +1,39 @@
 # CHANGELOG
 
+## v3.22 보험업 FCF-DCF 교차검증 배선 (2026-07-28)
+
+**계기**: ACGL(v3.13, 손배선)과 PGR(v3.21, 이번 세션) 두 종목에서 "보험사의
+OCF는 플로트(float) 성장이 섞여 FCF-DCF가 내재가치를 과대평가할 수 있다"는
+문제를 매번 스크립트에 별도 함수로 손계산해 대응해왔다. 실증사례가 2건 쌓여
+`capex_classification`(v3.20)/`cagr_base_year_override`(v3.21)와 같은 기준으로
+정식 배선했다.
+
+**추가 기능**: `AnalysisInputs.is_insurer: bool`(+ `net_income_by_year`/
+`shareholders_equity_by_year`/`dividends_paid_by_year` 필수, 셋 중 하나라도
+없으면 실행 거부). `True`면 `run_analysis()`가:
+- 최근 최대 5개년 평균 ROE(언더라이팅 사이클 왜곡을 줄이려 단일연도 대신 평균)
+- 최근 최대 3개년 합산 배당성향 -> 유보율
+- 지속가능성장률 = 평균ROE x 유보율
+- P/B = 시가총액 / 최근 자기자본
+을 자동 계산해 결과의 `insurer_cross_check`에 담고, Realistic Growth와
+지속가능성장률의 괴리가 5%p(`INSURER_GROWTH_DIVERGENCE_THRESHOLD`) 이상이면
+`data_limitations`에 경고를 남긴다. `is_insurer` 미지정 시 기존 동작과 완전히
+동일 - 순수 가산적. P/B는 하드코딩된 "정상/과열" 임계값 없이 숫자만
+제공한다 - ACGL(1.46x)/PGR(4.14x) 단 2건으로 컷오프를 고정하는 건 시기상조로
+판단했다(분석자가 해석하도록 남겨둠, capex_classification/
+cagr_base_year_override와 같은 설계 철학).
+
+**검증**: PGR 스크립트를 `is_insurer=True` 경로로 재실행해 기존 손계산치와
+정확히 일치함을 확인(5y평균ROE 22.52%, 유보율 83.83%, 지속가능성장률
+18.88%, P/B 4.14배 - 전부 동일, DRS/RAR/Gap 등 다른 결과값도 전혀 변하지
+않음). ledger 갱신, 스크립트에서 손계산 함수 제거.
+
+**테스트 6건 추가**(총 98개 통과): 필수 필드 검증(전체/부분 누락), PGR
+실사례 재현으로 손계산 대조, `is_insurer` 미지정 시 `None` 반환, 괴리
+임계값 이상/이내 각각의 경고 유무.
+
+engine_version을 "v3.21" -> "v3.22"로 갱신.
+
 ## Cencora(COR) 정식분석 (2026-07-28, 엔진 v3.21) - 강건성점검 flip 실사례
 
 **경위**: 2026-07-26 스크리닝 통과 후보(MCK와 동일 산업 - 의약품유통

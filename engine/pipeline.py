@@ -55,6 +55,7 @@ from engine.expectation_gap_engine import (
 )
 
 MODEL_DIVERGENCE_WARNING_THRESHOLD = 0.03  # 3%p 이상 벌어지면 경고
+INSURER_GROWTH_DIVERGENCE_THRESHOLD = 0.05  # 5%p 이상 벌어지면 경고(v3.22)
 
 
 def compare_implied_growth_models(
@@ -167,6 +168,17 @@ class AnalysisInputs:
     cagr_base_year_override: int = None
     cagr_base_year_override_reason: str = None
 
+    # 보험업 FCF-DCF 교차검증 - v3.22에서 배선(ACGL/PGR 실증 2건 기반).
+    # 보험사의 OCF는 플로트(float, 보험료 선수취-보험금 후지급) 성장이 섞여
+    # 회계이익보다 구조적으로 부풀려진다 - FCF-DCF를 그대로 적용하면 내재가치가
+    # 체계적으로 과대평가될 수 있다. is_insurer=True면 net_income_by_year/
+    # shareholders_equity_by_year/dividends_paid_by_year로 지속가능성장률
+    # (ROE x 유보율)과 P/B를 자동 계산해 Realistic Growth와 대조 경고한다.
+    is_insurer: bool = False
+    net_income_by_year: dict = None
+    shareholders_equity_by_year: dict = None
+    dividends_paid_by_year: dict = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -218,6 +230,22 @@ class AnalysisInputs:
             if self.cagr_base_year_override >= max(self.revenue_by_year):
                 raise ValueError(
                     "cagr_base_year_override는 최근 회계연도보다 앞서야 함"
+                )
+
+        # v3.22: 보험업 교차검증은 3개 시계열이 모두 있어야 계산 가능.
+        if self.is_insurer:
+            missing = [
+                name for name, d in [
+                    ("net_income_by_year", self.net_income_by_year),
+                    ("shareholders_equity_by_year", self.shareholders_equity_by_year),
+                    ("dividends_paid_by_year", self.dividends_paid_by_year),
+                ] if not d
+            ]
+            if missing:
+                raise ValueError(
+                    f"is_insurer=True면 {', '.join(missing)}이(가) 필수(v3.22): "
+                    f"보험업 ROE x 유보율 교차검증(ACGL/PGR 선례)을 계산하려면 "
+                    f"순이익·자기자본·배당 시계열이 있어야 한다."
                 )
 
         # ⚠️ v3.19에서 실제로 겪은 사고(2026-07-25 BRO 재검증): 데이터 소스마다
@@ -503,12 +531,69 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     else:
         judgment = "적정가/경계선"
 
+    # ── v3.22: 보험업 FCF-DCF 교차검증(ACGL/PGR 실증사례 기반) ──────────────
+    # ROE x 유보율(지속가능성장률)과 P/B를 계산해 Realistic Growth와 대조한다.
+    # ROE는 최근 최대 5개년 평균(단일연도는 언더라이팅 사이클 왜곡이 커서
+    # PGR 사례에서 5개년 평균을 채택했다), 배당성향은 최근 최대 3개년 합산
+    # 기준(연간 변동배당 관행이 있는 보험사가 있어 단일연도는 왜곡될 수 있다).
+    insurer_cross_check = None
+    if inputs.is_insurer:
+        eq_years = sorted(inputs.shareholders_equity_by_year)
+        roe_years = eq_years[-min(5, len(eq_years)):]
+        roes = [
+            inputs.net_income_by_year[y] / inputs.shareholders_equity_by_year[y]
+            for y in roe_years
+        ]
+        avg_roe = sum(roes) / len(roes)
+
+        div_years = sorted(inputs.dividends_paid_by_year)[-min(3, len(inputs.dividends_paid_by_year)):]
+        total_dividends = sum(inputs.dividends_paid_by_year[y] for y in div_years)
+        total_net_income = sum(inputs.net_income_by_year[y] for y in div_years)
+        payout_ratio = total_dividends / total_net_income
+        retention_ratio = 1 - payout_ratio
+        sustainable_growth = avg_roe * retention_ratio
+
+        latest_equity_year = max(inputs.shareholders_equity_by_year)
+        price_to_book = inputs.market_cap / inputs.shareholders_equity_by_year[latest_equity_year]
+
+        insurer_cross_check = {
+            "roe_years_used": roe_years,
+            "avg_roe": avg_roe,
+            "dividend_years_used": div_years,
+            "payout_ratio": payout_ratio,
+            "retention_ratio": retention_ratio,
+            "sustainable_growth": sustainable_growth,
+            "price_to_book": price_to_book,
+        }
+
+        divergence = abs(realistic_growth - sustainable_growth)
+        if divergence >= INSURER_GROWTH_DIVERGENCE_THRESHOLD:
+            data_limitations.append(
+                f"[보험업 교차검증 경고] Realistic Growth({realistic_growth*100:.2f}%)와 "
+                f"지속가능성장률(ROE x 유보율={sustainable_growth*100:.2f}%, "
+                f"평균ROE {avg_roe*100:.2f}%/유보율 {retention_ratio*100:.2f}%)이 "
+                f"{divergence*100:.2f}%p 벌어져 있다(경고임계값 "
+                f"{INSURER_GROWTH_DIVERGENCE_THRESHOLD*100:.0f}%p). FCF-DCF가 보험업의 "
+                f"플로트 성장을 유기적 성장으로 착각했을 가능성이 있다(ACGL 선례: "
+                f"Gap 31.44%p가 이 방식으로 과장 확인됨). P/B={price_to_book:.2f}배도 "
+                f"함께 참고할 것 - 낮으면(~1.5배 이하) 시장이 아직 재평가하지 않았다는 "
+                f"뜻이라 방향은 유지하되 크기를 할인, 높으면(~3배 이상) 이미 재평가됐을 "
+                f"수 있어 판정 신뢰도를 더 낮출 것."
+            )
+        else:
+            data_limitations.append(
+                f"[보험업 교차검증] Realistic Growth({realistic_growth*100:.2f}%)와 "
+                f"지속가능성장률({sustainable_growth*100:.2f}%)이 {divergence*100:.2f}%p "
+                f"이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). "
+                f"P/B={price_to_book:.2f}배는 별도로 판정 신뢰도 판단에 참고할 것."
+            )
+
     return {
         "meta": {
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.21",
+            "engine_version": "v3.22",
             "data_sources": inputs.data_sources,
         },
         "data_limitations": data_limitations,
@@ -562,6 +647,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         "sensitivity_check": sensitivity,
         "confidence": confidence,
         "judgment": judgment,
+        "insurer_cross_check": insurer_cross_check,
     }
 
 
