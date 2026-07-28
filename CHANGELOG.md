@@ -1,5 +1,45 @@
 # CHANGELOG
 
+## PDD Holdings 정식분석 (2026-07-28, 엔진 v3.21)
+
+**경위**: 2026-07-26 스크리닝 S등급(Gap 추정 +40.96%p, 후보 중 최고치) 후보를
+정식분석. 비큐(ad-hoc) 분석. BKNG에서 드러난 "짧은 조회창이 경기 저점을
+놓친다" 문제의 재확인 대상으로 골랐으나, PDD는 2018년 IPO(최초 20-F)라 애초에
+10년 데이터가 존재하지 않는다 - 확보 가능한 최장 구간(FY2018~2025, 8개년,
+SEC EDGAR 20-F 3개 제출서)을 전부 사용했다. BKNG과 달리 코로나(FY2020)가
+PDD에는 저점이 아니라 성장 가속 구간이라 `cagr_base_year_override`는 불필요
+(기본 5년 룩백 FY2020 FCF가 +281.5억 위안으로 이미 양수).
+
+**결과**:
+  DRS 45.40 (competition_intensity 20점 만점 - Alibaba/Douyin/JD 3파전 +
+  美 de minimis 폐지 + EU DSA 과징금 2억유로) / Lynch fast_grower / two_stage
+  Realistic Growth 25.00% / Implied Growth -4.16% / Gap +29.16%p
+  RAR +2.4757 / 강건성점검 통과(flip 없음, 모델괴리 2.30%p) / Confidence 89
+  ** 판정: 저평가 가능성 **
+순현금 포지션(net_debt/EBITDA -4.51배, 이자부 차입금 사실상 0 - 전환사채
+FY2025 전액 상환)이 leverage 리스크를 최소화했다.
+
+**⚠️ 스크리너 정확도 사후검증 - BKNG과는 다른 유형의 괴리**:
+  Gap        +40.96%p(추정) vs  +29.16%p(실제) -> 11.80%p 과대
+  DRS           30.6 (추정) vs    45.4 (실제)  -> 14.8점 과소
+  현실적성장률   38.41%(추정) vs   25.00%(실제) -> 13.41%p 과대
+BKNG은 조회창이 짧아 코로나 저점을 놓친 게 원인이었지만, PDD는 4년 조회창
+자체(2021~2025)의 매출·FCF 원자료가 SEC 실측치와 소수점까지 정확히
+일치했다(원인이 아님을 직접 확인). 실제 원인은 **competition_intensity가
+스크리너에서 상수 placeholder(12.0)로 처리된다는 구조적 한계**다 -
+engine/screener.py는 DRS 5개 구성요소 중 leverage/cyclicality만 실측하고
+나머지 3개(revenue_volatility/margin_volatility/competition_intensity)는
+ledger 중앙값 상수를 쓴다(스크리닝 단계에서는 정성적 경쟁강도 입력이
+없으므로 구조적으로 불가피). PDD처럼 규제·경쟁이 실제로 치열한 종목은
+정식분석에서 competition_intensity가 20.00(만점)까지 나와 DRS를 15점 가까이
+끌어올렸고, 이게 realistic_growth_estimate의 structural_discount_pct에도
+그대로 반영돼 현실적성장률까지 낮췄다. 판정 **방향**은 맞았으나(둘 다
+저평가) 크기는 이번에도 신뢰할 수 없었다 - 다만 원인은 조회창 길이가 아니라
+경쟁강도 placeholder였다는 점에서 BKNG 사례와 구분해서 기록한다.
+=> 규제·경쟁 이슈가 뚜렷한 업종(플랫폼, 중국기업, 반독점 노출 종목)은
+   스크리닝 Gap을 그대로 신뢰하지 말고 정성적 경쟁강도를 감안해 보수적으로
+   할인해서 볼 것.
+
 ## v3.21 CAGR 기준연도 override + BKNG 정식분석 (2026-07-28)
 
 **계기**: 스크리닝 A등급 후보 BKNG을 정식분석하려다 엔진이 실행을 거부했다.

@@ -194,6 +194,20 @@ Gap +18.99%p(추정) vs +5.98%p(실제), DRS 34.6 vs 56.0, FCF CAGR 37.86% vs 12
 순위를 매길 때 조회창 길이를 함께 볼 것 - 여행·항공·소재 등 경기민감 업종은
 10년 이상 창으로 재확인 필요.
 
+**⚠️ 스크리너 한계 2건째 - competition_intensity placeholder (2026-07-28 PDD에서
+실측 확인)**: BKNG과는 원인이 다른 별개의 한계다. PDD는 조회창 원자료 자체가
+SEC 실측치와 정확히 일치했음에도(원인이 아님을 확인) Gap이 크게 벌어졌다:
++40.96%p(추정) vs +29.16%p(실제), DRS 30.6 vs 45.4, 현실적성장률 38.41% vs
+25.00%. 원인은 `engine/screener.py`가 DRS 5개 구성요소 중 competition_intensity를
+상수 placeholder(12.0)로 고정한다는 점 - 스크리닝 단계에서는 경쟁사 위협도·
+시장점유율 추세 같은 정성적 입력이 없어 구조적으로 불가피하다. PDD는
+Alibaba/Douyin/JD 3파전 + 美 de minimis 통관특례 폐지 + EU DSA 과징금(2억유로)
+까지 겹쳐 competition_intensity가 실제로는 20.00(만점)까지 나왔고, 이게 DRS와
+structural_discount_pct를 동시에 끌어올려 Gap을 눌렀다. 판정 **방향**은 맞았으나
+(둘 다 저평가) 크기는 이번에도 신뢰할 수 없었다. 규제·경쟁 이슈가 뚜렷한
+업종(플랫폼, 중국기업, 반독점 노출 종목)은 스크리닝 Gap을 그대로 신뢰하지 말고
+정성적 경쟁강도를 감안해 보수적으로 할인해서 볼 것.
+
 **CI 추가됨(2026-07-26)**: `.github/workflows/tests.yml`이 모든 push에서
 `pytest tests/`를 자동 실행한다. 이 프로젝트의 사고 대부분(RAR 100배,
 sensitivity_check 모델불일치)이 "테스트는 있었지만 실행을 깜빡함"이 아니라

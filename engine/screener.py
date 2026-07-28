@@ -44,6 +44,24 @@ BKNG(2021~2025 창) 실측 오차:
 판정 **방향**은 맞았으나(둘 다 저평가) 크기는 크게 빗나갔다. 따라서
 Gap 추정치로 후보 간 순위를 매길 때는 조회창 길이를 함께 볼 것. 특히
 여행·항공·소재 등 경기민감 업종은 10년 이상 창으로 재확인이 필요하다.
+
+⚠️ **알려진 한계 2건째: competition_intensity가 상수 placeholder** (PDD 실사례,
+2026-07-28에 정식분석과 대조하며 확인):
+BKNG과는 원인이 다른 별개의 한계다. `estimate_drs()`는 leverage/cyclicality만
+실측하고 나머지 3개 DRS 구성요소(revenue_volatility/margin_volatility/
+competition_intensity)는 ledger 중앙값 상수를 쓴다(스크리닝 단계에는 경쟁사
+위협도·시장점유율추세 같은 정성적 입력이 없어 구조적으로 불가피). 규제·경쟁이
+실제로 치열한 종목은 이 placeholder가 실제 competition_intensity를 크게
+과소평가한다.
+PDD 실측 오차(4년 조회창 2021~2025의 매출·FCF 원자료 자체는 SEC 실측치와
+소수점까지 일치 - 조회창 길이가 원인이 아님을 확인):
+  competition_intensity  12.0(상수) vs  20.0(만점, 실제)
+  DRS                     30.6(추정) vs  45.4(실제)   -> 14.8점 과소
+  현실적성장률            38.41%(추정) vs 25.00%(실제) -> 13.41%p 과대
+  Gap                    +40.96%p(추정) vs +29.16%p(실제) -> 11.80%p 과대
+판정 **방향**은 이번에도 맞았으나(둘 다 저평가) 크기는 신뢰할 수 없었다.
+플랫폼·중국기업·반독점 노출 종목처럼 규제·경쟁 이슈가 뚜렷한 업종은
+Gap 추정치를 정성적으로 할인해서 볼 것.
 """
 
 from dataclasses import dataclass, field
