@@ -157,6 +157,16 @@ class AnalysisInputs:
     capex_classification: str = None          # "growth_investment" | "margin_erosion"
     capex_classification_basis: str = None
 
+    # 5년 CAGR 기준연도 override - v3.21에서 추가(BKNG 실사례).
+    # 기본값은 years[-6](= 최근년도 5년 전)인데, 그 해가 코로나 같은 일회성
+    # 충격에 걸리면 두 가지가 동시에 망가진다:
+    #   (1) FCF가 음수면 CAGR 자체가 정의되지 않아 실행이 거부된다
+    #   (2) 매출이 저점이면 CAGR이 '회복 반등'을 '성장'으로 착각해 과대계상된다
+    # 이 값을 지정하면 매출·FCF CAGR **양쪽 모두** 같은 기준연도를 쓴다
+    # (둘을 다른 창으로 계산하면 min() 비교 자체가 성립하지 않는다).
+    cagr_base_year_override: int = None
+    cagr_base_year_override_reason: str = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -188,6 +198,26 @@ class AnalysisInputs:
                     "부르면 FCF CAGR이 상향조정되어 판정이 뒤집힐 수 있다. 무엇을 근거로 "
                     "그렇게 분류했는지(증설계획 공시, 수주잔고, 가동률 등) 남기지 않으면 "
                     "검증 불가능한 낙관이 된다."
+                )
+
+        # v3.21: CAGR 기준연도 override는 성장률을 통째로 바꾸므로 근거 필수.
+        # 기준연도를 고르는 행위 자체가 결과를 좌우하기 때문에(저점을 고르면
+        # 성장률이 부풀고 고점을 고르면 눌린다) 반드시 사유를 남기게 한다.
+        if self.cagr_base_year_override is not None:
+            if not self.cagr_base_year_override_reason or not self.cagr_base_year_override_reason.strip():
+                raise ValueError(
+                    "cagr_base_year_override_reason 필수(v3.21): 기준연도 선택은 "
+                    "성장률을 통째로 바꾼다. 왜 기본값(5년 전)을 쓸 수 없는지, 왜 "
+                    "하필 그 해인지를 남기지 않으면 유리한 해를 고른 것과 구별되지 않는다."
+                )
+            if self.cagr_base_year_override not in self.revenue_by_year:
+                raise ValueError(
+                    f"cagr_base_year_override={self.cagr_base_year_override}가 "
+                    f"revenue_by_year에 없다"
+                )
+            if self.cagr_base_year_override >= max(self.revenue_by_year):
+                raise ValueError(
+                    "cagr_base_year_override는 최근 회계연도보다 앞서야 함"
                 )
 
         # ⚠️ v3.19에서 실제로 겪은 사고(2026-07-25 BRO 재검증): 데이터 소스마다
@@ -254,8 +284,24 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
 
     data_limitations = []
 
+    # ── v3.21: 5년 CAGR 기준연도 ──────────────────────────────────────────
+    # 기본은 years[-6](5년 전). override가 있으면 매출·FCF **양쪽 모두** 그 해를
+    # 기준으로 쓴다(서로 다른 창을 쓰면 realistic_growth_estimate의 min() 비교가
+    # 성립하지 않는다). BKNG에서 실제로 필요해져 추가한 기능이다.
+    base_5y = years[-6]
+    span_5y = 5
+    if inputs.cagr_base_year_override is not None:
+        base_5y = inputs.cagr_base_year_override
+        span_5y = years[-1] - base_5y
+        data_limitations.append(
+            f"[CAGR 기준연도 변경] 기본 기준연도({years[-6]}) 대신 {base_5y}년을 "
+            f"기준으로 {span_5y}년 CAGR을 산출했다(매출·FCF 동일 적용). "
+            f"기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: "
+            f"{inputs.cagr_base_year_override_reason}"
+        )
+
     rev_cagr_3y = _cagr(rev[years[-4]], rev[years[-1]], 3, "revenue 3y")
-    rev_cagr_5y = _cagr(rev[years[-6]], rev[years[-1]], 5, "revenue 5y")
+    rev_cagr_5y = _cagr(rev[base_5y], rev[years[-1]], span_5y, "revenue 5y")
     if len(years) >= 11:
         rev_cagr_10y = _cagr(rev[years[-11]], rev[years[-1]], 10, "revenue 10y")
     else:
@@ -271,7 +317,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             f"구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
         )
 
-    fcf_cagr_5y = _cagr(fcf[years[-6]], fcf[years[-1]], 5, "FCF 5y")
+    fcf_cagr_5y = _cagr(fcf[base_5y], fcf[years[-1]], span_5y, "FCF 5y")
     fcf0 = fcf[years[-1]]
 
     yoy = [(years[i], rev[years[i]] / rev[years[i - 1]] - 1) for i in range(1, len(years))]
@@ -462,7 +508,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.19",
+            "engine_version": "v3.21",
             "data_sources": inputs.data_sources,
         },
         "data_limitations": data_limitations,
@@ -470,6 +516,8 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         "derived": {
             "revenue_cagr_3y": rev_cagr_3y,
             "revenue_cagr_5y": rev_cagr_5y,
+            "cagr_5y_base_year": base_5y,
+            "cagr_5y_span": span_5y,
             "revenue_cagr_10y": rev_cagr_10y,
             "fcf_cagr_5y": fcf_cagr_5y,
             "fcf0": fcf0,

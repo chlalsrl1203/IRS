@@ -539,3 +539,84 @@ def test_capex_adjustment_reuses_weighted_average_not_recomputed():
     blended = 0.7 * adj["fcf_cagr_before"] + 0.3 * result["growth"]["breakdown"]["base_growth_before_fcf_check"]
     expected = min(blended, result["growth"]["breakdown"]["base_growth_before_fcf_check"])
     assert adj["fcf_cagr_after"] == pytest.approx(expected, abs=1e-12)
+
+
+# ----------------------------------------------------------------------
+# v3.21: CAGR 기준연도 override (BKNG 실사례에서 도출)
+# ----------------------------------------------------------------------
+
+def _covid_shaped_inputs(**overrides):
+    """
+    BKNG 패턴 재현: 5년 전(기본 기준연도)이 코로나로 FCF 음수인 케이스.
+    2020년 OCF를 capex보다 작게 만들어 FCF를 음수로 떨군다.
+    """
+    ocf = dict(CDNS_OCF)
+    ocf[2020] = 50_000_000          # capex(94,813,000)보다 작음 -> FCF 음수
+    base = dict(operating_cashflow_by_year=ocf)
+    base.update(overrides)
+    return cdns_inputs(**base)
+
+
+def test_negative_fcf_at_default_base_year_is_rejected_without_override():
+    """
+    기본 기준연도의 FCF가 음수면 CAGR이 정의되지 않으므로 실행이 거부돼야 한다.
+    BKNG(FY2020 FCF -$201M)이 실제로 이 벽에 부딪혔다.
+    """
+    with pytest.raises(ValueError) as exc:
+        run_analysis(_covid_shaped_inputs())
+    assert "FCF 5y" in str(exc.value)
+
+
+def test_cagr_base_year_override_unblocks_and_records_limitation():
+    result = run_analysis(_covid_shaped_inputs(
+        cagr_base_year_override=2019,
+        cagr_base_year_override_reason="2020년이 일회성 충격으로 FCF 음수(테스트용 가정)",
+    ))
+    assert result["derived"]["cagr_5y_base_year"] == 2019
+    assert result["derived"]["cagr_5y_span"] == 6
+    assert any("CAGR 기준연도 변경" in x for x in result["data_limitations"])
+
+
+def test_cagr_base_year_override_applies_to_both_revenue_and_fcf():
+    """
+    매출과 FCF에 서로 다른 창을 쓰면 realistic_growth_estimate의 min() 비교가
+    성립하지 않는다. 반드시 같은 기준연도를 써야 한다.
+    """
+    result = run_analysis(cdns_inputs(
+        cagr_base_year_override=2018,
+        cagr_base_year_override_reason="양쪽 동일 적용 검증용",
+    ))
+    d = result["derived"]
+    span = d["cagr_5y_span"]
+    expected_rev = (CDNS_REVENUE[2025] / CDNS_REVENUE[2018]) ** (1 / span) - 1
+    fcf18 = CDNS_OCF[2018] - CDNS_CAPEX[2018]
+    fcf25 = CDNS_OCF[2025] - CDNS_CAPEX[2025]
+    expected_fcf = (fcf25 / fcf18) ** (1 / span) - 1
+    assert d["revenue_cagr_5y"] == pytest.approx(expected_rev, abs=1e-12)
+    assert d["fcf_cagr_5y"] == pytest.approx(expected_fcf, abs=1e-12)
+
+
+def test_cagr_base_year_override_requires_reason():
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(cagr_base_year_override=2019)
+    assert "cagr_base_year_override_reason" in str(exc.value)
+
+
+def test_cagr_base_year_override_rejects_year_not_in_data():
+    with pytest.raises(ValueError):
+        cdns_inputs(cagr_base_year_override=2009,
+                    cagr_base_year_override_reason="데이터에 없는 해")
+
+
+def test_cagr_base_year_override_rejects_latest_year():
+    with pytest.raises(ValueError):
+        cdns_inputs(cagr_base_year_override=2025,
+                    cagr_base_year_override_reason="최근년도는 기준이 될 수 없음")
+
+
+def test_cagr_base_year_default_is_unchanged():
+    """override 미지정 시 기존 동작(years[-6], 5년)과 완전히 동일해야 한다."""
+    result = run_analysis(cdns_inputs())
+    assert result["derived"]["cagr_5y_base_year"] == 2020
+    assert result["derived"]["cagr_5y_span"] == 5
+    assert not any("CAGR 기준연도 변경" in x for x in result["data_limitations"])

@@ -172,6 +172,28 @@ WCN 5.04%→9.01~10.4%) "FY2025 10-K가 새로 나와서 그렇다"고 즉시 �
   직접 하고 있어(`op_margins = [...]`) 기능은 동일하지만 헬퍼를 재사용하지
   않는다. 결과에 차이는 없어 우선순위 낮음.
 
+**v3.20/v3.21에서 배선·추가 완료** (위 미배선 목록 중 일부 해소):
+- `capex_intensity_from_series()` + `fcf_conservatism_adjustment()`는
+  **v3.20에서 배선했다**(NVO 스크리닝이 실증 사례가 됨 - 매출 CAGR 21.7%인데
+  FCF CAGR 4.92%, capex가 5년새 9.5배 폭증). `AnalysisInputs.capex_classification`
+  (+ `_basis` 필수)로 값을 넣을 때만 경로를 탄다. 위 지침대로
+  `revenue_weighted_cagr`은 재계산하지 않고 `realistic_growth_estimate`가
+  내놓은 `base_growth_before_fcf_check`를 재사용한다.
+- **v3.21: `cagr_base_year_override`** (+ `_reason` 필수). BKNG 정식분석에서
+  필요해졌다 - 코로나가 5년 룩백 자리에 걸리면 (a)그 해 FCF가 음수면 CAGR이
+  정의되지 않아 실행이 거부되고 (b)매출 저점이 기준이 되어 '회복 반등'을
+  '성장'으로 착각한다. 매출·FCF 양쪽에 동일 기준연도를 적용한다.
+  **기준연도는 저점이 아니라 고점을 고를 것** - BKNG은 FY2020(저점)이 아니라
+  FY2019(코로나 이전 고점)를 기준으로 삼아 성장률을 부풀리지 않았다.
+
+**⚠️ 스크리너 조회창 한계 (2026-07-28 BKNG에서 실측 확인)**:
+`engine/screener.py`는 보통 확보하기 쉬운 5개년만 쓰는데, 그 창 밖에 폭락기가
+있으면 DRS가 과소추정되고 성장률이 과대추정된다. BKNG 실측 오차:
+Gap +18.99%p(추정) vs +5.98%p(실제), DRS 34.6 vs 56.0, FCF CAGR 37.86% vs 12.44%.
+판정 **방향**은 맞았으나 크기는 신뢰할 수 없었다. 스크리닝 Gap으로 후보
+순위를 매길 때 조회창 길이를 함께 볼 것 - 여행·항공·소재 등 경기민감 업종은
+10년 이상 창으로 재확인 필요.
+
 **CI 추가됨(2026-07-26)**: `.github/workflows/tests.yml`이 모든 push에서
 `pytest tests/`를 자동 실행한다. 이 프로젝트의 사고 대부분(RAR 100배,
 sensitivity_check 모델불일치)이 "테스트는 있었지만 실행을 깜빡함"이 아니라
