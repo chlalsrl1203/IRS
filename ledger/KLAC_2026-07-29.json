@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "ticker": "KLAC",
+    "company_name": "KLA Corporation",
+    "analyzed_at": "2026-07-29T10:31:25.979855+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000319201-25-000024) R3/R5/R9, as-filed, 2026-07-29 조회",
+      "SEC EDGAR 10-K FY2022(0000319201-22-000023) R5/R9 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0000319201-19-000031) R4/R8 (FY2017~2019)",
+      "stockanalysis.com 시가총액 $249.24B (2026-07-28 종가, 실적발표 반영)",
+      "WebSearch: KLA FY2026 4분기 실적/가이던스 실망 주가급락(2026-07-28), 美 상무부 中 화훙반도체向 수출통제 조치, KLA 시장점유율/경쟁구도"
+    ]
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(9개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(15.93%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[모델 괴리 경고] single_stage(9.47%)와 two_stage(22.31%)가 12.85%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+  ],
+  "inputs": {
+    "ticker": "KLAC",
+    "company_name": "KLA Corporation",
+    "revenue_by_year": {
+      "2017": 3480014000,
+      "2018": 4036701000,
+      "2019": 4568904000,
+      "2020": 5806424000,
+      "2021": 6918734000,
+      "2022": 9211883000,
+      "2023": 10496056000,
+      "2024": 9812247000,
+      "2025": 12156162000
+    },
+    "operating_income_by_year": {
+      "2017": 1278900000,
+      "2018": 1539825000,
+      "2019": 1389373000,
+      "2020": 1502201000,
+      "2021": 2488480000,
+      "2022": 3654181000,
+      "2023": 3994696000,
+      "2024": 3346210000,
+      "2025": 4775127000
+    },
+    "operating_cashflow_by_year": {
+      "2017": 1079665000,
+      "2018": 1229120000,
+      "2019": 1152632000,
+      "2020": 1778850000,
+      "2021": 2185026000,
+      "2022": 3312702000,
+      "2023": 3669805000,
+      "2024": 3308575000,
+      "2025": 4081903000
+    },
+    "capex_by_year": {
+      "2017": 38594000,
+      "2018": 66947000,
+      "2019": 130498000,
+      "2020": 152675000,
+      "2021": 231628000,
+      "2022": 307320000,
+      "2023": 341591000,
+      "2024": 277384000,
+      "2025": 335259000
+    },
+    "market_cap": 249240000000.0,
+    "net_debt": 1389634000,
+    "ebitda": 5169215000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.25,
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -0.5,
+    "active_antitrust_or_regulatory_case": true,
+    "demand_sensitivity_pct": 0.38,
+    "subjective_input_basis": "Applied Materials 0.25(가장 큰 종합WFE업체이나 KLA만큼 공정제어에 특화되지는 않음), Onto Innovation 0.20(순수 공정제어 전문업체로 빠르게 성장 중인 위협), Nova Ltd 등 기타 계측전문사 0.15. 셋 다 낮은 편으로 설정한 이유는 KLA가 웨이퍼검사・계측 시장점유율 약 50%로 '선단공정 팹 품질관리에 사실상 필수'로 평가되는 압도적 지위 때문(2026-07 WebSearch)[추정치]. market_share_trend=-0.5pp: 글로벌 기술적 리더십 자체는 침식 증거가 없으나, 아래 수출통제로 中 매출(전체의 약 30%)이 구조적으로 위축될 리스크가 있어 완만한 음(-) 추세로 보수적 반영[추정치]. active_antitrust_or_regulatory_case=True: 근거 명확 - 美 상무부가 2026-07 KLA/Applied Materials/Lam Research 반도체장비 3대사에 中 화훙반도체(Hua Hong) 등 선단공정 中 팹向 첨단장비 수출을 사실상 불허하는 조치를 내렸다(라이선스 추정거부). 中이 KLA 매출의 약 30%(약 $2.66B)를 차지해 재무영향이 실질적 - 경쟁당국 반독점이 아니라 수출통제/무역정책 성격임을 명시. demand_sensitivity=0.38: 반도체장비는 WFE(웨이퍼팹장비) 지출사이클에 연동되는 대표적 경기민감 산업 - 실제로 FY2024 매출이 전년比 -6.5% 역성장한 실측 이력이 있다. GWRE(0.22)・PTC(0.25)보다 높은 값을 채택[추정치].",
+    "model_used": "single_stage",
+    "model_choice_reason": "초안에서는 'WFE 다운사이클→회복' 서사로 two_stage를 검토했으나, 실제 계산 결과 single_stage(9.47%)와 two_stage(22.31%)의 괴리가 **12.85%p로 이 프로젝트 역대 최대**(CDNS 10.97%p·GWRE 9.03%p를 능가)이고 판정 자체가 갈렸다(two_stage: Gap -11.61%p 과대평가 vs single_stage: Gap +1.23%p 적정가/경계선). 결정적으로, two_stage가 요구하는 22.31% 성장은 KLA 자체의 2026-07-28 FY2027 1분기 가이던스(컨센서스를 근소하게 상회하는 수준에 그침, 'underwhelming'으로 시장이 평가해 당일 -6.18% 급락)와 정면으로 배치된다 - 회사 스스로도 22%대 성장을 시사하지 않는데 two_stage로 밸류에이션하면 이를 무시하는 셈이다. 반면 single_stage가 요구하는 9.47%는 Realistic Growth(10.70%)와 근접해 훨씬 현실적이다. Lynch 자동분류는 'cyclical'이라 GWRE(stalwart)와 완전히 동일한 전례는 아니지만, 이 프로젝트가 반복적으로 확인해온 원칙(모델선택이 판정을 뒤집을 만큼 크면 서사가 아니라 실제 가이던스・펀더멘털과 더 정합적인 쪽을 선택)을 그대로 적용해 single_stage로 전환했다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000319201-25-000024) R3/R5/R9, as-filed, 2026-07-29 조회",
+      "SEC EDGAR 10-K FY2022(0000319201-22-000023) R5/R9 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0000319201-19-000031) R4/R8 (FY2017~2019)",
+      "stockanalysis.com 시가총액 $249.24B (2026-07-28 종가, 실적발표 반영)",
+      "WebSearch: KLA FY2026 4분기 실적/가이던스 실망 주가급락(2026-07-28), 美 상무부 中 화훙반도체向 수출통제 조치, KLA 시장점유율/경쟁구도"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.09685534331651668,
+    "revenue_cagr_5y": 0.15925117998554894,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.1816667890794359,
+    "fcf0": 3746644000,
+    "fcf_by_year": {
+      "2017": 1041071000,
+      "2018": 1162173000,
+      "2019": 1022134000,
+      "2020": 1626175000,
+      "2021": 1953398000,
+      "2022": 3005382000,
+      "2023": 3328214000,
+      "2024": 3031191000,
+      "2025": 3746644000
+    },
+    "worst_yoy_revenue_growth": -0.06514913792380683,
+    "worst_yoy_year": 2024,
+    "operating_margins": [
+      0.3596727378159068,
+      0.39668122141803147,
+      0.38059019502182534,
+      0.3410238246142805,
+      0.39281534747562596
+    ],
+    "net_debt_to_ebitda": 0.26882882604031755
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 6.0,
+      "cyclicality": 17.52,
+      "competition_intensity": 15.2
+    },
+    "score": 54.72
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": "[분류 애매] cyclicality_raw_score=17.52로 cyclical 기준을 충족하지만 revenue_cagr_5y=15.9%도 fast_grower 기준을 충족한다. cyclical을 기본 채택했으나, cyclicality 점수의 원인이 이미 지나간 일회성 위기(예: 팬데믹)뿐이라면 fast_grower로 오버라이드할지 검토할 것.",
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.066416,
+    "r": 0.11111599999999999,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.11,
+    "realistic_growth": 0.10702586603998937,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.09685534331651668,
+        "5y": 0.15925117998554894,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.12025378206740378,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.12025378206740378,
+      "structural_discount_pct": 0.11,
+      "discounted_growth": 0.10702586603998937,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.10702586603998937
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.09466075940356757,
+      "two_stage": 0.2231206893920898,
+      "errors": {},
+      "divergence": 0.12845992998852224,
+      "divergence_warning": "[모델 괴리 경고] single_stage(9.47%)와 two_stage(22.31%)가 12.85%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "single_stage",
+    "model_choice_reason": "초안에서는 'WFE 다운사이클→회복' 서사로 two_stage를 검토했으나, 실제 계산 결과 single_stage(9.47%)와 two_stage(22.31%)의 괴리가 **12.85%p로 이 프로젝트 역대 최대**(CDNS 10.97%p·GWRE 9.03%p를 능가)이고 판정 자체가 갈렸다(two_stage: Gap -11.61%p 과대평가 vs single_stage: Gap +1.23%p 적정가/경계선). 결정적으로, two_stage가 요구하는 22.31% 성장은 KLA 자체의 2026-07-28 FY2027 1분기 가이던스(컨센서스를 근소하게 상회하는 수준에 그침, 'underwhelming'으로 시장이 평가해 당일 -6.18% 급락)와 정면으로 배치된다 - 회사 스스로도 22%대 성장을 시사하지 않는데 two_stage로 밸류에이션하면 이를 무시하는 셈이다. 반면 single_stage가 요구하는 9.47%는 Realistic Growth(10.70%)와 근접해 훨씬 현실적이다. Lynch 자동분류는 'cyclical'이라 GWRE(stalwart)와 완전히 동일한 전례는 아니지만, 이 프로젝트가 반복적으로 확인해온 원칙(모델선택이 판정을 뒤집을 만큼 크면 서사가 아니라 실제 가이던스・펀더멘털과 더 정합적인 쪽을 선택)을 그대로 적용해 single_stage로 전환했다.",
+    "value": 0.09466075940356757
+  },
+  "expectation_gap": 0.012365106636421805,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.10702586603998937,
+      "g_bull": 0.16053879905998406,
+      "g_bear": 0.053512933019994685,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": -0.16355860240375963,
+      "base": -0.2815388320843627,
+      "bear": -0.38094289319589436
+    },
+    "probabilities": {
+      "bull": 0.28584,
+      "base": 0.5,
+      "bear": 0.21416000000000002
+    },
+    "probability_rationale": "DRS=54.7 (중립점 50 대비 편차 +0.09) 기준: p_bull=28.6%, p_base=50.0%, p_bear=21.4%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.26910373696010476
+  },
+  "rar": -0.4917831450294312,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11111599999999999,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.09466075940356757,
+    "implied_growth_without_drs": 0.07848787464052845,
+    "gap_with_drs": 0.012365106636421805,
+    "gap_without_drs": 0.02853799139946092,
+    "judgment_with_drs": "적정가",
+    "judgment_without_drs": "적정가",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11111599999999999,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.09466075940356757,
+      "implied_growth_without_drs": 0.07848787464052845,
+      "gap_with_drs": 0.012365106636421805,
+      "gap_without_drs": 0.02853799139946092,
+      "judgment_with_drs": "적정가",
+      "judgment_without_drs": "적정가",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": false,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 0,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 79,
+    "final": 79
+  },
+  "judgment": "적정가/경계선",
+  "insurer_cross_check": null
+}

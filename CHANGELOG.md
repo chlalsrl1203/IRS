@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## KLA Corporation(KLAC) 정식분석 (2026-07-29, 엔진 v3.22) - 공식 큐 48/83, 역대 최대 모델괴리
+
+**경위**: 공식 83개 큐 48번째. 반도체 공정제어(웨이퍼 검사/계측) 분야의
+사실상 독점적 리더(시장점유율 약 50%). 분석일 전날(2026-07-28) FY2026
+4분기 실적을 발표했는데, 실적 자체는 컨센서스 상회했으나 FY2027 가이던스가
+"underwhelming"으로 평가돼 정규장에서 -6.18% 급락했다 - 시가총액은 이 하락
+반영 종가 기준 사용.
+
+**⚠️ 활성 수출통제 리스크**: 美 상무부가 KLA/Applied Materials/Lam Research
+반도체장비 3대사에 中 화훙반도체(Hua Hong) 등 선단공정 中 팹向 첨단장비
+수출을 사실상 불허하는 조치를 내렸다 - 中이 KLA 매출의 약 30%를 차지해
+재무영향이 실질적인 진행형 규제리스크. active_antitrust_or_regulatory_case=
+True로 반영(경쟁당국 반독점이 아니라 수출통제/무역정책 성격임을 명시).
+
+**모델선택 - 이 프로젝트 역대 최대 괴리**: single_stage(9.47%)와
+two_stage(22.31%)의 괴리가 **12.85%p**로 CDNS(10.97%p)·GWRE(9.03%p)를
+넘어서는 역대 최대치였고 판정이 갈렸다(two_stage: Gap -11.61%p 과대평가
+vs single_stage: Gap +1.24%p 적정가). two_stage가 요구하는 22.31% 성장은
+KLA 자체의 방금 나온 가이던스(컨센서스 근소상회에 그침)와 정면으로 배치돼
+single_stage(9.47%, Realistic Growth 10.70%와 근접)를 채택했다. Lynch
+자동분류는 'cyclical'(revenue_cagr_5y 15.9%가 fast_grower 기준도 동시
+충족하는 분류애매 케이스였으나, 원인이 FY2024 WFE다운사이클이라는 **아직도
+반복되는 구조적 패턴**이지 지나간 일회성 위기가 아니라 cyclical 유지가
+타당하다고 판단).
+
+**결과**:
+  DRS 54.72(cyclicality 17.52로 이 프로젝트 상위권) / Lynch cyclical /
+  single_stage(괴리 12.85%p)
+  Realistic Growth 10.70% / Implied Growth 9.47% / Gap +1.24%p
+  RAR -0.4918(scenario 모델 항상 two_stage 고정 - GWRE/FICO류와 동일한
+  Gap-RAR 반대방향 구조) / 강건성점검 통과 / Confidence 79
+  ** 판정: 적정가/경계선 **
+
+큐 페이지 48번 항목 ☑ 완료로 갱신, 다음 항목(49. Keysight)으로 포인터 이동.
+큐 페이지 편집 중 46/47번 사이 중복라인 사고가 발생해 replace_content로
+전체 재작성해 정정 - update_content 부분삽입은 이 사고가 세 번째라 향후
+항목 사이 삽입시 반드시 replace_content를 쓸 것으로 페이지 자체에 기록.
+
 ## PTC 정식분석 (2026-07-29, 엔진 v3.22) - 공식 큐 47/83, 46번 Ansys는 건너뜀
 
 **46번 Ansys(ANSS) 건너뜀**: Synopsys가 2025-07-17 $35B에 인수 완료(美/EU/
