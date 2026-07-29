@@ -1,5 +1,26 @@
 # CHANGELOG
 
+## PTC 정식분석 (2026-07-29, 엔진 v3.22) - 공식 큐 47/83, 46번 Ansys는 건너뜀
+
+**46번 Ansys(ANSS) 건너뜀**: Synopsys가 2025-07-17 $35B에 인수 완료(美/EU/
+UK/中 규제승인 전부 완료 확인). 더 이상 독립 상장사가 아니라 비교할 현재
+시가총액 자체가 없어 단독 밸류에이션이 무의미 - FTV/Atlas Copco/Halma/
+Experian과 동일 유형의 건너뜀으로 큐 페이지에 기록.
+
+**47번 PTC 정식분석**: GWRE와 달리 관측구간(FY2017~2025) 내내 흑자를 유지한
+꾸준한 성장 스토리라 CAGR 가드/기준연도 함정 이슈가 전혀 없었다. CAD/PLM
+'빅3'(PTC/Siemens/Dassault Systèmes) 중 하나로 ABI Research 평가에서 대형
+제조업체 PLM 부문 1위. 모델괴리도 1.15%p로 작아(GWRE의 9.03%p와 대조) 모델
+선택이 판정에 영향을 주지 않았다.
+
+**결과**:
+  DRS 44.40 / Lynch stalwart / two_stage(괴리 1.15%p, 미미)
+  Realistic Growth 11.46% / Implied Growth 5.86% / Gap +5.60%p
+  RAR +0.3266 / 강건성점검 통과 / Confidence 94
+  ** 판정: 저평가 가능성 **
+
+큐 페이지 47번 항목 ☑ 완료로 갱신, 다음 항목(48. KLA)으로 포인터 이동.
+
 ## Guidewire(GWRE) 정식분석 (2026-07-29, 엔진 v3.22) - 공식 큐 45/83
 
 **경위**: 공식 83개 큐 재개. 2026-07-26 06:10에 한 세션이 잠금을 걸고 SEC
