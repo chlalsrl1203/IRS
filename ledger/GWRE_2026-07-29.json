@@ -1,0 +1,262 @@
+{
+  "meta": {
+    "ticker": "GWRE",
+    "company_name": "Guidewire Software, Inc.",
+    "analyzed_at": "2026-07-29T09:23:52.549845+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001528396-25-000221) R3/R5/R8, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001528396-22-000106) R5/R8 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0001528396-19-000032) R4/R7 (FY2017~2019)",
+      "stockanalysis.com 시가총액 $13.27B (2026-07-28 종가)",
+      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인"
+    ]
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(9개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(10.13%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[모델 괴리 경고] single_stage(8.35%)와 two_stage(17.38%)가 9.03%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+  ],
+  "inputs": {
+    "ticker": "GWRE",
+    "company_name": "Guidewire Software, Inc.",
+    "revenue_by_year": {
+      "2017": 509533000,
+      "2018": 652849000,
+      "2019": 719514000,
+      "2020": 742307000,
+      "2021": 743267000,
+      "2022": 812614000,
+      "2023": 905341000,
+      "2024": 980497000,
+      "2025": 1202459000
+    },
+    "operating_income_by_year": {
+      "2017": 21861000,
+      "2018": -15624000,
+      "2019": 1471000,
+      "2020": -23886000,
+      "2021": -105584000,
+      "2022": -199447000,
+      "2023": -149490000,
+      "2024": -52573000,
+      "2025": 41068000
+    },
+    "operating_cashflow_by_year": {
+      "2017": 138759000,
+      "2018": 140459000,
+      "2019": 116126000,
+      "2020": 113066000,
+      "2021": 111587000,
+      "2022": -37940000,
+      "2023": 38395000,
+      "2024": 195748000,
+      "2025": 300867000
+    },
+    "capex_by_year": {
+      "2017": 6670000,
+      "2018": 12011000,
+      "2019": 48857000,
+      "2020": 25660000,
+      "2021": 28854000,
+      "2022": 21776000,
+      "2023": 17427000,
+      "2024": 18527000,
+      "2025": 20455000
+    },
+    "market_cap": 13270000000.0,
+    "net_debt": -474875000,
+    "ebitda": 64826000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.4,
+      0.25,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.22,
+    "subjective_input_basis": "Duck Creek Technologies 0.40(가장 직접적인 경쟁자 - 2023년 Vista Equity가 $2.6B에 인수해 비상장 PE 소유 상태로 저가・중견 보험사 시장을 공격적으로 공략 중), Sapiens International 0.25(P&C・생명보험 전반의 다각화 포트폴리오, EMEA 강세 + 북미 진출 확대), SAP/Salesforce 등 범용 엔터프라이즈SW 0.20(보험 전용은 아니나 일부 기능 대체 위협). 셋 다 [추정치]. market_share_trend=+0.5pp: 2026-07 WebSearch 확인 - Tier 1 대형 보험사 시장에서 GWRE 압도적 우위 유지(고객리뷰 4.6점 vs Duck Creek 3.2점), 다만 Duck Creek이 중견시장에서 진전 중이라 완전한 독주는 아님 - 완만한 긍정 추세로 설정[추정치]. active_antitrust_or_regulatory_case=False: 2026-07 WebSearch로 확인 결과 반독점・경쟁당국 조사는 발견되지 않았다. 2020년 클라우드 전환 관련 진술에 대한 증권집단소송과 2024년 원고측 로펌의 '조사 발표'(통상적 소송인 모집 공고)가 있으나 반독점・시장구조 규제와는 무관해 False 유지. demand_sensitivity=0.22: 보험사 대상 기간계 시스템(코어시스템) 판매는 다년 계약・필수업무 소프트웨어라 재량소비 성격은 약하나, 신규 도입・업그레이드 의사결정은 보험사 IT예산 사이클에 따라 지연될 수 있어 완전한 방어주는 아니다 - MCK(0.08)보다는 높고 BKNG(0.60)보다는 훨씬 낮은 중간값[추정치].",
+    "model_used": "single_stage",
+    "model_choice_reason": "초안에서는 'FY2025 흑자전환+가속 성장' 서사를 근거로 two_stage를 고려했으나, 실제 계산 결과 single_stage(8.35%)와 two_stage(17.38%)의 괴리가 9.03%p로 이 프로젝트에서 손꼽히게 크고(경고임계값 3%p의 3배), **판정 자체가 갈린다**(two_stage: Gap -6.11%p 과대평가 vs single_stage: Gap +2.92%p 적정가/경계선) - PH가 정확히 이 유형의 실수(모델선택이 판정을 뒤집음)로 재검증됐던 사례다. 엔진의 Lynch 자동분류가 'stalwart'로 나온 점이 결정적 근거다(revenue_cagr_5y 10.13%는 fast_grower 기준 15% 미달 - SaaS 전환기 매출은 견조했으나 폭발적 고성장은 아니었음). 이 프로젝트의 확립된 관행(CDNS: '성숙 stalwart이고 two_stage와의 괴리가 커 Gordon Growth 채택')을 그대로 따라 stalwart + 대형 모델괴리 조합에서는 더 보수적인 single_stage를 채택한다. GWRE가 여전히 SaaS 전환 초기 국면이라는 반론은 있을 수 있으나, 엔진 자체 분류 결과를 무시하고 서사만으로 더 낙관적인 모델을 고르는 것은 이 프로젝트가 반복적으로 경계해온 '근거 없는 자동화/서술형 근사'와 다를 바 없다고 판단했다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001528396-25-000221) R3/R5/R8, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001528396-22-000106) R5/R8 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0001528396-19-000032) R4/R7 (FY2017~2019)",
+      "stockanalysis.com 시가총액 $13.27B (2026-07-28 종가)",
+      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.13953759827074275,
+    "revenue_cagr_5y": 0.10127896550131066,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.2625572201253956,
+    "fcf0": 280412000,
+    "fcf_by_year": {
+      "2017": 132089000,
+      "2018": 128448000,
+      "2019": 67269000,
+      "2020": 87406000,
+      "2021": 82733000,
+      "2022": -59716000,
+      "2023": 20968000,
+      "2024": 177221000,
+      "2025": 280412000
+    },
+    "worst_yoy_revenue_growth": 0.0012932654548589717,
+    "worst_yoy_year": 2021,
+    "operating_margins": [
+      -0.1420539321670409,
+      -0.2454387938184673,
+      -0.16512010391664578,
+      -0.05361872601344012,
+      0.03415334743222014
+    ],
+    "net_debt_to_ebitda": -7.325378706074723
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 14.0,
+      "leverage": 2.0,
+      "cyclicality": 8.88,
+      "competition_intensity": 10.200000000000001
+    },
+    "score": 39.080000000000005
+  },
+  "lynch": {
+    "auto_classified": "stalwart",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.061724,
+    "r": 0.10642399999999999,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.1,
+    "realistic_growth": 0.11267154988398514,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.13953759827074275,
+        "5y": 0.10127896550131066,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.1251906109822057,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.1251906109822057,
+      "structural_discount_pct": 0.1,
+      "discounted_growth": 0.11267154988398514,
+      "lynch_type": "stalwart",
+      "cap_applied": null,
+      "final_realistic_growth": 0.11267154988398514
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.08352768019156906,
+      "two_stage": 0.17382049560546875,
+      "errors": {},
+      "divergence": 0.09029281541389969,
+      "divergence_warning": "[모델 괴리 경고] single_stage(8.35%)와 two_stage(17.38%)가 9.03%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "single_stage",
+    "model_choice_reason": "초안에서는 'FY2025 흑자전환+가속 성장' 서사를 근거로 two_stage를 고려했으나, 실제 계산 결과 single_stage(8.35%)와 two_stage(17.38%)의 괴리가 9.03%p로 이 프로젝트에서 손꼽히게 크고(경고임계값 3%p의 3배), **판정 자체가 갈린다**(two_stage: Gap -6.11%p 과대평가 vs single_stage: Gap +2.92%p 적정가/경계선) - PH가 정확히 이 유형의 실수(모델선택이 판정을 뒤집음)로 재검증됐던 사례다. 엔진의 Lynch 자동분류가 'stalwart'로 나온 점이 결정적 근거다(revenue_cagr_5y 10.13%는 fast_grower 기준 15% 미달 - SaaS 전환기 매출은 견조했으나 폭발적 고성장은 아니었음). 이 프로젝트의 확립된 관행(CDNS: '성숙 stalwart이고 two_stage와의 괴리가 커 Gordon Growth 채택')을 그대로 따라 stalwart + 대형 모델괴리 조합에서는 더 보수적인 single_stage를 채택한다. GWRE가 여전히 SaaS 전환 초기 국면이라는 반론은 있을 수 있으나, 엔진 자체 분류 결과를 무시하고 서사만으로 더 낙관적인 모델을 고르는 것은 이 프로젝트가 반복적으로 경계해온 '근거 없는 자동화/서술형 근사'와 다를 바 없다고 판단했다.",
+    "value": 0.08352768019156906
+  },
+  "expectation_gap": 0.029143869692416086,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.11267154988398514,
+      "g_bull": 0.12,
+      "g_bear": 0.05633577494199257,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": -0.1438178127506271,
+      "base": -0.16164440162039473,
+      "bear": -0.28541466870916155
+    },
+    "probabilities": {
+      "bull": 0.33275999999999994,
+      "base": 0.5,
+      "bear": 0.16724000000000003
+    },
+    "probability_rationale": "DRS=39.1 (중립점 50 대비 편차 -0.22) 기준: p_bull=33.3%, p_base=50.0%, p_bear=16.7%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.17641176537601622
+  },
+  "rar": -0.4514118868372984,
+  "stalwart_bias": {
+    "flagged": true,
+    "note": "[구조적 편향 플래그] lynch_type=stalwart, model=two_stage에서 RAR=-0.451(음수)이 산출됨. 이는 사업의 질이 나빠서가 아니라 two_stage 모델의 min_spread 가드가 stalwart 기본 시나리오 대부분에서 발동하는 구조적 모델 한계로 알려져 있다(v3.13). 메모 7번(RAR) 섹션에 이 사실을 반드시 명시하고, 다른 stalwart 종목과의 상대 비교로 해석할 것(절대값으로 '나쁜 종목'이라 판단 금지)."
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10642399999999999,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.08352768019156906,
+    "implied_growth_without_drs": 0.07204629645209312,
+    "gap_with_drs": 0.029143869692416086,
+    "gap_without_drs": 0.04062525343189202,
+    "judgment_with_drs": "적정가",
+    "judgment_without_drs": "적정가",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10642399999999999,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.08352768019156906,
+      "implied_growth_without_drs": 0.07204629645209312,
+      "gap_with_drs": 0.029143869692416086,
+      "gap_without_drs": 0.04062525343189202,
+      "judgment_with_drs": "적정가",
+      "judgment_without_drs": "적정가",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": false,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 0,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": -5
+    },
+    "raw_score": 74,
+    "final": 74
+  },
+  "judgment": "적정가/경계선",
+  "insurer_cross_check": null
+}
