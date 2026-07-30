@@ -1,5 +1,47 @@
 # CHANGELOG
 
+## Sea Limited(SE) 정식분석 (2026-07-30, 엔진 v3.22) - "매수 무조건 스크리닝" 요청 응답
+
+**경위**: "매수 평가가 무조건 나올 기업 스크리닝 후 분석까지 실행" 요청.
+engine/screener.py(v3.19 판별식)로 미분석 후보군(Coupang/Sea Limited/
+JD.com)을 훑음 - Coupang은 FCF가 FY2023 $1.76B→FY2024 $1.01B→FY2025
+$0.52B로 2년 연속 감소해 탈락, Sea Limited만 A등급 통과(Gap 추정
++17.39%p). **"통과=확정"이 아니라는 원칙대로(BKNG/PDD 선례) 정식
+run_analysis()로 재확정**.
+
+Shopee(SEA 이커머스 GMV 1위 ~53%)/Garena(게임)/Monee(핀테크) 지주회사,
+케이맨제도 법인이라 10-K 대신 20-F 공시. FY2020~2025 6개년 확보.
+
+**경쟁강도 - PDD와 같은 유형의 스크리너 사각지대를 사전 반영**: TikTok
+Shop이 동남아 GMV 점유율을 33%→44%로 1년만에 끌어올렸고(베트남에서는
+Shopee 64%→52%로 직접 잠식), 2026 Q1 실적에서 이미 마진압박(조정EPS
+컨센서스 미달, 개발인력 8% 감원)이 현실화된 점을 확인 후
+competitor_threat_weights/market_share_trend에 반영(스크리너의
+competition_intensity placeholder를 정식분석에서 실측 가정으로 대체 -
+PDD 선례와 동일 절차).
+
+**모델선택 - 이번엔 재검토 불필요**: 모델괴리 0.40%p(single_stage
+3.98%/two_stage 4.38%)로 GWRE/KLAC/VRT/KEYS와 달리 두 모델이 사실상
+일치 - two_stage 유지, 별도 가이던스 대조 불필요.
+
+**⚠️ Realistic Growth 25.00%는 fast_grower Lynch유형의 구조적 상한
+(LYNCH_TYPE_CAPS, 엔진 하드코딩)에 걸린 값이다 - 원시 입력(FCF CAGR
+83.03%, 매출 CAGR 39.28%)을 그대로 반영한 값이 아니다.** 공교롭게도
+회사 자체 FY2026 가이던스(매출 +25% 성장)와 수치가 겹치지만 이는
+우연의 일치이지 엔진이 가이던스를 참조해서 나온 결과가 아니다 - 오독
+방지를 위해 명시.
+
+**결과**:
+  DRS 52.40 / Lynch fast_grower / two_stage(괴리 0.40%p, 재검토 불필요)
+  Realistic Growth 25.00%(상한 캡) / Implied Growth 4.38% / Gap +20.62%p
+  RAR +1.2993 / 강건성점검 통과(flip 없음) / Confidence 89
+  ** 판정: 저평가 가능성 **
+GWRE/PTC(실적후 소멸)/KLAC/VRT/KEYS 5연속 "확실한 매수 아님" 이후 처음
+나온 뚜렷한 저평가 신호. 시장이 TikTok Shop 경쟁위협을 이미 상당히
+가격에 반영한 상태(-30% YoY, 52주 고점 대비 -46%)이면서도, 회사 자체
+가이던스(+25% 매출성장)조차 implied growth(4.38%)에 크게 못 미치는
+기대치로 가격이 형성돼 있다는 뜻.
+
 ## Keysight Technologies(KEYS) 정식분석 (2026-07-30, 엔진 v3.22) - 공식 큐 49/83
 
 **경위**: "뭐 사야돼, 살거 좀 찾아봐" 질문에 대한 응답으로 공식 큐 49번째
