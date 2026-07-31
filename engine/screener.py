@@ -10,6 +10,21 @@
     Implied Growth   <= 5.5% : 저평가군 11/13 ( 85%)  vs 과대평가군  0/18 ( 0%)
     둘 다 충족               : 저평가군 11/13 ( 85%)  vs 과대평가군  0/18 ( 0%)
 
+  ⚠️ **재검증 (2026-07-31, ledger/ 27종목 전수 - DECK/ACGL/ROP 등 ledger가
+  없는 v3.18 이전 분석은 이 재검증에서 제외돼 표본이 다름)**:
+    screen() 실제 호출        : 저평가군 11/11(100%)  vs 과대평가군  0/2 ( 0%)
+  임계값·estimate_drs() 둘 다 안 건드렸다 - 그대로 재검증만 했고 여전히
+  깨끗하게 통과한다. **주의**: 처음엔 "저평가군의 엔진 정식 Implied
+  Growth 값(DRS 전체 5요소 반영)을 5.5% 임계값과 직접 비교"하는 방식으로
+  재검증했다가 DUOL/BKNG/PTC 3건이 근소하게(0.5%p 이내) 못 미치는
+  것처럼 보여 "근접탈락" 보정 로직을 추가했었다 - 그런데 이는 잘못된
+  비교였다. **screen()은 정식 DRS가 아니라 estimate_drs()의 자체 근사치
+  (2요소 실측+3요소 중앙값 가정)로 별도의 r을 계산**하므로, 정식
+  Implied Growth와 스크리너 추정 Implied Growth는 애초에 다른 수치다.
+  실제로 screen()을 그대로 호출해보니 11/11 전부 통과했다 - 가짜
+  결함을 근거로 코드를 고칠 뻔한 사례라 기록해둔다(v3.12 가짜버전
+  사건과 같은 계열의 교훈: 검증 없이 그럴듯한 원인을 확정하지 말 것).
+
 문제는 Implied Growth/Realistic Growth 둘 다 엔진을 돌려야 나오는 값이라
 스크리닝 단계에서는 쓸 수 없다는 것이다. 그래서 **관측 가능한 시장지표로
 역산**해서 1차 필터로 쓴다.
@@ -232,6 +247,8 @@ def screen(c: Candidate, drs_override: float = None,
     rg = binding * (1 - STRUCTURAL_DISCOUNT_MEDIAN)
     gap = rg - ig
 
+    review_flags = []
+
     if ig > MAX_IMPLIED_GROWTH:
         failures.append(
             f"내재성장률 추정 {ig*100:.2f}% > {MAX_IMPLIED_GROWTH*100:.1f}% "
@@ -254,7 +271,6 @@ def screen(c: Candidate, drs_override: float = None,
     # ⚠️ FCF CAGR이 음수면 이 플래그를 붙이지 않는다. capex에 '눌린' 것과 FCF가
     # 절대금액으로 줄어드는 것은 다른 문제이고, 후자는 capex를 성장투자로
     # 재분류해도 구제되지 않는다(UNH가 -5.18%로 잡혀 이 가드를 추가했다).
-    review_flags = []
     rg_from_revenue = c.revenue_cagr_5y * (1 - STRUCTURAL_DISCOUNT_MEDIAN)
     fcf_binds = 0 < c.fcf_cagr_5y < c.revenue_cagr_5y
     if fcf_binds and rg < MIN_REALISTIC_GROWTH <= rg_from_revenue:
