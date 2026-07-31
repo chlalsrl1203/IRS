@@ -93,6 +93,43 @@ path = save_ledger(result)                    # ledger/<TICKER>_<날짜>.json
 불변(sensitivity_check와 무관한 경로였으므로). 9종목 전체를 저장된 ledger
 입력값으로 재실행해 이 영향 범위를 직접 확인했다(상세는 CHANGELOG).
 
+## 코드 변경 원칙 - Simplicity First (2026-07-31 도입)
+
+이 CLAUDE.md는 이미 "Think Before Coding"(model_choice_reason·subjective_
+input_basis 필수화), "Surgical Changes"(git 안전수칙, update_content vs
+replace_content 교훈), "Goal-Driven Execution"(run_analysis()/save_ledger()
+강제, CI)을 각각 사고 이후 구체적 가드로 갖추고 있다. 빠져 있던 한 가지를
+명문화한다 - **engine/pipeline.py·engine/expectation_gap_engine.py에 새
+기능을 배선할 때는 그 시점까지 실증된 필요만큼만 넣는다.**
+
+이미 이 방식으로 해온 선례가 있다(원칙이 아니라 관행이었던 걸 규칙으로
+승격하는 것):
+- `capex_intensity_from_series`/`fcf_conservatism_adjustment`(v3.6/v3.7
+  때 만들어졌으나): "실증사례가 없어 서둘러 넣기보다 필요한 사례가 실제로
+  나왔을 때 구체적 요구사항을 갖고 배선하는 쪽을 택했다" - NVO 스크리닝이
+  실사례가 되고서야 v3.20에서 배선.
+- 보험업 P/B 임계값: ACGL·PGR 단 2건으로 "정상범위" 컷오프를 고정하지
+  않고, 숫자만 제공해 분석자가 해석하게 함(v3.22).
+- GEN의 M&A 성장왜곡: 세그먼트 분리를 표준 입력 스키마로 만들지 않고,
+  실증사례가 더 쌓일 때까지 수작업 대조를 요구하는 주석으로만 남김.
+
+앞으로 새 기능을 pipeline.py에 추가하기 전 자문할 것:
+1. 지금 분석 중인 종목이 실제로 이 기능을 요구하는가, 아니면 "나중에
+   필요할 것 같아서"인가? 후자면 넣지 않는다.
+2. 기존 필드(capex_classification/cagr_base_year_override/is_insurer
+   패턴처럼) 값이 없을 때는 기존 동작을 그대로 유지하는 opt-in으로
+   설계할 수 있는가? 강제 분기보다 opt-in을 우선한다.
+3. 100줄이면 될 걸 300줄로 짜고 있지 않은가 - "시니어 엔지니어가 보면
+   과하다고 할까?"가 기준이다.
+4. 기존 계산 로직(예: `realistic_growth_estimate`의 가중평균)을 새
+   기능을 위해 중복 재구현하고 있지 않은가 - 중복 자체가 두 계산이
+   미묘하게 어긋나는 새로운 버그를 만든다(capex_classification 배선 시
+   `revenue_weighted_cagr`을 별도 재계산하지 말라고 명시한 이유와 동일).
+
+이 원칙은 종목 분석 스크립트(scripts/analyze_*.py)에는 적용하지 않는다 -
+티커별 스크립트는 반복돼도 재현성·감사가능성이 더 중요하다(이미 CLAUDE.md
+다른 곳에서 확립된 관행). 대상은 engine/ 아래 공유 로직뿐이다.
+
 ## 과거 기록이 있는 종목을 재검증할 때 (v3.19)
 
 이 프로젝트가 발견한 사고 대부분은 **과거 기록과 대조하다가** 잡혔다
