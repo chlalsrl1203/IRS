@@ -1,0 +1,244 @@
+{
+  "meta": {
+    "ticker": "DUOL",
+    "company_name": "Duolingo, Inc.",
+    "analyzed_at": "2026-07-31T11:16:13.087568+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001628280-26-012494) R3/R5/R7, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 10-K FY2022(0001562088-23-000052) R5/R7 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $6.22B, 주가 $140.17(전일종가), 2026-07-31 조회",
+      "WebSearch: Duolingo FY2026 bookings/매출/마진 가이던스(2026-02-27 발표), AI대체 우려 서사, 2026-08-05 Q2 실적발표 예정 확인"
+    ]
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(45.03%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+  ],
+  "inputs": {
+    "ticker": "DUOL",
+    "company_name": "Duolingo, Inc.",
+    "revenue_by_year": {
+      "2020": 161696000,
+      "2021": 250772000,
+      "2022": 369495000,
+      "2023": 531109000,
+      "2024": 748024000,
+      "2025": 1037589000
+    },
+    "operating_income_by_year": {
+      "2020": -16011000,
+      "2021": -60007000,
+      "2022": -65195000,
+      "2023": -13259000,
+      "2024": 62595000,
+      "2025": 135570000
+    },
+    "operating_cashflow_by_year": {
+      "2020": 17708000,
+      "2021": 9170000,
+      "2022": 53656000,
+      "2023": 153614000,
+      "2024": 285513000,
+      "2025": 387823000
+    },
+    "capex_by_year": {
+      "2020": 3376000,
+      "2021": 3586000,
+      "2022": 5562000,
+      "2023": 3191000,
+      "2024": 12116000,
+      "2025": 18096000
+    },
+    "market_cap": 6220000000.0,
+    "net_debt": -1140467000,
+    "ebitda": 149961000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.3,
+      0.15,
+      0.1
+    ],
+    "market_share_trend_pp_per_year": -1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "범용 AI 챗봇(ChatGPT 등) 0.30(2026-07 WebSearch로 확인: 'AI가 언어학습앱 수요를 대체할 것'이 주가급락의 핵심 서사 - 무료로 대화연습이 가능해 Duolingo의 핵심가치제안을 직접 위협. 다만 Duolingo 자체도 Duolingo Max(GPT-4 기반 AI튜터 기능)를 제품에 내재화해 대응 중이라 완전한 대체재는 아님[추정치]). Babbel/Busuu 등 구독형 경쟁앱 0.15(시장점유율은 Duolingo가 여전히 압도적 1위). Rosetta Stone(IXL Learning 계열) 0.10. market_share_trend=-1.0pp: AI발 대체 우려를 반영해 소폭 음수로 설정하되, 실제 DAU/MAU 지표는 계속 성장 중이라는 점과 균형 - 극단적 음수는 아직 근거 부족[추정치]. active_antitrust_or_regulatory_case=False: 2026-07 WebSearch로 확인한 현재 진행 중인 반독점・규제조사 없음. demand_sensitivity=0.20: 교육용 구독앱은 경기민감도가 낮은 편(습관재+저가구독)이나 가처분소득 위축 시 무료버전으로의 이탈 가능성 있어 완전한 비민감군은 아님[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️핵심 판단: Duolingo는 FY2020~2025 5년간 매출이 6.4배(연 35~55%) 성장한 전형적 고성장기였으나, 2026-02-27 발표한 FY2026 가이던스에서 bookings 성장률을 10~12%로 명시적으로 낮췄다(무료사용자 경험에 $5000만+ 투자하는 전략적 전환, 조정EBITDA마진도 29.5%->25% 하락 예고) - 이는 KEYS/VRT처럼 '시장이 아직 못 따라온 가속'이 아니라 정반대로 '회사가 스스로 인정한 감속'이다. 명시적 고성장구간 이후 정상화를 모델링하는 two_stage가 이 전환 시점에 이론적으로 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD와 동일 절차). 첫 분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001628280-26-012494) R3/R5/R7, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 10-K FY2022(0001562088-23-000052) R5/R7 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $6.22B, 주가 $140.17(전일종가), 2026-07-31 조회",
+      "WebSearch: Duolingo FY2026 bookings/매출/마진 가이던스(2026-02-27 발표), AI대체 우려 서사, 2026-08-05 Q2 실적발표 예정 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.41082213323758765,
+    "revenue_cagr_5y": 0.4503246102127074,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.9156443078001484,
+    "fcf0": 369727000,
+    "fcf_by_year": {
+      "2020": 14332000,
+      "2021": 5584000,
+      "2022": 48094000,
+      "2023": 150423000,
+      "2024": 273397000,
+      "2025": 369727000
+    },
+    "worst_yoy_revenue_growth": 0.38710656342577243,
+    "worst_yoy_year": 2025,
+    "operating_margins": [
+      -0.2392890753353644,
+      -0.1764435242696112,
+      -0.024964743583708805,
+      0.08368047014534293,
+      0.13065867120796384
+    ],
+    "net_debt_to_ebitda": -7.605090656904128
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 20.0,
+      "leverage": 2.0,
+      "cyclicality": 4.8,
+      "competition_intensity": 12.6
+    },
+    "score": 43.4
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06302,
+    "r": 0.10772000000000001,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.1,
+    "realistic_growth": 0.25,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.41082213323758765,
+        "5y": 0.4503246102127074,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.4256355621032576,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.4256355621032576,
+      "structural_discount_pct": 0.1,
+      "discounted_growth": 0.38307200589293183,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.04556962678423554,
+      "two_stage": 0.05546874999999998,
+      "errors": {},
+      "divergence": 0.009899123215764444,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️핵심 판단: Duolingo는 FY2020~2025 5년간 매출이 6.4배(연 35~55%) 성장한 전형적 고성장기였으나, 2026-02-27 발표한 FY2026 가이던스에서 bookings 성장률을 10~12%로 명시적으로 낮췄다(무료사용자 경험에 $5000만+ 투자하는 전략적 전환, 조정EBITDA마진도 29.5%->25% 하락 예고) - 이는 KEYS/VRT처럼 '시장이 아직 못 따라온 가속'이 아니라 정반대로 '회사가 스스로 인정한 감속'이다. 명시적 고성장구간 이후 정상화를 모델링하는 two_stage가 이 전환 시점에 이론적으로 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD와 동일 절차). 첫 분석이라 대조할 과거 기록 없음.",
+    "value": 0.05546874999999998
+  },
+  "expectation_gap": 0.19453125000000002,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.25,
+      "g_bull": 0.25,
+      "g_bear": 0.125,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7429995199623523,
+      "base": 0.7429995199623523,
+      "bear": 0.2173752135424356
+    },
+    "probabilities": {
+      "bull": 0.3198,
+      "base": 0.5,
+      "bear": 0.1802
+    },
+    "probability_rationale": "DRS=43.4 (중립점 50 대비 편차 -0.13) 기준: p_bull=32.0%, p_base=50.0%, p_bear=18.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.6482820199454833
+  },
+  "rar": 1.4937373731462749,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10772000000000001,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.05546874999999998,
+    "implied_growth_without_drs": 0.03184051513671873,
+    "gap_with_drs": 0.19453125000000002,
+    "gap_without_drs": 0.21815948486328127,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10772000000000001,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.05546874999999998,
+      "implied_growth_without_drs": 0.03184051513671873,
+      "gap_with_drs": 0.19453125000000002,
+      "gap_without_drs": 0.21815948486328127,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": null
+}
