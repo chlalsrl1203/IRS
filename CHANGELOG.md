@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## SBC(주식보상비용) 병기 교차검증 배선 (2026-08-01, 엔진 v3.23) - 방법론 감사 Critical-1 해소
+
+**경위**: "투자 및 AI 전문회사가 감사할 때만큼" 요청에 따라 engine 코드 정독 +
+ledger 36종목 전수 실측으로 방법론 전면감사(`docs/AUDIT_2026-08-01_methodology.md`)
+를 수행, Critical 1건을 확인했다: `FCF = OCF - capex` 정의가 SBC를 현금흐름표의
+비현금비용 가산 항목 그대로 따라가 암묵적으로 주주 귀속 현금처럼 취급한다.
+SEC 원자료로 실측한 SBC/FCF 비율은 TTD 62%/WDAY 59%/MNDY 57%/DUOL 37%/
+UBER 19%/ROP 7%/ACGL 2% - 업종별 편차가 극심해 SBC 반영 여부가 순위 자체를
+바꾼다.
+
+**배선**: `AnalysisInputs.sbc_by_year: dict = None`(opt-in, is_insurer과 동일
+"병기·자동판정 안 함" 원칙). 값을 넣으면 최근연도 SBC를 FCF0에서 차감한 대안
+Implied Growth/Gap/판정을 같은 model_used로 계산해 `sbc_cross_check`에
+담는다. 판정이 뒤집히면 `data_limitations`에 명시 경고, SBC가 FCF의 30%
+이상이면 여유폭 주의 경고, SBC가 FCF보다 크면 `[Model Not Applicable]`.
+테스트 7건 추가(flip/no-flip/Not-Applicable/음수가드/최근연도 필수 전부 커버).
+
+**ledger 보유 7종목 전부 이 경로로 갱신**:
+
+| 종목 | SBC/FCF | Gap(기존) | Gap(SBC차감) | 판정 변화 |
+|---|---|---|---|---|
+| TTD | 62% | +17.56%p | +6.07%p | 유지 |
+| WDAY | 59% | +11.56%p | **+1.26%p** | **저평가→적정가(SBC차감 시나리오만)** |
+| MNDY | 57% | +23.28%p | +13.11%p | 유지 |
+| DUOL | 37% | +19.45%p | +13.96%p | 유지 |
+| UBER | 19% | +11.78%p | +9.28%p | 유지 |
+| ROP | 7% | +7.74%p | +6.89%p | 유지 |
+| ACGL | 2% | +24.38%p | +24.03%p | 유지 |
+
+각 종목의 **공식 판정(SBC 미차감 기준)은 전부 그대로**다 - 이 배선은 어느 쪽이
+"맞는 FCF"인지 자동 결정하지 않고 병기만 한다. WDAY만 SBC차감 시나리오에서
+판정이 뒤집혀 `data_limitations`에 경고가 남는다.
+
+TTD/DUOL 원장은 v3.23 재계산으로 `ledger/TTD_2026-08-01.json` /
+`ledger/DUOL_2026-08-01.json`으로 통합했다(기존 07-31판은 핵심 수치가
+동일하고 SBC 필드만 추가된 것이라 새 분석으로 취급하지 않음 - 07-31판은
+삭제, 참조하던 `scripts/deep_analysis_9_2026_08_01.py`도 경로 갱신).
+
 ## 재검토 대상 4건 처리 (2026-08-01) - UBER 재분석 / ROP 상충해소 / TIGR 방법론 제외 / CSU·EVO 보류
 
 **경위**: "마스터 랭킹" 작업 중 재검토 필요로 표시해둔 5건(UBER/CSU/TIGR/

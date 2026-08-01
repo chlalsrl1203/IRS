@@ -94,6 +94,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.23(2026-08-01 방법론 감사 Critical-1): SBC 병기 교차검증.
+        # SEC 20-F R8 현금흐름표 "Share-based compensation" FY2025 실측.
+        sbc_by_year={2025: 177011 * K},
+
         cagr_base_year_override=2021,
         cagr_base_year_override_reason=(
             "기본 기준연도 FY2020(IPO 초기·팬데믹 첫해)의 OCF가 -$37.175M로 "

@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "TTD",
     "company_name": "The Trade Desk, Inc.",
-    "analyzed_at": "2026-07-31T23:47:59.259643+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-01T10:18:33.626204+00:00",
+    "engine_version": "v3.23",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001671933-26-000014) R3/R5/R7, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2022(0001671933-23-000007) R5/R7 (FY2020~2022)",
@@ -12,7 +12,8 @@
     ]
   },
   "data_limitations": [
-    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(28.21%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(28.21%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[SBC 교차검증] SBC가 FCF0의 62%로 상당히 크다 (SBC차감 시 Gap +17.56%p -> +6.07%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
   ],
   "inputs": {
     "ticker": "TTD",
@@ -88,7 +89,10 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2025": 490627000
+    }
   },
   "derived": {
     "revenue_cagr_3y": 0.2244193656887754,
@@ -240,5 +244,14 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 490627000,
+    "sbc_to_fcf_pct": 0.6165902150280881,
+    "fcf0_sbc_adjusted": 305083000,
+    "implied_growth_sbc_adjusted": 0.11191368103027341,
+    "gap_sbc_adjusted": 0.0606566378490202,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  }
 }

@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "MNDY",
     "company_name": "monday.com Ltd.",
-    "analyzed_at": "2026-08-01T04:28:21.509774+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-01T10:18:33.674906+00:00",
+    "engine_version": "v3.23",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001178913-26-000870) R2/R4/R8, as-filed, 2026-07-31 조회",
       "SEC EDGAR 20-F FY2022(0001178913-23-000966) R4/R8 (FY2020~2022)",
@@ -13,7 +13,8 @@
   },
   "data_limitations": [
     "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2021년을 기준으로 4년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020(IPO 초기·팬데믹 첫해)의 OCF가 -$37.175M로 적자라 FCF가 음수(-$42.656M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 자체가 거부된다. FY2021(상장 직후, FCF 첫 플러스전환 +$2.597M)을 기준연도로 삼아 4년 구간 CAGR을 산출한다.",
-    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(41.40%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(41.40%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[SBC 교차검증] SBC가 FCF0의 57%로 상당히 크다 (SBC차감 시 Gap +23.28%p -> +13.11%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
   ],
   "inputs": {
     "ticker": "MNDY",
@@ -89,7 +90,10 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2025": 177011000
+    }
   },
   "derived": {
     "revenue_cagr_3y": 0.33394935709847084,
@@ -241,5 +245,14 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 177011000,
+    "sbc_to_fcf_pct": 0.5711837935863595,
+    "fcf0_sbc_adjusted": 132891000,
+    "implied_growth_sbc_adjusted": 0.11891098022460934,
+    "gap_sbc_adjusted": 0.13108901977539067,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  }
 }

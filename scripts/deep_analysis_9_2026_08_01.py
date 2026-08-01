@@ -64,8 +64,8 @@ TODAY = date(2026, 8, 1)
 LEDGERS = {
     "SE": "ledger/SE_2026-07-30.json",
     "RMD": "ledger/RMD_2026-07-31.json",
-    "DUOL": "ledger/DUOL_2026-07-31.json",
-    "TTD": "ledger/TTD_2026-07-31.json",
+    "DUOL": "ledger/DUOL_2026-08-01.json",
+    "TTD": "ledger/TTD_2026-08-01.json",
     "MNDY": "ledger/MNDY_2026-08-01.json",
     "WDAY": "ledger/WDAY_2026-08-01.json",
 }

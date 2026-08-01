@@ -85,6 +85,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.23(2026-08-01 방법론 감사 Critical-1): SBC 병기 교차검증.
+        # SEC 10-K R8 현금흐름표 "Stock-based compensation" FY2025 실측.
+        sbc_by_year={2025: 1826 * M},
+
         cagr_base_year_override=2022,
         cagr_base_year_override_reason=(
             "기본 기준연도 FY2020(팬데믹 직격탄)의 OCF가 -$2,745M 적자라 "

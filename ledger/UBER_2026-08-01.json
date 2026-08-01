@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "UBER",
     "company_name": "Uber Technologies, Inc.",
-    "analyzed_at": "2026-08-01T06:48:28.458612+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-01T10:18:33.817743+00:00",
+    "engine_version": "v3.23",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001543151-26-000015) R3/R5/R8, as-filed, 2026-08-01 조회",
       "SEC EDGAR 10-K FY2022(0001543151-23-000010) R5/R8 (FY2020~2022)",
@@ -89,7 +89,10 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2025": 1826000000
+    }
   },
   "derived": {
     "revenue_cagr_3y": 0.17730580736694201,
@@ -241,5 +244,14 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 1826000000,
+    "sbc_to_fcf_pct": 0.1870326743828741,
+    "fcf0_sbc_adjusted": 7937000000,
+    "implied_growth_sbc_adjusted": 0.06678390502929685,
+    "gap_sbc_adjusted": 0.09279132160095097,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  }
 }

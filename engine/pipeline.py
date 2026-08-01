@@ -179,6 +179,17 @@ class AnalysisInputs:
     shareholders_equity_by_year: dict = None
     dividends_paid_by_year: dict = None
 
+    # 주식보상비용(SBC) 병기 교차검증 - v3.23에서 배선(2026-08-01 방법론 감사 Critical-1).
+    # FCF = OCF - capex 정의는 SBC를 비현금비용으로 가산하는 회계처리를 그대로
+    # 따라가므로, SBC를 암묵적으로 주주 귀속 현금처럼 취급한다. SBC는 회계적으로만
+    # 비현금일 뿐 지분 희석을 통한 실질적 가치이전이다. 감사에서 TTD(SBC/FCF 62%)·
+    # WDAY(59%)처럼 업종별 편차가 극심함을 확인했고, WDAY는 SBC를 차감하면 판정 자체가
+    # 뒤집혔다(저평가 가능성 -> 적정가). None이면 기존 동작(SBC를 FCF에 포함) 그대로다 -
+    # 값을 넣으면 SBC를 차감한 대안 Implied Growth/Gap을 **병기**한다(어느 쪽이
+    # 맞는지 자동 판정하지 않는다 - is_insurer가 지속가능성장률을 병기만 하는 것과
+    # 동일 원칙). 최근 회계연도 값만 쓴다(fcf0와 동일 시점 비교를 위해).
+    sbc_by_year: dict = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -262,6 +273,24 @@ class AnalysisInputs:
                 f"(Fiscal.ai 등) abs()로 부호를 정규화할 것. 그대로 넣으면 FCF가 "
                 f"capex의 2배만큼 과대계상된다(v3.19 가드)."
             )
+
+        # v3.23: SBC도 capex와 동일한 부호규약 함정이 있다(현금흐름표에
+        # 비현금비용 가산 항목으로 항상 양수 표기됨) - 음수가 들어오면 데이터
+        # 소스 부호규약을 의심할 것.
+        if self.sbc_by_year is not None:
+            negative_sbc = {y: v for y, v in self.sbc_by_year.items() if v < 0}
+            if negative_sbc:
+                raise ValueError(
+                    f"sbc_by_year에 음수 값이 있다: {negative_sbc}. SBC는 항상 "
+                    f"양수(비용 규모)로 넣어야 한다."
+                )
+            latest_year = max(self.revenue_by_year)
+            if latest_year not in self.sbc_by_year:
+                raise ValueError(
+                    f"sbc_by_year에 최근 회계연도({latest_year})가 없다 - fcf0와 "
+                    f"동일 시점의 SBC가 있어야 병기 계산이 가능하다."
+                )
+
         if self.margin_years is None:
             self.margin_years = sorted(self.revenue_by_year)[-5:]
 
@@ -588,12 +617,77 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
                 f"P/B={price_to_book:.2f}배는 별도로 판정 신뢰도 판단에 참고할 것."
             )
 
+    # ── v3.23: SBC 병기 교차검증(2026-08-01 방법론 감사 Critical-1) ─────────
+    # FCF = OCF - capex는 SBC를 암묵적으로 주주 귀속 현금으로 취급한다.
+    # sbc_by_year가 있으면 최근연도 SBC를 fcf0에서 추가로 차감한 대안 시나리오를
+    # 같은 model_used로 계산해 병기한다 - 어느 쪽이 "맞다"고 자동 판정하지 않는다
+    # (is_insurer가 지속가능성장률만 병기하고 판정을 덮어쓰지 않는 것과 동일 원칙).
+    sbc_cross_check = None
+    if inputs.sbc_by_year is not None:
+        sbc0 = inputs.sbc_by_year[years[-1]]
+        fcf0_sbc_adjusted = fcf0 - sbc0
+        if fcf0_sbc_adjusted <= 0:
+            sbc_cross_check = {
+                "sbc0": sbc0,
+                "sbc_to_fcf_pct": sbc0 / fcf0 if fcf0 else None,
+                "fcf0_sbc_adjusted": fcf0_sbc_adjusted,
+                "implied_growth_sbc_adjusted": None,
+                "gap_sbc_adjusted": None,
+                "judgment_sbc_adjusted": None,
+                "judgment_flipped": None,
+            }
+            data_limitations.append(
+                f"[SBC 교차검증] SBC(${sbc0:,.0f})를 FCF0(${fcf0:,.0f})에서 차감하면 "
+                f"음수가 되어 SBC차감 시나리오는 [Model Not Applicable]이다 - SBC가 "
+                f"FCF보다 큰 비중을 차지한다는 뜻으로 그 자체가 경고 신호다."
+            )
+        else:
+            models_sbc = compare_implied_growth_models(
+                inputs.market_cap, fcf0_sbc_adjusted, r, n, g_terminal
+            )
+            ig_sbc = models_sbc[inputs.model_used]
+            gap_sbc = realistic_growth - ig_sbc if ig_sbc is not None else None
+            if gap_sbc is None:
+                judgment_sbc = None
+            elif gap_sbc >= 0.05:
+                judgment_sbc = "저평가 가능성"
+            elif gap_sbc <= -0.05:
+                judgment_sbc = "과대평가 가능성"
+            else:
+                judgment_sbc = "적정가/경계선"
+            judgment_flipped = judgment_sbc is not None and judgment_sbc != judgment
+            sbc_cross_check = {
+                "sbc0": sbc0,
+                "sbc_to_fcf_pct": sbc0 / fcf0,
+                "fcf0_sbc_adjusted": fcf0_sbc_adjusted,
+                "implied_growth_sbc_adjusted": ig_sbc,
+                "gap_sbc_adjusted": gap_sbc,
+                "judgment_sbc_adjusted": judgment_sbc,
+                "judgment_flipped": judgment_flipped,
+            }
+            sbc_pct = sbc0 / fcf0
+            if judgment_flipped:
+                data_limitations.append(
+                    f"[SBC 교차검증 경고] SBC가 FCF0의 {sbc_pct*100:.0f}%를 차지한다. "
+                    f"SBC를 실제 비용으로 차감하면 판정이 '{judgment}' -> "
+                    f"'{judgment_sbc}'로 **뒤집힌다**(Gap {gap*100:+.2f}%p -> "
+                    f"{gap_sbc*100:+.2f}%p, 2026-08-01 방법론 감사에서 WDAY가 실제로 "
+                    f"이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 "
+                    f"민감하므로 액면 그대로 신뢰하지 말 것."
+                )
+            elif sbc_pct >= 0.30:
+                data_limitations.append(
+                    f"[SBC 교차검증] SBC가 FCF0의 {sbc_pct*100:.0f}%로 상당히 크다 "
+                    f"(SBC차감 시 Gap {gap*100:+.2f}%p -> {gap_sbc*100:+.2f}%p). "
+                    f"판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
+                )
+
     return {
         "meta": {
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.22",
+            "engine_version": "v3.23",
             "data_sources": inputs.data_sources,
         },
         "data_limitations": data_limitations,
@@ -648,6 +742,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         "confidence": confidence,
         "judgment": judgment,
         "insurer_cross_check": insurer_cross_check,
+        "sbc_cross_check": sbc_cross_check,
     }
 
 

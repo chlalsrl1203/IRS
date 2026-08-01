@@ -723,3 +723,76 @@ def test_insurer_cross_check_no_warning_when_growth_estimates_agree():
         )
         assert not any("보험업 교차검증 경고" in x for x in result["data_limitations"])
     assert not any("CAGR 기준연도 변경" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.23: SBC 병기 교차검증 (2026-08-01 방법론 감사 Critical-1에서 배선)
+# ----------------------------------------------------------------------
+
+def test_sbc_cross_check_none_when_not_provided():
+    """sbc_by_year를 안 넘기면 기존 동작 그대로(opt-in) - None이어야 한다."""
+    result = run_analysis(cdns_inputs())
+    assert result["sbc_cross_check"] is None
+
+
+def test_sbc_by_year_rejects_negative_values():
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(sbc_by_year={2025: -1000})
+    assert "sbc_by_year" in str(exc.value)
+
+
+def test_sbc_by_year_requires_latest_year():
+    """fcf0와 동일 시점 비교가 전제이므로 최근 회계연도가 없으면 거부한다."""
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(sbc_by_year={2020: 1000})
+    assert "최근 회계연도" in str(exc.value)
+
+
+def test_sbc_cross_check_small_sbc_no_warning():
+    """SBC가 FCF의 5%면 판정도 그대로고 경고도 안 남아야 한다."""
+    fcf0 = 1728781000 - 141871000
+    result = run_analysis(cdns_inputs(sbc_by_year={2025: int(fcf0 * 0.05)}))
+    cross = result["sbc_cross_check"]
+    assert cross["judgment_flipped"] is False
+    assert not any("SBC 교차검증" in x for x in result["data_limitations"])
+
+
+def test_sbc_cross_check_large_sbc_warns_without_flip():
+    """SBC가 30% 이상이면 판정이 안 뒤집혀도 경고는 남아야 한다."""
+    fcf0 = 1728781000 - 141871000
+    result = run_analysis(cdns_inputs(sbc_by_year={2025: int(fcf0 * 0.40)}))
+    cross = result["sbc_cross_check"]
+    assert cross["judgment_flipped"] is False
+    assert any(x.startswith("[SBC 교차검증]") for x in result["data_limitations"])
+
+
+def test_sbc_cross_check_flips_judgment():
+    """
+    2026-08-01 방법론 감사에서 실제로 WDAY가 이 경로로 뒤집힌 사례를 재현한다.
+    시총을 낮춰 저평가 가능성으로 만든 뒤 SBC를 크게 넣으면 적정가로 돌아와야 한다.
+    """
+    fcf0 = 1728781000 - 141871000
+    low_mc = 40_000_000_000
+    baseline = run_analysis(cdns_inputs(market_cap=low_mc))
+    assert baseline["judgment"] == "저평가 가능성"
+
+    result = run_analysis(cdns_inputs(
+        market_cap=low_mc, sbc_by_year={2025: int(fcf0 * 0.5)}
+    ))
+    cross = result["sbc_cross_check"]
+    assert result["judgment"] == "저평가 가능성"  # 원 판정은 그대로 유지
+    assert cross["judgment_sbc_adjusted"] == "적정가/경계선"  # SBC차감 시나리오만 뒤집힘
+    assert cross["judgment_flipped"] is True
+    assert any("SBC 교차검증 경고" in x for x in result["data_limitations"])
+    assert any("뒤집힌다" in x for x in result["data_limitations"])
+
+
+def test_sbc_cross_check_not_applicable_when_sbc_exceeds_fcf():
+    """SBC가 FCF보다 크면 차감시 FCF가 음수가 되어 DCF 자체가 불가능(Not Applicable)."""
+    fcf0 = 1728781000 - 141871000
+    result = run_analysis(cdns_inputs(sbc_by_year={2025: int(fcf0 * 1.5)}))
+    cross = result["sbc_cross_check"]
+    assert cross["fcf0_sbc_adjusted"] < 0
+    assert cross["implied_growth_sbc_adjusted"] is None
+    assert cross["judgment_sbc_adjusted"] is None
+    assert any("Not Applicable" in x for x in result["data_limitations"])

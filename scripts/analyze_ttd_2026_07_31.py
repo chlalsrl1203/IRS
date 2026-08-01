@@ -89,6 +89,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.23(2026-08-01 방법론 감사 Critical-1): SBC 병기 교차검증.
+        # SEC 10-K R7 현금흐름표 "Stock-based compensation expense" FY2025 실측.
+        sbc_by_year={2025: 490627 * K},
+
         competitor_threat_weights=[0.40, 0.20, 0.15],
         market_share_trend_pp_per_year=-2.5,
         active_antitrust_or_regulatory_case=False,

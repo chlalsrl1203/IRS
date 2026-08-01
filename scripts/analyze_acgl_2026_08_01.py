@@ -127,6 +127,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.23(2026-08-01 방법론 감사 Critical-1): SBC 병기 교차검증.
+        # SEC 10-K R8 현금흐름표 "Share-based compensation" FY2025 실측.
+        sbc_by_year={2025: 148 * M},
+
         is_insurer=True,
         net_income_by_year=NET_INCOME_5Y,
         shareholders_equity_by_year=EQUITY_5Y,
