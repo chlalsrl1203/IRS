@@ -1,0 +1,245 @@
+{
+  "meta": {
+    "ticker": "UBER",
+    "company_name": "Uber Technologies, Inc.",
+    "analyzed_at": "2026-08-01T06:48:28.458612+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001543151-26-000015) R3/R5/R8, as-filed, 2026-08-01 조회",
+      "SEC EDGAR 10-K FY2022(0001543151-23-000010) R5/R8 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $143.22B(주가 $70.36, YoY-21.4%), 2026-07-31 조회",
+      "WebSearch: Waymo 로보택시 확장 현황(2026-08), Uber의 서드파티 AV 플랫폼 통합전략 확인"
+    ]
+  },
+  "data_limitations": [
+    "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2022년을 기준으로 3년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020(팬데믹 직격탄)의 OCF가 -$2,745M 적자라 FCF가 음수(-$3,361M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 거부. FY2022(FCF 첫 플러스전환 +$390M)를 기준연도로 삼아 3년 구간 CAGR을 산출한다.",
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(17.73%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+  ],
+  "inputs": {
+    "ticker": "UBER",
+    "company_name": "Uber Technologies, Inc.",
+    "revenue_by_year": {
+      "2020": 11139000000,
+      "2021": 17455000000,
+      "2022": 31877000000,
+      "2023": 37281000000,
+      "2024": 43978000000,
+      "2025": 52017000000
+    },
+    "operating_income_by_year": {
+      "2020": -4863000000,
+      "2021": -3834000000,
+      "2022": -1832000000,
+      "2023": 1110000000,
+      "2024": 2799000000,
+      "2025": 5565000000
+    },
+    "operating_cashflow_by_year": {
+      "2020": -2745000000,
+      "2021": -445000000,
+      "2022": 642000000,
+      "2023": 3585000000,
+      "2024": 7137000000,
+      "2025": 10099000000
+    },
+    "capex_by_year": {
+      "2020": 616000000,
+      "2021": 298000000,
+      "2022": 252000000,
+      "2023": 223000000,
+      "2024": 242000000,
+      "2025": 336000000
+    },
+    "market_cap": 143220000000.0,
+    "net_debt": 2888000000,
+    "ebitda": 6312000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.3,
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -2.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.3,
+    "subjective_input_basis": "Waymo(Alphabet) 0.30 - 2026-08 WebSearch 확인: 주간 유료승차 45만건으로 1년새 약 2배 증가, 샌프란시스코 특정구역 총거래액 기준 Lyft 추월해 점유율 25%+ 도달. 자체 운전자 비용구조가 없는 대형테크의 실측 확장이라 이 프로젝트 최대 가중치권. 다만 Uber가 서드파티 AV를 자사 플랫폼에 통합하는 전략을 취하고 있어 순수 경쟁자가 아니라 잠재적 유통파트너이기도 함(위협도를 TTD의 Amazon DSP 0.40보다는 낮게 설정한 이유). Lyft 0.20(핵심 직접경쟁자, 미국 승차공유 2위). DoorDash 등 배달 전문업체 0.15(Uber Eats와 직접경쟁하나 승차공유는 겹치지 않아 부분적 위협). 전부 [추정치]. market_share_trend=-2.0pp: Waymo의 실측 점유율 급증(SF 25%+, 0에서 시작)을 반영해 이 프로젝트 최대 음수권으로 설정[추정치] - 다만 이는 특정 도시(SF) 국지적 데이터라 전국 단위로 일반화하기엔 근거가 제한적임을 인지. active_antitrust_or_regulatory_case=False: 2026-08 WebSearch로 주요 반독점 조사는 확인 안 됨(다만 각국 긱워커 분류 소송·규제는 상시 존재 - 별도 사업모델 리스크로 data_limitations에 준하는 정성 리스크로만 인지). demand_sensitivity=0.30: 승차공유·배달은 재량소비 성격이 뚜렷해 경기침체시 이용빈도 영향을 받는다 - SE(재량소비 이커머스)와 유사한 수준으로 이 프로젝트 상위권[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "Uber는 FY2020~2022 영업손실에서 FY2023부터 흑자전환 후 매년 확대되는 궤적(2023년 $1.1B -> 2025년 $5.6B, 5배)의 명시적 고성장기다. 이 정상화 국면을 모델링하는 데 single_stage(현재 마진이 무한 지속된다고 가정)보다 two_stage가 이론적으로 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(다른 종목들과 동일 절차). v3.9 원기록과는 엔진 버전 차이가 너무 커 직접 대조하지 않고 처음부터 다시 판단했다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001543151-26-000015) R3/R5/R8, as-filed, 2026-08-01 조회",
+      "SEC EDGAR 10-K FY2022(0001543151-23-000010) R5/R8 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $143.22B(주가 $70.36, YoY-21.4%), 2026-07-31 조회",
+      "WebSearch: Waymo 로보택시 확장 현황(2026-08), Uber의 서드파티 AV 플랫폼 통합전략 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": 2022,
+    "cagr_base_year_override_reason": "기본 기준연도 FY2020(팬데믹 직격탄)의 OCF가 -$2,745M 적자라 FCF가 음수(-$3,361M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 거부. FY2022(FCF 첫 플러스전환 +$390M)를 기준연도로 삼아 3년 구간 CAGR을 산출한다.",
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.17730580736694201,
+    "revenue_cagr_5y": 0.17730580736694201,
+    "cagr_5y_base_year": 2022,
+    "cagr_5y_span": 3,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 1.9253167244957807,
+    "fcf0": 9763000000,
+    "fcf_by_year": {
+      "2020": -3361000000,
+      "2021": -743000000,
+      "2022": 390000000,
+      "2023": 3362000000,
+      "2024": 6895000000,
+      "2025": 9763000000
+    },
+    "worst_yoy_revenue_growth": 0.16952661793769797,
+    "worst_yoy_year": 2023,
+    "operating_margins": [
+      -0.2196505299341163,
+      -0.057470903786429085,
+      0.029773879456023174,
+      0.06364545909318295,
+      0.10698425514735567
+    ],
+    "net_debt_to_ebitda": 0.45754119138149557
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 20.0,
+      "leverage": 6.0,
+      "cyclicality": 5.2,
+      "competition_intensity": 13.8
+    },
+    "score": 49.0
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06470000000000001,
+    "r": 0.1094,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.1,
+    "realistic_growth": 0.1595752266302478,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.17730580736694201,
+        "5y": 0.17730580736694201,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.17730580736694201,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.17730580736694201,
+      "structural_discount_pct": 0.1,
+      "discounted_growth": 0.1595752266302478,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.1595752266302478
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.03860081185491198,
+      "two_stage": 0.04173316955566405,
+      "errors": {},
+      "divergence": 0.0031323577007520698,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "Uber는 FY2020~2022 영업손실에서 FY2023부터 흑자전환 후 매년 확대되는 궤적(2023년 $1.1B -> 2025년 $5.6B, 5배)의 명시적 고성장기다. 이 정상화 국면을 모델링하는 데 single_stage(현재 마진이 무한 지속된다고 가정)보다 two_stage가 이론적으로 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(다른 종목들과 동일 절차). v3.9 원기록과는 엔진 버전 차이가 너무 커 직접 대조하지 않고 처음부터 다시 판단했다.",
+    "value": 0.04173316955566405
+  },
+  "expectation_gap": 0.11784205707458376,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.1595752266302478,
+      "g_bull": 0.23936283994537172,
+      "g_bear": 0.0797876133151239,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7515916157042366,
+      "base": 0.39397799816587487,
+      "bear": 0.11106007390035577
+    },
+    "probabilities": {
+      "bull": 0.303,
+      "base": 0.5,
+      "bear": 0.197
+    },
+    "probability_rationale": "DRS=49.0 (중립점 50 대비 편차 -0.02) 기준: p_bull=30.3%, p_base=50.0%, p_bear=19.7%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.44660009319969124
+  },
+  "rar": 0.911428761632023,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.1094,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.04173316955566405,
+    "implied_growth_without_drs": 0.015912246704101546,
+    "gap_with_drs": 0.11784205707458376,
+    "gap_without_drs": 0.14366297992614627,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.1094,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.04173316955566405,
+      "implied_growth_without_drs": 0.015912246704101546,
+      "gap_with_drs": 0.11784205707458376,
+      "gap_without_drs": 0.14366297992614627,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": null
+}
