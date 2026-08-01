@@ -1,0 +1,314 @@
+{
+  "meta": {
+    "ticker": "ACGL",
+    "company_name": "Arch Capital Group Ltd.",
+    "analyzed_at": "2026-08-01T06:33:06.122747+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000947484-26-000017) R3/R5/R8, as-filed, 2026-08-01 조회",
+      "SEC EDGAR 10-K FY2022(0000947484-23-000015) R3/R5/R8 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2024(0000947484-25-000017) R3 (FY2023 자기자본)",
+      "SEC EDGAR 10-K FY2019(0000947484-20-000012) R4/R7 (FY2017~2019)",
+      "SEC EDGAR 10-K FY2017(0000947484-18-000012) R4/R7 (FY2015~2016, FY2017 capex 대조검증)",
+      "stockanalysis.com 시가총액 $34.14B(주가 $100.53, YoY+5.8%), 2026-07-31 조회",
+      "WebSearch: ACGL 2026 Q2 실적(2026-07-29), 재보험 소프트사이클・가격하락・Fitch 업종전망 하향, 반독점/규제조사 여부 확인(2026-08)",
+      "Notion 트래커 ACGL v3.13 원 기록(2026-07-18) - 이번 재분석의 문제제기 대상",
+      "analyze_pgr_2026_07_28.py - is_insurer 경로 및 방법론 선례"
+    ]
+  },
+  "data_limitations": [
+    "[보험업 교차검증] Realistic Growth(15.74%)와 지속가능성장률(15.46%)이 0.28%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=1.41배는 별도로 판정 신뢰도 판단에 참고할 것."
+  ],
+  "inputs": {
+    "ticker": "ACGL",
+    "company_name": "Arch Capital Group Ltd.",
+    "revenue_by_year": {
+      "2015": 3936590000.0,
+      "2016": 4463556000.0,
+      "2017": 5627375000.0,
+      "2018": 5450568000.0,
+      "2019": 6928200000.0,
+      "2020": 8508509000.0,
+      "2021": 9249980000.0,
+      "2022": 9614808000.0,
+      "2023": 13634000000,
+      "2024": 17440000000,
+      "2025": 19929000000
+    },
+    "operating_income_by_year": {
+      "2015": 567194000.0,
+      "2016": 855552000.0,
+      "2017": 757277000.0,
+      "2018": 841772000.0,
+      "2019": 1849110000.0,
+      "2020": 1560783000.0,
+      "2021": 2103351000.0,
+      "2022": 1488493000.0,
+      "2023": 3385000000,
+      "2024": 4474000000,
+      "2025": 4979000000
+    },
+    "operating_cashflow_by_year": {
+      "2015": 997906000.0,
+      "2016": 1396644000.0,
+      "2017": 1094878000.0,
+      "2018": 1559322000.0,
+      "2019": 2048458999.9999998,
+      "2020": 2886505000.0,
+      "2021": 3427555000.0,
+      "2022": 3815227000.0,
+      "2023": 5749000000,
+      "2024": 6673000000,
+      "2025": 6172000000
+    },
+    "capex_by_year": {
+      "2015": 15736000.0,
+      "2016": 15303000.0,
+      "2017": 22841000.0,
+      "2018": 29809000.0,
+      "2019": 37837000.0,
+      "2020": 39872000.0,
+      "2021": 41394000.0,
+      "2022": 51672000.0,
+      "2023": 52000000,
+      "2024": 51000000,
+      "2025": 44000000
+    },
+    "market_cap": 34140000000.0,
+    "net_debt": 1736000000.0,
+    "ebitda": 5172000000.0,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.25,
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -1.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "Berkshire Hathaway Re/Munich Re/Swiss Re 등 초대형 재보험사 0.25(막대한 자본력으로 가격경쟁 주도 가능), RenaissanceRe/Everest Re 등 전문 재보험사 0.20(유사 니치 전략 경쟁), Chubb 등 종합 손해보험사 0.15(원수보험 부문 경쟁). 전부 [추정치]. market_share_trend=-1.5pp: 2026-07-29 Q2 실적발표(WebSearch 확인)에서 재보험 부문 순보험료가 경쟁심화・고객 리스크자체보유확대로 전년比 -10%, 2026년초 갱신 가격이 10~20% 하락하는 '매수자 우위' 국면 전환, Fitch가 업종전망 'deteriorating'으로 하향. 다만 CEO가 '시장점유율을 좇지 않겠다'며 가격규율을 유지한다고 명시(재무건전성 우려가 아니라 선택적 위축) - PGR(+1.0pp, 업계 1위 등극)과 정반대 국면이라 이 프로젝트 보험업 2건 중 가장 음수로 설정[추정치]. active_antitrust_or_regulatory_case=False: 2026-08 WebSearch로 확인한 결과 반독점/규제기관의 시장구조적 조사는 발견되지 않음. demand_sensitivity=0.20: 특수보험・재보험은 원수보험(자동차 의무가입)보다는 경기민감도가 있으나(대재해 손해율 변동이 더 큰 변수) 여전히 낮은 편 - PGR(0.15)보다 소폭 높게 설정[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "ACGL 세전이익도 PGR과 유사하게 언더라이팅・대재해 사이클로 진동한다(2022년 14.88억달러 저점 -> 2025년 49.79억달러 고점, 3.3배). 마진이 현재 수준으로 무한 지속된다고 가정하는 single_stage보다 일정기간 후 정상화를 명시하는 two_stage가 보수적 - PGR과 동일 논리. ⚠️ **다만 이 모델선택 논의 자체가 보험업에는 부차적**이다 - 아래 insurer_cross_check가 보여주듯 FCF-DCF 프레임 자체가 보험업 밸류에이션에 구조적으로 부적합할 수 있어, Gap/RAR 결과는 방향성 참고자료로만 쓸 것(PGR과 동일 원칙). 재분석 대상이라 과거 기록(v3.13, RAR 3.003)이 있으나 그 기록 자체가 이번 재분석의 문제제기 대상이라 cross_check 대조는 하지 않는다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000947484-26-000017) R3/R5/R8, as-filed, 2026-08-01 조회",
+      "SEC EDGAR 10-K FY2022(0000947484-23-000015) R3/R5/R8 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2024(0000947484-25-000017) R3 (FY2023 자기자본)",
+      "SEC EDGAR 10-K FY2019(0000947484-20-000012) R4/R7 (FY2017~2019)",
+      "SEC EDGAR 10-K FY2017(0000947484-18-000012) R4/R7 (FY2015~2016, FY2017 capex 대조검증)",
+      "stockanalysis.com 시가총액 $34.14B(주가 $100.53, YoY+5.8%), 2026-07-31 조회",
+      "WebSearch: ACGL 2026 Q2 실적(2026-07-29), 재보험 소프트사이클・가격하락・Fitch 업종전망 하향, 반독점/규제조사 여부 확인(2026-08)",
+      "Notion 트래커 ACGL v3.13 원 기록(2026-07-18) - 이번 재분석의 문제제기 대상",
+      "analyze_pgr_2026_07_28.py - is_insurer 경로 및 방법론 선례"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": true,
+    "net_income_by_year": {
+      "2021": 2239462000.0,
+      "2022": 1482423000.0,
+      "2023": 4442000000,
+      "2024": 4312000000,
+      "2025": 4399000000
+    },
+    "shareholders_equity_by_year": {
+      "2021": 13545896000.0,
+      "2022": 12910073000.0,
+      "2023": 18353000000,
+      "2024": 20820000000,
+      "2025": 24206000000
+    },
+    "dividends_paid_by_year": {
+      "2023": 40000000,
+      "2024": 1906000000,
+      "2025": 47000000
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.2750140299551005,
+    "revenue_cagr_5y": 0.18556783699532264,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.17607909997985338,
+    "fcf_cagr_5y": 0.16572861020907137,
+    "fcf0": 6128000000,
+    "fcf_by_year": {
+      "2015": 982170000.0,
+      "2016": 1381341000.0,
+      "2017": 1072037000.0,
+      "2018": 1529513000.0,
+      "2019": 2010621999.9999998,
+      "2020": 2846633000.0,
+      "2021": 3386161000.0,
+      "2022": 3763555000.0,
+      "2023": 5697000000,
+      "2024": 6622000000,
+      "2025": 6128000000
+    },
+    "worst_yoy_revenue_growth": -0.03141908971767471,
+    "worst_yoy_year": 2018,
+    "operating_margins": [
+      0.22738978895089504,
+      0.15481255579934616,
+      0.24827636790376997,
+      0.25653669724770645,
+      0.24983692106979777
+    ],
+    "net_debt_to_ebitda": 0.3356535189481825
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 6.0,
+      "cyclicality": 12.8,
+      "competition_intensity": 13.2
+    },
+    "score": 48.0
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.0644,
+    "r": 0.1091,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.05053253501237645,
+    "realistic_growth": 0.157353923411129,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.2750140299551005,
+        "5y": 0.18556783699532264,
+        "10y": 0.17607909997985338
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.22839318607211773,
+      "fcf_conservatism_applied": "FCF CAGR(16.57%) < Revenue 가중평균(22.84%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.16572861020907137,
+      "structural_discount_pct": 0.05053253501237645,
+      "discounted_growth": 0.157353923411129,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.157353923411129
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": -0.05968327207708354,
+      "two_stage": -0.08648414611816407,
+      "errors": {},
+      "divergence": 0.02680087404108053,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "ACGL 세전이익도 PGR과 유사하게 언더라이팅・대재해 사이클로 진동한다(2022년 14.88억달러 저점 -> 2025년 49.79억달러 고점, 3.3배). 마진이 현재 수준으로 무한 지속된다고 가정하는 single_stage보다 일정기간 후 정상화를 명시하는 two_stage가 보수적 - PGR과 동일 논리. ⚠️ **다만 이 모델선택 논의 자체가 보험업에는 부차적**이다 - 아래 insurer_cross_check가 보여주듯 FCF-DCF 프레임 자체가 보험업 밸류에이션에 구조적으로 부적합할 수 있어, Gap/RAR 결과는 방향성 참고자료로만 쓸 것(PGR과 동일 원칙). 재분석 대상이라 과거 기록(v3.13, RAR 3.003)이 있으나 그 기록 자체가 이번 재분석의 문제제기 대상이라 cross_check 대조는 하지 않는다.",
+    "value": -0.08648414611816407
+  },
+  "expectation_gap": 0.24383806952929307,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.157353923411129,
+      "g_bull": 0.2360308851166935,
+      "g_bear": 0.0786769617055645,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 1.400327512711634,
+      "base": 0.9159448984574283,
+      "bear": 0.531755748135651
+    },
+    "probabilities": {
+      "bull": 0.306,
+      "base": 0.49999999999999994,
+      "bear": 0.194
+    },
+    "probability_rationale": "DRS=48.0 (중립점 50 대비 편차 -0.04) 기준: p_bull=30.6%, p_base=50.0%, p_bear=19.4%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.9896332832567903
+  },
+  "rar": 2.06173600678498,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.1091,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": -0.08648414611816407,
+    "implied_growth_without_drs": -0.10622329711914064,
+    "gap_with_drs": 0.24383806952929307,
+    "gap_without_drs": 0.26357722053026966,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.1091,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": -0.08648414611816407,
+      "implied_growth_without_drs": -0.10622329711914064,
+      "gap_with_drs": 0.24383806952929307,
+      "gap_without_drs": 0.26357722053026966,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": {
+    "roe_years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "avg_roe": 0.18220449944055067,
+    "dividend_years_used": [
+      2023,
+      2024,
+      2025
+    ],
+    "payout_ratio": 0.151524367064548,
+    "retention_ratio": 0.848475632935452,
+    "sustainable_growth": 0.15459607798650846,
+    "price_to_book": 1.4103941171610344
+  }
+}
