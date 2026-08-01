@@ -1,0 +1,246 @@
+{
+  "meta": {
+    "ticker": "WDAY",
+    "company_name": "Workday, Inc.",
+    "analyzed_at": "2026-08-01T04:34:08.572056+00:00",
+    "engine_version": "v3.22",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2026(0001327811-26-000014) R3/R5/R10, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
+      "SEC EDGAR 10-K FY2022(0001327811-22-000030) R5/R10 (FY2021 데이터)",
+      "stockanalysis.com 시가총액 $39.60B(주가 $160.34), 2026-07-31 조회",
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인"
+    ]
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(17.21%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+  ],
+  "inputs": {
+    "ticker": "WDAY",
+    "company_name": "Workday, Inc.",
+    "revenue_by_year": {
+      "2021": 4317996000.0,
+      "2022": 5138798000.0,
+      "2023": 6216000000,
+      "2024": 7259000000,
+      "2025": 8446000000,
+      "2026": 9552000000
+    },
+    "operating_income_by_year": {
+      "2021": -248599000.0,
+      "2022": -116450000.0,
+      "2023": -222000000,
+      "2024": 183000000,
+      "2025": 415000000,
+      "2026": 721000000
+    },
+    "operating_cashflow_by_year": {
+      "2021": 1268441000.0,
+      "2022": 1650704000.0,
+      "2023": 1657000000,
+      "2024": 2149000000,
+      "2025": 2461000000,
+      "2026": 2939000000
+    },
+    "capex_by_year": {
+      "2021": 259496000.0,
+      "2022": 435768000.0,
+      "2023": 364000000,
+      "2024": 232000000,
+      "2025": 269000000,
+      "2026": 162000000
+    },
+    "market_cap": 39600000000.0,
+    "net_debt": -2456000000,
+    "ebitda": 1068000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.2,
+      0.15,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -0.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "Oracle Fusion Cloud/SAP SuccessFactors 등 대형 ERP/HCM 통합업체 0.20(WebSearch 확인: 실제 고객전환 데이터는 Workday가 ADP 대비 2:1, Taleo 대비 8.9배 우위로 나타나 위협도를 TTD의 Amazon DSP 0.40만큼 크게 잡지 않음). ADP/UKG/Ceridian Dayforce 등 HR전문 경쟁사 0.15. AI-네이티브 신생 재무자동화 스타트업(자율결산·에이전틱 재무보고 등 신규 카테고리 창출 중) 0.15 - 아직 실측 점유율 데이터는 없으나 신흥 위협으로 분류. 전부 [추정치]. market_share_trend=-0.5pp: 실측 고객전환 데이터 자체는 Workday에 유리하나(순전입 우위), 매출성장률이 5년 전 20%대에서 13%대로 자연감속 중이고 AI-네이티브 카테고리 재편 초기 국면 이라는 정성적 불확실성을 반영해 소폭 음수만 부여 - MNDY(-1.0pp)보다는 낙관적[추정치]. demand_sensitivity=0.20: 엔터프라이즈 HR/재무 SaaS는 다년계약·높은 전환비용으로 경기민감도가 낮은 편(GWRE/PTC 0.22~0.25와 유사하거나 약간 낮음)[추정치]. ⚠️Mobley v. Workday(AI채용스크리닝 차별 집단소송, 2026-06-22 법원이 본안심리 진행 허용)는 반독점/규제 사건이 아니라 고용차별 소송이라 active_antitrust_or_regulatory_case에는 반영하지 않음 - 대신 data_limitations에 미확정 배상액 리스크로 명시.",
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 5년 CAGR 16.76%(2022년 5,139M -> 2026년 9,552M)로 SE/RMD/DUOL/TTD/MNDY만큼 극단적인 고성장은 아니나 여전히 뚜렷한 감속구간(4년 전 20%대 성장 -> 최근 13%대)에 있다는 점, FCF가 최근 5년간 흑자전환 후 3배 이상 성장했다는 점에서 two_stage가 명시적 고성장기 이후 정상화를 모델링하는 데 이 세션의 다른 종목들과 일관되게 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것. 첫 분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2026(0001327811-26-000014) R3/R5/R10, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
+      "SEC EDGAR 10-K FY2022(0001327811-22-000030) R5/R10 (FY2021 데이터)",
+      "stockanalysis.com 시가총액 $39.60B(주가 $160.34), 2026-07-31 조회",
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.15396978072353007,
+    "revenue_cagr_5y": 0.17209392670406998,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.22445175339833945,
+    "fcf0": 2777000000,
+    "fcf_by_year": {
+      "2021": 1008945000.0,
+      "2022": 1214936000.0,
+      "2023": 1293000000,
+      "2024": 1917000000,
+      "2025": 2192000000,
+      "2026": 2777000000
+    },
+    "worst_yoy_revenue_growth": 0.1309495619228036,
+    "worst_yoy_year": 2026,
+    "operating_margins": [
+      -0.022660941332973198,
+      -0.03571428571428571,
+      0.025210084033613446,
+      0.0491356855316126,
+      0.07548157453936348
+    ],
+    "net_debt_to_ebitda": -2.299625468164794
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 8.0,
+      "leverage": 2.0,
+      "cyclicality": 4.8,
+      "competition_intensity": 12.0
+    },
+    "score": 30.8
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.05924,
+    "r": 0.10394,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.1,
+    "realistic_growth": 0.14468970191960928,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.15396978072353007,
+        "5y": 0.17209392670406998,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.16076633546623254,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.16076633546623254,
+      "structural_discount_pct": 0.1,
+      "discounted_growth": 0.14468970191960928,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.14468970191960928
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.031597895084597774,
+      "two_stage": 0.02906227111816404,
+      "errors": {},
+      "divergence": 0.0025356239664337324,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 5년 CAGR 16.76%(2022년 5,139M -> 2026년 9,552M)로 SE/RMD/DUOL/TTD/MNDY만큼 극단적인 고성장은 아니나 여전히 뚜렷한 감속구간(4년 전 20%대 성장 -> 최근 13%대)에 있다는 점, FCF가 최근 5년간 흑자전환 후 3배 이상 성장했다는 점에서 two_stage가 명시적 고성장기 이후 정상화를 모델링하는 데 이 세션의 다른 종목들과 일관되게 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것. 첫 분석이라 대조할 과거 기록 없음.",
+    "value": 0.02906227111816404
+  },
+  "expectation_gap": 0.11562743080144525,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.14468970191960928,
+      "g_bull": 0.21703455287941392,
+      "g_bear": 0.07234485095980464,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7162777566773233,
+      "base": 0.39117668830951624,
+      "bear": 0.12921529589061365
+    },
+    "probabilities": {
+      "bull": 0.3576,
+      "base": 0.5,
+      "bear": 0.14240000000000003
+    },
+    "probability_rationale": "DRS=30.8 (중립점 50 대비 편차 -0.38) 기준: p_bull=35.8%, p_base=50.0%, p_bear=14.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.4701295280773923
+  },
+  "rar": 1.526394571679845,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10394,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.02906227111816404,
+    "implied_growth_without_drs": 0.012592887878417953,
+    "gap_with_drs": 0.11562743080144525,
+    "gap_without_drs": 0.13209681404119133,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10394,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.02906227111816404,
+      "implied_growth_without_drs": 0.012592887878417953,
+      "gap_with_drs": 0.11562743080144525,
+      "gap_without_drs": 0.13209681404119133,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": null
+}
