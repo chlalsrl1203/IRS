@@ -508,6 +508,22 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         if "정합성 경고" in (capex_reason or ""):
             data_limitations.append(f"[capex 정합성] {capex_reason}")
 
+    # ⚠️ v3.24(2026-08-01 방법론 감사 M-1, 권고 #6): Lynch 유형별 성장상한이
+    # 바인딩되면 Realistic Growth는 매출·FCF CAGR 계산과 무관하게 상한값
+    # 그대로 고정된다 - 즉 Gap = 상한 - Implied Growth가 되어, 이 종목의
+    # 순위는 오직 "누가 더 싼가(Implied Growth)"로만 결정되고 공들여 계산한
+    # 성장분석은 결과에 기여하지 않는다. 이 상한값 자체의 근거는 코드에 없다
+    # (LYNCH_TYPE_CAPS 주석 참고) - 최소한 그 사실을 눈에 보이게 남긴다.
+    if growth_breakdown["cap_applied"] and "상한" in growth_breakdown["cap_applied"]:
+        data_limitations.append(
+            f"[성장상한 바인딩] {lynch_type} 유형의 성장상한"
+            f"({realistic_growth*100:.2f}%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - "
+            f"Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 "
+            f"않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 "
+            f"결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 "
+            f"자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+        )
+
     erp = erp_from_drs(drs)
     r = inputs.risk_free_rate + erp
     n = capped_n(inputs.n_requested)

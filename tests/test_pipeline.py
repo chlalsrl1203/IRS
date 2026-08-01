@@ -827,3 +827,30 @@ def test_falsification_price_currency_pass_through():
     assert meta["currency"] == "USD"
     # 계산 경로에는 영향을 주지 않아야 한다 - 골든 회귀값과 동일해야 함
     assert result["expectation_gap"] == pytest.approx(0.0329, abs=5e-4)
+
+
+# ----------------------------------------------------------------------
+# v3.24: 성장상한 바인딩 경고 (2026-08-01 방법론 감사 M-1, 권고 #6)
+# ----------------------------------------------------------------------
+
+def test_growth_cap_binding_warns_when_upper_cap_overrides_calculated_growth():
+    """
+    상한 캡이 바인딩되면(=계산된 성장률이 Lynch 유형 상한보다 높음) Realistic
+    Growth가 매출·FCF CAGR 계산과 무관하게 상한값으로 고정된다는 사실을
+    data_limitations에 명시적으로 남겨야 한다(M-1: 안 남기면 조용히 순위를
+    결정한다).
+    """
+    result = run_analysis(mnst_inputs(
+        lynch_type_override="slow_grower",  # g_max 5.0% - MNST 계산성장률보다 낮음
+        lynch_type_override_reason="가드 배선 테스트용 인위적 하향 오버라이드",
+    ))
+    assert result["growth"]["breakdown"]["cap_applied"] is not None
+    assert result["growth"]["realistic_growth"] == pytest.approx(0.05)
+    assert any("성장상한 바인딩" in x for x in result["data_limitations"])
+
+
+def test_growth_cap_binding_silent_when_not_bound():
+    """캡이 안 걸리면(기본 stalwart 자동분류) 경고가 없어야 한다."""
+    result = run_analysis(mnst_inputs())
+    assert result["growth"]["breakdown"]["cap_applied"] is None
+    assert not any("성장상한 바인딩" in x for x in result["data_limitations"])
