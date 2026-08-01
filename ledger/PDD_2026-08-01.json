@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "PDD",
     "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
-    "analyzed_at": "2026-07-28T01:04:31.721396+00:00",
-    "engine_version": "v3.21",
+    "analyzed_at": "2026-08-01T23:32:58.614486+00:00",
+    "engine_version": "v3.24",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001104659-26-050727) R2/R4/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 20-F FY2022(0001104659-23-049927) R4/R7 (FY2020~2022 비교치)",
@@ -11,7 +11,10 @@
       "stockanalysis.com 시가총액 $120.78B (2026-07-27 종가)",
       "USD/CNY 6.7716 (2026-07-24 Fed H.10, 기존 스크리닝에서 검증된 값, 2026-07-27 스팟 6.765~6.773과 0.1% 이내 일치 재확인)",
       "WebSearch: Temu 미국 de minimis 폐지 영향(PYMNTS/CNBC/eMarketer), EU DSA Temu 조사·과징금(Lewis Silkin/EU 공식 발표), 중국 e-commerce 경쟁구도 2026(Douyin/Alibaba/JD)"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "CNY"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(48.65%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
@@ -96,7 +99,15 @@
     "capex_classification": null,
     "capex_classification_basis": null,
     "cagr_base_year_override": null,
-    "cagr_base_year_override_reason": null
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "CNY"
   },
   "derived": {
     "revenue_cagr_3y": 0.489963045630756,
@@ -249,5 +260,7 @@
     "raw_score": 89,
     "final": 89
   },
-  "judgment": "저평가 가능성"
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

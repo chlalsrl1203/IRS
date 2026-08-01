@@ -86,6 +86,13 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.24(2026-08-01 방법론 감사 M-6): 재무제표가 RMB 표시라 market_cap도
+        # RMB 환산해 넣었다(위 MARKET_CAP 주석 참고) - currency 필드가 없던
+        # 시점에는 이 사실이 ledger에 남지 않아 향후 종목 간 절대값을 비교하면
+        # 조용히 틀릴 위험이 있었다. 비율 기반 계산이라 내부 정합성 자체는
+        # 문제없었지만(감사에서 확인), 이제 명시적으로 기록한다.
+        currency="CNY",
+
         competitor_threat_weights=[0.45, 0.40, 0.30],
         market_share_trend_pp_per_year=-1.0,
         active_antitrust_or_regulatory_case=True,

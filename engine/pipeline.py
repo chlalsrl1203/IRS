@@ -190,6 +190,22 @@ class AnalysisInputs:
     # 동일 원칙). 최근 회계연도 값만 쓴다(fcf0와 동일 시점 비교를 위해).
     sbc_by_year: dict = None
 
+    # 종목별 반증조건 사전기록 - v3.24에서 배선(2026-08-01 방법론 감사 권고 #2).
+    # High-1(실현수익률로 검증된 적이 단 한 번도 없음)의 최소 대응책 - "이런
+    # 실적이 나오면 이 판정은 틀린 것"을 분석 시점에 미리 적어두면 사후합리화를
+    # 막을 수 있다(감사 원문: "사후합리화를 막는 유일한 실질적 장치"). 필수화하지는
+    # 않는다 - 과거 분석에 소급 작성하면 그 자체가 사후합리화이므로 허위 기록이
+    # 된다. 새 분석부터 opt-in으로 채워나간다.
+    falsification_conditions: str = None
+
+    # 분석시점 주가·통화 - v3.24에서 배선(2026-08-01 방법론 감사 권고 #3).
+    # 향후 백테스트(실현수익률 검증, High-1)의 전제조건은 "그때 얼마였는지"를
+    # 기록해두는 것이다. currency 미기재시 기존 관행대로 USD로 간주한다(PDD만
+    # CNY 예외 - M-6 참고. 과거 ledger에는 이 필드가 없어 소급 판별 불가하므로
+    # 새 ledger부터 명시적으로 남긴다).
+    price_at_analysis: float = None
+    currency: str = "USD"
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -687,8 +703,11 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.23",
+            "engine_version": "v3.24",
             "data_sources": inputs.data_sources,
+            "falsification_conditions": inputs.falsification_conditions,
+            "price_at_analysis": inputs.price_at_analysis,
+            "currency": inputs.currency,
         },
         "data_limitations": data_limitations,
         "inputs": asdict(inputs),

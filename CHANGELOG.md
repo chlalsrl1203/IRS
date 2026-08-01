@@ -1,5 +1,45 @@
 # CHANGELOG
 
+## 반증조건·분석시점 주가/통화 병기 + 스크리너 문서 보강 (2026-08-01, 엔진 v3.24) - 방법론 감사 권고 #2/#3/#4 해소
+
+**경위**: SBC 배선(Critical-1, 바로 아래 항목)으로 판정을 실제로 뒤집는 결함은
+해소했으나, 감사(`docs/AUDIT_2026-08-01_methodology.md`)가 지적한 더 근본적인
+문제는 남아 있었다(High-1): 이 프로젝트의 모든 통제가 "계산이 스스로와
+일치하는가"에만 걸려 있고 "계산이 현실과 일치하는가"에는 아무 장치가 없다.
+지금 백테스트를 만들 수는 없지만(분석 이력 3주뿐), 그 전제조건은 지금 놓을 수
+있어 권고 우선순위 #2/#3/#4(전부 저비용으로 분류됨)를 이어서 처리했다.
+
+**배선**:
+- `AnalysisInputs.falsification_conditions: str = None`(opt-in): 종목별
+  반증조건("이런 실적이 나오면 이 판정은 틀린 것")을 분석 시점에 사전 기록.
+  사후합리화를 막는 유일한 실질적 장치(감사 원문). 과거 분석에는 소급 작성하지
+  않는다 - 소급 작성 자체가 사후합리화라 허위 기록이 되기 때문이다.
+- `AnalysisInputs.price_at_analysis: float = None` / `currency: str = "USD"`
+  (opt-in, currency 기본값은 기존 관행과 동일해 하위호환): 향후 실현수익률
+  검증의 전제조건인 "그때 얼마였는지·어느 통화였는지"를 ledger에 남긴다.
+- 셋 다 `run_analysis()`의 `meta`에 그대로 병기만 될 뿐 계산 경로(Gap/RAR/판정)
+  에는 관여하지 않는다 - 골든테스트로 확인(`test_falsification_price_currency_
+  pass_through`).
+- `engine/screener.py` docstring에 "이 판별력은 엔진 자기 라벨 대비다, 시장
+  대비가 아니다"라는 명시적 경고문 추가(권고 #4) - 기존 "저평가군 11/13"
+  판별력 수치가 `run_analysis()`의 판정을 정답지로 삼은 것임을 문서화해
+  순환논증 오독을 방지한다.
+
+**M-6(통화 규약 미문서화) 해소**: PDD는 재무제표가 RMB 표시라 market_cap도
+RMB 환산해 넣어왔는데(`analyze_pdd_2026_07_28.py` MARKET_CAP 주석), ledger
+어디에도 통화 필드가 없어 향후 종목 간 절대값 비교 시 조용히 틀릴 위험이
+있었다. `currency="CNY"`를 추가해 재실행 - 핵심수치(Gap +29.16%p, DRS 45.4,
+Realistic Growth 25.00%, Implied Growth -4.16%)는 전부 기존과 동일함을 확인,
+`ledger/PDD_2026-07-28.json` -> `ledger/PDD_2026-08-01.json`으로 통합(TTD/DUOL과
+동일한 "핵심수치 불변 + 필드 추가"는 in-place 갱신 원칙).
+
+**테스트**: 신규 2건 추가(107 passed, 이전 105).
+
+**남은 항목**: 권고 #5(demand_sensitivity 업종 앵커표), #6(25% 캡 근거 문서화
+또는 하향)은 아직 미착수 - `docs/AUDIT_2026-08-01_methodology.md` 우선순위표 참고.
+
+---
+
 ## SBC(주식보상비용) 병기 교차검증 배선 (2026-08-01, 엔진 v3.23) - 방법론 감사 Critical-1 해소
 
 **경위**: "투자 및 AI 전문회사가 감사할 때만큼" 요청에 따라 engine 코드 정독 +

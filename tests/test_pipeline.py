@@ -796,3 +796,34 @@ def test_sbc_cross_check_not_applicable_when_sbc_exceeds_fcf():
     assert cross["implied_growth_sbc_adjusted"] is None
     assert cross["judgment_sbc_adjusted"] is None
     assert any("Not Applicable" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.24: 반증조건·분석시점 주가/통화 병기 (2026-08-01 방법론 감사 권고 #2/#3)
+# ----------------------------------------------------------------------
+
+def test_falsification_price_currency_default_none_when_not_provided():
+    """세 필드 모두 opt-in - 안 넘기면 falsification/price는 None, currency는 USD 기본값."""
+    result = run_analysis(cdns_inputs())
+    meta = result["meta"]
+    assert meta["falsification_conditions"] is None
+    assert meta["price_at_analysis"] is None
+    assert meta["currency"] == "USD"
+
+
+def test_falsification_price_currency_pass_through():
+    """넘긴 값이 그대로 meta에 병기되어야 한다 - 계산에는 관여하지 않는다."""
+    result = run_analysis(cdns_inputs(
+        falsification_conditions=(
+            "차년도 EDA 매출성장률이 8% 밑으로 떨어지면(경쟁강도 과소평가) "
+            "이 판정은 틀린 것으로 간주한다."
+        ),
+        price_at_analysis=345.67,
+        currency="USD",
+    ))
+    meta = result["meta"]
+    assert "8%" in meta["falsification_conditions"]
+    assert meta["price_at_analysis"] == pytest.approx(345.67)
+    assert meta["currency"] == "USD"
+    # 계산 경로에는 영향을 주지 않아야 한다 - 골든 회귀값과 동일해야 함
+    assert result["expectation_gap"] == pytest.approx(0.0329, abs=5e-4)
