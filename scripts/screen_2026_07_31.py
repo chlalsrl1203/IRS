@@ -386,6 +386,23 @@ CANDIDATES.append(Candidate(
          "FCF수익률 3.37%로 밸류에이션 탈락.",
 ))
 
+# ── 7차 배치: Seeking Alpha "30 for 30"(S&P500 -30%+ 30종목, 2026-07-15) 잔여 -
+# TTD 발굴 과정. INTU/TTD/BSX는 통과해 정식분석(analyze_ttd_2026_07_31.py 등).
+# CRM/ADBE/DECK/TYL/ZTS/CSGP/APP/ORCL/NKE/CHTR/PODD/LULU는 기존 기록·이미
+# 스크리닝된 종목이라 이 파일에서 제외(중복 방지).
+_rev = {2021: 4994e6, 2022: 5709e6, 2023: 6061e6, 2024: 6507e6, 2025: 6889e6}
+_ocf = {2021: 640.1e6, 2022: 443.5e6, 2023: 823.3e6, 2024: 1056e6, 2025: 1171e6}
+_capex = {2021: 51.9e6, 2022: 29e6, 2023: 38.4e6, 2024: 57.4e6, 2025: 43.8e6}
+_fcf = {y: _ocf[y] - _capex[y] for y in _rev}
+CANDIDATES.append(Candidate(
+    ticker="BR", name="Broadridge Financial Solutions", exchange="NYSE",
+    market_cap=17.81e9, fcf0=_fcf[2025],
+    revenue_cagr_5y=cagr(_rev[2021], _rev[2025], 4), fcf_cagr_5y=cagr(_fcf[2021], _fcf[2025], 4),
+    net_debt_to_ebitda=1.8, worst_yoy_revenue=worst_yoy(_rev),
+    note="YoY -38.9%, FCF수익률 6.33%로 밸류에이션은 양호하나 현실적성장률 7.53%로 "
+         "기준(8.0%) 근소 미달(STE와 유사한 근소탈락 유형). 가장 아까운 탈락.",
+))
+
 
 def main():
     results = screen_all(CANDIDATES)
@@ -437,6 +454,17 @@ def main():
                 "변동성 과다로 제외",
         "APP(AppLovin)": "FY2023 모바일게임 매각으로 매출이 기준연도에 걸쳐 왜곡(PTC식 "
                           "구조단절) - 특별처리 필요, 보류",
+        "LVS(Las Vegas Sands)": "YoY -11.9%로 하락폭이 작음(리스트에는 있었으나 실질적 "
+                                 "'급락' 아님) - 후순위",
+        "TRMB(Trimble)": "YoY -35.1%이나 순이익 -69.9% 급감 - 진짜 나빠짐",
+        "INSM(Insmed)": "YoY +11.8%(하락 아님), 매출 급성장이나 대규모 순손실(-$1.18B) - "
+                         "적자 바이오, 프레임워크 부적합",
+        "UHS(Universal Health Services)": "YoY -2.8%로 하락폭 미미 - 후순위",
+        "IT(Gartner)": "YoY -62.5%로 낙폭 크나 순이익 -40.9% 동반급감 - 진짜 나빠짐",
+        "PNR(Pentair)": "YoY -37.7%이나 매출 자체가 역성장(-2.1%) - 진짜 나빠짐",
+        "TSCO(Tractor Supply)": "YoY -48.1%이나 매출+4.0%/순이익-6.9% - 저성장+진짜나빠짐",
+        "LDOS(Leidos)": "YoY -29.9%이나 매출성장 2.3%로 낮아 저성장 탈락 유력, 미정밀화",
+        "PSKY(Paramount Skydance)": "YoY -0.3%(하락 아님), 대규모 순손실 - 제외",
     }
     for tickers, reason in excluded.items():
         print(f"  {tickers:24} : {reason}")
