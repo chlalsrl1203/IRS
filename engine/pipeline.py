@@ -147,6 +147,14 @@ class AnalysisInputs:
 
     margin_years: list = None
     n_requested: int = 12
+    # v3.25(2026-08-01 방법론 감사 M-4): capped_n()은 8~15년을 허용해 해자
+    # 강도에 따라 성장지속기간을 차등화하도록 설계됐으나, 지금까지의 36종목
+    # ledger 전부가 기본값 12를 그대로 썼다 - 실제로 아무도 이 유연성을 쓴
+    # 적이 없다. 코드 버그는 아니지만(누구도 오버라이드하지 않았을 뿐),
+    # lynch_type_override/cagr_base_year_override와 동일하게 기본값에서
+    # 벗어나면 근거를 남기게 한다. n_requested=12(기본값)면 사유 불필요 -
+    # 기존 36개 ledger는 전부 이 경로라 영향 없음.
+    n_requested_reason: str = None
     data_completeness_pct: float = 0.9
     lynch_type_override: str = None
     lynch_type_override_reason: str = None
@@ -222,6 +230,17 @@ class AnalysisInputs:
             )
         if self.lynch_type_override is not None and not self.lynch_type_override_reason:
             raise ValueError("lynch_type을 수동 오버라이드하려면 사유 필수")
+
+        # v3.25(M-4): n_requested를 기본값(12)에서 벗어나게 쓰려면 사유 필수.
+        if self.n_requested != 12 and not (
+            self.n_requested_reason and self.n_requested_reason.strip()
+        ):
+            raise ValueError(
+                "n_requested_reason 필수(v3.25): n_requested를 기본값(12)에서 "
+                "벗어나게 쓰려면 해자 강도 등 근거를 남길 것 - capped_n()의 "
+                "docstring이 경고하듯 이 값은 '해자 강도를 이유로 밸류에이션을 "
+                "정당화'하는 데 오남용되기 쉽다."
+            )
 
         # v3.20: capex 분류는 판정을 뒤집을 수 있는 주관적 입력이므로
         # model_choice_reason/lynch_type_override_reason과 동일하게 근거를 강제한다.
@@ -423,9 +442,17 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     )
     lynch_type = inputs.lynch_type_override or auto_lynch_type
 
+    # ⚠️ v3.24 버그수정(2026-08-01 방법론 감사 M-3): 10년 데이터가 없을 때 위
+    # data_limitations 경고문은 "5년 CAGR을 대체 입력했다"고 명시하는데, 실제
+    # 코드는 여태 rev_cagr_3y를 대체값으로 넣고 있었다 - trend_delta가
+    # rev_cagr_3y - rev_cagr_3y = 0으로 항상 정확히 0이 되어 구조적 할인율이
+    # 신호 없이 base_discount(10%)+시총가산으로만 고정되는 결과를 낳았다
+    # (감사 시점 36종목 중 16개가 정확히 10.00%였던 원인). 경고문이 이미
+    # 약속한 대로 rev_cagr_5y로 맞춘다 - 18개 ledger에서 재계산해보니 편차는
+    # -1.91%p(GWRE)~+8.35%p(SE)로, 특히 SE는 판정에 영향을 줄 수 있는 크기다.
     structural_discount = structural_discount_rate(
         rev_cagr_3y,
-        rev_cagr_10y if rev_cagr_10y is not None else rev_cagr_3y,
+        rev_cagr_10y if rev_cagr_10y is not None else rev_cagr_5y,
         market_cap_b,
     )
 
@@ -719,7 +746,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.24",
+            "engine_version": "v3.25",
             "data_sources": inputs.data_sources,
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,

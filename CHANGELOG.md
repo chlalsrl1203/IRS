@@ -1,5 +1,48 @@
 # CHANGELOG
 
+## structural_discount_rate 10년 대체값 버그수정 + n_requested 사유 필수화 (2026-08-01, 엔진 v3.25) - 방법론 감사 M-3/M-4 해소
+
+**경위**: M-1/M-5(#6)를 마친 뒤 사용자가 "M-3/M-4(구조적 할인율·N) 먼저
+조사"를 지시. 조사 결과 M-3는 설계 판단이 아니라 **순수 코드 버그**로
+확인됐다 - `data_limitations` 경고문은 "structural_discount_rate에 5년
+CAGR을 대체 입력했다"고 이미 명시하고 있었는데, 실제 `pipeline.py`는
+`rev_cagr_3y`를 넣고 있었다. `rev_cagr_3y`를 자기 자신과 비교하면
+`trend_delta`가 항상 정확히 0이 되어 구조적 할인율이 신호 없이
+`base_discount(10%)+시총가산`만 반환한다 - M-1이 지적한 "36종목 중 16개가
+정확히 10.00%"의 실제 원인이었다.
+
+**배선**: 경고문이 이미 약속한 대로 fallback을 `rev_cagr_5y`로 바로잡았다.
+10년 데이터가 없는 18개 ledger로 재계산한 편차:
+
+| 종목 | Δ할인율 | 종목 | Δ할인율 |
+|---|---|---|---|
+| SE | +8.35pp | DUOL | +1.98pp |
+| MNDY | +4.00pp | BSY | +1.21pp |
+| KLAC | +3.12pp | WDAY | +0.91pp |
+| TTD | +2.88pp | PTC | +0.56pp |
+| KEYS | +2.61pp | ROP | +0.36pp |
+| COR | +0.33pp | PDD | −0.17pp |
+| UBER | 0.00pp | GEN | −0.01pp |
+| RMD | −0.58pp | MCK | −1.14pp |
+| VRT | −1.52pp | GWRE | −1.91pp |
+
+`discounted_growth = base_growth * (1 - structural_discount)`이므로 이 편차는
+대체로 그대로 Gap에 반영된다(Lynch 캡이 바인딩되지 않은 경우). SE(+8.35pp)는
+판정에 영향을 줄 수 있는 크기다. **18개 ledger의 소급 재검증 여부는 별도
+결정 사항** - 이번 커밋은 코드 수정과 신규 골든테스트(`test_structural_
+discount_fallback_uses_5y_not_3y`)만 포함하고 과거 ledger는 아직 손대지
+않았다.
+
+**M-4**: `capped_n()`이 8~15년 차등화를 지원하지만 36종목 ledger 전부가
+기본값 12를 그대로 썼다(코드 버그 아님 - 미사용 유연성). `n_requested_reason`
+필드를 추가해 `lynch_type_override`/`cagr_base_year_override`와 동일하게
+기본값(12) 이탈 시 사유를 요구한다. 기존 ledger는 전부 기본값 경로라
+영향 없음(zero blast radius).
+
+**테스트**: 신규 5건 추가(114 passed, 이전 109).
+
+---
+
 ## demand_sensitivity 업종 앵커표 + 성장상한 바인딩 경고 (2026-08-01, 엔진 v3.24) - 방법론 감사 M-1·권고 #5/#6 해소
 
 **경위**: 권고 #2/#3/#4(바로 아래 항목)를 마친 뒤 남은 두 항목(#5/#6)도 전부

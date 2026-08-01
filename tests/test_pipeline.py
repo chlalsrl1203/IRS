@@ -854,3 +854,94 @@ def test_growth_cap_binding_silent_when_not_bound():
     result = run_analysis(mnst_inputs())
     assert result["growth"]["breakdown"]["cap_applied"] is None
     assert not any("성장상한 바인딩" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.24: structural_discount_rate 10y 대체값 버그수정
+# (2026-08-01 방법론 감사 M-3 - data_limitations 경고문은 "5년 CAGR을 대체
+# 입력했다"고 이미 약속하고 있었는데 실제 코드는 rev_cagr_3y를 넣고 있었다.
+# rev_cagr_3y를 자기 자신과 비교하면 trend_delta가 항상 정확히 0이 되어
+# 구조적 할인율이 신호 없이 base_discount 고정값만 반환하는 결과를 낳았다)
+# ----------------------------------------------------------------------
+
+def _short_history_inputs(**overrides):
+    """10년치가 없는(6개년만 확보) 합성 fixture - fallback 경로를 강제로 태운다."""
+    rev = {2020: 100e6, 2021: 112e6, 2022: 126e6, 2023: 150e6, 2024: 178e6, 2025: 210e6}
+    base = dict(
+        ticker="SYNTH",
+        company_name="Synthetic Test Co.",
+        revenue_by_year=rev,
+        operating_income_by_year={y: v * 0.20 for y, v in rev.items()},
+        operating_cashflow_by_year={y: v * 0.25 for y, v in rev.items()},
+        capex_by_year={y: v * 0.05 for y, v in rev.items()},
+        market_cap=3_000_000_000,
+        net_debt=-500_000_000,
+        ebitda=rev[2025] * 0.20 + 5_000_000,
+        risk_free_rate=0.045,
+        competitor_threat_weights=[0.3, 0.2],
+        market_share_trend_pp_per_year=0.0,
+        active_antitrust_or_regulatory_case=False,
+        demand_sensitivity_pct=0.2,
+        subjective_input_basis="합성 fixture - M-3 fallback 경로 검증용, 실제 근거 없음",
+        model_used="single_stage",
+        model_choice_reason="합성 fixture - 모델괴리 무관, single_stage로 고정",
+        data_sources=["synthetic"],
+    )
+    base.update(overrides)
+    return AnalysisInputs(**base)
+
+
+def test_structural_discount_fallback_uses_5y_not_3y():
+    """
+    10년 CAGR이 없을 때 structural_discount_rate에 넘어가는 대체값이 rev_cagr_3y가
+    아니라 rev_cagr_5y여야 한다(data_limitations 경고문이 이미 그렇게 약속하고
+    있었다). rev_cagr_3y로 자기 자신과 비교하면 trend_delta가 항상 정확히 0이 되어
+    버그 있는 경로에서는 정확히 base_discount(10%)가 나온다 - 고쳐진 경로는
+    3y(18.56%)와 5y(16.00%)가 다르므로 0이 아닌 값이 나와야 한다.
+    """
+    result = run_analysis(_short_history_inputs())
+    d = result["derived"]
+    assert d["revenue_cagr_10y"] is None  # fallback 경로 확인
+    assert d["revenue_cagr_3y"] == pytest.approx(0.18563, abs=1e-4)
+    assert d["revenue_cagr_5y"] == pytest.approx(0.15996, abs=1e-4)
+
+    structural_discount = result["growth"]["structural_discount_pct"]
+    # 버그 있던 경로(rev_cagr_3y를 자기 자신과 비교)라면 trend_delta=0이라
+    # 정확히 10.00%가 나왔을 것 - 고쳐진 경로는 그렇지 않아야 한다.
+    assert structural_discount != pytest.approx(0.10, abs=1e-6)
+    # 3y > 5y(가속 중)이므로 trend_delta(5y-3y)가 음수 -> 할인율이 base보다 낮아야 함
+    assert structural_discount < 0.10
+
+
+def test_structural_discount_10y_data_present_unaffected():
+    """10년 데이터가 실제로 있으면(CDNS) 이 fallback 경로 자체를 타지 않는다."""
+    result = run_analysis(cdns_inputs())
+    assert result["derived"]["revenue_cagr_10y"] is not None
+    assert not any("10년 CAGR 산출 불가" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.25: n_requested 기본값(12) 이탈 시 사유 필수화
+# (2026-08-01 방법론 감사 M-4 - capped_n()이 8~15년 차등화를 지원하지만
+# 36종목 ledger 전부가 기본값 12를 그대로 썼다. 버그는 아니고 미사용
+# 유연성이었을 뿐이라 강제 로직은 넣지 않고, 이탈 시 근거만 요구한다)
+# ----------------------------------------------------------------------
+
+def test_n_requested_default_needs_no_reason():
+    """기본값 12를 그대로 쓰면(기존 36종목 전부 이 경로) 사유 없이도 통과해야 한다."""
+    result = run_analysis(cdns_inputs())
+    assert result["discount_rate"]["n"] == 12
+
+
+def test_n_requested_override_without_reason_rejected():
+    with pytest.raises(ValueError) as exc:
+        cdns_inputs(n_requested=15)
+    assert "n_requested_reason" in str(exc.value)
+
+
+def test_n_requested_override_with_reason_accepted():
+    result = run_analysis(cdns_inputs(
+        n_requested=15,
+        n_requested_reason="가드 배선 테스트용 - 실제 해자 근거 아님",
+    ))
+    assert result["discount_rate"]["n"] == 15

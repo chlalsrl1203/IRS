@@ -386,6 +386,31 @@ ROP/ACGL) 전부 이 경로로 갱신 완료 - 판정 자체가 바뀐 건 WDAY�
 결정하는 상황을 최소한 눈에 보이게는 만든다(테스트:
 `test_growth_cap_binding_warns_when_upper_cap_overrides_calculated_growth`).
 
+**structural_discount_rate 10년 대체값 버그수정 - v3.25(2026-08-01, 방법론
+전면감사 M-3)**: 이건 설계 판단이 아니라 **코드와 경고문이 서로 다른 말을
+하고 있던 순수 버그**였다. 10년 CAGR이 없을 때 `data_limitations`는 이미
+"structural_discount_rate에 5년 CAGR을 대체 입력했다"고 명시하고 있었는데,
+실제 `pipeline.py`는 `rev_cagr_3y`를 넣고 있었다. `rev_cagr_3y`를 자기
+자신과 비교하면 `trend_delta`가 **언제나 정확히 0**이 되어 구조적 할인율이
+아무 신호 없이 `base_discount(10%) + 시총가산`만 반환한다(M-1과 별개로
+M-3가 지적한 "36종목 중 16개가 정확히 10.00%"의 실제 원인). 경고문이 이미
+약속한 대로 `rev_cagr_5y`로 바로잡았다 - 18개 ledger(10년 데이터 없는
+종목)로 재계산해보니 편차는 GWRE −1.91%p ~ SE +8.35%p였다(테스트:
+`test_structural_discount_fallback_uses_5y_not_3y`). SE는 판정에 영향을
+줄 수 있는 크기라 **18개 ledger 재검증 여부는 별도로 결정** - 이 절 갱신
+시점 기준 아직 미착수(진행 여부는 아래 CHANGELOG 최신 항목 참고).
+
+**n_requested 기본값 이탈 시 사유 필수화 - v3.25(2026-08-01, 방법론 전면감사
+M-4)**: `capped_n()`은 8~15년을 허용해 해자 강도에 따라 성장지속기간을
+차등화하도록 설계됐으나, 지금까지 분석한 36종목 ledger 전부가 기본값 12를
+그대로 썼다 - 코드 버그는 아니고 단지 아무도 이 유연성을 쓴 적이 없을
+뿐이었다. `lynch_type_override`/`cagr_base_year_override`와 동일한 패턴으로
+`n_requested_reason: str = None`을 추가해, 기본값(12)에서 벗어날 때만 근거를
+요구한다. **기존 36개 ledger는 전부 기본값 12 경로라 영향 없음**(zero
+blast radius) - `capped_n()`을 실제로 차등화할지는 여전히 분석자 판단이고,
+언제 차등화해야 하는지에 대한 코드화된 기준은 아직 없다(demand_sensitivity
+앵커표와 달리 관측 데이터가 전무해 표를 만들 근거 자체가 없다).
+
 **⚠️ 미해결 항목 2건째 - M&A/사업다각화로 인한 CAGR 왜곡이 통계적으로
 안 보일 수 있다 (2026-07-28 GEN에서 발견)**: BRO 때부터 알려진 "M&A주도
 성장은 유기적 성장과 분리검증 필요"라는 원칙이 있었지만, GEN은 그 원칙만으론
