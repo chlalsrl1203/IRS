@@ -91,6 +91,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.24(2026-08-02 방법론 감사 권고 #3): 향후 실현수익률 검증 전제조건.
+        price_at_analysis=140.17,
+        currency="USD",
+
         # v3.23(2026-08-01 방법론 감사 Critical-1): SBC 병기 교차검증.
         # SEC 10-K R7 현금흐름표 "Stock-based compensation expense" FY2025 실측.
         sbc_by_year={2025: 137437 * K},
@@ -129,6 +133,27 @@ def build_inputs() -> AnalysisInputs:
             "two_stage가 이 전환 시점에 이론적으로 부합한다고 판단 - "
             "실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD와 "
             "동일 절차). 첫 분석이라 대조할 과거 기록 없음."
+        ),
+
+        # v3.24+(2026-08-02, S등급 4종목 중 3종목 심층조사): 원분석에는 없던
+        # 사실 확인 - 주가 66~80% 하락 구간 내내 내부자 순매도(최근12개월
+        # 약 $41M)만 확인되고 매수는 전혀 확인되지 않았으며, 성장서사 과장
+        # 의혹을 제기하는 증권소송(조사단계)이 진행 중. OpenAI 자체
+        # 스타트업펀드가 투자한 AI네이티브 경쟁사 Speak(ARR $100M, 밸류
+        # $1B)가 급성장 중 - 기존 competitor_threat_weights(범용 AI챗봇
+        # 0.30/Babbel 0.15/Rosetta 0.10)가 특정하지 못한 새 위협. 다만
+        # DAU는 여전히 +21%YoY로 'AI가 사용자를 실제로 대체 중'이라는
+        # 증거는 확인 안 됨(유료구독 순증만 급감) - 서사와 실측이 갈리는
+        # 미해결 지점으로 남겨둠.
+        falsification_conditions=(
+            "(1) 2026-08-05 Q2 실적에서 유료구독자 순증이 전분기(30만명) "
+            "대비 재차 감소하거나 30만명을 밑돌면(현재 '컴프효과+전략적 "
+            "전환' 해석의 근거가 무너짐) AI대체 서사가 실측 데이터로 확인된 "
+            "것으로 간주해 판정을 재검토. (2) DAU 성장률이 20%YoY 밑으로 "
+            "떨어지거나 top-of-funnel(신규유입) 정체가 다음 분기까지 "
+            "이어지면 동일하게 재검토. (3) Speak 등 AI네이티브 경쟁사 "
+            "매출/사용자 규모가 Duolingo 대비 유의미한 비중까지 성장하면 "
+            "competitor_threat_weights 재산정 필요."
         ),
 
         data_sources=[

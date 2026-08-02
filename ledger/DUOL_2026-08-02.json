@@ -2,16 +2,16 @@
   "meta": {
     "ticker": "DUOL",
     "company_name": "Duolingo, Inc.",
-    "analyzed_at": "2026-08-02T00:00:11.603278+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-02T04:47:47.386908+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001628280-26-012494) R3/R5/R7, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2022(0001562088-23-000052) R5/R7 (FY2020~2022)",
       "stockanalysis.com 시가총액 $6.22B, 주가 $140.17(전일종가), 2026-07-31 조회",
       "WebSearch: Duolingo FY2026 bookings/매출/마진 가이던스(2026-02-27 발표), AI대체 우려 서사, 2026-08-05 Q2 실적발표 예정 확인"
     ],
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "(1) 2026-08-05 Q2 실적에서 유료구독자 순증이 전분기(30만명) 대비 재차 감소하거나 30만명을 밑돌면(현재 '컴프효과+전략적 전환' 해석의 근거가 무너짐) AI대체 서사가 실측 데이터로 확인된 것으로 간주해 판정을 재검토. (2) DAU 성장률이 20%YoY 밑으로 떨어지거나 top-of-funnel(신규유입) 정체가 다음 분기까지 이어지면 동일하게 재검토. (3) Speak 등 AI네이티브 경쟁사 매출/사용자 규모가 Duolingo 대비 유의미한 비중까지 성장하면 competitor_threat_weights 재산정 필요.",
+    "price_at_analysis": 140.17,
     "currency": "USD"
   },
   "data_limitations": [
@@ -98,8 +98,8 @@
     "sbc_by_year": {
       "2025": 137437000
     },
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "(1) 2026-08-05 Q2 실적에서 유료구독자 순증이 전분기(30만명) 대비 재차 감소하거나 30만명을 밑돌면(현재 '컴프효과+전략적 전환' 해석의 근거가 무너짐) AI대체 서사가 실측 데이터로 확인된 것으로 간주해 판정을 재검토. (2) DAU 성장률이 20%YoY 밑으로 떨어지거나 top-of-funnel(신규유입) 정체가 다음 분기까지 이어지면 동일하게 재검토. (3) Speak 등 AI네이티브 경쟁사 매출/사용자 규모가 Duolingo 대비 유의미한 비중까지 성장하면 competitor_threat_weights 재산정 필요.",
+    "price_at_analysis": 140.17,
     "currency": "USD"
   },
   "derived": {
@@ -252,6 +252,7 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 137437000,

@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "PDD",
     "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
-    "analyzed_at": "2026-08-02T00:00:11.841262+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-02T04:47:47.279445+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001104659-26-050727) R2/R4/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 20-F FY2022(0001104659-23-049927) R4/R7 (FY2020~2022 비교치)",
@@ -12,7 +12,7 @@
       "USD/CNY 6.7716 (2026-07-24 Fed H.10, 기존 스크리닝에서 검증된 값, 2026-07-27 스팟 6.765~6.773과 0.1% 이내 일치 재확인)",
       "WebSearch: Temu 미국 de minimis 폐지 영향(PYMNTS/CNBC/eMarketer), EU DSA Temu 조사·과징금(Lewis Silkin/EU 공식 발표), 중국 e-commerce 경쟁구도 2026(Douyin/Alibaba/JD)"
     ],
-    "falsification_conditions": null,
+    "falsification_conditions": "(1) 차기 실적(2026-08-31 Q2 예정)에서 매출성장률이 재차 5% 미만으로 둔화되거나 순이익 감소폭이 -15%보다 더 벌어지면(현재 마진압박이 일시적 재투자가 아니라 구조적 경쟁열위로 전환된 신호) 이 판정은 틀린 것으로 간주. (2) 2026-08-28 EU DSA 컴플라이언스 시한 이후 추가 제재나 Temu 유럽사업 축소가 발생하거나, SAMR 조사가 임원 형사처벌·RMB 10억 단위를 초과하는 벌금으로 확대되면 거버넌스 리스크가 이미 반영된 정성적 추정치를 넘어선 것으로 보고 재검토.",
     "price_at_analysis": null,
     "currency": "CNY"
   },
@@ -107,7 +107,7 @@
     "shareholders_equity_by_year": null,
     "dividends_paid_by_year": null,
     "sbc_by_year": null,
-    "falsification_conditions": null,
+    "falsification_conditions": "(1) 차기 실적(2026-08-31 Q2 예정)에서 매출성장률이 재차 5% 미만으로 둔화되거나 순이익 감소폭이 -15%보다 더 벌어지면(현재 마진압박이 일시적 재투자가 아니라 구조적 경쟁열위로 전환된 신호) 이 판정은 틀린 것으로 간주. (2) 2026-08-28 EU DSA 컴플라이언스 시한 이후 추가 제재나 Temu 유럽사업 축소가 발생하거나, SAMR 조사가 임원 형사처벌·RMB 10억 단위를 초과하는 벌금으로 확대되면 거버넌스 리스크가 이미 반영된 정성적 추정치를 넘어선 것으로 보고 재검토.",
     "price_at_analysis": null,
     "currency": "CNY"
   },
@@ -263,6 +263,7 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": null,
   "sbc_cross_check": null
 }

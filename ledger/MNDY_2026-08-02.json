@@ -2,16 +2,16 @@
   "meta": {
     "ticker": "MNDY",
     "company_name": "monday.com Ltd.",
-    "analyzed_at": "2026-08-02T00:00:11.414670+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-02T04:47:47.344271+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001178913-26-000870) R2/R4/R8, as-filed, 2026-07-31 조회",
       "SEC EDGAR 20-F FY2022(0001178913-23-000966) R4/R8 (FY2020~2022)",
       "stockanalysis.com 시가총액 $3.74B(주가 $87.15), 2026-07-31 조회",
       "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, MNDY Q1 2026 실적(매출 $351.3M +24%YoY, 가이던스 19~20% 재확인), 2026-07-22 630명 감원(AI 에이전트 전환) 보도 확인"
     ],
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "(1) 2026-08-10 Q2 실적에서 $50K+/$100K+ ARR 코호트 NDR이 110% 미만으로 하락하거나 SMB/셀프서브 채널 매출비중이 추가로 축소되는 신호가 나오면(현재 상단 코호트 강세로 하단 약세가 상쇄되는 구도가 무너짐) 이 판정은 틀린 것으로 간주. (2) 진행 중인 증권소송이 화해·기각이 아니라 실제 손해배상 판결이나 대규모 화해금으로 귀결되면 거버넌스 리스크를 재평가할 것.",
+    "price_at_analysis": 87.15,
     "currency": "USD"
   },
   "data_limitations": [
@@ -99,8 +99,8 @@
     "sbc_by_year": {
       "2025": 177011000
     },
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "(1) 2026-08-10 Q2 실적에서 $50K+/$100K+ ARR 코호트 NDR이 110% 미만으로 하락하거나 SMB/셀프서브 채널 매출비중이 추가로 축소되는 신호가 나오면(현재 상단 코호트 강세로 하단 약세가 상쇄되는 구도가 무너짐) 이 판정은 틀린 것으로 간주. (2) 진행 중인 증권소송이 화해·기각이 아니라 실제 손해배상 판결이나 대규모 화해금으로 귀결되면 거버넌스 리스크를 재평가할 것.",
+    "price_at_analysis": 87.15,
     "currency": "USD"
   },
   "derived": {
@@ -253,6 +253,7 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 177011000,
