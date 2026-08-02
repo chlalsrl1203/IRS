@@ -2,14 +2,17 @@
   "meta": {
     "ticker": "RMD",
     "company_name": "ResMed Inc.",
-    "analyzed_at": "2026-07-31T07:38:55.611877+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-02T00:00:11.934676+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000943819-25-000035) R3/R5/R9, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2022(0000943819-22-000010) R5/R8 (FY2020~2022)",
       "stockanalysis.com 시가총액 $30.08B, 주가 $214.29(전일종가), 2026-07-31 조회",
       "WebSearch: ResMed GLP-1 실측 데이터(210만명), Philips Respironics 美 재진입 여부, FY2026 가이던스 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(11.72%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
@@ -71,6 +74,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -87,7 +91,11 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.12879187738214926,
@@ -141,8 +149,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.11199860938025434,
+    "structural_discount_pct": 0.09420136257232595,
+    "realistic_growth": 0.11272020863380966,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.12879187738214926,
@@ -156,11 +164,11 @@
       "base_growth_before_fcf_check": 0.12444289931139371,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.12444289931139371,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.11199860938025434,
+      "structural_discount_pct": 0.09420136257232595,
+      "discounted_growth": 0.11272020863380966,
       "lynch_type": "stalwart",
       "cap_applied": null,
-      "final_realistic_growth": 0.11199860938025434
+      "final_realistic_growth": 0.11272020863380966
     },
     "capex_adjustment": null
   },
@@ -176,19 +184,19 @@
     "model_choice_reason": "ResMed는 FY2020~2025 전 구간 흑자를 유지했고 최근 3개년 영업이익 성장이 매출성장보다 빠른(FY24->FY25 매출 +9.84%, 영업이익 +27.7%) 마진확장 국면에 있다 - 명시적 성장기간 이후 정상화를 모델링하는 two_stage가 이 궤적에 이론적으로 부합한다고 판단. 첫 분석이라 대조할 과거 기록 없음 - 모델괴리가 크면 GWRE/KLAC/VRT/KEYS/SE와 동일 절차로 재검토할 것(아래 실행결과 참고).",
     "value": 0.05382785797119137
   },
-  "expectation_gap": 0.05817075140906297,
+  "expectation_gap": 0.05889235066261829,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.11199860938025434,
+      "g_base": 0.11272020863380966,
       "g_bull": 0.12,
-      "g_bear": 0.05599930469012717,
+      "g_bear": 0.05636010431690483,
       "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.12
     },
     "returns": {
       "bull": 0.2101955522698078,
-      "base": 0.18232899376995593,
-      "bear": 0.006186710712852372
+      "base": 0.18481364836327674,
+      "bear": 0.0072191945480297726
     },
     "probabilities": {
       "bull": 0.378,
@@ -196,9 +204,9 @@
       "bear": 0.12200000000000001
     },
     "probability_rationale": "DRS=24.0 (중립점 50 대비 편차 -0.52) 기준: p_bull=37.8%, p_base=50.0%, p_bear=12.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.1713731943499333
+    "expected_return_decimal": 0.17274148467448536
   },
-  "rar": 0.7140549764580554,
+  "rar": 0.7197561861436891,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -208,8 +216,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.05382785797119137,
     "implied_growth_without_drs": 0.040283203124999986,
-    "gap_with_drs": 0.05817075140906297,
-    "gap_without_drs": 0.07171540625525435,
+    "gap_with_drs": 0.05889235066261829,
+    "gap_without_drs": 0.07243700550880967,
     "judgment_with_drs": "저평가 가능성",
     "judgment_without_drs": "저평가 가능성",
     "judgment_flipped": false
@@ -221,8 +229,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.05382785797119137,
       "implied_growth_without_drs": 0.040283203124999986,
-      "gap_with_drs": 0.05817075140906297,
-      "gap_without_drs": 0.07171540625525435,
+      "gap_with_drs": 0.05889235066261829,
+      "gap_without_drs": 0.07243700550880967,
       "judgment_with_drs": "저평가 가능성",
       "judgment_without_drs": "저평가 가능성",
       "judgment_flipped": false
@@ -239,5 +247,6 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

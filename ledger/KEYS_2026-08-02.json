@@ -2,15 +2,18 @@
   "meta": {
     "ticker": "KEYS",
     "company_name": "Keysight Technologies, Inc.",
-    "analyzed_at": "2026-07-30T10:24:54.266688+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-02T00:00:11.557389+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001601046-25-000127) R3/R6/R8/R20, as-filed, 2026-07-30 조회",
       "SEC EDGAR 10-K FY2022(0001601046-22-000161) R3/R6/R8 (FY2020~2022)",
       "stockanalysis.com 시가총액 $50.71B, 주가 $305.17(전일종가), 2026-07-30 조회",
       "WebSearch: Keysight-Spirent 인수/매각 구조, FY2026 10-Q 매출기여, 경쟁구도 확인",
       "WebSearch: Keysight FY2026 Q2 실적발표(2026-05-19) - 매출 +31% YoY, 수주 +56% YoY, FY26 가이던스 high-20s%, 애널리스트 장기정상화성장률 15.4% 역산"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(4.95%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
@@ -74,6 +77,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -91,7 +95,11 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": -0.0027752224099102385,
@@ -145,8 +153,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.015153490498581727,
+    "structural_discount_pct": 0.1261499121000014,
+    "realistic_growth": 0.014713198893530484,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": -0.0027752224099102385,
@@ -160,11 +168,11 @@
       "base_growth_before_fcf_check": 0.016837211665090807,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.016837211665090807,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.015153490498581727,
+      "structural_discount_pct": 0.1261499121000014,
+      "discounted_growth": 0.014713198893530484,
       "lynch_type": "cyclical",
       "cap_applied": null,
-      "final_realistic_growth": 0.015153490498581727
+      "final_realistic_growth": 0.014713198893530484
     },
     "capex_adjustment": null
   },
@@ -180,19 +188,19 @@
     "model_choice_reason": "1차 실행 결과 모델괴리 7.67%p(single_stage 8.17% / two_stage 15.84%)로 GWRE/KLAC 사례와 같은 재검토 기준을 넘어, Lynch 자동분류(cyclical, 대체분류 없음)와 2026-07 WebSearch로 확보한 최신 가이던스를 대조했다. KEYS는 2026-05-19 발표 FY2026 Q2 실적에서 매출 +31% YoY(AI 관련 매출이 FY2025 연간 실적을 상반기만에 초과), 수주 +56% YoY를 기록했고 FY2026 전사 매출 성장률 가이던스를 'high-20s%'로 상향했다 - 이는 Spirent 인수 기여분을 포함한 수치이나 AI 인프라 테스트 수요가 핵심 동인으로 지목됐다. 애널리스트들은 이 예외적 속도가 결국 정상화된다고 보고 장기 정상화 성장률을 15.4%로 역산했는데, 이는 two_stage의 15.84%와 거의 일치하고(0.44%p 차이) single_stage의 8.17%보다 훨씬 가깝다 - VRT 사례와 같은 결론(AI발 고성장 국면에서는 two_stage가 시장의 실제 기대치에 더 부합). 다만 이 회사 스스로도 'AI가 기준선을 끌어올린 지금도 기존 5~7% 장기 프레임워크가 유효한지'에 대해 '향후 업데이트 예정'이라고만 답해 아직 공식 장기목표를 재확정하지 않았다는 점은 불확실성으로 남는다.",
     "value": 0.15835533142089842
   },
-  "expectation_gap": -0.1432018409223167,
+  "expectation_gap": -0.14364213252736793,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.015153490498581727,
-      "g_bull": 0.02273023574787259,
-      "g_bear": 0.007576745249290863,
+      "g_base": 0.014713198893530484,
+      "g_bull": 0.022069798340295727,
+      "g_bear": 0.007356599446765242,
       "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.2
     },
     "returns": {
-      "bull": -0.3165424923380812,
-      "base": -0.330254500473556,
-      "bear": -0.3435831810772991
+      "bull": -0.31775311987065513,
+      "base": -0.33103947506818443,
+      "bear": -0.3439647821151376
     },
     "probabilities": {
       "bull": 0.30696,
@@ -200,9 +208,9 @@
       "bear": 0.19304000000000002
     },
     "probability_rationale": "DRS=47.7 (중립점 50 대비 편차 -0.05) 기준: p_bull=30.7%, p_base=50.0%, p_bear=19.3%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": -0.32861843096003723
+    "expected_return_decimal": -0.32945619674909465
   },
-  "rar": -0.6892165078859842,
+  "rar": -0.6909735670073294,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -212,8 +220,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.15835533142089842,
     "implied_growth_without_drs": 0.12862339019775387,
-    "gap_with_drs": -0.1432018409223167,
-    "gap_without_drs": -0.11346989969917215,
+    "gap_with_drs": -0.14364213252736793,
+    "gap_without_drs": -0.11391019130422339,
     "judgment_with_drs": "과대평가 가능성",
     "judgment_without_drs": "과대평가 가능성",
     "judgment_flipped": false
@@ -225,8 +233,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.15835533142089842,
       "implied_growth_without_drs": 0.12862339019775387,
-      "gap_with_drs": -0.1432018409223167,
-      "gap_without_drs": -0.11346989969917215,
+      "gap_with_drs": -0.14364213252736793,
+      "gap_without_drs": -0.11391019130422339,
       "judgment_with_drs": "과대평가 가능성",
       "judgment_without_drs": "과대평가 가능성",
       "judgment_flipped": false
@@ -243,5 +251,6 @@
     "final": 94
   },
   "judgment": "과대평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

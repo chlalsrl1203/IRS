@@ -2,18 +2,21 @@
   "meta": {
     "ticker": "TTD",
     "company_name": "The Trade Desk, Inc.",
-    "analyzed_at": "2026-08-01T10:18:33.626204+00:00",
-    "engine_version": "v3.23",
+    "analyzed_at": "2026-08-02T00:00:11.509832+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001671933-26-000014) R3/R5/R7, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2022(0001671933-23-000007) R5/R7 (FY2020~2022)",
       "stockanalysis.com 시가총액 $8.48B, 2026-07-31 조회",
       "WebSearch: Seeking Alpha '30 for 30'(2026-07-15) 리스트, TTD 2026 Q1 실적/Q2가이던스(+8%YoY, 발표당일 -15%), Amazon DSP 경쟁구도, 임원진 이탈 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(28.21%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
-    "[SBC 교차검증] SBC가 FCF0의 62%로 상당히 크다 (SBC차감 시 Gap +17.56%p -> +6.07%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
+    "[SBC 교차검증] SBC가 FCF0의 62%로 상당히 크다 (SBC차감 시 Gap +17.01%p -> +5.51%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
   ],
   "inputs": {
     "ticker": "TTD",
@@ -73,6 +76,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -92,7 +96,10 @@
     "dividends_paid_by_year": null,
     "sbc_by_year": {
       "2025": 490627000
-    }
+    },
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.2244193656887754,
@@ -146,8 +153,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.1725703188792936,
+    "structural_discount_pct": 0.12884274496058148,
+    "realistic_growth": 0.16703987255129174,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.2244193656887754,
@@ -161,11 +168,11 @@
       "base_growth_before_fcf_check": 0.2460514244092115,
       "fcf_conservatism_applied": "FCF CAGR(19.17%) < Revenue 가중평균(24.61%) -> FCF CAGR 채택",
       "base_growth_after_fcf_check": 0.19174479875477068,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.1725703188792936,
+      "structural_discount_pct": 0.12884274496058148,
+      "discounted_growth": 0.16703987255129174,
       "lynch_type": "fast_grower",
       "cap_applied": null,
-      "final_realistic_growth": 0.1725703188792936
+      "final_realistic_growth": 0.16703987255129174
     },
     "capex_adjustment": null
   },
@@ -181,19 +188,19 @@
     "model_choice_reason": "⚠️핵심 판단: TTD는 FY2020~2025 5년간 매출이 3.5배(연 20%대중후반) 성장한 고성장기였으나, 2026 Q1 실적발표에서 제시한 Q2 가이던스가 전년比 +8%에 불과해(DUOL과 동일하게 회사 스스로의 근시일 감속 인정) 발표당일 주가 -15% 추가하락했다. 여기에 Amazon DSP 점유율 잠식, CFO 복수교체, CRO 이탈, 대형대행사 고객감사까지 겹쳐 DUOL보다 리스크가 다층적이다. 명시적 고성장구간 이후 정상화를 모델링하는 two_stage가 이 감속국면에 이론적으로 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD/DUOL과 동일 절차). 첫 분석이라 대조할 과거 기록 없음.",
     "value": -0.0030563354492187636
   },
-  "expectation_gap": 0.17562665432851238,
+  "expectation_gap": 0.1700962080005105,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.1725703188792936,
+      "g_base": 0.16703987255129174,
       "g_bull": 0.25,
-      "g_bear": 0.0862851594396468,
+      "g_bear": 0.08351993627564587,
       "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.25
     },
     "returns": {
       "bull": 1.0489451287769356,
-      "base": 0.6397178250495599,
-      "bear": 0.2793218588994595
+      "base": 0.6137102737686735,
+      "bear": 0.26931216558675297
     },
     "probabilities": {
       "bull": 0.3348,
@@ -201,9 +208,9 @@
       "bear": 0.1652
     },
     "probability_rationale": "DRS=38.4 (중립점 50 대비 편차 -0.23) 기준: p_bull=33.5%, p_base=50.0%, p_bear=16.5%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.7171897127294887
+    "expected_return_decimal": 0.7025323357537864
   },
-  "rar": 1.8676815435663772,
+  "rar": 1.8295112910254856,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -213,8 +220,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": -0.0030563354492187636,
     "implied_growth_without_drs": -0.022172737121582044,
-    "gap_with_drs": 0.17562665432851238,
-    "gap_without_drs": 0.19474305600087566,
+    "gap_with_drs": 0.1700962080005105,
+    "gap_without_drs": 0.1892126096728738,
     "judgment_with_drs": "저평가 가능성",
     "judgment_without_drs": "저평가 가능성",
     "judgment_flipped": false
@@ -226,8 +233,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": -0.0030563354492187636,
       "implied_growth_without_drs": -0.022172737121582044,
-      "gap_with_drs": 0.17562665432851238,
-      "gap_without_drs": 0.19474305600087566,
+      "gap_with_drs": 0.1700962080005105,
+      "gap_without_drs": 0.1892126096728738,
       "judgment_with_drs": "저평가 가능성",
       "judgment_without_drs": "저평가 가능성",
       "judgment_flipped": false
@@ -250,7 +257,7 @@
     "sbc_to_fcf_pct": 0.6165902150280881,
     "fcf0_sbc_adjusted": 305083000,
     "implied_growth_sbc_adjusted": 0.11191368103027341,
-    "gap_sbc_adjusted": 0.0606566378490202,
+    "gap_sbc_adjusted": 0.05512619152101833,
     "judgment_sbc_adjusted": "저평가 가능성",
     "judgment_flipped": false
   }

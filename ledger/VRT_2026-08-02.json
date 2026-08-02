@@ -2,13 +2,16 @@
   "meta": {
     "ticker": "VRT",
     "company_name": "Vertiv Holdings Co",
-    "analyzed_at": "2026-07-30T10:04:04.830372+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-02T00:00:11.987709+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001674101-26-000008) R3/R5/R7, as-filed, 2026-07-29 조회",
       "SEC EDGAR 10-K FY2022(0001628280-23-005248) R3/R7 (FY2020~2022, OCF적자 구간)",
       "WebSearch: VRT 시가총액/종가 2026-07-29(Google Finance/macrotrends), Q2 2026 실적발표 및 주가급락 상세(TipRanks/StockStory/Yahoo Finance), 경쟁구도(Dell'Oro/Mordor Intelligence/MarketsandMarkets), 증권집단소송 현황(2022 공급망 공시 관련)"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(18.54%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
@@ -72,6 +75,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -87,7 +91,11 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.2158543401649824,
@@ -141,8 +149,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.18399161880953366,
+    "structural_discount_pct": 0.08477438912748073,
+    "realistic_growth": 0.18710426857819903,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.2158543401649824,
@@ -156,11 +164,11 @@
       "base_growth_before_fcf_check": 0.20443513201059293,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.20443513201059293,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.18399161880953366,
+      "structural_discount_pct": 0.08477438912748073,
+      "discounted_growth": 0.18710426857819903,
       "lynch_type": "fast_grower",
       "cap_applied": null,
-      "final_realistic_growth": 0.18399161880953366
+      "final_realistic_growth": 0.18710426857819903
     },
     "capex_adjustment": null
   },
@@ -176,19 +184,19 @@
     "model_choice_reason": "VRT는 FY2023~2025 3개년 연속 매출 +16~28%, FCF는 거의 매년 40~65%씩 성장하는 명확한 고성장 국면에 있고, AI데이터센터 투자사이클이라는 구조적 성장동력이 있어 명시적 성장기간을 모델링하는 two_stage가 이론적으로 부합한다고 판단했다. 실제 계산 결과 single_stage(8.31%)와 two_stage(16.99%)의 괴리가 8.68%p로 커서(GWRE 9.03%p·KLAC 12.85%p에 준하는 수준) GWRE/KLAC와 동일한 절차로 재검토했다 - 다만 이번엔 결론이 반대다. GWRE/KLAC는 two_stage가 회사 가이던스보다 과도하게 낙관적이라 single_stage로 전환했지만, VRT는 **정반대**다: 회사의 FY2026 가이던스(매출 $13.8~14.2B, 중간값 $14.0B)는 FY2025($10.23B) 대비 +36.9% 성장을 시사하는데, 이는 single_stage가 요구하는 8.31%는 물론이고 Realistic Growth(18.40%)보다도 훨씬 높다. 즉 single_stage를 쓰면 회사 자체 가이던스보다 훨씬 비관적인 성장가정으로 밸류에이션하는 셈이 되어 오히려 부적절하다 - two_stage(16.99%)가 그나마 가이던스에 더 가깝다. 첫 정식분석이라 대조할 과거 기록은 없으나, GWRE/KLAC와 같은 원칙(모델선택이 판정을 뒤집을 만큼 크면 서사가 아니라 실제 가이던스와 더 정합적인 쪽을 선택)을 일관되게 적용해 two_stage를 유지했다.",
     "value": 0.16991710662841797
   },
-  "expectation_gap": 0.01407451218111569,
+  "expectation_gap": 0.017187161949781066,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.18399161880953366,
+      "g_base": 0.18710426857819903,
       "g_bull": 0.25,
-      "g_bear": 0.09199580940476683,
+      "g_bear": 0.09355213428909952,
       "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.25
     },
     "returns": {
       "bull": 0.25868473169428063,
-      "base": 0.04143304099045508,
-      "bear": -0.20046186183423698
+      "base": 0.05082168397992337,
+      "bear": -0.1969172555611709
     },
     "probabilities": {
       "bull": 0.32639999999999997,
@@ -196,9 +204,9 @@
       "bear": 0.17360000000000003
     },
     "probability_rationale": "DRS=41.2 (중립점 50 대비 편차 -0.18) 기준: p_bull=32.6%, p_base=50.0%, p_bear=17.4%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.07035103770581719
+    "expected_return_decimal": 0.0756607028495556
   },
-  "rar": 0.1707549458879058,
+  "rar": 0.18364248264455243,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -208,8 +216,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.16991710662841797,
     "implied_growth_without_drs": 0.1435461044311523,
-    "gap_with_drs": 0.01407451218111569,
-    "gap_without_drs": 0.04044551437838137,
+    "gap_with_drs": 0.017187161949781066,
+    "gap_without_drs": 0.043558164147046746,
     "judgment_with_drs": "적정가",
     "judgment_without_drs": "적정가",
     "judgment_flipped": false
@@ -221,8 +229,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.16991710662841797,
       "implied_growth_without_drs": 0.1435461044311523,
-      "gap_with_drs": 0.01407451218111569,
-      "gap_without_drs": 0.04044551437838137,
+      "gap_with_drs": 0.017187161949781066,
+      "gap_without_drs": 0.043558164147046746,
       "judgment_with_drs": "적정가",
       "judgment_without_drs": "적정가",
       "judgment_flipped": false
@@ -239,5 +247,6 @@
     "final": 94
   },
   "judgment": "적정가/경계선",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

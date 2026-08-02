@@ -2,18 +2,22 @@
   "meta": {
     "ticker": "ROP",
     "company_name": "Roper Technologies, Inc.",
-    "analyzed_at": "2026-08-01T10:18:33.870033+00:00",
-    "engine_version": "v3.23",
+    "analyzed_at": "2026-08-02T00:00:11.746296+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000882835-26-000009) R3/R5/R9, as-filed, 2026-08-01 조회",
       "SEC EDGAR 10-K FY2022(0000882835-23-000016) R5/R10 (FY2020~2022, 계속영업 기준 재작성치)",
       "stockanalysis.com 시가총액 $38.77B(주가 $391.97), 2026-07-31 조회",
       "WebSearch: ROP 애널리스트 컨센서스(Buy, 목표가 +24.69%), 경쟁사 구도 확인(2026-07)",
       "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
-    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(14.46%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(14.46%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
   ],
   "inputs": {
     "ticker": "ROP",
@@ -73,6 +77,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -93,7 +98,10 @@
     "dividends_paid_by_year": null,
     "sbc_by_year": {
       "2025": 166300000.0
-    }
+    },
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.13731706743631933,
@@ -147,7 +155,7 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
+    "structural_discount_pct": 0.10364424431628375,
     "realistic_growth": 0.12,
     "breakdown": {
       "revenue_cagr_inputs": {
@@ -162,8 +170,8 @@
       "base_growth_before_fcf_check": 0.14005025067353213,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.14005025067353213,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.12604522560617892,
+      "structural_discount_pct": 0.10364424431628375,
+      "discounted_growth": 0.1255348482761678,
       "lynch_type": "stalwart",
       "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
       "final_realistic_growth": 0.12

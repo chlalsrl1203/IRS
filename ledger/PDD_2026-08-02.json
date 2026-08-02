@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "PDD",
     "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
-    "analyzed_at": "2026-08-01T23:32:58.614486+00:00",
-    "engine_version": "v3.24",
+    "analyzed_at": "2026-08-02T00:00:11.841262+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001104659-26-050727) R2/R4/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 20-F FY2022(0001104659-23-049927) R4/R7 (FY2020~2022 비교치)",
@@ -17,7 +17,8 @@
     "currency": "CNY"
   },
   "data_limitations": [
-    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(48.65%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(48.65%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
   ],
   "inputs": {
     "ticker": "PDD",
@@ -85,6 +86,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -163,7 +165,7 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.11,
+    "structural_discount_pct": 0.10828438005421372,
     "realistic_growth": 0.25,
     "breakdown": {
       "revenue_cagr_inputs": {
@@ -178,8 +180,8 @@
       "base_growth_before_fcf_check": 0.48867633067141625,
       "fcf_conservatism_applied": "FCF CAGR(30.31%) < Revenue 가중평균(48.87%) -> FCF CAGR 채택",
       "base_growth_after_fcf_check": 0.3031222533005351,
-      "structural_discount_pct": 0.11,
-      "discounted_growth": 0.26977880543747623,
+      "structural_discount_pct": 0.10828438005421372,
+      "discounted_growth": 0.2702988480212503,
       "lynch_type": "fast_grower",
       "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
       "final_realistic_growth": 0.25

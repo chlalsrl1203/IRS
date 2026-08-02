@@ -2,14 +2,17 @@
   "meta": {
     "ticker": "UBER",
     "company_name": "Uber Technologies, Inc.",
-    "analyzed_at": "2026-08-01T10:18:33.817743+00:00",
-    "engine_version": "v3.23",
+    "analyzed_at": "2026-08-02T00:00:11.887275+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001543151-26-000015) R3/R5/R8, as-filed, 2026-08-01 조회",
       "SEC EDGAR 10-K FY2022(0001543151-23-000010) R5/R8 (FY2020~2022)",
       "stockanalysis.com 시가총액 $143.22B(주가 $70.36, YoY-21.4%), 2026-07-31 조회",
       "WebSearch: Waymo 로보택시 확장 현황(2026-08), Uber의 서드파티 AV 플랫폼 통합전략 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2022년을 기준으로 3년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020(팬데믹 직격탄)의 OCF가 -$2,745M 적자라 FCF가 음수(-$3,361M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 거부. FY2022(FCF 첫 플러스전환 +$390M)를 기준연도로 삼아 3년 구간 CAGR을 산출한다.",
@@ -73,6 +76,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -92,7 +96,10 @@
     "dividends_paid_by_year": null,
     "sbc_by_year": {
       "2025": 1826000000
-    }
+    },
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.17730580736694201,

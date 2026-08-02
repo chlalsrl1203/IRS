@@ -2,19 +2,22 @@
   "meta": {
     "ticker": "WDAY",
     "company_name": "Workday, Inc.",
-    "analyzed_at": "2026-08-01T10:18:33.723341+00:00",
-    "engine_version": "v3.23",
+    "analyzed_at": "2026-08-02T00:00:11.650381+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2026(0001327811-26-000014) R3/R5/R10, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
       "SEC EDGAR 10-K FY2022(0001327811-22-000030) R5/R10 (FY2021 데이터)",
       "stockanalysis.com 시가총액 $39.60B(주가 $160.34), 2026-07-31 조회",
       "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(17.21%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
-    "[SBC 교차검증 경고] SBC가 FCF0의 59%를 차지한다. SBC를 실제 비용으로 차감하면 판정이 '저평가 가능성' -> '적정가/경계선'로 **뒤집힌다**(Gap +11.56%p -> +1.26%p, 2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 민감하므로 액면 그대로 신뢰하지 말 것."
+    "[SBC 교차검증 경고] SBC가 FCF0의 59%를 차지한다. SBC를 실제 비용으로 차감하면 판정이 '저평가 가능성' -> '적정가/경계선'로 **뒤집힌다**(Gap +11.42%p -> +1.11%p, 2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 민감하므로 액면 그대로 신뢰하지 말 것."
   ],
   "inputs": {
     "ticker": "WDAY",
@@ -74,6 +77,7 @@
       2026
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -94,7 +98,10 @@
     "dividends_paid_by_year": null,
     "sbc_by_year": {
       "2026": 1626000000
-    }
+    },
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.15396978072353007,
@@ -148,8 +155,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.14468970191960928,
+    "structural_discount_pct": 0.10906207299026996,
+    "realistic_growth": 0.14323282565323606,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.15396978072353007,
@@ -163,11 +170,11 @@
       "base_growth_before_fcf_check": 0.16076633546623254,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.16076633546623254,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.14468970191960928,
+      "structural_discount_pct": 0.10906207299026996,
+      "discounted_growth": 0.14323282565323606,
       "lynch_type": "fast_grower",
       "cap_applied": null,
-      "final_realistic_growth": 0.14468970191960928
+      "final_realistic_growth": 0.14323282565323606
     },
     "capex_adjustment": null
   },
@@ -183,19 +190,19 @@
     "model_choice_reason": "매출 5년 CAGR 16.76%(2022년 5,139M -> 2026년 9,552M)로 SE/RMD/DUOL/TTD/MNDY만큼 극단적인 고성장은 아니나 여전히 뚜렷한 감속구간(4년 전 20%대 성장 -> 최근 13%대)에 있다는 점, FCF가 최근 5년간 흑자전환 후 3배 이상 성장했다는 점에서 two_stage가 명시적 고성장기 이후 정상화를 모델링하는 데 이 세션의 다른 종목들과 일관되게 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것. 첫 분석이라 대조할 과거 기록 없음.",
     "value": 0.02906227111816404
   },
-  "expectation_gap": 0.11562743080144525,
+  "expectation_gap": 0.11417055453507202,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.14468970191960928,
-      "g_bull": 0.21703455287941392,
-      "g_bear": 0.07234485095980464,
+      "g_base": 0.14323282565323606,
+      "g_bull": 0.2148492384798541,
+      "g_bear": 0.07161641282661803,
       "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.25
     },
     "returns": {
-      "bull": 0.7162777566773233,
-      "base": 0.39117668830951624,
-      "bear": 0.12921529589061365
+      "bull": 0.7054700888922554,
+      "base": 0.38529998903677654,
+      "bear": 0.12687676884162125
     },
     "probabilities": {
       "bull": 0.3576,
@@ -203,9 +210,9 @@
       "bear": 0.14240000000000003
     },
     "probability_rationale": "DRS=30.8 (중립점 50 대비 편차 -0.38) 기준: p_bull=35.8%, p_base=50.0%, p_bear=14.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.4701295280773923
+    "expected_return_decimal": 0.46299335018930565
   },
-  "rar": 1.526394571679845,
+  "rar": 1.503225162952291,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -215,8 +222,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.02906227111816404,
     "implied_growth_without_drs": 0.012592887878417953,
-    "gap_with_drs": 0.11562743080144525,
-    "gap_without_drs": 0.13209681404119133,
+    "gap_with_drs": 0.11417055453507202,
+    "gap_without_drs": 0.1306399377748181,
     "judgment_with_drs": "저평가 가능성",
     "judgment_without_drs": "저평가 가능성",
     "judgment_flipped": false
@@ -228,8 +235,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.02906227111816404,
       "implied_growth_without_drs": 0.012592887878417953,
-      "gap_with_drs": 0.11562743080144525,
-      "gap_without_drs": 0.13209681404119133,
+      "gap_with_drs": 0.11417055453507202,
+      "gap_without_drs": 0.1306399377748181,
       "judgment_with_drs": "저평가 가능성",
       "judgment_without_drs": "저평가 가능성",
       "judgment_flipped": false
@@ -252,7 +259,7 @@
     "sbc_to_fcf_pct": 0.5855239467050775,
     "fcf0_sbc_adjusted": 1151000000,
     "implied_growth_sbc_adjusted": 0.13209686279296873,
-    "gap_sbc_adjusted": 0.012592839126640554,
+    "gap_sbc_adjusted": 0.011135962860267329,
     "judgment_sbc_adjusted": "적정가/경계선",
     "judgment_flipped": true
   }

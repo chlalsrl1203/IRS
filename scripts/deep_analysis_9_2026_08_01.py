@@ -62,12 +62,12 @@ R_MAX = RF + erp_from_drs(100)  # DRS 최악값에서의 할인율 상한
 TODAY = date(2026, 8, 1)
 
 LEDGERS = {
-    "SE": "ledger/SE_2026-07-30.json",
-    "RMD": "ledger/RMD_2026-07-31.json",
-    "DUOL": "ledger/DUOL_2026-08-01.json",
-    "TTD": "ledger/TTD_2026-08-01.json",
-    "MNDY": "ledger/MNDY_2026-08-01.json",
-    "WDAY": "ledger/WDAY_2026-08-01.json",
+    "SE": "ledger/SE_2026-08-02.json",
+    "RMD": "ledger/RMD_2026-08-02.json",
+    "DUOL": "ledger/DUOL_2026-08-02.json",
+    "TTD": "ledger/TTD_2026-08-02.json",
+    "MNDY": "ledger/MNDY_2026-08-02.json",
+    "WDAY": "ledger/WDAY_2026-08-02.json",
 }
 
 # ── 정성 리스크: DRS/엔진에 반영되지 않는 항목만 (-15 ~ 0) ───────────────

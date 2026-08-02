@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "GEN",
     "company_name": "Gen Digital Inc.",
-    "analyzed_at": "2026-07-28T10:52:16.455784+00:00",
-    "engine_version": "v3.21",
+    "analyzed_at": "2026-08-02T00:00:12.131860+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 10-K FY2026(0000849399-26-000017) R3/R5/R9, as-filed, 2026-07-28 조회",
       "SEC EDGAR 10-K FY2023(0000849399-23-000014) R5/R9 (FY2021~2023)",
@@ -11,10 +11,14 @@
       "Gen Digital FY26 실적발표(2026-05-07, PRNewswire) - 세그먼트별 매출, FY27 가이던스",
       "stockanalysis.com 시가총액 $16.11B (2026-07-27 종가)",
       "WebSearch: GEN 반독점/규제조사 여부 확인(2026-07), TCPA 집단소송($9.95M) 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
-    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(14.41%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(14.41%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
   ],
   "inputs": {
     "ticker": "GEN",
@@ -73,6 +77,7 @@
       2026
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -87,7 +92,15 @@
     "capex_classification": null,
     "capex_classification_basis": null,
     "cagr_base_year_override": null,
-    "cagr_base_year_override_reason": null
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.14418054061784868,
@@ -141,7 +154,7 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
+    "structural_discount_pct": 0.09994382287791506,
     "realistic_growth": 0.12,
     "breakdown": {
       "revenue_cagr_inputs": {
@@ -156,8 +169,8 @@
       "base_growth_before_fcf_check": 0.14413840777628495,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.14413840777628495,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.12972456699865645,
+      "structural_discount_pct": 0.09994382287791506,
+      "discounted_growth": 0.12973266427958724,
       "lynch_type": "stalwart",
       "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
       "final_realistic_growth": 0.12
@@ -238,5 +251,7 @@
     "raw_score": 89,
     "final": 89
   },
-  "judgment": "저평가 가능성"
+  "judgment": "저평가 가능성",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

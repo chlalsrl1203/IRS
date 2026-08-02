@@ -2,14 +2,17 @@
   "meta": {
     "ticker": "SE",
     "company_name": "Sea Limited",
-    "analyzed_at": "2026-07-30T10:37:31.370327+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-02T00:00:11.348857+00:00",
+    "engine_version": "v3.25",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001140361-26-015366) R2/R4/R6, as-filed, 2026-07-30 조회",
       "SEC EDGAR 20-F FY2022(0001140361-23-017021) R2/R4/R6 (FY2020~2022)",
       "stockanalysis.com 시가총액 $66.37B, 주가 $107.41(전일종가), 2026-07-30 조회",
       "WebSearch: Shopee/TikTok Shop/Lazada 동남아 이커머스 점유율(2026), Sea Q1 2026 실적・가이던스・주가하락 배경 확인"
-    ]
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(39.28%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
@@ -72,6 +75,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -88,7 +92,11 @@
     "is_insurer": false,
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
-    "dividends_paid_by_year": null
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.2259378555374607,
@@ -142,8 +150,8 @@
     "g_terminal": 0.034699999999999995
   },
   "growth": {
-    "structural_discount_pct": 0.1,
-    "realistic_growth": 0.25,
+    "structural_discount_pct": 0.18345566158456164,
+    "realistic_growth": 0.23559721275453016,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.2259378555374607,
@@ -157,11 +165,11 @@
       "base_growth_before_fcf_check": 0.2885296017258819,
       "fcf_conservatism_applied": null,
       "base_growth_after_fcf_check": 0.2885296017258819,
-      "structural_discount_pct": 0.1,
-      "discounted_growth": 0.2596766415532937,
+      "structural_discount_pct": 0.18345566158456164,
+      "discounted_growth": 0.23559721275453016,
       "lynch_type": "fast_grower",
-      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
-      "final_realistic_growth": 0.25
+      "cap_applied": null,
+      "final_realistic_growth": 0.23559721275453016
     },
     "capex_adjustment": null
   },
@@ -177,19 +185,19 @@
     "model_choice_reason": "Sea는 FY2020(매출 $4.4B)에서 FY2025(매출 $22.9B)까지 5년간 매출이 5.2배로 커진 전형적 고성장 스토리이자, FY2023부터 영업이익・FCF가 흑자전환 후 매년 확대되는 궤적이다 - 명시적 성장기간을 모델링하는 two_stage가 이 궤적에 부합한다고 1차 판단. 회사 자체 FY2026 가이던스(매출 +25% 성장, EBITDA는 전년 수준 유지 - 마진압박 시사)와도 대조해 재검토할 것(아래 실행결과 참고, 모델괴리가 크면 GWRE/KLAC/VRT/KEYS와 동일 절차로 최종 확정).",
     "value": 0.04379405975341795
   },
-  "expectation_gap": 0.20620594024658206,
+  "expectation_gap": 0.19180315300111223,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.25,
+      "g_base": 0.23559721275453016,
       "g_bull": 0.25,
-      "g_bear": 0.125,
-      "bull_capped_at_base": true,
+      "g_bear": 0.11779860637726508,
+      "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.25
     },
     "returns": {
       "bull": 0.7922533384042416,
-      "base": 0.7922533384042416,
-      "bear": 0.25458630246536607
+      "base": 0.7204557668399965,
+      "bear": 0.22918723736773994
     },
     "probabilities": {
       "bull": 0.29279999999999995,
@@ -197,9 +205,9 @@
       "bear": 0.20720000000000002
     },
     "probability_rationale": "DRS=52.4 (중립점 50 대비 편차 +0.05) 기준: p_bull=29.3%, p_base=50.0%, p_bear=20.7%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.6808487285577066
+    "expected_return_decimal": 0.6396872564873559
   },
-  "rar": 1.2993296346521115,
+  "rar": 1.2207772070369387,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -209,8 +217,8 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.04379405975341795,
     "implied_growth_without_drs": 0.016264152526855456,
-    "gap_with_drs": 0.20620594024658206,
-    "gap_without_drs": 0.23373584747314455,
+    "gap_with_drs": 0.19180315300111223,
+    "gap_without_drs": 0.2193330602276747,
     "judgment_with_drs": "저평가 가능성",
     "judgment_without_drs": "저평가 가능성",
     "judgment_flipped": false
@@ -222,8 +230,8 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.04379405975341795,
       "implied_growth_without_drs": 0.016264152526855456,
-      "gap_with_drs": 0.20620594024658206,
-      "gap_without_drs": 0.23373584747314455,
+      "gap_with_drs": 0.19180315300111223,
+      "gap_without_drs": 0.2193330602276747,
       "judgment_with_drs": "저평가 가능성",
       "judgment_without_drs": "저평가 가능성",
       "judgment_flipped": false
@@ -233,12 +241,13 @@
       "robustness_check_passed": 15,
       "section_5_7_aligned": 15,
       "data_completeness": 14,
-      "lynch_type_cap_applied": -5,
+      "lynch_type_cap_applied": 0,
       "stalwart_two_stage_bias_flagged": 0
     },
-    "raw_score": 89,
-    "final": 89
+    "raw_score": 94,
+    "final": 94
   },
   "judgment": "저평가 가능성",
-  "insurer_cross_check": null
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

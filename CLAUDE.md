@@ -396,9 +396,16 @@ ROP/ACGL) 전부 이 경로로 갱신 완료 - 판정 자체가 바뀐 건 WDAY�
 M-3가 지적한 "36종목 중 16개가 정확히 10.00%"의 실제 원인). 경고문이 이미
 약속한 대로 `rev_cagr_5y`로 바로잡았다 - 18개 ledger(10년 데이터 없는
 종목)로 재계산해보니 편차는 GWRE −1.91%p ~ SE +8.35%p였다(테스트:
-`test_structural_discount_fallback_uses_5y_not_3y`). SE는 판정에 영향을
-줄 수 있는 크기라 **18개 ledger 재검증 여부는 별도로 결정** - 이 절 갱신
-시점 기준 아직 미착수(진행 여부는 아래 CHANGELOG 최신 항목 참고).
+`test_structural_discount_fallback_uses_5y_not_3y`). **18개 전부 소급
+재검증 완료(2026-08-02)** - SE·MNDY·KLAC·TTD·KEYS·DUOL·BSY·WDAY·PTC·ROP·
+COR·PDD·UBER·RMD·VRT·MCK·GWRE·GEN. **판정이 뒤집힌 종목은 0건**이었다 -
+DUOL/MNDY/ROP/PDD/GEN/UBER 등은 Lynch 유형 성장상한이 이미 바인딩돼 있어
+할인율 변화가 애초에 Realistic Growth에 도달하지 못했고(위 M-1 절 참고),
+나머지도 Gap이 판정 경계(±5%p)에서 충분히 멀어 이번 폭의 변화로는
+넘어가지 않았다. BSY는 스크립트 자체가 저장소에 없던 상태였는데(2026-07-26
+당시 세션 내 직접 배선으로 실행, 재현용 파일 미보관) 이번에 ledger의
+원본 입력값을 그대로 옮겨 `scripts/analyze_bsy_2026_08_02.py`로 정식
+등록했다. 상세 종목별 편차·재검증 결과는 CHANGELOG 참고.
 
 **n_requested 기본값 이탈 시 사유 필수화 - v3.25(2026-08-01, 방법론 전면감사
 M-4)**: `capped_n()`은 8~15년을 허용해 해자 강도에 따라 성장지속기간을

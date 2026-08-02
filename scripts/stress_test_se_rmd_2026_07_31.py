@@ -70,8 +70,8 @@ def stress(name, ledger_path):
 
 
 if __name__ == "__main__":
-    r1 = stress("Sea Limited(SE)", "ledger/SE_2026-07-30.json")
-    r2 = stress("ResMed(RMD)", "ledger/RMD_2026-07-31.json")
+    r1 = stress("Sea Limited(SE)", "ledger/SE_2026-08-02.json")
+    r2 = stress("ResMed(RMD)", "ledger/RMD_2026-08-02.json")
 
     print(f"\n{'='*90}\n요약\n{'='*90}")
     print(f"  SE : 결합 스트레스(방법2)에서도 Gap {r1['gap_method2']*100:+.2f}%p로 저평가 유지 - 매우 견고")
