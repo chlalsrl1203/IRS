@@ -945,3 +945,24 @@ def test_n_requested_override_with_reason_accepted():
         n_requested_reason="가드 배선 테스트용 - 실제 해자 근거 아님",
     ))
     assert result["discount_rate"]["n"] == 15
+
+
+# ----------------------------------------------------------------------
+# v3.26: RAR 방향성 경고 (2026-08-02 방법론 감사 M-2)
+# RAR=ER/DRS는 ER이 음수일 때 방향이 뒤집힌다(DRS가 클수록 RAR이 0에 가깝게
+# 압축돼 "덜 나빠 보임"). 공식 자체(과거 트래커 전체가 이 컨벤션)는 바꾸지
+# 않고 경고만 남긴다.
+# ----------------------------------------------------------------------
+
+def test_rar_direction_warning_fires_when_er_negative():
+    """CDNS 기본 fixture는 ER이 음수(-21.94%) - 경고가 남아야 한다."""
+    result = run_analysis(cdns_inputs())
+    assert result["scenarios"]["expected_return_decimal"] < 0
+    assert any("RAR 방향성 경고" in x for x in result["data_limitations"])
+
+
+def test_rar_direction_warning_silent_when_er_positive():
+    """시총을 낮춰 ER을 양수로 만들면(정상 동작 구간) 경고가 없어야 한다."""
+    result = run_analysis(cdns_inputs(market_cap=40_000_000_000))
+    assert result["scenarios"]["expected_return_decimal"] > 0
+    assert not any("RAR 방향성 경고" in x for x in result["data_limitations"])

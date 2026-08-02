@@ -583,6 +583,23 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     # ⚠️ 여기가 v3.19 사고 지점. 반드시 decimal 전용 함수를 쓴다.
     rar_value = rar_from_decimal_return(er_decimal, drs)
 
+    # v3.26(2026-08-02 방법론 감사 M-2): RAR=ER/DRS는 ER이 음수일 때 방향이
+    # 뒤집힌다 - 음수를 더 큰 DRS로 나누면 0에 가까워져(=덜 나빠 보여) DRS가
+    # 높을수록 오히려 "개선된" 것처럼 보인다. CDNS 원자료로 DRS만 20→80으로
+    # 올려 검증: RAR -0.95→-0.36(같은 종목, ER은 오히려 더 나빠졌는데도).
+    # ER>=0에서는 반대로 정상 작동한다(DRS 클수록 RAR 작아짐, PDD로 검증).
+    # RAR 공식 자체를 바꾸면 트래커에 축적된 과거 RAR 전체와 비교불가능해지므로
+    # (v3.19 단위규약과 동일한 이유로) 값은 그대로 두고 경고만 남긴다.
+    if er_decimal < 0:
+        data_limitations.append(
+            f"[RAR 방향성 경고] 기대수익률이 음수({er_decimal*100:.2f}%)라 "
+            f"RAR=ER/DRS 공식이 의도와 반대로 움직이는 구간이다 - DRS(위험도)가 "
+            f"높을수록 음수 RAR이 0에 가깝게 압축돼 실제로는 위험이 클수록 "
+            f"'덜 나빠 보이는' 착시가 생긴다(2026-08-02 방법론 감사 M-2, CDNS 원자료로 "
+            f"기계적 검증: DRS 20→80일 때 같은 종목 RAR이 -0.95→-0.36로 개선돼 보임). "
+            f"이 종목은 RAR 절대값만으로 판단하지 말고 Expectation Gap을 우선 참고할 것."
+        )
+
     # ⚠️ 여기에 inputs.model_used를 넘기면 안 된다(v3.19 골든테스트가 잡아낸 버그).
     # RAR은 scenario_return_from_growth() -> _two_stage_market_cap() 경로라
     # **Section 5에서 single_stage를 썼더라도 항상 two_stage로 산출**된다.
@@ -746,7 +763,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.25",
+            "engine_version": "v3.26",
             "data_sources": inputs.data_sources,
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,
