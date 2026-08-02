@@ -44,6 +44,7 @@ from engine.expectation_gap_engine import (
     expected_return,
     implied_growth_single_stage,
     implied_growth_two_stage,
+    judgment_grade_from_gap,
     leverage_score,
     margin_volatility_score,
     rar_from_decimal_return,
@@ -636,6 +637,11 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     else:
         judgment = "적정가/경계선"
 
+    # v3.27(2026-08-02): 기존 3단계 경계는 그대로 두고 6단계로 세분화만
+    # 추가한다(S/A/B가 "저평가 가능성"의 부분집합, D/F가 "과대평가 가능성"의
+    # 부분집합 - judgment_grade_from_gap() docstring 참고).
+    judgment_grade = judgment_grade_from_gap(gap)
+
     # ── v3.22: 보험업 FCF-DCF 교차검증(ACGL/PGR 실증사례 기반) ──────────────
     # ROE x 유보율(지속가능성장률)과 P/B를 계산해 Realistic Growth와 대조한다.
     # ROE는 최근 최대 5개년 평균(단일연도는 언더라이팅 사이클 왜곡이 커서
@@ -763,7 +769,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.26",
+            "engine_version": "v3.27",
             "data_sources": inputs.data_sources,
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,
@@ -820,6 +826,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         "sensitivity_check": sensitivity,
         "confidence": confidence,
         "judgment": judgment,
+        "judgment_grade": judgment_grade,
         "insurer_cross_check": insurer_cross_check,
         "sbc_cross_check": sbc_cross_check,
     }

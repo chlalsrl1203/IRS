@@ -2,6 +2,7 @@ import json
 
 import pytest
 
+from engine.expectation_gap_engine import judgment_grade_from_gap
 from engine.pipeline import (
     AnalysisInputs,
     compare_implied_growth_models,
@@ -966,3 +967,43 @@ def test_rar_direction_warning_silent_when_er_positive():
     result = run_analysis(cdns_inputs(market_cap=40_000_000_000))
     assert result["scenarios"]["expected_return_decimal"] > 0
     assert not any("RAR 방향성 경고" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.27: 판정 세분화(Judgment Grade, 2026-08-02 사용자 요청)
+# 기존 3단계(±5%p) 경계는 그대로 두고 6단계(S/A/B/C/D/F)로 세분화만 추가.
+# ----------------------------------------------------------------------
+
+def test_judgment_grade_boundaries():
+    """S>=15%p, A 7~15%p, B 5~7%p, C -5~5%p, D -15~-5%p, F<=-15%p."""
+    assert judgment_grade_from_gap(0.30) == "S"
+    assert judgment_grade_from_gap(0.15) == "S"
+    assert judgment_grade_from_gap(0.1499) == "A"
+    assert judgment_grade_from_gap(0.07) == "A"
+    assert judgment_grade_from_gap(0.0699) == "B"
+    assert judgment_grade_from_gap(0.05) == "B"
+    assert judgment_grade_from_gap(0.0499) == "C"
+    assert judgment_grade_from_gap(0.0) == "C"
+    assert judgment_grade_from_gap(-0.0499) == "C"
+    assert judgment_grade_from_gap(-0.05) == "D"
+    assert judgment_grade_from_gap(-0.1499) == "D"
+    assert judgment_grade_from_gap(-0.15) == "F"
+    assert judgment_grade_from_gap(-0.30) == "F"
+
+
+def test_judgment_grade_is_strict_subset_of_judgment():
+    """S/A/B는 전부 '저평가 가능성'의 부분집합, D/F는 '과대평가 가능성'의 부분집합이어야 한다."""
+    for gap in [0.30, 0.15, 0.10, 0.07, 0.06, 0.05]:
+        assert judgment_grade_from_gap(gap) in ("S", "A", "B")
+    for gap in [0.0499, 0.0, -0.0499]:
+        assert judgment_grade_from_gap(gap) == "C"
+    for gap in [-0.05, -0.10, -0.15, -0.30]:
+        assert judgment_grade_from_gap(gap) in ("D", "F")
+
+
+def test_judgment_grade_wired_into_run_analysis():
+    result = run_analysis(cdns_inputs())
+    assert result["judgment_grade"] in ("S", "A", "B", "C", "D", "F")
+    # CDNS golden case: judgment="적정가/경계선" (Gap +3.29%p) -> grade는 반드시 C
+    assert result["judgment"] == "적정가/경계선"
+    assert result["judgment_grade"] == "C"
