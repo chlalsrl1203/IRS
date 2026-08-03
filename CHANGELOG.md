@@ -1,5 +1,42 @@
 # CHANGELOG
 
+## 실제 매수리스트 산출 - 팩터 진단 + 규칙기반 사이징 (2026-08-03)
+
+**경위**: "S/A등급만 투자하는 건 비추천"(집중도·미검증확신도·사이징부재
+지적) -> "실제 매수리스트는 어떻게 만드나" 질문에 답한 3단계 계획의
+2·3단계. 1단계(S등급 7종목 정성조사, 바로 아래 두 항목)를 마친 뒤 실행.
+
+**2단계 - 팩터/섹터 집중도 진단**: S/A등급 13종목을 사업모델·리스크축
+기준 4개 버킷으로 재분류(Lynch유형만으로는 이 집중을 못 잡음 - fast_grower가
+버킷을 가로질러 존재):
+- growth_platform(PDD·MNDY·DUOL·SE·TTD·UBER·WDAY, 7종목=54%): "폭락발굴
+  고베타 소비자/플랫폼주"라는 공통 팩터에 사실상 몰빵
+- insurance(ACGL·PGR·BRO, 3종목=23%), industrial_stalwart(GEN·ROP,
+  2종목=15%), travel(TCOM, 1종목=8%)
+
+**3단계 - 규칙기반 사이징(공분산 최적화 아님, 수익률 상관행렬 데이터 없음
+- 알려진 스코프 갭)**: `scripts/build_buylist_2026_08_03.py`. 버킷 목표비중
+growth_platform 40%/insurance 30%/industrial_stalwart 20%/travel 10%로
+강제 분산(동일가중 대비 growth_platform 54%->40%로 캡). 버킷 내부는
+quality_score = Gap%p x (Confidence_adj/100), 캡바인딩 종목 x0.85,
+TTD(증권사기소송+CEO 내부자거래혐의) 추가 x0.85, 종목당 상한 12%.
+
+**Confidence_adj 확정**: S등급 7종목은 이번 정성조사 결과 반영(MNDY 65 <
+TTD 72 < PDD 75 < DUOL 78 < SE 79 < ACGL 83 < PGR 87) - MNDY/DUOL은
+CLAUDE.md에 범위만 있던 걸 이 스크립트에서 처음 구체적 숫자로 확정.
+A등급 6종목(GEN/UBER/WDAY/ROP/TCOM/BRO)은 심층조사 전이라 엔진 원값을
+그대로 쓰고 `conf_status="미검증"`으로 명시.
+
+**최종 배분**(상위 3종목이 상한 12%로 나란히): ACGL 12.00% / PGR 12.00% /
+GEN 12.00% / TCOM 10.00% / PDD 8.11% / ROP 8.00% / SE 6.61% / BRO 6.00% /
+DUOL 5.62% / MNDY 5.61% / UBER 4.83% / WDAY 4.68% / TTD 4.54%(최하위 -
+거버넌스 이중할인이 실제로 작동). 결과는 `reports/buylist_2026-08-03.json`에
+전체 계산 과정과 함께 저장.
+
+**테스트**: 코드 변경 없음(신규 독립 스크립트), 119개 테스트 영향 없음.
+
+---
+
 ## S등급 나머지 4종목(ACGL/PGR/SE/TTD) 심층 정성조사 완료 (2026-08-03) - S등급 7종목 전수조사 완료
 
 **경위**: "실제 매수리스트를 만들려면 어떻게 해야 하냐"는 질문에 제시한

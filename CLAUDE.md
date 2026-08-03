@@ -574,6 +574,36 @@ PDD·MNDY·DUOL과 동일 절차로 완료 - S등급 7종목 전부 심층조사
 price_at_analysis만 반영, 공식 수치 불변 - 재실행 후 4종목 전부 Gap/
 RAR/판정 동일함 확인). ledger를 전부 `_2026-08-03.json`으로 통합.
 
+**실제 매수리스트 - 2·3단계(팩터진단+사이징) 실행 완료(2026-08-03)**:
+"S/A등급만 투자하는 건 비추천"(집중도·미검증확신도·사이징부재) ->
+1단계(S등급 7종목 정성조사) 완료 후 이어서 실행. `scripts/build_
+buylist_2026_08_03.py`:
+
+- **2단계 진단**: S/A등급 13종목을 4개 팩터버킷으로 분류 - growth_platform
+  (PDD·MNDY·DUOL·SE·TTD·UBER·WDAY, "폭락발굴 고베타 성장주" 공통점)이
+  종목수 기준 7/13=54%를 차지, 나머지는 insurance(ACGL·PGR·BRO)·
+  industrial_stalwart(GEN·ROP)·travel(TCOM). Lynch유형만으로는 이 몰빵을
+  못 잡는다(fast_grower가 growth_platform 7개 중 6개+insurance 2개에도
+  걸쳐 있어 유형 자체는 분산 신호로 못 씀).
+- **3단계 사이징**: 공분산 최적화가 아니라 투명한 규칙기반 배분(수익률
+  상관행렬 자체가 이 프로젝트에 없음 - 알려진 스코프 갭). 버킷 목표비중
+  growth_platform 40%/insurance 30%/industrial_stalwart 20%/travel 10%로
+  강제 분산(동일가중 시 54%였던 걸 40%로 캡). 버킷 내부는 quality_score
+  = Gap%p x (Confidence_adj/100)로 배분하되 캡바인딩 종목 x0.85, TTD
+  (증권사기소송+CEO 내부자거래혐의)에 추가 x0.85. 종목당 상한 12%.
+  **Confidence_adj는 S등급 7종목만 이번 정성조사 결과를 반영**(MNDY 65/
+  TTD 72/PDD 75/DUOL 78/SE 79/ACGL 83/PGR 87 - MNDY·DUOL은 이 스크립트에서
+  처음 구체적 숫자로 확정, CLAUDE.md에 범위만 있던 걸 결정함). A등급
+  6종목(GEN/UBER/WDAY/ROP/TCOM/BRO)은 심층조사 전이라 엔진 원값을
+  그대로 쓰고 `conf_status="미검증"`으로 명시 - 액면가로 믿으라는 뜻이
+  아니라 아직 확인 안 했다는 뜻임을 결과표에 남긴다.
+- **결과**: ACGL·PGR·GEN이 상한 12%로 나란히 최상위(보험업 2종목은
+  정성조사에서 상대적으로 양호했던 게, GEN은 상한바인딩 종목 특성상
+  quality_score 계산에서 유리하게 나온 결과 - 후자는 조사가 아니라
+  공식의 산물이므로 과신 금지). TTD가 최하위(4.54%) - 거버넌스 적신호
+  이중할인이 실제로 작동함을 보여주는 사례.
+- `reports/buylist_2026-08-03.json`에 전체 계산 과정과 근거 저장.
+
 **⚠️ 미해결 항목 2건째 - M&A/사업다각화로 인한 CAGR 왜곡이 통계적으로
 안 보일 수 있다 (2026-07-28 GEN에서 발견)**: BRO 때부터 알려진 "M&A주도
 성장은 유기적 성장과 분리검증 필요"라는 원칙이 있었지만, GEN은 그 원칙만으론

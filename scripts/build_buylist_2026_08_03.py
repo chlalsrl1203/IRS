@@ -1,0 +1,187 @@
+"""
+S/A등급 13종목 팩터 진단 + 사이징 규칙 + 최종 매수리스트 - 2026-08-03.
+
+경위: "S/A등급만 투자하는 건 비추천"(집중도·미검증확신도·사이징부재 지적) ->
+"그럼 실제 매수리스트는 어떻게 만드나" -> 3단계 계획(1.정성심층조사
+2.팩터/섹터 집중도 진단 3.사이징규칙+최종리스트) 중 1단계(S등급 7종목
+전수 정성조사)를 마친 뒤, 이 스크립트로 2·3단계를 실행한다.
+
+⚠️ 이 스크립트는 공분산 기반 포트폴리오 최적화가 아니다. 그런 최적화를
+하려면 종목간 수익률 상관행렬이 필요한데 이 프로젝트는 그런 시계열
+데이터를 갖고 있지 않다(포지션 사이징 자체가 알려진 스코프 갭). 대신
+투명하고 검증 가능한 규칙 기반 배분이다 - CLAUDE.md의 "근거 없는 자동판정
+보다 숫자를 드러내고 분석자가 해석하게 하라" 원칙과 동일하게, 가중치
+산출 로직 전부를 코드로 노출한다.
+
+**팩터 버킷 4개** (Lynch유형만으로는 못 잡는 실제 사업모델·리스크요인
+군집화 - 예: PDD/MNDY/DUOL/SE/TTD/UBER/WDAY 7종목 전부 fast_grower지만
+공통점은 그게 아니라 "최근 대폭락 스크리닝으로 발굴된 고베타 소비자/
+플랫폼주"라는 점이다):
+  growth_platform: PDD MNDY DUOL SE TTD UBER WDAY (7) - 폭락발굴 고성장주,
+                   단일 팩터(위험선호 국면)에 몰빵될 위험
+  insurance:       ACGL PGR BRO (3) - 손해율·준비금 사이클, 다른 리스크축
+  industrial_stalwart: GEN ROP (2) - M&A영향권+성장상한 바인딩, 안정형
+  travel:          TCOM (1) - 경기소비재 최상단
+
+**버킷 목표비중**(관측: growth_platform이 종목수 7/13=54%를 차지해
+그대로 두면 사실상 단일 베팅 - 40%로 강제 캡):
+  growth_platform 40% / insurance 30% / industrial_stalwart 20% / travel 10%
+
+**버킷 내 배분**: quality_score = Gap%p x (Confidence_adj/100), 정규화 후
+버킷 목표비중에 곱함. 조정치:
+  - 캡바인딩(성장분석이 결과에 기여 안 함, M-1): x0.85
+  - 중대 거버넌스 적신호(TTD 증권사기소송+CEO 내부자거래 혐의): x0.85 추가
+  - 종목당 상한 12%(단일종목 과다집중 방지)
+
+**Confidence_adj**: 2026-08-02~03 정성심층조사를 거친 S등급 7종목은 조사
+결과를 반영한 조정치(CLAUDE.md/Notion에 기록된 범위의 중간값 또는 이
+세션에서 직접 판단한 값 - MNDY/DUOL은 명시적 구간을 안 적어뒀어서 이번에
+처음 숫자로 확정한다). A등급 6종목(GEN/UBER/WDAY/ROP/TCOM/BRO)은 아직
+심층조사 전이라 **엔진 원값 그대로 사용하고 '미검증'으로 표시** -
+액면가로 신뢰하라는 뜻이 아니라 아직 확인을 안 했다는 뜻이다.
+
+실행: python3 scripts/build_buylist_2026_08_03.py
+"""
+
+import json
+import os
+
+BUCKET = {
+    "PDD": "growth_platform", "MNDY": "growth_platform", "DUOL": "growth_platform",
+    "SE": "growth_platform", "TTD": "growth_platform", "UBER": "growth_platform",
+    "WDAY": "growth_platform",
+    "ACGL": "insurance", "PGR": "insurance", "BRO": "insurance",
+    "GEN": "industrial_stalwart", "ROP": "industrial_stalwart",
+    "TCOM": "travel",
+}
+
+BUCKET_TARGET = {
+    "growth_platform": 0.40,
+    "insurance": 0.30,
+    "industrial_stalwart": 0.20,
+    "travel": 0.10,
+}
+
+# (조정 Confidence, 검증상태, 근거)
+CONFIDENCE_ADJ = {
+    "PDD":  (75, "검증", "2026-08-02 심층조사: SAMR 물리충돌·확대된 사기조사(신규 거버넌스 리스크). 희석은 무해."),
+    "MNDY": (65, "검증", "2026-08-02 심층조사: S등급 7종목 중 최우려 - FY2027목표 철회+주가-21%급락(원분석 누락)+진행중 증권소송."),
+    "DUOL": (78, "검증", "2026-08-02 심층조사: 내부자 순매도만 확인(매수 없음)+증권소송(초기)+신규 AI경쟁사 Speak, 다만 DAU는 여전히 견조."),
+    "ACGL": (83, "검증", "2026-08-03 심층조사: 준비금·자본배분·거버넌스 양호(신용등급 상향), ex-cat 마진 2분기연속 소폭악화."),
+    "PGR":  (87, "검증", "2026-08-03 심층조사: 성장추정 정합적이나 텔레매틱스 모트가 손해율 우위로 미이어짐(GEICO/Allstate가 더 나음)."),
+    "SE":   (79, "검증", "2026-08-03 심층조사: Shopee EBITDA 역성장(TikTok Shop 방어비용), 그룹이익은 Garena 단독부담."),
+    "TTD":  (72, "검증", "2026-08-03 심층조사: 연방 증권사기소송 진행중(CEO 내부자거래 혐의 포함, 기각동의 기각) - S등급 7종목 중 최심각."),
+    "GEN":  (89, "미검증", "엔진 원값 그대로 - CLAUDE.md에 이미 M&A연결효과로 판정신뢰도 낮춤 별도 플래그 있음(핵심사업 유기성장 +5.13% vs 연결 +27%)."),
+    "UBER": (94, "미검증", "엔진 원값 그대로 - 심층조사 미실시."),
+    "WDAY": (94, "미검증", "엔진 원값 그대로 - 심층조사 미실시. Mobley 소송(AI채용차별)은 이미 data_limitations에 기록됨."),
+    "ROP":  (89, "미검증", "엔진 원값 그대로 - 심층조사 미실시. M&A 유기/비유기 성장 분리 미실시로 이미 기록됨."),
+    "TCOM": (94, "미검증", "엔진 원값 그대로 - 심층조사 미실시."),
+    "BRO":  (89, "미검증", "엔진 원값 그대로 - 심층조사 미실시."),
+}
+
+SEVERE_FLAG = {"TTD"}  # 중대 거버넌스 적신호 - 추가 0.85x
+PER_STOCK_CAP = 0.12
+
+
+def main():
+    data = json.load(open("reports/portfolio_ranking_2026-08-02.json"))
+    universe = {r["ticker"]: r for r in data if r["grade"] in ("S", "A")}
+
+    # ── 2단계: 팩터/섹터 집중도 진단 ────────────────────────────────────
+    print("=" * 100)
+    print("2단계 - 팩터/섹터 집중도 진단 (현재 상태: S/A등급 13종목 단순 동일가중 가정시)")
+    print("=" * 100)
+    bucket_count = {}
+    for t in universe:
+        bucket_count[BUCKET[t]] = bucket_count.get(BUCKET[t], 0) + 1
+    for b, n in sorted(bucket_count.items(), key=lambda x: -x[1]):
+        tickers = [t for t in universe if BUCKET[t] == b]
+        print(f"  {b:22} {n:2}종목 ({n/13*100:4.1f}%)  {', '.join(tickers)}")
+    print(f"\n  -> growth_platform 단일 버킷이 종목수 기준 {bucket_count['growth_platform']}/13="
+          f"{bucket_count['growth_platform']/13*100:.0f}%를 차지 - 사실상 '폭락한 고베타 성장주'라는")
+    print("     단일 팩터에 몰빵된 상태. 동일가중 매수는 분산이 아니라 집중이다.")
+
+    # ── 3단계: 사이징 규칙 적용 ──────────────────────────────────────────
+    rows = []
+    for t, r in universe.items():
+        bucket = BUCKET[t]
+        conf_adj, status, basis = CONFIDENCE_ADJ[t]
+        quality = r["gap_pct"] * (conf_adj / 100)
+        if r["cap_bound"]:
+            quality *= 0.85
+        if t in SEVERE_FLAG:
+            quality *= 0.85
+        rows.append({
+            "ticker": t, "bucket": bucket, "grade": r["grade"],
+            "gap_pct": r["gap_pct"], "conf_engine": r["confidence"],
+            "conf_adj": conf_adj, "conf_status": status,
+            "cap_bound": r["cap_bound"], "severe_flag": t in SEVERE_FLAG,
+            "quality_score": quality, "basis": basis,
+        })
+
+    bucket_quality_sum = {}
+    for row in rows:
+        bucket_quality_sum.setdefault(row["bucket"], 0)
+        bucket_quality_sum[row["bucket"]] += row["quality_score"]
+
+    for row in rows:
+        within_bucket_share = row["quality_score"] / bucket_quality_sum[row["bucket"]]
+        row["weight_raw"] = within_bucket_share * BUCKET_TARGET[row["bucket"]]
+
+    # 종목당 상한 적용 + 초과분은 **같은 버킷 안에서만** 재분배한다(버킷
+    # 목표비중을 지키기 위함 - 버킷을 넘나들며 재분배하면 insurance가 캡에
+    # 걸렸다고 growth_platform 비중이 몰래 늘어나는 부작용이 생긴다).
+    for bucket_name in BUCKET_TARGET:
+        bucket_rows = [r for r in rows if r["bucket"] == bucket_name]
+        for _ in range(5):
+            excess = 0.0
+            uncapped = []
+            for row in bucket_rows:
+                if row["weight_raw"] > PER_STOCK_CAP:
+                    excess += row["weight_raw"] - PER_STOCK_CAP
+                    row["weight_raw"] = PER_STOCK_CAP
+                else:
+                    uncapped.append(row)
+            if excess < 1e-9 or not uncapped:
+                break
+            total_uncapped = sum(r["weight_raw"] for r in uncapped)
+            for row in uncapped:
+                row["weight_raw"] += excess * (row["weight_raw"] / total_uncapped)
+
+    total_weight = sum(row["weight_raw"] for row in rows)
+    for row in rows:
+        row["weight_final"] = row["weight_raw"] / total_weight  # 정규화(합계 100%)
+
+    rows.sort(key=lambda r: -r["weight_final"])
+
+    print("\n" + "=" * 100)
+    print("3단계 - 최종 매수리스트 (규칙기반 배분, 공분산 최적화 아님)")
+    print("=" * 100)
+    header = (f"{'종목':6} {'버킷':20} {'Gap':>8} {'Conf(엔진)':>10} {'Conf(조정)':>10} "
+              f"{'상태':6} {'캡바인딩':>7} {'적신호':>6} {'비중':>7}")
+    print(header)
+    print("-" * len(header))
+    for row in rows:
+        print(f"{row['ticker']:6} {row['bucket']:20} {row['gap_pct']:+7.2f}%p "
+              f"{row['conf_engine']:10} {row['conf_adj']:10} {row['conf_status']:6} "
+              f"{'Y' if row['cap_bound'] else '':>7} {'Y' if row['severe_flag'] else '':>6} "
+              f"{row['weight_final']*100:6.2f}%")
+
+    print("\n버킷별 실제 배분 합계 (목표치와 대조):")
+    actual_bucket = {}
+    for row in rows:
+        actual_bucket.setdefault(row["bucket"], 0)
+        actual_bucket[row["bucket"]] += row["weight_final"]
+    for b, target in BUCKET_TARGET.items():
+        print(f"  {b:22} 목표 {target*100:4.1f}%  ->  실제 {actual_bucket[b]*100:5.2f}%")
+
+    os.makedirs("reports", exist_ok=True)
+    out_path = "reports/buylist_2026-08-03.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)
+    print(f"\n결과 저장: {out_path}")
+    return rows
+
+
+if __name__ == "__main__":
+    main()
