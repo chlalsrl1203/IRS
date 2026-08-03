@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "PGR",
     "company_name": "The Progressive Corporation",
-    "analyzed_at": "2026-07-28T11:34:54.768382+00:00",
-    "engine_version": "v3.22",
+    "analyzed_at": "2026-08-03T15:14:49.439426+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000080661-26-000086) R3/R4/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 10-K FY2022(0000080661-23-000006) R3/R4/R7 (FY2020~2022)",
@@ -13,7 +13,10 @@
       "stockanalysis.com 시가총액 $125.44B (2026-07-27 종가)",
       "WebSearch: PGR 1위 등극(S&P Global 2026-05), 반독점/규제조사 여부 확인(2026-07)",
       "Notion 트래커 ACGL 핵심노트(2026-07-18, v3.13) - 보험업 FCF-DCF 방법론 우려 선례"
-    ]
+    ],
+    "falsification_conditions": "(1) 신규계약(PIF) 증가율이 2026년 내내 한 자릿수 초반까지 추가 둔화되거나, GEICO/Allstate 대비 손해율 열위가 확대되면 (현재 '점유율은 1위, 손해율은 3위' 구도가 더 악화됨을 뜻함) 텔레매틱스 모트 서사를 재검토. (2) 상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토 대상. (3) 2026-08-04 Q2 실적(이 조사 하루 뒤 예정)에서 컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [
     "[보험업 교차검증] Realistic Growth(16.87%)와 지속가능성장률(18.88%)이 2.01%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=4.14배는 별도로 판정 신뢰도 판단에 참고할 것."
@@ -96,6 +99,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -132,7 +136,11 @@
       "2023": 277000000,
       "2024": 682000000,
       "2025": 2871000000
-    }
+    },
+    "sbc_by_year": null,
+    "falsification_conditions": "(1) 신규계약(PIF) 증가율이 2026년 내내 한 자릿수 초반까지 추가 둔화되거나, GEICO/Allstate 대비 손해율 열위가 확대되면 (현재 '점유율은 1위, 손해율은 3위' 구도가 더 악화됨을 뜻함) 텔레매틱스 모트 서사를 재검토. (2) 상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토 대상. (3) 2026-08-04 Q2 실적(이 조사 하루 뒤 예정)에서 컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.20900158007376457,
@@ -290,6 +298,7 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": {
     "roe_years_used": [
       2021,
@@ -308,5 +317,6 @@
     "retention_ratio": 0.8383352327888227,
     "sustainable_growth": 0.18878775629904956,
     "price_to_book": 4.136793852850971
-  }
+  },
+  "sbc_cross_check": null
 }

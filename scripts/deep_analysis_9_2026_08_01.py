@@ -62,10 +62,10 @@ R_MAX = RF + erp_from_drs(100)  # DRS 최악값에서의 할인율 상한
 TODAY = date(2026, 8, 1)
 
 LEDGERS = {
-    "SE": "ledger/SE_2026-08-02.json",
+    "SE": "ledger/SE_2026-08-03.json",
     "RMD": "ledger/RMD_2026-08-02.json",
     "DUOL": "ledger/DUOL_2026-08-02.json",
-    "TTD": "ledger/TTD_2026-08-02.json",
+    "TTD": "ledger/TTD_2026-08-03.json",
     "MNDY": "ledger/MNDY_2026-08-02.json",
     "WDAY": "ledger/WDAY_2026-08-02.json",
 }

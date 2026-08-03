@@ -70,7 +70,7 @@ def stress(name, ledger_path):
 
 
 if __name__ == "__main__":
-    r1 = stress("Sea Limited(SE)", "ledger/SE_2026-08-02.json")
+    r1 = stress("Sea Limited(SE)", "ledger/SE_2026-08-03.json")
     r2 = stress("ResMed(RMD)", "ledger/RMD_2026-08-02.json")
 
     print(f"\n{'='*90}\n요약\n{'='*90}")

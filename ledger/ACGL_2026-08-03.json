@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "ACGL",
     "company_name": "Arch Capital Group Ltd.",
-    "analyzed_at": "2026-08-01T10:18:33.918731+00:00",
-    "engine_version": "v3.23",
+    "analyzed_at": "2026-08-03T15:14:49.393378+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000947484-26-000017) R3/R5/R8, as-filed, 2026-08-01 조회",
       "SEC EDGAR 10-K FY2022(0000947484-23-000015) R3/R5/R8 (FY2020~2022)",
@@ -14,7 +14,10 @@
       "WebSearch: ACGL 2026 Q2 실적(2026-07-29), 재보험 소프트사이클・가격하락・Fitch 업종전망 하향, 반독점/규제조사 여부 확인(2026-08)",
       "Notion 트래커 ACGL v3.13 원 기록(2026-07-18) - 이번 재분석의 문제제기 대상",
       "analyze_pgr_2026_07_28.py - is_insurer 경로 및 방법론 선례"
-    ]
+    ],
+    "falsification_conditions": "(1) ex-cat 컴바인드레이쇼가 3개 분기 연속 악화되거나 200bpYoY를 초과해 벌어지면(현재 '가격규율 유지' 서사의 근거가 무너짐) 이 판정은 재검토 대상. (2) 대형 대재해 손실(허리케인 등)로 특정 분기 cat load가 두 자릿수 %p를 넘으면 평활화된 FCF 가정 자체가 깨진 것으로 간주. (3) S&P/AM Best가 등급을 하향하거나 전망을 negative로 바꾸면 준비금 적정성 재평가 필요.",
+    "price_at_analysis": 100.53,
+    "currency": "USD"
   },
   "data_limitations": [
     "[보험업 교차검증] Realistic Growth(15.74%)와 지속가능성장률(15.46%)이 0.28%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=1.41배는 별도로 판정 신뢰도 판단에 참고할 것."
@@ -97,6 +100,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -137,7 +141,10 @@
     },
     "sbc_by_year": {
       "2025": 148000000
-    }
+    },
+    "falsification_conditions": "(1) ex-cat 컴바인드레이쇼가 3개 분기 연속 악화되거나 200bpYoY를 초과해 벌어지면(현재 '가격규율 유지' 서사의 근거가 무너짐) 이 판정은 재검토 대상. (2) 대형 대재해 손실(허리케인 등)로 특정 분기 cat load가 두 자릿수 %p를 넘으면 평활화된 FCF 가정 자체가 깨진 것으로 간주. (3) S&P/AM Best가 등급을 하향하거나 전망을 negative로 바꾸면 준비금 적정성 재평가 필요.",
+    "price_at_analysis": 100.53,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.2750140299551005,
@@ -295,6 +302,7 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": {
     "roe_years_used": [
       2021,

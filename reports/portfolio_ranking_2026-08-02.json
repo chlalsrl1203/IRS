@@ -31,7 +31,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-01"
+    "analyzed_at": "2026-08-03"
   },
   {
     "ticker": "MNDY",
@@ -65,7 +65,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-07-28"
+    "analyzed_at": "2026-08-03"
   },
   {
     "ticker": "DUOL",
@@ -99,7 +99,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-03"
   },
   {
     "ticker": "TTD",
@@ -116,7 +116,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-03"
   },
   {
     "ticker": "GEN",

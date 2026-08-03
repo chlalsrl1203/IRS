@@ -93,6 +93,10 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.24(2026-08-03 방법론 감사 권고 #3): 향후 실현수익률 검증 전제조건.
+        price_at_analysis=107.41,
+        currency="USD",
+
         competitor_threat_weights=[0.35, 0.15, 0.10],
         market_share_trend_pp_per_year=-2.0,
         active_antitrust_or_regulatory_case=False,
@@ -127,6 +131,24 @@ def build_inputs() -> AnalysisInputs:
             "전년 수준 유지 - 마진압박 시사)와도 대조해 재검토할 것(아래 "
             "실행결과 참고, 모델괴리가 크면 GWRE/KLAC/VRT/KEYS와 동일 "
             "절차로 최종 확정)."
+        ),
+
+        # v3.24+(2026-08-03, S등급 나머지 4종목 심층조사): 원분석에는 없던
+        # 사실 확인 - 세그먼트 분리 결과 Shopee EBITDA가 사상최대 GMV에도
+        # 불구하고 전년比 감소(TikTok Shop 방어를 위한 이행·구독보조금
+        # 확대) 중이며, 그룹 이익성장은 사실상 Garena 단독(2021년 이후
+        # 최고분기) 부담이다. TikTok Shop 점유율 잠식은 계속 진행 중(베트남
+        # 52%→41%로 원분석보다 더 심함), 과거 인도네시아 규제제동(2023년
+        # 일시금지)도 재발 안 됨. SBC/희석은 양호(FCF의 ~14%, 트래커
+        # 중위권 - 최초 교차검증). 다만 희석주식수는 FY2025에도 +5.5%로
+        # 여전히 증가 중(자사주매입은 2025-11 시작해 아직 상쇄 못함).
+        falsification_conditions=(
+            "(1) 2026-08-11 Q2 실적에서 Shopee EBITDA가 전년比 추가 감소하거나 "
+            "그룹 전체 조정EBITDA가 가이던스(전년 수준 유지)를 밑돌면 "
+            "'Garena가 그룹을 떠받치는 구도'가 심화된 것으로 재검토. "
+            "(2) TikTok Shop의 동남아 GMV 점유율이 44%를 넘어 추가 확대되거나 "
+            "베트남 외 다른 핵심시장(인도네시아・태국)에서도 유사한 잠식이 "
+            "확인되면 competitor_threat_weights 재산정 필요."
         ),
 
         data_sources=[

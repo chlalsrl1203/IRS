@@ -2,15 +2,15 @@
   "meta": {
     "ticker": "TTD",
     "company_name": "The Trade Desk, Inc.",
-    "analyzed_at": "2026-08-02T00:00:11.509832+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-03T15:14:49.522702+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001671933-26-000014) R3/R5/R7, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2022(0001671933-23-000007) R5/R7 (FY2020~2022)",
       "stockanalysis.com 시가총액 $8.48B, 2026-07-31 조회",
       "WebSearch: Seeking Alpha '30 for 30'(2026-07-15) 리스트, TTD 2026 Q1 실적/Q2가이던스(+8%YoY, 발표당일 -15%), Amazon DSP 경쟁구도, 임원진 이탈 확인"
     ],
-    "falsification_conditions": null,
+    "falsification_conditions": "(1) 증권소송에서 불리한 판결이나 거액 화해금 합의가 나오면 이 판정은 재검토 대상. (2) 12개월 내 5번째 CFO/CRO급 교체가 발생하면 재검토. (3) 미국 매출성장률이 FY2027까지 낮은 한자릿수 밑으로 재차 둔화되거나 회복 실패하면(Amazon DSP 잠식이 구조적 임을 뜻함) 재검토. (4) 2026-08-06 Q2 실적에서 가이던스 $750M을 다시 하회하면 즉시 재검토.",
     "price_at_analysis": null,
     "currency": "USD"
   },
@@ -97,7 +97,7 @@
     "sbc_by_year": {
       "2025": 490627000
     },
-    "falsification_conditions": null,
+    "falsification_conditions": "(1) 증권소송에서 불리한 판결이나 거액 화해금 합의가 나오면 이 판정은 재검토 대상. (2) 12개월 내 5번째 CFO/CRO급 교체가 발생하면 재검토. (3) 미국 매출성장률이 FY2027까지 낮은 한자릿수 밑으로 재차 둔화되거나 회복 실패하면(Amazon DSP 잠식이 구조적 임을 뜻함) 재검토. (4) 2026-08-06 Q2 실적에서 가이던스 $750M을 다시 하회하면 즉시 재검토.",
     "price_at_analysis": null,
     "currency": "USD"
   },
@@ -251,6 +251,7 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "S",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 490627000,
