@@ -26,8 +26,21 @@ S/A등급 13종목 팩터 진단 + 사이징 규칙 + 최종 매수리스트 - 2
   travel:          TCOM (1) - 경기소비재 최상단
 
 **버킷 목표비중**(관측: growth_platform이 종목수 7/13=54%를 차지해
-그대로 두면 사실상 단일 베팅 - 40%로 강제 캡):
+그대로 두면 사실상 단일 베팅 - 40%로 강제 캡). 아래는 **명목 목표비중**이다:
   growth_platform 40% / insurance 30% / industrial_stalwart 20% / travel 10%
+
+**v3.29(2026-08-04) - 목표비중 동적 상한 재설계**: 명목 목표비중은 종목수와
+무관한 고정값이라, 버킷 종목수가 줄면(1종목 x 12%캡 = 최대 12%인데 명목
+목표가 20%인 경우처럼) 구조적으로 달성 불가능한 목표가 생긴다. ROP가
+A등급에서 이탈(아래 갱신 참고)하며 industrial_stalwart가 정확히 이 상태에
+빠졌다 - 실증사례가 생겼으므로 하드코딩된 예외 처리 대신 일반 규칙을
+`effective_bucket_targets()`로 배선했다: 버킷 목표가 `종목수 x 종목당상한`
+을 넘으면 그 상한까지 깎고, 초과분을 나머지(캡에 안 걸린) 버킷들에 **명목
+목표비중 비율대로** 재분배한다. industrial_stalwart(GEN 1종목)를 억지로
+다른 버킷과 합치거나(공통 리스크축이 없는 종목끼리 묶는 건 이 스크립트의
+"실제 사업모델·리스크요인 군집화" 원칙에 위배) 20% 목표를 그냥 방치하지도
+않는, 재사용 가능한 일반 해법이다. 향후 어느 버킷이든 종목수가 줄어들면
+(또는 새 종목 편입으로 다시 늘어나면) 자동으로 재계산된다.
 
 **버킷 내 배분**: quality_score = Gap%p x (Confidence_adj/100), 정규화 후
 버킷 목표비중에 곱함. 조정치:
@@ -46,13 +59,13 @@ S/A등급 13종목 팩터 진단 + 사이징 규칙 + 최종 매수리스트 - 2
 검증(Gap +7.74%p→+1.24%p, 판정 뒤집힘)을 실제로 공식판정에 반영
 (`realistic_growth_override`, engine/pipeline.py v3.28)하면서 ROP가
 A등급에서 C등급으로 빠져 S/A 유니버스가 13종목→12종목이 됐다.
-`industrial_stalwart` 버킷이 GEN 1종목만 남아 목표비중(20%)을 못 채우는
-구조적 문제가 생겼고(GEN 혼자 12%캡에 막혀 최대 12%까지만 가능), 이 과정
-에서 **버킷 재분배 이후 전역 정규화가 이미 캡된 종목까지 12% 넘게
-재상승시키는 버그**를 발견해 고쳤다(정규화 후 2차 전역 캡 강제 패스 추가 -
-버킷당 목표 미달은 그대로 두되 종목당 12% 상한만큼은 어떤 경우에도 지킨다).
-industrial_stalwart 버킷 구조(현재 GEN 단독) 자체를 재설계할지는 이후
-세션 판단 사안으로 남긴다.
+`industrial_stalwart` 버킷이 GEN 1종목만 남아 명목목표(20%)를 구조적으로
+못 채우게 됐다. 1차로 정규화 후 2차 전역 캡 강제 패스를 추가해 "이미
+캡된 종목까지 재상승"하는 버그는 막았지만, 그것만으로는 industrial_
+stalwart의 미달분이 여전히 암묵적으로 나머지 버킷에 흘러들어가는 문제가
+남아 있었다 - 바로 위 v3.29 항목의 `effective_bucket_targets()`로
+근본적으로 재설계해 명시적·비례적 재분배로 바꿨다(2차 전역 캡 패스는
+안전망으로 유지).
 
 실행: python3 scripts/build_buylist_2026_08_03.py
 """
@@ -69,12 +82,38 @@ BUCKET = {
     "TCOM": "travel",
 }
 
-BUCKET_TARGET = {
+# 명목 목표비중 - 종목수와 무관한 "이상적" 분산 목표. 실제 배분에는
+# effective_bucket_targets()로 계산한 EFFECTIVE_BUCKET_TARGET을 쓴다.
+NOMINAL_BUCKET_TARGET = {
     "growth_platform": 0.40,
     "insurance": 0.30,
     "industrial_stalwart": 0.20,
     "travel": 0.10,
 }
+
+
+def effective_bucket_targets(bucket_counts: dict, nominal_targets: dict, per_stock_cap: float) -> dict:
+    """
+    버킷 목표비중이 `종목수 x 종목당상한`을 넘으면 그 상한까지 깎고,
+    초과분을 캡에 안 걸린 나머지 버킷들에 명목 목표비중 비율대로
+    재분배한다. 종목수가 늘거나 줄면 자동으로 재계산되는 일반 규칙 -
+    한 버킷만 하드코딩으로 예외처리하지 않는다.
+    """
+    targets = dict(nominal_targets)
+    total_excess = 0.0
+    capped = set()
+    for bucket, n in bucket_counts.items():
+        max_achievable = n * per_stock_cap
+        if targets[bucket] > max_achievable:
+            total_excess += targets[bucket] - max_achievable
+            targets[bucket] = max_achievable
+            capped.add(bucket)
+    if total_excess > 1e-9:
+        remaining = [b for b in targets if b not in capped]
+        remaining_nominal_sum = sum(nominal_targets[b] for b in remaining)
+        for bucket in remaining:
+            targets[bucket] += total_excess * (nominal_targets[bucket] / remaining_nominal_sum)
+    return targets
 
 # (조정 Confidence, 검증상태, 근거)
 CONFIDENCE_ADJ = {
@@ -100,20 +139,35 @@ PER_STOCK_CAP = 0.12
 def main():
     data = json.load(open("reports/portfolio_ranking_2026-08-02.json"))
     universe = {r["ticker"]: r for r in data if r["grade"] in ("S", "A")}
+    n_universe = len(universe)
 
     # ── 2단계: 팩터/섹터 집중도 진단 ────────────────────────────────────
     print("=" * 100)
-    print("2단계 - 팩터/섹터 집중도 진단 (현재 상태: S/A등급 13종목 단순 동일가중 가정시)")
+    print(f"2단계 - 팩터/섹터 집중도 진단 (현재 상태: S/A등급 {n_universe}종목 단순 동일가중 가정시)")
     print("=" * 100)
-    bucket_count = {}
+    bucket_count = {b: 0 for b in NOMINAL_BUCKET_TARGET}
     for t in universe:
-        bucket_count[BUCKET[t]] = bucket_count.get(BUCKET[t], 0) + 1
+        bucket_count[BUCKET[t]] += 1
     for b, n in sorted(bucket_count.items(), key=lambda x: -x[1]):
         tickers = [t for t in universe if BUCKET[t] == b]
-        print(f"  {b:22} {n:2}종목 ({n/13*100:4.1f}%)  {', '.join(tickers)}")
-    print(f"\n  -> growth_platform 단일 버킷이 종목수 기준 {bucket_count['growth_platform']}/13="
-          f"{bucket_count['growth_platform']/13*100:.0f}%를 차지 - 사실상 '폭락한 고베타 성장주'라는")
+        print(f"  {b:22} {n:2}종목 ({n/n_universe*100:4.1f}%)  {', '.join(tickers)}")
+    print(f"\n  -> growth_platform 단일 버킷이 종목수 기준 {bucket_count['growth_platform']}/{n_universe}="
+          f"{bucket_count['growth_platform']/n_universe*100:.0f}%를 차지 - 사실상 '폭락한 고베타 성장주'라는")
     print("     단일 팩터에 몰빵된 상태. 동일가중 매수는 분산이 아니라 집중이다.")
+
+    bucket_target = effective_bucket_targets(bucket_count, NOMINAL_BUCKET_TARGET, PER_STOCK_CAP)
+    print("\n  버킷별 목표비중 (명목 -> 종목수 제약 반영 후 실제 사용값):")
+    for b in NOMINAL_BUCKET_TARGET:
+        nominal, effective = NOMINAL_BUCKET_TARGET[b], bucket_target[b]
+        max_achievable = bucket_count[b] * PER_STOCK_CAP
+        if nominal > max_achievable + 1e-9:
+            note = (f"  <- {b}는 {bucket_count[b]}종목 x {PER_STOCK_CAP*100:.0f}%캡="
+                     f"{max_achievable*100:.0f}%가 상한이라 하향")
+        elif effective > nominal + 1e-9:
+            note = "  <- 다른 버킷의 초과분을 명목비중 비율로 흡수"
+        else:
+            note = ""
+        print(f"    {b:22} 명목 {nominal*100:4.1f}%  ->  실사용 {effective*100:5.2f}%{note}")
 
     # ── 3단계: 사이징 규칙 적용 ──────────────────────────────────────────
     rows = []
@@ -140,12 +194,14 @@ def main():
 
     for row in rows:
         within_bucket_share = row["quality_score"] / bucket_quality_sum[row["bucket"]]
-        row["weight_raw"] = within_bucket_share * BUCKET_TARGET[row["bucket"]]
+        row["weight_raw"] = within_bucket_share * bucket_target[row["bucket"]]
 
     # 종목당 상한 적용 + 초과분은 **같은 버킷 안에서만** 재분배한다(버킷
     # 목표비중을 지키기 위함 - 버킷을 넘나들며 재분배하면 insurance가 캡에
-    # 걸렸다고 growth_platform 비중이 몰래 늘어나는 부작용이 생긴다).
-    for bucket_name in BUCKET_TARGET:
+    # 걸렸다고 growth_platform 비중이 몰래 늘어나는 부작용이 생긴다). 이제
+    # bucket_target 자체가 이미 종목수 제약을 반영했으므로(v3.29), 이
+    # 패스는 버킷 "내부"에서 quality_score 편차가 큰 경우의 잔여 안전망이다.
+    for bucket_name in bucket_target:
         bucket_rows = [r for r in rows if r["bucket"] == bucket_name]
         for _ in range(5):
             excess = 0.0
@@ -204,13 +260,12 @@ def main():
               f"{'Y' if row['cap_bound'] else '':>7} {'Y' if row['severe_flag'] else '':>6} "
               f"{row['weight_final']*100:6.2f}%")
 
-    print("\n버킷별 실제 배분 합계 (목표치와 대조):")
-    actual_bucket = {}
+    print("\n버킷별 실제 배분 합계 (실사용 목표치와 대조):")
+    actual_bucket = {b: 0.0 for b in NOMINAL_BUCKET_TARGET}
     for row in rows:
-        actual_bucket.setdefault(row["bucket"], 0)
         actual_bucket[row["bucket"]] += row["weight_final"]
-    for b, target in BUCKET_TARGET.items():
-        print(f"  {b:22} 목표 {target*100:4.1f}%  ->  실제 {actual_bucket[b]*100:5.2f}%")
+    for b, target in bucket_target.items():
+        print(f"  {b:22} 실사용목표 {target*100:5.2f}%  ->  실제 {actual_bucket[b]*100:5.2f}%")
 
     os.makedirs("reports", exist_ok=True)
     out_path = "reports/buylist_2026-08-03.json"
