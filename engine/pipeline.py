@@ -215,6 +215,18 @@ class AnalysisInputs:
     price_at_analysis: float = None
     currency: str = "USD"
 
+    # Realistic Growth 직접 오버라이드 - v3.28에서 배선(2026-08-04, ROP 유기적
+    # 성장률 교차검증이 실증사례). M&A 롤업 성장 종목(GEN/ROP/BRO 패턴)은
+    # 매출·FCF CAGR 기반 계산이 Lynch 성장상한에 항상 걸려버려(M-1) 계산 자체가
+    # 결과에 기여하지 못하는데, 그 상한값이 회사가 실제로 공시한 성장률과
+    # 크게 괴리될 수 있다(ROP: 캡 12% vs 오가닉 공시 5-6%, 캡이 만든 여유폭이
+    # 실제로는 근거가 약했음을 교차검증으로 확인). 값을 넣으면 CAGR 계산·Lynch
+    # 캡을 모두 우회하고 이 값을 Realistic Growth로 직접 사용한다 - 근거 없이
+    # 강제하지 않기 위해 반드시 subjective_input_basis 수준의 사유를 요구한다.
+    # None이면 기존 동작(CAGR 계산 + 캡) 그대로다.
+    realistic_growth_override: float = None
+    realistic_growth_override_reason: str = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -231,6 +243,16 @@ class AnalysisInputs:
             )
         if self.lynch_type_override is not None and not self.lynch_type_override_reason:
             raise ValueError("lynch_type을 수동 오버라이드하려면 사유 필수")
+
+        if self.realistic_growth_override is not None and not (
+            self.realistic_growth_override_reason
+            and self.realistic_growth_override_reason.strip()
+        ):
+            raise ValueError(
+                "realistic_growth_override 필수 사유 누락(v3.28): CAGR 계산과 "
+                "Lynch 캡을 모두 우회하는 값이라 근거 없이 쓰면 판정을 조용히 "
+                "뒤집을 수 있다."
+            )
 
         # v3.25(M-4): n_requested를 기본값(12)에서 벗어나게 쓰려면 사유 필수.
         if self.n_requested != 12 and not (
@@ -550,6 +572,29 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             f"않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 "
             f"결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 "
             f"자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+        )
+
+    # ── v3.28: Realistic Growth 직접 오버라이드 배선 ────────────────────
+    # 위 캡바인딩 경고까지 전부 계산된 뒤 적용한다 - "원래는 캡이 걸렸었다"는
+    # 사실 자체가 진단정보로서 남아있어야 다음 분석자가 왜 오버라이드가
+    # 필요했는지 추적할 수 있다.
+    if inputs.realistic_growth_override is not None:
+        pre_override_growth = realistic_growth
+        pre_override_cap_note = growth_breakdown.get("cap_applied")
+        realistic_growth = inputs.realistic_growth_override
+        growth_breakdown = dict(growth_breakdown)
+        growth_breakdown["realistic_growth_override_applied"] = {
+            "pre_override_growth": pre_override_growth,
+            "pre_override_cap_note": pre_override_cap_note,
+            "override_value": inputs.realistic_growth_override,
+            "reason": inputs.realistic_growth_override_reason,
+        }
+        growth_breakdown["final_realistic_growth"] = realistic_growth
+        data_limitations.append(
+            f"[Realistic Growth 오버라이드] CAGR 계산·Lynch 캡 기반값"
+            f"({pre_override_growth*100:.2f}%, {pre_override_cap_note or '캡 미적용'})을 "
+            f"우회하고 {realistic_growth*100:.2f}%를 직접 사용했다. 사유: "
+            f"{inputs.realistic_growth_override_reason}"
         )
 
     erp = erp_from_drs(drs)

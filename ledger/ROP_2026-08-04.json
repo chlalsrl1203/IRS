@@ -2,7 +2,7 @@
   "meta": {
     "ticker": "ROP",
     "company_name": "Roper Technologies, Inc.",
-    "analyzed_at": "2026-08-04T01:31:19.486916+00:00",
+    "analyzed_at": "2026-08-04T08:02:53.973431+00:00",
     "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000882835-26-000009) R3/R5/R9, as-filed, 2026-08-01 조회",
@@ -12,13 +12,14 @@
       "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상",
       "2026-08-04 정성심층조사(A등급): M&A자본배분·유기적성장률(핵심 발견, 5-6%vs 캡12%)·회계품질·거버넌스/레버리지·경쟁동향 - 판정불변이나 Gap 크기의 근거가 약함을 확인, 유기적성장 입력 재실행 권고(Confidence 89→미검증 유지)"
     ],
-    "falsification_conditions": "1) 이 발견 자체가 사실상 즉시성 반증조건에 가깝다 - 회사 공시 유기적성장(5-6%)을 Realistic Growth 입력으로 대체해 재실행하면 Gap이 +7.74%p에서 약 +1~2%p(유기적 성장 기준) 또는 +4~5%p(연결 성장 기준)로 축소되어 '적정가/경계선' 근접 또는 진입 가능성이 있다 - 다음 세션에서 반드시 재실행 검증할 것. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
+    "falsification_conditions": "1) 오가닉 성장률이 향후 2개분기 연속 5.5% 아래로(4% 이하) 추가 감속하면 이번에 채택한 5.5% 전제 자체가 낙관적이었다는 뜻이므로 하향 재검토. 반대로 6%대 이상으로 반등이 확인되면 연결성장 기준(8.5%, Gap +4.24%p)까지 상향 재검토 여지. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
     "price_at_analysis": 391.97,
     "currency": "USD"
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(14.46%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
-    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[Realistic Growth 오버라이드] CAGR 계산·Lynch 캡 기반값(12.00%, 상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요)을 우회하고 5.50%를 직접 사용했다. 사유: 회사 공시 오가닉 성장률(Q1'26 5%, Q2'26 5%, FY26 가이던스 상단 6%)의 중간값. stalwart 캡(12%)이 만든 여유폭은 매출/FCF CAGR 계산이 M&A 롤업 효과를 오가닉 성장과 분리하지 못해 생긴 것으로 확인됐다(2026-08-04 정성심층조사 핵심발견, scripts/rop_organic_growth_crosscheck_2026_08_04.py로 사전 검증 - 유기적 5.5%/연결 8.5% 두 시나리오 모두 판정이 '저평가 가능성'->'적정가/경계선'으로 뒤집힘을 확인 후 사용자 승인을 받아 보수적인 유기적성장 값을 공식 채택)."
   ],
   "inputs": {
     "ticker": "ROP",
@@ -101,9 +102,11 @@
     "sbc_by_year": {
       "2025": 166300000.0
     },
-    "falsification_conditions": "1) 이 발견 자체가 사실상 즉시성 반증조건에 가깝다 - 회사 공시 유기적성장(5-6%)을 Realistic Growth 입력으로 대체해 재실행하면 Gap이 +7.74%p에서 약 +1~2%p(유기적 성장 기준) 또는 +4~5%p(연결 성장 기준)로 축소되어 '적정가/경계선' 근접 또는 진입 가능성이 있다 - 다음 세션에서 반드시 재실행 검증할 것. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
+    "falsification_conditions": "1) 오가닉 성장률이 향후 2개분기 연속 5.5% 아래로(4% 이하) 추가 감속하면 이번에 채택한 5.5% 전제 자체가 낙관적이었다는 뜻이므로 하향 재검토. 반대로 6%대 이상으로 반등이 확인되면 연결성장 기준(8.5%, Gap +4.24%p)까지 상향 재검토 여지. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
     "price_at_analysis": 391.97,
-    "currency": "USD"
+    "currency": "USD",
+    "realistic_growth_override": 0.055,
+    "realistic_growth_override_reason": "회사 공시 오가닉 성장률(Q1'26 5%, Q2'26 5%, FY26 가이던스 상단 6%)의 중간값. stalwart 캡(12%)이 만든 여유폭은 매출/FCF CAGR 계산이 M&A 롤업 효과를 오가닉 성장과 분리하지 못해 생긴 것으로 확인됐다(2026-08-04 정성심층조사 핵심발견, scripts/rop_organic_growth_crosscheck_2026_08_04.py로 사전 검증 - 유기적 5.5%/연결 8.5% 두 시나리오 모두 판정이 '저평가 가능성'->'적정가/경계선'으로 뒤집힘을 확인 후 사용자 승인을 받아 보수적인 유기적성장 값을 공식 채택)."
   },
   "derived": {
     "revenue_cagr_3y": 0.13731706743631933,
@@ -158,7 +161,7 @@
   },
   "growth": {
     "structural_discount_pct": 0.10364424431628375,
-    "realistic_growth": 0.12,
+    "realistic_growth": 0.055,
     "breakdown": {
       "revenue_cagr_inputs": {
         "3y": 0.13731706743631933,
@@ -176,7 +179,13 @@
       "discounted_growth": 0.1255348482761678,
       "lynch_type": "stalwart",
       "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
-      "final_realistic_growth": 0.12
+      "final_realistic_growth": 0.055,
+      "realistic_growth_override_applied": {
+        "pre_override_growth": 0.12,
+        "pre_override_cap_note": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+        "override_value": 0.055,
+        "reason": "회사 공시 오가닉 성장률(Q1'26 5%, Q2'26 5%, FY26 가이던스 상단 6%)의 중간값. stalwart 캡(12%)이 만든 여유폭은 매출/FCF CAGR 계산이 M&A 롤업 효과를 오가닉 성장과 분리하지 못해 생긴 것으로 확인됐다(2026-08-04 정성심층조사 핵심발견, scripts/rop_organic_growth_crosscheck_2026_08_04.py로 사전 검증 - 유기적 5.5%/연결 8.5% 두 시나리오 모두 판정이 '저평가 가능성'->'적정가/경계선'으로 뒤집힘을 확인 후 사용자 승인을 받아 보수적인 유기적성장 값을 공식 채택)."
+      }
     },
     "capex_adjustment": null
   },
@@ -192,19 +201,19 @@
     "model_choice_reason": "ROP는 M&A 중심으로 매출이 꾸준히 확대되는 궤적(2020년 $4.0B -> 2025년 $7.9B, 2배)이나 SE/TTD/DUOL류의 극단적 고성장은 아니다. FY2025 한 해 인수지출($3.29B)이 시총의 8.5%에 달할 만큼 M&A가 상시적 성장동력이라 명시적 고성장기 이후 정상화를 가정하는 two_stage보다 정상마진을 유지하는 single_stage가 이 비즈니스모델에 더 맞을 수도 있으나, 이 세션의 다른 종목들과의 비교가능성을 위해 우선 two_stage로 실행하고 모델괴리를 확인해 재검토한다 - VRSN/GWRE(single_stage 채택 선례)와 유사한 상황일 가능성. ⚠️2022년 OCF가 일회성 세금납부로 급감했으나 3y FCF CAGR 기준연도라 왜곡 가능성 있음(본문 참고) - 결과의 fcf_conservatism_applied 여부로 실제 영향 확인할 것.",
     "value": 0.04264221191406248
   },
-  "expectation_gap": 0.07735778808593752,
+  "expectation_gap": 0.012357788085937522,
   "scenarios": {
     "growth_rates": {
-      "g_base": 0.12,
-      "g_bull": 0.12,
-      "g_bear": 0.06,
-      "bull_capped_at_base": true,
+      "g_base": 0.055,
+      "g_bull": 0.0825,
+      "g_bear": 0.0275,
+      "bull_capped_at_base": false,
       "lynch_type_cap_max": 0.12
     },
     "returns": {
-      "bull": 0.2468455540836425,
-      "base": 0.2468455540836425,
-      "bear": 0.04994478708180616
+      "bull": 0.11927910323917978,
+      "base": 0.035246257292452565,
+      "bear": -0.04112711948567105
     },
     "probabilities": {
       "bull": 0.35544,
@@ -212,9 +221,9 @@
       "bear": 0.14456000000000002
     },
     "probability_rationale": "DRS=31.5 (중립점 50 대비 편차 -0.37) 기준: p_bull=35.5%, p_base=50.0%, p_bear=14.5%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
-    "expected_return_decimal": 0.21838157920585702
+    "expected_return_decimal": 0.05407435670871173
   },
-  "rar": 0.6928349594094447,
+  "rar": 0.17155570021799407,
   "stalwart_bias": {
     "flagged": false,
     "note": null
@@ -224,10 +233,10 @@
     "r_without_drs": 0.0947,
     "implied_growth_with_drs": 0.04264221191406248,
     "implied_growth_without_drs": 0.025432586669921865,
-    "gap_with_drs": 0.07735778808593752,
-    "gap_without_drs": 0.09456741333007813,
-    "judgment_with_drs": "저평가 가능성",
-    "judgment_without_drs": "저평가 가능성",
+    "gap_with_drs": 0.012357788085937522,
+    "gap_without_drs": 0.029567413330078136,
+    "judgment_with_drs": "적정가",
+    "judgment_without_drs": "적정가",
     "judgment_flipped": false
   },
   "confidence": {
@@ -237,10 +246,10 @@
       "r_without_drs": 0.0947,
       "implied_growth_with_drs": 0.04264221191406248,
       "implied_growth_without_drs": 0.025432586669921865,
-      "gap_with_drs": 0.07735778808593752,
-      "gap_without_drs": 0.09456741333007813,
-      "judgment_with_drs": "저평가 가능성",
-      "judgment_without_drs": "저평가 가능성",
+      "gap_with_drs": 0.012357788085937522,
+      "gap_without_drs": 0.029567413330078136,
+      "judgment_with_drs": "적정가",
+      "judgment_without_drs": "적정가",
       "judgment_flipped": false
     },
     "section_5_7_aligned": true,
@@ -254,16 +263,16 @@
     "raw_score": 89,
     "final": 89
   },
-  "judgment": "저평가 가능성",
-  "judgment_grade": "A",
+  "judgment": "적정가/경계선",
+  "judgment_grade": "C",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 166300000.0,
     "sbc_to_fcf_pct": 0.06827886352438824,
     "fcf0_sbc_adjusted": 2269300000.0,
     "implied_growth_sbc_adjusted": 0.05106410980224607,
-    "gap_sbc_adjusted": 0.06893589019775392,
-    "judgment_sbc_adjusted": "저평가 가능성",
+    "gap_sbc_adjusted": 0.003935890197753929,
+    "judgment_sbc_adjusted": "적정가/경계선",
     "judgment_flipped": false
   }
 }

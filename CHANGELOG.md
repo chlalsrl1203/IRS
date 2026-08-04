@@ -1,5 +1,40 @@
 # CHANGELOG
 
+## ROP 유기적성장률 - 공식판정 승격 + realistic_growth_override 신규배선 (2026-08-04)
+
+**경위**: 바로 아래 크로스체크(같은 날) 결과를 사용자에게 보여준 뒤 "그것을
+공식판정으로 승격할지"를 명확히 물어 "ROP 공식판정 승격 + 매수리스트 재실행"
+승인을 받았다. 이 프로젝트가 지금까지 일관되게 지켜온 "병기, 자동판정 안
+함" 원칙의 첫 예외 - 크로스체크가 이미 결과를 명확히 보여줬고 사용자가 그
+사실을 알고 명시적으로 지시했기 때문에 예외로 처리했다.
+
+**엔진 변경(v3.28)**: `engine/pipeline.py`의 `AnalysisInputs`에
+`realistic_growth_override`(+ `_reason` 필수) 신규 배선. CAGR 계산과 Lynch
+캡을 모두 우회하고 지정값을 Realistic Growth로 직접 사용한다. opt-in이라
+기존 ledger 전부에 영향 없음(None이면 기존 동작 그대로) - capex_
+classification/cagr_base_year_override와 동일한 안전한 확장 패턴.
+
+**ROP 재실행**: `scripts/analyze_rop_2026_08_01.py`에
+`realistic_growth_override=0.055`(오가닉성장 기준, M&A배수상승·낮은
+실현ROIC를 감안해 크로스체크 두 시나리오 중 더 보수적인 쪽 채택) 추가 후
+재실행 - 크로스체크와 동일한 결과가 공식 ledger에 반영됨(Gap +7.74%p→
++1.24%p, RAR +0.6928→+0.1716, 판정 저평가 가능성→적정가/경계선). **ROP가
+A등급→C등급으로 이탈**, S/A 유니버스 13종목→12종목.
+
+**매수리스트 연쇄효과 + 버그 발견/수정**: ROP 이탈로 `industrial_stalwart`
+버킷이 GEN 단독이 되며 목표비중(20%) 구조적 미달(GEN 혼자 12%캡에 막힘).
+이 과정에서 **버킷별 재분배 후 전역 정규화가 이미 12%캡된 종목까지
+13.04%로 재상승시키는 버그**를 발견 - `scripts/build_buylist_2026_08_03.py`
+에 정규화 후 2차 전역 캡 강제 패스를 추가해 수정. 최종 배분: ACGL/PGR/GEN
+12.00%씩, TCOM 11.43%, PDD 9.56%, SE 7.79%, BRO 6.86%, DUOL 6.63%,
+MNDY 6.61%, TTD 5.35%, UBER 5.03%, WDAY 4.75%.
+
+**테스트**: `tests/test_pipeline.py`에 realistic_growth_override 배선
+검증 3건 추가(기본값 불변/사유필수/값이 그대로 쓰여 판정 뒤집힘까지 확인,
+CDNS 골든케이스 재사용). `pytest tests/` 122개 전부 통과.
+
+---
+
 ## ROP 유기적성장률 교차검증 - 판정 뒤집힘 확인 (2026-08-04)
 
 **경위**: 직전 A등급 6종목 심층조사에서 나온 ROP의 falsification_conditions

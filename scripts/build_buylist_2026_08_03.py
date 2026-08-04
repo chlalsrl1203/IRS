@@ -20,7 +20,9 @@ S/A등급 13종목 팩터 진단 + 사이징 규칙 + 최종 매수리스트 - 2
   growth_platform: PDD MNDY DUOL SE TTD UBER WDAY (7) - 폭락발굴 고성장주,
                    단일 팩터(위험선호 국면)에 몰빵될 위험
   insurance:       ACGL PGR BRO (3) - 손해율·준비금 사이클, 다른 리스크축
-  industrial_stalwart: GEN ROP (2) - M&A영향권+성장상한 바인딩, 안정형
+  industrial_stalwart: GEN (원래 ROP 포함 2종목 설계였으나 2026-08-04 ROP가
+                   유기적성장 재검증으로 C등급 이탈 - 현재 GEN 단독, 아래
+                   갱신 참고) - M&A영향권+성장상한 바인딩, 안정형
   travel:          TCOM (1) - 경기소비재 최상단
 
 **버킷 목표비중**(관측: growth_platform이 종목수 7/13=54%를 차지해
@@ -33,12 +35,24 @@ S/A등급 13종목 팩터 진단 + 사이징 규칙 + 최종 매수리스트 - 2
   - 중대 거버넌스 적신호(TTD 증권사기소송+CEO 내부자거래 혐의): x0.85 추가
   - 종목당 상한 12%(단일종목 과다집중 방지)
 
-**Confidence_adj**: 2026-08-02~04 정성심층조사를 거친 S/A등급 13종목 전부
+**Confidence_adj**: 2026-08-02~04 정성심층조사를 거친 S/A등급 종목 전부
 조사 결과를 반영한 조정치(CLAUDE.md/Notion에 기록된 범위의 중간값 또는 각
-세션에서 직접 판단한 값). A등급 6종목(GEN/UBER/WDAY/ROP/TCOM/BRO)은
+세션에서 직접 판단한 값). A등급 나머지 6종목(GEN/UBER/WDAY/ROP/TCOM/BRO)은
 2026-08-04 배치에서 심층조사를 마쳐 전부 '검증' 상태로 전환됐다 - S등급
-7종목과 마찬가지로 이제 13종목 전부가 엔진이 볼 수 없는 영역(자본배분・
-회계품질・거버넌스・희석・경쟁동향)을 확인한 상태다.
+7종목과 마찬가지로 엔진이 볼 수 없는 영역(자본배분・회계품질・거버넌스・
+희석・경쟁동향)을 확인한 상태다.
+
+**2026-08-04 갱신 - ROP 등급이탈**: ROP의 정성심층조사가 유기적성장 교차
+검증(Gap +7.74%p→+1.24%p, 판정 뒤집힘)을 실제로 공식판정에 반영
+(`realistic_growth_override`, engine/pipeline.py v3.28)하면서 ROP가
+A등급에서 C등급으로 빠져 S/A 유니버스가 13종목→12종목이 됐다.
+`industrial_stalwart` 버킷이 GEN 1종목만 남아 목표비중(20%)을 못 채우는
+구조적 문제가 생겼고(GEN 혼자 12%캡에 막혀 최대 12%까지만 가능), 이 과정
+에서 **버킷 재분배 이후 전역 정규화가 이미 캡된 종목까지 12% 넘게
+재상승시키는 버그**를 발견해 고쳤다(정규화 후 2차 전역 캡 강제 패스 추가 -
+버킷당 목표 미달은 그대로 두되 종목당 12% 상한만큼은 어떤 경우에도 지킨다).
+industrial_stalwart 버킷 구조(현재 GEN 단독) 자체를 재설계할지는 이후
+세션 판단 사안으로 남긴다.
 
 실행: python3 scripts/build_buylist_2026_08_03.py
 """
@@ -151,6 +165,29 @@ def main():
     total_weight = sum(row["weight_raw"] for row in rows)
     for row in rows:
         row["weight_final"] = row["weight_raw"] / total_weight  # 정규화(합계 100%)
+
+    # ⚠️ 버킷 하나가 목표비중을 못 채우면(예: 종목이 1개뿐이라 12%캡에 막혀
+    # 20% 목표에 못 미침) total_weight < 1이 되고, 위 정규화가 전체 행을
+    # 균일하게 끌어올리면서 **이미 12%로 캡된 종목까지 12% 넘게 재상승**하는
+    # 부작용이 생긴다(2026-08-04 ROP 등급이탈로 실제 발생 확인 - industrial_
+    # stalwart가 20%→13.04%로 미달되며 ACGL/PGR/GEN이 전부 13.04%로 상승).
+    # 종목당 상한은 버킷 재분배 이후에도 전역적으로 다시 강제해야 한다 -
+    # 버킷 다양화 목적은 이미 달성됐으므로 이 2차 패스는 버킷 구분 없이
+    # 전체 행에 대해 상한을 지키고 초과분을 미캡 종목에 비례 재분배한다.
+    for _ in range(5):
+        excess = 0.0
+        uncapped = []
+        for row in rows:
+            if row["weight_final"] > PER_STOCK_CAP:
+                excess += row["weight_final"] - PER_STOCK_CAP
+                row["weight_final"] = PER_STOCK_CAP
+            else:
+                uncapped.append(row)
+        if excess < 1e-9 or not uncapped:
+            break
+        total_uncapped = sum(r["weight_final"] for r in uncapped)
+        for row in uncapped:
+            row["weight_final"] += excess * (row["weight_final"] / total_uncapped)
 
     rows.sort(key=lambda r: -r["weight_final"])
 

@@ -39,6 +39,16 @@ FCF CAGR과 매출가중평균 중 min()을 취하므로 3y FCF CAGR이 왜곡�
   계속영업 기준으로 재작성된 수치)
 시가총액: stockanalysis.com 2026-07-31 조회 $38.77B(주가 $391.97).
 
+**v3.28 갱신(2026-08-04) - Realistic Growth 공식 오버라이드**: 위 "유기적/
+비유기적 분리 미실시" 한계를 2026-08-04 A등급 정성심층조사가 채웠다.
+회사 공시 오가닉 성장률(5-6%, 3년 연속 감속)이 stalwart 캡(12%)과 크게
+괴리됨을 확인했고, `scripts/rop_organic_growth_crosscheck_2026_08_04.py`로
+"판정이 실제로 뒤집히는지"까지 사전검증(유기적 5.5%/연결 8.5% 둘 다
+'저평가 가능성'→'적정가/경계선')한 뒤, 사용자 명시적 승인을 받아
+`realistic_growth_override=0.055`로 공식 반영했다. 이제 Gap/RAR/판정이
+캡(12%)이 아니라 이 값 기준으로 계산된다 - 상세 사유는 아래
+`realistic_growth_override_reason` 참고.
+
 실행: python3 scripts/analyze_rop_2026_08_01.py
 """
 
@@ -100,6 +110,31 @@ def build_inputs() -> AnalysisInputs:
         # SEC 10-K R9 현금흐름표 "Non-cash stock compensation" FY2025 실측.
         sbc_by_year={2025: 166.3 * M},
 
+        # v3.28(2026-08-04): 2026-08-04 A등급 정성심층조사 + 유기적성장률
+        # 교차검증(scripts/rop_organic_growth_crosscheck_2026_08_04.py) 결과를
+        # 공식판정으로 승격(사용자 명시적 승인). 매출/FCF CAGR 기반 계산은
+        # 항상 stalwart 캡(12%)에 걸려 계산 자체가 결과에 기여하지 못했는데
+        # (M-1), 그 캡값은 회사가 실제로 공시한 오가닉 성장률과 큰 괴리가
+        # 있었다(3년 연속 감속: FY2023 ~8% -> FY2024 ~6% -> FY2025/26
+        # ~5-6%, Q1'26/Q2'26 모두 실측 5%). 연결성장(오가닉+M&A, FY26
+        # 가이던스 "north of 8%")도 함께 계산해봤으나, M&A 배수가 14x->18x
+        # ->22-23x로 상승하는데 실현 ROIC는 ~5%로 낮아(같은 조사에서 확인)
+        # M&A가 계속 같은 속도로 가치를 창출한다고 가정하는 연결성장보다,
+        # 회사의 핵심 오가닉 궤적만 반영하는 이 값이 더 보수적이고 방어
+        # 가능한 기준이라 판단해 채택했다(이 프로젝트의 FCF보수원칙 - "불확실"
+        # 하면 더 낮은 값을 쓴다 - 과 동일한 판단 원칙).
+        realistic_growth_override=0.055,
+        realistic_growth_override_reason=(
+            "회사 공시 오가닉 성장률(Q1'26 5%, Q2'26 5%, FY26 가이던스 상단 "
+            "6%)의 중간값. stalwart 캡(12%)이 만든 여유폭은 매출/FCF CAGR "
+            "계산이 M&A 롤업 효과를 오가닉 성장과 분리하지 못해 생긴 것으로 "
+            "확인됐다(2026-08-04 정성심층조사 핵심발견, "
+            "scripts/rop_organic_growth_crosscheck_2026_08_04.py로 사전 "
+            "검증 - 유기적 5.5%/연결 8.5% 두 시나리오 모두 판정이 "
+            "'저평가 가능성'->'적정가/경계선'으로 뒤집힘을 확인 후 사용자 "
+            "승인을 받아 보수적인 유기적성장 값을 공식 채택)."
+        ),
+
         competitor_threat_weights=[0.15, 0.15, 0.10],
         market_share_trend_pp_per_year=0.0,
         active_antitrust_or_regulatory_case=False,
@@ -140,18 +175,20 @@ def build_inputs() -> AnalysisInputs:
         # 2026-08-04 정성심층조사(A등급 6종목 배치)에서 이 스크립트의 알려진
         # 한계(유기적/비유기적 성장 미분리, 상단 주석 참고)가 실제로 채워짐 -
         # 회사 공시 유기적성장 5~6%(3년 연속 감속: 8%→6%→5-6%)로 확인, 12%
-        # Lynch캡과 큰 괴리. 이 발견이 가장 비중있는 결과라 반증조건도 이를
-        # 직접 반영한다.
+        # Lynch캡과 큰 괴리. 크로스체크(scripts/rop_organic_growth_
+        # crosscheck_2026_08_04.py)로 판정 뒤집힘까지 확인한 뒤 사용자 승인을
+        # 받아 realistic_growth_override로 공식 반영 완료 - 원래 #1이었던
+        # "재실행 검증할 것"은 이미 이행됐으므로 제거하고, 새 공식 성장전제
+        # (오가닉 5.5%)에 대한 전방향 반증조건으로 교체한다.
         falsification_conditions=(
-            "1) 이 발견 자체가 사실상 즉시성 반증조건에 가깝다 - 회사 공시 "
-            "유기적성장(5-6%)을 Realistic Growth 입력으로 대체해 재실행하면 "
-            "Gap이 +7.74%p에서 약 +1~2%p(유기적 성장 기준) 또는 +4~5%p(연결 "
-            "성장 기준)로 축소되어 '적정가/경계선' 근접 또는 진입 가능성이 "
-            "있다 - 다음 세션에서 반드시 재실행 검증할 것. 2) 순부채/EBITDA가 "
-            "2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 "
-            "트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x "
-            "EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 "
-            "M&A자본배분 규율에 대한 우려 재검토."
+            "1) 오가닉 성장률이 향후 2개분기 연속 5.5% 아래로(4% 이하) "
+            "추가 감속하면 이번에 채택한 5.5% 전제 자체가 낙관적이었다는 "
+            "뜻이므로 하향 재검토. 반대로 6%대 이상으로 반등이 확인되면 "
+            "연결성장 기준(8.5%, Gap +4.24%p)까지 상향 재검토 여지. "
+            "2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 "
+            "Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. "
+            "3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC"
+            "(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토."
         ),
 
         data_sources=[
@@ -190,7 +227,12 @@ def main():
     print(f"  구조적 할인      : {g['structural_discount_pct']*100:.2f}%")
     if g["breakdown"].get("fcf_conservatism_applied"):
         print(f"  FCF 보수화 적용  : {g['breakdown']['fcf_conservatism_applied']}")
-    print(f"  Realistic Growth : {g['realistic_growth']*100:.2f}%")
+    override = g["breakdown"].get("realistic_growth_override_applied")
+    if override:
+        print(f"  Realistic Growth : {g['realistic_growth']*100:.2f}%   "
+              f"(v3.28 오버라이드 - CAGR/캡 기반값 {override['pre_override_growth']*100:.2f}% 대체)")
+    else:
+        print(f"  Realistic Growth : {g['realistic_growth']*100:.2f}%")
     ss_str = "N/A" if models['single_stage'] is None else f"{models['single_stage']*100:.2f}%"
     ts_str = "N/A" if models['two_stage'] is None else f"{models['two_stage']*100:.2f}%"
     print(f"  Implied Growth   : single_stage {ss_str} / two_stage {ts_str} "

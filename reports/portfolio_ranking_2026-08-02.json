@@ -170,23 +170,6 @@
     "analyzed_at": "2026-08-04"
   },
   {
-    "ticker": "ROP",
-    "company_name": "Roper Technologies, Inc.",
-    "grade": "A",
-    "grade_label": "매수",
-    "judgment": "저평가 가능성",
-    "gap_pct": 7.735778808593752,
-    "realistic_growth_pct": 12.0,
-    "implied_growth_pct": 4.264221191406248,
-    "drs": 31.520000000000003,
-    "rar": 0.6928349594094447,
-    "confidence": 89,
-    "robust": true,
-    "cap_bound": true,
-    "lynch_type": "stalwart",
-    "analyzed_at": "2026-08-04"
-  },
-  {
     "ticker": "TCOM",
     "company_name": "Trip.com Group Limited",
     "grade": "A",
@@ -406,6 +389,23 @@
     "cap_bound": false,
     "lynch_type": "fast_grower",
     "analyzed_at": "2026-08-02"
+  },
+  {
+    "ticker": "ROP",
+    "company_name": "Roper Technologies, Inc.",
+    "grade": "C",
+    "grade_label": "중립/보유",
+    "judgment": "적정가/경계선",
+    "gap_pct": 1.2357788085937522,
+    "realistic_growth_pct": 5.5,
+    "implied_growth_pct": 4.264221191406248,
+    "drs": 31.520000000000003,
+    "rar": 0.17155570021799407,
+    "confidence": 89,
+    "robust": true,
+    "cap_bound": true,
+    "lynch_type": "stalwart",
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "WCN",

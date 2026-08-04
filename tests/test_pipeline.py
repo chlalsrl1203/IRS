@@ -858,6 +858,45 @@ def test_growth_cap_binding_silent_when_not_bound():
 
 
 # ----------------------------------------------------------------------
+# v3.28: realistic_growth_override 배선 (2026-08-04, ROP 유기적성장률
+# 교차검증이 실증사례 - Lynch 캡이 만든 여유폭이 회사 실제 공시 성장률과
+# 크게 괴리됨을 확인한 뒤 공식판정으로 승격)
+# ----------------------------------------------------------------------
+
+def test_realistic_growth_override_defaults_to_none_and_changes_nothing():
+    """override를 안 쓰면 기존 CDNS 골든 결과와 완전히 동일해야 한다."""
+    result = run_analysis(cdns_inputs())
+    assert result["growth"]["realistic_growth"] == pytest.approx(0.12, abs=1e-4)
+    assert "realistic_growth_override_applied" not in result["growth"]["breakdown"]
+    assert not any("Realistic Growth 오버라이드" in x for x in result["data_limitations"])
+
+
+def test_realistic_growth_override_requires_reason():
+    with pytest.raises(ValueError, match="realistic_growth_override"):
+        cdns_inputs(realistic_growth_override=0.05)
+
+
+def test_realistic_growth_override_replaces_capped_growth_and_can_flip_judgment():
+    """
+    CDNS는 stalwart 캡(12%)이 바인딩된 골든 케이스(Implied Growth 8.71%,
+    Gap +3.29%p, 적정가/경계선). 오버라이드로 2%를 직접 넣으면 캡을 완전히
+    우회해 Gap이 -5%p 경계 밖으로 뒤집혀야 한다(과대평가 가능성) - CAGR
+    계산이나 캡과 무관하게 override 값이 그대로 쓰인다는 증거.
+    """
+    result = run_analysis(cdns_inputs(
+        realistic_growth_override=0.02,
+        realistic_growth_override_reason="가드 배선 테스트용 인위적 오버라이드",
+    ))
+    assert result["growth"]["realistic_growth"] == pytest.approx(0.02)
+    applied = result["growth"]["breakdown"]["realistic_growth_override_applied"]
+    assert applied["pre_override_growth"] == pytest.approx(0.12, abs=1e-4)
+    assert applied["override_value"] == pytest.approx(0.02)
+    assert result["expectation_gap"] < 0
+    assert result["judgment"] == "과대평가 가능성"
+    assert any("Realistic Growth 오버라이드" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
 # v3.24: structural_discount_rate 10y 대체값 버그수정
 # (2026-08-01 방법론 감사 M-3 - data_limitations 경고문은 "5년 CAGR을 대체
 # 입력했다"고 이미 약속하고 있었는데 실제 코드는 rev_cagr_3y를 넣고 있었다.
