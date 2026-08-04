@@ -1,0 +1,31 @@
+{
+  "official": {
+    "realistic_growth": 0.014713198893530484,
+    "gap": -0.14364213252736793,
+    "rar": -0.6909735670073294,
+    "judgment": "과대평가 가능성"
+  },
+  "crosscheck_scenarios": [
+    {
+      "scenario": "A) cyclical 상한 시나리오",
+      "growth": 0.2,
+      "gap": 0.041644668579101596,
+      "er": 0.07282555603096665,
+      "rar": 0.15273816281662467,
+      "judgment": "적정가/경계선",
+      "grade": "C",
+      "caveat": "trailing CAGR 무시, 이 프로젝트가 cyclical에 허용하는 최댓값(보수적 상한 테스트)"
+    },
+    {
+      "scenario": "B) FY26 가이던스 시나리오",
+      "growth": 0.28,
+      "gap": 0.12164466857910161,
+      "er": 0.3250676856257611,
+      "rar": 0.681769474886244,
+      "judgment": "저평가 가능성",
+      "grade": "A",
+      "caveat": "⚠️1개년 가이던스, AI 데이터센터 수퍼사이클 의존 - 검증 안 된 공격적 가정"
+    }
+  ],
+  "recommendation": "재실행 보류 - FY26 Q4 실적(가이던스 이행 여부) 확인 후 재검토 권고. 1개년 가이던스만으로 realistic_growth_override 승격은 시기상조."
+}
