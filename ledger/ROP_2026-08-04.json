@@ -2,17 +2,18 @@
   "meta": {
     "ticker": "ROP",
     "company_name": "Roper Technologies, Inc.",
-    "analyzed_at": "2026-08-02T00:00:11.746296+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-04T01:31:19.486916+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0000882835-26-000009) R3/R5/R9, as-filed, 2026-08-01 조회",
       "SEC EDGAR 10-K FY2022(0000882835-23-000016) R5/R10 (FY2020~2022, 계속영업 기준 재작성치)",
       "stockanalysis.com 시가총액 $38.77B(주가 $391.97), 2026-07-31 조회",
       "WebSearch: ROP 애널리스트 컨센서스(Buy, 목표가 +24.69%), 경쟁사 구도 확인(2026-07)",
-      "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상"
+      "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분·유기적성장률(핵심 발견, 5-6%vs 캡12%)·회계품질·거버넌스/레버리지·경쟁동향 - 판정불변이나 Gap 크기의 근거가 약함을 확인, 유기적성장 입력 재실행 권고(Confidence 89→미검증 유지)"
     ],
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "1) 이 발견 자체가 사실상 즉시성 반증조건에 가깝다 - 회사 공시 유기적성장(5-6%)을 Realistic Growth 입력으로 대체해 재실행하면 Gap이 +7.74%p에서 약 +1~2%p(유기적 성장 기준) 또는 +4~5%p(연결 성장 기준)로 축소되어 '적정가/경계선' 근접 또는 진입 가능성이 있다 - 다음 세션에서 반드시 재실행 검증할 것. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
+    "price_at_analysis": 391.97,
     "currency": "USD"
   },
   "data_limitations": [
@@ -86,7 +87,8 @@
       "SEC EDGAR 10-K FY2022(0000882835-23-000016) R5/R10 (FY2020~2022, 계속영업 기준 재작성치)",
       "stockanalysis.com 시가총액 $38.77B(주가 $391.97), 2026-07-31 조회",
       "WebSearch: ROP 애널리스트 컨센서스(Buy, 목표가 +24.69%), 경쟁사 구도 확인(2026-07)",
-      "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상"
+      "Notion 트래커 ROP 상충기록 3건(v3.13, 2026-07-18) - 이번 재분석의 해소 대상",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분·유기적성장률(핵심 발견, 5-6%vs 캡12%)·회계품질·거버넌스/레버리지·경쟁동향 - 판정불변이나 Gap 크기의 근거가 약함을 확인, 유기적성장 입력 재실행 권고(Confidence 89→미검증 유지)"
     ],
     "capex_classification": null,
     "capex_classification_basis": null,
@@ -99,8 +101,8 @@
     "sbc_by_year": {
       "2025": 166300000.0
     },
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "1) 이 발견 자체가 사실상 즉시성 반증조건에 가깝다 - 회사 공시 유기적성장(5-6%)을 Realistic Growth 입력으로 대체해 재실행하면 Gap이 +7.74%p에서 약 +1~2%p(유기적 성장 기준) 또는 +4~5%p(연결 성장 기준)로 축소되어 '적정가/경계선' 근접 또는 진입 가능성이 있다 - 다음 세션에서 반드시 재실행 검증할 것. 2) 순부채/EBITDA가 2.9x(FY25)→3.4x(Q2'26) 상승 추세가 지속되어 Moody's 업그레이드 트리거(3x 미만)를 계속 상회하면 재검토. 3) 인수배수가 22-23x EBITDA대에서 추가 상승하며 실현 ROIC(현재 ~5%)가 회복되지 않으면 M&A자본배분 규율에 대한 우려 재검토.",
+    "price_at_analysis": 391.97,
     "currency": "USD"
   },
   "derived": {
@@ -253,6 +255,7 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "A",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 166300000.0,

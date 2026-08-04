@@ -1,5 +1,69 @@
 # CHANGELOG
 
+## A등급 나머지 6종목(GEN/UBER/WDAY/ROP/TCOM/BRO) 심층 정성조사 완료 (2026-08-04) - S/A등급 13종목 전수조사 완료
+
+**경위**: S등급 7종목 정성조사 완료 후 제안한 확장 - "A등급 6종목도 같은
+심층조사를 거쳐 '미검증' 딱지를 떼겠다"는 제안에 사용자가 "ㄱㄱ"로 승인.
+6종목 병렬 에이전트 전부 첫 시도에 성공(세션한도 이슈 없었음). 각
+에이전트에 종목별로 엔진이 이미 계산한 값(Gap/DRS/RAR/Confidence/Lynch
+유형/캡바인딩 여부)과 원 subjective_input_basis를 그대로 넘겨 중복조사를
+막고, "DCF 엔진이 구조적으로 볼 수 없는 영역"(자본배분·회계품질·거버넌스·
+희석·경쟁동향, 업종별 변형)을 명시적으로 지시하는 기존 절차를 그대로
+재사용했다.
+
+**핵심 발견 - 판정을 뒤집는 근거는 6종목 모두 없었으나 Confidence를 액면가로
+신뢰하기엔 부담**:
+- GEN: ROIC 9.15%(5y평균 20.74%대비 급락, 단일출처 미검증)+TBS세그먼트
+  마진 30%vs Cyber Safety 61%(구조적 절반)+시장은 27%매출성장에도 -9%로
+  반응(멀티플압축, 대형데스크 2곳 beat-and-raise 후에도 중립유지). SBC/FCF
+  15.6%(트래커 최하위권)는 긍정적. Confidence 89→70 권고.
+- UBER: Prop22 CA대법원 만장일치 합헌(2024-07)으로 최대과거리스크 durably
+  해소. 반대로 Waymo가 Phoenix철수완료+Atlanta/Austin배타권종료(Waymo자체앱
+  2028-01)로 "파트너"프레이밍 약화, Uber 자체가 85%인간운전자의무 법안
+  로비 중(모트자신감 부족 신호). EU Platform Work Directive(2026-12-02)
+  미해결. FCF가 GAAP순이익보다 깨끗한 지표(Grab/Didi 마크투마켓 왜곡 배제)
+  라는 점은 엔진방법론에 긍정적. Confidence 94→83 권고.
+- WDAY: 자사주매입이 SBC 2배속 상회(긍정적 신규발견, 순주식수 감소전환).
+  반대로 Mobley v. Workday가 2026-03 기각argument패소+수정소장으로 확대,
+  "AI벤더=고용주에이전트" 이론이 업계파급 판례로 부상(Eightfold 등 유사
+  소송). AI네이티브경쟁(Ramp/Rippling ARR$1B+) 실측트랙션 확인.
+  SBC교차검증 플립 최근접 종목이라 이 조사결과와 결합해 특히 주의.
+  Confidence 94→81 권고.
+- ROP(가장 비중있는 발견): CLAUDE.md에 "M&A 유기/비유기 성장 분리 미실시"
+  로 기록돼 있던 알려진 한계를 실제로 채웠다 - 회사공시 오가닉성장률
+  5-6%(3년연속 감속 8%→6%→5-6%)가 엔진의 12% Lynch캡과 큰 괴리.
+  유기적성장 기준 재계산시 Gap이 +7.74%p→약+1~2%p로 축소 - 다음 세션
+  재실행 검증 강력권고. 레버리지도 2.9x→3.4x 상승(자사주매입원인, Moody's
+  트리거 상회). Confidence 89→77 권고.
+- TCOM: SEC CORRESP로 확인된 中규제리스크 공시완화 이력(진행중 증권소송
+  De Wilde v. Trip.com과 직결) 신규발견. 회사 자체 Q2 2026 가이던스
+  (+3~8%)가 Realistic Growth(12.39%) 크게 하회 - MNDY류 패턴. DRS
+  73.6(트래커 최고) 타당성은 재확인(근거는 competition_intensity가 아니라
+  실현된 own-conduct 규제리스크). Confidence 94→80 권고.
+- BRO: ROP와 동일유형 발견 - lynch_type_override 사유의 "Q1'26 오가닉0%"
+  신호가 이후 실제로 악화(7분기 연속 감속, 2회 마이너스: -2.8%/-0.7%)
+  확인, 오버라이드 판단이 사후적으로 뒷받침됨. 시장은 이미 EBITDA멀티플을
+  17.8x→12.9x로 재평가 완료. M&A주식대가 다일루션(~19%, SBC와 별개
+  채널) 신규확인. Confidence 89→70 권고.
+
+**처리 방식은 S등급과 완전 동일**(병기·falsification_conditions·ledger경로만
+반영, Gap/RAR/판정 수치 불변 - 6종목 전부 재실행 후 diff로 확인). BRO는
+재현용 스크립트가 저장소에 없던 상태(BSY와 동일패턴)라 ledger 원본
+입력값을 그대로 옮겨 `scripts/analyze_bro_2026_07_25.py`로 정식 등록.
+ledger 6건 전부 `_2026-08-04.json`으로 통합(git rm 구파일 + git add
+신파일, rename으로 인식). 하위 스크립트(`deep_analysis_9_2026_08_01.py`의
+WDAY 경로) 갱신 후 재실행해 타임스탬프만 변경됨을 확인.
+`scripts/build_buylist_2026_08_03.py`의 `CONFIDENCE_ADJ`를 13종목 전부
+"검증" 상태로 갱신하고 재실행 - 버킷목표 전부 정확 달성
+(growth_platform 40.00%/insurance 30.00%/industrial_stalwart 20.00%/
+travel 10.00%). ROP가 캡(12%) 아래로 내려간 유일한 캡바인딩 종목이 됨
+(Confidence 하향으로 quality_score 감소).
+
+**테스트**: 엔진코드 변경 없음(데이터/스크립트 변경만), `pytest tests/`
+119개 전부 통과.
+
+---
+
 ## 실제 매수리스트 산출 - 팩터 진단 + 규칙기반 사이징 (2026-08-03)
 
 **경위**: "S/A등급만 투자하는 건 비추천"(집중도·미검증확신도·사이징부재

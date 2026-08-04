@@ -2,17 +2,18 @@
   "meta": {
     "ticker": "GEN",
     "company_name": "Gen Digital Inc.",
-    "analyzed_at": "2026-08-02T00:00:12.131860+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-04T01:31:19.295063+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2026(0000849399-26-000017) R3/R5/R9, as-filed, 2026-07-28 조회",
       "SEC EDGAR 10-K FY2023(0000849399-23-000014) R5/R9 (FY2021~2023)",
       "SEC EDGAR 10-K FY2021(0000849399-21-000010) R4/R8 (FY2019~2021, 참고용)",
       "Gen Digital FY26 실적발표(2026-05-07, PRNewswire) - 세그먼트별 매출, FY27 가이던스",
       "stockanalysis.com 시가총액 $16.11B (2026-07-27 종가)",
-      "WebSearch: GEN 반독점/규제조사 여부 확인(2026-07), TCPA 집단소송($9.95M) 확인"
+      "WebSearch: GEN 반독점/규제조사 여부 확인(2026-07), TCPA 집단소송($9.95M) 확인",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분·ROIC·세그먼트마진·거버넌스·희석·경쟁동향 - 판정불변, Confidence 재검토 권고(89→미검증 상태 유지, 다음 세션 판단)"
     ],
-    "falsification_conditions": null,
+    "falsification_conditions": "1) FY2027 H2(2027-08~2027-10경 실적발표) '핵심사업 외 파트너 확장으로 연 $100M 증분매출' 목표 미달성시 크로스셀 서사 재검토. 2) ROIC가 9.15%대에서 정체/추가하락하고 5y평균(20.74%) 대비 회복 기미 없으면 MoneyLion 인수가 가치창출이 아닌 가치희석으로 확정 - 재검토. 3) Trust-Based Solutions 세그먼트 마진이 30%에서 추가 악화되거나 Cyber Safety 마진(61%)이 5%p 이상 하락하면 재검토. ⚠️ ROIC 9.15%는 단일출처(ainvest.com)로 10-K 대조 미실시 - 다음 재분석 시 1차 검증 필요.",
     "price_at_analysis": null,
     "currency": "USD"
   },
@@ -87,7 +88,8 @@
       "SEC EDGAR 10-K FY2021(0000849399-21-000010) R4/R8 (FY2019~2021, 참고용)",
       "Gen Digital FY26 실적발표(2026-05-07, PRNewswire) - 세그먼트별 매출, FY27 가이던스",
       "stockanalysis.com 시가총액 $16.11B (2026-07-27 종가)",
-      "WebSearch: GEN 반독점/규제조사 여부 확인(2026-07), TCPA 집단소송($9.95M) 확인"
+      "WebSearch: GEN 반독점/규제조사 여부 확인(2026-07), TCPA 집단소송($9.95M) 확인",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분·ROIC·세그먼트마진·거버넌스·희석·경쟁동향 - 판정불변, Confidence 재검토 권고(89→미검증 상태 유지, 다음 세션 판단)"
     ],
     "capex_classification": null,
     "capex_classification_basis": null,
@@ -98,7 +100,7 @@
     "shareholders_equity_by_year": null,
     "dividends_paid_by_year": null,
     "sbc_by_year": null,
-    "falsification_conditions": null,
+    "falsification_conditions": "1) FY2027 H2(2027-08~2027-10경 실적발표) '핵심사업 외 파트너 확장으로 연 $100M 증분매출' 목표 미달성시 크로스셀 서사 재검토. 2) ROIC가 9.15%대에서 정체/추가하락하고 5y평균(20.74%) 대비 회복 기미 없으면 MoneyLion 인수가 가치창출이 아닌 가치희석으로 확정 - 재검토. 3) Trust-Based Solutions 세그먼트 마진이 30%에서 추가 악화되거나 Cyber Safety 마진(61%)이 5%p 이상 하락하면 재검토. ⚠️ ROIC 9.15%는 단일출처(ainvest.com)로 10-K 대조 미실시 - 다음 재분석 시 1차 검증 필요.",
     "price_at_analysis": null,
     "currency": "USD"
   },
@@ -252,6 +254,7 @@
     "final": 89
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "A",
   "insurer_cross_check": null,
   "sbc_cross_check": null
 }

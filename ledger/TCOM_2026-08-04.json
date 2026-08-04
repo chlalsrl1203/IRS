@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "TCOM",
     "company_name": "Trip.com Group Limited",
-    "analyzed_at": "2026-07-28T10:36:32.912222+00:00",
-    "engine_version": "v3.21",
+    "analyzed_at": "2026-08-04T01:31:19.544678+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 20-F FY2025(0001193125-26-183379) R2/R3/R7, as-filed, 2026-07-28 조회",
       "SEC EDGAR 20-F FY2022(0001193125-23-080422) R2/R7 (FY2020~2022)",
@@ -11,8 +11,12 @@
       "SEC EDGAR 20-F FY2016(0001104659-17-023278) R2/R7 (FY2014~2016, 당시 사명 Ctrip.com International)",
       "stockanalysis.com 시가총액 $28.19B (2026-07-27 종가, SAMR 과징금 발표 이후)",
       "USD/CNY 6.7716 (기존 프로젝트 검증치, PDD와 동일)",
-      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)"
-    ]
+      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)",
+      "2026-08-04 정성심층조사(A등급): 자본배분·회계품질(SEC CORRESP 공시완화 이력 발견)·거버넌스(증권소송 진행중)·中규제리스크·희석·DRS 73.6(트래커 최고) 타당성 재확인 - 판정불변, 자체가이던스(+3~8%)가 Realistic Growth(12.39%) 하회 확인, Confidence 재검토 권고(94→미검증 유지)"
+    ],
+    "falsification_conditions": "1) Q2/Q3 2026 실제 매출성장률이 가이던스(+3~8%YoY) 수준 또는 그 이하로 확정되면, Realistic Growth(12.39%)가 회사 자체 전망과 괴리된 낙관적 입력이었음이 확인되므로 재실행 필요. 2) De Wilde 증권소송(E.D.N.Y., 집단기간 2024-04-30~2026-01-13)이 화해 또는 판결로 종결되고 그 내용이 SEC 공시완화 관행에 대한 실질 책임을 인정하면 거버넌스 리스크 재평가. 3) 중국-일본 여행 코리더 급감 (최대 -50% 전망)이 실제로 현실화되며 대체 코리더(한국/베트남/태국)로의 전환이 매출믹스/마진에 유의미한 악영향을 미치면 재검토.",
+    "price_at_analysis": 44.77,
+    "currency": "USD"
   },
   "data_limitations": [
     "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2019년을 기준으로 6년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020은 코로나 직격탄을 맞은 해라 BKNG과 동일한 이유로 사용 불가하다. (1) FCF가 -RMB 43.55억(OCF -38.23억 - capex 5.32억)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -48.65% 폭락한 저점이다. 대안으로 **FY2019(코로나 이전 고점, 직전연도까지 꾸준히 증가하다 코로나로 꺾인 지점)**를 골랐다 - 저점이 아닌 고점 기준이므로 성장률을 부풀리지 않는다. 단, 이 override는 5y/FCF 창에만 적용되고 고정된 3y 창(기준연도 FY2022)은 여전히 中 제로코로나 지속기(2022년 12월까지)라 왜곡돼 있다 - 이 잔여 왜곡은 realistic_growth_estimate의 FCF보수원칙(min 채택)이 구조적으로 흡수함을 실행 결과로 확인했다(위 모듈 docstring 참고)."
@@ -99,6 +103,7 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
@@ -109,12 +114,21 @@
       "SEC EDGAR 20-F FY2016(0001104659-17-023278) R2/R7 (FY2014~2016, 당시 사명 Ctrip.com International)",
       "stockanalysis.com 시가총액 $28.19B (2026-07-27 종가, SAMR 과징금 발표 이후)",
       "USD/CNY 6.7716 (기존 프로젝트 검증치, PDD와 동일)",
-      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)"
+      "WebSearch: 中 SAMR 反독점 과징금 52.79억위안(PYMNTS/Caixin/SCMP/MLex, 2026-07-25 확정), 中 온라인여행 시장 경쟁구도(Mordor Intelligence, 2025 선호도 68.7%)",
+      "2026-08-04 정성심층조사(A등급): 자본배분·회계품질(SEC CORRESP 공시완화 이력 발견)·거버넌스(증권소송 진행중)·中규제리스크·희석·DRS 73.6(트래커 최고) 타당성 재확인 - 판정불변, 자체가이던스(+3~8%)가 Realistic Growth(12.39%) 하회 확인, Confidence 재검토 권고(94→미검증 유지)"
     ],
     "capex_classification": null,
     "capex_classification_basis": null,
     "cagr_base_year_override": 2019,
-    "cagr_base_year_override_reason": "기본 기준연도 FY2020은 코로나 직격탄을 맞은 해라 BKNG과 동일한 이유로 사용 불가하다. (1) FCF가 -RMB 43.55억(OCF -38.23억 - capex 5.32억)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -48.65% 폭락한 저점이다. 대안으로 **FY2019(코로나 이전 고점, 직전연도까지 꾸준히 증가하다 코로나로 꺾인 지점)**를 골랐다 - 저점이 아닌 고점 기준이므로 성장률을 부풀리지 않는다. 단, 이 override는 5y/FCF 창에만 적용되고 고정된 3y 창(기준연도 FY2022)은 여전히 中 제로코로나 지속기(2022년 12월까지)라 왜곡돼 있다 - 이 잔여 왜곡은 realistic_growth_estimate의 FCF보수원칙(min 채택)이 구조적으로 흡수함을 실행 결과로 확인했다(위 모듈 docstring 참고)."
+    "cagr_base_year_override_reason": "기본 기준연도 FY2020은 코로나 직격탄을 맞은 해라 BKNG과 동일한 이유로 사용 불가하다. (1) FCF가 -RMB 43.55억(OCF -38.23억 - capex 5.32억)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -48.65% 폭락한 저점이다. 대안으로 **FY2019(코로나 이전 고점, 직전연도까지 꾸준히 증가하다 코로나로 꺾인 지점)**를 골랐다 - 저점이 아닌 고점 기준이므로 성장률을 부풀리지 않는다. 단, 이 override는 5y/FCF 창에만 적용되고 고정된 3y 창(기준연도 FY2022)은 여전히 中 제로코로나 지속기(2022년 12월까지)라 왜곡돼 있다 - 이 잔여 왜곡은 realistic_growth_estimate의 FCF보수원칙(min 채택)이 구조적으로 흡수함을 실행 결과로 확인했다(위 모듈 docstring 참고).",
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": "1) Q2/Q3 2026 실제 매출성장률이 가이던스(+3~8%YoY) 수준 또는 그 이하로 확정되면, Realistic Growth(12.39%)가 회사 자체 전망과 괴리된 낙관적 입력이었음이 확인되므로 재실행 필요. 2) De Wilde 증권소송(E.D.N.Y., 집단기간 2024-04-30~2026-01-13)이 화해 또는 판결로 종결되고 그 내용이 SEC 공시완화 관행에 대한 실질 책임을 인정하면 거버넌스 리스크 재평가. 3) 중국-일본 여행 코리더 급감 (최대 -50% 전망)이 실제로 현실화되며 대체 코리더(한국/베트남/태국)로의 전환이 매출믹스/마진에 유의미한 악영향을 미치면 재검토.",
+    "price_at_analysis": 44.77,
+    "currency": "USD"
   },
   "derived": {
     "revenue_cagr_3y": 0.4603503514179359,
@@ -272,5 +286,8 @@
     "raw_score": 94,
     "final": 94
   },
-  "judgment": "저평가 가능성"
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
 }

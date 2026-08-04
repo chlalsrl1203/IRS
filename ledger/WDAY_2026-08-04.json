@@ -2,17 +2,18 @@
   "meta": {
     "ticker": "WDAY",
     "company_name": "Workday, Inc.",
-    "analyzed_at": "2026-08-02T00:00:11.650381+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-04T01:31:19.419276+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2026(0001327811-26-000014) R3/R5/R10, as-filed, 2026-07-31 조회",
       "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
       "SEC EDGAR 10-K FY2022(0001327811-22-000030) R5/R10 (FY2021 데이터)",
       "stockanalysis.com 시가총액 $39.60B(주가 $160.34), 2026-07-31 조회",
-      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인"
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인",
+      "2026-08-04 정성심층조사(A등급): Mobley소송 심층·자본배분(자사주매입이 SBC 2배속 초과)·회계품질·거버넌스·성장감속·AI네이티브경쟁 - 판정불변, Confidence 재검토 권고(94→미검증 유지, SBC교차검증 플립 근접종목이라 특히 주의)"
     ],
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "1) Mobley v. Workday에서 Rule 23 집단인증이 확정되거나 배상액이 공개(어느 방향이든 구체적 숫자)되면 재검토. 2) 동종 AI채용도구 소송(Eightfold 등)이 Workday를 공동피고로 추가하면 산업패턴 확산 신호로 재검토. 3) Ramp/Rippling 등 AI-네이티브 경쟁사가 Workday 핵심 HCM/Financials 스위트와 직접 경쟁하는 제품을 출시(현재는 지출관리/급여 인접영역)하면 competitor_threat_weight(0.15) 상향 검토. 4) FY2027 분기 subscription revenue growth가 12% 밑으로 추가 감속하면 성장서사 재검토.",
+    "price_at_analysis": 160.34,
     "currency": "USD"
   },
   "data_limitations": [
@@ -86,7 +87,8 @@
       "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
       "SEC EDGAR 10-K FY2022(0001327811-22-000030) R5/R10 (FY2021 데이터)",
       "stockanalysis.com 시가총액 $39.60B(주가 $160.34), 2026-07-31 조회",
-      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인"
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. Workday 소송 진행상황(2026-06-22 법원 판결) 확인",
+      "2026-08-04 정성심층조사(A등급): Mobley소송 심층·자본배분(자사주매입이 SBC 2배속 초과)·회계품질·거버넌스·성장감속·AI네이티브경쟁 - 판정불변, Confidence 재검토 권고(94→미검증 유지, SBC교차검증 플립 근접종목이라 특히 주의)"
     ],
     "capex_classification": null,
     "capex_classification_basis": null,
@@ -99,8 +101,8 @@
     "sbc_by_year": {
       "2026": 1626000000
     },
-    "falsification_conditions": null,
-    "price_at_analysis": null,
+    "falsification_conditions": "1) Mobley v. Workday에서 Rule 23 집단인증이 확정되거나 배상액이 공개(어느 방향이든 구체적 숫자)되면 재검토. 2) 동종 AI채용도구 소송(Eightfold 등)이 Workday를 공동피고로 추가하면 산업패턴 확산 신호로 재검토. 3) Ramp/Rippling 등 AI-네이티브 경쟁사가 Workday 핵심 HCM/Financials 스위트와 직접 경쟁하는 제품을 출시(현재는 지출관리/급여 인접영역)하면 competitor_threat_weight(0.15) 상향 검토. 4) FY2027 분기 subscription revenue growth가 12% 밑으로 추가 감속하면 성장서사 재검토.",
+    "price_at_analysis": 160.34,
     "currency": "USD"
   },
   "derived": {
@@ -253,6 +255,7 @@
     "final": 94
   },
   "judgment": "저평가 가능성",
+  "judgment_grade": "A",
   "insurer_cross_check": null,
   "sbc_cross_check": {
     "sbc0": 1626000000,

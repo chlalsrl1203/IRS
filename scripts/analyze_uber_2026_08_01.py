@@ -137,12 +137,33 @@ def build_inputs() -> AnalysisInputs:
             "않고 처음부터 다시 판단했다."
         ),
 
+        price_at_analysis=70.36,
+        currency="USD",
+
+        # 2026-08-04 정성심층조사(A등급 6종목 배치) 반증조건 - 결과 미확정
+        # 미래시점 이벤트 기준. 근거: Waymo가 Phoenix 철수 완료(2026-06)+
+        # Atlanta/Austin 배타권 종료 발표(2026-07-24, Waymo 자체앱 2028-01
+        # 예정)로 '파트너' 프레이밍이 최초 분석 시점보다 약화됨을 확인.
+        falsification_conditions=(
+            "1) Waymo가 Atlanta/Austin 외 추가 대도시에서 Uber와의 관계를 "
+            "종료(자체앱 전환)하면 유통플랫폼 전략 자체가 흔들리는 신호로 "
+            "재검토. 2) EU Platform Work Directive 회원국 전환시한"
+            "(2026-12-02)에서 대다수 회원국이 고용추정 원칙을 강하게 채택시 "
+            "노동비용 상승 리스크 반영해 재검토. 3) Waymo 주간 유료승차가 "
+            "가이던스(연말 100만건)에 못 미치거나 반대로 이를 크게 상회하며 "
+            "SF 외 도시에서도 25%+ 점유율 확산 확인시 competitor_threat_"
+            "weight(0.30) 재조정 검토."
+        ),
+
         data_sources=[
             "SEC EDGAR 10-K FY2025(0001543151-26-000015) R3/R5/R8, as-filed, 2026-08-01 조회",
             "SEC EDGAR 10-K FY2022(0001543151-23-000010) R5/R8 (FY2020~2022)",
             "stockanalysis.com 시가총액 $143.22B(주가 $70.36, YoY-21.4%), 2026-07-31 조회",
             "WebSearch: Waymo 로보택시 확장 현황(2026-08), Uber의 서드파티 AV 플랫폼 "
             "통합전략 확인",
+            "2026-08-04 정성심층조사(A등급): 긱워커분류·자본배분·회계품질·거버넌스·"
+            "Waymo threat trajectory·배달경쟁 - 판정불변, Waymo 배타권 종료(Atlanta/"
+            "Austin, 2026-07-24)가 신규 악화신호, Confidence 재검토 권고(94→미검증 유지)",
         ],
     )
 

@@ -133,7 +133,7 @@
     "robust": true,
     "cap_bound": true,
     "lynch_type": "stalwart",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "UBER",
@@ -150,7 +150,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "WDAY",
@@ -167,7 +167,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "ROP",
@@ -184,7 +184,7 @@
     "robust": true,
     "cap_bound": true,
     "lynch_type": "stalwart",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "TCOM",
@@ -201,7 +201,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "cyclical",
-    "analyzed_at": "2026-07-28"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "BRO",
@@ -218,7 +218,7 @@
     "robust": true,
     "cap_bound": true,
     "lynch_type": "stalwart",
-    "analyzed_at": "2026-07-25"
+    "analyzed_at": "2026-08-04"
   },
   {
     "ticker": "BKNG",

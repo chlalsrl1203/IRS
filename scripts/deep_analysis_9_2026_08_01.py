@@ -67,7 +67,7 @@ LEDGERS = {
     "DUOL": "ledger/DUOL_2026-08-02.json",
     "TTD": "ledger/TTD_2026-08-03.json",
     "MNDY": "ledger/MNDY_2026-08-02.json",
-    "WDAY": "ledger/WDAY_2026-08-02.json",
+    "WDAY": "ledger/WDAY_2026-08-04.json",
 }
 
 # ── 정성 리스크: DRS/엔진에 반영되지 않는 항목만 (-15 ~ 0) ───────────────

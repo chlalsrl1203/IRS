@@ -12,7 +12,7 @@
     "quality_score": 20.238559770931325,
     "basis": "2026-08-03 심층조사: 준비금·자본배분·거버넌스 양호(신용등급 상향), ex-cat 마진 2분기연속 소폭악화.",
     "weight_raw": 0.12,
-    "weight_final": 0.12
+    "weight_final": 0.11999999999999997
   },
   {
     "ticker": "PGR",
@@ -27,7 +27,7 @@
     "quality_score": 18.929012200054988,
     "basis": "2026-08-03 심층조사: 성장추정 정합적이나 텔레매틱스 모트가 손해율 우위로 미이어짐(GEICO/Allstate가 더 나음).",
     "weight_raw": 0.12,
-    "weight_final": 0.12
+    "weight_final": 0.11999999999999997
   },
   {
     "ticker": "GEN",
@@ -35,14 +35,14 @@
     "grade": "A",
     "gap_pct": 12.182151794433596,
     "conf_engine": 89,
-    "conf_adj": 89,
-    "conf_status": "미검증",
+    "conf_adj": 70,
+    "conf_status": "검증",
     "cap_bound": true,
     "severe_flag": false,
-    "quality_score": 9.215797832489015,
-    "basis": "엔진 원값 그대로 - CLAUDE.md에 이미 M&A연결효과로 판정신뢰도 낮춤 별도 플래그 있음(핵심사업 유기성장 +5.13% vs 연결 +27%).",
-    "weight_raw": 0.12,
-    "weight_final": 0.12
+    "quality_score": 7.248380317687988,
+    "basis": "2026-08-04 심층조사: ROIC 9.15%(5y평균 20.74%대비 급락, 단일출처 미검증)+TBS세그먼트마진 30%vs61%+시장은 27%매출성장에도 -9%로 반응(멀티플압축).",
+    "weight_raw": 0.11775025299794172,
+    "weight_final": 0.11775025299794169
   },
   {
     "ticker": "TCOM",
@@ -50,14 +50,14 @@
     "grade": "A",
     "gap_pct": 7.547684320764038,
     "conf_engine": 94,
-    "conf_adj": 94,
-    "conf_status": "미검증",
+    "conf_adj": 80,
+    "conf_status": "검증",
     "cap_bound": false,
     "severe_flag": false,
-    "quality_score": 7.094823261518195,
-    "basis": "엔진 원값 그대로 - 심층조사 미실시.",
+    "quality_score": 6.038147456611231,
+    "basis": "2026-08-04 심층조사: SEC CORRESP로 확인된 中규제리스크 공시완화 이력(증권소송과 직결)+자체가이던스(+3~8%)가 Realistic Growth(12.39%) 크게 하회. DRS73.6(트래커최고)은 타당성 재확인됨.",
     "weight_raw": 0.1,
-    "weight_final": 0.1
+    "weight_final": 0.09999999999999998
   },
   {
     "ticker": "PDD",
@@ -71,8 +71,8 @@
     "severe_flag": false,
     "quality_score": 18.590961456298828,
     "basis": "2026-08-02 심층조사: SAMR 물리충돌·확대된 사기조사(신규 거버넌스 리스크). 희석은 무해.",
-    "weight_raw": 0.08107700131005502,
-    "weight_final": 0.08107700131005502
+    "weight_raw": 0.08361167772534199,
+    "weight_final": 0.08361167772534198
   },
   {
     "ticker": "ROP",
@@ -80,14 +80,14 @@
     "grade": "A",
     "gap_pct": 7.735778808593752,
     "conf_engine": 89,
-    "conf_adj": 89,
-    "conf_status": "미검증",
+    "conf_adj": 77,
+    "conf_status": "검증",
     "cap_bound": true,
     "severe_flag": false,
-    "quality_score": 5.852116668701173,
-    "basis": "엔진 원값 그대로 - 심층조사 미실시. M&A 유기/비유기 성장 분리 미실시로 이미 기록됨.",
-    "weight_raw": 0.08000000000000002,
-    "weight_final": 0.08000000000000002
+    "quality_score": 5.063067230224611,
+    "basis": "2026-08-04 심층조사: 회사공시 오가닉성장률 5-6%(3년연속감속)가 12%Lynch캡과 큰 괴리 확인 - Gap크기의 근거가 약함(재실행시 +1~5%p로 축소 가능), 레버리지도 2.9x→3.4x 상승.",
+    "weight_raw": 0.08224974700205828,
+    "weight_final": 0.08224974700205827
   },
   {
     "ticker": "SE",
@@ -101,8 +101,8 @@
     "severe_flag": false,
     "quality_score": 15.152449087087865,
     "basis": "2026-08-03 심층조사: Shopee EBITDA 역성장(TikTok Shop 방어비용), 그룹이익은 Garena 단독부담.",
-    "weight_raw": 0.0660813125438507,
-    "weight_final": 0.0660813125438507
+    "weight_raw": 0.06814718500693763,
+    "weight_final": 0.06814718500693762
   },
   {
     "ticker": "BRO",
@@ -110,14 +110,14 @@
     "grade": "A",
     "gap_pct": 7.427728925631566,
     "conf_engine": 89,
-    "conf_adj": 89,
-    "conf_status": "미검증",
+    "conf_adj": 70,
+    "conf_status": "검증",
     "cap_bound": true,
     "severe_flag": false,
-    "quality_score": 5.619076932240279,
-    "basis": "엔진 원값 그대로 - 심층조사 미실시.",
+    "quality_score": 4.419498710750781,
+    "basis": "2026-08-04 심층조사: 오가닉성장률 7분기연속감속해 2회 마이너스(-2.8%/-0.7%) 확인 - 시장이 이미 멀티플 17.8x→12.9x로 재평가 완료. 레버리지 2.77x, M&A주식대가 다일루션 ~19%(SBC와 별개) 신규 확인.",
     "weight_raw": 0.06,
-    "weight_final": 0.06
+    "weight_final": 0.059999999999999984
   },
   {
     "ticker": "DUOL",
@@ -131,8 +131,8 @@
     "severe_flag": false,
     "quality_score": 12.897421875,
     "basis": "2026-08-02 심층조사: 내부자 순매도만 확인(매수 없음)+증권소송(초기)+신규 AI경쟁사 Speak, 다만 DAU는 여전히 견조.",
-    "weight_raw": 0.056246918305638105,
-    "weight_final": 0.056246918305638105
+    "weight_raw": 0.05800534221079299,
+    "weight_final": 0.058005342210792975
   },
   {
     "ticker": "MNDY",
@@ -146,38 +146,8 @@
     "severe_flag": false,
     "quality_score": 12.860119104385376,
     "basis": "2026-08-02 심층조사: S등급 7종목 중 최우려 - FY2027목표 철회+주가-21%급락(원분석 누락)+진행중 증권소송.",
-    "weight_raw": 0.056084237274369245,
-    "weight_final": 0.056084237274369245
-  },
-  {
-    "ticker": "UBER",
-    "bucket": "growth_platform",
-    "grade": "A",
-    "gap_pct": 11.784205707458376,
-    "conf_engine": 94,
-    "conf_adj": 94,
-    "conf_status": "미검증",
-    "cap_bound": false,
-    "severe_flag": false,
-    "quality_score": 11.077153365010874,
-    "basis": "엔진 원값 그대로 - 심층조사 미실시.",
-    "weight_raw": 0.048308549291428915,
-    "weight_final": 0.048308549291428915
-  },
-  {
-    "ticker": "WDAY",
-    "bucket": "growth_platform",
-    "grade": "A",
-    "gap_pct": 11.417055453507203,
-    "conf_engine": 94,
-    "conf_adj": 94,
-    "conf_status": "미검증",
-    "cap_bound": false,
-    "severe_flag": false,
-    "quality_score": 10.73203212629677,
-    "basis": "엔진 원값 그대로 - 심층조사 미실시. Mobley 소송(AI채용차별)은 이미 data_limitations에 기록됨.",
-    "weight_raw": 0.04680344181276913,
-    "weight_final": 0.04680344181276913
+    "weight_raw": 0.05783757535041711,
+    "weight_final": 0.05783757535041709
   },
   {
     "ticker": "TTD",
@@ -191,7 +161,37 @@
     "severe_flag": true,
     "quality_score": 10.409887929631243,
     "basis": "2026-08-03 심층조사: 연방 증권사기소송 진행중(CEO 내부자거래 혐의 포함, 기각동의 기각) - S등급 7종목 중 최심각.",
-    "weight_raw": 0.04539853946188891,
-    "weight_final": 0.04539853946188891
+    "weight_raw": 0.04681781503206536,
+    "weight_final": 0.046817815032065356
+  },
+  {
+    "ticker": "UBER",
+    "bucket": "growth_platform",
+    "grade": "A",
+    "gap_pct": 11.784205707458376,
+    "conf_engine": 94,
+    "conf_adj": 83,
+    "conf_status": "검증",
+    "cap_bound": false,
+    "severe_flag": false,
+    "quality_score": 9.780890737190452,
+    "basis": "2026-08-04 심층조사: Prop22로 CA 리스크는 durably 해소됐으나 Waymo가 Atlanta/Austin 배타권 종료(자체앱 2028-01)로 파트너 프레이밍 약화, EU Directive(2026-12) 미해결.",
+    "weight_raw": 0.04398893979244263,
+    "weight_final": 0.04398893979244262
+  },
+  {
+    "ticker": "WDAY",
+    "bucket": "growth_platform",
+    "grade": "A",
+    "gap_pct": 11.417055453507203,
+    "conf_engine": 94,
+    "conf_adj": 81,
+    "conf_status": "검증",
+    "cap_bound": false,
+    "severe_flag": false,
+    "quality_score": 9.247814917340834,
+    "basis": "2026-08-04 심층조사: 자사주매입이 SBC 2배속 상회(긍정적)하나 Mobley소송 확대(3월 기각argument 패소)+AI네이티브경쟁 실측화(Ramp/Rippling ARR$1B+) - SBC교차검증 플립 근접종목이라 특히 주의.",
+    "weight_raw": 0.041591464882002355,
+    "weight_final": 0.04159146488200235
   }
 ]

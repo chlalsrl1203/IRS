@@ -135,6 +135,26 @@ def build_inputs() -> AnalysisInputs:
             "재검토할 것. 첫 분석이라 대조할 과거 기록 없음."
         ),
 
+        price_at_analysis=160.34,
+        currency="USD",
+
+        # 2026-08-04 정성심층조사(A등급 6종목 배치) 반증조건 - 결과 미확정
+        # 미래시점 이벤트 기준. 근거: Mobley 소송이 2026-03 기각argument
+        # 패소+청구범위 확대(수정소장)로 악화, Ramp($44B밸류/ARR $1B+/YoY
+        # +110%)·Rippling(ARR $1B+/YoY+78%) 등 AI-네이티브 경쟁이 서사에서
+        # 실측 트랙션으로 전환 확인. WDAY는 이 트래커에서 유일하게 SBC차감
+        # 시나리오가 판정을 뒤집는 종목이라는 점과 결합해 특히 주시 필요.
+        falsification_conditions=(
+            "1) Mobley v. Workday에서 Rule 23 집단인증이 확정되거나 배상액이 "
+            "공개(어느 방향이든 구체적 숫자)되면 재검토. 2) 동종 AI채용도구 "
+            "소송(Eightfold 등)이 Workday를 공동피고로 추가하면 산업패턴 "
+            "확산 신호로 재검토. 3) Ramp/Rippling 등 AI-네이티브 경쟁사가 "
+            "Workday 핵심 HCM/Financials 스위트와 직접 경쟁하는 제품을 "
+            "출시(현재는 지출관리/급여 인접영역)하면 competitor_threat_"
+            "weight(0.15) 상향 검토. 4) FY2027 분기 subscription revenue "
+            "growth가 12% 밑으로 추가 감속하면 성장서사 재검토."
+        ),
+
         data_sources=[
             "SEC EDGAR 10-K FY2026(0001327811-26-000014) R3/R5/R10, as-filed, 2026-07-31 조회",
             "SEC EDGAR 10-K FY2024(0001327811-24-000044) R5/R10 (FY2023/2022 대조검증)",
@@ -143,6 +163,9 @@ def build_inputs() -> AnalysisInputs:
             "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy "
             "on the Dip' 기사, Workday 경쟁구도(ADP/Taleo 전환데이터), Mobley v. "
             "Workday 소송 진행상황(2026-06-22 법원 판결) 확인",
+            "2026-08-04 정성심층조사(A등급): Mobley소송 심층·자본배분(자사주매입이 "
+            "SBC 2배속 초과)·회계품질·거버넌스·성장감속·AI네이티브경쟁 - 판정불변, "
+            "Confidence 재검토 권고(94→미검증 유지, SBC교차검증 플립 근접종목이라 특히 주의)",
         ],
     )
 
