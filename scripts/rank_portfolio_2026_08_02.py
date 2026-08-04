@@ -96,7 +96,7 @@ def main():
     print("등급 분포:")
     for g in ["S", "A", "B", "C", "D", "F"]:
         n = grade_counts.get(g, 0)
-        print(f"  {g}({JUDGMENT_GRADE_LABELS[g]:8}): {n:2}종목")
+        print(f"  {g}({JUDGMENT_GRADE_LABELS[g]:16}): {n:2}종목")
 
     out_path = "reports/portfolio_ranking_2026-08-02.json"
     os.makedirs("reports", exist_ok=True)
