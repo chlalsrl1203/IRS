@@ -42,6 +42,25 @@ A등급에서 이탈(아래 갱신 참고)하며 industrial_stalwart가 정확�
 않는, 재사용 가능한 일반 해법이다. 향후 어느 버킷이든 종목수가 줄어들면
 (또는 새 종목 편입으로 다시 늘어나면) 자동으로 재계산된다.
 
+**v3.30(2026-08-04, 사용자 요청 "모두 실사용목표 90%까지 올려") - 버킷
+목표 최소 달성률 바닥**: v3.29는 달성 불가능한 목표를 "달성 가능한 데까지"
+깎기만 해서, industrial_stalwart가 명목 20% 대비 12%(달성률 60%)까지
+떨어지는 걸 그대로 뒀다. `MIN_BUCKET_TARGET_ACHIEVEMENT = 0.90`을 도입해
+**어떤 버킷도 명목목표의 90% 밑으로는 내려가지 않게** 바닥을 깔았다.
+
+⚠️ **이 바닥은 종목당 상한(PER_STOCK_CAP)과 직접 충돌한다**. 1종목뿐인
+버킷은 상한 때문에 애초에 12%가 최대인데 바닥은 18%를 요구하므로, 둘 중
+하나는 포기해야 한다. 이 규칙은 **버킷 목표 달성을 단일종목 과다집중
+방지보다 우선**하도록 정했고(사용자 요청 그대로), 해당 버킷에 한해
+종목당 상한을 필요한 만큼(여기서는 12%→18%) 완화한다. 전역 상한을 올리는
+게 아니라 **버킷별 상한**으로 관리해, 상한 완화가 필요 없는 버킷
+(growth_platform/insurance/travel)은 12%를 그대로 유지한다.
+
+실측 영향: GEN이 12%→**18%로 최대 보유종목**이 됐다. GEN은 Confidence
+70으로 최하위권(BRO와 공동)이고 M&A 연결효과로 성장상한이 바인딩된
+종목이라, 이 집중이 의도된 것인지 매 실행마다 확인할 것 - 실행 시
+완화된 상한과 해당 종목 비중을 경고문으로 명시 출력한다.
+
 **버킷 내 배분**: quality_score = Gap%p x (Confidence_adj/100), 정규화 후
 버킷 목표비중에 곱함. 조정치:
   - 캡바인딩(성장분석이 결과에 기여 안 함, M-1): x0.85
@@ -83,7 +102,7 @@ BUCKET = {
 }
 
 # 명목 목표비중 - 종목수와 무관한 "이상적" 분산 목표. 실제 배분에는
-# effective_bucket_targets()로 계산한 EFFECTIVE_BUCKET_TARGET을 쓴다.
+# effective_bucket_targets()로 계산한 실사용 목표비중을 쓴다.
 NOMINAL_BUCKET_TARGET = {
     "growth_platform": 0.40,
     "insurance": 0.30,
@@ -91,29 +110,70 @@ NOMINAL_BUCKET_TARGET = {
     "travel": 0.10,
 }
 
+# 버킷 목표 최소 달성률 - v3.30(2026-08-04 사용자 요청 "모두 실사용목표 90%까지
+# 올려"). 어떤 버킷도 명목 목표의 이 비율 밑으로는 내려가지 않는다.
+# ⚠️ 이 바닥은 PER_STOCK_CAP(종목당 상한)과 **직접 충돌한다** - 종목수가 적은
+# 버킷은 상한 때문에 애초에 목표를 못 채우기 때문이다(예: 1종목 x 12% = 12%가
+# 최대인데 명목목표가 20%면 달성률 60%). 둘 중 하나를 포기해야 하고, 이 규칙은
+# **버킷 바닥을 우선**해 해당 버킷에 한해 종목당 상한을 필요한 만큼 완화한다.
+# 즉 종목수가 적은 버킷일수록 개별 종목 집중도가 높아진다 - 이 트레이드오프가
+# 눈에 보이도록 실행 시 완화된 상한을 명시적으로 출력한다.
+MIN_BUCKET_TARGET_ACHIEVEMENT = 0.90
 
-def effective_bucket_targets(bucket_counts: dict, nominal_targets: dict, per_stock_cap: float) -> dict:
+
+def effective_bucket_targets(
+    bucket_counts: dict,
+    nominal_targets: dict,
+    per_stock_cap: float,
+    min_achievement: float = MIN_BUCKET_TARGET_ACHIEVEMENT,
+) -> tuple:
     """
-    버킷 목표비중이 `종목수 x 종목당상한`을 넘으면 그 상한까지 깎고,
-    초과분을 캡에 안 걸린 나머지 버킷들에 명목 목표비중 비율대로
-    재분배한다. 종목수가 늘거나 줄면 자동으로 재계산되는 일반 규칙 -
-    한 버킷만 하드코딩으로 예외처리하지 않는다.
+    버킷별 실사용 목표비중과 **버킷별 종목당 상한**을 함께 계산한다.
+
+    규칙:
+      1) 버킷 목표가 `종목수 x 종목당상한`을 넘으면 달성 가능한 데까지 깎되,
+      2) 명목목표의 min_achievement(기본 90%) 밑으로는 내리지 않는다 - 그
+         아래로 갈 상황이면 대신 **그 버킷의 종목당 상한을 완화**해서
+         바닥을 지킨다(v3.30).
+      3) 깎인 만큼의 미달분은 캡에 안 걸린 나머지 버킷들에 명목 비중
+         비율대로 재분배해 합계 100%를 유지한다.
+
+    종목수가 늘거나 줄면 자동 재계산되는 일반 규칙 - 특정 버킷을
+    하드코딩으로 예외처리하지 않는다.
+
+    반환: (실사용 목표비중 dict, 버킷별 종목당 상한 dict)
     """
     targets = dict(nominal_targets)
-    total_excess = 0.0
+    caps = {b: per_stock_cap for b in nominal_targets}
     capped = set()
-    for bucket, n in bucket_counts.items():
-        max_achievable = n * per_stock_cap
-        if targets[bucket] > max_achievable:
-            total_excess += targets[bucket] - max_achievable
-            targets[bucket] = max_achievable
-            capped.add(bucket)
-    if total_excess > 1e-9:
-        remaining = [b for b in targets if b not in capped]
+
+    for _ in range(5):
+        newly_capped = False
+        for bucket, n in bucket_counts.items():
+            if bucket in capped or n == 0:
+                continue
+            max_achievable = n * caps[bucket]
+            if targets[bucket] > max_achievable + 1e-12:
+                floor = nominal_targets[bucket] * min_achievement
+                if max_achievable < floor:
+                    caps[bucket] = floor / n   # 바닥을 지키려 상한을 완화
+                    targets[bucket] = floor
+                else:
+                    targets[bucket] = max_achievable
+                capped.add(bucket)
+                newly_capped = True
+
+        deficit = 1.0 - sum(targets.values())
+        remaining = [b for b in targets if b not in capped and bucket_counts.get(b, 0) > 0]
+        if abs(deficit) < 1e-12 or not remaining:
+            break
         remaining_nominal_sum = sum(nominal_targets[b] for b in remaining)
         for bucket in remaining:
-            targets[bucket] += total_excess * (nominal_targets[bucket] / remaining_nominal_sum)
-    return targets
+            targets[bucket] += deficit * (nominal_targets[bucket] / remaining_nominal_sum)
+        if not newly_capped:
+            break
+
+    return targets, caps
 
 # (조정 Confidence, 검증상태, 근거)
 CONFIDENCE_ADJ = {
@@ -155,19 +215,23 @@ def main():
           f"{bucket_count['growth_platform']/n_universe*100:.0f}%를 차지 - 사실상 '폭락한 고베타 성장주'라는")
     print("     단일 팩터에 몰빵된 상태. 동일가중 매수는 분산이 아니라 집중이다.")
 
-    bucket_target = effective_bucket_targets(bucket_count, NOMINAL_BUCKET_TARGET, PER_STOCK_CAP)
-    print("\n  버킷별 목표비중 (명목 -> 종목수 제약 반영 후 실제 사용값):")
+    bucket_target, bucket_cap = effective_bucket_targets(
+        bucket_count, NOMINAL_BUCKET_TARGET, PER_STOCK_CAP
+    )
+    print(f"\n  버킷별 목표비중 (명목 -> 실사용, 최소 달성률 {MIN_BUCKET_TARGET_ACHIEVEMENT*100:.0f}% 보장):")
     for b in NOMINAL_BUCKET_TARGET:
-        nominal, effective = NOMINAL_BUCKET_TARGET[b], bucket_target[b]
-        max_achievable = bucket_count[b] * PER_STOCK_CAP
-        if nominal > max_achievable + 1e-9:
-            note = (f"  <- {b}는 {bucket_count[b]}종목 x {PER_STOCK_CAP*100:.0f}%캡="
-                     f"{max_achievable*100:.0f}%가 상한이라 하향")
+        nominal, effective, cap = NOMINAL_BUCKET_TARGET[b], bucket_target[b], bucket_cap[b]
+        achievement = effective / nominal if nominal else 1.0
+        if cap > PER_STOCK_CAP + 1e-9:
+            note = (f"  <- {bucket_count[b]}종목뿐이라 기본상한({PER_STOCK_CAP*100:.0f}%)으로는 "
+                    f"{bucket_count[b]*PER_STOCK_CAP*100:.0f}%가 최대 - 달성률 바닥을 지키려 "
+                    f"**이 버킷 종목당 상한을 {cap*100:.1f}%로 완화**")
         elif effective > nominal + 1e-9:
-            note = "  <- 다른 버킷의 초과분을 명목비중 비율로 흡수"
+            note = "  <- 다른 버킷의 미달분을 명목비중 비율로 흡수"
         else:
             note = ""
-        print(f"    {b:22} 명목 {nominal*100:4.1f}%  ->  실사용 {effective*100:5.2f}%{note}")
+        print(f"    {b:22} 명목 {nominal*100:4.1f}%  ->  실사용 {effective*100:5.2f}% "
+              f"(달성률 {achievement*100:5.1f}%){note}")
 
     # ── 3단계: 사이징 규칙 적용 ──────────────────────────────────────────
     rows = []
@@ -201,15 +265,18 @@ def main():
     # 걸렸다고 growth_platform 비중이 몰래 늘어나는 부작용이 생긴다). 이제
     # bucket_target 자체가 이미 종목수 제약을 반영했으므로(v3.29), 이
     # 패스는 버킷 "내부"에서 quality_score 편차가 큰 경우의 잔여 안전망이다.
+    # 상한은 전역 PER_STOCK_CAP이 아니라 **버킷별 상한**(v3.30에서 달성률
+    # 바닥을 지키려 완화됐을 수 있음)을 쓴다.
     for bucket_name in bucket_target:
         bucket_rows = [r for r in rows if r["bucket"] == bucket_name]
+        cap = bucket_cap[bucket_name]
         for _ in range(5):
             excess = 0.0
             uncapped = []
             for row in bucket_rows:
-                if row["weight_raw"] > PER_STOCK_CAP:
-                    excess += row["weight_raw"] - PER_STOCK_CAP
-                    row["weight_raw"] = PER_STOCK_CAP
+                if row["weight_raw"] > cap:
+                    excess += row["weight_raw"] - cap
+                    row["weight_raw"] = cap
                 else:
                     uncapped.append(row)
             if excess < 1e-9 or not uncapped:
@@ -224,19 +291,19 @@ def main():
 
     # ⚠️ 버킷 하나가 목표비중을 못 채우면(예: 종목이 1개뿐이라 12%캡에 막혀
     # 20% 목표에 못 미침) total_weight < 1이 되고, 위 정규화가 전체 행을
-    # 균일하게 끌어올리면서 **이미 12%로 캡된 종목까지 12% 넘게 재상승**하는
+    # 균일하게 끌어올리면서 **이미 캡된 종목까지 상한을 넘게 재상승**하는
     # 부작용이 생긴다(2026-08-04 ROP 등급이탈로 실제 발생 확인 - industrial_
     # stalwart가 20%→13.04%로 미달되며 ACGL/PGR/GEN이 전부 13.04%로 상승).
-    # 종목당 상한은 버킷 재분배 이후에도 전역적으로 다시 강제해야 한다 -
-    # 버킷 다양화 목적은 이미 달성됐으므로 이 2차 패스는 버킷 구분 없이
-    # 전체 행에 대해 상한을 지키고 초과분을 미캡 종목에 비례 재분배한다.
+    # 종목당 상한은 버킷 재분배 이후에도 다시 강제해야 한다 - 여기서도
+    # 전역 PER_STOCK_CAP이 아니라 **각 종목이 속한 버킷의 상한**을 쓴다.
     for _ in range(5):
         excess = 0.0
         uncapped = []
         for row in rows:
-            if row["weight_final"] > PER_STOCK_CAP:
-                excess += row["weight_final"] - PER_STOCK_CAP
-                row["weight_final"] = PER_STOCK_CAP
+            cap = bucket_cap[row["bucket"]]
+            if row["weight_final"] > cap:
+                excess += row["weight_final"] - cap
+                row["weight_final"] = cap
             else:
                 uncapped.append(row)
         if excess < 1e-9 or not uncapped:
@@ -244,6 +311,12 @@ def main():
         total_uncapped = sum(r["weight_final"] for r in uncapped)
         for row in uncapped:
             row["weight_final"] += excess * (row["weight_final"] / total_uncapped)
+
+    # 적용된 버킷별 상한을 행마다 기록해둔다 - 나중에 리포트만 보고도
+    # "이 종목이 왜 12%를 넘겼나"를 추적할 수 있어야 한다(v3.30).
+    for row in rows:
+        row["bucket_cap_applied"] = bucket_cap[row["bucket"]]
+        row["bucket_target_effective"] = bucket_target[row["bucket"]]
 
     rows.sort(key=lambda r: -r["weight_final"])
 
@@ -260,12 +333,26 @@ def main():
               f"{'Y' if row['cap_bound'] else '':>7} {'Y' if row['severe_flag'] else '':>6} "
               f"{row['weight_final']*100:6.2f}%")
 
-    print("\n버킷별 실제 배분 합계 (실사용 목표치와 대조):")
+    print("\n버킷별 실제 배분 합계 (실사용 목표치·명목 달성률과 대조):")
     actual_bucket = {b: 0.0 for b in NOMINAL_BUCKET_TARGET}
     for row in rows:
         actual_bucket[row["bucket"]] += row["weight_final"]
     for b, target in bucket_target.items():
-        print(f"  {b:22} 실사용목표 {target*100:5.2f}%  ->  실제 {actual_bucket[b]*100:5.2f}%")
+        nominal = NOMINAL_BUCKET_TARGET[b]
+        print(f"  {b:22} 실사용목표 {target*100:5.2f}%  ->  실제 {actual_bucket[b]*100:5.2f}% "
+              f"(명목 {nominal*100:4.1f}% 대비 달성률 {actual_bucket[b]/nominal*100:5.1f}%)")
+
+    relaxed = {b: c for b, c in bucket_cap.items() if c > PER_STOCK_CAP + 1e-9}
+    if relaxed:
+        print(f"\n⚠️ 달성률 바닥({MIN_BUCKET_TARGET_ACHIEVEMENT*100:.0f}%)을 지키느라 종목당 상한이 완화된 버킷:")
+        for b, cap in relaxed.items():
+            holders = [r for r in rows if r["bucket"] == b]
+            names = ", ".join(f"{r['ticker']} {r['weight_final']*100:.2f}%" for r in holders)
+            print(f"   {b}: 기본 {PER_STOCK_CAP*100:.0f}% -> {cap*100:.1f}%  ({names})")
+        print("   이 규칙은 '버킷 목표 달성'을 '단일종목 과다집중 방지'보다 우선한 결과다.")
+        print("   종목수가 적은 버킷일수록 개별 종목 비중이 커지므로, 해당 종목의")
+        print("   Confidence·정성리스크를 특히 함께 볼 것(현재 GEN은 Conf 70으로 최하위권이며")
+        print("   M&A 연결효과로 성장상한이 바인딩된 종목이다).")
 
     os.makedirs("reports", exist_ok=True)
     out_path = "reports/buylist_2026-08-03.json"
