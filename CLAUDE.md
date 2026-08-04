@@ -694,3 +694,29 @@ git이 rename으로 인식). `scripts/build_buylist_2026_08_03.py`의
 전부 정확히 달성: growth_platform 40.00%/insurance 30.00%/
 industrial_stalwart 20.00%/travel 10.00%). ROP가 상한(12%) 아래로 내려간
 유일한 캡바인딩 종목이 됐다(quality_score가 Confidence 하향으로 낮아진 결과).
+
+**ROP 유기적성장률 교차검증 - 2026-08-04(위 falsification_conditions의 즉시
+검증)**: 정성심층조사가 "다음 세션에서 반드시 재실행 검증할 것"이라 명시한
+항목을 `scripts/rop_organic_growth_crosscheck_2026_08_04.py`로 실행했다.
+공식 재분석이 아니라 `is_insurer`/`sbc_cross_check`와 동일한 "병기, 자동판정
+안 함" 원칙의 교차검증이다 - engine/pipeline.py의 `AnalysisInputs`에는
+"유기적성장 오버라이드" 필드가 없다(세그먼트 공시 방식이 회사마다 달라
+표준 입력 스키마를 만들기엔 아직 실증사례 부족, 위 GEN 항목과 동일 판단).
+대신 ledger/ROP_2026-08-04.json에 이미 저장된 DRS·할인율(r)·Implied
+Growth(growth 입력과 무관하게 고정)를 그대로 가져와 Realistic Growth
+자리에만 회사 공시 성장률을 대입해 Gap·RAR·판정을 재계산했다.
+
+**결과가 정성조사의 예상("근접 또는 진입 가능")보다 더 뚜렷하다 - 판정이
+실제로 뒤집힌다.** 유기적성장 기준(5.5%, Q1'26/Q2'26 실측 5%와 FY26
+가이던스 상단 6%의 중간값)에서 Gap +7.74%p→**+1.24%p**, 연결성장 기준
+(8.5%, FY26 가이던스 "north of 8%")에서도 Gap +7.74%p→**+4.24%p** - 둘 다
+±5%p 경계 안쪽이라 판정이 "저평가 가능성"에서 "적정가/경계선"으로
+바뀐다(RAR도 +0.6928→+0.17~+0.48로 크게 축소). 즉 ROP의 공식 A등급
+판정(+7.74%p)이 서 있는 근거는 사실상 stalwart 성장상한(12%) 그
+자체이며, 회사가 실제로 공시한 성장률로 대체하면 저평가 근거가 사실상
+사라진다. **공식 ledger의 Gap/RAR/판정/Confidence는 변경하지 않았다** -
+`reports/rop_organic_growth_crosscheck_2026-08-04.json`에 결과를
+병기해뒀을 뿐, 이를 공식 판정으로 승격할지(예: `lynch_type_override`로
+캡 자체를 낮추거나 별도 입력 스키마를 신설)는 다음 세션에서 사용자와
+함께 결정할 사안으로 남겨둔다 - Simplicity First 원칙상 실증사례 1건만으로
+새 필드를 서둘러 만들지 않는다.
