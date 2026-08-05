@@ -2,12 +2,16 @@
   "meta": {
     "ticker": "TYL",
     "company_name": "Tyler Technologies, Inc.",
-    "analyzed_at": "2026-07-26T05:03:44.643293+00:00",
-    "engine_version": "v3.19",
+    "analyzed_at": "2026-08-05T09:25:12.932434+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025/2022/2019/2016 (as-filed R.htm, 2026-07-26 조회)",
-      "WebSearch: TYL market cap/price 2026-07-24, gov-tech competitor landscape 2026"
-    ]
+      "WebSearch: TYL market cap/price 2026-07-24, gov-tech competitor landscape 2026",
+      "SEC EDGAR XBRL companyconcept API (CIK 860731, us-gaap:ShareBasedCompensation, FY2025) - SBC $151,276K 실측, 2026-08-05 조회"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
   },
   "data_limitations": [],
   "inputs": {
@@ -81,7 +85,7 @@
     "market_share_trend_pp_per_year": 0.0,
     "active_antitrust_or_regulatory_case": false,
     "demand_sensitivity_pct": 0.05,
-    "subjective_input_basis": "OpenGov 0.35(SaaS-first로 가장 빠르게 성장하는 도전자, budgeting/permitting/reporting 통합 플랫폼으로 Tyler와 직접 경쟁 확대중), Accela 0.30(permitting/licensing/inspection에서 Tyler EnerGov와 직접 경쟁, 2026 RFP 숏리스트에 상시 등장), CentralSquare 0.25(공공안전/ERP 영역 중복). 셋 다 개별로는 Tyler 규모에 크게 못 미치는 파편화된 시장의 도전자들 [추정치, 2026-07 WebSearch 기반]. market_share_trend=0.0은 Tyler가 NIC 인수(2021, 전자결제) 이후 꾸준한 유기적 성장과 SaaS 전환을 병행중이나 순수 유기적 점유율 변화를 뒷받침할 정량근거가 없어 중립 처리 [추정치]. demand_sensitivity=0.05로 낮게 설정 - 매출 대부분이 주/지방정부와의 다년 SaaS/구독 계약(법원, 재산세, 공공안전, ERP)으로 경기침체에도 정부 핵심 소프트웨어 예산은잘 삭감되지 않는 특성 반영(2020 COVID 최악 YoY도 +2.78%로 역성장 없었음, 12년 조회창 확인). 반독점/규제소송: 2021년 Lexur사와의 반독점 분쟁은 이미 종결(정성리스크로만 언급), 현재 진행중인 반독점/규제 소송 없음 확인(2026-07 WebSearch) - active_case=False.",
+    "subjective_input_basis": "OpenGov 0.35(SaaS-first로 가장 빠르게 성장하는 도전자, budgeting/permitting/reporting 통합 플랫폼으로 Tyler와 직접 경쟁 확대중), Accela 0.30(permitting/licensing/inspection에서 Tyler EnerGov와 직접 경쟁, 2026 RFP 숏리스트에 상시 등장), CentralSquare 0.25(공공안전/ERP 영역 중복). 셋 다 개별로는 Tyler 규모에 크게 못 미치는 파편화된 시장의 도전자들 [추정치, 2026-07 WebSearch 기반]. market_share_trend=0.0은 Tyler가 NIC 인수(2021, 전자결제) 이후 꾸준한 유기적 성장과 SaaS 전환을 병행중이나 순수 유기적 점유율 변화를 뒷받침할 정량근거가 없어 중립 처리 [추정치]. demand_sensitivity=0.05로 낮게 설정 - 매출 대부분이 주/지방정부와의 다년 SaaS/구독 계약(법원, 재산세, 공공안전, ERP)으로 경기침체에도 정부 핵심 소프트웨어 예산은 잘 삭감되지 않는 특성 반영(2020 COVID 최악 YoY도 +2.78%로 역성장 없었음, 12년 조회창 확인). 반독점/규제소송: 2021년 Lexur사와의 반독점 분쟁은 이미 종결(정성리스크로만 언급), 현재 진행중인 반독점/규제 소송 없음 확인(2026-07 WebSearch) - active_case=False.",
     "model_used": "two_stage",
     "model_choice_reason": "fast_grower 자동분류(5y 매출CAGR 15.87%, 시총 $12.77B<$1000B) 예상, single_stage(5.83%)와 two_stage(8.30%)의 괴리가 2.47%p로 v3.19 경고임계값(3%p) 미만이라 모델선택에 비교적 강건하지만, 여전히 두 자릿수 성장률이 진행중인 SaaS 성장기업 특성상 명시적 성장기간을 모델링하는 two_stage가 이론적으로 더 적합하다고 판단(Gordon Growth는 이미 안정된 성숙기업에 더 적합). 이 종목은 첫 분석이라 대조할 과거 기록이 없음.",
     "margin_years": [
@@ -92,17 +96,37 @@
       2025
     ],
     "n_requested": 12,
+    "n_requested_reason": null,
     "data_completeness_pct": 0.9,
     "lynch_type_override": null,
     "lynch_type_override_reason": null,
     "data_sources": [
       "SEC EDGAR 10-K FY2025/2022/2019/2016 (as-filed R.htm, 2026-07-26 조회)",
-      "WebSearch: TYL market cap/price 2026-07-24, gov-tech competitor landscape 2026"
-    ]
+      "WebSearch: TYL market cap/price 2026-07-24, gov-tech competitor landscape 2026",
+      "SEC EDGAR XBRL companyconcept API (CIK 860731, us-gaap:ShareBasedCompensation, FY2025) - SBC $151,276K 실측, 2026-08-05 조회"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2025": 151276000
+    },
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD",
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null
   },
   "derived": {
     "revenue_cagr_3y": 0.08024951917670409,
     "revenue_cagr_5y": 0.15870784367787483,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
     "revenue_cagr_10y": 0.14714633340996852,
     "fcf_cagr_5y": 0.13703541809123143,
     "fcf0": 620750000,
@@ -177,7 +201,8 @@
       "lynch_type": "fast_grower",
       "cap_applied": null,
       "final_realistic_growth": 0.10153071267866381
-    }
+    },
+    "capex_adjustment": null
   },
   "implied_growth": {
     "models": {
@@ -253,5 +278,16 @@
     "raw_score": 94,
     "final": 94
   },
-  "judgment": "적정가/경계선"
+  "judgment": "적정가/경계선",
+  "judgment_grade": "C",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 151276000,
+    "sbc_to_fcf_pct": 0.24369875151026985,
+    "fcf0_sbc_adjusted": 469474000,
+    "implied_growth_sbc_adjusted": 0.1063350677490234,
+    "gap_sbc_adjusted": -0.004804355070359589,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": false
+  }
 }

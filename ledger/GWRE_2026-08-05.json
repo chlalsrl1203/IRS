@@ -2,14 +2,15 @@
   "meta": {
     "ticker": "GWRE",
     "company_name": "Guidewire Software, Inc.",
-    "analyzed_at": "2026-08-02T00:00:12.082829+00:00",
-    "engine_version": "v3.25",
+    "analyzed_at": "2026-08-05T09:24:07.815418+00:00",
+    "engine_version": "v3.27",
     "data_sources": [
       "SEC EDGAR 10-K FY2025(0001528396-25-000221) R3/R5/R8, as-filed, 2026-07-28 조회",
       "SEC EDGAR 10-K FY2022(0001528396-22-000106) R5/R8 (FY2020~2022)",
       "SEC EDGAR 10-K FY2019(0001528396-19-000032) R4/R7 (FY2017~2019)",
       "stockanalysis.com 시가총액 $13.27B (2026-07-28 종가)",
-      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인"
+      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인",
+      "SEC EDGAR XBRL companyconcept API (CIK 1528396, us-gaap:ShareBasedCompensation, FY2025) - SBC $161,556K 실측, 2026-08-05 조회"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
@@ -17,7 +18,9 @@
   },
   "data_limitations": [
     "10년 CAGR 산출 불가(9개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(10.13%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
-    "[모델 괴리 경고] single_stage(8.35%)와 two_stage(17.38%)가 9.03%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    "[모델 괴리 경고] single_stage(8.35%)와 two_stage(17.38%)가 9.03%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
+    "[RAR 방향성 경고] 기대수익률이 음수(-17.31%)라 RAR=ER/DRS 공식이 의도와 반대로 움직이는 구간이다 - DRS(위험도)가 높을수록 음수 RAR이 0에 가깝게 압축돼 실제로는 위험이 클수록 '덜 나빠 보이는' 착시가 생긴다(2026-08-02 방법론 감사 M-2, CDNS 원자료로 기계적 검증: DRS 20→80일 때 같은 종목 RAR이 -0.95→-0.36로 개선돼 보임). 이 종목은 RAR 절대값만으로 판단하지 말고 Expectation Gap을 우선 참고할 것.",
+    "[SBC 교차검증] SBC가 FCF0의 58%로 상당히 크다 (SBC차감 시 Gap +3.15%p -> +1.85%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
   ],
   "inputs": {
     "ticker": "GWRE",
@@ -98,7 +101,8 @@
       "SEC EDGAR 10-K FY2022(0001528396-22-000106) R5/R8 (FY2020~2022)",
       "SEC EDGAR 10-K FY2019(0001528396-19-000032) R4/R7 (FY2017~2019)",
       "stockanalysis.com 시가총액 $13.27B (2026-07-28 종가)",
-      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인"
+      "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인",
+      "SEC EDGAR XBRL companyconcept API (CIK 1528396, us-gaap:ShareBasedCompensation, FY2025) - SBC $161,556K 실측, 2026-08-05 조회"
     ],
     "capex_classification": null,
     "capex_classification_basis": null,
@@ -108,10 +112,14 @@
     "net_income_by_year": null,
     "shareholders_equity_by_year": null,
     "dividends_paid_by_year": null,
-    "sbc_by_year": null,
+    "sbc_by_year": {
+      "2025": 161556000
+    },
     "falsification_conditions": null,
     "price_at_analysis": null,
-    "currency": "USD"
+    "currency": "USD",
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null
   },
   "derived": {
     "revenue_cagr_3y": 0.13953759827074275,
@@ -266,6 +274,15 @@
     "final": 74
   },
   "judgment": "적정가/경계선",
+  "judgment_grade": "C",
   "insurer_cross_check": null,
-  "sbc_cross_check": null
+  "sbc_cross_check": {
+    "sbc0": 161556000,
+    "sbc_to_fcf_pct": 0.5761379684178993,
+    "fcf0_sbc_adjusted": 118856000,
+    "implied_growth_sbc_adjusted": 0.0966020158854498,
+    "gap_sbc_adjusted": 0.018464344804409866,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": false
+  }
 }

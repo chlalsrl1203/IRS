@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## TYL·GWRE 공식 SBC 크로스체크 + KLAC/KEYS 섹터 한계 문서화 (2026-08-05)
+
+**TYL/GWRE SBC 정식 검증**: 2026-08-04 경량검증에서 나온 SBC/FCF 추정치
+(TYL≈62%, GWRE≈52.5%)를 SEC EDGAR XBRL companyconcept API 원자료로
+정식 크로스체크(`sbc_by_year` opt-in 배선). GWRE는 실측 57.6%로 추정과
+근접 확인. **TYL은 실측 24.4%로 추정의 약 1/3 - 실질적 정정.** 원인은
+경량검증 리서치 에이전트가 인용한 FCF 수치($236.9M)가 ledger 확정값
+($620.75M)과 크게 달랐던 것 - 2차 출처 오류로 추정. 둘 다 SBC차감해도
+Gap이 중립밴드 안에 머물러 판정은 불변. TYL은 재현용 스크립트가 없어
+`scripts/analyze_tyl_2026_07_26.py`로 신규 등록(BRO 선례와 동일 패턴,
+ledger/TYL_2026-07-26.json 원본 입력값 전사). ledger를 각각
+`GWRE_2026-08-05.json`/`TYL_2026-08-05.json`으로 롤포워드(구 파일 git rm
+후 rename 처리).
+
+**KLAC/KEYS 섹터 한계 문서화**: BKNG/PDD(조회창이 짧아 과거 저점을 놓쳐
+성장 과대추정)와 정반대 방향의 별개 한계를 CLAUDE.md에 신규 기록 -
+trailing CAGR 기반 Realistic Growth가 반도체 공정제어/테스트장비 업종의
+AI 수요 인플렉션(최근 1~2분기에야 뚜렷해짐)을 구조적으로 과소추정한다.
+KEYS(1.47% vs 가이던스 20%대 후반)·KLAC(10.33% vs 가이던스 20%+) 2건
+관측. Simplicity First 원칙에 따라 아직 코드 대응은 하지 않고(관측
+2건뿐, 반영 방식 미확정), 향후 반도체/AI인프라 종목 분석 시 가이던스
+기반 대체 시나리오를 반드시 병기해서 볼 것을 지침으로 남김.
+
+**테스트**: 코드 변경 없음(engine 로직 불변, `sbc_by_year`는 기존 opt-in
+필드 재사용), 영향 없음. 122개 전체 통과 재확인.
+
+---
+
 ## C등급 7종목 가벼운 정성검증 3차 배치 - B/C/D등급 20종목 전체 완료 (2026-08-04/05)
 
 **경위**: 2차 배치에 이어 ZTS·KLAC·IDXX·WM·MCK·MNST·VRSN 조사(동일하게

@@ -98,6 +98,12 @@ def build_inputs() -> AnalysisInputs:
         ebitda=EBITDA,
         risk_free_rate=RF,
 
+        # v3.23(2026-08-05 추가배선): SBC 병기 교차검증. SEC EDGAR XBRL
+        # companyconcept API(us-gaap:ShareBasedCompensation) FY2025
+        # (2024-08-01~2025-07-31) 실측 - 2026-08-04 정성심층조사에서
+        # SBC/FCF 52.5%(트래커 최고권)로 추정됐던 것을 SEC 원자료로 정식 검증.
+        sbc_by_year={2025: 161556 * K},
+
         competitor_threat_weights=[0.40, 0.25, 0.20],
         market_share_trend_pp_per_year=0.5,
         active_antitrust_or_regulatory_case=False,
@@ -152,6 +158,8 @@ def build_inputs() -> AnalysisInputs:
             "stockanalysis.com 시가총액 $13.27B (2026-07-28 종가)",
             "WebSearch: GWRE 주가 급등 원인(업종전반 금리랠리, 2026-06-04 실적 "
             "어닝비트/가이던스상향), 경쟁구도(Duck Creek/Sapiens), 반독점/규제조사 여부 확인",
+            "SEC EDGAR XBRL companyconcept API (CIK 1528396, us-gaap:ShareBasedCompensation, "
+            "FY2025) - SBC $161,556K 실측, 2026-08-05 조회",
         ],
     )
 
@@ -189,6 +197,12 @@ def main():
     print(f"  강건성점검 flip  : {result['sensitivity_check'].get('judgment_flipped')}")
     print(f"  Confidence       : {result['confidence']['final']}/100")
     print(f"  ** 판정          : {result['judgment']} **")
+    sbc = result.get("sbc_cross_check")
+    if sbc:
+        print()
+        print(f"  SBC 교차검증     : SBC/FCF {sbc['sbc_to_fcf_pct']*100:.1f}% -> "
+              f"SBC차감 Gap {sbc['gap_sbc_adjusted']*100:+.2f}%p "
+              f"(판정 {'뒤집힘' if sbc['judgment_flipped'] else '유지'}: {sbc['judgment_sbc_adjusted']})")
     print()
     if result["data_limitations"]:
         print("  데이터 한계·경고:")
