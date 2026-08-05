@@ -1,5 +1,57 @@
 # CHANGELOG
 
+## v3.32 — 기록 무결성 감사: 버전 스탬프·판정 단일화·캡 플래그·중복 ledger (2026-08-05)
+
+**경위**: 사용자 요청("개혁 필요 부분 스스로 철저히 찾아 완벽히 개혁"). 기존
+감사들이 전부 방법론(무엇을 계산하는가)을 봤던 것과 달리, 이번엔 기록
+무결성(계산 결과가 저장소에 정직하게 남는가)을 점검했다.
+
+**① engine_version 리터럴 → ENGINE_VERSION 상수**: `run_analysis()` 본문에
+`"v3.27"`이 문자열로 박혀 있어 v3.28~v3.31 변경이 스탬프에 반영되지 않았다.
+`ledger/ROP_2026-08-04.json`은 v3.27로 스탬프됐으면서 v3.27에 없는 필드
+(`realistic_growth_override_applied`)를 담고 있다 - v3.12 가짜버전 사건과 같은
+계열의 결함. `engine/expectation_gap_engine.py`의 `ENGINE_VERSION` 상수로
+단일화(현재 v3.32). 과거 ledger 스탬프는 소급 수정하지 않고 CLAUDE.md에
+"v3.27 스탬프 15건은 실제로 v3.27~v3.31 코드"라고 기록.
+
+**② 판정 규칙 4중 복사 → `judgment_from_gap()` 단일화**: ±5%p 3단계 판정이
+pipeline 2곳 + `expectation_gap_sensitivity_check._judge()` + 크로스체크
+스크립트 2곳에 독립 구현돼 있었고, **중립 라벨이 이미 갈라져 있었다**
+("적정가/경계선" vs "적정가"). ledger 36건 중 13건이 한 파일 안에서 두 이름을
+동시에 보유. 경계값·라벨 변경 없이 호출부만 통일(`judgment_flipped`는 두
+출력의 != 비교라 영향 없음).
+
+**③ 오버라이드 후 stale cap 플래그**: `realistic_growth_override`로 캡을
+우회한 뒤에도 `cap_applied`에 캡 문구가 남아 ledger가 자기모순(ROP:
+Realistic Growth 5.5% vs cap_applied "상한 캡 적용(12.0%)")을 일으키고,
+걸리지도 않은 캡으로 `confidence_score`에서 -5점이 붙었다. `cap_applied`를
+`None`으로 정정하고(원 문구는 `pre_override_cap_note`에 보존) 동일 크기의
+`realistic_growth_overridden` 감점 항목을 신설 - **Confidence 총점 불변**
+(ROP 89 유지), 감점 근거만 정정.
+
+**④ 중복 ledger 3건 제거 + 무결성 테스트 신설**: WM·WCN·IDXX의 구 파일
+(2026-07-25, v3.19 sensitivity 수정 이전 값)이 남아 33종목이 36건으로
+집계되고 있었다. **이 중복이 CLAUDE.md v3.26의 RAR-DRS 상관 통계를 실제로
+오염시켰다** - 3종목 전부 RAR<0 집단이라 하위집단이 10→13건으로 부풀려져
+상관 **+0.285로 보고됐으나 실제로는 +0.067**("부호 반전" 근거가 사실상
+소멸, 다만 v3.26 경고 자체는 CDNS 기계적 검증이 뒷받침하므로 유지). 구 파일
+git rm + `tests/test_ledger_integrity.py` 신설(종목당 1건/파일명-meta 일치/
+판정 라벨 어휘 검사).
+
+**부수**: 이분탐색 로그 `implied_cap`에 성장률이 들어가던 복붙 버그 수정,
+ROP 크로스체크 스크립트의 하드코딩된 "Realistic Growth 12.00%" 제거.
+
+**영향범위 실측**: 33종목 전건을 저장된 ledger 입력값으로 재실행해 Gap/RAR/
+DRS/Realistic Growth/Implied Growth/판정/Confidence/강건성flip **8개 지표
+전부 완전 동일** 확인(변동 0건). 테스트 122 → 131개 전부 통과.
+
+**미조치(기록만)**: `cross_check_prior_record()`가 25개 분석 스크립트 중
+1개(BKNG)에서만 호출됨. 자동화하려면 `run_analysis`/`save_ledger`가 디스크의
+다른 ledger를 읽는 부작용이 생겨 골든테스트가 저장소 상태에 의존하게 되므로,
+실증된 사고 사례가 나올 때까지 Simplicity First 원칙대로 보류.
+
+---
+
 ## TYL·GWRE 공식 SBC 크로스체크 + KLAC/KEYS 섹터 한계 문서화 (2026-08-05)
 
 **TYL/GWRE SBC 정식 검증**: 2026-08-04 경량검증에서 나온 SBC/FCF 추정치

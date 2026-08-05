@@ -50,6 +50,7 @@ from engine.expectation_gap_engine import (
     scenario_probabilities_from_drs,
     expected_return,
     rar_from_decimal_return,
+    judgment_from_gap,
     judgment_grade_from_gap,
 )
 
@@ -80,12 +81,8 @@ def run_scenario(name, growth, ledger, caveat):
     rar_value = rar_from_decimal_return(er, drs)
 
     gap = growth - implied_growth
-    if gap >= 0.05:
-        judgment = "저평가 가능성"
-    elif gap <= -0.05:
-        judgment = "과대평가 가능성"
-    else:
-        judgment = "적정가/경계선"
+    # v3.32: 판정 규칙 사본을 지우고 엔진의 judgment_from_gap()을 그대로 쓴다.
+    judgment = judgment_from_gap(gap)
     grade = judgment_grade_from_gap(gap)
 
     print(f"\n  [{name}] Realistic Growth 대체값 {growth*100:.2f}%  ({caveat})")

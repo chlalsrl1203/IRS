@@ -320,7 +320,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "stalwart",
-    "analyzed_at": "2026-08-02"
+    "analyzed_at": "2026-08-05"
   },
   {
     "ticker": "COR",
@@ -354,7 +354,7 @@
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-07-26"
+    "analyzed_at": "2026-08-05"
   },
   {
     "ticker": "ZTS",

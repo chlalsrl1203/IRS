@@ -1,5 +1,5 @@
 """
-Expectation Gap Engine v3.9
+Expectation Gap Engine (현재 버전은 아래 ENGINE_VERSION 참조)
 
 투자 분석 프롬프트 v3.0의 5번/6번/7번 섹션을 실제로 계산하는 스크립트.
 LLM이 텍스트로 "시행착오로 근사했다"고 서술하는 대신, 이 스크립트를 실행해서
@@ -14,6 +14,26 @@ LLM이 텍스트로 "시행착오로 근사했다"고 서술하는 대신, 이 �
 
 from dataclasses import dataclass, field
 import statistics
+
+# ======================================================================
+# 엔진 버전 - 단일 진실원천 (v3.32에서 도입)
+# ======================================================================
+# ⚠️ 왜 상수로 뽑았나 (2026-08-05 감사에서 발견한 실제 결함):
+# 버전 문자열이 `pipeline.py`의 `run_analysis()` 반환 dict 안에 리터럴로
+# 박혀 있었고("engine_version": "v3.27"), v3.28에서 `realistic_growth_override`
+# (계산 결과를 실제로 바꾸는 기능)를 배선하면서 아무도 그 리터럴을 올리지
+# 않았다. 그 결과 `ledger/ROP_2026-08-04.json`은 **v3.27로 스탬프돼 있으면서
+# v3.27에는 존재하지도 않는 필드(realistic_growth_override_applied)를 담고
+# 있다** - 스탬프가 거짓말을 하는 상태다.
+#
+# 이 프로젝트가 v3.12 "가짜 버전 사건"에서 배운 게 정확히 이것이다: 버전
+# 라벨과 실제 코드가 어긋나면 다음 세션이 재현을 시도할 때 어느 코드로
+# 계산된 값인지 특정할 수 없다. 리터럴을 함수 본문 800줄 안쪽에 두는 한
+# 같은 누락이 반복될 수밖에 없으므로 모듈 최상단 상수로 올린다.
+#
+# **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
+# 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
+ENGINE_VERSION = "v3.32"
 
 # ======================================================================
 # DRS 원점수 구간 임계값 - v3.7에서 모듈 상단으로 노출
@@ -130,7 +150,16 @@ def implied_growth_two_stage(
         mid = (lo + hi) / 2
         f_mid = _two_stage_market_cap(mid, fcf0, r, n, g_terminal) - market_cap
         error_pct = abs(f_mid) / market_cap * 100
-        log.append({"iter": i, "g_guess": round(mid, 6), "implied_cap": round(mid, 6), "error_pct": round(error_pct, 6)})
+        # v3.32 버그수정: implied_cap 자리에 g_guess와 똑같은 mid가 들어가 있었다
+        # (복붙 실수). 로그 전용 필드라 계산 결과에는 영향이 없었지만, 수렴이
+        # 이상할 때 이 로그를 보고 원인을 찾으려 하면 "이 g에서 시총이 얼마로
+        # 나왔는가"라는 핵심 정보가 통째로 없는 셈이었다.
+        log.append({
+            "iter": i,
+            "g_guess": round(mid, 6),
+            "implied_cap": round(f_mid + market_cap, 2),
+            "error_pct": round(error_pct, 6),
+        })
 
         if abs(f_mid) < market_cap * tolerance:
             return mid, log, error_pct
@@ -716,6 +745,7 @@ def confidence_score(
     data_completeness_pct: float,
     lynch_type_cap_applied: bool = False,
     stalwart_two_stage_bias_flagged: bool = False,
+    realistic_growth_overridden: bool = False,
     base: int = 50,
 ) -> dict:
     """
@@ -754,12 +784,26 @@ def confidence_score(
     # gap과 rar의 부호가 같은 방향(둘 다 양수=저평가+매력적, 둘 다 음수=고평가+비매력)이면 정합
     section_5_7_aligned = (gap >= 0 and rar >= 0) or (gap < 0 and rar < 0)
 
+    # v3.32 추가: realistic_growth_overridden.
+    # 배경 - v3.28에서 realistic_growth_override를 배선했을 때, 오버라이드가
+    # 적용된 뒤에도 growth_breakdown["cap_applied"]에 **이미 우회된 캡의 문구가
+    # 그대로 남아** 그 값이 lynch_type_cap_applied로 넘어가고 있었다. ROP가 실제
+    # 피해자다: Realistic Growth는 5.5%인데 ledger의 cap_applied는 "상한 캡
+    # 적용(12.0%)"이라고 적혀 있고, -5점 페널티도 걸리지 않은 캡을 근거로 붙었다.
+    #
+    # 캡 플래그를 사실대로(=미적용) 되돌리면 페널티가 사라져 Confidence가 그냥
+    # 올라가버리는데, 그건 옳지 않다 - 오버라이드는 분석자가 직접 넣은 주관적
+    # 입력이라 오히려 신뢰도를 낮출 사유다. 그래서 캡 플래그는 사실대로 고치되
+    # 동일 크기(-5)의 오버라이드 페널티를 별도 항목으로 신설한다. 결과적으로
+    # **기존 종목의 Confidence 수치는 하나도 바뀌지 않고**(ROP 89 유지), 감점의
+    # 근거만 실제 원인으로 정정된다.
     adjustments = {
         "robustness_check_passed": 15 if robustness_check_passed else 0,
         "section_5_7_aligned": 15 if section_5_7_aligned else 0,
         "data_completeness": round(data_completeness_pct * 15),
         "lynch_type_cap_applied": -5 if lynch_type_cap_applied else 0,
         "stalwart_two_stage_bias_flagged": -5 if stalwart_two_stage_bias_flagged else 0,
+        "realistic_growth_overridden": -5 if realistic_growth_overridden else 0,
     }
     raw_score = base + sum(adjustments.values())
     final = max(0, min(100, raw_score))
@@ -813,6 +857,45 @@ JUDGMENT_GRADE_LABELS = {
     "D": "비중축소",
     "F": "매도",
 }
+
+# ⚠️ v3.32(2026-08-05 감사): 3단계 판정 규칙이 **네 곳에 독립적으로 복사**돼
+# 있었다 - pipeline.run_analysis(), pipeline의 SBC 병기 블록,
+# expectation_gap_sensitivity_check() 내부의 _judge(), 그리고 크로스체크
+# 스크립트 2개(rop/keys). 경계값(±5%p)은 넷 다 같았지만 **중립 구간 라벨이
+# 이미 갈라져 있었다**: 셋은 "적정가/경계선"인데 sensitivity_check만
+# "적정가"였다. 그 결과 지금까지 저장된 ledger 36건 중 13건이 한 파일 안에서
+# `judgment="적정가/경계선"`과 `sensitivity_check.judgment_with_drs="적정가"`를
+# 동시에 들고 있다 - 같은 규칙의 같은 출력인데 이름이 다르다.
+#
+# 이것이 정확히 CLAUDE.md의 Simplicity First 항목이 경고한 상황이다("중복
+# 자체가 두 계산이 미묘하게 어긋나는 새로운 버그를 만든다"). 지금은 라벨만
+# 어긋났지만, 다음에 경계값을 조정하는 사람이 네 곳 중 셋만 고치면
+# `judgment_flipped`(두 _judge() 출력의 != 비교)가 조용히 무의미해진다.
+#
+# 그래서 규칙을 이 함수 하나로 모으고 나머지는 전부 여기를 호출하게 바꾼다.
+# 경계값·라벨 자체는 하나도 바꾸지 않는다(중립 라벨은 다수파이자 pipeline이
+# ledger의 최상위 `judgment`에 쓰던 "적정가/경계선"으로 통일).
+JUDGMENT_UNDERVALUED = "저평가 가능성"
+JUDGMENT_NEUTRAL = "적정가/경계선"
+JUDGMENT_OVERVALUED = "과대평가 가능성"
+
+
+def judgment_from_gap(gap: float) -> str:
+    """
+    Expectation Gap(소수, 0.05=+5%p)으로 3단계 판정을 내린다 - 이 프로젝트의
+    유일한 판정 규칙 구현체다.
+
+    +5%p 이상 -> 저평가 가능성 / -5%p 이하 -> 과대평가 가능성 / 그 사이 -> 적정가·경계선
+
+    `judgment_grade_from_gap()`과 경계가 정확히 일치한다(S/A/B ⊂ 저평가,
+    C = 적정가/경계선, D/F ⊂ 과대평가) - 두 함수의 정합성은
+    test_judgment_grade_is_strict_subset_of_judgment가 지킨다.
+    """
+    if gap >= 0.05:
+        return JUDGMENT_UNDERVALUED
+    if gap <= -0.05:
+        return JUDGMENT_OVERVALUED
+    return JUDGMENT_NEUTRAL
 
 
 def judgment_grade_from_gap(gap: float) -> str:
@@ -869,12 +952,11 @@ def expectation_gap_sensitivity_check(
         raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
     r_without_drs = rf + base_erp
 
-    def _judge(gap):
-        if gap >= 0.05:
-            return "저평가 가능성"
-        elif gap <= -0.05:
-            return "과대평가 가능성"
-        return "적정가"
+    # v3.32: 여기 있던 _judge() 사본을 제거하고 judgment_from_gap()으로 통일했다.
+    # 이 사본만 중립 라벨이 "적정가"라서 같은 ledger 안에서 최상위 judgment
+    # ("적정가/경계선")와 이름이 갈리는 문제가 있었다(13건). judgment_flipped는
+    # 두 판정의 != 비교라 라벨 통일로 바뀌지 않는다.
+    _judge = judgment_from_gap
 
     def _try(r):
         try:

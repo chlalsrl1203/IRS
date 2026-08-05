@@ -27,6 +27,7 @@ from datetime import datetime, timezone
 
 from engine.expectation_gap_engine import (
     DRSInputs,
+    ENGINE_VERSION,
     LYNCH_TYPE_CAPS,
     bull_bear_base_growth_rates,
     capex_intensity_from_series,
@@ -44,6 +45,7 @@ from engine.expectation_gap_engine import (
     expected_return,
     implied_growth_single_stage,
     implied_growth_two_stage,
+    judgment_from_gap,
     judgment_grade_from_gap,
     leverage_score,
     margin_volatility_score,
@@ -590,6 +592,14 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "reason": inputs.realistic_growth_override_reason,
         }
         growth_breakdown["final_realistic_growth"] = realistic_growth
+        # v3.32 버그수정: 오버라이드로 캡을 우회했는데도 cap_applied에 캡 문구가
+        # 그대로 남아 있어 (a) ledger가 자기모순을 일으키고(ROP: realistic_growth
+        # 5.5%인데 cap_applied는 "상한 캡 적용(12.0%)") (b) 그 값이 그대로
+        # confidence_score(lynch_type_cap_applied=...)로 흘러가 걸리지도 않은 캡을
+        # 근거로 -5점이 붙었다. 캡은 실제로 적용되지 않았으므로 None으로 되돌리고
+        # (원래 문구는 위 pre_override_cap_note에 보존된다), 감점은 실제 원인인
+        # realistic_growth_overridden 항목이 동일하게 -5로 이어받는다.
+        growth_breakdown["cap_applied"] = None
         data_limitations.append(
             f"[Realistic Growth 오버라이드] CAGR 계산·Lynch 캡 기반값"
             f"({pre_override_growth*100:.2f}%, {pre_override_cap_note or '캡 미적용'})을 "
@@ -673,14 +683,11 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         data_completeness_pct=inputs.data_completeness_pct,
         lynch_type_cap_applied=(growth_breakdown["cap_applied"] is not None),
         stalwart_two_stage_bias_flagged=bias_flag,
+        realistic_growth_overridden=(inputs.realistic_growth_override is not None),
     )
 
-    if gap >= 0.05:
-        judgment = "저평가 가능성"
-    elif gap <= -0.05:
-        judgment = "과대평가 가능성"
-    else:
-        judgment = "적정가/경계선"
+    # v3.32: 판정 규칙 사본을 제거하고 engine의 judgment_from_gap() 하나만 쓴다.
+    judgment = judgment_from_gap(gap)
 
     # v3.27(2026-08-02): 기존 3단계 경계는 그대로 두고 6단계로 세분화만
     # 추가한다(S/A/B가 "저평가 가능성"의 부분집합, D/F가 "과대평가 가능성"의
@@ -774,14 +781,8 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             )
             ig_sbc = models_sbc[inputs.model_used]
             gap_sbc = realistic_growth - ig_sbc if ig_sbc is not None else None
-            if gap_sbc is None:
-                judgment_sbc = None
-            elif gap_sbc >= 0.05:
-                judgment_sbc = "저평가 가능성"
-            elif gap_sbc <= -0.05:
-                judgment_sbc = "과대평가 가능성"
-            else:
-                judgment_sbc = "적정가/경계선"
+            # v3.32: 여기도 판정 규칙 사본이 있었다 - judgment_from_gap()으로 통일.
+            judgment_sbc = judgment_from_gap(gap_sbc) if gap_sbc is not None else None
             judgment_flipped = judgment_sbc is not None and judgment_sbc != judgment
             sbc_cross_check = {
                 "sbc0": sbc0,
@@ -814,7 +815,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "ticker": inputs.ticker,
             "company_name": inputs.company_name,
             "analyzed_at": datetime.now(timezone.utc).isoformat(),
-            "engine_version": "v3.27",
+            "engine_version": ENGINE_VERSION,
             "data_sources": inputs.data_sources,
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,

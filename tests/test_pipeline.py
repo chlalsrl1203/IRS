@@ -1046,3 +1046,122 @@ def test_judgment_grade_wired_into_run_analysis():
     # CDNS golden case: judgment="적정가/경계선" (Gap +3.29%p) -> grade는 반드시 C
     assert result["judgment"] == "적정가/경계선"
     assert result["judgment_grade"] == "C"
+
+
+# ----------------------------------------------------------------------
+# v3.32 (2026-08-05 감사) — 버전 스탬프·판정 단일화·오버라이드 캡플래그
+# ----------------------------------------------------------------------
+
+
+def test_engine_version_comes_from_single_constant():
+    """
+    ledger의 engine_version은 반드시 ENGINE_VERSION 상수에서 나와야 한다.
+
+    배경(실제 사고): v3.27까지는 이 값이 run_analysis() 본문에 문자열
+    리터럴로 박혀 있었고, v3.28에서 realistic_growth_override(계산 결과를
+    바꾸는 기능)를 배선하면서 아무도 그 리터럴을 올리지 않았다. 그 결과
+    ledger/ROP_2026-08-04.json은 v3.27로 스탬프돼 있으면서 v3.27에는
+    존재하지 않는 필드를 담고 있다 - 스탬프가 거짓말을 하는 상태였다.
+    """
+    from engine.expectation_gap_engine import ENGINE_VERSION
+
+    result = run_analysis(cdns_inputs())
+    assert result["meta"]["engine_version"] == ENGINE_VERSION
+    # 리터럴이 다시 기어들어오면 이 assert가 잡는다.
+    assert ENGINE_VERSION.startswith("v3.")
+
+
+def test_judgment_uses_single_shared_rule_everywhere():
+    """
+    최상위 judgment와 sensitivity_check의 판정이 같은 함수(judgment_from_gap)를
+    쓰는지 확인한다. v3.32 이전에는 sensitivity_check 안에 사본이 있었고
+    중립 라벨만 "적정가"로 갈려 있어, 한 ledger 안에서 같은 규칙의 출력이
+    두 이름으로 저장됐다(36건 중 13건).
+    """
+    from engine.expectation_gap_engine import (
+        JUDGMENT_NEUTRAL,
+        JUDGMENT_OVERVALUED,
+        JUDGMENT_UNDERVALUED,
+        judgment_from_gap,
+    )
+
+    allowed = {JUDGMENT_UNDERVALUED, JUDGMENT_NEUTRAL, JUDGMENT_OVERVALUED}
+    result = run_analysis(cdns_inputs())
+
+    assert result["judgment"] == judgment_from_gap(result["expectation_gap"])
+    assert result["sensitivity_check"]["judgment_with_drs"] in allowed
+    assert result["sensitivity_check"]["judgment_without_drs"] in allowed
+    # 중립 구간 라벨이 두 곳에서 동일해야 한다(v3.32에서 통일한 지점).
+    assert judgment_from_gap(0.0) == JUDGMENT_NEUTRAL == "적정가/경계선"
+
+
+def test_judgment_from_gap_matches_pipeline_boundaries():
+    from engine.expectation_gap_engine import judgment_from_gap
+
+    assert judgment_from_gap(0.05) == "저평가 가능성"
+    assert judgment_from_gap(0.0499) == "적정가/경계선"
+    assert judgment_from_gap(-0.0499) == "적정가/경계선"
+    assert judgment_from_gap(-0.05) == "과대평가 가능성"
+
+
+def test_override_clears_cap_flag_but_keeps_penalty():
+    """
+    realistic_growth_override가 캡을 우회하면 cap_applied는 사실대로 None이
+    되어야 하고(ledger 자기모순 제거), 감점은 사라지는 게 아니라 실제 원인인
+    realistic_growth_overridden 항목으로 옮겨가야 한다.
+
+    ROP 실사례: Realistic Growth는 5.5%인데 cap_applied에는 "상한 캡
+    적용(12.0%)"이 남아 있었고, 걸리지도 않은 캡을 근거로 -5점이 붙어 있었다.
+    """
+    base = run_analysis(cdns_inputs())
+    assert base["confidence"]["adjustments"]["realistic_growth_overridden"] == 0
+
+    result = run_analysis(cdns_inputs(
+        realistic_growth_override=0.02,
+        realistic_growth_override_reason="캡 플래그 정정 검증용 인위적 오버라이드",
+    ))
+    breakdown = result["growth"]["breakdown"]
+
+    # 캡은 실제로 적용되지 않았으므로 None
+    assert breakdown["cap_applied"] is None
+    # 원래 캡 문구는 진단정보로 보존된다
+    applied = breakdown["realistic_growth_override_applied"]
+    assert applied["pre_override_cap_note"] is not None
+    assert "상한" in applied["pre_override_cap_note"]
+
+    adj = result["confidence"]["adjustments"]
+    assert adj["lynch_type_cap_applied"] == 0      # 걸리지 않은 캡으로 감점하지 않는다
+    assert adj["realistic_growth_overridden"] == -5  # 대신 실제 원인으로 감점
+
+
+def test_override_confidence_total_unchanged_versus_stale_cap_flag():
+    """
+    v3.32 정정이 기존 종목의 Confidence 총점을 바꾸지 않는지 확인한다
+    (감점 근거만 옮기고 크기는 동일하게 설계했다 - ROP 89 유지).
+    """
+    result = run_analysis(cdns_inputs(
+        realistic_growth_override=0.02,
+        realistic_growth_override_reason="총점 불변 검증용",
+    ))
+    adj = result["confidence"]["adjustments"]
+    # 캡 감점(-5)이 오버라이드 감점(-5)으로 이동했을 뿐 합계 기여는 동일
+    assert adj["lynch_type_cap_applied"] + adj["realistic_growth_overridden"] == -5
+
+
+def test_two_stage_bisection_log_records_market_cap_not_growth():
+    """
+    이분탐색 로그의 implied_cap이 g_guess와 같은 값이던 복붙 버그(v3.32 수정)
+    회귀 방지. 로그 전용 필드지만, 수렴이 이상할 때 원인을 찾는 유일한 단서다.
+    """
+    from engine.expectation_gap_engine import implied_growth_two_stage
+
+    target_cap = 500_000
+    g, log, _ = implied_growth_two_stage(target_cap, 8_000, 0.093, 12, 0.035)
+
+    assert log, "이분탐색 로그가 비어 있다"
+    for entry in log:
+        assert entry["implied_cap"] != entry["g_guess"], (
+            "implied_cap에 성장률 추정치가 그대로 들어가 있다(v3.32 이전 버그)"
+        )
+    # 수렴한 마지막 항목의 implied_cap은 목표 시총에 수렴해 있어야 한다
+    assert log[-1]["implied_cap"] == pytest.approx(target_cap, rel=1e-4)

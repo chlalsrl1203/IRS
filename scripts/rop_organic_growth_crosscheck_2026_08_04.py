@@ -39,6 +39,7 @@ from engine.expectation_gap_engine import (
     scenario_probabilities_from_drs,
     expected_return,
     rar_from_decimal_return,
+    judgment_from_gap,
     judgment_grade_from_gap,
 )
 
@@ -70,12 +71,8 @@ def run_scenario(name, growth, ledger):
     rar_value = rar_from_decimal_return(er, drs)
 
     gap = growth - implied_growth
-    if gap >= 0.05:
-        judgment = "저평가 가능성"
-    elif gap <= -0.05:
-        judgment = "과대평가 가능성"
-    else:
-        judgment = "적정가/경계선"
+    # v3.32: 판정 규칙 사본을 지우고 엔진의 judgment_from_gap()을 그대로 쓴다.
+    judgment = judgment_from_gap(gap)
     grade = judgment_grade_from_gap(gap)
 
     print(f"\n  [{name}] Realistic Growth 대체값 {growth*100:.2f}%")
@@ -96,7 +93,15 @@ def main():
     print("=" * 100)
     print("ROP 유기적성장률 교차검증 (ledger/ROP_2026-08-04.json 기반, 공식 판정 아님)")
     print("=" * 100)
-    print(f"  공식 기록: Realistic Growth 12.00%(stalwart 캡, 바인딩) / "
+    # v3.32: 여기 "12.00%(stalwart 캡, 바인딩)"가 문자열로 박혀 있었는데, v3.28에서
+    # ROP를 realistic_growth_override=5.5%로 공식 승격한 뒤부터는 사실이 아니게 됐다
+    # (ledger의 공식 Realistic Growth는 5.5%). 하드코딩을 걷어내고 ledger에서 읽는다.
+    override = ledger["growth"]["breakdown"].get("realistic_growth_override_applied")
+    rg_desc = f"{ledger['growth']['realistic_growth']*100:.2f}%"
+    if override:
+        rg_desc += (f" (v3.28 오버라이드 - 원래 캡 기반값 "
+                    f"{override['pre_override_growth']*100:.2f}%)")
+    print(f"  공식 기록: Realistic Growth {rg_desc} / "
           f"Gap {ledger['expectation_gap']*100:+.2f}%p / RAR {ledger['rar']:+.4f} / "
           f"판정 {ledger['judgment']} (등급 {ledger['judgment_grade']})")
     print(f"  DRS {ledger['drs']['score']:.2f} / 할인율 r {ledger['discount_rate']['r']*100:.2f}% "
