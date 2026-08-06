@@ -71,41 +71,51 @@ run_analysis()로 정식분석 우선순위 1순위.** 스크리너 추정치(es
 선례와 동일 한계), 정식분석 시 실제 근거를 갖고 입력할 것.
 
 **4차 라운드(동일 08-06 세션, 사용자 요청 "ETF에서" -> "스스로 많은
-섹터 분석 비교") - ETF 구성종목 기반 발굴, 재무데이터 미확보 상태로
-후보만 확정**: Alpha Vantage 일일한도(25회)와 FMP(statements/
-etfAndMutualFunds 둘 다 상위플랜 필요)가 동시에 막혀 이번 라운드는
-WebSearch로 ETF 구성종목·정성정보만 확보했다 - **screen()을 실행하지
-않았다**(재무 시계열 없이 숫자를 만들어내는 것은 이 프로젝트가 금지하는
-"검증 없는 서술형 근사"이므로, 정식 통과/탈락 판정은 다음 세션 API
-쿼터 회복 후로 미룬다).
+섹터 분석 비교") - ETF 구성종목 기반 발굴, IGV/XLV는 WebSearch로 정성
+스크리닝만, SOXX 3종목은 SEC EDGAR 원자료로 정식 확인**:
 
 - **IGV(소프트웨어) 구성종목 확인**: 상위 25종목 중 CDNS/ROP/WDAY/PTC는
   이미 정식분석 완료, ZM/INTU는 이미 탈락 확정(저성장/진짜나빠짐).
-  **CRM(Salesforce)이 ADBE와 완전히 같은 패턴** - "SaaSpocalypse" 서사로
-  YTD -33%(52주 고점 267->저점146)했으나 FY26 매출 $41.5B(+10%YoY),
-  Q4 매출 +12%YoY(컨센서스 상회, EPS비트 24%), **Agentforce ARR
-  +205%YoY(\$1.2B)**. KeyBanc가 "Agentforce 채택 둔화"를 이유로
-  다운그레이드했는데 그 근거가 회사 발표 ARR +205%와 정면으로 배치돼
-  ADBE의 "서사가 아직 숫자에 반영 안 됨" 패턴과 동일해 보인다 -
-  **다음 세션 최우선 검증 대상**.
-- **SOXX(반도체) 재검토**: 위 1차 라운드에서 "섹터 전체 재평가"로
-  일괄 배제했으나, **CLAUDE.md가 이미 문서화한 KLAC/KEYS 패턴**
-  (trailing CAGR이 AI 수요 인플렉션을 구조적으로 과소추정)이 같은
-  공정제어/테스트장비 섹터의 AMAT(Applied Materials)·LRCX(Lam
-  Research)·TER(Teradyne)에도 재현될 가능성이 있어 배제를 재검토한다 -
-  이건 추측이 아니라 이 프로젝트가 KLAC/KEYS 2건에서 이미 실증한
-  구조적 패턴이므로, 같은 하위섹터 종목을 우연이 아니라 근거를 갖고
-  후보에 넣는다. **AMAT/LRCX/TER 3종목도 다음 세션 검증 대상**(단
-  가이던스 기반 대체시나리오를 KEYS 크로스체크와 같은 방식으로
-  병행할 것 - trailing CAGR만으로 탈락시키면 KEYS와 같은 실수 반복).
+  CRM(Salesforce)이 유력 후보로 식별돼 아래에서 SEC EDGAR로 정식 확인.
 - **XLV(헬스케어) 확인**: 상위 25종목 대부분 이미 분석완료(UNH/CVS/
   SYK/MCK/COR/CI/BSX/REGN)이거나 이번 검색에서 뚜렷한 "공포과잉" 신호를
   못 찾음(대형제약 LLY/JNJ/MRK/PFE 등은 최근 급락 뉴스 자체가 없었음) -
   이번 라운드에서는 신규 후보를 추가하지 않는다.
 
-**다음 세션 우선순위(API 쿼터 회복 후)**: 1) CRM 재무데이터 확보 후
-screen() 정식 실행, 2) AMAT/LRCX/TER 3종목 trailing CAGR 계산 +
-가이던스 대체시나리오 병행 확인.
+**5차 라운드(동일 08-06 세션, 사용자 재촉 "etf조사하라고") - Alpha
+Vantage 일일한도 소진 지속으로 SEC EDGAR XBRL companyconcept API 직접
+조회로 전환(TYL/GWRE SBC 크로스체크와 동일 방식)**:
+
+- **CRM(Salesforce) - ADBE와 동일 패턴, 두 번째 통과 종목(A등급,
+  Gap 추정 +10.84%p).** SEC EDGAR 실측: FY2025(2025-01-31) 매출
+  \$41.525B, 5y 매출 CAGR 14.34%, **FCF 5y CAGR 28.12%**(매출보다
+  훨씬 빠름 - 이연수익 증가+마진확장), FCF수익률 8.29%(문턱의 2배
+  이상). 관측구간(FY2017~2025) 최악 YoY도 +8.72%로 단 한 번도 역성장
+  없음. Agentforce ARR +205%YoY(\$1.2B, 회사발표)가 KeyBanc의 "채택
+  둔화" 다운그레이드 근거와 정면으로 배치 - ADBE와 마찬가지로 서사가
+  아직 숫자에 반영되지 않은 상태.
+- **SOXX(반도체) 재검토 결과 - 가설이 실측으로 기각됨, 정직하게 기록.**
+  KLAC/KEYS 패턴(trailing CAGR이 AI 수요 인플렉션을 과소추정)이 같은
+  공정제어/테스트장비 하위섹터인 AMAT/LRCX/TER에도 재현될 것이라는
+  가설을 세웠으나, **SEC EDGAR 실측 결과 셋 다 탈락 - 그것도 KLAC/KEYS와
+  정반대 이유였다**:
+  - AMAT: 매출 5y CAGR 10.52%·FCF CAGR 11.00%로 성장 자체는 견조하나,
+    시가총액이 이미 \$443B까지 랠리해 FCF수익률 1.29%(문턱 5.09%의
+    1/4)로 밸류에이션 탈락. Gap 거의 0(-0.00%p) - "저평가"가 아니라
+    "정확히 적정가"에 가깝다.
+  - LRCX: 매출 5y CAGR 12.91%·FCF CAGR 9.85%로 역시 견조하나 시총
+    \$350.7B로 FCF수익률 1.54% - 동일하게 밸류에이션 탈락(Gap -0.33%p).
+  - TER: AMAT/LRCX와 반대로 **성장 자체가 진짜 꺾였다** - 매출 5y CAGR
+    0.44%(2020년 팬데믹 특수 고점 기저효과), FCF 5y CAGR -8.02%(마진
+    악화 동반). 밸류에이션도 여전히 비쌈(FCF수익률 0.79%) - 이중탈락
+    (Gap -17.31%p, 트래커 최저권).
+  **결론: KLAC/KEYS 패턴은 "회사가 최근 급락"이 전제조건인데, AMAT/
+  LRCX는 애초에 급락한 적이 없다(오히려 AI 랠리로 최고가권) - 섹터
+  뉴스만 보고 개별 주가 흐름을 확인하지 않은 채 가설을 세운 것이
+  원인이다. 반도체 섹터 전체를 배제한 1차 라운드 판단이 결과적으로
+  맞았다.** 다음에 이 패턴을 다시 적용할 땐 "최근 실제로 급락했는가"부터
+  먼저 확인할 것(BKNG/PDD 스크리너 한계 항목이 강조하는 것과 같은
+  교훈 - 원인을 확인 없이 그럴듯하게 확정하지 말 것).
 
 실행: python3 scripts/screen_2026_08_06.py
 """
@@ -300,6 +310,94 @@ CANDIDATES.append(Candidate(
     ),
 ))
 
+# ── CRM (Salesforce) - ADBE와 동일 패턴, 두 번째 통과 종목 ──
+# 원자료: SEC EDGAR XBRL companyconcept API(CIK0001108524, 2026-08-06 조회,
+# Alpha Vantage 일일한도 소진으로 전환). "SaaSpocalypse" 서사로 YTD -33%했으나
+# FCF가 매출보다 훨씬 빠르게 성장(5y CAGR 28.12% vs 매출 14.34%) - ADBE보다도
+# 마진확장 속도가 빠르다. FY 표기는 Salesforce 회계연도(1/31 마감) 기준.
+_rev_crm = {2017: 10540, 2018: 13282, 2019: 17098, 2020: 21252, 2021: 26492,
+            2022: 31352, 2023: 34857, 2024: 37895, 2025: 41525}
+_ocf_crm = {2020: 4331, 2025: 13092}
+_capex_crm = {2020: 710, 2025: 594}
+_fcf_crm = {y: _ocf_crm[y] - _capex_crm[y] for y in _ocf_crm}
+CANDIDATES.append(Candidate(
+    ticker="CRM", name="Salesforce", exchange="NYSE",
+    market_cap=150710, fcf0=_fcf_crm[2025],
+    revenue_cagr_5y=cagr(_rev_crm[2020], _rev_crm[2025], 5), fcf_cagr_5y=cagr(_fcf_crm[2020], _fcf_crm[2025], 5),
+    net_debt_to_ebitda=0.62,  # 총부채 $17.7B - 현금성자산 근사, EBITDA 근사치 기준
+    worst_yoy_revenue=worst_yoy(_rev_crm),
+    note=(
+        "이 배치 두 번째 통과 종목(A등급, Gap 추정 +10.84%p) - ADBE와 완전히 "
+        "동일한 패턴. SaaSpocalypse 서사로 YTD -33%(52주 고점267->저점146)했으나 "
+        "FY2025(2025-01-31) 매출 $41.525B, 5y 매출 CAGR 14.34%, FCF 5y CAGR "
+        "28.12%(매출보다 훨씬 빠름 - 이연수익 증가+마진확장). FY2017~2025 관측 "
+        "구간 최악 YoY도 +8.72%로 단 한 번도 역성장 없음. Agentforce ARR "
+        "+205%YoY($1.2B, 회사발표)가 KeyBanc의 '채택 둔화' 다운그레이드 근거와 "
+        "정면 배치 - 서사가 아직 숫자에 반영 안 된 상태. ADBE와 함께 정식분석 "
+        "우선순위 상위."
+    ),
+))
+
+# ── AMAT/LRCX/TER (반도체 공정제어·테스트장비) - KLAC/KEYS 패턴 가설, 실측으로 기각 ──
+# 원자료: SEC EDGAR XBRL(CIK0000006951/CIK0000707549/CIK0000097210, 2026-08-06).
+# 가설(같은 하위섹터라 KLAC/KEYS의 trailing CAGR 과소추정이 재현될 것)이
+# 실측으로 기각됐다 - AMAT/LRCX는 애초에 급락한 적이 없어(AI 랠리로 오히려
+# 최고가권) 밸류에이션이 이미 성장을 반영, TER는 반대로 성장 자체가 진짜
+# 꺾였다(팬데믹 특수 기저효과+마진악화). 셋 다 서로 다른 이유로 탈락.
+_rev_amat = {2018: 16705, 2019: 14608, 2020: 17202, 2021: 23063, 2022: 25785,
+             2023: 26517, 2024: 27176, 2025: 28368}
+_fcf_amat = {2020: 3804 - 422, 2025: 7958 - 2260}
+CANDIDATES.append(Candidate(
+    ticker="AMAT", name="Applied Materials", exchange="NASDAQ",
+    market_cap=443000, fcf0=_fcf_amat[2025],
+    revenue_cagr_5y=cagr(_rev_amat[2020], _rev_amat[2025], 5), fcf_cagr_5y=cagr(_fcf_amat[2020], _fcf_amat[2025], 5),
+    net_debt_to_ebitda=0.3,
+    worst_yoy_revenue=worst_yoy(_rev_amat),
+    note=(
+        "밸류에이션 탈락(Gap 거의 0, -0.00%p) - KLAC/KEYS 가설과 달리 성장은 "
+        "이미 충분히 반영돼 있다. 매출 5y CAGR 10.52%·FCF CAGR 11.00%로 견조하나 "
+        "AI 랠리로 시총이 이미 $443B까지 상승해 FCF수익률 1.29%(문턱 5.09%의 "
+        "1/4). KLAC/KEYS 패턴의 전제조건('회사가 최근 급락')이 애초에 성립하지 "
+        "않는 종목이었다 - 섹터 뉴스만 보고 개별주가를 확인 안 한 게 원인."
+    ),
+))
+
+_rev_lrcx = {2017: 8013.62, 2018: 11076.998, 2019: 9653.559, 2020: 10044.736, 2021: 14626.15,
+             2022: 17227.039, 2023: 17428.516, 2024: 14905.386, 2025: 18435.591}
+_fcf_lrcx = {2020: 3588.163 - 203.239, 2025: 6173.264 - 759.186}
+CANDIDATES.append(Candidate(
+    ticker="LRCX", name="Lam Research", exchange="NASDAQ",
+    market_cap=350710, fcf0=_fcf_lrcx[2025],
+    revenue_cagr_5y=cagr(_rev_lrcx[2020], _rev_lrcx[2025], 5), fcf_cagr_5y=cagr(_fcf_lrcx[2020], _fcf_lrcx[2025], 5),
+    net_debt_to_ebitda=0.2,
+    worst_yoy_revenue=worst_yoy(_rev_lrcx),
+    note=(
+        "AMAT와 동일 유형 - 밸류에이션 탈락(Gap -0.33%p). 매출 5y CAGR "
+        "12.91%·FCF CAGR 9.85%로 견조하나 시총 $350.7B(AI 랠리 반영)로 "
+        "FCF수익률 1.54%에 불과. KLAC/KEYS와 달리 이 종목은 최근 급락한 적이 "
+        "없다."
+    ),
+))
+
+_rev_ter = {2014: 1647.824, 2015: 1639.578, 2016: 1753.25, 2017: 2136.606, 2018: 2100.802,
+            2019: 2294.965, 2020: 3121.469, 2021: 3702.881, 2022: 3155.045, 2023: 2676.298,
+            2024: 2819.88, 2025: 3190.024}
+_fcf_ter = {2020: 868.935 - 184.977, 2025: 674.415 - 224.009}
+CANDIDATES.append(Candidate(
+    ticker="TER", name="Teradyne", exchange="NASDAQ",
+    market_cap=57210, fcf0=_fcf_ter[2025],
+    revenue_cagr_5y=cagr(_rev_ter[2020], _rev_ter[2025], 5), fcf_cagr_5y=cagr(_fcf_ter[2020], _fcf_ter[2025], 5),
+    net_debt_to_ebitda=0.1,
+    worst_yoy_revenue=worst_yoy(_rev_ter),
+    note=(
+        "AMAT/LRCX와 정반대 이유로 이중탈락(Gap -17.31%p, 이 배치 최저권) - "
+        "성장 자체가 진짜 꺾였다. 매출 5y CAGR 0.44%(2020년 팬데믹 특수 고점이 "
+        "기준연도라 사실상 정체), FCF 5y CAGR -8.02%(마진 악화 동반). "
+        "밸류에이션도 여전히 비쌈(FCF수익률 0.79%) - KLAC/KEYS의 '숨겨진 가속'이 "
+        "아니라 진짜나빠짐(4분류 3번)에 가깝다."
+    ),
+))
+
 # ── 아래는 WebSearch 확인 단계에서 '진짜 나빠짐'으로 판정, 재무데이터 없이 제외 ──
 PREFILTERED_OUT = {
     "APTV(Aptiv)": (
@@ -344,7 +442,7 @@ def main():
     print()
 
     print("=" * 108)
-    print("⚠️ 재무데이터 확보 종목 상세(통과/탈락 포함, 7종목)")
+    print("⚠️ 재무데이터 확보 종목 상세(통과/탈락 포함, 11종목)")
     print("=" * 108)
     for r in results:
         c = r.candidate
@@ -366,8 +464,10 @@ def main():
     print("\n" + "=" * 108)
     print("이 결과는 후보를 좁힌 1차 필터일 뿐 판정이 아니다.")
     print("통과 종목은 반드시 engine/pipeline.py의 run_analysis()로 정식 분석할 것.")
-    print(f"이번 배치는 총 {len(results)}종목 중 {n_passed}종목 통과(ADBE) - ")
-    print("07-31/08-06 1·2차 라운드 전수탈락 이후 이번 3차 라운드에서 첫 통과 종목 발견.")
+    passed_tickers = ", ".join(r.candidate.ticker for r in results if r.passed)
+    print(f"이번 배치는 총 {len(results)}종목 중 {n_passed}종목 통과({passed_tickers}) - ")
+    print("07-31/08-06 1·2차 라운드 전수탈락 이후 3·5차 라운드에서 SaaS 섹터")
+    print("2종목(ADBE/CRM) 통과, 반도체 섹터(AMAT/LRCX/TER) 가설은 실측으로 기각.")
     print("=" * 108)
 
 
