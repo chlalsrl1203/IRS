@@ -65,9 +65,8 @@ _CONCENTRATION_BUCKETS = [(0.20, 2.0), (0.30, 6.0), (0.40, 10.0),
 # 보유종목 수: 적을수록 위험(ascending=False로 '이하면 그 점수')
 _BREADTH_BUCKETS = [(50, 20.0), (100, 18.0), (200, 14.0),
                     (500, 10.0), (1000, 6.0), (float("inf"), 2.0)]
-# 보수율: 확정적으로 발생하는 손실이라 위험이라기보다 '확실한 마이너스 알파'
-_COST_BUCKETS = [(0.0005, 2.0), (0.0010, 6.0), (0.0025, 10.0),
-                 (0.0050, 14.0), (0.0075, 18.0), (float("inf"), 20.0)]
+# (v3.34에서 _COST_BUCKETS 제거 - 보수율은 위험점수가 아니라 성장률 차감으로
+#  처리하도록 바꿨다. net_expected_growth() 주석 참고.)
 # P/E 출처간 상대괴리: IWM 사건을 점수화한 항목(이 엔진의 핵심 기여)
 _PE_DIVERGENCE_BUCKETS = [(0.05, 2.0), (0.10, 6.0), (0.20, 10.0),
                           (0.35, 14.0), (0.50, 18.0), (float("inf"), 20.0)]
@@ -196,11 +195,23 @@ def breadth_score(n_holdings: int) -> float:
     return _bucket_score(n_holdings, _BREADTH_BUCKETS, ascending=False)
 
 
-def cost_score(expense_ratio: float) -> float:
-    """보수율(소수) -> 0~20."""
-    if not (0.0 <= expense_ratio < 1.0):
-        raise ValueError(f"expense_ratio는 0~1 소수여야 함(받은 값: {expense_ratio})")
-    return _bucket_score(expense_ratio, _COST_BUCKETS, ascending=True)
+def net_expected_growth(expected_earnings_growth: float, expense_ratio: float) -> float:
+    """
+    보수율을 차감한 **투자자 귀속** 기대성장률.
+
+    ⚠️ v3.34 설계 정정(2026-08-06): v3.33은 보수율을 ERS(위험점수)의 한 항목으로
+    넣고 Gap 계산에서는 빼지 않았다. 이는 두 가지가 잘못이었다.
+      1) **보수율은 위험이 아니라 확정 손실이다.** ERS는 ERP(위험 프리미엄)로
+         변환되는 값인데, 계약으로 확정된 비용을 '위험'으로 취급하면 개념이
+         어긋난다. 불확실성이 없는 항목에 리스크 프리미엄을 매기는 셈이다.
+      2) 그러면서 정작 투자자 수익에 직접 미치는 경로(수익률 차감)에는
+         반영되지 않아, 보수율 0.03%인 VOO와 0.95%인 액티브 ETF가 Gap 상에서
+         똑같이 취급됐다.
+    연 0.20% 보수는 투자자 입장에서 지수가 연 0.20% 덜 성장하는 것과 경제적으로
+    동일하므로, 성장률에서 직접 차감하는 것이 옳다. 동시에 ERS에서는 제거해
+    **이중 반영**(check_deceleration_double_count가 경고하는 바로 그 유형)을 피한다.
+    """
+    return expected_earnings_growth - expense_ratio
 
 
 def data_quality_score(pe_spread_relative: float) -> float:
@@ -222,22 +233,24 @@ def earnings_quality_score(pct_unprofitable: float) -> float:
 def etf_risk_score(
     top10_weight: float,
     n_holdings: int,
-    expense_ratio: float,
     pe_spread_relative: float,
     pct_unprofitable: float = None,
 ) -> dict:
     """
     ERS(ETF Risk Score) 0~100. 회사 엔진의 DRS와 같은 스케일·같은 산식
-    (5개 항목 0~20 평균 x5)이라 `erp_from_drs()`를 그대로 쓸 수 있다.
+    (항목별 0~20 평균 x5)이라 `erp_from_drs()`를 그대로 쓸 수 있다.
 
-    pct_unprofitable이 None이면 그 항목을 제외하고 나머지 4개로 평균낸다
+    ⚠️ v3.34에서 `cost`(보수율) 항목을 제거했다 - 보수율은 불확실성이 아니라
+    계약으로 확정된 비용이라 위험 프리미엄의 입력으로 부적절하고, 이제
+    `net_expected_growth()`가 성장률에서 직접 차감한다(위 함수 주석 참고).
+
+    pct_unprofitable이 None이면 그 항목을 제외하고 나머지로 평균낸다
     (DRSInputs가 항목 제외를 허용하는 것과 같은 취지). 다만 제외 사실을
     components에 남겨 조용히 관대해지는 일이 없게 한다.
     """
     components = {
         "concentration": concentration_score(top10_weight),
         "breadth": breadth_score(n_holdings),
-        "cost": cost_score(expense_ratio),
         "data_quality": data_quality_score(pe_spread_relative),
     }
     excluded = []
@@ -272,6 +285,77 @@ def fed_model_spread(pe_ratio: float, treasury_yield: float) -> dict:
     }
 
 
+def required_growth_thresholds(pe_ratio: float, r: float, band: float = 0.05) -> dict:
+    """
+    ⭐ v3.34 신설 - 이 엔진의 프레이밍을 뒤집는 함수.
+
+    "내가 성장률을 X%로 본다 -> 따라서 싸다"가 아니라, **"시장은 이미 몇 %를
+    요구하고 있고, 저평가라고 부르려면 몇 %를 믿어야 하는가"**를 내놓는다.
+
+    왜 이 전환이 필요했나(2026-08-06 자체 진단): v3.33 엔진의 Gap은
+    `expected_earnings_growth - implied_growth`인데, implied_growth는
+    expected_earnings_growth와 **완전히 독립**이다. 따라서 Gap의 성장률
+    민감도는 정확히 1:1이고, 판정 밴드 폭이 ±5%p뿐이라 분석자가 성장률을
+    2%p만 다르게 잡아도 판정이 뒤집힌다. 실제로 7개 ETF의 성장률 가정을
+    전부 8%로 통일해봤더니 **순위가 거의 정반대로 뒤집혔다**(XLK 2위->7위,
+    XLE 7위->2위). 즉 v3.33의 출력은 엔진이 계산한 게 아니라 분석자가
+    타이핑한 값이었다 - CLAUDE.md M-1(성장상한 바인딩)과 같은 계열이되,
+    고정 규칙조차 없어 더 나쁘다.
+
+    `breakeven`(=내재성장률)은 순수하게 P/E와 r에서만 나오는 **객관적** 값이라
+    분석자 주관이 개입할 여지가 없다. 이 값을 결론의 중심에 두는 것이
+    정직하다.
+
+    반환값의 각 항목이 답하는 질문:
+      - breakeven: 지금 가격을 정당화하려면 시장이 요구하는 영구 성장률
+      - for_undervalued: '저평가 가능성' 판정을 받으려면 믿어야 하는 성장률
+      - for_overvalued: 이 아래로 믿으면 '과대평가 가능성'이 되는 성장률
+    """
+    ig = implied_growth_from_pe(pe_ratio, r)
+    return {
+        "breakeven": ig,
+        "for_undervalued": ig + band,
+        "for_overvalued": ig - band,
+    }
+
+
+def growth_sensitivity(
+    pe_ratio: float,
+    r: float,
+    expected_earnings_growth: float,
+    uncertainty: float = 0.02,
+) -> dict:
+    """
+    성장률 가정에 ±uncertainty(기본 2%p)를 줬을 때 판정이 유지되는지 본다.
+
+    v3.33이 놓쳤던 것: Gap 하나만 보고하면 그 Gap이 얼마나 취약한 가정 위에
+    서 있는지가 드러나지 않는다. IWM에서 이미 확인한 "P/E 출처가 갈리면
+    판정도 갈릴 수 있다"와 정확히 같은 논리를 성장률 축에도 적용한다.
+
+    2%p를 기본값으로 둔 이유: 이 엔진이 다루는 지수 장기 이익성장률 추정은
+    출처마다 통상 2%p 안팎 차이가 나기 때문이다(예: S&P500 장기 EPS 성장을
+    7%로 보는 견해와 9%로 보는 견해가 병존). 검증된 값은 아니므로 호출부가
+    조정할 수 있게 열어둔다.
+    """
+    if uncertainty < 0:
+        raise ValueError("uncertainty는 음수일 수 없음")
+    ig = implied_growth_from_pe(pe_ratio, r)
+    lo_g = expected_earnings_growth - uncertainty
+    hi_g = expected_earnings_growth + uncertainty
+    lo_j = judgment_from_gap(lo_g - ig)
+    hi_j = judgment_from_gap(hi_g - ig)
+    return {
+        "uncertainty": uncertainty,
+        "growth_low": lo_g,
+        "growth_high": hi_g,
+        "gap_low": lo_g - ig,
+        "gap_high": hi_g - ig,
+        "judgment_low": lo_j,
+        "judgment_high": hi_j,
+        "robust": lo_j == hi_j,
+    }
+
+
 def evaluate_valuation_by_source(
     pe_by_source: dict,
     expected_earnings_growth: float,
@@ -298,6 +382,8 @@ def evaluate_valuation_by_source(
             "implied_growth": ig,
             "gap": gap,
             "judgment": judgment_from_gap(gap),
+            # v3.34: 주관적 성장률이 개입하지 않는 객관적 기준선을 함께 낸다.
+            "required_growth": required_growth_thresholds(pe, r),
         }
 
     judgments = {v["judgment"] for v in per_source.values()}
@@ -317,7 +403,6 @@ __all__ = [
     "PE_DIVERGENCE_WARNING_THRESHOLD",
     "breadth_score",
     "concentration_score",
-    "cost_score",
     "data_quality_score",
     "earnings_quality_score",
     "earnings_yield",
@@ -325,7 +410,10 @@ __all__ = [
     "evaluate_valuation_by_source",
     "expense_drag",
     "fed_model_spread",
+    "growth_sensitivity",
     "implied_growth_from_pe",
+    "net_expected_growth",
     "pe_source_divergence",
+    "required_growth_thresholds",
     "erp_from_drs",
 ]

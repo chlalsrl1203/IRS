@@ -3,8 +3,8 @@
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "tracks": "Nasdaq-100",
-    "analyzed_at": "2026-08-06T07:16:29.526239+00:00",
-    "engine_version": "v3.33",
+    "analyzed_at": "2026-08-06T08:58:54.666224+00:00",
+    "engine_version": "v3.34",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -18,7 +18,7 @@
   },
   "data_limitations": [
     "[P/E 출처 괴리 경고] 출처간 P/E가 24.00x ~ 33.04x로 37.7% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
-    "[판정 우연 일치 주의] P/E 출처 괴리가 37.7%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+2.69%p ~ +3.87%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
+    "[판정 우연 일치 주의] P/E 출처 괴리가 37.7%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+2.37%p ~ +3.56%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
   ],
   "inputs": {
     "ticker": "QQQ",
@@ -39,6 +39,7 @@
     "return_1y": 0.2777,
     "return_ytd": 0.1704,
     "holding_years": 10,
+    "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
@@ -64,41 +65,62 @@
     "components": {
       "concentration": 18.0,
       "breadth": 14.0,
-      "cost": 10.0,
       "data_quality": 18.0,
       "earnings_quality": 6.0
     },
     "excluded": [],
-    "score": 66.0
+    "score": 70.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.0698,
-    "r": 0.1159
+    "erp": 0.07100000000000001,
+    "r": 0.11710000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.11,
-    "basis": "나스닥100은 메가캡 기술주 비중이 높아 S&P500(8%)보다 높은 장기 이익성장을 가정. 다만 AI 자본지출 사이클 의존도가 커 지속가능성이 검증되지 않았다 [추정치] - 이 값이 Gap을 좌우하므로 특히 보수적으로 볼 것."
+    "expense_ratio_deducted": 0.002,
+    "net_expected_growth": 0.108,
+    "basis": "나스닥100은 메가캡 기술주 비중이 높아 S&P500(8%)보다 높은 장기 이익성장을 가정. 다만 AI 자본지출 사이클 의존도가 커 지속가능성이 검증되지 않았다 [추정치] - 이 값이 Gap을 좌우하므로 특히 보수적으로 볼 것.",
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.088,
+      "growth_high": 0.128,
+      "gap_low": 0.003717273795534645,
+      "gap_high": 0.04371727379553465,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
   },
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
         "pe_ratio": 33.04,
         "earnings_yield": 0.03026634382566586,
-        "implied_growth": 0.08311797884841364,
-        "gap": 0.02688202115158636,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.08428272620446535,
+        "gap": 0.02371727379553465,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08428272620446535,
+          "for_undervalued": 0.13428272620446535,
+          "for_overvalued": 0.03428272620446535
+        }
       },
       "GoldmanSachs(forward)": {
         "pe_ratio": 24.0,
         "earnings_yield": 0.041666666666666664,
-        "implied_growth": 0.07126400000000001,
-        "gap": 0.03873599999999999,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.07241600000000001,
+        "gap": 0.03558399999999999,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07241600000000001,
+          "for_undervalued": 0.12241600000000001,
+          "for_overvalued": 0.022416000000000005
+        }
       }
     },
-    "gap_min": 0.02688202115158636,
-    "gap_max": 0.03873599999999999,
+    "gap_min": 0.02371727379553465,
+    "gap_max": 0.03558399999999999,
     "judgments_seen": [
       "적정가/경계선"
     ],

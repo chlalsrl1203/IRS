@@ -3,8 +3,8 @@
     "ticker": "XLK",
     "name": "Technology Select Sector SPDR",
     "tracks": "기술 섹터",
-    "analyzed_at": "2026-08-06T07:16:29.526382+00:00",
-    "engine_version": "v3.33",
+    "analyzed_at": "2026-08-06T08:58:54.666914+00:00",
+    "engine_version": "v3.34",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -17,7 +17,8 @@
   },
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
-    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 4개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다."
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '적정가/경계선' <-> '저평가 가능성'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것."
   ],
   "inputs": {
     "ticker": "XLK",
@@ -37,6 +38,7 @@
     "return_1y": 0.425,
     "return_ytd": null,
     "holding_years": 10,
+    "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
@@ -60,35 +62,51 @@
     "components": {
       "concentration": 20.0,
       "breadth": 18.0,
-      "cost": 6.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 57.5
+    "score": 66.66666666666667
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.06725,
-    "r": 0.11335
+    "erp": 0.07,
+    "r": 0.11610000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.12,
-    "basis": "기술섹터 장기 이익성장률. AI 사이클 수혜가 크나 그만큼 사이클 반전 리스크도 크다 [추정치]."
+    "expense_ratio_deducted": 0.0008,
+    "net_expected_growth": 0.1192,
+    "basis": "기술섹터 장기 이익성장률. AI 사이클 수혜가 크나 그만큼 사이클 반전 리스크도 크다 [추정치].",
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0992,
+      "growth_high": 0.1392,
+      "gap_low": 0.012187829033098757,
+      "gap_high": 0.05218782903309875,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "저평가 가능성",
+      "robust": false
+    }
   },
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
         "pe_ratio": 37.37,
         "earnings_yield": 0.026759432700026762,
-        "implied_growth": 0.08433384154287205,
-        "gap": 0.03566615845712795,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.08701217096690124,
+        "gap": 0.03218782903309876,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08701217096690124,
+          "for_undervalued": 0.13701217096690124,
+          "for_overvalued": 0.03701217096690124
+        }
       }
     },
-    "gap_min": 0.03566615845712795,
-    "gap_max": 0.03566615845712795,
+    "gap_min": 0.03218782903309876,
+    "gap_max": 0.03218782903309876,
     "judgments_seen": [
       "적정가/경계선"
     ],

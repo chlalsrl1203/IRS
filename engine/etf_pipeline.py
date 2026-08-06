@@ -32,10 +32,15 @@ from engine.etf_engine import (
     evaluate_valuation_by_source,
     expense_drag,
     fed_model_spread,
+    growth_sensitivity,
+    net_expected_growth,
     pe_source_divergence,
 )
 
 DEFAULT_HOLDING_YEARS = 10
+# 성장률 가정 불확실성 기본값(±%p). v3.34에서 도입 - 근거는
+# etf_engine.growth_sensitivity() 주석 참고.
+DEFAULT_GROWTH_UNCERTAINTY = 0.02
 
 
 @dataclass
@@ -72,6 +77,7 @@ class ETFInputs:
     return_1y: float = None
     return_ytd: float = None
     holding_years: int = DEFAULT_HOLDING_YEARS
+    growth_uncertainty: float = DEFAULT_GROWTH_UNCERTAINTY
     currency: str = "USD"
     price_at_analysis: float = None
     data_sources: list = field(default_factory=list)
@@ -130,7 +136,6 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
     ers = etf_risk_score(
         top10_weight=inputs.top10_weight,
         n_holdings=inputs.n_holdings,
-        expense_ratio=inputs.expense_ratio,
         pe_spread_relative=divergence["spread_relative"],
         pct_unprofitable=inputs.pct_unprofitable_constituents,
     )
@@ -145,9 +150,27 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
     erp = erp_from_drs(ers["score"])
     r = inputs.risk_free_rate + erp
 
-    valuation = evaluate_valuation_by_source(
-        inputs.pe_by_source, inputs.expected_earnings_growth, r
+    # v3.34: 보수율을 성장률에서 직접 차감한다(ERS에서는 제거해 이중반영 방지).
+    net_growth = net_expected_growth(
+        inputs.expected_earnings_growth, inputs.expense_ratio
     )
+    valuation = evaluate_valuation_by_source(inputs.pe_by_source, net_growth, r)
+
+    # v3.34: 성장률 가정이 결과를 사실상 단독 결정한다는 자체 진단(2026-08-06)에
+    # 대한 대응. 가장 비싼 P/E(보수적)를 기준으로 ±uncertainty 밴드를 계산해
+    # 판정이 그 안에서 유지되는지 본다.
+    sensitivity = growth_sensitivity(
+        divergence["max"], r, net_growth, inputs.growth_uncertainty
+    )
+    if not sensitivity["robust"]:
+        data_limitations.append(
+            f"[성장률 가정 취약] 기대성장률을 ±{inputs.growth_uncertainty*100:.1f}%p만 "
+            f"달리 잡아도 판정이 '{sensitivity['judgment_low']}' <-> "
+            f"'{sensitivity['judgment_high']}'로 바뀐다. 이 ETF의 판정은 엔진 계산이 "
+            f"아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 "
+            f"근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 "
+            f"기준으로 판단할 것."
+        )
 
     if valuation["judgment_flipped_across_sources"]:
         data_limitations.append(
@@ -210,7 +233,10 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
         "discount_rate": {"rf": inputs.risk_free_rate, "erp": erp, "r": r},
         "growth": {
             "expected_earnings_growth": inputs.expected_earnings_growth,
+            "expense_ratio_deducted": inputs.expense_ratio,
+            "net_expected_growth": net_growth,
             "basis": inputs.expected_earnings_growth_basis,
+            "sensitivity": sensitivity,
         },
         "valuation": valuation,
         "cost": {
@@ -231,15 +257,24 @@ def compare_etfs(results: list) -> list:
     """
     여러 ETF 결과를 상대비교용으로 정렬한다.
 
-    ⚠️ **판정이 출처간에 갈린 ETF는 순위를 신뢰할 수 없으므로 뒤로 보낸다** -
-    Gap이 아무리 좋아 보여도 그 Gap 자체가 어느 출처를 믿느냐에 달려 있기
-    때문이다(IWM이 정확히 이 경우: 한 출처로는 최상위, 다른 출처로는 최하위).
-    정렬 키는 (판정불일치 여부, -보수적 Gap) - 보수적 Gap은 출처별 Gap 중
-    최솟값으로, 가장 비싼 P/E를 믿었을 때의 Gap이다.
+    ⚠️ **신뢰할 수 없는 순위를 앞에 두지 않는다.** 두 종류의 취약성을 모두
+    뒤로 보낸다:
+      1) 판정이 P/E 출처간에 갈리는 경우(IWM) - Gap이 어느 출처를 믿느냐에 달림
+      2) 판정이 성장률 가정 ±band 안에서 갈리는 경우(v3.34 신규) - Gap이 엔진
+         계산이 아니라 분석자 타이핑에 달림
+
+    ⚠️⚠️ **이 정렬 자체를 투자 순위로 쓰지 말 것**(v3.34 자체 진단): 7개 ETF의
+    성장률 가정을 전부 8%로 통일해봤더니 순위가 거의 정반대로 뒤집혔다
+    (XLK 2위->7위, XLE 7위->2위). 즉 Gap 기반 순위는 분석자의 성장률 가정을
+    되비추는 거울에 가깝다. 객관적으로 비교 가능한 것은 각 ETF의
+    `required_growth.breakeven`(시장이 요구하는 성장률)뿐이며, 그것을 각
+    지수의 실제 성장 가능성과 대조하는 일은 사람이 해야 한다.
     """
     def sort_key(res):
         v = res["valuation"]
-        return (v["judgment_flipped_across_sources"], -v["gap_min"])
+        fragile = (v["judgment_flipped_across_sources"]
+                   or not res["growth"]["sensitivity"]["robust"])
+        return (fragile, -v["gap_min"])
 
     return sorted(results, key=sort_key)
 
@@ -261,24 +296,43 @@ def save_etf_ledger(result: dict, ledger_dir: str = "ledger_etf") -> str:
 
 
 def format_comparison_table(results: list) -> str:
-    """상대비교 결과를 사람이 읽는 표로."""
+    """
+    상대비교 결과를 사람이 읽는 표로.
+
+    v3.34에서 열 구성을 바꿨다: **객관적 값(시장이 요구하는 성장률)을 앞에,
+    주관에 오염된 값(Gap)을 뒤에** 둔다. v3.33 표는 Gap을 가운데 두어 마치
+    엔진이 계산한 결론처럼 보이게 했는데, 실제로는 분석자의 성장률 가정이
+    그 Gap을 거의 그대로 결정하고 있었다.
+    """
     lines = []
-    head = (f"{'티커':6} {'추종':22} {'ERS':>6} {'P/E범위':>14} "
-            f"{'내재성장':>16} {'Gap범위':>18} {'보수율':>7} 판정")
+    head = (f"{'티커':6} {'추종':20} {'ERS':>5} {'P/E범위':>13} "
+            f"{'시장요구성장':>13} {'저평가되려면':>13} "
+            f"{'가정성장(순)':>13} {'Gap':>16} 신뢰도")
     lines.append(head)
-    lines.append("-" * 118)
+    lines.append("-" * 132)
     for res in results:
-        v, d = res["valuation"], res["pe_divergence"]
-        igs = [s["implied_growth"] for s in v["by_source"].values()]
-        judgment = (v["consensus_judgment"]
-                    if not v["judgment_flipped_across_sources"]
-                    else "⚠️출처간 불일치: " + " / ".join(v["judgments_seen"]))
-        pe_range = f"{d['min']:.2f}~{d['max']:.2f}x"
-        ig_range = f"{min(igs)*100:.2f}~{max(igs)*100:.2f}%"
-        gap_range = f"{v['gap_min']*100:+.2f}~{v['gap_max']*100:+.2f}%p"
+        v, d, g = res["valuation"], res["pe_divergence"], res["growth"]
+        # 보수적 기준 = 가장 비싼 P/E(=가장 높은 내재성장률 요구)
+        worst = max(v["by_source"].values(), key=lambda s: s["implied_growth"])
+        req = worst["required_growth"]
+
+        flags = []
+        if v["judgment_flipped_across_sources"]:
+            flags.append("출처갈림")
+        if not g["sensitivity"]["robust"]:
+            flags.append("성장가정취약")
+        trust = "⚠️" + "+".join(flags) if flags else "일관"
+
+        pe_range = "{:.1f}~{:.1f}x".format(d["min"], d["max"])
+        breakeven = "{:.2f}%".format(req["breakeven"] * 100)
+        need = "{:.2f}%+".format(req["for_undervalued"] * 100)
+        assumed = "{:.2f}%".format(g["net_expected_growth"] * 100)
+        gap_range = "{:+.2f}~{:+.2f}%p".format(
+            v["gap_min"] * 100, v["gap_max"] * 100)
+
         lines.append(
-            f"{res['meta']['ticker']:6} {res['meta']['tracks'][:22]:22} "
-            f"{res['ers']['score']:6.1f} {pe_range:>14} {ig_range:>16} "
-            f"{gap_range:>18} {res['cost']['expense_ratio']*100:6.2f}% {judgment}"
+            f"{res['meta']['ticker']:6} {res['meta']['tracks'][:20]:20} "
+            f"{res['ers']['score']:5.1f} {pe_range:>13} {breakeven:>13} "
+            f"{need:>13} {assumed:>13} {gap_range:>16} {trust}"
         )
     return "\n".join(lines)

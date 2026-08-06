@@ -3,8 +3,8 @@
     "ticker": "VOO",
     "name": "Vanguard S&P 500 ETF",
     "tracks": "S&P 500",
-    "analyzed_at": "2026-08-06T07:16:29.526123+00:00",
-    "engine_version": "v3.33",
+    "analyzed_at": "2026-08-06T08:58:54.666114+00:00",
+    "engine_version": "v3.34",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -18,7 +18,7 @@
   },
   "data_limitations": [
     "[P/E 출처 괴리 경고] 출처간 P/E가 19.60x ~ 27.53x로 40.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
-    "[판정 우연 일치 주의] P/E 출처 괴리가 40.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+1.13%p ~ +2.63%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
+    "[판정 우연 일치 주의] P/E 출처 괴리가 40.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+0.90%p ~ +2.40%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
   ],
   "inputs": {
     "ticker": "VOO",
@@ -39,6 +39,7 @@
     "return_1y": 0.2341,
     "return_ytd": 0.1352,
     "holding_years": 10,
+    "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
@@ -64,41 +65,62 @@
     "components": {
       "concentration": 10.0,
       "breadth": 6.0,
-      "cost": 2.0,
       "data_quality": 18.0,
       "earnings_quality": 2.0
     },
     "excluded": [],
-    "score": 38.0
+    "score": 45.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.0614,
-    "r": 0.10750000000000001
+    "erp": 0.0635,
+    "r": 0.1096
   },
   "growth": {
     "expected_earnings_growth": 0.08,
-    "basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것."
+    "expense_ratio_deducted": 0.0003,
+    "net_expected_growth": 0.07970000000000001,
+    "basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것.",
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0597,
+      "growth_high": 0.09970000000000001,
+      "gap_low": -0.011007606028741679,
+      "gap_high": 0.02899239397125833,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
   },
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
         "pe_ratio": 27.53,
         "earnings_yield": 0.03632401017072285,
-        "implied_growth": 0.06868121275849984,
-        "gap": 0.011318787241500164,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.07070760602874168,
+        "gap": 0.008992393971258325,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07070760602874168,
+          "for_undervalued": 0.12070760602874168,
+          "for_overvalued": 0.02070760602874168
+        }
       },
       "FactSet(forward)": {
         "pe_ratio": 19.6,
         "earnings_yield": 0.0510204081632653,
-        "implied_growth": 0.05373786407766992,
-        "gap": 0.02626213592233008,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.055735922330097096,
+        "gap": 0.02396407766990291,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.055735922330097096,
+          "for_undervalued": 0.1057359223300971,
+          "for_overvalued": 0.005735922330097093
+        }
       }
     },
-    "gap_min": 0.011318787241500164,
-    "gap_max": 0.02626213592233008,
+    "gap_min": 0.008992393971258325,
+    "gap_max": 0.02396407766990291,
     "judgments_seen": [
       "적정가/경계선"
     ],

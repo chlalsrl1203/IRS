@@ -3,8 +3,8 @@
     "ticker": "XLU",
     "name": "Utilities Select Sector SPDR",
     "tracks": "유틸리티 섹터",
-    "analyzed_at": "2026-08-06T07:16:29.526493+00:00",
-    "engine_version": "v3.33",
+    "analyzed_at": "2026-08-06T08:58:54.667041+00:00",
+    "engine_version": "v3.34",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -17,7 +17,7 @@
   },
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
-    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 4개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다."
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다."
   ],
   "inputs": {
     "ticker": "XLU",
@@ -37,6 +37,7 @@
     "return_1y": 0.0279,
     "return_ytd": null,
     "holding_years": 10,
+    "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
@@ -60,35 +61,51 @@
     "components": {
       "concentration": 20.0,
       "breadth": 20.0,
-      "cost": 6.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 60.0
+    "score": 70.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.068,
-    "r": 0.11410000000000001
+    "erp": 0.07100000000000001,
+    "r": 0.11710000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.05,
-    "basis": "규제산업 특성상 요금인상률 + 설비투자 기반 성장으로 제한된다 (전통적으로 4~6%) [추정치]. AI 데이터센터 전력수요가 상방요인이나 아직 실적으로 확인되지 않았다."
+    "expense_ratio_deducted": 0.0008,
+    "net_expected_growth": 0.0492,
+    "basis": "규제산업 특성상 요금인상률 + 설비투자 기반 성장으로 제한된다 (전통적으로 4~6%) [추정치]. AI 데이터센터 전력수요가 상방요인이나 아직 실적으로 확인되지 않았다.",
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0292,
+      "growth_high": 0.0692,
+      "gap_low": -0.04112026800670017,
+      "gap_high": -0.0011202680067001758,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
   },
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
         "pe_ratio": 22.88,
         "earnings_yield": 0.04370629370629371,
-        "implied_growth": 0.06744589614740368,
-        "gap": -0.017445896147403675,
-        "judgment": "적정가/경계선"
+        "implied_growth": 0.07032026800670017,
+        "gap": -0.021120268006700173,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07032026800670017,
+          "for_undervalued": 0.12032026800670018,
+          "for_overvalued": 0.02032026800670017
+        }
       }
     },
-    "gap_min": -0.017445896147403675,
-    "gap_max": -0.017445896147403675,
+    "gap_min": -0.021120268006700173,
+    "gap_max": -0.021120268006700173,
     "judgments_seen": [
       "적정가/경계선"
     ],

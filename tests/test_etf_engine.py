@@ -15,14 +15,16 @@ from engine.etf_engine import (
     PE_DIVERGENCE_WARNING_THRESHOLD,
     breadth_score,
     concentration_score,
-    cost_score,
     earnings_yield,
     etf_risk_score,
     evaluate_valuation_by_source,
     expense_drag,
     fed_model_spread,
+    growth_sensitivity,
     implied_growth_from_pe,
+    net_expected_growth,
     pe_source_divergence,
+    required_growth_thresholds,
 )
 from engine.etf_pipeline import (
     ETFInputs,
@@ -103,20 +105,21 @@ def test_expense_drag_rejects_bad_units():
 def test_score_buckets_are_monotonic():
     """위험이 커질수록 점수가 단조증가해야 한다(구간표 정합성)."""
     assert concentration_score(0.10) < concentration_score(0.45) < concentration_score(0.90)
-    assert cost_score(0.0003) < cost_score(0.003) < cost_score(0.009)
     # 보유종목은 적을수록 위험 -> 역방향
     assert breadth_score(2000) < breadth_score(300) < breadth_score(30)
 
 
 def test_etf_risk_score_uses_drs_scale():
     """ERS는 DRS와 같은 0~100 스케일이어야 erp_from_drs를 재사용할 수 있다."""
-    ers = etf_risk_score(0.37, 505, 0.0003, 0.0)
+    ers = etf_risk_score(0.37, 505, 0.0)
     assert 0 <= ers["score"] <= 100
     assert ers["excluded"] == ["earnings_quality"]
 
-    full = etf_risk_score(0.37, 505, 0.0003, 0.0, pct_unprofitable=0.02)
+    full = etf_risk_score(0.37, 505, 0.0, pct_unprofitable=0.02)
     assert full["excluded"] == []
-    assert len(full["components"]) == 5
+    assert len(full["components"]) == 4
+    # v3.34: 보수율은 위험점수가 아니므로 ERS 구성에 없어야 한다
+    assert "cost" not in full["components"]
 
 
 def test_fed_model_is_reported_but_flagged_as_contested():
@@ -335,3 +338,93 @@ def test_ledger_dir_is_separate_from_company_ledgers():
     default = inspect.signature(f).parameters["ledger_dir"].default
     assert default != "ledger"
     assert default == "ledger_etf"
+
+
+# ----------------------------------------------------------------------
+# v3.34 — 주관적 성장률 지배 문제 대응
+# ----------------------------------------------------------------------
+
+def test_required_growth_is_independent_of_analyst_assumption():
+    """
+    ⭐ v3.34의 존재 이유: breakeven(시장이 요구하는 성장률)은 P/E와 r에서만
+    나오므로 분석자가 성장률을 어떻게 잡든 **변하지 않는다**. 그래서 Gap과
+    달리 ETF간 객관적 비교가 가능하다.
+    """
+    a = required_growth_thresholds(20.0, 0.09)
+    b = required_growth_thresholds(20.0, 0.09)
+    assert a == b
+    assert a["breakeven"] == pytest.approx(implied_growth_from_pe(20.0, 0.09))
+    # 저평가 판정을 받으려면 breakeven보다 정확히 밴드(5%p)만큼 높아야 한다
+    assert a["for_undervalued"] == pytest.approx(a["breakeven"] + 0.05)
+    assert a["for_overvalued"] == pytest.approx(a["breakeven"] - 0.05)
+
+
+def test_gap_is_one_to_one_sensitive_to_growth_assumption():
+    """
+    2026-08-06 진단으로 확인한 성질을 회귀로 고정한다: implied_growth는
+    expected_earnings_growth와 독립이므로 Gap 민감도는 정확히 1:1이다.
+    이 성질이 있는 한 성장률 가정은 판정을 그대로 좌우한다.
+    """
+    r, pe = 0.09, 20.0
+    ig = implied_growth_from_pe(pe, r)
+    g1 = evaluate_valuation_by_source({"s": pe}, 0.08, r)["by_source"]["s"]
+    g2 = evaluate_valuation_by_source({"s": pe}, 0.10, r)["by_source"]["s"]
+    assert g1["implied_growth"] == pytest.approx(ig)
+    assert g2["implied_growth"] == pytest.approx(ig)
+    assert (g2["gap"] - g1["gap"]) == pytest.approx(0.02)
+
+
+def test_growth_sensitivity_flags_fragile_judgment():
+    """성장률 ±2%p 안에서 판정이 갈리면 robust=False여야 한다."""
+    r, pe = 0.09, 20.0
+    ig = implied_growth_from_pe(pe, r)
+    # 정확히 저평가 경계(+5%p)에 걸치도록 성장률을 잡으면 밴드가 경계를 가로지른다
+    fragile = growth_sensitivity(pe, r, ig + 0.05, uncertainty=0.02)
+    assert fragile["robust"] is False
+    # 경계에서 충분히 먼 값이면 robust
+    solid = growth_sensitivity(pe, r, ig + 0.20, uncertainty=0.02)
+    assert solid["robust"] is True
+
+
+def test_expense_ratio_is_deducted_from_growth_not_scored_as_risk():
+    """
+    v3.34 설계 정정: 보수율은 (a) ERS에서 빠지고 (b) 성장률에서 차감된다.
+    같은 ETF에서 보수율만 올리면 ERS는 그대로이고 Gap만 줄어야 한다.
+    """
+    cheap = run_etf_analysis(voo_inputs(expense_ratio=0.0003))
+    pricey = run_etf_analysis(voo_inputs(expense_ratio=0.0095))
+
+    # 위험점수는 보수율과 무관해야 한다(이중 반영 방지)
+    assert cheap["ers"]["score"] == pricey["ers"]["score"]
+    # 순 기대성장률은 보수율만큼 정확히 낮아야 한다
+    assert net_expected_growth(0.08, 0.0095) == pytest.approx(0.08 - 0.0095)
+    assert pricey["growth"]["net_expected_growth"] < cheap["growth"]["net_expected_growth"]
+    # 따라서 Gap도 비싼 쪽이 나쁘다
+    assert pricey["valuation"]["gap_min"] < cheap["valuation"]["gap_min"]
+
+
+def test_fragile_growth_surfaces_in_data_limitations_and_demotes_ranking():
+    """성장률 취약 ETF는 경고가 붙고 compare_etfs에서 뒤로 밀려야 한다."""
+    solid = run_etf_analysis(voo_inputs())
+    # 저평가 경계에 딱 걸치는 성장률을 만들어 취약 케이스를 구성
+    r_probe = run_etf_analysis(voo_inputs())["discount_rate"]["r"]
+    ig = implied_growth_from_pe(27.53, r_probe)
+    fragile = run_etf_analysis(voo_inputs(
+        ticker="FRAG",
+        expected_earnings_growth=ig + 0.05 + 0.0003,  # 보수율 차감 후 경계에 걸림
+        expected_earnings_growth_basis="취약성 검증용 인위적 값 [테스트]",
+    ))
+    assert fragile["growth"]["sensitivity"]["robust"] is False
+    assert any("성장률 가정 취약" in x for x in fragile["data_limitations"])
+
+    ordered = compare_etfs([fragile, solid])
+    assert ordered[-1]["meta"]["ticker"] == "FRAG"
+
+
+def test_required_growth_recorded_per_source_in_ledger():
+    """ledger에 객관적 기준선이 출처별로 남아야 재현·대조가 가능하다."""
+    result = run_etf_analysis(voo_inputs())
+    for src, entry in result["valuation"]["by_source"].items():
+        assert "required_growth" in entry
+        assert entry["required_growth"]["breakeven"] == pytest.approx(
+            entry["implied_growth"])
