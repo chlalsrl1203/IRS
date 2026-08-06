@@ -1232,3 +1232,68 @@ WebSearch 기반 스냅샷이라 재현 가능성이 회사 단위 분석(SEC ED
 낮다 - 다음에 이 유형을 다시 쓸 때는 이번처럼 매번 새로 조사할지, 아니면
 전용 스크립트로 고정할지 실증사례가 더 쌓인 뒤 결정할 것(Simplicity First
 원칙과 동일 판단).
+
+## v3.33 — ETF 분석 엔진 신설(2026-08-06, 사용자 요청 "etf 스크리닝과 분석을
+위한 코드 작성. IRS수준만큼 전문적으로")
+
+바로 위 항목(ETF 자체 밸류에이션 비교)은 WebSearch 스냅샷을 JSON 리포트로만
+남긴 1회성 조사였고, "engine 코드에 배선된 게 아니라 재현 가능성이 회사 단위
+분석보다 낮다"는 한계를 스스로 적어뒀었다. 이번에 그 한계를 코드로 해소했다.
+
+**구조**: `engine/etf_engine.py`(순수함수) + `engine/etf_pipeline.py`
+(오케스트레이션·ledger) + `tests/test_etf_engine.py`(28건) +
+`scripts/analyze_etfs_2026_08_06.py`(실측 7종목). 회사 엔진의
+expectation_gap_engine/pipeline 2단 구조를 그대로 따랐다.
+
+**왜 회사 pipeline에 안 끼워넣었나**: `AnalysisInputs`는 revenue/OCF/capex
+시계열을 필수로 요구하는데 ETF에는 그게 존재하지 않는다. 억지로 합치면 절반이
+항상 None인 필드가 되고 `run_analysis()` 본문이 "ETF면/회사면"으로 갈라진다 -
+Simplicity First의 "강제 분기보다 opt-in" 원칙에 정면으로 어긋난다. 대신
+**공유 원시함수는 전부 재사용**했다: `implied_growth_from_fcf_yield`(Gordon
+역산은 분자가 FCF든 이익이든 동일), `erp_from_drs`(ERS를 DRS와 같은 0~100
+스케일로 설계해 그대로 사용), `judgment_from_gap`(v3.32에서 단일화한 유일한
+판정 규칙 - ETF라고 사본을 만들지 않았고, 테스트로 고정했다).
+
+**핵심 설계 근거 - IWM 사건을 코드로 만든 것**: P/E를 단일 스칼라가 아니라
+`{출처명: P/E}` 딕셔너리로 받는다. 2026-08-06 실측에서 같은 IWM의 P/E가
+stockanalysis 20.07x(트레일링)와 Goldman Sachs 26x(forward)로 갈렸고 그 차이가
+"3대 지수 중 가장 쌈"과 "가장 비쌈"이라는 정반대 결론을 만들었기 때문이다.
+엔진은 출처별로 Gap·판정을 각각 계산해 `judgment_flipped_across_sources`를
+최상위로 보고한다(sbc_cross_check의 병기 원칙과 동일 구조).
+
+**⚠️ 구현 중 테스트가 잡아낸 중요한 성질 - `flipped=False`를 안전으로 읽지 말 것**:
+처음엔 "IWM은 판정이 갈린다"를 상수처럼 단정하고 테스트를 썼는데 실패했다.
+확인해보니 **P/E 괴리는 Gap에 일정한 폭(IWM의 경우 약 1.16%p)을 만들 뿐,
+그 폭이 ±5%p 판정 경계를 가로지르는지는 r·성장률이 어디 놓이느냐에 달려
+있었다** - 같은 IWM 데이터가 r=0.09에서는 갈리고 r=0.1081에서는 안 갈렸다.
+즉 판정 일치는 데이터 신뢰도가 확보됐다는 뜻이 아니라 우연히 같은 구간에
+들어왔다는 뜻일 수 있다. 그래서 괴리가 임계값(20%)을 넘는데 판정만 일치하는
+경우에도 `[판정 우연 일치 주의]` 경고를 별도로 남기도록 배선했다(테스트:
+`test_high_divergence_without_flip_still_warns`). 가설을 실측이 기각한
+사례라 그대로 기록해둔다.
+
+**ERS(ETF Risk Score)**: DRS와 같은 0~100 스케일, 5개 항목(집중도/보유종목수/
+보수율/P/E출처괴리/무이익기업비중) 평균 x5. 구간 임계값은 **검증된 값이
+아니다** - 8종목 관측치 기반 시작점이며 LYNCH_TYPE_CAPS·demand_sensitivity
+앵커표와 동일하게 취급할 것. `pct_unprofitable_constituents`를 모르면 그
+항목을 빼되 제외 사실을 `data_limitations`에 남긴다(조용히 관대해지지 않게).
+
+**의도적으로 넣지 않은 것들**: (1) 배당성향 반영 Gordon - 재투자수익률(ROE)
+가정이 주관적 입력으로 하나 더 늘어나 실증사례 없이는 과설계. 대신 "이익
+전액 귀속 가정"이라는 한계를 docstring에 명시. (2) Fed모델 스프레드는
+계산해서 병기만 하고 **판정에 쓰지 않는다**(논쟁적 지표 - is_insurer의 P/B를
+임계값 없이 숫자만 주는 것과 동일 처리). (3) ETF간 보유종목 중복(VOO+QQQ+XLK를
+같이 사면 메가캡 기술주 3중 계상) 측정 - 구성종목 전체 데이터가 필요한데
+FMP ETF holdings API가 상위플랜 전용이라 확보 못함, 실증 필요시 배선.
+
+**ledger는 `ledger_etf/`에 분리 저장**한다. 회사 `ledger/`에 섞으면
+`tests/test_ledger_integrity.py`가 회사 스키마(judgment/sensitivity_check 키)를
+가정하고 전수 파싱하다 깨진다 - 스키마가 다른 두 기록을 한 폴더에 섞지 않는다
+(테스트로 고정: `test_ledger_dir_is_separate_from_company_ledgers`).
+
+**실측 결과(7종목)**: 전부 "적정가/경계선" 밴드 안이고 IWM만 출처간 판정
+불일치. 보수적 Gap(가장 비싼 P/E 기준) 기준 XLK +3.57%p > QQQ +2.69%p >
+XLF +1.64%p > VOO +1.13%p > XLU -1.74%p > XLE -2.33%p 순.
+**섹터 ETF 4종(XLK/XLE/XLF/XLU)은 P/E 출처가 1개뿐이라 IWM 같은 집계방식
+왜곡을 검증할 수단 자체가 없다** - 다음 조사 시 forward P/E를 추가 확보할 것
+(엔진이 `[단일 출처 경고]`로 자동 표시한다).

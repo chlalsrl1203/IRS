@@ -1,0 +1,124 @@
+{
+  "meta": {
+    "ticker": "VOO",
+    "name": "Vanguard S&P 500 ETF",
+    "tracks": "S&P 500",
+    "analyzed_at": "2026-08-06T07:16:29.526123+00:00",
+    "engine_version": "v3.33",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
+      "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
+      "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)",
+      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[P/E 출처 괴리 경고] 출처간 P/E가 19.60x ~ 27.53x로 40.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[판정 우연 일치 주의] P/E 출처 괴리가 40.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+1.13%p ~ +2.63%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
+  ],
+  "inputs": {
+    "ticker": "VOO",
+    "name": "Vanguard S&P 500 ETF",
+    "tracks": "S&P 500",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 27.53,
+      "FactSet(forward)": 19.6
+    },
+    "expense_ratio": 0.0003,
+    "n_holdings": 505,
+    "top10_weight": 0.37,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.08,
+    "expected_earnings_growth_basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것.",
+    "dividend_yield": 0.0104,
+    "pct_unprofitable_constituents": 0.03,
+    "return_1y": 0.2341,
+    "return_ytd": 0.1352,
+    "holding_years": 10,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
+      "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
+      "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)",
+      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 27.53,
+      "FactSet(forward)": 19.6
+    },
+    "min": 19.6,
+    "max": 27.53,
+    "spread_abs": 7.93,
+    "spread_relative": 0.40459183673469384,
+    "warning": "[P/E 출처 괴리 경고] 출처간 P/E가 19.60x ~ 27.53x로 40.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 10.0,
+      "breadth": 6.0,
+      "cost": 2.0,
+      "data_quality": 18.0,
+      "earnings_quality": 2.0
+    },
+    "excluded": [],
+    "score": 38.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.0614,
+    "r": 0.10750000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.08,
+    "basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것."
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 27.53,
+        "earnings_yield": 0.03632401017072285,
+        "implied_growth": 0.06868121275849984,
+        "gap": 0.011318787241500164,
+        "judgment": "적정가/경계선"
+      },
+      "FactSet(forward)": {
+        "pe_ratio": 19.6,
+        "earnings_yield": 0.0510204081632653,
+        "implied_growth": 0.05373786407766992,
+        "gap": 0.02626213592233008,
+        "judgment": "적정가/경계선"
+      }
+    },
+    "gap_min": 0.011318787241500164,
+    "gap_max": 0.02626213592233008,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0003,
+    "holding_years": 10,
+    "cumulative_drag": 0.002995953238299265
+  },
+  "fed_model": {
+    "earnings_yield": 0.0510204081632653,
+    "treasury_yield": 0.0461,
+    "spread": 0.004920408163265298,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.2341,
+    "return_ytd": 0.1352,
+    "dividend_yield": 0.0104
+  }
+}

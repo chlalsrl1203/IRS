@@ -1,5 +1,39 @@
 # CHANGELOG
 
+## v3.33 — ETF 분석 엔진 신설 (2026-08-06)
+
+**경위**: 사용자 요청("etf 스크리닝과 분석을 위한 코드 작성. IRS수준만큼
+전문적으로"). 직전 ETF 조사가 WebSearch 스냅샷 JSON 리포트뿐이라 재현
+가능성이 낮다는 한계를 스스로 명시했었고, 이를 코드로 해소했다.
+
+**신규 파일**: `engine/etf_engine.py`(순수함수), `engine/etf_pipeline.py`
+(ETFInputs/run_etf_analysis/compare_etfs/save_etf_ledger),
+`tests/test_etf_engine.py`(28건), `scripts/analyze_etfs_2026_08_06.py`
+(실측 7종목 - VOO/QQQ/IWM/XLK/XLE/XLF/XLU).
+
+**핵심 설계 - P/E를 단일 스칼라로 받지 않는다**: `{출처명: P/E}` 딕셔너리로
+받아 출처별 Gap·판정을 각각 계산하고 `judgment_flipped_across_sources`를
+보고한다. IWM 실측(stockanalysis 20.07x vs Goldman Sachs 26x = 29.5% 괴리)이
+"가장 쌈"과 "가장 비쌈"이라는 정반대 결론을 만든 사건이 근거.
+
+**구현 중 가설이 실측에 기각된 건**: "IWM은 판정이 갈린다"를 단정했다가
+테스트 실패. P/E 괴리는 Gap에 일정 폭(~1.16%p)만 만들고, 그 폭이 ±5%p 경계를
+가로지르는지는 r·성장률에 달려 있었다(r=0.09에서는 갈리고 r=0.1081에서는
+안 갈림). `flipped=False`를 안전으로 오독하지 않도록 `[판정 우연 일치 주의]`
+경고를 별도 배선.
+
+**재사용(중복 구현 금지)**: `implied_growth_from_fcf_yield`(Gordon 역산),
+`erp_from_drs`(ERS를 DRS와 같은 0~100 스케일로 설계), `judgment_from_gap`
+(v3.32 단일화한 유일 판정 규칙 - ETF용 사본을 만들지 않았음을 테스트로 고정).
+
+**ENGINE_VERSION v3.32 -> v3.33**(v3.32에서 세운 "새 기능 배선 시 반드시
+올릴 것" 규칙 준수). ledger는 스키마 충돌 방지를 위해 `ledger_etf/`에 분리.
+
+**테스트**: 131 -> 159개 전부 통과. 기존 회사 엔진 동작 불변(공유 함수는
+읽기만 하고 수정하지 않음).
+
+---
+
 ## v3.32 — 기록 무결성 감사: 버전 스탬프·판정 단일화·캡 플래그·중복 ledger (2026-08-05)
 
 **경위**: 사용자 요청("개혁 필요 부분 스스로 철저히 찾아 완벽히 개혁"). 기존
