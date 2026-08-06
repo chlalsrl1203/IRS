@@ -33,6 +33,43 @@ CAGR 9.42%)이었으나 FCF수익률 3.29%로 밸류에이션이 이미 높아 �
 넣지 않았고, 보험/금융 섹터도 이번 검색에서 뚜렷한 미스프라이싱 신호가
 나오지 않아 후보를 추가하지 않았다.
 
+**3차 라운드(동일 08-06 세션) - "SaaSpocalypse" 테마에서 ADBE 발굴, 첫
+통과 종목**: 2026년초부터 "AI 에이전트가 SaaS를 대체한다"는 서사로
+소프트웨어 섹터 전체가 $2T 증발한 사건(Microsoft -16%/Shopify -26%/
+Adobe -27~46%/Salesforce -30%)을 확인 - 개별기업 문제가 아니라 섹터
+전체 재평가라는 점에서 반도체(MU 등)와 같은 계열이지만, **여기서는
+펀더멘털이 실제로 안 꺾인 개별종목이 섞여 있는지 재무데이터로 직접
+확인**했다(반도체는 위에서 이미 섹터 전체 배제로 판단, 이번엔 배제하지
+않고 검증):
+
+- **ADBE(Adobe) - 이 프로젝트 두 배치(07-31/08-06) 통틀어 첫 통과
+  종목(A등급, Gap 추정 +11.15%p).** "생성형AI가 Photoshop 구독수요를
+  잠식한다"는 서사로 52주 고점 대비 -46%(PER 14.4x까지 하락, SaaS
+  대형주 치고 이례적으로 저렴)했으나, 실측 재무데이터는 정반대다 -
+  5y 매출 CAGR 13.06%, **FCF CAGR이 매출보다 더 빠른 13.17%**(마진
+  확장 중), FCF수익률 9.86%(문턱 4.86%의 2배). 관측구간(2014~2025)
+  최악 YoY 매출성장률이 +10.24%로 **12년간 단 한 번도 역성장이 없었다**
+  (코로나 해도 +15.19%). 회사 발표 AI-first ARR도 전년比 3배 성장 -
+  AI가 위협이 아니라 오히려 신규 성장동력으로 편입되고 있다는 근거.
+  전형적 4분류 1번(공포과잉) - 서사(AI 파괴 우려)가 아직 숫자에 나타나지
+  않은 상태에서 시장이 선반영했다.
+- **SHOP(Shopify) - 성장은 ADBE보다도 강하나(YoY +34.3%, 4개분기
+  연속 30%+, AI 트래픽 8배 증가) 밸류에이션이 이미 너무 높아 탈락.**
+  FCF수익률 단 1.25%(EV/EBITDA 68.6x, P/S 12.94x) - "30% 하락"이
+  이미 훨씬 더 비쌌던 출발점에서의 하락이라 여전히 극단적 프리미엄
+  밸류에이션. Agentic commerce의 실질적 수혜주(ChatGPT/Copilot/Google
+  안에서 상거래를 구동하는 유일한 플랫폼)라는 서사는 오히려 사실에
+  가까워 보이나, 그 사실이 이미 주가에 과반영돼 있다 - EME와 동일한
+  "이미비쌈"(4분류 2번) 유형. Salesforce(CRM)는 Alpha Vantage 일일
+  호출한도(25회/일) 소진으로 이번 라운드에서 재무데이터 미확보 -
+  다음 세션에서 이어서 확인할 것.
+
+**⚠️ ADBE는 이 배치에서 유일한 통과 종목이므로 engine/pipeline.py의
+run_analysis()로 정식분석 우선순위 1순위.** 스크리너 추정치(estimate_drs
+등 근사)일 뿐 정식 판정이 아니다 - 특히 AI 파괴 리스크 같은 정성적
+경쟁강도(competition_intensity)는 스크리너가 상수로 가정하므로(PDD
+선례와 동일 한계), 정식분석 시 실제 근거를 갖고 입력할 것.
+
 실행: python3 scripts/screen_2026_08_06.py
 """
 
@@ -178,6 +215,54 @@ CANDIDATES.append(Candidate(
     ),
 ))
 
+# ── ADBE (Adobe) - 이 배치 유일한 통과 종목 ──
+# "생성형AI가 Photoshop을 대체한다"는 서사로 52주 고점 대비 -46%했으나
+# 실측 재무데이터는 정반대(매출·FCF 모두 두 자릿수 성장, FCF가 매출보다
+# 더 빠르게 성장 - 마진 확장 중). 12년 관측구간 최악 YoY도 +10.24%로
+# 단 한 번도 역성장 없음(코로나 해도 +15.19%).
+_rev_adbe = {2014: 4147.065, 2015: 4795.511, 2016: 5854.43, 2017: 7301.505, 2018: 9030.008,
+             2019: 11171.297, 2020: 12868, 2021: 15785, 2022: 17606, 2023: 19409, 2024: 21505, 2025: 23769}
+_ocf_adbe = {2020: 5727, 2021: 7230, 2022: 7838, 2023: 7302, 2024: 8056, 2025: 10031}
+_capex_adbe = {2020: 419, 2021: 330, 2022: 442, 2023: 360, 2024: 232, 2025: 179}
+_fcf_adbe = {y: _ocf_adbe[y] - _capex_adbe[y] for y in _ocf_adbe}
+CANDIDATES.append(Candidate(
+    ticker="ADBE", name="Adobe", exchange="NASDAQ",
+    market_cap=99907.65, fcf0=_fcf_adbe[2025],
+    revenue_cagr_5y=cagr(_rev_adbe[2020], _rev_adbe[2025], 5), fcf_cagr_5y=cagr(_fcf_adbe[2020], _fcf_adbe[2025], 5),
+    net_debt_to_ebitda=0.11,  # EVToRevenue 근사 기반, 순부채 거의 없음
+    worst_yoy_revenue=worst_yoy(_rev_adbe),
+    note=(
+        "이 배치 유일한 통과 종목(A등급, Gap 추정 +11.15%p). AI 파괴 서사로 "
+        "-46% 급락했으나 매출 5y CAGR 13.06%, FCF CAGR 13.17%(매출보다 빠름 - "
+        "마진확장), FCF수익률 9.86%(문턱의 2배). AI-first ARR 전년比 3배(회사"
+        "발표) - AI가 위협이 아니라 신규 성장동력으로 편입 중일 가능성. 정식분석 "
+        "우선순위 1순위 - competition_intensity(AI 경쟁 위협의 실체) 등 정성적 "
+        "입력은 스크리너가 못 보므로 반드시 별도 근거 확보할 것."
+    ),
+))
+
+# ── SHOP (Shopify) - 성장은 ADBE보다 강하나 밸류에이션 탈락 ──
+# YoY +34.3%(4개분기 연속 30%+대), agentic commerce 실질 수혜주 서사도
+# 사실에 가까우나 이미 극단적 프리미엄 밸류에이션(EV/EBITDA 68.6x)이라
+# FCF수익률이 1.25%에 불과 - "30% 하락"이 훨씬 더 비쌌던 출발점에서의
+# 하락일 뿐. Alpha Vantage 일일한도로 revenue_cagr_5y는 CompanyOverview의
+# QuarterlyRevenueGrowthYOY(34.3%)로 근사(정식 5y CAGR 미확보 - 어느 쪽이든
+# FCF수익률이 결정적 탈락사유라 결론에 영향 없음).
+CANDIDATES.append(Candidate(
+    ticker="SHOP", name="Shopify", exchange="NASDAQ",
+    market_cap=160000.819, fcf0=2007,  # 2025 OCF 2033 - capex 26
+    revenue_cagr_5y=0.343, fcf_cagr_5y=0.343,  # 근사(위 설명 참고) - 밸류에이션이 결정적 탈락사유
+    net_debt_to_ebitda=0.0,
+    worst_yoy_revenue=0.10,  # 보수적 추정(정식 데이터 미확보)
+    note=(
+        "밸류에이션 탈락 - 성장(YoY+34.3%, ADBE보다 강함)은 문제가 아니다. "
+        "FCF수익률 1.25%(EV/EBITDA 68.6x, P/S 12.94x)로 문턱에 크게 못 미침. "
+        "Agentic commerce 수혜주 서사는 사실에 가까우나 이미 주가에 과반영 - "
+        "EME와 동일한 '이미비쌈' 유형. 밸류에이션이 큰 폭으로 추가 하락하면 "
+        "재확인 가치 있음(ADBE보다 낙폭이 더 커야 통과권에 진입할 것)."
+    ),
+))
+
 # ── 아래는 WebSearch 확인 단계에서 '진짜 나빠짐'으로 판정, 재무데이터 없이 제외 ──
 PREFILTERED_OUT = {
     "APTV(Aptiv)": (
@@ -222,11 +307,12 @@ def main():
     print()
 
     print("=" * 108)
-    print("⚠️ 탈락 종목 상세(재무데이터까지 확보한 5종목)")
+    print("⚠️ 재무데이터 확보 종목 상세(통과/탈락 포함, 7종목)")
     print("=" * 108)
     for r in results:
         c = r.candidate
-        print(f"  {c.ticker:6} {c.name}")
+        mark = "[통과]" if r.passed else "[탈락]"
+        print(f"  {mark} {c.ticker:6} {c.name}")
         print(f"    -> {c.note}")
         if r.failures:
             for f in r.failures:
@@ -243,7 +329,8 @@ def main():
     print("\n" + "=" * 108)
     print("이 결과는 후보를 좁힌 1차 필터일 뿐 판정이 아니다.")
     print("통과 종목은 반드시 engine/pipeline.py의 run_analysis()로 정식 분석할 것.")
-    print("이번 배치는 10종목 전수 탈락(0/10) - 07-31 배치(0/26)에 이어 완전탈락.")
+    print(f"이번 배치는 총 {len(results)}종목 중 {n_passed}종목 통과(ADBE) - ")
+    print("07-31/08-06 1·2차 라운드 전수탈락 이후 이번 3차 라운드에서 첫 통과 종목 발견.")
     print("=" * 108)
 
 
