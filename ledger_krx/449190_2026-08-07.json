@@ -3,8 +3,8 @@
     "ticker": "449190",
     "name": "KODEX 미국나스닥100(H)",
     "tracks": "Nasdaq-100",
-    "analyzed_at": "2026-08-07T23:43:36.446452+00:00",
-    "engine_version": "v3.38",
+    "analyzed_at": "2026-08-07T23:58:03.989316+00:00",
+    "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "etfshopping.com/etf/index/nasdaq-100(2026-08-07)"

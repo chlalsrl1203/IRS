@@ -23,7 +23,26 @@ Dow Jones U.S. Dividend 100 Index(SCHD와 동일 계열)를 추종한다 - 이�
 래퍼는 TIGER 미국다우존스30(245340, 기초지수 "Dow Jones Industrial Average"
 공식 확인)뿐이다.
 
-실행: python3 scripts/analyze_krx_etfs_2026_08_07.py
+**섹터 확장(같은 날 추가, "섹터 다양한 방면으로" 요청)**: KODEX가 GICS 섹터별로
+"KODEX 미국S&P500{섹터명}" 라인업을 운영 중임을 확인했다 - 전부 총보수
+0.25%(운용보수 0.229%)로 통일돼 있고 기초지수가 각 Select Sector Index다.
+이미 미국 원본이 있던 금융(XLF)·유틸리티(XLU)에 더해, 이번에
+`scripts/analyze_etfs_sectors_2026_08_07.py`로 산업재(XLI)·헬스케어(XLV)·
+커뮤니케이션서비스(XLC)·필수소비재(XLP) 미국 원본을 새로 분석해 국내 래퍼를
+추가했다.
+
+⚠️ **KODEX 미국S&P500테크놀로지(463680)는 이번 배치에서 제외했다** - 총보수를
+여러 경로로 검색했으나 확인하지 못했다(다른 형제 상품은 전부 0.25%로 확인돼
+같은 값일 가능성이 높지만, 추측으로 채우지 않는다 - 이 프로젝트의 원칙).
+확인되는 대로 추가할 것.
+
+⚠️ 순자산(aum_krw) 일부(KODEX 미국S&P500유틸리티)는 검색으로 확인하지 못해
+`None`으로 남겼다 - `compare_krx_wrappers()`가 이를 "0원"이 아니라 "미확인"으로
+처리해 비교 정렬 최하위로 두고 표에 "미확인"이라고 표시한다(v3.38 후반 완화,
+회귀 테스트: `test_unconfirmed_aum_sorts_last_and_renders_as_unconfirmed`).
+
+실행: python3 scripts/analyze_etfs_sectors_2026_08_07.py 먼저 실행해 미국 원본을
+채운 뒤 python3 scripts/analyze_krx_etfs_2026_08_07.py 실행.
 """
 
 import json
@@ -148,6 +167,55 @@ CANDIDATES = [
         estimated_hedge_carry=None,
         aum_krw=266.0 * 1e8, listed_date="미확인",
         data_sources=["samsungfund.com/etf/product/view.do?id=2ETF95(2026-08-07)"],
+    ),
+    # ==== 섹터 확장 (같은 날 추가) - KODEX 미국S&P500{섹터} 라인업 ====
+    # 전부 총보수 0.25%(운용보수 0.229%)로 통일 - funetf.co.kr 공식 상품페이지에서
+    # 개별 확인(2026-08-07). 테크놀로지(463680)만 총보수 미확인이라 제외.
+    dict(
+        krx_ticker="453650", krx_name="KODEX 미국S&P500금융",
+        tracks_same_index_as="S&P Financial Select Sector Index - 공식페이지에서 확인, XLF와 동일 계열",
+        us_reference_ticker="XLF", expense_ratio=0.0025, hedged=False,
+        aum_krw=5_195.8 * 1e8, listed_date="2023-03-21",
+        data_sources=["funetf.co.kr/product/etf/view/KR7453650004(2026-08-07)"],
+    ),
+    dict(
+        krx_ticker="463640", krx_name="KODEX 미국S&P500유틸리티",
+        tracks_same_index_as="S&P Utilities Select Sector Index(Price Return) - 공식페이지에서 확인, XLU와 동일 계열",
+        us_reference_ticker="XLU", expense_ratio=0.0025, hedged=False,
+        aum_krw=None,  # 검색으로 확인 못함 - "미확인"으로 정직하게 남김(v3.38 후반 완화)
+        listed_date="2023-08-01",
+        data_sources=["funetf.co.kr/product/etf/view/KR7463640003(2026-08-07)"],
+    ),
+    dict(
+        krx_ticker="200030", krx_name="KODEX 미국S&P500산업재(합성)",
+        tracks_same_index_as="S&P Industrial Select Sector Index(원화환산) - 공식페이지에서 확인, XLI와 동일 계열",
+        us_reference_ticker="XLI", expense_ratio=0.0025, hedged=False,
+        aum_krw=499 * 1e8, listed_date="미확인",
+        data_sources=["funetf.co.kr/product/etf/view/KR7200030005(2026-08-07)"],
+    ),
+    dict(
+        krx_ticker="453640", krx_name="KODEX 미국S&P500헬스케어",
+        tracks_same_index_as="S&P Health Care Select Sector Index - 공식페이지에서 확인, XLV와 동일 계열",
+        us_reference_ticker="XLV", expense_ratio=0.0025, hedged=False,
+        aum_krw=15_460 * 1e8, listed_date="미확인",
+        data_sources=["funetf.co.kr/product/etf/view/KR7453640005(2026-08-07)"],
+    ),
+    dict(
+        krx_ticker="463690", krx_name="KODEX 미국S&P500커뮤니케이션",
+        tracks_same_index_as=(
+            "S&P Communication Services Select Sector Index(Price Return) - "
+            "공식페이지에서 확인, XLC와 동일 계열"
+        ),
+        us_reference_ticker="XLC", expense_ratio=0.0025, hedged=False,
+        aum_krw=131.10 * 1e8, listed_date="미확인",
+        data_sources=["funetf.co.kr/product/etf/view/KR7463690008(2026-08-07)"],
+    ),
+    dict(
+        krx_ticker="453630", krx_name="KODEX 미국S&P500필수소비재",
+        tracks_same_index_as="S&P Consumer Staples Select Sector Index - 공식페이지에서 확인, XLP와 동일 계열",
+        us_reference_ticker="XLP", expense_ratio=0.0025, hedged=False,
+        aum_krw=119.36 * 1e8, listed_date="미확인",
+        data_sources=["funetf.co.kr/product/etf/view/KR7453630006(2026-08-07)"],
     ),
 ]
 

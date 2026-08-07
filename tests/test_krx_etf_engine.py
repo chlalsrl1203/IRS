@@ -251,6 +251,33 @@ def test_wrapper_handles_json_roundtripped_realized_eps_keys():
     assert krx["growth"]["anchor_cross_check"] is not None
 
 
+def test_unconfirmed_aum_sorts_last_and_renders_as_unconfirmed():
+    """
+    ⭐ v3.38 후반 완화 - 검색으로 AUM을 못 찾은 종목(KODEX 미국S&P500유틸리티
+    등 실제 사례)을 억지 숫자 없이 다룰 수 있어야 한다. aum_krw=None은
+    "0원"이 아니라 "모름"이므로 비교 정렬에서 최하위로 밀려야 하고(0원으로
+    취급하면 부호 함정으로 최상위에 잘못 뜰 위험이 있다), 표에는 "미확인"으로
+    나와야 한다.
+    """
+    us = voo_us_result()
+    known = run_krx_wrapper_analysis(
+        tiger_sp500_inputs(krx_ticker="379800", krx_name="KODEX 미국S&P500",
+                            expense_ratio=0.0006, aum_krw=100 * 1e8),
+        us,
+    )
+    unknown_aum = run_krx_wrapper_analysis(
+        tiger_sp500_inputs(krx_ticker="360200", krx_name="ACE 미국S&P500",
+                            expense_ratio=0.0006, aum_krw=None),
+        us,
+    )
+    groups = compare_krx_wrappers([unknown_aum, known])
+    ordered = [r["meta"]["ticker"] for r in groups["VOO"]]
+    assert ordered == ["379800", "360200"]  # AUM 확인된 쪽이 먼저
+
+    table = format_krx_comparison_table(groups)
+    assert "미확인" in table
+
+
 def test_save_krx_ledger_writes_to_separate_dir(tmp_path):
     us = voo_us_result()
     krx = run_krx_wrapper_analysis(tiger_sp500_inputs(), us)

@@ -3,8 +3,8 @@
     "ticker": "360750",
     "name": "TIGER 미국S&P500",
     "tracks": "S&P 500",
-    "analyzed_at": "2026-08-07T23:43:36.441932+00:00",
-    "engine_version": "v3.38",
+    "analyzed_at": "2026-08-07T23:58:03.984571+00:00",
+    "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "etfshopping.com/best/us-etf(2026-08-07)",

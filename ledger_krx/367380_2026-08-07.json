@@ -3,8 +3,8 @@
     "ticker": "367380",
     "name": "ACE 미국나스닥100",
     "tracks": "Nasdaq-100",
-    "analyzed_at": "2026-08-07T23:43:36.446008+00:00",
-    "engine_version": "v3.38",
+    "analyzed_at": "2026-08-07T23:58:03.988873+00:00",
+    "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "etfshopping.com/etf/index/nasdaq-100(2026-08-07)"

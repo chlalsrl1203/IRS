@@ -41,8 +41,13 @@ class KRXWrapperInputs:
 
     expense_ratio: float              # 국내 상장분 자체의 총보수(소수)
     hedged: bool
-    aum_krw: float                    # 순자산총액(원 단위 그대로 - 억원 아님)
-    listed_date: str                  # "YYYY-MM-DD"
+    listed_date: str                  # "YYYY-MM-DD" (미확인이면 "미확인")
+
+    # 순자산총액(원 단위 그대로 - 억원 아님). None 허용(v3.38 후반 완화) - 밸류에이션과
+    # 무관한 정보성 필드라 검색으로 못 찾았을 때 억지로 숫자를 만들어 넣기보다
+    # None으로 정직하게 남긴다(listed_date="미확인"과 같은 취급). None인 항목은
+    # 비교표에서 "미확인"으로 표시되고 비용 정렬에서 후순위로 밀린다.
+    aum_krw: float = None
 
     data_sources: list = field(default_factory=list)
 
@@ -77,7 +82,7 @@ class KRXWrapperInputs:
                 f"expense_ratio={self.expense_ratio}가 범위를 벗어났다(0~3% 미만 "
                 f"소수여야 함) - 퍼센트 숫자를 그대로 넣은 것으로 보인다."
             )
-        if self.aum_krw < 0:
+        if self.aum_krw is not None and self.aum_krw < 0:
             raise ValueError("aum_krw는 원 단위 양수여야 함(억원 단위로 넣지 말 것)")
 
 
@@ -177,7 +182,14 @@ def compare_krx_wrappers(results: list) -> dict:
         groups.setdefault(key, []).append(res)
 
     for key in groups:
-        groups[key].sort(key=lambda r: (r["wrapper"]["expense_ratio"], -r["wrapper"]["aum_krw"]))
+        # aum_krw가 None(미확인)인 항목은 순자산 비교에서 최하위로 밀린다 -
+        # "0원"으로 취급하지 않는다(그러면 최하위가 아니라 최상위로 잘못 밀릴 수
+        # 있는 부호 함정이 있다. -None은 TypeError라 아예 이렇게 방지한다).
+        groups[key].sort(key=lambda r: (
+            r["wrapper"]["expense_ratio"],
+            r["wrapper"]["aum_krw"] is None,
+            -(r["wrapper"]["aum_krw"] or 0),
+        ))
 
     return groups
 
@@ -204,10 +216,11 @@ def format_krx_comparison_table(groups: dict) -> str:
                       f"{'환헤지':>6} {'순자산(억원)':>12}")
         for r in group:
             w = r["wrapper"]
+            aum_str = f"{w['aum_krw']/1e8:12,.0f}" if w["aum_krw"] is not None else f"{'미확인':>12}"
             lines.append(
                 f"{r['meta']['ticker']:8} {r['meta']['name'][:28]:28} "
                 f"{w['expense_ratio']*100:7.2f}% {w['expense_ratio_delta_vs_us']*100:+7.2f}%p "
-                f"{'H' if w['hedged'] else '-':>6} {w['aum_krw']/1e8:12,.0f}"
+                f"{'H' if w['hedged'] else '-':>6} {aum_str}"
             )
         lines.append("")
     return "\n".join(lines)
