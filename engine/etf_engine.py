@@ -43,6 +43,7 @@ Sachs, forward)로 갈렸고, **그 차이가 "3대 지수 중 가장 싸다"와
 
 from engine.expectation_gap_engine import (
     ENGINE_VERSION,
+    JUDGMENT_BAND,
     _bucket_score,
     erp_from_drs,
     judgment_from_gap,
@@ -285,7 +286,7 @@ def fed_model_spread(pe_ratio: float, treasury_yield: float) -> dict:
     }
 
 
-def required_growth_thresholds(pe_ratio: float, r: float, band: float = 0.05) -> dict:
+def required_growth_thresholds(pe_ratio: float, r: float, band: float = None) -> dict:
     """
     ⭐ v3.34 신설 - 이 엔진의 프레이밍을 뒤집는 함수.
 
@@ -311,11 +312,101 @@ def required_growth_thresholds(pe_ratio: float, r: float, band: float = 0.05) ->
       - for_undervalued: '저평가 가능성' 판정을 받으려면 믿어야 하는 성장률
       - for_overvalued: 이 아래로 믿으면 '과대평가 가능성'이 되는 성장률
     """
+    # band 기본값은 반드시 엔진의 판정 경계 상수에서 가져온다 - 여기에 0.05를
+    # 다시 적으면 "저평가가 되려면 필요한 성장률"과 실제 판정 경계가 따로 놀 수
+    # 있다(v3.35에서 정정한 중복).
+    if band is None:
+        band = JUDGMENT_BAND
     ig = implied_growth_from_pe(pe_ratio, r)
     return {
         "breakeven": ig,
         "for_undervalued": ig + band,
         "for_overvalued": ig - band,
+        "band_used": band,
+    }
+
+
+def realized_eps_growth(eps_by_year: dict, lookback: int = None) -> dict:
+    """
+    ⭐ v3.35 신설 - v3.34가 "근본 해결은 이것뿐인데 데이터 접근이 막혀 있다"고
+    기록했던 **방향 A(지수 EPS 실적 앵커)의 계산 부분**.
+
+    지수의 실제 EPS 시계열에서 CAGR을 구해, 분석자가 타이핑한
+    `expected_earnings_growth`를 대조할 **관측 기반 앵커**를 만든다. 회사 엔진이
+    Realistic Growth를 매출·FCF CAGR에서 계산하는 것과 같은 규율이다.
+
+    왜 지금 만드나(데이터가 아직 부분적인데): 이 프로젝트가 `capex_classification`·
+    `cagr_base_year_override`에서 반복한 패턴 그대로다 - **기능은 opt-in으로 먼저
+    배선해두고, 값이 확보되는 종목부터 채운다.** 지수 EPS는 S&P500·나스닥100처럼
+    공표되는 것부터 확보 가능하고, 섹터SPDR·러셀2000은 유료라 당장은 비어 있다.
+    기능이 없으면 데이터를 구해도 쓸 곳이 없다.
+
+    CAGR 계산은 `pipeline._cagr`을 재사용한다 - 시작값이 음수일 때 파이썬이
+    복소수를 조용히 반환하는 문제를 v3.19에서 이미 가드해뒀기 때문이다
+    (같은 함정을 다시 구현하지 않는다).
+    """
+    from engine.pipeline import _cagr
+
+    years = sorted(eps_by_year)
+    if len(years) < 2:
+        raise ValueError("EPS 시계열은 최소 2개 연도가 필요하다")
+
+    if lookback is not None:
+        if lookback < 1:
+            raise ValueError("lookback은 1 이상이어야 함")
+        if len(years) < lookback + 1:
+            raise ValueError(
+                f"lookback={lookback}년 CAGR을 구하려면 {lookback+1}개 연도가 "
+                f"필요한데 {len(years)}개뿐이다"
+            )
+        years = years[-(lookback + 1):]
+
+    span = years[-1] - years[0]
+    cagr = _cagr(eps_by_year[years[0]], eps_by_year[years[-1]], span,
+                 "지수 EPS")
+    return {
+        "base_year": years[0],
+        "end_year": years[-1],
+        "span_years": span,
+        "eps_start": eps_by_year[years[0]],
+        "eps_end": eps_by_year[years[-1]],
+        "cagr": cagr,
+    }
+
+
+def growth_anchor_cross_check(
+    expected_earnings_growth: float,
+    realized: dict,
+    tolerance: float = 0.03,
+) -> dict:
+    """
+    분석자 가정 성장률을 실적 EPS CAGR과 대조한다.
+
+    `insurer_cross_check`(ROE x 유보율로 Realistic Growth를 대조)와 정확히 같은
+    구조·같은 원칙이다: **자동으로 덮어쓰지 않고 병기하며, 괴리가 크면 경고**한다.
+    자동 대체를 하지 않는 이유는 지수 EPS 실적 CAGR이 그 자체로 미래 성장률의
+    정답이 아니기 때문이다(경기 사이클·구성종목 교체·기저효과가 섞여 있다).
+    다만 분석자가 실적에서 크게 벗어난 값을 쓸 때 그 사실이 드러나야 한다.
+    """
+    deviation = expected_earnings_growth - realized["cagr"]
+    warning = None
+    if abs(deviation) >= tolerance:
+        warning = (
+            f"[성장률 앵커 괴리] 분석자 가정 {expected_earnings_growth*100:.2f}%가 "
+            f"실적 EPS CAGR({realized['cagr']*100:.2f}%, "
+            f"{realized['base_year']}~{realized['end_year']} {realized['span_years']}년)와 "
+            f"{deviation*100:+.2f}%p 벌어져 있다(허용폭 {tolerance*100:.0f}%p). "
+            f"실적을 벗어난 가정을 쓰려면 근거가 expected_earnings_growth_basis에 "
+            f"명시돼야 한다 - Gap은 이 가정에 1:1로 좌우되므로 근거 없는 낙관은 "
+            f"그대로 '저평가' 결론이 된다."
+        )
+    return {
+        "realized": realized,
+        "assumed": expected_earnings_growth,
+        "deviation": deviation,
+        "tolerance": tolerance,
+        "within_tolerance": warning is None,
+        "warning": warning,
     }
 
 
@@ -400,6 +491,7 @@ def evaluate_valuation_by_source(
 
 __all__ = [
     "ENGINE_VERSION",
+    "JUDGMENT_BAND",
     "PE_DIVERGENCE_WARNING_THRESHOLD",
     "breadth_score",
     "concentration_score",
@@ -410,10 +502,12 @@ __all__ = [
     "evaluate_valuation_by_source",
     "expense_drag",
     "fed_model_spread",
+    "growth_anchor_cross_check",
     "growth_sensitivity",
     "implied_growth_from_pe",
     "net_expected_growth",
     "pe_source_divergence",
+    "realized_eps_growth",
     "required_growth_thresholds",
     "erp_from_drs",
 ]

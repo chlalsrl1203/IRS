@@ -104,3 +104,56 @@ def test_every_ledger_is_self_consistent_on_judgment():
             if lab not in known:
                 bad.append(f"{os.path.basename(path)}: {lab!r}")
     assert not bad, f"알 수 없는 판정 라벨: {bad}"
+
+
+# ----------------------------------------------------------------------
+# ETF ledger (v3.35 추가)
+# ----------------------------------------------------------------------
+# 회사 ledger에서 겪은 "구 파일이 안 지워져 33종목이 36건으로 잡히고 그 중복이
+# 통계를 오염시킨" 사고(v3.32)를 ETF 쪽에서 반복하지 않도록 같은 규칙을 건다.
+# 실제로 v3.35 작업 중 UTC 날짜가 바뀌면서 같은 ETF의 파일이 두 날짜로 생길
+# 뻔했다 - 규칙이 없으면 정확히 같은 일이 벌어진다.
+
+ETF_LEDGER_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ledger_etf")
+
+
+def _etf_ledger_files():
+    if not os.path.isdir(ETF_LEDGER_DIR):
+        return []
+    return sorted(glob.glob(os.path.join(ETF_LEDGER_DIR, "*.json")))
+
+
+def test_one_etf_ledger_file_per_ticker():
+    by_ticker = collections.defaultdict(list)
+    for path in _etf_ledger_files():
+        m = FNAME_RE.match(os.path.basename(path))
+        assert m, f"ETF ledger 파일명 규약 위반: {path}"
+        by_ticker[m.group("ticker")].append(os.path.basename(path))
+
+    duplicated = {t: sorted(f) for t, f in by_ticker.items() if len(f) > 1}
+    assert not duplicated, (
+        "같은 ETF의 ledger가 2건 이상 남아 있다 - 구 파일을 git rm하고 최신 "
+        f"1건으로 통합할 것: {duplicated}"
+    )
+
+
+def test_etf_ledger_filename_matches_content():
+    mismatches = []
+    for path in _etf_ledger_files():
+        m = FNAME_RE.match(os.path.basename(path))
+        d = json.load(open(path, encoding="utf-8"))
+        if d["meta"]["ticker"] != m.group("ticker"):
+            mismatches.append(f"{os.path.basename(path)}: {d['meta']['ticker']}")
+        if d["meta"]["analyzed_at"][:10] != m.group("date"):
+            mismatches.append(
+                f"{os.path.basename(path)}: {d['meta']['analyzed_at'][:10]}")
+    assert not mismatches, f"파일명과 meta 불일치: {mismatches}"
+
+
+def test_etf_ledger_is_not_mixed_into_company_ledger_dir():
+    """ETF 기록이 회사 ledger 디렉터리로 새어 들어가지 않았는지 확인."""
+    for path in _ledger_files():
+        d = json.load(open(path, encoding="utf-8"))
+        assert d["meta"].get("analysis_type") != "etf", (
+            f"ETF ledger가 회사 ledger 디렉터리에 있다: {path}")

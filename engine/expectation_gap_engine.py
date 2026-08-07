@@ -33,7 +33,7 @@ import statistics
 #
 # **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
 # 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
-ENGINE_VERSION = "v3.34"
+ENGINE_VERSION = "v3.35"
 
 # ======================================================================
 # DRS 원점수 구간 임계값 - v3.7에서 모듈 상단으로 노출
@@ -879,6 +879,16 @@ JUDGMENT_UNDERVALUED = "저평가 가능성"
 JUDGMENT_NEUTRAL = "적정가/경계선"
 JUDGMENT_OVERVALUED = "과대평가 가능성"
 
+# ⚠️ v3.35(2026-08-06): 판정 경계값 자체도 상수로 뽑는다.
+# v3.32에서 판정 *규칙*은 단일화했지만 **경계값 숫자(0.05)는 여전히 리터럴**로
+# 남아 있었고, v3.34에서 ETF 엔진의 `required_growth_thresholds(band=0.05)`가
+# 같은 값을 독립적으로 또 하드코딩하면서 중복이 되살아났다. "저평가가 되려면
+# 필요한 성장률"은 정의상 판정 경계와 같아야 하는데, 두 곳에 따로 적혀 있으면
+# 한쪽만 바꿨을 때 엔진이 '저평가라 부르려면 X% 필요'라고 안내해놓고 정작
+# 그 X%에서 저평가 판정을 안 내리는 자기모순이 생긴다. 같은 죄를 세 번째로
+# 반복하지 않도록 여기서 끝낸다(테스트: test_judgment_band_is_single_source).
+JUDGMENT_BAND = 0.05
+
 
 def judgment_from_gap(gap: float) -> str:
     """
@@ -891,9 +901,9 @@ def judgment_from_gap(gap: float) -> str:
     C = 적정가/경계선, D/F ⊂ 과대평가) - 두 함수의 정합성은
     test_judgment_grade_is_strict_subset_of_judgment가 지킨다.
     """
-    if gap >= 0.05:
+    if gap >= JUDGMENT_BAND:
         return JUDGMENT_UNDERVALUED
-    if gap <= -0.05:
+    if gap <= -JUDGMENT_BAND:
         return JUDGMENT_OVERVALUED
     return JUDGMENT_NEUTRAL
 

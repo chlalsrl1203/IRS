@@ -1,10 +1,10 @@
 {
   "meta": {
-    "ticker": "XLE",
-    "name": "Energy Select Sector SPDR",
-    "tracks": "에너지 섹터",
-    "analyzed_at": "2026-08-06T08:58:54.666974+00:00",
-    "engine_version": "v3.34",
+    "ticker": "XLF",
+    "name": "Financial Select Sector SPDR",
+    "tracks": "금융 섹터",
+    "analyzed_at": "2026-08-07T00:57:57.756149+00:00",
+    "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -17,24 +17,26 @@
   },
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
-    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다."
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
   ],
   "inputs": {
-    "ticker": "XLE",
-    "name": "Energy Select Sector SPDR",
-    "tracks": "에너지 섹터",
+    "ticker": "XLF",
+    "name": "Financial Select Sector SPDR",
+    "tracks": "금융 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 20.94
+      "stockanalysis(trailing)": 17.85
     },
     "expense_ratio": 0.0008,
-    "n_holdings": 23,
-    "top10_weight": 0.75,
+    "n_holdings": 73,
+    "top10_weight": 0.56,
     "risk_free_rate": 0.0461,
-    "expected_earnings_growth": 0.04,
-    "expected_earnings_growth_basis": "에너지는 유가 사이클에 종속돼 장기 이익성장률을 구조적으로 낮게 잡는다 (장기적으로 실질 성장보다 인플레이션 연동에 가깝다) [추정치].",
-    "dividend_yield": 0.0265,
+    "expected_earnings_growth": 0.07,
+    "expected_earnings_growth_basis": "금융섹터 장기 이익성장률. 명목GDP 성장에 레버리지가 얹히는 구조라 S&P500 평균과 비슷하거나 소폭 낮게 잡음 [추정치].",
+    "dividend_yield": 0.0139,
     "pct_unprofitable_constituents": null,
-    "return_1y": 0.384,
+    "realized_eps_by_year": null,
+    "return_1y": 0.1347,
     "return_ytd": null,
     "holding_years": 10,
     "growth_uncertainty": 0.02,
@@ -49,41 +51,43 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 20.94
+      "stockanalysis(trailing)": 17.85
     },
-    "min": 20.94,
-    "max": 20.94,
+    "min": 17.85,
+    "max": 17.85,
     "spread_abs": 0.0,
     "spread_relative": 0.0,
     "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
   },
   "ers": {
     "components": {
-      "concentration": 20.0,
-      "breadth": 20.0,
+      "concentration": 18.0,
+      "breadth": 18.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 63.33333333333333
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.069,
+    "r": 0.11510000000000001
   },
   "growth": {
-    "expected_earnings_growth": 0.04,
+    "expected_earnings_growth": 0.07,
     "expense_ratio_deducted": 0.0008,
-    "net_expected_growth": 0.0392,
-    "basis": "에너지는 유가 사이클에 종속돼 장기 이익성장률을 구조적으로 낮게 잡는다 (장기적으로 실질 성장보다 인플레이션 연동에 가깝다) [추정치].",
+    "net_expected_growth": 0.06920000000000001,
+    "basis": "금융섹터 장기 이익성장률. 명목GDP 성장에 레버리지가 얹히는 구조라 S&P500 평균과 비슷하거나 소폭 낮게 잡음 [추정치].",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
-      "growth_low": 0.0192,
-      "growth_high": 0.0592,
-      "gap_low": -0.046983865086599824,
-      "gap_high": -0.006983865086599816,
+      "growth_low": 0.04920000000000001,
+      "growth_high": 0.08920000000000002,
+      "gap_low": -0.006743501326259949,
+      "gap_high": 0.03325649867374006,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -92,20 +96,21 @@
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
-        "pe_ratio": 20.94,
-        "earnings_yield": 0.04775549188156638,
-        "implied_growth": 0.06618386508659982,
-        "gap": -0.02698386508659982,
+        "pe_ratio": 17.85,
+        "earnings_yield": 0.05602240896358543,
+        "implied_growth": 0.055943501326259956,
+        "gap": 0.013256498673740055,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.06618386508659982,
-          "for_undervalued": 0.11618386508659982,
-          "for_overvalued": 0.016183865086599816
+          "breakeven": 0.055943501326259956,
+          "for_undervalued": 0.10594350132625996,
+          "for_overvalued": 0.005943501326259953,
+          "band_used": 0.05
         }
       }
     },
-    "gap_min": -0.02698386508659982,
-    "gap_max": -0.02698386508659982,
+    "gap_min": 0.013256498673740055,
+    "gap_max": 0.013256498673740055,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -118,14 +123,14 @@
     "cumulative_drag": 0.007971261354066783
   },
   "fed_model": {
-    "earnings_yield": 0.04775549188156638,
+    "earnings_yield": 0.05602240896358543,
     "treasury_yield": 0.0461,
-    "spread": 0.0016554918815663774,
+    "spread": 0.009922408963585427,
     "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
   },
   "performance": {
-    "return_1y": 0.384,
+    "return_1y": 0.1347,
     "return_ytd": null,
-    "dividend_yield": 0.0265
+    "dividend_yield": 0.0139
   }
 }

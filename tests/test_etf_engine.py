@@ -20,10 +20,12 @@ from engine.etf_engine import (
     evaluate_valuation_by_source,
     expense_drag,
     fed_model_spread,
+    growth_anchor_cross_check,
     growth_sensitivity,
     implied_growth_from_pe,
     net_expected_growth,
     pe_source_divergence,
+    realized_eps_growth,
     required_growth_thresholds,
 )
 from engine.etf_pipeline import (
@@ -428,3 +430,100 @@ def test_required_growth_recorded_per_source_in_ledger():
         assert "required_growth" in entry
         assert entry["required_growth"]["breakeven"] == pytest.approx(
             entry["implied_growth"])
+
+
+# ----------------------------------------------------------------------
+# v3.35 — 판정 밴드 단일화 + 성장률 실적 앵커(방향 A)
+# ----------------------------------------------------------------------
+
+def test_judgment_band_is_single_source():
+    """
+    ⭐ v3.35 회귀 고정: "저평가가 되려면 필요한 성장률"은 정의상 판정 경계와
+    같아야 한다. v3.34에서 required_growth_thresholds가 band=0.05를 독립
+    하드코딩해 judgment_from_gap의 경계와 중복돼 있었다(v3.32에서 규칙은
+    단일화했지만 경계값 숫자는 놓쳤던 것).
+
+    한쪽만 바뀌면 엔진이 "저평가라 부르려면 X% 필요"라고 안내해놓고 정작
+    그 X%에서 저평가 판정을 안 내리는 자기모순이 생긴다.
+    """
+    from engine.expectation_gap_engine import JUDGMENT_BAND, judgment_from_gap
+
+    r, pe = 0.09, 20.0
+    req = required_growth_thresholds(pe, r)
+    assert req["band_used"] == JUDGMENT_BAND
+
+    # 안내된 성장률을 그대로 믿으면 실제로 저평가 판정이 나와야 한다
+    ig = req["breakeven"]
+    assert judgment_from_gap(req["for_undervalued"] - ig) == "저평가 가능성"
+    assert judgment_from_gap(req["for_overvalued"] - ig) == "과대평가 가능성"
+    # breakeven 자체는 중립이어야 한다
+    assert judgment_from_gap(req["breakeven"] - ig) == "적정가/경계선"
+
+
+def test_realized_eps_growth_computes_cagr_from_index_earnings():
+    """지수 EPS 실적에서 CAGR을 계산한다(방향 A의 계산부)."""
+    eps = {2020: 100.0, 2021: 110.0, 2022: 121.0, 2023: 133.1, 2024: 146.41,
+           2025: 161.051}
+    out = realized_eps_growth(eps)
+    assert out["base_year"] == 2020
+    assert out["end_year"] == 2025
+    assert out["span_years"] == 5
+    assert out["cagr"] == pytest.approx(0.10)  # 정확히 연 10% 복리 시계열
+
+
+def test_realized_eps_growth_respects_lookback_and_reuses_cagr_guard():
+    eps = {2015: 20.0, 2020: 100.0, 2021: 110.0, 2022: 121.0,
+           2023: 133.1, 2024: 146.41, 2025: 161.051}
+    # lookback=5면 2020~2025 구간만 봐서 정확히 10%
+    assert realized_eps_growth(eps, lookback=5)["cagr"] == pytest.approx(0.10)
+    # 전체 구간(2015 기준)은 저점 기저효과로 더 높게 나온다 - 기준연도 선택이
+    # 성장률을 통째로 바꾼다는 회사 엔진의 교훈(cagr_base_year_override)과 동일
+    assert realized_eps_growth(eps)["cagr"] > 0.10
+
+    # 시작값이 음수면 회사 엔진의 _cagr 가드가 복소수 반환을 막아야 한다
+    with pytest.raises(ValueError, match="CAGR 계산 불가"):
+        realized_eps_growth({2020: -10.0, 2025: 100.0})
+    with pytest.raises(ValueError):
+        realized_eps_growth({2025: 100.0})  # 1개 연도로는 계산 불가
+    with pytest.raises(ValueError):
+        realized_eps_growth({2024: 100.0, 2025: 110.0}, lookback=5)  # 데이터 부족
+
+
+def test_growth_anchor_warns_when_assumption_departs_from_realized():
+    """
+    분석자 가정이 실적 CAGR에서 크게 벗어나면 경고한다 - 자동으로 덮어쓰지는
+    않는다(insurer_cross_check와 같은 '병기, 자동판정 안 함' 원칙).
+    """
+    realized = realized_eps_growth({2020: 100.0, 2025: 161.051})  # 10%
+    near = growth_anchor_cross_check(0.11, realized)
+    assert near["within_tolerance"] is True
+    assert near["warning"] is None
+
+    far = growth_anchor_cross_check(0.18, realized)
+    assert far["within_tolerance"] is False
+    assert "성장률 앵커 괴리" in far["warning"]
+    assert far["deviation"] == pytest.approx(0.08)
+    # 가정값을 덮어쓰지 않았음을 확인(병기만 한다)
+    assert far["assumed"] == 0.18
+
+
+def test_missing_anchor_is_disclosed_not_silent():
+    """실적 앵커가 없으면 그 사실이 data_limitations에 남아야 한다."""
+    result = run_etf_analysis(voo_inputs())
+    assert result["growth"]["basis_type"] == "analyst_estimate"
+    assert result["growth"]["anchor_cross_check"] is None
+    assert any("성장률 앵커 없음" in x for x in result["data_limitations"])
+
+
+def test_anchored_etf_is_labelled_and_cross_checked():
+    """실적 시계열을 넣으면 basis_type이 바뀌고 대조 결과가 기록된다."""
+    result = run_etf_analysis(voo_inputs(
+        realized_eps_by_year={2020: 100.0, 2021: 110.0, 2022: 121.0,
+                              2023: 133.1, 2024: 146.41, 2025: 161.051},
+    ))
+    assert result["growth"]["basis_type"] == "observed_anchored"
+    cc = result["growth"]["anchor_cross_check"]
+    assert cc["realized"]["cagr"] == pytest.approx(0.10)
+    # 가정 8% vs 실적 10% -> 2%p 차이로 허용폭(3%p) 안
+    assert cc["within_tolerance"] is True
+    assert not any("성장률 앵커 없음" in x for x in result["data_limitations"])

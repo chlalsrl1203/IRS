@@ -32,9 +32,11 @@ from engine.etf_engine import (
     evaluate_valuation_by_source,
     expense_drag,
     fed_model_spread,
+    growth_anchor_cross_check,
     growth_sensitivity,
     net_expected_growth,
     pe_source_divergence,
+    realized_eps_growth,
 )
 
 DEFAULT_HOLDING_YEARS = 10
@@ -74,6 +76,12 @@ class ETFInputs:
 
     dividend_yield: float = None
     pct_unprofitable_constituents: float = None   # 소수, 모르면 None
+
+    # v3.35: 지수 EPS 실적 시계열(opt-in). 넣으면 실적 CAGR을 계산해 분석자
+    # 가정과 대조한다(방향 A - v3.34가 "근본 해결은 이것뿐"이라 기록한 항목).
+    # {회계연도: 지수 EPS}. 회사 엔진의 capex_classification처럼 값이 없으면
+    # 기존 동작 그대로다.
+    realized_eps_by_year: dict = None
     return_1y: float = None
     return_ytd: float = None
     holding_years: int = DEFAULT_HOLDING_YEARS
@@ -159,6 +167,24 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
     # v3.34: 성장률 가정이 결과를 사실상 단독 결정한다는 자체 진단(2026-08-06)에
     # 대한 대응. 가장 비싼 P/E(보수적)를 기준으로 ±uncertainty 밴드를 계산해
     # 판정이 그 안에서 유지되는지 본다.
+    # v3.35(방향 A): 지수 EPS 실적이 있으면 분석자 가정을 관측값과 대조한다.
+    # 자동으로 덮어쓰지 않고 병기·경고만 한다(insurer_cross_check와 동일 원칙).
+    anchor = None
+    if inputs.realized_eps_by_year:
+        realized = realized_eps_growth(inputs.realized_eps_by_year)
+        anchor = growth_anchor_cross_check(
+            inputs.expected_earnings_growth, realized
+        )
+        if anchor["warning"]:
+            data_limitations.append(anchor["warning"])
+    else:
+        data_limitations.append(
+            "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 "
+            "기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 "
+            "(v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 "
+            "순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
+        )
+
     sensitivity = growth_sensitivity(
         divergence["max"], r, net_growth, inputs.growth_uncertainty
     )
@@ -236,6 +262,11 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
             "expense_ratio_deducted": inputs.expense_ratio,
             "net_expected_growth": net_growth,
             "basis": inputs.expected_earnings_growth_basis,
+            # v3.35: 이 성장률이 관측 기반인지 순수 추정인지 명시한다.
+            # 두 유형을 섞어 순위를 매기면 사과와 오렌지를 비교하는 셈이라,
+            # 라벨을 결과에 남겨 그 사실이 드러나게 한다.
+            "basis_type": "observed_anchored" if anchor else "analyst_estimate",
+            "anchor_cross_check": anchor,
             "sensitivity": sensitivity,
         },
         "valuation": valuation,

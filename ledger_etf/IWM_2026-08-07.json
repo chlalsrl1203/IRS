@@ -3,8 +3,8 @@
     "ticker": "IWM",
     "name": "iShares Russell 2000 ETF",
     "tracks": "Russell 2000 (소형주)",
-    "analyzed_at": "2026-08-06T08:58:54.666274+00:00",
-    "engine_version": "v3.34",
+    "analyzed_at": "2026-08-07T00:57:57.756010+00:00",
+    "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -19,6 +19,7 @@
   },
   "data_limitations": [
     "[P/E 출처 괴리 경고] 출처간 P/E가 20.07x ~ 26.00x로 29.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
     "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '적정가/경계선' <-> '저평가 가능성'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것.",
     "[판정 불일치] P/E 출처에 따라 판정이 갈린다(저평가 가능성 / 적정가/경계선). Gap 범위 +3.96%p ~ +5.12%p. **단일 결론을 내리지 말 것** - 어느 출처의 집계방식이 이 지수에 적합한지 먼저 판단해야 한다(무이익 기업이 많은 소형주 지수는 트레일링 단순평균이 특히 왜곡되기 쉽다). IWM이 실제 사례다."
   ],
@@ -38,6 +39,7 @@
     "expected_earnings_growth_basis": "소형주 이익성장 전망 17~18%(2026-08 컨센서스, 2년 연속)를 그대로 쓰지 않고 크게 할인한 값. 근거: 이 전망 자체가 '아직 증명되지 않았다'는 지적이 병존하고(Benzinga 2026-07 valuation trap 경고), Russell2000은 무이익 기업 비중이 커 컨센서스 이익전망의 실현률이 낮은 경향이 있다 [추정치].",
     "dividend_yield": 0.0089,
     "pct_unprofitable_constituents": 0.35,
+    "realized_eps_by_year": null,
     "return_1y": 0.3784,
     "return_ytd": 0.2229,
     "holding_years": 10,
@@ -84,6 +86,8 @@
     "expense_ratio_deducted": 0.0019,
     "net_expected_growth": 0.1081,
     "basis": "소형주 이익성장 전망 17~18%(2026-08 컨센서스, 2년 연속)를 그대로 쓰지 않고 크게 할인한 값. 근거: 이 전망 자체가 '아직 증명되지 않았다'는 지적이 병존하고(Benzinga 2026-07 valuation trap 경고), Russell2000은 무이익 기업 비중이 커 컨센서스 이익전망의 실현률이 낮은 경향이 있다 [추정치].",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
       "growth_low": 0.0881,
@@ -106,7 +110,8 @@
         "required_growth": {
           "breakeven": 0.0569374466065496,
           "for_undervalued": 0.10693744660654961,
-          "for_overvalued": 0.006937446606549595
+          "for_overvalued": 0.006937446606549595,
+          "band_used": 0.05
         }
       },
       "GoldmanSachs(forward)": {
@@ -118,7 +123,8 @@
         "required_growth": {
           "breakeven": 0.0685037037037037,
           "for_undervalued": 0.11850370370370371,
-          "for_overvalued": 0.018503703703703703
+          "for_overvalued": 0.018503703703703703,
+          "band_used": 0.05
         }
       }
     },
