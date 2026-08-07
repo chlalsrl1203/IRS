@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "ticker": "280930",
+    "name": "KODEX 미국러셀2000(H)",
+    "tracks": "Russell 2000 (소형주)",
+    "analyzed_at": "2026-08-07T23:43:36.448030+00:00",
+    "engine_version": "v3.38",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "samsungfund.com/etf/product/view.do?id=2ETF95(2026-08-07)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "IWM",
+      "us_analyzed_at": "2026-08-07T23:09:21.144415+00:00",
+      "tracks_same_index_as": "FTSE Russell 2000 Index - 공식페이지에서 IWM과 동일 지수 확인"
+    }
+  },
+  "data_limitations": [
+    "[P/E 출처 괴리 경고] 출처간 P/E가 20.07x ~ 26.00x로 29.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '적정가/경계선' <-> '저평가 가능성'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것.",
+    "[판정 우연 일치 주의] P/E 출처 괴리가 29.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+3.70%p ~ +4.86%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다.",
+    "[보수율 부담] 연 보수율 0.45%는 10년 보유 시 누적 4.41%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[환헤지 비용 미반영] 환헤지형 상품이라 환노출형과 달리 한미 단기금리차만큼의 캐리비용이 매년 발생하는데, 이 비용을 추정치로 넣지 않아 Gap·보수율차와 같은 축에서 비교되지 않았다. 현재(2026-08 기준) 미국 정책금리가 한국보다 높아 헤지가 구조적으로 불리한 국면이라는 점을 감안할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 IWM 분석(2026-08-07 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "280930",
+    "name": "KODEX 미국러셀2000(H)",
+    "tracks": "Russell 2000 (소형주)",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 20.07,
+      "GoldmanSachs(forward)": 26.0
+    },
+    "expense_ratio": 0.0045,
+    "n_holdings": 1954,
+    "top10_weight": 0.041,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.11,
+    "expected_earnings_growth_basis": "소형주 이익성장 전망 17~18%(2026-08 컨센서스, 2년 연속)를 그대로 쓰지 않고 크게 할인한 값. 근거: 이 전망 자체가 '아직 증명되지 않았다'는 지적이 병존하고(Benzinga 2026-07 valuation trap 경고), Russell2000은 무이익 기업 비중이 커 컨센서스 이익전망의 실현률이 낮은 경향이 있다 [추정치]. [v3.38: IWM 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0089,
+    "pct_unprofitable_constituents": 0.35,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "samsungfund.com/etf/product/view.do?id=2ETF95(2026-08-07)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 20.07,
+      "GoldmanSachs(forward)": 26.0
+    },
+    "min": 20.07,
+    "max": 26.0,
+    "spread_abs": 5.93,
+    "spread_relative": 0.29546586945690084,
+    "warning": "[P/E 출처 괴리 경고] 출처간 P/E가 20.07x ~ 26.00x로 29.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 2.0,
+      "breadth": 2.0,
+      "data_quality": 14.0,
+      "earnings_quality": 18.0
+    },
+    "excluded": [],
+    "score": 45.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.0635,
+    "r": 0.1096
+  },
+  "growth": {
+    "expected_earnings_growth": 0.11,
+    "expense_ratio_deducted": 0.0045,
+    "net_expected_growth": 0.1055,
+    "basis": "소형주 이익성장 전망 17~18%(2026-08 컨센서스, 2년 연속)를 그대로 쓰지 않고 크게 할인한 값. 근거: 이 전망 자체가 '아직 증명되지 않았다'는 지적이 병존하고(Benzinga 2026-07 valuation trap 경고), Russell2000은 무이익 기업 비중이 커 컨센서스 이익전망의 실현률이 낮은 경향이 있다 [추정치]. [v3.38: IWM 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.08549999999999999,
+      "growth_high": 0.1255,
+      "gap_low": 0.016996296296296287,
+      "gap_high": 0.056996296296296295,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "저평가 가능성",
+      "robust": false
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 20.07,
+        "earnings_yield": 0.04982561036372696,
+        "implied_growth": 0.0569374466065496,
+        "gap": 0.0485625533934504,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0569374466065496,
+          "for_undervalued": 0.10693744660654961,
+          "for_overvalued": 0.006937446606549595,
+          "band_used": 0.05
+        }
+      },
+      "GoldmanSachs(forward)": {
+        "pe_ratio": 26.0,
+        "earnings_yield": 0.038461538461538464,
+        "implied_growth": 0.0685037037037037,
+        "gap": 0.03699629629629629,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0685037037037037,
+          "for_undervalued": 0.11850370370370371,
+          "for_overvalued": 0.018503703703703703,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.03699629629629629,
+    "gap_max": 0.0485625533934504,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0045,
+    "holding_years": 10,
+    "cumulative_drag": 0.04409959935014607
+  },
+  "fed_model": {
+    "earnings_yield": 0.04982561036372696,
+    "treasury_yield": 0.0461,
+    "spread": 0.0037256103637269555,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0089
+  },
+  "wrapper": {
+    "expense_ratio": 0.0045,
+    "expense_ratio_delta_vs_us": 0.0026,
+    "hedged": true,
+    "aum_krw": 26600000000.0,
+    "listed_date": "미확인"
+  }
+}

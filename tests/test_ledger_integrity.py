@@ -157,3 +157,69 @@ def test_etf_ledger_is_not_mixed_into_company_ledger_dir():
         d = json.load(open(path, encoding="utf-8"))
         assert d["meta"].get("analysis_type") != "etf", (
             f"ETF ledger가 회사 ledger 디렉터리에 있다: {path}")
+
+
+# ----------------------------------------------------------------------
+# KRX 래퍼 ETF ledger (v3.38 추가)
+# ----------------------------------------------------------------------
+# ETF ledger와 같은 이유로 같은 규칙을 건다 - 회사/미국ETF/국내래퍼 세 스키마가
+# 서로 다르고 파일명 규약 사고(v3.32)가 이미 두 번(회사·ETF) 반복됐다.
+
+KRX_LEDGER_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "ledger_krx")
+
+# 회사/미국ETF 티커는 알파벳(+.)이지만 KRX 종목코드는 6자리 숫자다
+# (예: "360750") - FNAME_RE로는 매칭이 안 돼 별도 정규식을 쓴다.
+KRX_FNAME_RE = re.compile(r"^(?P<ticker>[0-9]+)_(?P<date>\d{4}-\d{2}-\d{2})\.json$")
+
+
+def _krx_ledger_files():
+    if not os.path.isdir(KRX_LEDGER_DIR):
+        return []
+    return sorted(glob.glob(os.path.join(KRX_LEDGER_DIR, "*.json")))
+
+
+def test_one_krx_ledger_file_per_ticker():
+    by_ticker = collections.defaultdict(list)
+    for path in _krx_ledger_files():
+        m = KRX_FNAME_RE.match(os.path.basename(path))
+        assert m, f"KRX ledger 파일명 규약 위반: {path}"
+        by_ticker[m.group("ticker")].append(os.path.basename(path))
+
+    duplicated = {t: sorted(f) for t, f in by_ticker.items() if len(f) > 1}
+    assert not duplicated, (
+        "같은 종목의 KRX ledger가 2건 이상 남아 있다 - 구 파일을 git rm하고 최신 "
+        f"1건으로 통합할 것: {duplicated}"
+    )
+
+
+def test_krx_ledger_filename_matches_content():
+    mismatches = []
+    for path in _krx_ledger_files():
+        m = KRX_FNAME_RE.match(os.path.basename(path))
+        d = json.load(open(path, encoding="utf-8"))
+        if d["meta"]["ticker"] != m.group("ticker"):
+            mismatches.append(f"{os.path.basename(path)}: {d['meta']['ticker']}")
+        if d["meta"]["analyzed_at"][:10] != m.group("date"):
+            mismatches.append(
+                f"{os.path.basename(path)}: {d['meta']['analyzed_at'][:10]}")
+    assert not mismatches, f"파일명과 meta 불일치: {mismatches}"
+
+
+def test_krx_ledger_is_not_mixed_into_other_ledger_dirs():
+    """KRX 래퍼 기록이 회사/미국ETF ledger 디렉터리로 새어 들어가지 않았는지 확인."""
+    for path in _ledger_files() + _etf_ledger_files():
+        d = json.load(open(path, encoding="utf-8"))
+        assert d["meta"].get("analysis_type") != "krx_wrapper", (
+            f"KRX 래퍼 ledger가 다른 ledger 디렉터리에 있다: {path}")
+
+
+def test_krx_ledger_requires_wrapper_of_provenance():
+    """모든 KRX ledger는 어느 미국 원본을 재사용했는지 근거를 남겨야 한다."""
+    for path in _krx_ledger_files():
+        d = json.load(open(path, encoding="utf-8"))
+        wrapper_of = d["meta"].get("wrapper_of")
+        assert wrapper_of and wrapper_of.get("us_reference_ticker"), (
+            f"{os.path.basename(path)}: wrapper_of.us_reference_ticker 누락")
+        assert wrapper_of.get("tracks_same_index_as"), (
+            f"{os.path.basename(path)}: tracks_same_index_as 근거 누락")

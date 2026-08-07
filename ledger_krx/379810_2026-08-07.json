@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "ticker": "379810",
+    "name": "KODEX 미국나스닥100",
+    "tracks": "Nasdaq-100",
+    "analyzed_at": "2026-08-07T23:43:36.444760+00:00",
+    "engine_version": "v3.38",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "etfshopping.com/etf/index/nasdaq-100(2026-08-07)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "QQQ",
+      "us_analyzed_at": "2026-08-07T23:09:21.144343+00:00",
+      "tracks_same_index_as": "나스닥100 - 삼성자산운용 공식페이지에서 QQQ와 동일 지수 확인"
+    }
+  },
+  "data_limitations": [
+    "[P/E 출처 괴리 경고] 출처간 P/E가 24.00x ~ 33.04x로 37.7% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[판정 우연 일치 주의] P/E 출처 괴리가 37.7%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+2.45%p ~ +3.64%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 QQQ 분석(2026-08-07 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "379810",
+    "name": "KODEX 미국나스닥100",
+    "tracks": "Nasdaq-100",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 33.04,
+      "GoldmanSachs(forward)": 24.0
+    },
+    "expense_ratio": 0.0012,
+    "n_holdings": 101,
+    "top10_weight": 0.51,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.11,
+    "expected_earnings_growth_basis": "나스닥100은 메가캡 기술주 비중이 높아 S&P500(8%)보다 높은 장기 이익성장을 가정. 다만 AI 자본지출 사이클 의존도가 커 지속가능성이 검증되지 않았다 [추정치] - 이 값이 Gap을 좌우하므로 특히 보수적으로 볼 것. [v3.38: QQQ 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0042,
+    "pct_unprofitable_constituents": 0.05,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "etfshopping.com/etf/index/nasdaq-100(2026-08-07)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 33.04,
+      "GoldmanSachs(forward)": 24.0
+    },
+    "min": 24.0,
+    "max": 33.04,
+    "spread_abs": 9.04,
+    "spread_relative": 0.37666666666666665,
+    "warning": "[P/E 출처 괴리 경고] 출처간 P/E가 24.00x ~ 33.04x로 37.7% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 18.0,
+      "breadth": 14.0,
+      "data_quality": 18.0,
+      "earnings_quality": 6.0
+    },
+    "excluded": [],
+    "score": 70.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07100000000000001,
+    "r": 0.11710000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.11,
+    "expense_ratio_deducted": 0.0012,
+    "net_expected_growth": 0.1088,
+    "basis": "나스닥100은 메가캡 기술주 비중이 높아 S&P500(8%)보다 높은 장기 이익성장을 가정. 다만 AI 자본지출 사이클 의존도가 커 지속가능성이 검증되지 않았다 [추정치] - 이 값이 Gap을 좌우하므로 특히 보수적으로 볼 것. [v3.38: QQQ 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.08879999999999999,
+      "growth_high": 0.1288,
+      "gap_low": 0.00451727379553464,
+      "gap_high": 0.04451727379553465,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 33.04,
+        "earnings_yield": 0.03026634382566586,
+        "implied_growth": 0.08428272620446535,
+        "gap": 0.024517273795534644,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08428272620446535,
+          "for_undervalued": 0.13428272620446535,
+          "for_overvalued": 0.03428272620446535,
+          "band_used": 0.05
+        }
+      },
+      "GoldmanSachs(forward)": {
+        "pe_ratio": 24.0,
+        "earnings_yield": 0.041666666666666664,
+        "implied_growth": 0.07241600000000001,
+        "gap": 0.036383999999999986,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07241600000000001,
+          "for_undervalued": 0.12241600000000001,
+          "for_overvalued": 0.022416000000000005,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.024517273795534644,
+    "gap_max": 0.036383999999999986,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0012,
+    "holding_years": 10,
+    "cumulative_drag": 0.011935406925170255
+  },
+  "fed_model": {
+    "earnings_yield": 0.041666666666666664,
+    "treasury_yield": 0.0461,
+    "spread": -0.004433333333333338,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0042
+  },
+  "wrapper": {
+    "expense_ratio": 0.0012,
+    "expense_ratio_delta_vs_us": -0.0008000000000000001,
+    "hedged": false,
+    "aum_krw": 9057900000000.0,
+    "listed_date": "미확인"
+  }
+}

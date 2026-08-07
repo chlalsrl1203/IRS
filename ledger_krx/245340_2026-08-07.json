@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "ticker": "245340",
+    "name": "TIGER 미국다우존스30",
+    "tracks": "Dow Jones Industrial Avg",
+    "analyzed_at": "2026-08-07T23:43:36.446994+00:00",
+    "engine_version": "v3.38",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "investments.miraeasset.com(공식 상품페이지, 2026-08-07)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "DIA",
+      "us_analyzed_at": "2026-08-07T23:09:21.144694+00:00",
+      "tracks_same_index_as": "Dow Jones Industrial Average - 미래에셋 공식페이지에서 기초지수명 'Dow Jones Industrial Average' 직접 확인(DIA와 동일)"
+    }
+  },
+  "data_limitations": [
+    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.35%는 10년 보유 시 누적 3.45%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 DIA 분석(2026-08-07 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "245340",
+    "name": "TIGER 미국다우존스30",
+    "tracks": "Dow Jones Industrial Avg",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 25.57
+    },
+    "expense_ratio": 0.0035,
+    "n_holdings": 31,
+    "top10_weight": 0.52,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.07,
+    "expected_earnings_growth_basis": "다우30은 성숙 대형 우량주 중심이라 S&P500(8%)보다 소폭 낮은 장기 이익성장률을 가정 [추정치]. 가격가중 지수라 시총가중 지수와 성격이 달라 S&P500 실적 앵커를 그대로 쓸 수 없다는 점도 감안. [v3.38: DIA 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0133,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "investments.miraeasset.com(공식 상품페이지, 2026-08-07)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 25.57
+    },
+    "min": 25.57,
+    "max": 25.57,
+    "spread_abs": 0.0,
+    "spread_relative": 0.0,
+    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 18.0,
+      "breadth": 20.0,
+      "data_quality": 2.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 66.66666666666667
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07,
+    "r": 0.11610000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.07,
+    "expense_ratio_deducted": 0.0035,
+    "net_expected_growth": 0.0665,
+    "basis": "다우30은 성숙 대형 우량주 중심이라 S&P500(8%)보다 소폭 낮은 장기 이익성장률을 가정 [추정치]. 가격가중 지수라 시총가중 지수와 성격이 달라 S&P500 실적 앵커를 그대로 쓸 수 없다는 점도 감안. [v3.38: DIA 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0465,
+      "growth_high": 0.08650000000000001,
+      "gap_low": -0.027593978170869407,
+      "gap_high": 0.0124060218291306,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 25.57,
+        "earnings_yield": 0.03910833007430583,
+        "implied_growth": 0.0740939781708694,
+        "gap": -0.007593978170869403,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0740939781708694,
+          "for_undervalued": 0.12409397817086941,
+          "for_overvalued": 0.024093978170869404,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.007593978170869403,
+    "gap_max": -0.007593978170869403,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0035,
+    "holding_years": 10,
+    "cumulative_drag": 0.034453863618844394
+  },
+  "fed_model": {
+    "earnings_yield": 0.03910833007430583,
+    "treasury_yield": 0.0461,
+    "spread": -0.006991669925694173,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0133
+  },
+  "wrapper": {
+    "expense_ratio": 0.0035,
+    "expense_ratio_delta_vs_us": 0.0019,
+    "hedged": false,
+    "aum_krw": 149100000000.0,
+    "listed_date": "2016-07-01"
+  }
+}
