@@ -33,6 +33,7 @@ from engine.etf_engine import (
 from engine.etf_pipeline import (
     ETFInputs,
     compare_etfs,
+    format_overlap_table,
     portfolio_overlap_report,
     run_etf_analysis,
     save_etf_ledger,
@@ -639,6 +640,56 @@ def test_portfolio_overlap_report_warns_and_lists_missing_data():
     assert "중복노출 경고" in rep["pairs"][0]["warning"]
     # 데이터 없는 ETF를 '겹침 없음'으로 처리하지 않고 명시적으로 남긴다
     assert rep["skipped_no_holdings"] == ["XLF"]
+
+
+def test_holdings_overlap_zero_common_tickers_is_flagged_uninformative():
+    """
+    ⭐ v3.37 정정의 근거 사실 - top10 표본끼리 공통 종목이 0개면 shared_weight도
+    기계적으로 0이 되지만, 그게 "안 겹친다"는 뜻은 아니다. XLF(전부 S&P500
+    소속 금융주)와 VOO 실측 top10이 정확히 이 경우였다 - 우연히 top10끼리만
+    안 겹쳤을 뿐, XLF 보유종목은 전부 VOO 안에 있다.
+    """
+    xlf_top10 = {"JPM": 0.12, "BRK.B": 0.10, "V": 0.09, "MA": 0.08, "BAC": 0.07}
+    voo_top10_without_financials = {"NVDA": 0.0750, "AAPL": 0.0658, "MSFT": 0.0429,
+                                     "AMZN": 0.0361, "GOOGL": 0.0324}
+    ov = holdings_overlap(xlf_top10, voo_top10_without_financials)
+    assert ov["n_common"] == 0
+    assert ov["shared_weight"] == 0.0
+    # 이게 이번 정정의 핵심 - 0.0은 계산 결과일 뿐 "겹침 없음"으로 읽으면 안 된다
+    assert ov["informative"] is False
+    assert "모름" in ov["interpretation"]
+
+
+def test_holdings_overlap_nonzero_common_is_informative():
+    ov = holdings_overlap(VOO_TOP10, QQQ_TOP10)
+    assert ov["n_common"] > 0
+    assert ov["informative"] is True
+    assert "하한" in ov["interpretation"]
+
+
+def test_portfolio_overlap_report_separates_uninformative_pairs():
+    """
+    ⭐ v3.37 - portfolio_overlap_report()가 uninformative 쌍을 pairs(실측
+    겹침) 목록에서 제외하고 uninformative_pairs로 따로 보고해야 한다.
+    XLF+VOO처럼 top10끼리 우연히 안 겹친 쌍이 "0.0%p 겹침"으로
+    format_overlap_table()에 나오면 "섹터ETF와 광범위지수를 같이 담아도
+    안전하다"는 정반대 결론을 유도하기 때문이다.
+    """
+    xlf_top10 = {"JPM": 0.12, "BRK.B": 0.10, "V": 0.09, "MA": 0.08, "BAC": 0.07}
+    voo = run_etf_analysis(voo_inputs(top10_holdings=VOO_TOP10))
+    xlf = run_etf_analysis(voo_inputs(ticker="XLF", top10_holdings=xlf_top10))
+
+    rep = portfolio_overlap_report([voo, xlf])
+    assert rep["pairs"] == []                       # 실측 겹침 목록에는 없어야 함
+    assert len(rep["uninformative_pairs"]) == 1
+    assert rep["uninformative_pairs"][0]["pair"] == ("VOO", "XLF")
+    assert rep["uninformative_pairs"][0]["informative"] is False
+
+    table = format_overlap_table(rep)
+    # "0.0%p"로 렌더링되면 안 되고, 명시적으로 "측정 불가"라고 나와야 한다
+    assert "VOO+XLF" not in table.split("측정 불가")[0]  # pairs 섹션에는 없음
+    assert "측정 불가" in table
+    assert "0.0%p" not in table
 
 
 def test_overlap_does_not_affect_individual_judgment():

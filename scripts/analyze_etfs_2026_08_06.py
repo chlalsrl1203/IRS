@@ -131,6 +131,13 @@ CANDIDATES = [
         # Russell2000 무이익 기업 비중은 널리 인용되는 30~40% 구간의 중간값 근사.
         # 이 값이 곧 P/E 출처 괴리의 근본 원인이다.
         pct_unprofitable_constituents=0.35,
+        # 소형주 지수라 top10 비중이 개별 0.3%대로 극히 낮다(합계 3.2%).
+        # 광범위지수·섹터ETF와 겹칠 여지가 구조적으로 거의 없다는 뜻이다.
+        top10_holdings={
+            "MOG.A": 0.0036, "UMBF": 0.0034, "VSAT": 0.0034, "HUT": 0.0033,
+            "CYTK": 0.0032, "BTSG": 0.0032, "GKOS": 0.0031, "ONB": 0.0030,
+            "EAT": 0.0029, "FROG": 0.0029,
+        },
         data_sources=COMMON_SOURCES + [
             "24/7 Wall St(2026-07): 연초 Russell2000 forward P/E ~18x vs S&P500 26x "
             "(30년래 최대 할인이라는 견해)",
@@ -175,6 +182,11 @@ CANDIDATES = [
             "(장기적으로 실질 성장보다 인플레이션 연동에 가깝다) [추정치]."
         ),
         dividend_yield=0.0265, return_1y=0.3840,
+        top10_holdings={
+            "XOM": 0.2099, "CVX": 0.1506, "COP": 0.0606, "MPC": 0.0494,
+            "PSX": 0.0494, "VLO": 0.0477, "EOG": 0.0450, "SLB": 0.0430,
+            "KMI": 0.0388, "WMB": 0.0387,
+        },
         data_sources=COMMON_SOURCES,
     ),
     ETFInputs(
@@ -189,6 +201,11 @@ CANDIDATES = [
             "S&P500 평균과 비슷하거나 소폭 낮게 잡음 [추정치]."
         ),
         dividend_yield=0.0139, return_1y=0.1347,
+        top10_holdings={
+            "JPM": 0.1175, "BRK.B": 0.1161, "V": 0.0746, "MA": 0.0562,
+            "BAC": 0.0504, "GS": 0.0382, "WFC": 0.0333, "MS": 0.0319,
+            "C": 0.0286, "AXP": 0.0227,
+        },
         data_sources=COMMON_SOURCES,
     ),
     ETFInputs(
@@ -204,6 +221,11 @@ CANDIDATES = [
             "아직 실적으로 확인되지 않았다."
         ),
         dividend_yield=0.0274, return_1y=0.0279,
+        top10_holdings={
+            "NEE": 0.1300, "SO": 0.0755, "DUK": 0.0698, "CEG": 0.0630,
+            "AEP": 0.0503, "D": 0.0435, "SRE": 0.0413, "ETR": 0.0356,
+            "VST": 0.0356, "XEL": 0.0349,
+        },
         data_sources=COMMON_SOURCES,
     ),
     ETFInputs(
@@ -220,6 +242,14 @@ CANDIDATES = [
             "달라 S&P500 실적 앵커를 그대로 쓸 수 없다는 점도 감안."
         ),
         dividend_yield=0.0133, return_1y=0.2384, return_ytd=0.1383,
+        # ⚠️ 다우는 **가격가중** 지수라 비중이 시총이 아니라 주가에 비례한다
+        # (GS 11.66%가 1위인 이유). 시총가중 ETF와 겹침을 비교할 때 이 차이를
+        # 감안할 것 - 같은 종목이라도 비중 산정 원리가 다르다.
+        top10_holdings={
+            "GS": 0.1166, "CAT": 0.0920, "MSFT": 0.0513, "UNH": 0.0479,
+            "AMGN": 0.0441, "TRV": 0.0428, "V": 0.0417, "JPM": 0.0399,
+            "SHW": 0.0392, "AXP": 0.0384,
+        },
         data_sources=COMMON_SOURCES,
     ),
 ]
@@ -252,6 +282,11 @@ def main():
     print()
     print("개별 ETF 판정만 보면 절대 드러나지 않는 위험이다 - 각각은 '적정가'라도")
     print("함께 사면 같은 메가캡을 두세 번 사는 것일 수 있다.")
+    print()
+    print("⚠️ '측정 불가' 쌍을 '겹침 없음'으로 읽지 말 것(v3.37 정정) - 예를 들어")
+    print("XLF(금융섹터)는 정의상 S&P500 구성종목의 부분집합이라 VOO와 실제로는")
+    print("상당히 겹친다. top10 표본끼리만 우연히 안 겹쳤을 뿐이며, 전체 구성종목")
+    print("데이터가 확보돼야 이 쌍들의 실제 겹침을 측정할 수 있다.")
     print()
 
     print("=" * 118)

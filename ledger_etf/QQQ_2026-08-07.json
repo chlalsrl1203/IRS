@@ -3,8 +3,8 @@
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "tracks": "Nasdaq-100",
-    "analyzed_at": "2026-08-07T10:42:57.851304+00:00",
-    "engine_version": "v3.36",
+    "analyzed_at": "2026-08-07T23:09:21.144343+00:00",
+    "engine_version": "v3.37",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",

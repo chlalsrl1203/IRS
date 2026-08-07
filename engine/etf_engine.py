@@ -301,12 +301,28 @@ def holdings_overlap(a_holdings: dict, b_holdings: dict) -> dict:
         for t in common
     }
     shared_weight = sum(d["shared"] for d in detail.values())
+
+    # ⚠️ v3.36 실측 중 발견한 해석 함정(반드시 이 구분을 유지할 것):
+    # 공통 종목이 0개면 shared_weight도 0이 되는데, 이걸 "겹치지 않는다"로
+    # 읽으면 **정반대로 틀린다.** 실제로 XLF와 VOO의 top10을 넣었더니 0.0%p가
+    # 나왔지만, XLF의 구성종목(JPM/BRK.B/V/MA...)은 전부 S&P500 소속이라
+    # VOO가 이미 **전부 담고 있다** - top10 표본끼리만 안 겹쳤을 뿐이다.
+    # 즉 n_common=0은 "겹침 0"이 아니라 **"이 표본으로는 알 수 없음"**이다.
+    informative = len(common) > 0
     return {
         "common_tickers": common,
         "n_common": len(common),
         "shared_weight": shared_weight,
         "detail": detail,
         "is_lower_bound": True,
+        # False면 shared_weight를 '겹침 없음'으로 해석하면 안 된다.
+        "informative": informative,
+        "interpretation": (
+            "top10 기준 최소 공통 노출(하한)" if informative else
+            "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. "
+            "특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 "
+            "상당하다(구성종목 전체 데이터가 있어야 측정 가능)."
+        ),
     }
 
 

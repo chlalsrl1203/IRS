@@ -431,12 +431,25 @@ def portfolio_overlap_report(results: list) -> dict:
 
     `top10_holdings`가 없는 ETF는 조용히 건너뛰지 않고 `skipped`에 남긴다
     (데이터 없음을 '겹침 없음'으로 오독하면 안 되기 때문).
+
+    ⚠️ **v3.37 정정 - top10끼리 안 겹친 쌍을 "0.0%p 겹침"으로 보고하던 결함을
+    고쳤다.** 8종목 전체 조합을 처음 돌렸을 때 XLF+VOO가 0.0%p로 나왔는데,
+    이건 명백히 틀린 결론이다 - XLF의 구성종목(JPM/BRK.B/V/MA 등)은 정의상
+    전부 S&P500 소속이라 VOO가 이미 그 전부를 담고 있다. top10 표본끼리만
+    우연히 안 겹쳤을 뿐인데 그걸 "겹침 없음"으로 보고하면, 섹터 SPDR을
+    광범위지수 ETF와 같이 담아도 안전하다는 **정반대의 결론**을 유도한다.
+    `holdings_overlap()`이 이제 `informative` 플래그를 주므로, 이 함수는
+    그 값에 따라 `measured`(실측 겹침)와 `uninformative`(측정 불가 - top10
+    표본이 우연히 안 겹친 경우)를 분리해서 반환한다. `uninformative`는
+    `shared_weight`로 정렬하거나 경고 임계값과 비교하지 않는다 - 그 숫자
+    자체가 무의미하기 때문이다.
     """
     have = [r for r in results if r["inputs"].get("top10_holdings")]
     skipped = [r["meta"]["ticker"] for r in results
                if not r["inputs"].get("top10_holdings")]
 
-    pairs = []
+    measured = []
+    uninformative = []
     for i in range(len(have)):
         for j in range(i + 1, len(have)):
             a, b = have[i], have[j]
@@ -444,6 +457,13 @@ def portfolio_overlap_report(results: list) -> dict:
                                   b["inputs"]["top10_holdings"])
             ov["pair"] = (a["meta"]["ticker"], b["meta"]["ticker"])
             ov["warning"] = None
+
+            if not ov["informative"]:
+                # shared_weight가 0이어도 '겹침 없음'이 아니라 '모름'이다 -
+                # measured 쪽 정렬·경고 비교에 섞으면 안 된다.
+                uninformative.append(ov)
+                continue
+
             if ov["shared_weight"] >= OVERLAP_WARNING_THRESHOLD:
                 ov["warning"] = (
                     f"[중복노출 경고] {ov['pair'][0]}와 {ov['pair'][1]}는 상위 "
@@ -452,16 +472,19 @@ def portfolio_overlap_report(results: list) -> dict:
                     f"둘을 함께 보유하면 분산이 아니라 **같은 종목을 두 번 사는 것**에 "
                     f"가깝다. top10만 본 하한값이므로 실제 겹침은 이보다 크다."
                 )
-            pairs.append(ov)
+            measured.append(ov)
 
-    pairs.sort(key=lambda x: -x["shared_weight"])
+    measured.sort(key=lambda x: -x["shared_weight"])
     return {
-        "pairs": pairs,
+        "pairs": measured,
+        "uninformative_pairs": uninformative,
         "skipped_no_holdings": skipped,
         "threshold": OVERLAP_WARNING_THRESHOLD,
         "note": (
             "shared_weight는 공통 종목별 min(비중) 합 = 두 ETF가 공유하는 최소 "
-            "공통 노출. top10 기준이라 실제 겹침의 하한이다."
+            "공통 노출. top10 기준이라 실제 겹침의 하한이다. uninformative_pairs는 "
+            "top10 표본끼리 우연히 안 겹쳐 측정 자체가 불가능했던 쌍이다 - "
+            "겹침이 0이라는 뜻이 아니라 이 표본으로는 알 수 없다는 뜻이다."
         ),
     }
 
@@ -474,6 +497,12 @@ def format_overlap_table(report: dict) -> str:
         pair = f"{ov['pair'][0]}+{ov['pair'][1]}"
         lines.append(
             f"{pair:14} {ov['n_common']:>8}   {ov['shared_weight']*100:9.1f}%p   {flag}")
+    if report.get("uninformative_pairs"):
+        lines.append("")
+        lines.append("측정 불가(top10 표본이 우연히 안 겹침 - '겹침 0'이 아니라 '모름'):")
+        for ov in report["uninformative_pairs"]:
+            pair = f"{ov['pair'][0]}+{ov['pair'][1]}"
+            lines.append(f"  {pair:14} 측정 불가(모름)")
     if report["skipped_no_holdings"]:
         lines.append("")
         lines.append("보유종목 데이터 없어 측정 제외: "
