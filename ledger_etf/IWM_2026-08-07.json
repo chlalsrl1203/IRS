@@ -3,7 +3,7 @@
     "ticker": "IWM",
     "name": "iShares Russell 2000 ETF",
     "tracks": "Russell 2000 (소형주)",
-    "analyzed_at": "2026-08-07T00:57:57.756010+00:00",
+    "analyzed_at": "2026-08-07T08:10:32.904759+00:00",
     "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
@@ -40,6 +40,8 @@
     "dividend_yield": 0.0089,
     "pct_unprofitable_constituents": 0.35,
     "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
     "return_1y": 0.3784,
     "return_ytd": 0.2229,
     "holding_years": 10,

@@ -3,14 +3,15 @@
     "ticker": "VOO",
     "name": "Vanguard S&P 500 ETF",
     "tracks": "S&P 500",
-    "analyzed_at": "2026-08-07T00:57:57.755831+00:00",
+    "analyzed_at": "2026-08-07T08:10:32.904514+00:00",
     "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
       "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
       "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)",
-      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)"
+      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)",
+      "multpl.com S&P500 Earnings by Year (2014~2025, 실질 constant June 2026 dollars 기준, 2026-08-07 조회)"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
@@ -18,7 +19,7 @@
   },
   "data_limitations": [
     "[P/E 출처 괴리 경고] 출처간 P/E가 19.60x ~ 27.53x로 40.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
-    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[EPS 단위 환산] 지수 EPS가 실질(real) 기준이라 실질 CAGR 4.97%를 인플레이션 2.50% 가정으로 명목 7.59%로 환산해 비교했다. 인플레이션 가정이 틀리면 앵커 자체가 그만큼 어긋난다.",
     "[판정 우연 일치 주의] P/E 출처 괴리가 40.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+0.90%p ~ +2.40%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다."
   ],
   "inputs": {
@@ -37,7 +38,22 @@
     "expected_earnings_growth_basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것.",
     "dividend_yield": 0.0104,
     "pct_unprofitable_constituents": 0.03,
-    "realized_eps_by_year": null,
+    "realized_eps_by_year": {
+      "2014": 145.51,
+      "2015": 122.17,
+      "2016": 130.78,
+      "2017": 148.85,
+      "2018": 175.98,
+      "2019": 181.25,
+      "2020": 120.68,
+      "2021": 237.01,
+      "2022": 194.38,
+      "2023": 209.5,
+      "2024": 222.39,
+      "2025": 247.98
+    },
+    "realized_eps_basis": "real",
+    "inflation_for_conversion": 0.025,
     "return_1y": 0.2341,
     "return_ytd": 0.1352,
     "holding_years": 10,
@@ -48,7 +64,8 @@
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
       "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
       "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)",
-      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)"
+      "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x (5년평균 19.9x / 10년평균 19.0x)",
+      "multpl.com S&P500 Earnings by Year (2014~2025, 실질 constant June 2026 dollars 기준, 2026-08-07 조회)"
     ],
     "falsification_conditions": null
   },
@@ -83,8 +100,25 @@
     "expense_ratio_deducted": 0.0003,
     "net_expected_growth": 0.07970000000000001,
     "basis": "S&P500 장기 명목 EPS 성장률. 과거 수십년 실적이 7~8%대(명목 GDP 성장 + 마진확장)라는 통념을 채택 [추정치] - 이 프로젝트가 자체 검증한 값이 아니라 시장 통념이므로 ±2%p 민감도를 감안해서 볼 것.",
-    "basis_type": "analyst_estimate",
-    "anchor_cross_check": null,
+    "basis_type": "observed_anchored",
+    "anchor_cross_check": {
+      "realized": {
+        "base_year": 2014,
+        "end_year": 2025,
+        "span_years": 11,
+        "eps_start": 145.51,
+        "eps_end": 247.98,
+        "cagr": 0.0758989531183738,
+        "basis": "real",
+        "cagr_real": 0.04965751523743789,
+        "inflation_used": 0.025
+      },
+      "assumed": 0.08,
+      "deviation": 0.0041010468816262,
+      "tolerance": 0.03,
+      "within_tolerance": true,
+      "warning": null
+    },
     "sensitivity": {
       "uncertainty": 0.02,
       "growth_low": 0.0597,

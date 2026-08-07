@@ -3,7 +3,7 @@
     "ticker": "XLE",
     "name": "Energy Select Sector SPDR",
     "tracks": "에너지 섹터",
-    "analyzed_at": "2026-08-07T00:57:57.756107+00:00",
+    "analyzed_at": "2026-08-07T08:10:32.904864+00:00",
     "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
@@ -16,16 +16,17 @@
     "currency": "USD"
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
-    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '과대평가 가능성' <-> '적정가/경계선'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것."
   ],
   "inputs": {
     "ticker": "XLE",
     "name": "Energy Select Sector SPDR",
     "tracks": "에너지 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 20.94
+      "stockanalysis(trailing)": 20.94,
+      "allinvestview(trailing)": 22.1
     },
     "expense_ratio": 0.0008,
     "n_holdings": 23,
@@ -36,6 +37,8 @@
     "dividend_yield": 0.0265,
     "pct_unprofitable_constituents": null,
     "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
     "return_1y": 0.384,
     "return_ytd": null,
     "holding_years": 10,
@@ -51,29 +54,30 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 20.94
+      "stockanalysis(trailing)": 20.94,
+      "allinvestview(trailing)": 22.1
     },
     "min": 20.94,
-    "max": 20.94,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 22.1,
+    "spread_abs": 1.1600000000000001,
+    "spread_relative": 0.055396370582617004,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 20.0,
       "breadth": 20.0,
-      "data_quality": 2.0
+      "data_quality": 6.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 76.66666666666667
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.07300000000000001,
+    "r": 0.11910000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.04,
@@ -86,11 +90,11 @@
       "uncertainty": 0.02,
       "growth_low": 0.0192,
       "growth_high": 0.0592,
-      "gap_low": -0.046983865086599824,
-      "gap_high": -0.006983865086599816,
-      "judgment_low": "적정가/경계선",
+      "gap_low": -0.05145411255411256,
+      "gap_high": -0.01145411255411255,
+      "judgment_low": "과대평가 가능성",
       "judgment_high": "적정가/경계선",
-      "robust": true
+      "robust": false
     }
   },
   "valuation": {
@@ -98,19 +102,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 20.94,
         "earnings_yield": 0.04775549188156638,
-        "implied_growth": 0.06618386508659982,
-        "gap": -0.02698386508659982,
+        "implied_growth": 0.06809270738377393,
+        "gap": -0.028892707383773933,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.06618386508659982,
-          "for_undervalued": 0.11618386508659982,
-          "for_overvalued": 0.016183865086599816,
+          "breakeven": 0.06809270738377393,
+          "for_undervalued": 0.11809270738377393,
+          "for_overvalued": 0.01809270738377393,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 22.1,
+        "earnings_yield": 0.04524886877828054,
+        "implied_growth": 0.07065411255411255,
+        "gap": -0.031454112554112554,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07065411255411255,
+          "for_undervalued": 0.12065411255411256,
+          "for_overvalued": 0.02065411255411255,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": -0.02698386508659982,
-    "gap_max": -0.02698386508659982,
+    "gap_min": -0.031454112554112554,
+    "gap_max": -0.028892707383773933,
     "judgments_seen": [
       "적정가/경계선"
     ],

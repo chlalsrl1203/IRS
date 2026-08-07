@@ -27,6 +27,7 @@ from engine.etf_engine import (
     pe_source_divergence,
     realized_eps_growth,
     required_growth_thresholds,
+    to_nominal_growth,
 )
 from engine.etf_pipeline import (
     ETFInputs,
@@ -520,6 +521,7 @@ def test_anchored_etf_is_labelled_and_cross_checked():
     result = run_etf_analysis(voo_inputs(
         realized_eps_by_year={2020: 100.0, 2021: 110.0, 2022: 121.0,
                               2023: 133.1, 2024: 146.41, 2025: 161.051},
+        realized_eps_basis="nominal",
     ))
     assert result["growth"]["basis_type"] == "observed_anchored"
     cc = result["growth"]["anchor_cross_check"]
@@ -527,3 +529,40 @@ def test_anchored_etf_is_labelled_and_cross_checked():
     # 가정 8% vs 실적 10% -> 2%p 차이로 허용폭(3%p) 안
     assert cc["within_tolerance"] is True
     assert not any("성장률 앵커 없음" in x for x in result["data_limitations"])
+
+
+def test_real_vs_nominal_eps_unit_trap_is_guarded():
+    """
+    ⚠️ v3.35 단위 가드(RAR 100배 사고와 같은 계열): 공개 지수 EPS 시계열은
+    실질(인플레 조정)인 경우가 흔한데(multpl.com S&P500 EPS가 "constant
+    dollars" 기준) 기대성장률은 명목이다. 그대로 비교하면 인플레이션율만큼
+    (연 2~3%p) 조용히 어긋나 ±5%p 판정 밴드를 넘길 수 있다.
+    """
+    eps = {2015: 122.17, 2020: 120.68, 2025: 247.98}
+
+    # 단위를 안 밝히면 거부
+    with pytest.raises(ValueError, match="realized_eps_basis"):
+        voo_inputs(realized_eps_by_year=eps)
+    # real이라고 했으면 인플레이션 가정을 반드시 받아야 한다
+    with pytest.raises(ValueError, match="inflation_for_conversion"):
+        voo_inputs(realized_eps_by_year=eps, realized_eps_basis="real")
+
+    # 정확식: (1+real)(1+infl)-1
+    assert to_nominal_growth(0.05, 0.025) == pytest.approx(1.05 * 1.025 - 1)
+    # 근사식(단순 덧셈)과 다르다는 점을 고정 - 크기가 작아 보여도 누적되면 갈린다
+    assert to_nominal_growth(0.05, 0.025) > 0.075
+
+
+def test_real_eps_is_converted_to_nominal_before_comparison():
+    """real 기준 EPS는 명목으로 환산된 뒤에야 명목 가정과 비교돼야 한다."""
+    eps = {2020: 100.0, 2025: 127.628}  # 실질 CAGR 정확히 5%
+    result = run_etf_analysis(voo_inputs(
+        realized_eps_by_year=eps,
+        realized_eps_basis="real",
+        inflation_for_conversion=0.025,
+    ))
+    realized = result["growth"]["anchor_cross_check"]["realized"]
+    assert realized["basis"] == "real"
+    assert realized["cagr_real"] == pytest.approx(0.05, abs=1e-4)
+    assert realized["cagr"] == pytest.approx(1.05 * 1.025 - 1, abs=1e-4)
+    assert any("EPS 단위 환산" in x for x in result["data_limitations"])

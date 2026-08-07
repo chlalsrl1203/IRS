@@ -1,5 +1,5 @@
 """
-미국 상장 ETF 8종 정식 분석 - 2026-08-06.
+미국 상장 ETF 8종 정식 분석 - 2026-08-06(v3.35 데이터 보강).
 
 경위: 사용자가 "voo같은 미국에 상장된 etf 조사하라고, 개별 종목이 아니라"를
 요청했을 때, 이 프로젝트에는 ETF를 다룰 코드가 아예 없었다(회사 엔진은 10-K
@@ -15,6 +15,10 @@
   - Goldman Sachs 인용(24/7 Wall St, Benzinga 2026-07): Russell2000 forward 26x,
     Nasdaq100 24x, S&P500 20x - **stockanalysis 수치와 정면 배치되는 출처라
     일부러 함께 넣는다**(이 엔진의 핵심 설계 근거)
+  - allinvestview.com/compare/{A}-vs-{B} (2026-08-06 기준): 섹터 ETF 4종의
+    **2차 트레일링 P/E**. v3.34까지 섹터 ETF는 출처가 1개뿐이라 IWM식 집계왜곡을
+    검증할 수단이 없었는데(엔진이 [단일 출처 경고]로 표시), v3.35에서 해소했다.
+  - multpl.com S&P500 Earnings by Year: VOO의 실적 EPS 앵커(⚠️**실질** 기준)
   - totalrealreturns.com: YTD·1년 총수익률
   - tradingeconomics/FRED DGS10: 10년 국채금리 4.61%
 
@@ -62,9 +66,24 @@ CANDIDATES = [
         ),
         dividend_yield=0.0104, return_1y=0.2341, return_ytd=0.1352,
         pct_unprofitable_constituents=0.03,  # 대형주 지수라 적자기업 비중 낮음(근사)
+        # v3.35 방향A: 실측 앵커. multpl.com S&P500 EPS는 **실질(constant June
+        # 2026 dollars)** 기준이라 basis="real" + 인플레이션 환산이 필수다
+        # (명목 기대성장률과 그대로 비교하면 인플레율만큼 조용히 어긋난다).
+        # ⚠️ 기준연도를 2020(코로나 저점 EPS 120.68)으로 잡으면 실질 CAGR이
+        # 15%대로 튄다 - BKNG에서 배운 저점 기저효과다. 저점을 피해 전체
+        # 구간(2014~2025)을 쓴다.
+        realized_eps_by_year={
+            2014: 145.51, 2015: 122.17, 2016: 130.78, 2017: 148.85,
+            2018: 175.98, 2019: 181.25, 2020: 120.68, 2021: 237.01,
+            2022: 194.38, 2023: 209.50, 2024: 222.39, 2025: 247.98,
+        },
+        realized_eps_basis="real",
+        inflation_for_conversion=0.025,
         data_sources=COMMON_SOURCES + [
             "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x "
-            "(5년평균 19.9x / 10년평균 19.0x)"
+            "(5년평균 19.9x / 10년평균 19.0x)",
+            "multpl.com S&P500 Earnings by Year (2014~2025, 실질 constant "
+            "June 2026 dollars 기준, 2026-08-07 조회)",
         ],
     ),
     ETFInputs(
@@ -115,7 +134,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLK", name="Technology Select Sector SPDR", tracks="기술 섹터",
-        pe_by_source={"stockanalysis(trailing)": 37.37},
+        pe_by_source={"stockanalysis(trailing)": 37.37,
+                      "allinvestview(trailing)": 34.96},
         expense_ratio=0.0008, n_holdings=69, top10_weight=0.60,
         risk_free_rate=RF,
         expected_earnings_growth=0.12,
@@ -128,7 +148,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLE", name="Energy Select Sector SPDR", tracks="에너지 섹터",
-        pe_by_source={"stockanalysis(trailing)": 20.94},
+        pe_by_source={"stockanalysis(trailing)": 20.94,
+                      "allinvestview(trailing)": 22.10},
         expense_ratio=0.0008, n_holdings=23, top10_weight=0.75,
         risk_free_rate=RF,
         expected_earnings_growth=0.04,
@@ -141,7 +162,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLF", name="Financial Select Sector SPDR", tracks="금융 섹터",
-        pe_by_source={"stockanalysis(trailing)": 17.85},
+        pe_by_source={"stockanalysis(trailing)": 17.85,
+                      "allinvestview(trailing)": 18.03},
         expense_ratio=0.0008, n_holdings=73, top10_weight=0.56,
         risk_free_rate=RF,
         expected_earnings_growth=0.07,
@@ -154,7 +176,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLU", name="Utilities Select Sector SPDR", tracks="유틸리티 섹터",
-        pe_by_source={"stockanalysis(trailing)": 22.88},
+        pe_by_source={"stockanalysis(trailing)": 22.88,
+                      "allinvestview(trailing)": 20.50},
         expense_ratio=0.0008, n_holdings=31, top10_weight=0.62,
         risk_free_rate=RF,
         expected_earnings_growth=0.05,
@@ -164,6 +187,22 @@ CANDIDATES = [
             "아직 실적으로 확인되지 않았다."
         ),
         dividend_yield=0.0274, return_1y=0.0279,
+        data_sources=COMMON_SOURCES,
+    ),
+    ETFInputs(
+        # v3.35에서 추가 - v3.34까지는 P/E 미확보로 빠져 있던 종목.
+        ticker="DIA", name="SPDR Dow Jones Industrial Average ETF",
+        tracks="Dow Jones Industrial Avg",
+        pe_by_source={"stockanalysis(trailing)": 25.57},
+        expense_ratio=0.0016, n_holdings=31, top10_weight=0.52,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.07,
+        expected_earnings_growth_basis=(
+            "다우30은 성숙 대형 우량주 중심이라 S&P500(8%)보다 소폭 낮은 장기 "
+            "이익성장률을 가정 [추정치]. 가격가중 지수라 시총가중 지수와 성격이 "
+            "달라 S&P500 실적 앵커를 그대로 쓸 수 없다는 점도 감안."
+        ),
+        dividend_yield=0.0133, return_1y=0.2384, return_ytd=0.1383,
         data_sources=COMMON_SOURCES,
     ),
 ]

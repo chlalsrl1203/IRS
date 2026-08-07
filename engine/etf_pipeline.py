@@ -37,6 +37,7 @@ from engine.etf_engine import (
     net_expected_growth,
     pe_source_divergence,
     realized_eps_growth,
+    to_nominal_growth,
 )
 
 DEFAULT_HOLDING_YEARS = 10
@@ -82,6 +83,12 @@ class ETFInputs:
     # {회계연도: 지수 EPS}. 회사 엔진의 capex_classification처럼 값이 없으면
     # 기존 동작 그대로다.
     realized_eps_by_year: dict = None
+    # ⚠️ 단위 필수(v3.35): 공개 지수 EPS 시계열은 실질(real, 인플레 조정)인
+    # 경우가 흔한데(multpl.com S&P500 EPS가 그렇다) 분석자의 기대성장률은
+    # 명목이다. 그대로 비교하면 인플레이션율만큼 조용히 어긋난다 - RAR 100배
+    # 사고와 같은 단위 함정이라 코드로 막는다.
+    realized_eps_basis: str = None        # "nominal" | "real"
+    inflation_for_conversion: float = None  # realized_eps_basis="real"일 때 필수
     return_1y: float = None
     return_ytd: float = None
     holding_years: int = DEFAULT_HOLDING_YEARS
@@ -109,6 +116,22 @@ class ETFInputs:
                 "바텀업 추정/명목GDP 프록시 등)를 남기지 않으면 종목간 비교가 "
                 "불가능해진다 - 회사 엔진의 subjective_input_basis와 동일 취지."
             )
+        if self.realized_eps_by_year:
+            if self.realized_eps_basis not in ("nominal", "real"):
+                raise ValueError(
+                    'realized_eps_by_year를 넣으면 realized_eps_basis를 '
+                    '"nominal" 또는 "real"로 명시해야 한다(v3.35). 공개 지수 EPS '
+                    '시계열은 실질(인플레 조정) 값인 경우가 흔한데(multpl.com의 '
+                    'S&P500 EPS가 "constant dollars" 기준) 기대성장률은 명목이라, '
+                    '단위를 밝히지 않으면 인플레이션율만큼 조용히 어긋난다.'
+                )
+            if self.realized_eps_basis == "real" and self.inflation_for_conversion is None:
+                raise ValueError(
+                    'realized_eps_basis="real"이면 inflation_for_conversion(소수)이 '
+                    '필수다 - 실질 CAGR을 명목으로 환산해야 명목 기대성장률과 '
+                    '비교할 수 있다.'
+                )
+
         if self.n_holdings <= 0:
             raise ValueError("n_holdings는 1 이상이어야 함")
         if not (0.0 <= self.top10_weight <= 1.0):
@@ -172,6 +195,21 @@ def run_etf_analysis(inputs: ETFInputs) -> dict:
     anchor = None
     if inputs.realized_eps_by_year:
         realized = realized_eps_growth(inputs.realized_eps_by_year)
+        realized["basis"] = inputs.realized_eps_basis
+        if inputs.realized_eps_basis == "real":
+            # 실질 -> 명목 환산(위 단위 가드 참고). 원 실질값도 함께 남긴다.
+            realized["cagr_real"] = realized["cagr"]
+            realized["inflation_used"] = inputs.inflation_for_conversion
+            realized["cagr"] = to_nominal_growth(
+                realized["cagr"], inputs.inflation_for_conversion
+            )
+            data_limitations.append(
+                f"[EPS 단위 환산] 지수 EPS가 실질(real) 기준이라 실질 CAGR "
+                f"{realized['cagr_real']*100:.2f}%를 인플레이션 "
+                f"{inputs.inflation_for_conversion*100:.2f}% 가정으로 명목 "
+                f"{realized['cagr']*100:.2f}%로 환산해 비교했다. 인플레이션 가정이 "
+                f"틀리면 앵커 자체가 그만큼 어긋난다."
+            )
         anchor = growth_anchor_cross_check(
             inputs.expected_earnings_growth, realized
         )

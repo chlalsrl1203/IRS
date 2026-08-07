@@ -374,6 +374,24 @@ def realized_eps_growth(eps_by_year: dict, lookback: int = None) -> dict:
     }
 
 
+def to_nominal_growth(real_growth: float, inflation: float) -> float:
+    """
+    실질 성장률 -> 명목 성장률. (1+real)(1+infl)-1 (근사식이 아니라 정확식).
+
+    ⚠️ 왜 이 함수가 필요한가(2026-08-07 실제로 밟을 뻔한 함정): 공개된 지수 EPS
+    시계열 중 상당수가 **인플레이션 조정된 실질(real) 값**이다(multpl.com의
+    S&P500 EPS가 "constant June 2026 dollars" 기준). 반면 분석자가 넣는
+    `expected_earnings_growth`는 거의 항상 **명목**이다. 둘을 그대로 비교하면
+    인플레이션율만큼(연 2~3%p) 조용히 어긋난다 - 판정 밴드가 ±5%p뿐인 이
+    엔진에서는 판정을 뒤집기 충분한 크기다.
+
+    이 프로젝트가 v3.19에서 겪은 RAR 100배 사고와 같은 계열의 **단위 사고**라,
+    같은 방식으로 코드가 막는다(`realized_eps_basis`를 필수로 받고 real이면
+    변환을 강제).
+    """
+    return (1.0 + real_growth) * (1.0 + inflation) - 1.0
+
+
 def growth_anchor_cross_check(
     expected_earnings_growth: float,
     realized: dict,
@@ -509,5 +527,6 @@ __all__ = [
     "pe_source_divergence",
     "realized_eps_growth",
     "required_growth_thresholds",
+    "to_nominal_growth",
     "erp_from_drs",
 ]

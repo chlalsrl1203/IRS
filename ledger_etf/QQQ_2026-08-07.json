@@ -3,7 +3,7 @@
     "ticker": "QQQ",
     "name": "Invesco QQQ Trust",
     "tracks": "Nasdaq-100",
-    "analyzed_at": "2026-08-07T00:57:57.755951+00:00",
+    "analyzed_at": "2026-08-07T08:10:32.904656+00:00",
     "engine_version": "v3.35",
     "analysis_type": "etf",
     "data_sources": [
@@ -38,6 +38,8 @@
     "dividend_yield": 0.0042,
     "pct_unprofitable_constituents": 0.05,
     "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
     "return_1y": 0.2777,
     "return_ytd": 0.1704,
     "holding_years": 10,
