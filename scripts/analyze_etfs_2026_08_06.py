@@ -38,6 +38,8 @@ from engine.etf_pipeline import (
     ETFInputs,
     compare_etfs,
     format_comparison_table,
+    format_overlap_table,
+    portfolio_overlap_report,
     run_etf_analysis,
     save_etf_ledger,
 )
@@ -79,6 +81,11 @@ CANDIDATES = [
         },
         realized_eps_basis="real",
         inflation_for_conversion=0.025,
+        top10_holdings={
+            "NVDA": 0.0750, "AAPL": 0.0658, "MSFT": 0.0429, "AMZN": 0.0361,
+            "GOOGL": 0.0324, "AVGO": 0.0277, "GOOG": 0.0258, "MU": 0.0201,
+            "META": 0.0191, "TSLA": 0.0183,
+        },
         data_sources=COMMON_SOURCES + [
             "FactSet Earnings Insight 2026-08 초: S&P500 12M forward P/E 19.6x "
             "(5년평균 19.9x / 10년평균 19.0x)",
@@ -99,6 +106,11 @@ CANDIDATES = [
         ),
         dividend_yield=0.0042, return_1y=0.2777, return_ytd=0.1704,
         pct_unprofitable_constituents=0.05,
+        top10_holdings={
+            "AAPL": 0.0815, "NVDA": 0.0786, "MSFT": 0.0558, "MU": 0.0453,
+            "AMZN": 0.0422, "AMD": 0.0364, "GOOGL": 0.0323, "AVGO": 0.0306,
+            "GOOG": 0.0303, "META": 0.0266,
+        },
         data_sources=COMMON_SOURCES + ["GuruFocus 나스닥100 PE(2026-08)"],
     ),
     ETFInputs(
@@ -144,6 +156,11 @@ CANDIDATES = [
             "리스크도 크다 [추정치]."
         ),
         dividend_yield=0.0043, return_1y=0.4250,
+        top10_holdings={
+            "NVDA": 0.1391, "AAPL": 0.1298, "MSFT": 0.0988, "AVGO": 0.0527,
+            "AMD": 0.0423, "MU": 0.0366, "CSCO": 0.0320, "INTC": 0.0298,
+            "AMAT": 0.0281, "LRCX": 0.0256,
+        },
         data_sources=COMMON_SOURCES,
     ),
     ETFInputs(
@@ -225,6 +242,16 @@ def main():
           "   '가정성장'과 'Gap'은 분석자가 입력한 성장률에 1:1로 좌우되므로,\n"
           "   Gap 순위를 그대로 투자 순위로 쓰지 말 것(v3.34 자체 진단: 성장률을\n"
           "   전부 8%로 통일하면 순위가 거의 정반대로 뒤집혔다).")
+    print()
+
+    print("=" * 118)
+    print("⚠️ ETF간 중복노출 - '여러 개를 같이 사면 분산되는가'")
+    print("=" * 118)
+    overlap = portfolio_overlap_report(ordered)
+    print(format_overlap_table(overlap))
+    print()
+    print("개별 ETF 판정만 보면 절대 드러나지 않는 위험이다 - 각각은 '적정가'라도")
+    print("함께 사면 같은 메가캡을 두세 번 사는 것일 수 있다.")
     print()
 
     print("=" * 118)

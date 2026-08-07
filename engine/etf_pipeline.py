@@ -34,6 +34,7 @@ from engine.etf_engine import (
     fed_model_spread,
     growth_anchor_cross_check,
     growth_sensitivity,
+    holdings_overlap,
     net_expected_growth,
     pe_source_divergence,
     realized_eps_growth,
@@ -89,6 +90,11 @@ class ETFInputs:
     # 사고와 같은 단위 함정이라 코드로 막는다.
     realized_eps_basis: str = None        # "nominal" | "real"
     inflation_for_conversion: float = None  # realized_eps_basis="real"일 때 필수
+
+    # v3.36: 상위 보유종목 {티커: 비중(소수)}. 넣으면 ETF간 겹침을 측정할 수
+    # 있다(portfolio_overlap_report). 개별 ETF 판정에는 영향을 주지 않는다 -
+    # 겹침은 본질적으로 '여러 개를 같이 살 때'의 문제이기 때문이다.
+    top10_holdings: dict = None
     return_1y: float = None
     return_ytd: float = None
     holding_years: int = DEFAULT_HOLDING_YEARS
@@ -404,4 +410,73 @@ def format_comparison_table(results: list) -> str:
             f"{res['ers']['score']:5.1f} {pe_range:>13} {breakeven:>13} "
             f"{need:>13} {assumed:>13} {gap_range:>16} {trust}"
         )
+    return "\n".join(lines)
+
+
+# 겹침이 이 수준을 넘으면 "함께 보유 시 분산 효과 없음" 경고를 띄운다.
+# 2026-08-07 실측 top10 기준 VOO∩QQQ 34.5%p / QQQ∩XLK 32.0%p / VOO∩XLK 23.2%p로,
+# 광범위지수와 섹터ETF를 같이 담는 흔한 조합이 전부 20%p를 넘었다. top10만
+# 본 하한값이 이 정도라는 뜻이므로 임계값을 그보다 낮게 잡을 이유가 없어
+# 20%p로 둔다 - ERS 임계값과 마찬가지로 **검증된 값이 아닌 관측 기반 시작점**이다.
+OVERLAP_WARNING_THRESHOLD = 0.20
+
+
+def portfolio_overlap_report(results: list) -> dict:
+    """
+    여러 ETF를 **함께 보유할 때** 생기는 중복노출을 보고한다.
+
+    개별 `run_etf_analysis()`는 ETF를 하나씩만 보므로 이 위험을 구조적으로 볼 수
+    없다 - "VOO+QQQ+XLK로 분산했다"고 믿는 투자자가 실제로는 같은 메가캡을 세 번
+    사고 있는 상황을 잡아내지 못한다. 이 함수가 그 빈자리를 채운다.
+
+    `top10_holdings`가 없는 ETF는 조용히 건너뛰지 않고 `skipped`에 남긴다
+    (데이터 없음을 '겹침 없음'으로 오독하면 안 되기 때문).
+    """
+    have = [r for r in results if r["inputs"].get("top10_holdings")]
+    skipped = [r["meta"]["ticker"] for r in results
+               if not r["inputs"].get("top10_holdings")]
+
+    pairs = []
+    for i in range(len(have)):
+        for j in range(i + 1, len(have)):
+            a, b = have[i], have[j]
+            ov = holdings_overlap(a["inputs"]["top10_holdings"],
+                                  b["inputs"]["top10_holdings"])
+            ov["pair"] = (a["meta"]["ticker"], b["meta"]["ticker"])
+            ov["warning"] = None
+            if ov["shared_weight"] >= OVERLAP_WARNING_THRESHOLD:
+                ov["warning"] = (
+                    f"[중복노출 경고] {ov['pair'][0]}와 {ov['pair'][1]}는 상위 "
+                    f"보유종목만으로도 {ov['shared_weight']*100:.1f}%p가 겹친다"
+                    f"(공통 {ov['n_common']}종목: {', '.join(ov['common_tickers'])}). "
+                    f"둘을 함께 보유하면 분산이 아니라 **같은 종목을 두 번 사는 것**에 "
+                    f"가깝다. top10만 본 하한값이므로 실제 겹침은 이보다 크다."
+                )
+            pairs.append(ov)
+
+    pairs.sort(key=lambda x: -x["shared_weight"])
+    return {
+        "pairs": pairs,
+        "skipped_no_holdings": skipped,
+        "threshold": OVERLAP_WARNING_THRESHOLD,
+        "note": (
+            "shared_weight는 공통 종목별 min(비중) 합 = 두 ETF가 공유하는 최소 "
+            "공통 노출. top10 기준이라 실제 겹침의 하한이다."
+        ),
+    }
+
+
+def format_overlap_table(report: dict) -> str:
+    lines = ["ETF 쌍          공통종목수   겹침(하한)   경고"]
+    lines.append("-" * 66)
+    for ov in report["pairs"]:
+        flag = "⚠️ 분산효과 없음" if ov["warning"] else ""
+        pair = f"{ov['pair'][0]}+{ov['pair'][1]}"
+        lines.append(
+            f"{pair:14} {ov['n_common']:>8}   {ov['shared_weight']*100:9.1f}%p   {flag}")
+    if report["skipped_no_holdings"]:
+        lines.append("")
+        lines.append("보유종목 데이터 없어 측정 제외: "
+                     + ", ".join(report["skipped_no_holdings"])
+                     + "  (겹침 없음이 아니라 '모름'이다)")
     return "\n".join(lines)

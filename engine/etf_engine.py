@@ -264,6 +264,52 @@ def etf_risk_score(
     return {"components": components, "excluded": excluded, "score": score}
 
 
+def holdings_overlap(a_holdings: dict, b_holdings: dict) -> dict:
+    """
+    ⭐ v3.36 신설 - 두 ETF가 **같은 회사를 얼마나 겹쳐서 담고 있는지** 측정한다.
+
+    왜 필요한가(실투자에서 가장 흔한 착시): VOO+QQQ+XLK를 함께 사면 "시장 전체 +
+    성장주 + 기술섹터"로 분산했다고 느끼지만, 실제로는 같은 메가캡 7~8개를
+    세 번 사는 것에 가깝다. 2026-08-07 실측 top10 기준 VOO∩QQQ 공통비중이
+    34.5%p, QQQ∩XLK가 32.0%p다. 이 엔진은 지금까지 ETF를 **개별적으로만**
+    평가해서 이 위험을 전혀 볼 수 없었다.
+
+    측정 방식: 공통 종목별 `min(weight_a, weight_b)`의 합. 두 펀드가 공유하는
+    **최소 공통 노출**을 뜻하며, 겹침이 클수록 함께 보유해도 분산 효과가 없다.
+
+    ⚠️ **이 값은 실제 겹침의 하한(lower bound)이다** - top10만 보기 때문이다.
+    나머지 구성종목도 상당부분 겹치므로 진짜 겹침은 이보다 크다. 전체 구성종목
+    데이터가 확보되면 그대로 넣어 정확한 값을 낼 수 있다(함수는 top10에
+    한정되지 않는다 - 넣어준 딕셔너리 전체를 본다).
+
+    ⚠️ GOOG/GOOGL 같은 이중주식은 별도 티커로 잡힌다. 겹침 측정에서는 두 펀드
+    모두 양쪽 클래스를 담으므로 결과가 왜곡되지 않지만, "한 회사에 대한 노출"을
+    보려면 합산해서 읽을 것.
+    """
+    if not a_holdings or not b_holdings:
+        raise ValueError("두 ETF 모두 보유종목 딕셔너리가 있어야 한다")
+    for name, h in (("a", a_holdings), ("b", b_holdings)):
+        bad = {k: v for k, v in h.items() if not (0.0 <= v <= 1.0)}
+        if bad:
+            raise ValueError(
+                f"{name}_holdings 비중은 0~1 소수여야 함(퍼센트 숫자 주의): {bad}"
+            )
+
+    common = sorted(set(a_holdings) & set(b_holdings))
+    detail = {
+        t: {"a": a_holdings[t], "b": b_holdings[t], "shared": min(a_holdings[t], b_holdings[t])}
+        for t in common
+    }
+    shared_weight = sum(d["shared"] for d in detail.values())
+    return {
+        "common_tickers": common,
+        "n_common": len(common),
+        "shared_weight": shared_weight,
+        "detail": detail,
+        "is_lower_bound": True,
+    }
+
+
 def fed_model_spread(pe_ratio: float, treasury_yield: float) -> dict:
     """
     이익수익률 - 장기국채금리(=흔히 말하는 Fed 모델 스프레드).
@@ -521,6 +567,7 @@ __all__ = [
     "expense_drag",
     "fed_model_spread",
     "growth_anchor_cross_check",
+    "holdings_overlap",
     "growth_sensitivity",
     "implied_growth_from_pe",
     "net_expected_growth",

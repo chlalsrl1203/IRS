@@ -22,6 +22,7 @@ from engine.etf_engine import (
     fed_model_spread,
     growth_anchor_cross_check,
     growth_sensitivity,
+    holdings_overlap,
     implied_growth_from_pe,
     net_expected_growth,
     pe_source_divergence,
@@ -32,6 +33,7 @@ from engine.etf_engine import (
 from engine.etf_pipeline import (
     ETFInputs,
     compare_etfs,
+    portfolio_overlap_report,
     run_etf_analysis,
     save_etf_ledger,
 )
@@ -566,3 +568,82 @@ def test_real_eps_is_converted_to_nominal_before_comparison():
     assert realized["cagr_real"] == pytest.approx(0.05, abs=1e-4)
     assert realized["cagr"] == pytest.approx(1.05 * 1.025 - 1, abs=1e-4)
     assert any("EPS 단위 환산" in x for x in result["data_limitations"])
+
+
+# ----------------------------------------------------------------------
+# v3.36 — ETF간 중복노출(함께 보유할 때의 위험)
+# ----------------------------------------------------------------------
+
+# 2026-08-07 stockanalysis.com 실측 top10
+VOO_TOP10 = {"NVDA": 0.0750, "AAPL": 0.0658, "MSFT": 0.0429, "AMZN": 0.0361,
+             "GOOGL": 0.0324, "AVGO": 0.0277, "GOOG": 0.0258, "MU": 0.0201,
+             "META": 0.0191, "TSLA": 0.0183}
+QQQ_TOP10 = {"AAPL": 0.0815, "NVDA": 0.0786, "MSFT": 0.0558, "MU": 0.0453,
+             "AMZN": 0.0422, "AMD": 0.0364, "GOOGL": 0.0323, "AVGO": 0.0306,
+             "GOOG": 0.0303, "META": 0.0266}
+XLK_TOP10 = {"NVDA": 0.1391, "AAPL": 0.1298, "MSFT": 0.0988, "AVGO": 0.0527,
+             "AMD": 0.0423, "MU": 0.0366, "CSCO": 0.0320, "INTC": 0.0298,
+             "AMAT": 0.0281, "LRCX": 0.0256}
+
+
+def test_overlap_uses_min_weight_and_is_symmetric():
+    """공통 종목별 min(비중) 합 = 두 펀드가 공유하는 최소 공통 노출."""
+    a = {"X": 0.10, "Y": 0.05, "Z": 0.03}
+    b = {"X": 0.04, "Y": 0.09, "W": 0.20}
+    ov = holdings_overlap(a, b)
+    assert ov["common_tickers"] == ["X", "Y"]
+    assert ov["shared_weight"] == pytest.approx(0.04 + 0.05)
+    # 대칭이어야 한다
+    assert holdings_overlap(b, a)["shared_weight"] == pytest.approx(ov["shared_weight"])
+    # top10 기준이라 하한임을 명시해야 한다
+    assert ov["is_lower_bound"] is True
+
+
+def test_overlap_rejects_percent_numbers():
+    """비중을 퍼센트(7.5)로 넣는 단위 실수를 막는다."""
+    with pytest.raises(ValueError, match="0~1 소수"):
+        holdings_overlap({"X": 7.5}, {"X": 0.05})
+
+
+def test_real_megacap_triple_counting_is_detected():
+    """
+    ⭐ v3.36의 존재 이유(2026-08-07 실측): VOO+QQQ+XLK를 함께 사면 "시장+성장+
+    기술"로 분산했다고 느끼지만 실제로는 같은 메가캡을 세 번 사는 것에 가깝다.
+    top10만 봐도 세 쌍 전부 20%p를 넘는다.
+    """
+    voo_qqq = holdings_overlap(VOO_TOP10, QQQ_TOP10)
+    qqq_xlk = holdings_overlap(QQQ_TOP10, XLK_TOP10)
+    voo_xlk = holdings_overlap(VOO_TOP10, XLK_TOP10)
+
+    assert voo_qqq["shared_weight"] == pytest.approx(0.3448, abs=1e-3)
+    assert qqq_xlk["shared_weight"] == pytest.approx(0.3195, abs=1e-3)
+    assert voo_xlk["shared_weight"] == pytest.approx(0.2315, abs=1e-3)
+    # 셋 다 경고 임계값을 넘는다
+    for ov in (voo_qqq, qqq_xlk, voo_xlk):
+        assert ov["shared_weight"] >= 0.20
+    # NVDA/AAPL/MSFT는 세 ETF 모두에 들어 있다(삼중 계상의 핵심)
+    for t in ("NVDA", "AAPL", "MSFT"):
+        assert t in voo_qqq["common_tickers"]
+        assert t in qqq_xlk["common_tickers"]
+        assert t in voo_xlk["common_tickers"]
+
+
+def test_portfolio_overlap_report_warns_and_lists_missing_data():
+    voo = run_etf_analysis(voo_inputs(top10_holdings=VOO_TOP10))
+    qqq = run_etf_analysis(voo_inputs(ticker="QQQ", top10_holdings=QQQ_TOP10))
+    no_data = run_etf_analysis(voo_inputs(ticker="XLF"))
+
+    rep = portfolio_overlap_report([voo, qqq, no_data])
+    assert len(rep["pairs"]) == 1                 # 데이터 있는 2개만 쌍이 된다
+    assert rep["pairs"][0]["warning"] is not None
+    assert "중복노출 경고" in rep["pairs"][0]["warning"]
+    # 데이터 없는 ETF를 '겹침 없음'으로 처리하지 않고 명시적으로 남긴다
+    assert rep["skipped_no_holdings"] == ["XLF"]
+
+
+def test_overlap_does_not_affect_individual_judgment():
+    """겹침은 '함께 살 때'의 문제이므로 개별 ETF 판정은 건드리지 않는다."""
+    without = run_etf_analysis(voo_inputs())
+    with_h = run_etf_analysis(voo_inputs(top10_holdings=VOO_TOP10))
+    assert without["valuation"]["gap_min"] == pytest.approx(with_h["valuation"]["gap_min"])
+    assert without["ers"]["score"] == with_h["ers"]["score"]

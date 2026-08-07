@@ -3,8 +3,8 @@
     "ticker": "XLU",
     "name": "Utilities Select Sector SPDR",
     "tracks": "유틸리티 섹터",
-    "analyzed_at": "2026-08-07T08:10:32.904954+00:00",
-    "engine_version": "v3.35",
+    "analyzed_at": "2026-08-07T10:42:57.851765+00:00",
+    "engine_version": "v3.36",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
@@ -38,6 +38,7 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
+    "top10_holdings": null,
     "return_1y": 0.0279,
     "return_ytd": null,
     "holding_years": 10,
