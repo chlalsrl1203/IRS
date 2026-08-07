@@ -1,0 +1,270 @@
+{
+  "meta": {
+    "ticker": "COR",
+    "company_name": "Cencora, Inc.",
+    "analyzed_at": "2026-08-02T00:00:11.793952+00:00",
+    "engine_version": "v3.25",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001140859-25-000131) R3/R5/R9, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001140859-22-000098) R5/R9 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0001140859-19-000040) R4/R8 (FY2017~2019, 당시 AmerisourceBergen)",
+      "stockanalysis.com 시가총액 $60.54B (2026-07-27 종가)",
+      "WebSearch: 오피오이드 소송충당금 확정 경위($6.6B->$6.4B/18년), 2024 이사회 파생소송 $111M, DOJ CSA 소송 확인"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(9개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(11.09%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다."
+  ],
+  "inputs": {
+    "ticker": "COR",
+    "company_name": "Cencora, Inc.",
+    "revenue_by_year": {
+      "2017": 153143826000,
+      "2018": 167939635000,
+      "2019": 179589121000,
+      "2020": 189893926000,
+      "2021": 213988843000,
+      "2022": 238587006000,
+      "2023": 262173411000,
+      "2024": 293958599000,
+      "2025": 321332819000
+    },
+    "operating_income_by_year": {
+      "2017": 1060342000,
+      "2018": 1443685000,
+      "2019": 1111923000,
+      "2020": -5135354000,
+      "2021": 2354197000,
+      "2022": 2366378000,
+      "2023": 2340731000,
+      "2024": 2175249000,
+      "2025": 2628601000
+    },
+    "operating_cashflow_by_year": {
+      "2017": 1504138000,
+      "2018": 1411388000,
+      "2019": 2344023000,
+      "2020": 2207040000,
+      "2021": 2666586000,
+      "2022": 2703088000,
+      "2023": 3911334000,
+      "2024": 3484685000,
+      "2025": 3875120000
+    },
+    "capex_by_year": {
+      "2017": 466397000,
+      "2018": 336411000,
+      "2019": 310222000,
+      "2020": 369677000,
+      "2021": 438217000,
+      "2022": 496318000,
+      "2023": 458359000,
+      "2024": 487173000,
+      "2025": 667981000
+    },
+    "market_cap": 60540000000.0,
+    "net_debt": 3304635000,
+    "ebitda": 3697017000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.35,
+      0.3,
+      0.25
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": true,
+    "demand_sensitivity_pct": 0.08,
+    "subjective_input_basis": "McKesson 0.35(3파전 중 최대 경쟁자이자 이번 배치에서 동시분석한 동일업종 종목), Cardinal Health 0.30, PBM/보험사 수직계열화 위협 0.25(CVS/Optum의 자체 유통망 내재화 압력) - MCK 분석과 동일 논리로 동일 가중치 적용(같은 산업구조이므로 일관성 유지)[셋 다 추정치]. market_share_trend=0.0: 3사 과점구조가 수십년째 안정적이라는 근거는 있으나 정량 추세 데이터가 없어 중립[추정치]. active_antitrust_or_regulatory_case=True: MCK보다도 진행형 성격이 강하다 - (1)FY2020 세전 $6.6B 오피오이드 소송충당금 -> 2022년 18년간 $6.4B 전국합의로 확정(3사 $21B 합의의 일부), (2)2024년 이사회 임원 배임 관련 파생소송 $111M 추가 합의, (3)미 법무부(DOJ)가 별도로 통제물질법(CSA) 위반 관련 전국 소송을 제기한 상태. demand_sensitivity=0.08: MCK과 동일 논리 (처방의약품 유통은 경기와 무관하게 필수 소비) - 이 프로젝트 최저권.",
+    "model_used": "two_stage",
+    "model_choice_reason": "COR도 MCK와 같은 이유로 two_stage를 채택한다 - 성숙・안정 산업의 과점 사업자이나 최근 3년 매출성장이 가속(FY24 +12.1%, FY25 +9.3%)되는 국면이라 GLP-1 등 고가 특수의약품 유통 확대 효과로 추정되며, 이 가속이 무기한 지속된다고 가정하는 single_stage보다 정상화 경로를 명시하는 two_stage가 보수적이다. 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning으로 확인.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001140859-25-000131) R3/R5/R9, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001140859-22-000098) R5/R9 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0001140859-19-000040) R4/R8 (FY2017~2019, 당시 AmerisourceBergen)",
+      "stockanalysis.com 시가총액 $60.54B (2026-07-27 종가)",
+      "WebSearch: 오피오이드 소송충당금 확정 경위($6.6B->$6.4B/18년), 2024 이사회 파생소송 $111M, DOJ CSA 소송 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.1043399050694318,
+    "revenue_cagr_5y": 0.11093539055828328,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.11785265670487566,
+    "fcf0": 3207139000,
+    "fcf_by_year": {
+      "2017": 1037741000,
+      "2018": 1074977000,
+      "2019": 2033801000,
+      "2020": 1837363000,
+      "2021": 2228369000,
+      "2022": 2206770000,
+      "2023": 3452975000,
+      "2024": 2997512000,
+      "2025": 3207139000
+    },
+    "worst_yoy_revenue_growth": 0.057379895522736035,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      0.011001494129299069,
+      0.009918302088924323,
+      0.008928178456662793,
+      0.0073998481670543,
+      0.008180306662046867
+    ],
+    "net_debt_to_ebitda": 0.8938652432488139
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 6.0,
+      "cyclicality": 8.32,
+      "competition_intensity": 12.799999999999999
+    },
+    "score": 35.12
+  },
+  "lynch": {
+    "auto_classified": "stalwart",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.060536,
+    "r": 0.105236,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.10329774274442574,
+    "realistic_growth": 0.0957796484196729,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.1043399050694318,
+        "5y": 0.11093539055828328,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.1068132121277511,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.1068132121277511,
+      "structural_discount_pct": 0.10329774274442574,
+      "discounted_growth": 0.0957796484196729,
+      "lynch_type": "stalwart",
+      "cap_applied": null,
+      "final_realistic_growth": 0.0957796484196729
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.049631222508668194,
+      "two_stage": 0.06480789184570312,
+      "errors": {},
+      "divergence": 0.015176669337034931,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "COR도 MCK와 같은 이유로 two_stage를 채택한다 - 성숙・안정 산업의 과점 사업자이나 최근 3년 매출성장이 가속(FY24 +12.1%, FY25 +9.3%)되는 국면이라 GLP-1 등 고가 특수의약품 유통 확대 효과로 추정되며, 이 가속이 무기한 지속된다고 가정하는 single_stage보다 정상화 경로를 명시하는 two_stage가 보수적이다. 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning으로 확인.",
+    "value": 0.06480789184570312
+  },
+  "expectation_gap": 0.030971756573969778,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.0957796484196729,
+      "g_bull": 0.12,
+      "g_bear": 0.04788982420983645,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": 0.17081070153638067,
+      "base": 0.09206550819905868,
+      "bear": -0.046352092409934986
+    },
+    "probabilities": {
+      "bull": 0.34464,
+      "base": 0.49999999999999994,
+      "bear": 0.15536
+    },
+    "probability_rationale": "DRS=35.1 (중립점 50 대비 편차 -0.30) 기준: p_bull=34.5%, p_base=50.0%, p_bear=15.5%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.09769969320022005
+  },
+  "rar": 0.2781881924835423,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.105236,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.06480789184570312,
+    "implied_growth_without_drs": 0.0450946807861328,
+    "gap_with_drs": 0.030971756573969778,
+    "gap_without_drs": 0.0506849676335401,
+    "judgment_with_drs": "적정가",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": true
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.105236,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.06480789184570312,
+      "implied_growth_without_drs": 0.0450946807861328,
+      "gap_with_drs": 0.030971756573969778,
+      "gap_without_drs": 0.0506849676335401,
+      "judgment_with_drs": "적정가",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": true
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 0,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 79,
+    "final": 79
+  },
+  "judgment": "적정가/경계선",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
+}

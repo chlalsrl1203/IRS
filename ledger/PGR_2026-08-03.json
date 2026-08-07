@@ -1,0 +1,322 @@
+{
+  "meta": {
+    "ticker": "PGR",
+    "company_name": "The Progressive Corporation",
+    "analyzed_at": "2026-08-03T15:14:49.439426+00:00",
+    "engine_version": "v3.27",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000080661-26-000086) R3/R4/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0000080661-23-000006) R3/R4/R7 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0000080661-20-000006) R2/R7 (FY2018~2019)",
+      "SEC EDGAR 10-K FY2017(0000080661-18-000011) R2/R7 (FY2015~2017)",
+      "SEC EDGAR 10-K FY2024(0000080661-25-000007) R4 (FY2023 자기자본)",
+      "stockanalysis.com 시가총액 $125.44B (2026-07-27 종가)",
+      "WebSearch: PGR 1위 등극(S&P Global 2026-05), 반독점/규제조사 여부 확인(2026-07)",
+      "Notion 트래커 ACGL 핵심노트(2026-07-18, v3.13) - 보험업 FCF-DCF 방법론 우려 선례"
+    ],
+    "falsification_conditions": "(1) 신규계약(PIF) 증가율이 2026년 내내 한 자릿수 초반까지 추가 둔화되거나, GEICO/Allstate 대비 손해율 열위가 확대되면 (현재 '점유율은 1위, 손해율은 3위' 구도가 더 악화됨을 뜻함) 텔레매틱스 모트 서사를 재검토. (2) 상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토 대상. (3) 2026-08-04 Q2 실적(이 조사 하루 뒤 예정)에서 컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[보험업 교차검증] Realistic Growth(16.87%)와 지속가능성장률(18.88%)이 2.01%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=4.14배는 별도로 판정 신뢰도 판단에 참고할 것."
+  ],
+  "inputs": {
+    "ticker": "PGR",
+    "company_name": "The Progressive Corporation",
+    "revenue_by_year": {
+      "2015": 20853800000.0,
+      "2016": 23441400000.0,
+      "2017": 26839000000.0,
+      "2018": 31979000000.0,
+      "2019": 39022300000.0,
+      "2020": 42658100000.0,
+      "2021": 47702000000.0,
+      "2022": 49610700000.0,
+      "2023": 62109000000,
+      "2024": 75372000000,
+      "2025": 87671000000
+    },
+    "operating_income_by_year": {
+      "2015": 1911600000.0,
+      "2016": 1470700000.0,
+      "2017": 2138900000.0,
+      "2018": 3163600000.0,
+      "2019": 5160300000.0,
+      "2020": 7173200000.0,
+      "2021": 4210000000.0,
+      "2022": 922100000.0,
+      "2023": 4904000000,
+      "2024": 10713000000,
+      "2025": 14223000000
+    },
+    "operating_cashflow_by_year": {
+      "2015": 2292900000.0,
+      "2016": 2732700000.0,
+      "2017": 3756800000.0,
+      "2018": 6284800000.0,
+      "2019": 6261600000.0,
+      "2020": 6905600000.0,
+      "2021": 7761700000.0,
+      "2022": 6848800000.0,
+      "2023": 10643000000,
+      "2024": 15119000000,
+      "2025": 17548000000
+    },
+    "capex_by_year": {
+      "2015": 130699999.99999999,
+      "2016": 215000000.0,
+      "2017": 155700000.0,
+      "2018": 266000000.0,
+      "2019": 363500000.0,
+      "2020": 223500000.0,
+      "2021": 243500000.0,
+      "2022": 292000000.0,
+      "2023": 252000000,
+      "2024": 285000000,
+      "2025": 348000000
+    },
+    "market_cap": 125440000000.0,
+    "net_debt": 6772000000.0,
+    "ebitda": 14536000000.0,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.35,
+      0.3,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.15,
+    "subjective_input_basis": "State Farm 0.35(상호회사, 오랫동안 업계 1위였던 최대 스케일 - 2026-05 S&P Global 확인상 PGR에 직전 12개월 기준 1위를 처음 내줬으나 여전히 최대 경쟁자), GEICO/Berkshire 0.30(공격적 광고・가격경쟁력), Allstate 0.20(텔레매틱스 등 데이터기반 요율산정에서 PGR과 유사 전략 추구). 셋 다 [추정치]. market_share_trend=+1.0pp: 2026-05 S&P Global 보도로 확인된 명확한 근거 - PGR이 1942년 이후 최초로 State Farm을 제치고 직전 12개월 기준 미국 1위 개인용 자동차보험사가 됐다(2025년말 기준 시장점유율 약 17%, DPW 기준 672억달러). active_antitrust_or_regulatory_case=False: 2026-07 WebSearch로 확인한 결과 반독점/경쟁당국의 공식 조사・제재는 발견되지 않았다(BKNG/PDD/TCOM과 대조적). 총손해액 산정・PIP・UM/UIM 관련 소비자 집단소송이 다수 진행 중이나(2026-04 일리노이 연방법원 집단소송 인증 기각 등) 이는 대형 손보사의 통상적 소송 리스크이지 반독점・규제기관의 시장구조적 조사가 아니라 False로 유지. demand_sensitivity=0.15: 자동차보험은 대부분 주(state)에서 법적 의무가입이라 재량소비 성격이 약하다 - 실제로 FY2020(코로나) 매출이 오히려 증가했다(BKNG/TCOM과 정반대). 경기침체기 신차판매 둔화・보장등급 하향 정도의 완만한 민감도만 반영해 이 프로젝트 최저권으로 설정[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR의 세전이익은 언더라이팅 사이클로 극심하게 진동한다(2022년 9.22억달러 저점 -> 2025년 142.23억달러 고점, 15.4배) - 현재는 사이클 고점 부근으로 판단되며 이 마진이 무한히 지속된다고 가정하는 single_stage보다, 일정 기간 후 정상화(terminal)를 명시적으로 모델링하는 two_stage가 보수적이다. 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning으로 확인. ⚠️ **다만 이 모델선택 논의 자체가 보험업에는 부차적**이다 - 아래 insurer_cross_check()가 보여주듯 FCF-DCF 프레임 자체가 보험업 밸류에이션에 구조적으로 부적합할 수 있어(ACGL 선례), Gap/RAR 결과는 방향성 참고자료로만 쓸 것.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0000080661-26-000086) R3/R4/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0000080661-23-000006) R3/R4/R7 (FY2020~2022)",
+      "SEC EDGAR 10-K FY2019(0000080661-20-000006) R2/R7 (FY2018~2019)",
+      "SEC EDGAR 10-K FY2017(0000080661-18-000011) R2/R7 (FY2015~2017)",
+      "SEC EDGAR 10-K FY2024(0000080661-25-000007) R4 (FY2023 자기자본)",
+      "stockanalysis.com 시가총액 $125.44B (2026-07-27 종가)",
+      "WebSearch: PGR 1위 등극(S&P Global 2026-05), 반독점/규제조사 여부 확인(2026-07)",
+      "Notion 트래커 ACGL 핵심노트(2026-07-18, v3.13) - 보험업 FCF-DCF 방법론 우려 선례"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": true,
+    "net_income_by_year": {
+      "2021": 3350900000.0,
+      "2022": 721500000.0,
+      "2023": 3903000000,
+      "2024": 8480000000,
+      "2025": 11308000000
+    },
+    "shareholders_equity_by_year": {
+      "2021": 18231600000.0,
+      "2022": 15891000000.0,
+      "2023": 20277000000.0,
+      "2024": 25591000000.0,
+      "2025": 30323000000.0
+    },
+    "dividends_paid_by_year": {
+      "2023": 277000000,
+      "2024": 682000000,
+      "2025": 2871000000
+    },
+    "sbc_by_year": null,
+    "falsification_conditions": "(1) 신규계약(PIF) 증가율이 2026년 내내 한 자릿수 초반까지 추가 둔화되거나, GEICO/Allstate 대비 손해율 열위가 확대되면 (현재 '점유율은 1위, 손해율은 3위' 구도가 더 악화됨을 뜻함) 텔레매틱스 모트 서사를 재검토. (2) 상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토 대상. (3) 2026-08-04 Q2 실적(이 조사 하루 뒤 예정)에서 컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.20900158007376457,
+    "revenue_cagr_5y": 0.15497049664906393,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.15442859499631134,
+    "fcf_cagr_5y": 0.2081562230688616,
+    "fcf0": 17200000000,
+    "fcf_by_year": {
+      "2015": 2162200000.0,
+      "2016": 2517700000.0,
+      "2017": 3601100000.0,
+      "2018": 6018800000.0,
+      "2019": 5898100000.0,
+      "2020": 6682100000.0,
+      "2021": 7518200000.0,
+      "2022": 6556800000.0,
+      "2023": 10391000000,
+      "2024": 14834000000,
+      "2025": 17200000000
+    },
+    "worst_yoy_revenue_growth": 0.04001299735860142,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      0.08825625759926209,
+      0.018586716172116095,
+      0.07895796100404129,
+      0.1421350103486706,
+      0.16223152467748742
+    ],
+    "net_debt_to_ebitda": 0.4658778205833792
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 14.0,
+      "leverage": 6.0,
+      "cyclicality": 8.6,
+      "competition_intensity": 10.2
+    },
+    "score": 46.8
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06404,
+    "r": 0.10874,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.07271350746127339,
+    "realistic_growth": 0.1686526955865976,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.20900158007376457,
+        "5y": 0.15497049664906393,
+        "10y": 0.15442859499631134
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.18187765803086373,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.18187765803086373,
+      "structural_discount_pct": 0.07271350746127339,
+      "discounted_growth": 0.1686526955865976,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.1686526955865976
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": -0.02495551318003365,
+      "two_stage": -0.04892215728759766,
+      "errors": {},
+      "divergence": 0.023966644107564012,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR의 세전이익은 언더라이팅 사이클로 극심하게 진동한다(2022년 9.22억달러 저점 -> 2025년 142.23억달러 고점, 15.4배) - 현재는 사이클 고점 부근으로 판단되며 이 마진이 무한히 지속된다고 가정하는 single_stage보다, 일정 기간 후 정상화(terminal)를 명시적으로 모델링하는 two_stage가 보수적이다. 첫 정식분석이라 대조할 과거 기록이 없다 - 실제 괴리는 divergence_warning으로 확인. ⚠️ **다만 이 모델선택 논의 자체가 보험업에는 부차적**이다 - 아래 insurer_cross_check()가 보여주듯 FCF-DCF 프레임 자체가 보험업 밸류에이션에 구조적으로 부적합할 수 있어(ACGL 선례), Gap/RAR 결과는 방향성 참고자료로만 쓸 것.",
+    "value": -0.04892215728759766
+  },
+  "expectation_gap": 0.21757485287419526,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.1686526955865976,
+      "g_bull": 0.25,
+      "g_bear": 0.0843263477932988,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 1.2883285586039834,
+      "base": 0.8129022178857708,
+      "bear": 0.425194817630111
+    },
+    "probabilities": {
+      "bull": 0.3096,
+      "base": 0.5,
+      "bear": 0.1904
+    },
+    "probability_rationale": "DRS=46.8 (중립점 50 대비 편차 -0.06) 기준: p_bull=31.0%, p_base=50.0%, p_bear=19.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.8862747239634519
+  },
+  "rar": 1.893749410178316,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10874,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": -0.04892215728759766,
+    "implied_growth_without_drs": -0.06987247467041015,
+    "gap_with_drs": 0.21757485287419526,
+    "gap_without_drs": 0.23852517025700776,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10874,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": -0.04892215728759766,
+      "implied_growth_without_drs": -0.06987247467041015,
+      "gap_with_drs": 0.21757485287419526,
+      "gap_without_drs": 0.23852517025700776,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": {
+    "roe_years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "avg_roe": 0.22519363246970361,
+    "dividend_years_used": [
+      2023,
+      2024,
+      2025
+    ],
+    "payout_ratio": 0.16166476721117723,
+    "retention_ratio": 0.8383352327888227,
+    "sustainable_growth": 0.18878775629904956,
+    "price_to_book": 4.136793852850971
+  },
+  "sbc_cross_check": null
+}

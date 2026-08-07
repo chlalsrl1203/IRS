@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "ticker": "XLK",
+    "name": "Technology Select Sector SPDR",
+    "tracks": "기술 섹터",
+    "analyzed_at": "2026-08-07T23:09:21.144476+00:00",
+    "engine_version": "v3.37",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
+      "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
+      "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '적정가/경계선' <-> '저평가 가능성'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것."
+  ],
+  "inputs": {
+    "ticker": "XLK",
+    "name": "Technology Select Sector SPDR",
+    "tracks": "기술 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 37.37,
+      "allinvestview(trailing)": 34.96
+    },
+    "expense_ratio": 0.0008,
+    "n_holdings": 69,
+    "top10_weight": 0.6,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.12,
+    "expected_earnings_growth_basis": "기술섹터 장기 이익성장률. AI 사이클 수혜가 크나 그만큼 사이클 반전 리스크도 크다 [추정치].",
+    "dividend_yield": 0.0043,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "NVDA": 0.1391,
+      "AAPL": 0.1298,
+      "MSFT": 0.0988,
+      "AVGO": 0.0527,
+      "AMD": 0.0423,
+      "MU": 0.0366,
+      "CSCO": 0.032,
+      "INTC": 0.0298,
+      "AMAT": 0.0281,
+      "LRCX": 0.0256
+    },
+    "return_1y": 0.425,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-06 조회)",
+      "totalrealreturns.com (YTD·1년 총수익률, 2026-08-05 기준)",
+      "tradingeconomics / FRED DGS10 (미국10Y 4.61%, 2026-08-05/06)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 37.37,
+      "allinvestview(trailing)": 34.96
+    },
+    "min": 34.96,
+    "max": 37.37,
+    "spread_abs": 2.4099999999999966,
+    "spread_relative": 0.06893592677345528,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 18.0,
+      "data_quality": 6.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 73.33333333333333
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07200000000000001,
+    "r": 0.11810000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.12,
+    "expense_ratio_deducted": 0.0008,
+    "net_expected_growth": 0.1192,
+    "basis": "기술섹터 장기 이익성장률. AI 사이클 수혜가 크나 그만큼 사이클 반전 리스크도 크다 [추정치].",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0992,
+      "growth_high": 0.1392,
+      "gap_low": 0.010239953088350254,
+      "gap_high": 0.05023995308835025,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "저평가 가능성",
+      "robust": false
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 37.37,
+        "earnings_yield": 0.026759432700026762,
+        "implied_growth": 0.08896004691164974,
+        "gap": 0.030239953088350258,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08896004691164974,
+          "for_undervalued": 0.13896004691164976,
+          "for_overvalued": 0.03896004691164974,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 34.96,
+        "earnings_yield": 0.02860411899313501,
+        "implied_growth": 0.08700711902113462,
+        "gap": 0.032192880978865385,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08700711902113462,
+          "for_undervalued": 0.1370071190211346,
+          "for_overvalued": 0.03700711902113461,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.030239953088350258,
+    "gap_max": 0.032192880978865385,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0008,
+    "holding_years": 10,
+    "cumulative_drag": 0.007971261354066783
+  },
+  "fed_model": {
+    "earnings_yield": 0.02860411899313501,
+    "treasury_yield": 0.0461,
+    "spread": -0.017495881006864993,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.425,
+    "return_ytd": null,
+    "dividend_yield": 0.0043
+  }
+}

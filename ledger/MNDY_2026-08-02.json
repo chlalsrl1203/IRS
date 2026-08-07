@@ -1,0 +1,267 @@
+{
+  "meta": {
+    "ticker": "MNDY",
+    "company_name": "monday.com Ltd.",
+    "analyzed_at": "2026-08-02T04:47:47.344271+00:00",
+    "engine_version": "v3.27",
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001178913-26-000870) R2/R4/R8, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 20-F FY2022(0001178913-23-000966) R4/R8 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $3.74B(주가 $87.15), 2026-07-31 조회",
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, MNDY Q1 2026 실적(매출 $351.3M +24%YoY, 가이던스 19~20% 재확인), 2026-07-22 630명 감원(AI 에이전트 전환) 보도 확인"
+    ],
+    "falsification_conditions": "(1) 2026-08-10 Q2 실적에서 $50K+/$100K+ ARR 코호트 NDR이 110% 미만으로 하락하거나 SMB/셀프서브 채널 매출비중이 추가로 축소되는 신호가 나오면(현재 상단 코호트 강세로 하단 약세가 상쇄되는 구도가 무너짐) 이 판정은 틀린 것으로 간주. (2) 진행 중인 증권소송이 화해·기각이 아니라 실제 손해배상 판결이나 대규모 화해금으로 귀결되면 거버넌스 리스크를 재평가할 것.",
+    "price_at_analysis": 87.15,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2021년을 기준으로 4년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도 FY2020(IPO 초기·팬데믹 첫해)의 OCF가 -$37.175M로 적자라 FCF가 음수(-$42.656M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 자체가 거부된다. FY2021(상장 직후, FCF 첫 플러스전환 +$2.597M)을 기준연도로 삼아 4년 구간 CAGR을 산출한다.",
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(41.40%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[SBC 교차검증] SBC가 FCF0의 57%로 상당히 크다 (SBC차감 시 Gap +23.28%p -> +13.11%p). 판정은 유지되나 여유폭이 SBC 처리방식에 따라 크게 흔들린다."
+  ],
+  "inputs": {
+    "ticker": "MNDY",
+    "company_name": "monday.com Ltd.",
+    "revenue_by_year": {
+      "2020": 161123000,
+      "2021": 308150000,
+      "2022": 519029000,
+      "2023": 729695000,
+      "2024": 971995000,
+      "2025": 1231997000
+    },
+    "operating_income_by_year": {
+      "2020": -150537000,
+      "2021": -126125000,
+      "2022": -152015000,
+      "2023": -38585000,
+      "2024": -21034000,
+      "2025": -1748000
+    },
+    "operating_cashflow_by_year": {
+      "2020": -37175000,
+      "2021": 16355000,
+      "2022": 27138000,
+      "2023": 215404000,
+      "2024": 311065000,
+      "2025": 333644000
+    },
+    "capex_by_year": {
+      "2020": 5481000,
+      "2021": 13758000,
+      "2022": 19001000,
+      "2023": 10459000,
+      "2024": 15235000,
+      "2025": 23742000
+    },
+    "market_cap": 3740000000.0,
+    "net_debt": -1665457000,
+    "ebitda": 12057000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.25,
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.25,
+    "subjective_input_basis": "ClickUp/Asana/Smartsheet 등 협업툴 시장은 다수 경쟁사가 난립한 파편화 시장 - 단일 지배적 경쟁자가 없어 TTD(Amazon DSP 0.40)만큼 집중된 위협은 아니라고 판단해 최대 가중치를 0.25로 설정[추정치]. AI 네이티브 신생 워크관리 툴(범주 자체를 재정의할 잠재 위협) 0.20, 기존 대형 경쟁사(Asana/Smartsheet, 이미 AI 기능을 무료 번들로 제공 중이라 가격경쟁 유발 가능) 0.15. 전부 [추정치]. market_share_trend=-1.0pp: 회사가 자발적으로 좌석기반 과금을폐기하고 AI 에이전트 모델로 전환 중이라는 사실 자체가 기존 모델의 점유율 압박을 인정하는 신호로 보되, Q1 순증가고객·ARR 지표는 견고해(DUOL -1.0pp와 동일 수준) 과도한 음수는 부여하지 않음[추정치]. demand_sensitivity=0.25: 협업 SaaS는 기업 IT예산 삭감시 영향받으나 필수업무툴 성격이 강해 광고(TTD 0.35)나 소비자재량재(SE) 대비 낮은 편[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️핵심 판단: MNDY는 5년 매출 CAGR이 41.4%(2022년 +68%→2025년 +26.8%로 자연 감속 중)에 달하는 고성장기였고, DUOL/TTD와 달리 Q1 2026 실적은 컨센서스 상회·FY2026 가이던스(19~20%)도 하향이 아니라 재확인이었다. 2026-07-22 발표한 20% 감원은 실적 부진이 아니라 좌석과금->AI에이전트 사업모델 선제전환이며 발표 당일 주가가 오히려 소폭 상승했다 - 시장이 부정적 신호로 보지 않았다는 뜻. 그럼에도 명시적 고성장구간(3배 이상 매출성장) 이후 감속 국면이라는 구조 자체는 DUOL/TTD와 동일해 two_stage가 이론적으로 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD/DUOL/TTD와 동일 절차). 첫 분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001178913-26-000870) R2/R4/R8, as-filed, 2026-07-31 조회",
+      "SEC EDGAR 20-F FY2022(0001178913-23-000966) R4/R8 (FY2020~2022)",
+      "stockanalysis.com 시가총액 $3.74B(주가 $87.15), 2026-07-31 조회",
+      "WebSearch: Barchart 'AI Disruption Overblown! 4 Software Stocks to Buy on the Dip' 기사, MNDY Q1 2026 실적(매출 $351.3M +24%YoY, 가이던스 19~20% 재확인), 2026-07-22 630명 감원(AI 에이전트 전환) 보도 확인"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": 2021,
+    "cagr_base_year_override_reason": "기본 기준연도 FY2020(IPO 초기·팬데믹 첫해)의 OCF가 -$37.175M로 적자라 FCF가 음수(-$42.656M) -> CAGR 시작값 음수 가드(v3.19)에 걸려 실행 자체가 거부된다. FY2021(상장 직후, FCF 첫 플러스전환 +$2.597M)을 기준연도로 삼아 4년 구간 CAGR을 산출한다.",
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2025": 177011000
+    },
+    "falsification_conditions": "(1) 2026-08-10 Q2 실적에서 $50K+/$100K+ ARR 코호트 NDR이 110% 미만으로 하락하거나 SMB/셀프서브 채널 매출비중이 추가로 축소되는 신호가 나오면(현재 상단 코호트 강세로 하단 약세가 상쇄되는 구도가 무너짐) 이 판정은 틀린 것으로 간주. (2) 진행 중인 증권소송이 화해·기각이 아니라 실제 손해배상 판결이나 대규모 화해금으로 귀결되면 거버넌스 리스크를 재평가할 것.",
+    "price_at_analysis": 87.15,
+    "currency": "USD"
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.33394935709847084,
+    "revenue_cagr_5y": 0.4140405688499116,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 4,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 2.305126660414949,
+    "fcf0": 309902000,
+    "fcf_by_year": {
+      "2020": -42656000,
+      "2021": 2597000,
+      "2022": 8137000,
+      "2023": 204945000,
+      "2024": 295830000,
+      "2025": 309902000
+    },
+    "worst_yoy_revenue_growth": 0.2674931455408722,
+    "worst_yoy_year": 2025,
+    "operating_margins": [
+      -0.40929742008761966,
+      -0.2928834419656705,
+      -0.0528782573541,
+      -0.02164002901249492,
+      -0.0014188346237856099
+    ],
+    "net_debt_to_ebitda": -138.13195653976942
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 20.0,
+      "leverage": 2.0,
+      "cyclicality": 5.0,
+      "competition_intensity": 13.2
+    },
+    "score": 48.2
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06446,
+    "r": 0.10916000000000001,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.14004560587572037,
+    "realistic_growth": 0.25,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.33394935709847084,
+        "5y": 0.4140405688499116,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.3639835615052611,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.3639835615052611,
+      "structural_discount_pct": 0.14004560587572037,
+      "discounted_growth": 0.3130092631054543,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.02428611852830019,
+      "two_stage": 0.01723766326904296,
+      "errors": {},
+      "divergence": 0.007048455259257232,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️핵심 판단: MNDY는 5년 매출 CAGR이 41.4%(2022년 +68%→2025년 +26.8%로 자연 감속 중)에 달하는 고성장기였고, DUOL/TTD와 달리 Q1 2026 실적은 컨센서스 상회·FY2026 가이던스(19~20%)도 하향이 아니라 재확인이었다. 2026-07-22 발표한 20% 감원은 실적 부진이 아니라 좌석과금->AI에이전트 사업모델 선제전환이며 발표 당일 주가가 오히려 소폭 상승했다 - 시장이 부정적 신호로 보지 않았다는 뜻. 그럼에도 명시적 고성장구간(3배 이상 매출성장) 이후 감속 국면이라는 구조 자체는 DUOL/TTD와 동일해 two_stage가 이론적으로 더 부합한다고 판단 - 실행 후 모델괴리를 보고 재검토할 것(GWRE/KLAC/VRT/KEYS/SE/RMD/DUOL/TTD와 동일 절차). 첫 분석이라 대조할 과거 기록 없음.",
+    "value": 0.01723766326904296
+  },
+  "expectation_gap": 0.23276233673095703,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.25,
+      "g_bull": 0.25,
+      "g_bear": 0.125,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.9296097591624009,
+      "base": 0.9296097591624009,
+      "bear": 0.3493248814476422
+    },
+    "probabilities": {
+      "bull": 0.3054,
+      "base": 0.5,
+      "bear": 0.19460000000000002
+    },
+    "probability_rationale": "DRS=48.2 (중립점 50 대비 편차 -0.04) 기준: p_bull=30.5%, p_base=50.0%, p_bear=19.5%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.8166863219591087
+  },
+  "rar": 1.6943699625707649,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10916000000000001,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.01723766326904296,
+    "implied_growth_without_drs": -0.007172203063964858,
+    "gap_with_drs": 0.23276233673095703,
+    "gap_without_drs": 0.2571722030639649,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10916000000000001,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.01723766326904296,
+      "implied_growth_without_drs": -0.007172203063964858,
+      "gap_with_drs": 0.23276233673095703,
+      "gap_without_drs": 0.2571722030639649,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 177011000,
+    "sbc_to_fcf_pct": 0.5711837935863595,
+    "fcf0_sbc_adjusted": 132891000,
+    "implied_growth_sbc_adjusted": 0.11891098022460934,
+    "gap_sbc_adjusted": 0.13108901977539067,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  }
+}

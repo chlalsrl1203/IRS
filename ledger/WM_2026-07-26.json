@@ -1,0 +1,260 @@
+{
+  "meta": {
+    "ticker": "WM",
+    "company_name": "Waste Management, Inc.",
+    "analyzed_at": "2026-07-26T00:35:56.952197+00:00",
+    "engine_version": "v3.19",
+    "data_sources": [
+      "SEC EDGAR 10-K primary financial statements (as-filed R.htm, 2026-07-25 조회) - FY2025(acc 0001104659-26-012049), FY2023(acc 0001558370-24-001049), FY2018(acc 0001558370-19-000662), FY2016(acc 0001193125-17-046480), FY2021(acc 0001558370-22-001179)",
+      "SEC XBRL companyconcept API (Revenues/RevenueFromContractWithCustomerExcludingAssessedTax/OperatingIncomeLoss)",
+      "WebSearch+companiesmarketcap.com: 시가총액 $95.87B (2026-07-24 기준, $238.75/주 x 401.58M주)"
+    ]
+  },
+  "data_limitations": [
+    "[모델 괴리 경고] single_stage(7.94%)와 two_stage(14.49%)가 6.55%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+  ],
+  "inputs": {
+    "ticker": "WM",
+    "company_name": "Waste Management, Inc.",
+    "revenue_by_year": {
+      "2014": 13996000000,
+      "2015": 12961000000,
+      "2016": 13609000000,
+      "2017": 14485000000,
+      "2018": 14914000000,
+      "2019": 15455000000,
+      "2020": 15218000000,
+      "2021": 17931000000,
+      "2022": 19698000000,
+      "2023": 20426000000,
+      "2024": 22063000000,
+      "2025": 25204000000
+    },
+    "operating_income_by_year": {
+      "2014": 2299000000,
+      "2015": 2045000000,
+      "2016": 2296000000,
+      "2017": 2636000000,
+      "2018": 2789000000,
+      "2019": 2706000000,
+      "2020": 2434000000,
+      "2021": 2965000000,
+      "2022": 3365000000,
+      "2023": 3575000000,
+      "2024": 4063000000,
+      "2025": 4308000000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 2331000000,
+      "2015": 2498000000,
+      "2016": 2960000000,
+      "2017": 3180000000,
+      "2018": 3570000000,
+      "2019": 3874000000,
+      "2020": 3403000000,
+      "2021": 4338000000,
+      "2022": 4536000000,
+      "2023": 4719000000,
+      "2024": 5390000000,
+      "2025": 6043000000
+    },
+    "capex_by_year": {
+      "2014": 1151000000,
+      "2015": 1233000000,
+      "2016": 1339000000,
+      "2017": 1509000000,
+      "2018": 1694000000,
+      "2019": 1818000000,
+      "2020": 1632000000,
+      "2021": 1904000000,
+      "2022": 2587000000,
+      "2023": 2895000000,
+      "2024": 3231000000,
+      "2025": 3227000000
+    },
+    "market_cap": 95870000000,
+    "net_debt": 22706000000,
+    "ebitda": 7171000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.5,
+      0.4,
+      0.25
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "북미 1위 폐기물사업자. Republic Services 0.50(근접 듀오폴리 2위), Waste Connections 0.40(공격적 M&A롤업, 이번 세션 재검증 대상), GFL 0.25. 점유율추세 0.0(안정적 1위, M&A로 규모확대하나 유기적 변화 근거 부족), 수요민감도 0.20(방어적이나 산업/건설 폐기물 노출 존재). 전부 [추정치].",
+    "model_used": "single_stage",
+    "model_choice_reason": "과거 큐27 기록(v3.13)이 single_stage 7.79%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K primary financial statements (as-filed R.htm, 2026-07-25 조회) - FY2025(acc 0001104659-26-012049), FY2023(acc 0001558370-24-001049), FY2018(acc 0001558370-19-000662), FY2016(acc 0001193125-17-046480), FY2021(acc 0001558370-22-001179)",
+      "SEC XBRL companyconcept API (Revenues/RevenueFromContractWithCustomerExcludingAssessedTax/OperatingIncomeLoss)",
+      "WebSearch+companiesmarketcap.com: 시가총액 $95.87B (2026-07-24 기준, $238.75/주 x 401.58M주)"
+    ]
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.08563152473174229,
+    "revenue_cagr_5y": 0.1061712793131473,
+    "revenue_cagr_10y": 0.06876714833288,
+    "fcf_cagr_5y": 0.0971924686450385,
+    "fcf0": 2816000000,
+    "fcf_by_year": {
+      "2014": 1180000000,
+      "2015": 1265000000,
+      "2016": 1621000000,
+      "2017": 1671000000,
+      "2018": 1876000000,
+      "2019": 2056000000,
+      "2020": 1771000000,
+      "2021": 2434000000,
+      "2022": 1949000000,
+      "2023": 1824000000,
+      "2024": 2159000000,
+      "2025": 2816000000
+    },
+    "worst_yoy_revenue_growth": -0.07394969991426126,
+    "worst_yoy_year": 2015,
+    "operating_margins": [
+      0.16535608722324466,
+      0.17082952584018682,
+      0.17502203074512876,
+      0.18415446675429453,
+      0.17092524996032377
+    ],
+    "net_debt_to_ebitda": 3.166364523776321
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 18.0,
+      "cyclicality": 16.8,
+      "competition_intensity": 12.0
+    },
+    "score": 54.8
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06644,
+    "r": 0.11113999999999999,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.09156781180056886,
+    "realistic_growth": 0.0803240971798224,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.08563152473174229,
+        "5y": 0.1061712793131473,
+        "10y": 0.06876714833288
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.08842057582639133,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.08842057582639133,
+      "structural_discount_pct": 0.09156781180056886,
+      "discounted_growth": 0.0803240971798224,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.0803240971798224
+    }
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.07943367650933261,
+      "two_stage": 0.14491386413574214,
+      "errors": {},
+      "divergence": 0.06548018762640953,
+      "divergence_warning": "[모델 괴리 경고] single_stage(7.94%)와 two_stage(14.49%)가 6.55%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "single_stage",
+    "model_choice_reason": "과거 큐27 기록(v3.13)이 single_stage 7.79%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "value": 0.07943367650933261
+  },
+  "expectation_gap": 0.0008904206704897916,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.0803240971798224,
+      "g_bull": 0.1204861457697336,
+      "g_bear": 0.0401620485899112,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": -0.06706575806754145,
+      "base": -0.1666795567164736,
+      "bear": -0.25375252907355195
+    },
+    "probabilities": {
+      "bull": 0.2856,
+      "base": 0.4999999999999999,
+      "bear": 0.2144
+    },
+    "probability_rationale": "DRS=54.8 (중립점 50 대비 편차 +0.10) 기준: p_bull=28.6%, p_base=50.0%, p_bear=21.4%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.15689830109569616
+  },
+  "rar": -0.28631076842280323,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11113999999999999,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.07943367650933261,
+    "implied_growth_without_drs": 0.06346279107472184,
+    "gap_with_drs": 0.0008904206704897916,
+    "gap_without_drs": 0.01686130610510056,
+    "judgment_with_drs": "적정가",
+    "judgment_without_drs": "적정가",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11113999999999999,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.07943367650933261,
+      "implied_growth_without_drs": 0.06346279107472184,
+      "gap_with_drs": 0.0008904206704897916,
+      "gap_without_drs": 0.01686130610510056,
+      "judgment_with_drs": "적정가",
+      "judgment_without_drs": "적정가",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": false,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 0,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 79,
+    "final": 79
+  },
+  "judgment": "적정가/경계선"
+}

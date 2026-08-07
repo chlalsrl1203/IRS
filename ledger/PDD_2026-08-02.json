@@ -1,0 +1,269 @@
+{
+  "meta": {
+    "ticker": "PDD",
+    "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
+    "analyzed_at": "2026-08-02T04:47:47.279445+00:00",
+    "engine_version": "v3.27",
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001104659-26-050727) R2/R4/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 20-F FY2022(0001104659-23-049927) R4/R7 (FY2020~2022 비교치)",
+      "SEC EDGAR 20-F FY2020(0001104659-21-058237) R4/R7 (FY2018~2020 비교치)",
+      "stockanalysis.com 시가총액 $120.78B (2026-07-27 종가)",
+      "USD/CNY 6.7716 (2026-07-24 Fed H.10, 기존 스크리닝에서 검증된 값, 2026-07-27 스팟 6.765~6.773과 0.1% 이내 일치 재확인)",
+      "WebSearch: Temu 미국 de minimis 폐지 영향(PYMNTS/CNBC/eMarketer), EU DSA Temu 조사·과징금(Lewis Silkin/EU 공식 발표), 중국 e-commerce 경쟁구도 2026(Douyin/Alibaba/JD)"
+    ],
+    "falsification_conditions": "(1) 차기 실적(2026-08-31 Q2 예정)에서 매출성장률이 재차 5% 미만으로 둔화되거나 순이익 감소폭이 -15%보다 더 벌어지면(현재 마진압박이 일시적 재투자가 아니라 구조적 경쟁열위로 전환된 신호) 이 판정은 틀린 것으로 간주. (2) 2026-08-28 EU DSA 컴플라이언스 시한 이후 추가 제재나 Temu 유럽사업 축소가 발생하거나, SAMR 조사가 임원 형사처벌·RMB 10억 단위를 초과하는 벌금으로 확대되면 거버넌스 리스크가 이미 반영된 정성적 추정치를 넘어선 것으로 보고 재검토.",
+    "price_at_analysis": null,
+    "currency": "CNY"
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(48.65%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+  ],
+  "inputs": {
+    "ticker": "PDD",
+    "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
+    "revenue_by_year": {
+      "2018": 13119990000,
+      "2019": 30141886000,
+      "2020": 59491865000,
+      "2021": 93949939000,
+      "2022": 130557589000,
+      "2023": 247639205000,
+      "2024": 393836097000,
+      "2025": 431845713000
+    },
+    "operating_income_by_year": {
+      "2018": -10799741000,
+      "2019": -8538211000,
+      "2020": -9380325000,
+      "2021": 6896762000,
+      "2022": 30401921000,
+      "2023": 58698762000,
+      "2024": 108422862000,
+      "2025": 93102131000
+    },
+    "operating_cashflow_by_year": {
+      "2018": 7767927000,
+      "2019": 14820976000,
+      "2020": 28196627000,
+      "2021": 28783011000,
+      "2022": 48507860000,
+      "2023": 94162531000,
+      "2024": 121929292000,
+      "2025": 106938690000
+    },
+    "capex_by_year": {
+      "2018": 27331000,
+      "2019": 27436000,
+      "2020": 43046000,
+      "2021": 3287232000,
+      "2022": 635716000,
+      "2023": 583879000,
+      "2024": 967137000,
+      "2025": 1145077000
+    },
+    "market_cap": 817873848000.0,
+    "net_debt": -422308269000,
+    "ebitda": 93703614000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.45,
+      0.4,
+      0.3
+    ],
+    "market_share_trend_pp_per_year": -1.0,
+    "active_antitrust_or_regulatory_case": true,
+    "demand_sensitivity_pct": 0.35,
+    "subjective_input_basis": "Alibaba(Taobao/Tmall) 0.45(중국 최대 플랫폼, PDD에 저가 카테고리에서 정면 반격 중), Douyin(ByteDance) e-commerce 0.40(라이브커머스 기반 두자릿수 성장으로 Alibaba 5%대 성장을 크게 앞지르며 저가경쟁까지 가세 - 2026-07 WebSearch), JD.com 0.30(3위로 밀렸으나 물류·정품 신뢰도 기반 안정적 방어). 셋 다 [추정치]. market_share_trend=-1.0pp: PDD가 2023년 JD를 제치고 2024년 한때 Alibaba 시가총액을 넘어섰던 상승세가 2025년 들어 급격히 꺾였다 - 매출성장률이 FY2024 59.06%->FY2025 9.65%로 급감했고, Douyin의 두자릿수 성장이 PDD의 핵심 무기였던 '전체 최저가'를 잠식하는 중이라 순 점유율 모멘텀을 음(-)으로 판단[추정치]. active_antitrust_or_regulatory_case=True: 근거 명확하다. (1) 미국이 2025-05-02 중국발 소액면세(de minimis, $800 미만) 통관특례를 폐지해 Temu 미국 앱 일일 방문자가 58% 급감(2025-02 CNBC 보도, 관세정책발 직접 충격), (2) EU 집행위가 2024-10-31 Temu에 대해 DSA(디지털서비스법) 정식 조사를 개시했고 2025-07-28 예비판정(불법상품 유통 리스크관리 의무 위반)을 거쳐 2026-06 실제 과징금 2억 유로가 부과됐다(EU 공식 발표 확인). (3) 중국 내에서도 SAMR 등 규제당국의 '반내권(反内卷, 출혈경쟁 방지)' 압박이 저가 플랫폼 전반에 가해지는 중. demand_sensitivity=0.35: PDD의 핵심 가치제안이 '초저가'라 중국 내수 경기둔화 국면에서는 오히려 소비 downgrade 수혜(역방향 완충) 여지가 있으나, 실제로는 '중국 소비 변동성'이 FY2025 둔화 요인 중 하나로 언급됐고 Temu 해외매출은 관세정책 충격에 극단적으로 노출된 이력이 있어(-58% 방문자) 완전한 방어주로 보기 어렵다 - BKNG(0.60) 대비 낮지만 TYL(0.05) 같은 방어주보다는 확연히 높은 중간값[추정치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "PDD는 FY2024 59.06% -> FY2025 9.65%로 매출성장률이 6분의 1로 급감한 뒤 최근 분기(Q3 2025 +9%, Q4 2025 +12%)에 한 자릿수 후반~ 두자릿수 초반으로 재안정화되는 명확한 감속국면에 있다(2026-07 WebSearch, PYMNTS/eMarketer 실적 보도). 이런 '고성장에서 성숙성장로 이행 중'인 궤적은 일정 성장기간 이후 터미널 성장률로 수렴하는 구조를 명시적으로 모델링하는 two_stage가 이론적으로 더 부합한다 (BKNG과 동일 논리). 이 종목은 첫 정식분석이라 대조할 과거 기록이 없다 - single_stage/two_stage 실제 괴리는 결과의 divergence_warning 필드로 확인하고, 3%p 미만이면 모델선택이 판정을 바꾸지 않는다는 뜻이므로 이 사유가 그대로 유효하다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 20-F FY2025(0001104659-26-050727) R2/R4/R7, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 20-F FY2022(0001104659-23-049927) R4/R7 (FY2020~2022 비교치)",
+      "SEC EDGAR 20-F FY2020(0001104659-21-058237) R4/R7 (FY2018~2020 비교치)",
+      "stockanalysis.com 시가총액 $120.78B (2026-07-27 종가)",
+      "USD/CNY 6.7716 (2026-07-24 Fed H.10, 기존 스크리닝에서 검증된 값, 2026-07-27 스팟 6.765~6.773과 0.1% 이내 일치 재확인)",
+      "WebSearch: Temu 미국 de minimis 폐지 영향(PYMNTS/CNBC/eMarketer), EU DSA Temu 조사·과징금(Lewis Silkin/EU 공식 발표), 중국 e-commerce 경쟁구도 2026(Douyin/Alibaba/JD)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": "(1) 차기 실적(2026-08-31 Q2 예정)에서 매출성장률이 재차 5% 미만으로 둔화되거나 순이익 감소폭이 -15%보다 더 벌어지면(현재 마진압박이 일시적 재투자가 아니라 구조적 경쟁열위로 전환된 신호) 이 판정은 틀린 것으로 간주. (2) 2026-08-28 EU DSA 컴플라이언스 시한 이후 추가 제재나 Temu 유럽사업 축소가 발생하거나, SAMR 조사가 임원 형사처벌·RMB 10억 단위를 초과하는 벌금으로 확대되면 거버넌스 리스크가 이미 반영된 정성적 추정치를 넘어선 것으로 보고 재검토.",
+    "price_at_analysis": null,
+    "currency": "CNY"
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.489963045630756,
+    "revenue_cagr_5y": 0.4865318057391834,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.3031222533005351,
+    "fcf0": 105793613000,
+    "fcf_by_year": {
+      "2018": 7740596000,
+      "2019": 14793540000,
+      "2020": 28153581000,
+      "2021": 25495779000,
+      "2022": 47872144000,
+      "2023": 93578652000,
+      "2024": 120962155000,
+      "2025": 105793613000
+    },
+    "worst_yoy_revenue_growth": 0.09651125503612734,
+    "worst_yoy_year": 2025,
+    "operating_margins": [
+      0.0734089034373934,
+      0.23286215097002136,
+      0.23703339703420548,
+      0.27529945280764856,
+      0.21559118962470747
+    ],
+    "net_debt_to_ebitda": -4.506851453989811
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 14.0,
+      "leverage": 2.0,
+      "cyclicality": 5.4,
+      "competition_intensity": 20.0
+    },
+    "score": 45.4
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06362,
+    "r": 0.10832,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.10828438005421372,
+    "realistic_growth": 0.25,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.489963045630756,
+        "5y": 0.4865318057391834,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.48867633067141625,
+      "fcf_conservatism_applied": "FCF CAGR(30.31%) < Revenue 가중평균(48.87%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.3031222533005351,
+      "structural_discount_pct": 0.10828438005421372,
+      "discounted_growth": 0.2702988480212503,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": -0.018623063506012148,
+      "two_stage": -0.0416229248046875,
+      "errors": {},
+      "divergence": 0.022999861298675355,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "PDD는 FY2024 59.06% -> FY2025 9.65%로 매출성장률이 6분의 1로 급감한 뒤 최근 분기(Q3 2025 +9%, Q4 2025 +12%)에 한 자릿수 후반~ 두자릿수 초반으로 재안정화되는 명확한 감속국면에 있다(2026-07 WebSearch, PYMNTS/eMarketer 실적 보도). 이런 '고성장에서 성숙성장로 이행 중'인 궤적은 일정 성장기간 이후 터미널 성장률로 수렴하는 구조를 명시적으로 모델링하는 two_stage가 이론적으로 더 부합한다 (BKNG과 동일 논리). 이 종목은 첫 정식분석이라 대조할 과거 기록이 없다 - single_stage/two_stage 실제 괴리는 결과의 divergence_warning 필드로 확인하고, 3%p 미만이면 모델선택이 판정을 바꾸지 않는다는 뜻이므로 이 사유가 그대로 유효하다.",
+    "value": -0.0416229248046875
+  },
+  "expectation_gap": 0.2916229248046875,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.25,
+      "g_bull": 0.25,
+      "g_bear": 0.125,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 1.2501911213213663,
+      "base": 1.2501911213213663,
+      "bear": 0.5724010075813291
+    },
+    "probabilities": {
+      "bull": 0.31379999999999997,
+      "base": 0.5,
+      "bear": 0.1862
+    },
+    "probability_rationale": "DRS=45.4 (중립점 50 대비 편차 -0.09) 기준: p_bull=31.4%, p_base=50.0%, p_bear=18.6%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 1.1239866021429712
+  },
+  "rar": 2.475741414411831,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10832,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": -0.0416229248046875,
+    "implied_growth_without_drs": -0.062311172485351576,
+    "gap_with_drs": 0.2916229248046875,
+    "gap_without_drs": 0.31231117248535156,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10832,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": -0.0416229248046875,
+      "implied_growth_without_drs": -0.062311172485351576,
+      "gap_with_drs": 0.2916229248046875,
+      "gap_without_drs": 0.31231117248535156,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
+}

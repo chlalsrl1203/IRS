@@ -1,0 +1,283 @@
+{
+  "meta": {
+    "ticker": "BRO",
+    "company_name": "Brown & Brown, Inc.",
+    "analyzed_at": "2026-08-04T01:31:19.621120+00:00",
+    "engine_version": "v3.27",
+    "data_sources": [
+      "Fiscal.ai standardized financials (2026-07-25)",
+      "WebSearch: BRO 시가총액 $22.93B (2026-07-23 기준)",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분(Accession $9.8B, ~12-16x)·오가닉성장률(7분기 연속 감속, 2회 마이너스 확인)·보험료사이클 노출·컨틴전트커미션·거버넌스·희석(SBC 낮으나 M&A주식대가 다일루션 ~19% 별도 존재) - 판정불변, Confidence 재검토 권고(89→미검증 유지)"
+    ],
+    "falsification_conditions": "1) 오가닉 성장률(ex-contingents)이 H2 2026 가이던스(Retail 1.5-2.5%/Specialty Distribution 2-4%) 대비 추가로 악화되면 stalwart 분류를 넘어 성장서사 자체를 재검토. 2) 순부채/EBITDA(~2.77x, Accession 인수 후)가 추가 상승하거나 신용등급 조정이 발생하면 레버리지 리스크 반영. 3) Gallagher/Aon/Marsh 등 경쟁사의 대형 M&A가 BRO의 타겟 인수 풀 가격을 추가로 밀어올리는 정황이 확인되면 M&A 자본배분 규율 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+  ],
+  "inputs": {
+    "ticker": "BRO",
+    "company_name": "Brown & Brown, Inc.",
+    "revenue_by_year": {
+      "2014": 1567460000,
+      "2015": 1656951000,
+      "2016": 1762787000,
+      "2017": 1857270000,
+      "2018": 2009857000,
+      "2019": 2384737000,
+      "2020": 2606100000,
+      "2021": 3047500000,
+      "2022": 3563000000,
+      "2023": 4199000000,
+      "2024": 4705000000,
+      "2025": 5763000000
+    },
+    "operating_income_by_year": {
+      "2014": 417184000,
+      "2015": 440633000,
+      "2016": 467032000,
+      "2017": 471004000,
+      "2018": 499447000,
+      "2019": 570768000,
+      "2020": 668900000,
+      "2021": 854700000,
+      "2022": 963000000,
+      "2023": 1156000000,
+      "2024": 1367000000,
+      "2025": 1502000000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 385019000,
+      "2015": 381832000,
+      "2016": 411042000,
+      "2017": 441975000,
+      "2018": 567529000,
+      "2019": 678180000,
+      "2020": 713000000,
+      "2021": 808800000,
+      "2022": 881000000,
+      "2023": 1010000000,
+      "2024": 1174000000,
+      "2025": 1450000000
+    },
+    "capex_by_year": {
+      "2014": 24923000,
+      "2015": 18375000,
+      "2016": 17765000,
+      "2017": 24192000,
+      "2018": 41520000,
+      "2019": 73108000,
+      "2020": 70700000,
+      "2021": 45000000,
+      "2022": 52000000,
+      "2023": 69000000,
+      "2024": 82000000,
+      "2025": 68000000
+    },
+    "market_cap": 22933210922,
+    "net_debt": 6534000000,
+    "ebitda": 1869000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.5,
+      0.45,
+      0.4
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "보험중개. Marsh McLennan 0.50, Aon 0.45, AJG 0.40. 점유율추세 0.0(M&A 롤업 성장이나 유기적 점유율 변화 근거 없음), 수요민감도 0.20(보험중개 수수료는 방어적이나 보험료 사이클 노출). 전부 [추정치].",
+    "model_used": "single_stage",
+    "model_choice_reason": "과거 큐28 기록(v3.15)이 single_stage 4.25%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": "stalwart",
+    "lynch_type_override_reason": "자동분류는 fast_grower(5y 매출CAGR 17.2%)이나, 과거 v3.15 기록과 동일하게 stalwart로 하향 오버라이드. 근거: 매출성장 대부분이 M&A(Accession 등) 연결효과이고 Q1'26 오가닉 성장률 0%라는 명확한 반전신호가 있음.",
+    "data_sources": [
+      "Fiscal.ai standardized financials (2026-07-25)",
+      "WebSearch: BRO 시가총액 $22.93B (2026-07-23 기준)",
+      "2026-08-04 정성심층조사(A등급): M&A자본배분(Accession $9.8B, ~12-16x)·오가닉성장률(7분기 연속 감속, 2회 마이너스 확인)·보험료사이클 노출·컨틴전트커미션·거버넌스·희석(SBC 낮으나 M&A주식대가 다일루션 ~19% 별도 존재) - 판정불변, Confidence 재검토 권고(89→미검증 유지)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": "1) 오가닉 성장률(ex-contingents)이 H2 2026 가이던스(Retail 1.5-2.5%/Specialty Distribution 2-4%) 대비 추가로 악화되면 stalwart 분류를 넘어 성장서사 자체를 재검토. 2) 순부채/EBITDA(~2.77x, Accession 인수 후)가 추가 상승하거나 신용등급 조정이 발생하면 레버리지 리스크 반영. 3) Gallagher/Aon/Marsh 등 경쟁사의 대형 M&A가 BRO의 타겟 인수 풀 가격을 추가로 밀어올리는 정황이 확인되면 M&A 자본배분 규율 재검토.",
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.17384548109418518,
+    "revenue_cagr_5y": 0.17201051657396182,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.13274954240432435,
+    "fcf_cagr_5y": 0.16561203851174766,
+    "fcf0": 1382000000,
+    "fcf_by_year": {
+      "2014": 360096000,
+      "2015": 363457000,
+      "2016": 393277000,
+      "2017": 417783000,
+      "2018": 526009000,
+      "2019": 605072000,
+      "2020": 642300000,
+      "2021": 763800000,
+      "2022": 829000000,
+      "2023": 941000000,
+      "2024": 1092000000,
+      "2025": 1382000000
+    },
+    "worst_yoy_revenue_growth": 0.05359864804993464,
+    "worst_yoy_year": 2017,
+    "operating_margins": [
+      0.2804593929450369,
+      0.2702778557395453,
+      0.27530364372469635,
+      0.29054197662061637,
+      0.2606281450633351
+    ],
+    "net_debt_to_ebitda": 3.495987158908507
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 18.0,
+      "cyclicality": 8.8,
+      "competition_intensity": 12.0
+    },
+    "score": 46.8
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": "자동분류는 fast_grower(5y 매출CAGR 17.2%)이나, 과거 v3.15 기록과 동일하게 stalwart로 하향 오버라이드. 근거: 매출성장 대부분이 M&A(Accession 등) 연결효과이고 Q1'26 오가닉 성장률 0%라는 명확한 반전신호가 있음.",
+    "overridden_down": true
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06404,
+    "r": 0.10874,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.07945203065506959,
+    "realistic_growth": 0.12,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.17384548109418518,
+        "5y": 0.17201051657396182,
+        "10y": 0.13274954240432435
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.165075804000146,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.165075804000146,
+      "structural_discount_pct": 0.07945203065506959,
+      "discounted_growth": 0.15196019616031614,
+      "lynch_type": "stalwart",
+      "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.12
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.04572271074368433,
+      "two_stage": 0.055574798583984356,
+      "errors": {},
+      "divergence": 0.009852087840300026,
+      "divergence_warning": null
+    },
+    "model_used": "single_stage",
+    "model_choice_reason": "과거 큐28 기록(v3.15)이 single_stage 4.25%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "value": 0.04572271074368433
+  },
+  "expectation_gap": 0.07427728925631566,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12,
+      "g_bull": 0.12,
+      "g_bear": 0.06,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": 0.19893868851187047,
+      "base": 0.19893868851187047,
+      "bear": 0.012333536165233694
+    },
+    "probabilities": {
+      "bull": 0.3096,
+      "base": 0.5,
+      "bear": 0.1904
+    },
+    "probability_rationale": "DRS=46.8 (중립점 50 대비 편차 -0.06) 기준: p_bull=31.0%, p_base=50.0%, p_bear=19.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.16340906750507084
+  },
+  "rar": 0.3491646741561343,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10874,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.04572271074368433,
+    "implied_growth_without_drs": 0.03248070012005633,
+    "gap_with_drs": 0.07427728925631566,
+    "gap_without_drs": 0.08751929987994367,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10874,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.04572271074368433,
+      "implied_growth_without_drs": 0.03248070012005633,
+      "gap_with_drs": 0.07427728925631566,
+      "gap_without_drs": 0.08751929987994367,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
+}

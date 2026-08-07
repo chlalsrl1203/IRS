@@ -1,0 +1,274 @@
+{
+  "meta": {
+    "ticker": "BKNG",
+    "company_name": "Booking Holdings Inc.",
+    "analyzed_at": "2026-07-28T00:30:31.228668+00:00",
+    "engine_version": "v3.21",
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001075531-26-000009) R5/R9/R3, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001075531-23-000016) R5/R9",
+      "SEC EDGAR 10-K FY2019(0001075531-20-000011) R4/R8",
+      "SEC EDGAR 10-K FY2016(0001075531-17-000009) R4/R9 (당시 Priceline Group)",
+      "stockanalysis.com 시가총액 $144.74B (2026-07-27 종가)",
+      "WebSearch: OTA 경쟁구도 2026, 스페인 CNMC 과징금/EU DMA/DSA 규제현황"
+    ]
+  },
+  "data_limitations": [
+    "[CAGR 기준연도 변경] 기본 기준연도(2020) 대신 2019년을 기준으로 6년 CAGR을 산출했다(매출·FCF 동일 적용). 기준연도 선택은 성장률을 통째로 바꾸므로 사유를 반드시 대조할 것: 기본 기준연도인 FY2020은 코로나 직격탄을 맞은 해라 두 가지가 동시에 망가진다. (1) FCF가 -$201M(OCF $85M - capex $286M)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -54.9% 폭락한 저점이라 이를 기준으로 하면 5년 CAGR이 31.7%로 나오는데 이는 성장이 아니라 회복 반등이다(2026-07-26 스크리닝이 쓴 4년 CAGR 37.86%도 같은 오류). 대안으로 **FY2019(코로나 이전 고점)**를 골랐다. 저점이 아니라 고점을 기준으로 삼으므로 성장률을 부풀리지 않으며, 코로나 붕괴와 회복을 모두 포함한 6년 구간이 되어 through-cycle 성장률에 가깝다."
+  ],
+  "inputs": {
+    "ticker": "BKNG",
+    "company_name": "Booking Holdings Inc.",
+    "revenue_by_year": {
+      "2014": 8441971000.0,
+      "2015": 9223987000.0,
+      "2016": 10743006000.0,
+      "2017": 12681000000,
+      "2018": 14527000000,
+      "2019": 15066000000,
+      "2020": 6796000000,
+      "2021": 10958000000,
+      "2022": 17090000000,
+      "2023": 21365000000,
+      "2024": 23739000000,
+      "2025": 26917000000
+    },
+    "operating_income_by_year": {
+      "2014": 3073312000.0,
+      "2015": 3258907000.0,
+      "2016": 2906313000.0,
+      "2017": 4538000000,
+      "2018": 5341000000,
+      "2019": 5345000000,
+      "2020": -631000000,
+      "2021": 2496000000,
+      "2022": 5102000000,
+      "2023": 5835000000,
+      "2024": 7555000000,
+      "2025": 8825000000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 2914397000.0,
+      "2015": 3102231000.0,
+      "2016": 3924697000.0,
+      "2017": 4662000000,
+      "2018": 5338000000,
+      "2019": 4865000000,
+      "2020": 85000000,
+      "2021": 2820000000,
+      "2022": 6554000000,
+      "2023": 7344000000,
+      "2024": 8323000000,
+      "2025": 9409000000
+    },
+    "capex_by_year": {
+      "2014": 131503999.99999999,
+      "2015": 173915000.0,
+      "2016": 219889000.0,
+      "2017": 288000000,
+      "2018": 442000000,
+      "2019": 368000000,
+      "2020": 286000000,
+      "2021": 304000000,
+      "2022": 368000000,
+      "2023": 345000000,
+      "2024": 429000000,
+      "2025": 322000000
+    },
+    "market_cap": 144740000000.0,
+    "net_debt": 1533000000,
+    "ebitda": 9448000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.5,
+      0.4,
+      0.35
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": true,
+    "demand_sensitivity_pct": 0.6,
+    "subjective_input_basis": "Expedia 0.50(직접 경쟁 OTA, 매출 약 $15B로 BKNG과 함께 미국·유럽 온라인 여행예약의 약 60%를 과점), Airbnb 0.40(대체숙박 시장을 새로 만들어 BKNG·Expedia가 뒤따라 진입중, 매출 $11.94B), Google Travel 0.35(호텔광고·직접예약 푸시로 OTA 자체를 중간에서 걷어낼 수 있는 구조적 위협). 셋 다 2026-07 WebSearch 기반 [추정치]. market_share_trend=0.0: BKNG이 객실판매를 꾸준히 늘리고 있으나 대체숙박에서는 Airbnb에 밀리는 양면이 있어 순 유기적 점유율 변화를 뒷받침할 정량근거가 없어 중립 처리 [추정치]. active_antitrust_or_regulatory_case=True: 근거 명확하다. 스페인 CNMC가 2024년 €413.2M 과징금(CNMC 사상 최대, 스페인 점유율 70~90% 지배력 남용 - 다만 2025-02 스페인 국가법원이 항소심 판단까지 집행정지), 2024-05-13 EU DMA 게이트키퍼 지정(2024-11-13부터 의무 적용), 2025-09 EU가 DSA로 가짜매물·금융사기 대응 관련 공식 조사 착수, 프랑스 경쟁당국도 2026-01까지 관행시정 최종명령. demand_sensitivity=0.60: 이 프로젝트에서 가장 높게 잡은 값이다. 여행수요는 대표적 재량지출이고, 실제로 FY2020 매출이 -54.9% 폭락한 실측 이력이 있다(PH 산업재 0.35, TYL 정부SW 0.05과 대비).",
+    "model_used": "two_stage",
+    "model_choice_reason": "single_stage(4.7%대)와 two_stage(5.7%대)의 괴리가 약 1.0%p로 v3.19 경고임계값(3%p)에 한참 못 미쳐 **모델 선택이 판정을 바꾸지 않는다**(CDNS 10.97%p, PH 7.1%p 사례와 대조적). 그 전제 위에서, BKNG이 아직 두 자릿수 매출성장 중인 플랫폼이라 명시적 성장기간을 모델링하는 two_stage가 이론적으로 더 적합하다고 보아 채택. 이 종목은 첫 분석이라 대조할 과거 기록이 없다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC EDGAR 10-K FY2025(0001075531-26-000009) R5/R9/R3, as-filed, 2026-07-28 조회",
+      "SEC EDGAR 10-K FY2022(0001075531-23-000016) R5/R9",
+      "SEC EDGAR 10-K FY2019(0001075531-20-000011) R4/R8",
+      "SEC EDGAR 10-K FY2016(0001075531-17-000009) R4/R9 (당시 Priceline Group)",
+      "stockanalysis.com 시가총액 $144.74B (2026-07-27 종가)",
+      "WebSearch: OTA 경쟁구도 2026, 스페인 CNMC 과징금/EU DMA/DSA 규제현황"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": 2019,
+    "cagr_base_year_override_reason": "기본 기준연도인 FY2020은 코로나 직격탄을 맞은 해라 두 가지가 동시에 망가진다. (1) FCF가 -$201M(OCF $85M - capex $286M)로 음수여서 CAGR이 수학적으로 정의되지 않는다. (2) 매출도 전년比 -54.9% 폭락한 저점이라 이를 기준으로 하면 5년 CAGR이 31.7%로 나오는데 이는 성장이 아니라 회복 반등이다(2026-07-26 스크리닝이 쓴 4년 CAGR 37.86%도 같은 오류). 대안으로 **FY2019(코로나 이전 고점)**를 골랐다. 저점이 아니라 고점을 기준으로 삼으므로 성장률을 부풀리지 않으며, 코로나 붕괴와 회복을 모두 포함한 6년 구간이 되어 through-cycle 성장률에 가깝다."
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.1634869878187224,
+    "revenue_cagr_5y": 0.10155143836761948,
+    "cagr_5y_base_year": 2019,
+    "cagr_5y_span": 6,
+    "revenue_cagr_10y": 0.11304006434987146,
+    "fcf_cagr_5y": 0.12438818498366344,
+    "fcf0": 9087000000,
+    "fcf_by_year": {
+      "2014": 2782893000.0,
+      "2015": 2928316000.0,
+      "2016": 3704808000.0,
+      "2017": 4374000000,
+      "2018": 4896000000,
+      "2019": 4497000000,
+      "2020": -201000000,
+      "2021": 2516000000,
+      "2022": 6186000000,
+      "2023": 6999000000,
+      "2024": 7894000000,
+      "2025": 9087000000
+    },
+    "worst_yoy_revenue_growth": -0.5489180937209611,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      0.2277787917503194,
+      0.29853715623171445,
+      0.2731102270067868,
+      0.3182526643919289,
+      0.3278597169075306
+    ],
+    "net_debt_to_ebitda": 0.16225656223539373
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 6.0,
+      "cyclicality": 20.0,
+      "competition_intensity": 14.0
+    },
+    "score": 56.0
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.0668,
+    "r": 0.11149999999999999,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.07477653826557454,
+    "realistic_growth": 0.11508686710944717,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.1634869878187224,
+        "5y": 0.10155143836761948,
+        "10y": 0.11304006434987146
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.13481693828962132,
+      "fcf_conservatism_applied": "FCF CAGR(12.44%) < Revenue 가중평균(13.48%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.12438818498366344,
+      "structural_discount_pct": 0.07477653826557454,
+      "discounted_growth": 0.11508686710944717,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.11508686710944717
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.04584052214500704,
+      "two_stage": 0.055276679992675756,
+      "errors": {},
+      "divergence": 0.009436157847668714,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "single_stage(4.7%대)와 two_stage(5.7%대)의 괴리가 약 1.0%p로 v3.19 경고임계값(3%p)에 한참 못 미쳐 **모델 선택이 판정을 바꾸지 않는다**(CDNS 10.97%p, PH 7.1%p 사례와 대조적). 그 전제 위에서, BKNG이 아직 두 자릿수 매출성장 중인 플랫폼이라 명시적 성장기간을 모델링하는 two_stage가 이론적으로 더 적합하다고 보아 채택. 이 종목은 첫 분석이라 대조할 과거 기록이 없다.",
+    "value": 0.055276679992675756
+  },
+  "expectation_gap": 0.05981018711677141,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.11508686710944717,
+      "g_bull": 0.17263030066417076,
+      "g_bear": 0.057543433554723585,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.391332022345557,
+      "base": 0.18131856404571445,
+      "bear": 0.006225123866907101
+    },
+    "probabilities": {
+      "bull": 0.282,
+      "base": 0.5,
+      "bear": 0.218
+    },
+    "probability_rationale": "DRS=56.0 (중립점 50 대비 편차 +0.12) 기준: p_bull=28.2%, p_base=50.0%, p_bear=21.8%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.20237198932729003
+  },
+  "rar": 0.3613785523701608,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11149999999999999,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.055276679992675756,
+    "implied_growth_without_drs": 0.02550697326660155,
+    "gap_with_drs": 0.05981018711677141,
+    "gap_without_drs": 0.08957989384284562,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11149999999999999,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.055276679992675756,
+      "implied_growth_without_drs": 0.02550697326660155,
+      "gap_with_drs": 0.05981018711677141,
+      "gap_without_drs": 0.08957989384284562,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성"
+}

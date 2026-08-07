@@ -1,5 +1,5 @@
 """
-Expectation Gap Engine v3.9
+Expectation Gap Engine (현재 버전은 아래 ENGINE_VERSION 참조)
 
 투자 분석 프롬프트 v3.0의 5번/6번/7번 섹션을 실제로 계산하는 스크립트.
 LLM이 텍스트로 "시행착오로 근사했다"고 서술하는 대신, 이 스크립트를 실행해서
@@ -14,6 +14,26 @@ LLM이 텍스트로 "시행착오로 근사했다"고 서술하는 대신, 이 �
 
 from dataclasses import dataclass, field
 import statistics
+
+# ======================================================================
+# 엔진 버전 - 단일 진실원천 (v3.32에서 도입)
+# ======================================================================
+# ⚠️ 왜 상수로 뽑았나 (2026-08-05 감사에서 발견한 실제 결함):
+# 버전 문자열이 `pipeline.py`의 `run_analysis()` 반환 dict 안에 리터럴로
+# 박혀 있었고("engine_version": "v3.27"), v3.28에서 `realistic_growth_override`
+# (계산 결과를 실제로 바꾸는 기능)를 배선하면서 아무도 그 리터럴을 올리지
+# 않았다. 그 결과 `ledger/ROP_2026-08-04.json`은 **v3.27로 스탬프돼 있으면서
+# v3.27에는 존재하지도 않는 필드(realistic_growth_override_applied)를 담고
+# 있다** - 스탬프가 거짓말을 하는 상태다.
+#
+# 이 프로젝트가 v3.12 "가짜 버전 사건"에서 배운 게 정확히 이것이다: 버전
+# 라벨과 실제 코드가 어긋나면 다음 세션이 재현을 시도할 때 어느 코드로
+# 계산된 값인지 특정할 수 없다. 리터럴을 함수 본문 800줄 안쪽에 두는 한
+# 같은 누락이 반복될 수밖에 없으므로 모듈 최상단 상수로 올린다.
+#
+# **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
+# 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
+ENGINE_VERSION = "v3.37"
 
 # ======================================================================
 # DRS 원점수 구간 임계값 - v3.7에서 모듈 상단으로 노출
@@ -130,7 +150,16 @@ def implied_growth_two_stage(
         mid = (lo + hi) / 2
         f_mid = _two_stage_market_cap(mid, fcf0, r, n, g_terminal) - market_cap
         error_pct = abs(f_mid) / market_cap * 100
-        log.append({"iter": i, "g_guess": round(mid, 6), "implied_cap": round(mid, 6), "error_pct": round(error_pct, 6)})
+        # v3.32 버그수정: implied_cap 자리에 g_guess와 똑같은 mid가 들어가 있었다
+        # (복붙 실수). 로그 전용 필드라 계산 결과에는 영향이 없었지만, 수렴이
+        # 이상할 때 이 로그를 보고 원인을 찾으려 하면 "이 g에서 시총이 얼마로
+        # 나왔는가"라는 핵심 정보가 통째로 없는 셈이었다.
+        log.append({
+            "iter": i,
+            "g_guess": round(mid, 6),
+            "implied_cap": round(f_mid + market_cap, 2),
+            "error_pct": round(error_pct, 6),
+        })
 
         if abs(f_mid) < market_cap * tolerance:
             return mid, log, error_pct
@@ -300,6 +329,25 @@ class DRSInputs:
 # 6. Realistic Growth 산출 (v3.2 신규: 서술형 근사 금지, 규칙 기반 계산)
 # ----------------------------------------------------------------------
 
+# ⚠️ v3.24 문서화(2026-08-01 방법론 감사 M-1, 권고 #6): 이 상하한값들의 근거(왜
+# 하필 25%/12%/5%/20%/30%/10%인가)는 이 코드베이스 어디에도 없다 - 피터 린치의
+# 원저서 분류법에서 관용적으로 쓰이는 수치를 그대로 가져온 것으로 추정되며,
+# 이 프로젝트가 자체 데이터로 검증한 값이 아니다. 특히 fast_grower 25%는
+# 12년 성장 지속(capped_n() 기본값)과 결합하면 FCF 14.6배를 의미하는데, 이는
+# 역사적으로 극소수만 달성한 궤적이다.
+#
+# **상한이 실제로 바인딩되면 그 종목의 Gap은 Realistic Growth 계산 전체(매출·
+# FCF CAGR, 구조적 할인)를 무시하고 순수하게 `cap - Implied Growth`가 된다** -
+# 즉 공들여 계산한 성장분석이 결과에 아무 기여를 하지 못하고, 종목 간 순위는
+# 오직 "누가 더 싼가(Implied Growth)"로만 결정된다. 2026-08-01 감사 시점
+# 36종목 중 DUOL/MNDY/PDD/SE 4종목이 정확히 25.00%로 이 상한에 걸려 있었다.
+#
+# 하향 조정은 하지 않기로 결정했다 - 이 프로젝트가 이미 채택한 원칙(P/B 임계값을
+# ACGL/PGR 2건만으로 고정하지 않은 것과 동일)대로, 근거 없이 임의의 새 숫자로
+# 바꾸는 것은 근거 없이 유지하는 것보다 나을 게 없다. 대신 상한이 바인딩될 때마다
+# `run_analysis()`가 이 사실과 함의를 `data_limitations`에 명시적으로 남긴다
+# (아래 `realistic_growth_estimate` 호출부 및 pipeline.py 참고) - 캡이 조용히
+# 순위를 결정하는 상황을 최소한 눈에 보이게는 만든다.
 LYNCH_TYPE_CAPS = {
     "fast_grower": (-0.05, 0.25),
     "stalwart": (0.00, 0.12),
@@ -554,10 +602,50 @@ def expected_return(p_bull: float, r_bull: float, p_base: float, r_base: float, 
         raise ValueError(f"확률 합이 1이 아님: {total_p}")
     return p_bull * r_bull + p_base * r_base + p_bear * r_bear
 
-def rar(expected_return_pct: float, drs: float) -> float:
+def rar(expected_return_pct: float, drs: float, allow_sub_one_pct: bool = False) -> float:
+    """
+    RAR = 기대수익률(%) / DRS
+
+    ⚠️ 단위 규약 (v3.19에서 명문화): expected_return_pct는 **퍼센트 숫자**다.
+    기대수익률이 -22.39%라면 -22.39를 넣어야 하며, 소수 -0.2239를 넣으면 안 된다.
+
+    이 규약은 트래커에 축적된 과거 RAR 값들(ADBE 1.7231, CSU 1.6564, ACGL 3.003,
+    ANET 0.5895 등)이 모두 퍼센트 입력 기준으로 산출됐음이 2026-07-25 감사에서
+    확인되어 확정한 것이다.
+
+    ⚠️ 함정 주의: expected_return()과 scenario_return_from_growth()는 **소수**를
+    반환한다(-0.2239). 따라서 rar(expected_return(...), drs)로 그대로 연결하면
+    100배 작은 값이 조용히 나온다. 실제로 2026-07-25 세션에서 CDNS/MNST/PH
+    세 종목이 이 실수로 잘못 계산됐다(RAR -0.006 vs 정답 -0.599 등).
+    소수를 갖고 있다면 rar_from_decimal_return()을 쓸 것.
+
+    v3.19 가드: |expected_return_pct| < 1.0 이면 소수를 잘못 넣은 것으로 간주해
+    ValueError를 던진다. 기대수익률이 진짜로 ±1% 미만인 드문 경우에만
+    allow_sub_one_pct=True로 명시적으로 통과시킬 것.
+    """
     if drs <= 0:
         raise ValueError("DRS는 0보다 커야 함 (0이면 무위험이라는 뜻인데 현실적으로 불가)")
+    if not allow_sub_one_pct and abs(expected_return_pct) < 1.0:
+        raise ValueError(
+            f"expected_return_pct={expected_return_pct}: 절대값이 1.0 미만이라 "
+            f"소수(예: -0.2239)를 퍼센트 자리에 잘못 넣은 것으로 보인다(v3.19 가드). "
+            f"퍼센트 숫자(예: -22.39)를 넣거나, 소수를 갖고 있다면 "
+            f"rar_from_decimal_return()을 쓸 것. 기대수익률이 진짜로 ±1% 미만이면 "
+            f"allow_sub_one_pct=True를 명시할 것."
+        )
     return expected_return_pct / drs
+
+
+def rar_from_decimal_return(expected_return_decimal: float, drs: float) -> float:
+    """
+    v3.19 신규: expected_return()이 반환하는 **소수**를 그대로 받아 RAR을 계산한다.
+    내부에서 100을 곱해 퍼센트로 변환하므로 rar()의 단위 함정을 피할 수 있다.
+
+    권장 사용법:
+        er = expected_return(p_bull, r_bull, p_base, r_base, p_bear, r_bear)
+        rar_value = rar_from_decimal_return(er, drs)
+    """
+    return rar(expected_return_decimal * 100.0, drs, allow_sub_one_pct=True)
 
 # ----------------------------------------------------------------------
 # 10. Scenario 수익률(r_bull/r_base/r_bear) 산출 - v3.5 신규
@@ -621,6 +709,227 @@ def scenario_return_from_growth(
     return price_ratio ** (1.0 / convergence_years) - 1
 
 # ----------------------------------------------------------------------
+# 10-1. Stalwart + two_stage RAR 구조적 편향 감지 - v3.13 신규
+# ----------------------------------------------------------------------
+
+def check_stalwart_two_stage_bias(lynch_type: str, rar_value: float, model_used: str) -> tuple:
+    """
+    v3.13 신규: stalwart 유형이 two_stage 모델에서 구조적으로 음수 RAR을
+    보이는 경향이 실전 데이터(CTAS, AME 등)에서 반복 확인됨. min_spread
+    가드가 거의 모든 stalwart 기본 시나리오에서 발동하기 때문.
+
+    모델을 바꾸는 대신(model="two_stage" 기본값 유지), 이 함수로 편향
+    가능성을 감지해 메모에 명시적으로 플래그하도록 강제한다.
+
+    반환값: (bias_flag_required: bool, note: str|None)
+    """
+    if lynch_type == "stalwart" and model_used == "two_stage" and rar_value < 0:
+        return True, (
+            "[구조적 편향 플래그] lynch_type=stalwart, model=two_stage에서 "
+            f"RAR={rar_value:.3f}(음수)이 산출됨. 이는 사업의 질이 나빠서가 "
+            "아니라 two_stage 모델의 min_spread 가드가 stalwart 기본 시나리오 "
+            "대부분에서 발동하는 구조적 모델 한계로 알려져 있다(v3.13). "
+            "메모 7번(RAR) 섹션에 이 사실을 반드시 명시하고, 다른 stalwart "
+            "종목과의 상대 비교로 해석할 것(절대값으로 '나쁜 종목'이라 판단 금지)."
+        )
+    return False, None
+
+# ----------------------------------------------------------------------
+# 10-2. Confidence Score - v3.14 신규 (v3.16에서 하드닝)
+# ----------------------------------------------------------------------
+
+def confidence_score(
+    sensitivity_check_result: dict,
+    gap: float,
+    rar: float,
+    data_completeness_pct: float,
+    lynch_type_cap_applied: bool = False,
+    stalwart_two_stage_bias_flagged: bool = False,
+    realistic_growth_overridden: bool = False,
+    base: int = 50,
+) -> dict:
+    """
+    v3.16 하드닝: v3.14의 confidence_score()가 robustness_check_passed와
+    section_5_7_aligned를 순수 bool로 받아, 실제로 강건성 점검을 돌리지
+    않고도 그냥 True를 적어 넣으면 통과하는 결함이 있었음(run_self_check가
+    v3.15에서 무너졌던 것과 동일 유형의 취약점).
+
+    이제 다음을 강제한다:
+    - sensitivity_check_result: expectation_gap_sensitivity_check()의 실제
+      반환 dict를 그대로 받는다. 'judgment_flipped' 키가 없으면 잘못된
+      호출로 간주해 TypeError.
+    - gap, rar: 실수치를 직접 받아 함수 내부에서 부호를 비교한다(과거
+      section_5_7_aligned bool을 호출부가 임의로 계산해서 넣던 것과 달리,
+      정합 여부 판정 자체를 이 함수가 수행).
+
+    반환값: {"score": ..., "base": ..., "adjustments": {...}, "final": ...}
+    """
+    if "judgment_flipped" not in sensitivity_check_result:
+        raise TypeError(
+            "sensitivity_check_result는 expectation_gap_sensitivity_check()의 "
+            "실제 반환값이어야 함('judgment_flipped' 키 없음). 구 방식(bool 직접 "
+            "전달)은 v3.16부터 지원하지 않음."
+        )
+    if not (0.0 <= data_completeness_pct <= 1.0):
+        raise ValueError("data_completeness_pct는 0~1 범위")
+
+    judgment_flipped = sensitivity_check_result["judgment_flipped"]
+    if judgment_flipped is None:
+        # error 케이스([Model Not Applicable] 등) - 강건성 점검 자체가 불가능했던 상황이므로
+        # 보수적으로 미통과 처리
+        robustness_check_passed = False
+    else:
+        robustness_check_passed = not judgment_flipped
+
+    # gap과 rar의 부호가 같은 방향(둘 다 양수=저평가+매력적, 둘 다 음수=고평가+비매력)이면 정합
+    section_5_7_aligned = (gap >= 0 and rar >= 0) or (gap < 0 and rar < 0)
+
+    # v3.32 추가: realistic_growth_overridden.
+    # 배경 - v3.28에서 realistic_growth_override를 배선했을 때, 오버라이드가
+    # 적용된 뒤에도 growth_breakdown["cap_applied"]에 **이미 우회된 캡의 문구가
+    # 그대로 남아** 그 값이 lynch_type_cap_applied로 넘어가고 있었다. ROP가 실제
+    # 피해자다: Realistic Growth는 5.5%인데 ledger의 cap_applied는 "상한 캡
+    # 적용(12.0%)"이라고 적혀 있고, -5점 페널티도 걸리지 않은 캡을 근거로 붙었다.
+    #
+    # 캡 플래그를 사실대로(=미적용) 되돌리면 페널티가 사라져 Confidence가 그냥
+    # 올라가버리는데, 그건 옳지 않다 - 오버라이드는 분석자가 직접 넣은 주관적
+    # 입력이라 오히려 신뢰도를 낮출 사유다. 그래서 캡 플래그는 사실대로 고치되
+    # 동일 크기(-5)의 오버라이드 페널티를 별도 항목으로 신설한다. 결과적으로
+    # **기존 종목의 Confidence 수치는 하나도 바뀌지 않고**(ROP 89 유지), 감점의
+    # 근거만 실제 원인으로 정정된다.
+    adjustments = {
+        "robustness_check_passed": 15 if robustness_check_passed else 0,
+        "section_5_7_aligned": 15 if section_5_7_aligned else 0,
+        "data_completeness": round(data_completeness_pct * 15),
+        "lynch_type_cap_applied": -5 if lynch_type_cap_applied else 0,
+        "stalwart_two_stage_bias_flagged": -5 if stalwart_two_stage_bias_flagged else 0,
+        "realistic_growth_overridden": -5 if realistic_growth_overridden else 0,
+    }
+    raw_score = base + sum(adjustments.values())
+    final = max(0, min(100, raw_score))
+
+    return {
+        "base": base,
+        "sensitivity_check_result": sensitivity_check_result,
+        "section_5_7_aligned": section_5_7_aligned,
+        "adjustments": adjustments,
+        "raw_score": raw_score,
+        "final": final,
+    }
+
+# ----------------------------------------------------------------------
+# 10-3. 판정 세분화(Judgment Grade) - v3.27 신규(2026-08-02)
+# ----------------------------------------------------------------------
+
+# 기존 3단계 판정(저평가/적정가/과대평가, ±5%p 경계)은 "저평가 가능성"
+# 한 칸에 33종목 중 17개(52%)가 몰려 PDD(+29.16%p)와 BSY(+5.70%p)를 구분하지
+# 못했다(High-3 감사에서 지적된 높은 기저율과 같은 증상). 이 함수는 **기존
+# 3단계 경계값(±5%p, ±15%p)을 그대로 유지한 채** 그 안을 6단계로 세분화한다 -
+# 즉 기존 judgment(저평가/적정가/과대평가)는 하나도 바뀌지 않고, S/A/B는
+# 전부 "저평가 가능성"의 부분집합, D/F는 전부 "과대평가 가능성"의
+# 부분집합이다(엄밀한 상위호환 - 재검증 불필요, 기존 33종목 ledger 전부에
+# Gap 하나만으로 소급 계산 가능).
+#
+# 경계값 근거(2026-08-02 ledger 33종목 실측 분포에서 자연 단절점 확인):
+#   +15%p: TTD(+17.01%p)와 GEN(+12.18%p) 사이가 이 표본에서 가장 큰 간극(4.83%p)
+#   +7%p : BRO(+7.43%p)와 BKNG(+5.98%p) 사이 단절(1.45%p)
+#   -15%p: 현재 표본에 F등급 종목 없음(KEYS -14.36%p가 가장 근접) - 향후
+#          더 큰 과대평가 종목이 나올 때를 대비해 대칭으로 미리 설정
+# 상하한 비대칭 없이 대칭 설계(±5/±15)를 택한 이유: 표본 대부분이 저평가
+# 후보 스크리닝 결과라 과대평가 종목 수가 원천적으로 적어(2/33) 매도 쪽
+# 경계를 표본만으로 확정하기엔 근거가 얕다 - 대칭을 기본값으로 삼고 향후
+# 과대평가 표본이 쌓이면 재검토할 것(demand_sensitivity 앵커표와 동일하게
+# "시작점"으로 취급).
+# v3.31(2026-08-04 사용자 지적): B등급 라벨이 "관심(약매수)"였는데
+# `scripts/build_buylist_*.py`는 실제로 S/A등급만 매수 유니버스에 넣고
+# B등급은 완전히 배제한다 - 라벨은 "조금 사라"고 말하고 코드는 "안 산다"로
+# 동작하는 모순이었다. 이 프로젝트는 Gap 하나만으로 자동매수를 결정하지
+# 않는다(항상 정성 심층조사 + Confidence 검증을 거쳐야 실제 비중이 잡힘 -
+# is_insurer/sbc_cross_check와 동일한 "병기, 자동판정 안 함" 원칙). B등급은
+# 그 정성조사조차 아직 매수리스트 편입을 전제하지 않는 단계라 라벨을
+# 정직하게 "관찰대상"으로 바꾼다 - 매수 신호가 아니라 다음 스크리닝에서
+# 우선 확인할 후보라는 뜻.
+JUDGMENT_GRADE_LABELS = {
+    "S": "적극매수",
+    "A": "매수",
+    "B": "관찰대상(매수리스트 미포함)",
+    "C": "중립/보유",
+    "D": "비중축소",
+    "F": "매도",
+}
+
+# ⚠️ v3.32(2026-08-05 감사): 3단계 판정 규칙이 **네 곳에 독립적으로 복사**돼
+# 있었다 - pipeline.run_analysis(), pipeline의 SBC 병기 블록,
+# expectation_gap_sensitivity_check() 내부의 _judge(), 그리고 크로스체크
+# 스크립트 2개(rop/keys). 경계값(±5%p)은 넷 다 같았지만 **중립 구간 라벨이
+# 이미 갈라져 있었다**: 셋은 "적정가/경계선"인데 sensitivity_check만
+# "적정가"였다. 그 결과 지금까지 저장된 ledger 36건 중 13건이 한 파일 안에서
+# `judgment="적정가/경계선"`과 `sensitivity_check.judgment_with_drs="적정가"`를
+# 동시에 들고 있다 - 같은 규칙의 같은 출력인데 이름이 다르다.
+#
+# 이것이 정확히 CLAUDE.md의 Simplicity First 항목이 경고한 상황이다("중복
+# 자체가 두 계산이 미묘하게 어긋나는 새로운 버그를 만든다"). 지금은 라벨만
+# 어긋났지만, 다음에 경계값을 조정하는 사람이 네 곳 중 셋만 고치면
+# `judgment_flipped`(두 _judge() 출력의 != 비교)가 조용히 무의미해진다.
+#
+# 그래서 규칙을 이 함수 하나로 모으고 나머지는 전부 여기를 호출하게 바꾼다.
+# 경계값·라벨 자체는 하나도 바꾸지 않는다(중립 라벨은 다수파이자 pipeline이
+# ledger의 최상위 `judgment`에 쓰던 "적정가/경계선"으로 통일).
+JUDGMENT_UNDERVALUED = "저평가 가능성"
+JUDGMENT_NEUTRAL = "적정가/경계선"
+JUDGMENT_OVERVALUED = "과대평가 가능성"
+
+# ⚠️ v3.35(2026-08-06): 판정 경계값 자체도 상수로 뽑는다.
+# v3.32에서 판정 *규칙*은 단일화했지만 **경계값 숫자(0.05)는 여전히 리터럴**로
+# 남아 있었고, v3.34에서 ETF 엔진의 `required_growth_thresholds(band=0.05)`가
+# 같은 값을 독립적으로 또 하드코딩하면서 중복이 되살아났다. "저평가가 되려면
+# 필요한 성장률"은 정의상 판정 경계와 같아야 하는데, 두 곳에 따로 적혀 있으면
+# 한쪽만 바꿨을 때 엔진이 '저평가라 부르려면 X% 필요'라고 안내해놓고 정작
+# 그 X%에서 저평가 판정을 안 내리는 자기모순이 생긴다. 같은 죄를 세 번째로
+# 반복하지 않도록 여기서 끝낸다(테스트: test_judgment_band_is_single_source).
+JUDGMENT_BAND = 0.05
+
+
+def judgment_from_gap(gap: float) -> str:
+    """
+    Expectation Gap(소수, 0.05=+5%p)으로 3단계 판정을 내린다 - 이 프로젝트의
+    유일한 판정 규칙 구현체다.
+
+    +5%p 이상 -> 저평가 가능성 / -5%p 이하 -> 과대평가 가능성 / 그 사이 -> 적정가·경계선
+
+    `judgment_grade_from_gap()`과 경계가 정확히 일치한다(S/A/B ⊂ 저평가,
+    C = 적정가/경계선, D/F ⊂ 과대평가) - 두 함수의 정합성은
+    test_judgment_grade_is_strict_subset_of_judgment가 지킨다.
+    """
+    if gap >= JUDGMENT_BAND:
+        return JUDGMENT_UNDERVALUED
+    if gap <= -JUDGMENT_BAND:
+        return JUDGMENT_OVERVALUED
+    return JUDGMENT_NEUTRAL
+
+
+def judgment_grade_from_gap(gap: float) -> str:
+    """
+    Expectation Gap(소수, 0.05=+5%p)만으로 6단계 등급을 매긴다.
+
+    S >= +15%p > A >= +7%p > B >= +5%p > C(중립, -5%p~+5%p) > D >= -15%p > F
+
+    순수 함수(부작용 없음) - 이미 저장된 ledger의 expectation_gap 값에도
+    엔진 재실행 없이 그대로 적용 가능하다(과거 33종목 소급 랭킹에 사용).
+    """
+    if gap >= 0.15:
+        return "S"
+    if gap >= 0.07:
+        return "A"
+    if gap >= 0.05:
+        return "B"
+    if gap > -0.05:
+        return "C"
+    if gap > -0.15:
+        return "D"
+    return "F"
+
+# ----------------------------------------------------------------------
 # 11. DRS 이중 반영 강건성 점검 - v3.6 재설계
 # ----------------------------------------------------------------------
 
@@ -633,19 +942,38 @@ def expectation_gap_sensitivity_check(
     realistic_growth: float,
     n: int,
     g_terminal: float,
+    model_used: str = "two_stage",
 ) -> dict:
+    """
+    DRS를 반영한 r과 반영하지 않은 r로 각각 Implied Growth를 구해 판정이
+    바뀌는지(judgment_flipped) 점검한다.
+
+    v3.19 근본수정(2026-07-26): model_used 파라미터 신규 추가. 이전에는
+    이 함수가 **항상 two_stage로만** 판정해서, Section 5가 single_stage를
+    쓴 종목(WCN/WM/IDXX 등)에서는 강건성점검이 Section 5와 다른 모델로
+    수행되고 있었다 - 검증하려던 것과 다른 것을 검증한 셈이다. 이제
+    Section 5와 동일한 모델로 판정하도록 고쳤다(2026-07-26 발견,
+    2026-07-25 pipeline.py의 임시 경고문 우회책을 대체).
+
+    model_used를 생략하면 기존 동작(two_stage)과 동일하게 유지된다 -
+    호출부가 반드시 Section 5에서 실제로 쓴 모델을 명시적으로 넘길 것.
+    """
+    if model_used not in ("single_stage", "two_stage"):
+        raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
     r_without_drs = rf + base_erp
 
-    def _judge(gap):
-        if gap >= 0.05:
-            return "저평가 가능성"
-        elif gap <= -0.05:
-            return "과대평가 가능성"
-        return "적정가"
+    # v3.32: 여기 있던 _judge() 사본을 제거하고 judgment_from_gap()으로 통일했다.
+    # 이 사본만 중립 라벨이 "적정가"라서 같은 ledger 안에서 최상위 judgment
+    # ("적정가/경계선")와 이름이 갈리는 문제가 있었다(13건). judgment_flipped는
+    # 두 판정의 != 비교라 라벨 통일로 바뀌지 않는다.
+    _judge = judgment_from_gap
 
     def _try(r):
         try:
-            g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+            if model_used == "two_stage":
+                g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+            else:
+                g = implied_growth_single_stage(market_cap, fcf0, r)
             return g, None
         except ValueError as e:
             return None, str(e)
@@ -689,18 +1017,16 @@ FINAL_SELF_CHECK_ITEMS = [
     "RAR의 확률 가중치(Bull/Base/Bear)를 임의로 배정하지 않고 근거를 제시했는가",
     "Implied Growth, DRS 계산을 서술형 근사가 아니라 실제 코드 실행으로 산출했는가",
     "최종 결론이 현재 가격에서의 투자 행동으로 이어지는가",
+    "stalwart+two_stage 조합에서 RAR 음수가 나왔다면 구조적 편향으로 플래그했는가",
 ]
 
 
 def run_self_check(answers: dict) -> None:
     """
-    FINAL_SELF_CHECK_ITEMS의 각 문자열을 키로, True/False를 값으로 채운 딕셔너리를 넣는다.
-    항목이 하나라도 빠졌거나 False이면 ValueError를 던져 메모 마무리를 막는다.
-
-    ⚠️ v3.15에서 self_check_v2.run_self_check_v2(memo_text, ctx)로 교체됨.
-    이 함수는 "accepted any all-True dict, never touched memo text"라는 결함이
-    확인되어 v3.16 이후 폐기 대상. 이 파일은 v3.9 기준 원문이므로 아직 남아있음 -
-    Claude Code에서 v3.15 반영 시 이 함수를 self_check_v2 모듈로 교체할 것.
+    ⚠️ DEPRECATED (v3.15) — self_check_v2.run_self_check_v2(memo_text, ctx)로
+    대체됨. 이 함수는 불리언 자기신고만 받고 메모 텍스트를 전혀 검증하지
+    않는 결함이 확인됨(18개 호출 인스턴스 전체 확인). 새 분석에서는 절대
+    사용 금지. 과거 메모 이력 참고용으로만 코드 보존.
     """
     missing = [item for item in FINAL_SELF_CHECK_ITEMS if item not in answers]
     if missing:

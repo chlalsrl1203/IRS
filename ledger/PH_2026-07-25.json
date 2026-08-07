@@ -1,0 +1,258 @@
+{
+  "meta": {
+    "ticker": "PH",
+    "company_name": "Parker-Hannifin Corporation",
+    "analyzed_at": "2026-07-25T05:00:33.990330+00:00",
+    "engine_version": "v3.19",
+    "data_sources": [
+      "Alpha Vantage (조회일 2026-07-25)",
+      "WebSearch: Parker Filtration Group / CIRCOR / S&P outlook"
+    ]
+  },
+  "data_limitations": [
+    "[모델 괴리 경고] single_stage(7.99%)와 two_stage(15.09%)가 7.11%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+  ],
+  "inputs": {
+    "ticker": "PH",
+    "company_name": "Parker-Hannifin Corporation",
+    "revenue_by_year": {
+      "2014": 13215971000,
+      "2015": 12711744000,
+      "2016": 11360753000,
+      "2017": 12029312000,
+      "2018": 14302392000,
+      "2019": 14320324000,
+      "2020": 13695520000,
+      "2021": 14347640000,
+      "2022": 15861608000,
+      "2023": 19065194000,
+      "2024": 19929606000,
+      "2025": 19850000000
+    },
+    "operating_income_by_year": {
+      "2014": 1489230000,
+      "2015": 1468066000,
+      "2016": 1297957000,
+      "2017": 1450128000,
+      "2018": 2013704000,
+      "2019": 2123764999,
+      "2020": 1986786000,
+      "2021": 2402287000,
+      "2022": 2814745000,
+      "2023": 3220662000,
+      "2024": 3901280000,
+      "2025": 4060000000
+    },
+    "operating_cashflow_by_year": {
+      "2014": 1387893000,
+      "2015": 1363233000,
+      "2016": 1210778000,
+      "2017": 1300563000,
+      "2018": 1596700000,
+      "2019": 1730140000,
+      "2020": 2070949000,
+      "2021": 2575001000,
+      "2022": 2441730000,
+      "2023": 2979930000,
+      "2024": 3384329000,
+      "2025": 3776000000
+    },
+    "capex_by_year": {
+      "2014": 216340000,
+      "2015": 215527000,
+      "2016": 149407000,
+      "2017": 203748000,
+      "2018": 247667000,
+      "2019": 195089000,
+      "2020": 232591000,
+      "2021": 209957000,
+      "2022": 230044000,
+      "2023": 380747000,
+      "2024": 400112000,
+      "2025": 435000000
+    },
+    "market_cap": 124255617000,
+    "net_debt": 9173000000,
+    "ebitda": 4967000000,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.5,
+      0.35,
+      0.3
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.35,
+    "subjective_input_basis": "Eaton 0.5, Emerson 0.35, Honeywell 0.3. 산업재 특성상 demand_sensitivity 0.35로 높게 설정(2016년 -10.63% 실제 역성장 이력). 점유율추세 0.0은 M&A로 매출은 늘지만 유기적 점유율 변화 근거가 없어 중립 처리 [추정치]. 회계연도는 6월 결산.",
+    "model_used": "two_stage",
+    "model_choice_reason": "기존 v3.13 기록의 내재성장률 ~15.9%와 two_stage 재계산 15.09%가 거의 일치해 이 종목의 확립된 컨벤션으로 확인. single_stage로 계산하면 7.99%가 나와 Gap이 -1.48%p(적정가)로 판정이 뒤집히므로 반드시 two_stage를 쓸 것 - 2026-07-25 세션에서 실제로 이 실수를 했다가 기존기록과 대조해 잡았다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "Alpha Vantage (조회일 2026-07-25)",
+      "WebSearch: Parker Filtration Group / CIRCOR / S&P outlook"
+    ]
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.07763353923653371,
+    "revenue_cagr_5y": 0.07705131902453943,
+    "revenue_cagr_10y": 0.045575834714450814,
+    "fcf_cagr_5y": 0.1269101154593728,
+    "fcf0": 3341000000,
+    "fcf_by_year": {
+      "2014": 1171553000,
+      "2015": 1147706000,
+      "2016": 1061371000,
+      "2017": 1096815000,
+      "2018": 1349033000,
+      "2019": 1535051000,
+      "2020": 1838358000,
+      "2021": 2365044000,
+      "2022": 2211686000,
+      "2023": 2599183000,
+      "2024": 2984217000,
+      "2025": 3341000000
+    },
+    "worst_yoy_revenue_growth": -0.10627896534102643,
+    "worst_yoy_year": 2016,
+    "operating_margins": [
+      0.16743429581450328,
+      0.17745647225678507,
+      0.16892888685003676,
+      0.19575299180525696,
+      0.20453400503778338
+    ],
+    "net_debt_to_ebitda": 1.8467888061203945
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 10.0,
+      "cyclicality": 17.4,
+      "competition_intensity": 12.0
+    },
+    "score": 47.400000000000006
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.06422,
+    "r": 0.10891999999999999,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.08397114773895856,
+    "realistic_growth": 0.06508140623414017,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.07763353923653371,
+        "5y": 0.07705131902453943,
+        "10y": 0.045575834714450814
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.07104733226851885,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.07104733226851885,
+      "structural_discount_pct": 0.08397114773895856,
+      "discounted_growth": 0.06508140623414017,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.06508140623414017
+    }
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.07988395024328897,
+      "two_stage": 0.1509395599365234,
+      "errors": {},
+      "divergence": 0.07105560969323442,
+      "divergence_warning": "[모델 괴리 경고] single_stage(7.99%)와 two_stage(15.09%)가 7.11%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "기존 v3.13 기록의 내재성장률 ~15.9%와 two_stage 재계산 15.09%가 거의 일치해 이 종목의 확립된 컨벤션으로 확인. single_stage로 계산하면 7.99%가 나와 Gap이 -1.48%p(적정가)로 판정이 뒤집히므로 반드시 two_stage를 쓸 것 - 2026-07-25 세션에서 실제로 이 실수를 했다가 기존기록과 대조해 잡았다.",
+    "value": 0.1509395599365234
+  },
+  "expectation_gap": -0.08585815370238321,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.06508140623414017,
+      "g_bull": 0.09762210935121027,
+      "g_bear": 0.03254070311707009,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": -0.14112198775468743,
+      "base": -0.21611689238774012,
+      "bear": -0.2831872764449572
+    },
+    "probabilities": {
+      "bull": 0.30779999999999996,
+      "base": 0.5,
+      "bear": 0.19220000000000004
+    },
+    "probability_rationale": "DRS=47.4 (중립점 50 대비 편차 -0.05) 기준: p_bull=30.8%, p_base=50.0%, p_bear=19.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.20592438855748363
+  },
+  "rar": -0.43443963830692744,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10891999999999999,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": 0.1509395599365234,
+    "implied_growth_without_drs": 0.12164134979248044,
+    "gap_with_drs": -0.08585815370238321,
+    "gap_without_drs": -0.056559943558340264,
+    "judgment_with_drs": "과대평가 가능성",
+    "judgment_without_drs": "과대평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10891999999999999,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": 0.1509395599365234,
+      "implied_growth_without_drs": 0.12164134979248044,
+      "gap_with_drs": -0.08585815370238321,
+      "gap_without_drs": -0.056559943558340264,
+      "judgment_with_drs": "과대평가 가능성",
+      "judgment_without_drs": "과대평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "과대평가 가능성"
+}
