@@ -3,8 +3,8 @@
     "ticker": "SMH",
     "name": "VanEck Semiconductor ETF",
     "tracks": "반도체 섹터",
-    "analyzed_at": "2026-08-08T04:39:31.950099+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:53:21.237156+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/smh (2026-08-08 조회)"
@@ -14,7 +14,6 @@
     "currency": "USD"
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
     "[보수율 부담] 연 보수율 0.35%는 10년 보유 시 누적 3.45%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
@@ -24,7 +23,8 @@
     "name": "VanEck Semiconductor ETF",
     "tracks": "반도체 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 44.71
+      "stockanalysis(trailing)": 44.71,
+      "allinvestview(trailing)": 40.54
     },
     "expense_ratio": 0.0035,
     "n_holdings": 26,
@@ -62,29 +62,30 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 44.71
+      "stockanalysis(trailing)": 44.71,
+      "allinvestview(trailing)": 40.54
     },
-    "min": 44.71,
+    "min": 40.54,
     "max": 44.71,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "spread_abs": 4.170000000000002,
+    "spread_relative": 0.10286137148495318,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 20.0,
       "breadth": 20.0,
-      "data_quality": 2.0
+      "data_quality": 10.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 83.33333333333334
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.07500000000000001,
+    "r": 0.12110000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.12,
@@ -97,8 +98,8 @@
       "uncertainty": 0.02,
       "growth_low": 0.09649999999999999,
       "growth_high": 0.13649999999999998,
-      "gap_low": 0.0038388536425289638,
-      "gap_high": 0.04383885364252896,
+      "gap_low": -7.363815357692982e-05,
+      "gap_high": 0.039926361846423064,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -109,19 +110,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 44.71,
         "earnings_yield": 0.022366360993066426,
-        "implied_growth": 0.09266114635747102,
-        "gap": 0.023838853642528968,
+        "implied_growth": 0.09657363815357692,
+        "gap": 0.019926361846423074,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.09266114635747102,
-          "for_undervalued": 0.142661146357471,
-          "for_overvalued": 0.04266114635747102,
+          "breakeven": 0.09657363815357692,
+          "for_undervalued": 0.14657363815357694,
+          "for_overvalued": 0.046573638153576916,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 40.54,
+        "earnings_yield": 0.0246669955599408,
+        "implied_growth": 0.09411155512758788,
+        "gap": 0.022388444872412108,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.09411155512758788,
+          "for_undervalued": 0.1441115551275879,
+          "for_overvalued": 0.04411155512758788,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.023838853642528968,
-    "gap_max": 0.023838853642528968,
+    "gap_min": 0.019926361846423074,
+    "gap_max": 0.022388444872412108,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -134,9 +148,9 @@
     "cumulative_drag": 0.034453863618844394
   },
   "fed_model": {
-    "earnings_yield": 0.022366360993066426,
+    "earnings_yield": 0.0246669955599408,
     "treasury_yield": 0.0461,
-    "spread": -0.023733639006933576,
+    "spread": -0.021433004440059203,
     "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
   },
   "performance": {

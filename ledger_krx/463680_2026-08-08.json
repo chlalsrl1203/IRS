@@ -3,8 +3,8 @@
     "ticker": "463680",
     "name": "KODEX 미국S&P500테크놀로지",
     "tracks": "기술 섹터",
-    "analyzed_at": "2026-08-08T04:15:04.823392+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:56:18.310066+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "cbonds.com/etf/200059(2026-08-08) - 총보수 0.25% 확인",
@@ -159,6 +159,7 @@
     "expense_ratio": 0.0025,
     "expense_ratio_delta_vs_us": 0.0017000000000000001,
     "hedged": false,
+    "estimated_hedge_carry": null,
     "aum_krw": 11000000000.0,
     "listed_date": "2023-08-01"
   }

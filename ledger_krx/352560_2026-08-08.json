@@ -3,24 +3,22 @@
     "ticker": "352560",
     "name": "KODEX 미국부동산리츠(H)",
     "tracks": "리츠(부동산) 섹터",
-    "analyzed_at": "2026-08-08T04:49:08.369760+00:00",
+    "analyzed_at": "2026-08-08T04:56:18.307723+00:00",
     "engine_version": "v3.41",
     "analysis_type": "krx_wrapper",
     "data_sources": [
-      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)",
-      "한국은행 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값), 2026-08-08 확인"
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "IYR",
-      "us_analyzed_at": "2026-08-08T04:39:31.950585+00:00",
+      "us_analyzed_at": "2026-08-08T04:53:21.238139+00:00",
       "tracks_same_index_as": "Dow Jones US Real Estate 지수 - IYR(iShares U.S. Real Estate ETF)의 'Dow Jones U.S. Real Estate Capped Index'와 같은 계열. ⚠️ 'Capped' 적용 여부까지 완전히 일치하는지는 확정 못함(XLE/KODEX에너지와 동일 수준의 불확실성으로 취급)."
     }
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
     "[환헤지 비용 반영] 환헤지형 상품으로, 연 0.88%p의 캐리비용을 추정치로 병기한다(Gap에는 자동 반영하지 않음 - 분석자가 총보수차와 함께 판단할 것).",
@@ -31,7 +29,8 @@
     "name": "KODEX 미국부동산리츠(H)",
     "tracks": "리츠(부동산) 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 27.83
+      "stockanalysis(trailing)": 27.83,
+      "allinvestview(trailing)": 28.95
     },
     "expense_ratio": 0.0009,
     "n_holdings": 65,
@@ -52,20 +51,20 @@
     "currency": "KRW",
     "price_at_analysis": null,
     "data_sources": [
-      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)",
-      "한국은행 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값), 2026-08-08 확인"
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
     ],
     "falsification_conditions": null
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 27.83
+      "stockanalysis(trailing)": 27.83,
+      "allinvestview(trailing)": 28.95
     },
     "min": 27.83,
-    "max": 27.83,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 28.95,
+    "spread_abs": 1.120000000000001,
+    "spread_relative": 0.040244340639597594,
+    "warning": null
   },
   "ers": {
     "components": {
@@ -94,8 +93,8 @@
       "uncertainty": 0.02,
       "growth_low": 0.029100000000000004,
       "growth_high": 0.06910000000000001,
-      "gap_low": -0.047321540062434955,
-      "gap_high": -0.0073215400624349475,
+      "gap_low": -0.048767946577629395,
+      "gap_high": -0.008767946577629387,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -115,9 +114,22 @@
           "for_overvalued": 0.026421540062434953,
           "band_used": 0.05
         }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 28.95,
+        "earnings_yield": 0.03454231433506045,
+        "implied_growth": 0.0778679465776294,
+        "gap": -0.02876794657762939,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0778679465776294,
+          "for_undervalued": 0.1278679465776294,
+          "for_overvalued": 0.027867946577629393,
+          "band_used": 0.05
+        }
       }
     },
-    "gap_min": -0.02732154006243495,
+    "gap_min": -0.02876794657762939,
     "gap_max": -0.02732154006243495,
     "judgments_seen": [
       "적정가/경계선"

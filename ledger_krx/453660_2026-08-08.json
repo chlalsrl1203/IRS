@@ -3,8 +3,8 @@
     "ticker": "453660",
     "name": "KODEX 미국S&P500경기소비재",
     "tracks": "임의소비재(경기소비재) 섹터",
-    "analyzed_at": "2026-08-08T04:15:04.820742+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:56:18.306050+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "funetf.co.kr/product/etf/view(2026-08-08)",
@@ -15,12 +15,11 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "XLY",
-      "us_analyzed_at": "2026-08-08T04:14:35.181213+00:00",
+      "us_analyzed_at": "2026-08-08T04:53:21.234648+00:00",
       "tracks_same_index_as": "S&P Consumer Discretionary Select Sector Index(Price Return) - 공식페이지에서 확인, XLY와 동일 계열"
     }
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
     "[보수율 부담] 연 보수율 0.25%는 10년 보유 시 누적 2.47%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
@@ -31,7 +30,8 @@
     "name": "KODEX 미국S&P500경기소비재",
     "tracks": "임의소비재(경기소비재) 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 28.17,
+      "allinvestview(trailing)": 30.18
     },
     "expense_ratio": 0.0025,
     "n_holdings": 50,
@@ -59,29 +59,30 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 28.17,
+      "allinvestview(trailing)": 30.18
     },
     "min": 28.17,
-    "max": 28.17,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 30.18,
+    "spread_abs": 2.009999999999998,
+    "spread_relative": 0.07135250266240674,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 20.0,
       "breadth": 20.0,
-      "data_quality": 2.0
+      "data_quality": 6.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 76.66666666666667
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.07300000000000001,
+    "r": 0.11910000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.1,
@@ -94,8 +95,8 @@
       "uncertainty": 0.02,
       "growth_low": 0.0775,
       "growth_high": 0.11750000000000001,
-      "gap_low": -0.0013038052793966637,
-      "gap_high": 0.038696194720603344,
+      "gap_low": -0.0057084028223220035,
+      "gap_high": 0.034291597177678004,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -106,19 +107,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 28.17,
         "earnings_yield": 0.03549875754348598,
-        "implied_growth": 0.07880380527939666,
-        "gap": 0.01869619472060334,
+        "implied_growth": 0.0807352416866644,
+        "gap": 0.016764758313335598,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07880380527939666,
-          "for_undervalued": 0.12880380527939667,
-          "for_overvalued": 0.02880380527939666,
+          "breakeven": 0.0807352416866644,
+          "for_undervalued": 0.1307352416866644,
+          "for_overvalued": 0.030735241686664402,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 30.18,
+        "earnings_yield": 0.03313452617627568,
+        "implied_growth": 0.083208402822322,
+        "gap": 0.014291597177678,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.083208402822322,
+          "for_undervalued": 0.133208402822322,
+          "for_overvalued": 0.033208402822322,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.01869619472060334,
-    "gap_max": 0.01869619472060334,
+    "gap_min": 0.014291597177678,
+    "gap_max": 0.016764758313335598,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -145,6 +159,7 @@
     "expense_ratio": 0.0025,
     "expense_ratio_delta_vs_us": 0.0017000000000000001,
     "hedged": false,
+    "estimated_hedge_carry": null,
     "aum_krw": null,
     "listed_date": "미확인"
   }

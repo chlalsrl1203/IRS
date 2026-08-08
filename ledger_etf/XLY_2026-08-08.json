@@ -3,8 +3,8 @@
     "ticker": "XLY",
     "name": "Consumer Discretionary Select Sector SPDR Fund",
     "tracks": "임의소비재(경기소비재) 섹터",
-    "analyzed_at": "2026-08-08T04:39:31.949387+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:53:21.234648+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/xly (2026-08-08 조회)"
@@ -14,7 +14,6 @@
     "currency": "USD"
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
   ],
@@ -23,7 +22,8 @@
     "name": "Consumer Discretionary Select Sector SPDR Fund",
     "tracks": "임의소비재(경기소비재) 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 28.17,
+      "allinvestview(trailing)": 30.18
     },
     "expense_ratio": 0.0008,
     "n_holdings": 50,
@@ -61,29 +61,30 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 28.17,
+      "allinvestview(trailing)": 30.18
     },
     "min": 28.17,
-    "max": 28.17,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 30.18,
+    "spread_abs": 2.009999999999998,
+    "spread_relative": 0.07135250266240674,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 20.0,
       "breadth": 20.0,
-      "data_quality": 2.0
+      "data_quality": 6.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 76.66666666666667
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.07300000000000001,
+    "r": 0.11910000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.1,
@@ -96,8 +97,8 @@
       "uncertainty": 0.02,
       "growth_low": 0.0792,
       "growth_high": 0.11920000000000001,
-      "gap_low": 0.0003961947206033434,
-      "gap_high": 0.04039619472060335,
+      "gap_low": -0.004008402822321996,
+      "gap_high": 0.03599159717767801,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -108,19 +109,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 28.17,
         "earnings_yield": 0.03549875754348598,
-        "implied_growth": 0.07880380527939666,
-        "gap": 0.020396194720603347,
+        "implied_growth": 0.0807352416866644,
+        "gap": 0.018464758313335605,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07880380527939666,
-          "for_undervalued": 0.12880380527939667,
-          "for_overvalued": 0.02880380527939666,
+          "breakeven": 0.0807352416866644,
+          "for_undervalued": 0.1307352416866644,
+          "for_overvalued": 0.030735241686664402,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 30.18,
+        "earnings_yield": 0.03313452617627568,
+        "implied_growth": 0.083208402822322,
+        "gap": 0.015991597177678007,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.083208402822322,
+          "for_undervalued": 0.133208402822322,
+          "for_overvalued": 0.033208402822322,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.020396194720603347,
-    "gap_max": 0.020396194720603347,
+    "gap_min": 0.015991597177678007,
+    "gap_max": 0.018464758313335605,
     "judgments_seen": [
       "적정가/경계선"
     ],

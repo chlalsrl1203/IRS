@@ -107,7 +107,8 @@ CANDIDATES = [
     ETFInputs(
         ticker="XLY", name="Consumer Discretionary Select Sector SPDR Fund",
         tracks="임의소비재(경기소비재) 섹터",
-        pe_by_source={"stockanalysis(trailing)": 28.17},
+        pe_by_source={"stockanalysis(trailing)": 28.17,
+                      "allinvestview(trailing)": 30.18},  # 2026-08-08 확보
         expense_ratio=0.0008, n_holdings=50, top10_weight=0.675,
         risk_free_rate=RF,
         expected_earnings_growth=0.10,
@@ -129,7 +130,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="SMH", name="VanEck Semiconductor ETF", tracks="반도체 섹터",
-        pe_by_source={"stockanalysis(trailing)": 44.71},
+        pe_by_source={"stockanalysis(trailing)": 44.71,
+                      "allinvestview(trailing)": 40.54},  # 2026-08-08 확보
         expense_ratio=0.0035, n_holdings=26, top10_weight=0.7146,
         risk_free_rate=RF,
         expected_earnings_growth=0.12,
@@ -151,7 +153,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="IYR", name="iShares U.S. Real Estate ETF", tracks="리츠(부동산) 섹터",
-        pe_by_source={"stockanalysis(trailing)": 27.83},
+        pe_by_source={"stockanalysis(trailing)": 27.83,
+                      "allinvestview(trailing)": 28.95},  # 2026-08-08 확보
         expense_ratio=0.0038, n_holdings=65, top10_weight=0.5218,
         risk_free_rate=RF,
         expected_earnings_growth=0.05,
@@ -171,7 +174,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="LIT", name="Global X Lithium & Battery Tech ETF", tracks="배터리(리튬) 테마",
-        pe_by_source={"stockanalysis(trailing)": 23.76},
+        pe_by_source={"stockanalysis(trailing)": 23.76,
+                      "allinvestview(trailing)": 22.36},  # 2026-08-08 확보
         expense_ratio=0.0075, n_holdings=45, top10_weight=0.6601,
         risk_free_rate=RF,
         expected_earnings_growth=0.08,
@@ -197,7 +201,8 @@ CANDIDATES = [
     ETFInputs(
         ticker="ROBO", name="ROBO Global Robotics and Automation Index ETF",
         tracks="로봇/자동화 테마",
-        pe_by_source={"stockanalysis(trailing)": 29.17},
+        pe_by_source={"stockanalysis(trailing)": 29.17,
+                      "allinvestview(trailing)": 31.38},  # 2026-08-08 확보
         expense_ratio=0.0095, n_holdings=91, top10_weight=0.1759,
         risk_free_rate=RF,
         expected_earnings_growth=0.09,
@@ -217,7 +222,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XAR", name="SPDR S&P Aerospace & Defense ETF", tracks="항공우주/방위산업 테마",
-        pe_by_source={"stockanalysis(trailing)": 41.32},
+        pe_by_source={"stockanalysis(trailing)": 41.32,
+                      "allinvestview(trailing)": 37.66},  # 2026-08-08 확보
         expense_ratio=0.0035, n_holdings=48, top10_weight=0.3127,
         risk_free_rate=RF,
         expected_earnings_growth=0.09,
@@ -237,7 +243,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="CLOU", name="Global X Cloud Computing ETF", tracks="클라우드 컴퓨팅 테마",
-        pe_by_source={"stockanalysis(trailing)": 33.38},
+        pe_by_source={"stockanalysis(trailing)": 33.38,
+                      "allinvestview(trailing)": 36.70},  # 2026-08-08 확보
         expense_ratio=0.0068, n_holdings=40, top10_weight=0.4691,
         risk_free_rate=RF,
         expected_earnings_growth=0.11,
@@ -258,7 +265,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="SCHD", name="Schwab US Dividend Equity ETF", tracks="미국 배당성장주(다우존스)",
-        pe_by_source={"stockanalysis(trailing)": 17.60},
+        pe_by_source={"stockanalysis(trailing)": 17.60,
+                      "allinvestview(trailing)": 19.50},  # 2026-08-08 확보
         expense_ratio=0.0006, n_holdings=103, top10_weight=0.4154,
         risk_free_rate=RF,
         expected_earnings_growth=0.06,

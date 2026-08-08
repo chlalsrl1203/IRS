@@ -3,8 +3,8 @@
     "ticker": "453640",
     "name": "KODEX 미국S&P500헬스케어",
     "tracks": "헬스케어 섹터",
-    "analyzed_at": "2026-08-07T23:58:03.992817+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:55:50.769030+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "krx_wrapper",
     "data_sources": [
       "funetf.co.kr/product/etf/view/KR7453640005(2026-08-07)"
@@ -14,30 +14,30 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "XLV",
-      "us_analyzed_at": "2026-08-07T23:58:03.940677+00:00",
+      "us_analyzed_at": "2026-08-08T04:52:31.490419+00:00",
       "tracks_same_index_as": "S&P Health Care Select Sector Index - 공식페이지에서 확인, XLV와 동일 계열"
     }
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
     "[보수율 부담] 연 보수율 0.25%는 10년 보유 시 누적 2.47%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
-    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XLV 분석(2026-08-07 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XLV 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
   ],
   "inputs": {
     "ticker": "453640",
     "name": "KODEX 미국S&P500헬스케어",
     "tracks": "헬스케어 섹터",
     "pe_by_source": {
-      "stockanalysis(trailing)": 24.53
+      "stockanalysis(trailing)": 24.53,
+      "allinvestview(trailing)": 29.19
     },
     "expense_ratio": 0.0025,
     "n_holdings": 63,
     "top10_weight": 0.6096,
     "risk_free_rate": 0.0461,
     "expected_earnings_growth": 0.07,
-    "expected_earnings_growth_basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치]. [v3.38: XLV 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "expected_earnings_growth_basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치]. [v3.38: XLV 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
     "dividend_yield": 0.0153,
     "pct_unprofitable_constituents": null,
     "realized_eps_by_year": null,
@@ -57,43 +57,44 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 24.53
+      "stockanalysis(trailing)": 24.53,
+      "allinvestview(trailing)": 29.19
     },
     "min": 24.53,
-    "max": 24.53,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 29.19,
+    "spread_abs": 4.66,
+    "spread_relative": 0.1899714635140644,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 20.0,
       "breadth": 18.0,
-      "data_quality": 2.0
+      "data_quality": 10.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 66.66666666666667
+    "score": 80.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07,
-    "r": 0.11610000000000001
+    "erp": 0.07400000000000001,
+    "r": 0.12010000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.07,
     "expense_ratio_deducted": 0.0025,
     "net_expected_growth": 0.0675,
-    "basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치]. [v3.38: XLV 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치]. [v3.38: XLV 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
     "basis_type": "analyst_estimate",
     "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
       "growth_low": 0.0475,
       "growth_high": 0.08750000000000001,
-      "gap_low": -0.024882804543674114,
-      "gap_high": 0.015117195456325894,
+      "gap_low": -0.03549831069890694,
+      "gap_high": 0.00450168930109307,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -104,19 +105,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 24.53,
         "earnings_yield": 0.040766408479412965,
-        "implied_growth": 0.07238280454367411,
-        "gap": -0.00488280454367411,
+        "implied_growth": 0.07622612612612614,
+        "gap": -0.008726126126126138,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07238280454367411,
-          "for_undervalued": 0.12238280454367412,
-          "for_overvalued": 0.022382804543674112,
+          "breakeven": 0.07622612612612614,
+          "for_undervalued": 0.12622612612612616,
+          "for_overvalued": 0.02622612612612614,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 29.19,
+        "earnings_yield": 0.0342583076396026,
+        "implied_growth": 0.08299831069890694,
+        "gap": -0.015498310698906934,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08299831069890694,
+          "for_undervalued": 0.13299831069890694,
+          "for_overvalued": 0.032998310698906935,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": -0.00488280454367411,
-    "gap_max": -0.00488280454367411,
+    "gap_min": -0.015498310698906934,
+    "gap_max": -0.008726126126126138,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -143,6 +157,7 @@
     "expense_ratio": 0.0025,
     "expense_ratio_delta_vs_us": 0.0017000000000000001,
     "hedged": false,
+    "estimated_hedge_carry": null,
     "aum_krw": 1546000000000.0,
     "listed_date": "미확인"
   }

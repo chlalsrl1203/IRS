@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v3.41 후반 — 단일 P/E 출처 13종목 전건 해소 (2026-08-08)
+
+"단일출처" 플래그가 28종목 중 13개(미국 원본 기준: SMH/IYR/LIT/ROBO/XAR/
+CLOU/SCHD/XLY/XLI/XLV/XLC/XLP/DIA)에 붙어있었다. allinvestview.com(12종)·
+worldperatio.com(DIA)에서 2차 트레일링 P/E 확보해 전부 해소(순수 데이터,
+엔진 코드 변경 없음).
+
+**괴리 실측**: 대체로 5~10%대, XLV(헬스케어)만 19.0%로 컸다. SCHD는 2차
+출처(19.50x)가 1차(17.60x)보다 10.8% 높아 breakeven 5.14%→6.07%, Gap
++0.80%p→약 -0.13%p로 저평가 신호가 사실상 사라짐 - `rank_krx_etfs_
+2026_08_08.py`가 객관축(breakeven)으로 순위를 매기고 있어 이 변화가 표에
+그대로 드러났다.
+
+**작업 방식**: DIA만 `patch_dia_second_source_2026_08_08.py`로 분리 재실행
+(소속 스크립트의 나머지 7종목 collateral 재저장 방지). 미국 원본 갱신 후
+이를 재사용하는 KRX 래퍼도 재연결 필요 - 처음엔 놓쳐서 불일치가 생겼다가
+`patch_dia_krx_wrapper_2026_08_08.py`·`patch_sector_krx_second_source_
+2026_08_08.py`·`analyze_krx_etfs_2026_08_08.py` 재실행으로 바로잡음.
+재실행 후 ETF 28건·KRX 20건 전부 `len(by_source)==1` 0건임을 코드로 직접
+검증.
+
+국내 래퍼 28종목·미국 원본 20종목 변경 없음(데이터 보강뿐). `ENGINE_
+VERSION` v3.41 그대로. 테스트 212개 불변.
+
+---
+
 ## v3.41 — 환헤지 캐리비용 실제 반영 + 결과 dict 버그수정 (2026-08-08)
 
 `estimated_hedge_carry`(v3.38부터 opt-in으로 존재)에 실값을 넣은 적이

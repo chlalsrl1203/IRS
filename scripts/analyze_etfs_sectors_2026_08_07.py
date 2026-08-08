@@ -12,10 +12,11 @@
 원자료(전부 stockanalysis.com/etf/{ticker}, 2026-08-07 조회): 트레일링 P/E,
 보수율, 보유종목수, 상위10비중, 배당수익률, 1년수익률.
 
-⚠️ 이 4종은 forward P/E 등 2차 출처를 확보하지 못해 **단일 출처**다 - 엔진이
-`[단일 출처 경고]`로 자동 표시한다. 기존 XLE/XLU가 v3.35에서 2차 출처(트레일링)
-를 확보한 것과 달리, 이번엔 시간 관계상 1차 출처만으로 진행했다 - 후속 보강
-대상으로 남긴다.
+⚠️ 이 4종은 처음엔 forward P/E 등 2차 출처를 확보하지 못해 **단일 출처**로
+시작했다 - 엔진이 `[단일 출처 경고]`로 자동 표시했다. **2026-08-08 후반 -
+allinvestview.com에서 2차 트레일링 P/E를 확보해 해소했다.** 괴리 폭: XLI
+6.6%/XLC 7.5%/XLP 14.4%/**XLV 19.0%**(가장 큼, 주의) - 전부 XLE/XLU가
+v3.35에서 확보한 2차 출처와 같은 방식(allinvestview 트레일링 대 대조).
 
 **2026-08-08 후속 - `top10_holdings` 추가**: KRX 래퍼끼리의 중복노출 측정
 (v3.36 `holdings_overlap()`을 KRX 계층에 연결하는 작업)을 위해 4종 전부
@@ -35,12 +36,14 @@ from engine.etf_pipeline import ETFInputs, run_etf_analysis, save_etf_ledger
 
 RF = 0.0461  # 미국 10Y, 기존 배치와 동일 시점 유지
 
-SOURCES = ["stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-07 조회)"]
+SOURCES = ["stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-07 조회)",
+           "allinvestview.com/compare (2차 트레일링 P/E, 2026-08-08 확보)"]
 
 CANDIDATES = [
     ETFInputs(
         ticker="XLI", name="Industrial Select Sector SPDR Fund", tracks="산업재 섹터",
-        pe_by_source={"stockanalysis(trailing)": 29.48},
+        pe_by_source={"stockanalysis(trailing)": 29.48,
+                      "allinvestview(trailing)": 31.44},  # 2026-08-08 확보
         expense_ratio=0.0008, n_holdings=85, top10_weight=0.3975,
         risk_free_rate=RF,
         expected_earnings_growth=0.07,
@@ -60,7 +63,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLV", name="Health Care Select Sector SPDR Fund", tracks="헬스케어 섹터",
-        pe_by_source={"stockanalysis(trailing)": 24.53},
+        pe_by_source={"stockanalysis(trailing)": 24.53,
+                      "allinvestview(trailing)": 29.19},  # 2026-08-08 확보, 괴리 19% - 주의
         expense_ratio=0.0008, n_holdings=63, top10_weight=0.6096,
         risk_free_rate=RF,
         expected_earnings_growth=0.07,
@@ -81,7 +85,8 @@ CANDIDATES = [
     ETFInputs(
         ticker="XLC", name="Communication Services Select Sector SPDR Fund",
         tracks="커뮤니케이션서비스 섹터",
-        pe_by_source={"stockanalysis(trailing)": 15.14},
+        pe_by_source={"stockanalysis(trailing)": 15.14,
+                      "allinvestview(trailing)": 16.27},  # 2026-08-08 확보
         expense_ratio=0.0008, n_holdings=27, top10_weight=0.6753,
         risk_free_rate=RF,
         expected_earnings_growth=0.09,
@@ -102,7 +107,8 @@ CANDIDATES = [
     ),
     ETFInputs(
         ticker="XLP", name="Consumer Staples Select Sector SPDR Fund", tracks="필수소비재 섹터",
-        pe_by_source={"stockanalysis(trailing)": 22.57},
+        pe_by_source={"stockanalysis(trailing)": 22.57,
+                      "allinvestview(trailing)": 25.82},  # 2026-08-08 확보
         expense_ratio=0.0008, n_holdings=38, top10_weight=0.6195,
         risk_free_rate=RF,
         expected_earnings_growth=0.05,

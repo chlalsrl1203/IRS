@@ -3,8 +3,8 @@
     "ticker": "SCHD",
     "name": "Schwab US Dividend Equity ETF",
     "tracks": "미국 배당성장주(다우존스)",
-    "analyzed_at": "2026-08-08T04:39:31.953104+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:53:21.242415+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "etf",
     "data_sources": [
       "stockanalysis.com/etf/schd (2026-08-08 조회)"
@@ -14,7 +14,6 @@
     "currency": "USD"
   },
   "data_limitations": [
-    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
   ],
@@ -23,7 +22,8 @@
     "name": "Schwab US Dividend Equity ETF",
     "tracks": "미국 배당성장주(다우존스)",
     "pe_by_source": {
-      "stockanalysis(trailing)": 17.6
+      "stockanalysis(trailing)": 17.6,
+      "allinvestview(trailing)": 19.5
     },
     "expense_ratio": 0.0006,
     "n_holdings": 103,
@@ -61,29 +61,30 @@
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 17.6
+      "stockanalysis(trailing)": 17.6,
+      "allinvestview(trailing)": 19.5
     },
     "min": 17.6,
-    "max": 17.6,
-    "spread_abs": 0.0,
-    "spread_relative": 0.0,
-    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+    "max": 19.5,
+    "spread_abs": 1.8999999999999986,
+    "spread_relative": 0.10795454545454536,
+    "warning": null
   },
   "ers": {
     "components": {
       "concentration": 14.0,
       "breadth": 14.0,
-      "data_quality": 2.0
+      "data_quality": 10.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 50.0
+    "score": 63.33333333333333
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.065,
-    "r": 0.1111
+    "erp": 0.069,
+    "r": 0.11510000000000001
   },
   "growth": {
     "expected_earnings_growth": 0.06,
@@ -96,8 +97,8 @@
       "uncertainty": 0.02,
       "growth_low": 0.03939999999999999,
       "growth_high": 0.0794,
-      "gap_low": -0.011963440860215065,
-      "gap_high": 0.028036559139784943,
+      "gap_low": -0.021304878048780507,
+      "gap_high": 0.0186951219512195,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -108,19 +109,32 @@
       "stockanalysis(trailing)": {
         "pe_ratio": 17.6,
         "earnings_yield": 0.056818181818181816,
-        "implied_growth": 0.051363440860215055,
-        "gap": 0.00803655913978494,
+        "implied_growth": 0.0551483870967742,
+        "gap": 0.004251612903225795,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.051363440860215055,
-          "for_undervalued": 0.10136344086021506,
-          "for_overvalued": 0.0013634408602150525,
+          "breakeven": 0.0551483870967742,
+          "for_undervalued": 0.10514838709677421,
+          "for_overvalued": 0.005148387096774197,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 19.5,
+        "earnings_yield": 0.05128205128205128,
+        "implied_growth": 0.0607048780487805,
+        "gap": -0.0013048780487805028,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0607048780487805,
+          "for_undervalued": 0.1107048780487805,
+          "for_overvalued": 0.010704878048780495,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.00803655913978494,
-    "gap_max": 0.00803655913978494,
+    "gap_min": -0.0013048780487805028,
+    "gap_max": 0.004251612903225795,
     "judgments_seen": [
       "적정가/경계선"
     ],
