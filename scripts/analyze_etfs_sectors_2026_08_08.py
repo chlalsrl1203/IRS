@@ -1,5 +1,5 @@
 """
-미국 섹터/테마 ETF 추가 분석 - 2026-08-08 (XLY, SMH, IYR).
+미국 섹터/테마 ETF 추가 분석 - 2026-08-08 (XLY, SMH, IYR, LIT, ROBO).
 
 경위: "계속해서 섹터 확장" 요청에 따른 v3.39 후속. 이번 조사에서 확인한 것:
   - KODEX 미국S&P500경기소비재(453660)가 "S&P Consumer Discretionary Select
@@ -31,6 +31,35 @@
     KODEX 쪽 표기("Dow Jones US Real Estate 지수")와 정확히 일치하는지는
     확정하지 못했다 - XLE/KODEX에너지 때와 동일한 "같은 지수 계열이되 완전
     동일 여부 미확정"으로 취급한다.
+  - **배터리/리튬(LIT)**: TIGER 글로벌리튬&2차전지SOLACTIVE(합성)(394670)가
+    "Solactive Global Lithium 지수(PR)"를 추종 - LIT(Global X Lithium &
+    Battery Tech ETF)의 "Solactive Global Lithium Index"와 동일 계열. Gap 계산
+    자체는 P/E·기초자산이 같으면 PR/TR 표기 차이의 영향을 받지 않는다.
+  - **로봇/자동화(ROBO)**: KODEX 글로벌로봇(합성)(276990)이 "ROBO Global
+    Robotics & Automation UCITS Price Return Index"를 추종 - ROBO(ROBO Global
+    Robotics and Automation Index ETF)의 "ROBO Global Robotics and Automation
+    TR Index"와 동일 계열(UCITS/PR vs 본토/TR 표기 차이, IYR의 Capped 사례와
+    같은 수준으로 취급).
+  - **로봇/AI(BOTZ) 후보는 보류했다** - TIGER 글로벌AI&로보틱스INDXX(464310)가
+    BOTZ와 완전히 동일한 지수("Indxx Global Robotics & Artificial Intelligence
+    Thematic Index")를 추종한다는 것까지는 확인했으나, **총보수를 여러 경로로
+    검색해도 확인하지 못했다** - 추측으로 채우지 않고 다음 기회로 미룬다.
+  - **바이오는 지수는 일치하지만 밸류에이션이 원리적으로 불가능해 제외했다** -
+    KODEX 미국S&P바이오(합성)(185680)가 XBI(SPDR S&P Biotech ETF)와 완전히
+    동일한 지수("S&P Biotechnology Select Industry Index")를 추종한다는 걸
+    확인했지만, **XBI 자체가 적자기업 비중이 너무 높아 유의미한 P/E가 존재하지
+    않는다**(stockanalysis.com에 "n/a"로 표시). 이 엔진은 P/E 기반 Gordon
+    역산이 핵심이라 P/E가 없는 섹터는 애초에 다룰 수 없다 - 데이터 공백이
+    아니라 방법론 자체의 한계로 별도 취급한다.
+  - **우주항공/방위산업·은행·클라우드·게임은 조사했으나 전부 제외했다** - 국내
+    상장 상품은 있지만(TIGER 미국우주테크·TIGER 미국방산TOP10·KODEX
+    미국우주항공·TIGER 글로벌클라우드컴퓨팅INDXX 등) 전부 자산운용사 자체
+    커스텀/독점 지수(Akros U.S. Space Tech, Mirae Asset US Defense Top10,
+    iSelect 미국우주항공, Indxx Global Cloud Computing 등)를 써서 이 엔진이
+    이미 다루는 미국 상장 ETF(ITA/KBE/WCLD 등) 어느 것과도 지수가 일치하지
+    않는다. 은행은 국내에 아예 "미국은행" 추종 상품 자체가 없고(KODEX 은행/
+    TIGER 은행 전부 국내 은행주 추종), 게임도 마찬가지로 국내 상장 상품이
+    전부 국내 게임주 추종이었다.
 
 원자료: stockanalysis.com/etf/{ticker} (2026-08-08 조회).
 
@@ -96,6 +125,38 @@ CANDIDATES = [
         ),
         dividend_yield=0.0216, return_1y=0.1246,
         data_sources=["stockanalysis.com/etf/iyr (2026-08-08 조회)"],
+    ),
+    ETFInputs(
+        ticker="LIT", name="Global X Lithium & Battery Tech ETF", tracks="배터리(리튬) 테마",
+        pe_by_source={"stockanalysis(trailing)": 23.76},
+        expense_ratio=0.0075, n_holdings=45, top10_weight=0.6601,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.08,
+        expected_earnings_growth_basis=(
+            "EV 채택 확대라는 장기 상방 서사는 뚜렷하나, 리튬 등 원자재 가격이 "
+            "2022~2024년 폭락한 전례처럼 커머디티 가격 사이클에 강하게 종속돼 "
+            "있다 - 채굴·정제 기업 비중이 큰 지수 특성상 XLE(에너지, 4%)에 더 "
+            "가까운 낮은 성장률을 채택 [추정치]. 배터리 '기술' 테마라는 이름과 "
+            "달리 실질은 원자재 익스포저에 가깝다는 점에 유의."
+        ),
+        dividend_yield=0.0068, return_1y=0.7657,
+        data_sources=["stockanalysis.com/etf/lit (2026-08-08 조회)"],
+    ),
+    ETFInputs(
+        ticker="ROBO", name="ROBO Global Robotics and Automation Index ETF",
+        tracks="로봇/자동화 테마",
+        pe_by_source={"stockanalysis(trailing)": 29.17},
+        expense_ratio=0.0095, n_holdings=91, top10_weight=0.1759,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.09,
+        expected_earnings_growth_basis=(
+            "산업용 로봇·자동화는 인건비 상승·인력난이라는 구조적 순풍이 있는 "
+            "산업재 인접 테마다 - XLI(산업재, 7%)보다는 높이되, 91개 종목으로 "
+            "상위10비중이 17.59%뿐이라(BOTZ 60%대와 대비) 개별 고성장주 쏠림이 "
+            "적어 순수 테크섹터만큼 높이지는 않는다 [추정치]."
+        ),
+        dividend_yield=0.0035, return_1y=0.3477,
+        data_sources=["stockanalysis.com/etf/robo (2026-08-08 조회)"],
     ),
 ]
 
