@@ -1,0 +1,151 @@
+{
+  "meta": {
+    "ticker": "453660",
+    "name": "KODEX 미국S&P500경기소비재",
+    "tracks": "임의소비재(경기소비재) 섹터",
+    "analyzed_at": "2026-08-08T00:03:21.150705+00:00",
+    "engine_version": "v3.39",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "funetf.co.kr/product/etf/view(2026-08-08)",
+      "samsungfund.com/etf/product/view.do?id=2ETFI8"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "XLY",
+      "us_analyzed_at": "2026-08-08T00:02:54.960293+00:00",
+      "tracks_same_index_as": "S&P Consumer Discretionary Select Sector Index(Price Return) - 공식페이지에서 확인, XLY와 동일 계열"
+    }
+  },
+  "data_limitations": [
+    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.25%는 10년 보유 시 누적 2.47%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XLY 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "453660",
+    "name": "KODEX 미국S&P500경기소비재",
+    "tracks": "임의소비재(경기소비재) 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 28.17
+    },
+    "expense_ratio": 0.0025,
+    "n_holdings": 50,
+    "top10_weight": 0.675,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.1,
+    "expected_earnings_growth_basis": "상위비중이 Amazon(23.18%)·Tesla(15.66%)로 상위 2종목이 39%에 육박해 사실상 이 두 회사의 성장률이 섹터 성장률을 좌우한다 - 둘 다 고성장 서사를 가진 종목이라 전통 소매업 중심 섹터보다 높게 잡되, 경기민감 소비재 특성(Home Depot 등 주택경기 연동)상 나스닥100(11%)보다는 낮춘다 [추정치]. 상위 2종목 리스크가 이례적으로 커 집중도 위험을 감안해서 볼 것. [v3.38: XLY 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0075,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "funetf.co.kr/product/etf/view(2026-08-08)",
+      "samsungfund.com/etf/product/view.do?id=2ETFI8"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 28.17
+    },
+    "min": 28.17,
+    "max": 28.17,
+    "spread_abs": 0.0,
+    "spread_relative": 0.0,
+    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 20.0,
+      "data_quality": 2.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 70.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07100000000000001,
+    "r": 0.11710000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.1,
+    "expense_ratio_deducted": 0.0025,
+    "net_expected_growth": 0.0975,
+    "basis": "상위비중이 Amazon(23.18%)·Tesla(15.66%)로 상위 2종목이 39%에 육박해 사실상 이 두 회사의 성장률이 섹터 성장률을 좌우한다 - 둘 다 고성장 서사를 가진 종목이라 전통 소매업 중심 섹터보다 높게 잡되, 경기민감 소비재 특성(Home Depot 등 주택경기 연동)상 나스닥100(11%)보다는 낮춘다 [추정치]. 상위 2종목 리스크가 이례적으로 커 집중도 위험을 감안해서 볼 것. [v3.38: XLY 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0775,
+      "growth_high": 0.11750000000000001,
+      "gap_low": -0.0013038052793966637,
+      "gap_high": 0.038696194720603344,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 28.17,
+        "earnings_yield": 0.03549875754348598,
+        "implied_growth": 0.07880380527939666,
+        "gap": 0.01869619472060334,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07880380527939666,
+          "for_undervalued": 0.12880380527939667,
+          "for_overvalued": 0.02880380527939666,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.01869619472060334,
+    "gap_max": 0.01869619472060334,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0025,
+    "holding_years": 10,
+    "cumulative_drag": 0.024720616821432673
+  },
+  "fed_model": {
+    "earnings_yield": 0.03549875754348598,
+    "treasury_yield": 0.0461,
+    "spread": -0.010601242456514025,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0075
+  },
+  "wrapper": {
+    "expense_ratio": 0.0025,
+    "expense_ratio_delta_vs_us": 0.0017000000000000001,
+    "hedged": false,
+    "aum_krw": null,
+    "listed_date": "미확인"
+  }
+}
