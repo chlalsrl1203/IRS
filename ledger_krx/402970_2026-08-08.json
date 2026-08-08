@@ -1,0 +1,148 @@
+{
+  "meta": {
+    "ticker": "402970",
+    "name": "ACE 미국배당다우존스",
+    "tracks": "미국 배당성장주(다우존스)",
+    "analyzed_at": "2026-08-08T04:15:04.826527+00:00",
+    "engine_version": "v3.39",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "etfshopping.com/best/us-etf(2026-08-06 최초 조사)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "SCHD",
+      "us_analyzed_at": "2026-08-08T04:14:35.184160+00:00",
+      "tracks_same_index_as": "Dow Jones U.S. Dividend 100 Index - SCHD와 동일 지수"
+    }
+  },
+  "data_limitations": [
+    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 SCHD 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "402970",
+    "name": "ACE 미국배당다우존스",
+    "tracks": "미국 배당성장주(다우존스)",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 17.6
+    },
+    "expense_ratio": 0.0007,
+    "n_holdings": 103,
+    "top10_weight": 0.4154,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.06,
+    "expected_earnings_growth_basis": "Dow Jones U.S. Dividend 100 지수는 10년 연속 배당 이력·재무비율 스크린을 통과한 대형 성숙기업만 편입한다 - 배당·가치 성향이 강해 무배당 고성장주(예: Amazon·Tesla)가 원천 배제된다. XLP(필수소비재, 5%)·XLU(유틸리티, 5%)와 비슷한 낮은 성장률을 채택하되, 섹터가 특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치]. [v3.38: SCHD 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0309,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "etfshopping.com/best/us-etf(2026-08-06 최초 조사)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 17.6
+    },
+    "min": 17.6,
+    "max": 17.6,
+    "spread_abs": 0.0,
+    "spread_relative": 0.0,
+    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 14.0,
+      "breadth": 14.0,
+      "data_quality": 2.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 50.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.065,
+    "r": 0.1111
+  },
+  "growth": {
+    "expected_earnings_growth": 0.06,
+    "expense_ratio_deducted": 0.0007,
+    "net_expected_growth": 0.0593,
+    "basis": "Dow Jones U.S. Dividend 100 지수는 10년 연속 배당 이력·재무비율 스크린을 통과한 대형 성숙기업만 편입한다 - 배당·가치 성향이 강해 무배당 고성장주(예: Amazon·Tesla)가 원천 배제된다. XLP(필수소비재, 5%)·XLU(유틸리티, 5%)와 비슷한 낮은 성장률을 채택하되, 섹터가 특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치]. [v3.38: SCHD 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0393,
+      "growth_high": 0.0793,
+      "gap_low": -0.012063440860215054,
+      "gap_high": 0.02793655913978494,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 17.6,
+        "earnings_yield": 0.056818181818181816,
+        "implied_growth": 0.051363440860215055,
+        "gap": 0.007936559139784943,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.051363440860215055,
+          "for_undervalued": 0.10136344086021506,
+          "for_overvalued": 0.0013634408602150525,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.007936559139784943,
+    "gap_max": 0.007936559139784943,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0007,
+    "holding_years": 10,
+    "cumulative_drag": 0.006977991109621717
+  },
+  "fed_model": {
+    "earnings_yield": 0.056818181818181816,
+    "treasury_yield": 0.0461,
+    "spread": 0.010718181818181814,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0309
+  },
+  "wrapper": {
+    "expense_ratio": 0.0007,
+    "expense_ratio_delta_vs_us": 0.00010000000000000005,
+    "hedged": false,
+    "aum_krw": 947800000000.0,
+    "listed_date": "미확인"
+  }
+}

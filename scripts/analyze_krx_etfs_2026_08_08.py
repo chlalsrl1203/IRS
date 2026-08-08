@@ -1,7 +1,13 @@
 """
 국내 상장(KRX) 미국지수 추종 ETF 분석 - 2026-08-08 추가분
 (경기소비재/XLY, 반도체/SMH, 리츠/IYR, 배터리/LIT, 로봇/ROBO, 테크놀로지/XLK,
-방산/XAR, 클라우드/CLOU).
+방산/XAR, 클라우드/CLOU, 배당다우존스/SCHD).
+
+**5차 - SCHD(미국배당다우존스) 추가**: TIGER/SOL/ACE 미국배당다우존스 3종
+전부 "Dow Jones U.S. Dividend 100 Index"를 추종한다는 걸 확인해(2026-08-06
+최초 조사 당시 이미 확보한 데이터, DIA 매칭 함정의 반면교사로만 쓰고 정작
+분석은 안 했었다) SCHD 원본을 신규 분석 후 연결했다. VOO/QQQ 그룹과 같은
+"같은 지수, 여러 국내 경쟁상품" 구조.
 
 경위: "계속해서 섹터 확장" 요청, 이후 사용자가 실제 거래앱의 "지금 뜨고 있는
 카테고리" 스크린샷을 제공하며 그 목록 기준으로 확장을 요청했다 - 반도체
@@ -174,6 +180,29 @@ CANDIDATES = [
         us_reference_ticker="CLOU", expense_ratio=0.01, hedged=False,
         aum_krw=291 * 1e8, listed_date="2020-12-08",
         data_sources=["funetf.co.kr/product/etf/view/KR7371450008(2026-08-08)"],
+    ),
+    # ---- 미국배당다우존스(SCHD) - 3파전, VOO/QQQ 그룹과 같은 구조 ----
+    dict(
+        krx_ticker="458730", krx_name="TIGER 미국배당다우존스",
+        tracks_same_index_as="Dow Jones U.S. Dividend 100 Index - 공식 확인, SCHD와 동일 지수",
+        us_reference_ticker="SCHD", expense_ratio=0.0006, hedged=False,
+        aum_krw=41_759 * 1e8, listed_date="2023-06-20",
+        data_sources=["etfshopping.com/best/us-etf(2026-08-06 최초 조사)",
+                      "funetf.co.kr(2026-08-07 상장일 확인)"],
+    ),
+    dict(
+        krx_ticker="446720", krx_name="SOL 미국배당다우존스",
+        tracks_same_index_as="Dow Jones U.S. Dividend 100 Index - SCHD와 동일 지수",
+        us_reference_ticker="SCHD", expense_ratio=0.0007, hedged=False,
+        aum_krw=10_275 * 1e8, listed_date="미확인",
+        data_sources=["etfshopping.com/best/us-etf(2026-08-06 최초 조사)"],
+    ),
+    dict(
+        krx_ticker="402970", krx_name="ACE 미국배당다우존스",
+        tracks_same_index_as="Dow Jones U.S. Dividend 100 Index - SCHD와 동일 지수",
+        us_reference_ticker="SCHD", expense_ratio=0.0007, hedged=False,
+        aum_krw=9_478 * 1e8, listed_date="미확인",
+        data_sources=["etfshopping.com/best/us-etf(2026-08-06 최초 조사)"],
     ),
 ]
 

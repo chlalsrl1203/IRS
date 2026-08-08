@@ -217,6 +217,22 @@ CANDIDATES = [
         dividend_yield=None, return_1y=0.1970,
         data_sources=["stockanalysis.com/etf/clou (2026-08-08 조회)"],
     ),
+    ETFInputs(
+        ticker="SCHD", name="Schwab US Dividend Equity ETF", tracks="미국 배당성장주(다우존스)",
+        pe_by_source={"stockanalysis(trailing)": 17.60},
+        expense_ratio=0.0006, n_holdings=103, top10_weight=0.4154,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.06,
+        expected_earnings_growth_basis=(
+            "Dow Jones U.S. Dividend 100 지수는 10년 연속 배당 이력·재무비율 "
+            "스크린을 통과한 대형 성숙기업만 편입한다 - 배당·가치 성향이 강해 "
+            "무배당 고성장주(예: Amazon·Tesla)가 원천 배제된다. XLP(필수소비재, "
+            "5%)·XLU(유틸리티, 5%)와 비슷한 낮은 성장률을 채택하되, 섹터가 "
+            "특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치]."
+        ),
+        dividend_yield=0.0309, return_1y=0.3173,
+        data_sources=["stockanalysis.com/etf/schd (2026-08-08 조회)"],
+    ),
 ]
 
 

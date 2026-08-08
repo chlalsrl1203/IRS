@@ -3,7 +3,7 @@
     "ticker": "352560",
     "name": "KODEX 미국부동산리츠(H)",
     "tracks": "리츠(부동산) 섹터",
-    "analyzed_at": "2026-08-08T00:49:53.767012+00:00",
+    "analyzed_at": "2026-08-08T04:15:04.821917+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -14,7 +14,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "IYR",
-      "us_analyzed_at": "2026-08-08T00:48:30.308981+00:00",
+      "us_analyzed_at": "2026-08-08T04:14:35.182263+00:00",
       "tracks_same_index_as": "Dow Jones US Real Estate 지수 - IYR(iShares U.S. Real Estate ETF)의 'Dow Jones U.S. Real Estate Capped Index'와 같은 계열. ⚠️ 'Capped' 적용 여부까지 완전히 일치하는지는 확정 못함(XLE/KODEX에너지와 동일 수준의 불확실성으로 취급)."
     }
   },

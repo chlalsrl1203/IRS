@@ -3,7 +3,7 @@
     "ticker": "276990",
     "name": "KODEX 글로벌로봇(합성)",
     "tracks": "로봇/자동화 테마",
-    "analyzed_at": "2026-08-08T00:49:53.768187+00:00",
+    "analyzed_at": "2026-08-08T04:15:04.822856+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -14,7 +14,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "ROBO",
-      "us_analyzed_at": "2026-08-08T00:48:30.310160+00:00",
+      "us_analyzed_at": "2026-08-08T04:14:35.183111+00:00",
       "tracks_same_index_as": "ROBO Global Robotics & Automation UCITS Price Return Index - ROBO(ROBO Global Robotics and Automation Index ETF)의 'ROBO Global Robotics and Automation TR Index'와 동일 계열(UCITS/PR vs 본토/TR 표기 차이, IYR의 Capped 사례와 동일 수준으로 취급)."
     }
   },

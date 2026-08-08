@@ -1,13 +1,13 @@
 {
   "meta": {
-    "ticker": "ROBO",
-    "name": "ROBO Global Robotics and Automation Index ETF",
-    "tracks": "로봇/자동화 테마",
-    "analyzed_at": "2026-08-08T04:14:35.183111+00:00",
+    "ticker": "SCHD",
+    "name": "Schwab US Dividend Equity ETF",
+    "tracks": "미국 배당성장주(다우존스)",
+    "analyzed_at": "2026-08-08T04:14:35.184160+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
-      "stockanalysis.com/etf/robo (2026-08-08 조회)"
+      "stockanalysis.com/etf/schd (2026-08-08 조회)"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
@@ -16,78 +16,77 @@
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
-    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
-    "[보수율 부담] 연 보수율 0.95%는 10년 보유 시 누적 9.10%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
   ],
   "inputs": {
-    "ticker": "ROBO",
-    "name": "ROBO Global Robotics and Automation Index ETF",
-    "tracks": "로봇/자동화 테마",
+    "ticker": "SCHD",
+    "name": "Schwab US Dividend Equity ETF",
+    "tracks": "미국 배당성장주(다우존스)",
     "pe_by_source": {
-      "stockanalysis(trailing)": 29.17
+      "stockanalysis(trailing)": 17.6
     },
-    "expense_ratio": 0.0095,
-    "n_holdings": 91,
-    "top10_weight": 0.1759,
+    "expense_ratio": 0.0006,
+    "n_holdings": 103,
+    "top10_weight": 0.4154,
     "risk_free_rate": 0.0461,
-    "expected_earnings_growth": 0.09,
-    "expected_earnings_growth_basis": "산업용 로봇·자동화는 인건비 상승·인력난이라는 구조적 순풍이 있는 산업재 인접 테마다 - XLI(산업재, 7%)보다는 높이되, 91개 종목으로 상위10비중이 17.59%뿐이라(BOTZ 60%대와 대비) 개별 고성장주 쏠림이 적어 순수 테크섹터만큼 높이지는 않는다 [추정치].",
-    "dividend_yield": 0.0035,
+    "expected_earnings_growth": 0.06,
+    "expected_earnings_growth_basis": "Dow Jones U.S. Dividend 100 지수는 10년 연속 배당 이력·재무비율 스크린을 통과한 대형 성숙기업만 편입한다 - 배당·가치 성향이 강해 무배당 고성장주(예: Amazon·Tesla)가 원천 배제된다. XLP(필수소비재, 5%)·XLU(유틸리티, 5%)와 비슷한 낮은 성장률을 채택하되, 섹터가 특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치].",
+    "dividend_yield": 0.0309,
     "pct_unprofitable_constituents": null,
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
     "top10_holdings": null,
-    "return_1y": 0.3477,
+    "return_1y": 0.3173,
     "return_ytd": null,
     "holding_years": 10,
     "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
-      "stockanalysis.com/etf/robo (2026-08-08 조회)"
+      "stockanalysis.com/etf/schd (2026-08-08 조회)"
     ],
     "falsification_conditions": null
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 29.17
+      "stockanalysis(trailing)": 17.6
     },
-    "min": 29.17,
-    "max": 29.17,
+    "min": 17.6,
+    "max": 17.6,
     "spread_abs": 0.0,
     "spread_relative": 0.0,
     "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
   },
   "ers": {
     "components": {
-      "concentration": 2.0,
-      "breadth": 18.0,
+      "concentration": 14.0,
+      "breadth": 14.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 36.666666666666664
+    "score": 50.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.061,
-    "r": 0.1071
+    "erp": 0.065,
+    "r": 0.1111
   },
   "growth": {
-    "expected_earnings_growth": 0.09,
-    "expense_ratio_deducted": 0.0095,
-    "net_expected_growth": 0.0805,
-    "basis": "산업용 로봇·자동화는 인건비 상승·인력난이라는 구조적 순풍이 있는 산업재 인접 테마다 - XLI(산업재, 7%)보다는 높이되, 91개 종목으로 상위10비중이 17.59%뿐이라(BOTZ 60%대와 대비) 개별 고성장주 쏠림이 적어 순수 테크섹터만큼 높이지는 않는다 [추정치].",
+    "expected_earnings_growth": 0.06,
+    "expense_ratio_deducted": 0.0006,
+    "net_expected_growth": 0.059399999999999994,
+    "basis": "Dow Jones U.S. Dividend 100 지수는 10년 연속 배당 이력·재무비율 스크린을 통과한 대형 성숙기업만 편입한다 - 배당·가치 성향이 강해 무배당 고성장주(예: Amazon·Tesla)가 원천 배제된다. XLP(필수소비재, 5%)·XLU(유틸리티, 5%)와 비슷한 낮은 성장률을 채택하되, 섹터가 특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치].",
     "basis_type": "analyst_estimate",
     "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
-      "growth_low": 0.0605,
-      "growth_high": 0.1005,
-      "gap_low": -0.009904607225720938,
-      "gap_high": 0.03009539277427907,
+      "growth_low": 0.03939999999999999,
+      "growth_high": 0.0794,
+      "gap_low": -0.011963440860215065,
+      "gap_high": 0.028036559139784943,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -96,21 +95,21 @@
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
-        "pe_ratio": 29.17,
-        "earnings_yield": 0.03428179636612958,
-        "implied_growth": 0.07040460722572094,
-        "gap": 0.010095392774279066,
+        "pe_ratio": 17.6,
+        "earnings_yield": 0.056818181818181816,
+        "implied_growth": 0.051363440860215055,
+        "gap": 0.00803655913978494,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07040460722572094,
-          "for_undervalued": 0.12040460722572094,
-          "for_overvalued": 0.020404607225720933,
+          "breakeven": 0.051363440860215055,
+          "for_undervalued": 0.10136344086021506,
+          "for_overvalued": 0.0013634408602150525,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.010095392774279066,
-    "gap_max": 0.010095392774279066,
+    "gap_min": 0.00803655913978494,
+    "gap_max": 0.00803655913978494,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -118,19 +117,19 @@
     "consensus_judgment": "적정가/경계선"
   },
   "cost": {
-    "expense_ratio": 0.0095,
+    "expense_ratio": 0.0006,
     "holding_years": 10,
-    "cumulative_drag": 0.09103994388261993
+    "cumulative_drag": 0.005983825892803996
   },
   "fed_model": {
-    "earnings_yield": 0.03428179636612958,
+    "earnings_yield": 0.056818181818181816,
     "treasury_yield": 0.0461,
-    "spread": -0.01181820363387042,
+    "spread": 0.010718181818181814,
     "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
   },
   "performance": {
-    "return_1y": 0.3477,
+    "return_1y": 0.3173,
     "return_ytd": null,
-    "dividend_yield": 0.0035
+    "dividend_yield": 0.0309
   }
 }

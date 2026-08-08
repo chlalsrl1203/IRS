@@ -17,6 +17,54 @@
     ]
   },
   {
+    "krx_ticker": "402970",
+    "krx_name": "ACE 미국배당다우존스",
+    "us_ticker": "SCHD",
+    "tracks": "미국 배당성장주(다우존스)",
+    "breakeven_pct": 5.136344086021506,
+    "assumed_growth_pct": 5.93,
+    "gap_pct": 0.7936559139784943,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06999999999999999,
+    "aum_eok": 9478.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "446720",
+    "krx_name": "SOL 미국배당다우존스",
+    "us_ticker": "SCHD",
+    "tracks": "미국 배당성장주(다우존스)",
+    "breakeven_pct": 5.136344086021506,
+    "assumed_growth_pct": 5.93,
+    "gap_pct": 0.7936559139784943,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06999999999999999,
+    "aum_eok": 10275.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "458730",
+    "krx_name": "TIGER 미국배당다우존스",
+    "us_ticker": "SCHD",
+    "tracks": "미국 배당성장주(다우존스)",
+    "breakeven_pct": 5.136344086021506,
+    "assumed_growth_pct": 5.9399999999999995,
+    "gap_pct": 0.8036559139784939,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06,
+    "aum_eok": 41759.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
     "krx_ticker": "453650",
     "krx_name": "KODEX 미국S&P500금융",
     "us_ticker": "XLF",

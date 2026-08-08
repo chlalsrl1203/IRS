@@ -3,7 +3,7 @@
     "ticker": "371450",
     "name": "TIGER 글로벌클라우드컴퓨팅INDXX",
     "tracks": "클라우드 컴퓨팅 테마",
-    "analyzed_at": "2026-08-08T00:49:53.769900+00:00",
+    "analyzed_at": "2026-08-08T04:15:04.824388+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -14,7 +14,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "CLOU",
-      "us_analyzed_at": "2026-08-08T00:48:30.311383+00:00",
+      "us_analyzed_at": "2026-08-08T04:14:35.183736+00:00",
       "tracks_same_index_as": "Indxx Global Cloud Computing 지수(원화환산) - CLOU(Global X Cloud Computing ETF)와 완전히 동일한 지수(공식 확인). ⚠️ 처음엔 WCLD/SKYY 만 확인하고 매칭 실패로 단정했으나, 재조사에서 CLOU가 같은 Indxx 지수를 쓴다는 걸 발견 - 후보가 여럿일 때 전부 확인해야 한다는 교훈."
     }
   },
