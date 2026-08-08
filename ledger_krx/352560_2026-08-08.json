@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "ticker": "352560",
+    "name": "KODEX 미국부동산리츠(H)",
+    "tracks": "리츠(부동산) 섹터",
+    "analyzed_at": "2026-08-08T00:11:00.517862+00:00",
+    "engine_version": "v3.39",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "IYR",
+      "us_analyzed_at": "2026-08-08T00:10:04.803601+00:00",
+      "tracks_same_index_as": "Dow Jones US Real Estate 지수 - IYR(iShares U.S. Real Estate ETF)의 'Dow Jones U.S. Real Estate Capped Index'와 같은 계열. ⚠️ 'Capped' 적용 여부까지 완전히 일치하는지는 확정 못함(XLE/KODEX에너지와 동일 수준의 불확실성으로 취급)."
+    }
+  },
+  "data_limitations": [
+    "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[환헤지 비용 미반영] 환헤지형 상품이라 환노출형과 달리 한미 단기금리차만큼의 캐리비용이 매년 발생하는데, 이 비용을 추정치로 넣지 않아 Gap·보수율차와 같은 축에서 비교되지 않았다. 현재(2026-08 기준) 미국 정책금리가 한국보다 높아 헤지가 구조적으로 불리한 국면이라는 점을 감안할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 IYR 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "352560",
+    "name": "KODEX 미국부동산리츠(H)",
+    "tracks": "리츠(부동산) 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 27.83
+    },
+    "expense_ratio": 0.0009,
+    "n_holdings": 65,
+    "top10_weight": 0.5218,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.05,
+    "expected_earnings_growth_basis": "리츠는 임대료 상승률+신규개발 기반 성장이라 유틸리티(5%)와 비슷한 완만한 성장률을 채택 [추정치]. 금리 민감도가 매우 높은 섹터라 (REIT 배당수익률이 국채금리와 경쟁) 성장률 자체보다 할인율 변화가 밸류에이션을 더 크게 흔든다는 점을 감안해서 볼 것. [v3.38: IYR 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0216,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 27.83
+    },
+    "min": 27.83,
+    "max": 27.83,
+    "spread_abs": 0.0,
+    "spread_relative": 0.0,
+    "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 18.0,
+      "breadth": 18.0,
+      "data_quality": 2.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 63.33333333333333
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.069,
+    "r": 0.11510000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.05,
+    "expense_ratio_deducted": 0.0009,
+    "net_expected_growth": 0.049100000000000005,
+    "basis": "리츠는 임대료 상승률+신규개발 기반 성장이라 유틸리티(5%)와 비슷한 완만한 성장률을 채택 [추정치]. 금리 민감도가 매우 높은 섹터라 (REIT 배당수익률이 국채금리와 경쟁) 성장률 자체보다 할인율 변화가 밸류에이션을 더 크게 흔든다는 점을 감안해서 볼 것. [v3.38: IYR 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.029100000000000004,
+      "growth_high": 0.06910000000000001,
+      "gap_low": -0.047321540062434955,
+      "gap_high": -0.0073215400624349475,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 27.83,
+        "earnings_yield": 0.035932446999640676,
+        "implied_growth": 0.07642154006243496,
+        "gap": -0.02732154006243495,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07642154006243496,
+          "for_undervalued": 0.12642154006243495,
+          "for_overvalued": 0.026421540062434953,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.02732154006243495,
+    "gap_max": -0.02732154006243495,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0009,
+    "holding_years": 10,
+    "cumulative_drag": 0.008963637342367825
+  },
+  "fed_model": {
+    "earnings_yield": 0.035932446999640676,
+    "treasury_yield": 0.0461,
+    "spread": -0.010167553000359326,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0216
+  },
+  "wrapper": {
+    "expense_ratio": 0.0009,
+    "expense_ratio_delta_vs_us": -0.0029,
+    "hedged": true,
+    "aum_krw": 35892000000.0,
+    "listed_date": "2020-05-13"
+  }
+}

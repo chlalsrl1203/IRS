@@ -1,21 +1,34 @@
 """
-국내 상장(KRX) 미국지수 추종 ETF 분석 - 2026-08-08 추가분 (경기소비재/XLY).
+국내 상장(KRX) 미국지수 추종 ETF 분석 - 2026-08-08 추가분
+(경기소비재/XLY, 반도체/SMH, 리츠/IYR).
 
-경위: "계속해서 섹터 확장" 요청. v3.38/v3.39가 이미 11개 지수를 커버했는데,
-이번에 `scripts/analyze_etfs_sectors_2026_08_08.py`로 새로 분석한 XLY(임의
-소비재) 국내 래퍼를 추가한다. 기존 `analyze_krx_etfs_2026_08_07.py`를 통째로
-재실행하지 않는다 - 그러면 안 바뀐 종목들까지 오늘 날짜로 재저장되어
-`ledger_krx/`에 어제·오늘 중복 파일이 생긴다(v3.32/v3.35/v3.36이 반복 경계한
-바로 그 사고). 이 스크립트는 **오늘 새로 추가되는 종목만** 다룬다.
+경위: "계속해서 섹터 확장" 요청, 이후 사용자가 실제 거래앱의 "지금 뜨고 있는
+카테고리" 스크린샷을 제공하며 그 목록 기준으로 확장을 요청했다 - 반도체
+밸류체인(스마트폰부품·종합반도체·반도체파운드리·반도체장비·반도체부품소재·
+반도체팹리스)이 상위 11개 카테고리 중 6개를 차지할 만큼 압도적이었다. 기존
+`analyze_krx_etfs_2026_08_07.py`를 통째로 재실행하지 않는다 - 안 바뀐 종목까지
+오늘 날짜로 재저장되면 `ledger_krx/`에 어제·오늘 중복 파일이 생긴다(v3.32/
+v3.35/v3.36이 반복 경계한 사고). 이 스크립트는 **오늘 새로 추가되는 종목만**
+다룬다.
 
-⚠️ 이번 조사에서 소재(Materials/XLB)는 국내 상장 상품을 찾지 못했고, 부동산
-(리츠/XLRE)은 국내 상품(KODEX 미국부동산리츠(H))이 있으나 기초지수가 달라
-(Dow Jones US Real Estate Index ≠ Real Estate Select Sector Index) 재사용
-전제가 깨진다 - 둘 다 정직한 공백으로 남긴다(추측 금지). 상세 근거는
-`scripts/analyze_etfs_sectors_2026_08_08.py` 모듈독스트링 참고.
+⚠️ 반도체는 처음엔 TIGER 미국필라델피아반도체나스닥(PHLX Semiconductor Sector
+Index 추종)에 맞춰 SOXX를 쓰려 했으나, SOXX가 2021-06-21에 다른 지수(NYSE
+Semiconductor Index)로 갈아탔다는 걸 확인해 대신 **같은 지수(MVIS US Listed
+Semiconductor 25 Index)를 추종하는 KODEX 미국반도체(390390) + SMH** 조합으로
+바꿨다 - TIGER 미국필라델피아반도체나스닥은 지수가 진짜 일치하는 미국 원본을
+못 찾아 보류.
 
-실행: python3 scripts/analyze_etfs_sectors_2026_08_08.py 먼저 실행해 XLY
-원본을 채운 뒤 python3 scripts/analyze_krx_etfs_2026_08_08.py 실행.
+⚠️ 리츠는 v3.39에서 XLRE와 지수가 달라 제외했던 KODEX 미국부동산리츠(H)를,
+"Dow Jones U.S. Real Estate Capped Index"를 추종하는 **IYR**과 짝지어 되살렸다
+- "Capped" 여부까지 완전히 일치하는지는 미확정이라 XLE 때와 같은 수준의
+불확실성으로 취급한다. 상세 근거는 `scripts/analyze_etfs_sectors_2026_08_08.py`
+모듈독스트링 참고.
+
+⚠️ 소재(Materials/XLB)는 이번에도 국내 상장 상품을 찾지 못해 정직한 공백으로
+남긴다. 테크놀로지(463680)도 총보수 미확인으로 계속 제외.
+
+실행: python3 scripts/analyze_etfs_sectors_2026_08_08.py 먼저 실행해 XLY/SMH/
+IYR 원본을 채운 뒤 python3 scripts/analyze_krx_etfs_2026_08_08.py 실행.
 """
 
 import json
@@ -54,6 +67,32 @@ CANDIDATES = [
         data_sources=["funetf.co.kr/product/etf/view(2026-08-08)",
                        "samsungfund.com/etf/product/view.do?id=2ETFI8"],
     ),
+    dict(
+        krx_ticker="390390", krx_name="KODEX 미국반도체",
+        tracks_same_index_as=(
+            "MVIS US Listed Semiconductor 25 Index(KRW) - 공식페이지에서 확인, "
+            "SMH(VanEck Semiconductor ETF)와 완전히 동일한 지수(SOXX는 2021년 "
+            "다른 지수로 변경돼 제외)."
+        ),
+        us_reference_ticker="SMH", expense_ratio=0.0009, hedged=False,
+        aum_krw=8_738 * 1e8,  # 시가총액 기준(순자산 원자료 확보 못함, 근사치)
+        listed_date="2021-06-30",
+        data_sources=["funetf.co.kr/product/etf/view/KR7390390003(2026-08-08)",
+                       "samsungfund.com/sheet/20250805/2ETFE8_20250731.pdf"],
+    ),
+    dict(
+        krx_ticker="352560", krx_name="KODEX 미국부동산리츠(H)",
+        tracks_same_index_as=(
+            "Dow Jones US Real Estate 지수 - IYR(iShares U.S. Real Estate ETF)의 "
+            "'Dow Jones U.S. Real Estate Capped Index'와 같은 계열. ⚠️ 'Capped' "
+            "적용 여부까지 완전히 일치하는지는 확정 못함(XLE/KODEX에너지와 동일 "
+            "수준의 불확실성으로 취급)."
+        ),
+        us_reference_ticker="IYR", expense_ratio=0.0009, hedged=True,
+        estimated_hedge_carry=None,
+        aum_krw=358.92 * 1e8, listed_date="2020-05-13",
+        data_sources=["funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"],
+    ),
 ]
 
 
@@ -70,11 +109,13 @@ def main():
 
     print()
     print(format_krx_comparison_table(compare_krx_wrappers(results)))
-    print("⚠️ 소재(Materials/XLB)·부동산(리츠/XLRE)은 이번 조사에서 국내 래퍼를 "
-          "찾지 못했거나(소재) 기초지수가 달라 재사용할 수 없었다(리츠) - GICS 11섹터 "
-          "중 이 둘만 아직 커버 안 됨.")
+    print("⚠️ 소재(Materials/XLB)는 이번에도 국내 상장 상품을 찾지 못했다 - "
+          "GICS 11섹터 중 유일하게 아직 후보조차 없는 섹터.")
     print("⚠️ 테크놀로지(KODEX 미국S&P500테크놀로지, 463680)는 총보수를 이번에도 "
           "확인하지 못해 계속 제외 상태다.")
+    print("⚠️ 반도체(KODEX 미국반도체)·리츠(KODEX 미국부동산리츠(H))는 GICS 11섹터에 "
+          "속하지 않는 테마/산업 분류다 - 사용자가 제공한 거래앱 트렌드 카테고리를 "
+          "근거로 추가했다.")
 
 
 if __name__ == "__main__":
