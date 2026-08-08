@@ -1,0 +1,387 @@
+[
+  {
+    "krx_ticker": "463690",
+    "krx_name": "KODEX 미국S&P500커뮤니케이션",
+    "us_ticker": "XLC",
+    "tracks": "커뮤니케이션서비스 섹터",
+    "breakeven_pct": 4.788686493184636,
+    "assumed_growth_pct": 8.75,
+    "gap_pct": 3.9613135068153635,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 131.1,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "성장가정취약",
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "453650",
+    "krx_name": "KODEX 미국S&P500금융",
+    "us_ticker": "XLF",
+    "tracks": "금융 섹터",
+    "breakeven_pct": 5.65030478192328,
+    "assumed_growth_pct": 6.75,
+    "gap_pct": 1.0996952180767203,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 5195.8,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "280930",
+    "krx_name": "KODEX 미국러셀2000(H)",
+    "us_ticker": "IWM",
+    "tracks": "Russell 2000 (소형주)",
+    "breakeven_pct": 6.850370370370371,
+    "assumed_growth_pct": 10.549999999999999,
+    "gap_pct": 3.699629629629629,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.44999999999999996,
+    "aum_eok": 266.0,
+    "n_pe_sources": 2,
+    "fragile_flags": [
+      "성장가정취약",
+      "환헤지비용미반영"
+    ]
+  },
+  {
+    "krx_ticker": "453630",
+    "krx_name": "KODEX 미국S&P500필수소비재",
+    "us_ticker": "XLP",
+    "tracks": "필수소비재 섹터",
+    "breakeven_pct": 6.970500636402208,
+    "assumed_growth_pct": 4.75,
+    "gap_pct": -2.2205006364022077,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 119.36,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "276990",
+    "krx_name": "KODEX 글로벌로봇(합성)",
+    "us_ticker": "ROBO",
+    "tracks": "로봇/자동화 테마",
+    "breakeven_pct": 7.040460722572093,
+    "assumed_growth_pct": 8.7,
+    "gap_pct": 1.6595392774279059,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.3,
+    "aum_eok": 254.33,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "218420",
+    "krx_name": "KODEX 미국S&P500에너지(합성)",
+    "us_ticker": "XLE",
+    "tracks": "에너지 섹터",
+    "breakeven_pct": 7.065411255411255,
+    "assumed_growth_pct": 3.75,
+    "gap_pct": -3.3154112554112554,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 265.36,
+    "n_pe_sources": 2,
+    "fragile_flags": [
+      "성장가정취약"
+    ]
+  },
+  {
+    "krx_ticker": "360200",
+    "krx_name": "ACE 미국S&P500",
+    "us_ticker": "VOO",
+    "tracks": "S&P 500",
+    "breakeven_pct": 7.070760602874168,
+    "assumed_growth_pct": 7.93,
+    "gap_pct": 0.8592393971258314,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06999999999999999,
+    "aum_eok": 40405.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "360750",
+    "krx_name": "TIGER 미국S&P500",
+    "us_ticker": "VOO",
+    "tracks": "S&P 500",
+    "breakeven_pct": 7.070760602874168,
+    "assumed_growth_pct": 7.9399999999999995,
+    "gap_pct": 0.8692393971258316,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06,
+    "aum_eok": 204640.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "379800",
+    "krx_name": "KODEX 미국S&P500",
+    "us_ticker": "VOO",
+    "tracks": "S&P 500",
+    "breakeven_pct": 7.070760602874168,
+    "assumed_growth_pct": 7.93,
+    "gap_pct": 0.8592393971258314,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.06999999999999999,
+    "aum_eok": 100701.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "449180",
+    "krx_name": "KODEX 미국S&P500(H)",
+    "us_ticker": "VOO",
+    "tracks": "S&P 500",
+    "breakeven_pct": 7.070760602874168,
+    "assumed_growth_pct": 7.89,
+    "gap_pct": 0.8192393971258316,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.11,
+    "aum_eok": 9937.0,
+    "n_pe_sources": 2,
+    "fragile_flags": [
+      "환헤지비용미반영"
+    ]
+  },
+  {
+    "krx_ticker": "394670",
+    "krx_name": "TIGER 글로벌리튬&2차전지SOLACTIVE(합성)",
+    "us_ticker": "LIT",
+    "tracks": "배터리(리튬) 테마",
+    "breakeven_pct": 7.198287560581583,
+    "assumed_growth_pct": 7.51,
+    "gap_pct": 0.31171243941841703,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.49,
+    "aum_eok": 1890.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "453640",
+    "krx_name": "KODEX 미국S&P500헬스케어",
+    "us_ticker": "XLV",
+    "tracks": "헬스케어 섹터",
+    "breakeven_pct": 7.238280454367412,
+    "assumed_growth_pct": 6.75,
+    "gap_pct": -0.488280454367411,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 15460.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "245340",
+    "krx_name": "TIGER 미국다우존스30",
+    "us_ticker": "DIA",
+    "tracks": "Dow Jones Industrial Avg",
+    "breakeven_pct": 7.409397817086941,
+    "assumed_growth_pct": 6.65,
+    "gap_pct": -0.7593978170869403,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.35000000000000003,
+    "aum_eok": 1491.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "463640",
+    "krx_name": "KODEX 미국S&P500유틸리티",
+    "us_ticker": "XLU",
+    "tracks": "유틸리티 섹터",
+    "breakeven_pct": 7.415276381909548,
+    "assumed_growth_pct": 4.75,
+    "gap_pct": -2.665276381909548,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": null,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "200030",
+    "krx_name": "KODEX 미국S&P500산업재(합성)",
+    "us_ticker": "XLI",
+    "tracks": "산업재 섹터",
+    "breakeven_pct": 7.464658792650919,
+    "assumed_growth_pct": 6.75,
+    "gap_pct": -0.7146587926509185,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 499.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "352560",
+    "krx_name": "KODEX 미국부동산리츠(H)",
+    "us_ticker": "IYR",
+    "tracks": "리츠(부동산) 섹터",
+    "breakeven_pct": 7.642154006243496,
+    "assumed_growth_pct": 4.91,
+    "gap_pct": -2.732154006243495,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.09,
+    "aum_eok": 358.92,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처",
+      "환헤지비용미반영"
+    ]
+  },
+  {
+    "krx_ticker": "453660",
+    "krx_name": "KODEX 미국S&P500경기소비재",
+    "us_ticker": "XLY",
+    "tracks": "임의소비재(경기소비재) 섹터",
+    "breakeven_pct": 7.880380527939666,
+    "assumed_growth_pct": 9.75,
+    "gap_pct": 1.869619472060334,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": null,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "371450",
+    "krx_name": "TIGER 글로벌클라우드컴퓨팅INDXX",
+    "us_ticker": "CLOU",
+    "tracks": "클라우드 컴퓨팅 테마",
+    "breakeven_pct": 8.169453170447936,
+    "assumed_growth_pct": 10.0,
+    "gap_pct": 1.8305468295520642,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 1.0,
+    "aum_eok": 291.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "133690",
+    "krx_name": "TIGER 미국나스닥100",
+    "us_ticker": "QQQ",
+    "tracks": "Nasdaq-100",
+    "breakeven_pct": 8.428272620446535,
+    "assumed_growth_pct": 10.91,
+    "gap_pct": 2.4817273795534653,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.09,
+    "aum_eok": 114540.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "367380",
+    "krx_name": "ACE 미국나스닥100",
+    "us_ticker": "QQQ",
+    "tracks": "Nasdaq-100",
+    "breakeven_pct": 8.428272620446535,
+    "assumed_growth_pct": 10.9,
+    "gap_pct": 2.471727379553465,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.1,
+    "aum_eok": 35067.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "379810",
+    "krx_name": "KODEX 미국나스닥100",
+    "us_ticker": "QQQ",
+    "tracks": "Nasdaq-100",
+    "breakeven_pct": 8.428272620446535,
+    "assumed_growth_pct": 10.879999999999999,
+    "gap_pct": 2.451727379553464,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.12,
+    "aum_eok": 90579.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "449190",
+    "krx_name": "KODEX 미국나스닥100(H)",
+    "us_ticker": "QQQ",
+    "tracks": "Nasdaq-100",
+    "breakeven_pct": 8.428272620446535,
+    "assumed_growth_pct": 10.9,
+    "gap_pct": 2.471727379553465,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.1,
+    "aum_eok": 5605.0,
+    "n_pe_sources": 2,
+    "fragile_flags": [
+      "환헤지비용미반영"
+    ]
+  },
+  {
+    "krx_ticker": "440910",
+    "krx_name": "WON 미국우주항공방산",
+    "us_ticker": "XAR",
+    "tracks": "항공우주/방위산업 테마",
+    "breakeven_pct": 8.582164461247636,
+    "assumed_growth_pct": 8.649999999999999,
+    "gap_pct": 0.06783553875236298,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.35000000000000003,
+    "aum_eok": 833.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  },
+  {
+    "krx_ticker": "463680",
+    "krx_name": "KODEX 미국S&P500테크놀로지",
+    "us_ticker": "XLK",
+    "tracks": "기술 섹터",
+    "breakeven_pct": 8.896004691164974,
+    "assumed_growth_pct": 11.75,
+    "gap_pct": 2.853995308835025,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.25,
+    "aum_eok": 110.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "390390",
+    "krx_name": "KODEX 미국반도체",
+    "us_ticker": "SMH",
+    "tracks": "반도체 섹터",
+    "breakeven_pct": 9.266114635747103,
+    "assumed_growth_pct": 11.91,
+    "gap_pct": 2.643885364252897,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.09,
+    "aum_eok": 8738.0,
+    "n_pe_sources": 1,
+    "fragile_flags": [
+      "단일출처"
+    ]
+  }
+]
