@@ -98,7 +98,9 @@ CANDIDATES = [
         krx_ticker="449180", krx_name="KODEX 미국S&P500(H)",
         tracks_same_index_as="S&P500 - KODEX 미국S&P500과 동일 지수의 환헤지형",
         us_reference_ticker="VOO", expense_ratio=0.0011, hedged=True,
-        estimated_hedge_carry=None,  # 병기 원칙 - 한미 금리차 추정치 미확보
+        # 2026-08-08 반영: 한국 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값
+        # 3.625%) - 차이 0.875%p를 캐리비용 추정치로 병기(자동 Gap 반영 안 함).
+        estimated_hedge_carry=0.00875,
         aum_krw=9_937 * 1e8, listed_date="미확인",
         data_sources=["etfshopping.com/best/us-etf(2026-08-07)"],
     ),
@@ -129,7 +131,7 @@ CANDIDATES = [
         krx_ticker="449190", krx_name="KODEX 미국나스닥100(H)",
         tracks_same_index_as="나스닥100 - KODEX 미국나스닥100과 동일 지수의 환헤지형",
         us_reference_ticker="QQQ", expense_ratio=0.0010, hedged=True,
-        estimated_hedge_carry=None,
+        estimated_hedge_carry=0.00875,  # 2026-08-08 반영, 근거는 위 449180 주석 참고
         aum_krw=5_605 * 1e8, listed_date="미확인",
         data_sources=["etfshopping.com/etf/index/nasdaq-100(2026-08-07)"],
     ),
@@ -164,7 +166,7 @@ CANDIDATES = [
         krx_ticker="280930", krx_name="KODEX 미국러셀2000(H)",
         tracks_same_index_as="FTSE Russell 2000 Index - 공식페이지에서 IWM과 동일 지수 확인",
         us_reference_ticker="IWM", expense_ratio=0.0045, hedged=True,
-        estimated_hedge_carry=None,
+        estimated_hedge_carry=0.00875,  # 2026-08-08 반영, 근거는 449180 주석 참고
         aum_krw=266.0 * 1e8, listed_date="미확인",
         data_sources=["samsungfund.com/etf/product/view.do?id=2ETF95(2026-08-07)"],
     ),

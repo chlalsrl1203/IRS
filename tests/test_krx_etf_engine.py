@@ -184,6 +184,26 @@ def test_hedged_wrapper_gets_hedge_warning():
     )
     assert any("환헤지 비용" in x for x in krx["data_limitations"])
     assert krx["wrapper"]["hedged"] is True
+    # estimated_hedge_carry를 안 넣었으면 결과에도 None으로 남아야 한다
+    assert krx["wrapper"]["estimated_hedge_carry"] is None
+
+
+def test_hedged_wrapper_stores_estimated_hedge_carry_in_result():
+    """
+    ⭐ v3.40 버그수정의 회귀 테스트 - estimated_hedge_carry는 경고 문구를
+    만드는 데만 쓰이고 결과 dict에는 저장되지 않아서, 다운스트림 스크립트가
+    "캐리비용이 실제로 병기됐는지"를 알 수 없었다(경고 문자열을 파싱하지
+    않는 한). result["wrapper"]에 구조화된 필드로 노출돼야 한다.
+    """
+    us = voo_us_result()
+    krx = run_krx_wrapper_analysis(
+        tiger_sp500_inputs(krx_ticker="449180", krx_name="KODEX 미국S&P500(H)",
+                            hedged=True, expense_ratio=0.0011, aum_krw=9_937 * 1e8,
+                            estimated_hedge_carry=0.00875),
+        us,
+    )
+    assert krx["wrapper"]["estimated_hedge_carry"] == pytest.approx(0.00875)
+    assert any("환헤지 비용 반영" in x for x in krx["data_limitations"])
 
 
 # ----------------------------------------------------------------------

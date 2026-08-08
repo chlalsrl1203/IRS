@@ -149,6 +149,11 @@ def run_krx_wrapper_analysis(inputs: KRXWrapperInputs, us_result: dict) -> dict:
             inputs.expense_ratio, us_inputs["expense_ratio"]
         ),
         "hedged": inputs.hedged,
+        # v3.40 버그수정: 이 값이 hedge_cost_warning() 문구를 만드는 데만 쓰이고
+        # 결과 dict에는 저장되지 않아, 다운스트림 스크립트(rank_krx_etfs_
+        # 2026_08_08.py)가 "캐리비용이 실제로 병기됐는지"를 경고 문자열
+        # 파싱 없이는 알 수 없었다 - 구조화된 필드로 명시.
+        "estimated_hedge_carry": inputs.estimated_hedge_carry,
         "aum_krw": inputs.aum_krw,
         "listed_date": inputs.listed_date,
     }

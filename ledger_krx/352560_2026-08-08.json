@@ -3,18 +3,19 @@
     "ticker": "352560",
     "name": "KODEX 미국부동산리츠(H)",
     "tracks": "리츠(부동산) 섹터",
-    "analyzed_at": "2026-08-08T04:15:04.821917+00:00",
-    "engine_version": "v3.39",
+    "analyzed_at": "2026-08-08T04:49:08.369760+00:00",
+    "engine_version": "v3.41",
     "analysis_type": "krx_wrapper",
     "data_sources": [
-      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)",
+      "한국은행 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값), 2026-08-08 확인"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "IYR",
-      "us_analyzed_at": "2026-08-08T04:14:35.182263+00:00",
+      "us_analyzed_at": "2026-08-08T04:39:31.950585+00:00",
       "tracks_same_index_as": "Dow Jones US Real Estate 지수 - IYR(iShares U.S. Real Estate ETF)의 'Dow Jones U.S. Real Estate Capped Index'와 같은 계열. ⚠️ 'Capped' 적용 여부까지 완전히 일치하는지는 확정 못함(XLE/KODEX에너지와 동일 수준의 불확실성으로 취급)."
     }
   },
@@ -22,7 +23,7 @@
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
-    "[환헤지 비용 미반영] 환헤지형 상품이라 환노출형과 달리 한미 단기금리차만큼의 캐리비용이 매년 발생하는데, 이 비용을 추정치로 넣지 않아 Gap·보수율차와 같은 축에서 비교되지 않았다. 현재(2026-08 기준) 미국 정책금리가 한국보다 높아 헤지가 구조적으로 불리한 국면이라는 점을 감안할 것.",
+    "[환헤지 비용 반영] 환헤지형 상품으로, 연 0.88%p의 캐리비용을 추정치로 병기한다(Gap에는 자동 반영하지 않음 - 분석자가 총보수차와 함께 판단할 것).",
     "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 IYR 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
   ],
   "inputs": {
@@ -51,7 +52,8 @@
     "currency": "KRW",
     "price_at_analysis": null,
     "data_sources": [
-      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"
+      "funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)",
+      "한국은행 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값), 2026-08-08 확인"
     ],
     "falsification_conditions": null
   },
@@ -143,6 +145,7 @@
     "expense_ratio": 0.0009,
     "expense_ratio_delta_vs_us": -0.0029,
     "hedged": true,
+    "estimated_hedge_carry": 0.00875,
     "aum_krw": 35892000000.0,
     "listed_date": "2020-05-13"
   }

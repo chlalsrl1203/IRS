@@ -61,7 +61,13 @@ def build_ranking(ledgers: list) -> list:
         if n_sources == 1:
             fragile_flags.append("단일출처")
         if d["wrapper"]["hedged"]:
-            fragile_flags.append("환헤지비용미반영")
+            # v3.40: estimated_hedge_carry가 실제로 채워졌는지 확인 - 병기됐다면
+            # "미반영"이 아니라 "참고용 반영"이라고 정확히 표시한다(자동으로
+            # Gap에 반영된 건 아니므로 여전히 주의 플래그이긴 하다).
+            if d["wrapper"].get("estimated_hedge_carry") is not None:
+                fragile_flags.append("환헤지비용참고반영")
+            else:
+                fragile_flags.append("환헤지비용미반영")
 
         rows.append({
             "krx_ticker": d["meta"]["ticker"],

@@ -115,7 +115,9 @@ CANDIDATES = [
             "수준의 불확실성으로 취급)."
         ),
         us_reference_ticker="IYR", expense_ratio=0.0009, hedged=True,
-        estimated_hedge_carry=None,
+        # 2026-08-08 반영: 한국 기준금리 2.75% vs 미국 연준 3.50~3.75%(중간값
+        # 3.625%) - 차이 0.875%p를 캐리비용 추정치로 병기(자동 Gap 반영 안 함).
+        estimated_hedge_carry=0.00875,
         aum_krw=358.92 * 1e8, listed_date="2020-05-13",
         data_sources=["funddoctor.co.kr/ast/etf/etf_02.jsp?fund_cd=KR7352560007(2026-08-08)"],
     ),
