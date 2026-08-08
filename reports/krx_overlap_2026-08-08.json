@@ -3700,6 +3700,66 @@
     },
     {
       "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0955,
+      "detail": {
+        "NVDA": {
+          "a": 0.217,
+          "b": 0.0955,
+          "shared": 0.0955
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "390390",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국반도체",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "SMH",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0955,
+      "detail": {
+        "NVDA": {
+          "a": 0.1391,
+          "b": 0.0955,
+          "shared": 0.0955
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "463680",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500테크놀로지",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLK",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
         "BA",
         "GE",
         "RTX"
@@ -4054,6 +4114,162 @@
     },
     {
       "common_tickers": [
+        "QLYS",
+        "ZS"
+      ],
+      "n_common": 2,
+      "shared_weight": 0.0818,
+      "detail": {
+        "QLYS": {
+          "a": 0.0429,
+          "b": 0.0548,
+          "shared": 0.0429
+        },
+        "ZS": {
+          "a": 0.0389,
+          "b": 0.0485,
+          "shared": 0.0389
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "371450",
+        "418670"
+      ],
+      "pair_names": [
+        "TIGER 글로벌클라우드컴퓨팅INDXX",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "CLOU",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0786,
+      "detail": {
+        "NVDA": {
+          "a": 0.0786,
+          "b": 0.0955,
+          "shared": 0.0786
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "133690",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 미국나스닥100",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0786,
+      "detail": {
+        "NVDA": {
+          "a": 0.0786,
+          "b": 0.0955,
+          "shared": 0.0786
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "367380",
+        "464310"
+      ],
+      "pair_names": [
+        "ACE 미국나스닥100",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0786,
+      "detail": {
+        "NVDA": {
+          "a": 0.0786,
+          "b": 0.0955,
+          "shared": 0.0786
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "379810",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국나스닥100",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.0786,
+      "detail": {
+        "NVDA": {
+          "a": 0.0786,
+          "b": 0.0955,
+          "shared": 0.0786
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "449190",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국나스닥100(H)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
         "GOOG",
         "GOOGL",
         "META"
@@ -4217,6 +4433,126 @@
       "us_pair": [
         "VOO",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.075,
+      "detail": {
+        "NVDA": {
+          "a": 0.075,
+          "b": 0.0955,
+          "shared": 0.075
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "360200",
+        "464310"
+      ],
+      "pair_names": [
+        "ACE 미국S&P500",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "VOO",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.075,
+      "detail": {
+        "NVDA": {
+          "a": 0.075,
+          "b": 0.0955,
+          "shared": 0.075
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "360750",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 미국S&P500",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "VOO",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.075,
+      "detail": {
+        "NVDA": {
+          "a": 0.075,
+          "b": 0.0955,
+          "shared": 0.075
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "379800",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "VOO",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [
+        "NVDA"
+      ],
+      "n_common": 1,
+      "shared_weight": 0.075,
+      "detail": {
+        "NVDA": {
+          "a": 0.075,
+          "b": 0.0955,
+          "shared": 0.075
+        }
+      },
+      "is_lower_bound": true,
+      "informative": true,
+      "interpretation": "top10 기준 최소 공통 노출(하한)",
+      "pair": [
+        "449180",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500(H)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "VOO",
+        "BOTZ"
       ],
       "warning": null
     },
@@ -5392,6 +5728,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "133690",
+        "418670"
+      ],
+      "pair_names": [
+        "TIGER 미국나스닥100",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "133690",
         "440910"
       ],
       "pair_names": [
@@ -5533,6 +5891,28 @@
       "us_pair": [
         "QQQ",
         "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "133690",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 미국나스닥100",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "QQQ",
+        "RSP"
       ],
       "warning": null
     },
@@ -5832,6 +6212,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "200030",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500산업재(합성)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "XLI",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "200030",
         "446720"
       ],
       "pair_names": [
@@ -6061,6 +6463,50 @@
       "us_pair": [
         "XLI",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "200030",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500산업재(합성)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLI",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "200030",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500산업재(합성)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLI",
+        "RSP"
       ],
       "warning": null
     },
@@ -6338,6 +6784,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "218420",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500에너지(합성)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "XLE",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "218420",
         "440910"
       ],
       "pair_names": [
@@ -6545,6 +7013,50 @@
       "us_pair": [
         "XLE",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "218420",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500에너지(합성)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLE",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "218420",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500에너지(합성)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLE",
+        "RSP"
       ],
       "warning": null
     },
@@ -6690,6 +7202,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "245340",
+        "418670"
+      ],
+      "pair_names": [
+        "TIGER 미국다우존스30",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "DIA",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "245340",
         "440910"
       ],
       "pair_names": [
@@ -6787,6 +7321,50 @@
       "us_pair": [
         "DIA",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "245340",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 미국다우존스30",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "DIA",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "245340",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 미국다우존스30",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "DIA",
+        "RSP"
       ],
       "warning": null
     },
@@ -7042,6 +7620,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "276990",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 글로벌로봇(합성)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "ROBO",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "276990",
         "440910"
       ],
       "pair_names": [
@@ -7293,6 +7893,50 @@
       "us_pair": [
         "ROBO",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "276990",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 글로벌로봇(합성)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "ROBO",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "276990",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 글로벌로봇(합성)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "ROBO",
+        "RSP"
       ],
       "warning": null
     },
@@ -7526,6 +8170,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "280930",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국러셀2000(H)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "IWM",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "280930",
         "440910"
       ],
       "pair_names": [
@@ -7777,6 +8443,50 @@
       "us_pair": [
         "IWM",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "280930",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국러셀2000(H)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "IWM",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "280930",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국러셀2000(H)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "IWM",
+        "RSP"
       ],
       "warning": null
     },
@@ -7988,6 +8698,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "352560",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국부동산리츠(H)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "IYR",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "352560",
         "440910"
       ],
       "pair_names": [
@@ -8251,6 +8983,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "352560",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국부동산리츠(H)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "IYR",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "352560",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국부동산리츠(H)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "IYR",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "360200",
         "371450"
       ],
@@ -8283,6 +9059,28 @@
       "us_pair": [
         "VOO",
         "SCHD"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "360200",
+        "418670"
+      ],
+      "pair_names": [
+        "ACE 미국S&P500",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "VOO",
+        "BUG"
       ],
       "warning": null
     },
@@ -8449,6 +9247,28 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "360200",
+        "488500"
+      ],
+      "pair_names": [
+        "ACE 미국S&P500",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "VOO",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "360750",
         "371450"
       ],
@@ -8481,6 +9301,28 @@
       "us_pair": [
         "VOO",
         "SCHD"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "360750",
+        "418670"
+      ],
+      "pair_names": [
+        "TIGER 미국S&P500",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "VOO",
+        "BUG"
       ],
       "warning": null
     },
@@ -8635,6 +9477,28 @@
       "us_pair": [
         "VOO",
         "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "360750",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 미국S&P500",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "VOO",
+        "RSP"
       ],
       "warning": null
     },
@@ -8714,6 +9578,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "367380",
+        "418670"
+      ],
+      "pair_names": [
+        "ACE 미국나스닥100",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "367380",
         "440910"
       ],
       "pair_names": [
@@ -8855,6 +9741,28 @@
       "us_pair": [
         "QQQ",
         "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "367380",
+        "488500"
+      ],
+      "pair_names": [
+        "ACE 미국나스닥100",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "QQQ",
+        "RSP"
       ],
       "warning": null
     },
@@ -9241,6 +10149,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "371450",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 글로벌클라우드컴퓨팅INDXX",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "CLOU",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "371450",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 글로벌클라우드컴퓨팅INDXX",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "CLOU",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "379800",
         "402970"
       ],
@@ -9251,6 +10203,28 @@
       "us_pair": [
         "VOO",
         "SCHD"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "379800",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "VOO",
+        "BUG"
       ],
       "warning": null
     },
@@ -9405,6 +10379,28 @@
       "us_pair": [
         "VOO",
         "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "379800",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "VOO",
+        "RSP"
       ],
       "warning": null
     },
@@ -9462,6 +10458,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "379810",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국나스닥100",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "QQQ",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "379810",
         "440910"
       ],
       "pair_names": [
@@ -9603,6 +10621,28 @@
       "us_pair": [
         "QQQ",
         "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "379810",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국나스닥100",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "QQQ",
+        "RSP"
       ],
       "warning": null
     },
@@ -9660,6 +10700,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "390390",
+        "418670"
+      ],
+      "pair_names": [
+        "KODEX 미국반도체",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "SMH",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "390390",
         "440910"
       ],
       "pair_names": [
@@ -9845,6 +10907,28 @@
       "us_pair": [
         "SMH",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "390390",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국반도체",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "SMH",
+        "RSP"
       ],
       "warning": null
     },
@@ -9880,6 +10964,28 @@
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
         "394670",
+        "418670"
+      ],
+      "pair_names": [
+        "TIGER 글로벌리튬&2차전지SOLACTIVE(합성)",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "LIT",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "394670",
         "440910"
       ],
       "pair_names": [
@@ -10099,6 +11205,72 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "394670",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 글로벌리튬&2차전지SOLACTIVE(합성)",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "LIT",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "394670",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 글로벌리튬&2차전지SOLACTIVE(합성)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "LIT",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "402970",
+        "418670"
+      ],
+      "pair_names": [
+        "ACE 미국배당다우존스",
+        "TIGER 글로벌AI사이버보안"
+      ],
+      "us_pair": [
+        "SCHD",
+        "BUG"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "402970",
         "440910"
       ],
@@ -10219,6 +11391,358 @@
       "us_pair": [
         "SCHD",
         "XLK"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "402970",
+        "464310"
+      ],
+      "pair_names": [
+        "ACE 미국배당다우존스",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "SCHD",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "402970",
+        "488500"
+      ],
+      "pair_names": [
+        "ACE 미국배당다우존스",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "SCHD",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "440910"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "WON 미국우주항공방산"
+      ],
+      "us_pair": [
+        "BUG",
+        "XAR"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "446720"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "SOL 미국배당다우존스"
+      ],
+      "us_pair": [
+        "BUG",
+        "SCHD"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "449180"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500(H)"
+      ],
+      "us_pair": [
+        "BUG",
+        "VOO"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "449190"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국나스닥100(H)"
+      ],
+      "us_pair": [
+        "BUG",
+        "QQQ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "453630"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500필수소비재"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "453640"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500헬스케어"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLV"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "453650"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500금융"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLF"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "453660"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500경기소비재"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLY"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "458730"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "TIGER 미국배당다우존스"
+      ],
+      "us_pair": [
+        "BUG",
+        "SCHD"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "463640"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500유틸리티"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLU"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "463680"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500테크놀로지"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLK"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "463690"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "KODEX 미국S&P500커뮤니케이션"
+      ],
+      "us_pair": [
+        "BUG",
+        "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "BUG",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "418670",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI사이버보안",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "BUG",
+        "RSP"
       ],
       "warning": null
     },
@@ -10473,6 +11997,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "440910",
+        "464310"
+      ],
+      "pair_names": [
+        "WON 미국우주항공방산",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XAR",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "440910",
+        "488500"
+      ],
+      "pair_names": [
+        "WON 미국우주항공방산",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XAR",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "446720",
         "449180"
       ],
@@ -10583,6 +12151,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "446720",
+        "464310"
+      ],
+      "pair_names": [
+        "SOL 미국배당다우존스",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "SCHD",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "446720",
+        "488500"
+      ],
+      "pair_names": [
+        "SOL 미국배당다우존스",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "SCHD",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "449180",
         "453630"
       ],
@@ -10693,6 +12305,28 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "449180",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500(H)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "VOO",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "449190",
         "453630"
       ],
@@ -10803,6 +12437,28 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "449190",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국나스닥100(H)",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "QQQ",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "453630",
         "453640"
       ],
@@ -10935,6 +12591,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "453630",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500필수소비재",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLP",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "453630",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500필수소비재",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLP",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "453640",
         "453650"
       ],
@@ -11033,6 +12733,50 @@
       "us_pair": [
         "XLV",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "453640",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500헬스케어",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLV",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "453640",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500헬스케어",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLV",
+        "RSP"
       ],
       "warning": null
     },
@@ -11155,6 +12899,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "453650",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500금융",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLF",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "453650",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500금융",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLF",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "453660",
         "463640"
       ],
@@ -11221,6 +13009,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "453660",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500경기소비재",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLY",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "453660",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500경기소비재",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLY",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "458730",
         "463640"
       ],
@@ -11265,6 +13097,50 @@
       "informative": false,
       "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
       "pair": [
+        "458730",
+        "464310"
+      ],
+      "pair_names": [
+        "TIGER 미국배당다우존스",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "SCHD",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "458730",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 미국배당다우존스",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "SCHD",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
         "463640",
         "463680"
       ],
@@ -11297,6 +13173,50 @@
       "us_pair": [
         "XLU",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "463640",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500유틸리티",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLU",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "463640",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500유틸리티",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLU",
+        "RSP"
       ],
       "warning": null
     },
@@ -11319,6 +13239,94 @@
       "us_pair": [
         "XLK",
         "XLC"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "463680",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500테크놀로지",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLK",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "463690",
+        "464310"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500커뮤니케이션",
+        "TIGER 글로벌AI&로보틱스INDXX"
+      ],
+      "us_pair": [
+        "XLC",
+        "BOTZ"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "463690",
+        "488500"
+      ],
+      "pair_names": [
+        "KODEX 미국S&P500커뮤니케이션",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "XLC",
+        "RSP"
+      ],
+      "warning": null
+    },
+    {
+      "common_tickers": [],
+      "n_common": 0,
+      "shared_weight": 0,
+      "detail": {},
+      "is_lower_bound": true,
+      "informative": false,
+      "interpretation": "top10 표본이 서로 겹치지 않아 측정 불가 - '겹침 0'이 아니라 '모름'이다. 특히 섹터 SPDR은 정의상 S&P500의 부분집합이라 VOO와의 실제 겹침은 상당하다(구성종목 전체 데이터가 있어야 측정 가능).",
+      "pair": [
+        "464310",
+        "488500"
+      ],
+      "pair_names": [
+        "TIGER 글로벌AI&로보틱스INDXX",
+        "TIGER 미국S&P500동일가중"
+      ],
+      "us_pair": [
+        "BOTZ",
+        "RSP"
       ],
       "warning": null
     }

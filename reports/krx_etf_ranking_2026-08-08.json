@@ -30,6 +30,20 @@
     "fragile_flags": []
   },
   {
+    "krx_ticker": "488500",
+    "krx_name": "TIGER 미국S&P500동일가중",
+    "us_ticker": "RSP",
+    "tracks": "S&P 500 동일가중",
+    "breakeven_pct": 5.682297910990009,
+    "assumed_growth_pct": 6.800000000000001,
+    "gap_pct": 1.1177020890099914,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.2,
+    "aum_eok": 1133.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
     "krx_ticker": "402970",
     "krx_name": "ACE 미국배당다우존스",
     "us_ticker": "SCHD",
@@ -389,6 +403,34 @@
     "judgment": "적정가/경계선",
     "expense_ratio_pct": 0.25,
     "aum_eok": 110.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "464310",
+    "krx_name": "TIGER 글로벌AI&로보틱스INDXX",
+    "us_ticker": "BOTZ",
+    "tracks": "로봇·AI 테마(Indxx Global Robotics & AI)",
+    "breakeven_pct": 9.224103246407664,
+    "assumed_growth_pct": 9.51,
+    "gap_pct": 0.2858967535923365,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.49,
+    "aum_eok": 1341.0,
+    "n_pe_sources": 2,
+    "fragile_flags": []
+  },
+  {
+    "krx_ticker": "418670",
+    "krx_name": "TIGER 글로벌AI사이버보안",
+    "us_ticker": "BUG",
+    "tracks": "사이버보안 테마(Indxx Cybersecurity)",
+    "breakeven_pct": 9.588421189301478,
+    "assumed_growth_pct": 11.51,
+    "gap_pct": 1.921578810698521,
+    "judgment": "적정가/경계선",
+    "expense_ratio_pct": 0.49,
+    "aum_eok": 446.0,
     "n_pe_sources": 2,
     "fragile_flags": []
   },
