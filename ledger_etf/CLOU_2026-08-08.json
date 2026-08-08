@@ -1,13 +1,13 @@
 {
   "meta": {
-    "ticker": "XLY",
-    "name": "Consumer Discretionary Select Sector SPDR Fund",
-    "tracks": "임의소비재(경기소비재) 섹터",
-    "analyzed_at": "2026-08-08T00:48:30.307436+00:00",
+    "ticker": "CLOU",
+    "name": "Global X Cloud Computing ETF",
+    "tracks": "클라우드 컴퓨팅 테마",
+    "analyzed_at": "2026-08-08T00:48:30.311383+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
-      "stockanalysis.com/etf/xly (2026-08-08 조회)"
+      "stockanalysis.com/etf/clou (2026-08-08 조회)"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
@@ -16,77 +16,78 @@
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
-    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.68%는 10년 보유 시 누적 6.60%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
   ],
   "inputs": {
-    "ticker": "XLY",
-    "name": "Consumer Discretionary Select Sector SPDR Fund",
-    "tracks": "임의소비재(경기소비재) 섹터",
+    "ticker": "CLOU",
+    "name": "Global X Cloud Computing ETF",
+    "tracks": "클라우드 컴퓨팅 테마",
     "pe_by_source": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 33.38
     },
-    "expense_ratio": 0.0008,
-    "n_holdings": 50,
-    "top10_weight": 0.675,
+    "expense_ratio": 0.0068,
+    "n_holdings": 40,
+    "top10_weight": 0.4691,
     "risk_free_rate": 0.0461,
-    "expected_earnings_growth": 0.1,
-    "expected_earnings_growth_basis": "상위비중이 Amazon(23.18%)·Tesla(15.66%)로 상위 2종목이 39%에 육박해 사실상 이 두 회사의 성장률이 섹터 성장률을 좌우한다 - 둘 다 고성장 서사를 가진 종목이라 전통 소매업 중심 섹터보다 높게 잡되, 경기민감 소비재 특성(Home Depot 등 주택경기 연동)상 나스닥100(11%)보다는 낮춘다 [추정치]. 상위 2종목 리스크가 이례적으로 커 집중도 위험을 감안해서 볼 것.",
-    "dividend_yield": 0.0075,
+    "expected_earnings_growth": 0.11,
+    "expected_earnings_growth_basis": "클라우드 전환(on-premise -> SaaS)은 여전히 진행 중인 구조적 성장 동력이라 나스닥100(11%)과 동일 수준으로 잡는다 [추정치]. 다만 2022년 이후 금리상승기에 SaaS 멀티플이 큰 폭으로 재조정된 전례가 있어, XLK(12%)만큼 높이지는 않는다 - 순수 빅테크보다 성장주 밸류에이션 변동성에 더 민감한 세그먼트다.",
+    "dividend_yield": null,
     "pct_unprofitable_constituents": null,
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
     "top10_holdings": null,
-    "return_1y": 0.0811,
+    "return_1y": 0.197,
     "return_ytd": null,
     "holding_years": 10,
     "growth_uncertainty": 0.02,
     "currency": "USD",
     "price_at_analysis": null,
     "data_sources": [
-      "stockanalysis.com/etf/xly (2026-08-08 조회)"
+      "stockanalysis.com/etf/clou (2026-08-08 조회)"
     ],
     "falsification_conditions": null
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 28.17
+      "stockanalysis(trailing)": 33.38
     },
-    "min": 28.17,
-    "max": 28.17,
+    "min": 33.38,
+    "max": 33.38,
     "spread_abs": 0.0,
     "spread_relative": 0.0,
     "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
   },
   "ers": {
     "components": {
-      "concentration": 20.0,
+      "concentration": 14.0,
       "breadth": 20.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 70.0
+    "score": 60.0
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.07100000000000001,
-    "r": 0.11710000000000001
+    "erp": 0.068,
+    "r": 0.11410000000000001
   },
   "growth": {
-    "expected_earnings_growth": 0.1,
-    "expense_ratio_deducted": 0.0008,
-    "net_expected_growth": 0.09920000000000001,
-    "basis": "상위비중이 Amazon(23.18%)·Tesla(15.66%)로 상위 2종목이 39%에 육박해 사실상 이 두 회사의 성장률이 섹터 성장률을 좌우한다 - 둘 다 고성장 서사를 가진 종목이라 전통 소매업 중심 섹터보다 높게 잡되, 경기민감 소비재 특성(Home Depot 등 주택경기 연동)상 나스닥100(11%)보다는 낮춘다 [추정치]. 상위 2종목 리스크가 이례적으로 커 집중도 위험을 감안해서 볼 것.",
+    "expected_earnings_growth": 0.11,
+    "expense_ratio_deducted": 0.0068,
+    "net_expected_growth": 0.1032,
+    "basis": "클라우드 전환(on-premise -> SaaS)은 여전히 진행 중인 구조적 성장 동력이라 나스닥100(11%)과 동일 수준으로 잡는다 [추정치]. 다만 2022년 이후 금리상승기에 SaaS 멀티플이 큰 폭으로 재조정된 전례가 있어, XLK(12%)만큼 높이지는 않는다 - 순수 빅테크보다 성장주 밸류에이션 변동성에 더 민감한 세그먼트다.",
     "basis_type": "analyst_estimate",
     "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
-      "growth_low": 0.0792,
-      "growth_high": 0.11920000000000001,
-      "gap_low": 0.0003961947206033434,
-      "gap_high": 0.04039619472060335,
+      "growth_low": 0.0832,
+      "growth_high": 0.1232,
+      "gap_low": 0.0015054682955206317,
+      "gap_high": 0.04150546829552064,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -95,21 +96,21 @@
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
-        "pe_ratio": 28.17,
-        "earnings_yield": 0.03549875754348598,
-        "implied_growth": 0.07880380527939666,
-        "gap": 0.020396194720603347,
+        "pe_ratio": 33.38,
+        "earnings_yield": 0.029958058717795083,
+        "implied_growth": 0.08169453170447936,
+        "gap": 0.021505468295520636,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07880380527939666,
-          "for_undervalued": 0.12880380527939667,
-          "for_overvalued": 0.02880380527939666,
+          "breakeven": 0.08169453170447936,
+          "for_undervalued": 0.13169453170447937,
+          "for_overvalued": 0.03169453170447936,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.020396194720603347,
-    "gap_max": 0.020396194720603347,
+    "gap_min": 0.021505468295520636,
+    "gap_max": 0.021505468295520636,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -117,19 +118,19 @@
     "consensus_judgment": "적정가/경계선"
   },
   "cost": {
-    "expense_ratio": 0.0008,
+    "expense_ratio": 0.0068,
     "holding_years": 10,
-    "cumulative_drag": 0.007971261354066783
+    "cumulative_drag": 0.06595648647433516
   },
   "fed_model": {
-    "earnings_yield": 0.03549875754348598,
+    "earnings_yield": 0.029958058717795083,
     "treasury_yield": 0.0461,
-    "spread": -0.010601242456514025,
+    "spread": -0.01614194128220492,
     "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
   },
   "performance": {
-    "return_1y": 0.0811,
+    "return_1y": 0.197,
     "return_ytd": null,
-    "dividend_yield": 0.0075
+    "dividend_yield": null
   }
 }

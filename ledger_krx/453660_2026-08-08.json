@@ -3,7 +3,7 @@
     "ticker": "453660",
     "name": "KODEX 미국S&P500경기소비재",
     "tracks": "임의소비재(경기소비재) 섹터",
-    "analyzed_at": "2026-08-08T00:19:53.163955+00:00",
+    "analyzed_at": "2026-08-08T00:49:53.765490+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -15,7 +15,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "XLY",
-      "us_analyzed_at": "2026-08-08T00:19:11.223070+00:00",
+      "us_analyzed_at": "2026-08-08T00:48:30.307436+00:00",
       "tracks_same_index_as": "S&P Consumer Discretionary Select Sector Index(Price Return) - 공식페이지에서 확인, XLY와 동일 계열"
     }
   },

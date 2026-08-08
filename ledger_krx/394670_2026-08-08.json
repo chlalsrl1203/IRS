@@ -3,7 +3,7 @@
     "ticker": "394670",
     "name": "TIGER 글로벌리튬&2차전지SOLACTIVE(합성)",
     "tracks": "배터리(리튬) 테마",
-    "analyzed_at": "2026-08-08T00:19:53.166224+00:00",
+    "analyzed_at": "2026-08-08T00:49:53.767720+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -14,7 +14,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "LIT",
-      "us_analyzed_at": "2026-08-08T00:19:11.226058+00:00",
+      "us_analyzed_at": "2026-08-08T00:48:30.309545+00:00",
       "tracks_same_index_as": "Solactive Global Lithium 지수(PR) - LIT(Global X Lithium & Battery Tech ETF)의 'Solactive Global Lithium Index'와 동일 계열."
     }
   },

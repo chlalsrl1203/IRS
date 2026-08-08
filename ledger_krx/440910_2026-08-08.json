@@ -1,44 +1,44 @@
 {
   "meta": {
-    "ticker": "276990",
-    "name": "KODEX 글로벌로봇(합성)",
-    "tracks": "로봇/자동화 테마",
-    "analyzed_at": "2026-08-08T00:49:53.768187+00:00",
+    "ticker": "440910",
+    "name": "WON 미국우주항공방산",
+    "tracks": "항공우주/방위산업 테마",
+    "analyzed_at": "2026-08-08T00:49:53.769469+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
-      "samsungfund.com/sheet/20251013/2ETF91_20250930.pdf(2026-08-08)"
+      "funetf.co.kr/product/etf/view/KR7440910008(2026-08-08)"
     ],
     "falsification_conditions": null,
     "price_at_analysis": null,
     "currency": "KRW",
     "wrapper_of": {
-      "us_reference_ticker": "ROBO",
-      "us_analyzed_at": "2026-08-08T00:48:30.310160+00:00",
-      "tracks_same_index_as": "ROBO Global Robotics & Automation UCITS Price Return Index - ROBO(ROBO Global Robotics and Automation Index ETF)의 'ROBO Global Robotics and Automation TR Index'와 동일 계열(UCITS/PR vs 본토/TR 표기 차이, IYR의 Capped 사례와 동일 수준으로 취급)."
+      "us_reference_ticker": "XAR",
+      "us_analyzed_at": "2026-08-08T00:48:30.310619+00:00",
+      "tracks_same_index_as": "S&P Aerospace & Defense Select Industry Index(PR) - XAR(SPDR S&P Aerospace & Defense ETF)와 완전히 동일한 지수(공식 확인)."
     }
   },
   "data_limitations": [
     "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것.",
     "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
     "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
-    "[보수율 부담] 연 보수율 0.30%는 10년 보유 시 누적 2.96%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
-    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 ROBO 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+    "[보수율 부담] 연 보수율 0.35%는 10년 보유 시 누적 3.45%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XAR 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
   ],
   "inputs": {
-    "ticker": "276990",
-    "name": "KODEX 글로벌로봇(합성)",
-    "tracks": "로봇/자동화 테마",
+    "ticker": "440910",
+    "name": "WON 미국우주항공방산",
+    "tracks": "항공우주/방위산업 테마",
     "pe_by_source": {
-      "stockanalysis(trailing)": 29.17
+      "stockanalysis(trailing)": 41.32
     },
-    "expense_ratio": 0.003,
-    "n_holdings": 91,
-    "top10_weight": 0.1759,
+    "expense_ratio": 0.0035,
+    "n_holdings": 48,
+    "top10_weight": 0.3127,
     "risk_free_rate": 0.0461,
     "expected_earnings_growth": 0.09,
-    "expected_earnings_growth_basis": "산업용 로봇·자동화는 인건비 상승·인력난이라는 구조적 순풍이 있는 산업재 인접 테마다 - XLI(산업재, 7%)보다는 높이되, 91개 종목으로 상위10비중이 17.59%뿐이라(BOTZ 60%대와 대비) 개별 고성장주 쏠림이 적어 순수 테크섹터만큼 높이지는 않는다 [추정치]. [v3.38: ROBO 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
-    "dividend_yield": 0.0035,
+    "expected_earnings_growth_basis": "전세계 국방예산 증액(NATO 2%+목표, 우크라이나·중동 갈등 장기화)이라는 구조적 순풍이 뚜렷하다 - XLI(산업재, 7%)보다 높이되, 방산 매출은 정부예산 배정에 좌우돼 정권교체·재정긴축 시 급격히 꺾일 수 있다는 정치적 리스크를 감안해 XLK(12%) 수준까지는 올리지 않는다 [추정치]. [v3.38: XAR 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0028,
     "pct_unprofitable_constituents": null,
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
@@ -51,49 +51,49 @@
     "currency": "KRW",
     "price_at_analysis": null,
     "data_sources": [
-      "samsungfund.com/sheet/20251013/2ETF91_20250930.pdf(2026-08-08)"
+      "funetf.co.kr/product/etf/view/KR7440910008(2026-08-08)"
     ],
     "falsification_conditions": null
   },
   "pe_divergence": {
     "sources": {
-      "stockanalysis(trailing)": 29.17
+      "stockanalysis(trailing)": 41.32
     },
-    "min": 29.17,
-    "max": 29.17,
+    "min": 41.32,
+    "max": 41.32,
     "spread_abs": 0.0,
     "spread_relative": 0.0,
     "warning": "[단일 출처 경고] P/E 출처가 1개뿐이라 집계방식 차이로 인한 왜곡을 검증할 수 없다. IWM 사례에서 같은 ETF의 P/E가 출처에 따라 20.07x와 26x로 갈려 '가장 쌈'과 '가장 비쌈'이라는 정반대 결론이 나온 적이 있으므로(2026-08-06 실측), 최소 2개 출처(가능하면 트레일링 1개 + forward 1개)를 확보할 것."
   },
   "ers": {
     "components": {
-      "concentration": 2.0,
-      "breadth": 18.0,
+      "concentration": 10.0,
+      "breadth": 20.0,
       "data_quality": 2.0
     },
     "excluded": [
       "earnings_quality"
     ],
-    "score": 36.666666666666664
+    "score": 53.33333333333333
   },
   "discount_rate": {
     "rf": 0.0461,
-    "erp": 0.061,
-    "r": 0.1071
+    "erp": 0.066,
+    "r": 0.1121
   },
   "growth": {
     "expected_earnings_growth": 0.09,
-    "expense_ratio_deducted": 0.003,
-    "net_expected_growth": 0.087,
-    "basis": "산업용 로봇·자동화는 인건비 상승·인력난이라는 구조적 순풍이 있는 산업재 인접 테마다 - XLI(산업재, 7%)보다는 높이되, 91개 종목으로 상위10비중이 17.59%뿐이라(BOTZ 60%대와 대비) 개별 고성장주 쏠림이 적어 순수 테크섹터만큼 높이지는 않는다 [추정치]. [v3.38: ROBO 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "expense_ratio_deducted": 0.0035,
+    "net_expected_growth": 0.0865,
+    "basis": "전세계 국방예산 증액(NATO 2%+목표, 우크라이나·중동 갈등 장기화)이라는 구조적 순풍이 뚜렷하다 - XLI(산업재, 7%)보다 높이되, 방산 매출은 정부예산 배정에 좌우돼 정권교체·재정긴축 시 급격히 꺾일 수 있다는 정치적 리스크를 감안해 XLK(12%) 수준까지는 올리지 않는다 [추정치]. [v3.38: XAR 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
     "basis_type": "analyst_estimate",
     "anchor_cross_check": null,
     "sensitivity": {
       "uncertainty": 0.02,
-      "growth_low": 0.06699999999999999,
-      "growth_high": 0.107,
-      "gap_low": -0.003404607225720946,
-      "gap_high": 0.03659539277427906,
+      "growth_low": 0.06649999999999999,
+      "growth_high": 0.1065,
+      "gap_low": -0.019321644612476374,
+      "gap_high": 0.020678355387523634,
       "judgment_low": "적정가/경계선",
       "judgment_high": "적정가/경계선",
       "robust": true
@@ -102,21 +102,21 @@
   "valuation": {
     "by_source": {
       "stockanalysis(trailing)": {
-        "pe_ratio": 29.17,
-        "earnings_yield": 0.03428179636612958,
-        "implied_growth": 0.07040460722572094,
-        "gap": 0.016595392774279058,
+        "pe_ratio": 41.32,
+        "earnings_yield": 0.02420135527589545,
+        "implied_growth": 0.08582164461247636,
+        "gap": 0.0006783553875236298,
         "judgment": "적정가/경계선",
         "required_growth": {
-          "breakeven": 0.07040460722572094,
-          "for_undervalued": 0.12040460722572094,
-          "for_overvalued": 0.020404607225720933,
+          "breakeven": 0.08582164461247636,
+          "for_undervalued": 0.13582164461247637,
+          "for_overvalued": 0.03582164461247636,
           "band_used": 0.05
         }
       }
     },
-    "gap_min": 0.016595392774279058,
-    "gap_max": 0.016595392774279058,
+    "gap_min": 0.0006783553875236298,
+    "gap_max": 0.0006783553875236298,
     "judgments_seen": [
       "적정가/경계선"
     ],
@@ -124,26 +124,26 @@
     "consensus_judgment": "적정가/경계선"
   },
   "cost": {
-    "expense_ratio": 0.003,
+    "expense_ratio": 0.0035,
     "holding_years": 10,
-    "cumulative_drag": 0.029598223051083172
+    "cumulative_drag": 0.034453863618844394
   },
   "fed_model": {
-    "earnings_yield": 0.03428179636612958,
+    "earnings_yield": 0.02420135527589545,
     "treasury_yield": 0.0461,
-    "spread": -0.01181820363387042,
+    "spread": -0.021898644724104552,
     "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
   },
   "performance": {
     "return_1y": null,
     "return_ytd": null,
-    "dividend_yield": 0.0035
+    "dividend_yield": 0.0028
   },
   "wrapper": {
-    "expense_ratio": 0.003,
-    "expense_ratio_delta_vs_us": -0.0065,
+    "expense_ratio": 0.0035,
+    "expense_ratio_delta_vs_us": 0.0,
     "hedged": false,
-    "aum_krw": 25433000000.0,
-    "listed_date": "미확인"
+    "aum_krw": 83300000000.0,
+    "listed_date": "2022-08-26"
   }
 }

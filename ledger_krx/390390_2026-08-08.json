@@ -3,7 +3,7 @@
     "ticker": "390390",
     "name": "KODEX 미국반도체",
     "tracks": "반도체 섹터",
-    "analyzed_at": "2026-08-08T00:19:53.164869+00:00",
+    "analyzed_at": "2026-08-08T00:49:53.766253+00:00",
     "engine_version": "v3.39",
     "analysis_type": "krx_wrapper",
     "data_sources": [
@@ -15,7 +15,7 @@
     "currency": "KRW",
     "wrapper_of": {
       "us_reference_ticker": "SMH",
-      "us_analyzed_at": "2026-08-08T00:19:11.224666+00:00",
+      "us_analyzed_at": "2026-08-08T00:48:30.308210+00:00",
       "tracks_same_index_as": "MVIS US Listed Semiconductor 25 Index(KRW) - 공식페이지에서 확인, SMH(VanEck Semiconductor ETF)와 완전히 동일한 지수(SOXX는 2021년 다른 지수로 변경돼 제외)."
     }
   },

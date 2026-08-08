@@ -1,6 +1,7 @@
 """
 국내 상장(KRX) 미국지수 추종 ETF 분석 - 2026-08-08 추가분
-(경기소비재/XLY, 반도체/SMH, 리츠/IYR, 배터리/LIT, 로봇/ROBO).
+(경기소비재/XLY, 반도체/SMH, 리츠/IYR, 배터리/LIT, 로봇/ROBO, 테크놀로지/XLK,
+방산/XAR, 클라우드/CLOU).
 
 경위: "계속해서 섹터 확장" 요청, 이후 사용자가 실제 거래앱의 "지금 뜨고 있는
 카테고리" 스크린샷을 제공하며 그 목록 기준으로 확장을 요청했다 - 반도체
@@ -25,16 +26,26 @@ Semiconductor 25 Index)를 추종하는 KODEX 미국반도체(390390) + SMH** �
 모듈독스트링 참고.
 
 ⚠️ 소재(Materials/XLB)는 이번에도 국내 상장 상품을 찾지 못해 정직한 공백으로
-남긴다. 테크놀로지(463680)도 총보수 미확인으로 계속 제외.
+남긴다.
 
 ⚠️ 배터리/리튬은 TIGER 글로벌리튬&2차전지SOLACTIVE(합성)(394670, Solactive
 Global Lithium 지수)를 LIT와 짝지었다. 로봇/자동화는 KODEX 글로벌로봇(합성)
 (276990, ROBO Global Robotics & Automation UCITS PR Index)을 ROBO와 짝지었다
 (TIGER 글로벌AI&로보틱스INDXX↔BOTZ는 지수는 일치를 확인했으나 총보수를 못
-찾아 보류). 우주항공/방산·은행·클라우드·게임·바이오는 조사 결과 매칭 원본이
-없거나(자체 커스텀 지수) 밸류에이션이 원리적으로 불가능해(바이오/XBI, P/E
-없음) 전부 제외했다 - 상세 근거는 `scripts/analyze_etfs_sectors_2026_08_08.py`
-모듈독스트링 참고.
+찾아 보류).
+
+**2026-08-08 4차 - 사용자 요청("보류/기각한거 다시 진행. 안되면 다른방향으로")
+로 3건을 추가 해소:**
+  - 테크놀로지: KODEX 미국S&P500테크놀로지(463680) 총보수를 최종 확인(0.25%)
+    - XLK 원본은 이미 있어 국내 래퍼만 추가.
+  - 방산/우주항공: WON 미국우주항공방산(440910, S&P Aerospace & Defense
+    Select Industry Index)을 XAR과 새로 매칭 - 기존 TIGER/KODEX 우주 상품은
+    여전히 커스텀 지수라 매칭 불가지만 다른 운용사(우리자산운용) 상품에서 뚫림.
+  - 클라우드: TIGER 글로벌클라우드컴퓨팅INDXX(371450, Indxx Global Cloud
+    Computing Index)를 CLOU와 새로 매칭 - 처음엔 WCLD/SKYY만 확인하고 매칭
+    실패로 단정했으나 CLOU도 같은 Indxx 지수를 쓴다는 걸 재조사로 확인.
+  - 여전히 못 뚫음: 로봇/AI(BOTZ, 총보수 미확인) / 은행 / 게임 / 소재 / 바이오.
+    상세 근거는 `scripts/analyze_etfs_sectors_2026_08_08.py` 모듈독스트링 참고.
 
 실행: python3 scripts/analyze_etfs_sectors_2026_08_08.py 먼저 실행해 원본을
 채운 뒤 python3 scripts/analyze_krx_etfs_2026_08_08.py 실행.
@@ -128,13 +139,51 @@ CANDIDATES = [
         listed_date="미확인",
         data_sources=["samsungfund.com/sheet/20251013/2ETF91_20250930.pdf(2026-08-08)"],
     ),
+    dict(
+        krx_ticker="463680", krx_name="KODEX 미국S&P500테크놀로지",
+        tracks_same_index_as=(
+            "S&P Technology Select Sector Index(Price Return) - 공식페이지에서 "
+            "확인, XLK와 동일 계열."
+        ),
+        us_reference_ticker="XLK", expense_ratio=0.0025, hedged=False,
+        aum_krw=110 * 1e8, listed_date="2023-08-01",
+        # XLK는 v3.39 배치(2026-08-07)에서 이미 분석돼 ledger_etf/에 있다 -
+        # 다른 후보(XAR/CLOU)와 원본 날짜가 다르므로 아래 main()에서 개별 처리.
+        us_date="2026-08-07",
+        data_sources=["cbonds.com/etf/200059(2026-08-08) - 총보수 0.25% 확인",
+                      "markets.hankyung.com/stock/463680(2026-08-08) - AUM 110억원"],
+    ),
+    dict(
+        krx_ticker="440910", krx_name="WON 미국우주항공방산",
+        tracks_same_index_as=(
+            "S&P Aerospace & Defense Select Industry Index(PR) - XAR(SPDR S&P "
+            "Aerospace & Defense ETF)와 완전히 동일한 지수(공식 확인)."
+        ),
+        us_reference_ticker="XAR", expense_ratio=0.0035, hedged=False,
+        aum_krw=833 * 1e8, listed_date="2022-08-26",
+        data_sources=["funetf.co.kr/product/etf/view/KR7440910008(2026-08-08)"],
+    ),
+    dict(
+        krx_ticker="371450", krx_name="TIGER 글로벌클라우드컴퓨팅INDXX",
+        tracks_same_index_as=(
+            "Indxx Global Cloud Computing 지수(원화환산) - CLOU(Global X Cloud "
+            "Computing ETF)와 완전히 동일한 지수(공식 확인). ⚠️ 처음엔 WCLD/SKYY "
+            "만 확인하고 매칭 실패로 단정했으나, 재조사에서 CLOU가 같은 Indxx "
+            "지수를 쓴다는 걸 발견 - 후보가 여럿일 때 전부 확인해야 한다는 교훈."
+        ),
+        us_reference_ticker="CLOU", expense_ratio=0.01, hedged=False,
+        aum_krw=291 * 1e8, listed_date="2020-12-08",
+        data_sources=["funetf.co.kr/product/etf/view/KR7371450008(2026-08-08)"],
+    ),
 ]
 
 
 def main():
     results = []
-    for cand in CANDIDATES:
-        us_result = load_us_result(cand["us_reference_ticker"], "2026-08-08")
+    for raw_cand in CANDIDATES:
+        cand = dict(raw_cand)
+        us_date = cand.pop("us_date", "2026-08-08")
+        us_result = load_us_result(cand["us_reference_ticker"], us_date)
         inputs = KRXWrapperInputs(**cand)
         result = run_krx_wrapper_analysis(inputs, us_result)
         results.append(result)
@@ -145,15 +194,15 @@ def main():
     print()
     print(format_krx_comparison_table(compare_krx_wrappers(results)))
     print("⚠️ 소재(Materials/XLB)는 이번에도 국내 상장 상품을 찾지 못했다 - "
-          "GICS 11섹터 중 유일하게 아직 후보조차 없는 섹터.")
-    print("⚠️ 테크놀로지(KODEX 미국S&P500테크놀로지, 463680)는 총보수를 이번에도 "
-          "확인하지 못해 계속 제외 상태다.")
-    print("⚠️ 반도체(KODEX 미국반도체)·리츠(KODEX 미국부동산리츠(H))·배터리(TIGER "
-          "글로벌리튬&2차전지)·로봇(KODEX 글로벌로봇)은 GICS 11섹터에 속하지 않는 "
-          "테마/산업 분류다 - 사용자가 제공한 거래앱 트렌드 카테고리를 근거로 추가했다.")
-    print("⚠️ 우주항공/방산·은행·클라우드·게임·바이오/AI로보틱스(BOTZ)는 조사했으나 "
-          "매칭 원본 부재 또는 방법론 한계로 제외했다(상세: analyze_etfs_sectors_"
-          "2026_08_08.py 모듈독스트링).")
+          "유일하게 아직 후보조차 없는 섹터.")
+    print("⚠️ 테크놀로지(KODEX 미국S&P500테크놀로지, 463680)는 총보수를 최종 확인해 "
+          "이번 배치에서 해소됐다(0.25%, XLK와 매칭).")
+    print("⚠️ 반도체·리츠·배터리·로봇·방산(WON 미국우주항공방산)·클라우드(TIGER "
+          "글로벌클라우드컴퓨팅INDXX)는 GICS 11섹터에 속하지 않는 테마/산업 분류다 "
+          "- 사용자가 제공한 거래앱 트렌드 카테고리를 근거로 추가했다.")
+    print("⚠️ 여전히 못 뚫은 것: 로봇/AI(BOTZ, 총보수 미확인) / 은행 / 게임 / 바이오"
+          "(XBI, P/E 부재로 방법론적 불가) - 상세: analyze_etfs_sectors_2026_08_08.py "
+          "모듈독스트링.")
 
 
 if __name__ == "__main__":

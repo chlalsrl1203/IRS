@@ -1,5 +1,5 @@
 """
-미국 섹터/테마 ETF 추가 분석 - 2026-08-08 (XLY, SMH, IYR, LIT, ROBO).
+미국 섹터/테마 ETF 추가 분석 - 2026-08-08 (XLY, SMH, IYR, LIT, ROBO, XAR, CLOU).
 
 경위: "계속해서 섹터 확장" 요청에 따른 v3.39 후속. 이번 조사에서 확인한 것:
   - KODEX 미국S&P500경기소비재(453660)가 "S&P Consumer Discretionary Select
@@ -60,6 +60,34 @@
     않는다. 은행은 국내에 아예 "미국은행" 추종 상품 자체가 없고(KODEX 은행/
     TIGER 은행 전부 국내 은행주 추종), 게임도 마찬가지로 국내 상장 상품이
     전부 국내 게임주 추종이었다.
+
+**2026-08-08 4차 - 사용자 요청("보류/기각한거 다시 진행. 안되면 다른방향으로")
+에 따라 위 기각 항목들을 재조사, 2건을 다른 방향(다른 미국 ETF로 재매칭)으로
+뚫었다:**
+
+  - **테크놀로지 총보수 최종 확인**: cbonds.com에서 KODEX 미국S&P500테크놀로지
+    (463680)의 총보수가 0.25%임을 확인(다른 형제 상품 7개 전부 0.25%였던
+    패턴과 정확히 일치) - v3.39부터 이어진 공백을 해소한다. XLK는 이미
+    `ledger_etf/`에 있어 새 미국 원본 분석 없이 바로 국내 래퍼만 추가한다.
+  - **방산/우주항공 - 다른 방향으로 매칭**: TIGER 미국우주테크·TIGER
+    미국방산TOP10·KODEX 미국우주항공은 여전히 커스텀 지수라 매칭 불가지만,
+    **WON 미국우주항공방산(440910)**을 새로 찾아 확인해보니 "S&P Aerospace &
+    Defense Select Industry Index (PR)"를 추종 - **XAR(SPDR S&P Aerospace &
+    Defense ETF)**의 추종지수와 정확히 일치한다. XAR을 신규 분석해 짝짓는다.
+  - **클라우드 - 다른 방향으로 매칭**: 처음엔 WCLD(BVP Nasdaq Emerging Cloud
+    Index)·SKYY(ISE CTA Cloud Computing Index)만 확인해 TIGER 글로벌클라우드
+    컴퓨팅INDXX(371450, Indxx Global Cloud Computing Index 추종)와 매칭되는
+    미국 ETF가 없다고 결론 내렸었다. 재조사에서 **CLOU(Global X Cloud
+    Computing ETF)**가 정확히 같은 "Indxx Global Cloud Computing Index"를
+    추종한다는 걸 확인 - WCLD/SKYY 두 곳만 확인하고 매칭 실패로 단정한 게
+    성급했다는 뜻이다(반도체의 SOXX/SMH 사례처럼, 후보 US ETF가 여럿일 때는
+    전부 확인해야 한다는 교훈 재확인).
+  - **여전히 못 뚫은 것**: 로봇/AI(TIGER 글로벌AI&로보틱스INDXX↔BOTZ, 지수는
+    일치하나 총보수 끝내 미확인) / 은행(미국은행 추종 국내 상품 자체 부재,
+    KBWB/KBW Nasdaq Bank Index와 매칭되는 후보 못 찾음) / 게임(동일하게 국내
+    상품 부재) / 소재(XLB, 여전히 국내 상품 없음) / 바이오(XBI, 지수는 일치
+    하나 P/E 자체가 없어 방법론적으로 불가 - IBB 등 대안도 매칭되는 국내
+    상품을 못 찾음). 다섯 다 이번에도 다른 방향을 시도했으나 뚫지 못했다.
 
 원자료: stockanalysis.com/etf/{ticker} (2026-08-08 조회).
 
@@ -157,6 +185,37 @@ CANDIDATES = [
         ),
         dividend_yield=0.0035, return_1y=0.3477,
         data_sources=["stockanalysis.com/etf/robo (2026-08-08 조회)"],
+    ),
+    ETFInputs(
+        ticker="XAR", name="SPDR S&P Aerospace & Defense ETF", tracks="항공우주/방위산업 테마",
+        pe_by_source={"stockanalysis(trailing)": 41.32},
+        expense_ratio=0.0035, n_holdings=48, top10_weight=0.3127,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.09,
+        expected_earnings_growth_basis=(
+            "전세계 국방예산 증액(NATO 2%+목표, 우크라이나·중동 갈등 장기화)이라는 "
+            "구조적 순풍이 뚜렷하다 - XLI(산업재, 7%)보다 높이되, 방산 매출은 "
+            "정부예산 배정에 좌우돼 정권교체·재정긴축 시 급격히 꺾일 수 있다는 "
+            "정치적 리스크를 감안해 XLK(12%) 수준까지는 올리지 않는다 [추정치]."
+        ),
+        dividend_yield=0.0028, return_1y=0.3273,
+        data_sources=["stockanalysis.com/etf/xar (2026-08-08 조회)"],
+    ),
+    ETFInputs(
+        ticker="CLOU", name="Global X Cloud Computing ETF", tracks="클라우드 컴퓨팅 테마",
+        pe_by_source={"stockanalysis(trailing)": 33.38},
+        expense_ratio=0.0068, n_holdings=40, top10_weight=0.4691,
+        risk_free_rate=RF,
+        expected_earnings_growth=0.11,
+        expected_earnings_growth_basis=(
+            "클라우드 전환(on-premise -> SaaS)은 여전히 진행 중인 구조적 성장 "
+            "동력이라 나스닥100(11%)과 동일 수준으로 잡는다 [추정치]. 다만 "
+            "2022년 이후 금리상승기에 SaaS 멀티플이 큰 폭으로 재조정된 전례가 "
+            "있어, XLK(12%)만큼 높이지는 않는다 - 순수 빅테크보다 성장주 "
+            "밸류에이션 변동성에 더 민감한 세그먼트다."
+        ),
+        dividend_yield=None, return_1y=0.1970,
+        data_sources=["stockanalysis.com/etf/clou (2026-08-08 조회)"],
     ),
 ]
 
