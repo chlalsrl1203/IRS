@@ -3,7 +3,7 @@
     "ticker": "XLV",
     "name": "Health Care Select Sector SPDR Fund",
     "tracks": "헬스케어 섹터",
-    "analyzed_at": "2026-08-07T23:58:03.940677+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.898649+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -36,7 +36,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "LLY": 0.1547,
+      "JNJ": 0.1043,
+      "ABBV": 0.077,
+      "UNH": 0.0648,
+      "MRK": 0.0543,
+      "TMO": 0.0363,
+      "AMGN": 0.0354,
+      "ABT": 0.0311,
+      "GILD": 0.0276,
+      "PFE": 0.024
+    },
     "return_1y": 0.2917,
     "return_ytd": null,
     "holding_years": 10,

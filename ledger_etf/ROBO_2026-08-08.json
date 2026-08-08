@@ -3,7 +3,7 @@
     "ticker": "ROBO",
     "name": "ROBO Global Robotics and Automation Index ETF",
     "tracks": "로봇/자동화 테마",
-    "analyzed_at": "2026-08-08T04:14:35.183111+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.951587+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -37,7 +37,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "ILMN": 0.0197,
+      "ROK": 0.0191,
+      "AMBA": 0.0185,
+      "ETR:G1A": 0.018,
+      "TER": 0.017,
+      "TYO:6841": 0.017,
+      "JBTM": 0.017,
+      "EMR": 0.0169,
+      "TYO:6954": 0.0165,
+      "NOVT": 0.0162
+    },
     "return_1y": 0.3477,
     "return_ytd": null,
     "holding_years": 10,

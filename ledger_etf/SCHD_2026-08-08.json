@@ -3,7 +3,7 @@
     "ticker": "SCHD",
     "name": "Schwab US Dividend Equity ETF",
     "tracks": "미국 배당성장주(다우존스)",
-    "analyzed_at": "2026-08-08T04:14:35.184160+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.953104+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -36,7 +36,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "ABT": 0.0464,
+      "AMGN": 0.0461,
+      "HD": 0.0431,
+      "MRK": 0.0428,
+      "KO": 0.0422,
+      "UNH": 0.0419,
+      "PG": 0.04,
+      "VZ": 0.0381,
+      "CVX": 0.0376,
+      "PEP": 0.0372
+    },
     "return_1y": 0.3173,
     "return_ytd": null,
     "holding_years": 10,

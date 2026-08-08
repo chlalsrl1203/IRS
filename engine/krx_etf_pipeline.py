@@ -18,8 +18,8 @@ import os
 from dataclasses import dataclass, field, asdict
 from datetime import datetime, timezone
 
-from engine.etf_engine import ENGINE_VERSION
-from engine.etf_pipeline import ETFInputs, run_etf_analysis
+from engine.etf_engine import ENGINE_VERSION, holdings_overlap
+from engine.etf_pipeline import ETFInputs, OVERLAP_WARNING_THRESHOLD, run_etf_analysis
 from engine.krx_etf_engine import expense_ratio_delta, hedge_cost_warning
 
 
@@ -223,4 +223,124 @@ def format_krx_comparison_table(groups: dict) -> str:
                 f"{'H' if w['hedged'] else '-':>6} {aum_str}"
             )
         lines.append("")
+    return "\n".join(lines)
+
+
+def krx_holdings_overlap_report(krx_results: list, us_results_by_ticker: dict) -> dict:
+    """
+    ⭐ v3.39 후속 - **실제로 살 국내 상장 ETF끼리** 여러 개를 함께 담을 때
+    생기는 중복노출을 측정한다.
+
+    v3.36의 `portfolio_overlap_report()`는 미국 원본끼리의 겹침만 봤다 - 그런데
+    한국 투자자는 미국 원본을 못 사고 국내 래퍼를 산다. 그렇다고 국내 래퍼마다
+    별도로 top10_holdings를 새로 조사할 필요는 없다 - **이 엔진의 핵심 전제**
+    (국내 래퍼는 미국 원본과 같은 주식 바스켓을 담는다)가 여기서도 그대로
+    성립하므로, 국내 래퍼 A·B의 겹침은 각각의 `us_reference_ticker` 원본의
+    top10_holdings로 근사할 수 있다. 새 데이터 수집 없이 `holdings_overlap()`
+    (v3.36/v3.37에서 이미 만들고 검증한 함수)을 그대로 재사용한다 - Simplicity
+    First 원칙(중복 계산 금지)을 여기서도 지킨다.
+
+    `us_results_by_ticker`: {US 티커: run_etf_analysis() 결과 dict}. 이 dict에
+    `top10_holdings`가 없는 원본을 참조하는 국내 래퍼는 `skipped_no_holdings`로
+    빠진다(데이터 없음을 '겹침 없음'으로 오독하지 않는다 - v3.36 원칙).
+
+    ⚠️ **같은 미국 원본을 추종하는 국내 래퍼끼리는 정의상 거의 완전히 겹친다**
+    (TIGER/KODEX/ACE 미국S&P500이 전부 VOO를 재사용하므로) - 이건 버그가 아니라
+    사실이다. `informative`가 True인 이상 그대로 보고하되, "같은 지수를
+    파는 다른 브랜드일 뿐"이라는 걸 명확히 표시한다(같은 그룹 내 비교는 이미
+    `compare_krx_wrappers()`가 비용 기준으로 하고 있으므로 여기서는 정보 제공만).
+    """
+    have = []
+    skipped = []
+    for r in krx_results:
+        us_ticker = r["meta"]["wrapper_of"]["us_reference_ticker"]
+        us_result = us_results_by_ticker.get(us_ticker)
+        holdings = us_result["inputs"].get("top10_holdings") if us_result else None
+        if holdings:
+            have.append((r, us_ticker, holdings))
+        else:
+            skipped.append(r["meta"]["ticker"])
+
+    measured = []
+    uninformative = []
+    same_index = []
+    for i in range(len(have)):
+        for j in range(i + 1, len(have)):
+            r_a, us_a, hold_a = have[i]
+            r_b, us_b, hold_b = have[j]
+            ov = holdings_overlap(hold_a, hold_b)
+            ov["pair"] = (r_a["meta"]["ticker"], r_b["meta"]["ticker"])
+            ov["pair_names"] = (r_a["meta"]["name"], r_b["meta"]["name"])
+            ov["us_pair"] = (us_a, us_b)
+            ov["warning"] = None
+
+            if us_a == us_b:
+                ov["warning"] = (
+                    f"[동일지수 경고] {r_a['meta']['ticker']}({r_a['meta']['name']})와 "
+                    f"{r_b['meta']['ticker']}({r_b['meta']['name']})는 둘 다 {us_a}를 "
+                    f"재사용해 사실상 동일한 주식 바스켓이다 - 같이 담아도 분산 효과가 "
+                    f"전혀 없다. 총보수·유동성만 비교해 하나만 고를 것"
+                    f"(`compare_krx_wrappers()` 참고)."
+                )
+                same_index.append(ov)
+                continue
+
+            if not ov["informative"]:
+                uninformative.append(ov)
+                continue
+
+            if ov["shared_weight"] >= OVERLAP_WARNING_THRESHOLD:
+                ov["warning"] = (
+                    f"[중복노출 경고] {r_a['meta']['ticker']}({r_a['meta']['name']})와 "
+                    f"{r_b['meta']['ticker']}({r_b['meta']['name']})는 서로 다른 지수를 "
+                    f"추종하지만 상위 보유종목만으로도 {ov['shared_weight']*100:.1f}%p가 "
+                    f"겹친다(공통 {ov['n_common']}종목: {', '.join(ov['common_tickers'])}). "
+                    f"top10만 본 하한값이므로 실제 겹침은 이보다 크다."
+                )
+            measured.append(ov)
+
+    measured.sort(key=lambda x: -x["shared_weight"])
+    return {
+        "same_index_pairs": same_index,
+        "pairs": measured,
+        "uninformative_pairs": uninformative,
+        "skipped_no_holdings": skipped,
+        "threshold": OVERLAP_WARNING_THRESHOLD,
+        "note": (
+            "국내 래퍼의 겹침은 각자의 미국 원본 top10_holdings로 근사한 값이다 "
+            "(재사용 설계 원칙상 국내 래퍼=미국 원본과 동일 바스켓). top10 기준이라 "
+            "실제 겹침의 하한이다."
+        ),
+    }
+
+
+def format_krx_overlap_table(report: dict) -> str:
+    lines = []
+    if report["same_index_pairs"]:
+        lines.append("같은 미국 원본을 재사용하는 쌍(정의상 거의 완전히 겹침):")
+        for ov in report["same_index_pairs"]:
+            pair = f"{ov['pair'][0]}+{ov['pair'][1]}"
+            lines.append(f"  {pair:16} {ov['shared_weight']*100:6.1f}%p  ({ov['us_pair'][0]} 공용)")
+        lines.append("")
+
+    lines.append("서로 다른 지수 추종 - 실측 겹침:")
+    lines.append(f"{'KRX 쌍':16} {'미국원본 쌍':14} {'공통종목수':>8} {'겹침(하한)':>10} 경고")
+    lines.append("-" * 90)
+    for ov in report["pairs"]:
+        pair = f"{ov['pair'][0]}+{ov['pair'][1]}"
+        us_pair = f"{ov['us_pair'][0]}+{ov['us_pair'][1]}"
+        flag = "⚠️ 중복노출" if ov["warning"] else ""
+        lines.append(
+            f"{pair:16} {us_pair:14} {ov['n_common']:>8} {ov['shared_weight']*100:9.1f}%p {flag}"
+        )
+
+    if report["uninformative_pairs"]:
+        lines.append("")
+        lines.append(f"측정 불가(top10 표본이 우연히 안 겹침 - '겹침 0'이 아니라 '모름'): "
+                     f"{len(report['uninformative_pairs'])}쌍")
+
+    if report["skipped_no_holdings"]:
+        lines.append("")
+        lines.append("보유종목 데이터 없어 측정 제외: " + ", ".join(report["skipped_no_holdings"]))
+
     return "\n".join(lines)

@@ -17,12 +17,22 @@ from engine.krx_etf_pipeline import (
     KRXWrapperInputs,
     compare_krx_wrappers,
     format_krx_comparison_table,
+    format_krx_overlap_table,
+    krx_holdings_overlap_report,
     run_krx_wrapper_analysis,
     save_krx_ledger,
 )
 
+# 2026-08-07 실측 top10 - test_etf_engine.py와 동일한 골든 데이터 재사용
+VOO_TOP10 = {"NVDA": 0.0750, "AAPL": 0.0658, "MSFT": 0.0429, "AMZN": 0.0361,
+             "GOOGL": 0.0324, "AVGO": 0.0277, "GOOG": 0.0258, "MU": 0.0201,
+             "META": 0.0191, "TSLA": 0.0183}
+QQQ_TOP10 = {"AAPL": 0.0815, "NVDA": 0.0786, "MSFT": 0.0558, "MU": 0.0453,
+             "AMZN": 0.0422, "AMD": 0.0364, "GOOGL": 0.0323, "AVGO": 0.0306,
+             "GOOG": 0.0303, "META": 0.0266}
 
-def voo_us_result():
+
+def voo_us_result(top10_holdings=None):
     """ledger_etf/VOO_2026-08-07.json을 재현하는 골든 입력."""
     inputs = ETFInputs(
         ticker="VOO",
@@ -39,11 +49,12 @@ def voo_us_result():
         ),
         dividend_yield=0.0104,
         pct_unprofitable_constituents=0.03,
+        top10_holdings=top10_holdings,
     )
     return run_etf_analysis(inputs)
 
 
-def qqq_us_result():
+def qqq_us_result(top10_holdings=None):
     inputs = ETFInputs(
         ticker="QQQ",
         name="Invesco QQQ Trust",
@@ -56,6 +67,7 @@ def qqq_us_result():
         expected_earnings_growth=0.11,
         expected_earnings_growth_basis="나스닥100 메가캡 기술주 비중 반영 [추정치]",
         pct_unprofitable_constituents=0.05,
+        top10_holdings=top10_holdings,
     )
     return run_etf_analysis(inputs)
 
@@ -276,6 +288,121 @@ def test_unconfirmed_aum_sorts_last_and_renders_as_unconfirmed():
 
     table = format_krx_comparison_table(groups)
     assert "미확인" in table
+
+
+# ----------------------------------------------------------------------
+# krx_holdings_overlap_report - v3.39 후속: 국내 래퍼끼리의 실제 중복노출
+# ----------------------------------------------------------------------
+
+def test_overlap_report_measures_between_different_index_krx_wrappers():
+    """
+    ⭐ 이 기능의 존재 이유 - TIGER 미국S&P500(VOO 재사용)과 TIGER 미국나스닥100
+    (QQQ 재사용)을 같이 담으면, 실제로는 각각의 미국 원본(VOO/QQQ)이 공유하는
+    메가캡 겹침을 그대로 물려받는다. 새 데이터 없이 이미 있는 미국 원본
+    top10_holdings로 이걸 측정할 수 있어야 한다.
+    """
+    voo_us = voo_us_result(top10_holdings=VOO_TOP10)
+    qqq_us = qqq_us_result(top10_holdings=QQQ_TOP10)
+
+    tiger_sp500 = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us)
+    tiger_nasdaq = run_krx_wrapper_analysis(
+        KRXWrapperInputs(
+            krx_ticker="133690", krx_name="TIGER 미국나스닥100",
+            tracks_same_index_as="나스닥100 - 미국 원본(QQQ)과 동일 지수",
+            us_reference_ticker="QQQ", expense_ratio=0.0009, hedged=False,
+            aum_krw=114_540 * 1e8, listed_date="2010-10-18",
+        ),
+        qqq_us,
+    )
+
+    report = krx_holdings_overlap_report(
+        [tiger_sp500, tiger_nasdaq],
+        {"VOO": voo_us, "QQQ": qqq_us},
+    )
+    assert len(report["pairs"]) == 1
+    pair = report["pairs"][0]
+    assert pair["pair"] == ("360750", "133690")
+    assert pair["us_pair"] == ("VOO", "QQQ")
+    # VOO∩QQQ top10 겹침(2026-08-07 실측)과 동일해야 한다 - 새 계산이 아니므로
+    assert pair["shared_weight"] == pytest.approx(0.3448, abs=1e-3)
+    assert pair["warning"] is not None
+    assert "중복노출 경고" in pair["warning"]
+
+
+def test_overlap_report_flags_same_us_reference_as_same_index():
+    """
+    ⭐ 같은 미국 원본을 재사용하는 국내 래퍼 두 개(TIGER/KODEX 미국S&P500)는
+    정의상 동일 바스켓이다 - '중복노출 경고'가 아니라 '동일지수 경고'로
+    구분해서 보고해야 한다(이유가 다르므로 다른 메시지가 필요).
+    """
+    voo_us = voo_us_result(top10_holdings=VOO_TOP10)
+    tiger = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us)
+    kodex = run_krx_wrapper_analysis(
+        tiger_sp500_inputs(krx_ticker="379800", krx_name="KODEX 미국S&P500",
+                            expense_ratio=0.0007, aum_krw=100_701 * 1e8),
+        voo_us,
+    )
+
+    report = krx_holdings_overlap_report([tiger, kodex], {"VOO": voo_us})
+    assert len(report["same_index_pairs"]) == 1
+    assert report["pairs"] == []  # 동일지수 쌍은 일반 pairs에 안 섞인다
+    ov = report["same_index_pairs"][0]
+    assert "동일지수 경고" in ov["warning"]
+    # 같은 dict를 자기 자신과 비교하므로 shared_weight = VOO_TOP10 비중의 합
+    assert ov["shared_weight"] == pytest.approx(sum(VOO_TOP10.values()), abs=1e-6)
+
+
+def test_overlap_report_skips_wrapper_without_us_holdings():
+    """미국 원본에 top10_holdings가 없으면 '겹침 0'이 아니라 skipped로 빠져야 한다."""
+    voo_us = voo_us_result(top10_holdings=None)  # holdings 미확보 원본
+    qqq_us = qqq_us_result(top10_holdings=QQQ_TOP10)
+
+    tiger_sp500 = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us)
+    tiger_nasdaq = run_krx_wrapper_analysis(
+        KRXWrapperInputs(
+            krx_ticker="133690", krx_name="TIGER 미국나스닥100",
+            tracks_same_index_as="나스닥100 - 미국 원본(QQQ)과 동일 지수",
+            us_reference_ticker="QQQ", expense_ratio=0.0009, hedged=False,
+            aum_krw=114_540 * 1e8, listed_date="2010-10-18",
+        ),
+        qqq_us,
+    )
+
+    report = krx_holdings_overlap_report(
+        [tiger_sp500, tiger_nasdaq], {"VOO": voo_us, "QQQ": qqq_us},
+    )
+    assert report["skipped_no_holdings"] == ["360750"]
+    assert report["pairs"] == []
+
+
+def test_overlap_report_does_not_affect_individual_valuation():
+    """겹침 측정은 순수 병기 - 개별 KRX 래퍼의 Gap·판정에는 전혀 영향을 주지 않는다."""
+    voo_us_no_holdings = voo_us_result(top10_holdings=None)
+    voo_us_with_holdings = voo_us_result(top10_holdings=VOO_TOP10)
+    a = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us_no_holdings)
+    b = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us_with_holdings)
+    assert a["valuation"]["gap_min"] == pytest.approx(b["valuation"]["gap_min"])
+
+
+def test_format_overlap_table_runs_without_error():
+    voo_us = voo_us_result(top10_holdings=VOO_TOP10)
+    qqq_us = qqq_us_result(top10_holdings=QQQ_TOP10)
+    tiger_sp500 = run_krx_wrapper_analysis(tiger_sp500_inputs(), voo_us)
+    tiger_nasdaq = run_krx_wrapper_analysis(
+        KRXWrapperInputs(
+            krx_ticker="133690", krx_name="TIGER 미국나스닥100",
+            tracks_same_index_as="나스닥100 - 미국 원본(QQQ)과 동일 지수",
+            us_reference_ticker="QQQ", expense_ratio=0.0009, hedged=False,
+            aum_krw=114_540 * 1e8, listed_date="2010-10-18",
+        ),
+        qqq_us,
+    )
+    report = krx_holdings_overlap_report(
+        [tiger_sp500, tiger_nasdaq], {"VOO": voo_us, "QQQ": qqq_us},
+    )
+    table = format_krx_overlap_table(report)
+    assert "360750" in table
+    assert "133690" in table
 
 
 def test_save_krx_ledger_writes_to_separate_dir(tmp_path):

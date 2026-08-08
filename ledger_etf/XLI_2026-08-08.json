@@ -3,7 +3,7 @@
     "ticker": "XLI",
     "name": "Industrial Select Sector SPDR Fund",
     "tracks": "산업재 섹터",
-    "analyzed_at": "2026-08-07T23:58:03.940008+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.897872+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -36,7 +36,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "GE": 0.0671,
+      "CAT": 0.067,
+      "RTX": 0.0517,
+      "GEV": 0.0475,
+      "UNP": 0.031,
+      "BA": 0.0304,
+      "ETN": 0.0288,
+      "DE": 0.0266,
+      "UBER": 0.0256,
+      "PH": 0.022
+    },
     "return_1y": 0.2427,
     "return_ytd": null,
     "holding_years": 10,

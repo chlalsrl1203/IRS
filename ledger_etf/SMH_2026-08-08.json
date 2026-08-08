@@ -3,7 +3,7 @@
     "ticker": "SMH",
     "name": "VanEck Semiconductor ETF",
     "tracks": "반도체 섹터",
-    "analyzed_at": "2026-08-08T04:14:35.181849+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.950099+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -37,7 +37,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "NVDA": 0.217,
+      "TSM": 0.0951,
+      "AVGO": 0.0673,
+      "AMD": 0.0543,
+      "ASML": 0.0512,
+      "TXN": 0.0495,
+      "MU": 0.0474,
+      "ADI": 0.0463,
+      "AMAT": 0.0452,
+      "QCOM": 0.0411
+    },
     "return_1y": 1.0393,
     "return_ytd": null,
     "holding_years": 10,

@@ -3,7 +3,7 @@
     "ticker": "CLOU",
     "name": "Global X Cloud Computing ETF",
     "tracks": "클라우드 컴퓨팅 테마",
-    "analyzed_at": "2026-08-08T04:14:35.183736+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.952612+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -37,7 +37,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "SNOW": 0.073,
+      "DDOG": 0.0543,
+      "PAYC": 0.0535,
+      "NET": 0.0436,
+      "WDAY": 0.0435,
+      "QLYS": 0.0429,
+      "NOW": 0.0416,
+      "TWLO": 0.0408,
+      "DOCN": 0.0397,
+      "ZS": 0.0389
+    },
     "return_1y": 0.197,
     "return_ytd": null,
     "holding_years": 10,

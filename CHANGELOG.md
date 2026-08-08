@@ -1,5 +1,31 @@
 # CHANGELOG
 
+## v3.40 — KRX 래퍼끼리의 실제 중복노출 측정 (2026-08-08)
+
+지금까지 겹침 측정(v3.36/v3.37)은 미국 원본끼리만 했다 - 한국 투자자가
+실제로 사는 국내 래퍼끼리의 겹침은 답할 수 없었다.
+
+**전제조건**: 12개 신규 미국 원본(XLI/XLV/XLC/XLP/XLY/SMH/IYR/LIT/ROBO/
+XAR/CLOU/SCHD)에 top10_holdings 추가(집계 비중만 있고 종목별 명세가
+없었음). XLI/XLV/XLC/XLP는 재실행으로 날짜가 08-07→08-08로 바뀌어 구
+파일 git rm(diff로 timestamp·필드 추가 외 완전 동일 확인 후).
+
+**`krx_holdings_overlap_report()` 신규(`engine/krx_etf_pipeline.py`)**: 새
+계산 로직 0줄 - KRX 래퍼=미국 원본과 동일 바스켓이라는 재사용 원칙을 그대로
+적용해, 기존 `holdings_overlap()`을 재사용. 같은 미국 원본을 공유하는 쌍
+(TIGER/KODEX/ACE 미국S&P500 등)은 정의상 거의 완전히 겹치므로
+`same_index_pairs`로 별도 분리하고 `[동일지수 경고]`로 구분.
+
+**실측(28종목, 378쌍)**: 동일지수 15 / 실측 85 / 측정불가 278 / 데이터없음
+0. 최대 신규 발견 - SMH(반도체)+XLK(기술) 겹침 29.9%p(공통 AMAT/AMD/AVGO/
+MU/NVDA) - QQQ+XLK(31.9%p)에 버금가는 수준인데 "반도체+기술섹터"는 분산
+투자로 착각하기 쉬운 조합이다.
+
+`scripts/krx_overlap_report_2026_08_08.py` 신규. `ENGINE_VERSION` v3.39 →
+v3.40(신규 함수 배선). 기존 ledger 소급 재실행 안 함. 테스트 206 → 211개.
+
+---
+
 ## v3.39 후속 6차 — SCHD(미국배당다우존스) 추가, 동일가중·사이버보안 보수
 미확인 확정 (2026-08-08)
 

@@ -3,7 +3,7 @@
     "ticker": "LIT",
     "name": "Global X Lithium & Battery Tech ETF",
     "tracks": "배터리(리튬) 테마",
-    "analyzed_at": "2026-08-08T04:14:35.182627+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.951131+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -37,7 +37,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "RIO": 0.2292,
+      "SHE:002371": 0.0704,
+      "TYO:6752": 0.0686,
+      "TYO:6762": 0.0565,
+      "ALB": 0.0438,
+      "KRX:006400": 0.0418,
+      "SHE:300750": 0.0406,
+      "TSLA": 0.0372,
+      "HKG:1211": 0.0372,
+      "KRX:373220": 0.0348
+    },
     "return_1y": 0.7657,
     "return_ytd": null,
     "holding_years": 10,

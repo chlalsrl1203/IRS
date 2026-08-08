@@ -17,6 +17,12 @@
 를 확보한 것과 달리, 이번엔 시간 관계상 1차 출처만으로 진행했다 - 후속 보강
 대상으로 남긴다.
 
+**2026-08-08 후속 - `top10_holdings` 추가**: KRX 래퍼끼리의 중복노출 측정
+(v3.36 `holdings_overlap()`을 KRX 계층에 연결하는 작업)을 위해 4종 전부
+상위10 보유종목을 추가했다(stockanalysis.com/etf/{ticker}/holdings,
+2026-08-08 조회). 재실행 시 `analyzed_at`이 오늘 날짜로 갱신되므로 구
+2026-08-07 파일은 git rm하고 새 파일로 통합한다(v3.32 관행).
+
 실행: python3 scripts/analyze_etfs_sectors_2026_08_07.py
 """
 
@@ -45,6 +51,11 @@ CANDIDATES = [
             "재편이 상방/하방 어느 쪽으로도 작용할 수 있어 불확실성이 크다."
         ),
         dividend_yield=0.0111, return_1y=0.2427,
+        top10_holdings={
+            "GE": 0.0671, "CAT": 0.0670, "RTX": 0.0517, "GEV": 0.0475,
+            "UNP": 0.0310, "BA": 0.0304, "ETN": 0.0288, "DE": 0.0266,
+            "UBER": 0.0256, "PH": 0.0220,
+        },
         data_sources=SOURCES,
     ),
     ETFInputs(
@@ -60,6 +71,11 @@ CANDIDATES = [
             "을 채택 [추정치]."
         ),
         dividend_yield=0.0153, return_1y=0.2917,
+        top10_holdings={
+            "LLY": 0.1547, "JNJ": 0.1043, "ABBV": 0.0770, "UNH": 0.0648,
+            "MRK": 0.0543, "TMO": 0.0363, "AMGN": 0.0354, "ABT": 0.0311,
+            "GILD": 0.0276, "PFE": 0.0240,
+        },
         data_sources=SOURCES,
     ),
     ETFInputs(
@@ -77,6 +93,11 @@ CANDIDATES = [
             "내리는 효과도 감안해 나스닥100(11%)보다는 낮춘다 [추정치]."
         ),
         dividend_yield=0.0129, return_1y=0.0457,
+        top10_holdings={
+            "META": 0.1757, "GOOGL": 0.1104, "GOOG": 0.0887, "T": 0.0489,
+            "VZ": 0.0479, "DIS": 0.0477, "CMCSA": 0.0467, "TMUS": 0.0465,
+            "NFLX": 0.0449, "LYV": 0.0448,
+        },
         data_sources=SOURCES,
     ),
     ETFInputs(
@@ -92,6 +113,11 @@ CANDIDATES = [
             "가격 성장은 인플레이션 연동에 가깝다."
         ),
         dividend_yield=0.0258, return_1y=0.0718,
+        top10_holdings={
+            "WMT": 0.1047, "COST": 0.0888, "PG": 0.0727, "KO": 0.0715,
+            "PM": 0.0626, "CL": 0.0467, "MDLZ": 0.0439, "PEP": 0.0433,
+            "MNST": 0.0428, "TGT": 0.0425,
+        },
         data_sources=SOURCES,
     ),
 ]

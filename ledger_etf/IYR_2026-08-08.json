@@ -3,7 +3,7 @@
     "ticker": "IYR",
     "name": "iShares U.S. Real Estate ETF",
     "tracks": "리츠(부동산) 섹터",
-    "analyzed_at": "2026-08-08T04:14:35.182263+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.950585+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -38,7 +38,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "WELL": 0.1081,
+      "PLD": 0.0903,
+      "DLR": 0.0478,
+      "SPG": 0.0475,
+      "EQIX": 0.0438,
+      "O": 0.0425,
+      "AMT": 0.0396,
+      "PSA": 0.0393,
+      "VTR": 0.0317,
+      "CBRE": 0.0312
+    },
     "return_1y": 0.1246,
     "return_ytd": null,
     "holding_years": 10,

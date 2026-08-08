@@ -3,7 +3,7 @@
     "ticker": "XAR",
     "name": "SPDR S&P Aerospace & Defense ETF",
     "tracks": "항공우주/방위산업 테마",
-    "analyzed_at": "2026-08-08T04:14:35.183423+00:00",
+    "analyzed_at": "2026-08-08T04:39:31.952060+00:00",
     "engine_version": "v3.39",
     "analysis_type": "etf",
     "data_sources": [
@@ -37,7 +37,18 @@
     "realized_eps_by_year": null,
     "realized_eps_basis": null,
     "inflation_for_conversion": null,
-    "top10_holdings": null,
+    "top10_holdings": {
+      "AXON": 0.0344,
+      "RTX": 0.0326,
+      "SARO": 0.0323,
+      "VSEC": 0.0319,
+      "GE": 0.0309,
+      "HWM": 0.0307,
+      "HII": 0.0301,
+      "HEI": 0.03,
+      "GD": 0.0299,
+      "BA": 0.0298
+    },
     "return_1y": 0.3273,
     "return_ytd": null,
     "holding_years": 10,

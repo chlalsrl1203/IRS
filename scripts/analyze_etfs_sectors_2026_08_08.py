@@ -120,6 +120,11 @@ CANDIDATES = [
             "감안해서 볼 것."
         ),
         dividend_yield=0.0075, return_1y=0.0811,
+        top10_holdings={
+            "AMZN": 0.2318, "TSLA": 0.1566, "HD": 0.0589, "MCD": 0.0436,
+            "TJX": 0.0428, "BKNG": 0.0366, "SBUX": 0.0314, "LOW": 0.0310,
+            "MAR": 0.0218, "ROST": 0.0205,
+        },
         data_sources=["stockanalysis.com/etf/xly (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -137,6 +142,11 @@ CANDIDATES = [
             "XLK보다도 크다는 점을 감안해 그 이상으로는 올리지 않았다 [추정치]."
         ),
         dividend_yield=0.0019, return_1y=1.0393,
+        top10_holdings={
+            "NVDA": 0.2170, "TSM": 0.0951, "AVGO": 0.0673, "AMD": 0.0543,
+            "ASML": 0.0512, "TXN": 0.0495, "MU": 0.0474, "ADI": 0.0463,
+            "AMAT": 0.0452, "QCOM": 0.0411,
+        },
         data_sources=["stockanalysis.com/etf/smh (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -152,6 +162,11 @@ CANDIDATES = [
             "밸류에이션을 더 크게 흔든다는 점을 감안해서 볼 것."
         ),
         dividend_yield=0.0216, return_1y=0.1246,
+        top10_holdings={
+            "WELL": 0.1081, "PLD": 0.0903, "DLR": 0.0478, "SPG": 0.0475,
+            "EQIX": 0.0438, "O": 0.0425, "AMT": 0.0396, "PSA": 0.0393,
+            "VTR": 0.0317, "CBRE": 0.0312,
+        },
         data_sources=["stockanalysis.com/etf/iyr (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -168,6 +183,15 @@ CANDIDATES = [
             "달리 실질은 원자재 익스포저에 가깝다는 점에 유의."
         ),
         dividend_yield=0.0068, return_1y=0.7657,
+        # ⚠️ 글로벌 리튬 밸류체인 펀드라 비-미국 상장 종목이 섞여있다(거래소
+        # 접두사로 구분: SHE=심천, TYO=도쿄, KRX=한국, HKG=홍콩) - 겹침 측정 시
+        # 이런 종목은 미국 대형주 중심인 다른 ETF와 자연히 안 겹칠 것으로 예상됨.
+        top10_holdings={
+            "RIO": 0.2292, "SHE:002371": 0.0704, "TYO:6752": 0.0686,
+            "TYO:6762": 0.0565, "ALB": 0.0438, "KRX:006400": 0.0418,
+            "SHE:300750": 0.0406, "TSLA": 0.0372, "HKG:1211": 0.0372,
+            "KRX:373220": 0.0348,
+        },
         data_sources=["stockanalysis.com/etf/lit (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -184,6 +208,11 @@ CANDIDATES = [
             "적어 순수 테크섹터만큼 높이지는 않는다 [추정치]."
         ),
         dividend_yield=0.0035, return_1y=0.3477,
+        top10_holdings={
+            "ILMN": 0.0197, "ROK": 0.0191, "AMBA": 0.0185, "ETR:G1A": 0.0180,
+            "TER": 0.0170, "TYO:6841": 0.0170, "JBTM": 0.0170, "EMR": 0.0169,
+            "TYO:6954": 0.0165, "NOVT": 0.0162,
+        },
         data_sources=["stockanalysis.com/etf/robo (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -199,6 +228,11 @@ CANDIDATES = [
             "정치적 리스크를 감안해 XLK(12%) 수준까지는 올리지 않는다 [추정치]."
         ),
         dividend_yield=0.0028, return_1y=0.3273,
+        top10_holdings={
+            "AXON": 0.0344, "RTX": 0.0326, "SARO": 0.0323, "VSEC": 0.0319,
+            "GE": 0.0309, "HWM": 0.0307, "HII": 0.0301, "HEI": 0.0300,
+            "GD": 0.0299, "BA": 0.0298,
+        },
         data_sources=["stockanalysis.com/etf/xar (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -215,6 +249,11 @@ CANDIDATES = [
             "밸류에이션 변동성에 더 민감한 세그먼트다."
         ),
         dividend_yield=None, return_1y=0.1970,
+        top10_holdings={
+            "SNOW": 0.0730, "DDOG": 0.0543, "PAYC": 0.0535, "NET": 0.0436,
+            "WDAY": 0.0435, "QLYS": 0.0429, "NOW": 0.0416, "TWLO": 0.0408,
+            "DOCN": 0.0397, "ZS": 0.0389,
+        },
         data_sources=["stockanalysis.com/etf/clou (2026-08-08 조회)"],
     ),
     ETFInputs(
@@ -231,6 +270,11 @@ CANDIDATES = [
             "특정 산업에 국한되지 않고 분산돼 있어 소폭 높인다 [추정치]."
         ),
         dividend_yield=0.0309, return_1y=0.3173,
+        top10_holdings={
+            "ABT": 0.0464, "AMGN": 0.0461, "HD": 0.0431, "MRK": 0.0428,
+            "KO": 0.0422, "UNH": 0.0419, "PG": 0.0400, "VZ": 0.0381,
+            "CVX": 0.0376, "PEP": 0.0372,
+        },
         data_sources=["stockanalysis.com/etf/schd (2026-08-08 조회)"],
     ),
 ]
