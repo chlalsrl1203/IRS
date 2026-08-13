@@ -2233,3 +2233,63 @@ docstring 초안에 "플래그가 걸렸다"고 잘못 적었다가 screen() 실
   더 긁지 않고 서사 확인 단계에서 제외했다.
 
 테스트 212개 불변(2차 라운드도 엔진 코드 무변경).
+
+## BSX 정식분석 - screen()이 문서화된 "worst error"(거짓 탈락)를 실제로
+낸 첫 사례 (2026-08-13, 사용자 요청 "BSX 정식분석")
+
+스크리닝에서 임계값에 가장 근접했던 BSX(내재성장률 추정 5.77% vs 5.5%)를
+`scripts/analyze_bsx_2026_08_13.py`로 정식분석했다. Alpha Vantage 원자료를
+2015~2025 11개년으로 확장(10y CAGR 산출 가능), 경쟁구도는 WebSearch로
+실측(EP 전체시장 J&J 54% vs BSX 9%, 다만 고성장 PFA 하위세그먼트에서는
+Farapulse가 Medtronic 대비 74% 점유 - J&J가 "이 시장 싸움은 매우
+개인적"이라 할 만큼 반격 중).
+
+**결과: "저평가 가능성" 통과** (Gap +5.87%p, DRS 43.80, Realistic Growth
+13.86%, Implied Growth 8.00%(two_stage 채택, single_stage와 괴리 2.21%p로
+경고 임계값 3%p 미만), RAR +0.4926, 강건성점검 flip 없음, Confidence
+94/100). 스크리너가 예측한 방향(밸류에이션 문턱 근접)이 맞았고, 실제
+경쟁강도를 반영하니 통과권으로 들어왔다.
+
+**Lynch 유형 분류 애매 - 논바인딩이라 영향 없음**: 엔진이 자동으로
+"cyclical"을 채택하며 "[분류 애매]" 경고를 냈다(cyclicality_raw_score
+16.4가 cyclical 기준을 충족하지만 revenue_cagr_5y 15.16%도 fast_grower
+기준을 충족). 원인은 2020년 코로나로 인한 일시적 매출감소(YoY -7.66%)가
+cyclicality 점수를 밀어올린 것 - BSX 자체가 경기순환에 취약한 사업이라서가
+아니다. 다만 Realistic Growth(13.86%)가 cyclical 상한(20%)·fast_grower
+상한(25%) 어느 쪽에도 안 걸려 있어 이 분류 논쟁은 결과에 실질적 영향이
+없다 - lynch_type_override는 쓰지 않았다.
+
+**⚠️ 핵심 발견 - screener.py가 스스로 문서화해둔 "가장 나쁜 오류"(거짓
+탈락)가 실제로 발생한 첫 사례.** `tests/test_screener.py`의 골든테스트
+(`test_screener_reproduces_known_buy_verdicts`)가 이 ledger를 자동으로
+집어 재확인하다가 실패했다 - `screen()`이 방금 "저평가 가능성"으로 확정된
+BSX를 **탈락시킨다**. 원인을 분해해보니 DRS 5개 구성요소 중 정확히
+competition_intensity 하나 때문이었다(screener 추정 DRS 50.6 vs 정식
+DRS 43.8, 격차 6.8점이 전부 이 항목에서 발생 - leverage/cyclicality는
+거의 일치, revenue_volatility/margin_volatility는 서로 반대방향으로 정확히
+상쇄됨). `estimate_drs()`는 competition_intensity를 상수 12.0(ledger
+중앙값)으로 가정하는데, BSX의 실제 연구된 값은 5.4(경쟁자 J&J·Medtronic
+둘 다 위협도를 상대적으로 낮게 평가 - RMD와 정확히 같은 값). **이건
+engine/screener.py가 이미 문서화해둔 "알려진 한계 2건째"(PDD 실사례,
+competition_intensity 상수 placeholder)와 같은 결함의 반대방향 사례다** -
+PDD는 실제값이 상수보다 높아 Gap이 과대평가됐을 뿐 판정 방향은 안 바뀌었는데,
+BSX는 실제값이 상수보다 낮아 **판정 자체가 뒤집혔다**(스크리너 탈락 vs
+정식분석 통과).
+
+**상수를 고치지 않았다** - ledger 34종목 전수로 competition_intensity
+분포를 재확인한 결과 중앙값은 여전히 정확히 12.0(평균 11.91)이었다.
+문제는 상수가 틀려서가 아니라, median 대체 방식 자체가 median에서 크게
+벗어난 개별종목(RMD·BSX 5.4대, VRSN·ROP 3.6~4.8대)에서는 구조적으로
+오분류한다는 것 - 이건 애초에 screener.py가 "1차 필터일 뿐, 정식분석으로만
+확정할 것"이라 못박아둔 이유 그 자체다. 상수를 낮추면 다른 종목들의 판정이
+조용히 바뀔 위험이 있어(예: median을 낮추면 실제로 경쟁강도가 높은 종목들이
+대거 통과권으로 잘못 이동) 손대지 않고, 대신 `engine/screener.py` docstring에
+이 실사례를 기록하고 `tests/test_screener.py`에 `KNOWN_SCREENER_FALSE_
+REJECTIONS = {"BSX"}`로 문서화된 예외를 남긴 뒤, 이 예외의 근거(DRS 추정치가
+정확히 50.6이고 여전히 탈락하는지)가 유효한 채로 남아있는지 확인하는 회귀
+테스트(`test_bsx_false_rejection_is_still_reproducible`)를 추가했다 -
+나중에 엔진이 바뀌어 이 discrepancy가 저절로 사라지면 테스트가 실패해
+예외를 빼야 한다는 신호를 준다.
+
+`ENGINE_VERSION`은 그대로 v3.41(엔진 로직 무변경 - docstring과 테스트만
+수정). 테스트 212 -> 213개.

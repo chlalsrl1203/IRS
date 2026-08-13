@@ -1,0 +1,280 @@
+{
+  "meta": {
+    "ticker": "BSX",
+    "company_name": "Boston Scientific Corporation",
+    "analyzed_at": "2026-08-13T09:33:20.060163+00:00",
+    "engine_version": "v3.41",
+    "data_sources": [
+      "Alpha Vantage MCP INCOME_STATEMENT/CASH_FLOW/BALANCE_SHEET(BSX, 2026-08-13 조회, SEC 공시 기반)",
+      "WebSearch: 시가총액 $74.19B/주가 $51.19(2026-08-13), 미국10Y 4.69%(2026-08-12)",
+      "WebSearch: BSX 하락배경(가이던스 하향・리콜・WATCHMAN 성장둔화・EP 소송, 2026-08-13)",
+      "WebSearch: EP시장 경쟁구도(J&J 54%/BSX 9% 전체시장, BSX Farapulse PFA세그먼트 74% vs Medtronic, 2026-08-13)"
+    ],
+    "falsification_conditions": "(1) 2026 Q3/Q4 실적에서 WATCHMAN 성장률이 추가로 둔화되거나 회사가 재차 가이던스를 하향하면 재검토. (2) CRE/CRE Pro 리콜이 확대되거나(현재 Class II, 81,000+ 유닛) 추가 제품군으로 번지면 재검토. (3) EP 증권집단소송이 화해・기각 없이 본안 진행되며 거액 배상이 확정되면 재검토. (4) Medtronic・J&J의 PFA 신제품이 실제 시장점유율에서 Farapulse를 유의미하게 잠식(예: BSX PFA 점유율이 74%에서 60% 미만으로 하락)하면 경쟁강도 가정을 재검토.",
+    "price_at_analysis": 51.19,
+    "currency": "USD"
+  },
+  "data_limitations": [],
+  "inputs": {
+    "ticker": "BSX",
+    "company_name": "Boston Scientific Corporation",
+    "revenue_by_year": {
+      "2015": 7477000000,
+      "2016": 8386000000,
+      "2017": 9048000000,
+      "2018": 9823000000,
+      "2019": 10735000000,
+      "2020": 9913000000,
+      "2021": 11888000000,
+      "2022": 12682000000,
+      "2023": 14240000000,
+      "2024": 16747000000,
+      "2025": 20074000000
+    },
+    "operating_income_by_year": {
+      "2015": 790000000,
+      "2016": 1236000000,
+      "2017": 1525000000,
+      "2018": 1737000000,
+      "2019": 1712000000,
+      "2020": 601000000,
+      "2021": 1922000000,
+      "2022": 1824000000,
+      "2023": 2181000000,
+      "2024": 2635000000,
+      "2025": 3971000000
+    },
+    "operating_cashflow_by_year": {
+      "2015": 600000000,
+      "2016": 972000000,
+      "2017": 1426000000,
+      "2018": 310000000,
+      "2019": 1836000000,
+      "2020": 1508000000,
+      "2021": 1870000000,
+      "2022": 1526000000,
+      "2023": 2503000000,
+      "2024": 3435000000,
+      "2025": 4534000000
+    },
+    "capex_by_year": {
+      "2015": 247000000,
+      "2016": 376000000,
+      "2017": 319000000,
+      "2018": 316000000,
+      "2019": 461000000,
+      "2020": 376000000,
+      "2021": 554000000,
+      "2022": 612000000,
+      "2023": 800000000,
+      "2024": 790000000,
+      "2025": 876000000
+    },
+    "market_cap": 74190000000.0,
+    "net_debt": 10373000000,
+    "ebitda": 5339000000,
+    "risk_free_rate": 0.0469,
+    "competitor_threat_weights": [
+      0.3,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": 0.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.1,
+    "subjective_input_basis": "경쟁강도 - J&J/Biosense Webster 0.30(EP 전체시장 점유율 54%로 압도적 1위, 2026-08 WebSearch에서 J&J MedTech 임원이 'EP 시장 싸움은 매우 개인적'이라 언급할 만큼 명시적으로 공격적 태세 - EP 소송이 겨냥하는 성장서사 자체를 위협하는 가장 실질적인 경쟁자라 RMD의 Philips 0.25보다 소폭 높게 설정[추정치]). Medtronic 0.15(BSX Farapulse가 PFA 하위세그먼트에서 Medtronic 대비 74% 점유하며 현재는 앞서 있으나, Medtronic도 2026년 자체 PFA 제품을 출시해 3파전에 참여 중이라 0을 주지 않음 - 다만 현재 열세라 J&J 보다는 낮게 설정[추정치]). market_share_trend=+0.5pp: Farapulse가 PFA 신규세그먼트에서 아직 주도권을 유지 중이나(RMD의 Philips 부재 상황과 달리) J&J・Medtronic 둘 다 적극 반격 중이라 과도하게 낙관하지 않고 RMD와 동일한 완만한 값 사용[추정치]. active_antitrust_or_regulatory_case=False: 2026-08 WebSearch로 확인한 진행 중인 반독점・경쟁당국 조사는 없음 - 다만 EP 관련 증권집단소송(공시 부실 의혹, 반독점과는 성격이 다른 별도 리스크)과 CRE/CRE Pro Class II 리콜(FDA, 멸균파우치 손상 가능성)이 진행 중이라는 점은 이 불리언이 포착 못 하는 별도 리스크로 falsification_conditions에 남긴다. demand_sensitivity=0.10: 심장질환(구조적심장질환・EP・관상동맥) 시술은 대부분 생명과 직결된 응급・필수 의료라 경기순환에 상대적으로 가장 둔감한 축에 속한다고 판단 - RMD(수면무호흡증 CPAP, 0.15)보다도 낮게 설정했다[추정치]. 다만 이 낮은 수치는 GLP-1이나 대체 치료법에 의한 구조적 수요치환 리스크는 포착하지 못한다는 점을 RMD와 동일하게 명시해둔다 - 다만 BSX의 경우 그런 구조적 대체 서사는 이번 조사에서 확인되지 않았다(WATCHMAN 성장둔화는 경쟁・가이던스 요인으로 설명되며 대체치료법 서사는 없음).",
+    "model_used": "two_stage",
+    "model_choice_reason": "BSX는 2015~2025 전 구간 흑자를 유지했고(2020년 코로나로 마진이 크게 눌렸으나 적자전환은 아님), 최근 3개년 영업이익 성장이 매출 성장보다 뚜렷하게 빠르다(FY23->FY24 매출 +17.6%/영업이익 +20.8%, FY24->FY25 매출 +19.9%/영업이익 +50.7%) - RMD와 동일하게 명시적 성장기간 이후 정상화를 모델링하는 two_stage가 이 마진확장궤적에 이론적으로 부합한다고 판단. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "Alpha Vantage MCP INCOME_STATEMENT/CASH_FLOW/BALANCE_SHEET(BSX, 2026-08-13 조회, SEC 공시 기반)",
+      "WebSearch: 시가총액 $74.19B/주가 $51.19(2026-08-13), 미국10Y 4.69%(2026-08-12)",
+      "WebSearch: BSX 하락배경(가이던스 하향・리콜・WATCHMAN 성장둔화・EP 소송, 2026-08-13)",
+      "WebSearch: EP시장 경쟁구도(J&J 54%/BSX 9% 전체시장, BSX Farapulse PFA세그먼트 74% vs Medtronic, 2026-08-13)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": null,
+    "falsification_conditions": "(1) 2026 Q3/Q4 실적에서 WATCHMAN 성장률이 추가로 둔화되거나 회사가 재차 가이던스를 하향하면 재검토. (2) CRE/CRE Pro 리콜이 확대되거나(현재 Class II, 81,000+ 유닛) 추가 제품군으로 번지면 재검토. (3) EP 증권집단소송이 화해・기각 없이 본안 진행되며 거액 배상이 확정되면 재검토. (4) Medtronic・J&J의 PFA 신제품이 실제 시장점유율에서 Farapulse를 유의미하게 잠식(예: BSX PFA 점유율이 74%에서 60% 미만으로 하락)하면 경쟁강도 가정을 재검토.",
+    "price_at_analysis": 51.19,
+    "currency": "USD",
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.16541890019606442,
+    "revenue_cagr_5y": 0.15155785671653277,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.10380067145732896,
+    "fcf_cagr_5y": 0.2643853490752126,
+    "fcf0": 3658000000,
+    "fcf_by_year": {
+      "2015": 353000000,
+      "2016": 596000000,
+      "2017": 1107000000,
+      "2018": -6000000,
+      "2019": 1375000000,
+      "2020": 1132000000,
+      "2021": 1316000000,
+      "2022": 914000000,
+      "2023": 1703000000,
+      "2024": 2645000000,
+      "2025": 3658000000
+    },
+    "worst_yoy_revenue_growth": -0.07657196087564044,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      0.1616756393001346,
+      0.14382589496924775,
+      0.15316011235955057,
+      0.1573416134232997,
+      0.19781807312942115
+    ],
+    "net_debt_to_ebitda": 1.9428731972279454
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 4.0,
+      "leverage": 10.0,
+      "cyclicality": 16.4,
+      "competition_intensity": 5.3999999999999995
+    },
+    "score": 43.8
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": "[분류 애매] cyclicality_raw_score=16.4로 cyclical 기준을 충족하지만 revenue_cagr_5y=15.2%도 fast_grower 기준을 충족한다. cyclical을 기본 채택했으나, cyclicality 점수의 원인이 이미 지나간 일회성 위기(예: 팬데믹)뿐이라면 fast_grower로 오버라이드할지 검토할 것.",
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0469,
+    "erp": 0.06314,
+    "r": 0.11004,
+    "n": 12,
+    "g_terminal": 0.036899999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.06919088563063228,
+    "realistic_growth": 0.13863186252556584,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.16541890019606442,
+        "5y": 0.15155785671653277,
+        "10y": 0.10380067145732896
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.14893694140445785,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.14893694140445785,
+      "structural_discount_pct": 0.06919088563063228,
+      "discounted_growth": 0.13863186252556584,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.13863186252556584
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.05788032576302538,
+      "two_stage": 0.07997894287109375,
+      "errors": {},
+      "divergence": 0.022098617108068368,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "BSX는 2015~2025 전 구간 흑자를 유지했고(2020년 코로나로 마진이 크게 눌렸으나 적자전환은 아님), 최근 3개년 영업이익 성장이 매출 성장보다 뚜렷하게 빠르다(FY23->FY24 매출 +17.6%/영업이익 +20.8%, FY24->FY25 매출 +19.9%/영업이익 +50.7%) - RMD와 동일하게 명시적 성장기간 이후 정상화를 모델링하는 two_stage가 이 마진확장궤적에 이론적으로 부합한다고 판단. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "value": 0.07997894287109375
+  },
+  "expectation_gap": 0.058652919654472085,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.13863186252556584,
+      "g_bull": 0.2,
+      "g_bear": 0.06931593126278292,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.4092061733774699,
+      "base": 0.1814679531765604,
+      "bear": -0.029427662658945253
+    },
+    "probabilities": {
+      "bull": 0.3186,
+      "base": 0.5,
+      "bear": 0.1814
+    },
+    "probability_rationale": "DRS=43.8 (중립점 50 대비 편차 -0.12) 기준: p_bull=31.9%, p_base=50.0%, p_bear=18.1%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.21576888542000944
+  },
+  "rar": 0.49262302607308095,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11004,
+    "r_without_drs": 0.0969,
+    "implied_growth_with_drs": 0.07997894287109375,
+    "implied_growth_without_drs": 0.05529022216796873,
+    "gap_with_drs": 0.058652919654472085,
+    "gap_without_drs": 0.08334164035759711,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11004,
+      "r_without_drs": 0.0969,
+      "implied_growth_with_drs": 0.07997894287109375,
+      "implied_growth_without_drs": 0.05529022216796873,
+      "gap_with_drs": 0.058652919654472085,
+      "gap_without_drs": 0.08334164035759711,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "B",
+  "insurer_cross_check": null,
+  "sbc_cross_check": null
+}

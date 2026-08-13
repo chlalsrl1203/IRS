@@ -1,5 +1,29 @@
 # CHANGELOG
 
+## BSX 정식분석 — screener false-rejection 실사례 발견 (2026-08-13)
+
+스크리닝 최근접 미스였던 BSX를 `scripts/analyze_bsx_2026_08_13.py`로
+정식분석. 결과: **저평가 가능성 통과**(Gap +5.87%p, DRS 43.80, Realistic
+Growth 13.86%, Confidence 94). Lynch 유형이 "cyclical"로 애매하게
+분류됐으나(2020 코로나 일시적 매출감소 때문) Realistic Growth가 어느 쪽
+상한에도 안 걸려 결과에 영향 없음.
+
+**핵심 발견**: `tests/test_screener.py`의 골든테스트가 이 ledger를 자동
+집어 재확인하다 실패 - `screen()`이 방금 통과 확정된 BSX를 탈락시킨다.
+원인은 `estimate_drs()`의 competition_intensity 상수(12.0, ledger 중앙값)가
+BSX 실제값(5.4, RMD와 동일)보다 훨씬 높아 DRS를 50.6까지 과대평가하기
+때문 - screener.py가 이미 문서화한 "알려진 한계 2건째"(PDD, 상수가 실제값
+보다 낮아 Gap 과대평가)의 반대방향 사례이자, 이번엔 판정 자체가 뒤집힌
+첫 사례("worst error" 실증). ledger 34종목 전수 재확인 결과 상수 자체는
+여전히 정확한 중앙값(12.0)이라 상수를 고치지 않고, screener.py docstring에
+실사례를 기록 + `KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX"}` 문서화된
+예외 + 예외 근거 유효성을 계속 확인하는 회귀테스트 추가.
+
+`ENGINE_VERSION` v3.41 그대로(로직 무변경, docstring·테스트만 수정).
+테스트 212 -> 213개.
+
+---
+
 ## 개별주식 스크리닝 2026-08-13 — 3종목 전수탈락, 원인 3갈래
 
 `scripts/screen_2026_08_13.py`. 원자료를 Alpha Vantage MCP(INCOME_STATEMENT/
