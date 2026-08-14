@@ -120,6 +120,23 @@ Vantage 매출이 부정확했던 것으로 확정. **그런데 정확한 원자
 패턴과는 다르다). 결국 PREFILTERED_OUT이 아니라 FRAMEWORK_MISMATCH로
 재분류했다 - 매출 자체는 견조(5y CAGR 47.9%)하지만 5y CAGR 프레임에 억지로
 밀어넣지 않는다는 PODD/APP 원칙을 그대로 적용한 것.
+
+**후속 조사 5차(동일 세션, 사용자 "계속 스크리닝" 요청) - AMD, 이번 배치
+유일의 실제 screen() 통과 시도.** "analyst buy rating maintained despite
+selloff" 계열 검색으로 AMD를 발견 - 2026-08-04 Q2 실적발표에서 매출
+$11.54B(+50.1%YoY, 컨센서스 상회)·데이터센터 매출 2배 이상($6.72B)·EPS
+컨센서스 상회에도 시간외 -8.82% 급락. 원인은 실적 미스가 아니라 실적발표
+직전 5거래일간 +21% 랠리로 기대치가 '블로아웃'급으로 과열된 상태에서
+Q3 매출총이익률 가이던스가 전분기와 동일(약 56%)했던 점 - 공포과잉과는
+결이 다른 '기대치 과열' 유형이라 판단해 재무데이터를 확보, 이번 배치에서
+유일하게 CANDIDATES에 넣어 screen()을 실제로 실행했다. **결과: FAIL** -
+내재성장률 추정 9.76%가 임계값(5.5%)을 크게 상회, FCF수익률(0.79%)이
+필요치(4.86%)에 크게 못 미쳤다. 매출 5y CAGR 28.82%·FCF CAGR 53.85%(마진
+확장 중, capex 재검토 대상 아님)로 성장 자체는 넉넉히 통과했지만, 시가
+총액이 이미 $847.59B(주가가 52주 범위 상단 $584.73 근처까지 반등한 상태 -
+급락 이벤트가 이미 지나갔고 시장이 그 이후 되돌린 것으로 추정)로 워낙 커
+밸류에이션 단계에서 탈락했다 - META와 동일한 4분류 2번('실적은 훌륭한데
+이미 비쌈') 패턴으로 확인된 사례.
 """
 
 import os
@@ -140,6 +157,42 @@ def worst_yoy(series):
 
 
 CANDIDATES = []
+
+# ── AMD (Advanced Micro Devices) - 실적 서프라이즈에도 급락, 후속조사 5차 ──
+# 원자료: Alpha Vantage INCOME_STATEMENT/CASH_FLOW/BALANCE_SHEET(2026-08-14).
+# 시가총액은 WebSearch 여러 출처 중 가장 보수적(비싼) 값 채택($847.59B,
+# ETF/KRX 비교표와 동일 관행). 하락배경: 2026-08-04 Q2 실적발표 - 매출
+# $11.54B(+50.1%YoY, 컨센서스 상회), 데이터센터 매출 2배 이상($6.72B), EPS도
+# 컨센서스 상회했음에도 시간외 -8.82% 급락(WebSearch, 2026-08-14). 원인은
+# 실적 미스가 아니라 (1) 이미 실적발표 전 5거래일간 +21% 랠리로 기대치가
+# '블로아웃'급으로 과열돼 있었고, (2) Q3 비GAAP 매출총이익률 가이던스가
+# 전분기와 동일한 약 56%로 제시(믹스개선 기대에 못미침), (3) capex 급증(순차
+# 2배 이상)으로 FCF가 분기 기준 순차 -39% 감소한 점 - "실적은 좋았으나
+# 블로아웃은 아니었다"는 전형적 기대치 과열 패턴(공포과잉과는 결이 다른
+# '기대치 과열' 유형).
+_rev_amd = {2020: 9763, 2021: 16434, 2022: 23601, 2023: 22680, 2024: 25785, 2025: 34639}
+_fcf_amd = {2020: 1071 - 294, 2021: 3521 - 301, 2022: 3565 - 450,
+            2023: 1667 - 546, 2024: 3041 - 636, 2025: 7709 - 1012}
+_capex_amd = {2020: 294, 2021: 301, 2022: 450, 2023: 546, 2024: 636, 2025: 1012}
+CANDIDATES.append(Candidate(
+    ticker="AMD", name="Advanced Micro Devices", exchange="NASDAQ",
+    market_cap=847590, fcf0=_fcf_amd[2025],
+    revenue_cagr_5y=cagr(_rev_amd[2020], _rev_amd[2025], 5),
+    fcf_cagr_5y=cagr(_fcf_amd[2020], _fcf_amd[2025], 5),
+    net_debt_to_ebitda=-0.91,  # 총부채 $44.72억 - 현금+ST투자 $105.52억(FY2025), 순현금 상태
+    worst_yoy_revenue=worst_yoy(_rev_amd),  # 2023년 -3.90%(PC수요침체+Xilinx 통합비용)
+    capex_to_revenue_current=_capex_amd[2025] / _rev_amd[2025],
+    capex_to_revenue_avg=sum(_capex_amd[y] / _rev_amd[y] for y in range(2020, 2025)) / 5,
+    note=(
+        "FY2025 실측: 매출 5y CAGR 28.82%, FCF CAGR 53.85%(매출보다 훨씬 "
+        "빠름 - 마진 확장 중, capex/매출도 2020-2024 평균 2.32% -> 2025 "
+        "2.92%로 소폭 상승에 그쳐 META급 급증(+14.05%p)과는 성격이 다름, "
+        "v3.20 capex 재검토 대상 아님). worst_yoy_revenue -3.90%(2023년 "
+        "PC수요침체+Xilinx 인수통합비용 반영, Xilinx 인수가 2022년 종결이라 "
+        "5y창 초입에 걸리지만 매출 자체는 그 해에도 견조했고 왜곡은 크지 "
+        "않다고 판단)."
+    ),
+))
 
 # ── 아래는 WebSearch/Alpha Vantage 확인 단계에서 4분류 3번(진짜나빠짐)으로 제외 ──
 PREFILTERED_OUT = {
@@ -288,26 +341,39 @@ FRAMEWORK_MISMATCH["ONON(On Holding)"] = (
 
 
 def main():
-    if not CANDIDATES:
-        print("=" * 108)
-        print("2026-08-14 스크리닝 결과")
-        print("=" * 108)
-        print("이번 배치는 4분류 체크리스트 단계에서 후보 전부 제외됨 - screen() 미호출.")
-        print()
-        print(f"1차 분류에서 제외된 후보 ({len(PREFILTERED_OUT)}건):")
-        for k, v in PREFILTERED_OUT.items():
-            print(f"  - {k}: {v}")
-        print()
-        print(f"프레임워크 부적합으로 정량모델 제외 ({len(FRAMEWORK_MISMATCH)}건):")
-        for k, v in FRAMEWORK_MISMATCH.items():
-            print(f"  - {k}: {v}")
-        return
-
-    results = screen_all(CANDIDATES)
     print("=" * 108)
     print("2026-08-14 스크리닝 결과")
     print("=" * 108)
-    print(format_table(results))
+
+    if CANDIDATES:
+        results = screen_all(CANDIDATES)
+        print(format_table(results))
+        n_passed = sum(1 for r in results if r.passed)
+        print()
+        print(f"통과: {n_passed}/{len(results)}")
+        print()
+        for r in results:
+            c = r.candidate
+            status = "PASS" if r.passed else "FAIL"
+            print(f"[{c.ticker}] {status}")
+            if not r.passed:
+                for f in r.failures:
+                    print(f"    - {f}")
+            for f in r.review_flags:
+                print(f"    ⚠️ {f}")
+            print(f"    note: {c.note}")
+            print()
+    else:
+        print("이번 배치는 4분류 체크리스트 단계에서 후보 전부 제외됨 - screen() 미호출.")
+        print()
+
+    print(f"1차 분류에서 제외된 후보 ({len(PREFILTERED_OUT)}건):")
+    for k, v in PREFILTERED_OUT.items():
+        print(f"  - {k}: {v}")
+    print()
+    print(f"프레임워크 부적합으로 정량모델 제외 ({len(FRAMEWORK_MISMATCH)}건):")
+    for k, v in FRAMEWORK_MISMATCH.items():
+        print(f"  - {k}: {v}")
 
 
 if __name__ == "__main__":
