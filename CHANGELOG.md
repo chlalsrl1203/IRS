@@ -22,6 +22,15 @@ Trefis 52주 저점 후보 KR(Kroger)/AGCO(AGCO Corp)/RBA(RB Global) 3종을 4�
 
 엔진 코드 변경 없음(`scripts/screen_2026_08_14.py` 신규). 테스트 255개 불변.
 
+**후속(동일 세션) - NOW(ServiceNow) 추가**: 'AI가 SW 좌석을 대체한다'는
+공포 서사(-53%)와 달리 분기 매출은 오히려 가속(+21.8%→+24.0%YoY) - 그러나
+goodwill이 한 분기 만에 $4.54B→$9.84B로 급증해 확인해보니 Moveworks/Veza/
+Armis($7.75B, 사상최대) 연쇄 M&A가 진행 중이었다(RBA보다 심한 5y CAGR
+오염). 게다가 M&A와 무관한 유기적 지표(cRPO organic growth)조차 실제로
+감속 중임을 서사조사로 확인 - RBA와 달리 "프레임워크만 못 쓸 뿐 서사는
+과장"이라 볼 근거가 약해 정량모델에서 제외. CL/AA/NBIS는 스크리너 구조와
+안 맞아 확인 전 단계에서 제외.
+
 ---
 
 ## TTD 재검토 완료 — Confidence 하향 + 매수리스트 비중 축소 (2026-08-13)
