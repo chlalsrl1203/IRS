@@ -1,5 +1,33 @@
 # CHANGELOG
 
+## v3.44 — Gap Distribution 신설: BSX 사건의 일반해, 가설은 기각됨 (2026-08-13)
+
+`engine/gap_distribution.py` 신규. BSX screener false-rejection("점 하나로
+대체한 값이 판정을 뒤집었다")의 일반해 - 정식 엔진의 주관적 DRS 입력
+(demand_sensitivity_pct·competition_intensity)을 이 프로젝트가 34종목에서
+실제 쓴 관측범위로 삼각분포화해 Monte Carlo로 Gap·판정 흔들림을 측정한다.
+
+**처음 제안한 가설("P(저평가)=73% 형태")이 실측으로 기각됐다** - 34종목 전부
+100%/0%, 취약 판정 0건. 원인은 `erp_from_drs()`가 DRS 0~100 전체를 ERP
+5~8%로만 사상하는 좁은 매핑이라 - 두 주관입력을 관측범위 끝까지 흔들어도
+r은 최대 ~0.6%p만 움직인다. 경계에 가장 근접했던 PTC(Gap +5.53%p)조차
+표준편차 0.17%p로 한 번도 못 넘었다.
+
+**결론**: v3.43 growth_scorecard가 보인 성장률 축 취약성(TTD/TCOM/KEYS
+실제 flip)과 정확히 대비 - 이 프로젝트에서 판정이 흔들리는 곳은 성장률
+입력이지 DRS 리스크스코어링 입력이 아니다. 원래 가설은 기각됐지만 그
+기각 자체가 더 구체적인 결론을 줬다(META capex 가설 기각과 동일 계열의
+정직한 정정).
+
+perturbation 없이(분석자 실제 판단값 그대로) DRS/r/Gap을 재구성하면 ledger
+원본과 1e-9~1e-12 수준으로 정확히 일치함을 5개 티커로 검증 - 자기일치 없이는
+Monte Carlo 자체가 무의미하므로 이를 먼저 테스트로 고정했다. 관측범위는
+하드코딩 없이 corpus에서 직접 계산.
+
+`ENGINE_VERSION` v3.43 → v3.44. 테스트 237 → 250개.
+
+---
+
 ## v3.43 — Growth Scorecard 신설: 주가보다 빠른 외부 검증축 (2026-08-13)
 
 `engine/growth_scorecard.py` 신규. v3.42가 이진 예측(반증조건)을 감시한다면

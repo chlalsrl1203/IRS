@@ -1,0 +1,800 @@
+{
+  "generated_at": "2026-08-13",
+  "observed_ranges": {
+    "demand_sensitivity_pct": {
+      "lo": 0.05,
+      "hi": 0.6,
+      "n": 34
+    },
+    "competition_intensity": {
+      "lo": 3.6000000000000005,
+      "hi": 20.0,
+      "n": 34
+    }
+  },
+  "rows": [
+    {
+      "ticker": "KEYS",
+      "n_draws": 3000,
+      "official_gap": -0.14364213252736793,
+      "official_judgment": "과대평가 가능성",
+      "gap_mean": -0.1450691019919879,
+      "gap_stdev": 0.0020636805067773554,
+      "gap_p10": -0.14799126887990696,
+      "gap_p90": -0.14252061153127416,
+      "p_undervalued": 0.0,
+      "p_overvalued": 1.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.32
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        8.399999999999999
+      ]
+    },
+    {
+      "ticker": "RMD",
+      "n_draws": 3000,
+      "official_gap": 0.05889235066261829,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.05626463923938015,
+      "gap_stdev": 0.002036626461510902,
+      "gap_p10": 0.05323725270119249,
+      "gap_p90": 0.05869017170754015,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.15
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        5.4
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "n_draws": 3000,
+      "official_gap": 0.017187161949781066,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.01727164458782226,
+      "gap_stdev": 0.0019995765305132864,
+      "gap_p10": 0.014595265892652115,
+      "gap_p90": 0.019950147179273264,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.45
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        11.4
+      ]
+    },
+    {
+      "ticker": "PH",
+      "n_draws": 3000,
+      "official_gap": -0.08585815370238321,
+      "official_judgment": "과대평가 가능성",
+      "gap_mean": -0.08567718624429403,
+      "gap_stdev": 0.0019788446734588885,
+      "gap_p10": -0.0883571618810942,
+      "gap_p90": -0.0829992288366606,
+      "p_undervalued": 0.0,
+      "p_overvalued": 1.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.35
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    },
+    {
+      "ticker": "BSX",
+      "n_draws": 3000,
+      "official_gap": 0.058652919654472085,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.05607740403455836,
+      "gap_stdev": 0.0019411902840724565,
+      "gap_p10": 0.05317711246453072,
+      "gap_p90": 0.058389133338554125,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.1
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        5.3999999999999995
+      ]
+    },
+    {
+      "ticker": "DSGX",
+      "n_draws": 3000,
+      "official_gap": 0.04248310348930688,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.04183938216311464,
+      "gap_stdev": 0.0019341289823221835,
+      "gap_p10": 0.039212191318896736,
+      "gap_p90": 0.044409334873584186,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.15
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        10.799999999999999
+      ]
+    },
+    {
+      "ticker": "ROP",
+      "n_draws": 3000,
+      "official_gap": 0.012357788085937522,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.0097616139094035,
+      "gap_stdev": 0.0019287240067271318,
+      "gap_p10": 0.006977157592773453,
+      "gap_p90": 0.012060241699218766,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.18
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        4.8
+      ]
+    },
+    {
+      "ticker": "TYL",
+      "n_draws": 3000,
+      "official_gap": 0.0277231870438982,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.02701048162245045,
+      "gap_stdev": 0.0018507246155831543,
+      "gap_p10": 0.024424809053175553,
+      "gap_p90": 0.029456394746534928,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.05
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        10.799999999999999
+      ]
+    },
+    {
+      "ticker": "COR",
+      "n_draws": 3000,
+      "official_gap": 0.030971756573969778,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.030998516420974998,
+      "gap_stdev": 0.0018158034033459768,
+      "gap_p10": 0.028619995709711993,
+      "gap_p90": 0.03355278074389167,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.08
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.799999999999999
+      ]
+    },
+    {
+      "ticker": "MCK",
+      "n_draws": 3000,
+      "official_gap": -0.0001648937621887142,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": -0.00013164861194049895,
+      "gap_stdev": 0.0017993075835493902,
+      "gap_p10": -0.002498534814434808,
+      "gap_p90": 0.0024027789673034816,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.08
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.799999999999999
+      ]
+    },
+    {
+      "ticker": "DUOL",
+      "n_draws": 3000,
+      "official_gap": 0.19453125000000002,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.19463606046040854,
+      "gap_stdev": 0.0017722608672744809,
+      "gap_p10": 0.19228096008300782,
+      "gap_p90": 0.19704170227050782,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.6
+      ]
+    },
+    {
+      "ticker": "WDAY",
+      "n_draws": 3000,
+      "official_gap": 0.11417055453507202,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.1140933848624239,
+      "gap_stdev": 0.0017467012489674836,
+      "gap_p10": 0.1117354425355603,
+      "gap_p90": 0.11643534030167357,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    },
+    {
+      "ticker": "PDD",
+      "n_draws": 3000,
+      "official_gap": 0.2916229248046875,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.29403914864857994,
+      "gap_stdev": 0.0017419097118124235,
+      "gap_p10": 0.29198989868164066,
+      "gap_p90": 0.2965923309326172,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.35
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        20.0
+      ]
+    },
+    {
+      "ticker": "UBER",
+      "n_draws": 3000,
+      "official_gap": 0.11784205707458376,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.11848779732930383,
+      "gap_stdev": 0.0017299534141769059,
+      "gap_p10": 0.11625743183044315,
+      "gap_p90": 0.1209249046697986,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.3
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        13.8
+      ]
+    },
+    {
+      "ticker": "PTC",
+      "n_draws": 3000,
+      "official_gap": 0.0553015837082313,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.05507755257775849,
+      "gap_stdev": 0.0017114877240293452,
+      "gap_p10": 0.05274115890354381,
+      "gap_p90": 0.05736132949680553,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.25
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        11.4
+      ]
+    },
+    {
+      "ticker": "BKNG",
+      "n_draws": 3000,
+      "official_gap": 0.05981018711677141,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.06054730011573381,
+      "gap_stdev": 0.0017088982700220745,
+      "gap_p10": 0.058364607587962816,
+      "gap_p90": 0.06296227146735735,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.6
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        14.0
+      ]
+    },
+    {
+      "ticker": "SE",
+      "n_draws": 3000,
+      "official_gap": 0.19180315300111223,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.19226432389700657,
+      "gap_stdev": 0.0017087356904623597,
+      "gap_p10": 0.19002474113587783,
+      "gap_p90": 0.19462488456849503,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.3
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        13.2
+      ]
+    },
+    {
+      "ticker": "TTD",
+      "n_draws": 3000,
+      "official_gap": 0.1700962080005105,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.17115308418306666,
+      "gap_stdev": 0.0016632522437651186,
+      "gap_p10": 0.1690809263232644,
+      "gap_p90": 0.1735446943286355,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.35
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        15.0
+      ]
+    },
+    {
+      "ticker": "MNDY",
+      "n_draws": 3000,
+      "official_gap": 0.23276233673095703,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.2331264887491862,
+      "gap_stdev": 0.0016491908995231997,
+      "gap_p10": 0.231005859375,
+      "gap_p90": 0.23546104431152345,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.25
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        13.2
+      ]
+    },
+    {
+      "ticker": "GEN",
+      "n_draws": 3000,
+      "official_gap": 0.12182151794433595,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.12059862651824953,
+      "gap_stdev": 0.0015969668091104102,
+      "gap_p10": 0.11827270507812501,
+      "gap_p90": 0.1225554656982422,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.3
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        7.799999999999999
+      ]
+    },
+    {
+      "ticker": "TCOM",
+      "n_draws": 3000,
+      "official_gap": 0.07547684320764038,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.07540279192285035,
+      "gap_stdev": 0.001584559892640497,
+      "gap_p10": 0.07324848779992554,
+      "gap_p90": 0.07758694300012084,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.55
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        11.6
+      ]
+    },
+    {
+      "ticker": "PGR",
+      "n_draws": 3000,
+      "official_gap": 0.21757485287419526,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.21697635821731456,
+      "gap_stdev": 0.0014555747534472693,
+      "gap_p10": 0.21501271145573825,
+      "gap_p90": 0.2188766183160898,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.15
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        10.2
+      ]
+    },
+    {
+      "ticker": "ACGL",
+      "n_draws": 3000,
+      "official_gap": 0.24383806952929307,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.2440880111644249,
+      "gap_stdev": 0.0013426039291168025,
+      "gap_p10": 0.2422996021220665,
+      "gap_p90": 0.24596609839892197,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        13.2
+      ]
+    },
+    {
+      "ticker": "VRSN",
+      "n_draws": 3000,
+      "official_gap": -0.009719340999338522,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": -0.011522360690494561,
+      "gap_stdev": 0.0011291778739630155,
+      "gap_p10": -0.013179377628606728,
+      "gap_p90": -0.010186164749660477,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.05
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        3.6000000000000005
+      ]
+    },
+    {
+      "ticker": "CDNS",
+      "n_draws": 3000,
+      "official_gap": 0.032879560479090325,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.0339709407472322,
+      "gap_stdev": 0.0011062696600951097,
+      "gap_p10": 0.03267204896168051,
+      "gap_p90": 0.03562099780680697,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.15
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        18.0
+      ]
+    },
+    {
+      "ticker": "MNST",
+      "n_draws": 3000,
+      "official_gap": -0.006418685378330832,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": -0.005381328387379056,
+      "gap_stdev": 0.0010920700117841697,
+      "gap_p10": -0.006673007505275497,
+      "gap_p90": -0.00377096626188253,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.1
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        18.0
+      ]
+    },
+    {
+      "ticker": "KLAC",
+      "n_draws": 3000,
+      "official_gap": 0.008613438964066245,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.009370722351985588,
+      "gap_stdev": 0.0010426947390630922,
+      "gap_p10": 0.008076638094094271,
+      "gap_p90": 0.01083804019798229,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.38
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        15.2
+      ]
+    },
+    {
+      "ticker": "ZTS",
+      "n_draws": 3000,
+      "official_gap": 0.020971515574735304,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.02197086199959307,
+      "gap_stdev": 0.0010253434190395983,
+      "gap_p10": 0.020747115350897245,
+      "gap_p90": 0.02348717192941633,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.1
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        18.0
+      ]
+    },
+    {
+      "ticker": "GWRE",
+      "n_draws": 3000,
+      "official_gap": 0.0315386804982906,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.031149514845659795,
+      "gap_stdev": 0.0010188689782512886,
+      "gap_p10": 0.029711717438038132,
+      "gap_p90": 0.03242266877491219,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.22
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        10.200000000000001
+      ]
+    },
+    {
+      "ticker": "IDXX",
+      "n_draws": 3000,
+      "official_gap": 0.004138841871727902,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.003893826555724097,
+      "gap_stdev": 0.0010036273308726045,
+      "gap_p10": 0.002531223483376907,
+      "gap_p90": 0.005258269661301315,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.1
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        11.399999999999999
+      ]
+    },
+    {
+      "ticker": "WCN",
+      "n_draws": 3000,
+      "official_gap": 0.0100359824109255,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.010022727181876249,
+      "gap_stdev": 0.0009877936962734883,
+      "gap_p10": 0.008719879550157475,
+      "gap_p90": 0.011370555213522579,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.25
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    },
+    {
+      "ticker": "WM",
+      "n_draws": 3000,
+      "official_gap": 0.0008904206704897916,
+      "official_judgment": "적정가/경계선",
+      "gap_mean": 0.0008309068507246672,
+      "gap_stdev": 0.0009800560208963439,
+      "gap_p10": -0.0004959845357100229,
+      "gap_p90": 0.0021364209959894437,
+      "p_undervalued": 0.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 1.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    },
+    {
+      "ticker": "BSY",
+      "n_draws": 3000,
+      "official_gap": 0.05695494807794302,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.056880986725680614,
+      "gap_stdev": 0.0009577330283719719,
+      "gap_p10": 0.05559003485871977,
+      "gap_p90": 0.0581683728192251,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    },
+    {
+      "ticker": "BRO",
+      "n_draws": 3000,
+      "official_gap": 0.07427728925631566,
+      "official_judgment": "저평가 가능성",
+      "gap_mean": 0.07421995421210525,
+      "gap_stdev": 0.0009464064021891287,
+      "gap_p10": 0.07294437469497753,
+      "gap_p90": 0.07547935240351973,
+      "p_undervalued": 1.0,
+      "p_overvalued": 0.0,
+      "p_neutral": 0.0,
+      "ds_range_used": [
+        0.05,
+        0.6,
+        0.2
+      ],
+      "ci_range_used": [
+        3.6000000000000005,
+        20.0,
+        12.0
+      ]
+    }
+  ],
+  "n_fragile": 0
+}
