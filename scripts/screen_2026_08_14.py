@@ -95,6 +95,22 @@ FRAMEWORK_MISMATCH로 분류하되, RBA와 달리 "정량모델만 못 쓸 뿐 �
   PODD/APP과 동일 유형)·신생 투기적 소형주(하루새 +39.38% 급등할 정도의
   변동성) - 프레임워크 부적합.
 - SECZ: WebSearch로 실체를 확인하지 못함 - 추측하지 않고 확인불가로 남김.
+
+**후속 조사 3차(동일 08-14 세션, 사용자 "스크리닝 계속" 요청) - ONON(On
+Holding), 새로운 유형의 미해결 사례.** Trefis 풀이 소진돼 "quality stock
+oversold" 계열 검색으로 확장, On Holding(ONON)을 발견했다 - 52주 고점 대비
+큰 폭 하락에도 Q2 2026 순매출 +21.6%(CC), DTC +34%, 총마진 사상최대 65.4%로
+서사만 보면 공포과잉(4분류 1번) 후보였다. **그러나 FCF 원자료를 확보하는
+과정에서 출처 간 불일치가 발견됐다** - Alpha Vantage INCOME_STATEMENT의
+FY2025 매출(CHF 2,878.5M)이 회사 1차 출처(공식 보도자료+20-F 표지, CHF
+3,014.0M, +30.0%YoY)와 4.7% 차이났고, CASH_FLOW 엔드포인트는 아예 실패했다
+(다른 심볼은 정상 작동 확인). 대체 2차 출처(stockanalysis.com 2회 조회,
+WebSearch 요약)는 같은 연도 OCF·FCF를 서로 다른 숫자로 제시했으며 FY2022
+OCF조차 부호가 반대로 나왔다. SEC 20-F 원문 본문엔 재무제표가 없었고 첨부
+PDF는 10MB 제한 초과, WSJ은 접근 차단됐다. TYL SBC 3배 오류의 교훈대로
+검증 안 된 2차출처 수치를 골라 쓰지 않기로 하고, PREFILTERED_OUT/
+FRAMEWORK_MISMATCH 어디에도 속하지 않는 신규 카테고리
+UNRESOLVED_DATA_QUALITY(원자료 신뢰도 문제로 정량모델 보류)로 기록했다.
 """
 
 import os
@@ -230,6 +246,34 @@ PREFILTERED_OUT["WBTN(WEBTOON Entertainment)/EMAT(Evolution Metals & Technologie
 # SECZ: WebSearch로 실체를 확인하지 못함(존재하지 않거나 상장폐지 가능성) -
 # 추측하지 않고 "확인불가"로 정직하게 남긴다.
 
+# ── 원자료 자체의 신뢰도 문제로 정량모델 진행을 보류한 경우(신규 유형) ──
+# PREFILTERED_OUT(4분류 3번)도 FRAMEWORK_MISMATCH(구조 부적합)도 아니다 -
+# 서사·매출성장 자체는 긍정적이나, FCF 계산에 필요한 원자료를 신뢰할 수 있는
+# 수준으로 확보하지 못해 screen()에 넣을 입력값 자체를 만들 수 없었던 경우.
+UNRESOLVED_DATA_QUALITY = {
+    "ONON(On Holding)": (
+        "Morningstar발 오버솔드 서사 조사에서 발견 - 52주 고점 대비 큰 폭 "
+        "하락에도 Q2 2026 순매출 +21.6%(CC), DTC +34%, 총마진 사상최대 "
+        "65.4%로 서사만 보면 공포과잉(4분류 1번) 후보였다. 가이던스도 "
+        "'최소 23%'에서 '20%대 초반'으로 소폭 하향에 그침. 그런데 FCF 계산에 "
+        "필요한 원자료를 확보하는 과정에서 출처 간 불일치를 발견: Alpha "
+        "Vantage INCOME_STATEMENT의 FY2025 매출(CHF 2,878.5M)이 회사 1차 "
+        "출처(공식 보도자료+20-F 표지, CHF 3,014.0M, +30.0%YoY)와 4.7% "
+        "차이났고, CASH_FLOW 엔드포인트는 아예 실패했다(다른 심볼은 정상 "
+        "작동 확인 - ONON 심볼 고유의 데이터 커버리지 문제로 추정, 스위스 "
+        "발행사 20-F 매핑 이슈일 가능성). 대체 출처(stockanalysis.com 2회 "
+        "조회, WebSearch 요약)는 같은 연도의 OCF·FCF를 서로 다른 숫자로 "
+        "제시했고(FY2022 OCF조차 부호가 반대로 나옴), SEC 20-F 원문은 "
+        "본문에 재무제표가 없었고 첨부 PDF는 10MB 제한 초과로 파싱 실패, "
+        "WSJ은 접근 차단됐다. **TYL SBC 3배 오류의 교훈대로 검증 안 된 2차"
+        "출처 수치를 골라 쓰지 않는다** - fcf0를 신뢰할 수 없는 값으로 "
+        "넣으면 그 자체가 결과를 오염시키므로, 이번 배치에서는 정량모델 "
+        "진행을 보류하고 정직하게 미해결로 남긴다. 재시도 시 SEC EDGAR에서 "
+        "20-F 재무제표 섹션만 별도로 잘라 조회하거나 XBRL 구조화 데이터를 "
+        "직접 파싱하는 방식을 고려할 것."
+    ),
+}
+
 
 def main():
     if not CANDIDATES:
@@ -244,6 +288,10 @@ def main():
         print()
         print(f"프레임워크 부적합으로 정량모델 제외 ({len(FRAMEWORK_MISMATCH)}건):")
         for k, v in FRAMEWORK_MISMATCH.items():
+            print(f"  - {k}: {v}")
+        print()
+        print(f"원자료 신뢰도 문제로 정량모델 보류 ({len(UNRESOLVED_DATA_QUALITY)}건):")
+        for k, v in UNRESOLVED_DATA_QUALITY.items():
             print(f"  - {k}: {v}")
         return
 
