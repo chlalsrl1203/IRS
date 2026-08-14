@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## TTD 재검토 완료 — Confidence 하향 + 매수리스트 비중 축소 (2026-08-13)
+
+v3.42~v3.45가 만든 3개 독립 검증축(반증조건 감시견/성장률 채점표/시가총액
+부식)이 전부 TTD를 지목했다. 사용자 승인 후 실행: 공식 ledger(Gap/RAR/판정)는
+불변 유지(growth_scorecard 원칙상 1개 분기 실적+1개년 가이던스는
+`usable_as_override`가 아님), 대신 매수리스트 `CONFIDENCE_ADJ`를 72→45로
+하향하고 신설 `THESIS_BROKEN_FLAG`로 추가 0.85x 패널티를 걸어 비중을
+4.80%→2.70%로 축소했다. 차액은 growth_platform 버킷 내 나머지 6종목에
+quality_score 비례로 자동 재분배(기존 코드 변경 없이 규칙이 그대로 작동).
+완전 제외하지 않은 이유는 CEO의 2026-03 개인자금 직접매수(유일한 강세신호)가
+아직 반증되지 않았고 증거가 아직 다년 축적 수준이 아니기 때문.
+
+다음 체크포인트: FY2026 Q3 실적(2026-11월경) - 두 번째 실현 분기가 쌓이면
+공식판정 override 논의 재개.
+
+---
+
 ## v3.45 — Market-Relative Gap 신설: 회사·ETF 두 엔진 최초 연결 (2026-08-13)
 
 `engine/market_relative.py` 신규. 회사 34종목 Gap을 VOO(시장 전체)의 Gap

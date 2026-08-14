@@ -83,7 +83,14 @@ VERIFICATION = {
             "커머셜총괄 교체 - CLAUDE.md에 기록된 '14개월새 CFO 4명'에 이어 "
             "5번째 교체라 조건 충족. 주가는 발표 후 -21.8%."
         ),
-        "action": "판정 재검토 필요(매수리스트 포함 종목)",
+        "action": (
+            "재검토 완료(2026-08-13, 사용자 승인): 매수리스트 CONFIDENCE_ADJ "
+            "72->45 하향 + THESIS_BROKEN_FLAG 추가(0.85x) - 비중 4.80%->2.70%로 "
+            "축소(scripts/build_buylist_2026_08_03.py). 공식 ledger의 Gap/RAR/"
+            "판정은 변경하지 않음(growth_scorecard 원칙상 realized_quarterly· "
+            "guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지 "
+            "병기만)."
+        ),
     },
     "SE": {
         "verdict": "NOT_TRIGGERED",

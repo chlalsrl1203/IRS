@@ -183,7 +183,16 @@ CONFIDENCE_ADJ = {
     "ACGL": (83, "검증", "2026-08-03 심층조사: 준비금·자본배분·거버넌스 양호(신용등급 상향), ex-cat 마진 2분기연속 소폭악화."),
     "PGR":  (87, "검증", "2026-08-03 심층조사: 성장추정 정합적이나 텔레매틱스 모트가 손해율 우위로 미이어짐(GEICO/Allstate가 더 나음)."),
     "SE":   (79, "검증", "2026-08-03 심층조사: Shopee EBITDA 역성장(TikTok Shop 방어비용), 그룹이익은 Garena 단독부담."),
-    "TTD":  (72, "검증", "2026-08-03 심층조사: 연방 증권사기소송 진행중(CEO 내부자거래 혐의 포함, 기각동의 기각) - S등급 7종목 중 최심각."),
+    "TTD":  (45, "검증(하향)", "2026-08-13 재검토: 반증조건 4개 중 3개 동시 발동(thesis_monitor) - "
+             "Q2 매출 $715M<가이던스$750M, Q3 가이던스 -12.1%YoY 역성장(회사 자체 제시), "
+             "CFO·CMO·커머셜총괄 동시교체(2026-08-06). growth_scorecard 교차검증도 독립적으로 "
+             "동일결론(저평가 판정 최소선 4.69% vs 회사 Q3 가이던스 -12.1% - 판정 자체가 뒤집힘). "
+             "gap_decay: 주가 -26.3%로 공식 Gap이 오히려 +17.01%p->+20.96%p로 벌어짐(가치함정 "
+             "패턴 - 사업이 나빠져도 시총만 빠지면 Gap은 개선된 것처럼 보인다). 2026-08-03 원조사"
+             "(증권사기소송+CEO내부자거래혐의, 당시 72)가 예상한 거버넌스 리스크가 이번에 실적・"
+             "가이던스로 실현됨 - governance-risk 단계에서 confirmed-deterioration 단계로 격상. "
+             "다만 공식 Gap/RAR/판정은 변경하지 않는다(growth_scorecard 원칙상 realized_quarterly"
+             "・guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지는 병기만)."),
     "GEN":  (70, "검증", "2026-08-04 심층조사: ROIC 9.15%(5y평균 20.74%대비 급락, 단일출처 미검증)+TBS세그먼트마진 30%vs61%+시장은 27%매출성장에도 -9%로 반응(멀티플압축)."),
     "UBER": (83, "검증", "2026-08-04 심층조사: Prop22로 CA 리스크는 durably 해소됐으나 Waymo가 Atlanta/Austin 배타권 종료(자체앱 2028-01)로 파트너 프레이밍 약화, EU Directive(2026-12) 미해결."),
     "WDAY": (81, "검증", "2026-08-04 심층조사: 자사주매입이 SBC 2배속 상회(긍정적)하나 Mobley소송 확대(3월 기각argument 패소)+AI네이티브경쟁 실측화(Ramp/Rippling ARR$1B+) - SBC교차검증 플립 근접종목이라 특히 주의."),
@@ -193,6 +202,11 @@ CONFIDENCE_ADJ = {
 }
 
 SEVERE_FLAG = {"TTD"}  # 중대 거버넌스 적신호 - 추가 0.85x
+# 반증조건 실제 발동(v3.42 thesis_monitor, 2026-08-13) - SEVERE_FLAG(거버넌스
+# 리스크, 2026-08-03 시점)와는 축이 다른 별개 패널티다. 저건 "소송이 진행
+# 중이다"라는 리스크였고 이건 "매출·가이던스가 실제로 꺾였다"는 확인된
+# 결과라 둘 다 유효하게 별도로 곱한다. TTD가 이 시점 기준 유일한 해당 종목.
+THESIS_BROKEN_FLAG = {"TTD"}  # 반증조건 3/4 발동 확인(thesis_monitor) - 추가 0.85x
 PER_STOCK_CAP = 0.12
 
 
@@ -243,11 +257,14 @@ def main():
             quality *= 0.85
         if t in SEVERE_FLAG:
             quality *= 0.85
+        if t in THESIS_BROKEN_FLAG:
+            quality *= 0.85
         rows.append({
             "ticker": t, "bucket": bucket, "grade": r["grade"],
             "gap_pct": r["gap_pct"], "conf_engine": r["confidence"],
             "conf_adj": conf_adj, "conf_status": status,
             "cap_bound": r["cap_bound"], "severe_flag": t in SEVERE_FLAG,
+            "thesis_broken_flag": t in THESIS_BROKEN_FLAG,
             "quality_score": quality, "basis": basis,
         })
 
@@ -324,13 +341,14 @@ def main():
     print("3단계 - 최종 매수리스트 (규칙기반 배분, 공분산 최적화 아님)")
     print("=" * 100)
     header = (f"{'종목':6} {'버킷':20} {'Gap':>8} {'Conf(엔진)':>10} {'Conf(조정)':>10} "
-              f"{'상태':6} {'캡바인딩':>7} {'적신호':>6} {'비중':>7}")
+              f"{'상태':10} {'캡바인딩':>7} {'적신호':>6} {'반증발동':>7} {'비중':>7}")
     print(header)
     print("-" * len(header))
     for row in rows:
         print(f"{row['ticker']:6} {row['bucket']:20} {row['gap_pct']:+7.2f}%p "
-              f"{row['conf_engine']:10} {row['conf_adj']:10} {row['conf_status']:6} "
+              f"{row['conf_engine']:10} {row['conf_adj']:10} {row['conf_status']:10} "
               f"{'Y' if row['cap_bound'] else '':>7} {'Y' if row['severe_flag'] else '':>6} "
+              f"{'Y' if row['thesis_broken_flag'] else '':>7} "
               f"{row['weight_final']*100:6.2f}%")
 
     print("\n버킷별 실제 배분 합계 (실사용 목표치·명목 달성률과 대조):")

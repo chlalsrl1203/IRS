@@ -103,7 +103,7 @@
         "verification": {
           "verdict": "TRIGGERED",
           "summary": "4개 조건 중 3개 동시 발동. (4) Q2 매출 $715M으로 가이던스 $750M 하회 - 조건 문구 그대로 발동. (3) 매출성장 +3%YoY에 그쳤고 Q3 가이던스 $650M(중간값)은 컨센서스 $804.8M을 크게 밑돌며 -12.1%YoY 역성장을 회사 스스로 제시 - '낮은 한자릿수 밑으로 재차 둔화'를 넘어 아예 역성장이라 조건 충족. (2) 실적발표와 동시에 CFO·CMO· 커머셜총괄 교체 - CLAUDE.md에 기록된 '14개월새 CFO 4명'에 이어 5번째 교체라 조건 충족. 주가는 발표 후 -21.8%.",
-          "action": "판정 재검토 필요(매수리스트 포함 종목)"
+          "action": "재검토 완료(2026-08-13, 사용자 승인): 매수리스트 CONFIDENCE_ADJ 72->45 하향 + THESIS_BROKEN_FLAG 추가(0.85x) - 비중 4.80%->2.70%로 축소(scripts/build_buylist_2026_08_03.py). 공식 ledger의 Gap/RAR/판정은 변경하지 않음(growth_scorecard 원칙상 realized_quarterly· guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지 병기만)."
         }
       }
     ],
