@@ -2649,30 +2649,46 @@ MIN_REALISTIC_GROWTH(8%) 임계값과 구조적으로 안 맞아 재무데이터
 
 엔진 코드 변경 없음, 테스트 255개 불변.
 
-**후속 조사 3차(동일 08-14 세션, 사용자 "스크리닝 계속" 요청) - ONON(On
-Holding), 새로운 미해결 유형.** "quality stock oversold" 계열 검색으로
+**후속 조사 3~4차(동일 08-14 세션) - ONON(On Holding), 원자료 신뢰도 문제를
+SEC XBRL API로 실제로 해결한 사례.** "quality stock oversold" 계열 검색으로
 On Holding(ONON)을 발견 - 52주 고점 대비 큰 폭 하락에도 Q2 2026 순매출
 +21.6%(CC), DTC +34%, 총마진 사상최대 65.4%로 서사만 보면 4분류 1번(공포
 과잉) 후보였다. 가이던스도 '최소 23%'→'20%대 초반'으로 소폭 하향에 그쳤다.
-**그러나 FCF 원자료를 확보하는 과정에서 심각한 출처 간 불일치가 드러났다**:
-- Alpha Vantage INCOME_STATEMENT의 FY2025 매출(CHF 2,878.5M)이 회사 1차
-  출처(공식 보도자료+20-F 표지, CHF 3,014.0M, +30.0%YoY)와 4.7% 차이.
-- Alpha Vantage CASH_FLOW 엔드포인트가 ONON 심볼에서만 실패(AAPL 등 다른
-  심볼은 정상 작동 확인 - 스위스 발행사 20-F 데이터 매핑 문제로 추정).
-- 대체 2차 출처(stockanalysis.com 2회 조회, WebSearch 요약)가 같은 연도의
-  OCF·FCF를 서로 다른 숫자로 제시했고, **FY2022 OCF조차 부호가 정반대로
-  나왔다**(한쪽은 +$232.1M, 다른 쪽은 -CHF 227.0M).
-- SEC 20-F 원문은 본문에 재무제표가 없었고(리스크팩터만 방대), 첨부
-  Exhibit PDF는 10MB 파싱 한도 초과, WSJ은 접근 차단.
 
-TYL SBC 3배 오류(검증 안 된 2차 출처 수치를 그대로 인용해 실질 정정이
-필요했던 사례)의 교훈을 여기 그대로 적용했다 - fcf0를 신뢰할 수 없는 값으로
-넣으면 그 자체가 결과를 오염시키므로, `PREFILTERED_OUT`(4분류 3번)도
-`FRAMEWORK_MISMATCH`(구조 부적합)도 아닌 신규 카테고리
-`UNRESOLVED_DATA_QUALITY`(원자료 신뢰도 문제로 정량모델 보류)를 신설해
-정직하게 미해결로 남겼다. 재시도 시 SEC EDGAR XBRL 구조화 데이터를 직접
-파싱하는 방식을 고려할 것 - 서사·매출성장 자체는 여전히 흥미로운 후보라
-다음 세션에서 원자료 문제만 풀리면 재도전할 가치가 있다.
+**3차: FCF 원자료를 확보하는 과정에서 심각한 출처 간 불일치가 드러났다** -
+Alpha Vantage INCOME_STATEMENT의 FY2025 매출(CHF 2,878.5M)이 회사 1차
+출처(공식 보도자료+20-F 표지, CHF 3,014.0M, +30.0%YoY)와 4.7% 차이났고,
+CASH_FLOW 엔드포인트는 ONON 심볼에서만 실패했다(AAPL 등 다른 심볼은 정상).
+2차 출처(stockanalysis.com, WebSearch 요약)끼리도 FY2022 OCF 부호가
+정반대로 나왔다. SEC 20-F 원문 본문엔 재무제표가 없었고 첨부 PDF는 10MB
+파싱 한도 초과, WSJ은 접근 차단됐다.
+
+**4차(사용자 "계속 더 파고들어봐" 요청) - HTML 스크레이핑을 포기하고 SEC
+XBRL companyfacts API(`data.sec.gov/api/xbrl/companyfacts/CIK0001858985
+.json`, 회사가 직접 제출한 구조화 원자료)를 직접 조회해 실제로 해결했다.**
+`RevenueFromContractsWithCustomers`/`CashFlowsFromUsedInOperatingActivities`/
+`PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities` 태그를
+조회한 결과 stockanalysis.com의 2차 조회값과 정확히 일치했다(FY2025 매출
+CHF 3,014.0M/OCF 359.5M/capex 72.9M) - Alpha Vantage 매출이 부정확했던
+것으로 확정됐다(첫 WebSearch 요약이 잘못됐던 것이지 stockanalysis 자체는
+정확했다).
+
+**그런데 정확한 원자료를 확보하고 나니 새로운 문제가 드러났다** - FCF(OCF-
+capex)가 2022년 재고 CHF 273M 급증(급성장기 스케일업, WebSearch로 구조적
+악화가 아님을 확인)으로 심각한 적자(-287.3M)를 기록해, 5y CAGR의 표준
+시작점 후보(2020년 -25.7M/2021년 -7.7M) **둘 다 음수라 CAGR 자체가
+정의되지 않는다**(v3.19 가드 해당 - PODD와 같은 유형이나, PODD의 '다년
+연속 적자 후 최초 흑자전환' 단조패턴과 달리 ONON은 '흑자(2021)→성장통
+적자(2022)→흑자 재개'라는 비단조 패턴이라는 점이 다르다). 유일하게 계산
+가능한 건 2023→2025 2년 CAGR(23.04%)뿐인데 screener.py의 5y 기준 임계값과
+정합적이지 않아 그대로 못 쓴다. 매출 자체는 견조(5y CAGR 47.9%)해 서사는
+여전히 유효해 보이지만, PODD/APP과 동일 원칙으로 `FRAMEWORK_MISMATCH`에
+최종 분류했다(1차 조사에서 만들었던 `UNRESOLVED_DATA_QUALITY` 카테고리는
+문제가 실제로 해소되며 필요 없어져 제거).
+
+**교훈**: 2차 출처 간 불일치가 발견되면 SEC EDGAR HTML을 직접 스크레이핑
+하기보다 XBRL companyfacts API를 먼저 시도할 것 - 문서 전체 파싱(10MB
+제한, 리스크팩터만 방대한 본문) 없이 필요한 태그만 정확히 뽑을 수 있다.
 
 엔진 코드 변경 없음, 테스트 255개 불변.
 
