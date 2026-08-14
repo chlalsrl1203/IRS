@@ -1,0 +1,352 @@
+{
+  "generated_at": "2026-08-13",
+  "market_baseline": {
+    "source": "stockanalysis(trailing)",
+    "implied_growth": 0.07070760602874168,
+    "gap": 0.008992393971258325,
+    "expected_growth": 0.07970000000000001
+  },
+  "rows": [
+    {
+      "ticker": "PDD",
+      "gap": 0.2916229248046875,
+      "judgment": "저평가 가능성",
+      "implied_growth": -0.0416229248046875,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.11233053083342918,
+      "relative_gap": 0.28263053083342915
+    },
+    {
+      "ticker": "ACGL",
+      "gap": 0.24383806952929307,
+      "judgment": "저평가 가능성",
+      "implied_growth": -0.08648414611816407,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.15719175214690576,
+      "relative_gap": 0.23484567555803476
+    },
+    {
+      "ticker": "MNDY",
+      "gap": 0.23276233673095703,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.01723766326904296,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.05346994275969873,
+      "relative_gap": 0.2237699427596987
+    },
+    {
+      "ticker": "PGR",
+      "gap": 0.21757485287419526,
+      "judgment": "저평가 가능성",
+      "implied_growth": -0.04892215728759766,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.11962976331633934,
+      "relative_gap": 0.20858245890293692
+    },
+    {
+      "ticker": "DUOL",
+      "gap": 0.19453125000000002,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.05546874999999998,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.015238856028741699,
+      "relative_gap": 0.1855388560287417
+    },
+    {
+      "ticker": "SE",
+      "gap": 0.19180315300111223,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.04379405975341795,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.026913546275323733,
+      "relative_gap": 0.1828107590298539
+    },
+    {
+      "ticker": "TTD",
+      "gap": 0.1700962080005105,
+      "judgment": "저평가 가능성",
+      "implied_growth": -0.0030563354492187636,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.07376394147796045,
+      "relative_gap": 0.16110381402925217
+    },
+    {
+      "ticker": "GEN",
+      "gap": 0.12182151794433595,
+      "judgment": "저평가 가능성",
+      "implied_growth": -0.0018215179443359514,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.07252912397307763,
+      "relative_gap": 0.11282912397307762
+    },
+    {
+      "ticker": "UBER",
+      "gap": 0.11784205707458376,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.04173316955566405,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.028974436473077632,
+      "relative_gap": 0.10884966310332543
+    },
+    {
+      "ticker": "WDAY",
+      "gap": 0.11417055453507202,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.02906227111816404,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.04164533491057764,
+      "relative_gap": 0.1051781605638137
+    },
+    {
+      "ticker": "TCOM",
+      "gap": 0.07547684320764038,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.048398971557617174,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.022308634471124508,
+      "relative_gap": 0.06648444923638205
+    },
+    {
+      "ticker": "BRO",
+      "gap": 0.07427728925631566,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.04572271074368433,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.024984895285057353,
+      "relative_gap": 0.06528489528505733
+    },
+    {
+      "ticker": "BKNG",
+      "gap": 0.05981018711677141,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.055276679992675756,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.015430926036065926,
+      "relative_gap": 0.05081779314551309
+    },
+    {
+      "ticker": "RMD",
+      "gap": 0.05889235066261829,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.05382785797119137,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.01687974805755031,
+      "relative_gap": 0.049899956691359965
+    },
+    {
+      "ticker": "BSX",
+      "gap": 0.058652919654472085,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.07997894287109375,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.009271336842352068,
+      "relative_gap": 0.04966052568321376
+    },
+    {
+      "ticker": "BSY",
+      "gap": 0.05695494807794302,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.04845613864266632,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.022251467386075363,
+      "relative_gap": 0.04796255410668469
+    },
+    {
+      "ticker": "PTC",
+      "gap": 0.0553015837082313,
+      "judgment": "저평가 가능성",
+      "implied_growth": 0.05860443115234374,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.012103174876397942,
+      "relative_gap": 0.046309189736972976
+    },
+    {
+      "ticker": "DSGX",
+      "gap": 0.04248310348930688,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.09183883666992183,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.02113123064118015,
+      "relative_gap": 0.033490709518048556
+    },
+    {
+      "ticker": "CDNS",
+      "gap": 0.032879560479090325,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.08712043952090967,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.01641283349216799,
+      "relative_gap": 0.023887166507832
+    },
+    {
+      "ticker": "GWRE",
+      "gap": 0.0315386804982906,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.08352768019156906,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.012820074162827377,
+      "relative_gap": 0.022546286527032278
+    },
+    {
+      "ticker": "COR",
+      "gap": 0.030971756573969778,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.06480789184570312,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.005899714183038557,
+      "relative_gap": 0.021979362602711452
+    },
+    {
+      "ticker": "TYL",
+      "gap": 0.0277231870438982,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.07380752563476561,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.003099919606023932,
+      "relative_gap": 0.018730793072639876
+    },
+    {
+      "ticker": "ZTS",
+      "gap": 0.020971515574735304,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.03523566352591158,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.0354719425028301,
+      "relative_gap": 0.011979121603476979
+    },
+    {
+      "ticker": "VRT",
+      "gap": 0.017187161949781066,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.16991710662841797,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.09920950059967629,
+      "relative_gap": 0.00819476797852274
+    },
+    {
+      "ticker": "ROP",
+      "gap": 0.012357788085937522,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.04264221191406248,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.028065394114679204,
+      "relative_gap": 0.0033653941146791974
+    },
+    {
+      "ticker": "WCN",
+      "gap": 0.0100359824109255,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.08008688823767682,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.009379282208935136,
+      "relative_gap": 0.0010435884396671757
+    },
+    {
+      "ticker": "KLAC",
+      "gap": 0.008613438964066245,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.09466075940356757,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.023953153374825883,
+      "relative_gap": -0.00037895500719208053
+    },
+    {
+      "ticker": "IDXX",
+      "gap": 0.004138841871727902,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.07828772366571138,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.0075801176369696965,
+      "relative_gap": -0.004853552099530423
+    },
+    {
+      "ticker": "WM",
+      "gap": 0.0008904206704897916,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.07943367650933261,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.00872607048059093,
+      "relative_gap": -0.008101973300768534
+    },
+    {
+      "ticker": "MCK",
+      "gap": -0.0001648937621887142,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.06176624298095702,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.008941363047784659,
+      "relative_gap": -0.00915728773344704
+    },
+    {
+      "ticker": "MNST",
+      "gap": -0.006418685378330832,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.0835233994237123,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.012815793394970618,
+      "relative_gap": -0.015411079349589157
+    },
+    {
+      "ticker": "VRSN",
+      "gap": -0.009719340999338522,
+      "judgment": "적정가/경계선",
+      "implied_growth": 0.05623670042058006,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": -0.014470905608161624,
+      "relative_gap": -0.018711734970596847
+    },
+    {
+      "ticker": "PH",
+      "gap": -0.08585815370238321,
+      "judgment": "과대평가 가능성",
+      "implied_growth": 0.1509395599365234,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.0802319539077817,
+      "relative_gap": -0.09485054767364154
+    },
+    {
+      "ticker": "KEYS",
+      "gap": -0.14364213252736793,
+      "judgment": "과대평가 가능성",
+      "implied_growth": 0.15835533142089842,
+      "market_implied_growth": 0.07070760602874168,
+      "market_gap": 0.008992393971258325,
+      "growth_premium": 0.08764772539215673,
+      "relative_gap": -0.15263452649862624
+    }
+  ],
+  "caveat": "요인분해가 아니라 벤치마크(VOO) 차감이다. 회사 엔진과 ETF 엔진의 할인율 계산 경로가 독립이라 체계적/고유 분해는 정당화되지 않는다. 분자도 다르다(회사=FCF, VOO=이익) - 레벨을 정밀하게 읽지 말 것."
+}
