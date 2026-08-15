@@ -1165,3 +1165,138 @@ def test_two_stage_bisection_log_records_market_cap_not_growth():
         )
     # 수렴한 마지막 항목의 implied_cap은 목표 시총에 수렴해 있어야 한다
     assert log[-1]["implied_cap"] == pytest.approx(target_cap, rel=1e-4)
+
+
+# ======================================================================
+# v3.46 Phase 0 감사(2026-08-15) - P0 결함 회귀 테스트
+# docs/system_audit.md FM-1~FM-4 / docs/change_plan.md C-01~C-04, C-06
+# ======================================================================
+
+
+def test_ebitda_zero_rejected_with_explanatory_message():
+    """
+    C-01: EBITDA=0이면 net_debt/EBITDA가 정의되지 않는다. 가드 이전에는 원인
+    설명 없는 ZeroDivisionError가 났다(계약서 107절 Error Contract 위배).
+    """
+    with pytest.raises(ValueError, match="EBITDA가 0 이하"):
+        cdns_inputs(ebitda=0.0)
+
+
+def test_ebitda_negative_rejected_instead_of_inverting_leverage_risk():
+    """
+    C-01의 핵심 회귀 테스트. 가드 이전에는 EBITDA 적자 기업이 '순현금'으로
+    오인되어 leverage_score가 **최저 위험(2.0)** 을 받았다 - 부실할수록 DRS가
+    낮게(안전하게) 나오는 방향의 오류였다.
+
+    실측(감사 FM-1): 순부채 +$30억 동일 조건에서
+        EBITDA -$5억 -> leverage 2.0 / DRS 22.4 (경고 없음)
+        EBITDA +$5억 -> leverage 20.0 / DRS 40.4
+    """
+    with pytest.raises(ValueError, match="정반대"):
+        cdns_inputs(ebitda=-500_000_000.0)
+
+
+def test_net_cash_company_still_passes_with_lowest_leverage_score():
+    """
+    C-01 수정이 **정상 경로를 깨지 않는지** 확인한다. 순현금(net_debt<0)이면서
+    EBITDA>0인 기업은 34종목 중 13종목이 해당하며(MNDY -138.13 등) 그 종목들의
+    leverage 2.0은 옳다. 가드는 분모(EBITDA)만 검사하므로 이 경로는 그대로여야 한다.
+    """
+    result = run_analysis(cdns_inputs(net_debt=-5_000_000_000.0))
+    assert result["derived"]["net_debt_to_ebitda"] < 0
+    assert result["drs"]["components"]["leverage"] == 2.0
+
+
+def test_run_analysis_is_deterministic_except_timestamp():
+    """
+    C-04: 동일 입력 2회 실행 시 meta.analyzed_at을 제외한 전 필드가 동일해야
+    한다(계약서 58·111절). 감사 시점에 실제로는 결정적이었으나 이를 고정하는
+    테스트가 없어, 향후 비결정적 요소가 들어와도 잡히지 않았다.
+    """
+    first = run_analysis(cdns_inputs())
+    second = run_analysis(cdns_inputs())
+
+    assert first["meta"]["analyzed_at"] != second["meta"]["analyzed_at"] or True
+
+    def strip(obj):
+        trimmed = dict(obj)
+        meta = dict(trimmed["meta"])
+        meta.pop("analyzed_at")
+        trimmed["meta"] = meta
+        return json.dumps(trimmed, sort_keys=True, default=str)
+
+    assert strip(first) == strip(second), "동일 입력인데 결과가 달라졌다(결정성 위반)"
+
+
+def test_save_ledger_rejects_overwriting_different_content(tmp_path):
+    """
+    C-02: 같은 티커·같은 날짜에 **내용이 다른** 결과를 저장하면 이전 분석이
+    흔적 없이 사라졌다(감사 FM-2 재현: Gap +0.10 -> -0.30 저장 시 파일 1개만
+    남고 1차 결과 소실). 이제 예외로 막고 원본을 보존한다.
+    """
+    result = run_analysis(cdns_inputs())
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+
+    mutated = json.loads(json.dumps(result, default=str))
+    mutated["expectation_gap"] = -0.30
+
+    with pytest.raises(FileExistsError, match="내용이 다른 ledger"):
+        save_ledger(mutated, ledger_dir=str(tmp_path))
+
+    with open(path, encoding="utf-8") as f:
+        assert json.load(f)["expectation_gap"] == pytest.approx(
+            result["expectation_gap"]
+        ), "예외를 던졌는데도 원본이 훼손됐다"
+
+
+def test_save_ledger_allows_identical_rerun(tmp_path):
+    """
+    C-02 설계 판단의 회귀 테스트: '같은 입력으로 재실행해 값이 같은지 확인'은
+    이 프로젝트의 표준 검증 관행이다(v3.19/v3.32에서 33종목 전건 재실행).
+    내용이 같으면(analyzed_at 제외) 예외 없이 통과해야 한다.
+    """
+    save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+
+    assert len(list(tmp_path.iterdir())) == 1
+
+
+def test_save_ledger_overwrite_flag_allows_intentional_update(tmp_path):
+    """C-02: 의도한 갱신(정성조사 결과 반영 등)은 명시적으로 허용된다."""
+    result = run_analysis(cdns_inputs())
+    save_ledger(result, ledger_dir=str(tmp_path))
+
+    updated = json.loads(json.dumps(result, default=str))
+    updated["expectation_gap"] = -0.30
+    path = save_ledger(updated, ledger_dir=str(tmp_path), overwrite=True)
+
+    with open(path, encoding="utf-8") as f:
+        assert json.load(f)["expectation_gap"] == pytest.approx(-0.30)
+
+
+def test_default_data_completeness_is_flagged_as_unmeasured():
+    """
+    C-06: data_completeness_pct 기본값 0.9는 Confidence에 14점을 자동 부여하는데
+    ledger 34종목 전부가 이 기본값이었다 - 그 축의 판별력이 0이라는 사실이
+    드러나야 한다. **점수 자체는 바꾸지 않는다**(가시화만).
+    """
+    result = run_analysis(cdns_inputs())
+    assert any("데이터 완전성 미실측" in s for s in result["data_limitations"])
+    assert result["confidence"]["adjustments"]["data_completeness"] == 14
+
+
+def test_explicit_data_completeness_is_not_flagged():
+    """C-06: 분석자가 실제로 값을 넣으면 경고하지 않는다."""
+    result = run_analysis(cdns_inputs(data_completeness_pct=0.75))
+    assert not any("데이터 완전성 미실측" in s for s in result["data_limitations"])
+
+
+def test_validation_status_marks_confidence_as_uncalibrated():
+    """
+    C-05: 모델의 인식론적 지위가 코드에 남아 있어야 한다(계약서 40·50절).
+    Confidence를 확률로 오독하는 것을 막는 유일한 기계 판독 장치다.
+    """
+    from engine.expectation_gap_engine import VALIDATION_STATUS
+
+    assert "UNCALIBRATED" in VALIDATION_STATUS["confidence_score"]
+    assert "HEURISTIC_MAPPING" in VALIDATION_STATUS["erp_from_drs"]

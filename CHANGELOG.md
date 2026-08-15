@@ -1,5 +1,53 @@
 # CHANGELOG
 
+## v3.46 — Phase 0 전수감사 + P0 도메인/기록무결성 결함 4건 수정 (2026-08-15)
+
+사용자가 제시한 System Development Contract에 따라 **코드 수정 전 저장소 전수
+감사**를 먼저 수행하고(`docs/system_audit.md`), 발견사항을 우선순위별로 분류한
+뒤(`docs/change_plan.md`), 현재 실제로 보장되는 불변조건을 문서화했다
+(`docs/invariants.md`). 그 다음 P0만 최소 변경으로 수정했다.
+
+**신규 발견 P0 결함 4건(전부 실행으로 재현 확인, 과거 결과 영향 0건)**:
+
+1. **EBITDA≤0에서 레버리지 위험이 정반대로 산출됨** — `net_debt/EBITDA`에
+   도메인 가드가 없어 EBITDA 적자 기업이 '순현금'으로 오인됐다. 실측: 순부채
+   +$30억 동일 조건에서 EBITDA −$5억 → leverage 2.0/DRS 22.4(경고 없음),
+   EBITDA +$5억 → leverage 20.0/DRS 40.4. **부실한 쪽이 DRS 18점 안전하게**
+   나왔다. EBITDA=0이면 원인 설명 없는 ZeroDivisionError. → `__post_init__`
+   가드 추가. 순현금(net_debt<0, EBITDA>0) 정상경로 13종목은 불변.
+2. **`save_ledger()`가 같은 날짜 분석을 경고 없이 덮어씀** — Gap +0.10 저장 후
+   Gap −0.30 저장 시 파일 1개만 남고 1차 결과가 흔적 없이 소실됨(재현 확인).
+   → 내용이 다르면 `FileExistsError`. 단 **동일 내용 재실행은 그대로 통과**
+   시킨다(이 프로젝트의 표준 검증 관행인 전건 재실행이 깨지면 안 되므로).
+   의도한 갱신은 `overwrite=True`로 명시.
+3. **보험사 유보율이 정의역(0~1)을 벗어나도 통과** — 3년 창에 손실 연도가
+   섞이면 유보율 +2.50 → 지속가능성장률 30%(ROE보다 큼), 배당>순이익이면
+   유보율 음수. → 합산 순이익≤0이면 교차검증을 건너뛰고 사유 기록(분석 전체를
+   막지 않는다 - is_insurer는 병기 경로이므로).
+4. **결정성 테스트 부재** — 엔진은 실제로 결정적이었으나(analyzed_at 외 전
+   필드 동일) 이를 고정하는 테스트가 없었다. → 추가.
+
+**P1 2건**: `data_completeness_pct`가 34/34 종목에서 기본값 0.9로 굳어
+Confidence 14점이 무조건 부여되는 사실을 `data_limitations`에 가시화(점수는
+불변). `VALIDATION_STATUS` 상수 신설로 ERP 매핑=HEURISTIC_MAPPING,
+Confidence=UNCALIBRATED 지위를 기계 판독 가능하게 명시. README를 실제 구조
+(engine/ 12개 모듈)에 맞게 갱신.
+
+⚠️ **의도적으로 바꾸지 않은 것**: ERP 매핑값, Lynch 캡, 판정 경계(±5%p), DRS
+가중치, RAR 공식. 전부 근거 없이 다른 숫자로 바꾸는 것이 개선이 아니거나
+(계약서 5.2절) 과거 ledger와 비교 불가능해지기 때문이다.
+
+**Point-in-Time / Provenance / Historical Replay / Calibration은 DEFERRED** —
+현재 구조에서 부분 구현하면 "PIT 검증됨"이라는 허위 표시를 낳는다. 사유와
+재개 조건을 `docs/change_plan.md`에 명시했다.
+
+**검증**: 저장된 34종목 ledger 입력값으로 전건 재실행해 Gap/RAR/판정/DRS/
+Confidence/Realistic Growth/Implied Growth/강건성flip **8개 지표가 1e-12
+정밀도로 완전 일치**함을 확인(ledger 파일은 하나도 수정하지 않았다).
+테스트 255 → 265개.
+
+---
+
 ## 개별주식 스크리닝 2026-08-14 — 3종목 전수탈락(screen() 미호출), 서사-실측 괴리 1건
 
 Trefis 52주 저점 후보 KR(Kroger)/AGCO(AGCO Corp)/RBA(RB Global) 3종을 4분류

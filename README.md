@@ -48,15 +48,51 @@ path = save_ledger(result)              # ledger/<TICKER>_<날짜>.json
 
 ```
 engine/
-  expectation_gap_engine.py   # 계산 원본 함수들(Implied Growth, DRS, RAR 등)
+  # ── 회사 분석(핵심 경로) ──
+  expectation_gap_engine.py   # 계산 원본 함수들(Implied Growth, DRS, RAR, 판정)
   pipeline.py                 # 실제 분석 진입점 - run_analysis(), 항상 이걸 쓸 것
-  self_check_v2.py            # 메모 발행 전 대조검증
-ledger/                       # 종목별 입력값+중간값+결과 JSON (재현/대조검증용)
-scripts/                      # 과거 세션의 일회성 분석/감사 스크립트(참고용 보존)
+  self_check_v2.py            # 메모 발행 전 대조검증(수동 호출)
+  screener.py                 # 1차 후보 필터(정식분석 전 스크리닝)
+  # ── 외부 검증 루프(v3.42~v3.45) ──
+  thesis_monitor.py           # 반증조건 기한도래 감시 + 시총 부식 재계산
+  growth_scorecard.py         # 엔진 성장률 vs 회사 실적/가이던스 대조
+  gap_distribution.py         # DRS 주관입력 섭동에 대한 Gap 분포(몬테카를로)
+  market_relative.py          # 회사 Gap을 VOO(시장) 대비로 재해석
+  # ── ETF 분석(별도 엔진) ──
+  etf_engine.py               # 미국 상장 ETF 자체 밸류에이션
+  etf_pipeline.py             # ETF 분석 진입점
+  krx_etf_engine.py           # 국내 상장 래퍼 ETF 고유 비용/구조
+  krx_etf_pipeline.py         # KRX 래퍼 진입점(미국 원본 결과 재사용)
+
+ledger/                       # 회사 분석 JSON (입력값+중간값+결과, 재현/대조검증용)
+ledger_etf/                   # 미국 ETF 분석 JSON (스키마가 달라 디렉터리 분리)
+ledger_krx/                   # 국내 래퍼 ETF 분석 JSON
+reports/                      # ledger를 재조합한 리포트(순위·매수리스트·감시 결과)
+scripts/                      # 종목별 분석/감사 스크립트(재현용 보존)
 tests/                        # pytest - 매 push마다 CI가 자동 실행
+docs/                         # 감사 산출물(아래 참고)
 CLAUDE.md                     # 버전 이력, 단위 규약, 사고 기록과 그 교훈
 CHANGELOG.md                  # 버전별 변경사항
 ```
+
+## 감사 문서 (docs/)
+
+- **`docs/system_audit.md`** — 실제 architecture·data flow·failure mode를
+  코드 실행으로 재구성한 감사 보고서. **엔진을 수정하기 전에 읽을 것.**
+- **`docs/change_plan.md`** — 발견된 결함의 우선순위(P0~P3)와 처리 상태
+  (REQUIRED_NOW / DEFERRED / NOT_JUSTIFIED)와 그 사유.
+- **`docs/invariants.md`** — 현재 코드가 **실제로 보장하는** 불변조건과 아직
+  보장하지 않는 조건을 분리 기록. 새 기능을 넣기 전 여기 A절을 깨지 않는지 확인.
+- **`docs/AUDIT_2026-08-01_methodology.md`** — 방법론 감사(SBC·반증조건 등).
+
+### 아직 보장하지 않는 것(오해 방지)
+
+- **Point-in-Time / Historical Replay 미지원** — `filing_date`가 스키마에 없어
+  "그 시점에 실제로 공시돼 있던 데이터"를 보증하지 못한다.
+- **Confidence는 확률이 아니다** — calibration된 적이 없다(`UNCALIBRATED`).
+  Confidence 85는 "85% 확률로 맞다"는 뜻이 아니다.
+- **ERP 매핑(DRS→5~8%)은 휴리스틱** — 실증 근거가 없다. `VALIDATION_STATUS`
+  상수 참고.
 
 ## 테스트
 

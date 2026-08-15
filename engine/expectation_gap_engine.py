@@ -33,7 +33,33 @@ import statistics
 #
 # **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
 # 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
-ENGINE_VERSION = "v3.45"
+ENGINE_VERSION = "v3.46"
+
+# ======================================================================
+# 모델 검증 상태 - v3.46에서 도입(2026-08-15 Phase 0 감사 C-05)
+# ======================================================================
+# 계약서 36·40·50절: 모델의 **인식론적 지위**를 기계 판독 가능하게 남긴다.
+# 이 프로젝트가 반복해서 겪은 오독 위험 - 코드가 계산해서 숫자가 나오면
+# 그 숫자가 검증된 것처럼 보인다는 점 - 을 최소한 라벨로는 막는다.
+#
+# 단계 정의(계약서 40절):
+#   IMPLEMENTED_NOT_VALIDATED  구현만 됨
+#   SOFTWARE_VALIDATED         테스트가 명세대로 동작함을 보장
+#   ECONOMICALLY_SUPPORTED     경제적 근거가 문서화됨
+#   EMPIRICALLY_SUPPORTED      실증 데이터로 뒷받침됨
+#   CALIBRATED                 실제 결과로 보정됨
+#
+# ⚠️ 아래 어느 항목도 EMPIRICALLY_SUPPORTED 이상이 아니다. 특히
+# confidence_score는 **확률이 아니다** - Confidence 85는 "85% 확률로 맞다"는
+# 뜻이 절대 아니며, 실현결과로 보정된 적이 한 번도 없다(계약서 50·149절).
+VALIDATION_STATUS = {
+    "erp_from_drs": "SOFTWARE_VALIDATED (매핑 자체는 HEURISTIC_MAPPING - 실증근거 없음)",
+    "lynch_type_caps": "SOFTWARE_VALIDATED (상하한값 근거 없음 - v3.24 문서화)",
+    "confidence_score": "SOFTWARE_VALIDATED / UNCALIBRATED (확률로 해석 금지)",
+    "rar": "SOFTWARE_VALIDATED (ER<0 구간에서 방향 반전 - v3.26 경고 배선)",
+    "judgment_band": "SOFTWARE_VALIDATED (±5%p는 33종목 관측 기반 시작점)",
+    "implied_growth": "SOFTWARE_VALIDATED (Gordon/2단계 DCF - 수학적으로는 정확)",
+}
 
 # ======================================================================
 # DRS 원점수 구간 임계값 - v3.7에서 모듈 상단으로 노출
@@ -181,7 +207,25 @@ def erp_from_drs(drs: float, base_erp: float = 0.05, max_add: float = 0.03) -> f
     """
     ERP = base_erp + (DRS/100) * max_add
     DRS 0 -> ERP 5%, DRS 100 -> ERP 8%
-    * 이 매핑은 고정 규칙이며 애널리스트 재량으로 임의 조정 금지.
+
+    ⚠️ **Validation Status: HEURISTIC_MAPPING (경험적 미검증)** — v3.46에서 명시.
+    기존 docstring은 "고정 규칙이며 임의 조정 금지"라는 **규범**만 말하고 이
+    매핑의 **인식론적 지위**는 말하지 않았다. 사실관계를 분명히 한다:
+
+    - 이 선형 매핑(5%~8%)의 근거는 이 코드베이스·문서 어디에도 없다. 어떤
+      실증 데이터로도 보정(calibrate)된 적이 없다.
+    - 따라서 이것은 경제이론적 사실이 아니라 **이 프로젝트가 채택한 휴리스틱**
+      이다. "DRS가 높으면 요구수익률도 높다"는 방향성만 가정할 뿐, 그 기울기
+      (100점당 3%p)에 실증 근거가 없다.
+    - 실측된 부작용: DRS 0~100 전 구간이 ERP 3%p 폭으로만 사상되기 때문에,
+      DRS 주관입력을 관측범위 끝에서 끝까지 흔들어도 Gap이 판정 경계를
+      넘지 못한다(v3.44 gap_distribution이 34종목 전건에서 확인 -
+      "취약성은 성장률 축에 있지 DRS 축에는 없다").
+
+    **값은 바꾸지 않는다.** 근거 없이 유지하던 숫자를 근거 없는 다른 숫자로
+    바꾸는 것은 개선이 아니며(LYNCH_TYPE_CAPS·P/B 임계값과 동일 판단),
+    바꾸면 축적된 과거 ledger 전체와 비교 불가능해진다.
+
     규칙 자체를 바꾸고 싶으면 base_erp/max_add 값을 바꾸되 반드시 사유를 기록.
     """
     if not (0 <= drs <= 100):
@@ -761,6 +805,14 @@ def confidence_score(
     - gap, rar: 실수치를 직접 받아 함수 내부에서 부호를 비교한다(과거
       section_5_7_aligned bool을 호출부가 임의로 계산해서 넣던 것과 달리,
       정합 여부 판정 자체를 이 함수가 수행).
+
+    ⚠️ **Validation Status: UNCALIBRATED — 이 점수는 확률이 아니다**(v3.46 명시).
+    Confidence 85는 "85% 확률로 판정이 맞다"는 뜻이 **아니다**. base 50에
+    가감점을 더한 순위용 점수일 뿐이며, 실현결과로 보정(calibration)된 적이
+    한 번도 없다(계약서 50·149절). 확률처럼 표현하거나 기대값 계산에 곱하지 말 것.
+    또한 `data_completeness_pct`는 2026-08-15 기준 ledger 34종목 전부가
+    기본값 0.9를 써서 이 항목의 판별력은 사실상 0이다(pipeline이 그 사실을
+    data_limitations에 기록한다).
 
     반환값: {"score": ..., "base": ..., "adjustments": {...}, "final": ...}
     """
