@@ -130,6 +130,15 @@
 ⚠️ B-26 실측: CDNS 다인자 변경에서 잔차가 전체 변화의 **108%**이고 개별 기여도
 합은 **부호까지 반대**였다. 이 분해는 참고용이며 개별 기여도를 단독 인용하면 안 된다.
 
+## B'''. v3.49에서 새로 강제하는 불변조건 — SEC 제출일 조회
+
+| ID | 조건 | 강제 위치 | 검증 테스트 |
+|---|---|---|---|
+| B-27 | 연차 제출일은 **최초 공시일(min)**이며 10-Q·부분기간은 제외 | `annual_filing_dates()` | `test_picks_earliest_filing_for_a_fiscal_year` · `test_quarterly_filings_are_excluded` |
+| B-28 | 태그를 고정하지 않아 외국 발행사(20-F/ifrs-full)도 잡힌다 | `annual_filing_dates()` | `test_foreign_issuer_20f_and_ifrs_taxonomy_recognized` |
+| B-29 | 제출일 미상 연도를 '안전'으로 간주하지 않는다 | `check_lookahead()` | `test_unknown_years_are_reported_not_assumed_safe` |
+| B-30 | 최근 회계연도 제출일을 못 찾으면 필드를 **비워** `PIT_UNKNOWN`으로 떨어뜨린다 | `pit_inputs_for()` | — (억지로 채우면 "검증한 척"이 된다) |
+
 ---
 
 ## C. 아직 보장하지 않는 조건 (NOT ENFORCED — 향후 과제)
@@ -139,8 +148,9 @@
 
 | ID | 조건 | 현재 상태 | 관련 |
 |---|---|---|---|
-| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | **규칙은 v3.47에서 강제(B-7)되나 실제로 채운 종목이 0건**이라 34종목 전부 `PIT_UNKNOWN`. 즉 *수단은 생겼고 데이터는 아직 없다* | change_plan C-10 |
+| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | 규칙 강제(B-7) + v3.49에서 조회 수단 확보(B-27). **새 분석은 채울 수 있으나 기존 34종목은 여전히 `PIT_UNKNOWN`** — 미래정보 감사는 위반 0건이었지만 재작성 여부는 검증 불가(C-9) | change_plan C-10 |
 | C-2 | 개별 수치의 출처 추적(Provenance) | `data_sources` 자유문자열뿐 | C-09 |
+| C-9 | **재작성(restatement) 검증** | v3.49 감사는 '그 시점에 공시됐는가'만 답한다. 'ledger의 숫자가 그 시점 값이었는가'는 원자료 스냅샷 필요 | C-09 |
 | C-3 | 통화 일관성 검증 | `currency` 기록만, 교차검증 없음. v3.46 스케일 가드는 **자릿수 오류만** 잡고 7배 통화오류는 기저수익률이 낮은 종목에서 놓친다(C-15 한계표) | 감사 D-3 |
 | C-4 | Report 숫자 ↔ 엔진 출력 자동 대조 | `self_check_v2`는 **수동 호출** | 계약서 86절 |
 | ~~C-5~~ | ~~과거 기록 자동 대조~~ | **해소됨** — v3.47에서 `save_ledger()`에 배선(B-11) | 감사 T-2 |

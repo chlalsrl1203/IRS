@@ -53,6 +53,7 @@ engine/
   pipeline.py                 # 실제 분석 진입점 - run_analysis(), 항상 이걸 쓸 것
   self_check_v2.py            # 메모 발행 전 대조검증(수동 호출)
   screener.py                 # 1차 후보 필터(정식분석 전 스크리닝)
+  filing_dates.py             # SEC 최초 공시일 조회 - PIT 필드를 추측 없이 채운다
   # ── 외부 검증 루프(v3.42~v3.45) ──
   thesis_monitor.py           # 반증조건 기한도래 감시 + 시총 부식 재계산
   growth_scorecard.py         # 엔진 성장률 vs 회사 실적/가이던스 대조
@@ -105,12 +106,12 @@ CHANGELOG.md                  # 버전별 변경사항
 - **투자 결정은 코드가 내리지 않는다** — `engine/thesis.py`에는 Gap을 넣으면
   BUY가 나오는 함수가 **의도적으로 없다**. 액션은 분석자가 고르고, 6개 관문
   근거가 비면 기록 자체가 거부된다.
-- **Point-in-Time — 수단은 있으나 데이터가 0건** — v3.47에서 `analysis_as_of` /
-  `filing_dates_by_year` 필드와 `filing_date <= analysis_as_of` 검증이
-  들어갔지만(위반 시 실행 거부), **실제로 채운 종목은 아직 하나도 없어
-  기존 34종목은 전부 `PIT_UNKNOWN`이다.** 즉 "그 시점에 공시돼 있던
-  데이터"임을 아직 보증하지 못한다 — 과거 filing_date를 추정해 채우는 것은
-  금지(추측을 기록으로 위장하게 됨). **새 분석부터 채울 것.**
+- **Point-in-Time — 새 분석은 채울 수 있고, 기존 34종목은 여전히
+  `PIT_UNKNOWN`이다.** v3.49의 `pit_inputs_for()`가 SEC 최초 공시일을 조회해
+  한 줄로 채워주므로 **새 분석부터는 반드시 채울 것**. 기존 34종목은 미래정보
+  감사에서 위반 0건이었지만(`reports/pit_audit_2026-08-15.json`), 그 감사는
+  "그 시점에 공시돼 있었는가"만 답하고 **재작성(restatement) 여부는 답하지
+  못한다** — 그래서 소급해서 `PIT_VALID`로 바꾸지 않았다.
 - **Historical Replay 미지원** — 위 PIT 데이터가 쌓여야 시작할 수 있다.
 - **Confidence는 확률이 아니다** — calibration된 적이 없다(`UNCALIBRATED`).
   Confidence 85는 "85% 확률로 맞다"는 뜻이 아니다.
