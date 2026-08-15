@@ -57,6 +57,18 @@ def test_required_fcf_yield_is_inverse_of_implied_growth():
         assert implied_growth_from_fcf_yield(y, r) == pytest.approx(g, abs=1e-12)
 
 
+# BSX(2026-08-13): 정식분석은 "저평가 가능성"(Gap +5.87%p)이나 screen()은
+# 탈락한다 - screener.py "알려진 한계 2건째"의 반대방향 실사례로 조사·문서화
+# 완료(engine/screener.py 참고). 원인은 estimate_drs()가 competition_intensity
+# 를 상수(12.0)로 가정하는데 BSX의 실제 연구된 값(5.4, RMD와 동일 - 경쟁자 2곳
+# 모두 위협도가 낮음)이 그보다 훨씬 낮아 DRS가 50.6까지 과대평가되기 때문이다.
+# ledger 34종목 전수 재확인 결과 상수 12.0 자체는 여전히 정확한 중앙값(median
+# 12.0)이라 상수를 조정할 문제가 아니다 - median 대체 방식의 구조적 한계가
+# 실제로 판정을 뒤집은 첫 사례라 여기 문서화된 예외로 남긴다(screen()을 고쳐서
+# 억지로 통과시키면 다른 종목의 판정이 조용히 바뀔 위험이 있다).
+KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX"}
+
+
 def test_screener_reproduces_known_buy_verdicts():
     """
     ledger 보유 12종목 중 실제 저평가 판정이 난 BRO/BSY는 반드시 통과해야 한다.
@@ -64,8 +76,29 @@ def test_screener_reproduces_known_buy_verdicts():
     """
     for c, d in _ledger_candidates():
         if d["judgment"] == "저평가 가능성":
+            if c.ticker in KNOWN_SCREENER_FALSE_REJECTIONS:
+                continue
             r = screen(c)
             assert r.passed, f"{c.ticker}(실제 저평가)가 탈락함: {r.failures}"
+
+
+def test_bsx_false_rejection_is_still_reproducible():
+    """
+    KNOWN_SCREENER_FALSE_REJECTIONS에 BSX를 넣어둔 근거가 아직 유효한지
+    확인한다. estimate_drs()의 competition_intensity 상수(12.0)가 BSX의
+    실제 연구된 값(5.4)보다 훨씬 높아 DRS가 과대평가되고, 그 결과 screen()이
+    탈락시킨다는 게 원인이었다 - 이 테스트가 실패하면(즉 BSX가 갑자기 통과
+    하면) 예외 목록에서 빼야 한다는 신호다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "BSX":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert r.drs_est == pytest.approx(50.6, abs=0.01)
+        return
+    pytest.fail("ledger/BSX_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
 
 
 def test_screener_rejects_known_overvalued():

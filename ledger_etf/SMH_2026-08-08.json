@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "ticker": "SMH",
+    "name": "VanEck Semiconductor ETF",
+    "tracks": "반도체 섹터",
+    "analyzed_at": "2026-08-08T04:53:21.237156+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/smh (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.35%는 10년 보유 시 누적 3.45%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
+  ],
+  "inputs": {
+    "ticker": "SMH",
+    "name": "VanEck Semiconductor ETF",
+    "tracks": "반도체 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 44.71,
+      "allinvestview(trailing)": 40.54
+    },
+    "expense_ratio": 0.0035,
+    "n_holdings": 26,
+    "top10_weight": 0.7146,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.12,
+    "expected_earnings_growth_basis": "AI 데이터센터 투자 슈퍼사이클의 직접 수혜 섹터(상위비중 NVIDIA 21.70%+TSM 9.51%+Broadcom 6.73%). CLAUDE.md에 기록된 KEYS/KLAC 패턴(trailing CAGR이 AI 수요 인플렉션을 과소추정)과 반대 방향의 함정을 피하려 12%로 XLK(12%)와 동일하게 잡되, 반도체는 역사적으로 가장 극심한 boom/bust 사이클을 가진 섹터라 사이클 반전 리스크가 XLK보다도 크다는 점을 감안해 그 이상으로는 올리지 않았다 [추정치].",
+    "dividend_yield": 0.0019,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "NVDA": 0.217,
+      "TSM": 0.0951,
+      "AVGO": 0.0673,
+      "AMD": 0.0543,
+      "ASML": 0.0512,
+      "TXN": 0.0495,
+      "MU": 0.0474,
+      "ADI": 0.0463,
+      "AMAT": 0.0452,
+      "QCOM": 0.0411
+    },
+    "return_1y": 1.0393,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/smh (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 44.71,
+      "allinvestview(trailing)": 40.54
+    },
+    "min": 40.54,
+    "max": 44.71,
+    "spread_abs": 4.170000000000002,
+    "spread_relative": 0.10286137148495318,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 20.0,
+      "data_quality": 10.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 83.33333333333334
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07500000000000001,
+    "r": 0.12110000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.12,
+    "expense_ratio_deducted": 0.0035,
+    "net_expected_growth": 0.11649999999999999,
+    "basis": "AI 데이터센터 투자 슈퍼사이클의 직접 수혜 섹터(상위비중 NVIDIA 21.70%+TSM 9.51%+Broadcom 6.73%). CLAUDE.md에 기록된 KEYS/KLAC 패턴(trailing CAGR이 AI 수요 인플렉션을 과소추정)과 반대 방향의 함정을 피하려 12%로 XLK(12%)와 동일하게 잡되, 반도체는 역사적으로 가장 극심한 boom/bust 사이클을 가진 섹터라 사이클 반전 리스크가 XLK보다도 크다는 점을 감안해 그 이상으로는 올리지 않았다 [추정치].",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.09649999999999999,
+      "growth_high": 0.13649999999999998,
+      "gap_low": -7.363815357692982e-05,
+      "gap_high": 0.039926361846423064,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 44.71,
+        "earnings_yield": 0.022366360993066426,
+        "implied_growth": 0.09657363815357692,
+        "gap": 0.019926361846423074,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.09657363815357692,
+          "for_undervalued": 0.14657363815357694,
+          "for_overvalued": 0.046573638153576916,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 40.54,
+        "earnings_yield": 0.0246669955599408,
+        "implied_growth": 0.09411155512758788,
+        "gap": 0.022388444872412108,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.09411155512758788,
+          "for_undervalued": 0.1441115551275879,
+          "for_overvalued": 0.04411155512758788,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.019926361846423074,
+    "gap_max": 0.022388444872412108,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0035,
+    "holding_years": 10,
+    "cumulative_drag": 0.034453863618844394
+  },
+  "fed_model": {
+    "earnings_yield": 0.0246669955599408,
+    "treasury_yield": 0.0461,
+    "spread": -0.021433004440059203,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 1.0393,
+    "return_ytd": null,
+    "dividend_yield": 0.0019
+  }
+}

@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "ticker": "464310",
+    "name": "TIGER 글로벌AI&로보틱스INDXX",
+    "tracks": "로봇·AI 테마(Indxx Global Robotics & AI)",
+    "analyzed_at": "2026-08-08T06:25:12.361786+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "investments.miraeasset.com(공식 상품페이지, 총보수 0.49%, 2026-08-08 확인)",
+      "funetf.co.kr/hankyung.com(AUM·상장일, 2026-08-08 조회)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "BOTZ",
+      "us_analyzed_at": "2026-08-08T06:24:49.133358+00:00",
+      "tracks_same_index_as": "Indxx Global Robotics & Artificial Intelligence Thematic Index - v3.39 후속 6차에서 확인, BOTZ(Global X Robotics & AI ETF)와 동일 지수. KODEX 글로벌로봇(276990)이 추종하는 ROBO Global Robotics & Automation Index와는 다른 별개 지수이므로 혼동 주의."
+    }
+  },
+  "data_limitations": [
+    "[P/E 출처 괴리 경고] 출처간 P/E가 28.58x ~ 36.58x로 28.0% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[판정 우연 일치 주의] P/E 출처 괴리가 28.0%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+0.29%p ~ +1.09%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다.",
+    "[보수율 부담] 연 보수율 0.49%는 10년 보유 시 누적 4.79%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 BOTZ 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "464310",
+    "name": "TIGER 글로벌AI&로보틱스INDXX",
+    "tracks": "로봇·AI 테마(Indxx Global Robotics & AI)",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 36.58,
+      "investing.com(trailing)": 28.58
+    },
+    "expense_ratio": 0.0049,
+    "n_holdings": 66,
+    "top10_weight": 0.6019,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.1,
+    "expected_earnings_growth_basis": "상위비중이 산업용 로봇(ABB 9.73%+Keyence 9.55%+Fanuc 8.63%+SMC 4.72%+Daifuku 3.42%, 일본·유럽 제조업 자동화 중심)과 AI/헬스케어 로보틱스(NVIDIA 9.55%+Intuitive Surgical 5.75%)로 나뉜다 - 산업재 자동화 쪽은 설비투자 사이클에 민감해 XLI(산업재, 관측 미확보이나 성숙섹터 추정)보다는 높지만 NVDA 비중이 낮아 SMH(반도체, 12%)만큼 높이지는 않았다 [추정치]. ROBO(KODEX 글로벌로봇이 추종, 9%)보다 NVDA·Intuitive Surgical 비중이 커 1%p 높인 10%로 잡았다. [v3.38: BOTZ 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0047,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "investments.miraeasset.com(공식 상품페이지, 총보수 0.49%, 2026-08-08 확인)",
+      "funetf.co.kr/hankyung.com(AUM·상장일, 2026-08-08 조회)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 36.58,
+      "investing.com(trailing)": 28.58
+    },
+    "min": 28.58,
+    "max": 36.58,
+    "spread_abs": 8.0,
+    "spread_relative": 0.2799160251924423,
+    "warning": "[P/E 출처 괴리 경고] 출처간 P/E가 28.58x ~ 36.58x로 28.0% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 18.0,
+      "data_quality": 14.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 86.66666666666666
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.076,
+    "r": 0.1221
+  },
+  "growth": {
+    "expected_earnings_growth": 0.1,
+    "expense_ratio_deducted": 0.0049,
+    "net_expected_growth": 0.0951,
+    "basis": "상위비중이 산업용 로봇(ABB 9.73%+Keyence 9.55%+Fanuc 8.63%+SMC 4.72%+Daifuku 3.42%, 일본·유럽 제조업 자동화 중심)과 AI/헬스케어 로보틱스(NVIDIA 9.55%+Intuitive Surgical 5.75%)로 나뉜다 - 산업재 자동화 쪽은 설비투자 사이클에 민감해 XLI(산업재, 관측 미확보이나 성숙섹터 추정)보다는 높지만 NVDA 비중이 낮아 SMH(반도체, 12%)만큼 높이지는 않았다 [추정치]. ROBO(KODEX 글로벌로봇이 추종, 9%)보다 NVDA·Intuitive Surgical 비중이 커 1%p 높인 10%로 잡았다. [v3.38: BOTZ 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0751,
+      "growth_high": 0.11510000000000001,
+      "gap_low": -0.01714103246407664,
+      "gap_high": 0.02285896753592337,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 36.58,
+        "earnings_yield": 0.02733734281027884,
+        "implied_growth": 0.09224103246407664,
+        "gap": 0.002858967535923365,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.09224103246407664,
+          "for_undervalued": 0.14224103246407666,
+          "for_overvalued": 0.042241032464076636,
+          "band_used": 0.05
+        }
+      },
+      "investing.com(trailing)": {
+        "pe_ratio": 28.58,
+        "earnings_yield": 0.03498950314905529,
+        "implied_growth": 0.0841655848546315,
+        "gap": 0.010934415145368498,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0841655848546315,
+          "for_undervalued": 0.1341655848546315,
+          "for_overvalued": 0.0341655848546315,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.002858967535923365,
+    "gap_max": 0.010934415145368498,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0049,
+    "holding_years": 10,
+    "cumulative_drag": 0.04793354752811818
+  },
+  "fed_model": {
+    "earnings_yield": 0.03498950314905529,
+    "treasury_yield": 0.0461,
+    "spread": -0.011110496850944715,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0047
+  },
+  "wrapper": {
+    "expense_ratio": 0.0049,
+    "expense_ratio_delta_vs_us": -0.0018999999999999998,
+    "hedged": false,
+    "estimated_hedge_carry": null,
+    "aum_krw": 134100000000.0,
+    "listed_date": "2023-08-17"
+  }
+}

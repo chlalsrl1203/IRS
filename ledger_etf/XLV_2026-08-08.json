@@ -1,0 +1,162 @@
+{
+  "meta": {
+    "ticker": "XLV",
+    "name": "Health Care Select Sector SPDR Fund",
+    "tracks": "헬스케어 섹터",
+    "analyzed_at": "2026-08-08T04:52:31.490419+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-07 조회)",
+      "allinvestview.com/compare (2차 트레일링 P/E, 2026-08-08 확보)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것."
+  ],
+  "inputs": {
+    "ticker": "XLV",
+    "name": "Health Care Select Sector SPDR Fund",
+    "tracks": "헬스케어 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 24.53,
+      "allinvestview(trailing)": 29.19
+    },
+    "expense_ratio": 0.0008,
+    "n_holdings": 63,
+    "top10_weight": 0.6096,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.07,
+    "expected_earnings_growth_basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치].",
+    "dividend_yield": 0.0153,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "LLY": 0.1547,
+      "JNJ": 0.1043,
+      "ABBV": 0.077,
+      "UNH": 0.0648,
+      "MRK": 0.0543,
+      "TMO": 0.0363,
+      "AMGN": 0.0354,
+      "ABT": 0.0311,
+      "GILD": 0.0276,
+      "PFE": 0.024
+    },
+    "return_1y": 0.2917,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/{ticker} (트레일링 P/E·배당수익률·1년수익률, 2026-08-07 조회)",
+      "allinvestview.com/compare (2차 트레일링 P/E, 2026-08-08 확보)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 24.53,
+      "allinvestview(trailing)": 29.19
+    },
+    "min": 24.53,
+    "max": 29.19,
+    "spread_abs": 4.66,
+    "spread_relative": 0.1899714635140644,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 18.0,
+      "data_quality": 10.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 80.0
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07400000000000001,
+    "r": 0.12010000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.07,
+    "expense_ratio_deducted": 0.0008,
+    "net_expected_growth": 0.06920000000000001,
+    "basis": "헬스케어는 인구 고령화로 수요가 구조적으로 방어적이나, 미국 약가인하 압력(IRA 약가협상)·특허절벽이 상위비중 대형제약사(Eli Lilly·JNJ·AbbVie)에 지속적인 역풍이다. 전통적인 방어주 프리미엄 성장률(6~8%대) 을 채택 [추정치].",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.04920000000000001,
+      "growth_high": 0.08920000000000002,
+      "gap_low": -0.03379831069890693,
+      "gap_high": 0.006201689301093077,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 24.53,
+        "earnings_yield": 0.040766408479412965,
+        "implied_growth": 0.07622612612612614,
+        "gap": -0.007026126126126131,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07622612612612614,
+          "for_undervalued": 0.12622612612612616,
+          "for_overvalued": 0.02622612612612614,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 29.19,
+        "earnings_yield": 0.0342583076396026,
+        "implied_growth": 0.08299831069890694,
+        "gap": -0.013798310698906927,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08299831069890694,
+          "for_undervalued": 0.13299831069890694,
+          "for_overvalued": 0.032998310698906935,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.013798310698906927,
+    "gap_max": -0.007026126126126131,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0008,
+    "holding_years": 10,
+    "cumulative_drag": 0.007971261354066783
+  },
+  "fed_model": {
+    "earnings_yield": 0.040766408479412965,
+    "treasury_yield": 0.0461,
+    "spread": -0.005333591520587037,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.2917,
+    "return_ytd": null,
+    "dividend_yield": 0.0153
+  }
+}

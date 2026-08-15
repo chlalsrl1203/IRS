@@ -1,0 +1,165 @@
+{
+  "meta": {
+    "ticker": "BUG",
+    "name": "Global X Cybersecurity ETF",
+    "tracks": "사이버보안 테마(Indxx Cybersecurity)",
+    "analyzed_at": "2026-08-08T06:24:49.133848+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/bug (2026-08-08 조회)",
+      "investing.com/etfs/bug (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[P/E 출처 괴리 경고] 출처간 P/E가 27.09x ~ 37.51x로 38.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것.",
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[판정 우연 일치 주의] P/E 출처 괴리가 38.5%로 큰데도 이번 입력에서는 판정이 '적정가/경계선'로 일치했다. 이는 Gap 범위(+1.91%p ~ +3.00%p)가 마침 같은 판정 구간 안에 들어온 결과일 뿐, 데이터 신뢰도가 확보됐다는 뜻이 아니다 - 할인율이나 성장률 가정이 조금만 달라져도 판정이 갈릴 수 있다.",
+    "[보수율 부담] 연 보수율 0.50%는 10년 보유 시 누적 4.89%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
+  ],
+  "inputs": {
+    "ticker": "BUG",
+    "name": "Global X Cybersecurity ETF",
+    "tracks": "사이버보안 테마(Indxx Cybersecurity)",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 37.51,
+      "investing.com(trailing)": 27.09
+    },
+    "expense_ratio": 0.005,
+    "n_holdings": 34,
+    "top10_weight": 0.6087,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.12,
+    "expected_earnings_growth_basis": "Fortinet·Palo Alto·CrowdStrike·Okta 등 고성장 SaaS형 보안기업 중심(top10 60.87%) - 엔터프라이즈 보안예산은 경기와 비교적 무관하게 구조적으로 증가하는 항목이라 XLK(기술섹터, 12%)에 준하는 수준으로 잡았다. 다만 P/E가 이미 27~38x로 상당한 프리미엄을 반영하고 있어 그 이상으로는 올리지 않았다 [추정치] - 밸류에이션과 성장기대가 이미 상당 부분 가격에 반영됐을 가능성을 감안.",
+    "dividend_yield": 0.0003,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "FTNT": 0.0794,
+      "PANW": 0.0794,
+      "OKTA": 0.0789,
+      "CRWD": 0.0746,
+      "QLYS": 0.0548,
+      "TENB": 0.0515,
+      "ZS": 0.0485,
+      "VRNS": 0.0482,
+      "AKAM": 0.047,
+      "SAIL": 0.0464
+    },
+    "return_1y": 0.2253,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/bug (2026-08-08 조회)",
+      "investing.com/etfs/bug (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 37.51,
+      "investing.com(trailing)": 27.09
+    },
+    "min": 27.09,
+    "max": 37.51,
+    "spread_abs": 10.419999999999998,
+    "spread_relative": 0.3846437799926171,
+    "warning": "[P/E 출처 괴리 경고] 출처간 P/E가 27.09x ~ 37.51x로 38.5% 벌어져 있다(임계값 20%). 이 정도 괴리는 판정을 뒤집을 수 있다 - IWM이 정확히 이 사례였다. **어느 한 출처의 숫자로 단일 결론을 내리지 말 것.** 원인은 대개 지수에 무이익 기업이 많아 집계방식(트레일링 단순평균 vs forward 가중)에 따라 값이 달라지는 것이므로, pct_unprofitable_constituents를 함께 확인할 것."
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 20.0,
+      "data_quality": 18.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 96.66666666666666
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.079,
+    "r": 0.1251
+  },
+  "growth": {
+    "expected_earnings_growth": 0.12,
+    "expense_ratio_deducted": 0.005,
+    "net_expected_growth": 0.11499999999999999,
+    "basis": "Fortinet·Palo Alto·CrowdStrike·Okta 등 고성장 SaaS형 보안기업 중심(top10 60.87%) - 엔터프라이즈 보안예산은 경기와 비교적 무관하게 구조적으로 증가하는 항목이라 XLK(기술섹터, 12%)에 준하는 수준으로 잡았다. 다만 P/E가 이미 27~38x로 상당한 프리미엄을 반영하고 있어 그 이상으로는 올리지 않았다 [추정치] - 밸류에이션과 성장기대가 이미 상당 부분 가격에 반영됐을 가능성을 감안.",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.09499999999999999,
+      "growth_high": 0.13499999999999998,
+      "gap_low": -0.0008842118930147969,
+      "gap_high": 0.0391157881069852,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 37.51,
+        "earnings_yield": 0.026659557451346308,
+        "implied_growth": 0.09588421189301478,
+        "gap": 0.019115788106985207,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.09588421189301478,
+          "for_undervalued": 0.1458842118930148,
+          "for_overvalued": 0.04588421189301478,
+          "band_used": 0.05
+        }
+      },
+      "investing.com(trailing)": {
+        "pe_ratio": 27.09,
+        "earnings_yield": 0.0369139904023625,
+        "implied_growth": 0.08504660021359912,
+        "gap": 0.029953399786400867,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.08504660021359912,
+          "for_undervalued": 0.13504660021359913,
+          "for_overvalued": 0.03504660021359912,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.019115788106985207,
+    "gap_max": 0.029953399786400867,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.005,
+    "holding_years": 10,
+    "cumulative_drag": 0.048889869534228136
+  },
+  "fed_model": {
+    "earnings_yield": 0.0369139904023625,
+    "treasury_yield": 0.0461,
+    "spread": -0.009186009597637504,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.2253,
+    "return_ytd": null,
+    "dividend_yield": 0.0003
+  }
+}

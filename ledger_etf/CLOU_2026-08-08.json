@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "ticker": "CLOU",
+    "name": "Global X Cloud Computing ETF",
+    "tracks": "클라우드 컴퓨팅 테마",
+    "analyzed_at": "2026-08-08T04:53:21.241713+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/clou (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.68%는 10년 보유 시 누적 6.60%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
+  ],
+  "inputs": {
+    "ticker": "CLOU",
+    "name": "Global X Cloud Computing ETF",
+    "tracks": "클라우드 컴퓨팅 테마",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 33.38,
+      "allinvestview(trailing)": 36.7
+    },
+    "expense_ratio": 0.0068,
+    "n_holdings": 40,
+    "top10_weight": 0.4691,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.11,
+    "expected_earnings_growth_basis": "클라우드 전환(on-premise -> SaaS)은 여전히 진행 중인 구조적 성장 동력이라 나스닥100(11%)과 동일 수준으로 잡는다 [추정치]. 다만 2022년 이후 금리상승기에 SaaS 멀티플이 큰 폭으로 재조정된 전례가 있어, XLK(12%)만큼 높이지는 않는다 - 순수 빅테크보다 성장주 밸류에이션 변동성에 더 민감한 세그먼트다.",
+    "dividend_yield": null,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "SNOW": 0.073,
+      "DDOG": 0.0543,
+      "PAYC": 0.0535,
+      "NET": 0.0436,
+      "WDAY": 0.0435,
+      "QLYS": 0.0429,
+      "NOW": 0.0416,
+      "TWLO": 0.0408,
+      "DOCN": 0.0397,
+      "ZS": 0.0389
+    },
+    "return_1y": 0.197,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/clou (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 33.38,
+      "allinvestview(trailing)": 36.7
+    },
+    "min": 33.38,
+    "max": 36.7,
+    "spread_abs": 3.3200000000000003,
+    "spread_relative": 0.0994607549430797,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 14.0,
+      "breadth": 20.0,
+      "data_quality": 6.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 66.66666666666667
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07,
+    "r": 0.11610000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.11,
+    "expense_ratio_deducted": 0.0068,
+    "net_expected_growth": 0.1032,
+    "basis": "클라우드 전환(on-premise -> SaaS)은 여전히 진행 중인 구조적 성장 동력이라 나스닥100(11%)과 동일 수준으로 잡는다 [추정치]. 다만 2022년 이후 금리상승기에 SaaS 멀티플이 큰 폭으로 재조정된 전례가 있어, XLK(12%)만큼 높이지는 않는다 - 순수 빅테크보다 성장주 밸류에이션 변동성에 더 민감한 세그먼트다.",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0832,
+      "growth_high": 0.1232,
+      "gap_low": -0.003295225464191004,
+      "gap_high": 0.036704774535809004,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 33.38,
+        "earnings_yield": 0.029958058717795083,
+        "implied_growth": 0.0836363583478767,
+        "gap": 0.019563641652123306,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0836363583478767,
+          "for_undervalued": 0.13363635834787668,
+          "for_overvalued": 0.03363635834787669,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 36.7,
+        "earnings_yield": 0.02724795640326975,
+        "implied_growth": 0.086495225464191,
+        "gap": 0.016704774535809,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.086495225464191,
+          "for_undervalued": 0.13649522546419102,
+          "for_overvalued": 0.036495225464191,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": 0.016704774535809,
+    "gap_max": 0.019563641652123306,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0068,
+    "holding_years": 10,
+    "cumulative_drag": 0.06595648647433516
+  },
+  "fed_model": {
+    "earnings_yield": 0.029958058717795083,
+    "treasury_yield": 0.0461,
+    "spread": -0.01614194128220492,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.197,
+    "return_ytd": null,
+    "dividend_yield": null
+  }
+}

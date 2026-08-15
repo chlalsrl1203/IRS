@@ -230,9 +230,11 @@ CANDIDATES = [
     ),
     ETFInputs(
         # v3.35에서 추가 - v3.34까지는 P/E 미확보로 빠져 있던 종목.
+        # v3.41 후반(2026-08-08): worldperatio.com 2차 출처 추가로 단일출처 해소.
         ticker="DIA", name="SPDR Dow Jones Industrial Average ETF",
         tracks="Dow Jones Industrial Avg",
-        pe_by_source={"stockanalysis(trailing)": 25.57},
+        pe_by_source={"stockanalysis(trailing)": 25.57,
+                      "worldperatio(trailing)": 25.49},
         expense_ratio=0.0016, n_holdings=31, top10_weight=0.52,
         risk_free_rate=RF,
         expected_earnings_growth=0.07,

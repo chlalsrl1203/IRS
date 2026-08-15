@@ -1,0 +1,361 @@
+{
+  "generated_at": "2026-08-13",
+  "n_ledgers": 34,
+  "falsification_scan": {
+    "counts": {
+      "undated": 4,
+      "no_conditions": 20,
+      "pending": 4,
+      "past_due": 6
+    },
+    "past_due": [
+      {
+        "ticker": "DUOL",
+        "analyzed_at": "2026-08-02",
+        "dates": [
+          {
+            "date": "2026-08-05",
+            "raw": "2026-08-05",
+            "context": "(1) 2026-08-05 Q2 실적에서 유료구독자 순증이 전분기(30만명) 대비 재차 감소하거나 30만명을 밑돌면(현재 '컴프효과+전략적 전환' 해석의 근거가 무너짐) AI대체 서사가"
+          }
+        ],
+        "verification": {
+          "verdict": "NOT_TRIGGERED",
+          "summary": "조건(2) 'DAU 성장률이 20%YoY 밑으로 떨어지면'이 명확히 미발동 - DAU +23%YoY(58.7백만)로 **전분기 대비 오히려 가속**했다. 이는 2026-08-02 정성조사의 미해결 쟁점('AI가 실제로 사용자를 대체 중이라는 직접 증거는 미확인')에 대한 실측 반박에 해당한다. 매출 $298.5M/+18.3%YoY 컨센서스 상회, EPS $0.66로 8.2% 상회, 유료 구독자 +17%(1,270만명). ⚠️ 조건(1)이 지정한 '유료구독자 **순증**' (전분기 30만명 대비)의 분기 순증 수치 자체는 확보하지 못해 조건(1)은 미확인으로 남긴다 - 다만 방향은 명백히 긍정적이다.",
+          "action": "판정 유지·강화(조건1 순증 수치는 차기 확인)"
+        }
+      },
+      {
+        "ticker": "MNDY",
+        "analyzed_at": "2026-08-02",
+        "dates": [
+          {
+            "date": "2026-08-10",
+            "raw": "2026-08-10",
+            "context": "(1) 2026-08-10 Q2 실적에서 $50K+/$100K+ ARR 코호트 NDR이 110% 미만으로 하락하거나 SMB/셀프서브 채널 매출비중이 추가로 축소되는 신호가 나오면(현재 상"
+          }
+        ],
+        "verification": {
+          "verdict": "INCONCLUSIVE",
+          "summary": "조건(1)이 지정한 것은 '**$50K+/$100K+ ARR 코호트** NDR이 110% 미만'인데, 공개된 건 **전사 NDR 109%**뿐이라 해당 코호트별 수치를 확보하지 못했다. 전사 109%는 110% 아래지만 조건은 상단 코호트를 특정했고(원 논리: '상단 코호트 강세로 하단 약세가 상쇄되는 구도'가 무너지는지), 통상 상단 코호트는 전사 대비 높게 나오므로 전사값만으로 발동을 단정할 수 없다. 헤드라인은 오히려 강세 - 매출 $364.6M/+22%YoY (컨센서스 $355M 상회), 조정EPS $1.48(컨센서스 $1.11 대폭 상회), AI ARR 전분기 대비 2배, 7월 ARR $15억 돌파. **추측하지 않고 '확인필요'로 남긴다** - 10-Q/실적자료에서 코호트별 NDR 확인 필요.",
+          "action": "코호트별 NDR 확보 후 재판정"
+        }
+      },
+      {
+        "ticker": "PGR",
+        "analyzed_at": "2026-08-03",
+        "dates": [
+          {
+            "date": "2026-08-04",
+            "raw": "2026-08-04",
+            "context": "화됨을 뜻함) 텔레매틱스 모트 서사를 재검토. (2) 상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토 대상. (3) 2026-08-04 Q2 실적(이 조사 하루 뒤 예정)에서 컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토."
+          }
+        ],
+        "verification": {
+          "verdict": "NOT_TRIGGERED",
+          "summary": "조건(3) '컴바인드레이쇼가 90 이상으로 뛰면' 미발동 - Q2 CR 87.3%로 임계값 아래. 다만 **방향은 조건이 우려한 쪽으로 움직였다**: 전년 동기 86.2%에서 87.3%로 악화했고, 분기 마지막 달인 6월 단월 CR은 정확히 90.0%까지 올랐다. 조건(1) 관련 PIF 증가율도 +7%로 CLAUDE.md 기록(11%->8%)에 이어 추가 둔화 - '한 자릿수 초반'까지는 아직 아니라 미발동이나 임계값에 접근 중이다. 순이익 $3,311M/+4%YoY.",
+          "action": "판정 유지, 다음 분기 우선 관찰대상"
+        }
+      },
+      {
+        "ticker": "SE",
+        "analyzed_at": "2026-08-03",
+        "dates": [
+          {
+            "date": "2026-08-11",
+            "raw": "2026-08-11",
+            "context": "(1) 2026-08-11 Q2 실적에서 Shopee EBITDA가 전년比 추가 감소하거나 그룹 전체 조정EBITDA가 가이던스(전년 수준 유지)를 밑돌면 'Garena가 그룹을 떠받치는"
+          }
+        ],
+        "verification": {
+          "verdict": "NOT_TRIGGERED",
+          "summary": "조건(1) 'Shopee EBITDA가 전년比 추가 감소'가 정면 반전됐다 - Shopee 조정EBITDA $255.4M으로 **+12.2%YoY 증가**(단위경제성·운영 효율 개선), 그룹 조정EBITDA도 $917.2M/+10.6%YoY로 가이던스(전년 수준 유지)를 상회. 매출 $7.8B/+48.1%YoY 서프라이즈. 회사는 FY2026 Shopee EBITDA $10억 달성 자신감 표명. 2026-08-03 정성조사가 지적했던 '사상최대 GMV에도 Shopee EBITDA 감소, 그룹이익을 Garena가 단독부담' 구도가 이번 분기에 해소된 것으로 확인된다.",
+          "action": "판정 유지·강화"
+        }
+      },
+      {
+        "ticker": "TCOM",
+        "analyzed_at": "2026-08-04",
+        "dates": [
+          {
+            "date": "2024-04-30",
+            "raw": "2024-04-30",
+            "context": "ic Growth(12.39%)가 회사 자체 전망과 괴리된 낙관적 입력이었음이 확인되므로 재실행 필요. 2) De Wilde 증권소송(E.D.N.Y., 집단기간 2024-04-30~2026-01-13)이 화해 또는 판결로 종결되고 그 내용이 SEC 공시완화 관행에 대한 실질 책임을 인정하면 거버넌스 리스크 재평가. 3) 중국-일본 여행 코"
+          },
+          {
+            "date": "2026-01-13",
+            "raw": "2026-01-13",
+            "context": "2.39%)가 회사 자체 전망과 괴리된 낙관적 입력이었음이 확인되므로 재실행 필요. 2) De Wilde 증권소송(E.D.N.Y., 집단기간 2024-04-30~2026-01-13)이 화해 또는 판결로 종결되고 그 내용이 SEC 공시완화 관행에 대한 실질 책임을 인정하면 거버넌스 리스크 재평가. 3) 중국-일본 여행 코리더 급감 (최대 -"
+          }
+        ],
+        "verification": null
+      },
+      {
+        "ticker": "TTD",
+        "analyzed_at": "2026-08-03",
+        "dates": [
+          {
+            "date": "2026-08-06",
+            "raw": "2026-08-06",
+            "context": "토. (3) 미국 매출성장률이 FY2027까지 낮은 한자릿수 밑으로 재차 둔화되거나 회복 실패하면(Amazon DSP 잠식이 구조적 임을 뜻함) 재검토. (4) 2026-08-06 Q2 실적에서 가이던스 $750M을 다시 하회하면 즉시 재검토."
+          }
+        ],
+        "verification": {
+          "verdict": "TRIGGERED",
+          "summary": "4개 조건 중 3개 동시 발동. (4) Q2 매출 $715M으로 가이던스 $750M 하회 - 조건 문구 그대로 발동. (3) 매출성장 +3%YoY에 그쳤고 Q3 가이던스 $650M(중간값)은 컨센서스 $804.8M을 크게 밑돌며 -12.1%YoY 역성장을 회사 스스로 제시 - '낮은 한자릿수 밑으로 재차 둔화'를 넘어 아예 역성장이라 조건 충족. (2) 실적발표와 동시에 CFO·CMO· 커머셜총괄 교체 - CLAUDE.md에 기록된 '14개월새 CFO 4명'에 이어 5번째 교체라 조건 충족. 주가는 발표 후 -21.8%.",
+          "action": "재검토 완료(2026-08-13, 사용자 승인): 매수리스트 CONFIDENCE_ADJ 72->45 하향 + THESIS_BROKEN_FLAG 추가(0.85x) - 비중 4.80%->2.70%로 축소(scripts/build_buylist_2026_08_03.py). 공식 ledger의 Gap/RAR/판정은 변경하지 않음(growth_scorecard 원칙상 realized_quarterly· guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지 병기만)."
+        }
+      }
+    ],
+    "pending": [
+      {
+        "ticker": "BSX",
+        "dates": [
+          "2026-09-30"
+        ]
+      },
+      {
+        "ticker": "GEN",
+        "dates": [
+          "2027-08-01",
+          "2027-10-01"
+        ]
+      },
+      {
+        "ticker": "PDD",
+        "dates": [
+          "2026-08-28",
+          "2026-08-31"
+        ]
+      },
+      {
+        "ticker": "UBER",
+        "dates": [
+          "2026-12-02"
+        ]
+      }
+    ]
+  },
+  "gap_decay": {
+    "rows": [
+      {
+        "ticker": "ACGL",
+        "analyzed_at": "2026-08-03",
+        "market_cap_then": 34140000000.0,
+        "market_cap_now": 33039695613.24978,
+        "market_cap_change_pct": -0.03222918531781549,
+        "gap_then": 0.24383806952929307,
+        "gap_now": 0.24866499671435166,
+        "gap_decay_pp": 0.004826927185058588,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.157353923411129,
+        "realistic_growth_now": 0.157353923411129,
+        "price_then": 100.53,
+        "price_now": 97.29,
+        "price_change_pct": -0.03222918531781549,
+        "implied_shares": 339600119.367353
+      },
+      {
+        "ticker": "DUOL",
+        "analyzed_at": "2026-08-02",
+        "market_cap_then": 6220000000.0,
+        "market_cap_now": 5974164229.150318,
+        "market_cap_change_pct": -0.03952343582792317,
+        "gap_then": 0.19453125000000002,
+        "gap_now": 0.1993808746337891,
+        "gap_decay_pp": 0.004849624633789074,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.25,
+        "realistic_growth_now": 0.25,
+        "price_then": 140.17,
+        "price_now": 134.63,
+        "price_change_pct": -0.03952343582792317,
+        "implied_shares": 44374687.87900407
+      },
+      {
+        "ticker": "MNDY",
+        "analyzed_at": "2026-08-02",
+        "market_cap_then": 3740000000.0,
+        "market_cap_now": 3688502581.755594,
+        "market_cap_change_pct": -0.013769363166953541,
+        "gap_then": 0.23276233673095703,
+        "gap_now": 0.23449592590332033,
+        "gap_decay_pp": 0.001733589172363298,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.25,
+        "realistic_growth_now": 0.25,
+        "price_then": 87.15,
+        "price_now": 85.95,
+        "price_change_pct": -0.013769363166953541,
+        "implied_shares": 42914515.20367183
+      },
+      {
+        "ticker": "ROP",
+        "analyzed_at": "2026-08-04",
+        "market_cap_then": 38770000000.0,
+        "market_cap_now": 39092448656.78496,
+        "market_cap_change_pct": 0.008316963032885205,
+        "gap_then": 0.012357788085937522,
+        "gap_now": 0.011368637084960956,
+        "gap_decay_pp": -0.0009891510009765667,
+        "judgment_then": "적정가/경계선",
+        "judgment_now": "적정가/경계선",
+        "judgment_flipped": false,
+        "grade_then": "C",
+        "grade_now": "C",
+        "realistic_growth_then": 0.055,
+        "realistic_growth_now": 0.055,
+        "price_then": 391.97,
+        "price_now": 395.23,
+        "price_change_pct": 0.008316963032885205,
+        "implied_shares": 98910630.9156313
+      },
+      {
+        "ticker": "SE",
+        "analyzed_at": "2026-08-03",
+        "market_cap_then": 66370000000.0,
+        "market_cap_now": 79160792291.22057,
+        "market_cap_change_pct": 0.19271948608137057,
+        "gap_then": 0.19180315300111223,
+        "gap_now": 0.17040136619691298,
+        "gap_decay_pp": -0.02140178680419924,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.23559721275453016,
+        "realistic_growth_now": 0.23559721275453016,
+        "price_then": 107.41,
+        "price_now": 128.11,
+        "price_change_pct": 0.19271948608137057,
+        "implied_shares": 617912671.0734569
+      },
+      {
+        "ticker": "TCOM",
+        "analyzed_at": "2026-08-04",
+        "market_cap_then": 190891404000.0,
+        "market_cap_now": 194345101503.6855,
+        "market_cap_change_pct": 0.018092472637927015,
+        "gap_then": 0.07547684320764038,
+        "gap_now": 0.07323532709435913,
+        "gap_decay_pp": -0.0022415161132812444,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "A",
+        "grade_now": "A",
+        "realistic_growth_then": 0.12387581476525755,
+        "realistic_growth_now": 0.12387581476525755,
+        "price_then": 44.77,
+        "price_now": 45.58,
+        "price_change_pct": 0.018092472637927015,
+        "implied_shares": 4263824078.6240783
+      },
+      {
+        "ticker": "TTD",
+        "analyzed_at": "2026-08-03",
+        "market_cap_then": 8480000000.0,
+        "market_cap_now": 6251103825.136612,
+        "market_cap_change_pct": -0.26284153005464483,
+        "gap_then": 0.1700962080005105,
+        "gap_now": 0.20957508220705345,
+        "gap_decay_pp": 0.03947887420654295,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.16703987255129174,
+        "realistic_growth_now": 0.16703987255129174,
+        "price_then": 18.3,
+        "price_now": 13.49,
+        "price_change_pct": -0.26284153005464483,
+        "implied_shares": 463387978.1420765
+      },
+      {
+        "ticker": "UBER",
+        "analyzed_at": "2026-08-04",
+        "market_cap_then": 143220000000.0,
+        "market_cap_now": 153397657760.09094,
+        "market_cap_change_pct": 0.07106310403638427,
+        "gap_then": 0.11784205707458376,
+        "gap_now": 0.10948386463073612,
+        "gap_decay_pp": -0.00835819244384764,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "A",
+        "grade_now": "A",
+        "realistic_growth_then": 0.1595752266302478,
+        "realistic_growth_now": 0.1595752266302478,
+        "price_then": 70.36,
+        "price_now": 75.36,
+        "price_change_pct": 0.07106310403638427,
+        "implied_shares": 2035531552.018192
+      },
+      {
+        "ticker": "WDAY",
+        "analyzed_at": "2026-08-04",
+        "market_cap_then": 39600000000.0,
+        "market_cap_now": 43292278907.32194,
+        "market_cap_change_pct": 0.09323936634651364,
+        "gap_then": 0.11417055453507202,
+        "gap_now": 0.10346117343155639,
+        "gap_decay_pp": -0.01070938110351563,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "A",
+        "grade_now": "A",
+        "realistic_growth_then": 0.14323282565323606,
+        "realistic_growth_now": 0.14323282565323606,
+        "price_then": 160.34,
+        "price_now": 175.29,
+        "price_change_pct": 0.09323936634651364,
+        "implied_shares": 246975177.747287
+      }
+    ],
+    "skipped_no_price_at_analysis": [
+      "BKNG",
+      "BRO",
+      "BSY",
+      "CDNS",
+      "COR",
+      "DSGX",
+      "GEN",
+      "GWRE",
+      "IDXX",
+      "KEYS",
+      "KLAC",
+      "MCK",
+      "MNST",
+      "PDD",
+      "PGR",
+      "PH",
+      "PTC",
+      "RMD",
+      "TYL",
+      "VRSN",
+      "VRT",
+      "WCN",
+      "WM",
+      "ZTS"
+    ],
+    "skipped_no_current_price": [
+      "BSX"
+    ]
+  }
+}

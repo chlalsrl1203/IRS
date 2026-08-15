@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "ticker": "218420",
+    "name": "KODEX 미국S&P500에너지(합성)",
+    "tracks": "에너지 섹터",
+    "analyzed_at": "2026-08-07T23:58:03.990424+00:00",
+    "engine_version": "v3.39",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "samsungfund.com/etf/product/view.do?id=2ETF49(2026-08-07)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "XLE",
+      "us_analyzed_at": "2026-08-07T23:09:21.144529+00:00",
+      "tracks_same_index_as": "S&P Select Sector Energy Index - XLE(Energy Select Sector SPDR)와 같은 Select Sector 지수 계열. 완전히 동일한 지수인지(vs 유사 계열)는 확정 못함 - 이 재사용은 그 전제 위에 있다는 걸 명시해둔다."
+    }
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[성장률 가정 취약] 기대성장률을 ±2.0%p만 달리 잡아도 판정이 '과대평가 가능성' <-> '적정가/경계선'로 바뀐다. 이 ETF의 판정은 엔진 계산이 아니라 **분석자의 성장률 가정**이 결정하고 있다는 뜻이므로, Gap 수치를 근거로 순위를 매기지 말고 아래 required_growth(시장이 요구하는 성장률)를 기준으로 판단할 것.",
+    "[보수율 부담] 연 보수율 0.25%는 10년 보유 시 누적 2.47%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XLE 분석(2026-08-07 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "218420",
+    "name": "KODEX 미국S&P500에너지(합성)",
+    "tracks": "에너지 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 20.94,
+      "allinvestview(trailing)": 22.1
+    },
+    "expense_ratio": 0.0025,
+    "n_holdings": 23,
+    "top10_weight": 0.75,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.04,
+    "expected_earnings_growth_basis": "에너지는 유가 사이클에 종속돼 장기 이익성장률을 구조적으로 낮게 잡는다 (장기적으로 실질 성장보다 인플레이션 연동에 가깝다) [추정치]. [v3.38: XLE 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0265,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "samsungfund.com/etf/product/view.do?id=2ETF49(2026-08-07)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 20.94,
+      "allinvestview(trailing)": 22.1
+    },
+    "min": 20.94,
+    "max": 22.1,
+    "spread_abs": 1.1600000000000001,
+    "spread_relative": 0.055396370582617004,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 20.0,
+      "data_quality": 6.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 76.66666666666667
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07300000000000001,
+    "r": 0.11910000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.04,
+    "expense_ratio_deducted": 0.0025,
+    "net_expected_growth": 0.0375,
+    "basis": "에너지는 유가 사이클에 종속돼 장기 이익성장률을 구조적으로 낮게 잡는다 (장기적으로 실질 성장보다 인플레이션 연동에 가깝다) [추정치]. [v3.38: XLE 분석(2026-08-07)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.017499999999999998,
+      "growth_high": 0.057499999999999996,
+      "gap_low": -0.05315411255411255,
+      "gap_high": -0.013154112554112557,
+      "judgment_low": "과대평가 가능성",
+      "judgment_high": "적정가/경계선",
+      "robust": false
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 20.94,
+        "earnings_yield": 0.04775549188156638,
+        "implied_growth": 0.06809270738377393,
+        "gap": -0.030592707383773933,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.06809270738377393,
+          "for_undervalued": 0.11809270738377393,
+          "for_overvalued": 0.01809270738377393,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 22.1,
+        "earnings_yield": 0.04524886877828054,
+        "implied_growth": 0.07065411255411255,
+        "gap": -0.033154112554112554,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07065411255411255,
+          "for_undervalued": 0.12065411255411256,
+          "for_overvalued": 0.02065411255411255,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.033154112554112554,
+    "gap_max": -0.030592707383773933,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0025,
+    "holding_years": 10,
+    "cumulative_drag": 0.024720616821432673
+  },
+  "fed_model": {
+    "earnings_yield": 0.04775549188156638,
+    "treasury_yield": 0.0461,
+    "spread": 0.0016554918815663774,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0265
+  },
+  "wrapper": {
+    "expense_ratio": 0.0025,
+    "expense_ratio_delta_vs_us": 0.0017000000000000001,
+    "hedged": false,
+    "aum_krw": 26536000000.0,
+    "listed_date": "미확인"
+  }
+}

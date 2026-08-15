@@ -1,0 +1,161 @@
+{
+  "meta": {
+    "ticker": "LIT",
+    "name": "Global X Lithium & Battery Tech ETF",
+    "tracks": "배터리(리튬) 테마",
+    "analyzed_at": "2026-08-08T04:53:21.239105+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "etf",
+    "data_sources": [
+      "stockanalysis.com/etf/lit (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "USD"
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.75%는 10년 보유 시 누적 7.25%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것."
+  ],
+  "inputs": {
+    "ticker": "LIT",
+    "name": "Global X Lithium & Battery Tech ETF",
+    "tracks": "배터리(리튬) 테마",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 23.76,
+      "allinvestview(trailing)": 22.36
+    },
+    "expense_ratio": 0.0075,
+    "n_holdings": 45,
+    "top10_weight": 0.6601,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.08,
+    "expected_earnings_growth_basis": "EV 채택 확대라는 장기 상방 서사는 뚜렷하나, 리튬 등 원자재 가격이 2022~2024년 폭락한 전례처럼 커머디티 가격 사이클에 강하게 종속돼 있다 - 채굴·정제 기업 비중이 큰 지수 특성상 XLE(에너지, 4%)에 더 가까운 낮은 성장률을 채택 [추정치]. 배터리 '기술' 테마라는 이름과 달리 실질은 원자재 익스포저에 가깝다는 점에 유의.",
+    "dividend_yield": 0.0068,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": {
+      "RIO": 0.2292,
+      "SHE:002371": 0.0704,
+      "TYO:6752": 0.0686,
+      "TYO:6762": 0.0565,
+      "ALB": 0.0438,
+      "KRX:006400": 0.0418,
+      "SHE:300750": 0.0406,
+      "TSLA": 0.0372,
+      "HKG:1211": 0.0372,
+      "KRX:373220": 0.0348
+    },
+    "return_1y": 0.7657,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "USD",
+    "price_at_analysis": null,
+    "data_sources": [
+      "stockanalysis.com/etf/lit (2026-08-08 조회)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 23.76,
+      "allinvestview(trailing)": 22.36
+    },
+    "min": 22.36,
+    "max": 23.76,
+    "spread_abs": 1.4000000000000021,
+    "spread_relative": 0.0626118067978534,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 20.0,
+      "breadth": 20.0,
+      "data_quality": 6.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 76.66666666666667
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.07300000000000001,
+    "r": 0.11910000000000001
+  },
+  "growth": {
+    "expected_earnings_growth": 0.08,
+    "expense_ratio_deducted": 0.0075,
+    "net_expected_growth": 0.07250000000000001,
+    "basis": "EV 채택 확대라는 장기 상방 서사는 뚜렷하나, 리튬 등 원자재 가격이 2022~2024년 폭락한 전례처럼 커머디티 가격 사이클에 강하게 종속돼 있다 - 채굴·정제 기업 비중이 큰 지수 특성상 XLE(에너지, 4%)에 더 가까운 낮은 성장률을 채택 [추정치]. 배터리 '기술' 테마라는 이름과 달리 실질은 원자재 익스포저에 가깝다는 점에 유의.",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.052500000000000005,
+      "growth_high": 0.09250000000000001,
+      "gap_low": -0.02140210016155089,
+      "gap_high": 0.018597899838449117,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 23.76,
+        "earnings_yield": 0.04208754208754208,
+        "implied_growth": 0.0739021001615509,
+        "gap": -0.0014021001615508871,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.0739021001615509,
+          "for_undervalued": 0.1239021001615509,
+          "for_overvalued": 0.023902100161550893,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 22.36,
+        "earnings_yield": 0.044722719141323794,
+        "implied_growth": 0.07119332191780824,
+        "gap": 0.0013066780821917728,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07119332191780824,
+          "for_undervalued": 0.12119332191780824,
+          "for_overvalued": 0.021193321917808233,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.0014021001615508871,
+    "gap_max": 0.0013066780821917728,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0075,
+    "holding_years": 10,
+    "cumulative_drag": 0.07251871648973696
+  },
+  "fed_model": {
+    "earnings_yield": 0.044722719141323794,
+    "treasury_yield": 0.0461,
+    "spread": -0.001377280858676208,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": 0.7657,
+    "return_ytd": null,
+    "dividend_yield": 0.0068
+  }
+}

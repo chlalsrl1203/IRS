@@ -1,0 +1,164 @@
+{
+  "meta": {
+    "ticker": "200030",
+    "name": "KODEX 미국S&P500산업재(합성)",
+    "tracks": "산업재 섹터",
+    "analyzed_at": "2026-08-08T04:55:50.768101+00:00",
+    "engine_version": "v3.41",
+    "analysis_type": "krx_wrapper",
+    "data_sources": [
+      "funetf.co.kr/product/etf/view/KR7200030005(2026-08-07)"
+    ],
+    "falsification_conditions": null,
+    "price_at_analysis": null,
+    "currency": "KRW",
+    "wrapper_of": {
+      "us_reference_ticker": "XLI",
+      "us_analyzed_at": "2026-08-08T04:52:31.489594+00:00",
+      "tracks_same_index_as": "S&P Industrial Select Sector Index(원화환산) - 공식페이지에서 확인, XLI와 동일 계열"
+    }
+  },
+  "data_limitations": [
+    "[ERS 항목 제외] earnings_quality 항목을 구하지 못해 나머지 3개로만 위험점수를 산출했다. 특히 earnings_quality(무이익 구성종목 비중)는 P/E 출처 괴리의 근본 원인이라, 이 값이 없으면 괴리가 큰 ETF의 위험이 과소평가될 수 있다.",
+    "[성장률 앵커 없음] 지수 EPS 실적 시계열(realized_eps_by_year)이 없어 기대성장률이 순수 분석자 추정이다. Gap은 이 추정에 1:1로 좌우되므로 (v3.34 진단) 이 ETF의 Gap을 실적 앵커가 있는 ETF와 나란히 놓고 순위를 매기지 말 것 - 비교하려면 required_growth.breakeven을 쓸 것.",
+    "[보수율 부담] 연 보수율 0.25%는 10년 보유 시 누적 2.47%의 확정 비용이다. Gap 추정치는 불확실하지만 이 비용은 계약으로 확정돼 있다 - 저비용 대안(광범위지수 ETF는 0.03%대)과 반드시 비교할 것.",
+    "[래퍼 재사용] 이 결과의 P/E·성장률·위험점수는 XLI 분석(2026-08-08 기준)을 그대로 재사용했다 - 국내 상장 ETF 자체의 기초자산을 재평가한 것이 아니다. 원본 분석이 오래되면 이 결과도 함께 낡아진다."
+  ],
+  "inputs": {
+    "ticker": "200030",
+    "name": "KODEX 미국S&P500산업재(합성)",
+    "tracks": "산업재 섹터",
+    "pe_by_source": {
+      "stockanalysis(trailing)": 29.48,
+      "allinvestview(trailing)": 31.44
+    },
+    "expense_ratio": 0.0025,
+    "n_holdings": 85,
+    "top10_weight": 0.3975,
+    "risk_free_rate": 0.0461,
+    "expected_earnings_growth": 0.07,
+    "expected_earnings_growth_basis": "산업재는 항공우주·방산(GE Aerospace·RTX·Boeing)과 중장비(Caterpillar·Deere)가 상위비중을 차지해 설비투자·리쇼어링 사이클에 연동된다. 명목GDP+α 수준으로 S&P500과 비슷하게 잡음 [추정치] - 관세·공급망 재편이 상방/하방 어느 쪽으로도 작용할 수 있어 불확실성이 크다. [v3.38: XLI 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "dividend_yield": 0.0111,
+    "pct_unprofitable_constituents": null,
+    "realized_eps_by_year": null,
+    "realized_eps_basis": null,
+    "inflation_for_conversion": null,
+    "top10_holdings": null,
+    "return_1y": null,
+    "return_ytd": null,
+    "holding_years": 10,
+    "growth_uncertainty": 0.02,
+    "currency": "KRW",
+    "price_at_analysis": null,
+    "data_sources": [
+      "funetf.co.kr/product/etf/view/KR7200030005(2026-08-07)"
+    ],
+    "falsification_conditions": null
+  },
+  "pe_divergence": {
+    "sources": {
+      "stockanalysis(trailing)": 29.48,
+      "allinvestview(trailing)": 31.44
+    },
+    "min": 29.48,
+    "max": 31.44,
+    "spread_abs": 1.9600000000000009,
+    "spread_relative": 0.06648575305291726,
+    "warning": null
+  },
+  "ers": {
+    "components": {
+      "concentration": 10.0,
+      "breadth": 18.0,
+      "data_quality": 6.0
+    },
+    "excluded": [
+      "earnings_quality"
+    ],
+    "score": 56.66666666666667
+  },
+  "discount_rate": {
+    "rf": 0.0461,
+    "erp": 0.067,
+    "r": 0.1131
+  },
+  "growth": {
+    "expected_earnings_growth": 0.07,
+    "expense_ratio_deducted": 0.0025,
+    "net_expected_growth": 0.0675,
+    "basis": "산업재는 항공우주·방산(GE Aerospace·RTX·Boeing)과 중장비(Caterpillar·Deere)가 상위비중을 차지해 설비투자·리쇼어링 사이클에 연동된다. 명목GDP+α 수준으로 S&P500과 비슷하게 잡음 [추정치] - 관세·공급망 재편이 상방/하방 어느 쪽으로도 작용할 수 있어 불확실성이 크다. [v3.38: XLI 분석(2026-08-08)에서 그대로 재사용 - 같은 주식 바스켓이라 P/E·성장률은 화폐 표시와 무관]",
+    "basis_type": "analyst_estimate",
+    "anchor_cross_check": null,
+    "sensitivity": {
+      "uncertainty": 0.02,
+      "growth_low": 0.0475,
+      "growth_high": 0.08750000000000001,
+      "gap_low": -0.031287422934648576,
+      "gap_high": 0.008712577065351432,
+      "judgment_low": "적정가/경계선",
+      "judgment_high": "적정가/경계선",
+      "robust": true
+    }
+  },
+  "valuation": {
+    "by_source": {
+      "stockanalysis(trailing)": {
+        "pe_ratio": 29.48,
+        "earnings_yield": 0.033921302578018994,
+        "implied_growth": 0.07658097112860894,
+        "gap": -0.009080971128608936,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07658097112860894,
+          "for_undervalued": 0.12658097112860894,
+          "for_overvalued": 0.026580971128608938,
+          "band_used": 0.05
+        }
+      },
+      "allinvestview(trailing)": {
+        "pe_ratio": 31.44,
+        "earnings_yield": 0.031806615776081425,
+        "implied_growth": 0.07878742293464858,
+        "gap": -0.011287422934648572,
+        "judgment": "적정가/경계선",
+        "required_growth": {
+          "breakeven": 0.07878742293464858,
+          "for_undervalued": 0.12878742293464857,
+          "for_overvalued": 0.028787422934648574,
+          "band_used": 0.05
+        }
+      }
+    },
+    "gap_min": -0.011287422934648572,
+    "gap_max": -0.009080971128608936,
+    "judgments_seen": [
+      "적정가/경계선"
+    ],
+    "judgment_flipped_across_sources": false,
+    "consensus_judgment": "적정가/경계선"
+  },
+  "cost": {
+    "expense_ratio": 0.0025,
+    "holding_years": 10,
+    "cumulative_drag": 0.024720616821432673
+  },
+  "fed_model": {
+    "earnings_yield": 0.033921302578018994,
+    "treasury_yield": 0.0461,
+    "spread": -0.012178697421981008,
+    "caveat": "Fed 모델 스프레드는 명목 국채금리와 이익수익률을 직접 비교하는 논쟁적 지표다(인플레이션 처리 문제). 판정 근거로 쓰지 말고 참고용 병기로만 볼 것 - 이 엔진도 판정 계산에 사용하지 않는다."
+  },
+  "performance": {
+    "return_1y": null,
+    "return_ytd": null,
+    "dividend_yield": 0.0111
+  },
+  "wrapper": {
+    "expense_ratio": 0.0025,
+    "expense_ratio_delta_vs_us": 0.0017000000000000001,
+    "hedged": false,
+    "estimated_hedge_carry": null,
+    "aum_krw": 49900000000.0,
+    "listed_date": "미확인"
+  }
+}

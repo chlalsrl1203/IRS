@@ -23,7 +23,7 @@ Analysis Pipeline (v3.19 신규)
 import json
 import os
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 from engine.expectation_gap_engine import (
     DRSInputs,
@@ -33,6 +33,7 @@ from engine.expectation_gap_engine import (
     capex_intensity_from_series,
     capped_n,
     check_deceleration_double_count,
+    check_scale_plausibility,
     fcf_conservatism_adjustment,
     check_stalwart_two_stage_bias,
     classify_lynch_type,
@@ -229,6 +230,23 @@ class AnalysisInputs:
     realistic_growth_override: float = None
     realistic_growth_override_reason: str = None
 
+    # ── Point-in-Time 토대 - v3.47에서 배선(2026-08-15 Phase 3) ──────────
+    # 계약서 20~22절의 **최소 요건만** 넣는다. Historical Replay를 만드는 게
+    # 아니라, replay가 언젠가 가능해지려면 반드시 있어야 하는 두 날짜를 지금부터
+    # 모으기 시작하는 것이다(v3.24가 price_at_analysis를 "백테스트의 전제조건"
+    # 이라며 먼저 넣은 것과 같은 패턴).
+    #
+    # analysis_as_of      : "이 분석이 어느 시점의 정보로 이뤄졌는가"(ISO 날짜)
+    #                       meta.analyzed_at(코드 실행 시각)과 다르다 - 실행
+    #                       시각은 그 시점에 무엇이 공시돼 있었는지 보증하지 않는다.
+    # filing_dates_by_year: {회계연도: 그 연도 실적이 공시된 ISO 날짜}
+    #                       최근 회계연도(fcf0를 결정하는 해)는 반드시 포함해야 한다.
+    #
+    # ⚠️ 둘 다 None이면 PIT_UNKNOWN이다 - 기존 34종목이 전부 여기 해당하며,
+    # 그 사실을 "검증됨"으로 위장하지 않는다(계약서 22절).
+    analysis_as_of: str = None
+    filing_dates_by_year: dict = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -334,6 +352,36 @@ class AnalysisInputs:
                 f"capex의 2배만큼 과대계상된다(v3.19 가드)."
             )
 
+        # ⚠️ v3.46 가드(2026-08-15 Phase 0 감사 C-01): EBITDA<=0이면
+        # net_debt/EBITDA는 정의되지 않는다. 가드가 없을 때 무슨 일이 벌어지는지
+        # 실행으로 확인했다 - EBITDA가 적자면 비율이 **음수**가 되고,
+        # leverage_score()는 음수를 "순현금"으로 해석해 최저 위험점수(2.0)를 준다.
+        #
+        #   동일 기업(순부채 +$30억):
+        #     EBITDA -$5억(적자) -> 비율 -6.00 -> leverage 2.0  -> DRS 22.4
+        #     EBITDA +$5억(흑자) -> 비율 +6.00 -> leverage 20.0 -> DRS 40.4
+        #
+        # 부실한 쪽이 DRS 18점 더 "안전"하게 나오고 경고조차 없었다. DRS는
+        # ERP -> 할인율 -> Implied Growth -> Gap -> 판정, 그리고 시나리오확률·
+        # Confidence·RAR까지 전부를 타고 흐르므로 조용히 판정을 뒤집을 수 있다
+        # (capex 부호 사고와 같은 계열: 단위/부호가 조용히 반대로 작동하는 유형).
+        #
+        # EBITDA=0이면 원인 설명 없는 ZeroDivisionError가 났다.
+        #
+        # ⚠️ 순현금(net_debt<0, EBITDA>0)은 **정상 경로**다 - 34종목 중 13종목이
+        # 여기 해당하며(MNDY -138.13 등) 그 종목들의 leverage 2.0은 옳다.
+        # 이 가드는 분모만 검사하므로 그 경로를 건드리지 않는다.
+        if self.ebitda is None or self.ebitda <= 0:
+            raise ValueError(
+                f"ebitda={self.ebitda}: EBITDA가 0 이하면 net_debt/EBITDA가 "
+                f"정의되지 않는다(v3.46 가드). 그대로 두면 EBITDA 적자 기업이 "
+                f"'순현금'으로 오인되어 레버리지 위험이 **정반대로** 산출된다"
+                f"(부실기업일수록 DRS가 낮게 나옴). EBITDA가 실제로 적자인 "
+                f"기업이라면 leverage 항목을 DRS에서 제외하고 "
+                f"DRSInputs.excluded_reasons에 사유를 남기는 경로를 쓸 것 - "
+                f"이 파이프라인은 그 종목을 자동으로 처리하지 않는다."
+            )
+
         # v3.23: SBC도 capex와 동일한 부호규약 함정이 있다(현금흐름표에
         # 비현금비용 가산 항목으로 항상 양수 표기됨) - 음수가 들어오면 데이터
         # 소스 부호규약을 의심할 것.
@@ -351,8 +399,104 @@ class AnalysisInputs:
                     f"동일 시점의 SBC가 있어야 병기 계산이 가능하다."
                 )
 
+        # v3.47: PIT 입력 형식 검증(값이 있을 때만). 형식이 틀리면 조용히
+        # PIT_UNKNOWN으로 떨어지는 대신 즉시 거부한다 - "기록했다고 생각했는데
+        # 사실은 안 된" 상태가 가장 나쁘다.
+        if self.analysis_as_of is not None:
+            _parse_iso_date(self.analysis_as_of, "analysis_as_of")
+        if self.filing_dates_by_year is not None:
+            if not self.filing_dates_by_year:
+                raise ValueError(
+                    "filing_dates_by_year가 빈 dict다 - 모르면 None으로 둘 것"
+                    "(PIT_UNKNOWN으로 정직하게 기록된다)."
+                )
+            for year, value in self.filing_dates_by_year.items():
+                _parse_iso_date(value, f"filing_dates_by_year[{year}]")
+            latest_fy = max(self.revenue_by_year)
+            if latest_fy not in self.filing_dates_by_year:
+                raise ValueError(
+                    f"filing_dates_by_year에 최근 회계연도({latest_fy})가 없다 - "
+                    f"그 해가 fcf0를 결정하므로 PIT 검증의 핵심이다. 모르면 "
+                    f"filing_dates_by_year 자체를 None으로 둘 것."
+                )
+            if self.analysis_as_of is None:
+                raise ValueError(
+                    "filing_dates_by_year를 넣으려면 analysis_as_of도 필요하다 - "
+                    "비교 기준일이 없으면 filing_date만으로는 미래정보 여부를 "
+                    "판정할 수 없다(계약서 22절)."
+                )
+
         if self.margin_years is None:
             self.margin_years = sorted(self.revenue_by_year)[-5:]
+
+
+def _parse_iso_date(value, label: str) -> date:
+    """ISO 날짜 문자열(YYYY-MM-DD)을 date로. 형식이 틀리면 즉시 거부한다."""
+    if isinstance(value, date):
+        return value
+    try:
+        return date.fromisoformat(str(value))
+    except (TypeError, ValueError):
+        raise ValueError(
+            f"{label}={value!r}: ISO 날짜(YYYY-MM-DD) 형식이어야 한다(v3.47)."
+        )
+
+
+# Point-in-Time 상태 어휘 - 계약서 21절
+PIT_VALID = "PIT_VALID"
+PIT_INVALID = "PIT_INVALID"
+PIT_UNKNOWN = "PIT_UNKNOWN"
+
+
+def evaluate_point_in_time(inputs: "AnalysisInputs") -> dict:
+    """
+    이 분석이 "그 시점에 실제로 이용 가능했던 정보만 썼는가"를 판정한다.
+
+    계약서 22절의 규칙 그대로다:
+        filing_date <= analysis_as_of  -> 사용 가능
+        filing_date >  analysis_as_of  -> 미래정보(사용 금지)
+        filing_date 미상               -> PIT_UNKNOWN (valid로 위장하지 않는다)
+
+    ⚠️ **이 함수는 Historical Replay가 아니다.** replay는 계약서 70절의 7개
+    조건을 전부 만족해야 하는데, 이 저장소는 아직 원자료 스냅샷도 소스 타이밍
+    검증도 갖추지 못했다(docs/change_plan.md C-09~C-11 참고). 여기서 하는 것은
+    그 7개 조건 중 **2개(분석일 확정, 소스 타이밍 검증 가능)의 토대**를 지금부터
+    쌓기 시작하는 것뿐이다.
+
+    반환값: {"status", "analysis_as_of", "filing_dates_by_year", "violations"}
+    """
+    if inputs.analysis_as_of is None or inputs.filing_dates_by_year is None:
+        return {
+            "status": PIT_UNKNOWN,
+            "analysis_as_of": inputs.analysis_as_of,
+            "filing_dates_by_year": inputs.filing_dates_by_year,
+            "violations": [],
+            "note": (
+                "analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 "
+                "데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 "
+                "코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다."
+            ),
+        }
+
+    as_of = _parse_iso_date(inputs.analysis_as_of, "analysis_as_of")
+    violations = [
+        {
+            "fiscal_year": year,
+            "filing_date": str(value),
+            "days_after_analysis": (_parse_iso_date(value, "filing_date") - as_of).days,
+        }
+        for year, value in sorted(inputs.filing_dates_by_year.items())
+        if _parse_iso_date(value, "filing_date") > as_of
+    ]
+    return {
+        "status": PIT_INVALID if violations else PIT_VALID,
+        "analysis_as_of": inputs.analysis_as_of,
+        "filing_dates_by_year": {
+            str(k): str(v) for k, v in sorted(inputs.filing_dates_by_year.items())
+        },
+        "violations": violations,
+        "note": None,
+    }
 
 
 def _cagr(start: float, end: float, years: int, label: str = "") -> float:
@@ -436,6 +580,30 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
 
     fcf_cagr_5y = _cagr(fcf[base_5y], fcf[years[-1]], span_5y, "FCF 5y")
     fcf0 = fcf[years[-1]]
+
+    # ⚠️ v3.46(2026-08-15 Phase 2): 시가총액의 스케일/통화 오류는 single_stage
+    # 경로에서 경고 없이 판정까지 흘러간다(BRO 실측: 100배 과소 시 Gap이
+    # +7.43%p -> +96.22%p로 부풀어도 무경고 통과). 자동보정 없이 탐지만 한다.
+    _scale_ok, _scale_warning = check_scale_plausibility(fcf0, inputs.market_cap)
+    if not _scale_ok:
+        data_limitations.append(_scale_warning)
+
+    # ── v3.47: Point-in-Time 판정(계산에는 관여하지 않는 순수 기록·검증) ──
+    point_in_time = evaluate_point_in_time(inputs)
+    if point_in_time["status"] == PIT_INVALID:
+        raise ValueError(
+            f"[미래정보 사용] analysis_as_of({inputs.analysis_as_of}) 이후에 "
+            f"공시된 데이터가 입력에 섞여 있다: {point_in_time['violations']}. "
+            f"그 시점에 존재하지 않던 정보로 그 시점의 판단을 만드는 것이라 "
+            f"결과가 무의미하다(계약서 5.5절). analysis_as_of를 실제 분석 시점으로 "
+            f"고치거나, 해당 회계연도를 입력에서 제외할 것."
+        )
+    if point_in_time["status"] == PIT_UNKNOWN:
+        data_limitations.append(
+            f"[PIT 미검증] {point_in_time['note']} 이 분석은 Historical Replay "
+            f"대상이 될 수 없다(계약서 70절 조건 미충족). 새 분석부터 "
+            f"analysis_as_of와 filing_dates_by_year를 채워나갈 것."
+        )
 
     yoy = [(years[i], rev[years[i]] / rev[years[i - 1]] - 1) for i in range(1, len(years))]
     worst_yoy = min(g for _, g in yoy)
@@ -686,6 +854,25 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         realistic_growth_overridden=(inputs.realistic_growth_override is not None),
     )
 
+    # ⚠️ v3.46 가시화(2026-08-15 Phase 0 감사 C-06): data_completeness_pct는
+    # confidence_score에 최대 15점(round(0.9*15)=14점)을 기여하는데, ledger
+    # 34종목 **전부**가 기본값 0.9를 그대로 쓰고 있었다 - 실제 데이터 완전성에서
+    # 산출된 적이 한 번도 없다. 즉 Confidence는 "데이터 완전성을 반영한다"고
+    # 표방하면서 그 축의 판별력이 정확히 0이다(계약서 3절 False Precision).
+    #
+    # 자동 계산하지 않는다 - 무엇이 "완전한 데이터"인지에 대한 근거가 이
+    # 프로젝트에 없고, 근거 없는 새 공식을 만드는 것은 계약서 5.2절(금융 가정
+    # 발명 금지) 위반이다. 점수도 바꾸지 않는다(기존 34종목 Confidence 불변).
+    # 대신 기본값을 그대로 썼다는 사실만 눈에 보이게 남긴다.
+    if inputs.data_completeness_pct == 0.9:
+        data_limitations.append(
+            f"[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - "
+            f"Confidence에 자동 부여된 {round(0.9 * 15)}점은 실제 데이터 완전성을 "
+            f"측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 "
+            f"기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 "
+            f"판별력이 없다고 보고 나머지 항목으로 해석할 것."
+        )
+
     # v3.32: 판정 규칙 사본을 제거하고 engine의 judgment_from_gap() 하나만 쓴다.
     judgment = judgment_from_gap(gap)
 
@@ -712,44 +899,79 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
         div_years = sorted(inputs.dividends_paid_by_year)[-min(3, len(inputs.dividends_paid_by_year)):]
         total_dividends = sum(inputs.dividends_paid_by_year[y] for y in div_years)
         total_net_income = sum(inputs.net_income_by_year[y] for y in div_years)
-        payout_ratio = total_dividends / total_net_income
-        retention_ratio = 1 - payout_ratio
-        sustainable_growth = avg_roe * retention_ratio
 
-        latest_equity_year = max(inputs.shareholders_equity_by_year)
-        price_to_book = inputs.market_cap / inputs.shareholders_equity_by_year[latest_equity_year]
-
-        insurer_cross_check = {
-            "roe_years_used": roe_years,
-            "avg_roe": avg_roe,
-            "dividend_years_used": div_years,
-            "payout_ratio": payout_ratio,
-            "retention_ratio": retention_ratio,
-            "sustainable_growth": sustainable_growth,
-            "price_to_book": price_to_book,
-        }
-
-        divergence = abs(realistic_growth - sustainable_growth)
-        if divergence >= INSURER_GROWTH_DIVERGENCE_THRESHOLD:
+        # ⚠️ v3.46 가드(2026-08-15 Phase 0 감사 C-03): 합산 순이익이 0 이하면
+        # 배당성향이 정의되지 않는다. 가드가 없을 때의 실측 결과:
+        #     순이익합계 -200, 배당 300 -> 배당성향 -1.50 -> 유보율 +2.50
+        #                                 -> 지속가능성장률이 ROE보다 커짐(30%)
+        #     배당 > 순이익            -> 유보율 음수 -> 성장률 부호 반전
+        # 유보율은 정의상 0~1인데 그 밖의 값이 그대로 Realistic Growth와 대조돼
+        # 경고를 내거나(또는 내지 않아) 판정 신뢰도 판단에 쓰였다. 대재해 노출
+        # 재보험사(ACGL 유형)에서 손실 연도는 충분히 현실적이다.
+        #
+        # is_insurer는 "병기, 자동판정 안 함" 경로이므로 여기서 예외를 던져
+        # 분석 전체를 막지 않는다 - 교차검증만 건너뛰고 그 사실을 남긴다.
+        # (ACGL·PGR 기존 2건은 순이익 음수 연도가 0건이라 이 분기를 타지 않는다.)
+        if total_net_income <= 0:
+            insurer_cross_check = None
             data_limitations.append(
-                f"[보험업 교차검증 경고] Realistic Growth({realistic_growth*100:.2f}%)와 "
-                f"지속가능성장률(ROE x 유보율={sustainable_growth*100:.2f}%, "
-                f"평균ROE {avg_roe*100:.2f}%/유보율 {retention_ratio*100:.2f}%)이 "
-                f"{divergence*100:.2f}%p 벌어져 있다(경고임계값 "
-                f"{INSURER_GROWTH_DIVERGENCE_THRESHOLD*100:.0f}%p). FCF-DCF가 보험업의 "
-                f"플로트 성장을 유기적 성장으로 착각했을 가능성이 있다(ACGL 선례: "
-                f"Gap 31.44%p가 이 방식으로 과장 확인됨). P/B={price_to_book:.2f}배도 "
-                f"함께 참고할 것 - 낮으면(~1.5배 이하) 시장이 아직 재평가하지 않았다는 "
-                f"뜻이라 방향은 유지하되 크기를 할인, 높으면(~3배 이상) 이미 재평가됐을 "
-                f"수 있어 판정 신뢰도를 더 낮출 것."
+                f"[보험업 교차검증 불가] 배당성향 산출 구간({div_years})의 합산 "
+                f"순이익이 {total_net_income:,.0f}으로 0 이하다 - 배당성향/유보율이 "
+                f"정의되지 않아 지속가능성장률(ROE x 유보율) 교차검증을 건너뛴다"
+                f"(v3.46 가드). 손실 연도가 창에 걸린 것이라면 창을 옮기지 말고 "
+                f"(유리한 구간 선택이 된다) 이 종목은 FCF-DCF 결과를 보험업 "
+                f"플로트 왜곡 관점에서 별도 수작업 검증할 것."
             )
         else:
-            data_limitations.append(
-                f"[보험업 교차검증] Realistic Growth({realistic_growth*100:.2f}%)와 "
-                f"지속가능성장률({sustainable_growth*100:.2f}%)이 {divergence*100:.2f}%p "
-                f"이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). "
-                f"P/B={price_to_book:.2f}배는 별도로 판정 신뢰도 판단에 참고할 것."
+            payout_ratio = total_dividends / total_net_income
+            retention_ratio = 1 - payout_ratio
+            sustainable_growth = avg_roe * retention_ratio
+            if not (0.0 <= retention_ratio <= 1.0):
+                data_limitations.append(
+                    f"[보험업 유보율 정의역 이탈] 유보율이 {retention_ratio:.3f}로 "
+                    f"0~1 범위를 벗어났다(배당성향 {payout_ratio:.3f}) - 배당이 "
+                    f"순이익을 초과했거나 특별배당이 섞인 구간일 수 있다. "
+                    f"지속가능성장률({sustainable_growth*100:.2f}%)을 그대로 "
+                    f"신뢰하지 말 것(v3.46)."
+                )
+
+            latest_equity_year = max(inputs.shareholders_equity_by_year)
+            price_to_book = (
+                inputs.market_cap
+                / inputs.shareholders_equity_by_year[latest_equity_year]
             )
+
+            insurer_cross_check = {
+                "roe_years_used": roe_years,
+                "avg_roe": avg_roe,
+                "dividend_years_used": div_years,
+                "payout_ratio": payout_ratio,
+                "retention_ratio": retention_ratio,
+                "sustainable_growth": sustainable_growth,
+                "price_to_book": price_to_book,
+            }
+
+            divergence = abs(realistic_growth - sustainable_growth)
+            if divergence >= INSURER_GROWTH_DIVERGENCE_THRESHOLD:
+                data_limitations.append(
+                    f"[보험업 교차검증 경고] Realistic Growth({realistic_growth*100:.2f}%)와 "
+                    f"지속가능성장률(ROE x 유보율={sustainable_growth*100:.2f}%, "
+                    f"평균ROE {avg_roe*100:.2f}%/유보율 {retention_ratio*100:.2f}%)이 "
+                    f"{divergence*100:.2f}%p 벌어져 있다(경고임계값 "
+                    f"{INSURER_GROWTH_DIVERGENCE_THRESHOLD*100:.0f}%p). FCF-DCF가 보험업의 "
+                    f"플로트 성장을 유기적 성장으로 착각했을 가능성이 있다(ACGL 선례: "
+                    f"Gap 31.44%p가 이 방식으로 과장 확인됨). P/B={price_to_book:.2f}배도 "
+                    f"함께 참고할 것 - 낮으면(~1.5배 이하) 시장이 아직 재평가하지 않았다는 "
+                    f"뜻이라 방향은 유지하되 크기를 할인, 높으면(~3배 이상) 이미 재평가됐을 "
+                    f"수 있어 판정 신뢰도를 더 낮출 것."
+                )
+            else:
+                data_limitations.append(
+                    f"[보험업 교차검증] Realistic Growth({realistic_growth*100:.2f}%)와 "
+                    f"지속가능성장률({sustainable_growth*100:.2f}%)이 {divergence*100:.2f}%p "
+                    f"이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). "
+                    f"P/B={price_to_book:.2f}배는 별도로 판정 신뢰도 판단에 참고할 것."
+                )
 
     # ── v3.23: SBC 병기 교차검증(2026-08-01 방법론 감사 Critical-1) ─────────
     # FCF = OCF - capex는 SBC를 암묵적으로 주주 귀속 현금으로 취급한다.
@@ -820,6 +1042,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,
             "currency": inputs.currency,
+            "point_in_time": point_in_time,
         },
         "data_limitations": data_limitations,
         "inputs": asdict(inputs),
@@ -948,17 +1171,148 @@ def cross_check_prior_record(result: dict, prior: dict) -> list:
     return warnings
 
 
-def save_ledger(result: dict, ledger_dir: str = "ledger") -> str:
+def _ledger_payload_without_timestamp(obj: dict) -> str:
+    """
+    두 ledger 내용이 '실질적으로 같은지' 비교하기 위한 정규화 문자열.
+
+    제외 대상 2개:
+    - `meta.analyzed_at` — 같은 입력으로 재실행하면 이 값만 달라진다는 것을
+      실측으로 확인했다(감사 FM-4: analyzed_at 외 전 필드 동일).
+    - `prior_cross_check` — v3.47에서 save_ledger가 저장 직전에 덧붙이는
+      **파생 필드**다. `run_analysis()` 결과에는 없고 저장본에만 있으므로,
+      제외하지 않으면 동일 입력 재실행이 "내용 다름"으로 오판된다
+      (테스트 `test_save_ledger_allows_identical_rerun`이 실제로 잡아냈다).
+      대조 결과는 조언일 뿐 분석 내용 자체가 아니므로 동일성 판단에서 뺀다.
+    """
+    trimmed = dict(obj)
+    meta = dict(trimmed.get("meta", {}))
+    meta.pop("analyzed_at", None)
+    trimmed["meta"] = meta
+    trimmed.pop("prior_cross_check", None)
+    return json.dumps(trimmed, ensure_ascii=False, sort_keys=True, default=str)
+
+
+def _find_prior_ledger(ticker: str, current_path: str, ledger_dir: str):
+    """
+    같은 티커의 **직전** ledger를 찾는다(현재 저장하려는 파일은 제외).
+    파일명이 `<TICKER>_<YYYY-MM-DD>.json`이라 이름 정렬 = 날짜 정렬이다.
+    """
+    import glob as _glob
+
+    candidates = [
+        p
+        for p in _glob.glob(os.path.join(ledger_dir, f"{ticker}_*.json"))
+        if os.path.abspath(p) != os.path.abspath(current_path)
+    ]
+    if not candidates:
+        return None, None
+    prior_path = sorted(candidates)[-1]
+    try:
+        with open(prior_path, encoding="utf-8") as f:
+            return prior_path, json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return None, None
+
+
+def save_ledger(result: dict, ledger_dir: str = "ledger", overwrite: bool = False,
+                cross_check: bool = True) -> str:
     """
     분석 결과 전체(입력값 포함)를 JSON으로 저장한다.
 
     왜 필요한가: 큐22(Cadence)가 "계산은 했다"는 기록만 남고 입력값이 사라져
     전면 재수행해야 했고, CDNS/MNST/PH의 과거 RAR과 대조검증도 불가능했다.
     ledger 파일이 있으면 다음 세션이 같은 입력으로 재현하거나 차이를 특정할 수 있다.
+
+    ⚠️ v3.46 덮어쓰기 가드(2026-08-15 Phase 0 감사 C-02): 파일명이
+    `<TICKER>_<날짜>.json`이라 **같은 날 재실행하면 경로가 충돌**한다. 그전까지
+    이 함수는 경고 없이 덮어썼고, 실측으로 재현했다 - Gap +0.10짜리 분석을
+    저장한 뒤 Gap -0.30짜리를 저장하니 파일 1개만 남고 1차 결과는 흔적 없이
+    사라졌다. ledger는 이 프로젝트의 유일한 재현 근거이므로(계약서 5.4/63절)
+    조용한 소실은 가장 나쁜 실패 유형이다.
+
+    설계 판단 - 무조건 금지하지 않는다:
+    - **내용이 같으면(analyzed_at 제외) 그대로 통과**시킨다. 이 프로젝트의 표준
+      관행인 "같은 입력으로 재실행해 값이 같은지 확인"(v3.19 sensitivity 근본수정,
+      v3.32 33종목 전건 재실행 등)이 깨지면 안 되기 때문이다.
+    - **내용이 다르면 예외**를 던진다. 의도한 갱신이면(정성조사 결과 반영 등)
+      `overwrite=True`를 명시하게 해 "의도한 갱신"과 "사고에 의한 소실"을 구분한다.
     """
     os.makedirs(ledger_dir, exist_ok=True)
     date = result["meta"]["analyzed_at"][:10]
     path = os.path.join(ledger_dir, f"{result['meta']['ticker']}_{date}.json")
+
+    if os.path.exists(path) and not overwrite:
+        with open(path, encoding="utf-8") as f:
+            try:
+                existing = json.load(f)
+            except json.JSONDecodeError:
+                existing = None
+        if existing is None or _ledger_payload_without_timestamp(
+            existing
+        ) != _ledger_payload_without_timestamp(result):
+            raise FileExistsError(
+                f"{path}에 내용이 다른 ledger가 이미 있다(v3.46 가드). 그대로 쓰면 "
+                f"기존 분석이 흔적 없이 사라진다 - ledger는 이 프로젝트의 유일한 "
+                f"재현 근거다. 의도한 갱신이라면(정성조사 결과 반영 등) "
+                f"save_ledger(..., overwrite=True)로 명시할 것. 같은 입력을 "
+                f"재실행한 것이라면 값이 달라진 이유를 먼저 특정할 것 - "
+                f"analyzed_at을 제외한 전 필드가 같으면 이 예외는 발생하지 않는다."
+            )
+
+    # ── v3.47: 과거 기록 자동 대조(2026-08-15 Phase 3) ─────────────────────
+    # 감사 T-2에서 확인한 사실: cross_check_prior_record()는 55개 스크립트 중
+    # **1개(BKNG)**에서만 호출된다. CLAUDE.md는 "과거 기록이 있는 종목을
+    # 재검증할 때 대조하라"고 규정하지만 강제 수단이 없었다.
+    #
+    # 이 프로젝트는 **문서로만 둔 규칙이 지켜지지 않는 것을 이미 세 번 겪었다**
+    # (run_self_check·confidence_score·claim/lock). PH 모델선택 실수도 사람이
+    # 우연히 대조해서 잡았을 뿐이다. 네 번째를 만들지 않는다.
+    #
+    # CLAUDE.md v3.32가 이미 "부작용이 가장 작은 방향"으로 지목한 설계를 그대로
+    # 따른다 - save_ledger()가 같은 티커의 직전 ledger를 찾아 위임하는 것.
+    # 모든 분석 스크립트가 이미 save_ledger()를 부르므로 **배선 누락이 구조적으로
+    # 불가능**하다.
+    #
+    # 부작용 억제:
+    #   - 절대 예외를 던지지 않는다(대조는 조언이지 차단이 아니다)
+    #   - 결과를 저장 JSON에 병기만 한다(판정은 건드리지 않는다 - 병기 원칙)
+    #   - cross_check=False로 끌 수 있다(골든테스트가 저장소 상태에 의존하지
+    #     않아야 하는 경우 대비)
+    prior_warnings = []
+    prior_ref = None
+    if cross_check:
+        prior_path, prior = _find_prior_ledger(
+            result["meta"]["ticker"], path, ledger_dir
+        )
+        if prior:
+            prior_ref = os.path.basename(prior_path)
+            try:
+                prior_warnings = cross_check_prior_record(
+                    result,
+                    {
+                        "rar": prior.get("rar"),
+                        "gap": prior.get("expectation_gap"),
+                        "drs": (prior.get("drs") or {}).get("score"),
+                        "implied_growth": (prior.get("implied_growth") or {}).get("value"),
+                    },
+                )
+            except Exception as e:  # 대조 실패가 저장을 막아선 안 된다
+                prior_warnings = [
+                    f"[과거기록 대조 실패] {type(e).__name__}: {e} "
+                    f"(대조는 조언이므로 저장은 계속 진행됨)"
+                ]
+            if prior_warnings:
+                print(f"⚠️ 과거 기록({prior_ref}) 대조 경고 {len(prior_warnings)}건:")
+                for w in prior_warnings:
+                    print(f"   - {w}")
+
+    payload = dict(result)
+    payload["prior_cross_check"] = {
+        "prior_ledger": prior_ref,
+        "warnings": prior_warnings,
+        "checked": bool(cross_check),
+    }
+
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2, default=str)
+        json.dump(payload, f, ensure_ascii=False, indent=2, default=str)
     return path

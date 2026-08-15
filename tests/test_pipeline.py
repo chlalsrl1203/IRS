@@ -4,8 +4,12 @@ import pytest
 
 from engine.expectation_gap_engine import judgment_grade_from_gap
 from engine.pipeline import (
+    PIT_INVALID,
+    PIT_UNKNOWN,
+    PIT_VALID,
     AnalysisInputs,
     compare_implied_growth_models,
+    evaluate_point_in_time,
     run_analysis,
     save_ledger,
 )
@@ -1165,3 +1169,412 @@ def test_two_stage_bisection_log_records_market_cap_not_growth():
         )
     # 수렴한 마지막 항목의 implied_cap은 목표 시총에 수렴해 있어야 한다
     assert log[-1]["implied_cap"] == pytest.approx(target_cap, rel=1e-4)
+
+
+# ======================================================================
+# v3.46 Phase 0 감사(2026-08-15) - P0 결함 회귀 테스트
+# docs/system_audit.md FM-1~FM-4 / docs/change_plan.md C-01~C-04, C-06
+# ======================================================================
+
+
+def test_ebitda_zero_rejected_with_explanatory_message():
+    """
+    C-01: EBITDA=0이면 net_debt/EBITDA가 정의되지 않는다. 가드 이전에는 원인
+    설명 없는 ZeroDivisionError가 났다(계약서 107절 Error Contract 위배).
+    """
+    with pytest.raises(ValueError, match="EBITDA가 0 이하"):
+        cdns_inputs(ebitda=0.0)
+
+
+def test_ebitda_negative_rejected_instead_of_inverting_leverage_risk():
+    """
+    C-01의 핵심 회귀 테스트. 가드 이전에는 EBITDA 적자 기업이 '순현금'으로
+    오인되어 leverage_score가 **최저 위험(2.0)** 을 받았다 - 부실할수록 DRS가
+    낮게(안전하게) 나오는 방향의 오류였다.
+
+    실측(감사 FM-1): 순부채 +$30억 동일 조건에서
+        EBITDA -$5억 -> leverage 2.0 / DRS 22.4 (경고 없음)
+        EBITDA +$5억 -> leverage 20.0 / DRS 40.4
+    """
+    with pytest.raises(ValueError, match="정반대"):
+        cdns_inputs(ebitda=-500_000_000.0)
+
+
+def test_net_cash_company_still_passes_with_lowest_leverage_score():
+    """
+    C-01 수정이 **정상 경로를 깨지 않는지** 확인한다. 순현금(net_debt<0)이면서
+    EBITDA>0인 기업은 34종목 중 13종목이 해당하며(MNDY -138.13 등) 그 종목들의
+    leverage 2.0은 옳다. 가드는 분모(EBITDA)만 검사하므로 이 경로는 그대로여야 한다.
+    """
+    result = run_analysis(cdns_inputs(net_debt=-5_000_000_000.0))
+    assert result["derived"]["net_debt_to_ebitda"] < 0
+    assert result["drs"]["components"]["leverage"] == 2.0
+
+
+def test_run_analysis_is_deterministic_except_timestamp():
+    """
+    C-04: 동일 입력 2회 실행 시 meta.analyzed_at을 제외한 전 필드가 동일해야
+    한다(계약서 58·111절). 감사 시점에 실제로는 결정적이었으나 이를 고정하는
+    테스트가 없어, 향후 비결정적 요소가 들어와도 잡히지 않았다.
+    """
+    first = run_analysis(cdns_inputs())
+    second = run_analysis(cdns_inputs())
+
+    assert first["meta"]["analyzed_at"] != second["meta"]["analyzed_at"] or True
+
+    def strip(obj):
+        trimmed = dict(obj)
+        meta = dict(trimmed["meta"])
+        meta.pop("analyzed_at")
+        trimmed["meta"] = meta
+        return json.dumps(trimmed, sort_keys=True, default=str)
+
+    assert strip(first) == strip(second), "동일 입력인데 결과가 달라졌다(결정성 위반)"
+
+
+def test_save_ledger_rejects_overwriting_different_content(tmp_path):
+    """
+    C-02: 같은 티커·같은 날짜에 **내용이 다른** 결과를 저장하면 이전 분석이
+    흔적 없이 사라졌다(감사 FM-2 재현: Gap +0.10 -> -0.30 저장 시 파일 1개만
+    남고 1차 결과 소실). 이제 예외로 막고 원본을 보존한다.
+    """
+    result = run_analysis(cdns_inputs())
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+
+    mutated = json.loads(json.dumps(result, default=str))
+    mutated["expectation_gap"] = -0.30
+
+    with pytest.raises(FileExistsError, match="내용이 다른 ledger"):
+        save_ledger(mutated, ledger_dir=str(tmp_path))
+
+    with open(path, encoding="utf-8") as f:
+        assert json.load(f)["expectation_gap"] == pytest.approx(
+            result["expectation_gap"]
+        ), "예외를 던졌는데도 원본이 훼손됐다"
+
+
+def test_save_ledger_allows_identical_rerun(tmp_path):
+    """
+    C-02 설계 판단의 회귀 테스트: '같은 입력으로 재실행해 값이 같은지 확인'은
+    이 프로젝트의 표준 검증 관행이다(v3.19/v3.32에서 33종목 전건 재실행).
+    내용이 같으면(analyzed_at 제외) 예외 없이 통과해야 한다.
+    """
+    save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+
+    assert len(list(tmp_path.iterdir())) == 1
+
+
+def test_save_ledger_overwrite_flag_allows_intentional_update(tmp_path):
+    """C-02: 의도한 갱신(정성조사 결과 반영 등)은 명시적으로 허용된다."""
+    result = run_analysis(cdns_inputs())
+    save_ledger(result, ledger_dir=str(tmp_path))
+
+    updated = json.loads(json.dumps(result, default=str))
+    updated["expectation_gap"] = -0.30
+    path = save_ledger(updated, ledger_dir=str(tmp_path), overwrite=True)
+
+    with open(path, encoding="utf-8") as f:
+        assert json.load(f)["expectation_gap"] == pytest.approx(-0.30)
+
+
+def test_default_data_completeness_is_flagged_as_unmeasured():
+    """
+    C-06: data_completeness_pct 기본값 0.9는 Confidence에 14점을 자동 부여하는데
+    ledger 34종목 전부가 이 기본값이었다 - 그 축의 판별력이 0이라는 사실이
+    드러나야 한다. **점수 자체는 바꾸지 않는다**(가시화만).
+    """
+    result = run_analysis(cdns_inputs())
+    assert any("데이터 완전성 미실측" in s for s in result["data_limitations"])
+    assert result["confidence"]["adjustments"]["data_completeness"] == 14
+
+
+def test_explicit_data_completeness_is_not_flagged():
+    """C-06: 분석자가 실제로 값을 넣으면 경고하지 않는다."""
+    result = run_analysis(cdns_inputs(data_completeness_pct=0.75))
+    assert not any("데이터 완전성 미실측" in s for s in result["data_limitations"])
+
+
+def test_validation_status_marks_confidence_as_uncalibrated():
+    """
+    C-05: 모델의 인식론적 지위가 코드에 남아 있어야 한다(계약서 40·50절).
+    Confidence를 확률로 오독하는 것을 막는 유일한 기계 판독 장치다.
+    """
+    from engine.expectation_gap_engine import VALIDATION_STATUS
+
+    assert "UNCALIBRATED" in VALIDATION_STATUS["confidence_score"]
+    assert "HEURISTIC_MAPPING" in VALIDATION_STATUS["erp_from_drs"]
+
+
+def test_scale_check_silent_on_all_existing_ledgers():
+    """
+    v3.46 Phase 2: 스케일 탐지 밴드는 **알려진 정상 종목에서 절대 발동하면 안
+    된다**. 34종목 실측 FCF수익률 범위는 1.50%(KLAC)~17.95%(ACGL)이며 밴드는
+    0.5~25%로 여유를 뒀다. 이 테스트가 깨지면 밴드가 너무 좁아진 것이다.
+    """
+    import glob
+
+    from engine.expectation_gap_engine import check_scale_plausibility
+
+    fired = []
+    for path in sorted(glob.glob("ledger/*.json")):
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        ok, _ = check_scale_plausibility(
+            data["derived"]["fcf0"], data["inputs"]["market_cap"]
+        )
+        if not ok:
+            fired.append(data["meta"]["ticker"])
+
+    assert not fired, f"정상 종목에서 스케일 경고가 오발동했다: {fired}"
+
+
+@pytest.mark.parametrize("multiplier,label", [(1 / 100, "100배 과소"), (100.0, "100배 과대")])
+def test_scale_check_catches_order_of_magnitude_errors(multiplier, label):
+    """
+    v3.46 Phase 2 핵심 회귀 테스트. 가드 이전에는 single_stage 경로에서 자릿수
+    오류가 **경고 없이 실행되어 판정까지 흘러갔다**(BRO 실데이터 검증):
+        100배 과소 -> Gap +7.43%p가 +96.22%p로 (매수리스트 1위감)
+        100배 과대 -> 판정이 '저평가'에서 '적정가'로 뒤집힘
+    100배 오류는 기저 FCF수익률과 무관하게 전부 탐지된다(실측 확인).
+    """
+    result = run_analysis(
+        cdns_inputs(market_cap=92952756000 * multiplier, model_used="single_stage")
+    )
+    assert any("스케일/통화 이상 의심" in s for s in result["data_limitations"]), (
+        f"{label} 오류가 탐지되지 않았다"
+    )
+
+
+def test_scale_check_currency_error_detected_only_above_yield_floor():
+    """
+    ⚠️ 이 가드의 **알려진 한계를 고정하는 테스트**(임계값을 조정해 통과시키지
+    않고 사실을 그대로 박아둔다).
+
+    통화 오류(x7.1) 탐지 여부는 그 종목의 기저 FCF수익률에 의존한다:
+        CDNS(기저 1.71%) x7.1 -> 12.14%  탐지 실패 - PDD 정상값 12.94%와 겹침
+        BRO (기저 6.03%) x7.1 -> 42.81%  탐지 성공
+    어떤 임계값으로도 분리되지 않으므로, 이 가드는 자릿수 오류의 안전망일 뿐
+    통화 오류 전반을 막지 못한다. 비USD 종목은 수작업 대조가 여전히 필요하다.
+    """
+    from engine.expectation_gap_engine import check_scale_plausibility
+
+    # 기저가 낮은 종목: 통화 오류가 밴드 안에 들어와 탐지되지 않는다(한계)
+    low_yield_ok, _ = check_scale_plausibility(0.0171 * 7.1 * 1e9, 1e9)
+    assert low_yield_ok, "기저 1.71% 종목의 통화오류가 탐지된다면 밴드가 좁아진 것"
+
+    # 기저가 중간 이상인 종목: 탐지된다
+    mid_yield_ok, warning = check_scale_plausibility(0.0603 * 7.1 * 1e9, 1e9)
+    assert not mid_yield_ok and "스케일/통화 이상 의심" in warning
+
+
+def test_scale_check_never_blocks_or_autocorrects():
+    """
+    계약서 30절: '100배 차이나니 100으로 나눈다'는 자동보정은 금지다. 경고만
+    남기고 계산값은 입력 그대로여야 한다(어느 쪽이 틀렸는지 코드는 모른다).
+    """
+    bad_cap = 92952756000 / 100
+    result = run_analysis(cdns_inputs(market_cap=bad_cap, model_used="single_stage"))
+
+    assert result["inputs"]["market_cap"] == bad_cap, "입력값이 자동으로 수정됐다"
+    assert result["judgment"], "경고 때문에 실행이 막혔다(경고는 차단이 아니다)"
+
+
+# ----------------------------------------------------------------------
+# Phase 3 (v3.47) — Point-in-Time 토대
+# 계약서 5.5절(미래정보 사용 금지) / 21~22절(PIT 상태 어휘와 규칙)
+# ----------------------------------------------------------------------
+
+def test_existing_analyses_are_pit_unknown_not_pit_valid():
+    """
+    ⚠️ 가장 중요한 PIT 테스트: 기존 34종목은 filing_date를 기록한 적이 없다.
+    그 상태를 'PIT_VALID'로 취급하면 **검증하지 않은 것을 검증했다고 주장**하는
+    셈이라 계약서 5.1절 위반이다. 반드시 PIT_UNKNOWN으로 떨어지고, 그 사실이
+    data_limitations에 드러나야 한다.
+    """
+    result = run_analysis(cdns_inputs())
+
+    assert result["meta"]["point_in_time"]["status"] == PIT_UNKNOWN
+    assert any("PIT" in s or "시점" in s for s in result["data_limitations"])
+
+
+def test_pit_valid_when_all_filings_precede_analysis_date():
+    """filing_date <= analysis_as_of를 전부 만족하면 PIT_VALID(계약서 22절)."""
+    result = run_analysis(
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2024: "2025-02-24", 2025: "2026-02-23"},
+        )
+    )
+
+    pit = result["meta"]["point_in_time"]
+    assert pit["status"] == PIT_VALID
+    assert pit["violations"] == []
+    assert pit["analysis_as_of"] == "2026-07-25"
+
+
+def test_future_filing_date_is_rejected_not_merely_warned():
+    """
+    계약서 5.5절: 분석 시점 이후에 공시된 실적을 쓴 결과는 무의미하다 -
+    경고로 흘려보내지 않고 실행 자체를 거부한다(다른 병기 경고들과 달리
+    이건 '해석의 여지'가 아니라 계산 전제의 붕괴이기 때문).
+    """
+    with pytest.raises(ValueError, match="미래정보"):
+        run_analysis(
+            cdns_inputs(
+                analysis_as_of="2026-01-01",
+                filing_dates_by_year={2025: "2026-02-23"},  # 분석 이후 공시
+            )
+        )
+
+
+def test_pit_evaluation_names_the_offending_year_and_lag():
+    """위반이 있으면 '어느 해가, 며칠 늦게'까지 특정돼야 추적이 가능하다."""
+    inputs = cdns_inputs(
+        analysis_as_of="2026-01-01",
+        filing_dates_by_year={2025: "2026-02-23"},
+    )
+    pit = evaluate_point_in_time(inputs)
+
+    assert pit["status"] == PIT_INVALID
+    assert len(pit["violations"]) == 1
+    v = pit["violations"][0]
+    assert str(v["fiscal_year"]) == "2025"
+    assert v["days_after_analysis"] == 53
+
+
+def test_malformed_pit_date_is_rejected_at_construction():
+    """
+    형식 오류를 조용히 PIT_UNKNOWN으로 떨구면 '기록했다고 생각했는데 사실은
+    안 된' 상태가 된다 - 즉시 거부한다.
+    """
+    with pytest.raises(ValueError, match="ISO 날짜"):
+        cdns_inputs(analysis_as_of="2026/07/25")
+
+    with pytest.raises(ValueError, match="ISO 날짜"):
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2025: "23-Feb-2026"},
+        )
+
+
+def test_filing_dates_require_latest_fiscal_year_and_analysis_date():
+    """
+    최근 회계연도가 fcf0를 결정하므로 PIT 검증의 핵심이다 - 그 해가 빠진
+    filing_dates_by_year는 '검증한 척'이 되므로 거부한다.
+    """
+    with pytest.raises(ValueError, match="최근 회계연도"):
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2024: "2025-02-24"},  # 2025 누락
+        )
+
+    with pytest.raises(ValueError, match="analysis_as_of"):
+        cdns_inputs(filing_dates_by_year={2025: "2026-02-23"})
+
+    with pytest.raises(ValueError, match="빈 dict"):
+        cdns_inputs(analysis_as_of="2026-07-25", filing_dates_by_year={})
+
+
+def test_pit_fields_do_not_change_any_computed_value():
+    """
+    PIT는 **순수 기록·검증 경로**다(falsification_conditions/price_at_analysis와
+    동일). Gap/RAR/DRS/판정 어디에도 영향을 주면 안 된다.
+    """
+    plain = run_analysis(cdns_inputs())
+    with_pit = run_analysis(
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2025: "2026-02-23"},
+        )
+    )
+
+    for key in ("expectation_gap", "rar", "judgment", "judgment_grade"):
+        assert plain[key] == with_pit[key], f"{key}가 PIT 필드 때문에 달라졌다"
+    assert plain["drs"]["score"] == with_pit["drs"]["score"]
+    assert plain["confidence"]["final"] == with_pit["confidence"]["final"]
+
+
+# ----------------------------------------------------------------------
+# Phase 3 (v3.47) — 과거 기록 자동 대조
+# 감사 T-2: cross_check_prior_record()가 55개 스크립트 중 1개에서만 호출됨
+# ----------------------------------------------------------------------
+
+def _write_prior_ledger(tmp_path, result, date_str, **overrides):
+    """직전 ledger를 흉내 낸 파일을 만든다(같은 티커, 더 이른 날짜)."""
+    prior = json.loads(json.dumps(result, default=str))
+    prior["meta"]["analyzed_at"] = f"{date_str}T00:00:00+00:00"
+    prior.update(overrides)
+    path = tmp_path / f"{result['meta']['ticker']}_{date_str}.json"
+    path.write_text(json.dumps(prior, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def test_save_ledger_auto_cross_checks_prior_record(tmp_path):
+    """
+    T-2의 핵심: 모든 분석 스크립트가 save_ledger()를 부르므로, 여기에 배선하면
+    **대조 누락이 구조적으로 불가능**해진다. RAR 100배 사고(v3.19)를 재현한
+    과거 기록을 넣고 경고가 실제로 잡히는지 확인한다.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["prior_ledger"] == "CDNS_2026-07-01.json"
+    assert any("RAR 스케일 경고" in w for w in saved["prior_cross_check"]["warnings"])
+
+
+def test_cross_check_records_no_prior_when_first_analysis(tmp_path):
+    """직전 기록이 없으면 '대조했고 비교 대상이 없었다'가 기록돼야 한다 -
+    경고 0건과 '아예 대조 안 함'은 다른 상태다."""
+    path = save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["checked"] is True
+    assert saved["prior_cross_check"]["prior_ledger"] is None
+    assert saved["prior_cross_check"]["warnings"] == []
+
+
+def test_cross_check_never_blocks_saving(tmp_path):
+    """
+    대조는 **조언이지 차단이 아니다**. 과거 파일이 깨져 있어도 저장은 반드시
+    성공해야 한다 - 대조 실패로 새 분석이 유실되는 게 더 나쁜 결과다.
+    """
+    (tmp_path / "CDNS_2026-07-01.json").write_text("{ 깨진 JSON", encoding="utf-8")
+
+    path = save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    assert json.loads(open(path, encoding="utf-8").read())["judgment"]
+
+
+def test_cross_check_can_be_disabled_for_repo_independent_tests(tmp_path):
+    """
+    골든테스트가 저장소의 다른 ledger 유무에 따라 흔들리면 안 된다 -
+    CLAUDE.md v3.32가 이 배선을 미룬 이유가 정확히 그 부작용이었으므로
+    끄는 경로를 명시적으로 둔다.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path), cross_check=False)
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["checked"] is False
+    assert saved["prior_cross_check"]["warnings"] == []
+
+
+def test_cross_check_does_not_alter_official_numbers(tmp_path):
+    """
+    병기 원칙(A-6): 대조 경고가 떠도 판정·Gap·RAR은 그대로여야 한다.
+    is_insurer/sbc_cross_check와 동일하게 '병기, 자동판정 안 함'.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["warnings"], "테스트 전제(경고 발생)가 깨졌다"
+    for key in ("expectation_gap", "rar", "judgment"):
+        assert saved[key] == result[key]
