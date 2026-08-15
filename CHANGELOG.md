@@ -74,6 +74,15 @@ FAIL. capex 재검토 플래그가 실제로 발동했으나 capex/매출이 오
 로직이 growth_investment/margin_erosion을 정확히 구분해 재분류로 구제하지
 않는 설계대로 작동한 첫 실전 사례.
 
+**후속 8차(동일 세션) - MU(Micron Technology), 새로운 CAGR 계산 함정
+유형**: "장기 펀더멘털 그대로, 월간 -15%"라는 서술로 발견했으나 실측해보니
+계산 자체가 함정이었다. 메모리 반도체 boom/bust 사이클로 FY2023 매출이
+-49.5%YoY 역성장했고, 5y CAGR 시작점(FY2020) FCF가 $83M로 거의 0에 수렴 -
+이를 시작점으로 계산하면 FCF CAGR이 82.23%라는 매출 CAGR(11.76%)과 전혀
+무관한 숫자가 나온다(순수 계산 아티팩트). PODD/ONON과 다른 새 CAGR 함정
+유형이라 동일 원칙(5y CAGR 프레임에 억지로 밀어넣지 않음)으로
+FRAMEWORK_MISMATCH 처리.
+
 ---
 
 ## TTD 재검토 완료 — Confidence 하향 + 매수리스트 비중 축소 (2026-08-13)

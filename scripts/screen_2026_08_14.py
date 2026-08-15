@@ -166,6 +166,21 @@ CAGR만 보면 8.51%로 통과) capex/매출이 오히려 감소해(-0.2%p, v3.7
 capex_intensity_from_series/fcf_conservatism_adjustment 로직이 growth_
 investment와 margin_erosion을 정확히 구분해 재분류로 구제하지 않는
 설계대로 작동함을 이번에 처음 실전에서 확인한 사례.
+
+**후속 조사 8차(동일 세션, 사용자 "계속" 요청) - MU(Micron Technology),
+새로운 유형의 CAGR 계산 함정.** "AI infrastructure sell-off buy the dip"
+계열 검색에서 발견 - "장기 펀더멘털은 그대로인데 월간 -15% 하락"이라는
+서술이 공포과잉 후보를 시사했으나, 서사 자체는 메모리 다운사이클 우려·
+섹터 전반 셀오프(삼성 실적 부진, DeepSeek 반도체 계획)가 겹친 혼재
+유형이었다(Citigroup은 목표가는 낮췄지만 Buy 등급 유지). Alpha Vantage
+실측으로 확인해보니 서사보다 더 근본적인 계산 함정이 드러났다 - 메모리
+반도체 특유의 극심한 boom/bust 사이클로 FY2023 매출이 -49.5%YoY 역성장
+(영업손실 전환)했고, 5y CAGR 시작점(FY2020)의 FCF가 $83M로 거의 0에
+수렴하는 값이었다. 이를 시작점으로 CAGR을 계산하면 **FCF CAGR이 82.23%
+라는 터무니없는 숫자**가 나온다(매출 5y CAGR 11.76%와 전혀 무관 - 순수
+계산 아티팩트, PODD/ONON과는 또 다른 새로운 CAGR 함정 유형). v3.19
+가드(시작값 음수)에는 안 걸리지만 5y CAGR 하나로 이 정도 변동성을
+대표할 수 없어 PODD/APP/ONON과 동일 원칙으로 FRAMEWORK_MISMATCH 처리.
 """
 
 import os
@@ -418,6 +433,23 @@ FRAMEWORK_MISMATCH["AVGO(Broadcom)"] = (
     "정량모델에서 제외한다. 서사 자체도(공포과잉이 아니라 차익실현) AMD가 "
     "이미 시총 과열로 탈락한 것과 결이 같아, 설령 세그먼트조정을 하더라도 "
     "밸류에이션 단계에서 통과할 가능성은 낮다고 판단."
+)
+FRAMEWORK_MISMATCH["MU(Micron Technology)"] = (
+    "메모리 다운사이클/가격 우려·섹터 전반 셀오프(삼성 실적 부진, DeepSeek "
+    "반도체 계획 등)가 겹친 혼재 서사(WebSearch, 2026-08-14) - Citigroup은 "
+    "목표가는 낮췄지만 Buy 등급과 '다년 가격계약'을 유지해 판단이 갈렸다. "
+    "Alpha Vantage 실측(2026-08-14)으로 확인해보니 서사보다 더 근본적인 "
+    "**계산 함정**이 있었다 - 메모리 반도체 특유의 극심한 boom/bust "
+    "사이클로 FY2023 매출이 -49.5%YoY 역성장(영업손실 전환)했고, FY2020 "
+    "FCF가 $83M로 거의 0에 수렴하는 값이었다. 이 $83M을 5y CAGR 시작점으로 "
+    "쓰면 **FCF CAGR이 82.23%라는 터무니없는 숫자**가 나온다(매출 5y CAGR "
+    "11.76%와 전혀 무관 - 순수하게 '시작값이 우연히 거의 0'이라는 계산 "
+    "아티팩트, PODD/ONON의 CAGR 함정과는 또 다른 새로운 유형). v3.19 "
+    "가드(시작값 음수)에는 안 걸리지만(시작·끝 둘 다 양수) 그 사이 극단적 "
+    "변동성이 5y CAGR 하나로 도저히 대표될 수 없는 상황이라 PODD/APP/ONON과 "
+    "동일 원칙(5y CAGR 프레임에 억지로 밀어넣지 않는다)으로 FRAMEWORK_"
+    "MISMATCH 처리한다. worst_yoy_revenue(-49.5%)만으로도 이미 이 업종이 "
+    "이 스크리너가 가정하는 '완만한 경기민감도'와 성격이 다름을 보여준다."
 )
 
 
