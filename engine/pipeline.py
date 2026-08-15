@@ -33,6 +33,7 @@ from engine.expectation_gap_engine import (
     capex_intensity_from_series,
     capped_n,
     check_deceleration_double_count,
+    check_scale_plausibility,
     fcf_conservatism_adjustment,
     check_stalwart_two_stage_bias,
     classify_lynch_type,
@@ -466,6 +467,13 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
 
     fcf_cagr_5y = _cagr(fcf[base_5y], fcf[years[-1]], span_5y, "FCF 5y")
     fcf0 = fcf[years[-1]]
+
+    # ⚠️ v3.46(2026-08-15 Phase 2): 시가총액의 스케일/통화 오류는 single_stage
+    # 경로에서 경고 없이 판정까지 흘러간다(BRO 실측: 100배 과소 시 Gap이
+    # +7.43%p -> +96.22%p로 부풀어도 무경고 통과). 자동보정 없이 탐지만 한다.
+    _scale_ok, _scale_warning = check_scale_plausibility(fcf0, inputs.market_cap)
+    if not _scale_ok:
+        data_limitations.append(_scale_warning)
 
     yoy = [(years[i], rev[years[i]] / rev[years[i - 1]] - 1) for i in range(1, len(years))]
     worst_yoy = min(g for _, g in yoy)

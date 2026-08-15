@@ -1300,3 +1300,77 @@ def test_validation_status_marks_confidence_as_uncalibrated():
 
     assert "UNCALIBRATED" in VALIDATION_STATUS["confidence_score"]
     assert "HEURISTIC_MAPPING" in VALIDATION_STATUS["erp_from_drs"]
+
+
+def test_scale_check_silent_on_all_existing_ledgers():
+    """
+    v3.46 Phase 2: 스케일 탐지 밴드는 **알려진 정상 종목에서 절대 발동하면 안
+    된다**. 34종목 실측 FCF수익률 범위는 1.50%(KLAC)~17.95%(ACGL)이며 밴드는
+    0.5~25%로 여유를 뒀다. 이 테스트가 깨지면 밴드가 너무 좁아진 것이다.
+    """
+    import glob
+
+    from engine.expectation_gap_engine import check_scale_plausibility
+
+    fired = []
+    for path in sorted(glob.glob("ledger/*.json")):
+        with open(path, encoding="utf-8") as f:
+            data = json.load(f)
+        ok, _ = check_scale_plausibility(
+            data["derived"]["fcf0"], data["inputs"]["market_cap"]
+        )
+        if not ok:
+            fired.append(data["meta"]["ticker"])
+
+    assert not fired, f"정상 종목에서 스케일 경고가 오발동했다: {fired}"
+
+
+@pytest.mark.parametrize("multiplier,label", [(1 / 100, "100배 과소"), (100.0, "100배 과대")])
+def test_scale_check_catches_order_of_magnitude_errors(multiplier, label):
+    """
+    v3.46 Phase 2 핵심 회귀 테스트. 가드 이전에는 single_stage 경로에서 자릿수
+    오류가 **경고 없이 실행되어 판정까지 흘러갔다**(BRO 실데이터 검증):
+        100배 과소 -> Gap +7.43%p가 +96.22%p로 (매수리스트 1위감)
+        100배 과대 -> 판정이 '저평가'에서 '적정가'로 뒤집힘
+    100배 오류는 기저 FCF수익률과 무관하게 전부 탐지된다(실측 확인).
+    """
+    result = run_analysis(
+        cdns_inputs(market_cap=92952756000 * multiplier, model_used="single_stage")
+    )
+    assert any("스케일/통화 이상 의심" in s for s in result["data_limitations"]), (
+        f"{label} 오류가 탐지되지 않았다"
+    )
+
+
+def test_scale_check_currency_error_detected_only_above_yield_floor():
+    """
+    ⚠️ 이 가드의 **알려진 한계를 고정하는 테스트**(임계값을 조정해 통과시키지
+    않고 사실을 그대로 박아둔다).
+
+    통화 오류(x7.1) 탐지 여부는 그 종목의 기저 FCF수익률에 의존한다:
+        CDNS(기저 1.71%) x7.1 -> 12.14%  탐지 실패 - PDD 정상값 12.94%와 겹침
+        BRO (기저 6.03%) x7.1 -> 42.81%  탐지 성공
+    어떤 임계값으로도 분리되지 않으므로, 이 가드는 자릿수 오류의 안전망일 뿐
+    통화 오류 전반을 막지 못한다. 비USD 종목은 수작업 대조가 여전히 필요하다.
+    """
+    from engine.expectation_gap_engine import check_scale_plausibility
+
+    # 기저가 낮은 종목: 통화 오류가 밴드 안에 들어와 탐지되지 않는다(한계)
+    low_yield_ok, _ = check_scale_plausibility(0.0171 * 7.1 * 1e9, 1e9)
+    assert low_yield_ok, "기저 1.71% 종목의 통화오류가 탐지된다면 밴드가 좁아진 것"
+
+    # 기저가 중간 이상인 종목: 탐지된다
+    mid_yield_ok, warning = check_scale_plausibility(0.0603 * 7.1 * 1e9, 1e9)
+    assert not mid_yield_ok and "스케일/통화 이상 의심" in warning
+
+
+def test_scale_check_never_blocks_or_autocorrects():
+    """
+    계약서 30절: '100배 차이나니 100으로 나눈다'는 자동보정은 금지다. 경고만
+    남기고 계산값은 입력 그대로여야 한다(어느 쪽이 틀렸는지 코드는 모른다).
+    """
+    bad_cap = 92952756000 / 100
+    result = run_analysis(cdns_inputs(market_cap=bad_cap, model_used="single_stage"))
+
+    assert result["inputs"]["market_cap"] == bad_cap, "입력값이 자동으로 수정됐다"
+    assert result["judgment"], "경고 때문에 실행이 막혔다(경고는 차단이 아니다)"
