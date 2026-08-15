@@ -90,6 +90,14 @@ FIGMA(상장이력부족)도 확인 전 제외. SAP·DDOG·PLTR 3종목은 서�
 신규 카테고리 `PASSED_INITIAL_SCREEN`(재무데이터 확보 필요)으로 분리 -
 다음 단계에서 실제 screen() 시도 예정.
 
+**후속 10차(동일 세션) - 신규 8종목 병렬 1차 분류**: HON/UWM/AI(C3.ai)는
+실적으로 확정된 4분류3번, MTZ는 하락폭이 너무 작아 스크리닝 대상 아님,
+KPTI/GRAL(단일 임상실패, 바이오텍 프레임워크 부적합)·EOSE(초기단계 FCF
+적자 가능성)도 확인 전 제외. MP Materials는 AA/NRG와 동일한 자본집약
+원자재 자본구조 문제로 FRAMEWORK_MISMATCH. IONS는 KPTI/GRAL과 달리
+다각화된 매출구조라 PASSED_INITIAL_SCREEN에 추가(누적 4건: SAP/DDOG/
+PLTR/IONS).
+
 ---
 
 ## TTD 재검토 완료 — Confidence 하향 + 매수리스트 비중 축소 (2026-08-13)
