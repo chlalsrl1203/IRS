@@ -58,6 +58,11 @@ engine/
   growth_scorecard.py         # 엔진 성장률 vs 회사 실적/가이던스 대조
   gap_distribution.py         # DRS 주관입력 섭동에 대한 Gap 분포(몬테카를로)
   market_relative.py          # 회사 Gap을 VOO(시장) 대비로 재해석
+  # ── 신호 -> 결정 -> 사후검증(v3.48) ──
+  gap_analysis.py             # Gap 5분해(level/change/drivers/evidence/uncertainty)
+  thesis.py                   # Investment Thesis + 결정(6개 관문) + 모니터링 상태
+  prediction_ledger.py        # 예측 사전등록 - 결과 확인 후 수정 불가(해시 봉인)
+  experiment_registry.py      # 연구 가설 등록부 - 실패한 실험 삭제 불가
   # ── ETF 분석(별도 엔진) ──
   etf_engine.py               # 미국 상장 ETF 자체 밸류에이션
   etf_pipeline.py             # ETF 분석 진입점
@@ -67,6 +72,9 @@ engine/
 ledger/                       # 회사 분석 JSON (입력값+중간값+결과, 재현/대조검증용)
 ledger_etf/                   # 미국 ETF 분석 JSON (스키마가 달라 디렉터리 분리)
 ledger_krx/                   # 국내 래퍼 ETF 분석 JSON
+thesis/                       # 투자논거 + 결정 로그 + 증거 로그 (v3.48)
+predictions/                  # 사전등록 예측과 실제 결과 (v3.48, 해시 봉인)
+experiments/                  # 연구 가설 등록부 (v3.48, EXP-001)
 reports/                      # ledger를 재조합한 리포트(순위·매수리스트·감시 결과)
 scripts/                      # 종목별 분석/감사 스크립트(재현용 보존)
 tests/                        # pytest - 매 push마다 CI가 자동 실행
@@ -87,6 +95,16 @@ CHANGELOG.md                  # 버전별 변경사항
 
 ### 아직 보장하지 않는 것(오해 방지)
 
+- **Expectation Gap은 검증된 alpha가 아니다** — Gap이 실제 초과수익과 관계가
+  있는지 이 저장소는 **한 번도 검증한 적이 없다**. 그래서
+  `gap_analysis.GAP_SIGNAL_STATUS`가 `RESEARCH_HYPOTHESIS`이고, 그 검증 자체가
+  `experiments/EXP-001.json`에 BLOCKED 상태로 등록돼 있다(분석 이력 3주,
+  진입가 보유 9/34종목 — 실행 전제 미달). ⚠️ 그런데 매수리스트는 이미 Gap 기반
+  등급으로 만들어지고 있다 — **미검증 가설이 이미 자본배분을 움직이는 중**이며
+  등록부는 그 사실을 숨기지 않는다.
+- **투자 결정은 코드가 내리지 않는다** — `engine/thesis.py`에는 Gap을 넣으면
+  BUY가 나오는 함수가 **의도적으로 없다**. 액션은 분석자가 고르고, 6개 관문
+  근거가 비면 기록 자체가 거부된다.
 - **Point-in-Time — 수단은 있으나 데이터가 0건** — v3.47에서 `analysis_as_of` /
   `filing_dates_by_year` 필드와 `filing_date <= analysis_as_of` 검증이
   들어갔지만(위반 시 실행 거부), **실제로 채운 종목은 아직 하나도 없어

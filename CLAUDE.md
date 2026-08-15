@@ -3087,3 +3087,121 @@ confidence_score · claim/lock 프로토콜). 네 번째를 만들지 않는다.
 **34종목 전건 재실행 → Gap/RAR/DRS/Realistic Growth/Implied Growth/판정/
 Confidence/강건성flip 8개 지표 완전 동일, 실패 0건, ledger 파일 무수정.**
 테스트 270 → 282개. `ENGINE_VERSION` v3.46 → v3.47.
+
+## v3.48 — 신호에서 결정으로: Thesis / Prediction / Experiment 배선
+(2026-08-15, 사용자 "IRS 핵심 투자기능 고도화" 실행 프롬프트)
+
+이 프로젝트는 **"이 종목이 싼가"까지만 답하고 있었다.** `judgment`(저평가/
+적정가/과대평가)가 사실상 매수리스트였고(`build_buylist`의 `grade in ("S","A")`),
+싸다는 것과 사야 한다는 것 사이에 있어야 할 관문이 코드 어디에도 없었다.
+이번 작업은 새 밸류에이션 방법론을 만들지 않고, **기존 계산을 실제 투자판단과
+사후검증에 연결**한다.
+
+### 신규 모듈 4개 (전부 기존 엔진 재사용, 새 valuation 로직 0줄)
+
+**① `engine/gap_analysis.py` — Gap을 숫자 하나로 끝내지 않는다**
+다섯 질문(gap_level / gap_change / gap_drivers / evidence_strength /
+model_uncertainty)에 답한다. 2·4·5는 이미 만들어 둔 thesis_monitor(v3.42)·
+growth_scorecard(v3.43)·gap_distribution(v3.44)을 **호출만** 하고, 3만 새로
+만들었다.
+
+⚠️ **gap_drivers에서 근거 없는 attribution을 만들지 않았다.** 최상위는 정확한
+대수 항등식(ΔGap = ΔRealisticGrowth − ΔImpliedGrowth)이지만, ΔImplied Growth를
+다시 쪼개는 것은 비선형이라 유일하지 않다. one-at-a-time + **잔차 명시** 방식만
+쓰고 가중치를 지어내 100%로 맞추지 않는다.
+
+**실측으로 확인한 것 — 이 잔차는 장식이 아니다.** CDNS로 시총 ×0.6 · FCF0 ×1.4 ·
+r +2%p를 동시에 바꿔보니 개별 기여도의 합은 **+0.00038**인데 실제 변화는
+**−0.00456**으로 **부호까지 반대**였고, 잔차가 전체 변화의 **108%**였다. 즉
+개별 기여도만 인용하면 "Implied Growth가 올랐다"고 정반대로 읽게 된다.
+테스트가 이 성질 자체를 고정한다
+(`test_multi_factor_change_reports_interaction_residual_openly`).
+
+**② `engine/thesis.py` — Signal과 Decision의 분리를 구조로 강제**
+`decide()` 같은 함수를 **의도적으로 만들지 않았다.** Gap을 넣으면 BUY가 나오는
+함수가 있으면 미검증 신호(RESEARCH_HYPOTHESIS)가 곧바로 자본배분이 된다.
+대신 `record_decision()`이 6개 관문(신호요약·사업품질·재무품질·리스크·
+밸류에이션·포트폴리오맥락) 근거가 하나라도 비면 **실행을 거부**한다 —
+`model_choice_reason`·`subjective_input_basis`에서 이미 쓴 "근거 없으면 거부"
+패턴 그대로다. 액션(BUY/ADD/HOLD/WATCH/REDUCE/SELL)은 **분석자가 고르고**
+코드는 고르지 않는다.
+
+테스트가 이 경계를 지킨다 — `test_no_function_maps_gap_to_action`이 공개 함수
+시그니처를 훑어 `gap`/`grade`를 인자로 받는 함수가 생기면 실패한다.
+
+기록 구조: thesis 코어는 **변경 불가**(생각이 바뀌면 새 날짜로 새 thesis),
+decisions/evidence는 **append-only**. 반증조건 발동은 분석자가 명시적으로
+표시해야만 되며 코드가 텍스트를 읽고 자동 판정하지 않는다(v3.42가 확립한
+원칙 — 정규식은 트리거 날짜와 서술적 날짜를 구분하지 못한다).
+
+§7 상태(STRENGTHENING/STABLE/WEAKENING/INVALIDATED)는 **투명한 집계 규칙**이며
+`STATUS_RULE_VALIDATION = IMPLEMENTED_NOT_VALIDATED`로 지위를 명시했다.
+사전등록 반증조건이 발동하면 지지 증거가 아무리 많아도 INVALIDATED가 이긴다 —
+"그래도 좋아 보인다"고 넘어가는 것이 정확히 사후합리화다.
+
+**③ `engine/prediction_ledger.py` — 결과를 알고 난 뒤 예측을 고칠 수 없다**
+이 모듈의 유일한 핵심 불변조건이다. 없으면 예측 기록이 무의미하다(결과를 보고
+범위를 슬쩍 넓히면 적중률이 100%가 된다). 강제 방식은 **코어 SHA-256 해시** —
+기록 시 코어(지표·기한·범위·가정)를 해싱해 저장하고, 결과를 붙일 때 다시
+해싱해 대조한다. 한 글자라도 바뀌었으면 거부한다. 이미 해소된 예측의 재해소도
+거부한다.
+
+`falsification_conditions`(v3.24)가 자유 텍스트라 **얼마나** 틀렸는지 잴 수
+없었던 한계를 메운다. `forecast_error`는 **부호를 유지**한다 — "나는 체계적으로
+낙관적인가"에 답하려면 절댓값만으로는 알 수 없다. 데이터를 못 구하면
+UNRESOLVABLE로 정직하게 닫고 추측으로 채우지 않는다.
+
+**④ `engine/experiment_registry.py` — 실패한 실험을 지울 수 없다**
+`results`는 append-only, 실험 코어는 등록 후 변경 불가(해시 대조), **삭제 함수
+자체를 제공하지 않는다**(코드에 경로가 있으면 언젠가 쓰인다). 실패를 지우면
+남는 것은 '성공한 실험만 모아둔 목록'이고 그건 연구 기록이 아니라 광고다.
+
+### ⚠️ 구현 중 스스로 잡은 결함 — 죽은 무결성 검사
+
+`record_result()`의 코어 변경 검사가 **절대 발동할 수 없는 코드**였다.
+append 직전/직후의 코어를 비교했는데 append는 코어를 건드리지 않으므로 항상
+같았다. 테스트를 쓰다 발견했고(초판 테스트도 같은 이유로 무의미했다),
+prediction_ledger의 `core_hash()`를 **재사용**해 등록 시점 지문과 대조하도록
+고쳤다(해시 로직을 복제하면 두 구현이 어긋난다 — Simplicity First).
+
+### EXP-001 등록 — 미검증 가설이 이미 자본배분을 움직이고 있다는 사실을 드러냄
+
+"Valuation-Implied Requirement와 Evidence-Supported Forward Expectation의
+괴리가 미래 위험조정수익률과 관계가 있는가?" — `experiments/EXP-001.json`.
+**결과를 미리 가정하지 않는다**(가설 문구가 방향을 단정하지 않는지 테스트가
+확인한다).
+
+**status=BLOCKED로 등록했고 사유는 실측이다**: 분석일이 2026-07-25~08-13에
+몰려 12개월 보유수익률 구간이 아예 없고, `price_at_analysis`가 34종목 중
+**9건**(ACGL·BSX·DUOL·MNDY·ROP·SE·TCOM·UBER·WDAY)뿐이라 나머지 25종목은
+진입가를 모른다. 9건을 5분위로 나누면 분위당 최소표본을 못 채운다.
+(작성 중 "10건"으로 적었다가 실측해 9건으로 정정했다.)
+
+이 등록의 의미: **매수리스트는 이미 Gap 기반 등급으로 만들어지고 있다.**
+즉 미검증 가설이 이미 자본을 배분하는 중이며, 등록부는 그 상태를 숨기지 않는다.
+그래서 `gap_analysis.GAP_SIGNAL_STATUS = "RESEARCH_HYPOTHESIS"`다.
+
+### 검증
+
+전체 워크플로를 BSX 실데이터로 끝까지 실행해 §12 완료 기준을 확인했다
+(`scripts/workflow_demo_2026_08_15.py`): 경제적 현실 → 가격이 요구하는 조건
+→ Gap → 왜 다른가 → Thesis → 결정(WATCH) → 반증조건 → 예측 봉인 → 실제
+비교(MISS, 오차 −0.0200) → thesis 상태 WEAKENING.
+
+⚠️ **이 데모는 기본적으로 임시 디렉터리에 쓴다.** 사용자가 검토하지 않은
+투자논거를 저장소에 남기면 그 자체가 이 프로젝트가 금지해온 "빈칸 채우기"다.
+실제로 쓰려면 내용을 검토·수정한 뒤 `--thesis-dir thesis`로 실행할 것.
+
+테스트 282 → 355개. **34종목 전건 재실행 8개 지표 완전 동일, ledger 파일
+무수정** — 이번 작업은 기존 계산 경로를 한 줄도 건드리지 않았다.
+`ENGINE_VERSION` v3.47 → v3.48.
+
+### 아직 하지 않은 것 (DEFERRED)
+
+- **`build_buylist`를 thesis 경로로 옮기지 않았다.** 지금도 `grade in ("S","A")`로
+  유니버스를 만든다 — §5가 금지한 "Gap = BUY"에 가장 가까운 코드지만, 기존
+  사이징 규칙을 이번에 재작성하면 검증된 산출물이 흔들린다. 새 구조는 병렬로
+  두고 실제 사용 경험이 쌓인 뒤 이관 여부를 판단한다.
+- **Thesis 자동 모니터링 없음.** §7이 "완전 자동화보다 구조와 데이터 연결을
+  먼저"라고 명시한 대로 증거는 분석자가 기록한다.
+- **EXP-001 실행 불가** — 위 차단 사유 3건이 해소돼야 한다.

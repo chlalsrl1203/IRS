@@ -109,6 +109,27 @@
 | B-12 | 대조는 **예외를 던지지 않는다**(조언이지 차단이 아님) | `save_ledger()` try/except | `test_cross_check_never_blocks_saving` |
 | B-13 | 대조 결과는 병기만 하고 공식 수치를 바꾸지 않는다 | `payload["prior_cross_check"]` | `test_cross_check_does_not_alter_official_numbers` |
 
+## B''. v3.48에서 새로 강제하는 불변조건 — 신호/결정 분리와 기록 봉인
+
+| ID | 조건 | 강제 위치 | 검증 테스트 |
+|---|---|---|---|
+| B-14 | Gap을 인자로 받아 액션을 내는 공개 함수가 **존재하지 않는다** | `engine/thesis.py` 설계 | `test_no_function_maps_gap_to_action` |
+| B-15 | 6개 관문 근거가 하나라도 비면 결정 기록 거부 | `build_decision()` | `test_decision_requires_every_gate` |
+| B-16 | 액션은 분석자 입력이며 계산되지 않는다(같은 신호로 다른 액션 기록 가능) | `build_decision()` | `test_decision_action_is_analyst_supplied_not_computed` |
+| B-17 | thesis 코어는 최초 기록 후 변경 불가 | `save_thesis()` | `test_thesis_core_cannot_be_overwritten` |
+| B-18 | decisions/evidence는 append-only | `_append_only()` | `test_decisions_and_evidence_are_append_only` |
+| B-19 | 반증조건 발동은 명시적 호출로만(자동판정 없음), 되돌리기 없음 | `mark_invalidation_triggered()` | `test_invalidation_trigger_is_explicit_never_automatic` |
+| B-20 | 발동된 반증조건은 지지 증거 수와 무관하게 INVALIDATED | `evaluate_thesis_status()` | `test_triggered_invalidation_overrides_all_supporting_evidence` |
+| B-21 | **결과를 알고 난 뒤 예측 수정 불가**(코어 해시 대조) | `resolve_prediction()` | `test_cannot_edit_prediction_after_seeing_outcome` |
+| B-22 | 예측 재해소 불가 | `resolve_prediction()` | `test_cannot_resolve_twice` |
+| B-23 | 실험 코어는 등록 후 변경 불가(해시 대조), results는 append-only | `record_result()` | `test_core_rules_cannot_change_after_registration` |
+| B-24 | 실험 삭제 경로가 코드에 존재하지 않는다 | `experiment_registry` 설계 | `test_no_delete_function_exists` |
+| B-25 | 저장소의 모든 실험/예측 기록이 해시 무결성을 유지 | — | `test_experiment_records_keep_their_integrity_hash` · `test_predictions_are_never_silently_edited_after_resolution` |
+| B-26 | gap_drivers는 잔차를 숨기지 않는다(합≠전체일 때 드러냄) | `gap_drivers()` | `test_multi_factor_change_reports_interaction_residual_openly` |
+
+⚠️ B-26 실측: CDNS 다인자 변경에서 잔차가 전체 변화의 **108%**이고 개별 기여도
+합은 **부호까지 반대**였다. 이 분해는 참고용이며 개별 기여도를 단독 인용하면 안 된다.
+
 ---
 
 ## C. 아직 보장하지 않는 조건 (NOT ENFORCED — 향후 과제)

@@ -1,5 +1,49 @@
 # CHANGELOG
 
+## v3.48 — 신호에서 결정으로: Thesis / Prediction / Experiment (2026-08-15)
+
+이 프로젝트는 **"이 종목이 싼가"까지만 답하고 있었다.** 싸다는 것과 사야 한다는
+것 사이의 관문이 코드에 없었고, 판단이 맞았는지 사후 검증할 구조도 없었다.
+새 밸류에이션 방법론은 하나도 만들지 않고, 기존 계산을 투자판단·사후검증에
+**연결**한다.
+
+### 신규 모듈 4개
+
+- **`engine/gap_analysis.py`** — Gap을 다섯 축(level/change/drivers/evidence/
+  uncertainty)으로 분해. 2·4·5는 thesis_monitor·growth_scorecard·gap_distribution을
+  호출만 하고 3만 새로 만들었다. attribution은 정확한 항등식 + OAT **잔차 명시**만
+  쓴다. CDNS 실측: 다인자 변경 시 잔차가 전체 변화의 **108%**이고 개별 기여도
+  합은 **부호까지 반대** — 잔차를 숨기는 attribution이 왜 위험한지 실증.
+- **`engine/thesis.py`** — Investment Thesis + Decision + 모니터링 상태.
+  **Gap→액션 자동 매핑 함수를 의도적으로 만들지 않았고**, 6개 관문 근거가 비면
+  결정 기록을 거부한다. 테스트가 공개 함수 시그니처를 훑어 경계를 지킨다.
+- **`engine/prediction_ledger.py`** — 예측 사전등록. **결과를 알고 난 뒤 예측을
+  고칠 수 없다**(코어 SHA-256 대조). `forecast_error`는 부호를 유지해 편향
+  추적이 가능하다.
+- **`engine/experiment_registry.py`** — 실험 등록부. results append-only,
+  코어 변경 불가, **삭제 함수 없음**.
+
+### 구현 중 스스로 잡은 결함
+
+`record_result()`의 코어 변경 검사가 **절대 발동할 수 없는 죽은 코드**였다
+(append 전후 코어를 비교했는데 append는 코어를 안 건드린다). prediction_ledger의
+`core_hash()`를 재사용해 등록 시점 지문과 대조하도록 고쳤다.
+
+### EXP-001
+
+근본 가설("Gap이 미래 위험조정수익률과 관계가 있는가")을 등록. **결과를 미리
+가정하지 않는다.** status=BLOCKED — 분석 이력이 3주뿐이고 `price_at_analysis`가
+34종목 중 **9건**뿐이라 실행 전제가 없다(실측 확인, 초안의 "10건"을 정정).
+
+### 검증
+
+BSX 실데이터로 전체 워크플로 end-to-end 실행 확인(분석→Gap→Thesis→결정→
+반증조건→예측 봉인→실제 비교→상태 갱신). 데모는 기본적으로 임시 디렉터리에
+쓴다 — 검토되지 않은 투자논거를 저장소에 남기지 않는다.
+
+테스트 282 → 355개. **34종목 전건 재실행 8개 지표 완전 동일, ledger 무수정.**
+`ENGINE_VERSION` v3.47 → v3.48.
+
 ## v3.47 — Phase 3: Point-in-Time 토대 + 과거기록 자동 대조 (2026-08-15)
 
 계약서 STEP 1-16의 남은 항목 중, Phase 0 감사에서 **DEFERRED로 분류했던

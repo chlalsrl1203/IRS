@@ -1,0 +1,24 @@
+{
+  "core": {
+    "experiment_id": "EXP-001",
+    "hypothesis": "Valuation-Implied Requirement(현재 가격이 요구하는 성장률)와 Evidence-Supported Forward Expectation(재무 실적에 근거한 현실적 성장률) 사이의 괴리(Expectation Gap)가 미래 위험조정수익률과 관계가 있는가? **방향과 존재 여부 모두 미지이며 가정하지 않는다.**",
+    "universe": "ledger/에 공식 분석이 존재하는 미국 상장 개별주식. 2026-08-15 기준 34종목. ETF·KRX 래퍼는 제외(밸류에이션 산식이 다르다).",
+    "entry_rule": "분석일(meta.analyzed_at) 종가 기준 진입. Gap 오름차순 5분위로 나눠 최상위 분위(Gap 큼)와 최하위 분위(Gap 작음)를 비교한다. 임계값을 별도로 만들지 않고 분위로 나누는 이유: ±5%p 판정밴드는 33종목 관측 기반 시작점일 뿐 검증된 경계가 아니기 때문이다.",
+    "exit_rule": "진입 후 12개월 보유 후 청산(단일 고정 보유기간). 중도 청산·재조정 없음 - 규칙이 늘어날수록 자유도가 커져 우연한 성공이 쉬워진다.",
+    "parameters": {
+      "gap_source": "ledger[].expectation_gap",
+      "return_measure": "총수익률(배당 포함), 위험조정은 실현 변동성 대비",
+      "min_sample_per_quintile": 5,
+      "price_source_required": "inputs.price_at_analysis (v3.24 필드)"
+    },
+    "test_period": "미정 - 데이터 확보 후 확정(임의 선택 방지를 위해 사전 고정 예정)",
+    "oos_period": "미정 - test_period 확정과 동시에 분리 고정",
+    "benchmark": "VOO(S&P500) 동일기간 총수익률. engine/market_relative.py가 이미 VOO를 기준선으로 쓰고 있어 같은 벤치마크를 유지한다."
+  },
+  "core_hash": "d2e918fe1839b38690cd84b30efa8ace79622d0d95030b4f78534c22fd260f31",
+  "registered_date": "2026-08-15",
+  "note": "이 가설이 검증되기 전까지 Expectation Gap은 RESEARCH_HYPOTHESIS다(engine/gap_analysis.GAP_SIGNAL_STATUS). 매수리스트가 이미 Gap 기반 등급으로 만들어지고 있다는 사실 자체가 이 실험이 필요한 이유다.",
+  "status": "BLOCKED",
+  "blocked_reason": "실행 전제가 아직 없다(2026-08-15 실측). (1) 분석일이 2026-07-25~08-13에 몰려 있어 12개월 보유수익률을 잴 구간이 아예 존재하지 않는다. (2) price_at_analysis가 채워진 종목이 34건 중 **9건**뿐이라(ACGL·BSX·DUOL·MNDY·ROP·SE·TCOM·UBER·WDAY - v3.24 이후 분석만 해당) 나머지 25종목은 진입가를 알 수 없다. (3) 9건을 5분위로 나누면 분위당 최소 표본(5건)을 채울 수 없다. 재개 조건: 분석일로부터 12개월이 지난 종목이 분위당 5건 이상 확보될 것. 그 전에 실행하면 표본 몇 건으로 alpha를 주장하게 된다(계약서 138절).",
+  "results": []
+}
