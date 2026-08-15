@@ -137,6 +137,19 @@ Q3 매출총이익률 가이던스가 전분기와 동일(약 56%)했던 점 - �
 급락 이벤트가 이미 지나갔고 시장이 그 이후 되돌린 것으로 추정)로 워낙 커
 밸류에이션 단계에서 탈락했다 - META와 동일한 4분류 2번('실적은 훌륭한데
 이미 비쌈') 패턴으로 확인된 사례.
+
+**후속 조사 6차(동일 세션, 사용자 "계속" 요청) - AVGO(Broadcom), M&A-CAGR
+왜곡으로 FRAMEWORK_MISMATCH.** AMD와 같은 검색에서 함께 발견된 반도체
+대형주 - 2026-08-14 하루 -5.0% 하락했으나 WebSearch가 "회사 고유의 새로운
+악재 공시 없음... 심리·포지셔닝에 가까움"이라 명시해 AMD와 동일한 '기대치
+과열' 유형으로 판단했다. Alpha Vantage INCOME_STATEMENT 확인 결과 FY2024
+(2023-11~2024-10) 매출이 전년 $35.82B -> $51.57B로 +44.0% 급증 - VMware
+인수($690억, 2023-11-22 종결)가 5y CAGR 구간 한가운데 걸린 결과였다
+(GEN/BRO/ROP/SNPS/NRG/RBA/NOW와 동일 패턴). 반도체 사업만의 유기적성장을
+세그먼트 분리 없이 5y CAGR로 그대로 쓰면 왜곡되므로 SNPS/NRG와 동일하게
+재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 - AMD가 이미
+시총 과열로 밸류에이션 탈락했다는 선례상, 세그먼트조정을 하더라도 통과
+가능성은 낮다고 판단.
 """
 
 import os
@@ -337,6 +350,21 @@ FRAMEWORK_MISMATCH["ONON(On Holding)"] = (
     "SEC EDGAR HTML을 직접 스크레이핑하기보다 XBRL companyfacts API를 먼저 "
     "시도할 것 - 문서 전체 파싱(10MB 제한, 리스크팩터 방대) 없이 필요한 "
     "태그만 정확히 뽑을 수 있다."
+)
+FRAMEWORK_MISMATCH["AVGO(Broadcom)"] = (
+    "'no fresh company-specific negative filing... looks more like sentiment "
+    "and positioning'(WebSearch, 2026-08-14) - Broadcom도 2026-08-14 하루 "
+    "-5.0% 하락했으나 회사 고유 악재가 아니라 밸류에이션 부담·차익실현이 "
+    "원인으로 지목됐다(AMD와 동일한 '기대치 과열' 유형). Alpha Vantage "
+    "INCOME_STATEMENT 실측(2026-08-14): FY2024(2023-11~2024-10) 매출이 전년 "
+    "$35.82B -> $51.57B로 +44.0% 급증 - **VMware 인수($690억, 2023-11-22 "
+    "종결)가 5y CAGR 구간(2020~2025) 한가운데 걸린 결과**(GEN/BRO/ROP/SNPS/ "
+    "NRG/RBA/NOW와 동일한 'M&A가 CAGR 구간에 걸리는' 패턴). 반도체 사업만의 "
+    "유기적성장을 세그먼트 분리 없이 5y CAGR 그대로 쓰면 왜곡된 숫자가 "
+    "나오므로 SNPS/NRG와 동일 판단으로 재무데이터를 더 확보하지 않고 "
+    "정량모델에서 제외한다. 서사 자체도(공포과잉이 아니라 차익실현) AMD가 "
+    "이미 시총 과열로 탈락한 것과 결이 같아, 설령 세그먼트조정을 하더라도 "
+    "밸류에이션 단계에서 통과할 가능성은 낮다고 판단."
 )
 
 
