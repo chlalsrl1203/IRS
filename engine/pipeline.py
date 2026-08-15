@@ -23,7 +23,7 @@ Analysis Pipeline (v3.19 신규)
 import json
 import os
 from dataclasses import dataclass, field, asdict
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 from engine.expectation_gap_engine import (
     DRSInputs,
@@ -230,6 +230,23 @@ class AnalysisInputs:
     realistic_growth_override: float = None
     realistic_growth_override_reason: str = None
 
+    # ── Point-in-Time 토대 - v3.47에서 배선(2026-08-15 Phase 3) ──────────
+    # 계약서 20~22절의 **최소 요건만** 넣는다. Historical Replay를 만드는 게
+    # 아니라, replay가 언젠가 가능해지려면 반드시 있어야 하는 두 날짜를 지금부터
+    # 모으기 시작하는 것이다(v3.24가 price_at_analysis를 "백테스트의 전제조건"
+    # 이라며 먼저 넣은 것과 같은 패턴).
+    #
+    # analysis_as_of      : "이 분석이 어느 시점의 정보로 이뤄졌는가"(ISO 날짜)
+    #                       meta.analyzed_at(코드 실행 시각)과 다르다 - 실행
+    #                       시각은 그 시점에 무엇이 공시돼 있었는지 보증하지 않는다.
+    # filing_dates_by_year: {회계연도: 그 연도 실적이 공시된 ISO 날짜}
+    #                       최근 회계연도(fcf0를 결정하는 해)는 반드시 포함해야 한다.
+    #
+    # ⚠️ 둘 다 None이면 PIT_UNKNOWN이다 - 기존 34종목이 전부 여기 해당하며,
+    # 그 사실을 "검증됨"으로 위장하지 않는다(계약서 22절).
+    analysis_as_of: str = None
+    filing_dates_by_year: dict = None
+
     def __post_init__(self):
         if self.model_used not in ("single_stage", "two_stage"):
             raise ValueError('model_used는 "single_stage" 또는 "two_stage"여야 함')
@@ -382,8 +399,104 @@ class AnalysisInputs:
                     f"동일 시점의 SBC가 있어야 병기 계산이 가능하다."
                 )
 
+        # v3.47: PIT 입력 형식 검증(값이 있을 때만). 형식이 틀리면 조용히
+        # PIT_UNKNOWN으로 떨어지는 대신 즉시 거부한다 - "기록했다고 생각했는데
+        # 사실은 안 된" 상태가 가장 나쁘다.
+        if self.analysis_as_of is not None:
+            _parse_iso_date(self.analysis_as_of, "analysis_as_of")
+        if self.filing_dates_by_year is not None:
+            if not self.filing_dates_by_year:
+                raise ValueError(
+                    "filing_dates_by_year가 빈 dict다 - 모르면 None으로 둘 것"
+                    "(PIT_UNKNOWN으로 정직하게 기록된다)."
+                )
+            for year, value in self.filing_dates_by_year.items():
+                _parse_iso_date(value, f"filing_dates_by_year[{year}]")
+            latest_fy = max(self.revenue_by_year)
+            if latest_fy not in self.filing_dates_by_year:
+                raise ValueError(
+                    f"filing_dates_by_year에 최근 회계연도({latest_fy})가 없다 - "
+                    f"그 해가 fcf0를 결정하므로 PIT 검증의 핵심이다. 모르면 "
+                    f"filing_dates_by_year 자체를 None으로 둘 것."
+                )
+            if self.analysis_as_of is None:
+                raise ValueError(
+                    "filing_dates_by_year를 넣으려면 analysis_as_of도 필요하다 - "
+                    "비교 기준일이 없으면 filing_date만으로는 미래정보 여부를 "
+                    "판정할 수 없다(계약서 22절)."
+                )
+
         if self.margin_years is None:
             self.margin_years = sorted(self.revenue_by_year)[-5:]
+
+
+def _parse_iso_date(value, label: str) -> date:
+    """ISO 날짜 문자열(YYYY-MM-DD)을 date로. 형식이 틀리면 즉시 거부한다."""
+    if isinstance(value, date):
+        return value
+    try:
+        return date.fromisoformat(str(value))
+    except (TypeError, ValueError):
+        raise ValueError(
+            f"{label}={value!r}: ISO 날짜(YYYY-MM-DD) 형식이어야 한다(v3.47)."
+        )
+
+
+# Point-in-Time 상태 어휘 - 계약서 21절
+PIT_VALID = "PIT_VALID"
+PIT_INVALID = "PIT_INVALID"
+PIT_UNKNOWN = "PIT_UNKNOWN"
+
+
+def evaluate_point_in_time(inputs: "AnalysisInputs") -> dict:
+    """
+    이 분석이 "그 시점에 실제로 이용 가능했던 정보만 썼는가"를 판정한다.
+
+    계약서 22절의 규칙 그대로다:
+        filing_date <= analysis_as_of  -> 사용 가능
+        filing_date >  analysis_as_of  -> 미래정보(사용 금지)
+        filing_date 미상               -> PIT_UNKNOWN (valid로 위장하지 않는다)
+
+    ⚠️ **이 함수는 Historical Replay가 아니다.** replay는 계약서 70절의 7개
+    조건을 전부 만족해야 하는데, 이 저장소는 아직 원자료 스냅샷도 소스 타이밍
+    검증도 갖추지 못했다(docs/change_plan.md C-09~C-11 참고). 여기서 하는 것은
+    그 7개 조건 중 **2개(분석일 확정, 소스 타이밍 검증 가능)의 토대**를 지금부터
+    쌓기 시작하는 것뿐이다.
+
+    반환값: {"status", "analysis_as_of", "filing_dates_by_year", "violations"}
+    """
+    if inputs.analysis_as_of is None or inputs.filing_dates_by_year is None:
+        return {
+            "status": PIT_UNKNOWN,
+            "analysis_as_of": inputs.analysis_as_of,
+            "filing_dates_by_year": inputs.filing_dates_by_year,
+            "violations": [],
+            "note": (
+                "analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 "
+                "데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 "
+                "코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다."
+            ),
+        }
+
+    as_of = _parse_iso_date(inputs.analysis_as_of, "analysis_as_of")
+    violations = [
+        {
+            "fiscal_year": year,
+            "filing_date": str(value),
+            "days_after_analysis": (_parse_iso_date(value, "filing_date") - as_of).days,
+        }
+        for year, value in sorted(inputs.filing_dates_by_year.items())
+        if _parse_iso_date(value, "filing_date") > as_of
+    ]
+    return {
+        "status": PIT_INVALID if violations else PIT_VALID,
+        "analysis_as_of": inputs.analysis_as_of,
+        "filing_dates_by_year": {
+            str(k): str(v) for k, v in sorted(inputs.filing_dates_by_year.items())
+        },
+        "violations": violations,
+        "note": None,
+    }
 
 
 def _cagr(start: float, end: float, years: int, label: str = "") -> float:
@@ -474,6 +587,23 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
     _scale_ok, _scale_warning = check_scale_plausibility(fcf0, inputs.market_cap)
     if not _scale_ok:
         data_limitations.append(_scale_warning)
+
+    # ── v3.47: Point-in-Time 판정(계산에는 관여하지 않는 순수 기록·검증) ──
+    point_in_time = evaluate_point_in_time(inputs)
+    if point_in_time["status"] == PIT_INVALID:
+        raise ValueError(
+            f"[미래정보 사용] analysis_as_of({inputs.analysis_as_of}) 이후에 "
+            f"공시된 데이터가 입력에 섞여 있다: {point_in_time['violations']}. "
+            f"그 시점에 존재하지 않던 정보로 그 시점의 판단을 만드는 것이라 "
+            f"결과가 무의미하다(계약서 5.5절). analysis_as_of를 실제 분석 시점으로 "
+            f"고치거나, 해당 회계연도를 입력에서 제외할 것."
+        )
+    if point_in_time["status"] == PIT_UNKNOWN:
+        data_limitations.append(
+            f"[PIT 미검증] {point_in_time['note']} 이 분석은 Historical Replay "
+            f"대상이 될 수 없다(계약서 70절 조건 미충족). 새 분석부터 "
+            f"analysis_as_of와 filing_dates_by_year를 채워나갈 것."
+        )
 
     yoy = [(years[i], rev[years[i]] / rev[years[i - 1]] - 1) for i in range(1, len(years))]
     worst_yoy = min(g for _, g in yoy)
@@ -912,6 +1042,7 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "falsification_conditions": inputs.falsification_conditions,
             "price_at_analysis": inputs.price_at_analysis,
             "currency": inputs.currency,
+            "point_in_time": point_in_time,
         },
         "data_limitations": data_limitations,
         "inputs": asdict(inputs),
@@ -1044,18 +1175,47 @@ def _ledger_payload_without_timestamp(obj: dict) -> str:
     """
     두 ledger 내용이 '실질적으로 같은지' 비교하기 위한 정규화 문자열.
 
-    `meta.analyzed_at`만 제외한다 - 같은 입력으로 재실행하면 이 값만 달라진다는
-    것을 실측으로 확인했다(감사 FM-4: analyzed_at 외 전 필드 동일). 따라서
-    이것만 빼면 "재실행 검증"과 "다른 분석으로 덮어쓰기"를 구분할 수 있다.
+    제외 대상 2개:
+    - `meta.analyzed_at` — 같은 입력으로 재실행하면 이 값만 달라진다는 것을
+      실측으로 확인했다(감사 FM-4: analyzed_at 외 전 필드 동일).
+    - `prior_cross_check` — v3.47에서 save_ledger가 저장 직전에 덧붙이는
+      **파생 필드**다. `run_analysis()` 결과에는 없고 저장본에만 있으므로,
+      제외하지 않으면 동일 입력 재실행이 "내용 다름"으로 오판된다
+      (테스트 `test_save_ledger_allows_identical_rerun`이 실제로 잡아냈다).
+      대조 결과는 조언일 뿐 분석 내용 자체가 아니므로 동일성 판단에서 뺀다.
     """
     trimmed = dict(obj)
     meta = dict(trimmed.get("meta", {}))
     meta.pop("analyzed_at", None)
     trimmed["meta"] = meta
+    trimmed.pop("prior_cross_check", None)
     return json.dumps(trimmed, ensure_ascii=False, sort_keys=True, default=str)
 
 
-def save_ledger(result: dict, ledger_dir: str = "ledger", overwrite: bool = False) -> str:
+def _find_prior_ledger(ticker: str, current_path: str, ledger_dir: str):
+    """
+    같은 티커의 **직전** ledger를 찾는다(현재 저장하려는 파일은 제외).
+    파일명이 `<TICKER>_<YYYY-MM-DD>.json`이라 이름 정렬 = 날짜 정렬이다.
+    """
+    import glob as _glob
+
+    candidates = [
+        p
+        for p in _glob.glob(os.path.join(ledger_dir, f"{ticker}_*.json"))
+        if os.path.abspath(p) != os.path.abspath(current_path)
+    ]
+    if not candidates:
+        return None, None
+    prior_path = sorted(candidates)[-1]
+    try:
+        with open(prior_path, encoding="utf-8") as f:
+            return prior_path, json.load(f)
+    except (OSError, json.JSONDecodeError):
+        return None, None
+
+
+def save_ledger(result: dict, ledger_dir: str = "ledger", overwrite: bool = False,
+                cross_check: bool = True) -> str:
     """
     분석 결과 전체(입력값 포함)를 JSON으로 저장한다.
 
@@ -1099,6 +1259,60 @@ def save_ledger(result: dict, ledger_dir: str = "ledger", overwrite: bool = Fals
                 f"analyzed_at을 제외한 전 필드가 같으면 이 예외는 발생하지 않는다."
             )
 
+    # ── v3.47: 과거 기록 자동 대조(2026-08-15 Phase 3) ─────────────────────
+    # 감사 T-2에서 확인한 사실: cross_check_prior_record()는 55개 스크립트 중
+    # **1개(BKNG)**에서만 호출된다. CLAUDE.md는 "과거 기록이 있는 종목을
+    # 재검증할 때 대조하라"고 규정하지만 강제 수단이 없었다.
+    #
+    # 이 프로젝트는 **문서로만 둔 규칙이 지켜지지 않는 것을 이미 세 번 겪었다**
+    # (run_self_check·confidence_score·claim/lock). PH 모델선택 실수도 사람이
+    # 우연히 대조해서 잡았을 뿐이다. 네 번째를 만들지 않는다.
+    #
+    # CLAUDE.md v3.32가 이미 "부작용이 가장 작은 방향"으로 지목한 설계를 그대로
+    # 따른다 - save_ledger()가 같은 티커의 직전 ledger를 찾아 위임하는 것.
+    # 모든 분석 스크립트가 이미 save_ledger()를 부르므로 **배선 누락이 구조적으로
+    # 불가능**하다.
+    #
+    # 부작용 억제:
+    #   - 절대 예외를 던지지 않는다(대조는 조언이지 차단이 아니다)
+    #   - 결과를 저장 JSON에 병기만 한다(판정은 건드리지 않는다 - 병기 원칙)
+    #   - cross_check=False로 끌 수 있다(골든테스트가 저장소 상태에 의존하지
+    #     않아야 하는 경우 대비)
+    prior_warnings = []
+    prior_ref = None
+    if cross_check:
+        prior_path, prior = _find_prior_ledger(
+            result["meta"]["ticker"], path, ledger_dir
+        )
+        if prior:
+            prior_ref = os.path.basename(prior_path)
+            try:
+                prior_warnings = cross_check_prior_record(
+                    result,
+                    {
+                        "rar": prior.get("rar"),
+                        "gap": prior.get("expectation_gap"),
+                        "drs": (prior.get("drs") or {}).get("score"),
+                        "implied_growth": (prior.get("implied_growth") or {}).get("value"),
+                    },
+                )
+            except Exception as e:  # 대조 실패가 저장을 막아선 안 된다
+                prior_warnings = [
+                    f"[과거기록 대조 실패] {type(e).__name__}: {e} "
+                    f"(대조는 조언이므로 저장은 계속 진행됨)"
+                ]
+            if prior_warnings:
+                print(f"⚠️ 과거 기록({prior_ref}) 대조 경고 {len(prior_warnings)}건:")
+                for w in prior_warnings:
+                    print(f"   - {w}")
+
+    payload = dict(result)
+    payload["prior_cross_check"] = {
+        "prior_ledger": prior_ref,
+        "warnings": prior_warnings,
+        "checked": bool(cross_check),
+    }
+
     with open(path, "w", encoding="utf-8") as f:
-        json.dump(result, f, ensure_ascii=False, indent=2, default=str)
+        json.dump(payload, f, ensure_ascii=False, indent=2, default=str)
     return path

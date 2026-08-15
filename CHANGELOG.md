@@ -1,5 +1,58 @@
 # CHANGELOG
 
+## v3.47 — Phase 3: Point-in-Time 토대 + 과거기록 자동 대조 (2026-08-15)
+
+계약서 STEP 1-16의 남은 항목 중, Phase 0 감사에서 **DEFERRED로 분류했던
+근거가 실제로 바뀐 것 하나**와 **미사용 경로로 확인된 것 하나**를 처리했다.
+
+### ① Point-in-Time — 검증이 아니라 "상태 표기 수단"만 먼저 (C-10 재분류)
+
+Phase 0의 보류 사유는 "과거 34종목의 `filing_date`를 알 수 없으므로 PIT를
+만들면 허위 표시를 낳는다"였다. **이 판단은 지금도 유효하다.** 바뀐 것은
+하나뿐이다 — *필드가 아예 없으면 앞으로도 영원히 채울 수 없고*, 계약서 21절이
+요구하는 `PIT_UNKNOWN`이라는 어휘가 없으면 **"모른다"조차 기록할 수단이 없다.**
+
+- `AnalysisInputs.analysis_as_of` / `filing_dates_by_year` (둘 다 opt-in)
+- `evaluate_point_in_time()` — 계약서 22절 규칙 `filing_date <= analysis_as_of`
+- `PIT_INVALID`면 **실행 거부**. 다른 병기 경고들과 달리 이건 해석의 여지가
+  아니라 계산 전제의 붕괴다(계약서 5.5절: 분석 시점 이후 공시된 실적으로
+  계산한 결과는 무의미하다).
+- `PIT_UNKNOWN`이면 `data_limitations`에 기록. 결과는 `meta["point_in_time"]`.
+
+**⚠️ 기존 34종목은 전부 `PIT_UNKNOWN`이고, 소급해서 채우지 않는다** —
+filing_date를 추정해 넣는 순간 계약서 155절의 "빈칸 채우기"가 된다.
+`test_existing_analyses_are_pit_unknown_not_pit_valid`가 **PIT_VALID로
+위장되지 않는지**를 고정한다. 즉 지금 상태는 *수단은 생겼고 데이터는 0건*이다 —
+C-11(Historical Replay)은 여전히 DEFERRED.
+
+### ② 과거기록 자동 대조 — 55개 스크립트 중 1개만 부르던 경로 (C-16)
+
+감사 T-2 실측: `cross_check_prior_record()`는 분석 스크립트 55개 중
+**1개(BKNG)** 에서만 호출됐다. 그런데 이 프로젝트가 발견한 사고 대부분(PH
+모델선택, RAR 100배)이 과거 기록과 대조하다 잡힌 것이고, **그 대조는 사람이
+우연히 한 것**이었다. 문서로만 둔 규칙이 무력화된 사례를 이미 세 번 겪었다
+(run_self_check · confidence_score · claim/lock).
+
+`save_ledger()`가 같은 티커의 직전 ledger를 찾아 대조하고 결과를
+`prior_cross_check`에 병기한다 — **모든 분석 스크립트가 이미 `save_ledger()`를
+부르므로 배선 누락이 구조적으로 불가능하다.** CLAUDE.md v3.32가 이미
+"부작용이 가장 작은 방향"으로 지목해둔 설계를 그대로 따랐다.
+
+부작용 억제: 예외를 **절대 던지지 않고**(대조는 조언이지 차단이 아니다 —
+깨진 JSON이 있어도 저장 성공), 판정을 **건드리지 않으며**(병기 원칙),
+`cross_check=False`로 끌 수 있다(골든테스트가 저장소 상태에 의존하지 않도록 —
+v3.32가 배선을 미룬 이유가 정확히 이 부작용이었다).
+
+**구현 중 실제로 잡힌 회귀**: `prior_cross_check`가 저장본에만 있는 파생
+필드라, v3.46 덮어쓰기 가드의 동일성 비교가 같은 입력 재실행을 "내용 다름"으로
+오판했다. `test_save_ledger_allows_identical_rerun`이 잡아냈고
+`_ledger_payload_without_timestamp()`에서 제외하도록 고쳤다.
+
+### 검증
+
+**34종목 전건 재실행 → 8개 지표 완전 동일, 실패 0건, ledger 파일 무수정.**
+테스트 270 → 282개. `ENGINE_VERSION` v3.46 → v3.47.
+
 ## v3.46 — Phase 0 전수감사 + P0 도메인/기록무결성 결함 4건 수정 (2026-08-15)
 
 사용자가 제시한 System Development Contract에 따라 **코드 수정 전 저장소 전수

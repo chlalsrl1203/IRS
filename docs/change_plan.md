@@ -23,12 +23,13 @@
 | C-07 | DOCUMENTATION | P1 | README가 engine/ 12개 중 3개만 기술 | REQUIRED_NOW |
 | C-08 | SOFTWARE | P2 | DEPRECATED `run_self_check()` 잔존 | OPTIONAL |
 | C-09 | DATA | P2 | Provenance(수치 단위 출처 추적) | DEFERRED |
-| C-10 | DATA | P2 | Point-in-Time 상태 관리 | DEFERRED |
+| C-10 | DATA | P2 | Point-in-Time 상태 관리 | **토대 DONE (v3.47 Phase 3)** |
 | C-11 | RESEARCH | P2 | Historical Replay | DEFERRED |
 | C-12 | RESEARCH | P3 | Outcome Validation / Calibration | DEFERRED |
 | C-13 | SOFTWARE | P3 | RAW/NORMALIZED/DERIVED 3계층 분리 | NOT_JUSTIFIED |
 | C-14 | SOFTWARE | P3 | Database 도입 | NOT_JUSTIFIED |
 | C-15 | DATA | P0 | 시총 스케일/통화 오류가 무경고 통과 | **DONE (v3.46 Phase 2)** |
+| C-16 | SOFTWARE | P1 | 과거기록 대조가 55개 중 1개에서만 호출 | **DONE (v3.47 Phase 3)** |
 
 ---
 
@@ -268,3 +269,62 @@ DRS 가중치, RAR 공식은 **하나도 바꾸지 않는다**. 전부 근거가
   테스트 `test_scale_check_currency_error_detected_only_above_yield_floor`가
   이 한계를 사실 그대로 고정한다.
 - **검증**: 34종목 전건 재실행 8개 지표 1e-12 일치, ledger 무수정. 테스트 265→270.
+
+---
+
+## C-10(재분류). Point-in-Time — **토대만** 구현 (v3.47 Phase 3)
+
+- **Category**: DATA · **Priority**: P2 · **Status**: 토대 DONE / 검증은 여전히 미달
+- **Phase 0에서 DEFERRED로 둔 이유와 그 이유가 바뀐 지점**: 당시 판단은
+  "과거 34종목의 `filing_date`를 알 수 없으므로 PIT를 만들면 허위 표시를
+  낳는다"였다. 이 판단은 **지금도 유효하다.** 바뀐 건 하나뿐이다 —
+  *필드가 아예 없으면 앞으로도 영원히 채울 수 없다.* 계약서 21절이 요구하는
+  `PIT_UNKNOWN` 상태 어휘 자체가 없으면 "모른다"조차 기록할 수단이 없다.
+  그래서 **검증 기능이 아니라 상태 표기 수단**만 먼저 넣었다.
+- **Implemented Change**:
+  - `AnalysisInputs.analysis_as_of` / `filing_dates_by_year` (둘 다 opt-in)
+  - `PIT_VALID` / `PIT_INVALID` / `PIT_UNKNOWN` 상태 어휘(계약서 21절)
+  - `evaluate_point_in_time()` — 계약서 22절 규칙 `filing_date <= analysis_as_of`
+  - `run_analysis()` 배선: `PIT_INVALID`면 **실행 거부**(계약서 5.5절 —
+    미래정보로 계산한 결과는 경고 대상이 아니라 무효다), `PIT_UNKNOWN`이면
+    `data_limitations`에 기록, 결과는 `meta["point_in_time"]`에 병기.
+- **⚠️ 기존 34종목은 전부 `PIT_UNKNOWN`이다** — 소급해서 채우지 않는다.
+  filing_date를 추정해 넣는 순간 계약서 155절의 "빈칸 채우기"가 된다.
+  테스트 `test_existing_analyses_are_pit_unknown_not_pit_valid`가
+  **PIT_VALID로 위장되지 않는지**를 고정한다.
+- **BUG-FIX vs MODEL-CHANGE**: 어느 쪽도 아님 — 순수 기록·검증 경로 추가.
+  `test_pit_fields_do_not_change_any_computed_value`가 Gap/RAR/DRS/판정/
+  Confidence 불변을 고정한다.
+- **재개 조건(변경 없음)**: 새 분석에서 실제로 `filing_date`를 수집하는 관행이
+  자리잡아야 C-11(Historical Replay)로 넘어갈 수 있다. 지금은 **0종목**이다.
+
+## C-16. 과거 기록 대조가 사실상 미사용 경로였음 (v3.47 Phase 3)
+
+- **Category**: SOFTWARE · **Priority**: P1 · **Status**: DONE
+- **Evidence(감사 T-2 실측)**: `cross_check_prior_record()`는 55개 분석
+  스크립트 중 **1개(BKNG)** 에서만 호출된다. CLAUDE.md는 "과거 기록이 있는
+  종목을 재검증할 때 대조하라"고 규정하지만 강제 수단이 없었다.
+- **왜 P1인가**: 이 프로젝트가 발견한 사고 대부분(PH 모델선택, RAR 100배)이
+  과거 기록과 대조하다 잡혔다. 그런데 그 대조는 **사람이 우연히** 한 것이다.
+  문서로만 둔 규칙이 무력화된 사례를 이미 세 번 겪었다(run_self_check ·
+  confidence_score · claim/lock).
+- **Implemented Change**: `save_ledger()`가 같은 티커의 직전 ledger를
+  `_find_prior_ledger()`로 찾아 `cross_check_prior_record()`에 위임하고,
+  결과를 저장 JSON의 `prior_cross_check`에 병기한다.
+  **모든 분석 스크립트가 이미 `save_ledger()`를 부르므로 배선 누락이
+  구조적으로 불가능하다** — CLAUDE.md v3.32가 이미 "부작용이 가장 작은
+  방향"으로 지목해둔 설계를 그대로 따랐다.
+- **부작용 억제(설계 판단)**:
+  - **절대 예외를 던지지 않는다.** 대조는 조언이지 차단이 아니며, 대조 실패로
+    새 분석이 유실되는 게 더 나쁜 결과다
+    (`test_cross_check_never_blocks_saving`: 깨진 JSON이 있어도 저장 성공).
+  - **판정을 건드리지 않는다**(병기 원칙 A-6,
+    `test_cross_check_does_not_alter_official_numbers`).
+  - `cross_check=False`로 끌 수 있다 — 골든테스트가 저장소 상태에 의존하지
+    않아야 하는 경우 대비(v3.32가 배선을 미룬 이유가 정확히 이 부작용이었다).
+- **구현 중 실제로 잡힌 회귀**: `prior_cross_check`가 저장본에만 있는 파생
+  필드라, 동일성 비교(C-02 가드)가 같은 입력 재실행을 "내용 다름"으로
+  오판했다. `test_save_ledger_allows_identical_rerun`이 잡아냈고
+  `_ledger_payload_without_timestamp()`에서 제외하도록 고쳤다.
+- **검증**: 34종목 전건 재실행 8개 지표 완전 동일, ledger 무수정.
+  테스트 270 → 282.

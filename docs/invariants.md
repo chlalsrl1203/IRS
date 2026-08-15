@@ -94,6 +94,21 @@
 | B-4 | 동일 입력 2회 실행 시 `analyzed_at` 제외 전 필드 동일 | C-04 — 결정성 |
 | B-5 | FCF수익률이 탐지밴드(0.5~25%) 밖이면 경고 기록 | C-15 — 자릿수 오류 무경고 통과 |
 
+## B'. Phase 3(v3.47)에서 새로 강제하는 불변조건
+
+`docs/change_plan.md`의 C-10(토대)·C-16에 대응한다.
+
+| ID | 조건 | 강제 위치 | 검증 테스트 |
+|---|---|---|---|
+| B-6 | PIT 필드가 없으면 `PIT_UNKNOWN`이며 **`PIT_VALID`로 위장되지 않는다** | `evaluate_point_in_time()` | `test_existing_analyses_are_pit_unknown_not_pit_valid` |
+| B-7 | `filing_date > analysis_as_of`면 **실행 거부**(경고 아님) | `run_analysis()` (계약서 5.5절) | `test_future_filing_date_is_rejected_not_merely_warned` |
+| B-8 | PIT 날짜는 ISO(YYYY-MM-DD)여야 하고, 형식 오류는 조용히 UNKNOWN으로 떨어지지 않는다 | `_parse_iso_date()` + `__post_init__` | `test_malformed_pit_date_is_rejected_at_construction` |
+| B-9 | `filing_dates_by_year`에는 **최근 회계연도**가 반드시 포함(fcf0 결정 연도) | `__post_init__` | `test_filing_dates_require_latest_fiscal_year_and_analysis_date` |
+| B-10 | PIT 필드는 계산값에 **영향 없음**(순수 기록 경로) | — | `test_pit_fields_do_not_change_any_computed_value` |
+| B-11 | `save_ledger()`는 직전 ledger와 **자동 대조**한다(배선 누락 구조적 불가) | `save_ledger()` → `_find_prior_ledger()` | `test_save_ledger_auto_cross_checks_prior_record` |
+| B-12 | 대조는 **예외를 던지지 않는다**(조언이지 차단이 아님) | `save_ledger()` try/except | `test_cross_check_never_blocks_saving` |
+| B-13 | 대조 결과는 병기만 하고 공식 수치를 바꾸지 않는다 | `payload["prior_cross_check"]` | `test_cross_check_does_not_alter_official_numbers` |
+
 ---
 
 ## C. 아직 보장하지 않는 조건 (NOT ENFORCED — 향후 과제)
@@ -103,11 +118,11 @@
 
 | ID | 조건 | 현재 상태 | 관련 |
 |---|---|---|---|
-| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | 필드 자체가 없음 → `PIT_UNKNOWN` | change_plan C-10 |
+| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | **규칙은 v3.47에서 강제(B-7)되나 실제로 채운 종목이 0건**이라 34종목 전부 `PIT_UNKNOWN`. 즉 *수단은 생겼고 데이터는 아직 없다* | change_plan C-10 |
 | C-2 | 개별 수치의 출처 추적(Provenance) | `data_sources` 자유문자열뿐 | C-09 |
 | C-3 | 통화 일관성 검증 | `currency` 기록만, 교차검증 없음. v3.46 스케일 가드는 **자릿수 오류만** 잡고 7배 통화오류는 기저수익률이 낮은 종목에서 놓친다(C-15 한계표) | 감사 D-3 |
 | C-4 | Report 숫자 ↔ 엔진 출력 자동 대조 | `self_check_v2`는 **수동 호출** | 계약서 86절 |
-| C-5 | 과거 기록 자동 대조 | `cross_check_prior_record`는 55개 중 1개만 호출 | 감사 T-2 |
+| ~~C-5~~ | ~~과거 기록 자동 대조~~ | **해소됨** — v3.47에서 `save_ledger()`에 배선(B-11) | 감사 T-2 |
 | C-6 | Confidence의 확률 해석 | **UNCALIBRATED** — 확률 아님 | 감사 M-4 |
 | C-7 | 데이터 완전성 실측 | 34/34가 기본값 0.9 | C-06 |
 | C-8 | ETF 성장률 가정의 외부 앵커 | VOO 1건만 관측 앵커 | v3.35 기록 |

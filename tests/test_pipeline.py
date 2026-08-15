@@ -4,8 +4,12 @@ import pytest
 
 from engine.expectation_gap_engine import judgment_grade_from_gap
 from engine.pipeline import (
+    PIT_INVALID,
+    PIT_UNKNOWN,
+    PIT_VALID,
     AnalysisInputs,
     compare_implied_growth_models,
+    evaluate_point_in_time,
     run_analysis,
     save_ledger,
 )
@@ -1374,3 +1378,203 @@ def test_scale_check_never_blocks_or_autocorrects():
 
     assert result["inputs"]["market_cap"] == bad_cap, "입력값이 자동으로 수정됐다"
     assert result["judgment"], "경고 때문에 실행이 막혔다(경고는 차단이 아니다)"
+
+
+# ----------------------------------------------------------------------
+# Phase 3 (v3.47) — Point-in-Time 토대
+# 계약서 5.5절(미래정보 사용 금지) / 21~22절(PIT 상태 어휘와 규칙)
+# ----------------------------------------------------------------------
+
+def test_existing_analyses_are_pit_unknown_not_pit_valid():
+    """
+    ⚠️ 가장 중요한 PIT 테스트: 기존 34종목은 filing_date를 기록한 적이 없다.
+    그 상태를 'PIT_VALID'로 취급하면 **검증하지 않은 것을 검증했다고 주장**하는
+    셈이라 계약서 5.1절 위반이다. 반드시 PIT_UNKNOWN으로 떨어지고, 그 사실이
+    data_limitations에 드러나야 한다.
+    """
+    result = run_analysis(cdns_inputs())
+
+    assert result["meta"]["point_in_time"]["status"] == PIT_UNKNOWN
+    assert any("PIT" in s or "시점" in s for s in result["data_limitations"])
+
+
+def test_pit_valid_when_all_filings_precede_analysis_date():
+    """filing_date <= analysis_as_of를 전부 만족하면 PIT_VALID(계약서 22절)."""
+    result = run_analysis(
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2024: "2025-02-24", 2025: "2026-02-23"},
+        )
+    )
+
+    pit = result["meta"]["point_in_time"]
+    assert pit["status"] == PIT_VALID
+    assert pit["violations"] == []
+    assert pit["analysis_as_of"] == "2026-07-25"
+
+
+def test_future_filing_date_is_rejected_not_merely_warned():
+    """
+    계약서 5.5절: 분석 시점 이후에 공시된 실적을 쓴 결과는 무의미하다 -
+    경고로 흘려보내지 않고 실행 자체를 거부한다(다른 병기 경고들과 달리
+    이건 '해석의 여지'가 아니라 계산 전제의 붕괴이기 때문).
+    """
+    with pytest.raises(ValueError, match="미래정보"):
+        run_analysis(
+            cdns_inputs(
+                analysis_as_of="2026-01-01",
+                filing_dates_by_year={2025: "2026-02-23"},  # 분석 이후 공시
+            )
+        )
+
+
+def test_pit_evaluation_names_the_offending_year_and_lag():
+    """위반이 있으면 '어느 해가, 며칠 늦게'까지 특정돼야 추적이 가능하다."""
+    inputs = cdns_inputs(
+        analysis_as_of="2026-01-01",
+        filing_dates_by_year={2025: "2026-02-23"},
+    )
+    pit = evaluate_point_in_time(inputs)
+
+    assert pit["status"] == PIT_INVALID
+    assert len(pit["violations"]) == 1
+    v = pit["violations"][0]
+    assert str(v["fiscal_year"]) == "2025"
+    assert v["days_after_analysis"] == 53
+
+
+def test_malformed_pit_date_is_rejected_at_construction():
+    """
+    형식 오류를 조용히 PIT_UNKNOWN으로 떨구면 '기록했다고 생각했는데 사실은
+    안 된' 상태가 된다 - 즉시 거부한다.
+    """
+    with pytest.raises(ValueError, match="ISO 날짜"):
+        cdns_inputs(analysis_as_of="2026/07/25")
+
+    with pytest.raises(ValueError, match="ISO 날짜"):
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2025: "23-Feb-2026"},
+        )
+
+
+def test_filing_dates_require_latest_fiscal_year_and_analysis_date():
+    """
+    최근 회계연도가 fcf0를 결정하므로 PIT 검증의 핵심이다 - 그 해가 빠진
+    filing_dates_by_year는 '검증한 척'이 되므로 거부한다.
+    """
+    with pytest.raises(ValueError, match="최근 회계연도"):
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2024: "2025-02-24"},  # 2025 누락
+        )
+
+    with pytest.raises(ValueError, match="analysis_as_of"):
+        cdns_inputs(filing_dates_by_year={2025: "2026-02-23"})
+
+    with pytest.raises(ValueError, match="빈 dict"):
+        cdns_inputs(analysis_as_of="2026-07-25", filing_dates_by_year={})
+
+
+def test_pit_fields_do_not_change_any_computed_value():
+    """
+    PIT는 **순수 기록·검증 경로**다(falsification_conditions/price_at_analysis와
+    동일). Gap/RAR/DRS/판정 어디에도 영향을 주면 안 된다.
+    """
+    plain = run_analysis(cdns_inputs())
+    with_pit = run_analysis(
+        cdns_inputs(
+            analysis_as_of="2026-07-25",
+            filing_dates_by_year={2025: "2026-02-23"},
+        )
+    )
+
+    for key in ("expectation_gap", "rar", "judgment", "judgment_grade"):
+        assert plain[key] == with_pit[key], f"{key}가 PIT 필드 때문에 달라졌다"
+    assert plain["drs"]["score"] == with_pit["drs"]["score"]
+    assert plain["confidence"]["final"] == with_pit["confidence"]["final"]
+
+
+# ----------------------------------------------------------------------
+# Phase 3 (v3.47) — 과거 기록 자동 대조
+# 감사 T-2: cross_check_prior_record()가 55개 스크립트 중 1개에서만 호출됨
+# ----------------------------------------------------------------------
+
+def _write_prior_ledger(tmp_path, result, date_str, **overrides):
+    """직전 ledger를 흉내 낸 파일을 만든다(같은 티커, 더 이른 날짜)."""
+    prior = json.loads(json.dumps(result, default=str))
+    prior["meta"]["analyzed_at"] = f"{date_str}T00:00:00+00:00"
+    prior.update(overrides)
+    path = tmp_path / f"{result['meta']['ticker']}_{date_str}.json"
+    path.write_text(json.dumps(prior, ensure_ascii=False), encoding="utf-8")
+    return path
+
+
+def test_save_ledger_auto_cross_checks_prior_record(tmp_path):
+    """
+    T-2의 핵심: 모든 분석 스크립트가 save_ledger()를 부르므로, 여기에 배선하면
+    **대조 누락이 구조적으로 불가능**해진다. RAR 100배 사고(v3.19)를 재현한
+    과거 기록을 넣고 경고가 실제로 잡히는지 확인한다.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["prior_ledger"] == "CDNS_2026-07-01.json"
+    assert any("RAR 스케일 경고" in w for w in saved["prior_cross_check"]["warnings"])
+
+
+def test_cross_check_records_no_prior_when_first_analysis(tmp_path):
+    """직전 기록이 없으면 '대조했고 비교 대상이 없었다'가 기록돼야 한다 -
+    경고 0건과 '아예 대조 안 함'은 다른 상태다."""
+    path = save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["checked"] is True
+    assert saved["prior_cross_check"]["prior_ledger"] is None
+    assert saved["prior_cross_check"]["warnings"] == []
+
+
+def test_cross_check_never_blocks_saving(tmp_path):
+    """
+    대조는 **조언이지 차단이 아니다**. 과거 파일이 깨져 있어도 저장은 반드시
+    성공해야 한다 - 대조 실패로 새 분석이 유실되는 게 더 나쁜 결과다.
+    """
+    (tmp_path / "CDNS_2026-07-01.json").write_text("{ 깨진 JSON", encoding="utf-8")
+
+    path = save_ledger(run_analysis(cdns_inputs()), ledger_dir=str(tmp_path))
+    assert json.loads(open(path, encoding="utf-8").read())["judgment"]
+
+
+def test_cross_check_can_be_disabled_for_repo_independent_tests(tmp_path):
+    """
+    골든테스트가 저장소의 다른 ledger 유무에 따라 흔들리면 안 된다 -
+    CLAUDE.md v3.32가 이 배선을 미룬 이유가 정확히 그 부작용이었으므로
+    끄는 경로를 명시적으로 둔다.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path), cross_check=False)
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["checked"] is False
+    assert saved["prior_cross_check"]["warnings"] == []
+
+
+def test_cross_check_does_not_alter_official_numbers(tmp_path):
+    """
+    병기 원칙(A-6): 대조 경고가 떠도 판정·Gap·RAR은 그대로여야 한다.
+    is_insurer/sbc_cross_check와 동일하게 '병기, 자동판정 안 함'.
+    """
+    result = run_analysis(cdns_inputs())
+    _write_prior_ledger(tmp_path, result, "2026-07-01", rar=result["rar"] / 100)
+
+    path = save_ledger(result, ledger_dir=str(tmp_path))
+    saved = json.loads(open(path, encoding="utf-8").read())
+
+    assert saved["prior_cross_check"]["warnings"], "테스트 전제(경고 발생)가 깨졌다"
+    for key in ("expectation_gap", "rar", "judgment"):
+        assert saved[key] == result[key]

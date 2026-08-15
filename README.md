@@ -87,8 +87,13 @@ CHANGELOG.md                  # 버전별 변경사항
 
 ### 아직 보장하지 않는 것(오해 방지)
 
-- **Point-in-Time / Historical Replay 미지원** — `filing_date`가 스키마에 없어
-  "그 시점에 실제로 공시돼 있던 데이터"를 보증하지 못한다.
+- **Point-in-Time — 수단은 있으나 데이터가 0건** — v3.47에서 `analysis_as_of` /
+  `filing_dates_by_year` 필드와 `filing_date <= analysis_as_of` 검증이
+  들어갔지만(위반 시 실행 거부), **실제로 채운 종목은 아직 하나도 없어
+  기존 34종목은 전부 `PIT_UNKNOWN`이다.** 즉 "그 시점에 공시돼 있던
+  데이터"임을 아직 보증하지 못한다 — 과거 filing_date를 추정해 채우는 것은
+  금지(추측을 기록으로 위장하게 됨). **새 분석부터 채울 것.**
+- **Historical Replay 미지원** — 위 PIT 데이터가 쌓여야 시작할 수 있다.
 - **Confidence는 확률이 아니다** — calibration된 적이 없다(`UNCALIBRATED`).
   Confidence 85는 "85% 확률로 맞다"는 뜻이 아니다.
 - **ERP 매핑(DRS→5~8%)은 휴리스틱** — 실증 근거가 없다. `VALIDATION_STATUS`
@@ -104,8 +109,16 @@ python3 -m pytest tests/ -v
 
 ## 재현/대조검증
 
-과거 기록이 있는 종목을 재검증할 때는 `engine/pipeline.cross_check_prior_record()`로
-새 결과와 트래커의 과거 값을 자동 대조한다(RAR 스케일/부호, Gap 괴리, 모델
-불일치, DRS 괴리를 잡아준다). `ledger/`에 파일이 없는 과거 기록은 원 입력값이
-사라져 독립 재현이 불가능하므로, 새 분석은 반드시 `save_ledger()`로 ledger를
-남길 것.
+**v3.47부터 `save_ledger()`가 같은 티커의 직전 ledger를 찾아 자동으로 대조한다** —
+따로 호출할 필요가 없다(모든 분석 스크립트가 이미 `save_ledger()`를 부르므로
+배선 누락이 구조적으로 불가능하다). RAR 스케일/부호, Gap 괴리, 모델 불일치,
+DRS 괴리를 잡아 결과 JSON의 `prior_cross_check`에 병기한다.
+
+- 대조는 **조언이지 차단이 아니다** — 경고가 떠도 저장은 진행되고 판정은
+  바뀌지 않는다(병기 원칙).
+- 저장소 상태에 의존하면 안 되는 경우 `save_ledger(..., cross_check=False)`.
+- 수동 대조가 필요하면 `engine/pipeline.cross_check_prior_record()`를 직접
+  부를 수도 있다.
+
+`ledger/`에 파일이 없는 과거 기록은 원 입력값이 사라져 독립 재현이 불가능하므로,
+새 분석은 반드시 `save_ledger()`로 ledger를 남길 것.
