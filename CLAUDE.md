@@ -3924,3 +3924,46 @@ robust True→False로 **신규 취약**(n 단독 아닌 조합 경로).
 `scripts/n_sensitivity_diagnostic_2026_08_16.py`, `reports/n_sensitivity_2026-08-16.json`.
 테스트 453 → **459개**, `engine/`·ledger·공식판정 전부 무변경, 34종목 골든재현
 8개 지표 완전 동일, `ENGINE_VERSION` v3.52 유지.
+
+## v3.53 STAGE 1 — Growth Quality: 성장의 양과 경제성 분리 (2026-08-16)
+
+IRS 고도화 5단계(Growth Quality → Duration → Robustness → PIT Replay → Attribution)
+중 STAGE 1. **새 코드를 먼저 쓰지 않고 RQ-001 증분정보 연구부터 수행했다.**
+
+**코드 확인으로 드러난 공백**: `operating_income_by_year`는 **필수 입력**인데 엔진은
+이걸 `margin_volatility_score`(표준편차) **하나로만** 쓴다 — 마진 **수준**은 어디에도
+쓰이지 않는다. 즉 영업이익률 32.8%(BKNG)와 3.4%(GWRE)가 변동성 말고는 동일 취급된다.
+`capex_by_year`도 필수 입력이나 `capex_intensity_from_series`는 주관적
+`capex_classification`이 있을 때만 작동하며 **34종목 중 사용 0건**이다.
+
+**⭐ 초기 가설이 실측으로 기각됐다.** "추세(trend)가 새 정보"라 예상했으나 반대였다 —
+마진추세 slope는 마진변동성과 **0.675**, RealisticGrowth와 0.594, Gap과 0.512로 크게
+중복된다(적자→흑자 전환 기업이 큰 slope와 큰 변동성을 동시에 갖기 때문). 반면
+**수준(level)이 독립적**이었다: 마진수준 vs 마진변동성 **−0.069**, vs DRS **−0.043**.
+
+**FCF/영업이익도 기각했다** — SBC/FCF와 순위상관 **+0.571**(n=8), 상위 3종목
+(GWRE 6.83·WDAY 3.85·DUOL 2.73)이 전부 고SBC로 "현금전환 우수"가 실은 SBC 강도를
+재는 아티팩트다. v3.23이 드러내려던 편향을 새 지표로 재도입할 뻔했다.
+
+**10개 후보 중 2개만 채택**: 영업이익률 수준(ADOPT) · capex/매출 수준(ADOPT,
+PROXY_ONLY). ROIC/ROIIC는 **BLOCKED**(투하자본 시계열이 입력 스키마에 없음) —
+`engine/growth_quality.py`는 **proxy를 ROIIC라고 부르지 않으며** 테스트가 이를 강제한다.
+
+**구조는 D(독립 보관)를 택했다.** 미리 C(둘 다 반영)를 정답으로 가정하지 말라는
+지시대로, 두 축이 성과와 관계있다는 증거가 **0건**이라는 사실이 D를 강제한다 —
+반영하면 미검증 변수가 34종목 판정을 즉시 바꾼다. `experiments/H-007.json`으로
+사전등록 완료(H-006 의존, 방향 미지정).
+
+**§12 STAGE 1 완료 조건 충족**: 관측 중앙값 기준 고성장·고마진 8종목(중앙 마진
+27.4%)과 고성장·저마진 9종목(13.1%)이 분리되는데 **RealisticGrowth는 오히려 저마진
+집단이 높다**(12.19% vs 16.87%) — 기존 IRS가 표현하지 못하던 차이다.
+
+**실제 포트폴리오 함의(병기, 자동판정 안 함)**: 매수리스트 12종목 중
+고성장·고마진 56.07% / **고성장·저마진 43.93%**이고, **MNDY(6.27% 보유)는 최근
+영업이익률이 −0.14%로 적자**인데 Lynch 상한 바인딩으로 RealisticGrowth 25.00%,
+Gap +23.28%p의 S등급을 받고 있다. **비중은 조정하지 않았다** — 두 축의 예측력이
+미검증이므로 조정하면 근거 없는 변경이 된다.
+
+전문 `reports/research/RQ-001_growth_quality_2026-08-16.md`. 테스트 459 → **472개**,
+34종목 골든재현 8개 지표 완전 동일, ledger 무수정, `growth_quality`는 `pipeline`에
+**미배선**(테스트로 고정). `ENGINE_VERSION` v3.52 → v3.53.
