@@ -38,6 +38,7 @@ from engine.gap_analysis import (
     gap_change,
     gap_drivers,
     gap_level,
+    gap_range_over_assumptions,
     model_uncertainty,
 )
 
@@ -128,6 +129,11 @@ def build_case(ledger: dict, thesis_record: dict = None,
         "gap_drivers": None,
         "evidence_strength": evidence_strength(ledger, observations),
         "model_uncertainty": model_uncertainty(ledger, corpus_ranges),
+        # v3.51: 정당화 가능한 가정집합 위의 Gap 범위. **공식 판정은 바꾸지
+        # 않는다**(병기 원칙) - 다만 그 판정이 가정 하나로 뒤집히는지 드러낸다.
+        # 34종목 실측: 21종목이 robust=False였고, 기존 sensitivity_check는
+        # 그중 2종목만 잡고 있었다.
+        "gap_range": gap_range_over_assumptions(ledger),
 
         # ── Decision 파트 (분석자가 기록) ────────────────────────
         "market_assumption": None,

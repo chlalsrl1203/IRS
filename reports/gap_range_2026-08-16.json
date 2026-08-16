@@ -1,0 +1,1023 @@
+{
+  "generated_at": "2026-08-16T05:08:57.324707+00:00",
+  "grid": {
+    "r_delta": [
+      -0.01,
+      0.0,
+      0.01
+    ],
+    "g_terminal_delta": [
+      -0.01,
+      0.0,
+      0.01
+    ],
+    "n_delta": [
+      -2,
+      0,
+      2
+    ],
+    "models": [
+      "single_stage",
+      "two_stage"
+    ]
+  },
+  "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+  "n_tickers": 34,
+  "n_not_robust": 21,
+  "not_robust_tickers": [
+    "BKNG",
+    "BRO",
+    "BSX",
+    "BSY",
+    "CDNS",
+    "COR",
+    "DSGX",
+    "GWRE",
+    "IDXX",
+    "KLAC",
+    "MNST",
+    "PH",
+    "PTC",
+    "RMD",
+    "TCOM",
+    "TYL",
+    "VRSN",
+    "VRT",
+    "WCN",
+    "WM",
+    "ZTS"
+  ],
+  "sensitivity_check_flipped_tickers": [
+    "COR",
+    "DSGX"
+  ],
+  "newly_caught": [
+    "BKNG",
+    "BRO",
+    "BSX",
+    "BSY",
+    "CDNS",
+    "GWRE",
+    "IDXX",
+    "KLAC",
+    "MNST",
+    "PH",
+    "PTC",
+    "RMD",
+    "TCOM",
+    "TYL",
+    "VRSN",
+    "VRT",
+    "WCN",
+    "WM",
+    "ZTS"
+  ],
+  "missed_vs_sensitivity_check": [],
+  "flip_driver_counts": {
+    "model_choice": 11,
+    "discount_rate": 6,
+    "terminal_growth": 2,
+    "growth_duration_n": 0
+  },
+  "results": [
+    {
+      "ticker": "ACGL",
+      "status": "COMPUTED",
+      "official_gap": 0.24383806952929307,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.20855899940199024,
+      "gap_max": 0.2796630359599571,
+      "gap_span_pp": 0.07110403655796688,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "BKNG",
+      "status": "COMPUTED",
+      "official_gap": 0.05981018711677141,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.03053448368659563,
+      "gap_max": 0.08927261997809953,
+      "gap_span_pp": 0.0587381362915039,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": true,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "BRO",
+      "status": "COMPUTED",
+      "official_gap": 0.07427728925631566,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.03422424316406253,
+      "gap_max": 0.09513809204101564,
+      "gap_span_pp": 0.060913848876953114,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "BSX",
+      "status": "COMPUTED",
+      "official_gap": 0.058652919654472085,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.02372593296013617,
+      "gap_max": 0.09028164672040706,
+      "gap_span_pp": 0.06655571376027089,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": true,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "BSY",
+      "status": "COMPUTED",
+      "official_gap": 0.05695494807794302,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.012901817006253882,
+      "gap_max": 0.07444203917422262,
+      "gap_span_pp": 0.06154022216796874,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": true,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "CDNS",
+      "status": "COMPUTED",
+      "official_gap": 0.032879560479090325,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.13956268310546882,
+      "gap_max": 0.042711703952074465,
+      "gap_span_pp": 0.18227438705754329,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "COR",
+      "status": "COMPUTED",
+      "official_gap": 0.030971756573969778,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.002240905169194257,
+      "gap_max": 0.06271995603686042,
+      "gap_span_pp": 0.06496086120605468,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": true
+    },
+    {
+      "ticker": "DSGX",
+      "status": "COMPUTED",
+      "official_gap": 0.04248310348930688,
+      "official_judgment": "적정가/경계선",
+      "gap_min": 0.0030261637920412365,
+      "gap_max": 0.08378959457746349,
+      "gap_span_pp": 0.08076343078542225,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": true,
+        "terminal_growth": true,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": true
+    },
+    {
+      "ticker": "DUOL",
+      "status": "COMPUTED",
+      "official_gap": 0.19453125000000002,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.16401462554931645,
+      "gap_max": 0.22575302124023439,
+      "gap_span_pp": 0.061738395690917935,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "GEN",
+      "status": "COMPUTED",
+      "official_gap": 0.12182151794433595,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.09892950717404865,
+      "gap_max": 0.15675765991210938,
+      "gap_span_pp": 0.05782815273806073,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "GWRE",
+      "status": "COMPUTED",
+      "official_gap": 0.0315386804982906,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.11548554971053092,
+      "gap_max": 0.04133174066502204,
+      "gap_span_pp": 0.15681729037555298,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "IDXX",
+      "status": "COMPUTED",
+      "official_gap": 0.004138841871727902,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.12308223878384979,
+      "gap_max": 0.013898514979740928,
+      "gap_span_pp": 0.1369807537635907,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "KEYS",
+      "status": "COMPUTED",
+      "official_gap": -0.14364213252736793,
+      "official_judgment": "과대평가 가능성",
+      "gap_min": -0.19556359554006325,
+      "gap_max": -0.0572125736440241,
+      "gap_span_pp": 0.13835102189603915,
+      "judgment_set": [
+        "과대평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "KLAC",
+      "status": "COMPUTED",
+      "official_gap": 0.008613438964066245,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.18640246789213183,
+      "gap_max": 0.01846534245032301,
+      "gap_span_pp": 0.20486781034245483,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "MCK",
+      "status": "COMPUTED",
+      "official_gap": -0.0001648937621887142,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.032773116723614465,
+      "gap_max": 0.031838318212908945,
+      "gap_span_pp": 0.06461143493652341,
+      "judgment_set": [
+        "적정가/경계선"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "MNDY",
+      "status": "COMPUTED",
+      "official_gap": 0.23276233673095703,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.20963592529296876,
+      "gap_max": 0.26593017578125,
+      "gap_span_pp": 0.05629425048828124,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "MNST",
+      "status": "COMPUTED",
+      "official_gap": -0.006418685378330832,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.15178894745364196,
+      "gap_max": 0.003370832333887158,
+      "gap_span_pp": 0.15515977978752912,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "PDD",
+      "status": "COMPUTED",
+      "official_gap": 0.2916229248046875,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.25976842823376234,
+      "gap_max": 0.32756385803222654,
+      "gap_span_pp": 0.0677954297984642,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "PGR",
+      "status": "COMPUTED",
+      "official_gap": 0.21757485287419526,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.1848140416325875,
+      "gap_max": 0.25344750302067964,
+      "gap_span_pp": 0.06863346138809215,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "PH",
+      "status": "COMPUTED",
+      "official_gap": -0.08585815370238321,
+      "official_judgment": "과대평가 가능성",
+      "gap_min": -0.13610820710814497,
+      "gap_max": -0.005064384807012587,
+      "gap_span_pp": 0.13104382230113237,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "PTC",
+      "status": "COMPUTED",
+      "official_gap": 0.0553015837082313,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.024281228483621936,
+      "gap_max": 0.08612166732639537,
+      "gap_span_pp": 0.06184043884277343,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": true,
+        "terminal_growth": true,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "RMD",
+      "status": "COMPUTED",
+      "official_gap": 0.05889235066261829,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.026614099014669046,
+      "gap_max": 0.09346056507912218,
+      "gap_span_pp": 0.06684646606445313,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": true,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "ROP",
+      "status": "COMPUTED",
+      "official_gap": 0.012357788085937522,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.01691905975341796,
+      "gap_max": 0.04644897460937501,
+      "gap_span_pp": 0.06336803436279298,
+      "judgment_set": [
+        "적정가/경계선"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "SE",
+      "status": "COMPUTED",
+      "official_gap": 0.19180315300111223,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.1643302754986708,
+      "gap_max": 0.22262934013490127,
+      "gap_span_pp": 0.05829906463623047,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "TCOM",
+      "status": "COMPUTED",
+      "official_gap": 0.07547684320764038,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.04895306238488646,
+      "gap_max": 0.1033178389962146,
+      "gap_span_pp": 0.054364776611328144,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "TTD",
+      "status": "COMPUTED",
+      "official_gap": 0.1700962080005105,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.14657398907714259,
+      "gap_max": 0.20579834117922144,
+      "gap_span_pp": 0.05922435210207885,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "TYL",
+      "status": "COMPUTED",
+      "official_gap": 0.0277231870438982,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.007543116972215047,
+      "gap_max": 0.05903994424604665,
+      "gap_span_pp": 0.0665830612182617,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "UBER",
+      "status": "COMPUTED",
+      "official_gap": 0.11784205707458376,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.09043956073669313,
+      "gap_max": 0.14929271015075565,
+      "gap_span_pp": 0.05885314941406253,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "VRSN",
+      "status": "COMPUTED",
+      "official_gap": -0.009719340999338522,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.07201234181166859,
+      "gap_max": -0.00014885877306382994,
+      "gap_span_pp": 0.07186348303860476,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "VRT",
+      "status": "COMPUTED",
+      "official_gap": 0.017187161949781066,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.03831649253019939,
+      "gap_max": 0.11377110807123153,
+      "gap_span_pp": 0.15208760060143092,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "WCN",
+      "status": "COMPUTED",
+      "official_gap": 0.0100359824109255,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.10566074446370234,
+      "gap_max": 0.01975598680471309,
+      "gap_span_pp": 0.12541673126841543,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "WDAY",
+      "status": "COMPUTED",
+      "official_gap": 0.11417055453507202,
+      "official_judgment": "저평가 가능성",
+      "gap_min": 0.087363913910072,
+      "gap_max": 0.14932146395890014,
+      "gap_span_pp": 0.061957550048828136,
+      "judgment_set": [
+        "저평가 가능성"
+      ],
+      "robust": true,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "two_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "WM",
+      "status": "COMPUTED",
+      "official_gap": 0.0008904206704897916,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.11255004832799005,
+      "gap_max": 0.010605071178160563,
+      "gap_span_pp": 0.12315511950615061,
+      "judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": true,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    },
+    {
+      "ticker": "ZTS",
+      "status": "COMPUTED",
+      "official_gap": 0.020971515574735304,
+      "official_judgment": "적정가/경계선",
+      "gap_min": -0.005790806739196852,
+      "gap_max": 0.05252389815582268,
+      "gap_span_pp": 0.05831470489501953,
+      "judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "robust": false,
+      "official_judgment_in_set": true,
+      "flip_drivers": {
+        "model_choice": false,
+        "discount_rate": false,
+        "terminal_growth": false,
+        "growth_duration_n": false
+      },
+      "n_evaluated": 30,
+      "n_failed": 0,
+      "failures": [],
+      "validation_status": "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 불확실성의 **하한**이다(최대 오차원이 그 축에 있다).",
+      "lower_bound_note": "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다.",
+      "official_model": "single_stage",
+      "sensitivity_check_flipped": false
+    }
+  ]
+}

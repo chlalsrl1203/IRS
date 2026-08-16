@@ -1,0 +1,32 @@
+{
+  "core": {
+    "experiment_id": "H-005",
+    "hypothesis": "가정집합 강건성(`gap_range_over_assumptions().robust`)이 미래 benchmark-relative 위험조정수익률과 관계가 있는가? 즉 **robust=True 부분집합이 전체집합과 다른 성과를 내는가?** **방향과 존재 여부 모두 미지이며 가정하지 않는다** - 강건한 종목이 이미 시장에 충분히 알려져 초과수익이 오히려 낮을 가능성도 열어둔다.",
+    "universe": "H-001과 동일. ledger/에 공식 분석이 존재하는 미국 상장 개별주식. **생존 편향 통제**: 분석 시점에 존재한 종목 전부를 포함하며 이후 상장폐지·피인수된 종목도 빼지 않는다(§13).",
+    "entry_rule": "H-001의 Gap 5분위 진입 규칙을 그대로 쓰되, 각 분위를 robust=True / robust=False로 다시 나눠 비교한다. robust 정의는 2026-08-15에 코드로 고정된 `ASSUMPTION_GRID`(모델 2종 x r±1%p x g_terminal±1%p x n±2년) 기준이며 **결과를 보고 바꾸지 않는다.** 2026-08-15 시점 실측: 34종목 중 robust=False 21종목.",
+    "exit_rule": "진입 후 12개월 보유 후 청산(H-001과 동일). 두 부분집합을 같은 규칙으로 다뤄야 비교가 성립한다.",
+    "parameters": {
+      "signal": "gap_range_over_assumptions().robust",
+      "grid_frozen_at": "2026-08-15 ASSUMPTION_GRID",
+      "measured_robust_false_at_registration": 21,
+      "measured_universe_at_registration": 34,
+      "min_sample_per_group": 5
+    },
+    "test_period": "미정 - H-001과 동시에 사전 고정",
+    "oos_period": "미정 - test_period 확정과 동시에 분리 고정",
+    "benchmark": "VOO(S&P500) 동일기간 총수익률 대비 초과수익(H-001과 동일)",
+    "analysis_as_of": "2026-08-15",
+    "data_version": "ledger/ 34종목 (2026-08-15 스냅샷, PIT_UNKNOWN)",
+    "methodology_version": "v3.50",
+    "transaction_cost_assumption": "왕복 20bp(H-001과 동일). 두 부분집합에 동일 적용하므로 비교 자체는 비용 가정에 둔감하나, 절대 성과 주장에는 반드시 반영한다.",
+    "depends_on": [
+      "H-001"
+    ]
+  },
+  "core_hash": "eabfc3d8ca56213e396681a5ad189a6ae9f3dcbfb672e029e51aee04cf11257f",
+  "registered_date": "2026-08-15",
+  "note": "2026-08-15 투자가치 감사의 SINGLE NEXT ACTION에서 파생. 감사가 확인한 것은 '판정이 가정 하나로 뒤집힌다'는 **내부** 사실이며, 그것이 **투자 성과와 관계가 있는지는 전혀 검증되지 않았다** - 이 실험이 바로 그 미검증 부분이다. robust 라벨을 성과 예측으로 읽지 말 것.",
+  "status": "BLOCKED",
+  "blocked_reason": "실행 전제가 아직 없다(2026-08-15 실측). (1) 분석일이 2026-07-25~08-13에 몰려 있어 12개월 보유수익률을 잴 구간이 아예 존재하지 않는다. (2) price_at_analysis가 34건 중 9건뿐이라 나머지는 진입가를 모른다. (3) 9건을 5분위로 나누면 분위당 최소 표본(5건)을 채울 수 없다. (4) PIT가 확보된 재현 가능한 과거 시점 분석이 0건이라 §7 Historical Replay 자체가 불가능하다. 재개 조건: 분석일로부터 12개월이 지난 종목이 분위당 5건 이상 확보되고, 그 종목들이 price_at_analysis와 PIT를 갖출 것.",
+  "results": []
+}

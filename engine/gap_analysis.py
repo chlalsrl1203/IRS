@@ -370,3 +370,194 @@ def analyze_gap(ledger: dict, market_cap_now: float = None,
         result["gap_drivers"] = gap_drivers(ledger, market_cap_now=market_cap_now)
 
     return result
+
+
+# ══════════════════════════════════════════════════════════════════════
+# 가정집합 Gap 범위 (v3.51, 2026-08-15 투자가치 감사의 SINGLE NEXT ACTION)
+# ══════════════════════════════════════════════════════════════════════
+#
+# ## 왜 만들었나 - 강건성 도구가 잘못된 축을 보고 있었다
+#
+# 2026-08-15 감사가 34종목을 재계산해 확인한 것:
+#
+#   요인                          Gap 변화 중앙값   판정 뒤집힘
+#   Realistic Growth 관측대조 괴리     8.70%p        4/11
+#   모델 선택 교체(single<->two)       2.04%p       11/34 (32%)
+#   DRS 전체 제거                      0.23%p        1/34 (3%)
+#
+# 판정 밴드는 ±5%p다. 즉 **가장 큰 오차원이 판정 밴드보다 크고**, 가장 정교하게
+# 통제해온 축(DRS)은 판정을 거의 바꾸지 않는다.
+#
+# 그런데 기존 강건성 도구 두 개가 **둘 다 DRS 축만** 검사한다:
+#   - `expectation_gap_sensitivity_check`(v3.19): DRS on/off
+#   - `gap_distribution.monte_carlo_gap`(v3.44): DRS 주관입력 섭동
+#     -> 34종목 전부 P=100%/0%, 취약 판정 0건. v3.44는 "취약성은 성장률 축에
+#        있다"고 정확히 결론냈으나 그 결론에 따른 도구는 만들어지지 않았다.
+#
+# 이 함수가 그 공백을 메운다. **새 방법론은 0줄** - 기존 implied_growth_*를
+# 격자 위에서 다시 부를 뿐이다.
+#
+# ## ⚠️ 이 범위는 실제 불확실성의 **하한**이다
+#
+# Realistic Growth를 **고정**한 채 계산한다. 그런데 감사가 측정한 최대 오차원이
+# 바로 그 축이다(관측 대조 괴리 중앙값 8.70%p). 고정하는 이유는 근거 없는 격자를
+# 지어내지 않기 위함이다 - 성장률을 흔들 정당한 폭이 이 저장소에 아직 없다
+# (LYNCH_TYPE_CAPS도 근거가 없고, 관측치는 11건뿐이다).
+#
+# 따라서 `robust=True`는 "확실하다"가 아니라 **"이 격자 안에서는 안 뒤집힌다"**는
+# 뜻이다. 성장 가정이 틀리면 여전히 뒤집힌다.
+#
+# ## 격자 폭의 근거 (HEURISTIC - 검증된 값 아님)
+#
+#   r ±1%p        : 감사에서 실제로 6/34 판정을 뒤집은 폭. erp_from_drs가
+#                   HEURISTIC_MAPPING이라 이 정도 불확실성은 정당하다.
+#   g_terminal ±1%p: default_terminal_growth도 규칙 기반 추정치다.
+#   n ±2년        : capped_n()이 8~15년을 허용하므로 그 안쪽 폭.
+#   모델 2종       : 분석자 재량 입력이며 감사에서 11/34을 뒤집었다.
+#
+# 이 폭들은 **관측 기반 시작점**이지 검증된 신뢰구간이 아니다.
+
+ASSUMPTION_GRID = {
+    "r_delta": (-0.01, 0.0, 0.01),
+    "g_terminal_delta": (-0.01, 0.0, 0.01),
+    "n_delta": (-2, 0, 2),
+    "models": ("single_stage", "two_stage"),
+}
+
+GAP_RANGE_VALIDATION = (
+    "HEURISTIC - 격자 폭은 2026-08-15 감사 실측 기반 시작점이며 검증된 "
+    "신뢰구간이 아니다. Realistic Growth를 고정하므로 이 범위는 실제 "
+    "불확실성의 **하한**이다(최대 오차원이 그 축에 있다)."
+)
+
+
+def _implied_growth_at(market_cap, fcf0, r, n, g_terminal, model):
+    """격자 한 점에서의 Implied Growth. 기존 함수를 그대로 재사용한다."""
+    if model == "single_stage":
+        return implied_growth_single_stage(market_cap, fcf0, r)
+    g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+    return g
+
+
+def gap_range_over_assumptions(ledger: dict, grid: dict = None) -> dict:
+    """
+    정당화 가능한 가정집합 전체에서 Gap이 어느 범위에 놓이는지 계산한다.
+
+    Realistic Growth는 **고정**한다(위 docstring의 하한 경고 참고).
+    Implied Growth만 격자 위에서 다시 계산한다.
+
+    반환:
+      gap_min / gap_max        범위
+      judgment_set             격자에서 나온 판정들의 집합
+      robust                   집합 크기가 1인가(= 어떤 가정으로도 안 뒤집힘)
+      flip_drivers             축을 **하나씩만** 흔들었을 때 판정을 바꾸는 축
+      n_evaluated / n_failed   수렴 실패한 조합은 숨기지 않고 센다
+    """
+    g = dict(ASSUMPTION_GRID)
+    if grid:
+        g.update(grid)
+
+    rg = ledger["growth"]["realistic_growth"]
+    mc = ledger["inputs"]["market_cap"]
+    fcf0 = ledger["derived"]["fcf0"]
+    disc = ledger["discount_rate"]
+    r0, n0, gt0 = disc["r"], disc["n"], disc["g_terminal"]
+
+    gaps, judgments, failures = [], set(), []
+
+    for model in g["models"]:
+        for dr in g["r_delta"]:
+            for dgt in g["g_terminal_delta"]:
+                for dn in g["n_delta"]:
+                    # single_stage는 n·g_terminal을 쓰지 않으므로 중복 조합을
+                    # 건너뛴다(같은 값이 여러 번 세어져 분포가 왜곡되지 않게).
+                    if model == "single_stage" and (dgt != 0.0 or dn != 0):
+                        continue
+                    try:
+                        ig = _implied_growth_at(mc, fcf0, r0 + dr, n0 + dn,
+                                                gt0 + dgt, model)
+                    except Exception as e:
+                        failures.append({
+                            "model": model, "r_delta": dr,
+                            "g_terminal_delta": dgt, "n_delta": dn,
+                            "error": f"{type(e).__name__}: {e}",
+                        })
+                        continue
+                    gap = rg - ig
+                    gaps.append(gap)
+                    judgments.add(judgment_from_gap(gap))
+
+    if not gaps:
+        return {
+            "ticker": ledger["meta"]["ticker"],
+            "status": "NOT_COMPUTABLE",
+            "n_evaluated": 0,
+            "n_failed": len(failures),
+            "failures": failures,
+            "validation_status": GAP_RANGE_VALIDATION,
+        }
+
+    official_gap = ledger["expectation_gap"]
+    return {
+        "ticker": ledger["meta"]["ticker"],
+        "status": "COMPUTED",
+        "official_gap": official_gap,
+        "official_judgment": ledger["judgment"],
+        "gap_min": min(gaps),
+        "gap_max": max(gaps),
+        "gap_span_pp": max(gaps) - min(gaps),
+        "judgment_set": sorted(judgments),
+        # ⚠️ robust=True는 "확실하다"가 아니라 "이 격자 안에서는 안 뒤집힌다"이다
+        "robust": len(judgments) == 1,
+        "official_judgment_in_set": ledger["judgment"] in judgments,
+        "flip_drivers": _flip_drivers(ledger, g),
+        "n_evaluated": len(gaps),
+        "n_failed": len(failures),
+        "failures": failures,
+        "validation_status": GAP_RANGE_VALIDATION,
+        "lower_bound_note": (
+            "Realistic Growth를 고정한 범위다. 감사가 측정한 최대 오차원이 "
+            "그 축이므로(관측 대조 괴리 중앙값 8.70%p) 실제 불확실성은 이보다 크다."
+        ),
+    }
+
+
+def _flip_drivers(ledger: dict, grid: dict) -> dict:
+    """
+    축을 **하나씩만** 흔들었을 때 판정을 바꾸는 축을 특정한다.
+
+    전체 격자는 "뒤집히는가"만 알려주고 **무엇 때문인지**는 알려주지 않는다.
+    한 축씩 보면 어디를 다시 검토해야 하는지가 나온다 - `gap_drivers`가
+    OAT + 잔차로 기여도를 보는 것과 같은 발상이되, 여기서는 판정 단위로 본다.
+    """
+    rg = ledger["growth"]["realistic_growth"]
+    mc = ledger["inputs"]["market_cap"]
+    fcf0 = ledger["derived"]["fcf0"]
+    disc = ledger["discount_rate"]
+    r0, n0, gt0 = disc["r"], disc["n"], disc["g_terminal"]
+    base_model = ledger["implied_growth"]["model_used"]
+    base_j = ledger["judgment"]
+
+    def judged(model=None, dr=0.0, dgt=0.0, dn=0):
+        try:
+            ig = _implied_growth_at(mc, fcf0, r0 + dr, n0 + dn, gt0 + dgt,
+                                    model or base_model)
+        except Exception:
+            return None
+        return judgment_from_gap(rg - ig)
+
+    out = {}
+    out["model_choice"] = any(
+        judged(model=m) not in (None, base_j)
+        for m in grid["models"] if m != base_model
+    )
+    out["discount_rate"] = any(
+        judged(dr=d) not in (None, base_j) for d in grid["r_delta"] if d
+    )
+    out["terminal_growth"] = any(
+        judged(dgt=d) not in (None, base_j) for d in grid["g_terminal_delta"] if d
+    )
+    out["growth_duration_n"] = any(
+        judged(dn=d) not in (None, base_j) for d in grid["n_delta"] if d
+    )
+    return out

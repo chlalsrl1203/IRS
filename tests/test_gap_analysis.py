@@ -265,3 +265,146 @@ def test_analyze_gap_never_emits_an_action():
 def test_analyze_gap_skips_change_when_no_current_data():
     out = analyze_gap(LEDGER)
     assert out["gap_change"] is None and out["gap_drivers"] is None
+
+
+# ──────────────────────────────────────────────────────────────────
+# 가정집합 Gap 범위 (v3.51) - 2026-08-15 감사의 SINGLE NEXT ACTION
+# ──────────────────────────────────────────────────────────────────
+
+from engine.gap_analysis import (  # noqa: E402
+    ASSUMPTION_GRID,
+    GAP_RANGE_VALIDATION,
+    gap_range_over_assumptions,
+)
+
+
+def test_official_judgment_is_always_inside_the_range():
+    """
+    ⚠️ 자기일관성: 격자에는 무섭동(전부 0, 공식 모델) 조합이 포함되므로
+    공식 판정이 반드시 결과 집합 안에 있어야 한다. 없다면 격자 계산이
+    공식 경로와 다른 값을 쓰고 있다는 뜻이다.
+    """
+    for path in sorted(glob.glob("ledger/*.json")):
+        led = json.load(open(path, encoding="utf-8"))
+        r = gap_range_over_assumptions(led)
+        assert r["status"] == "COMPUTED", f"{path}: {r['status']}"
+        assert r["official_judgment_in_set"], led["meta"]["ticker"]
+        assert r["gap_min"] <= led["expectation_gap"] <= r["gap_max"], (
+            led["meta"]["ticker"]
+        )
+
+
+def test_zero_width_grid_reproduces_official_gap_exactly():
+    """
+    격자 폭을 0으로 주면 공식 Gap 하나만 나와야 한다 - 재계산 경로가 공식
+    경로와 동일함을 증명한다(다른 값이 나오면 어딘가 입력이 어긋난 것).
+    """
+    r = gap_range_over_assumptions(LEDGER, grid={
+        "r_delta": (0.0,), "g_terminal_delta": (0.0,), "n_delta": (0,),
+        "models": (LEDGER["implied_growth"]["model_used"],),
+    })
+    assert r["n_evaluated"] == 1
+    assert r["gap_min"] == pytest.approx(LEDGER["expectation_gap"], abs=1e-12)
+    assert r["gap_max"] == pytest.approx(LEDGER["expectation_gap"], abs=1e-12)
+    assert r["robust"] is True
+
+
+def test_bsx_is_not_robust_and_flip_driver_is_identified():
+    """
+    ⚠️ 감사 실측 고정: BSX는 판정 여유가 0.87%p인데 r±1%p 민감도가 1.7~1.9%p라
+    **할인율만으로** 판정이 뒤집힌다. 뒤집는 축까지 특정돼야 어디를 재검토할지 안다.
+
+    (이 파일의 기본 LEDGER는 CDNS다 - BSX를 따로 읽는다. 초판이 이를 혼동해
+    CDNS에 BSX의 기대값을 걸었다가 실패했다.)
+    """
+    bsx = json.load(open(sorted(glob.glob("ledger/BSX_*.json"))[-1], encoding="utf-8"))
+    r = gap_range_over_assumptions(bsx)
+    assert r["robust"] is False
+    assert r["flip_drivers"]["discount_rate"] is True
+    assert len(r["judgment_set"]) == 2
+
+
+def test_cdns_flips_on_model_choice_with_very_wide_span():
+    """
+    ⚠️ 감사 실측 고정: CDNS는 공식 Gap이 +3.29%p(적정가)인데 모델을 교체하면
+    -13.96%p(과대평가)까지 간다 - 폭 18.23%p로 판정 밴드(±5%p)의 3.6배다.
+    single_stage 채택 종목에서 이 패턴이 반복된다(KLAC/GWRE/MNST/IDXX/WCN/WM).
+    """
+    r = gap_range_over_assumptions(LEDGER)
+    assert LEDGER["implied_growth"]["model_used"] == "single_stage"
+    assert r["robust"] is False
+    assert r["flip_drivers"]["model_choice"] is True
+    assert r["gap_span_pp"] > 0.15
+
+
+def test_range_is_labeled_as_lower_bound_of_uncertainty():
+    """
+    ⚠️ Realistic Growth를 고정하므로 이 범위는 하한이다. 감사가 측정한 최대
+    오차원(관측 대조 괴리 중앙값 8.70%p)이 바로 그 축이라, robust=True를
+    '확실하다'로 읽으면 안 된다.
+    """
+    r = gap_range_over_assumptions(LEDGER)
+    assert "Realistic Growth를 고정" in r["lower_bound_note"]
+    assert "이보다 크다" in r["lower_bound_note"]
+    assert "HEURISTIC" in GAP_RANGE_VALIDATION
+    assert "하한" in GAP_RANGE_VALIDATION
+
+
+def test_realistic_growth_is_held_fixed_across_the_grid():
+    """
+    범위는 Implied Growth만 흔들어 만든다 - Realistic Growth까지 흔들면
+    근거 없는 격자를 지어내는 것이 된다(그 폭이 이 저장소에 없다).
+    격자 폭이 Gap에 미치는 영향은 전부 IG 쪽에서 와야 한다.
+    """
+    rg = LEDGER["growth"]["realistic_growth"]
+    r = gap_range_over_assumptions(LEDGER)
+    # Gap = RG - IG 이므로 IG 범위는 RG에서 Gap 범위를 뺀 것과 정확히 일치
+    assert rg - r["gap_max"] < rg - r["gap_min"]
+    assert r["gap_span_pp"] == pytest.approx(r["gap_max"] - r["gap_min"], abs=1e-15)
+
+
+def test_single_stage_duplicates_are_not_double_counted():
+    """
+    single_stage는 n·g_terminal을 쓰지 않으므로 그 축을 흔든 조합은 같은 값이
+    된다 - 중복을 세면 분포가 왜곡된다. 격자 3x3x3x2=54에서 중복 제거 후
+    30개(two_stage 27 + single_stage 3)여야 한다.
+    """
+    r = gap_range_over_assumptions(LEDGER)
+    assert r["n_evaluated"] == 30, r["n_evaluated"]
+
+
+def test_convergence_failures_are_counted_not_hidden():
+    """수렴 실패 조합을 조용히 빼면 범위가 실제보다 좁아 보인다."""
+    r = gap_range_over_assumptions(LEDGER)
+    assert "n_failed" in r and "failures" in r
+    assert r["n_failed"] == len(r["failures"])
+
+
+def test_catches_strictly_more_than_existing_sensitivity_check():
+    """
+    ⚠️ 이 도구의 존재 이유. 기존 `sensitivity_check`(DRS 축)가 잡은 종목을
+    하나도 놓치지 않으면서 더 많이 잡아야 한다 - 그러지 못하면 기존 도구를
+    대체할 근거가 없다.
+
+    감사 실측: 기존 2종목(COR/DSGX) vs 신규 21종목, 놓친 것 0.
+    """
+    old, new = set(), set()
+    for path in sorted(glob.glob("ledger/*.json")):
+        led = json.load(open(path, encoding="utf-8"))
+        if (led.get("sensitivity_check") or {}).get("judgment_flipped"):
+            old.add(led["meta"]["ticker"])
+        if not gap_range_over_assumptions(led)["robust"]:
+            new.add(led["meta"]["ticker"])
+
+    assert old - new == set(), f"기존 도구만 잡은 종목이 있다: {old - new}"
+    assert len(new) > len(old)
+
+
+def test_grid_widths_are_exposed_as_constants_not_hardcoded():
+    """
+    격자 폭은 HEURISTIC이므로 코드 안쪽에 숨기지 않고 상수로 노출한다 -
+    나중에 근거가 생기면 여기만 고치면 되고, 근거 없이 바꾸면 눈에 띈다.
+    """
+    for k in ("r_delta", "g_terminal_delta", "n_delta", "models"):
+        assert k in ASSUMPTION_GRID
+    assert set(ASSUMPTION_GRID["models"]) == {"single_stage", "two_stage"}
