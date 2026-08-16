@@ -61,5 +61,10 @@
    가산(+3%p/+1%p)은 근거 못 찾아 `IMPLEMENTED_NOT_VALIDATED` 유지 - 코드는
    무변경, 라벨만 정직화. 상세는
    `reports/historical_validation/structural_discount_research.md`.
-3. TCOM류 "조합축에서만 취약한" 6종목(`ablation_analysis.md`)의 개별 축
-   분해 — 이번엔 존재만 확인, 원인 미분해
+3. ~~TCOM류 "조합축에서만 취약한" 6종목(`ablation_analysis.md`)의 개별 축
+   분해~~ — **2026-08-16 완료**. BRO·COR·TYL·VRSN은 model_choice+discount_rate
+   2축 조합, TCOM은 model_choice가 빠진 3축(discount_rate+terminal_growth+
+   growth_duration_n), ZTS는 4축 전부가 필요(30격자 중 1지점만 flip, 6종목 중
+   가장 강건). 공통 메커니즘: 각 축은 단독으로는 ±5%p 경계를 못 넘지만 같은
+   방향으로 겹치면 넘는다 - 상세는
+   `reports/historical_validation/combination_flip_decomposition.md`.

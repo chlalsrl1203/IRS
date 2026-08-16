@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## 조합축에서만 취약한 6종목 개별 축 분해 (2026-08-16)
+
+Historical Replay 감사 "다음 감사가 반드시 할 일" 3번 실행. v3.51
+`gap_range_over_assumptions()`가 OAT(단일축) 점검으로는 안전하다고 판정했지만
+전체 30격자에서는 뒤집히는 6종목(BRO/COR/TCOM/TYL/VRSN/ZTS)의 최소 flip 조합을
+실제로 특정했다. BRO·COR·TYL·VRSN은 model_choice+discount_rate 2축, TCOM은
+model_choice가 빠진 3축(discount_rate+terminal_growth+growth_duration_n),
+ZTS는 4축 전부 필요(30격자 중 1지점만 flip). 공통 메커니즘: 각 축은 단독으로
+±5%p 경계를 못 넘지만 같은 방향으로 겹치면 넘는다 - "단일 가정 오차엔
+강건해도 상관된 가정 오차엔 취약할 수 있다"는 v3.51 경고의 구체적 실증.
+새 engine/ 코드 0줄(순수 분석 스크립트, 기존 그리드/판정 함수 재사용).
+`reports/historical_validation/combination_flip_decomposition.md`.
+
 ## v3.52 — structural_discount_rate() 외부 경제적 근거 조사 (2026-08-16)
 
 Historical Replay 감사(`executive_summary.md` "다음 감사가 반드시 할 일" 2번)
