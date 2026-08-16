@@ -15,7 +15,8 @@
     "weight_raw": 0.18000000000000002,
     "weight_final": 0.18,
     "bucket_cap_applied": 0.18000000000000002,
-    "bucket_target_effective": 0.18000000000000002
+    "bucket_target_effective": 0.18000000000000002,
+    "model_dependent_universe": false
   },
   {
     "ticker": "ACGL",
@@ -33,7 +34,8 @@
     "weight_raw": 0.12,
     "weight_final": 0.11999999999999997,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.3075
+    "bucket_target_effective": 0.3075,
+    "model_dependent_universe": false
   },
   {
     "ticker": "PGR",
@@ -51,7 +53,8 @@
     "weight_raw": 0.12,
     "weight_final": 0.11999999999999997,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.3075
+    "bucket_target_effective": 0.3075,
+    "model_dependent_universe": false
   },
   {
     "ticker": "TCOM",
@@ -69,7 +72,8 @@
     "weight_raw": 0.10250000000000001,
     "weight_final": 0.10249999999999998,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.10250000000000001
+    "bucket_target_effective": 0.10250000000000001,
+    "model_dependent_universe": false
   },
   {
     "ticker": "PDD",
@@ -87,7 +91,8 @@
     "weight_raw": 0.09067692535472628,
     "weight_final": 0.09067692535472627,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "SE",
@@ -105,7 +110,8 @@
     "weight_raw": 0.0739056717448918,
     "weight_final": 0.07390567174489178,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "BRO",
@@ -123,7 +129,10 @@
     "weight_raw": 0.0675,
     "weight_final": 0.06749999999999999,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.3075
+    "bucket_target_effective": 0.3075,
+    "model_dependent_universe": true,
+    "grade_alternative_model": "B",
+    "gap_alternative_model_pct": 6.442520141601564
   },
   {
     "ticker": "DUOL",
@@ -141,7 +150,8 @@
     "weight_raw": 0.06290683585014638,
     "weight_final": 0.06290683585014636,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "MNDY",
@@ -159,7 +169,8 @@
     "weight_raw": 0.06272489256794994,
     "weight_final": 0.06272489256794993,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "UBER",
@@ -177,7 +188,8 @@
     "weight_raw": 0.04770603722479669,
     "weight_final": 0.047706037224796674,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "WDAY",
@@ -195,7 +207,8 @@
     "weight_raw": 0.045105973939283506,
     "weight_final": 0.0451059739392835,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   },
   {
     "ticker": "TTD",
@@ -213,6 +226,7 @@
     "weight_raw": 0.02697366331820545,
     "weight_final": 0.026973663318205443,
     "bucket_cap_applied": 0.12,
-    "bucket_target_effective": 0.41000000000000003
+    "bucket_target_effective": 0.41000000000000003,
+    "model_dependent_universe": false
   }
 ]
