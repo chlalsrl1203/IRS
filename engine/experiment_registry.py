@@ -62,12 +62,36 @@ EXPERIMENT_STATUSES = (
     "RUNNING",      # 실행 중
     "COMPLETED",    # 결과 확정
     "ABANDONED",    # 중단(삭제하지 않고 사유와 함께 남긴다)
+    "SUPERSEDED",   # 더 정교한 실험으로 대체됨(원본은 그대로 보존)
+)
+
+# ⚠️ 결과 판정 어휘 - 계약서 §14. 위 status(실행 상태)와 **다른 축**이다.
+# COMPLETED인 실험도 결과는 REJECTED일 수 있다.
+#
+# §14가 열거한 조건(PIT / 사전정의 방법론 / OOS / 비용 / 벤치마크 / factor
+# exposure / multiple-testing / 충분한 표본)이 **전부** 충족되기 전에는
+# 어떤 신호도 VALIDATED라고 부르지 않는다. 이 프로젝트는 아직 그 조건 중
+# 어느 것도 충족한 적이 없다.
+FINDING_STATUSES = (
+    "REJECTED",       # 가설이 기각됨
+    "INCONCLUSIVE",   # 표본·기간 부족 등으로 판단 불가
+    "PROMISING",      # 신호는 있으나 §14 조건 미충족 - alpha라 부르면 안 된다
+    "VALIDATED",      # §14 조건 전부 충족
 )
 
 # 실험 코어 = 결과를 보기 전에 확정돼야 하는 것. 등록 후 변경 불가.
+#
+# v3.50에서 §10이 요구한 4개를 추가했다:
+#   analysis_as_of          어느 시점 정보로 실험을 설계했는가(PIT 경계)
+#   data_version            어느 데이터 스냅샷을 썼는가
+#   methodology_version     어느 엔진 버전으로 계산했는가(ENGINE_VERSION)
+#   transaction_cost_assumption  비용 가정 - 없으면 총수익이 과대평가된다
+#   depends_on              §12의 연구 순서를 구조로 강제(아래 참고)
 _CORE_FIELDS = (
     "experiment_id", "hypothesis", "universe", "entry_rule", "exit_rule",
     "parameters", "test_period", "oos_period", "benchmark",
+    "analysis_as_of", "data_version", "methodology_version",
+    "transaction_cost_assumption", "depends_on",
 )
 
 
@@ -83,13 +107,24 @@ class Experiment:
     test_period: str
     oos_period: str
     benchmark: str
+    # §10에서 요구한 재현 좌표. 이게 없으면 "어느 데이터·어느 코드로 낸
+    # 결과인가"를 나중에 특정할 수 없어 결과 자체가 재현 불가능해진다.
+    analysis_as_of: str
+    data_version: str
+    methodology_version: str
+    transaction_cost_assumption: str
     parameters: dict = field(default_factory=dict)
+    # §12의 연구 순서. 선행 실험이 끝나기 전에 다음 실험을 돌리면 신호를
+    # 섞게 되므로 의존관계를 코어에 박아둔다(빈 리스트 = 선행 없음).
+    depends_on: list = field(default_factory=list)
     registered_date: str = None
     note: str = ""
 
     def __post_init__(self):
         for f in ("experiment_id", "hypothesis", "universe", "entry_rule",
-                  "exit_rule", "test_period", "oos_period", "benchmark"):
+                  "exit_rule", "test_period", "oos_period", "benchmark",
+                  "analysis_as_of", "data_version", "methodology_version",
+                  "transaction_cost_assumption"):
             v = str(getattr(self, f, "") or "").strip()
             if not v:
                 raise ValueError(
@@ -98,6 +133,7 @@ class Experiment:
                 )
             setattr(self, f, v)
         self.parameters = dict(self.parameters or {})
+        self.depends_on = list(self.depends_on or [])
 
     def core(self) -> dict:
         d = asdict(self)
@@ -147,18 +183,26 @@ def register_experiment(experiment: Experiment, status: str = "REGISTERED",
     return path
 
 
-def record_result(path: str, result: dict, status: str = None) -> dict:
+def record_result(path: str, result: dict, status: str = None,
+                  finding: str = None) -> dict:
     """
     결과를 **덧붙인다.** 기존 결과는 절대 수정되지 않는다.
 
     result에는 최소한 무엇을 측정했고 무엇이 나왔는지가 들어가야 한다.
     "결과가 나쁘다"는 이유로 이 함수를 건너뛰고 파일을 지우지 말 것 -
     실패한 실험이 남아 있어야 다음에 같은 실수를 반복하지 않는다.
+
+    `finding`: §14의 결과 판정(REJECTED/INCONCLUSIVE/PROMISING/VALIDATED).
+    ⚠️ `VALIDATED`는 §14의 조건이 **전부** 충족됐을 때만 쓴다 - 이 프로젝트는
+    아직 그 조건 중 어느 것도 충족한 적이 없다. 신호가 보인다고 VALIDATED를
+    붙이면 미검증 가설을 alpha라고 부르는 것이다(§11 명시적 금지).
     """
     if not isinstance(result, dict) or not result:
         raise ValueError("result는 비어 있지 않은 dict여야 한다.")
     if status is not None and status not in EXPERIMENT_STATUSES:
         raise ValueError(f"알 수 없는 상태: {status} (허용: {EXPERIMENT_STATUSES})")
+    if finding is not None and finding not in FINDING_STATUSES:
+        raise ValueError(f"알 수 없는 결과 판정: {finding} (허용: {FINDING_STATUSES})")
 
     with open(path, encoding="utf-8") as f:
         record = json.load(f)
@@ -190,10 +234,66 @@ def record_result(path: str, result: dict, status: str = None) -> dict:
 
     if status:
         record["status"] = status
+    if finding:
+        # 결과 판정도 이력으로 쌓는다 - 나중에 판정이 바뀌었다면 그 사실
+        # 자체가 기록돼야 한다(덮어쓰면 "처음부터 그렇게 봤다"가 된다).
+        record.setdefault("finding_history", []).append({
+            "finding": finding,
+            "result_index": len(record["results"]) - 1,
+        })
+        record["finding"] = finding
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(record, f, ensure_ascii=False, indent=2, default=str)
     return record
+
+
+def check_dependencies_satisfied(experiment_id: str,
+                                 experiment_dir: str = EXPERIMENT_DIR) -> dict:
+    """
+    §12의 연구 순서를 확인한다 - 선행 실험이 끝나기 전에 다음을 돌리면
+    "한 번에 여러 신호를 섞는" 것이 된다.
+
+    ⚠️ **실행을 막지는 않는다**(이 프로젝트의 병기 원칙). 다만 미충족 상태를
+    드러내, 순서를 어기고 있다는 사실이 조용히 넘어가지 않게 한다.
+
+    선행 실험이 COMPLETED이고 finding이 정해져 있어야 '충족'으로 본다 -
+    돌아가는 중(RUNNING)인 실험 위에 다음 실험을 얹으면 결국 같이 튜닝하게 된다.
+    """
+    by_id = {}
+    for rec in load_experiments(experiment_dir):
+        by_id[rec["core"]["experiment_id"]] = rec
+
+    target = by_id.get(experiment_id)
+    if target is None:
+        return {"experiment_id": experiment_id, "found": False,
+                "satisfied": False, "reason": "등록되지 않은 실험"}
+
+    deps = target["core"].get("depends_on") or []
+    unmet = []
+    for dep_id in deps:
+        dep = by_id.get(dep_id)
+        if dep is None:
+            unmet.append({"depends_on": dep_id, "reason": "선행 실험 미등록"})
+        elif dep.get("status") != "COMPLETED":
+            unmet.append({"depends_on": dep_id,
+                          "reason": f"선행 실험이 아직 {dep.get('status')}"})
+        elif not dep.get("finding"):
+            unmet.append({"depends_on": dep_id,
+                          "reason": "선행 실험의 결과 판정(finding)이 없음"})
+
+    return {
+        "experiment_id": experiment_id,
+        "found": True,
+        "depends_on": deps,
+        "satisfied": not unmet,
+        "unmet": unmet,
+        "note": (
+            "미충족이어도 실행을 막지 않는다 - 다만 §12의 연구 순서를 어기고 "
+            "있다는 사실이 기록에 남는다. 여러 신호를 동시에 시험하면 어느 것이 "
+            "작동했는지 구분할 수 없다."
+        ),
+    }
 
 
 def load_experiments(experiment_dir: str = EXPERIMENT_DIR) -> list:
@@ -209,6 +309,130 @@ def load_experiments(experiment_dir: str = EXPERIMENT_DIR) -> list:
 # ────────────────────────────────────────────────────────────────────────
 # EXP-001 - 이 시스템의 근본 가설
 # ────────────────────────────────────────────────────────────────────────
+
+def research_sequence(registered_date: str, methodology_version: str,
+                      data_version: str) -> list:
+    """
+    §11·§12가 고정한 연구 순서 H-001 → H-002 → H-003 → H-004를 등록 가능한
+    형태로 만든다(등록은 호출부가 한다).
+
+    ⚠️ **순서를 미리 박아두는 것이 핵심이다.** 결과를 본 뒤 "이번엔 이 변수가
+    더 좋아 보이니 순서를 바꾸자"가 가능하면 그건 검증이 아니라 튜닝이다
+    (§13 "동일 데이터를 반복해서 튜닝하여 가장 좋은 결과를 선택하지 마라").
+    `depends_on`이 그 순서를 코어에 고정한다.
+
+    ⚠️ **네 가설 모두 결과를 미리 가정하지 않는다.** 전부 의문형이며 방향을
+    단정하지 않는다.
+    """
+    common = dict(
+        universe=(
+            "ledger/에 공식 분석이 존재하는 미국 상장 개별주식. ETF·KRX 래퍼는 "
+            "밸류에이션 산식이 달라 제외. **생존 편향 통제**: 분석 시점에 존재한 "
+            "종목 전부를 포함하며 이후 상장폐지·피인수된 종목도 빼지 않는다(§13)."
+        ),
+        exit_rule=(
+            "진입 후 12개월 보유 후 청산(단일 고정 보유기간). 중도 청산·재조정 "
+            "없음 - 규칙이 늘어날수록 자유도가 커져 우연한 성공이 쉬워진다."
+        ),
+        benchmark=(
+            "VOO(S&P500) 동일기간 총수익률 대비 초과수익. engine/market_relative.py"
+            "가 이미 VOO를 기준선으로 쓰고 있어 같은 벤치마크를 유지한다."
+        ),
+        transaction_cost_assumption=(
+            "왕복 20bp(매수 10bp + 매도 10bp) 가정. 비용을 빼지 않으면 총수익이 "
+            "체계적으로 과대평가된다(§13). 이 값 자체는 검증된 수치가 아니라 "
+            "대형주 기준 통상값이며, 민감도를 0/20/50bp로 함께 볼 것."
+        ),
+        test_period="미정 - 데이터 확보 후 사전 고정(임의 선택 방지)",
+        oos_period="미정 - test_period 확정과 동시에 분리 고정",
+        analysis_as_of=registered_date,
+        data_version=data_version,
+        methodology_version=methodology_version,
+        registered_date=registered_date,
+    )
+
+    return [
+        Experiment(
+            experiment_id="H-001",
+            hypothesis=(
+                "Expectation Gap **수준**(Valuation-Implied Requirement와 "
+                "Evidence-Supported Forward Expectation의 괴리)이 미래 "
+                "benchmark-relative 위험조정수익률과 안정적인 관계를 갖는가? "
+                "**방향과 존재 여부 모두 미지이며 가정하지 않는다.**"
+            ),
+            entry_rule=(
+                "분석일 종가 진입. Gap 오름차순 5분위로 나눠 최상위/최하위 분위를 "
+                "비교한다. 임계값을 따로 만들지 않는 이유: ±5%p 판정밴드는 33종목 "
+                "관측 기반 시작점일 뿐 검증된 경계가 아니다."
+            ),
+            parameters={"signal": "expectation_gap (level)",
+                        "min_sample_per_quintile": 5},
+            depends_on=[],
+            note="§12의 첫 단계. 이것이 끝나기 전에 다른 변수를 섞지 않는다.",
+            **common,
+        ),
+        Experiment(
+            experiment_id="H-002",
+            hypothesis=(
+                "Expectation Gap의 **변화**(gap_change)가 수준보다 더 나은 신호인가? "
+                "**개선/악화 여부를 미리 가정하지 않는다.**"
+            ),
+            entry_rule=(
+                "직전 분석 대비 Gap 변화량 기준 5분위. H-001과 동일한 진입/청산 "
+                "규칙을 쓰되 신호만 교체한다 - 다른 조건을 함께 바꾸면 무엇이 "
+                "차이를 만들었는지 구분할 수 없다."
+            ),
+            parameters={"signal": "gap_change (Δ)", "min_sample_per_quintile": 5},
+            depends_on=["H-001"],
+            note="H-001의 결과와 비교 가능해야 하므로 진입/청산/벤치마크를 고정한다.",
+            **common,
+        ),
+        Experiment(
+            experiment_id="H-003",
+            hypothesis=(
+                "Expectation Gap에 **펀더멘털 품질**을 결합하면 Gap 단독보다 "
+                "나은가? **결합이 도움이 되는지 자체가 미지이며 가정하지 않는다.**"
+            ),
+            entry_rule=(
+                "Gap 상위 분위 중 품질 지표(FCF 마진·레버리지) 상위만 선택. "
+                "품질 정의는 실행 전에 고정하며 결과를 보고 바꾸지 않는다."
+            ),
+            parameters={"signal": "expectation_gap x fundamental_quality",
+                        "min_sample_per_quintile": 5},
+            depends_on=["H-001"],
+            note="H-001이 끝나야 '결합이 개선인지'를 판단할 기준선이 생긴다.",
+            **common,
+        ),
+        Experiment(
+            experiment_id="H-004",
+            hypothesis=(
+                "Expectation Gap에 **기대 수정**(회사 가이던스·실적의 방향 전환)을 "
+                "결합하면 개선되는가? **개선 여부를 미리 가정하지 않는다.**"
+            ),
+            entry_rule=(
+                "Gap 상위 분위 중 growth_scorecard 관측치가 상향인 종목만 선택. "
+                "관측치 종류(realized_multiyear/quarterly/guidance)를 섞지 않는다."
+            ),
+            parameters={"signal": "expectation_gap x expectation_revision",
+                        "min_sample_per_quintile": 5},
+            depends_on=["H-001", "H-002"],
+            note="기대 수정은 Gap 변화와 상관이 높을 수 있어 H-002 이후로 둔다.",
+            **common,
+        ),
+    ]
+
+
+BLOCKED_REASON_SEQUENCE = (
+    "실행 전제가 아직 없다(2026-08-15 실측). (1) 분석일이 2026-07-25~08-13에 "
+    "몰려 있어 12개월 보유수익률을 잴 구간이 아예 존재하지 않는다. "
+    "(2) price_at_analysis가 34건 중 9건뿐이라 나머지는 진입가를 모른다. "
+    "(3) 9건을 5분위로 나누면 분위당 최소 표본(5건)을 채울 수 없다. "
+    "(4) PIT가 확보된 재현 가능한 과거 시점 분석이 0건이라 §7 Historical "
+    "Replay 자체가 불가능하다. "
+    "재개 조건: 분석일로부터 12개월이 지난 종목이 분위당 5건 이상 확보되고, "
+    "그 종목들이 price_at_analysis와 PIT를 갖출 것."
+)
+
 
 def core_hypothesis_experiment(registered_date: str) -> Experiment:
     """
@@ -255,10 +479,23 @@ def core_hypothesis_experiment(registered_date: str) -> Experiment:
             "VOO를 기준선으로 쓰고 있어 같은 벤치마크를 유지한다."
         ),
         registered_date=registered_date,
+        # v3.50에서 §10 필수 필드가 추가되며 함께 채운 값들. EXP-001은 v3.48
+        # 시점 스키마로 등록됐고, 더 정교한 H-001로 대체된다(SUPERSEDED).
+        analysis_as_of=registered_date,
+        data_version="ledger/ 34종목 (2026-08-15 시점)",
+        methodology_version="v3.48",
+        transaction_cost_assumption=(
+            "미반영 - 이것이 EXP-001이 H-001로 대체된 이유 중 하나다"
+            "(§13은 비용 반영을 요구한다)."
+        ),
+        depends_on=[],
         note=(
             "이 가설이 검증되기 전까지 Expectation Gap은 RESEARCH_HYPOTHESIS다"
             "(engine/gap_analysis.GAP_SIGNAL_STATUS). 매수리스트가 이미 Gap 기반 "
-            "등급으로 만들어지고 있다는 사실 자체가 이 실험이 필요한 이유다."
+            "등급으로 만들어지고 있다는 사실 자체가 이 실험이 필요한 이유다. "
+            "⚠️ v3.50에서 H-001로 대체됨 - 가설은 동일하나 §10 스키마(비용 가정· "
+            "데이터/방법론 버전·생존편향 통제)를 갖추지 못했다. **삭제하지 않고 "
+            "SUPERSEDED로 남긴다**(실패·구버전 실험도 지우지 않는다는 원칙)."
         ),
     )
 

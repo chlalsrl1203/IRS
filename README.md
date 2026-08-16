@@ -54,6 +54,7 @@ engine/
   self_check_v2.py            # 메모 발행 전 대조검증(수동 호출)
   screener.py                 # 1차 후보 필터(정식분석 전 스크리닝)
   filing_dates.py             # SEC 최초 공시일 조회 - PIT 필드를 추측 없이 채운다
+  provenance.py               # 값 단위 출처(출처/공개일/기간/단위/통화/조회일)
   # ── 외부 검증 루프(v3.42~v3.45) ──
   thesis_monitor.py           # 반증조건 기한도래 감시 + 시총 부식 재계산
   growth_scorecard.py         # 엔진 성장률 vs 회사 실적/가이던스 대조
@@ -63,6 +64,7 @@ engine/
   gap_analysis.py             # Gap 5분해(level/change/drivers/evidence/uncertainty)
   thesis.py                   # Investment Thesis + 결정(6개 관문) + 모니터링 상태
   prediction_ledger.py        # 예측 사전등록 - 결과 확인 후 수정 불가(해시 봉인)
+  investment_case.py          # §3의 14개 필드를 묶는 얇은 계층(새 계산 없음)
   experiment_registry.py      # 연구 가설 등록부 - 실패한 실험 삭제 불가
   # ── ETF 분석(별도 엔진) ──
   etf_engine.py               # 미국 상장 ETF 자체 밸류에이션
@@ -75,7 +77,7 @@ ledger_etf/                   # 미국 ETF 분석 JSON (스키마가 달라 디�
 ledger_krx/                   # 국내 래퍼 ETF 분석 JSON
 thesis/                       # 투자논거 + 결정 로그 + 증거 로그 (v3.48)
 predictions/                  # 사전등록 예측과 실제 결과 (v3.48, 해시 봉인)
-experiments/                  # 연구 가설 등록부 (v3.48, EXP-001)
+experiments/                  # 연구 가설 등록부 (H-001~H-004, 순서 고정)
 reports/                      # ledger를 재조합한 리포트(순위·매수리스트·감시 결과)
 scripts/                      # 종목별 분석/감사 스크립트(재현용 보존)
 tests/                        # pytest - 매 push마다 CI가 자동 실행
@@ -99,10 +101,16 @@ CHANGELOG.md                  # 버전별 변경사항
 - **Expectation Gap은 검증된 alpha가 아니다** — Gap이 실제 초과수익과 관계가
   있는지 이 저장소는 **한 번도 검증한 적이 없다**. 그래서
   `gap_analysis.GAP_SIGNAL_STATUS`가 `RESEARCH_HYPOTHESIS`이고, 그 검증 자체가
-  `experiments/EXP-001.json`에 BLOCKED 상태로 등록돼 있다(분석 이력 3주,
-  진입가 보유 9/34종목 — 실행 전제 미달). ⚠️ 그런데 매수리스트는 이미 Gap 기반
-  등급으로 만들어지고 있다 — **미검증 가설이 이미 자본배분을 움직이는 중**이며
-  등록부는 그 사실을 숨기지 않는다.
+  `experiments/H-001.json`에 BLOCKED 상태로 등록돼 있다(분석 이력 3주,
+  진입가 보유 9/34종목 — 실행 전제 미달). 연구 순서는 H-001 → H-002/H-003 →
+  H-004로 **코어에 고정**돼 있다(결과를 보고 순서를 바꾸면 검증이 아니라
+  튜닝이다). ⚠️ 그런데 매수리스트는 이미 Gap 기반 등급으로 만들어지고 있다 —
+  **미검증 가설이 이미 자본배분을 움직이는 중**이며 등록부는 그 사실을 숨기지
+  않는다.
+- **어떤 신호도 아직 VALIDATED가 아니다** — 결과 판정 어휘는 REJECTED /
+  INCONCLUSIVE / PROMISING / VALIDATED이며, VALIDATED는 §14 조건(PIT·OOS·비용·
+  벤치마크·factor exposure·multiple-testing·충분한 표본)이 **전부** 충족돼야
+  쓴다. 이 저장소는 아직 그 중 어느 것도 충족한 적이 없다.
 - **투자 결정은 코드가 내리지 않는다** — `engine/thesis.py`에는 Gap을 넣으면
   BUY가 나오는 함수가 **의도적으로 없다**. 액션은 분석자가 고르고, 6개 관문
   근거가 비면 기록 자체가 거부된다.

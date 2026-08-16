@@ -18,7 +18,13 @@
   "core_hash": "d2e918fe1839b38690cd84b30efa8ace79622d0d95030b4f78534c22fd260f31",
   "registered_date": "2026-08-15",
   "note": "이 가설이 검증되기 전까지 Expectation Gap은 RESEARCH_HYPOTHESIS다(engine/gap_analysis.GAP_SIGNAL_STATUS). 매수리스트가 이미 Gap 기반 등급으로 만들어지고 있다는 사실 자체가 이 실험이 필요한 이유다.",
-  "status": "BLOCKED",
+  "status": "SUPERSEDED",
   "blocked_reason": "실행 전제가 아직 없다(2026-08-15 실측). (1) 분석일이 2026-07-25~08-13에 몰려 있어 12개월 보유수익률을 잴 구간이 아예 존재하지 않는다. (2) price_at_analysis가 채워진 종목이 34건 중 **9건**뿐이라(ACGL·BSX·DUOL·MNDY·ROP·SE·TCOM·UBER·WDAY - v3.24 이후 분석만 해당) 나머지 25종목은 진입가를 알 수 없다. (3) 9건을 5분위로 나누면 분위당 최소 표본(5건)을 채울 수 없다. 재개 조건: 분석일로부터 12개월이 지난 종목이 분위당 5건 이상 확보될 것. 그 전에 실행하면 표본 몇 건으로 alpha를 주장하게 된다(계약서 138절).",
-  "results": []
+  "results": [
+    {
+      "event": "superseded_by_H-001",
+      "date": "2026-08-15",
+      "reason": "가설은 동일하나 §10 스키마(transaction_cost_assumption· data_version·methodology_version·생존편향 통제)를 갖추지 못했다. 기록은 삭제하지 않고 그대로 보존한다."
+    }
+  ]
 }

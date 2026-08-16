@@ -3272,3 +3272,106 @@ ledger는 한 파일도 건드리지 않았다.
 **다음 분석부터 반드시**: `AnalysisInputs(..., **pit_inputs_for(ticker,
 analysis_as_of, revenue_by_year), price_at_analysis=...)`. 이 둘이 채워져야
 EXP-001(현재 BLOCKED)과 Historical Replay가 언젠가 시작될 수 있다.
+
+## v3.50 — 최종 명세 이행: Provenance / Investment Case / Drift 3분할 /
+연구 순서 고정 (2026-08-15, 사용자 "IRS 최종 방향성 및 실행 명세")
+
+§19가 정한 구현 우선순위를 따랐다. 우선순위 7·8(Historical Replay, 첫 OOS
+연구)은 구조적으로 막혀 있어 DEFERRED로 남기고 2·3·5·6만 실행했다.
+
+### ① §6 Provenance — `data_sources` 자유문자열로는 답할 수 없던 것
+
+기존 출처 기록은 `["Alpha Vantage (2026-07-25)"]` 같은 문자열 리스트뿐이라
+"FY2023 매출이 **어느 공시**에서 왔고 **언제 공개**됐으며 **통화**가
+무엇인가"에 답할 수 없었다. `engine/provenance.py`가 값 하나에 §6이 요구한
+7개 축을 붙인다(source/publication_date/period/value/unit/currency/
+retrieval_date).
+
+**`unit`과 `currency`를 분리했다** — 비율에는 통화 개념이 없고, 이 프로젝트는
+단위 사고를 두 번 겪었다(RAR 100배, 실질/명목 EPS). PDD가 CNY인데 ledger에
+표시가 없던 M-6 문제도 구조적으로 막힌다.
+
+**자동 생성이 핵심이다** — `provenance_from_sec_facts()`가 v3.49의 SEC
+companyfacts에서 만들어낸다. 손으로 적게 만들면 결국 아무도 안 적는다.
+BSX 실측: 11개년 중 10개년 생성(FY2015는 XBRL 태깅 이전이라 `missing_fields`로
+드러남), **SEC 값이 ledger 값과 정확히 일치**(20,074,000,000) — 출처 생성이
+데이터 교차검증까지 겸한다.
+
+⚠️ **기존 34종목에 소급 생성하지 않는다.** 지금 조회한 값을 그때 값인 양
+붙이면 허위 출처가 된다(§6). 전부 `PROVENANCE_UNKNOWN`이며, 테스트가 그
+상태를 사실 그대로 고정한다.
+
+### ② §3 Investment Case — 새 계산 0줄의 얇은 계층
+
+§3이 열거한 14개 필드는 **전부 이미 계산되고 있었다**. 문제는 흩어져 있어
+한 종목의 판단 전체를 한눈에 볼 수 없다는 것이었다. `engine/investment_case.py`
+가 조각을 묶기만 한다 — 새 valuation도 새 score도 없다(§18).
+
+**`PASS`를 어휘에 추가**했다(§3). WATCH와 다르다 — PASS는 "검토했고 투자
+대상 아님으로 결론", WATCH는 "아직 아니지만 계속 봄". 구분이 없으면 "안 산다"가
+전부 WATCH로 뭉뚱그려져 감시 목록이 무한히 늘어난다. **기존 6개 어휘는 하나도
+바꾸지 않았다**(§3 compatibility).
+
+⚠️ **구현 중 잡은 설계 오류**: 초판이 `gap_change`/`gap_drivers`를 '누락'으로
+세서 **갓 분석한 종목이 전부 INCOMPLETE**로 찍혔다. 이 둘은 비교 대상이
+생겨야 정의되는 값이라(분석 직후엔 변한 게 없으니 변화도 없다) 시간 의존
+필드로 분리했다. 그러지 않으면 플래그 자체가 무의미해진다 — 34종목 전부
+`SIGNAL_ONLY`가 정확한 상태다.
+
+### ③ §9 Drift 3분할 — 가치함정을 구분하는 유일한 방법
+
+기존 `thesis_monitor`는 가격 변화만 봤다. `decompose_drift()`가 셋으로 나눈다:
+
+| drift | 무엇이 변했나 | 출처 |
+|---|---|---|
+| Price | 시가총액만 | OAT 분해(잔차 동반) |
+| Fundamental | ΔRealisticGrowth | 재무제표에서만 나옴 |
+| Expectation | ΔImpliedGrowth | 시장 요구치 |
+
+정확한 항등식 `ΔGap = ΔRG − ΔIG`로 자기검증하며 잔차가 0임을 테스트로 고정했다.
+⚠️ **Expectation Drift는 Price Drift를 포함한다** — 둘을 더하면 이중계상이라
+합계를 아예 만들지 않는다.
+
+**가장 위험한 조합에 경고를 붙였다** — 펀더멘털이 낮아졌는데 Gap은 벌어진
+경우(가치함정). v3.42 TTD가 정확히 이 패턴이었다. BSX로 재현한 테스트
+시나리오가 Gap **+3.95%p**를 만드는데, TTD 실측 확대폭과 같은 크기다.
+
+⚠️ **잠복 버그를 하나 잡았다**: `gap_drivers`가 `implied_growth_two_stage`의
+튜플 반환을 스칼라로 다뤄 TypeError를 냈다. 골든케이스(CDNS)가 single_stage라
+v3.48 테스트를 통과했고, two_stage 종목(BSX)에서만 터졌다. 회귀 테스트 추가.
+
+### ④ §10/§12/§14 실험 등록부 — 순서를 결과보다 먼저 못박는다
+
+- **§10 재현 좌표 4개 필수화**: `analysis_as_of`/`data_version`/
+  `methodology_version`/`transaction_cost_assumption`. 비용 가정이 없으면
+  총수익이 체계적으로 과대평가된다(§13).
+- **§14 결과 판정 신설**: REJECTED/INCONCLUSIVE/PROMISING/VALIDATED.
+  실행 상태(status)와 **다른 축**이다 — COMPLETED인 실험도 REJECTED일 수 있다.
+  판정이 바뀌면 `finding_history`에 쌓아 덮어쓰지 않는다.
+- **§12 연구 순서를 코어에 고정**: `depends_on`으로 H-001 → H-002/H-003,
+  H-004는 H-001+H-002 이후. 결과를 본 뒤 순서를 바꿀 수 있으면 검증이 아니라
+  튜닝이다(§13). 선행이 COMPLETED이고 **finding까지 정해져야** 충족으로 본다.
+  ⚠️ 실행을 막지는 않는다 — 어기고 있다는 사실만 드러낸다(병기 원칙).
+
+**H-001~H-004를 데이터가 하나도 없는 지금 등록했다** — 순서를 미리 박아두는
+것이 목적이다. 넷 다 의문형이고 방향을 단정하지 않으며(테스트로 고정), 생존
+편향 통제와 왕복 20bp 비용 가정이 규칙에 명시돼 있다.
+
+**EXP-001은 삭제하지 않고 `SUPERSEDED`로 남겼다** — H-001과 가설은 같지만
+§10 스키마를 갖추지 못했다. "실패한 실험도 지우지 마라"(§10)는 구버전에도
+똑같이 적용된다.
+
+### 검증
+
+테스트 369 → 424개. **34종목 전건 재실행 8개 지표 완전 동일, ledger 파일
+무수정.** `ENGINE_VERSION` v3.49 → v3.50.
+
+### DEFERRED (§19의 7·8) — 구조적으로 막힘
+
+- **Historical Replay(§7)**: PIT가 확보된 과거 시점 분석이 **0건**이다.
+  2026년 데이터로 2023년 결과를 재구성하는 것은 §7이 명시적으로 금지한다.
+- **첫 OOS 연구(§8)**: 분석일이 3주에 몰려 12개월 구간이 없고, 진입가를 아는
+  종목이 34건 중 9건뿐이다. 9건을 5분위로 나누면 분위당 최소표본을 못 채운다.
+- **`build_buylist` 이관**: 지금도 `grade in ("S","A")`로 유니버스를 만든다 —
+  §3이 금지한 "Gap = BUY"에 가장 가까운 코드다. 다만 검증된 사이징 산출물을
+  재작성하면 흔들리므로 새 구조를 병렬로 두고 실사용 후 판단한다.

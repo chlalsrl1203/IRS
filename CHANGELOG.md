@@ -1,5 +1,37 @@
 # CHANGELOG
 
+## v3.50 — Provenance / Investment Case / Drift 3분할 / 연구 순서 고정 (2026-08-15)
+
+사용자 "IRS 최종 방향성 및 실행 명세"의 §19 우선순위를 따랐다. 7·8(Historical
+Replay, 첫 OOS 연구)은 구조적으로 막혀 DEFERRED.
+
+- **`engine/provenance.py` 신설(§6)** — 값 하나에 7개 축(source/publication_date/
+  period/value/unit/currency/retrieval_date)을 붙인다. `unit`과 `currency`를
+  분리해 PDD의 CNY 미표기(M-6) 같은 문제를 구조적으로 막는다. SEC companyfacts에서
+  **자동 생성**(BSX 11개년 중 10개년, SEC 값이 ledger 값과 정확히 일치).
+  ⚠️ 기존 34종목은 `PROVENANCE_UNKNOWN` 유지 — 소급 생성 금지(§6).
+- **`engine/investment_case.py` 신설(§3)** — §3의 14개 필드를 조합하는 얇은
+  계층. 새 계산 0줄. `PASS` 어휘 추가(기존 6개는 불변, compatibility 유지).
+- **`thesis_monitor.decompose_drift()` (§9)** — Price/Fundamental/Expectation
+  drift 분리. 항등식 `ΔGap = ΔRG − ΔIG`로 자기검증. **가치함정 패턴**(펀더멘털
+  하락 + Gap 확대)에 경고. ⚠️ Expectation은 Price를 포함하므로 합계를 만들지 않는다.
+- **실험 등록부 확장(§10/§12/§14)** — 재현 좌표 4개 필수화, 결과 판정
+  (REJECTED/INCONCLUSIVE/PROMISING/VALIDATED) 신설, `depends_on`으로 연구 순서를
+  코어에 고정. H-001~H-004 등록(데이터가 없는 지금 등록해 순서를 못박는다).
+  EXP-001은 삭제하지 않고 `SUPERSEDED`.
+
+### 구현 중 잡은 결함 2건
+
+1. **잠복 버그**: `gap_drivers`가 `implied_growth_two_stage`의 튜플 반환을
+   스칼라로 다뤄 TypeError. 골든케이스(CDNS)가 single_stage라 v3.48 테스트를
+   통과했고 two_stage 종목(BSX)에서만 터졌다. 회귀 테스트 추가.
+2. **설계 오류**: Investment Case 초판이 `gap_change`/`gap_drivers`를 '누락'으로
+   세서 갓 분석한 종목이 전부 INCOMPLETE로 찍혔다. 비교 대상이 생겨야 정의되는
+   값이라 시간 의존 필드로 분리 — 34종목 전부 `SIGNAL_ONLY`가 정확한 상태다.
+
+테스트 369 → 424개. **34종목 8개 지표 완전 동일, ledger 무수정.**
+`ENGINE_VERSION` v3.49 → v3.50.
+
 ## v3.49 — PIT에 실제 데이터 공급 + 34종목 미래정보 감사 (2026-08-15)
 
 v3.47이 PIT 필드와 검증 규칙을 만들었지만 **실제로 채운 종목이 0건**이었다 -

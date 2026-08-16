@@ -214,7 +214,12 @@ def gap_drivers(ledger: dict, market_cap_now: float = None,
     def _ig(market_cap, fcf0, r):
         if model == "single_stage":
             return implied_growth_single_stage(market_cap, fcf0, r)
-        return implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+        # ⚠️ two_stage는 (성장률, 수렴로그, 반복횟수) 튜플을 돌려준다 - 첫 값만
+        # 쓴다. 초판은 튜플을 그대로 빼서 TypeError를 냈는데, 골든케이스(CDNS)가
+        # single_stage라 테스트를 통과했다. two_stage 종목(BSX)으로 회귀 테스트를
+        # 따로 건다.
+        g, _, _ = implied_growth_two_stage(market_cap, fcf0, r, n, g_terminal)
+        return g
 
     ig_base = _ig(**base)
     ig_now = _ig(**now)

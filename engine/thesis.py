@@ -46,8 +46,17 @@ import json
 import os
 from dataclasses import asdict, dataclass, field
 
-# §1의 액션 어휘. 분석자가 고르는 값이며 코드가 계산하지 않는다.
-DECISION_ACTIONS = ("BUY", "ADD", "HOLD", "WATCH", "REDUCE", "SELL")
+# §3의 액션 어휘. 분석자가 고르는 값이며 코드가 계산하지 않는다.
+#
+# v3.50에서 `PASS`를 추가했다(계약서 §3의 vocabulary). WATCH와 다르다:
+#   PASS  - 검토했고 **투자 대상이 아니라고 결론**냈다(감시도 하지 않는다)
+#   WATCH - 아직 아니지만 조건이 바뀌면 살 수 있어 **계속 본다**
+# 이 구분이 없으면 "안 산다"가 전부 WATCH로 뭉뚱그려져 감시 목록이 무한히
+# 늘어나고, 정작 무엇을 왜 버렸는지가 기록에서 사라진다.
+#
+# ⚠️ 기존 어휘는 하나도 바꾸지 않았다(§3 "기존 judgment vocabulary가 존재한다면
+# compatibility를 유지한다") - 추가만 했으므로 v3.48 기록은 전부 그대로 유효하다.
+DECISION_ACTIONS = ("PASS", "WATCH", "BUY", "ADD", "HOLD", "REDUCE", "SELL")
 
 # §7 모니터링 상태
 THESIS_STATUSES = ("STRENGTHENING", "STABLE", "WEAKENING", "INVALIDATED")

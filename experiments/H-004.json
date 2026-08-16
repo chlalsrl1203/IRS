@@ -1,0 +1,30 @@
+{
+  "core": {
+    "experiment_id": "H-004",
+    "hypothesis": "Expectation Gap에 **기대 수정**(회사 가이던스·실적의 방향 전환)을 결합하면 개선되는가? **개선 여부를 미리 가정하지 않는다.**",
+    "universe": "ledger/에 공식 분석이 존재하는 미국 상장 개별주식. ETF·KRX 래퍼는 밸류에이션 산식이 달라 제외. **생존 편향 통제**: 분석 시점에 존재한 종목 전부를 포함하며 이후 상장폐지·피인수된 종목도 빼지 않는다(§13).",
+    "entry_rule": "Gap 상위 분위 중 growth_scorecard 관측치가 상향인 종목만 선택. 관측치 종류(realized_multiyear/quarterly/guidance)를 섞지 않는다.",
+    "exit_rule": "진입 후 12개월 보유 후 청산(단일 고정 보유기간). 중도 청산·재조정 없음 - 규칙이 늘어날수록 자유도가 커져 우연한 성공이 쉬워진다.",
+    "parameters": {
+      "signal": "expectation_gap x expectation_revision",
+      "min_sample_per_quintile": 5
+    },
+    "test_period": "미정 - 데이터 확보 후 사전 고정(임의 선택 방지)",
+    "oos_period": "미정 - test_period 확정과 동시에 분리 고정",
+    "benchmark": "VOO(S&P500) 동일기간 총수익률 대비 초과수익. engine/market_relative.py가 이미 VOO를 기준선으로 쓰고 있어 같은 벤치마크를 유지한다.",
+    "analysis_as_of": "2026-08-15",
+    "data_version": "ledger/ 34종목 (2026-08-15 스냅샷, PIT_UNKNOWN)",
+    "methodology_version": "v3.49",
+    "transaction_cost_assumption": "왕복 20bp(매수 10bp + 매도 10bp) 가정. 비용을 빼지 않으면 총수익이 체계적으로 과대평가된다(§13). 이 값 자체는 검증된 수치가 아니라 대형주 기준 통상값이며, 민감도를 0/20/50bp로 함께 볼 것.",
+    "depends_on": [
+      "H-001",
+      "H-002"
+    ]
+  },
+  "core_hash": "f6d60c241746683e50d5ec1509bd239bb07dfd5f9c210e9199c6381a5e390fae",
+  "registered_date": "2026-08-15",
+  "note": "기대 수정은 Gap 변화와 상관이 높을 수 있어 H-002 이후로 둔다.",
+  "status": "BLOCKED",
+  "blocked_reason": "실행 전제가 아직 없다(2026-08-15 실측). (1) 분석일이 2026-07-25~08-13에 몰려 있어 12개월 보유수익률을 잴 구간이 아예 존재하지 않는다. (2) price_at_analysis가 34건 중 9건뿐이라 나머지는 진입가를 모른다. (3) 9건을 5분위로 나누면 분위당 최소 표본(5건)을 채울 수 없다. (4) PIT가 확보된 재현 가능한 과거 시점 분석이 0건이라 §7 Historical Replay 자체가 불가능하다. 재개 조건: 분석일로부터 12개월이 지난 종목이 분위당 5건 이상 확보되고, 그 종목들이 price_at_analysis와 PIT를 갖출 것.",
+  "results": []
+}
