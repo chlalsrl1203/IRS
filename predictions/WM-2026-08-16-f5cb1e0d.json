@@ -1,0 +1,21 @@
+{
+  "prediction_id": "WM-2026-08-16-f5cb1e0d",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "WM",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-07-26 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.068767,
+    "expected_high": 0.106171,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.0856, '5y': 0.1062, '10y': 0.0688})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "f5cb1e0d4a05637b286c923679c5b9c405c54ada02121dcdd17f0e65bb10bb94",
+  "source": "WM_2026-07-26.json (engine_version=v3.19, 원분석일=2026-07-26)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

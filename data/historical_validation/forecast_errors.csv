@@ -1,0 +1,12 @@
+ticker,evidence_class,forecast_pct,actual_pct,signed_error_pp,abs_error_pp,usable_as_override
+TTD,realized_quarterly,16.704,3.0,-13.704,13.704,False
+SE,realized_quarterly,23.5597,48.1,24.5403,24.5403,False
+DUOL,realized_quarterly,25.0,18.3,-6.7,6.7,False
+MNDY,realized_quarterly,25.0,22.0,-3.0,3.0,False
+PGR,realized_quarterly,16.8653,6.0,-10.8653,10.8653,False
+TTD,guidance_annual,16.704,-12.1,-28.804,28.804,False
+DUOL,guidance_annual,25.0,16.3,-8.7,8.7,False
+TCOM,guidance_annual,12.3876,5.5,-6.8876,6.8876,False
+GEN,guidance_annual,12.0,7.5,-4.5,4.5,False
+KEYS,guidance_annual,1.4713,28.0,26.5287,26.5287,False
+ROP,realized_multiyear,5.5,5.5,0.0,0.0,True

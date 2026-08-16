@@ -1,0 +1,21 @@
+{
+  "prediction_id": "DSGX-2026-08-16-08ca71cd",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "DSGX",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-07-26 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.14471,
+    "expected_high": 0.158946,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.1447, '5y': 0.1589, '10y': 0.147})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "08ca71cd69bfd40db7705e71c68a338141f388437bd9a69c4621aab4c5a2241f",
+  "source": "DSGX_2026-07-26.json (engine_version=v3.19, 원분석일=2026-07-26)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

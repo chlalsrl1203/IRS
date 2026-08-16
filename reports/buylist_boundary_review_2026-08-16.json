@@ -1,0 +1,44 @@
+{
+  "generated_at": "2026-08-16",
+  "status": "확인",
+  "held_but_model_dependent": [
+    {
+      "ticker": "BRO",
+      "weight_final": 0.06749999999999999,
+      "grade": "A",
+      "grade_alternative": "B",
+      "gap_pct": 7.427728925631566,
+      "gap_alternative_pct": 6.442520141601564,
+      "model_chosen": "single_stage",
+      "reason_is_prior_record": true
+    }
+  ],
+  "excluded_but_would_enter": [
+    {
+      "ticker": "DSGX",
+      "grade": "C",
+      "grade_alternative": "A",
+      "gap_pct": 4.248310348930688,
+      "gap_alternative_pct": 7.418270722669015,
+      "model_chosen": "two_stage",
+      "reason_is_prior_record": false
+    },
+    {
+      "ticker": "VRT",
+      "grade": "C",
+      "grade_alternative": "A",
+      "gap_pct": 1.7187161949781067,
+      "gap_alternative_pct": 10.398738466041566,
+      "model_chosen": "two_stage",
+      "reason_is_prior_record": false
+    }
+  ],
+  "missing_from_ranking": [
+    {
+      "ticker": "BSX",
+      "gap_pct": 5.865291965447208,
+      "judgment": "저평가 가능성",
+      "analyzed_at": "2026-08-13"
+    }
+  ]
+}

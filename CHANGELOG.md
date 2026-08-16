@@ -1,5 +1,197 @@
 # CHANGELOG
 
+## 외부 벤치마크 기반 IRS 진화 보고 — n 민감도 진단 구현 (2026-08-16)
+
+세계 최상위 투자·리서치·데이터 조직의 관행을 IRS와 대조했다. §17 "빠진 기능이
+아니라 빠진 차원"을 실제 코드에 대고 확인한 결과:
+
+**W-1 (구조적 공백)**: `engine/` 전체에 ROIC·incremental return·moat·reinvestment
+히트 **0**(ROE는 is_insurer 분기 2종목 opt-in 안에만 존재). 품질투자 진영이 성장
+지속가능성 판단에 쓰는 표준축(ROIIC — 신규 자본의 한계 생산성)이 IRS에 없고,
+**바로 그 때문에 성장지속기간 n을 종목별로 차등화할 근거도 없다**(34종목 전부 12).
+두 공백은 같은 뿌리다. 단 FCF=OCF−capex와 min() 경로가 자본집약도를 **암묵적으로
+부분 반영**하므로 "자본효율을 무시한다"로 읽으면 안 된다 → **DEFER**(NOPAT·
+투하자본 신규 입력 필요).
+
+**W-2 (실측 확정, 구현 완료)**: `ASSUMPTION_GRID`의 `n_delta=(-2,0,2)`는 n∈{10,12,14}만
+보는데 엔진은 `capped_n(8~15)`를 허용 — **격자가 엔진 허용범위의 부분집합**이었다.
+전 범위로 보면 BSX·DSGX·PTC의 `flip_drivers.growth_duration_n`이 False→True로
+바뀐다(이미 취약했으나 **n축이 안전하다고 잘못 귀속**돼 있었다 — flip_drivers는
+분석자에게 무엇을 재검토할지 알려주는 필드라 단순 카운트 오류가 아니다). ROP는
+robust True→False로 **신규 취약**(n 단독 아닌 조합 경로).
+
+⚠️ **`ASSUMPTION_GRID`는 수정하지 않았다** — H-005가 그 상수로 `robust`를 사전등록
+했으므로 결과를 본 뒤 정의를 바꾸면 사후합리화와 구분되지 않는다. 대신
+`gap_range_over_assumptions(ledger, grid=...)`의 **이미 존재하는 오버라이드 인자**만
+사용해 진단했다 — 엔진 코드 0줄 변경, 사전등록 보존(테스트로 고정).
+
+**W-3 (자체 정정 포함)**: MNDY·UBER의 `fcf_by_year` 최초 연도가 음수인 걸 보고
+"v3.19 가드 미작동"으로 잠정 판단했으나 실제 `cagr_5y_base_year`를 확인하니
+**가드는 정상 작동**(MNDY 2020→2021, UBER 2021→2022로 기준을 앞당김)이었다.
+버그가 아니다. 실제 문제는 가드가 음수 기준을 **근사-0 기준으로 바꿔놓고 알리지
+않는다**는 것 — MNDY 기준 FCF는 최종값의 0.8%이고 필드명은 `fcf_cagr_5y`인데
+실제 span은 4년이다. 34종목 중 **11종목**이 이 패턴. 현재는 `min()`이 이 값들을
+자동으로 버려 결과가 보호되지만 **그 보호는 우연적**이라, 그 값을 다른 용도로
+쓰는 순간 깨진다(매출−FCF CAGR 격차는 Gap과 상관 −0.04로 독립 차원임이 확인됐으나
+바로 이 아티팩트 때문에 현 형태로는 **REJECT**).
+
+**§31 안티기능 등록부 신설** — 멀티에이전트/벡터DB/자동매매/단일합성점수/LLM
+직접계산/상관행렬최적화를 **의도적으로 만들지 않는 것**으로 등록했다(현재 병목은
+조율·검색이 아니라 입력의 근거 부재다).
+
+산출물: `docs/irs_evolution_report_2026-08-16.md`(§40 13개 절 + §33 갭 매트릭스),
+`docs/research_decision_record.md`(결정 18건 + 개정이력 R-1),
+`scripts/n_sensitivity_diagnostic_2026_08_16.py`, `reports/n_sensitivity_2026-08-16.json`.
+테스트 453 → **459개**, `engine/`·ledger·공식판정 전부 무변경, 34종목 골든재현
+8개 지표 완전 동일, `ENGINE_VERSION` v3.52 유지.
+
+## 모델선택 ADOPT 결정을 실제 결정경로에 배선 + 순위파일 노후화 발견 (2026-08-16)
+
+모델선택 D3 연구가 "등급·유니버스 수준 모델의존성 병기"를 **ADOPT**로 결정했으나
+실제로는 오프라인 리포트만 있었고 자본배분 경로에는 전달되지 않고 있었다. 이
+프로젝트는 "문서로만 둔 규칙은 지켜지지 않는다"를 이미 네 번 겪었으므로
+(run_self_check·confidence_score·claim/lock·cross_check_prior_record) 다섯 번째를
+만들지 않기 위해 `scripts/build_buylist_2026_08_03.py`에 경계검토를 배선했다.
+
+**비중은 하나도 바뀌지 않는다** - weight_final이 전부 확정된 뒤에 키만 덧붙이는
+구조이고, 기존 산출물과 전 필드가 완전히 동일함을 확인했다(신규 키
+`model_dependent_universe` 1개만 추가). 회귀 테스트 6건으로 고정.
+
+경계검토가 드러내는 것: ①보유 중인데 편입근거가 모델선택에 달린 종목
+(**BRO 6.75% 보유, A→대안모델이면 B로 유니버스 이탈, 사유는 과거기록 답습**),
+②유니버스 밖인데 대안모델이면 진입하는 거짓탈락 후보(DSGX·VRT),
+③**순위파일 노후화로 아예 고려조차 안 된 종목** - 신규 발견이다. 유니버스는
+`reports/portfolio_ranking_2026-08-02.json`에서 만드는데 **BSX는 2026-08-13
+분석이라 그 파일에 아예 없다**(Gap +5.87%p '저평가 가능성'). 판정에 의한 탈락과
+파일 노후화에 의한 탈락은 전혀 다른 것이라 구분해 표시한다.
+`reports/buylist_boundary_review_2026-08-16.json`. 테스트 447 → 453개,
+`engine/` 무변경(v3.52 유지).
+
+## Realistic Growth D3 연구 — 축소기제 재해석 + H-006 사전등록 (2026-08-16)
+
+Chan/Karceski/Lakonishok(2003)의 "장기 이익성장은 우연 이상 지속되지 않는다"가
+IRS 핵심 전제를 위협하는지 검정했다. **Gap 순위는 FCF수익률(+0.78)보다 Realistic
+Growth(+0.87)에 더 강하게 지배된다** — 성장기계는 장식이 아니라 순위의 주된
+결정자다.
+
+순진한 베이스라인과 정면 경쟁(독립 관측 10건, 순환참조 ROP 제외, §18 증거등급
+분리 유지): **IRS는 원시 5y/3y CAGR을 명확히 이긴다**(절대오차 중앙값 10.87 vs
+19.40%p, 8.70 vs 23.05%p — 대략 절반). 다만 무정보 상수(터미널 3.47%) 대비
+우위는 취약하다(guidance_annual 평균에서 상수에 짐: 15.08 vs 11.80%p).
+
+**재해석: IRS가 이기는 메커니즘은 '예측'이 아니라 '축소'다.** 함의된 축소계수
+w=(RG−g_term)/(raw−g_term)의 중앙값이 0.807 — 원시값의 19%만 당긴다. 세 갈래가
+더 공격적인 축소를 가리킨다: 표본내 최적 w가 두 증거등급에서 독립적으로
+0.45/0.25, 부호검정 10건 중 8건 과대추정(양측 p=0.109, **유의하지 않음**),
+외부문헌의 지속성 부재.
+
+결정: 성장기계를 수익률 스크린으로 대체 **REJECT**(정보를 실제로 더한다),
+축소계수 조정 **REJECT**(n=5 적합 = 과적합, §43 위반), 과대추정 가설
+**EXPERIMENT** — `experiments/H-006.json` 사전등록. **H-006은 주가·12개월
+수익률이 필요 없어(실현 매출성장률만 필요) `REGISTERED`로 등록됐다 — H-001~H-005가
+전부 BLOCKED인 것과 달리 이 저장소에서 가장 먼저 실행 가능한 실험이다.** 동기가
+된 10건은 순환 방지를 위해 검정 표본에서 제외한다. 공식 수치 불변, `engine/`
+무변경(v3.52 유지), 테스트 447개.
+`reports/research/realistic_growth_2026-08-16.md`.
+
+## 모델선택 D3 연구 — 규칙화 REJECT, 등급·유니버스 병기 ADOPT (2026-08-16)
+
+연구 모듈(§28 D3)로 시스템 최대 취약축(판정 flip 32%)인 모델선택을 조사했다.
+**이론 기준(성장이 g_terminal에 근접→Gordon, 크게 상회→다단계)이 실제 34종목
+선택을 전혀 분리하지 못함을 실증** — single_stage RG−g_term 구간(+1.18~+8.53%p)이
+two_stage 구간(−2.00~+21.53%p)에 거의 완전히 포함되고, 동일 관측치 반대선택 쌍이
+3개(GWRE/BKNG +8.04%p, BRO·CDNS/GEN +8.53%p), KEYS는 터미널보다 낮은 성장인데
+two_stage. H5 선택편향은 **기각**(18/34 vs 16/34, 중앙값 +0.15%p; VRT·KEYS·PH·DSGX는
+불리한 모델을 일부러 택함) — 문제는 편향이 아니라 기준 부재.
+
+**§22 투자가치 검증에서 자본이 걸린 사례 발견**: 판정(3단계) 의존 11종목보다
+등급 의존이 13종목, **매수 유니버스 의존이 4종목**(BRO·BSX·DSGX·VRT)이다.
+**BRO는 현재 포트폴리오 6.75% 보유 중**이고 A등급(+7.43%p, A/B경계 바로 위)이
+single_stage 선택에 달려 있는데 그 사유는 "과거 큐28 기록(v3.15)이 single_stage를
+사용했으므로 동일 채택"으로 경제논리가 아니다. BSX/DSGX/VRT는 반대로 대안모델이면
+유니버스에 진입한다(거짓탈락). `build_buylist`는 이 취약성을 전혀 소비하지 않는다.
+
+결정: 결정론적 규칙 신설 **REJECT**(근거 없는 휴리스틱을 근거 없는 다른 것으로
+대체 금지), 등급·유니버스 수준 병기 **ADOPT**(파라미터 0개·판정 무변경),
+과거기록 답습 7종목 재검토 **EXPERIMENT**(경제적 사유 확보 후). 공식 수치 불변.
+Rasmussen(2019)이 "다른 터미널 방식이 다른 종목을 고르나 수익률은 유사"를 보고해
+**수익률 개선은 일절 주장하지 않는다**. `reports/research/model_choice_2026-08-16.md`.
+테스트 441 → 447개, `engine/` 무변경(ENGINE_VERSION v3.52 유지).
+
+## 조합축에서만 취약한 6종목 개별 축 분해 (2026-08-16)
+
+Historical Replay 감사 "다음 감사가 반드시 할 일" 3번 실행. v3.51
+`gap_range_over_assumptions()`가 OAT(단일축) 점검으로는 안전하다고 판정했지만
+전체 30격자에서는 뒤집히는 6종목(BRO/COR/TCOM/TYL/VRSN/ZTS)의 최소 flip 조합을
+실제로 특정했다. BRO·COR·TYL·VRSN은 model_choice+discount_rate 2축, TCOM은
+model_choice가 빠진 3축(discount_rate+terminal_growth+growth_duration_n),
+ZTS는 4축 전부 필요(30격자 중 1지점만 flip). 공통 메커니즘: 각 축은 단독으로
+±5%p 경계를 못 넘지만 같은 방향으로 겹치면 넘는다 - "단일 가정 오차엔
+강건해도 상관된 가정 오차엔 취약할 수 있다"는 v3.51 경고의 구체적 실증.
+새 engine/ 코드 0줄(순수 분석 스크립트, 기존 그리드/판정 함수 재사용).
+`reports/historical_validation/combination_flip_decomposition.md`.
+
+## v3.52 — structural_discount_rate() 외부 경제적 근거 조사 (2026-08-16)
+
+Historical Replay 감사(`executive_summary.md` "다음 감사가 반드시 할 일" 2번)
+가 지목한 12% 판정영향력 함수의 경제적 근거를 §49-51 절차로 조사했다.
+`trend_delta`(최근 3y 성장이 10y 평균보다 느려지면 할인 확대) 메커니즘은
+Chan/Karceski/Lakonishok(Journal of Finance 2003, NBER w8282 - "장기 이익
+성장은 우연 이상 지속되지 않는다")가 방향을 지지함을 확인해 `VALIDATION_
+STATUS`에 `ECONOMICALLY_SUPPORTED`로 신규 등재했다. 반면 초대형주 가산
+(시총≥1000이면 +3%p, ≥200이면 +1%p)은 지지·반박 문헌 둘 다 못 찾아
+`IMPLEMENTED_NOT_VALIDATED`로 명시했다 - 근거 없는 걸 근거 없는 다른 값으로
+바꾸지 않는다는 원칙대로 **코드 로직은 그대로 두고 라벨만 정직하게 붙였다**
+(`reports/historical_validation/structural_discount_research.md`). 논문
+원문 PDF는 2회(NBER·저자 소속사 LSV Asset Management) 모두 텍스트 추출
+실패해 확보한 근거는 초록 수준 - 그 한계도 문서에 명시했다. 테스트 441개
+전부 통과, 34종목 골든재현 8지표 완전 동일. `ENGINE_VERSION` v3.51 → v3.52.
+
+## Historical Replay 감사 — §66 STOP CONDITION + 예측봉인 개시 (2026-08-16)
+
+진짜 Historical Replay는 지금 불가능하다고 공식 선언했다 — 전체 프로젝트
+이력이 22일뿐이라 미래 아웃컴 관측 자체가 시간적으로 존재하지 않는다
+(데이터 품질 문제 아님). "T0를 3주 전으로 재정의"하는 유혹을 거부하고,
+대신 이미 존재하던 17건의 초단기(9~11일) T0→결과 관측을 재발견해 엄격
+재분석했다.
+
+**문서-코드 괴리 2건 발견**: (1) "34종목 PIT_UNKNOWN"이라 서술했으나 실제로는
+`meta.point_in_time` 키 자체가 없음(필드 부재, 상태값 아님). (2) "예측/논거
+인프라 완성"이라 기록했으나 `predictions/`·`thesis/` 디렉터리가 파일시스템에
+존재하지 않았음(실사용 0건). v3.32(버전스탬프)에 이어 세 번째 반복되는
+"문서가 코드보다 낙관적" 패턴.
+
+**TTD 5-why**: 유일한 INCORRECT 사례. 반증조건 3/4 발동(Q2 가이던스 하회,
+Q3 역성장, 경영진 5번째 교체) → 근본원인은 Realistic Growth가 구조적으로
+거버넌스 리스크를 담을 그릇이 아니라는 것. 경고는 이미 있었다(2026-08-03
+정성조사, Confidence 94→72) — "병기, 자동판정 안 함" 원칙 때문에 반증조건
+발동 전까지 라벨이 유지된 것. Decision Impact는 HIGH(매수리스트 비중
+4.80%→2.70%, 이미 실행됨).
+
+**기존 감사 5개 주장 독립 재현 — 전부 일치**(corr=+0.801, DRS제거 1/34,
+모델선택flip 11/34, gap_range robust=False 21/34 등). [DOCUMENTED CLAIM] →
+[EMPIRICALLY VALIDATED at reproduction level].
+
+**신규 절제실험**: 구조적할인/Lynch캡 제거 → 판정변경 4/34(12%). 세
+절제실험 비교: DRS(3%) ≪ 구조적할인/캡(12%) ≪ 모델선택(32%). MCK가 캡 없이
+할인율 단독으로 판정이 뒤집히는 가장 순수한 사례.
+
+**#1 우선순위 조치**: 34종목 예측을 오늘(2026-08-16) 봉인(`scripts/
+freeze_predictions_2026_08_16.py`). 근거: 예측 인프라 완성 후 실사용 0건 —
+3개월 뒤에도 검증이 시작 안 될 상태였다. expected_range는 엔진이 이미 계산한
+CAGR 구성요소(3y/5y/10y) 최소~최대를 그대로 재사용, 새 판단 발명 없음.
+`thesis_id="NO_THESIS_SIGNAL_ONLY"`로 실제 Thesis 부재를 정직하게 기록.
+`engine/` 무변경, `ENGINE_VERSION` 불변.
+
+**작성 중 자체 오류 정정 1건**: case_results.md 초안이 검증 없이 "DUOL·SE가
+모델선택에 취약하다"고 적었다가 실제 gap_range 데이터 대조 후 즉시 정정
+(둘 다 robust=True, 취약한 건 TCOM 하나뿐).
+
+산출물: `reports/historical_validation/`(12개 문서) + `data/historical_
+validation/`(5개 CSV) + `predictions/`(신규 34건). 단일 IRS 점수 없음(§61).
+
+테스트 435 → 441개. 34종목 8개 지표 완전 동일, ledger·engine 무수정.
+
 ## v3.51 — 가정집합 Gap 범위: 판정을 점에서 범위로 (2026-08-15)
 
 2026-08-15 투자가치 감사의 SINGLE NEXT ACTION 실행.

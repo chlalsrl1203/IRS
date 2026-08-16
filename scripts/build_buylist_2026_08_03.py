@@ -89,6 +89,7 @@ stalwart의 미달분이 여전히 암묵적으로 나머지 버킷에 흘러들
 실행: python3 scripts/build_buylist_2026_08_03.py
 """
 
+import glob
 import json
 import os
 
@@ -208,6 +209,27 @@ SEVERE_FLAG = {"TTD"}  # 중대 거버넌스 적신호 - 추가 0.85x
 # 결과라 둘 다 유효하게 별도로 곱한다. TTD가 이 시점 기준 유일한 해당 종목.
 THESIS_BROKEN_FLAG = {"TTD"}  # 반증조건 3/4 발동 확인(thesis_monitor) - 추가 0.85x
 PER_STOCK_CAP = 0.12
+
+# 2026-08-16 모델선택 D3 연구의 ADOPT 결정을 결정경로에 배선하기 위한 입력.
+# 그 연구가 실측한 것: 유니버스 편입 여부가 모델선택에 달린 종목이 4개이고
+# (BRO·BSX·DSGX·VRT), 그중 BRO는 **이미 보유 중**인데 A등급 근거가 v3.15대
+# 과거기록 답습이다. 그런데 이 스크립트는 그 사실을 전혀 참조하지 않고 있었다.
+MODEL_SENSITIVITY_PATH = "reports/model_choice_sensitivity_2026-08-16.json"
+
+
+def load_model_dependence(path=MODEL_SENSITIVITY_PATH):
+    """
+    티커별 모델선택 민감도를 읽어 dict로 돌려준다. 파일이 없으면 None.
+
+    ⚠️ 파일이 없을 때 조용히 '의존 없음'으로 처리하지 않는다 - **데이터 없음을
+    유리한 값으로 오독하지 않는다**는 원칙(is_insurer·sbc_cross_check·
+    holdings_overlap의 '측정 불가 != 없음'과 동일)에 따라 None을 돌려주고
+    호출부가 '미확인'으로 명시하게 한다.
+    """
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        return {r["ticker"]: r for r in json.load(f)["results"]}
 
 
 def main():
@@ -372,7 +394,102 @@ def main():
         print("   Confidence·정성리스크를 특히 함께 볼 것(현재 GEN은 Conf 70으로 최하위권이며")
         print("   M&A 연결효과로 성장상한이 바인딩된 종목이다).")
 
+    # ── 경계 검토: 유니버스 편입이 모델선택에 달려 있는가 ────────────────
+    # 2026-08-16 모델선택 D3 연구의 ADOPT 결정("등급·유니버스 수준 모델의존성
+    # 병기")을 실제 결정경로에 배선한 것이다. **비중은 하나도 바꾸지 않는다** -
+    # 병기·자동판정 안 함 원칙 그대로이며 회귀 테스트가 이를 고정한다.
+    # 이 블록은 weight_final이 전부 확정된 **뒤**에 키만 덧붙인다.
+    dep = load_model_dependence()
+    boundary = {"generated_at": "2026-08-16", "status": None,
+                "held_but_model_dependent": [], "excluded_but_would_enter": [],
+                "missing_from_ranking": []}
+    # 노후화 점검: ledger에는 있는데 순위 파일에 없는 종목은 **어떤 판정도 받지
+    # 않은 채** 유니버스에서 빠진다. 2026-08-16 실측에서 BSX가 정확히 이 경우였다
+    # (순위는 08-02 생성, BSX 분석은 08-13). 판정에 의한 탈락과 파일 노후화에
+    # 의한 탈락은 전혀 다른 것이므로 구분해서 드러낸다.
+    ranked = {r["ticker"] for r in data}
+    for p in sorted(glob.glob("ledger/*.json")):
+        with open(p, encoding="utf-8") as f:
+            led = json.load(f)
+        t = led["meta"]["ticker"]
+        if t not in ranked:
+            boundary["missing_from_ranking"].append({
+                "ticker": t, "gap_pct": led["expectation_gap"] * 100,
+                "judgment": led["judgment"], "analyzed_at": led["meta"]["analyzed_at"][:10],
+            })
+    print("\n" + "=" * 100)
+    print("경계 검토 - 유니버스 편입이 모델선택 하나에 달려 있는 종목 (비중 미변경)")
+    print("=" * 100)
+    if dep is None:
+        boundary["status"] = "미확인"
+        print(f"  ⚠️ {MODEL_SENSITIVITY_PATH}가 없어 **확인하지 못했다**.")
+        print("     '의존 없음'이 아니라 '미확인'이다 - scripts/model_choice_sensitivity_2026_08_16.py를 먼저 실행할 것.")
+        for row in rows:
+            row["model_dependent_universe"] = None
+    else:
+        boundary["status"] = "확인"
+        for row in rows:
+            d = dep.get(row["ticker"])
+            row["model_dependent_universe"] = (
+                bool(d["buy_universe_depends_on_model"]) if d else None
+            )
+            if d and d["buy_universe_depends_on_model"]:
+                row["grade_alternative_model"] = d["grade_alternative"]
+                row["gap_alternative_model_pct"] = d["gap_alternative"] * 100
+                boundary["held_but_model_dependent"].append({
+                    "ticker": row["ticker"], "weight_final": row["weight_final"],
+                    "grade": row["grade"], "grade_alternative": d["grade_alternative"],
+                    "gap_pct": row["gap_pct"],
+                    "gap_alternative_pct": d["gap_alternative"] * 100,
+                    "model_chosen": d["model_chosen"],
+                    "reason_is_prior_record": d["reason_is_prior_record"],
+                })
+        for r in data:
+            d = dep.get(r["ticker"])
+            if (r["grade"] not in ("S", "A") and d
+                    and d["buy_universe_depends_on_model"]
+                    and d["grade_alternative"] in ("S", "A")):
+                boundary["excluded_but_would_enter"].append({
+                    "ticker": r["ticker"], "grade": r["grade"],
+                    "grade_alternative": d["grade_alternative"],
+                    "gap_pct": r["gap_pct"],
+                    "gap_alternative_pct": d["gap_alternative"] * 100,
+                    "model_chosen": d["model_chosen"],
+                    "reason_is_prior_record": d["reason_is_prior_record"],
+                })
+
+        held = boundary["held_but_model_dependent"]
+        excl = boundary["excluded_but_would_enter"]
+        if held:
+            print("  [보유 중인데 편입 근거가 모델선택에 달림 - 거짓편입 위험]")
+            for h in held:
+                pr = " ⚠️사유가 과거기록 답습" if h["reason_is_prior_record"] else ""
+                print(f"    {h['ticker']:6} 비중 {h['weight_final']*100:5.2f}%  "
+                      f"{h['grade']}({h['gap_pct']:+.2f}%p) -> 대안모델이면 "
+                      f"{h['grade_alternative']}({h['gap_alternative_pct']:+.2f}%p) 유니버스 이탈{pr}")
+        if excl:
+            print("  [유니버스 밖인데 대안모델이면 진입 - 거짓탈락 위험, BSX 스크리너 사건과 같은 유형]")
+            for e in excl:
+                pr = " ⚠️사유가 과거기록 답습" if e["reason_is_prior_record"] else ""
+                print(f"    {e['ticker']:6}         "
+                      f"{e['grade']}({e['gap_pct']:+.2f}%p) -> 대안모델이면 "
+                      f"{e['grade_alternative']}({e['gap_alternative_pct']:+.2f}%p) 유니버스 진입{pr}")
+        if not held and not excl:
+            print("  모델의존 해당 종목 없음.")
+        if boundary["missing_from_ranking"]:
+            print("  [순위 파일 노후화로 아예 고려조차 안 된 종목 - 판정에 의한 탈락이 아님]")
+            for m in boundary["missing_from_ranking"]:
+                print(f"    {m['ticker']:6}         분석일 {m['analyzed_at']} "
+                      f"Gap {m['gap_pct']:+.2f}%p '{m['judgment']}' - "
+                      f"순위 파일(2026-08-02)이 이 종목보다 먼저 만들어져 누락됨")
+        print("  ⚠️ 어느 모델이 옳은지는 판정하지 않는다 - 34종목 실측상 관측 가능한 성장")
+        print("     프로파일이 두 모델 선택집단을 분리하지 못해 판정 근거가 이 저장소에 없다.")
+        print("     비중은 이 검토로 조정되지 않았다(reports/research/model_choice_2026-08-16.md).")
+
     os.makedirs("reports", exist_ok=True)
+    with open("reports/buylist_boundary_review_2026-08-16.json", "w", encoding="utf-8") as f:
+        json.dump(boundary, f, ensure_ascii=False, indent=2)
+
     out_path = "reports/buylist_2026-08-03.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(rows, f, ensure_ascii=False, indent=2)

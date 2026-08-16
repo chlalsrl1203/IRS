@@ -1,0 +1,685 @@
+{
+  "generated_at": "2026-08-16",
+  "frozen_grid_n_values": [
+    10,
+    12,
+    14
+  ],
+  "engine_allowed_n_values": [
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "note": "ASSUMPTION_GRID는 H-005가 사전등록으로 고정했으므로 수정하지 않았다. 이 리포트는 진단 신호이며 공식 판정·Gap·비중을 바꾸지 않는다.",
+  "n_missed_by_frozen_grid": [
+    "ROP"
+  ],
+  "n_flip_newly_detected": [
+    "BSX",
+    "DSGX",
+    "PTC"
+  ],
+  "results": [
+    {
+      "ticker": "ACGL",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 7.110403655796688,
+      "gap_span_pp_wide": 9.483812927036922,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "BKNG",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.87381362915039,
+      "gap_span_pp_wide": 7.259254455566404,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "BRO",
+      "model_used": "single_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.091384887695312,
+      "gap_span_pp_wide": 7.534675598144531,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "BSX",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": true,
+      "gap_span_pp_frozen": 6.655571376027089,
+      "gap_span_pp_wide": 8.267147456349353,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "BSY",
+      "model_used": "single_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.154022216796874,
+      "gap_span_pp_wide": 7.615032196044923,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "CDNS",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 18.227438705754327,
+      "gap_span_pp_wide": 23.354925888371504,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "COR",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.496086120605468,
+      "gap_span_pp_wide": 8.049240112304688,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "DSGX",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": true,
+      "gap_span_pp_frozen": 8.076343078542225,
+      "gap_span_pp_wide": 10.110682983327376,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "DUOL",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.173839569091793,
+      "gap_span_pp_wide": 7.638988494873045,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "GEN",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.782815273806073,
+      "gap_span_pp_wide": 7.180482204958418,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "GWRE",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 15.681729037555298,
+      "gap_span_pp_wide": 20.039791781695932,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "IDXX",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 13.69807537635907,
+      "gap_span_pp_wide": 17.44612988075361,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "KEYS",
+      "model_used": "two_stage",
+      "official_judgment": "과대평가 가능성",
+      "frozen_judgment_set": [
+        "과대평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 13.835102189603916,
+      "gap_span_pp_wide": 17.649608720365634,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "KLAC",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 20.48678103424548,
+      "gap_span_pp_wide": 26.342951688542353,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "MCK",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "적정가/경계선"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "적정가/경계선"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.461143493652341,
+      "gap_span_pp_wide": 8.004035949707031,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "MNDY",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.629425048828124,
+      "gap_span_pp_wide": 6.951599121093749,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "MNST",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 15.515977978752913,
+      "gap_span_pp_wide": 19.826261639641586,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "PDD",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.77954297984642,
+      "gap_span_pp_wide": 8.712678966174547,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "PGR",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.863346138809215,
+      "gap_span_pp_wide": 8.874359169815074,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "PH",
+      "model_used": "two_stage",
+      "official_judgment": "과대평가 가능성",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 13.104382230113238,
+      "gap_span_pp_wide": 16.697159482310504,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "PTC",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": true,
+      "gap_span_pp_frozen": 6.184043884277343,
+      "gap_span_pp_wide": 7.652549743652341,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "RMD",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.684646606445313,
+      "gap_span_pp_wide": 8.284034729003906,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "ROP",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "적정가/경계선"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.336803436279298,
+      "gap_span_pp_wide": 7.842426300048828,
+      "missed_by_frozen_grid": true
+    },
+    {
+      "ticker": "SE",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.829906463623047,
+      "gap_span_pp_wide": 7.202892303466796,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "TCOM",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.436477661132814,
+      "gap_span_pp_wide": 6.705207824707031,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "TTD",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.922435210207885,
+      "gap_span_pp_wide": 7.361377165774291,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "TYL",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.65830612182617,
+      "gap_span_pp_wide": 8.258075714111326,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "UBER",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.885314941406253,
+      "gap_span_pp_wide": 7.27275848388672,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "VRSN",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 7.186348303860476,
+      "gap_span_pp_wide": 8.946316107815555,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "VRT",
+      "model_used": "two_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 15.208760060143092,
+      "gap_span_pp_wide": 19.42747191317044,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "WCN",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 12.541673126841543,
+      "gap_span_pp_wide": 15.977113190318104,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "WDAY",
+      "model_used": "two_stage",
+      "official_judgment": "저평가 가능성",
+      "frozen_judgment_set": [
+        "저평가 가능성"
+      ],
+      "frozen_robust": true,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성"
+      ],
+      "wide_robust": true,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 6.195755004882813,
+      "gap_span_pp_wide": 7.663192749023437,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "WM",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "과대평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 12.315511950615061,
+      "gap_span_pp_wide": 15.682020434501782,
+      "missed_by_frozen_grid": false
+    },
+    {
+      "ticker": "ZTS",
+      "model_used": "single_stage",
+      "official_judgment": "적정가/경계선",
+      "frozen_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "frozen_robust": false,
+      "frozen_n_flip_detected": false,
+      "wide_judgment_set": [
+        "저평가 가능성",
+        "적정가/경계선"
+      ],
+      "wide_robust": false,
+      "wide_n_flip_detected": false,
+      "gap_span_pp_frozen": 5.831470489501953,
+      "gap_span_pp_wide": 7.2046852111816415,
+      "missed_by_frozen_grid": false
+    }
+  ]
+}

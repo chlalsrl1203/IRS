@@ -1,0 +1,21 @@
+{
+  "prediction_id": "BKNG-2026-08-16-194c553f",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "BKNG",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-07-28 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.101551,
+    "expected_high": 0.163487,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.1635, '5y': 0.1016, '10y': 0.113})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "194c553f2716b8cb3d96e67069fa3d5514a731cb4ad26a3070404e1b2c7e4613",
+  "source": "BKNG_2026-07-28.json (engine_version=v3.21, 원분석일=2026-07-28)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

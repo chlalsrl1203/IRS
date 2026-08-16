@@ -1,0 +1,21 @@
+{
+  "prediction_id": "UBER-2026-08-16-b6ec341d",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "UBER",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-08-04 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.177306,
+    "expected_high": 0.177306,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.1773, '5y': 0.1773, '10y': None})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "b6ec341d591b5b7a45d42ef0be669c74f9ca07233e4fc88ae99ff1fe9de5813a",
+  "source": "UBER_2026-08-04.json (engine_version=v3.27, 원분석일=2026-08-04)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

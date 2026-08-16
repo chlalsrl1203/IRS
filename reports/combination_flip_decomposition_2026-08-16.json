@@ -1,0 +1,282 @@
+{
+  "generated_at": "2026-08-16",
+  "tickers": {
+    "BRO": {
+      "ledger_file": "BRO_2026-08-04.json",
+      "base_judgment": "저평가 가능성",
+      "official_gap": 0.07427728925631566,
+      "flips_found": true,
+      "n_total_flips": 5,
+      "min_n_active_axes": 2,
+      "minimal_flip_examples": [
+        {
+          "model": "two_stage",
+          "r_delta": 0.01,
+          "g_terminal_delta": 0.0,
+          "n_delta": 0,
+          "gap": 0.04781658172607424,
+          "judgment": "적정가/경계선",
+          "active_axes": [
+            "model_choice",
+            "discount_rate"
+          ],
+          "n_active": 2
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "model_choice": {
+          "gap": 0.06442520141601564,
+          "judgment": "저평가 가능성"
+        },
+        "discount_rate": {
+          "gap": 0.0648456577580051,
+          "judgment": "저평가 가능성",
+          "delta": 0.01
+        }
+      }
+    },
+    "COR": {
+      "ledger_file": "COR_2026-08-02.json",
+      "base_judgment": "적정가/경계선",
+      "official_gap": 0.030971756573969778,
+      "flips_found": true,
+      "n_total_flips": 5,
+      "min_n_active_axes": 2,
+      "minimal_flip_examples": [
+        {
+          "model": "single_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.0,
+          "n_delta": 0,
+          "gap": 0.055645322705071026,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "model_choice",
+            "discount_rate"
+          ],
+          "n_active": 2
+        },
+        {
+          "model": "two_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.0,
+          "n_delta": 2,
+          "gap": 0.05079502164965338,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "discount_rate",
+            "growth_duration_n"
+          ],
+          "n_active": 2
+        },
+        {
+          "model": "two_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.01,
+          "n_delta": 0,
+          "gap": 0.06122917234545416,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "discount_rate",
+            "terminal_growth"
+          ],
+          "n_active": 2
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "model_choice": {
+          "gap": 0.04614842591100471,
+          "judgment": "적정가/경계선"
+        },
+        "discount_rate": {
+          "gap": 0.04963974058275885,
+          "judgment": "적정가/경계선",
+          "delta": -0.01
+        },
+        "growth_duration_n": {
+          "gap": 0.03393272459154791,
+          "judgment": "적정가/경계선",
+          "delta": 2
+        },
+        "terminal_growth": {
+          "gap": 0.0406702429020948,
+          "judgment": "적정가/경계선",
+          "delta": 0.01
+        }
+      }
+    },
+    "TCOM": {
+      "ledger_file": "TCOM_2026-08-04.json",
+      "base_judgment": "저평가 가능성",
+      "official_gap": 0.07547684320764038,
+      "flips_found": true,
+      "n_total_flips": 1,
+      "min_n_active_axes": 3,
+      "minimal_flip_examples": [
+        {
+          "model": "two_stage",
+          "r_delta": 0.01,
+          "g_terminal_delta": -0.01,
+          "n_delta": -2,
+          "gap": 0.04895306238488646,
+          "judgment": "적정가/경계선",
+          "active_axes": [
+            "discount_rate",
+            "terminal_growth",
+            "growth_duration_n"
+          ],
+          "n_active": 3
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "discount_rate": {
+          "gap": 0.06008434900598021,
+          "judgment": "저평가 가능성",
+          "delta": 0.01
+        },
+        "terminal_growth": {
+          "gap": 0.0690313399727771,
+          "judgment": "저평가 가능성",
+          "delta": -0.01
+        },
+        "growth_duration_n": {
+          "gap": 0.07373371729211305,
+          "judgment": "저평가 가능성",
+          "delta": -2
+        }
+      }
+    },
+    "TYL": {
+      "ledger_file": "TYL_2026-08-05.json",
+      "base_judgment": "적정가/경계선",
+      "official_gap": 0.0277231870438982,
+      "flips_found": true,
+      "n_total_flips": 4,
+      "min_n_active_axes": 2,
+      "minimal_flip_examples": [
+        {
+          "model": "single_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.0,
+          "n_delta": 0,
+          "gap": 0.05766095570000432,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "model_choice",
+            "discount_rate"
+          ],
+          "n_active": 2
+        },
+        {
+          "model": "two_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.01,
+          "n_delta": 0,
+          "gap": 0.05875288827680836,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "discount_rate",
+            "terminal_growth"
+          ],
+          "n_active": 2
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "model_choice": {
+          "gap": 0.048124414890771176,
+          "judgment": "적정가/경계선"
+        },
+        "discount_rate": {
+          "gap": 0.0467774091508318,
+          "judgment": "적정가/경계선",
+          "delta": -0.01
+        },
+        "terminal_growth": {
+          "gap": 0.037736958101027104,
+          "judgment": "적정가/경계선",
+          "delta": 0.01
+        }
+      }
+    },
+    "VRSN": {
+      "ledger_file": "VRSN_2026-07-25.json",
+      "base_judgment": "적정가/경계선",
+      "official_gap": -0.009719340999338522,
+      "flips_found": true,
+      "n_total_flips": 7,
+      "min_n_active_axes": 2,
+      "minimal_flip_examples": [
+        {
+          "model": "two_stage",
+          "r_delta": 0.01,
+          "g_terminal_delta": 0.0,
+          "n_delta": 0,
+          "gap": -0.052894604995262356,
+          "judgment": "과대평가 가능성",
+          "active_axes": [
+            "model_choice",
+            "discount_rate"
+          ],
+          "n_active": 2
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "model_choice": {
+          "gap": -0.03481732685805532,
+          "judgment": "적정가/경계선"
+        },
+        "discount_rate": {
+          "gap": -0.019289823225613192,
+          "judgment": "적정가/경계선",
+          "delta": 0.01
+        }
+      }
+    },
+    "ZTS": {
+      "ledger_file": "ZTS_2026-07-25.json",
+      "base_judgment": "적정가/경계선",
+      "official_gap": 0.020971515574735304,
+      "flips_found": true,
+      "n_total_flips": 1,
+      "min_n_active_axes": 4,
+      "minimal_flip_examples": [
+        {
+          "model": "two_stage",
+          "r_delta": -0.01,
+          "g_terminal_delta": 0.01,
+          "n_delta": -2,
+          "gap": 0.05252389815582268,
+          "judgment": "저평가 가능성",
+          "active_axes": [
+            "model_choice",
+            "discount_rate",
+            "terminal_growth",
+            "growth_duration_n"
+          ],
+          "n_active": 4
+        }
+      ],
+      "solo_effects_of_involved_axes": {
+        "model_choice": {
+          "gap": 0.020557879479064865,
+          "judgment": "적정가/경계선"
+        },
+        "discount_rate": {
+          "gap": 0.03030452132225078,
+          "judgment": "적정가/경계선",
+          "delta": -0.01
+        },
+        "terminal_growth": {
+          "gap": 0.020971515574735304,
+          "judgment": "적정가/경계선",
+          "delta": 0.01
+        },
+        "growth_duration_n": {
+          "gap": 0.020971515574735304,
+          "judgment": "적정가/경계선",
+          "delta": -2
+        }
+      }
+    }
+  }
+}
