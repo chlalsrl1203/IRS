@@ -3453,3 +3453,119 @@ Realistic Growth를 **고정**한 채 계산한다. 그런데 감사가 측정�
 
 테스트 425 → 435개. 34종목 8개 지표 완전 동일, ledger 무수정(병기 경로).
 `ENGINE_VERSION` v3.50 → v3.51. 리포트: `reports/gap_range_2026-08-16.json`.
+
+## Historical Replay 감사 — §66 STOP CONDITION 공식 발동 + 예측봉인 개시
+(2026-08-16, 사용자 "POINT-IN-TIME HISTORICAL REPLAY" 실행 프롬프트)
+
+**핵심 발견부터**: 진짜 Historical Replay(T0 스냅샷 동결 → 미래 아웃컴 공개
+→ 비교)는 **지금 수행할 수 없다.** 원인은 데이터 품질이 아니라 시간이다 -
+전체 프로젝트 이력(137개 커밋)이 **2026-07-25~08-16, 22일**뿐이고 ledger
+34종목의 분석일도 그 안에 전부 몰려 있다. §33이 요구하는 1M조차 채우는
+종목이 없다. **§66 STOP CONDITION을 공식 발동**하고
+(`reports/historical_validation/limitations.md`), 진짜 미래를 기다리는
+대신 "T0를 3주 전으로 재정의"하는 유혹도 거부했다 - 그건 결과가 나왔다는
+사실 자체를 성과로 포장하는 것과 같은 함정이다(§52가 경고한 유형).
+
+### 문서 서술과 코드 사실의 괴리 2건 (§0 원칙 적용 결과)
+
+이번 감사가 "DOCUMENTED CLAIM vs CODE-VERIFIED FACT"를 엄격히 구분하라고
+요구해 실제로 코드를 파싱했더니, 이전 서술이 부정확했던 지점이 2건 나왔다:
+
+1. **v3.47/v3.49가 "기존 34종목은 PIT_UNKNOWN"이라 적었으나**, 실제로는
+   `meta.point_in_time` **키 자체가 없다**(상태값이 아니라 필드 부재 -
+   그 ledger들이 v3.19~v3.41 엔진으로 생성돼 v3.47 이후 재실행된 적이 없다).
+   결과적 의미(PIT 검증 안 됨)는 같지만 메커니즘 서술이 틀렸다.
+2. **v3.48이 "인프라 완성"이라 기록했으나**, `predictions/`·`thesis/`
+   디렉터리가 **파일시스템에 존재하지도 않았다**(실사용 0건). 435개 테스트가
+   무결성을 검증한 것과 실제로 쓰인 것은 다른 질문이었다.
+
+이건 v3.32(버전스탬프 거짓말)·v3.47(PIT 서술)에 이어 **세 번째로 반복된
+"문서가 코드보다 낙관적으로 서술되는" 패턴**이다.
+
+### 실제로 존재하는 것 - 17건의 초단기(9~11일) T0→결과 관측
+
+새로 만들지 않고 이미 저장소에 있던 것을 재발견·엄격 재분석했다:
+`growth_scorecard` 11건(그중 1건 ROP는 오버라이드 통제사례라 독립표본에서
+제외, 실질 n=10) + `thesis_monitor.falsification_scan` 6건(진짜 반증조건
+사전등록→발동확인, 9~11일 후).
+
+**TTD가 유일한 INCORRECT 사례**라 5-why로 전개했다: 4개 반증조건 중 3개
+동시발동(Q2 매출 가이던스 하회, Q3 역성장, 경영진 5번째 교체) →
+근본원인은 "Realistic Growth가 구조적으로 과거 재무제표 요약이라 거버넌스
+리스크를 담을 그릇이 아님". **경고 자체는 있었다**(2026-08-03 정성조사가
+이미 Confidence 94→72로 낮춤) - "병기, 자동판정 안 함" 원칙이 정성적 경고를
+공식 Gap에 자동반영하지 않도록 막고 있어서, 반증조건이 실제 발동하기
+전까지는 라벨이 그대로 유지된 것. 이건 설계된 트레이드오프이지 버그가
+아니나, 그 비용(라벨 갱신 지연)이 실측으로 확인됐다.
+**Decision Impact는 HIGH** - 공식 판정은 안 바뀌었지만 매수리스트 비중은
+실제로 4.80%→2.70%로 축소됐다(2026-08-13, 이미 실행됨).
+
+TCOM 케이스는 v3.42가 스스로 경고해둔 "날짜추출이 서술적 날짜(소송 집단기간)를
+오탐할 수 있다"는 함정을 **실제로 재현**했다 - 검증 자체가 불가능(verification=None)한
+채로 falsification_scan에 잡혔다.
+
+### 기존 감사 5개 핵심주장 독립 재현 - 전부 일치
+
+`docs/AUDIT_2026-08-15_investment_value.md`의 주장(corr(Gap,FCF수익률)=+0.801,
+DRS제거시 판정변경 1/34, 모델선택 단독 판정flip 11/34)과 v3.51의 주장
+(gap_range robust=False 21/34)을 **원 스크립트를 재실행한 게 아니라 raw
+데이터에서 새로 계산**해 재현했다 - 4건 전부 정확히 일치. [DOCUMENTED
+CLAIM] → [EMPIRICALLY VALIDATED at reproduction level]로 승격.
+
+### 신규 절제실험 - 구조적할인/Lynch캡 제거
+
+기존엔 DRS(3%)와 모델선택(32%)만 절제했는데, 이번에 **구조적할인율+Lynch캡을
+제거**(원시 CAGR 가중평균만 사용)하는 절제실험을 추가했다: **판정변경
+4/34(12%)**. 새 밸류에이션 로직 없이 ledger에 이미 저장된
+`growth.breakdown.base_growth_before_fcf_check`를 그대로 재사용했다.
+
+MCK가 가장 순수한 신호다(오버라이드도 캡도 없이 **구조적할인율 단독**으로
+Gap이 −0.02%p→+6.36%p, 판정 뒤집힘) - `structural_discount_rate()`가
+`VALIDATION_STATUS`에 이미 HEURISTIC으로 표기돼 있었는데, 그 표기가 실제
+판정에 미치는 영향력(최대 12% 종목)을 이번에 처음 정량화했다.
+ROP는 반대로 **이 절제실험의 함정**을 보여준다 - 원시CAGR(14.01%)로
+되돌리면 뒤집히는데, 이건 v3.28이 오버라이드를 도입한 이유(M&A롤업 성장을
+캡이 못 거름)가 재확인된 것이지 새 결함이 아니다.
+
+**세 절제실험 비교**: DRS(3%) ≪ 구조적할인/캡(12%) ≪ 모델선택(32%).
+
+### §1 우선순위 조치 - 34종목 예측을 오늘 봉인
+
+근본원인: 예측/논거 인프라(v3.48)가 완성됐으나 실사용 0건이라, 3개월 뒤에도
+1년 뒤에도 검증이 시작되지 않는 상태였다. `scripts/freeze_predictions_
+2026_08_16.py`가 34종목 전부에 대해 "다음 회계연도 매출 YoY 성장률" 예측을
+동결했다.
+
+**새 판단을 발명하지 않았다** - `expected_low/high`는 `growth.breakdown.
+revenue_cagr_inputs`(3y/5y/10y, 엔진이 이미 계산해둔 값)의 최소~최대를
+그대로 썼다. `thesis_id="NO_THESIS_SIGNAL_ONLY"`로 실제 Investment Thesis가
+없다는 사실을 정직하게 남겼다. `prediction_date`는 원분석일이 아니라
+**실제 동결일(2026-08-16)** - backdate하면 거짓 인상을 준다.
+
+`engine/`는 한 줄도 안 건드렸다(순수 데이터 동결) - `ENGINE_VERSION` 변경
+없음. 신규 테스트 6건(범위가 ledger 원본과 정확히 일치하는지 등)이 이
+불변조건을 고정한다.
+
+### 작성 중 자체적으로 잡은 오류 1건
+
+case_results.md 초안에 "DUOL·SE가 모델선택에 취약하다"고 검증 없이 적었다가,
+`reports/gap_range_2026-08-16.json`을 직접 대조하니 **둘 다 robust=True,
+flip_drivers 전부 빈 값**이었다 - 실제로 취약한 건 6종목 중 TCOM 하나뿐
+이었다. 즉시 정정했다(이 프로젝트의 반복 원칙 - 발견 즉시 정정하고 숨기지
+않는다).
+
+### 산출물
+
+`reports/historical_validation/`(12개 문서: executive_summary·methodology·
+limitations·model_evolution_ledger·forecast_validation·decision_attribution·
+error_analysis·baseline_comparison·ablation_analysis·model_improvements·
+holdout_validation·case_results), `data/historical_validation/`(5개 CSV),
+`predictions/`(신규, 34건).
+
+**단일 IRS 점수를 만들지 않았다**(§61 명시적 금지 - 축별로만 보고).
+**§59 마스터 케이스 테이블을 34행 전부 채우지 않았다** - 대부분의 필드가
+[NOT AVAILABLE]인데 그걸 34번 반복하는 건 정보가 아니라 표만 길어지는
+것이라 판단, 실제 값 있는 6종목만 상세 기록하고 나머지는 사유를 한 번만
+설명했다.
+
+테스트 435 → 441개. 34종목 8개 지표 완전 동일, ledger·engine 무수정.

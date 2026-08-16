@@ -1,0 +1,18 @@
+action_taken,divergence_pp,evidence_class,forecast_id,forecast_source,forecast_value_pct,horizon_mismatch_warning,judgment_flipped,metric,observed_value_pct,ticker,usable_as_override,verdict
+,-13.704,realized_quarterly,GS-01-TTD,growth_scorecard (2026-08-13),16.704,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),True,"realistic_growth (다년 지속가능성장률, n≈12년)",3.0,TTD,False,
+,24.5403,realized_quarterly,GS-02-SE,growth_scorecard (2026-08-13),23.5597,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",48.1,SE,False,
+,-6.7,realized_quarterly,GS-03-DUOL,growth_scorecard (2026-08-13),25.0,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",18.3,DUOL,False,
+,-3.0,realized_quarterly,GS-04-MNDY,growth_scorecard (2026-08-13),25.0,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",22.0,MNDY,False,
+,-10.8653,realized_quarterly,GS-05-PGR,growth_scorecard (2026-08-13),16.8653,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",6.0,PGR,False,
+,-28.804,guidance_annual,GS-06-TTD,growth_scorecard (2026-08-13),16.704,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),True,"realistic_growth (다년 지속가능성장률, n≈12년)",-12.1,TTD,False,
+,-8.7,guidance_annual,GS-07-DUOL,growth_scorecard (2026-08-13),25.0,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",16.3,DUOL,False,
+,-6.8876,guidance_annual,GS-08-TCOM,growth_scorecard (2026-08-13),12.3876,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),True,"realistic_growth (다년 지속가능성장률, n≈12년)",5.5,TCOM,False,
+,-4.5,guidance_annual,GS-09-GEN,growth_scorecard (2026-08-13),12.0,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),False,"realistic_growth (다년 지속가능성장률, n≈12년)",7.5,GEN,False,
+,26.5287,guidance_annual,GS-10-KEYS,growth_scorecard (2026-08-13),1.4713,YES - 다년 forecast를 분기/1년 관측과 직접 대조(§18 evidence class 분리 원칙 위반 위험),True,"realistic_growth (다년 지속가능성장률, n≈12년)",28.0,KEYS,False,
+,0.0,realized_multiyear,GS-11-ROP,growth_scorecard (2026-08-13),5.5,NO - 동일 증거등급,False,"realistic_growth (다년 지속가능성장률, n≈12년)",5.5,ROP,True,
+판정 유지·강화(조건1 순증 수치는 차기 확인),,binary_precommitted,FC-DUOL,falsification_condition (분석일 2026-08-02),,NO - 이진 사전등록이라 등급 불일치 없음,False,binary falsification condition (사전등록 반증조건),,DUOL,,NOT_TRIGGERED
+코호트별 NDR 확보 후 재판정,,binary_precommitted,FC-MNDY,falsification_condition (분석일 2026-08-02),,NO - 이진 사전등록이라 등급 불일치 없음,False,binary falsification condition (사전등록 반증조건),,MNDY,,INCONCLUSIVE
+"판정 유지, 다음 분기 우선 관찰대상",,binary_precommitted,FC-PGR,falsification_condition (분석일 2026-08-03),,NO - 이진 사전등록이라 등급 불일치 없음,False,binary falsification condition (사전등록 반증조건),,PGR,,NOT_TRIGGERED
+판정 유지·강화,,binary_precommitted,FC-SE,falsification_condition (분석일 2026-08-03),,NO - 이진 사전등록이라 등급 불일치 없음,False,binary falsification condition (사전등록 반증조건),,SE,,NOT_TRIGGERED
+,,binary_precommitted,FC-TCOM,falsification_condition (분석일 2026-08-04),,NO - 이진 사전등록이라 등급 불일치 없음,,binary falsification condition (사전등록 반증조건),,TCOM,,UNVERIFIED
+"재검토 완료(2026-08-13, 사용자 승인): 매수리스트 CONFIDENCE_ADJ 72->45 하향 + THESIS_BROKEN_FLAG 추가(0.85x) - 비중 4.80%->2.70%로 축소(scripts/build_buylist_2026_08_03.py). 공식 ledger의 Gap/RAR/판정은 변경하지 않음(growth_scorecard 원칙상 realized_quarterly· guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지 병기만).",,binary_precommitted,FC-TTD,falsification_condition (분석일 2026-08-03),,NO - 이진 사전등록이라 등급 불일치 없음,True,binary falsification condition (사전등록 반증조건),,TTD,,TRIGGERED

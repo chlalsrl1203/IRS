@@ -1,0 +1,21 @@
+{
+  "prediction_id": "PH-2026-08-16-4f9c7f28",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "PH",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-07-25 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.045576,
+    "expected_high": 0.077634,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.0776, '5y': 0.0771, '10y': 0.0456})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "4f9c7f28f62574dc3ed665e62a94a3f4bfa133900787f04ec9166fcb989b3e57",
+  "source": "PH_2026-07-25.json (engine_version=v3.19, 원분석일=2026-07-25)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

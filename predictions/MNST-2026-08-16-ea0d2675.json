@@ -1,0 +1,21 @@
+{
+  "prediction_id": "MNST-2026-08-16-ea0d2675",
+  "core": {
+    "thesis_id": "NO_THESIS_SIGNAL_ONLY",
+    "ticker": "MNST",
+    "prediction_date": "2026-08-16",
+    "horizon": "다음 공식 회계연도 실적 발표(원분석 2026-07-25 기준)",
+    "metric": "매출 YoY 성장률(연간)",
+    "expected_low": 0.095368,
+    "expected_high": 0.125202,
+    "assumption": "realistic_growth_estimate()가 이미 계산한 3y/5y/10y 매출 CAGR 구성요소({'3y': 0.0954, '5y': 0.1252, '10y': 0.1178})의 최소~최대 범위가 다음 회계연도에도 유지된다는 가정. 새 밴드폭을 발명하지 않고 엔진이 이미 산출한 값만 재사용했다.",
+    "unit": "decimal"
+  },
+  "core_hash": "ea0d2675f255012ee23d827e7d0a178f5832d9f5a64955421d8958002efc85eb",
+  "source": "MNST_2026-07-25.json (engine_version=v3.19, 원분석일=2026-07-25)",
+  "status": "OPEN",
+  "actual_value": null,
+  "actual_date": null,
+  "forecast_error": null,
+  "resolution_note": null
+}

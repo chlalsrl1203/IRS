@@ -1,5 +1,50 @@
 # CHANGELOG
 
+## Historical Replay 감사 — §66 STOP CONDITION + 예측봉인 개시 (2026-08-16)
+
+진짜 Historical Replay는 지금 불가능하다고 공식 선언했다 — 전체 프로젝트
+이력이 22일뿐이라 미래 아웃컴 관측 자체가 시간적으로 존재하지 않는다
+(데이터 품질 문제 아님). "T0를 3주 전으로 재정의"하는 유혹을 거부하고,
+대신 이미 존재하던 17건의 초단기(9~11일) T0→결과 관측을 재발견해 엄격
+재분석했다.
+
+**문서-코드 괴리 2건 발견**: (1) "34종목 PIT_UNKNOWN"이라 서술했으나 실제로는
+`meta.point_in_time` 키 자체가 없음(필드 부재, 상태값 아님). (2) "예측/논거
+인프라 완성"이라 기록했으나 `predictions/`·`thesis/` 디렉터리가 파일시스템에
+존재하지 않았음(실사용 0건). v3.32(버전스탬프)에 이어 세 번째 반복되는
+"문서가 코드보다 낙관적" 패턴.
+
+**TTD 5-why**: 유일한 INCORRECT 사례. 반증조건 3/4 발동(Q2 가이던스 하회,
+Q3 역성장, 경영진 5번째 교체) → 근본원인은 Realistic Growth가 구조적으로
+거버넌스 리스크를 담을 그릇이 아니라는 것. 경고는 이미 있었다(2026-08-03
+정성조사, Confidence 94→72) — "병기, 자동판정 안 함" 원칙 때문에 반증조건
+발동 전까지 라벨이 유지된 것. Decision Impact는 HIGH(매수리스트 비중
+4.80%→2.70%, 이미 실행됨).
+
+**기존 감사 5개 주장 독립 재현 — 전부 일치**(corr=+0.801, DRS제거 1/34,
+모델선택flip 11/34, gap_range robust=False 21/34 등). [DOCUMENTED CLAIM] →
+[EMPIRICALLY VALIDATED at reproduction level].
+
+**신규 절제실험**: 구조적할인/Lynch캡 제거 → 판정변경 4/34(12%). 세
+절제실험 비교: DRS(3%) ≪ 구조적할인/캡(12%) ≪ 모델선택(32%). MCK가 캡 없이
+할인율 단독으로 판정이 뒤집히는 가장 순수한 사례.
+
+**#1 우선순위 조치**: 34종목 예측을 오늘(2026-08-16) 봉인(`scripts/
+freeze_predictions_2026_08_16.py`). 근거: 예측 인프라 완성 후 실사용 0건 —
+3개월 뒤에도 검증이 시작 안 될 상태였다. expected_range는 엔진이 이미 계산한
+CAGR 구성요소(3y/5y/10y) 최소~최대를 그대로 재사용, 새 판단 발명 없음.
+`thesis_id="NO_THESIS_SIGNAL_ONLY"`로 실제 Thesis 부재를 정직하게 기록.
+`engine/` 무변경, `ENGINE_VERSION` 불변.
+
+**작성 중 자체 오류 정정 1건**: case_results.md 초안이 검증 없이 "DUOL·SE가
+모델선택에 취약하다"고 적었다가 실제 gap_range 데이터 대조 후 즉시 정정
+(둘 다 robust=True, 취약한 건 TCOM 하나뿐).
+
+산출물: `reports/historical_validation/`(12개 문서) + `data/historical_
+validation/`(5개 CSV) + `predictions/`(신규 34건). 단일 IRS 점수 없음(§61).
+
+테스트 435 → 441개. 34종목 8개 지표 완전 동일, ledger·engine 무수정.
+
 ## v3.51 — 가정집합 Gap 범위: 판정을 점에서 범위로 (2026-08-15)
 
 2026-08-15 투자가치 감사의 SINGLE NEXT ACTION 실행.
