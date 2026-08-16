@@ -87,7 +87,11 @@ def fundamental_view(ledger: dict) -> dict:
         "operating_margins": d.get("op_margins"),
         "evidence_supported_expectation": ledger["growth"]["realistic_growth"],
         "lynch_type": ledger["lynch"]["used"],
-        "growth_cap_applied": ledger["growth"].get("cap_applied"),
+        # ⚠️ `cap_applied`는 growth **최상위가 아니라 breakdown 안**에 있다.
+        # v3.50 초판이 `ledger["growth"].get("cap_applied")`로 읽어 6종목
+        # (BRO/CDNS/DUOL/GEN/MNDY/PDD)이 캡에 걸려 있는데도 전부 None을
+        # 반환했다 - 조용히 틀리는 유형이라 감사에서야 잡혔다.
+        "growth_cap_applied": (ledger["growth"].get("breakdown") or {}).get("cap_applied"),
         "note": (
             "재무제표에서만 나오는 값이다 - 시가총액·주가와 무관하며, "
             "Expectation Gap이 움직여도 여기가 안 움직였다면 사업 현실은 그대로다."

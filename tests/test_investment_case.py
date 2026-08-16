@@ -223,3 +223,28 @@ def test_all_existing_ledgers_are_signal_only():
         led = json.load(open(path, encoding="utf-8"))
         stage = build_case(led)["completeness"]["stage"]
         assert stage == "SIGNAL_ONLY", f"{path}: {stage}"
+
+
+def test_growth_cap_applied_is_read_from_breakdown_not_top_level():
+    """
+    ⚠️ 회귀 테스트: `cap_applied`는 growth 최상위가 아니라 `breakdown` 안에 있다.
+    v3.50 초판이 최상위에서 읽어 캡에 걸린 종목 전부가 None으로 나왔다 -
+    조용히 틀리는 유형이라 값이 있는 종목으로 고정해둔다.
+
+    캡 바인딩 종목은 Gap이 사실상 '상한 - Implied Growth'만 남아 성장분석이
+    결과에 기여하지 못하므로(M-1), 이 플래그가 죽어 있으면 그 사실을 놓친다.
+    """
+    import glob
+
+    capped = []
+    for path in sorted(glob.glob("ledger/*.json")):
+        led = json.load(open(path, encoding="utf-8"))
+        if (led["growth"].get("breakdown") or {}).get("cap_applied"):
+            capped.append(led)
+
+    assert capped, "캡에 걸린 ledger가 하나도 없다 - 테스트 전제 변경됨"
+    for led in capped:
+        fv = fundamental_view(led)
+        assert fv["growth_cap_applied"], (
+            f"{led['meta']['ticker']}: 캡이 걸렸는데 growth_cap_applied가 비었다"
+        )
