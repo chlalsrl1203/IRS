@@ -3569,3 +3569,68 @@ holdout_validation·case_results), `data/historical_validation/`(5개 CSV),
 설명했다.
 
 테스트 435 → 441개. 34종목 8개 지표 완전 동일, ledger·engine 무수정.
+
+## v3.52 — structural_discount_rate() 외부 경제적 근거 조사 (2026-08-16,
+Historical Replay 감사 "다음 감사가 반드시 할 일" 2번 실행)
+
+### PROBLEM
+
+`structural_discount_rate()`는 34종목 판정의 **12%를 좌우**하는데(ablation
+실측, `ablation_analysis.md`) 코드 주석 한 줄 말고는 근거가 없었고, `v3.46`이
+만든 `VALIDATION_STATUS`(계약서 40절 5단계 인식론적 사다리) 딕셔너리에
+**항목 자체가 없었다** - `erp_from_drs`·`lynch_type_caps`·`rar` 등은 라벨이
+있는데 이 함수만 라벨조차 안 붙어 있었다. 함수는 사실 서로 다른 두
+메커니즘을 하나로 합친 것: (1) 추세둔화 조정(`trend_delta` = 10y CAGR -
+3y CAGR, 둔화면 할인 확대), (2) 초대형주 가산(시총≥1000이면 +3%p, ≥200이면
++1%p 고정 가산, 10억 단위).
+
+### EXTERNAL EVIDENCE (§49 - 1차 학술문헌 우선)
+
+**Chan, Karceski, Lakonishok, "The Level and Persistence of Growth Rates"**
+(Journal of Finance Vol 58 No 2, 2003, pp.643-684 / NBER Working Paper
+w8282) - 3개 독립 출처(SSRN 등재정보·NBER 논문페이지·Illinois Experts
+저자소속 초록페이지)로 실재를 확인. **원문 PDF는 2회(NBER·저자 소속사 LSV
+Asset Management) 모두 텍스트 추출 실패**(FlateDecode 압축 바이너리만
+반환) - 확보한 근거는 초록 수준(Illinois Experts HTML)이라는 한계를
+명시한다.
+
+확인된 헤드라인: **"장기 이익성장에 우연 이상의 지속성이 없다"** - 최근
+고성장을 그대로 미래로 연장하면 안 된다는 `trend_delta` 메커니즘의 핵심
+전제와 방향이 정확히 일치한다. "다양한 예측변수를 써도 예측력이 낮다",
+IBES 애널리스트 장기성장 전망이 "과도하게 낙관적"이라는 발견도 함께
+확인됐다. **초록에는 기업규모(firm size) 관련 언급이 없다** - 초대형주
+가산 메커니즘을 지지하는 근거는 확보하지 못했다(지지도 반박도 아닌
+[원문 미확인]). 별도로 "규모×성장평균회귀" 관계 자체를 검색한 결과도
+혼재됐다(단조적으로 "클수록 할인 확대"를 지지하는 문헌을 찾지 못함).
+
+### 판정
+
+두 구성요소를 **분리해서** 라벨링했다(하나로 뭉뚱그리면 근거 있는 절반이
+근거 없는 절반을 가려버린다):
+- **trend_delta 메커니즘**: `ECONOMICALLY_SUPPORTED`로 승격(방향은 문헌
+  일치, 단 `deceleration_sensitivity=0.5` 반응계수 자체는 여전히 임의값이라
+  `EMPIRICALLY_SUPPORTED`나 `CALIBRATED`는 아님).
+- **초대형주 가산(+3%p/+1%p)**: `IMPLEMENTED_NOT_VALIDATED` 그대로 유지,
+  근거 없음을 명시.
+
+**코드 로직은 바꾸지 않았다** - 혼재된 외부검색 결과만으로 가산항을
+지금 수정하면 이 프로젝트가 반복 확립한 원칙("근거 없이 유지하던 걸
+근거 없는 다른 숫자로 바꾸는 것은 개선이 아니다" - LYNCH_TYPE_CAPS·P/B
+임계값·ERP매핑과 동일 판단)을 정확히 위반하는 것이 된다. `VALIDATION_
+STATUS` 딕셔너리에 두 구성요소의 근거 수준을 라벨로만 추가했다 - 로직
+변경 0줄. 전문은 `reports/historical_validation/structural_discount_
+research.md`.
+
+### 검증
+
+테스트 441개 전부 통과, 34종목 골든재현 8개 지표 완전 동일. `ENGINE_
+VERSION` v3.51 → v3.52(VALIDATION_STATUS 라벨 신설 - v3.32 규칙에 따라
+`engine/` 변경 시 상수 갱신).
+
+### 남은 한계
+
+논문 원문 본문(회귀계수·규모효과 세부 분석)에 끝내 접근하지 못해 확보한
+근거는 초록 수준이다 - 초록에 규모 관련 언급이 없다고 해서 원문 본문에도
+없다는 뜻은 아니므로 [원문 미확인]으로 정직하게 남겨둔다. 다음에 이 함수를
+다시 볼 여력이 생기면 초대형주 가산 하위요소부터 검토할 것(구조적할인
+12% 영향력 중 상대적으로 더 취약한 부분이라는 사실을 이번에 확정했다).

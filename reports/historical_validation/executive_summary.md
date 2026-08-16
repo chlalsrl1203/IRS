@@ -55,7 +55,11 @@
 ## 다음 감사가 반드시 할 일
 
 1. `predictions/` 34건 중 해소 가능한 것부터 `resolve_prediction()` 실행(3개월 뒤~)
-2. 이번에 신규 발견한 `structural_discount_rate()` 12% 영향력에 대한 경제적
-   근거 조사(외부연구 필요 — 이번엔 저장소 내부 데이터로 충분해 생략함)
+2. ~~이번에 신규 발견한 `structural_discount_rate()` 12% 영향력에 대한 경제적
+   근거 조사~~ — **2026-08-16 완료(v3.52)**. trend_delta 메커니즘은
+   Chan/Karceski/Lakonishok(JF 2003)로 `ECONOMICALLY_SUPPORTED` 승격, 초대형주
+   가산(+3%p/+1%p)은 근거 못 찾아 `IMPLEMENTED_NOT_VALIDATED` 유지 - 코드는
+   무변경, 라벨만 정직화. 상세는
+   `reports/historical_validation/structural_discount_research.md`.
 3. TCOM류 "조합축에서만 취약한" 6종목(`ablation_analysis.md`)의 개별 축
    분해 — 이번엔 존재만 확인, 원인 미분해

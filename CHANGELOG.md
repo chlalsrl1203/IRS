@@ -1,5 +1,21 @@
 # CHANGELOG
 
+## v3.52 — structural_discount_rate() 외부 경제적 근거 조사 (2026-08-16)
+
+Historical Replay 감사(`executive_summary.md` "다음 감사가 반드시 할 일" 2번)
+가 지목한 12% 판정영향력 함수의 경제적 근거를 §49-51 절차로 조사했다.
+`trend_delta`(최근 3y 성장이 10y 평균보다 느려지면 할인 확대) 메커니즘은
+Chan/Karceski/Lakonishok(Journal of Finance 2003, NBER w8282 - "장기 이익
+성장은 우연 이상 지속되지 않는다")가 방향을 지지함을 확인해 `VALIDATION_
+STATUS`에 `ECONOMICALLY_SUPPORTED`로 신규 등재했다. 반면 초대형주 가산
+(시총≥1000이면 +3%p, ≥200이면 +1%p)은 지지·반박 문헌 둘 다 못 찾아
+`IMPLEMENTED_NOT_VALIDATED`로 명시했다 - 근거 없는 걸 근거 없는 다른 값으로
+바꾸지 않는다는 원칙대로 **코드 로직은 그대로 두고 라벨만 정직하게 붙였다**
+(`reports/historical_validation/structural_discount_research.md`). 논문
+원문 PDF는 2회(NBER·저자 소속사 LSV Asset Management) 모두 텍스트 추출
+실패해 확보한 근거는 초록 수준 - 그 한계도 문서에 명시했다. 테스트 441개
+전부 통과, 34종목 골든재현 8지표 완전 동일. `ENGINE_VERSION` v3.51 → v3.52.
+
 ## Historical Replay 감사 — §66 STOP CONDITION + 예측봉인 개시 (2026-08-16)
 
 진짜 Historical Replay는 지금 불가능하다고 공식 선언했다 — 전체 프로젝트

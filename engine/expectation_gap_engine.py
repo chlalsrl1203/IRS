@@ -33,7 +33,7 @@ import statistics
 #
 # **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
 # 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
-ENGINE_VERSION = "v3.51"
+ENGINE_VERSION = "v3.52"
 
 # ======================================================================
 # 모델 검증 상태 - v3.46에서 도입(2026-08-15 Phase 0 감사 C-05)
@@ -59,6 +59,12 @@ VALIDATION_STATUS = {
     "rar": "SOFTWARE_VALIDATED (ER<0 구간에서 방향 반전 - v3.26 경고 배선)",
     "judgment_band": "SOFTWARE_VALIDATED (±5%p는 33종목 관측 기반 시작점)",
     "implied_growth": "SOFTWARE_VALIDATED (Gordon/2단계 DCF - 수학적으로는 정확)",
+    "structural_discount_rate": (
+        "trend_delta 메커니즘: ECONOMICALLY_SUPPORTED (Chan/Karceski/Lakonishok "
+        "2003 JF - 장기 이익성장은 우연 이상 지속되지 않음, 방향 일치·계수 미검증). "
+        "초대형주 가산(+3%p/+1%p): IMPLEMENTED_NOT_VALIDATED (근거 문헌 못 찾음 - "
+        "2026-08-16 외부연구, reports/historical_validation/structural_discount_research.md)"
+    ),
 }
 
 # ======================================================================
