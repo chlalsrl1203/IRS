@@ -57,6 +57,7 @@ from engine.expectation_gap_engine import (
     scenario_return_from_growth,
     structural_discount_rate,
 )
+from engine.provenance import PROVENANCE_UNKNOWN
 
 MODEL_DIVERGENCE_WARNING_THRESHOLD = 0.03  # 3%p 이상 벌어지면 경고
 INSURER_GROWTH_DIVERGENCE_THRESHOLD = 0.05  # 5%p 이상 벌어지면 경고(v3.22)
@@ -217,6 +218,16 @@ class AnalysisInputs:
     # 새 ledger부터 명시적으로 남긴다).
     price_at_analysis: float = None
     currency: str = "USD"
+
+    # ── 값 단위 출처 기록 - v3.50에서 배선(계약서 §6) ─────────────────────
+    # `data_sources`(자유 문자열)로는 "FY2023 매출이 어느 공시에서 왔고 언제
+    # 공개됐는가"에 답할 수 없다. `engine/provenance.py`가 만드는 기록을 그대로
+    # 담는 opt-in 필드다 - None이면 기존 동작 그대로이며, 기존 34종목은
+    # PROVENANCE_UNKNOWN으로 남는다(소급 생성 금지, §6).
+    #
+    # 생성은 `provenance.provenance_from_sec_facts()`로 자동화한다 - 손으로
+    # 적게 만들면 결국 아무도 안 적는다(이 프로젝트가 문서 규칙에서 네 번 겪은 실패).
+    provenance: dict = None
 
     # Realistic Growth 직접 오버라이드 - v3.28에서 배선(2026-08-04, ROP 유기적
     # 성장률 교차검증이 실증사례). M&A 롤업 성장 종목(GEN/ROP/BRO 패턴)은
@@ -1043,6 +1054,9 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             "price_at_analysis": inputs.price_at_analysis,
             "currency": inputs.currency,
             "point_in_time": point_in_time,
+            # v3.50 §6: 값 단위 출처. 없으면 PROVENANCE_UNKNOWN이 정확한 상태다
+            # (기존 34종목이 전부 여기 해당 - 소급 생성하지 않는다).
+            "provenance": inputs.provenance or {"status": PROVENANCE_UNKNOWN},
         },
         "data_limitations": data_limitations,
         "inputs": asdict(inputs),

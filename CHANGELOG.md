@@ -1,5 +1,139 @@
 # CHANGELOG
 
+## v3.51 — 가정집합 Gap 범위: 판정을 점에서 범위로 (2026-08-15)
+
+2026-08-15 투자가치 감사의 SINGLE NEXT ACTION 실행.
+
+**문제**: 기존 강건성 도구 2개(`sensitivity_check`, `gap_distribution`)가 둘 다
+판정을 3%만 바꾸는 축(DRS)을 검사하고, 32%를 바꾸는 축(모델 선택)은 검사하지
+않았다.
+
+**해결**: `gap_analysis.gap_range_over_assumptions()` — 모델 2종 × r±1%p ×
+g_terminal±1%p × n±2년 격자에서 Gap 범위·`judgment_set`·`robust`·`flip_drivers`
+산출. 새 방법론 0줄(기존 `implied_growth_*` 재사용). `investment_case`에 병기.
+
+**실측**: robust=False **21/34**. 기존 도구는 그중 2종목만 잡고 있었고(놓친 것
+0), 새로 19종목을 잡았다. 가장 심한 9종목은 **모델 선택만으로 Gap이 12~20%p**
+움직인다(판정 밴드의 2.5~4배).
+
+⚠️ **성공기준(8~15종목)이 빗나갔으나 격자를 조정하지 않았다**(§21 금지).
+원인은 격자 설계가 아니라 내 추정 오류 — 감사에서 두 축을 각각 측정해놓고
+성공기준은 하나만 근거로 잡았다. 독립 검증으로 model_choice 11·discount_rate 6이
+감사 실측과 정확히 일치했다.
+
+⚠️ **이 범위는 불확실성의 하한이다** — Realistic Growth를 고정하므로. 감사가
+측정한 최대 오차원이 바로 그 축이다(괴리 중앙값 8.70%p). `robust=True`는
+"확실하다"가 아니라 "이 격자 안에서는 안 뒤집힌다"는 뜻이다.
+
+**H-005 사전등록**: 결과가 존재하기 전에(보유수익률 관측 0건) `robust` 정의와
+격자를 고정해 등록. 결과 방향은 가정하지 않는다.
+
+테스트 425 → 435개. 34종목 8개 지표 완전 동일, ledger 무수정.
+`ENGINE_VERSION` v3.50 → v3.51.
+
+## v3.50 — Provenance / Investment Case / Drift 3분할 / 연구 순서 고정 (2026-08-15)
+
+사용자 "IRS 최종 방향성 및 실행 명세"의 §19 우선순위를 따랐다. 7·8(Historical
+Replay, 첫 OOS 연구)은 구조적으로 막혀 DEFERRED.
+
+- **`engine/provenance.py` 신설(§6)** — 값 하나에 7개 축(source/publication_date/
+  period/value/unit/currency/retrieval_date)을 붙인다. `unit`과 `currency`를
+  분리해 PDD의 CNY 미표기(M-6) 같은 문제를 구조적으로 막는다. SEC companyfacts에서
+  **자동 생성**(BSX 11개년 중 10개년, SEC 값이 ledger 값과 정확히 일치).
+  ⚠️ 기존 34종목은 `PROVENANCE_UNKNOWN` 유지 — 소급 생성 금지(§6).
+- **`engine/investment_case.py` 신설(§3)** — §3의 14개 필드를 조합하는 얇은
+  계층. 새 계산 0줄. `PASS` 어휘 추가(기존 6개는 불변, compatibility 유지).
+- **`thesis_monitor.decompose_drift()` (§9)** — Price/Fundamental/Expectation
+  drift 분리. 항등식 `ΔGap = ΔRG − ΔIG`로 자기검증. **가치함정 패턴**(펀더멘털
+  하락 + Gap 확대)에 경고. ⚠️ Expectation은 Price를 포함하므로 합계를 만들지 않는다.
+- **실험 등록부 확장(§10/§12/§14)** — 재현 좌표 4개 필수화, 결과 판정
+  (REJECTED/INCONCLUSIVE/PROMISING/VALIDATED) 신설, `depends_on`으로 연구 순서를
+  코어에 고정. H-001~H-004 등록(데이터가 없는 지금 등록해 순서를 못박는다).
+  EXP-001은 삭제하지 않고 `SUPERSEDED`.
+
+### 구현 중 잡은 결함 2건
+
+1. **잠복 버그**: `gap_drivers`가 `implied_growth_two_stage`의 튜플 반환을
+   스칼라로 다뤄 TypeError. 골든케이스(CDNS)가 single_stage라 v3.48 테스트를
+   통과했고 two_stage 종목(BSX)에서만 터졌다. 회귀 테스트 추가.
+2. **설계 오류**: Investment Case 초판이 `gap_change`/`gap_drivers`를 '누락'으로
+   세서 갓 분석한 종목이 전부 INCOMPLETE로 찍혔다. 비교 대상이 생겨야 정의되는
+   값이라 시간 의존 필드로 분리 — 34종목 전부 `SIGNAL_ONLY`가 정확한 상태다.
+
+테스트 369 → 424개. **34종목 8개 지표 완전 동일, ledger 무수정.**
+`ENGINE_VERSION` v3.49 → v3.50.
+
+## v3.49 — PIT에 실제 데이터 공급 + 34종목 미래정보 감사 (2026-08-15)
+
+v3.47이 PIT 필드와 검증 규칙을 만들었지만 **실제로 채운 종목이 0건**이었다 -
+채울 수단이 없었기 때문이다. v3.47이 금지한 것은 filing_date를 **추정**하는
+것이지 1차 자료에서 **조회**하는 것이 아니다.
+
+- **`engine/filing_dates.py` 신설** — SEC XBRL companyfacts의 `filed`(최초
+  공시일)에서 회계연도별 제출일을 얻는다. 같은 연도가 여러 보고서에 비교표로
+  반복 등장하므로 **최초 제출일(min)**을 택하고, 제출일은 태그가 아니라 공시의
+  속성이므로 **모든 태그를 훑는다**(외국 발행사 20-F + ifrs-full이 정확히 이
+  함정 — 태그를 고정했다면 조용히 빈 결과가 나왔을 지점, 테스트로 고정).
+- **`pit_inputs_for()`** — 새 분석에서 한 줄로 PIT를 채우는 헬퍼. 최근
+  회계연도를 못 찾으면 필드를 빼서 `PIT_UNKNOWN`으로 정직하게 떨어뜨린다.
+- **34종목 미래정보 감사** (`scripts/pit_audit_2026_08_15.py`) — SEC 제출일과
+  `analyzed_at` 대조. **위반 0종목, 조회 실패 0종목**
+  (`reports/pit_audit_2026-08-15.json`).
+
+⚠️ **그런데도 34종목을 PIT_VALID로 바꾸지 않았다.** 이 감사는 "그 시점에
+공시돼 있었는가"만 답하고 "ledger의 숫자가 그 시점 값이었는가"(재작성 여부)는
+답하지 못한다. 검증 못 한 축이 남은 채로 VALID를 붙이면 검증하지 않은 것을
+검증했다고 주장하는 게 된다. ledger는 한 파일도 수정하지 않았다.
+
+BSX 실데이터 확인: PIT 미기입 `PIT_UNKNOWN` → 11개년 실제 제출일 주입
+`PIT_VALID`, Gap/RAR/DRS/판정 전부 불변, 분석일을 앞당기면 실행 거부.
+
+테스트 355 → 369개. 34종목 8개 지표 완전 동일. `ENGINE_VERSION` v3.48 → v3.49.
+
+## v3.48 — 신호에서 결정으로: Thesis / Prediction / Experiment (2026-08-15)
+
+이 프로젝트는 **"이 종목이 싼가"까지만 답하고 있었다.** 싸다는 것과 사야 한다는
+것 사이의 관문이 코드에 없었고, 판단이 맞았는지 사후 검증할 구조도 없었다.
+새 밸류에이션 방법론은 하나도 만들지 않고, 기존 계산을 투자판단·사후검증에
+**연결**한다.
+
+### 신규 모듈 4개
+
+- **`engine/gap_analysis.py`** — Gap을 다섯 축(level/change/drivers/evidence/
+  uncertainty)으로 분해. 2·4·5는 thesis_monitor·growth_scorecard·gap_distribution을
+  호출만 하고 3만 새로 만들었다. attribution은 정확한 항등식 + OAT **잔차 명시**만
+  쓴다. CDNS 실측: 다인자 변경 시 잔차가 전체 변화의 **108%**이고 개별 기여도
+  합은 **부호까지 반대** — 잔차를 숨기는 attribution이 왜 위험한지 실증.
+- **`engine/thesis.py`** — Investment Thesis + Decision + 모니터링 상태.
+  **Gap→액션 자동 매핑 함수를 의도적으로 만들지 않았고**, 6개 관문 근거가 비면
+  결정 기록을 거부한다. 테스트가 공개 함수 시그니처를 훑어 경계를 지킨다.
+- **`engine/prediction_ledger.py`** — 예측 사전등록. **결과를 알고 난 뒤 예측을
+  고칠 수 없다**(코어 SHA-256 대조). `forecast_error`는 부호를 유지해 편향
+  추적이 가능하다.
+- **`engine/experiment_registry.py`** — 실험 등록부. results append-only,
+  코어 변경 불가, **삭제 함수 없음**.
+
+### 구현 중 스스로 잡은 결함
+
+`record_result()`의 코어 변경 검사가 **절대 발동할 수 없는 죽은 코드**였다
+(append 전후 코어를 비교했는데 append는 코어를 안 건드린다). prediction_ledger의
+`core_hash()`를 재사용해 등록 시점 지문과 대조하도록 고쳤다.
+
+### EXP-001
+
+근본 가설("Gap이 미래 위험조정수익률과 관계가 있는가")을 등록. **결과를 미리
+가정하지 않는다.** status=BLOCKED — 분석 이력이 3주뿐이고 `price_at_analysis`가
+34종목 중 **9건**뿐이라 실행 전제가 없다(실측 확인, 초안의 "10건"을 정정).
+
+### 검증
+
+BSX 실데이터로 전체 워크플로 end-to-end 실행 확인(분석→Gap→Thesis→결정→
+반증조건→예측 봉인→실제 비교→상태 갱신). 데모는 기본적으로 임시 디렉터리에
+쓴다 — 검토되지 않은 투자논거를 저장소에 남기지 않는다.
+
+테스트 282 → 355개. **34종목 전건 재실행 8개 지표 완전 동일, ledger 무수정.**
+`ENGINE_VERSION` v3.47 → v3.48.
+
 ## v3.47 — Phase 3: Point-in-Time 토대 + 과거기록 자동 대조 (2026-08-15)
 
 계약서 STEP 1-16의 남은 항목 중, Phase 0 감사에서 **DEFERRED로 분류했던

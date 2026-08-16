@@ -158,3 +158,120 @@ def test_recompute_never_writes_to_ledger_dir():
 def test_recompute_rejects_nonpositive_market_cap():
     with pytest.raises(ValueError):
         recompute_gap_at_market_cap(_load("BSX"), 0)
+
+
+# ----------------------------------------------------------------------
+# Drift 3분할 (v3.50, 계약서 §9)
+# ----------------------------------------------------------------------
+
+import glob as _glob  # noqa: E402
+import json as _json  # noqa: E402
+
+from dataclasses import replace as _replace  # noqa: E402
+
+from engine.pipeline import run_analysis as _run  # noqa: E402
+from engine.thesis_monitor import (  # noqa: E402
+    DRIFT_KINDS,
+    decompose_drift,
+    inputs_from_ledger,
+)
+
+_BSX = _json.load(open(sorted(_glob.glob("ledger/BSX_*.json"))[-1], encoding="utf-8"))
+
+
+def _bsx_inputs():
+    return inputs_from_ledger(_BSX)
+
+
+def test_drift_identity_holds_exactly():
+    """
+    ΔGap = ΔRealisticGrowth - ΔImpliedGrowth 는 대수 항등식이다. 잔차가 0이
+    아니면 세 갈래 중 하나가 잘못 계산된 것이다.
+    """
+    base = _bsx_inputs()
+    now = _run(_replace(base, market_cap=base.market_cap * 0.7))
+    d = decompose_drift(_BSX, now)
+    assert d["identity"]["residual"] == pytest.approx(0.0, abs=1e-12)
+
+
+def test_price_only_change_leaves_fundamental_drift_at_zero():
+    """주가만 변하면 펀더멘털 drift는 정확히 0이어야 한다(재무제표 불변)."""
+    base = _bsx_inputs()
+    now = _run(_replace(base, market_cap=base.market_cap * 0.7))
+    d = decompose_drift(_BSX, now)
+
+    assert d["fundamental_drift"]["change_pp"] == pytest.approx(0.0, abs=1e-12)
+    assert d["expectation_drift"]["change_pp"] != 0.0
+    assert d["dominant_drift"] == "expectation"
+
+
+def test_two_stage_ticker_does_not_crash_on_tuple_return():
+    """
+    ⚠️ 회귀 테스트: `implied_growth_two_stage()`는 (성장률, 로그, 반복) 튜플을
+    돌려주는데 초판이 튜플째로 뺄셈해 TypeError를 냈다. 골든케이스(CDNS)가
+    single_stage라 테스트를 통과했고, two_stage 종목에서만 터졌다.
+    """
+    assert _BSX["implied_growth"]["model_used"] == "two_stage", "테스트 전제 변경됨"
+    base = _bsx_inputs()
+    now = _run(_replace(base, market_cap=base.market_cap * 0.8))
+    d = decompose_drift(_BSX, now)
+    assert isinstance(d["price_drift"]["implied_growth_contribution"], float)
+
+
+def test_value_trap_pattern_is_flagged():
+    """
+    ⚠️ 가장 위험한 조합: 근거 기반 기대가 **낮아졌는데** Gap은 벌어짐.
+    v3.42 TTD가 정확히 이 패턴이었다(주가 -26.3%, Gap +3.95%p, 동시에
+    반증조건 3개 발동). Gap만 보면 "더 싸졌다"로 읽힌다.
+    """
+    base = _bsx_inputs()
+    latest = max(base.revenue_by_year)
+    # ⚠️ 배율 선택에 근거가 있다. **주가가 펀더멘털보다 더 빠져야** 가치함정
+    # 패턴이 된다 - 초판은 펀더멘털을 너무 심하게(-45%) 훼손시켜 Gap이 오히려
+    # 좁아졌고(-7.59%p) 전제 자체가 깨졌다. 아래 배율은 펀더 -1.45%p / Gap
+    # +3.95%p를 만드는데, 이는 v3.42가 TTD에서 실측한 Gap 확대폭(+3.95%p)과
+    # 정확히 같은 크기다.
+    rev = dict(base.revenue_by_year); rev[latest] = rev[latest] * 0.95
+    ocf = dict(base.operating_cashflow_by_year); ocf[latest] = ocf[latest] * 0.95
+    opi = dict(base.operating_income_by_year); opi[latest] = opi[latest] * 0.95
+
+    now = _run(_replace(base, market_cap=base.market_cap * 0.6,
+                        revenue_by_year=rev, operating_cashflow_by_year=ocf,
+                        operating_income_by_year=opi))
+    d = decompose_drift(_BSX, now)
+
+    assert d["fundamental_drift"]["change_pp"] < 0, "테스트 전제(펀더멘털 악화) 미성립"
+    assert d["gap_change_pp"] > 0, "테스트 전제(Gap 확대) 미성립"
+    assert "가치함정 주의" in d["interpretation"]
+
+
+def test_expectation_drift_contains_price_drift_and_must_not_be_summed():
+    """
+    ⚠️ Expectation Drift는 Price Drift를 **포함한다**(Implied Growth가 시총과
+    FCF0 양쪽에 의존). 둘을 더하면 이중계상이다 - 그래서 이 함수는 합계를
+    만들지 않는다.
+    """
+    base = _bsx_inputs()
+    now = _run(_replace(base, market_cap=base.market_cap * 0.7))
+    d = decompose_drift(_BSX, now)
+
+    assert "더하지 말 것" in d["expectation_drift"]["note"]
+    assert "total_drift" not in d and "drift_sum" not in d
+
+
+def test_drift_does_not_assign_thesis_status():
+    """
+    §9: "완전 자동 판정을 서두르지 마라." drift는 크기와 방향만 내놓고,
+    STRENGTHENING/INVALIDATED 같은 상태는 분석자가 기록한 증거로 정해진다.
+    """
+    base = _bsx_inputs()
+    now = _run(_replace(base, market_cap=base.market_cap * 0.7))
+    d = decompose_drift(_BSX, now)
+
+    blob = _json.dumps(d, ensure_ascii=False, default=str)
+    for status in ("STRENGTHENING", "WEAKENING", "INVALIDATED", "STABLE"):
+        assert status not in blob, f"drift가 thesis 상태({status})를 판정하고 있다"
+
+
+def test_drift_kinds_vocabulary():
+    assert DRIFT_KINDS == ("price", "fundamental", "expectation")

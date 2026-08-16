@@ -223,3 +223,67 @@ def test_krx_ledger_requires_wrapper_of_provenance():
             f"{os.path.basename(path)}: wrapper_of.us_reference_ticker 누락")
         assert wrapper_of.get("tracks_same_index_as"), (
             f"{os.path.basename(path)}: tracks_same_index_as 근거 누락")
+
+
+# ----------------------------------------------------------------------
+# 투자판단 기록 디렉터리 (v3.48 추가) - thesis / predictions / experiments
+# ----------------------------------------------------------------------
+# 세 기록은 ledger와 스키마가 전혀 다르다(judgment/drs 같은 키가 없다).
+# 한 디렉터리에 섞이면 위 무결성 테스트들이 회사 스키마를 가정하고 전수
+# 파싱하다 깨진다 - ETF(v3.35)·KRX(v3.38)에서 이미 두 번 확인한 규칙을
+# 세 번째로 적용한다.
+
+_RECORD_DIRS = ("thesis", "predictions", "experiments")
+_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def test_decision_records_are_not_mixed_into_any_ledger_dir():
+    """thesis/prediction/experiment 기록이 ledger 디렉터리로 새지 않았는지."""
+    ledger_dirs = [LEDGER_DIR, ETF_LEDGER_DIR, KRX_LEDGER_DIR]
+    for d in ledger_dirs:
+        if not os.path.isdir(d):
+            continue
+        for path in sorted(glob.glob(os.path.join(d, "*.json"))):
+            rec = json.load(open(path, encoding="utf-8"))
+            for key in ("thesis", "core_hash", "invalidation_conditions"):
+                assert key not in rec, (
+                    f"투자판단 기록('{key}' 키 보유)이 ledger 디렉터리에 있다: {path}"
+                )
+
+
+def test_experiment_records_keep_their_integrity_hash():
+    """
+    등록된 실험은 전부 core_hash를 갖고 있어야 하고, 그 해시가 현재 코어와
+    일치해야 한다 - 규칙이 사후 변경되지 않았음을 저장소 차원에서 확인한다.
+    """
+    from engine.experiment_registry import core_hash
+
+    d = os.path.join(_ROOT, "experiments")
+    if not os.path.isdir(d):
+        return
+    for path in sorted(glob.glob(os.path.join(d, "*.json"))):
+        rec = json.load(open(path, encoding="utf-8"))
+        assert rec.get("core_hash"), f"{path}에 core_hash가 없다"
+        assert core_hash(rec["core"]) == rec["core_hash"], (
+            f"{path}의 실험 규칙이 등록 이후 변경됐다 - 결과를 본 뒤 규칙을 "
+            f"고치면 검증이 무의미해진다"
+        )
+
+
+def test_predictions_are_never_silently_edited_after_resolution():
+    """
+    저장된 예측 전부에 대해 코어 해시를 재계산해 봉인이 유지되는지 확인한다.
+    resolve_prediction()이 막는 것은 코드 경로뿐이라, 손으로 파일을 고친
+    경우는 이 테스트가 잡는다.
+    """
+    from engine.prediction_ledger import core_hash
+
+    d = os.path.join(_ROOT, "predictions")
+    if not os.path.isdir(d):
+        return
+    for path in sorted(glob.glob(os.path.join(d, "*.json"))):
+        rec = json.load(open(path, encoding="utf-8"))
+        assert core_hash(rec["core"]) == rec["core_hash"], (
+            f"{path}의 예측 코어가 변조됐다 - 결과를 알고 난 뒤 예측을 "
+            f"수정할 수 없다는 것이 이 원장의 유일한 존재 이유다"
+        )

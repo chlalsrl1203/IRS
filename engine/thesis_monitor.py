@@ -230,3 +230,153 @@ def recompute_gap_at_market_cap(ledger: dict, new_market_cap: float) -> dict:
         "realistic_growth_then": ledger["growth"]["realistic_growth"],
         "realistic_growth_now": fresh["growth"]["realistic_growth"],
     }
+
+
+# ────────────────────────────────────────────────────────────────────────
+# Drift 3분할 (v3.50, 계약서 §9)
+# ────────────────────────────────────────────────────────────────────────
+#
+# 위 `recompute_gap_at_market_cap`은 "주가만 변했을 때"를 본다. 그런데 실제로
+# thesis가 흔들리는 원인은 세 가지이고, **셋을 구분하지 못하면 정반대로
+# 대응하게 된다**:
+#
+#   Price Drift        가격만 변함        -> Gap이 벌어져도 사업은 그대로
+#   Fundamental Drift  기업 현실이 변함   -> 근거 기반 기대(Realistic Growth)가 변함
+#   Expectation Drift  시장 요구가 변함   -> Implied Growth가 변함
+#
+# v3.42가 TTD에서 실측한 함정이 정확히 이 지점이다 - 주가가 26.3% 빠지자 Gap이
+# +17.01%p -> +20.96%p로 벌어졌는데, 같은 기간 반증조건 3개가 동시 발동했다.
+# Gap만 보면 "더 싸졌다"지만 Fundamental Drift를 함께 보면 "서사가 무너지는 중"
+# 이다. 셋을 분리하는 것이 가치함정을 구분하는 유일한 방법이다.
+#
+# ⚠️ Expectation Drift는 Price Drift를 **포함한다**(Implied Growth가 시총과
+# FCF0 둘 다에 의존하므로). 두 값을 더해서 쓰지 말 것 - 이중계상이다.
+# 그래서 아래 함수는 합계를 만들지 않고 셋을 나란히 놓기만 한다.
+
+DRIFT_KINDS = ("price", "fundamental", "expectation")
+
+
+def decompose_drift(ledger: dict, current_result: dict) -> dict:
+    """
+    저장된 공식 분석과 새 분석 결과를 대조해 drift를 세 갈래로 나눈다.
+
+    `current_result`: 새 재무데이터(또는 새 시총)로 다시 돌린 `run_analysis()`
+    결과. 이걸 만들려면 어차피 분석을 다시 해야 하므로, **이 함수는 새 계산을
+    하지 않는다** - 두 결과를 비교만 한다.
+
+    정확한 항등식(발명 아님):
+
+        Gap = RealisticGrowth - ImpliedGrowth
+        ΔGap = ΔRealisticGrowth - ΔImpliedGrowth
+             = (Fundamental Drift) - (Expectation Drift)
+
+    Price Drift는 Expectation Drift의 **하위 성분**이라 `gap_analysis.gap_drivers`
+    의 OAT 분해를 재사용해 시총 기여분만 뽑는다(잔차도 함께 온다).
+
+    ⚠️ 이 함수는 상태(STRENGTHENING 등)를 판정하지 않는다. drift의 크기와
+    방향만 내놓고, thesis 상태는 분석자가 기록한 증거로 `thesis.
+    evaluate_thesis_status()`가 정한다(§9: "완전 자동 판정을 서두르지 마라").
+    """
+    from engine.gap_analysis import gap_drivers
+
+    rg_then = ledger["growth"]["realistic_growth"]
+    rg_now = current_result["growth"]["realistic_growth"]
+    ig_then = ledger["implied_growth"]["value"]
+    ig_now = current_result["implied_growth"]["value"]
+    gap_then = ledger["expectation_gap"]
+    gap_now = current_result["expectation_gap"]
+
+    mc_then = ledger["inputs"]["market_cap"]
+    mc_now = current_result["inputs"]["market_cap"]
+
+    # Price Drift: 시총만 바뀌었다고 볼 때의 Implied Growth 변화(OAT)
+    drivers = gap_drivers(ledger, market_cap_now=mc_now)
+    price_component = drivers["contributions"]["market_cap"]
+
+    fundamental = rg_now - rg_then
+    expectation = ig_now - ig_then
+
+    return {
+        "ticker": ledger["meta"]["ticker"],
+        "analyzed_at": ledger["meta"]["analyzed_at"][:10],
+        "gap_then": gap_then,
+        "gap_now": gap_now,
+        "gap_change_pp": gap_now - gap_then,
+
+        # ── 세 갈래 ──────────────────────────────────────────────
+        "price_drift": {
+            "market_cap_then": mc_then,
+            "market_cap_now": mc_now,
+            "market_cap_change_pct": (mc_now / mc_then - 1.0) if mc_then else None,
+            # 시총 변화가 Implied Growth에 기여한 몫(OAT - 유일한 분해 아님)
+            "implied_growth_contribution": price_component,
+            "method": drivers["method"],
+            "residual_is_material": drivers["residual_is_material"],
+        },
+        "fundamental_drift": {
+            "realistic_growth_then": rg_then,
+            "realistic_growth_now": rg_now,
+            "change_pp": fundamental,
+            "note": (
+                "재무제표에서만 나오는 값이다 - 여기가 움직였다면 기업의 경제적 "
+                "현실이 실제로 변한 것이고, 주가와 무관하다."
+            ),
+        },
+        "expectation_drift": {
+            "implied_growth_then": ig_then,
+            "implied_growth_now": ig_now,
+            "change_pp": expectation,
+            "note": (
+                "시장이 요구하는 성장률의 변화. **price_drift를 포함한다**"
+                "(Implied Growth가 시총과 FCF0 양쪽에 의존) - 둘을 더하지 말 것."
+            ),
+        },
+
+        # ── 항등식 자기검증 ──────────────────────────────────────
+        "identity": {
+            "formula": "ΔGap = ΔRealisticGrowth - ΔImpliedGrowth",
+            "residual": (gap_now - gap_then) - (fundamental - expectation),
+        },
+
+        # ── 해석 보조(판정 아님) ─────────────────────────────────
+        "dominant_drift": _dominant_drift(fundamental, expectation),
+        "interpretation": _drift_interpretation(fundamental, expectation,
+                                                gap_now - gap_then),
+    }
+
+
+def _dominant_drift(fundamental: float, expectation: float) -> str:
+    """
+    어느 축이 더 크게 움직였는가. **판정이 아니라 읽기 보조**다 -
+    크기가 크다고 중요한 것은 아니다(작은 fundamental drift가 반증조건을
+    건드리면 그쪽이 결정적이다).
+    """
+    if abs(fundamental) < 1e-12 and abs(expectation) < 1e-12:
+        return "none"
+    return "fundamental" if abs(fundamental) > abs(expectation) else "expectation"
+
+
+def _drift_interpretation(fundamental: float, expectation: float,
+                          gap_change: float) -> str:
+    """
+    ⚠️ 이건 **경고문이지 판정이 아니다.** 가장 위험한 조합(사업이 나빠졌는데
+    Gap이 벌어짐 = 가치함정 패턴)을 눈에 보이게 만드는 것이 목적이다.
+    """
+    if fundamental < 0 and gap_change > 0:
+        return (
+            "[가치함정 주의] 근거 기반 기대가 **낮아졌는데** Gap은 오히려 벌어졌다. "
+            "주가 하락이 펀더멘털 악화를 앞질렀다는 뜻이며, v3.42 TTD가 정확히 "
+            "이 패턴이었다(주가 -26.3%에 Gap +3.95%p, 동시에 반증조건 3개 발동). "
+            "Gap을 매수 근거로 쓰기 전에 반증조건부터 확인할 것."
+        )
+    if fundamental > 0 and gap_change < 0:
+        return (
+            "[선반영 주의] 펀더멘털은 좋아졌는데 Gap은 좁아졌다 - 좋은 소식이 "
+            "이미 가격에 반영됐을 가능성(v3.42 SE 실측 패턴)."
+        )
+    if abs(fundamental) < 1e-12:
+        return (
+            "펀더멘털 불변, 기대/가격만 변동 - 사업 자체에 대한 판단은 "
+            "그대로 유지된다."
+        )
+    return "펀더멘털과 기대가 같은 방향으로 움직였다 - 특이 신호 없음."

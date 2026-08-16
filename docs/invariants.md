@@ -109,6 +109,36 @@
 | B-12 | 대조는 **예외를 던지지 않는다**(조언이지 차단이 아님) | `save_ledger()` try/except | `test_cross_check_never_blocks_saving` |
 | B-13 | 대조 결과는 병기만 하고 공식 수치를 바꾸지 않는다 | `payload["prior_cross_check"]` | `test_cross_check_does_not_alter_official_numbers` |
 
+## B''. v3.48에서 새로 강제하는 불변조건 — 신호/결정 분리와 기록 봉인
+
+| ID | 조건 | 강제 위치 | 검증 테스트 |
+|---|---|---|---|
+| B-14 | Gap을 인자로 받아 액션을 내는 공개 함수가 **존재하지 않는다** | `engine/thesis.py` 설계 | `test_no_function_maps_gap_to_action` |
+| B-15 | 6개 관문 근거가 하나라도 비면 결정 기록 거부 | `build_decision()` | `test_decision_requires_every_gate` |
+| B-16 | 액션은 분석자 입력이며 계산되지 않는다(같은 신호로 다른 액션 기록 가능) | `build_decision()` | `test_decision_action_is_analyst_supplied_not_computed` |
+| B-17 | thesis 코어는 최초 기록 후 변경 불가 | `save_thesis()` | `test_thesis_core_cannot_be_overwritten` |
+| B-18 | decisions/evidence는 append-only | `_append_only()` | `test_decisions_and_evidence_are_append_only` |
+| B-19 | 반증조건 발동은 명시적 호출로만(자동판정 없음), 되돌리기 없음 | `mark_invalidation_triggered()` | `test_invalidation_trigger_is_explicit_never_automatic` |
+| B-20 | 발동된 반증조건은 지지 증거 수와 무관하게 INVALIDATED | `evaluate_thesis_status()` | `test_triggered_invalidation_overrides_all_supporting_evidence` |
+| B-21 | **결과를 알고 난 뒤 예측 수정 불가**(코어 해시 대조) | `resolve_prediction()` | `test_cannot_edit_prediction_after_seeing_outcome` |
+| B-22 | 예측 재해소 불가 | `resolve_prediction()` | `test_cannot_resolve_twice` |
+| B-23 | 실험 코어는 등록 후 변경 불가(해시 대조), results는 append-only | `record_result()` | `test_core_rules_cannot_change_after_registration` |
+| B-24 | 실험 삭제 경로가 코드에 존재하지 않는다 | `experiment_registry` 설계 | `test_no_delete_function_exists` |
+| B-25 | 저장소의 모든 실험/예측 기록이 해시 무결성을 유지 | — | `test_experiment_records_keep_their_integrity_hash` · `test_predictions_are_never_silently_edited_after_resolution` |
+| B-26 | gap_drivers는 잔차를 숨기지 않는다(합≠전체일 때 드러냄) | `gap_drivers()` | `test_multi_factor_change_reports_interaction_residual_openly` |
+
+⚠️ B-26 실측: CDNS 다인자 변경에서 잔차가 전체 변화의 **108%**이고 개별 기여도
+합은 **부호까지 반대**였다. 이 분해는 참고용이며 개별 기여도를 단독 인용하면 안 된다.
+
+## B'''. v3.49에서 새로 강제하는 불변조건 — SEC 제출일 조회
+
+| ID | 조건 | 강제 위치 | 검증 테스트 |
+|---|---|---|---|
+| B-27 | 연차 제출일은 **최초 공시일(min)**이며 10-Q·부분기간은 제외 | `annual_filing_dates()` | `test_picks_earliest_filing_for_a_fiscal_year` · `test_quarterly_filings_are_excluded` |
+| B-28 | 태그를 고정하지 않아 외국 발행사(20-F/ifrs-full)도 잡힌다 | `annual_filing_dates()` | `test_foreign_issuer_20f_and_ifrs_taxonomy_recognized` |
+| B-29 | 제출일 미상 연도를 '안전'으로 간주하지 않는다 | `check_lookahead()` | `test_unknown_years_are_reported_not_assumed_safe` |
+| B-30 | 최근 회계연도 제출일을 못 찾으면 필드를 **비워** `PIT_UNKNOWN`으로 떨어뜨린다 | `pit_inputs_for()` | — (억지로 채우면 "검증한 척"이 된다) |
+
 ---
 
 ## C. 아직 보장하지 않는 조건 (NOT ENFORCED — 향후 과제)
@@ -118,8 +148,9 @@
 
 | ID | 조건 | 현재 상태 | 관련 |
 |---|---|---|---|
-| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | **규칙은 v3.47에서 강제(B-7)되나 실제로 채운 종목이 0건**이라 34종목 전부 `PIT_UNKNOWN`. 즉 *수단은 생겼고 데이터는 아직 없다* | change_plan C-10 |
+| C-1 | `filing_date <= analysis_as_of` (미래정보 차단) | 규칙 강제(B-7) + v3.49에서 조회 수단 확보(B-27). **새 분석은 채울 수 있으나 기존 34종목은 여전히 `PIT_UNKNOWN`** — 미래정보 감사는 위반 0건이었지만 재작성 여부는 검증 불가(C-9) | change_plan C-10 |
 | C-2 | 개별 수치의 출처 추적(Provenance) | `data_sources` 자유문자열뿐 | C-09 |
+| C-9 | **재작성(restatement) 검증** | v3.49 감사는 '그 시점에 공시됐는가'만 답한다. 'ledger의 숫자가 그 시점 값이었는가'는 원자료 스냅샷 필요 | C-09 |
 | C-3 | 통화 일관성 검증 | `currency` 기록만, 교차검증 없음. v3.46 스케일 가드는 **자릿수 오류만** 잡고 7배 통화오류는 기저수익률이 낮은 종목에서 놓친다(C-15 한계표) | 감사 D-3 |
 | C-4 | Report 숫자 ↔ 엔진 출력 자동 대조 | `self_check_v2`는 **수동 호출** | 계약서 86절 |
 | ~~C-5~~ | ~~과거 기록 자동 대조~~ | **해소됨** — v3.47에서 `save_ledger()`에 배선(B-11) | 감사 T-2 |
