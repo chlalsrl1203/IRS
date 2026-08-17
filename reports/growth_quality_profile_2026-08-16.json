@@ -1,0 +1,389 @@
+{
+  "generated_at": "2026-08-16",
+  "stage": "STAGE 1 prototype",
+  "affects_official_judgment": false,
+  "quadrant_thresholds": {
+    "basis": "관측 중앙값(임의 임계값 아님)",
+    "realistic_growth_median": 0.11507661389965342,
+    "operating_margin_median": 0.21006259733124544
+  },
+  "caveat": "두 축이 미래 수익률·성장 지속성과 관계가 있다는 증거는 없다. experiments/H-007.json으로 사전등록된 가설이며 검정 전이다.",
+  "results": [
+    {
+      "ticker": "ACGL",
+      "realistic_growth": 0.157353923411129,
+      "expectation_gap": 0.24383806952929307,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.24983692106979777,
+      "capex_to_revenue_level": 0.0022078378242761806,
+      "n_years_margin": 11,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "BKNG",
+      "realistic_growth": 0.11508686710944717,
+      "expectation_gap": 0.05981018711677141,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.3278597169075306,
+      "capex_to_revenue_level": 0.011962700152320095,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "BRO",
+      "realistic_growth": 0.12,
+      "expectation_gap": 0.07427728925631566,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.2606281450633351,
+      "capex_to_revenue_level": 0.011799410029498525,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "BSX",
+      "realistic_growth": 0.13863186252556584,
+      "expectation_gap": 0.058652919654472085,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.19781807312942115,
+      "capex_to_revenue_level": 0.043638537411577166,
+      "n_years_margin": 11,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "BSY",
+      "realistic_growth": 0.10541108672060934,
+      "expectation_gap": 0.05695494807794302,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.2414609606340214,
+      "capex_to_revenue_level": 0.012155583477995098,
+      "n_years_margin": 8,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "CDNS",
+      "realistic_growth": 0.12,
+      "expectation_gap": 0.032879560479090325,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.311469900744965,
+      "capex_to_revenue_level": 0.026784492177197413,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "COR",
+      "realistic_growth": 0.0957796484196729,
+      "expectation_gap": 0.030971756573969778,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.008180306662046867,
+      "capex_to_revenue_level": 0.002078782372988798,
+      "n_years_margin": 9,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "DSGX",
+      "realistic_growth": 0.13432194015922871,
+      "expectation_gap": 0.04248310348930688,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.2880388262148281,
+      "capex_to_revenue_level": 0.007860168561520565,
+      "n_years_margin": 11,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "DUOL",
+      "realistic_growth": 0.25,
+      "expectation_gap": 0.19453125000000002,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.13065867120796384,
+      "capex_to_revenue_level": 0.017440431615986678,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "GEN",
+      "realistic_growth": 0.12,
+      "expectation_gap": 0.12182151794433595,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.424,
+      "capex_to_revenue_level": 0.0044,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "GWRE",
+      "realistic_growth": 0.11506636068985966,
+      "expectation_gap": 0.0315386804982906,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.03415334743222014,
+      "capex_to_revenue_level": 0.017010975010374574,
+      "n_years_margin": 9,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "IDXX",
+      "realistic_growth": 0.08242656553743928,
+      "expectation_gap": 0.004138841871727902,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.316014212879981,
+      "capex_to_revenue_level": 0.028969477905301064,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "KEYS",
+      "realistic_growth": 0.014713198893530484,
+      "expectation_gap": -0.14364213252736793,
+      "judgment": "과대평가 가능성",
+      "operating_margin_level": 0.16297674418604652,
+      "capex_to_revenue_level": 0.02381395348837209,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "KLAC",
+      "realistic_growth": 0.10327419836763381,
+      "expectation_gap": 0.008613438964066245,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.39281534747562596,
+      "capex_to_revenue_level": 0.027579346178506013,
+      "n_years_margin": 9,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "MCK",
+      "realistic_growth": 0.06160134921876831,
+      "expectation_gap": -0.0001648937621887142,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.015397962471804279,
+      "capex_to_revenue_level": 0.0018466648489205066,
+      "n_years_margin": 8,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "MNDY",
+      "realistic_growth": 0.25,
+      "expectation_gap": 0.23276233673095703,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": -0.0014188346237856099,
+      "capex_to_revenue_level": 0.01927115082260752,
+      "n_years_margin": 6,
+      "data_limitations": [
+        "[UNPROFITABLE] 최근 영업이익률 -0.14% - 이 기업은 아직 영업 단계에서 이익을 내지 못한다"
+      ],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "MNST",
+      "realistic_growth": 0.07710471404538147,
+      "expectation_gap": -0.006418685378330832,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.29168723791625206,
+      "capex_to_revenue_level": 0.01594761634526086,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "PDD",
+      "realistic_growth": 0.25,
+      "expectation_gap": 0.2916229248046875,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.21559118962470747,
+      "capex_to_revenue_level": 0.0026515882073836865,
+      "n_years_margin": 8,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "PGR",
+      "realistic_growth": 0.1686526955865976,
+      "expectation_gap": 0.21757485287419526,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.16223152467748742,
+      "capex_to_revenue_level": 0.0039693855436803505,
+      "n_years_margin": 11,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "PH",
+      "realistic_growth": 0.06508140623414017,
+      "expectation_gap": -0.08585815370238321,
+      "judgment": "과대평가 가능성",
+      "operating_margin_level": 0.20453400503778338,
+      "capex_to_revenue_level": 0.021914357682619647,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "PTC",
+      "realistic_growth": 0.11390601486057504,
+      "expectation_gap": 0.0553015837082313,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.35863597965264643,
+      "capex_to_revenue_level": 0.004018653444440145,
+      "n_years_margin": 9,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "RMD",
+      "realistic_growth": 0.11272020863380966,
+      "expectation_gap": 0.05889235066261829,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.3274885175388194,
+      "capex_to_revenue_level": 0.017461968506859358,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "ROP",
+      "realistic_growth": 0.055,
+      "expectation_gap": 0.012357788085937522,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.28287250869977854,
+      "capex_to_revenue_level": 0.013248971844353051,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "SE",
+      "realistic_growth": 0.23559721275453016,
+      "expectation_gap": 0.19180315300111223,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.08654919384550032,
+      "capex_to_revenue_level": 0.022399446100783798,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "TCOM",
+      "realistic_growth": 0.12387581476525755,
+      "expectation_gap": 0.07547684320764038,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.25273598359211014,
+      "capex_to_revenue_level": 0.01277059398484193,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "고성장·고마진"
+    },
+    {
+      "ticker": "TTD",
+      "realistic_growth": 0.16703987255129174,
+      "expectation_gap": 0.1700962080005105,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.20347486641503387,
+      "capex_to_revenue_level": 0.0680219895562728,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "TYL",
+      "realistic_growth": 0.10153071267866381,
+      "expectation_gap": 0.0277231870438982,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.15335499969987224,
+      "capex_to_revenue_level": 0.014060128454684994,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "UBER",
+      "realistic_growth": 0.1595752266302478,
+      "expectation_gap": 0.11784205707458376,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.10698425514735567,
+      "capex_to_revenue_level": 0.006459426725878078,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "VRSN",
+      "realistic_growth": 0.046517359421241536,
+      "expectation_gap": -0.009719340999338522,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.6766871906314137,
+      "capex_to_revenue_level": 0.013763129300977906,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    },
+    {
+      "ticker": "VRT",
+      "realistic_growth": 0.18710426857819903,
+      "expectation_gap": 0.017187161949781066,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.1788580533534052,
+      "capex_to_revenue_level": 0.021505586564873558,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "WCN",
+      "realistic_growth": 0.09012287064860232,
+      "expectation_gap": 0.0100359824109255,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.18126503409323985,
+      "capex_to_revenue_level": 0.12567781390284166,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "WDAY",
+      "realistic_growth": 0.14323282565323606,
+      "expectation_gap": 0.11417055453507202,
+      "judgment": "저평가 가능성",
+      "operating_margin_level": 0.07548157453936348,
+      "capex_to_revenue_level": 0.016959798994974875,
+      "n_years_margin": 6,
+      "data_limitations": [],
+      "quadrant": "고성장·저마진"
+    },
+    {
+      "ticker": "WM",
+      "realistic_growth": 0.0803240971798224,
+      "expectation_gap": 0.0008904206704897916,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.17092524996032377,
+      "capex_to_revenue_level": 0.12803523250277735,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·저마진"
+    },
+    {
+      "ticker": "ZTS",
+      "realistic_growth": 0.05620717910064688,
+      "expectation_gap": 0.020971515574735304,
+      "judgment": "적정가/경계선",
+      "operating_margin_level": 0.37995141016161404,
+      "capex_to_revenue_level": 0.06559628182106264,
+      "n_years_margin": 12,
+      "data_limitations": [],
+      "quadrant": "저성장·고마진"
+    }
+  ]
+}

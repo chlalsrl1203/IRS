@@ -1,0 +1,1550 @@
+{
+  "generated_at": "2026-08-16",
+  "experiment_id": "R-001",
+  "affects_official_judgment": false,
+  "total_valid_scenarios_examined": 9675,
+  "results": [
+    {
+      "ticker": "ACGL",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "BKNG",
+      "base_grade": "B",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 65,
+        "nearest_flip": {
+          "gap": 0.049677016035228436,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 101,
+        "nearest_flip": {
+          "gap": 0.07078201939216204,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "BRO",
+      "base_grade": "A",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "model_choice",
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 34,
+        "nearest_flip": {
+          "gap": 0.04968864440917972,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 86,
+        "nearest_flip": {
+          "gap": 0.06846229553222657,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP",
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "BSX",
+      "base_grade": "B",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "growth_duration_n"
+          ],
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 96,
+        "nearest_flip": {
+          "gap": 0.049502033118827574,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 81,
+        "nearest_flip": {
+          "gap": 0.07007016057204102,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "BSY",
+      "base_grade": "B",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 95,
+        "nearest_flip": {
+          "gap": 0.04946626250185936,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 57,
+        "nearest_flip": {
+          "gap": 0.07065248087948574,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "CDNS",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 164,
+        "nearest_flip": {
+          "gap": 0.05860732342594552,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "realistic_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP",
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "COR",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "growth_duration_n",
+            "realistic_growth"
+          ],
+          [
+            "growth_duration_n",
+            "required_return_r"
+          ],
+          [
+            "model_choice",
+            "realistic_growth"
+          ],
+          [
+            "model_choice",
+            "required_return_r"
+          ],
+          [
+            "realistic_growth",
+            "required_return_r"
+          ],
+          [
+            "realistic_growth",
+            "terminal_growth"
+          ],
+          [
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 58,
+        "nearest_flip": {
+          "gap": 0.05025748070720906,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 3,
+        "minimal_combinations": [
+          [
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ],
+          [
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 9,
+        "nearest_flip": {
+          "gap": 0.0708010648436814,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "DSGX",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "growth_duration_n"
+          ],
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ],
+          [
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 113,
+        "nearest_flip": {
+          "gap": 0.05012699588962695,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 51,
+        "nearest_flip": {
+          "gap": 0.07031074985691209,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "DUOL",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "GEN",
+      "base_grade": "A",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP",
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "GWRE",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 355,
+        "nearest_flip": {
+          "gap": 0.0528468100510472,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "IDXX",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 155,
+        "nearest_flip": {
+          "gap": -0.0507283283477753,
+          "judgment": "과대평가 가능성",
+          "grade": "D",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "KEYS",
+      "base_grade": "D",
+      "base_judgment": "과대평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "model_choice",
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 3,
+        "nearest_flip": {
+          "gap": -0.04190839315133961,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "KLAC",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 199,
+        "nearest_flip": {
+          "gap": 0.05473851709572462,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "realistic_growth",
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 1,
+        "nearest_flip": {
+          "gap": 0.07444232406823814,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "MCK",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 66,
+        "nearest_flip": {
+          "gap": 0.05081052498466475,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 40,
+        "nearest_flip": {
+          "gap": 0.07044400887138351,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "MNDY",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 4,
+        "minimal_combinations": [
+          [
+            "fcf0",
+            "growth_duration_n",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 2,
+        "nearest_flip": {
+          "gap": 0.06142883300781249,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "MNST",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 177,
+        "nearest_flip": {
+          "gap": -0.05225184442383621,
+          "judgment": "과대평가 가능성",
+          "grade": "D",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "PDD",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP",
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "PGR",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "PH",
+      "base_grade": "D",
+      "base_judgment": "과대평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 22,
+        "nearest_flip": {
+          "gap": -0.04855327546751996,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "PTC",
+      "base_grade": "B",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "growth_duration_n"
+          ],
+          [
+            "required_return_r"
+          ],
+          [
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 70,
+        "nearest_flip": {
+          "gap": 0.049869929709360356,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 79,
+        "nearest_flip": {
+          "gap": 0.07013798848621579,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "RMD",
+      "base_grade": "B",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 57,
+        "nearest_flip": {
+          "gap": 0.049915000551094574,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 80,
+        "nearest_flip": {
+          "gap": 0.07002055322443441,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "ROP",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": true,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 152,
+        "nearest_flip": {
+          "gap": 0.05246879154251963,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 141,
+        "nearest_flip": {
+          "gap": 0.0717847018818751,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "RG_RANGE_ONE_SIDED_BY_CAP"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "SE",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": false
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "TCOM",
+      "base_grade": "A",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 42,
+        "nearest_flip": {
+          "gap": 0.04999885452380673,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ],
+          [
+            "required_return_r"
+          ],
+          [
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 96,
+        "nearest_flip": {
+          "gap": 0.0690313399727771,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "TTD",
+      "base_grade": "S",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "fcf0",
+            "growth_duration_n"
+          ],
+          [
+            "fcf0",
+            "required_return_r"
+          ],
+          [
+            "fcf0",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 64,
+        "nearest_flip": {
+          "gap": 0.049881173515647234,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "fcf0"
+          ]
+        ],
+        "n_flip_scenarios": 110,
+        "nearest_flip": {
+          "gap": 0.06898498668703396,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "TYL",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 136,
+        "nearest_flip": {
+          "gap": 0.05047992314564828,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 74,
+        "nearest_flip": {
+          "gap": 0.07018760289418344,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "UBER",
+      "base_grade": "A",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 4,
+        "minimal_combinations": [
+          [
+            "fcf0",
+            "growth_duration_n",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 2,
+        "nearest_flip": {
+          "gap": 0.0474071052923572,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 3,
+        "minimal_combinations": [
+          [
+            "fcf0",
+            "growth_duration_n",
+            "required_return_r"
+          ],
+          [
+            "fcf0",
+            "growth_duration_n",
+            "terminal_growth"
+          ],
+          [
+            "fcf0",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 19,
+        "nearest_flip": {
+          "gap": 0.06942172321227907,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "VRSN",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 2,
+        "minimal_combinations": [
+          [
+            "growth_duration_n",
+            "model_choice"
+          ],
+          [
+            "model_choice",
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 51,
+        "nearest_flip": {
+          "gap": -0.050191584361437974,
+          "judgment": "과대평가 가능성",
+          "grade": "D",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "VRT",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 58,
+        "nearest_flip": {
+          "gap": 0.050007305431662596,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 21,
+        "nearest_flip": {
+          "gap": 0.07043083247455273,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "realistic_growth",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "WCN",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ],
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 104,
+        "nearest_flip": {
+          "gap": 0.05062476909907579,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "realistic_growth"
+          ]
+        ],
+        "n_flip_scenarios": 3,
+        "nearest_flip": {
+          "gap": 0.07220322192659574,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "WDAY",
+      "base_grade": "A",
+      "base_judgment": "저평가 가능성",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "fcf0"
+          ]
+        ],
+        "n_flip_scenarios": 190,
+        "nearest_flip": {
+          "gap": 0.049603043830534876,
+          "judgment": "적정가/경계선",
+          "grade": "C",
+          "axes": [
+            "fcf0",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "fcf0"
+          ]
+        ],
+        "n_flip_scenarios": 212,
+        "nearest_flip": {
+          "gap": 0.0693809140087575,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "fcf0",
+            "growth_duration_n",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "false_robustness_flags": [],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 450
+    },
+    {
+      "ticker": "WM",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 1,
+        "minimal_combinations": [
+          [
+            "model_choice"
+          ]
+        ],
+        "n_flip_scenarios": 146,
+        "nearest_flip": {
+          "gap": -0.0510872065255184,
+          "judgment": "과대평가 가능성",
+          "grade": "D",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": false
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": true,
+      "n_valid_scenarios": 225
+    },
+    {
+      "ticker": "ZTS",
+      "base_grade": "C",
+      "base_judgment": "적정가/경계선",
+      "cap_bound": false,
+      "judgment_minimal_flip": {
+        "changeable": true,
+        "min_axes": 3,
+        "minimal_combinations": [
+          [
+            "model_choice",
+            "realistic_growth",
+            "required_return_r"
+          ]
+        ],
+        "n_flip_scenarios": 23,
+        "nearest_flip": {
+          "gap": 0.05054259587027207,
+          "judgment": "저평가 가능성",
+          "grade": "B",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "universe_minimal_flip": {
+        "changeable": true,
+        "min_axes": 5,
+        "minimal_combinations": [
+          [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        ],
+        "n_flip_scenarios": 2,
+        "nearest_flip": {
+          "gap": 0.07201293340342275,
+          "judgment": "저평가 가능성",
+          "grade": "A",
+          "axes": [
+            "growth_duration_n",
+            "model_choice",
+            "realistic_growth",
+            "required_return_r",
+            "terminal_growth"
+          ]
+        }
+      },
+      "false_robustness_flags": [
+        "FCF_DOWNSIDE_NOT_TESTED",
+        "N_AND_TERMINAL_NOT_PERTURBED_BY_DESIGN"
+      ],
+      "false_fragility_no_capital_impact": false,
+      "n_valid_scenarios": 225
+    }
+  ]
+}
