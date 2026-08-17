@@ -1,0 +1,2811 @@
+{
+  "generated_at": "2026-08-16",
+  "experiment_id": "R-001",
+  "baseline_ref": "reports/baseline_frozen_2026-08-16.json",
+  "affects_official_judgment": false,
+  "stability_is_not_probability": true,
+  "assumption_space": {
+    "r_delta": [
+      -0.01,
+      0.0,
+      0.01
+    ],
+    "g_terminal_delta": [
+      -0.01,
+      0.0,
+      0.01
+    ],
+    "n_values": [
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "models": [
+      "single_stage",
+      "two_stage"
+    ],
+    "realistic_growth": "기업 자신의 3y/5y/10y CAGR min~max (LEVEL 2)",
+    "fcf0": "reported / SBC차감 (LEVEL 1, 보유 종목만)"
+  },
+  "results": [
+    {
+      "ticker": "ACGL",
+      "base": {
+        "gap": 0.24383806952929307,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 1.0,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.20505895830644305,
+        "max": 0.421057235216331,
+        "median": 0.2590293384501915,
+        "base": 0.24383806952929307
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "BKNG",
+      "base": {
+        "gap": 0.05981018711677141,
+        "judgment": "저평가 가능성",
+        "grade": "B",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7111111111111111,
+        "grade": 0.26222222222222225,
+        "universe": 0.5511111111111111,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.006648255384221091,
+        "max": 0.14117634939098803,
+        "median": 0.06747620274177141,
+        "base": 0.05981018711677141
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.04358971287360733,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.04358971287360733,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.04627475837494373,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "low",
+            "fcf0": "base",
+            "gap": 0.04627475837494373,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "required_return_r",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "VALUATION_UNCERTAINTY",
+      "research_priority": "무위험금리·DRS 구성요소 재확인(주관입력 competition_intensity 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "BRO",
+      "base": {
+        "gap": 0.07427728925631566,
+        "judgment": "저평가 가능성",
+        "grade": "A",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.8488888888888889,
+        "grade": 0.6088888888888889,
+        "universe": 0.6177777777777778,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.02351791381835938,
+        "max": 0.15271015089398987,
+        "median": 0.0754750442504883,
+        "base": 0.07427728925631566
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "BSX",
+      "base": {
+        "gap": 0.058652919654472085,
+        "judgment": "저평가 가능성",
+        "grade": "B",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.5733333333333334,
+        "grade": 0.21333333333333335,
+        "universe": 0.64,
+        "gap_sign": 0.9555555555555556
+      },
+      "gap_range": {
+        "min": -0.027221018911323336,
+        "max": 0.11706868439090565,
+        "median": 0.0553539694591596,
+        "base": 0.058652919654472085
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.041316646461112744,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.041316646461112744,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 2,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": 0.04328312290154243,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 8,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.04328312290154243,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.023821728586235213,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "low",
+            "fcf0": "base",
+            "gap": 0.023821728586235213,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "growth_duration_n",
+        "required_return_r",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "DURATION_UNCERTAINTY",
+      "research_priority": "경쟁우위 지속기간 근거(재투자 여력·시장침투율) — Stage 2 미실행",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "BSY",
+      "base": {
+        "gap": 0.05695494807794302,
+        "judgment": "저평가 가능성",
+        "grade": "B",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.5777777777777777,
+        "grade": 0.3244444444444444,
+        "universe": 0.7466666666666667,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.0008933407489296608,
+        "max": 0.1054306943804623,
+        "median": 0.05321153227724999,
+        "base": 0.05695494807794302
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": 0.04418843810000389,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.04418843810000389,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.04749866311805462,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.04749866311805462,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "required_return_r"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "CDNS",
+      "base": {
+        "gap": 0.032879560479090325,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.27111111111111114,
+        "grade": 0.27111111111111114,
+        "universe": 1.0,
+        "gap_sign": 0.044444444444444446
+      },
+      "gap_range": {
+        "min": -0.19083755493164056,
+        "max": 0.06843946689892966,
+        "median": -0.07397850036621093,
+        "base": 0.032879560479090325
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.0768667984008789,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.0768667984008789,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.05860732342594552,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.05860732342594552,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "COR",
+      "base": {
+        "gap": 0.030971756573969778,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7422222222222222,
+        "grade": 0.7422222222222222,
+        "universe": 0.96,
+        "gap_sign": 0.96
+      },
+      "gap_range": {
+        "min": -0.015521773699467695,
+        "max": 0.08012636956218955,
+        "median": 0.036651529116938406,
+        "base": 0.030971756573969778
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "DSGX",
+      "base": {
+        "gap": 0.04248310348930688,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.49777777777777776,
+        "grade": 0.49777777777777776,
+        "universe": 0.7733333333333333,
+        "gap_sign": 0.9733333333333334
+      },
+      "gap_range": {
+        "min": -0.017317235255810276,
+        "max": 0.10841346744653357,
+        "median": 0.05012699588962695,
+        "base": 0.04248310348930688
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": 0.07418270722669015,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.07418270722669015,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.062278902744677955,
+          "example": {
+            "model": "two_stage",
+            "r_delta": -0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.062278902744677955,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "terminal_growth": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.053095972752002174,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.01,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.053095972752002174,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "growth_duration_n": {
+          "flips": 1,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": 0.050754702305224816,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 15,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.050754702305224816,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.06710697635837697,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.06710697635837697,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "required_return_r",
+        "terminal_growth",
+        "growth_duration_n",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "DUOL",
+      "base": {
+        "gap": 0.19453125000000002,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 0.7733333333333333,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.0732879638671875,
+        "max": 0.4299363884719848,
+        "median": 0.19499143894731907,
+        "base": 0.19453125000000002
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "GEN",
+      "base": {
+        "gap": 0.12182151794433595,
+        "judgment": "저평가 가능성",
+        "grade": "A",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 0.8088888888888889,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.09892950717404865,
+        "max": 0.19491486984148151,
+        "median": 0.13077073531999714,
+        "base": 0.12182151794433595
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "GWRE",
+      "base": {
+        "gap": 0.0315386804982906,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.2111111111111111,
+        "grade": 0.2111111111111111,
+        "universe": 1.0,
+        "gap_sign": 0.051111111111111114
+      },
+      "gap_range": {
+        "min": -0.33261347529458773,
+        "max": 0.06580297824590513,
+        "median": -0.10637834145857782,
+        "base": 0.0315386804982906
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.05875413491560909,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.05875413491560909,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.05600991807917369,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.05600991807917369,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "IDXX",
+      "base": {
+        "gap": 0.004138841871727902,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.3111111111111111,
+        "grade": 0.3111111111111111,
+        "universe": 1.0,
+        "gap_sign": 0.03111111111111111
+      },
+      "gap_range": {
+        "min": -0.16056278382779515,
+        "max": 0.035349486573041974,
+        "median": -0.06637027894498258,
+        "base": 0.004138841871727902
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.0705365005636349,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.0705365005636349,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "KEYS",
+      "base": {
+        "gap": -0.14364213252736793,
+        "judgment": "과대평가 가능성",
+        "grade": "D",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.9866666666666667,
+        "grade": 0.5555555555555556,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": -0.25119708215112113,
+        "max": -0.022401170747462035,
+        "median": -0.1420450512062969,
+        "base": -0.14364213252736793
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "KLAC",
+      "base": {
+        "gap": 0.008613438964066245,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.11555555555555555,
+        "grade": 0.11555555555555555,
+        "universe": 0.9955555555555555,
+        "gap_sign": 0.03111111111111111
+      },
+      "gap_range": {
+        "min": -0.25138302948621766,
+        "max": 0.07444232406823814,
+        "median": -0.11203957703260436,
+        "base": 0.008613438964066245
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.11984649102445598,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.11984649102445598,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.06459042058198138,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.06459042058198138,
+            "judgment": "저평가 가능성",
+            "grade": "B"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "MCK",
+      "base": {
+        "gap": -0.0001648937621887142,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7066666666666667,
+        "grade": 0.7066666666666667,
+        "universe": 0.8222222222222222,
+        "gap_sign": 0.3377777777777778
+      },
+      "gap_range": {
+        "min": -0.0453269039550598,
+        "max": 0.10702733711845383,
+        "median": 0.012696930273455823,
+        "base": -0.0001648937621887142
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.07214898781425459,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.07214898781425459,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "GROWTH_UNCERTAINTY",
+      "research_priority": "회사 가이던스·세그먼트 오가닉 성장률 확보(다년 실현치 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "MNDY",
+      "base": {
+        "gap": 0.23276233673095703,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 0.7377777777777778,
+        "universe": 0.9955555555555555,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.06142883300781249,
+        "max": 0.44064922668682566,
+        "median": 0.23235034942626953,
+        "base": 0.23276233673095703
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "MNST",
+      "base": {
+        "gap": -0.006418685378330832,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.21333333333333335,
+        "grade": 0.21333333333333335,
+        "universe": 1.0,
+        "gap_sign": 0.9733333333333334
+      },
+      "gap_range": {
+        "min": -0.1948917840625287,
+        "max": 0.05146826861564602,
+        "median": -0.08561806427493099,
+        "base": -0.006418685378330832
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.0955275033618451,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.0955275033618451,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "PDD",
+      "base": {
+        "gap": 0.2916229248046875,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 1.0,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.25976842823376234,
+        "max": 0.5868582635262638,
+        "median": 0.3058616638183594,
+        "base": 0.2916229248046875
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "PGR",
+      "base": {
+        "gap": 0.21757485287419526,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 1.0,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.17058994104230124,
+        "max": 0.31390651781790524,
+        "median": 0.225958174158909,
+        "base": 0.21757485287419526
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "PH",
+      "base": {
+        "gap": -0.08585815370238321,
+        "judgment": "과대평가 가능성",
+        "grade": "D",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.9022222222222223,
+        "grade": 0.8488888888888889,
+        "universe": 1.0,
+        "gap_sign": 0.9955555555555555
+      },
+      "gap_range": {
+        "min": -0.19154155114980698,
+        "max": 0.00748774819538095,
+        "median": -0.09152062793875926,
+        "base": -0.08585815370238321
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.014802544009148794,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.014802544009148794,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "PTC",
+      "base": {
+        "gap": 0.0553015837082313,
+        "judgment": "저평가 가능성",
+        "grade": "B",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.6888888888888889,
+        "grade": 0.3377777777777778,
+        "universe": 0.6488888888888888,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.012798608244364143,
+        "max": 0.10977402822010253,
+        "median": 0.06321173995823132,
+        "base": 0.0553015837082313
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.038510049284403186,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.038510049284403186,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "terminal_growth": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.047592843473856325,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": -0.01,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.047592843473856325,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "growth_duration_n": {
+          "flips": 2,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": 0.04707557052463757,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 8,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.04707557052463757,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "growth_duration_n",
+        "required_return_r",
+        "terminal_growth"
+      ],
+      "primary_uncertainty_type": "DURATION_UNCERTAINTY",
+      "research_priority": "경쟁우위 지속기간 근거(재투자 여력·시장침투율) — Stage 2 미실행",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "RMD",
+      "base": {
+        "gap": 0.05889235066261829,
+        "judgment": "저평가 가능성",
+        "grade": "B",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7466666666666667,
+        "grade": 0.39111111111111113,
+        "universe": 0.6444444444444445,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.015530114639669051,
+        "max": 0.1144421306780477,
+        "median": 0.06596839105402427,
+        "base": 0.05889235066261829
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 1,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": 0.041260247696309676,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.01,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.041260247696309676,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "required_return_r"
+      ],
+      "primary_uncertainty_type": "VALUATION_UNCERTAINTY",
+      "research_priority": "무위험금리·DRS 구성요소 재확인(주관입력 competition_intensity 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "ROP",
+      "base": {
+        "gap": 0.012357788085937522,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": true
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.6622222222222223,
+        "grade": 0.6622222222222223,
+        "universe": 0.6866666666666666,
+        "gap_sign": 0.7777777777777778
+      },
+      "gap_range": {
+        "min": -0.03713676452636718,
+        "max": 0.14284793430375012,
+        "median": 0.02213104248046876,
+        "base": 0.012357788085937522
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.10196334415482433,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.10196334415482433,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "GROWTH_UNCERTAINTY",
+      "research_priority": "회사 가이던스·세그먼트 오가닉 성장률 확보(다년 실현치 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "SE",
+      "base": {
+        "gap": 0.19180315300111223,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 1.0,
+        "grade": 0.9955555555555555,
+        "universe": 1.0,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.14674931793980447,
+        "max": 0.38568956414359573,
+        "median": 0.20007990165833878,
+        "base": 0.19180315300111223
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "TCOM",
+      "base": {
+        "gap": 0.07547684320764038,
+        "judgment": "저평가 가능성",
+        "grade": "A",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.8133333333333334,
+        "grade": 0.24,
+        "universe": 0.5733333333333334,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.014454649811892678,
+        "max": 0.4441188145527015,
+        "median": 0.07717362055139038,
+        "base": 0.07547684320764038
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.049339293366580175,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "low",
+            "fcf0": "base",
+            "gap": 0.049339293366580175,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "GROWTH_UNCERTAINTY",
+      "research_priority": "회사 가이던스·세그먼트 오가닉 성장률 확보(다년 실현치 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "TTD",
+      "base": {
+        "gap": 0.1700962080005105,
+        "judgment": "저평가 가능성",
+        "grade": "S",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.8577777777777778,
+        "grade": 0.6,
+        "universe": 0.7555555555555555,
+        "gap_sign": 0.9955555555555555
+      },
+      "gap_range": {
+        "min": -0.01280898914304418,
+        "max": 0.3352527437935321,
+        "median": 0.16156158580812768,
+        "base": 0.1700962080005105
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "TYL",
+      "base": {
+        "gap": 0.0277231870438982,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.6977777777777778,
+        "grade": 0.6977777777777778,
+        "universe": 0.8355555555555556,
+        "gap_sign": 0.6688888888888889
+      },
+      "gap_range": {
+        "min": -0.09225109117485847,
+        "max": 0.1166509970592225,
+        "median": 0.018504041861521846,
+        "base": 0.0277231870438982
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.08490031804310921,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.08490031804310921,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "GROWTH_UNCERTAINTY",
+      "research_priority": "회사 가이던스·세그먼트 오가닉 성장률 확보(다년 실현치 우선)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "UBER",
+      "base": {
+        "gap": 0.11784205707458376,
+        "judgment": "저평가 가능성",
+        "grade": "A",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.9955555555555555,
+        "grade": 0.9133333333333333,
+        "universe": 0.9577777777777777,
+        "gap_sign": 1.0
+      },
+      "gap_range": {
+        "min": 0.0474071052923572,
+        "max": 0.17333127428588735,
+        "median": 0.11079958300811642,
+        "base": 0.11784205707458376
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "VRSN",
+      "base": {
+        "gap": -0.009719340999338522,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7733333333333333,
+        "grade": 0.7733333333333333,
+        "universe": 1.0,
+        "gap_sign": 0.96
+      },
+      "gap_range": {
+        "min": -0.09040516926134032,
+        "max": 0.008745364078108352,
+        "median": -0.03259367438041828,
+        "base": -0.009719340999338522
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "VRT",
+      "base": {
+        "gap": 0.017187161949781066,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.7422222222222222,
+        "grade": 0.7422222222222222,
+        "universe": 0.9066666666666666,
+        "gap_sign": 0.7155555555555555
+      },
+      "gap_range": {
+        "min": -0.08220476121872805,
+        "max": 0.1425211796580149,
+        "median": 0.022610326317456853,
+        "base": 0.017187161949781066
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": 0.10398738466041565,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": 0.10398738466041565,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "WCN",
+      "base": {
+        "gap": 0.0100359824109255,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.5377777777777778,
+        "grade": 0.5377777777777778,
+        "universe": 0.9866666666666667,
+        "gap_sign": 0.24444444444444444
+      },
+      "gap_range": {
+        "min": -0.14001514509846796,
+        "max": 0.09164323071417091,
+        "median": -0.04405986860921017,
+        "base": 0.0100359824109255
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.05718566969563592,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.05718566969563592,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 1,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": 0.08192322632038332,
+          "example": {
+            "model": "single_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "high",
+            "fcf0": "base",
+            "gap": 0.08192322632038332,
+            "judgment": "저평가 가능성",
+            "grade": "A"
+          }
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice",
+        "realistic_growth"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "WDAY",
+      "base": {
+        "gap": 0.11417055453507202,
+        "judgment": "저평가 가능성",
+        "grade": "A",
+        "model": "two_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 450,
+        "valid": 450,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.5777777777777777,
+        "grade": 0.4533333333333333,
+        "universe": 0.5288888888888889,
+        "gap_sign": 0.8644444444444445
+      },
+      "gap_range": {
+        "min": -0.06846303616317015,
+        "max": 0.18753543976559342,
+        "median": 0.08501272525040404,
+        "base": 0.11417055453507202
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 1,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": 0.011135962860267329,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "sbc_adjusted",
+            "gap": 0.011135962860267329,
+            "judgment": "적정가/경계선",
+            "grade": "C"
+          }
+        }
+      },
+      "flip_drivers": [
+        "fcf0"
+      ],
+      "primary_uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+      "research_priority": "SEC 원자료로 SBC·FCF 정의 재확인",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "WM",
+      "base": {
+        "gap": 0.0008904206704897916,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.3511111111111111,
+        "grade": 0.3511111111111111,
+        "universe": 1.0,
+        "gap_sign": 0.03111111111111111
+      },
+      "gap_range": {
+        "min": -0.15777208201379966,
+        "max": 0.03645225331148545,
+        "median": -0.0641018671756463,
+        "base": 0.0008904206704897916
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 1,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": -0.06458976695591974,
+          "example": {
+            "model": "two_stage",
+            "r_delta": 0.0,
+            "g_terminal_delta": 0.0,
+            "n": 12,
+            "realistic_growth": "base",
+            "fcf0": "base",
+            "gap": -0.06458976695591974,
+            "judgment": "과대평가 가능성",
+            "grade": "D"
+          }
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [
+        "model_choice"
+      ],
+      "primary_uncertainty_type": "MODEL_UNCERTAINTY",
+      "research_priority": "내재성장률이 회사 가이던스 대비 달성가능한지 대조(GWRE/KLAC 절차)",
+      "rg_range_from_own_history": true
+    },
+    {
+      "ticker": "ZTS",
+      "base": {
+        "gap": 0.020971515574735304,
+        "judgment": "적정가/경계선",
+        "grade": "C",
+        "model": "single_stage",
+        "n": 12,
+        "cap_bound": false
+      },
+      "scenario_counts": {
+        "total": 225,
+        "valid": 225,
+        "infeasible": 0
+      },
+      "stability": {
+        "judgment": 0.8977777777777778,
+        "grade": 0.8977777777777778,
+        "universe": 0.9911111111111112,
+        "gap_sign": 0.9288888888888889
+      },
+      "gap_range": {
+        "min": -0.014054533951505271,
+        "max": 0.07615512242930166,
+        "median": 0.027334436088969627,
+        "base": 0.020971515574735304
+      },
+      "one_at_a_time": {
+        "model_choice": {
+          "flips": 0,
+          "uncertainty_type": "MODEL_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "required_return_r": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "terminal_growth": {
+          "flips": 0,
+          "uncertainty_type": "VALUATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "growth_duration_n": {
+          "flips": 0,
+          "uncertainty_type": "DURATION_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "realistic_growth": {
+          "flips": 0,
+          "uncertainty_type": "GROWTH_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        },
+        "fcf0": {
+          "flips": 0,
+          "uncertainty_type": "ACCOUNTING_UNCERTAINTY",
+          "worst_gap": null,
+          "example": null
+        }
+      },
+      "flip_drivers": [],
+      "primary_uncertainty_type": null,
+      "research_priority": null,
+      "rg_range_from_own_history": true
+    }
+  ]
+}
