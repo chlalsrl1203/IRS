@@ -358,7 +358,26 @@ def check_use(key: str, purpose: str, today: str = None) -> dict:
     src = get_source(key)
     stale = src.is_stale(today)
 
-    if src.tier == ComplianceTier.UNVERIFIED:
+    # ⚠️ 판정 순서가 중요하다. 초판은 UNVERIFIED를 먼저 검사해서 **미확인이
+    # '허용 안 함'을 '아마도'로 완화**했다(P0-02 테스트가 잡음). 불확실성이 "아니오"를
+    # 약화시키면 보수적 방향과 반대로 작동한다 — 허용 범위 밖은 티어와 무관하게 먼저 막는다.
+    #
+    # 어휘 정의:
+    #   PROHIBITED — 이 등록부가 그 목적을 **승인하지 않는다**(약관이 금지하거나,
+    #                확인 전까지 우리가 스스로 하지 않기로 한 경우 둘 다 포함).
+    #                어느 쪽인지는 `reason`이 말한다.
+    #   UNVERIFIED — 목적 자체는 허용 범위 안이지만 그 근거인 약관을 확인하지
+    #                못했거나(또는 확인이 낡았다).
+    if purpose not in src.allowed_use:
+        decision = "PROHIBITED"
+        reason = (
+            f"{src.provider}의 허용 목적은 {src.allowed_use}이며 '{purpose}'는 "
+            f"포함되지 않는다."
+            + (f" (약관 미확인 상태라 보수적으로 승인하지 않는다 — "
+               f"{src.verification_note})"
+               if src.tier == ComplianceTier.UNVERIFIED else "")
+        )
+    elif src.tier == ComplianceTier.UNVERIFIED:
         decision = UNVERIFIED
         reason = (
             f"{src.provider}의 약관을 확인하지 못했다 — {src.verification_note} "

@@ -35,20 +35,34 @@ from engine.provenance import SOURCE_KINDS  # noqa: E402
 def test_unverified_source_is_neither_allowed_nor_prohibited():
     """
     이 등록부가 존재하는 이유. Alpha Vantage 약관은 실제로 확인에 실패했고
-    (PDF 판독 불가), 그 상태가 ALLOWED로도 PROHIBITED로도 표시되면 안 된다.
+    (PDF 판독 불가), 허용 범위 안의 목적조차 ALLOWED로 표시되면 안 된다.
     """
-    r = check_use("alpha_vantage", "commercial")
+    r = check_use("alpha_vantage", "internal_research")   # allowed_use 안에 있다
     assert r["decision"] == UNVERIFIED
     assert r["decision"] != "ALLOWED"
     assert "확인하지 못했다" in r["reason"]
 
 
+def test_uncertainty_never_softens_a_no_into_a_maybe():
+    """
+    ⚠️ P0-02가 잡은 실제 결함의 회귀 테스트. 초판은 UNVERIFIED를 먼저 검사해
+    허용 범위 **밖**인 목적까지 '아마도'로 만들었다. 불확실성이 "아니오"를
+    약화시키면 보수적 방향과 반대로 작동한다.
+    """
+    r = check_use("alpha_vantage", "commercial")          # allowed_use 밖
+    assert r["decision"] == "PROHIBITED"
+    assert "포함되지 않는다" in r["reason"]
+    assert "보수적으로 승인하지 않는다" in r["reason"]   # 미확인 사실도 함께 남는다
+
+
 def test_require_use_raises_on_unverified_not_just_prohibited():
     """'미확인이니 일단 진행'이 코드 경로로 존재하면 안 된다."""
     with pytest.raises(PermissionError):
-        require_use("alpha_vantage", "raw_redistribution")
+        require_use("alpha_vantage", "raw_redistribution")   # PROHIBITED
     with pytest.raises(PermissionError):
-        require_use("web_research", "commercial")
+        require_use("web_research", "commercial")            # PROHIBITED
+    with pytest.raises(PermissionError):
+        require_use("alpha_vantage", "internal_research")    # UNVERIFIED
 
 
 def test_verified_free_source_is_allowed_for_all_purposes():

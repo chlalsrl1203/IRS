@@ -135,3 +135,113 @@ Alpha Vantage 약관은 실제로 **확인에 실패**했다 — 공개 약관�
 ## Next
 **P0-02 Provider Interface** — 등록부를 실제 수집 경로에 연결하는 추상 계층.
 여기서 "미확인 출처를 어디서 차단할 것인가"를 결정한다.
+
+---
+
+# P0-02 — Provider Interface ✅ 완료 (2026-08-19)
+
+## Source
+- https://github.com/dgunning/edgartools — typed filing abstraction, adapter 경계
+- https://github.com/eddmpython/dartlab — SEC/DART 통합 Company 추상화
+- https://github.com/simonlin1212/global-stock-data — source governance 연결
+
+## Capability
+provider abstraction · typed domain object · adapter 경계 · 시장 중립 인터페이스
+
+## IRS Target
+- `engine/data/providers/base.py` (신규)
+- `engine/data/providers/__init__.py` (신규)
+
+## Method
+**REIMPLEMENT** — 어느 라이브러리의 클래스도 상속하거나 재노출하지 않는다.
+가져온 것은 **경계 설계**뿐이다: 외부 객체가 도메인으로 새지 않게 하는 구조
+(§1.8)와, SEC/DART처럼 서로 다른 시장을 같은 인터페이스로 다루는 발상(DartLab).
+
+## Implementation
+
+**`FinancialFact`** — §14 CORE DATA CONTRACT를 이 계층이 실제로 보장할 수 있는
+만큼 담는다. 핵심은 **`period` ≠ `available_at`**: 무엇에 대한 수치인가(FY2023
+매출)와 언제부터 알 수 있었는가(그 10-K 제출일)를 분리한다. 섞이면 PIT 검증이
+통째로 무의미해지며, 이 저장소는 v3.47~v3.49에서 이미 그 대가를 치렀다.
+`available_at < period_end`면 **예외**를 던진다(기간이 끝나기 전에 그 기간
+실적이 공시될 수는 없다).
+
+`version`·`restated_at`은 **의도적으로 넣지 않았다.** 재작성 이력을 추적하려면
+같은 사실의 여러 판본을 저장해야 하고 그건 스냅샷 계층(P0-09)이 생겨야 의미가
+있다 — 지금 만들면 항상 None인 칸이 된다(Simplicity First).
+
+**`ProviderResult`** — `to_series()`가 `AnalysisInputs.*_by_year`에 바로 넣을
+수 있는 형태를 주되, **같은 연도에 다른 값이 둘 오면 예외를 던진다.** provider가
+임의로 고르면 어느 값이 살아남았는지 알 수 없다(대조·선택은 P0-07의 몫).
+
+### P0-01이 남긴 질문에 답했다 — "미확인 출처를 어디서 차단할 것인가"
+
+| 판정 | provider 동작 |
+|---|---|
+| `PROHIBITED` | **거부**(`ProviderGovernanceError`) |
+| `UNVERIFIED` | **진행하되 결과에 경고를 싣는다** |
+| `ALLOWED` | 진행 |
+
+`UNVERIFIED`에서 차단하지 않는 이유: 현재 등록된 6건 중 4건이 미확인이라 여기서
+막으면 돌아가던 스크리닝이 전부 멈춘다. **그러나 조용히 통과시키지도 않는다** —
+모든 `ProviderResult`가 `governance` 판정과 경고 문자열을 들고 다니므로
+ledger·리포트까지 따라간다. "미확인이니 일단 진행"과 "미확인인 줄 모르고 진행"은
+다르다.
+
+## Tests
+`tests/test_provider_base.py` — 17건 신규. 496 → **514개 전부 통과.**
+
+## Verification
+
+- 전체 테스트 **514개 통과**
+- 34종목 골든재현 **8개 지표 완전 동일**
+- baseline fingerprint `fbd34322…` **불변**, ledger 무수정
+
+### ⚠️ 테스트가 P0-01의 논리 결함을 잡았다 — 불확실성이 "아니오"를 완화하고 있었다
+
+`check_use()` 초판은 `UNVERIFIED` 티어를 **먼저** 검사해서, 허용 범위 **밖**인
+목적까지 "아마도"로 만들었다(`web_research` + `raw_redistribution`이
+PROHIBITED가 아니라 UNVERIFIED로 나왔다). 불확실성이 "아니오"를 약화시키면
+보수적 방향과 정반대로 작동한다. 판정 순서를 고쳐 **허용 범위 밖은 티어와
+무관하게 먼저 막도록** 했고, 어휘를 명확히 정의했다:
+
+- `PROHIBITED` — 이 등록부가 그 목적을 **승인하지 않는다**(약관이 금지하거나,
+  확인 전까지 스스로 하지 않기로 한 경우 둘 다. 어느 쪽인지는 `reason`이 말한다)
+- `UNVERIFIED` — 목적은 허용 범위 안이지만 그 근거인 약관을 확인하지 못했다
+
+회귀 테스트: `test_uncertainty_never_softens_a_no_into_a_maybe`
+
+### ⚠️ 그 결과 드러난 사실 — 현재 관행이 "승인되지 않음"으로 나온다
+
+| 출처 | internal_research | derived_publication | raw_redistribution | commercial |
+|---|---|---|---|---|
+| `sec_edgar` | ALLOWED | ALLOWED | ALLOWED | ALLOWED |
+| `analyst_input` | ALLOWED | ALLOWED | ALLOWED | ALLOWED |
+| `alpha_vantage` | UNVERIFIED | **PROHIBITED** | **PROHIBITED** | **PROHIBITED** |
+| `fmp` | UNVERIFIED | **PROHIBITED** | **PROHIBITED** | **PROHIBITED** |
+| `stockanalysis` | UNVERIFIED | **PROHIBITED** | **PROHIBITED** | **PROHIBITED** |
+| `web_research` | UNVERIFIED | **PROHIBITED** | **PROHIBITED** | **PROHIBITED** |
+
+IRS는 실제로 Alpha Vantage 원자료를 `ledger/*.json`에 담아 공개 저장소에 올리고
+(raw_redistribution), 그로부터 나온 Gap·판정을 공개한다(derived_publication).
+**이것이 위법이라는 뜻이 아니라 "확인한 적이 없다"는 뜻이다** — 등록부는
+승인하지 않은 것을 승인했다고 말하지 않는다. 해소하려면 각 벤더 약관을 실제로
+확인해야 한다.
+
+## Remaining Risk
+
+1. 위 표의 미확인 4건이 그대로 남아 있다. 벤더 약관 확인이 선행되지 않으면
+   provider를 만들어도 경고가 계속 붙는다.
+2. `FinancialProvider`는 아직 **구현체가 없다**(P0-03 SEC 어댑터에서 처음
+   생긴다). 인터페이스만으로는 아무 데이터도 들어오지 않는다.
+3. 기존 분석 스크립트는 여전히 dict 리터럴로 원자료를 넣는다 — provider 경로로
+   옮기는 것은 별개 작업이며, 옮기기 전까지 `data_sources` 자유문자열 상태가
+   유지된다.
+
+## Commit
+`(아래 P0-02 커밋)`
+
+## Next
+**P0-03 SEC / EDGAR Adapter** — `FinancialProvider`의 첫 구현체. edgartools를
+ADAPT할지, 기존 `engine/filing_dates.py`의 companyfacts 경로를 확장할지를
+**실제 코드·라이선스·의존성을 확인한 뒤** 결정한다(§1.4).

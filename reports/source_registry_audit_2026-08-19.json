@@ -1,8 +1,12 @@
 {
   "generated_at": "2026-08-19",
-  "step": "P0-01",
-  "source_repo": "https://github.com/simonlin1212/global-stock-data",
+  "step": "P0-01/P0-02",
   "method": "REIMPLEMENT",
+  "source_repos": [
+    "https://github.com/simonlin1212/global-stock-data",
+    "https://github.com/dgunning/edgartools",
+    "https://github.com/eddmpython/dartlab"
+  ],
   "audit": {
     "n_sources": 6,
     "n_unverified": 4,
@@ -94,6 +98,44 @@
       }
     ],
     "note": "UNVERIFIED는 '문제 없음'이 아니라 '확인하지 않음'이다. ledger/*.json은 벤더에서 받은 원자료 수치를 그대로 담아 공개 저장소에 저장하므로, 벤더 출처의 raw_redistribution 조항이 확인되기 전까지 그 행위의 적법성은 미확정 상태다."
+  },
+  "use_matrix": {
+    "sec_edgar": {
+      "internal_research": "ALLOWED",
+      "derived_publication": "ALLOWED",
+      "raw_redistribution": "ALLOWED",
+      "commercial": "ALLOWED"
+    },
+    "alpha_vantage": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "fmp": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "stockanalysis": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "web_research": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "analyst_input": {
+      "internal_research": "ALLOWED",
+      "derived_publication": "ALLOWED",
+      "raw_redistribution": "ALLOWED",
+      "commercial": "ALLOWED"
+    }
   },
   "registry": {
     "sec_edgar": {
