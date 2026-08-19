@@ -623,7 +623,7 @@ BSX FY2016·2017·2018의 제출일이 전부 `2019-02-19`로 나왔다. 세 해
 3. `available_at` 거짓 양성 가능성(위).
 
 ## Commit
-`(아래 커밋)`
+`8efc325`
 
 ## Next
 **P0-11 Financial Document Intelligence** 이후는 성격이 다르다(문서 파싱·평가·
