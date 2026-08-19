@@ -348,3 +348,52 @@ P0-07 reconcile의 몫이다.
 **P0-04 DART Adapter** — DartLab을 확인해 한국 시장을 같은 `FinancialProvider`
 인터페이스로 들일 수 있는지 판단한다. 그 다음 P0-05~07(canonical model ·
 normalize · reconcile)에서 이번에 발견한 `operating_income` 불일치를 다룬다.
+
+---
+
+# P0-04 — DART Adapter ⏸ DEFER (2026-08-19)
+
+## Source
+https://github.com/eddmpython/dartlab (코드 Apache-2.0 / 데이터셋 CC BY 4.0)
+
+**실제 확인한 것**(§1.4): 저장소 실재·이중 라이선스·구조(`src/dartlab/`·`tests/`·
+`ui/`·`pyodide/` 등), 런타임은 **Polars·numpy·HuggingFace 연동**에 의존하며
+사전구축 데이터를 HuggingFace에서 자동 다운로드해 캐시한다. DART API 키는
+`dartlab collect`(원자료 재수집)에만 필요하다.
+
+## Decision: **DEFER** (REJECT 아님)
+
+계획서 순서상 P0-04지만 **지금 만들지 않는다.** 근거는 저장소 실측이다:
+
+| 확인 | 사실 |
+|---|---|
+| `ledger/` | 미국 기업 **34건** |
+| `ledger_krx/` | **31건 전부 ETF 래퍼** — `inputs`가 `pe_by_source`·`expense_ratio`·`top10_weight`이고 기업 재무제표(revenue/OCF/capex)가 **없다** |
+| 한국 **기업** 재무분석 | **0건** |
+
+즉 DART 어댑터는 **IRS가 한 번도 분석한 적 없는 시장**을 위한 데이터 경로다.
+CLAUDE.md의 Simplicity First가 정확히 이 경우를 겨냥한다 — *"지금 분석 중인
+종목이 실제로 이 기능을 요구하는가, 아니면 '나중에 필요할 것 같아서'인가?
+후자면 넣지 않는다."* 게다가 DartLab 채택은 Polars·numpy·HuggingFace를
+의존성 0개 프로젝트에 들이는 일이라 P0-03에서 edgartools를 REIMPLEMENT로
+돌린 것과 같은 문제에 걸린다.
+
+## 그래도 가져온 것 — 이미 반영돼 있다
+
+DartLab의 핵심 아이디어(**SEC와 DART를 하나의 Company 인터페이스로**)는
+P0-02에서 이미 흡수했다: `FinancialProvider`는 시장 중립이며
+`SecCompanyFactsProvider`는 그 구현체 중 하나일 뿐이다. 한국 기업을 실제로
+분석할 일이 생기면 `DartProvider(FinancialProvider)`를 추가하는 것으로 끝나고,
+도메인 코드는 바뀌지 않는다 — **인터페이스가 이미 그 자리를 비워뒀다.**
+
+## 재개 조건
+
+IRS가 한국 **기업**(ETF 래퍼가 아니라)을 실제로 분석하기로 할 때. 그 시점에도
+DartLab 채택보다 `engine/filing_dates.py`처럼 stdlib으로 DART Open API를 직접
+호출하는 편이 이 저장소 구조에 맞을 가능성이 높다(P0-03과 동일 판단).
+
+## Next
+**P0-05~07**(Canonical Financial Data Model · Normalization · Reconciliation) —
+P0-03이 발견한 `operating_income` 벤더-SEC 불일치(BSX 11/11 연도)를 다룰 계층.
+지금 확정된 것은 "두 출처가 다르다"는 사실뿐이고, 어느 쪽을 쓸지는 이 계층이
+만들어져야 답할 수 있다.
