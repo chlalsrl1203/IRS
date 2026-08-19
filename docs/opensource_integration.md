@@ -748,7 +748,7 @@ calibrated uncertainty: 명시 표현 0개인데 시스템이 아는 미확인�
 4. 문서 이력이 `filings.recent`로 제한된다(오래된 공시는 별도 파일).
 
 ## Commit
-`(아래 커밋)`
+`ce0d773`
 
 ## Next
 P0-14~P0-18은 대부분 기존 모듈과 겹친다 — P0-15 Valuation은 `expectation_gap_engine.py`,
