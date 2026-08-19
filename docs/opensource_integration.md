@@ -342,7 +342,7 @@ P0-07 reconcile의 몫이다.
 4. 재작성(restatement)은 여전히 구분하지 못한다 — 스냅샷 계층(P0-09) 사안.
 
 ## Commit
-`(아래 P0-03 커밋)`
+`f60513b`
 
 ## Next
 **P0-04 DART Adapter** — DartLab을 확인해 한국 시장을 같은 `FinancialProvider`
