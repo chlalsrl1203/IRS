@@ -239,7 +239,7 @@ IRS는 실제로 Alpha Vantage 원자료를 `ledger/*.json`에 담아 공개 저
    유지된다.
 
 ## Commit
-`(아래 P0-02 커밋)`
+`336f9e1`
 
 ## Next
 **P0-03 SEC / EDGAR Adapter** — `FinancialProvider`의 첫 구현체. edgartools를
