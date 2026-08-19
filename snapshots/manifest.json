@@ -1,0 +1,18 @@
+{
+  "generated_at": "2026-08-19",
+  "n_snapshots": 1,
+  "entities": [
+    "BSX"
+  ],
+  "snapshots": [
+    {
+      "path": "sec_edgar/BSX_2026-08-19.json",
+      "entity": "BSX",
+      "source_key": "sec_edgar",
+      "retrieved_at": "2026-08-19",
+      "content_hash": "8298f06d1f78fc0964c7251d4e0a05a385c5458c2faacbcd59cfd04844ce7232",
+      "n_facts": 44
+    }
+  ],
+  "note": "⚠️ 기존 34종목에는 스냅샷이 없다. 소급 생성하지 않는다 — 오늘 조회한 값을 그때 값인 양 저장하면 허위 증거가 된다(provenance v3.50과 동일 판단). 스냅샷은 오늘 이후 조회분부터 쌓인다."
+}

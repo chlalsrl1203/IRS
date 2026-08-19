@@ -123,6 +123,30 @@ class FinancialFact:
                     f"{f}이(가) 비어 있다. **추측으로 채우지 않는다** — 특히 "
                     f"available_at을 오늘 날짜로 채우면 PIT 검증이 거짓이 된다."
                 )
+        self._check_available_at()
+
+    def to_provenance(self):
+        """
+        P0-08: 값 단위 출처(`engine.provenance.ValueProvenance`)로 변환한다.
+
+        두 타입이 같은 7개 축을 담는 중복을 **새 타입을 만들지 않고** 변환으로
+        해소한다. `source_kind`는 등록부에서 끌어오므로 provider 거버넌스와
+        값 단위 출처가 어긋날 수 없다.
+        """
+        from engine.data.governance.source_registry import get_source
+        from engine.provenance import ValueProvenance
+
+        return ValueProvenance(
+            field_path=f"{self.metric}_by_year[{self.fiscal_year}]",
+            value=self.value, unit=self.unit, currency=self.currency,
+            period=f"{self.period_start}~{self.period_end}",
+            source=self.source,
+            source_kind=get_source(self.source_key).source_kind,
+            publication_date=self.available_at,
+            retrieval_date=self.retrieved_at,
+        )
+
+    def _check_available_at(self):
         if self.available_at < self.period_end:
             raise ValueError(
                 f"{self.entity} {self.metric} FY{self.fiscal_year}: 공시일"
@@ -175,6 +199,45 @@ class ProviderResult:
         """`AnalysisInputs.filing_dates_by_year`에 바로 넣을 수 있는 형태."""
         return {f.fiscal_year: f.available_at
                 for f in self.facts if f.metric == metric}
+
+    def to_pit_inputs(self, analysis_as_of: str, metric: str = "revenue") -> dict:
+        """
+        P0-10: `AnalysisInputs`의 PIT 필드를 **이미 가져온 사실에서** 만든다.
+
+        ⚠️ `engine/filing_dates.pit_inputs_for()`와 겹쳐 보이지만 다른 것을
+        보장한다. 그쪽은 제출일을 **별도로 다시 조회**하므로, 값이 벤더에서
+        오고 날짜가 SEC에서 오면 **PIT 검증이 실제로 쓰지도 않은 값의 날짜를
+        검사**하게 된다. 이쪽은 값과 날짜가 같은 사실(FinancialFact)에서 나와
+        그 괴리가 원천적으로 생기지 않고, SEC 호출도 한 번 줄어든다.
+
+        `pit_inputs_for()`는 provider를 쓰지 않는 기존 경로용으로 그대로 둔다.
+
+        최근 회계연도의 공시일이 없으면 `filing_dates_by_year`를 **빼서**
+        `PIT_UNKNOWN`으로 떨어지게 한다(억지로 채우면 "검증한 척"이 된다).
+        """
+        dates = self.available_at_by_year(metric)
+        if not dates or max(dates) not in dates:
+            return {"analysis_as_of": analysis_as_of}
+        return {"analysis_as_of": analysis_as_of, "filing_dates_by_year": dict(dates)}
+
+    def to_provenance_record(self, missing_fields=None) -> dict:
+        """
+        P0-08: 값 단위 출처 기록(`engine/provenance.py`)을 **자동 생성**한다.
+
+        `provenance.py`가 스스로 적어둔 대로 *"손으로 적게 만들면 결국 아무도
+        안 적는다"* — provider가 이미 가진 정보를 그대로 옮기므로 별도 입력이
+        필요 없다. `FinancialFact`와 `ValueProvenance`가 같은 7개 축을 담는
+        중복을 이 변환으로 해소한다(§1.11: 중복 기능을 새로 만들지 않는다).
+        """
+        from engine.provenance import build_provenance_record
+
+        missing = list(missing_fields or [])
+        missing += [x for x in self.limitations if x.startswith("[미확보]")
+                    or x.startswith("[연도 누락]")]
+        return build_provenance_record(
+            [f.to_provenance() for f in self.facts],
+            retrieval_date=self.retrieved_at, missing_fields=missing,
+        )
 
     def coverage(self) -> dict:
         metrics = sorted({f.metric for f in self.facts})

@@ -268,3 +268,49 @@ def build_canonical_series(entity: str, facts_by_source: dict,
             )
 
     return CanonicalSeries(entity=entity, values=values, limitations=limitations)
+
+
+def canonical_pit_inputs(series: "CanonicalSeries", analysis_as_of: str,
+                         metric: str = "revenue") -> dict:
+    """
+    P0-10: canonical 계층에서 PIT 필드를 만든다.
+
+    ⚠️ `available_at`은 후보들 중 **가장 이른** 공시일이다(`build_canonical_series`
+    참조). 여러 출처가 같은 값을 다른 날 보고했다면 "언제부터 알 수 있었는가"는
+    가장 이른 쪽이 맞다 — 늦은 쪽을 쓰면 PIT 검증이 실제보다 관대해진다.
+
+    최근 회계연도가 없으면 `filing_dates_by_year`를 뺀다(PIT_UNKNOWN으로 정직하게).
+    """
+    dates = series.available_at(metric)
+    if not dates:
+        return {"analysis_as_of": analysis_as_of}
+    return {"analysis_as_of": analysis_as_of, "filing_dates_by_year": dict(dates)}
+
+
+def canonical_provenance_record(series: "CanonicalSeries",
+                                retrieval_date: str) -> dict:
+    """
+    P0-08: canonical 계층의 출처 기록. **채택된 값의 출처**를 남기되, 미해결
+    충돌은 `missing_fields`로 드러낸다 — 값이 없는 것과 값을 못 고른 것을
+    구분하지 않으면 커버리지가 실제보다 높아 보인다.
+    """
+    from engine.provenance import ValueProvenance, build_provenance_record
+
+    entries, missing = [], []
+    for (metric, fy), v in sorted(series.values.items()):
+        path = f"{metric}_by_year[{fy}]"
+        if v.value is None or not v.chosen_source_key:
+            missing.append(path)
+            continue
+        from engine.data.governance.source_registry import get_source
+        entries.append(ValueProvenance(
+            field_path=path, value=v.value, unit="currency_amount",
+            currency=v.currency, period=f"FY{fy}",
+            source=next((c["source"] for c in v.candidates
+                         if c["source_key"] == v.chosen_source_key),
+                        v.chosen_source_key),
+            source_kind=get_source(v.chosen_source_key).source_kind,
+            publication_date=v.available_at, retrieval_date=retrieval_date,
+            note=v.chosen_reason,
+        ))
+    return build_provenance_record(entries, retrieval_date, missing_fields=missing)

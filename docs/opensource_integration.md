@@ -531,3 +531,101 @@ Gap 중앙 4.90%p를 얻었던 것과 대비하면, **데이터 출처 선택이
 **P0-08 Provenance**(이미 `engine/provenance.py` 존재 — 이 계층과 연결이 필요한지
 확인) → **P0-09 Snapshot**(재작성 추적의 전제) → **P0-10 PIT/As-of Engine**
 (`engine/filing_dates.py`가 이미 담당하는 부분과 중복 여부 확인 필요).
+
+---
+
+# P0-08 / P0-09 / P0-10 — Provenance 연결 · Snapshot · PIT 연결 ✅ 완료 (2026-08-19)
+
+## Source
+https://github.com/chenditc/investment_data (Apache-2.0) — `qlib_bin.manifest.json`
+버저닝/재현 아카이브
+
+## Method
+- **P0-08 Provenance: DUPLICATE → 연결**. `engine/provenance.py`(v3.50)가 이미
+  존재한다. 새로 만들지 않고 `FinancialFact.to_provenance()`로 **변환**했다 —
+  두 타입이 같은 7개 축을 담는 중복을 새 타입 없이 해소한다(§1.11).
+- **P0-10 PIT: DUPLICATE → 연결**. `engine/filing_dates.py`가 이미 담당한다.
+- **P0-09 Snapshot: REIMPLEMENT**. 원본은 릴리스 tarball + manifest로 **배포**가
+  목적이지만, IRS가 필요한 것은 **"그때 무엇을 봤는가"의 증거**라 값 단위 해시와
+  매니페스트만 가져오고 아카이브 포맷은 옮기지 않았다.
+
+## Implementation
+
+### ⭐ P0-10에서 발견한 실질적 결함 — PIT가 쓰지도 않은 값의 날짜를 검사할 수 있었다
+
+`pit_inputs_for()`는 제출일을 **별도로 다시 조회**한다. 값이 벤더에서 오고
+날짜가 SEC에서 오면, **PIT 검증이 실제로 쓰지도 않은 값의 날짜를 검사**하게 된다
+(현재 34종목이 정확히 그 구조 — 값은 Alpha Vantage, PIT는 미기입).
+
+`ProviderResult.to_pit_inputs()`는 **이미 가져온 사실에서** PIT 필드를 만든다.
+값과 날짜가 같은 `FinancialFact`에서 나오므로 그 괴리가 원천적으로 생기지 않고,
+SEC 호출도 한 번 줄어든다. `pit_inputs_for()`는 provider를 쓰지 않는 기존 경로용으로
+그대로 둔다.
+
+### P0-09 스냅샷 — 여러 곳에서 미뤄둔 항목의 공통 전제조건
+
+| 미뤄둔 곳 | 답하지 못하던 질문 |
+|---|---|
+| `filing_dates.py` docstring | "그때 숫자가 이거였는가"(재작성 여부) |
+| v3.49 PIT 감사 | 34종목을 `PIT_VALID`로 못 올린 유일한 이유 |
+| `docs/change_plan.md` C-09 | Provenance를 DEFERRED로 둔 사유 |
+| P0-02 `FinancialFact` | `version`·`restated_at`을 안 넣은 이유 |
+
+전부 하나에 걸려 있었다 — **원자료를 조회 시점 그대로 보관해야 한다.**
+
+두 가지를 못박았다: (a) **소급 스냅샷을 만들지 않는다**(오늘 조회값을 그때 값인
+양 저장하면 허위 증거 — provenance v3.50과 동일 판단), (b) **스냅샷 1개로
+"재작성 없음"이라 말하지 않는다**(`comparable=False`, "알 수 없음" — 데이터
+부재를 안전 신호로 오독하지 않는다, v3.37 겹침 측정의 교훈).
+
+같은 날 내용이 다른 스냅샷은 **거부**한다(v3.46이 `save_ledger()`에서 잡은 사고).
+
+## Tests
+`tests/test_snapshot_pit_provenance.py` — 16건 신규. 545 → **561개 전부 통과.**
+
+## Verification
+
+### ⭐ 전 계층 관통 — 이 저장소 **최초의 `PIT_VALID` 분석**
+
+BSX 실데이터로 provider → 스냅샷 → provenance → PIT → `run_analysis()`까지:
+
+```
+스냅샷      snapshots/sec_edgar/BSX_2026-08-19.json
+provenance  PROVENANCE_RECORDED / 커버 44건 / 누락 0건
+PIT 입력    analysis_as_of=2026-08-19, filing_dates 11개년
+```
+
+| | 현재 ledger(PIT 미기입) | provider PIT |
+|---|---|---|
+| `point_in_time.status` | `PIT_UNKNOWN` | **`PIT_VALID`** (위반 0건) |
+| Gap | 0.058653 | 0.058653 |
+| 판정 / DRS / Confidence | 저평가 가능성 / 43.8 / 94 | **완전 동일** |
+
+v3.47이 PIT 필드를 만든 뒤 **34종목 중 채운 것이 0건**이었고, v3.49가 조회 수단을
+만들었지만 여전히 0건이었다. 그 경로가 실제로 끝까지 통한 첫 사례다.
+계산 경로에는 전혀 관여하지 않는다(순수 기록 경로).
+
+### ⚠️ 실측이 드러낸 미묘함 — `available_at`의 정확한 의미
+
+BSX FY2016·2017·2018의 제출일이 전부 `2019-02-19`로 나왔다. 세 해 모두
+`Revenues` 태그로는 FY2018 10-K에서 처음 등장하기 때문이다(ASC 606 전환).
+
+즉 이 값은 **"그 회계연도 실적이 처음 공시된 날"이 아니라 "그 수치가 이 태그로
+처음 등장한 날"**이다. PIT 관점에서는 **보수적**이라(실제보다 늦은 날짜) 미래정보
+사용을 놓치지 않지만, 분석일이 원 공시일과 태그 최초등장일 사이면 **거짓 양성**이
+날 수 있다. `sec.py` docstring에 명시했다.
+
+## Remaining Risk
+
+1. **스냅샷은 오늘 1건뿐이다.** 재작성 탐지는 시간이 지나 2건 이상 쌓여야
+   작동한다 — 지금은 `comparable=False`가 정확한 상태다.
+2. 기존 34종목은 여전히 `PIT_UNKNOWN`이며 **소급하지 않는다.**
+3. `available_at` 거짓 양성 가능성(위).
+
+## Commit
+`(아래 커밋)`
+
+## Next
+**P0-11 Financial Document Intelligence** 이후는 성격이 다르다(문서 파싱·평가·
+논거). 지금까지의 P0-01~10은 **데이터 계층**을 세운 것이고, 그 계층이 실제로
+관통됨을 BSX로 확인했다.

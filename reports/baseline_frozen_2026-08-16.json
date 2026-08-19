@@ -1,7 +1,7 @@
 {
   "frozen_at": "2026-08-16",
   "purpose": "Growth Quality 연구(§4) 동안 production 결과를 변경하지 않는다는 약속을 해시로 강제한다. 이 값이 바뀌면 연구가 공식 결과를 오염시킨 것이다.",
-  "engine_version_at_freeze": "v3.54",
+  "engine_version_at_freeze": "v3.55",
   "fields": [
     "engine_version",
     "realistic_growth",
