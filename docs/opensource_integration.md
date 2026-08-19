@@ -245,3 +245,106 @@ IRS는 실제로 Alpha Vantage 원자료를 `ledger/*.json`에 담아 공개 저
 **P0-03 SEC / EDGAR Adapter** — `FinancialProvider`의 첫 구현체. edgartools를
 ADAPT할지, 기존 `engine/filing_dates.py`의 companyfacts 경로를 확장할지를
 **실제 코드·라이선스·의존성을 확인한 뒤** 결정한다(§1.4).
+
+---
+
+# P0-03 — SEC / EDGAR Adapter ✅ 완료 (2026-08-19)
+
+## Source
+https://github.com/dgunning/edgartools (MIT)
+
+## Capability
+SEC EDGAR · XBRL 표준화 재무제표 · typed filing abstraction
+
+## IRS Target
+`engine/data/providers/sec.py` — `SecCompanyFactsProvider`
+
+## Method
+### ⚠️ 계획서의 **ADAPT → REIMPLEMENT로 변경**했다. 근거는 실제 확인이다(§1.4)
+
+| 확인 항목 | 사실 |
+|---|---|
+| edgartools 런타임 의존성 | **21개**(pyproject.toml 직접 확인): httpx·pandas·pyarrow·lxml·pydantic·rich·orjson·rapidfuzz 등 |
+| IRS 현재 런타임 의존성 | **0개** — `engine/` 전체가 stdlib만 쓴다. `requirements.txt`·`pyproject.toml` 없음 |
+| CI | `.github/workflows/tests.yml`이 `pip install pytest` 한 줄뿐 |
+| IRS가 실제로 필요한 것 | 연간 재무수치 + 제출일 — `engine/filing_dates.py`가 **이미 stdlib으로** 가져오고 있다(ONON 사건에서 실전 검증) |
+
+ADAPT는 의존성 0개 프로젝트에 21개 트리를 들이고, 의존성 관리 파일을 신설하고,
+CI를 바꾸는 일이다 — §1.14·§1.15에 정면으로 걸린다.
+
+**REJECT가 아니라 REIMPLEMENT다.** edgartools에서 실제로 가져온 설계는 둘:
+**XBRL 태그 표준화**(회사·연도마다 태그가 달라 우선순위 목록으로 정규화)와
+**어댑터 경계**(외부 응답 객체를 도메인에 노출하지 않음, §1.8).
+
+## Implementation
+
+8개 지표에 대한 태그 우선순위(us-gaap + ifrs-full), 연간/시점 구분, 최초 공시본
+선택, `available_at` 추출. 네트워크는 `engine/filing_dates.py`에 위임한다
+(P0-01 레이트리밋이 거기 걸려 있어 우회 경로를 새로 만들지 않는다).
+
+### ⚠️ 실측이 잡은 결함 — 긴 시계열이 한 태그로 덮이지 않는다
+
+BSX 실데이터로 돌리자 **FY2015 매출이 통째로 사라졌다.** 원인은 초판의 "첫 태그에서
+멈춤"이었다 — ASC 606(2018) 전후로 회사가 쓰는 태그가 갈린다(`Revenues` →
+`RevenueFromContractWithCustomerExcludingAssessedTax`). 우선순위 태그부터 훑되
+**비어 있는 연도만** 하위 태그로 보충하도록 고쳤고, 태그가 섞이면
+`[태그 혼재]` 경고를 남긴다(정의가 구간마다 다를 수 있으므로).
+회귀 테스트: `test_long_series_spanning_a_tag_change_is_not_silently_truncated`
+
+## Tests
+`tests/test_sec_provider.py` — 15건 신규(**네트워크 없이** 합성 companyfacts).
+514 → **529개 전부 통과.**
+
+## Verification
+
+- 34종목 골든재현 **8개 지표 완전 동일**, baseline fingerprint `fbd34322…` **불변**
+- ledger 파일 **무수정**
+
+### ⭐ 실데이터 대조 — BSX 11개년, ledger(벤더) vs SEC 1차자료
+
+| 지표 | 일치 | 비고 |
+|---|---|---|
+| `operating_cashflow` | **11/11** | 완전 일치 |
+| `revenue` | 10/11 | FY2015만 불일치(7,477 vs 8,068, +7.9% — 태그 정의 차이) |
+| `capex` | 9/11 | FY2022 −3.9%, FY2023 −11.1% |
+| `operating_income` | **0/11** | **전 연도 불일치**, −141% ~ +7.4% |
+
+`operating_income`이 전 연도 어긋난다. 벤더가 정규화(일회성 항목 제외)한 값을
+주고 SEC는 GAAP 원값을 주기 때문으로 보이나 **원인을 확정하지 않았다** — 확정은
+P0-07 reconcile의 몫이다.
+
+**영향 정량화**(공식 판정은 건드리지 않고 측정만):
+
+| | ledger(벤더) | SEC |
+|---|---|---|
+| margin_volatility | 4.00 | **8.00** |
+| DRS | 43.80 | **47.80** |
+| Implied Growth | 8.00% | 8.21% |
+| **Expectation Gap** | **+5.87%p** | **+5.65%p** |
+| RAR | +0.4926 | +0.4235 |
+| 판정 | 저평가 가능성 | 저평가 가능성 (**불변**) |
+
+판정은 뒤집히지 않았다. 다만 **BSX의 Gap은 +5%p 경계 바로 위(+5.87%p)라 이
+0.22%p 이동이 남은 여유의 약 25%를 먹는다** — 무시할 만한 차이가 아니다.
+
+리포트: `reports/sec_provider_crosscheck_2026-08-19.json`
+
+## Remaining Risk
+
+1. **`operating_income` 불일치의 원인이 미확정이다.** 어느 쪽이 "옳은" 값인지
+   이 단계에서 판정하지 않는다(P0-07). 지금 확정된 것은 **두 출처가 다르다는
+   사실과 그 크기**뿐이다.
+2. **기존 34종목 ledger를 SEC 값으로 바꾸지 않았다.** 소급 교체는 (a) 어느
+   정의가 옳은지 미확정이고 (b) 34종목 전체 판정에 영향을 주므로, 대조 계층이
+   완성된 뒤 사용자 승인 아래 결정할 사안이다.
+3. `[태그 혼재]` 구간은 정의가 연도마다 다를 수 있어 그 구간을 지나는 CAGR은
+   경계 연도를 확인해야 한다.
+4. 재작성(restatement)은 여전히 구분하지 못한다 — 스냅샷 계층(P0-09) 사안.
+
+## Commit
+`(아래 P0-03 커밋)`
+
+## Next
+**P0-04 DART Adapter** — DartLab을 확인해 한국 시장을 같은 `FinancialProvider`
+인터페이스로 들일 수 있는지 판단한다. 그 다음 P0-05~07(canonical model ·
+normalize · reconcile)에서 이번에 발견한 `operating_income` 불일치를 다룬다.
