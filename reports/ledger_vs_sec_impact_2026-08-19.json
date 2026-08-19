@@ -1,0 +1,138 @@
+{
+  "generated_at": "2026-08-19",
+  "step": "P0-07 영향측정",
+  "affects_official_judgment": false,
+  "note": "SEC 값 전면대체는 '옳은 값'이 아니라 시나리오다. 물질적 불일치는 reconcile이 자동 해결하지 않으며 ledger는 수정하지 않았다.",
+  "results": [
+    {
+      "ticker": "BSX",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "operating_income_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.058652919654472085,
+      "gap_sec": 0.05557402008525389,
+      "gap_delta_pp": -0.30788995692181964,
+      "judgment_ledger": "저평가 가능성",
+      "judgment_sec": "저평가 가능성",
+      "flipped": false,
+      "drs_ledger": 43.8,
+      "drs_sec": 47.8,
+      "rg_ledger": 0.13863186252556584,
+      "rg_sec": 0.1376905285691406
+    },
+    {
+      "ticker": "ROP",
+      "replaced_metrics": [
+        "operating_cashflow_by_year",
+        "operating_income_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.012357788085937522,
+      "gap_sec": 0.004081802368164078,
+      "gap_delta_pp": -0.8275985717773444,
+      "judgment_ledger": "적정가/경계선",
+      "judgment_sec": "적정가/경계선",
+      "flipped": false,
+      "drs_ledger": 31.520000000000003,
+      "drs_sec": 47.519999999999996,
+      "rg_ledger": 0.055,
+      "rg_sec": 0.055
+    },
+    {
+      "ticker": "TYL",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "operating_income_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.0277231870438982,
+      "gap_sec": 0.030854099824659934,
+      "gap_delta_pp": 0.31309127807617326,
+      "judgment_ledger": "적정가/경계선",
+      "judgment_sec": "적정가/경계선",
+      "flipped": false,
+      "drs_ledger": 33.0,
+      "drs_sec": 33.0,
+      "rg_ledger": 0.10153071267866381,
+      "rg_sec": 0.10153071267866381
+    },
+    {
+      "ticker": "GWRE",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "operating_income_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.0315386804982906,
+      "gap_sec": 0.032713975610649954,
+      "gap_delta_pp": 0.11752951123593508,
+      "judgment_ledger": "적정가/경계선",
+      "judgment_sec": "적정가/경계선",
+      "flipped": false,
+      "drs_ledger": 39.080000000000005,
+      "drs_sec": 39.080000000000005,
+      "rg_ledger": 0.11506636068985966,
+      "rg_sec": 0.11506636068985966
+    },
+    {
+      "ticker": "PGR",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.21757485287419526,
+      "gap_sec": 0.21757485287419526,
+      "gap_delta_pp": 0.0,
+      "judgment_ledger": "저평가 가능성",
+      "judgment_sec": "저평가 가능성",
+      "flipped": false,
+      "drs_ledger": 46.8,
+      "drs_sec": 46.8,
+      "rg_ledger": 0.1686526955865976,
+      "rg_sec": 0.1686526955865976
+    },
+    {
+      "ticker": "ACGL",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.24383806952929307,
+      "gap_sec": 0.24383806952929307,
+      "gap_delta_pp": 0.0,
+      "judgment_ledger": "저평가 가능성",
+      "judgment_sec": "저평가 가능성",
+      "flipped": false,
+      "drs_ledger": 48.0,
+      "drs_sec": 48.0,
+      "rg_ledger": 0.157353923411129,
+      "rg_sec": 0.157353923411129
+    },
+    {
+      "ticker": "WM",
+      "replaced_metrics": [
+        "capex_by_year",
+        "operating_cashflow_by_year",
+        "operating_income_by_year",
+        "revenue_by_year"
+      ],
+      "gap_ledger": 0.0008904206704897916,
+      "gap_sec": 0.0008904206704897916,
+      "gap_delta_pp": 0.0,
+      "judgment_ledger": "적정가/경계선",
+      "judgment_sec": "적정가/경계선",
+      "flipped": false,
+      "drs_ledger": 54.8,
+      "drs_sec": 54.8,
+      "rg_ledger": 0.0803240971798224,
+      "rg_sec": 0.0803240971798224
+    }
+  ]
+}

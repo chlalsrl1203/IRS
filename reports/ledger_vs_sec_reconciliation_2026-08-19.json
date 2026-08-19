@@ -1,0 +1,2055 @@
+{
+  "generated_at": "2026-08-19",
+  "step": "P0-07",
+  "source_repo": "https://github.com/chenditc/investment_data",
+  "affects_official_judgment": false,
+  "n_tickers": 8,
+  "aggregate": {
+    "capex": {
+      "n": 84,
+      "severity": {
+        "EXACT": 52,
+        "MATERIAL": 28,
+        "MINOR": 4
+      },
+      "median_rel_diff": 0.1416571205014115,
+      "max_rel_diff": 0.7193351258860914
+    },
+    "operating_cashflow": {
+      "n": 84,
+      "severity": {
+        "EXACT": 71,
+        "MATERIAL": 12,
+        "ROUNDING": 1
+      },
+      "median_rel_diff": 0.13583125056882225,
+      "max_rel_diff": 0.26352370336371383
+    },
+    "operating_income": {
+      "n": 84,
+      "severity": {
+        "EXACT": 63,
+        "MATERIAL": 21
+      },
+      "median_rel_diff": 0.16146466693690043,
+      "max_rel_diff": 1.4139240506329114
+    },
+    "revenue": {
+      "n": 84,
+      "severity": {
+        "EXACT": 75,
+        "MINOR": 2,
+        "MATERIAL": 6,
+        "ROUNDING": 1
+      },
+      "median_rel_diff": 0.0732523549826475,
+      "max_rel_diff": 0.2722404154077183
+    }
+  },
+  "by_ticker": [
+    {
+      "ticker": "ACGL",
+      "report": {
+        "entity": "ACGL",
+        "n_values": 44,
+        "n_unresolved": 0,
+        "by_severity": {
+          "EXACT": 43,
+          "MINOR": 1
+        },
+        "unresolved": [],
+        "limitations": [],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "operating_cashflow": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "operating_income": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "revenue": {
+          "n": 11,
+          "sev": {
+            "EXACT": 10,
+            "MINOR": 1
+          },
+          "rel": [
+            0.00196662277756436
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[미확보] operating_income: 시도한 태그 ('OperatingIncomeLoss', 'ProfitLossFromOperatingActivities') 중 연간 데이터를 찾지 못했다. 회사가 다른 태그를 쓰거나 XBRL 태깅 이전 연도일 수 있다.",
+        "[태그 혼재] operating_cashflow: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:NetCashProvidedByUsedInOperatingActivities (USD)', 'us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것."
+      ]
+    },
+    {
+      "ticker": "BSX",
+      "report": {
+        "entity": "BSX",
+        "n_values": 44,
+        "n_unresolved": 14,
+        "by_severity": {
+          "EXACT": 30,
+          "MATERIAL": 14
+        },
+        "unresolved": [
+          {
+            "metric": "capex",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.0392156862745098,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 612000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 588000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2023-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2023,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.11125,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 800000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2023-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 711000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2024-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 1.4139240506329114,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 790000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": -327000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2016-02-24"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.6383495145631068,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1236000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 447000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2017-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.15737704918032788,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1525000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1285000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2018-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2018,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.13298791018998274,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1737000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2018-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1506000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2019-02-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2019,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.1133177570093458,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1712000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2019-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1518000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2020-02-25"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 1.1331114808652247,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 601000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": -80000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2021-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.3761706555671176,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1922000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1199000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2022-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.09594298245614036,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1824000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1649000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2023-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2023,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.06914212548015365,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2181000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2023-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2343000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2024-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2024,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.012144212523719165,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2635000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2024-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2603000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2025-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2025,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.09015361369932007,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 3971000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2025-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 3613000000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2026-02-17"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.0732523549826475,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 7477000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 8068000000.0,
+                "source": "SEC XBRL us-gaap:Revenues",
+                "available_at": "2016-02-24"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] capex FY2022: MATERIAL — 편차 3.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2023: MATERIAL — 편차 11.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2015: MATERIAL — 부호가 갈린다(한쪽은 이익, 다른 쪽은 손실). 편차 141.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2016: MATERIAL — 편차 63.8%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2017: MATERIAL — 편차 15.7%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2018: MATERIAL — 편차 13.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2019: MATERIAL — 편차 11.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2020: MATERIAL — 부호가 갈린다(한쪽은 이익, 다른 쪽은 손실). 편차 113.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2021: MATERIAL — 편차 37.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2022: MATERIAL — 편차 9.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2023: MATERIAL — 편차 6.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2024: MATERIAL — 편차 1.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2025: MATERIAL — 편차 9.0%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2015: MATERIAL — 편차 7.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 11,
+          "sev": {
+            "EXACT": 9,
+            "MATERIAL": 2
+          },
+          "rel": [
+            0.0392156862745098,
+            0.11125
+          ]
+        },
+        "operating_cashflow": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "operating_income": {
+          "n": 11,
+          "sev": {
+            "MATERIAL": 11
+          },
+          "rel": [
+            1.4139240506329114,
+            0.6383495145631068,
+            0.15737704918032788,
+            0.13298791018998274,
+            0.1133177570093458,
+            1.1331114808652247,
+            0.3761706555671176,
+            0.09594298245614036,
+            0.06914212548015365,
+            0.012144212523719165,
+            0.09015361369932007
+          ]
+        },
+        "revenue": {
+          "n": 11,
+          "sev": {
+            "MATERIAL": 1,
+            "EXACT": 10
+          },
+          "rel": [
+            0.0732523549826475
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[태그 혼재] revenue: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)', 'us-gaap:Revenues (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것."
+      ]
+    },
+    {
+      "ticker": "CDNS",
+      "report": {
+        "entity": "CDNS",
+        "n_values": 48,
+        "n_unresolved": 16,
+        "by_severity": {
+          "EXACT": 31,
+          "MATERIAL": 16,
+          "MINOR": 1
+        },
+        "unresolved": [
+          {
+            "metric": "capex",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.11154258168184253,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 44808000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 39810000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2015-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.16577301161751565,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 53712000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 44808000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2016-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.29460095134633435,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 66881000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 94813000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.4743146962927183,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 124215000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 65298000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.1625542041248017,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 378200000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 316722000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2015-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.14988120365312815,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 444879000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 378200000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2016-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.17805947184179596,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1100958000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 904922000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.11348472574954062,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1241894000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1100958000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.2760256455172897,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 285430000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 206644000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2015-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.14199278281890482,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 244901000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 285430000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2016-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.17140147017863172,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 779089000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 645552000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.27437910152502687,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1073686000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 779089000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2025,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.09561208427057895,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1649781000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2025-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1492042000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2026-02-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.07118244559192194,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1702091000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1580932000.0,
+                "source": "SEC XBRL us-gaap:SalesRevenueNet",
+                "available_at": "2015-02-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.10218476135148268,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2988244000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2682891000.0,
+                "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.16101050111210377,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 3561718000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2988244000.0,
+                "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] capex FY2015: MATERIAL — 편차 11.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2016: MATERIAL — 편차 16.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2021: MATERIAL — 편차 29.5%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2022: MATERIAL — 편차 47.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2015: MATERIAL — 편차 16.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2016: MATERIAL — 편차 15.0%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2021: MATERIAL — 편차 17.8%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2022: MATERIAL — 편차 11.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2015: MATERIAL — 편차 27.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2016: MATERIAL — 편차 14.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2021: MATERIAL — 편차 17.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2022: MATERIAL — 편차 27.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2025: MATERIAL — 편차 9.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2015: MATERIAL — 편차 7.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2021: MATERIAL — 편차 10.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2022: MATERIAL — 편차 16.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 12,
+          "sev": {
+            "EXACT": 7,
+            "MATERIAL": 4,
+            "MINOR": 1
+          },
+          "rel": [
+            0.11154258168184253,
+            0.16577301161751565,
+            0.29460095134633435,
+            0.4743146962927183,
+            0.0016194647961523076
+          ]
+        },
+        "operating_cashflow": {
+          "n": 12,
+          "sev": {
+            "EXACT": 8,
+            "MATERIAL": 4
+          },
+          "rel": [
+            0.1625542041248017,
+            0.14988120365312815,
+            0.17805947184179596,
+            0.11348472574954062
+          ]
+        },
+        "operating_income": {
+          "n": 12,
+          "sev": {
+            "EXACT": 7,
+            "MATERIAL": 5
+          },
+          "rel": [
+            0.2760256455172897,
+            0.14199278281890482,
+            0.17140147017863172,
+            0.27437910152502687,
+            0.09561208427057895
+          ]
+        },
+        "revenue": {
+          "n": 12,
+          "sev": {
+            "EXACT": 9,
+            "MATERIAL": 3
+          },
+          "rel": [
+            0.07118244559192194,
+            0.10218476135148268,
+            0.16101050111210377
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[연도 누락] revenue: 요청한 회계연도 중 [2014, 2020]를 찾지 못했다(시도한 태그 ('RevenueFromContractWithCustomerExcludingAssessedTax', 'Revenues', 'RevenueFromContractWithCustomerIncludingAssessedTax', 'SalesRevenueNet', 'Revenue')).",
+        "[태그 혼재] revenue: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)', 'us-gaap:SalesRevenueNet (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것.",
+        "[연도 누락] operating_income: 요청한 회계연도 중 [2014, 2020]를 찾지 못했다(시도한 태그 ('OperatingIncomeLoss', 'ProfitLossFromOperatingActivities')).",
+        "[연도 누락] operating_cashflow: 요청한 회계연도 중 [2014, 2020]를 찾지 못했다(시도한 태그 ('NetCashProvidedByUsedInOperatingActivities', 'NetCashProvidedByUsedInOperatingActivitiesContinuingOperations', 'CashFlowsFromUsedInOperatingActivities')).",
+        "[연도 누락] capex: 요청한 회계연도 중 [2014, 2020]를 찾지 못했다(시도한 태그 ('PaymentsToAcquirePropertyPlantAndEquipment', 'PaymentsToAcquireProductiveAssets', 'PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities'))."
+      ]
+    },
+    {
+      "ticker": "GWRE",
+      "report": {
+        "entity": "GWRE",
+        "n_values": 36,
+        "n_unresolved": 12,
+        "by_severity": {
+          "MATERIAL": 12,
+          "EXACT": 24
+        },
+        "unresolved": [
+          {
+            "metric": "capex",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.11754122938530735,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 6670000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 5886000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2017-09-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2018,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.2175505786362501,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 12011000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2018-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 9398000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2018-09-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2019,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.08056163906912009,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 48857000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2019-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 44921000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2019-09-30"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.16691348402182385,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 25660000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 21377000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2020-09-28"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.34123518402994385,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 28854000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 19008000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2021-09-24"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.5632806759735489,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 21776000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 9510000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2022-09-26"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2023,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.6659780799908188,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 17427000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2023-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 5821000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2023-09-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2024,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.6566092729529875,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 18527000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2024-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 6362000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2024-09-16"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2025,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.7193351258860914,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 20455000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2025-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 5741000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2025-09-11"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.01152357684906925,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 138759000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 137160000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2017-09-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.17852848339095145,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 21861000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 26612000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2017-09-20"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2018,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.5308499743983615,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": -15624000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2018-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": -7330000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2018-09-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] capex FY2017: MATERIAL — 편차 11.8%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2018: MATERIAL — 편차 21.8%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2019: MATERIAL — 편차 8.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2020: MATERIAL — 편차 16.7%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2021: MATERIAL — 편차 34.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2022: MATERIAL — 편차 56.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2023: MATERIAL — 편차 66.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2024: MATERIAL — 편차 65.7%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2025: MATERIAL — 편차 71.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2017: MATERIAL — 편차 1.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2017: MATERIAL — 편차 17.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2018: MATERIAL — 편차 53.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 9,
+          "sev": {
+            "MATERIAL": 9
+          },
+          "rel": [
+            0.11754122938530735,
+            0.2175505786362501,
+            0.08056163906912009,
+            0.16691348402182385,
+            0.34123518402994385,
+            0.5632806759735489,
+            0.6659780799908188,
+            0.6566092729529875,
+            0.7193351258860914
+          ]
+        },
+        "operating_cashflow": {
+          "n": 9,
+          "sev": {
+            "MATERIAL": 1,
+            "EXACT": 8
+          },
+          "rel": [
+            0.01152357684906925
+          ]
+        },
+        "operating_income": {
+          "n": 9,
+          "sev": {
+            "MATERIAL": 2,
+            "EXACT": 7
+          },
+          "rel": [
+            0.17852848339095145,
+            0.5308499743983615
+          ]
+        },
+        "revenue": {
+          "n": 9,
+          "sev": {
+            "EXACT": 9
+          },
+          "rel": []
+        }
+      },
+      "sec_limitations": []
+    },
+    {
+      "ticker": "PGR",
+      "report": {
+        "entity": "PGR",
+        "n_values": 44,
+        "n_unresolved": 1,
+        "by_severity": {
+          "EXACT": 41,
+          "MATERIAL": 1,
+          "ROUNDING": 2
+        },
+        "unresolved": [
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.011270904233907857,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2732700000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2701900000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2017-03-01"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] operating_cashflow FY2016: MATERIAL — 편차 1.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "operating_cashflow": {
+          "n": 11,
+          "sev": {
+            "EXACT": 9,
+            "MATERIAL": 1,
+            "ROUNDING": 1
+          },
+          "rel": [
+            0.011270904233907857,
+            2.8186746591752557e-05
+          ]
+        },
+        "operating_income": {
+          "n": 11,
+          "sev": {
+            "EXACT": 11
+          },
+          "rel": []
+        },
+        "revenue": {
+          "n": 11,
+          "sev": {
+            "EXACT": 10,
+            "ROUNDING": 1
+          },
+          "rel": [
+            8.050363071374519e-06
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[미확보] operating_income: 시도한 태그 ('OperatingIncomeLoss', 'ProfitLossFromOperatingActivities') 중 연간 데이터를 찾지 못했다. 회사가 다른 태그를 쓰거나 XBRL 태깅 이전 연도일 수 있다."
+      ]
+    },
+    {
+      "ticker": "ROP",
+      "report": {
+        "entity": "ROP",
+        "n_values": 24,
+        "n_unresolved": 7,
+        "by_severity": {
+          "EXACT": 17,
+          "MATERIAL": 7
+        },
+        "unresolved": [
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.26352370336371383,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1123200000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1525100000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.17699686863164174,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1655800000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2011900000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.17424448679553498,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 606600000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 734600000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2023-02-27"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.243309342463839,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1082900000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1431100000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.16146466693690043,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1241200000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1480200000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.2722404154077183,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 4022400000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 5527100000.0,
+                "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "revenue",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.16338398698466544,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 4833800000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 5777800000.0,
+                "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+                "available_at": "2022-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] operating_cashflow FY2020: MATERIAL — 편차 26.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2021: MATERIAL — 편차 17.7%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2022: MATERIAL — 편차 17.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2020: MATERIAL — 편차 24.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2021: MATERIAL — 편차 16.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2020: MATERIAL — 편차 27.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] revenue FY2021: MATERIAL — 편차 16.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 6,
+          "sev": {
+            "EXACT": 6
+          },
+          "rel": []
+        },
+        "operating_cashflow": {
+          "n": 6,
+          "sev": {
+            "MATERIAL": 3,
+            "EXACT": 3
+          },
+          "rel": [
+            0.26352370336371383,
+            0.17699686863164174,
+            0.17424448679553498
+          ]
+        },
+        "operating_income": {
+          "n": 6,
+          "sev": {
+            "MATERIAL": 2,
+            "EXACT": 4
+          },
+          "rel": [
+            0.243309342463839,
+            0.16146466693690043
+          ]
+        },
+        "revenue": {
+          "n": 6,
+          "sev": {
+            "MATERIAL": 2,
+            "EXACT": 4
+          },
+          "rel": [
+            0.2722404154077183,
+            0.16338398698466544
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[미확보] capex: 시도한 태그 ('PaymentsToAcquirePropertyPlantAndEquipment', 'PaymentsToAcquireProductiveAssets', 'PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities') 중 연간 데이터를 찾지 못했다. 회사가 다른 태그를 쓰거나 XBRL 태깅 이전 연도일 수 있다."
+      ]
+    },
+    {
+      "ticker": "TYL",
+      "report": {
+        "entity": "TYL",
+        "n_values": 48,
+        "n_unresolved": 9,
+        "by_severity": {
+          "EXACT": 38,
+          "MATERIAL": 9,
+          "MINOR": 1
+        },
+        "unresolved": [
+          {
+            "metric": "capex",
+            "fiscal_year": 2019,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.1142721217887726,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 42040000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2019-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 37236000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2020-02-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.20290873322560246,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 28466000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 22690000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2021-02-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.39007768107602675,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 55612000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 33919000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2022-02-23"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.5507766545033997,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 50151000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 22529000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2023-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2023,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.6129147880548587,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 53009000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2023-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 20519000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2024-02-21"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2024,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.5887736302467158,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 49936000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2024-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 20535000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2025-02-19"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2025,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.5116335803372671,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 32793000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2025-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 16015000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2026-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2014,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.13583125056882225,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 142839000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2014-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 123437000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations",
+                "available_at": "2015-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_income",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.011231398763808844,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 162758000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 160930000.0,
+                "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                "available_at": "2018-02-21"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] capex FY2019: MATERIAL — 편차 11.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2020: MATERIAL — 편차 20.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2021: MATERIAL — 편차 39.0%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2022: MATERIAL — 편차 55.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2023: MATERIAL — 편차 61.3%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2024: MATERIAL — 편차 58.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2025: MATERIAL — 편차 51.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2014: MATERIAL — 편차 13.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_income FY2017: MATERIAL — 편차 1.1%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 12,
+          "sev": {
+            "EXACT": 5,
+            "MATERIAL": 7
+          },
+          "rel": [
+            0.1142721217887726,
+            0.20290873322560246,
+            0.39007768107602675,
+            0.5507766545033997,
+            0.6129147880548587,
+            0.5887736302467158,
+            0.5116335803372671
+          ]
+        },
+        "operating_cashflow": {
+          "n": 12,
+          "sev": {
+            "MATERIAL": 1,
+            "EXACT": 11
+          },
+          "rel": [
+            0.13583125056882225
+          ]
+        },
+        "operating_income": {
+          "n": 12,
+          "sev": {
+            "EXACT": 11,
+            "MATERIAL": 1
+          },
+          "rel": [
+            0.011231398763808844
+          ]
+        },
+        "revenue": {
+          "n": 12,
+          "sev": {
+            "EXACT": 11,
+            "MINOR": 1
+          },
+          "rel": [
+            0.005049481497078486
+          ]
+        }
+      },
+      "sec_limitations": [
+        "[태그 혼재] revenue: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)', 'us-gaap:Revenues (USD)', 'us-gaap:SalesRevenueNet (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것.",
+        "[태그 혼재] operating_cashflow: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:NetCashProvidedByUsedInOperatingActivities (USD)', 'us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것."
+      ]
+    },
+    {
+      "ticker": "WM",
+      "report": {
+        "entity": "WM",
+        "n_values": 48,
+        "n_unresolved": 8,
+        "by_severity": {
+          "MATERIAL": 8,
+          "MINOR": 3,
+          "EXACT": 37
+        },
+        "unresolved": [
+          {
+            "metric": "capex",
+            "fiscal_year": 2014,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.02540220152413209,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1151000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2014-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1181000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2016-02-18"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2017,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.03762755102040816,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1509000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2017-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1568000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2018-02-15"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2018,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.01357733175914994,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1694000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2018-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1671000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2019-02-14"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2020,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.028799019607843136,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1632000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2020-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 1585000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2021-02-22"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2021,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.06620892594409024,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 1904000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2021-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2039000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2022-02-15"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "capex",
+            "fiscal_year": 2022,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.07903168387326451,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2587000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2022-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2809000000.0,
+                "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                "available_at": "2023-02-07"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2015,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.011867088607594937,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2498000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2015-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 2528000000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2018-02-15"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          },
+          {
+            "metric": "operating_cashflow",
+            "fiscal_year": 2016,
+            "severity": "MATERIAL",
+            "max_rel_diff": 0.015302727877578177,
+            "candidates": [
+              {
+                "source_key": "alpha_vantage",
+                "value": 2960000000.0,
+                "source": "ledger 손입력(대부분 Alpha Vantage)",
+                "available_at": "2016-12-31"
+              },
+              {
+                "source_key": "sec_edgar",
+                "value": 3006000000.0,
+                "source": "SEC XBRL us-gaap:NetCashProvidedByUsedInOperatingActivities",
+                "available_at": "2018-02-15"
+              }
+            ],
+            "suggested_source_key": "sec_edgar"
+          }
+        ],
+        "limitations": [
+          "[검토 필요] capex FY2014: MATERIAL — 편차 2.5%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2017: MATERIAL — 편차 3.8%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2018: MATERIAL — 편차 1.4%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2020: MATERIAL — 편차 2.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2021: MATERIAL — 편차 6.6%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] capex FY2022: MATERIAL — 편차 7.9%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2015: MATERIAL — 편차 1.2%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다.",
+          "[검토 필요] operating_cashflow FY2016: MATERIAL — 편차 1.5%(MATERIAL)로 물질적이다. **자동 채택하지 않는다** — 회계 수치의 큰 불일치는 '둘 중 하나가 틀렸다'가 아니라 '정의가 다르다'인 경우가 많다(BSX 영업이익: 벤더 정규화값 vs GAAP 원값). 권위 서열상 제안은 sec_edgar이나, 채택은 원자료를 확인한 분석자가 정한다."
+        ],
+        "note": "미해결 항목은 '데이터가 없다'가 아니라 '출처가 갈리는데 어느 쪽을 쓸지 아직 정하지 않았다'는 뜻이다. 정하지 않은 채 분석에 넣으면 그 분석은 어느 출처를 썼는지 모르는 결과가 된다."
+      },
+      "per_metric": {
+        "capex": {
+          "n": 12,
+          "sev": {
+            "MATERIAL": 6,
+            "MINOR": 3,
+            "EXACT": 3
+          },
+          "rel": [
+            0.02540220152413209,
+            0.0032441200324412004,
+            0.005939123979213066,
+            0.03762755102040816,
+            0.01357733175914994,
+            0.0016501650165016502,
+            0.028799019607843136,
+            0.06620892594409024,
+            0.07903168387326451
+          ]
+        },
+        "operating_cashflow": {
+          "n": 12,
+          "sev": {
+            "EXACT": 10,
+            "MATERIAL": 2
+          },
+          "rel": [
+            0.011867088607594937,
+            0.015302727877578177
+          ]
+        },
+        "operating_income": {
+          "n": 12,
+          "sev": {
+            "EXACT": 12
+          },
+          "rel": []
+        },
+        "revenue": {
+          "n": 12,
+          "sev": {
+            "EXACT": 12
+          },
+          "rel": []
+        }
+      },
+      "sec_limitations": [
+        "[태그 혼재] revenue: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)', 'us-gaap:Revenues (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것.",
+        "[태그 혼재] operating_cashflow: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:NetCashProvidedByUsedInOperatingActivities (USD)', 'us-gaap:NetCashProvidedByUsedInOperatingActivitiesContinuingOperations (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것.",
+        "[태그 혼재] capex: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:PaymentsToAcquireProductiveAssets (USD)', 'us-gaap:PaymentsToAcquirePropertyPlantAndEquipment (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것."
+      ]
+    }
+  ],
+  "failures": [],
+  "note": "ledger를 수정하지 않는다. 물질적 불일치는 자동 해결되지 않으며(requires_review=True), 채택은 원자료를 확인한 분석자가 정한다. ⚠️ ledger 측 available_at은 미상이라 회계기간 종료일로 표시만 했다 - 기존 34종목에는 PIT 필드가 없다(v3.49 감사)."
+}

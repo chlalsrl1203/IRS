@@ -397,3 +397,137 @@ DartLab 채택보다 `engine/filing_dates.py`처럼 stdlib으로 DART Open API�
 P0-03이 발견한 `operating_income` 벤더-SEC 불일치(BSX 11/11 연도)를 다룰 계층.
 지금 확정된 것은 "두 출처가 다르다"는 사실뿐이고, 어느 쪽을 쓸지는 이 계층이
 만들어져야 답할 수 있다.
+
+---
+
+# P0-05 / P0-06 / P0-07 — Canonical Model · Normalization · Reconciliation ✅ 완료 (2026-08-19)
+
+세 단계를 한 데이터 흐름으로 묶어 구현했다(§4.1의 목표 구조
+`Raw → Normalize → Compare → Reconcile → Validate → Canonical`). 각각 따로 만들면
+어느 하나도 단독으로는 쓸 수 없어 검증이 불가능하다.
+
+## Source
+https://github.com/chenditc/investment_data (Apache-2.0)
+
+**실제 확인한 것**(§1.4): 저장소 실재·라이선스, `final_a_stock_eod_price` 대조
+테이블 전략(출처별 원본 테이블 `ts_*`/`yahoo_*`을 **남긴 채** 별도 canonical 층을
+만든다), `ts_link_table`을 통한 교차검증, `qlib_bin.manifest.json` 버저닝.
+
+## Capability
+multi-source normalization · source comparison · reconciliation ·
+conflict detection · missing-data handling · canonical("final") 계층 분리
+
+## IRS Target
+- `engine/data/canonical.py` — 정규화 + `CanonicalValue`/`CanonicalSeries`
+- `engine/data/reconcile.py` — 불일치 등급화 + 대조 정책
+- `scripts/reconcile_ledgers_vs_sec_2026_08_19.py` — 실측 대조
+
+## Method
+**REIMPLEMENT** — 원본은 SQL 테이블 + shell 파이프라인이고 대상이 **가격
+시계열**이다. IRS가 다루는 것은 **회계 수치**이며, 회계 수치의 불일치는 "둘 중
+하나가 틀렸다"보다 **"정의가 다르다"**인 경우가 많아(정규화 영업이익 vs GAAP)
+원본의 자동 정렬(`adjust_ratio` 재계산)을 옮겨오지 않았다. 가져온 것은 두 가지:
+**출처별 원본을 지우지 않고 대조본을 별도 계층으로 둔다**는 원칙과 **교차검증을
+상시 절차로 둔다**는 원칙.
+
+## Implementation
+
+### 정규화가 다루는 3가지 — 전부 이 저장소가 실제로 겪은 사고
+
+| 항목 | 처리 | 근거 사고 |
+|---|---|---|
+| 스케일 | `detect_scale_mismatch()` — **의심만 보고, 자동수정 안 함** | RAR 100배 오류(v3.19) |
+| 부호 | `normalize_sign()` — 뒤집기가 아니라 **절댓값** | capex 부호 사고 |
+| 통화 | 혼입 시 **오류**(환율 변환 안 함) | M-6, PDD의 CNY 미표기 |
+
+부호를 `-value`로 뒤집지 않고 `abs()`로 맞춘 이유: 뒤집기는 이미 올바른 부호로
+온 값까지 망가뜨려, 어느 벤더가 들어왔느냐에 따라 결과가 달라진다.
+
+### ⚠️ 핵심 결정 — 물질적 불일치를 자동 해결하지 않는다
+
+권위 서열(1차 공시 > 규제기관 > 벤더 > 웹)로 자동 선택하는 것이 손쉽지만, BSX
+사례가 그러면 안 되는 이유를 보여준다: 벤더 영업이익이 **틀린 것이 아니라 다른
+정의**(일회성 항목 제외)일 수 있다. 자동으로 SEC를 택하면 34종목 입력이 조용히
+바뀌고 그 변화를 추적할 수 없다.
+
+- 작은 차이(≤1%)는 자동 해결 — 판단할 것이 없다
+- 물질적 차이는 `requires_review=True`, 권위 서열은 **제안**으로만
+  (`suggested_source_key`), 채택은 분석자가 정한다
+- **부호가 갈리면 편차 크기와 무관하게 무조건 MATERIAL**(BSX FY2015: 벤더
+  +790M 이익 vs SEC −327M 손실 — 같은 것을 재고 있지 않다는 뜻)
+
+`TOLERANCE_TIERS`는 `VALIDATION_STATUS`에 **IMPLEMENTED_NOT_VALIDATED**로 명시했다.
+
+## Tests
+`tests/test_canonical_reconcile.py` — 16건 신규. 529 → **545개 전부 통과.**
+
+### ⚠️ 테스트가 또 실질 결함을 잡았다
+
+`strict=False`로 미해결 충돌을 감수할 때 `{2025: None}`이 시계열에 섞여
+`AnalysisInputs`로 흘러갔다. `None`은 값이 아니므로 시계열에서 제외하도록 고쳤다
+(빠진 연도는 `unresolved_conflicts()`·리포트에 그대로 드러난다).
+
+## Verification
+
+- 전체 **545개 통과**, 34종목 골든재현 8개 지표 완전 동일
+- baseline fingerprint `fbd34322…` **불변**, **ledger 파일 무수정**
+
+### ⭐ 실측 — 8종목 336개 값을 SEC 1차자료와 전수 대조
+
+`scripts/reconcile_ledgers_vs_sec_2026_08_19.py` (BSX·CDNS·ROP·TYL·GWRE·PGR·ACGL·WM)
+
+| 지표 | 값수 | EXACT | ROUNDING | MINOR | **MATERIAL** | 중앙편차 | 최대편차 |
+|---|---|---|---|---|---|---|---|
+| revenue | 84 | 75 | 1 | 2 | **6** | 7.33% | 27.2% |
+| operating_income | 84 | 63 | 0 | 0 | **21** | 16.15% | **141.4%** |
+| operating_cashflow | 84 | 71 | 1 | 0 | **12** | 13.58% | 26.4% |
+| capex | 84 | 52 | 0 | 4 | **28** | 14.17% | 71.9% |
+
+**BSX 1종목에서 본 문제가 전반적이다.** 건수로는 **capex(28건)**가 가장 많고
+크기로는 **operating_income(141%)**이 가장 크다. 둘 다 FCF·DRS를 통해 판정에
+직결되는 입력이다.
+
+**분포가 이봉(bimodal)이다** — 중간 등급(ROUNDING·MINOR)이 8건뿐이고 나머지는
+EXACT 아니면 MATERIAL이다. 이는 차이가 "측정 잡음"이 아니라 **"정의가 다르다"**
+쪽임을 시사한다(임계값을 이 데이터에 맞춰 조정하지 않았다 — 실행 전에 고정했다).
+
+### 판정 영향 — 8/8 불변, 그러나 DRS는 크게 움직인다
+
+SEC 값으로 전면 대체한 **시나리오**(옳은 값이라는 뜻이 아니다):
+
+| 종목 | Gap(ledger) | Gap(SEC) | 차이 | DRS 변화 | 판정 |
+|---|---|---|---|---|---|
+| ROP | +1.24% | +0.41% | **−0.83%p** | **31.5 → 47.5** | 불변 |
+| BSX | +5.87% | +5.56% | −0.31%p | 43.8 → 47.8 | 불변 |
+| TYL | +2.77% | +3.09% | +0.31%p | 33.0 → 33.0 | 불변 |
+| GWRE | +3.15% | +3.27% | +0.12%p | 39.1 → 39.1 | 불변 |
+| PGR·ACGL·WM | — | — | 0.00%p | 불변 | 불변 |
+| CDNS | **측정 불가** | | | | SEC 시계열이 불완전 |
+
+**판정은 하나도 뒤집히지 않았다** — 안심할 근거다. 다만 **ROP의 DRS가 출처
+선택만으로 16점 움직인다**(31.5→47.5). R-001 감사가 DRS를 정의역 전체로 흔들어
+Gap 중앙 4.90%p를 얻었던 것과 대비하면, **데이터 출처 선택이 그 축의 상당 부분을
+차지할 수 있다**는 뜻이다.
+
+리포트: `reports/ledger_vs_sec_reconciliation_2026-08-19.json` ·
+`reports/ledger_vs_sec_impact_2026-08-19.json`
+
+## Remaining Risk
+
+1. **어느 값이 옳은지는 여전히 미확정이다.** 이 계층은 "다르다"와 "얼마나"를
+   확정했을 뿐이다. `operating_income`이 벤더의 정규화값인지 SEC가 GAAP 원값인지는
+   원자료(10-K 손익계산서 주석)를 봐야 한다.
+2. **34종목 중 8종목만 대조했다.** 나머지 26종목은 미측정이다.
+3. **CDNS는 SEC 시계열이 불완전해 영향 측정 자체가 불가능했다** — 태그 커버리지
+   문제일 수 있다(미해결).
+4. ledger 측 `available_at`은 **미상**이라 회계기간 종료일로 표시만 했다(기존
+   34종목에 PIT 필드가 없다). 대조 계산에는 쓰이지 않는다.
+5. 재작성(restatement) 구분은 여전히 불가 — 스냅샷 계층(P0-09) 사안.
+
+## Commit
+`(아래 커밋)`
+
+## Next
+**P0-08 Provenance**(이미 `engine/provenance.py` 존재 — 이 계층과 연결이 필요한지
+확인) → **P0-09 Snapshot**(재작성 추적의 전제) → **P0-10 PIT/As-of Engine**
+(`engine/filing_dates.py`가 이미 담당하는 부분과 중복 여부 확인 필요).
