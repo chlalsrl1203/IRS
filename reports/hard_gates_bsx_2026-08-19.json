@@ -1,0 +1,180 @@
+{
+  "generated_at": "2026-08-19",
+  "step": "P0-13",
+  "ticker": "BSX",
+  "affects_official_judgment": false,
+  "result": {
+    "passed": false,
+    "n_gates": 6,
+    "n_failed": 1,
+    "failed_gates": [
+      "GATE.RECON"
+    ],
+    "n_vacuous": 0,
+    "vacuous_gates": [],
+    "results": [
+      {
+        "gate": "GATE.FABRICATION",
+        "passed": true,
+        "reason": "라벨 3건이 모두 계산값과 대응한다",
+        "detail": {
+          "checked": 3
+        }
+      },
+      {
+        "gate": "GATE.SCALE",
+        "passed": true,
+        "reason": "배수 관계 이상 없음",
+        "detail": null
+      },
+      {
+        "gate": "GATE.DIRECTION",
+        "passed": true,
+        "reason": "부호 반전 없음",
+        "detail": null
+      },
+      {
+        "gate": "GATE.RECON",
+        "passed": false,
+        "reason": "미해결 출처 충돌 14건을 안은 채 결론을 냈다 — 어느 출처를 썼는지 모르는 결론이 된다.",
+        "detail": {
+          "unresolved": [
+            {
+              "metric": "capex",
+              "fiscal_year": 2022,
+              "severity": "MATERIAL",
+              "max_rel_diff": 0.0392156862745098,
+              "candidates": [
+                {
+                  "source_key": "alpha_vantage",
+                  "value": 612000000.0,
+                  "source": "ledger 손입력(대부분 Alpha Vantage)",
+                  "available_at": "2022-12-31"
+                },
+                {
+                  "source_key": "sec_edgar",
+                  "value": 588000000.0,
+                  "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                  "available_at": "2023-02-23"
+                }
+              ],
+              "suggested_source_key": "sec_edgar"
+            },
+            {
+              "metric": "capex",
+              "fiscal_year": 2023,
+              "severity": "MATERIAL",
+              "max_rel_diff": 0.11125,
+              "candidates": [
+                {
+                  "source_key": "alpha_vantage",
+                  "value": 800000000.0,
+                  "source": "ledger 손입력(대부분 Alpha Vantage)",
+                  "available_at": "2023-12-31"
+                },
+                {
+                  "source_key": "sec_edgar",
+                  "value": 711000000.0,
+                  "source": "SEC XBRL us-gaap:PaymentsToAcquirePropertyPlantAndEquipment",
+                  "available_at": "2024-02-20"
+                }
+              ],
+              "suggested_source_key": "sec_edgar"
+            },
+            {
+              "metric": "operating_income",
+              "fiscal_year": 2015,
+              "severity": "MATERIAL",
+              "max_rel_diff": 1.4139240506329114,
+              "candidates": [
+                {
+                  "source_key": "alpha_vantage",
+                  "value": 790000000.0,
+                  "source": "ledger 손입력(대부분 Alpha Vantage)",
+                  "available_at": "2015-12-31"
+                },
+                {
+                  "source_key": "sec_edgar",
+                  "value": -327000000.0,
+                  "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                  "available_at": "2016-02-24"
+                }
+              ],
+              "suggested_source_key": "sec_edgar"
+            },
+            {
+              "metric": "operating_income",
+              "fiscal_year": 2016,
+              "severity": "MATERIAL",
+              "max_rel_diff": 0.6383495145631068,
+              "candidates": [
+                {
+                  "source_key": "alpha_vantage",
+                  "value": 1236000000.0,
+                  "source": "ledger 손입력(대부분 Alpha Vantage)",
+                  "available_at": "2016-12-31"
+                },
+                {
+                  "source_key": "sec_edgar",
+                  "value": 447000000.0,
+                  "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                  "available_at": "2017-02-23"
+                }
+              ],
+              "suggested_source_key": "sec_edgar"
+            },
+            {
+              "metric": "operating_income",
+              "fiscal_year": 2017,
+              "severity": "MATERIAL",
+              "max_rel_diff": 0.15737704918032788,
+              "candidates": [
+                {
+                  "source_key": "alpha_vantage",
+                  "value": 1525000000.0,
+                  "source": "ledger 손입력(대부분 Alpha Vantage)",
+                  "available_at": "2017-12-31"
+                },
+                {
+                  "source_key": "sec_edgar",
+                  "value": 1285000000.0,
+                  "source": "SEC XBRL us-gaap:OperatingIncomeLoss",
+                  "available_at": "2018-02-20"
+                }
+              ],
+              "suggested_source_key": "sec_edgar"
+            }
+          ]
+        }
+      },
+      {
+        "gate": "GATE.LOOKAHEAD",
+        "passed": true,
+        "reason": "미래정보 사용 흔적 없음(status=미기입)",
+        "detail": {
+          "pit_unknown": true
+        }
+      },
+      {
+        "gate": "GATE.MATCH",
+        "passed": true,
+        "reason": "self_check_v2 전체 통과",
+        "detail": null
+      }
+    ],
+    "calibrated_uncertainty": {
+      "explicit_uncertainty_markers": [],
+      "n_markers": 0,
+      "system_known_unknowns": [
+        "PIT 미검증",
+        "값 단위 출처 미기록",
+        "출처 약관 미확인(Alpha Vantage)"
+      ],
+      "acknowledged": false,
+      "note": "'판단 불가'는 실패가 아니다. 다만 시스템이 아는 미확인 상태가 있는데 메모가 그것을 언급하지 않으면 acknowledged=False가 되며, 이는 감점이 아니라 **누락 표시**다.",
+      "validation_status": "IMPLEMENTED_NOT_VALIDATED — '판단 불가'를 credit으로 인정하는 것이 옳다는 판단은 이 저장소의 원칙에서 나왔을 뿐 실증된 바 없다."
+    },
+    "validation_status": "SOFTWARE_VALIDATED — 각 게이트는 이 저장소에서 **실제로 일어난 사고** 하나씩에 대응하며 테스트로 고정돼 있다. 다만 '게이트를 통과한 메모가 더 나은 투자 성과를 낸다'는 증거는 0건이다.",
+    "note": "하드 게이트는 감점이 아니라 자동 실패다. 통과했다고 메모가 옳다는 뜻은 아니며, vacuous 게이트는 검사 자체를 하지 않았다는 뜻이다."
+  }
+}

@@ -629,3 +629,130 @@ BSX FY2016·2017·2018의 제출일이 전부 `2019-02-19`로 나왔다. 세 해
 **P0-11 Financial Document Intelligence** 이후는 성격이 다르다(문서 파싱·평가·
 논거). 지금까지의 P0-01~10은 **데이터 계층**을 세운 것이고, 그 계층이 실제로
 관통됨을 BSX로 확인했다.
+
+---
+
+# P0-11 / P0-12 / P0-13 — Document Index · Evidence Engine · Hard Gates ✅ 완료 (2026-08-19)
+
+## Source
+- https://github.com/dgunning/edgartools (MIT) — filing 접근·typed abstraction
+- https://github.com/noahnan-max/private-equity-investment-dd-skill — Evidence Matrix·Triangulation
+- https://github.com/DimaMerc/TieOutBench (MIT) — hard gates·auto-fail·calibrated uncertainty
+
+**TieOutBench 실제 확인**(§1.4): MIT, 하드 게이트가 `GATE.SCALE`·`GATE.RECON`·
+`GATE.MATCH`·`GATE.BRIDGE`·`GATE.FABRICATION`·`GATE.FREELUNCH`·`GATE.DIRECTION`·
+`GATE.BASIS`로 명명돼 있고, *"not determinable from this packet"*이라 말하면
+**감점이 아니라 credit**을 받는 refusal probe 구조.
+
+## Method — 전부 REIMPLEMENT
+
+## P0-11: 범위를 의도적으로 좁혔다 — **본문 파싱을 하지 않는다**
+
+계획서는 "Financial Document Intelligence"지만 10-K 본문 섹션 추출을 하지 않았다:
+
+1. **실증 사례가 0건이다.** IRS의 정성 조사는 전부 WebSearch로 했고, 본문 파싱이
+   없어서 막힌 분석이 하나도 없다.
+2. **HTML/PDF 파싱은 lxml·beautifulsoup4를 부른다** — P0-03에서 edgartools를
+   돌린 것과 같은 벽(의존성 0개).
+3. **정작 막혀 있던 것은 본문이 아니라 인용이다.** 본문을 긁어와도 담을 계약이
+   없으면 또 자유 문자열이 된다.
+
+그래서 **문서 신원(identity)만** 다룬다 — SEC submissions API로 어떤 서식이 언제
+제출됐고 원문이 어디 있는가. `filing_date`(제출일)와 `report_date`(대상 기간)를
+분리하고, SEC가 오래된 공시를 별도 파일로 분리하는 사실을 `truncated`로 드러낸다
+(**"여기 없다"가 "공시가 없다"는 아니다**).
+
+## P0-12: 이 저장소 정성 경로에는 계약이 아예 없었다
+
+`thesis.build_evidence()`의 `source`가 **자유 문자열**이라 §15가 요구하는
+Document·Location·Verification·Confidence가 전혀 없었다. 그 결과:
+
+- **TYL SBC 3배 오류**: 인용에 문서·위치가 없어 **어디서 왔는지 되짚을 수 없었다**
+- **S/A등급 13종목 + B/C/D등급 20종목 정성조사**: 전부 채팅 요약으로만 존재
+
+`Citation`(source_key·document·**location 필수**·observed_date·url·quote) →
+`Evidence`(direction·verification·confidence) → `Claim` → `EvidenceMatrix`.
+
+핵심 강제 3가지:
+- **2차 출처를 `VERIFIED_PRIMARY`로 표시할 수 없다** — TYL 사고가 정확히 이 형태였다
+- **반대 증거는 찬성 증거 수와 무관하게 우선한다**(`CONTRADICTED`) — "그래도 좋아
+  보인다"가 사후합리화다(`thesis.py`의 INVALIDATED와 같은 계열)
+- **삼각검증은 서로 다른 출처 2개 이상을 요구한다** — 같은 출처를 두 번 인용하는
+  것은 삼각검증이 아니다(IWM P/E 사건: 한 출처의 집계방식 편향은 반복해도 안 드러난다)
+
+**점수를 내지 않는다.** 지지된 주장 수를 세어 단일 점수로 만들면 공백(gap)이 점수
+뒤에 숨는다 — §31 안티기능 등록부의 "단일 합성점수"와 같은 이유. 리포트는
+**공백과 모순을 먼저** 보여주고, 중요도 HIGH인데 1차 확인이 없는 주장을
+`material_without_primary`로 따로 뽑는다(TYL 사고의 조기 경보).
+
+## P0-13: 실증 사고가 있는 게이트만 골랐다
+
+| 게이트 | 대응하는 실제 사고 |
+|---|---|
+| `GATE.FABRICATION` | TYL SBC/FCF 62% vs 실제 24.4% |
+| `GATE.SCALE` | RAR 100배 오류(v3.19, 4종목) |
+| `GATE.DIRECTION` | capex 부호 사고 |
+| `GATE.RECON` | P0-07이 찾은 336개 중 67건 물질적 불일치 |
+| `GATE.LOOKAHEAD` | v3.47~v3.49 PIT |
+| `GATE.MATCH` | **`self_check_v2`에 위임**(§1.11 중복 금지) |
+
+**원본의 `GATE.BRIDGE`·`GATE.FREELUNCH`·`GATE.BASIS`는 넣지 않았다** — IRS의 DCF는
+FCF 기반 역산 단일 경로라 해당 사고가 한 건도 없다. 실증 없이 게이트를 늘리면
+통과 의례만 늘어난다(테스트로 부재를 고정: `test_unimplemented_upstream_gates_are_absent_on_purpose`).
+
+두 가지를 못박았다:
+- **`vacuous` 게이트를 통과로 세지 않는다.** 데이터가 없어 검사를 안 한 게이트는
+  통과했지만 아무것도 보증하지 않으며, 그 수를 따로 담는다.
+- **`PIT_UNKNOWN`은 실패가 아니다.** 34종목이 전부 그 상태이고, 모른다고 말하는
+  것을 실패로 처리하면 이 저장소의 정직성 원칙과 충돌한다.
+
+**calibrated uncertainty**: "판단 불가"라고 말한 것을 credit으로 인정한다(원본의
+refusal probe). 다만 **점수를 매기지 않고**, 시스템이 아는 미확인 상태를 메모가
+언급하지 않으면 `acknowledged=False`로 **누락 표시**만 한다.
+
+## Tests
+`tests/test_evidence_documents.py` 24건 + `tests/test_gates.py` 21건 = 45건 신규.
+561 → **606개 전부 통과.**
+
+## Verification
+
+- 34종목 골든재현 8개 지표 완전 동일, fingerprint `fbd34322…` 불변, ledger 무수정
+
+### ⭐ 실제 BSX 분석에 게이트를 걸었더니 — **`GATE.RECON` 실패**
+
+| 게이트 | 결과 |
+|---|---|
+| GATE.FABRICATION | 통과 (라벨 3건 계산값과 대응) |
+| GATE.SCALE / GATE.DIRECTION | 통과 |
+| **GATE.RECON** | **실패 — 미해결 출처 충돌 14건** |
+| GATE.LOOKAHEAD | 통과 (PIT 미기입) |
+| GATE.MATCH | 통과 (self_check_v2 7항목) |
+
+calibrated uncertainty: 명시 표현 0개인데 시스템이 아는 미확인이 3건
+(PIT 미검증 · 값 단위 출처 미기록 · Alpha Vantage 약관 미확인) → `acknowledged=False`.
+
+**이것이 BSX 판정을 무효화한다는 뜻이 아니다.** "출처를 대조하지 않은 채 발행됐고,
+그 사실을 이제야 탐지할 수 있게 됐다"는 뜻이다. 리포트:
+`reports/hard_gates_bsx_2026-08-19.json`
+
+## Remaining Risk
+
+1. **게이트가 어떤 분석 경로에도 자동 배선돼 있지 않다.** 지금은 명시적으로
+   호출해야 한다 — 자동 배선하면 34종목 기존 분석이 전부 막힌다(대부분 GATE.RECON
+   실패할 것). 어디서 강제할지는 실사용 후 판단한다.
+2. `GATE.FABRICATION`은 `labeled_values`에 **분석자가 명시한 라벨만** 검사한다.
+   라벨을 안 적으면 아무것도 보증하지 않으며, 그 사실이 `vacuous`로 결과에 남는다.
+3. **Evidence Matrix에 실제 데이터가 0건이다.** 구조만 만들었고, 과거 정성조사
+   33종목을 소급 입력하지 않았다(소급 작성은 사후합리화 — `falsification_conditions`
+   원칙과 동일).
+4. 문서 이력이 `filings.recent`로 제한된다(오래된 공시는 별도 파일).
+
+## Commit
+`(아래 커밋)`
+
+## Next
+P0-14~P0-18은 대부분 기존 모듈과 겹친다 — P0-15 Valuation은 `expectation_gap_engine.py`,
+P0-16 Thesis/Memory는 `thesis.py`, P0-17 Historical Replay는 **STOP CONDITION이
+이미 공식 발동**(분석 이력 22일), P0-18 Evaluation Lab은 `prediction_ledger.py`·
+`experiment_registry.py`가 담당한다. 각각 DUPLICATE 여부를 실제 코드로 확인해
+판정할 차례다.
