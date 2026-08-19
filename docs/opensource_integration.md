@@ -525,7 +525,7 @@ Gap 중앙 4.90%p를 얻었던 것과 대비하면, **데이터 출처 선택이
 5. 재작성(restatement) 구분은 여전히 불가 — 스냅샷 계층(P0-09) 사안.
 
 ## Commit
-`(아래 커밋)`
+`a1781d8`
 
 ## Next
 **P0-08 Provenance**(이미 `engine/provenance.py` 존재 — 이 계층과 연결이 필요한지
