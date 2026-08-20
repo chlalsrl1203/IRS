@@ -897,3 +897,21 @@ Portfolio · Intelligence)은 성격이 또 다르다 — 특히 §31 안티기�
 **멀티에이전트·벡터DB·상관행렬최적화를 이미 "의도적으로 만들지 않는 것"으로
 등록**해뒀으므로, P1-02(Agent/Skill)와 P1-04(Portfolio/Risk)는 그 등록과
 정면으로 대조해 판정해야 한다.
+
+---
+
+# P1 단계 — 전건 REJECT/DUPLICATE/DEFER (2026-08-19)
+
+전문: `docs/p1_decision_2026-08-19.md`
+
+| 단계 | 판정 |
+|---|---|
+| P1-01 Research DSL | DEFER — `AnalysisInputs`·`experiments/`·P0-12 Citation이 이미 부분 구현, 막힌 사례 없음 |
+| P1-02 Agent/Skill Orchestration | **REJECT** — §31 등록("병목은 조율이 아니라 입력 근거 부재")이 R-001 감사로 재확인됨 |
+| P1-03 Screening/Funnel | **DUPLICATE** — `engine/screener.py`가 이미 전체 파이프라인 담당 |
+| P1-04 Portfolio/Risk | **REJECT** — §31 등록("수익률 시계열 없음")이 지금도 유효, `price_at_analysis` 9/34뿐 |
+| P1-05 Intelligence/Monitoring | DEFER — 실증 필요 없음 |
+
+새로 구현한 코드 없음. §19 IMPLEMENTATION ORDER의 실질 범위가 P0(P0-01~18)로
+종료된다. P2·P3은 P1-04와 같은 이유로 더 강하게 배제(§31: "자동 매수/매도
+실행 — Gap은 연구 가설이지 검증된 alpha가 아니다").
