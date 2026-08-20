@@ -4155,3 +4155,82 @@ Alpha Vantage 약관은 실제로 **확인에 실패**했다(공개 약관이 PD
 
 테스트 482 → **561개**. 34종목 골든재현 8개 지표 완전 동일, baseline fingerprint
 `fbd34322…` 불변, **ledger·공식 판정 무수정**.
+
+## 오픈소스 통합 P0-11~P0-18 완료 — 정성 경로에 계약을 세움(2026-08-19, v3.57~v3.58)
+
+P0-01~10이 **데이터 계층**을 세웠다면, P0-11~18은 이 저장소의 **정성 경로**에
+처음으로 계약을 붙였다. 상세는 `docs/opensource_integration.md`.
+
+| 단계 | 판정 | 산출물 |
+|---|---|---|
+| P0-11 Document Index | REIMPLEMENT(범위 축소) | `data/providers/sec_documents.py` |
+| P0-12 Evidence Engine | REIMPLEMENT | `engine/evidence.py` |
+| P0-13 Hard Gates | REIMPLEMENT | `engine/evaluation/gates.py` |
+| P0-14 Research Lenses | **ADAPT(축은 IRS 것)** | `engine/research_lenses.py` |
+| P0-15 Valuation | **DUPLICATE** | `expectation_gap_engine.py`가 이미 담당 |
+| P0-16 Refresh Boundary | ADAPT | `thesis.py`에 opt-in 추가 |
+| P0-17 Historical Replay | **DEFER** | STOP CONDITION 기발동(2026-08-16) |
+| P0-18 Evaluation Lab | 대부분 DUPLICATE | 마지막 조각을 P0-12/13이 채움 |
+
+### 이 저장소 정성 경로에는 계약이 **아예 없었다**
+
+`thesis.build_evidence()`의 `source`가 **자유 문자열**이라 §15가 요구하는
+Document·Location·Verification·Confidence가 전혀 없었다. 그 결과:
+- **TYL SBC 3배 오류**(62% vs 실제 24.4%): 인용에 문서·위치가 없어 **어디서
+  왔는지 되짚을 수 없었다**
+- S/A등급 13종목 + B/C/D등급 20종목 정성조사: 전부 **채팅 요약으로만 존재**
+
+`Citation`(location **필수**) → `Evidence` → `Claim` → `EvidenceMatrix`로 계약을
+세웠고, 강제 3가지를 걸었다: **2차 출처를 `VERIFIED_PRIMARY`로 표시 불가**(TYL
+사고의 형태) / **반대 증거가 찬성 증거 수와 무관하게 우선**(사후합리화 방지) /
+**삼각검증은 서로 다른 출처 2개 이상**(같은 출처 반복은 IWM P/E 사건이 보여준
+대로 편향이 안 드러난다).
+
+### ⭐ 실제 BSX 분석에 하드 게이트를 걸었더니 — `GATE.RECON` 실패
+
+| 게이트 | 결과 |
+|---|---|
+| FABRICATION / SCALE / DIRECTION / LOOKAHEAD / MATCH | 통과 |
+| **RECON** | **실패 — 미해결 출처 충돌 14건** |
+
+calibrated uncertainty도 `acknowledged=False`(시스템이 아는 미확인 3건을 메모가
+언급 안 함). **BSX 판정을 무효화한다는 뜻이 아니라, 출처를 대조하지 않은 채
+발행됐다는 사실을 이제야 탐지할 수 있게 됐다는 뜻이다.**
+
+게이트는 **실증 사고가 있는 것만** 골랐다(FABRICATION=TYL / SCALE=RAR 100배 /
+DIRECTION=capex 부호 / RECON=P0-07의 67건 / LOOKAHEAD=PIT / MATCH=self_check_v2
+위임). 원본의 BRIDGE·FREELUNCH·BASIS는 IRS에 해당 사고가 없어 **넣지 않았고 부재를
+테스트로 고정했다** — 실증 없이 게이트를 늘리면 통과 의례만 늘어난다.
+
+### P0-14에서 축을 바꾸지 않은 이유
+
+ai-berkshire의 4대 관점(段永平·버핏·멍거·리루) 렌즈를 **가져오지 않았다.** IRS는
+33종목에 실제로 적용해 축적한 자체 5축(자본배분·회계품질·거버넌스·희석·경쟁환경)이
+있고, 남의 분류로 갈아타면 **그 33종목 관측이 새 축에 매핑되지 않아 축적이
+끊긴다.** 가져온 것은 Disqualifier와 Mandatory Inversion 둘뿐이다.
+
+**6차원 별점(★★★★★)은 REJECT** — 정확히 "단일 합성점수"이고 §31 안티기능
+등록부 항목이다. 중요도가 다른 축이 같은 무게가 되고 공백이 점수 뒤에 숨는다.
+
+### P0-16 — Mira의 5개 개념 중 4개는 이미 있었다
+
+빠진 것은 **Refresh Boundary 하나뿐**이라 그것만 `thesis.py`에 opt-in으로 얹었다.
+근거는 실증이다 — **반증조건 트리거 날짜 5건이 전부 지났는데 12일간 아무도
+열어보지 않은** 사건(v3.42가 뒤늦게 발견). 논거가 언제 낡는지 스스로 말하지
+않으면 확인이 기억에 의존한다.
+
+⚠️ **`UNBOUNDED`는 `FRESH`가 아니다**(경계 미설정 ≠ 신선함), **조건 발동이
+기한보다 우선한다**("아직 기한 전이니 괜찮다"가 그 실패 방식이었다).
+
+### 남은 리스크
+
+1. **`evidence`·`research_lenses`·`thesis/`에 실제 데이터가 0건이다.** 구조만
+   만들었고 과거 정성조사 33종목을 **소급 입력하지 않았다** — 소급 작성은
+   사후합리화다(`falsification_conditions` 원칙과 동일).
+2. **게이트가 어떤 분석 경로에도 자동 배선돼 있지 않다.** 자동 배선하면 34종목
+   기존 분석이 전부 막힌다(대부분 GATE.RECON 실패할 것).
+3. 5축이 옳다는 근거는 "33종목에 써봤다"뿐이고 **투자 성과와의 관계는 증거 0건**
+   이다(`VALIDATION_STATUS`에 명시).
+
+테스트 561 → **641개**. 34종목 골든재현 8개 지표 완전 동일, baseline fingerprint
+`fbd34322…` 불변, **ledger·공식 판정 무수정**.
