@@ -756,3 +756,144 @@ P0-16 Thesis/Memory는 `thesis.py`, P0-17 Historical Replay는 **STOP CONDITION�
 이미 공식 발동**(분석 이력 22일), P0-18 Evaluation Lab은 `prediction_ledger.py`·
 `experiment_registry.py`가 담당한다. 각각 DUPLICATE 여부를 실제 코드로 확인해
 판정할 차례다.
+
+---
+
+# P0-14 / P0-16 — Research Lenses · Refresh Boundary ✅ 완료 (2026-08-19)
+# P0-15 / P0-17 / P0-18 — DUPLICATE · DEFER 판정
+
+## P0-14 Research Lenses — ADAPT
+
+**Source**: https://github.com/xbtlin/ai-berkshire (MIT)
+**확인한 것**(§1.4): 4대 관점(段永平·버핏·멍거·리루) 렌즈, 快速否决清单(rapid
+rejection), 강제 inversion("怎么会死"), PASS/CONDITIONAL/GRAY 어휘, 6차원 별점,
+Benford's Law 이상탐지.
+
+**IRS Target**: `engine/research_lenses.py`
+
+### ⚠️ 원본의 4대 렌즈를 그대로 안 가져왔다 — 축은 IRS 것을 쓴다
+
+IRS는 이미 자체 5축을 갖고 있고 그건 상상한 게 아니라 **33종목에 실제로 적용해
+축적한 절차**다(CLAUDE.md "정성 심층조사 절차", S등급 7 + A등급 6 + B/C/D 20종목):
+
+> 자본배분 품질 · 회계품질 · 거버넌스 · 희석 추이 · 경쟁환경 최신동향
+
+남의 분류로 갈아타면 **그 33종목 관측이 새 축에 매핑되지 않아 축적이 끊긴다.**
+업종 변형(보험사·복합기업)도 실제 사례(ACGL·PGR·SE)를 그대로 옮겼다.
+
+### 가져온 것 2가지
+
+1. **Disqualifier(快速否决清单)** — 감점이 아니라 즉시 탈락. 다만 **근거를 필수**로
+   요구한다(BSX 스크리너 거짓탈락 사건: 배제된 종목은 아무도 다시 안 본다).
+2. **Mandatory Inversion** — `falsification_conditions`와 **다르다.** 반증조건은
+   "이런 실적이 나오면 틀린 것"이라는 미래 트리거, inversion은 "실패 경로"의
+   열거다. 전자는 검증 **시점**을, 후자는 검증 **대상**을 정한다.
+
+### ⚠️ 가져오지 않은 것
+
+| 원본 기능 | 판정 | 사유 |
+|---|---|---|
+| 6차원 별점(★★★★★) | **REJECT** | 정확히 "단일 합성점수" — §31 안티기능 등록부 항목. 중요도가 다른 축이 같은 무게가 되고 공백이 점수 뒤에 숨는다 |
+| 4대 관점 가중 종합 | **REJECT** | 계획서 §7.1도 "단순 가중평균하지 않는다"고 명시 |
+| Benford's Law | **DEFER** | 실증 필요 0건. P0-03 이후 SEC 1차자료를 직접 쓴다 |
+| PASS/CONDITIONAL/GRAY | **DUPLICATE** | `investment_case.py`에 이미 7개 어휘가 있다 |
+
+**핵심 강제**: `effect="not_examined"`가 1급 값이다(조사 안 함 ≠ 별 게 없음) /
+방향을 주장하려면 EvidenceMatrix의 주장을 가리켜야 한다 / **점수를 내지 않는다**.
+
+**Tests**: `tests/test_research_lenses.py` 21건.
+
+## P0-16 Refresh Boundary — ADAPT
+
+**Source**: https://github.com/byteseek/Mira (Apache-2.0)
+**확인한 것**: Expectation · Event Delta · Decision Log · Postmortem ·
+**Refresh Boundary**(`stale_after` / `must_refresh_if`).
+
+**대조 결과**: Mira의 5개 개념 중 4개는 IRS에 **이미 있다** —
+`thesis.py`(expectation·decision log), `thesis_monitor.py`(event delta),
+`gap_analysis.decompose_drift`(3분할), `prediction_ledger.py`(postmortem).
+**빠진 것은 Refresh Boundary 하나뿐**이라 그것만 기존 타입에 얹었다(§1.11).
+
+**근거는 실증이다**: 이 저장소는 **반증조건 트리거 날짜 5건이 전부 지났는데
+12일간 아무도 열어보지 않은** 사건을 겪었다(v3.42가 뒤늦게 발견). 논거가 언제부터
+재확인이 필요한지 **논거 자신이 말하지 않으면** 그 확인은 누군가 기억하는 것에
+의존한다 — 이 프로젝트가 네 번 실패한 방식이다.
+
+**핵심 강제**:
+- **`UNBOUNDED`는 `FRESH`가 아니다.** 경계 미설정은 "아직 신선하다"가 아니라
+  "언제 낡는지 정한 적이 없다"이다.
+- **조건 발동이 기한보다 우선한다.** "아직 기한 전이니 괜찮다"가 정확히 그 실패
+  방식이었다.
+- 파싱 안 되는 경계는 거부하고, `stale_after <= thesis_date`도 거부한다
+  (만들자마자 낡은 논거는 논거가 아니다).
+- 발동 표시는 분석자가 명시적으로 한다(정규식은 트리거 날짜와 서술적 날짜를
+  구분 못 한다, v3.42).
+
+**Tests**: `tests/test_refresh_boundary.py` 14건. 기존 `test_thesis.py` 20건 무변경 통과
+(필드는 opt-in, 비파괴).
+
+## P0-15 Valuation Calculation Engine — **DUPLICATE**
+
+`engine/expectation_gap_engine.py`(1,187줄·35개 함수)가 이미 담당한다 —
+`implied_growth_single_stage`/`two_stage`, `structural_discount_rate`,
+`erp_from_drs`, `judgment_from_gap`, `confidence_score`, `rar`. 게다가 이 계산
+경로는 34종목 골든재현으로 매 커밋마다 고정돼 있다. **PyPortfolioOpt·okama류를
+넣으면 검증된 산출물이 흔들린다**(§1.15).
+
+## P0-17 Historical Replay / Validation — **DEFER (STOP CONDITION 기발동)**
+
+**Source**: https://github.com/ishtiaqrahman/capitalbench ·
+https://github.com/HKUSTDial/DeepFund
+
+이 저장소는 2026-08-16에 **§66 STOP CONDITION을 공식 발동**했다
+(`reports/historical_validation/limitations.md`). 사유는 데이터 품질이 아니라
+**시간**이다 — 전체 프로젝트 이력이 22일뿐이고 ledger 34종목 분석일이 그 안에
+전부 몰려 있어 12개월 보유수익률 구간이 **존재하지 않는다.**
+
+CapitalBench의 frozen inputs·as-of evaluation·decision timestamp는 IRS에 이미
+있다(`experiments/` 사전등록 + SHA-256 코어해시, `predictions/` 34건 동결,
+P0-09 스냅샷). **빠진 것은 도구가 아니라 시간이다.** T0를 3주 전으로 재정의하는
+유혹은 거부했다 — 그건 결과가 나왔다는 사실 자체를 성과로 포장하는 것이다.
+
+## P0-18 Evaluation Lab — **대부분 DUPLICATE, 이번에 마지막 조각을 채움**
+
+| §17 평가 축 | IRS 현황 |
+|---|---|
+| Data Accuracy | P0-07 reconciliation (이번 통합) |
+| Numerical Accuracy | `self_check_v2` + `GATE.MATCH` |
+| Evidence Quality / Citation Fidelity | **P0-12 evidence.py (이번 통합)** |
+| Research Quality | P0-14 lenses (이번 통합) |
+| Decision Quality / Historical Outcome | `prediction_ledger` + `thesis` (STOP CONDITION) |
+| Stability | `gap_analysis`·R-001 감사 |
+| Reproducibility | 골든재현 + baseline fingerprint + P0-09 스냅샷 |
+| Calibration | **UNCALIBRATED로 명시** — 표본 부족 |
+| 치명적 오류 hard gate | **P0-13 gates.py (이번 통합)** |
+
+§17이 요구한 **"단일 점수로 평가하지 않는다"**는 이미 이 저장소의 원칙이다
+(§31 안티기능). 축별 집계기를 새로 만들지 않았다 — 각 축이 이미 자기 리포트를
+내고 있고, 그걸 하나로 묶는 순간 §17이 금지한 단일 점수에 가까워진다.
+
+## Verification (P0-14/16 공통)
+
+- 전체 **641개 통과**(606 → 641, 신규 35건)
+- 34종목 골든재현 8개 지표 완전 동일, fingerprint `fbd34322…` 불변, ledger 무수정
+
+## Remaining Risk
+
+1. **`research_lenses`·`evidence`에 실제 데이터가 0건이다.** 구조만 만들었고
+   과거 정성조사 33종목을 **소급 입력하지 않았다** — 소급 작성은 사후합리화다
+   (`falsification_conditions` 원칙과 동일).
+2. **`thesis/` 디렉터리가 여전히 비어 있다.** refresh boundary를 만들었지만
+   적용할 논거가 0건이다. 실사용은 다음 분석부터.
+3. 5축이 옳다는 근거는 "이 저장소가 33종목에 써봤다"뿐이고, **투자 성과와의
+   관계는 증거 0건**이다(`VALIDATION_STATUS`에 명시).
+
+## Commit
+`(아래 커밋)`
+
+## Next
+P0 단계 완료. P1(Research DSL · Agent/Skill Orchestration · Screening ·
+Portfolio · Intelligence)은 성격이 또 다르다 — 특히 §31 안티기능 등록부가
+**멀티에이전트·벡터DB·상관행렬최적화를 이미 "의도적으로 만들지 않는 것"으로
+등록**해뒀으므로, P1-02(Agent/Skill)와 P1-04(Portfolio/Risk)는 그 등록과
+정면으로 대조해 판정해야 한다.
