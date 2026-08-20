@@ -889,7 +889,7 @@ P0-09 스냅샷). **빠진 것은 도구가 아니라 시간이다.** T0를 3주
    관계는 증거 0건**이다(`VALIDATION_STATUS`에 명시).
 
 ## Commit
-`(아래 커밋)`
+`2e919bf`
 
 ## Next
 P0 단계 완료. P1(Research DSL · Agent/Skill Orchestration · Screening ·
