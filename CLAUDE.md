@@ -4058,3 +4058,179 @@ Lynch 캡 자체의 근거 확보, v3.24 M-1이 이미 "근거 없음"으로 기
 근거가 없기 때문이다. 취약성은 "틀렸다"가 아니라 "가정에 달렸다"는 뜻이다.
 `engine/`·`ledger/` 무수정(`ENGINE_VERSION` v3.53 유지), 34종목 골든재현 8개 지표
 완전 동일, baseline fingerprint `fbd34322…` 불변. 테스트 472 → 482개.
+
+## 오픈소스 통합 P0-01~P0-10 — Data Core 계층 신설(2026-08-19, v3.54~v3.56)
+
+사용자가 제시한 "FINAL OPEN-SOURCE INTEGRATION PROMPT"에 따라 이미 조사된
+GitHub 오픈소스의 강점을 IRS-native로 흡수했다. 추적표는
+`docs/opensource_integration.md`(§18 attribution / §21 완료보고).
+
+**의존성은 여전히 0개다.** 통합 후에도 `engine/` 전체가 stdlib만 쓴다 — 이게
+계획서의 ADAPT 판정 두 건을 뒤집은 이유다.
+
+| 단계 | 판정 | 산출물 |
+|---|---|---|
+| P0-01 Source Registry | REIMPLEMENT | `engine/data/governance/source_registry.py` |
+| P0-02 Provider Interface | REIMPLEMENT | `engine/data/providers/base.py` |
+| P0-03 SEC Adapter | **ADAPT→REIMPLEMENT** | `engine/data/providers/sec.py` |
+| P0-04 DART Adapter | **DEFER** | 근거·재개조건만 기록 |
+| P0-05/06/07 Canonical·Normalize·Reconcile | REIMPLEMENT | `engine/data/canonical.py`·`reconcile.py` |
+| P0-08 Provenance | **DUPLICATE→연결** | `FinancialFact.to_provenance()` |
+| P0-09 Snapshot | REIMPLEMENT | `engine/data/snapshot.py` |
+| P0-10 PIT | **DUPLICATE→연결** | `ProviderResult.to_pit_inputs()` |
+
+### 계획서에서 벗어난 판정 3건 — 전부 실측 근거
+
+- **P0-03 ADAPT→REIMPLEMENT**: edgartools `pyproject.toml`을 직접 열어보니
+  런타임 의존성 **21개**(pandas·pyarrow·lxml·pydantic 등)인데 IRS는 **0개**이고
+  CI는 `pip install pytest` 한 줄이다. ADAPT는 의존성 관리 파일 신설 + CI 변경을
+  요구해 §1.14·§1.15에 걸린다. REJECT가 아니라 REIMPLEMENT — XBRL 태그 표준화와
+  어댑터 경계 두 설계는 실제로 가져왔다.
+- **P0-04 DEFER**: `ledger_krx/` 31건이 **전부 ETF 래퍼**(`pe_by_source`만 있고
+  재무제표 없음)라 IRS가 분석한 한국 **기업**은 0건이다. DartLab의 핵심(시장
+  중립 인터페이스)은 P0-02에서 이미 흡수했으므로, 한국 기업을 실제로 분석할 때
+  `DartProvider`를 추가하면 도메인 코드는 안 바뀐다.
+- **P0-08/P0-10 DUPLICATE→연결**: `provenance.py`·`filing_dates.py`가 이미
+  있어 새로 만들지 않고 변환·연결만 했다(§1.11).
+
+### ⭐ 가장 중요한 발견 — ledger 손입력값과 SEC 1차자료가 광범위하게 어긋난다
+
+8종목 336개 값 전수 대조(`scripts/reconcile_ledgers_vs_sec_2026_08_19.py`):
+
+| 지표 | 값수 | EXACT | **MATERIAL** | 중앙편차 | 최대편차 |
+|---|---|---|---|---|---|
+| revenue | 84 | 75 | **6** | 7.33% | 27.2% |
+| operating_income | 84 | 63 | **21** | 16.15% | **141.4%** |
+| operating_cashflow | 84 | 71 | **12** | 13.58% | 26.4% |
+| capex | 84 | 52 | **28** | 14.17% | 71.9% |
+
+건수로는 **capex**, 크기로는 **operating_income**이 최악이다. 둘 다 FCF·DRS를
+통해 판정에 직결된다. **분포가 이봉(bimodal)** — 중간 등급이 8건뿐이라 차이가
+"측정 잡음"이 아니라 **"정의가 다르다"** 쪽임을 시사한다(임계값은 실행 전에
+고정했고 결과에 맞춰 조정하지 않았다).
+
+**판정 영향: SEC 전면대체 시나리오에서 8/8 판정 불변**(Gap 최대 −0.83%p, ROP).
+다만 **ROP의 DRS가 출처 선택만으로 31.5→47.5(16점)** 움직인다 — R-001 감사가
+DRS 전 정의역 섭동으로 Gap 중앙 4.90%p를 얻었던 것과 대비하면, **데이터 출처
+선택이 그 축의 상당 부분을 차지할 수 있다**는 뜻이다. CDNS는 SEC 시계열이
+불완전해 측정 불가(미해결로 남김).
+
+⚠️ **어느 값이 옳은지는 확정하지 않았다.** 벤더 영업이익이 틀린 게 아니라
+정규화값(일회성 항목 제외)일 수 있다. `reconcile.py`는 물질적 불일치를 **자동
+해결하지 않고** `requires_review=True`로 남기며 권위 서열은 제안으로만 준다 —
+자동으로 SEC를 택하면 34종목 입력이 조용히 바뀌고 추적이 불가능해진다.
+**ledger는 한 파일도 수정하지 않았다.**
+
+### ⭐ 이 저장소 최초의 `PIT_VALID` 분석
+
+v3.47이 PIT 필드를 만들고 v3.49가 조회 수단을 만들었지만 **34종목 중 채운 것이
+0건**이었다. BSX를 provider → 스냅샷 → provenance(44건 커버) → PIT(11개년) →
+`run_analysis()`로 관통시켜 `PIT_UNKNOWN` → **`PIT_VALID`**(위반 0건)를 처음
+확인했다. Gap/판정/DRS/Confidence는 완전 동일(순수 기록 경로).
+
+발견한 결함: `pit_inputs_for()`는 제출일을 **별도로 다시 조회**하므로, 값이
+벤더에서 오고 날짜가 SEC에서 오면 **PIT가 쓰지도 않은 값의 날짜를 검사**한다.
+`ProviderResult.to_pit_inputs()`는 같은 사실에서 만들어 그 괴리를 원천 차단한다.
+
+⚠️ **`available_at`의 정확한 의미**: BSX FY2016~2018 제출일이 전부 2019-02-19로
+나온다 — 세 해 모두 `Revenues` 태그로는 FY2018 10-K에서 처음 등장하기 때문
+(ASC 606 전환). 즉 "회계연도가 처음 공시된 날"이 아니라 **"그 수치가 이 태그로
+처음 등장한 날"**이다. PIT상 보수적이지만 거짓 양성 가능성이 있다.
+
+### 통합 과정에서 테스트가 잡은 실질 결함 5건
+
+1. `RateLimiter._last=0.0` 초기화가 **첫 요청도 대기**시킴(monotonic에선 우연히 안 걸림)
+2. `check_use()`가 **불확실성으로 "아니오"를 "아마도"로 완화** — 판정 순서 역전
+3. SEC 태그 "첫 태그에서 멈춤"이 **BSX FY2015 매출을 통째로 버림**(ASC 606 전후)
+4. `strict=False`에서 **`None`이 시계열에 섞여** `AnalysisInputs`로 흘러감
+5. `fcf0` 축 키 오타로 R-001 감사에서 **사전등록 6축 중 1축이 조용히 비활성**
+   (STAGE 3에서 발견, 같은 유형)
+
+### 등록부가 드러낸 것 — 6건 중 4건이 미확인
+
+Alpha Vantage 약관은 실제로 **확인에 실패**했다(공개 약관이 PDF인데 본문 판독
+불가). 추측해 채우지 않았다. 그 결과 IRS의 현재 관행(벤더 원자료를 `ledger/*.json`에
+담아 공개 저장소에 올리고 그로부터 나온 판정을 공개)이 전부 `PROHIBITED`
+(=승인한 적 없음)로 나온다 — **위법이라는 뜻이 아니라 확인한 적이 없다는 뜻이다.**
+
+테스트 482 → **561개**. 34종목 골든재현 8개 지표 완전 동일, baseline fingerprint
+`fbd34322…` 불변, **ledger·공식 판정 무수정**.
+
+## 오픈소스 통합 P0-11~P0-18 완료 — 정성 경로에 계약을 세움(2026-08-19, v3.57~v3.58)
+
+P0-01~10이 **데이터 계층**을 세웠다면, P0-11~18은 이 저장소의 **정성 경로**에
+처음으로 계약을 붙였다. 상세는 `docs/opensource_integration.md`.
+
+| 단계 | 판정 | 산출물 |
+|---|---|---|
+| P0-11 Document Index | REIMPLEMENT(범위 축소) | `data/providers/sec_documents.py` |
+| P0-12 Evidence Engine | REIMPLEMENT | `engine/evidence.py` |
+| P0-13 Hard Gates | REIMPLEMENT | `engine/evaluation/gates.py` |
+| P0-14 Research Lenses | **ADAPT(축은 IRS 것)** | `engine/research_lenses.py` |
+| P0-15 Valuation | **DUPLICATE** | `expectation_gap_engine.py`가 이미 담당 |
+| P0-16 Refresh Boundary | ADAPT | `thesis.py`에 opt-in 추가 |
+| P0-17 Historical Replay | **DEFER** | STOP CONDITION 기발동(2026-08-16) |
+| P0-18 Evaluation Lab | 대부분 DUPLICATE | 마지막 조각을 P0-12/13이 채움 |
+
+### 이 저장소 정성 경로에는 계약이 **아예 없었다**
+
+`thesis.build_evidence()`의 `source`가 **자유 문자열**이라 §15가 요구하는
+Document·Location·Verification·Confidence가 전혀 없었다. 그 결과:
+- **TYL SBC 3배 오류**(62% vs 실제 24.4%): 인용에 문서·위치가 없어 **어디서
+  왔는지 되짚을 수 없었다**
+- S/A등급 13종목 + B/C/D등급 20종목 정성조사: 전부 **채팅 요약으로만 존재**
+
+`Citation`(location **필수**) → `Evidence` → `Claim` → `EvidenceMatrix`로 계약을
+세웠고, 강제 3가지를 걸었다: **2차 출처를 `VERIFIED_PRIMARY`로 표시 불가**(TYL
+사고의 형태) / **반대 증거가 찬성 증거 수와 무관하게 우선**(사후합리화 방지) /
+**삼각검증은 서로 다른 출처 2개 이상**(같은 출처 반복은 IWM P/E 사건이 보여준
+대로 편향이 안 드러난다).
+
+### ⭐ 실제 BSX 분석에 하드 게이트를 걸었더니 — `GATE.RECON` 실패
+
+| 게이트 | 결과 |
+|---|---|
+| FABRICATION / SCALE / DIRECTION / LOOKAHEAD / MATCH | 통과 |
+| **RECON** | **실패 — 미해결 출처 충돌 14건** |
+
+calibrated uncertainty도 `acknowledged=False`(시스템이 아는 미확인 3건을 메모가
+언급 안 함). **BSX 판정을 무효화한다는 뜻이 아니라, 출처를 대조하지 않은 채
+발행됐다는 사실을 이제야 탐지할 수 있게 됐다는 뜻이다.**
+
+게이트는 **실증 사고가 있는 것만** 골랐다(FABRICATION=TYL / SCALE=RAR 100배 /
+DIRECTION=capex 부호 / RECON=P0-07의 67건 / LOOKAHEAD=PIT / MATCH=self_check_v2
+위임). 원본의 BRIDGE·FREELUNCH·BASIS는 IRS에 해당 사고가 없어 **넣지 않았고 부재를
+테스트로 고정했다** — 실증 없이 게이트를 늘리면 통과 의례만 늘어난다.
+
+### P0-14에서 축을 바꾸지 않은 이유
+
+ai-berkshire의 4대 관점(段永平·버핏·멍거·리루) 렌즈를 **가져오지 않았다.** IRS는
+33종목에 실제로 적용해 축적한 자체 5축(자본배분·회계품질·거버넌스·희석·경쟁환경)이
+있고, 남의 분류로 갈아타면 **그 33종목 관측이 새 축에 매핑되지 않아 축적이
+끊긴다.** 가져온 것은 Disqualifier와 Mandatory Inversion 둘뿐이다.
+
+**6차원 별점(★★★★★)은 REJECT** — 정확히 "단일 합성점수"이고 §31 안티기능
+등록부 항목이다. 중요도가 다른 축이 같은 무게가 되고 공백이 점수 뒤에 숨는다.
+
+### P0-16 — Mira의 5개 개념 중 4개는 이미 있었다
+
+빠진 것은 **Refresh Boundary 하나뿐**이라 그것만 `thesis.py`에 opt-in으로 얹었다.
+근거는 실증이다 — **반증조건 트리거 날짜 5건이 전부 지났는데 12일간 아무도
+열어보지 않은** 사건(v3.42가 뒤늦게 발견). 논거가 언제 낡는지 스스로 말하지
+않으면 확인이 기억에 의존한다.
+
+⚠️ **`UNBOUNDED`는 `FRESH`가 아니다**(경계 미설정 ≠ 신선함), **조건 발동이
+기한보다 우선한다**("아직 기한 전이니 괜찮다"가 그 실패 방식이었다).
+
+### 남은 리스크
+
+1. **`evidence`·`research_lenses`·`thesis/`에 실제 데이터가 0건이다.** 구조만
+   만들었고 과거 정성조사 33종목을 **소급 입력하지 않았다** — 소급 작성은
+   사후합리화다(`falsification_conditions` 원칙과 동일).
+2. **게이트가 어떤 분석 경로에도 자동 배선돼 있지 않다.** 자동 배선하면 34종목
+   기존 분석이 전부 막힌다(대부분 GATE.RECON 실패할 것).
+3. 5축이 옳다는 근거는 "33종목에 써봤다"뿐이고 **투자 성과와의 관계는 증거 0건**
+   이다(`VALIDATION_STATUS`에 명시).
+
+테스트 561 → **641개**. 34종목 골든재현 8개 지표 완전 동일, baseline fingerprint
+`fbd34322…` 불변, **ledger·공식 판정 무수정**.

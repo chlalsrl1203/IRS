@@ -44,6 +44,7 @@ Investment Thesis (v3.48 신규, 2026-08-15) - 분석을 실제 투자판단으�
 import glob
 import json
 import os
+from datetime import date as _date
 from dataclasses import asdict, dataclass, field
 
 # §3의 액션 어휘. 분석자가 고르는 값이며 코드가 계산하지 않는다.
@@ -127,6 +128,19 @@ class InvestmentThesis:
     linked_ledger: str = None       # ledger 파일명 (예: "CDNS_2026-07-25.json")
     author_note: str = ""
 
+    # ── P0-16 Refresh Boundary (2026-08-19) ──────────────────────────────
+    # SOURCE: https://github.com/byteseek/Mira (Apache-2.0) — stale_after /
+    #         must_refresh_if. METHOD: ADAPT (개념만, 코드 아님)
+    #
+    # WHY: 이 저장소는 **반증조건 트리거 날짜 5건이 전부 지났는데 아무도
+    # 열어보지 않은** 사건을 겪었다(v3.42 thesis_monitor가 12일 뒤에야 발견).
+    # 논거가 언제부터 재확인이 필요한지 논거 자신이 말하지 않으면, 그 확인은
+    # 누군가 기억하는 것에 의존한다 — 이 프로젝트가 네 번 실패한 방식이다.
+    #
+    # 둘 다 opt-in이며 None이면 `UNBOUNDED`로 떨어진다(FRESH가 아니다).
+    stale_after: str = None         # 이 날짜 이후로는 재확인 없이 쓰지 않는다
+    must_refresh_if: list = None    # 날짜와 무관하게 재확인을 강제하는 조건
+
     def __post_init__(self):
         self.ticker = _require_text(self.ticker, "ticker").upper()
         _require_text(self.thesis_date, "thesis_date")
@@ -153,6 +167,39 @@ class InvestmentThesis:
                 "triggered_note": c.get("triggered_note"),
             })
         self.invalidation_conditions = normalized
+
+        # refresh boundary 정규화. 날짜 형식을 검사해 "2026년쯤" 같은 값이
+        # 조용히 들어가지 않게 한다 - 파싱 안 되는 경계는 경계가 아니다.
+        if self.stale_after is not None:
+            try:
+                _date.fromisoformat(str(self.stale_after))
+            except ValueError as e:
+                raise ValueError(
+                    f"stale_after는 YYYY-MM-DD여야 한다(받은 값: {self.stale_after!r}). "
+                    f"파싱되지 않는 경계는 경계가 아니다."
+                ) from e
+            if str(self.stale_after) <= str(self.thesis_date):
+                raise ValueError(
+                    f"stale_after({self.stale_after})가 thesis_date"
+                    f"({self.thesis_date})보다 앞서거나 같다 - 만들자마자 낡은 "
+                    f"논거는 논거가 아니다."
+                )
+        if self.must_refresh_if is not None:
+            conds = _require_list(self.must_refresh_if, "must_refresh_if")
+            norm = []
+            for i, c in enumerate(conds):
+                if not isinstance(c, dict) or not str(c.get("condition", "")).strip():
+                    raise ValueError(
+                        f"must_refresh_if[{i}]는 {{'condition': str}} 형식이어야 한다."
+                    )
+                norm.append({
+                    "condition": str(c["condition"]).strip(),
+                    # 발동 표시는 분석자가 명시적으로 한다(자동판정 안 함) -
+                    # invalidation_conditions와 같은 규칙이다.
+                    "triggered": bool(c.get("triggered", False)),
+                    "triggered_note": c.get("triggered_note"),
+                })
+            self.must_refresh_if = norm
 
     @property
     def thesis_id(self) -> str:
@@ -369,4 +416,81 @@ def mark_invalidation_triggered(path: str, index: int, note: str) -> dict:
 
     with open(path, "w", encoding="utf-8") as f:
         json.dump(record, f, ensure_ascii=False, indent=2, default=str)
+    return record
+
+
+# ── P0-16 Refresh Boundary 판정 (2026-08-19) ─────────────────────────────
+# SOURCE: https://github.com/byteseek/Mira (Apache-2.0) · METHOD: ADAPT
+REFRESH_STATES = ("FRESH", "STALE", "MUST_REFRESH", "UNBOUNDED")
+
+
+def refresh_status(record, today: str) -> dict:
+    """
+    논거가 지금 그대로 재사용해도 되는 상태인가.
+
+    ⚠️ **`UNBOUNDED`는 `FRESH`가 아니다.** 경계를 설정하지 않은 논거는 "아직
+    신선하다"가 아니라 "언제 낡는지 아무도 정하지 않았다"이며, 둘을 섞으면
+    경계 미설정이 안전 신호로 오독된다(이 저장소의 UNVERIFIED·PIT_UNKNOWN·
+    comparable=False와 같은 계열).
+
+    우선순위: MUST_REFRESH > STALE > FRESH/UNBOUNDED. 조건이 발동했으면 날짜가
+    아무리 남았어도 재확인 대상이다 — "아직 기한 전이니 괜찮다"가 정확히
+    이 저장소가 반증조건에서 겪은 실패 방식이다.
+    """
+    thesis = record.get("thesis", record) if isinstance(record, dict) else record
+    stale_after = thesis.get("stale_after") if isinstance(thesis, dict) \
+        else getattr(thesis, "stale_after", None)
+    must = (thesis.get("must_refresh_if") if isinstance(thesis, dict)
+            else getattr(thesis, "must_refresh_if", None)) or []
+
+    fired = [c for c in must if c.get("triggered")]
+    if fired:
+        return {
+            "status": "MUST_REFRESH", "as_of": today,
+            "triggered_conditions": fired, "stale_after": stale_after,
+            "reason": (
+                f"재확인 조건 {len(fired)}건이 발동했다. 기한이 남아 있어도 "
+                f"그대로 재사용할 수 없다."
+            ),
+        }
+    if stale_after is None:
+        return {
+            "status": "UNBOUNDED", "as_of": today, "stale_after": None,
+            "triggered_conditions": [],
+            "reason": (
+                "재확인 경계(stale_after)가 설정되지 않았다. **'아직 신선하다'가 "
+                "아니라 '언제 낡는지 정한 적이 없다'는 뜻이다** - 경계 미설정을 "
+                "안전 신호로 읽지 말 것."
+            ),
+        }
+    if str(today) > str(stale_after):
+        return {
+            "status": "STALE", "as_of": today, "stale_after": stale_after,
+            "triggered_conditions": [],
+            "reason": (f"재확인 기한({stale_after})이 지났다. 재확인 없이 "
+                       f"이 논거를 인용하지 말 것."),
+        }
+    return {
+        "status": "FRESH", "as_of": today, "stale_after": stale_after,
+        "triggered_conditions": [],
+        "reason": f"재확인 기한({stale_after}) 이내",
+    }
+
+
+def mark_refresh_required(path: str, index: int, note: str) -> dict:
+    """
+    `must_refresh_if[index]`를 발동 표시한다. **분석자가 명시적으로 호출한다** -
+    텍스트를 읽고 자동 판정하지 않는다(`mark_invalidation_triggered`와 동일 규칙:
+    정규식은 트리거 날짜와 서술적 날짜를 구분하지 못한다, v3.42).
+    """
+    with open(path, encoding="utf-8") as f:
+        record = json.load(f)
+    conds = record["thesis"].get("must_refresh_if") or []
+    if not 0 <= index < len(conds):
+        raise IndexError(f"must_refresh_if[{index}]가 없다(총 {len(conds)}건)")
+    conds[index]["triggered"] = True
+    conds[index]["triggered_note"] = _require_text(note, "note")
+    record["thesis"]["must_refresh_if"] = conds
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(record, f, ensure_ascii=False, indent=2)
     return record

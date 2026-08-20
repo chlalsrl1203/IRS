@@ -1,0 +1,285 @@
+{
+  "generated_at": "2026-08-19",
+  "step": "P0-01/P0-02",
+  "method": "REIMPLEMENT",
+  "source_repos": [
+    "https://github.com/simonlin1212/global-stock-data",
+    "https://github.com/dgunning/edgartools",
+    "https://github.com/eddmpython/dartlab"
+  ],
+  "audit": {
+    "n_sources": 6,
+    "n_unverified": 4,
+    "unverified": [
+      "alpha_vantage",
+      "fmp",
+      "stockanalysis",
+      "web_research"
+    ],
+    "n_stale": 4,
+    "sources": [
+      {
+        "key": "alpha_vantage",
+        "provider": "Alpha Vantage (MCP)",
+        "tier": "UNVERIFIED",
+        "authority": "VENDOR",
+        "last_verified": "UNVERIFIED",
+        "stale": true,
+        "allowed_use": [
+          "internal_research"
+        ],
+        "has_rate_limit": false
+      },
+      {
+        "key": "analyst_input",
+        "provider": "분석자 주관 입력",
+        "tier": "FREE_COMMERCIAL",
+        "authority": "ANALYST",
+        "last_verified": "2026-08-19",
+        "stale": false,
+        "allowed_use": [
+          "internal_research",
+          "derived_publication",
+          "raw_redistribution",
+          "commercial"
+        ],
+        "has_rate_limit": false
+      },
+      {
+        "key": "fmp",
+        "provider": "Financial Modeling Prep (MCP)",
+        "tier": "UNVERIFIED",
+        "authority": "VENDOR",
+        "last_verified": "UNVERIFIED",
+        "stale": true,
+        "allowed_use": [
+          "internal_research"
+        ],
+        "has_rate_limit": false
+      },
+      {
+        "key": "sec_edgar",
+        "provider": "SEC EDGAR / XBRL companyfacts",
+        "tier": "FREE_COMMERCIAL",
+        "authority": "PRIMARY_FILING",
+        "last_verified": "2026-08-19",
+        "stale": false,
+        "allowed_use": [
+          "internal_research",
+          "derived_publication",
+          "raw_redistribution",
+          "commercial"
+        ],
+        "has_rate_limit": true
+      },
+      {
+        "key": "stockanalysis",
+        "provider": "stockanalysis.com",
+        "tier": "UNVERIFIED",
+        "authority": "AGGREGATOR_WEB",
+        "last_verified": "UNVERIFIED",
+        "stale": true,
+        "allowed_use": [
+          "internal_research"
+        ],
+        "has_rate_limit": false
+      },
+      {
+        "key": "web_research",
+        "provider": "일반 웹 검색(WebSearch/WebFetch)",
+        "tier": "UNVERIFIED",
+        "authority": "AGGREGATOR_WEB",
+        "last_verified": "UNVERIFIED",
+        "stale": true,
+        "allowed_use": [
+          "internal_research"
+        ],
+        "has_rate_limit": false
+      }
+    ],
+    "note": "UNVERIFIED는 '문제 없음'이 아니라 '확인하지 않음'이다. ledger/*.json은 벤더에서 받은 원자료 수치를 그대로 담아 공개 저장소에 저장하므로, 벤더 출처의 raw_redistribution 조항이 확인되기 전까지 그 행위의 적법성은 미확정 상태다."
+  },
+  "use_matrix": {
+    "sec_edgar": {
+      "internal_research": "ALLOWED",
+      "derived_publication": "ALLOWED",
+      "raw_redistribution": "ALLOWED",
+      "commercial": "ALLOWED"
+    },
+    "alpha_vantage": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "fmp": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "stockanalysis": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "web_research": {
+      "internal_research": "UNVERIFIED",
+      "derived_publication": "PROHIBITED",
+      "raw_redistribution": "PROHIBITED",
+      "commercial": "PROHIBITED"
+    },
+    "analyst_input": {
+      "internal_research": "ALLOWED",
+      "derived_publication": "ALLOWED",
+      "raw_redistribution": "ALLOWED",
+      "commercial": "ALLOWED"
+    }
+  },
+  "registry": {
+    "sec_edgar": {
+      "provider": "SEC EDGAR / XBRL companyfacts",
+      "authority": "PRIMARY_FILING",
+      "data_type": "공시 원문·XBRL 재무수치·제출일",
+      "license": "미국 정부 저작물(17 U.S.C. §105) — 저작권 대상 아님",
+      "commercial_use": "ALLOWED",
+      "redistribution_raw": "ALLOWED",
+      "redistribution_derived": "ALLOWED",
+      "rate_limit_per_sec": 8.0,
+      "freshness": "제출 즉시(실시간)",
+      "reliability": "발행사 제출 원자료. ONON(2026-08-14)에서 2차 출처끼리 어긋났을 때 이 경로로 확정했다. 단 재작성(restatement)은 반영되므로 '그 시점 값'과 다를 수 있다(engine/filing_dates.py 경고 참조).",
+      "last_verified": "2026-08-19",
+      "allowed_use": [
+        "internal_research",
+        "derived_publication",
+        "raw_redistribution",
+        "commercial"
+      ],
+      "source_kind": "sec_xbrl",
+      "hosts": [
+        "sec.gov",
+        "www.sec.gov",
+        "data.sec.gov"
+      ],
+      "terms_url": "https://www.sec.gov/os/webmaster-faq",
+      "verification_note": "2026-08-19 SEC 공식 FAQ 직접 확인: 최대 10 req/s, User-Agent 선언 요구(\"Sample Company Name AdminContact@<domain>.com\" 형식), \"All Government-created content on sec.gov and EDGAR public filing content are free to access and reuse\", 스크립트 접근 명시적 허용.",
+      "tier": "FREE_COMMERCIAL"
+    },
+    "alpha_vantage": {
+      "provider": "Alpha Vantage (MCP)",
+      "authority": "VENDOR",
+      "data_type": "손익계산서·현금흐름표·대차대조표·시세",
+      "license": "UNVERIFIED",
+      "commercial_use": "UNVERIFIED",
+      "redistribution_raw": "UNVERIFIED",
+      "redistribution_derived": "UNVERIFIED",
+      "rate_limit_per_sec": null,
+      "freshness": "일 단위(분기 실적 반영 지연 관측됨)",
+      "reliability": "⚠️ 관측된 오류 있음: ONON(2026-08-14) FY2025 매출이 회사 1차 공시 대비 4.7% 차이(CHF 2,878.5M vs 3,014.0M)로 **부정확**했고, 같은 심볼에서 CASH_FLOW 엔드포인트가 실패했다. 1차 자료 대조 없이 단독 신뢰 금지.",
+      "last_verified": "UNVERIFIED",
+      "allowed_use": [
+        "internal_research"
+      ],
+      "source_kind": "vendor_api",
+      "hosts": [
+        "alphavantage.co",
+        "www.alphavantage.co"
+      ],
+      "terms_url": "https://www.alphavantage.co/terms_of_service/",
+      "verification_note": "2026-08-19 약관 확인 **실패** — 공개 약관이 PDF이며 본문이 판독되지 않아 재배포·상업이용 조항을 확인하지 못했다. **추측해 채우지 않는다.** 별개로 이 저장소는 2026-08-14 세션에서 일일 25회 쿼터 도달을 실측했다(약관 문구가 아니라 관측치다).",
+      "tier": "UNVERIFIED"
+    },
+    "fmp": {
+      "provider": "Financial Modeling Prep (MCP)",
+      "authority": "VENDOR",
+      "data_type": "시세·시가총액·기업개요·스크리너",
+      "license": "UNVERIFIED",
+      "commercial_use": "UNVERIFIED",
+      "redistribution_raw": "UNVERIFIED",
+      "redistribution_derived": "UNVERIFIED",
+      "rate_limit_per_sec": null,
+      "freshness": "일 단위",
+      "reliability": "⚠️ 2026-08-13 세션에서 동일 엔드포인트가 심볼에 따라 비일관적으로 플랜 제한에 걸렸다(AAPL/META/MSFT는 성공, MCO/BSX/PODD는 실패) — 원인 미특정. 가용성 자체를 신뢰하지 말 것.",
+      "last_verified": "UNVERIFIED",
+      "allowed_use": [
+        "internal_research"
+      ],
+      "source_kind": "vendor_api",
+      "hosts": [
+        "financialmodelingprep.com"
+      ],
+      "terms_url": "",
+      "verification_note": "2026-08-19 약관 미확인. 플랜별 제한이 관측되나 문서화 안 함.",
+      "tier": "UNVERIFIED"
+    },
+    "stockanalysis": {
+      "provider": "stockanalysis.com",
+      "authority": "AGGREGATOR_WEB",
+      "data_type": "ETF P/E·보수율·보유종목 top10·지수 구성",
+      "license": "UNVERIFIED",
+      "commercial_use": "UNVERIFIED",
+      "redistribution_raw": "UNVERIFIED",
+      "redistribution_derived": "UNVERIFIED",
+      "rate_limit_per_sec": null,
+      "freshness": "일 단위",
+      "reliability": "ETF 엔진(v3.33~)의 주 출처. IWM에서 같은 지표가 다른 출처와 29.5% 괴리(트레일링 vs forward)를 보인 사례가 있어 **단일 출처 신뢰 금지** 원칙이 여기서 나왔다. 값 자체가 틀렸다는 뜻은 아니고 집계방식이 다르다.",
+      "last_verified": "UNVERIFIED",
+      "allowed_use": [
+        "internal_research"
+      ],
+      "source_kind": "web_research",
+      "hosts": [
+        "stockanalysis.com"
+      ],
+      "terms_url": "",
+      "verification_note": "2026-08-19 약관 미확인. 웹 집계 출처이므로 1차 대조 필요.",
+      "tier": "UNVERIFIED"
+    },
+    "web_research": {
+      "provider": "일반 웹 검색(WebSearch/WebFetch)",
+      "authority": "AGGREGATOR_WEB",
+      "data_type": "정성 조사·뉴스·경쟁구도·가이던스",
+      "license": "UNVERIFIED",
+      "commercial_use": "UNVERIFIED",
+      "redistribution_raw": "PROHIBITED",
+      "redistribution_derived": "UNVERIFIED",
+      "rate_limit_per_sec": null,
+      "freshness": "가변",
+      "reliability": "⚠️ 이 저장소에서 가장 큰 단일 오류가 여기서 났다 — TYL SBC/FCF를 62%로 인용했으나 SEC 원자료 대조 결과 24.4%로 **약 1/3**이었다(2026-08-05). 리서치 에이전트가 2차 출처의 잘못된 FCF를 인용한 결과. 판정에 영향을 줄 수 있는 수치는 반드시 1차 자료로 재확인할 것.",
+      "last_verified": "UNVERIFIED",
+      "allowed_use": [
+        "internal_research"
+      ],
+      "source_kind": "web_research",
+      "hosts": [],
+      "terms_url": "",
+      "verification_note": "출처가 매번 달라 일괄 검증이 불가능하다 — 개별 확인이 원칙.",
+      "tier": "UNVERIFIED"
+    },
+    "analyst_input": {
+      "provider": "분석자 주관 입력",
+      "authority": "ANALYST",
+      "data_type": "경쟁강도·수요민감도·모델선택·Lynch 유형",
+      "license": "해당 없음(자체 생성)",
+      "commercial_use": "ALLOWED",
+      "redistribution_raw": "ALLOWED",
+      "redistribution_derived": "ALLOWED",
+      "rate_limit_per_sec": null,
+      "freshness": "분석 시점",
+      "reliability": "근거는 `subjective_input_basis`로 필수화돼 있으나 **보정된 적이 없다**. R-001 감사에서 이 입력들이 판정을 실제로 뒤집는 것이 확인됐다.",
+      "last_verified": "2026-08-19",
+      "allowed_use": [
+        "internal_research",
+        "derived_publication",
+        "raw_redistribution",
+        "commercial"
+      ],
+      "source_kind": "analyst_input",
+      "hosts": [],
+      "terms_url": "",
+      "verification_note": "자체 생성 데이터라 외부 약관이 없다.",
+      "tier": "FREE_COMMERCIAL"
+    }
+  }
+}

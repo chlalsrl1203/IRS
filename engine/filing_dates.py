@@ -45,6 +45,8 @@ import os
 import urllib.error
 import urllib.request
 
+from engine.data.governance.source_registry import rate_limiter_for
+
 SEC_TICKERS_URL = "https://www.sec.gov/files/company_tickers.json"
 SEC_FACTS_URL = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
 
@@ -63,6 +65,12 @@ _MAX_ANNUAL_DAYS = 400
 
 
 def _http_json(url: str, user_agent: str = None) -> dict:
+    # P0-01(2026-08-19): SEC 공식 상한은 10 req/s인데(sec.gov/os/webmaster-faq)
+    # 이 함수에는 **레이트리밋이 아예 없었다.** 34종목 PIT 감사처럼 반복 조회하는
+    # 경로에서 차단당하면 분석 자체가 중단되므로, 등록부가 아는 상한(SEC 8/s)을
+    # 강제한다. 등록부에 없는 호스트는 보수적 기본값(2/s)이 걸린다.
+    # SOURCE: https://github.com/simonlin1212/global-stock-data (per-domain limiter)
+    rate_limiter_for(url).wait()
     req = urllib.request.Request(
         url, headers={"User-Agent": user_agent or DEFAULT_USER_AGENT}
     )

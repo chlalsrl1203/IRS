@@ -1,0 +1,120 @@
+{
+  "generated_at": "2026-08-19",
+  "step": "P0-03",
+  "ticker": "BSX",
+  "ledger": "ledger/BSX_2026-08-13.json",
+  "comparison": {
+    "revenue": {
+      "n": 11,
+      "match": 10,
+      "diffs": {
+        "2015": {
+          "ledger": 7477000000,
+          "sec": 8068000000.0,
+          "pct": 7.904239668316169
+        }
+      }
+    },
+    "operating_income": {
+      "n": 11,
+      "match": 0,
+      "diffs": {
+        "2015": {
+          "ledger": 790000000,
+          "sec": -327000000.0,
+          "pct": -141.39240506329114
+        },
+        "2016": {
+          "ledger": 1236000000,
+          "sec": 447000000.0,
+          "pct": -63.834951456310684
+        },
+        "2017": {
+          "ledger": 1525000000,
+          "sec": 1285000000.0,
+          "pct": -15.737704918032788
+        },
+        "2018": {
+          "ledger": 1737000000,
+          "sec": 1506000000.0,
+          "pct": -13.298791018998275
+        },
+        "2019": {
+          "ledger": 1712000000,
+          "sec": 1518000000.0,
+          "pct": -11.33177570093458
+        },
+        "2020": {
+          "ledger": 601000000,
+          "sec": -80000000.0,
+          "pct": -113.31114808652248
+        },
+        "2021": {
+          "ledger": 1922000000,
+          "sec": 1199000000.0,
+          "pct": -37.61706555671176
+        },
+        "2022": {
+          "ledger": 1824000000,
+          "sec": 1649000000.0,
+          "pct": -9.594298245614036
+        },
+        "2023": {
+          "ledger": 2181000000,
+          "sec": 2343000000.0,
+          "pct": 7.4277854195323245
+        },
+        "2024": {
+          "ledger": 2635000000,
+          "sec": 2603000000.0,
+          "pct": -1.2144212523719164
+        },
+        "2025": {
+          "ledger": 3971000000,
+          "sec": 3613000000.0,
+          "pct": -9.015361369932007
+        }
+      }
+    },
+    "operating_cashflow": {
+      "n": 11,
+      "match": 11,
+      "diffs": {}
+    },
+    "capex": {
+      "n": 11,
+      "match": 9,
+      "diffs": {
+        "2022": {
+          "ledger": 612000000,
+          "sec": 588000000.0,
+          "pct": -3.9215686274509802
+        },
+        "2023": {
+          "ledger": 800000000,
+          "sec": 711000000.0,
+          "pct": -11.125
+        }
+      }
+    }
+  },
+  "used_tags": {
+    "revenue": [
+      "us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)",
+      "us-gaap:Revenues (USD)"
+    ],
+    "operating_income": [
+      "us-gaap:OperatingIncomeLoss (USD)"
+    ],
+    "operating_cashflow": [
+      "us-gaap:NetCashProvidedByUsedInOperatingActivities (USD)"
+    ],
+    "capex": [
+      "us-gaap:PaymentsToAcquirePropertyPlantAndEquipment (USD)"
+    ]
+  },
+  "limitations": [
+    "[태그 혼재] revenue: 연도에 따라 서로 다른 XBRL 태그에서 왔다(['us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax (USD)', 'us-gaap:Revenues (USD)']). 정의가 구간마다 다를 수 있으니 CAGR을 그대로 믿기 전에 경계 연도를 확인할 것."
+  ],
+  "note": "공식 판정을 바꾸지 않는다 - 대조 사실만 기록한다(P0-07 reconcile의 입력)."
+}
