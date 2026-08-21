@@ -1,0 +1,1149 @@
+{
+ "generated_at": "2026-08-21",
+ "phase": "PHASE 1 — signal independence adversarial case study",
+ "affects_official_judgment": false,
+ "question": "RQ-002가 보고한 'SBC 축 유니버스 이탈'이 SBC의 경제적 효과인가, 아니면 SBC를 수준에만 적용하고 성장경로에는 적용하지 않는 비대칭의 산물인가",
+ "not_a_methodology_proposal": "SBC 일관 적용이 옳다고 주장하지 않는다. 어느 쪽이 옳은지 판정할 근거가 이 저장소에 없다(v3.23 원칙). 독립성 진단일 뿐이다.",
+ "results": [
+  {
+   "ticker": "ACGL",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.157353923411129,
+    "implied_growth": -0.08648414611816407,
+    "gap": 0.24383806952929307,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.157353923411129,
+    "implied_growth": -0.08291206359863282,
+    "gap": 0.24026598700976182,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "rg_low": {
+    "realistic_growth": 0.157353923411129,
+    "implied_growth": -0.08648414611816407,
+    "gap": 0.24383806952929307,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "fcf_cagr_base": 0.16572861020907137,
+   "fcf_cagr_sbc_adjusted": 0.16593953196032496,
+   "sbc_consistent": {
+    "realistic_growth": 0.1575541867516025,
+    "implied_growth": -0.08291206359863282,
+    "gap": 0.2404662503502353,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "weight_final": 0.11999999999999997,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "BKNG",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.11508686710944717,
+    "implied_growth": 0.055276679992675756,
+    "gap": 0.05981018711677141,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.11508686710944717,
+    "implied_growth": 0.06376094818115233,
+    "gap": 0.05132591892829484,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "rg_low": {
+    "realistic_growth": 0.09395777335059906,
+    "implied_growth": 0.055276679992675756,
+    "gap": 0.0386810933579233,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.12438818498366344,
+   "fcf_cagr_sbc_adjusted": 0.12459552203609037,
+   "sbc_consistent": {
+    "realistic_growth": 0.11527870021483942,
+    "implied_growth": 0.06376094818115233,
+    "gap": 0.051517752033687095,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "BRO",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.04572271074368433,
+    "gap": 0.07427728925631566,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.04973771219885011,
+    "gap": 0.07026228780114988,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "rg_low": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.04572271074368433,
+    "gap": 0.07427728925631566,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "fcf_cagr_base": 0.16561203851174766,
+   "fcf_cagr_sbc_adjusted": 0.17215162251856042,
+   "sbc_consistent": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.04973771219885011,
+    "gap": 0.07026228780114988,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "weight_final": 0.06749999999999999,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "BSX",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.13863186252556584,
+    "implied_growth": 0.07997894287109375,
+    "gap": 0.058652919654472085,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.13863186252556584,
+    "implied_growth": 0.09006958007812499,
+    "gap": 0.04856228244744085,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.09661861107014208,
+    "implied_growth": 0.07997894287109375,
+    "gap": 0.01663966819904833,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.2643853490752126,
+   "fcf_cagr_sbc_adjusted": 0.2841240693115157,
+   "sbc_consistent": {
+    "realistic_growth": 0.13863186252556584,
+    "implied_growth": 0.09006958007812499,
+    "gap": 0.04856228244744085,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "BSY",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.10541108672060934,
+    "implied_growth": 0.04845613864266632,
+    "gap": 0.05695494807794302,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.10541108672060934,
+    "implied_growth": 0.05647003454602545,
+    "gap": 0.04894105217458389,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.09737543543214537,
+    "implied_growth": 0.04845613864266632,
+    "gap": 0.04891929678947905,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.16549633493129434,
+   "fcf_cagr_sbc_adjusted": 0.16367583811005337,
+   "sbc_consistent": {
+    "realistic_growth": 0.10541108672060934,
+    "implied_growth": 0.05647003454602545,
+    "gap": 0.04894105217458389,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "CDNS",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.08712043952090967,
+    "gap": 0.032879560479090325,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.09237986156591951,
+    "gap": 0.027620138434080482,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.10947181354594447,
+    "implied_growth": 0.08712043952090967,
+    "gap": 0.0223513740250348,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "COR",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.0957796484196729,
+    "implied_growth": 0.06480789184570312,
+    "gap": 0.030971756573969778,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.0957796484196729,
+    "implied_growth": 0.07038078308105467,
+    "gap": 0.025398865338618237,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.09356182839759183,
+    "implied_growth": 0.06480789184570312,
+    "gap": 0.02875393655188871,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.11785265670487566,
+   "fcf_cagr_sbc_adjusted": 0.11653616635182074,
+   "sbc_consistent": {
+    "realistic_growth": 0.0957796484196729,
+    "implied_growth": 0.07038078308105467,
+    "gap": 0.025398865338618237,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "DSGX",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.13432194015922871,
+    "implied_growth": 0.09183883666992183,
+    "gap": 0.04248310348930688,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.13432194015922871,
+    "implied_growth": 0.101518440246582,
+    "gap": 0.03280349991264671,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.13007463547642784,
+    "implied_growth": 0.09183883666992183,
+    "gap": 0.038235798806506,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "DUOL",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.05546874999999998,
+    "gap": 0.19453125000000002,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.11039772033691403,
+    "gap": 0.13960227966308597,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "rg_low": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.05546874999999998,
+    "gap": 0.19453125000000002,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 차감 후 기준연도 FCF <= 0 (-2,699,000) - CAGR 정의불가",
+   "weight_final": 0.06290683585014636,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "GEN",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.12,
+    "implied_growth": -0.0018215179443359514,
+    "gap": 0.12182151794433595,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.01935768127441405,
+    "gap": 0.10064231872558595,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "rg_low": {
+    "realistic_growth": 0.12,
+    "implied_growth": -0.0018215179443359514,
+    "gap": 0.12182151794433595,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "fcf_cagr_base": 0.16820852899657845,
+   "fcf_cagr_sbc_adjusted": 0.1574708538737848,
+   "sbc_consistent": {
+    "realistic_growth": 0.12,
+    "implied_growth": 0.01935768127441405,
+    "gap": 0.10064231872558595,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "weight_final": 0.18,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "GWRE",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.11506636068985966,
+    "implied_growth": 0.08352768019156906,
+    "gap": 0.0315386804982906,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.11506636068985966,
+    "implied_growth": 0.0966020158854498,
+    "gap": 0.018464344804409866,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.0930884663253709,
+    "implied_growth": 0.08352768019156906,
+    "gap": 0.009560786133801846,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 차감 후 기준연도 FCF <= 0 (-14,411,000) - CAGR 정의불가",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "IDXX",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.08242656553743928,
+    "implied_growth": 0.07828772366571138,
+    "gap": 0.004138841871727902,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.08242656553743928,
+    "implied_growth": 0.07976087480908146,
+    "gap": 0.002665690728357817,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.07590604912200542,
+    "implied_growth": 0.07828772366571138,
+    "gap": -0.0023816745437059555,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "KEYS",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.014713198893530484,
+    "implied_growth": 0.15835533142089842,
+    "gap": -0.14364213252736793,
+    "judgment": "과대평가 가능성",
+    "grade": "D"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.014713198893530484,
+    "implied_growth": 0.1740547180175781,
+    "gap": -0.15934151912404762,
+    "judgment": "과대평가 가능성",
+    "grade": "F"
+   },
+   "rg_low": {
+    "realistic_growth": -0.002425128346842108,
+    "implied_growth": 0.15835533142089842,
+    "gap": -0.16078045976774052,
+    "judgment": "과대평가 가능성",
+    "grade": "F"
+   },
+   "fcf_cagr_base": 0.07339084686143038,
+   "fcf_cagr_sbc_adjusted": 0.06755758451827076,
+   "sbc_consistent": {
+    "realistic_growth": 0.014713198893530484,
+    "implied_growth": 0.1740547180175781,
+    "gap": -0.15934151912404762,
+    "judgment": "과대평가 가능성",
+    "grade": "F"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "KLAC",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.10327419836763381,
+    "implied_growth": 0.09466075940356757,
+    "gap": 0.008613438964066245,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.10327419836763381,
+    "implied_growth": 0.09580865141054229,
+    "gap": 0.007465546957091521,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.08317957046064964,
+    "implied_growth": 0.09466075940356757,
+    "gap": -0.011481188942917928,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.1816667890794359,
+   "fcf_cagr_sbc_adjusted": 0.18109786039161868,
+   "sbc_consistent": {
+    "realistic_growth": 0.10327419836763381,
+    "implied_growth": 0.09580865141054229,
+    "gap": 0.007465546957091521,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "MCK",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.06160134921876831,
+    "implied_growth": 0.06176624298095702,
+    "gap": -0.0001648937621887142,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.06160134921876831,
+    "implied_growth": 0.06728973388671872,
+    "gap": -0.005688384667950408,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.06160134921876831,
+    "implied_growth": 0.06176624298095702,
+    "gap": -0.0001648937621887142,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.0675894243198174,
+   "fcf_cagr_sbc_adjusted": 0.0660416467038949,
+   "sbc_consistent": {
+    "realistic_growth": 0.06019069673295509,
+    "implied_growth": 0.06728973388671872,
+    "gap": -0.007099037153763629,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "MNDY",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.01723766326904296,
+    "gap": 0.23276233673095703,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.11891098022460934,
+    "gap": 0.13108901977539067,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "rg_low": {
+    "realistic_growth": 0.25,
+    "implied_growth": 0.01723766326904296,
+    "gap": 0.23276233673095703,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 차감 후 기준연도 FCF <= 0 (-70,932,000) - CAGR 정의불가",
+   "weight_final": 0.06272489256794993,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "MNST",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.07710471404538147,
+    "implied_growth": 0.0835233994237123,
+    "gap": -0.006418685378330832,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.07710471404538147,
+    "implied_growth": 0.08498344752537172,
+    "gap": -0.007878733479990255,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.07710471404538147,
+    "implied_growth": 0.0835233994237123,
+    "gap": -0.006418685378330832,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "PDD",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.25,
+    "implied_growth": -0.0416229248046875,
+    "gap": 0.2916229248046875,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.25,
+    "implied_growth": -0.031214141845703137,
+    "gap": 0.28121414184570315,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "rg_low": {
+    "realistic_growth": 0.25,
+    "implied_growth": -0.0416229248046875,
+    "gap": 0.2916229248046875,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "fcf_cagr_base": 0.3031222533005351,
+   "fcf_cagr_sbc_adjusted": 0.3186855456384645,
+   "sbc_consistent": {
+    "realistic_growth": 0.25,
+    "implied_growth": -0.031214141845703137,
+    "gap": 0.28121414184570315,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "weight_final": 0.09067692535472627,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "PGR",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.1686526955865976,
+    "implied_growth": -0.04892215728759766,
+    "gap": 0.21757485287419526,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.1686526955865976,
+    "implied_growth": -0.047871589660644545,
+    "gap": 0.21652428524724215,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "rg_low": {
+    "realistic_growth": 0.1431995502018131,
+    "implied_growth": -0.04892215728759766,
+    "gap": 0.19212170748941076,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 미확보 연도 [2020]",
+   "weight_final": 0.11999999999999997,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "PH",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.06508140623414017,
+    "implied_growth": 0.1509395599365234,
+    "gap": -0.08585815370238321,
+    "judgment": "과대평가 가능성",
+    "grade": "D"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.06508140623414017,
+    "implied_growth": 0.1566043853759765,
+    "gap": -0.09152297914183634,
+    "judgment": "과대평가 가능성",
+    "grade": "D"
+   },
+   "rg_low": {
+    "realistic_growth": 0.04174877956431731,
+    "implied_growth": 0.1509395599365234,
+    "gap": -0.10919078037220609,
+    "judgment": "과대평가 가능성",
+    "grade": "D"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "PTC",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.11390601486057504,
+    "implied_growth": 0.05860443115234374,
+    "gap": 0.0553015837082313,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.11390601486057504,
+    "implied_growth": 0.093126106262207,
+    "gap": 0.020779908598368035,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.11014892703642758,
+    "implied_growth": 0.05860443115234374,
+    "gap": 0.05154449588408384,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "fcf_cagr_base": 0.3201990243696191,
+   "fcf_cagr_sbc_adjusted": 0.4542762398758058,
+   "sbc_consistent": {
+    "realistic_growth": 0.11390601486057504,
+    "implied_growth": 0.093126106262207,
+    "gap": 0.020779908598368035,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "RMD",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.11272020863380966,
+    "implied_growth": 0.05382785797119137,
+    "gap": 0.05889235066261829,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.11272020863380966,
+    "implied_growth": 0.06047744750976561,
+    "gap": 0.05224276112404405,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "rg_low": {
+    "realistic_growth": 0.10615471128265432,
+    "implied_growth": 0.05382785797119137,
+    "gap": 0.052326853311462945,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "fcf_cagr_base": 0.18641617250229148,
+   "fcf_cagr_sbc_adjusted": 0.1931236418050042,
+   "sbc_consistent": {
+    "realistic_growth": 0.11272020863380966,
+    "implied_growth": 0.06047744750976561,
+    "gap": 0.05224276112404405,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "ROP",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+   "base": {
+    "realistic_growth": 0.055,
+    "implied_growth": 0.04264221191406248,
+    "gap": 0.012357788085937522,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.055,
+    "implied_growth": 0.05106410980224607,
+    "gap": 0.003935890197753929,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": null,
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "realistic_growth_override 사용 - RG가 CAGR과 무관",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "SE",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.23559721275453016,
+    "implied_growth": 0.04379405975341795,
+    "gap": 0.19180315300111223,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.23559721275453016,
+    "implied_growth": 0.06192798614501953,
+    "gap": 0.17366922660951062,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "rg_low": {
+    "realistic_growth": 0.18448827677283874,
+    "implied_growth": 0.04379405975341795,
+    "gap": 0.1406942170194208,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 차감 후 기준연도 FCF <= 0 (-70,652,000) - CAGR 정의불가",
+   "weight_final": 0.07390567174489178,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "TCOM",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.12387581476525755,
+    "implied_growth": 0.048398971557617174,
+    "gap": 0.07547684320764038,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.12387581476525755,
+    "implied_growth": 0.07106761932373044,
+    "gap": 0.05280819544152711,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "rg_low": {
+    "realistic_growth": 0.09285135167798747,
+    "implied_growth": 0.048398971557617174,
+    "gap": 0.0444523801203703,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.1303955944897448,
+   "fcf_cagr_sbc_adjusted": 0.1537455447990157,
+   "sbc_consistent": {
+    "realistic_growth": 0.1460582675590649,
+    "implied_growth": 0.07106761932373044,
+    "gap": 0.07499064823533445,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "weight_final": 0.10249999999999998,
+   "verdict": "CANCELLED"
+  },
+  {
+   "ticker": "TTD",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.16703987255129174,
+    "implied_growth": -0.0030563354492187636,
+    "gap": 0.1700962080005105,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.16703987255129174,
+    "implied_growth": 0.11191368103027341,
+    "gap": 0.05512619152101833,
+    "judgment": "저평가 가능성",
+    "grade": "B"
+   },
+   "rg_low": {
+    "realistic_growth": 0.16703987255129174,
+    "implied_growth": -0.0030563354492187636,
+    "gap": 0.1700962080005105,
+    "judgment": "저평가 가능성",
+    "grade": "S"
+   },
+   "fcf_cagr_base": 0.19174479875477068,
+   "fcf_cagr_sbc_adjusted": 0.06832260112923638,
+   "sbc_consistent": {
+    "realistic_growth": 0.05951972965689865,
+    "implied_growth": 0.11191368103027341,
+    "gap": -0.05239395137337476,
+    "judgment": "과대평가 가능성",
+    "grade": "D"
+   },
+   "weight_final": 0.026973663318205443,
+   "verdict": "SURVIVES"
+  },
+  {
+   "ticker": "TYL",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.10153071267866381,
+    "implied_growth": 0.07380752563476561,
+    "gap": 0.0277231870438982,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.10153071267866381,
+    "implied_growth": 0.1063350677490234,
+    "gap": -0.004804355070359589,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.06954034867069729,
+    "implied_growth": 0.07380752563476561,
+    "gap": -0.004267176964068323,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.13703541809123143,
+   "fcf_cagr_sbc_adjusted": 0.12609719276467501,
+   "sbc_consistent": {
+    "realistic_growth": 0.10153071267866381,
+    "implied_growth": 0.1063350677490234,
+    "gap": -0.004804355070359589,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "UBER",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.1595752266302478,
+    "implied_growth": 0.04173316955566405,
+    "gap": 0.11784205707458376,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.1595752266302478,
+    "implied_growth": 0.06678390502929685,
+    "gap": 0.09279132160095097,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "rg_low": {
+    "realistic_growth": 0.1595752266302478,
+    "implied_growth": 0.04173316955566405,
+    "gap": 0.11784205707458376,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "SBC 차감 후 기준연도 FCF <= 0 (-1,403,000,000) - CAGR 정의불가",
+   "weight_final": 0.047706037224796674,
+   "verdict": "NO_SIGNAL"
+  },
+  {
+   "ticker": "VRSN",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.046517359421241536,
+    "implied_growth": 0.05623670042058006,
+    "gap": -0.009719340999338522,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.046517359421241536,
+    "implied_growth": 0.05920495189433241,
+    "gap": -0.012687592473090877,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.041283936091403586,
+    "implied_growth": 0.05623670042058006,
+    "gap": -0.014952764329176471,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "VRT",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.18710426857819903,
+    "implied_growth": 0.16991710662841797,
+    "gap": 0.017187161949781066,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.18710426857819903,
+    "implied_growth": 0.1727519989013672,
+    "gap": 0.014352269676831841,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.16968568231356312,
+    "implied_growth": 0.16991710662841797,
+    "gap": -0.0002314243148548445,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "fcf_cagr_base": 0.6301727980423069,
+   "fcf_cagr_sbc_adjusted": 0.6491234472258387,
+   "sbc_consistent": {
+    "realistic_growth": 0.18710426857819903,
+    "implied_growth": 0.1727519989013672,
+    "gap": 0.014352269676831841,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "WCN",
+   "rg_driver": "fcf_cagr",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.09012287064860232,
+    "implied_growth": 0.08008688823767682,
+    "gap": 0.0100359824109255,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.09012287064860232,
+    "implied_growth": 0.0820603630228441,
+    "gap": 0.00806250762575822,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.0835394417436222,
+    "implied_growth": 0.08008688823767682,
+    "gap": 0.00345255350594538,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "WDAY",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.14323282565323606,
+    "implied_growth": 0.02906227111816404,
+    "gap": 0.11417055453507202,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.14323282565323606,
+    "implied_growth": 0.13209686279296873,
+    "gap": 0.011135962860267329,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.13717751725996458,
+    "implied_growth": 0.02906227111816404,
+    "gap": 0.10811524614180054,
+    "judgment": "저평가 가능성",
+    "grade": "A"
+   },
+   "fcf_cagr_base": 0.22445175339833945,
+   "fcf_cagr_sbc_adjusted": 2.0892223542795203,
+   "sbc_consistent": {
+    "realistic_growth": 0.14323282565323606,
+    "implied_growth": 0.13209686279296873,
+    "gap": 0.011135962860267329,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "weight_final": 0.0451059739392835,
+   "verdict": "SURVIVES"
+  },
+  {
+   "ticker": "WM",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.0803240971798224,
+    "implied_growth": 0.07943367650933261,
+    "gap": 0.0008904206704897916,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.0803240971798224,
+    "implied_growth": 0.08128538018819086,
+    "gap": -0.000961283008368452,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.062470291036273044,
+    "implied_growth": 0.07943367650933261,
+    "gap": -0.016963385473059568,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  },
+  {
+   "ticker": "ZTS",
+   "rg_driver": "revenue_weighted",
+   "cap_applied": null,
+   "base": {
+    "realistic_growth": 0.05620717910064688,
+    "implied_growth": 0.03523566352591158,
+    "gap": 0.020971515574735304,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_level_only": {
+    "realistic_growth": 0.05620717910064688,
+    "implied_growth": 0.03775211116379789,
+    "gap": 0.018455067936848993,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "rg_low": {
+    "realistic_growth": 0.04834678990363738,
+    "implied_growth": 0.03523566352591158,
+    "gap": 0.013111126377725803,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+   },
+   "sbc_consistent": null,
+   "sbc_consistent_blocked": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "verdict": "NOT_IN_UNIVERSE"
+  }
+ ]
+}

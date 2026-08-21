@@ -49,6 +49,9 @@
         "weight_final": 0.10249999999999998,
         "grade": "A",
         "grade_sbc_adjusted": "B",
+        "signal_verdict": "CANCELLED",
+        "gap_sbc_consistent_pct": 7.499064823533446,
+        "grade_sbc_consistent": "A",
         "gap_pct": 7.547684320764038,
         "gap_sbc_adjusted_pct": 5.280819544152711,
         "sbc_to_fcf_pct": 0.16713297010749523
@@ -58,6 +61,9 @@
         "weight_final": 0.0451059739392835,
         "grade": "A",
         "grade_sbc_adjusted": "C",
+        "signal_verdict": "SURVIVES",
+        "gap_sbc_consistent_pct": 1.1135962860267328,
+        "grade_sbc_consistent": "C",
         "gap_pct": 11.417055453507203,
         "gap_sbc_adjusted_pct": 1.1135962860267328,
         "sbc_to_fcf_pct": 0.5855239467050775
@@ -67,11 +73,15 @@
         "weight_final": 0.026973663318205443,
         "grade": "S",
         "grade_sbc_adjusted": "B",
+        "signal_verdict": "SURVIVES",
+        "gap_sbc_consistent_pct": -5.2393951373374765,
+        "grade_sbc_consistent": "D",
         "gap_pct": 17.00962080005105,
         "gap_sbc_adjusted_pct": 5.512619152101833,
         "sbc_to_fcf_pct": 0.6165902150280881
       }
     ],
-    "unverified": []
+    "unverified": [],
+    "signal_independence_checked": true
   }
 }

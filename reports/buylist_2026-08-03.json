@@ -19,7 +19,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.1556139198949442,
-    "gap_sbc_adjusted_pct": 10.064231872558596
+    "gap_sbc_adjusted_pct": 10.064231872558596,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "ACGL",
@@ -41,7 +42,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.024151436031331592,
-    "gap_sbc_adjusted_pct": 24.02659870097618
+    "gap_sbc_adjusted_pct": 24.02659870097618,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "PGR",
@@ -63,7 +65,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.007674418604651163,
-    "gap_sbc_adjusted_pct": 21.652428524724215
+    "gap_sbc_adjusted_pct": 21.652428524724215,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "TCOM",
@@ -85,7 +88,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": true,
     "sbc_to_fcf_pct": 0.16713297010749523,
-    "gap_sbc_adjusted_pct": 5.280819544152711
+    "gap_sbc_adjusted_pct": 5.280819544152711,
+    "sbc_signal_verdict": "CANCELLED"
   },
   {
     "ticker": "PDD",
@@ -107,7 +111,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.07502315853415462,
-    "gap_sbc_adjusted_pct": 28.121414184570316
+    "gap_sbc_adjusted_pct": 28.121414184570316,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "SE",
@@ -129,7 +134,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.13855788684452172,
-    "gap_sbc_adjusted_pct": 17.36692266095106
+    "gap_sbc_adjusted_pct": 17.36692266095106,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "BRO",
@@ -153,7 +159,8 @@
     "gap_alternative_model_pct": 6.442520141601564,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.06729377713458755,
-    "gap_sbc_adjusted_pct": 7.026228780114987
+    "gap_sbc_adjusted_pct": 7.026228780114987,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "DUOL",
@@ -175,7 +182,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.3717256245824622,
-    "gap_sbc_adjusted_pct": 13.960227966308597
+    "gap_sbc_adjusted_pct": 13.960227966308597,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "MNDY",
@@ -197,7 +205,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.5711837935863595,
-    "gap_sbc_adjusted_pct": 13.108901977539066
+    "gap_sbc_adjusted_pct": 13.108901977539066,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "UBER",
@@ -219,7 +228,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": false,
     "sbc_to_fcf_pct": 0.1870326743828741,
-    "gap_sbc_adjusted_pct": 9.279132160095097
+    "gap_sbc_adjusted_pct": 9.279132160095097,
+    "sbc_signal_verdict": "NO_SIGNAL"
   },
   {
     "ticker": "WDAY",
@@ -241,7 +251,8 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": true,
     "sbc_to_fcf_pct": 0.5855239467050775,
-    "gap_sbc_adjusted_pct": 1.1135962860267328
+    "gap_sbc_adjusted_pct": 1.1135962860267328,
+    "sbc_signal_verdict": "SURVIVES"
   },
   {
     "ticker": "TTD",
@@ -263,6 +274,7 @@
     "model_dependent_universe": false,
     "sbc_dependent_universe": true,
     "sbc_to_fcf_pct": 0.6165902150280881,
-    "gap_sbc_adjusted_pct": 5.512619152101833
+    "gap_sbc_adjusted_pct": 5.512619152101833,
+    "sbc_signal_verdict": "SURVIVES"
   }
 ]

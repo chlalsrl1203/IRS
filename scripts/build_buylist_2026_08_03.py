@@ -254,6 +254,33 @@ def load_sbc_dependence(path=SBC_HARVEST_PATH):
     return {r["ticker"]: r for r in rows if r.get("status") == "OK"}
 
 
+SIGNAL_INDEPENDENCE_PATH = "reports/signal_independence_2026-08-21.json"
+
+
+def load_sbc_signal_verdict(path=SIGNAL_INDEPENDENCE_PATH):
+    """
+    SBC 이탈 신호가 **일관 적용 후에도 살아남는지**(PHASE 1, 2026-08-21).
+
+    ⚠️ 왜 필요한가 — 실측으로 확인된 인공물이 있다.
+    `sbc_cross_check`는 SBC를 **수준(fcf0)에만** 적용하고 성장경로(FCF CAGR)에는
+    적용하지 않는다. RG가 FCF CAGR로 결정되고 Lynch 캡이 안 걸린 종목에서는
+    두 효과가 반대 방향이라, 부분 적용이 신호를 **만들어내거나 지울 수 있다**:
+
+        TCOM  부분 +5.28%p(B, 이탈)  ->  일관 +7.50%p(A, 이탈 안 함)   CANCELLED
+        TTD   부분 +5.51%p(B, 이탈)  ->  일관 −5.24%p(D, 더 심함)      SURVIVES
+
+    즉 어제(RQ-002) TCOM을 SBC 근거로 지목한 것은 틀렸다 — TCOM의 진짜 신호는
+    성장률 축 하나다. 이 파일이 그 구분을 자본배분 경로에 전달한다.
+
+    파일이 없으면 None — '왜곡 없음'이 아니라 '미확인'이다(기존 두 로더와 동일).
+    """
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        rows = json.load(f)["results"]
+    return {r["ticker"]: r for r in rows}
+
+
 def main():
     data = json.load(open("reports/portfolio_ranking_2026-08-02.json"))
     universe = {r["ticker"]: r for r in data if r["grade"] in ("S", "A")}
@@ -514,8 +541,10 @@ def main():
     # 바꾸지 않고**, weight_final이 확정된 뒤 키만 덧붙이며, 어느 쪽이 옳은지
     # 판정하지 않는다(SBC 전액차감/전액가산 둘 다 업계에서 논쟁적 - v3.23 원칙).
     sbc_dep = load_sbc_dependence()
+    sig = load_sbc_signal_verdict()
     boundary["sbc"] = {"status": None, "held_but_sbc_dependent": [],
-                       "unverified": []}
+                       "unverified": [],
+                       "signal_independence_checked": sig is not None}
     print("\n" + "=" * 100)
     print("경계 검토 2 - 유니버스 편입이 SBC 미차감 가정에 달려 있는 종목 (비중 미변경)")
     print("=" * 100)
@@ -541,10 +570,19 @@ def main():
             row["sbc_to_fcf_pct"] = s.get("sbc_to_fcf_pct")
             row["gap_sbc_adjusted_pct"] = (
                 s["gap_sbc_adjusted"] * 100 if s.get("gap_sbc_adjusted") is not None else None)
+            v = (sig or {}).get(row["ticker"], {})
+            # SURVIVES / CANCELLED / UNKNOWN / NO_SIGNAL / NOT_IN_UNIVERSE
+            row["sbc_signal_verdict"] = v.get("verdict")
             if leaves:
                 boundary["sbc"]["held_but_sbc_dependent"].append({
                     "ticker": row["ticker"], "weight_final": row["weight_final"],
                     "grade": row["grade"], "grade_sbc_adjusted": s["grade_sbc_adjusted"],
+                    "signal_verdict": v.get("verdict"),
+                    "gap_sbc_consistent_pct": (
+                        v["sbc_consistent"]["gap"] * 100
+                        if v.get("sbc_consistent") else None),
+                    "grade_sbc_consistent": (
+                        v["sbc_consistent"]["grade"] if v.get("sbc_consistent") else None),
                     "gap_pct": row["gap_pct"],
                     "gap_sbc_adjusted_pct": s["gap_sbc_adjusted"] * 100,
                     "sbc_to_fcf_pct": s["sbc_to_fcf_pct"],
@@ -558,6 +596,21 @@ def main():
                       f"{h['grade']}({h['gap_pct']:+.2f}%p) -> SBC 차감시 "
                       f"{h['grade_sbc_adjusted']}({h['gap_sbc_adjusted_pct']:+.2f}%p) 유니버스 이탈  "
                       f"[SBC/FCF {h['sbc_to_fcf_pct']*100:.1f}%]")
+                # 이 신호가 SBC의 경제적 효과인가, 부분 적용의 산물인가(PHASE 1).
+                vd, gc, cc = (h.get("signal_verdict"),
+                              h.get("gap_sbc_consistent_pct"),
+                              h.get("grade_sbc_consistent"))
+                if vd == "CANCELLED":
+                    print(f"           ⚠️ 이 이탈은 **부분 적용의 산물이다** - SBC를 성장경로에도 "
+                          f"일관 적용하면 {cc}({gc:+.2f}%p)로 이탈하지 않는다.")
+                    print("              SBC를 이 종목의 재검토 근거로 삼지 말 것.")
+                elif vd == "SURVIVES":
+                    print(f"           일관 적용에서도 이탈 유지: {cc}({gc:+.2f}%p) - SBC 고유 신호.")
+                elif vd == "UNKNOWN":
+                    print("           ⚠️ 일관 적용을 계산하지 못했다 - '무해'가 아니라 '미확인'.")
+                elif vd is None:
+                    print(f"           ⚠️ {SIGNAL_INDEPENDENCE_PATH} 미확인 - "
+                          "scripts/signal_independence_2026_08_21.py를 먼저 실행할 것.")
         else:
             print("  SBC 차감으로 유니버스를 이탈하는 보유 종목 없음.")
         if boundary["sbc"]["unverified"]:
