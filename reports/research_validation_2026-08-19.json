@@ -1,0 +1,578 @@
+{
+  "generated_at": "2026-08-19",
+  "source_repos": [
+    "https://github.com/stefan-jansen/machine-learning-for-trading",
+    "https://github.com/CPZ-Lab/cpz-quant",
+    "https://github.com/microsoft/qlib"
+  ],
+  "affects_official_judgment": false,
+  "multiple_testing": {
+    "generated_for_alpha": 0.05,
+    "counts": {
+      "n_reports": 28,
+      "n_experiments": 9,
+      "counted_tests": 9702,
+      "unknown_scenario_counts": [
+        "baseline_frozen_2026-08-16.json",
+        "buylist_2026-08-03.json",
+        "buylist_boundary_review_2026-08-16.json",
+        "combination_flip_decomposition_2026-08-16.json",
+        "deep_analysis_9_2026-08-01.json",
+        "etf_valuation_comparison_2026-08-06.json",
+        "gap_distribution_2026-08-13.json",
+        "gap_range_2026-08-16.json",
+        "global_robustness_2026-08-16.json",
+        "growth_quality_profile_2026-08-16.json",
+        "growth_quality_research_2026-08-16.json",
+        "growth_scorecard_2026-08-13.json",
+        "hard_gates_bsx_2026-08-19.json",
+        "keys_growth_crosscheck_2026-08-04.json",
+        "krx_etf_ranking_2026-08-08.json",
+        "krx_overlap_2026-08-08.json",
+        "ledger_vs_sec_impact_2026-08-19.json",
+        "ledger_vs_sec_reconciliation_2026-08-19.json",
+        "market_relative_2026-08-13.json",
+        "model_choice_sensitivity_2026-08-16.json",
+        "n_sensitivity_2026-08-16.json",
+        "pit_audit_2026-08-15.json",
+        "portfolio_ranking_2026-08-02.json",
+        "rop_organic_growth_crosscheck_2026-08-04.json",
+        "sec_provider_crosscheck_2026-08-19.json",
+        "source_registry_audit_2026-08-19.json",
+        "thesis_monitor_2026-08-13.json"
+      ],
+      "reports": [
+        {
+          "report": "baseline_frozen_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "buylist_2026-08-03.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "buylist_boundary_review_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "combination_flip_decomposition_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "deep_analysis_9_2026-08-01.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "etf_valuation_comparison_2026-08-06.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "gap_distribution_2026-08-13.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "gap_range_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "global_robustness_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "growth_quality_profile_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "growth_quality_research_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "growth_scorecard_2026-08-13.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "hard_gates_bsx_2026-08-19.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "keys_growth_crosscheck_2026-08-04.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "krx_etf_ranking_2026-08-08.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "krx_overlap_2026-08-08.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "ledger_vs_sec_impact_2026-08-19.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "ledger_vs_sec_reconciliation_2026-08-19.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "market_relative_2026-08-13.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "model_choice_sensitivity_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "n_sensitivity_2026-08-16.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "pit_audit_2026-08-15.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "portfolio_ranking_2026-08-02.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "robustness_interactions_2026-08-16.json",
+          "counted_tests": 9675,
+          "self_reported": true
+        },
+        {
+          "report": "rop_organic_growth_crosscheck_2026-08-04.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "sec_provider_crosscheck_2026-08-19.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "source_registry_audit_2026-08-19.json",
+          "counted_tests": 1,
+          "self_reported": false
+        },
+        {
+          "report": "thesis_monitor_2026-08-13.json",
+          "counted_tests": 1,
+          "self_reported": false
+        }
+      ],
+      "experiments": [
+        {
+          "file": "EXP-001.json",
+          "experiment_id": "EXP-001",
+          "status": "SUPERSEDED"
+        },
+        {
+          "file": "H-001.json",
+          "experiment_id": "H-001",
+          "status": "BLOCKED"
+        },
+        {
+          "file": "H-002.json",
+          "experiment_id": "H-002",
+          "status": "BLOCKED"
+        },
+        {
+          "file": "H-003.json",
+          "experiment_id": "H-003",
+          "status": "BLOCKED"
+        },
+        {
+          "file": "H-004.json",
+          "experiment_id": "H-004",
+          "status": "BLOCKED"
+        },
+        {
+          "file": "H-005.json",
+          "experiment_id": "H-005",
+          "status": "BLOCKED"
+        },
+        {
+          "file": "H-006.json",
+          "experiment_id": "H-006",
+          "status": "REGISTERED"
+        },
+        {
+          "file": "H-007.json",
+          "experiment_id": "H-007",
+          "status": "REGISTERED"
+        },
+        {
+          "file": "R-001.json",
+          "experiment_id": "R-001",
+          "status": "REGISTERED"
+        }
+      ],
+      "note": "리포트 1건 = 검정 1회가 아니다. 시나리오 수를 스스로 밝힌 리포트는 그 수를, 안 밝힌 리포트는 1로 세되 그 사실을 남긴다."
+    },
+    "familywise": {
+      "n_tests": 9702,
+      "alpha_nominal": 0.05,
+      "fwer_upper_bound": 1.0,
+      "fwer_saturated": true,
+      "bonferroni_alpha": 5.153576582148011e-06,
+      "expected_false_positives": 485.1,
+      "independence_assumed": true,
+      "note": "독립 가정은 IRS에서 성립하지 않는다(같은 표본·같은 엔진). 실제 FWER은 이보다 낮으므로 이 값은 **상한**이다. ⚠️ FWER이 1.0으로 포화됐다 — 계산 오류가 아니라 이 검정 횟수에서는 FWER이 정보를 잃는다는 뜻이다. expected_false_positives를 볼 것."
+    },
+    "correction_applied": false,
+    "validation_status": "SOFTWARE_VALIDATED — 검정 횟수 집계와 FWER 계산은 표준 공식이고 테스트로 고정돼 있다. 다만 **IRS의 분석 대부분은 nominal p값이 없어** 이 수치는 '보정된 유의수준'이 아니라 '우연한 발견의 기대 규모'다.",
+    "note": "IRS의 분석 대부분은 가설검정이 아니라 감사·서술이라 nominal p값이 없다. 따라서 이 리포트는 보정된 유의수준이 아니라 **'같은 표본을 몇 번 봤는가'**를 드러내는 것이 목적이다. 보정을 자동 적용하지 않는다 — 적용할 p값이 없기 때문이다."
+  },
+  "survivorship": {
+    "n_ledger_tickers": 34,
+    "n_considered_in_screening": 83,
+    "n_ledger_from_screening": 8,
+    "ledger_from_screening": [
+      "BKNG",
+      "BSX",
+      "COR",
+      "GEN",
+      "MCK",
+      "PDD",
+      "PGR",
+      "TCOM"
+    ],
+    "n_ledger_not_from_screening": 26,
+    "n_rejected": 75,
+    "rejected_tickers": [
+      "ACN",
+      "ADBE",
+      "AGCO",
+      "ALGN",
+      "AMAT",
+      "AMD",
+      "APP",
+      "APTV",
+      "BABA",
+      "BIDU",
+      "BR",
+      "CHTR",
+      "CHWY",
+      "CI",
+      "CNR.TO",
+      "CPNG",
+      "CRM",
+      "CRTO",
+      "DDOG",
+      "DG",
+      "DIS",
+      "DVA",
+      "DXCM",
+      "EL",
+      "EME",
+      "ETSY",
+      "GOOGL",
+      "IBM",
+      "IONS",
+      "JD",
+      "KR",
+      "LI",
+      "LII",
+      "LKQ",
+      "LRCX",
+      "LULU",
+      "MCO",
+      "META",
+      "MLM",
+      "MOH",
+      "MU",
+      "NKE",
+      "NOW",
+      "NRG",
+      "NTES",
+      "NVO",
+      "ON",
+      "ORCL",
+      "OTEX",
+      "PLTR",
+      "PODD",
+      "POOL",
+      "PYPL",
+      "QCOM",
+      "QRVO",
+      "RBA",
+      "ROL",
+      "RRX",
+      "SAP",
+      "SHOP",
+      "SNPS",
+      "SPGI",
+      "STE",
+      "STZ",
+      "SWKS",
+      "SYK",
+      "TDC",
+      "TER",
+      "TGT",
+      "TXN",
+      "UNH",
+      "UPS",
+      "WST",
+      "ZM",
+      "ZS"
+    ],
+    "by_bucket": {
+      "CANDIDATES": [
+        "ACN",
+        "ADBE",
+        "AMAT",
+        "AMD",
+        "BIDU",
+        "BKNG",
+        "BR",
+        "BSX",
+        "CHTR",
+        "CHWY",
+        "CI",
+        "CNR.TO",
+        "COR",
+        "CPNG",
+        "CRM",
+        "DG",
+        "DIS",
+        "DXCM",
+        "EL",
+        "EME",
+        "ETSY",
+        "GEN",
+        "GOOGL",
+        "IBM",
+        "JD",
+        "LI",
+        "LII",
+        "LKQ",
+        "LRCX",
+        "LULU",
+        "MCK",
+        "MCO",
+        "META",
+        "MLM",
+        "MOH",
+        "MU",
+        "NKE",
+        "NTES",
+        "NVO",
+        "ON",
+        "OTEX",
+        "PDD",
+        "PGR",
+        "PODD",
+        "PYPL",
+        "QCOM",
+        "QRVO",
+        "ROL",
+        "SHOP",
+        "SPGI",
+        "STE",
+        "STZ",
+        "SWKS",
+        "SYK",
+        "TCOM",
+        "TER",
+        "TGT",
+        "TXN",
+        "UNH",
+        "UPS",
+        "WST",
+        "ZM",
+        "ZS"
+      ],
+      "PREFILTERED_OUT": [
+        "AGCO",
+        "ALGN",
+        "APTV",
+        "CRTO",
+        "DVA",
+        "KR",
+        "NRG",
+        "ORCL",
+        "POOL",
+        "ROL",
+        "RRX",
+        "SNPS",
+        "TDC"
+      ],
+      "FRAMEWORK_MISMATCH": [
+        "APP",
+        "NOW",
+        "PODD",
+        "RBA"
+      ],
+      "PASSED_INITIAL_SCREEN": [
+        "BABA",
+        "DDOG",
+        "IONS",
+        "PLTR",
+        "PYPL",
+        "SAP"
+      ]
+    },
+    "by_script": {
+      "screen_2026_07_26.py": {
+        "CANDIDATES": [
+          "BKNG",
+          "CI",
+          "CNR.TO",
+          "COR",
+          "GEN",
+          "GOOGL",
+          "MCK",
+          "NTES",
+          "NVO",
+          "OTEX",
+          "PDD",
+          "PGR",
+          "PYPL",
+          "QCOM",
+          "TCOM",
+          "UNH"
+        ]
+      },
+      "screen_2026_07_31.py": {
+        "CANDIDATES": [
+          "BIDU",
+          "BR",
+          "CHTR",
+          "CHWY",
+          "CPNG",
+          "DG",
+          "DIS",
+          "DXCM",
+          "EL",
+          "ETSY",
+          "IBM",
+          "JD",
+          "LI",
+          "LII",
+          "LULU",
+          "MU",
+          "NKE",
+          "ON",
+          "PODD",
+          "QRVO",
+          "ROL",
+          "STE",
+          "STZ",
+          "SWKS",
+          "SYK",
+          "TGT",
+          "TXN",
+          "UPS",
+          "WST",
+          "ZM",
+          "ZS"
+        ]
+      },
+      "screen_2026_08_06.py": {
+        "CANDIDATES": [
+          "ADBE",
+          "AMAT",
+          "CRM",
+          "EME",
+          "LKQ",
+          "LRCX",
+          "MLM",
+          "MOH",
+          "SHOP",
+          "SPGI",
+          "TER"
+        ],
+        "PREFILTERED_OUT": [
+          "APTV",
+          "CRTO",
+          "DVA",
+          "RRX",
+          "TDC"
+        ]
+      },
+      "screen_2026_08_13.py": {
+        "CANDIDATES": [
+          "BSX",
+          "MCO",
+          "META"
+        ],
+        "PREFILTERED_OUT": [
+          "ALGN",
+          "APTV",
+          "NRG",
+          "ORCL",
+          "POOL",
+          "ROL",
+          "SNPS"
+        ],
+        "FRAMEWORK_MISMATCH": [
+          "APP",
+          "PODD"
+        ]
+      },
+      "screen_2026_08_14.py": {
+        "CANDIDATES": [
+          "ACN",
+          "AMAT",
+          "AMD"
+        ],
+        "PREFILTERED_OUT": [
+          "AGCO",
+          "KR"
+        ],
+        "FRAMEWORK_MISMATCH": [
+          "NOW",
+          "RBA"
+        ],
+        "PASSED_INITIAL_SCREEN": [
+          "BABA",
+          "DDOG",
+          "IONS",
+          "PLTR",
+          "PYPL",
+          "SAP"
+        ]
+      }
+    },
+    "parse_failures": [],
+    "survival_rate_lower_bound": 0.0963855421686747,
+    "validation_status": "SOFTWARE_VALIDATED — 스크리닝 기록에서 세는 것이라 정확하다. 다만 **기록되지 않은 탈락은 셀 수 없다**(WebSearch 단계에서 조용히 넘어간 후보). 따라서 아래 수치는 생존편향의 **하한**이다.",
+    "note": "기록되지 않은 탈락은 셀 수 없으므로 이 수치는 생존편향의 **하한**이다. 또한 ledger에 있다는 것은 분석을 마쳤다는 뜻이지 수익을 냈다는 뜻이 아니다 — 성과 검증은 STOP CONDITION 상태다. survival_rate_lower_bound는 **스크리닝을 거친 부분집합에만** 적용된다 (n_ledger_not_from_screening 참조)."
+  },
+  "sharpe_based_metrics": {
+    "available": false,
+    "n_tickers": 34,
+    "n_with_entry_price": 9,
+    "has_return_series": false,
+    "blocking_inputs": [
+      "종목별 수익률 시계열",
+      "백테스트 Sharpe 분포"
+    ],
+    "validation_status": "NOT_APPLICABLE — 수익률 시계열이 저장소에 없다. 계산하지 않는다.",
+    "reason": "PBO·DSR은 백테스트 Sharpe 분포를 요구한다. IRS에는 수익률 시계열이 없고 진입가조차 9/34종목뿐이다. **계산하지 않는다.**"
+  },
+  "note": "보정을 적용하지 않는다. 이 리포트의 목적은 '같은 표본을 몇 번 봤는가'와 '기록된 탈락이 얼마나 되는가'를 드러내는 것이다."
+}

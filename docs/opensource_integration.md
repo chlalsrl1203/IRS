@@ -915,3 +915,78 @@ Portfolio · Intelligence)은 성격이 또 다르다 — 특히 §31 안티기�
 새로 구현한 코드 없음. §19 IMPLEMENTATION ORDER의 실질 범위가 P0(P0-01~18)로
 종료된다. P2·P3은 P1-04와 같은 이유로 더 강하게 배제(§31: "자동 매수/매도
 실행 — Gap은 연구 가설이지 검증된 alpha가 아니다").
+
+---
+
+# Repository 01~30 전수 판정 — Master Execution Prompt (2026-08-19)
+
+전문: `docs/repo_integration_ledger_2026-08-19.md` (§23 형식 12개 절)
+
+30개 저장소를 **기능 단위로**(§1) 판정했다. 신규 구현은 **Repo 04 + Repo 17의
+일부 기능** 1건이며, 나머지 29건은 이전 P0 통합에서 완료됐거나 REJECT/DEFER다.
+
+## 신규: Repo 04 + 17 — `engine/quant/validation.py`
+
+**Source**: stefan-jansen/machine-learning-for-trading · CPZ-Lab/cpz-quant(Apache-2.0)
+
+§18이 "기능 존재를 가정하지 말라"고 경고한 대로 cpz-quant를 직접 확인했다 —
+`CombinatorialPurgedCV` · `probability_of_backtest_overfitting`(CSCV) ·
+Deflated/Probabilistic Sharpe 게이트 · `WalkForward`가 **실제로 존재**한다.
+
+**기능마다 판정이 갈렸다**:
+
+| 기능 | 판정 | 근거 |
+|---|---|---|
+| look-ahead / PIT | DUPLICATE | `check_lookahead`·`GATE.LOOKAHEAD`·`available_at`이 담당 |
+| **multiple testing** | **REIMPLEMENT** | 지금 계산 가능하고 실제 필요 |
+| **survivorship bias** | **REIMPLEMENT** | 탈락 기록이 남아 있어 계산 가능 |
+| Purged CV / Walk-Forward / PBO / DSR | DEFER | **수익률 시계열 부재** |
+
+cpz-quant를 의존성으로 채택하지 않은 이유: 입력(수익률 시계열)이 IRS에 없다.
+넣으면 쓰이지 않는 의존성이 되고, 억지로 돌리면 "정밀해 보이는 허구"가 된다.
+
+### ⭐ 실측 결과 — 이 저장소가 같은 표본을 몇 번 봤는지 처음으로 셌다
+
+| 항목 | 실측 |
+|---|---|
+| 같은 34종목 표본 검정 횟수 | **9,702회** (리포트 28 + 실험 9, R-001이 9,675 시나리오) |
+| 기대 위양성(α=0.05, 독립가정 상한) | **485건** |
+| FWER | 1.0으로 **포화**(계산 오류 아님 — 지표가 정보를 잃는 지점) |
+| 스크리닝 고려 종목 | **83종목** → 탈락 **75종목** |
+| ledger 34 중 스크리닝 경로 | **8종목** (나머지 26은 스크리닝 이전 큐 경로) |
+| 생존율 하한(스크리닝 부분집합) | **9.6%** |
+| PBO/DSR | `available=False` — 계산 시도조차 안 함 |
+
+⚠️ **"IRS가 틀렸다"는 뜻이 아니다.** IRS의 분석 대부분은 가설검정이 아니라
+감사·서술이라 nominal p값이 없고, 따라서 **보정을 적용할 대상 자체가 없다**
+(`correction_applied=False`). 이 리포트의 목적은 그 사실을 드러내는 것이다.
+
+### ⚠️ 테스트가 잡은 결함 2건 — 둘 다 탈락을 과소집계하는 방향
+
+1. **`CANDIDATES`가 항상 0건**이었다. 스크리닝 스크립트는 `CANDIDATES = []`로
+   시작한 뒤 `.append(Candidate(ticker="META", ...))`로 채우는데, 리터럴 블록만
+   파싱한 초판이 후보를 통째로 놓쳤다(83종목 → 20종목 과소집계).
+2. **딕셔너리 키가 `"KR(Kroger)"` 형태**라 괄호를 안 벗기면 매칭이 안 됐다.
+
+고치지 않았으면 생존편향이 실제보다 작아 보였을 것이다.
+
+**Tests**: `tests/test_quant_validation.py` 25건. 641 → **666개 전부 통과.**
+**Dependencies**: 추가 없음(stdlib만) — 테스트가 numpy·pandas·scipy 부재를 고정.
+**Report**: `reports/research_validation_2026-08-19.json`
+
+## 나머지 29건 판정 요약
+
+| 그룹 | 저장소 | 판정 | 사유 |
+|---|---|---|---|
+| 이미 통합 | 01·02·05·06·07·08·09 | 완료 | P0-02~16에서 처리(05=TieOutBench 리다이렉트) |
+| PIT/백테스트 | 03 qlib | PIT=DUPLICATE, 나머지 DEFER | PIT는 P0-02/10이 이미 담당, 최초 `PIT_VALID` 달성 |
+| Agent 계열 | 11·12·13·14·29 | REJECT/DEFER/DUPLICATE | §31 등록("병목은 조율이 아니라 입력 근거 부재")을 R-001이 재확인 |
+| Portfolio | 15·16·23·24 | **전부 REJECT** | §31 등록("수익률 시계열 없음") — `price_at_analysis` 9/34 재확인 |
+| Knowledge/News | 18·25·26·27 | DEFER/DUPLICATE | 27은 `thesis.py`+P0-16이 담당 |
+| Evidence | 19 | 부분 DUPLICATE | `Claim.is_triangulated()`가 이미 강제 |
+| Screening | 20·21·22 | DUPLICATE/DEFER | `screener.py` 380줄이 전체 파이프라인 담당 |
+| Thesis/Skill | 10·28·30 | DEFER/DUPLICATE | 10은 STOP CONDITION 기발동 |
+
+⚠️ **REJECT/DEFER가 "그 저장소가 나쁘다"는 뜻이 아니다.** 이유는 전부 **IRS 쪽
+입력 부재**(수익률 시계열)이거나 **이미 담당하는 모듈 존재**다. 재개 조건을
+각 항목에 명시했다.
