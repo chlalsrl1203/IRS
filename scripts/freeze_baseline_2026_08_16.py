@@ -76,31 +76,66 @@ def verify_baseline(path: str = BASELINE_PATH) -> dict:
     }
 
 
-def main():
-    rows = collect()
-    fp = fingerprint(rows)
+def freeze(rows=None):
+    """
+    기준선 파일을 (재)작성한다.
+
+    ⚠️ `engine_version_at_freeze`는 **기존 파일 값을 보존한다.** 이름 그대로
+    '동결 시점'의 버전이라 오늘 버전으로 덮어쓰면 필드가 거짓이 된다 —
+    v3.32가 잡은 "버전 스탬프가 거짓말을 하고 있었다"와 정확히 같은 유형이다
+    (2026-08-21에 실제로 v3.58 -> v3.59로 조용히 재스탬프되는 것을 확인했다).
+    """
+    rows = collect() if rows is None else rows
+    prior_version = None
+    if os.path.exists(BASELINE_PATH):
+        with open(BASELINE_PATH, encoding="utf-8") as f:
+            prior_version = json.load(f).get("engine_version_at_freeze")
     payload = {
         "frozen_at": "2026-08-16",
         "purpose": (
             "Growth Quality 연구(§4) 동안 production 결과를 변경하지 않는다는 약속을 "
             "해시로 강제한다. 이 값이 바뀌면 연구가 공식 결과를 오염시킨 것이다."
         ),
-        "engine_version_at_freeze": ENGINE_VERSION,
+        "engine_version_at_freeze": prior_version or ENGINE_VERSION,
         "fields": list(FIELDS),
         "n_tickers": len(rows),
-        "fingerprint": fp,
+        "fingerprint": fingerprint(rows),
         "rows": rows,
     }
     os.makedirs("reports", exist_ok=True)
     with open(BASELINE_PATH, "w", encoding="utf-8") as f:
         json.dump(payload, f, ensure_ascii=False, indent=2)
-    print(f"동결 완료: {len(rows)}종목")
-    print(f"  ENGINE_VERSION(동결시점): {ENGINE_VERSION}")
-    print(f"  fingerprint: {fp}")
-    print(f"  저장: {BASELINE_PATH}")
+    return payload
+
+
+def main(argv=None):
+    """
+    **기본 동작은 검증(비파괴)이다.** 재동결은 `--freeze`를 명시해야 한다.
+
+    이전에는 검증 경로가 CLI에 없어서, fingerprint를 확인하려면 재동결 함수를
+    부를 수밖에 없었다 - 확인하는 행위 자체가 파일을 다시 쓰는 구조였다.
+    """
+    argv = sys.argv[1:] if argv is None else argv
+    rows = collect()
+    if "--freeze" in argv:
+        payload = freeze(rows)
+        print(f"동결 완료: {payload['n_tickers']}종목")
+        print(f"  engine_version_at_freeze: {payload['engine_version_at_freeze']} "
+              f"(현재 ENGINE_VERSION={ENGINE_VERSION} - 동결시점 값을 보존한다)")
+        print(f"  fingerprint: {payload['fingerprint']}")
+        print(f"  저장: {BASELINE_PATH}")
+    else:
+        res = verify_baseline()
+        print("기준선 검증(비파괴 - 재동결하려면 --freeze):")
+        print(f"  일치: {res['match']}")
+        print(f"  fingerprint: {res['actual']}")
+        if not res["match"]:
+            print(f"  기대값:      {res['expected']}")
+            print(f"  ⚠️ 변경된 종목: {res['changed_tickers']}")
     print(f"  ledger 스탬프 분포: {dict(Counter(r['engine_version'] for r in rows.values()))}")
     print("    (ledger는 계산 시점 버전을 유지한다 - 소급 갱신하지 않는다)")
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

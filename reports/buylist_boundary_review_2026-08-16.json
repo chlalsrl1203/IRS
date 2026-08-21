@@ -40,5 +40,38 @@
       "judgment": "저평가 가능성",
       "analyzed_at": "2026-08-13"
     }
-  ]
+  ],
+  "sbc": {
+    "status": "확인",
+    "held_but_sbc_dependent": [
+      {
+        "ticker": "TCOM",
+        "weight_final": 0.10249999999999998,
+        "grade": "A",
+        "grade_sbc_adjusted": "B",
+        "gap_pct": 7.547684320764038,
+        "gap_sbc_adjusted_pct": 5.280819544152711,
+        "sbc_to_fcf_pct": 0.16713297010749523
+      },
+      {
+        "ticker": "WDAY",
+        "weight_final": 0.0451059739392835,
+        "grade": "A",
+        "grade_sbc_adjusted": "C",
+        "gap_pct": 11.417055453507203,
+        "gap_sbc_adjusted_pct": 1.1135962860267328,
+        "sbc_to_fcf_pct": 0.5855239467050775
+      },
+      {
+        "ticker": "TTD",
+        "weight_final": 0.026973663318205443,
+        "grade": "S",
+        "grade_sbc_adjusted": "B",
+        "gap_pct": 17.00962080005105,
+        "gap_sbc_adjusted_pct": 5.512619152101833,
+        "sbc_to_fcf_pct": 0.6165902150280881
+      }
+    ],
+    "unverified": []
+  }
 }
