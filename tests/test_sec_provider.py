@@ -225,3 +225,71 @@ def test_long_series_spanning_a_tag_change_is_not_silently_truncated():
     assert any("[태그 혼재]" in x for x in r.limitations)
     src = {f.fiscal_year: f.source for f in r.facts}
     assert "Revenues" in src[2015] and "RevenueFromContract" in src[2025]
+
+
+# ── PHASE 3 (2026-08-21): capex 정의 우선순위 ────────────────────────────
+def _facts(*tag_series):
+    """{tag: {fy: val}} -> 합성 companyfacts."""
+    facts = {}
+    for tag, series in tag_series:
+        units = [{"form": "10-K", "start": f"{fy}-01-01", "end": f"{fy}-12-31",
+                  "filed": f"{fy + 1}-02-15", "val": v} for fy, v in series.items()]
+        facts[tag] = {"units": {"USD": units}}
+    return {"facts": {"us-gaap": facts}}
+
+
+def _fetch(facts, years):
+    from engine.data.providers.sec import SecCompanyFactsProvider
+    p = SecCompanyFactsProvider(
+        purpose="internal_research",
+        fetch_facts=lambda cik, ua=None: facts,
+        resolve_cik=lambda t, ua=None: "0000000000")
+    return p.fetch_annual_financials("TEST", metrics=("capex",),
+                                     fiscal_years=years, retrieved_at="2026-08-21")
+
+
+def test_broad_capex_definition_wins_over_narrow():
+    """
+    MCK 실측(2026-08-21): 좁은 정의가 1순위였을 때 FY2026 capex가 436M로 나왔으나
+    회사가 보고한 총 자본지출은 745M이었다(−41%). 넓은 태그를 보고하는 4종목
+    39개년 전수에서 넓은 정의가 ledger와 100% 일치한다.
+    """
+    r = _fetch(_facts(
+        ("PaymentsToAcquirePropertyPlantAndEquipment", {2024: 431.0}),
+        ("PaymentsToAcquireProductiveAssets", {2024: 687.0}),
+    ), [2024])
+    assert [f.value for f in r.facts if f.metric == "capex"] == [687.0]
+
+
+def test_narrow_capex_is_still_used_when_broad_is_absent():
+    """넓은 태그가 없는 종목(31/34)은 동작이 바뀌지 않아야 한다."""
+    r = _fetch(_facts(
+        ("PaymentsToAcquirePropertyPlantAndEquipment", {2024: 876.0}),
+    ), [2024])
+    assert [f.value for f in r.facts if f.metric == "capex"] == [876.0]
+    assert not any("정의 공존" in m for m in r.limitations)
+
+
+def test_coexisting_capex_definitions_are_reported_not_silently_resolved():
+    """넓은 쪽을 채택하되 두 정의가 공존하고 값이 다르다는 사실을 남긴다."""
+    r = _fetch(_facts(
+        ("PaymentsToAcquirePropertyPlantAndEquipment", {2024: 431.0}),
+        ("PaymentsToAcquireProductiveAssets", {2024: 687.0}),
+    ), [2024])
+    assert any("정의 공존" in m for m in r.limitations)
+
+
+def test_separately_tagged_software_capex_is_flagged_not_auto_summed():
+    """
+    소프트웨어 자본화를 별도 태그로 보고하는 회사(MCK)에서, 넓은 태그가 없는
+    연도는 좁은 정의가 채택된다. **자동 합산하지 않는다** - 회사에 따라 유형자산
+    취득에 이미 포함됐을 수 있어 이중계상 위험이 있고 관측이 1종목뿐이다.
+    누락 가능성은 경고로 드러낸다.
+    """
+    r = _fetch(_facts(
+        ("PaymentsToAcquirePropertyPlantAndEquipment", {2026: 436.0}),
+        ("PaymentsToAcquireSoftware", {2026: 309.0}),
+    ), [2026])
+    vals = [f.value for f in r.facts if f.metric == "capex"]
+    assert vals == [436.0], "소프트웨어를 자동 합산하면 안 된다"
+    assert any("소프트웨어 별도 보고" in m for m in r.limitations)

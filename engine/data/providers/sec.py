@@ -100,9 +100,20 @@ METRIC_TAGS = {
     # ⚠️ XBRL의 Payments* 태그는 **유출을 양수로** 보고한다. IRS의 capex 규약도
     # 양수다(FCF = OCF − capex, BSX FY2025: 4,534 − 876 = 3,658로 확인). 부호를
     # 뒤집지 않는다 — 이 프로젝트는 capex 부호 사고를 이미 한 번 겪었다.
+    #
+    # ⚠️ **우선순위 주의(PHASE 3, 2026-08-21에 실측으로 뒤집음)**:
+    # `PaymentsToAcquireProductiveAssets`(넓은 정의 = 유형자산 + 기타 생산자산)를
+    # `PaymentsToAcquirePropertyPlantAndEquipment`(좁은 정의)보다 **먼저** 쓴다.
+    # 초판은 좁은 정의가 1순위여서, 두 태그를 모두 보고하는 회사에서 소프트웨어
+    # 자본화 등이 통째로 빠졌다 — MCK FY2026 실측 436M vs 실제 745M(−41%).
+    #
+    # 근거: 넓은 태그를 보고하는 4종목의 **39개년 전수에서 넓은 정의가 ledger
+    # (1차 자료 기반 손입력)와 100% 일치**한다(ACGL 11/11 · MCK 7/7 · WCN 9/9 ·
+    # WM 12/12). MCK는 `narrow + PaymentsToAcquireSoftware == broad`로 교차확인까지
+    # 된다. 넓은 태그가 없는 종목은 그대로 좁은 정의로 폴백하므로 동작이 안 바뀐다.
     "capex": (
-        "PaymentsToAcquirePropertyPlantAndEquipment",
         "PaymentsToAcquireProductiveAssets",
+        "PaymentsToAcquirePropertyPlantAndEquipment",
         "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",  # ifrs
     ),
     "net_income": (
@@ -246,6 +257,59 @@ class SecCompanyFactsProvider(FinancialProvider):
             used_tags[metric] = sorted(
                 {f"{t}:{g} ({u})" for t, g, u in chosen.values()}
             )
+
+            # capex는 넓은 정의와 좁은 정의가 **같은 해에 공존**할 수 있고 값이
+            # 다르다(MCK: 745M vs 436M). 넓은 쪽을 채택하되 그 사실을 조용히
+            # 넘기지 않는다 — 좁은 정의를 원하는 분석에는 이 차이가 중요하다.
+            if metric == "capex" and picked:
+                narrow = {}
+                for taxonomy in taxonomies.values():
+                    tag = "PaymentsToAcquirePropertyPlantAndEquipment"
+                    if tag not in taxonomy:
+                        continue
+                    for entries in (taxonomy[tag].get("units") or {}).values():
+                        for fy, row in _pick_by_fiscal_year(
+                                _annual_entries(entries, metric), years).items():
+                            narrow.setdefault(fy, row[3])
+                gaps = {fy: (picked[fy][3], narrow[fy]) for fy in sorted(narrow)
+                        if fy in picked and picked[fy][3]
+                        and abs(picked[fy][3] - narrow[fy]) / abs(picked[fy][3]) > 0.005}
+                if gaps:
+                    fy0 = max(gaps)
+                    wide, nar = gaps[fy0]
+                    limitations.append(
+                        f"[capex 정의 공존] 넓은 정의(생산자산 취득)와 좁은 정의"
+                        f"(유형자산 취득)가 {sorted(gaps)}년에 함께 보고되며 값이 "
+                        f"다르다. 넓은 정의를 채택했다(예: FY{fy0} {wide:,.0f} vs "
+                        f"{nar:,.0f}). 좁은 정의가 필요한 분석이면 직접 지정할 것."
+                    )
+
+                # ⚠️ 소프트웨어 자본화를 별도 태그로 보고하는 회사가 있다(MCK).
+                # **자동으로 더하지 않는다** — 회사에 따라 유형자산 취득에 이미
+                # 포함돼 있을 수 있어 이중계상 위험이 있고, 관측 사례가 1종목뿐이라
+                # 일반 규칙을 만들 근거가 없다(§21 LEVEL 1). 대신 누락 가능성을
+                # 조용히 넘기지 않는다: MCK FY2026이 정확히 이 경우로,
+                # 넓은 태그가 아직 없어 좁은 정의(436M)가 채택되지만 회사가 보고한
+                # 총 자본지출은 745M(= 436 + 소프트웨어 309)이다.
+                soft = {}
+                for taxonomy in taxonomies.values():
+                    if "PaymentsToAcquireSoftware" not in taxonomy:
+                        continue
+                    for entries in (taxonomy["PaymentsToAcquireSoftware"]
+                                    .get("units") or {}).values():
+                        for fy, row in _pick_by_fiscal_year(
+                                _annual_entries(entries, metric), years).items():
+                            soft.setdefault(fy, row[3])
+                unmerged = sorted(fy for fy, v in soft.items()
+                                  if fy in picked and picked[fy][3] == narrow.get(fy))
+                if unmerged:
+                    limitations.append(
+                        f"[capex 소프트웨어 별도 보고] {unmerged}년의 채택값은 "
+                        f"유형자산 취득만이며, 이 회사는 소프트웨어 취득을 별도 "
+                        f"태그로 보고한다(예: FY{unmerged[-1]} "
+                        f"{soft[unmerged[-1]]:,.0f}). **자동으로 더하지 않았다** - "
+                        f"총 자본지출이 필요하면 합산 여부를 직접 확인할 것."
+                    )
             for fy, (start, end, filed, val) in sorted(picked.items()):
                 taxonomy_name, tag, unit_name = chosen[fy]
                 out.append(FinancialFact(

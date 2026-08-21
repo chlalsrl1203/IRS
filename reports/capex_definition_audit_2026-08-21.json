@@ -1,0 +1,3293 @@
+{
+ "generated_at": "2026-08-21",
+ "phase": "PHASE 3 — capex definition reconciliation",
+ "affects_official_judgment": false,
+ "root_cause": "engine/data/providers/sec.py의 METRIC_TAGS['capex'] 우선순위가 PaymentsToAcquirePropertyPlantAndEquipment(좁은 정의)를 1순위로 두어, 소프트웨어 자본화를 별도 태그로 보고하는 회사에서 총 자본지출을 과소 포착한다. ledger 쪽이 회사 보고 총액과 일치한다.",
+ "results": [
+  {
+   "ticker": "ACGL",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": true,
+   "ledger_definition_kinds": [
+    "broad"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 11,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2015,
+     "ledger": 15736000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 15736000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 15736000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 15303000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 15303000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 15303000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 22841000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 22841000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 22841000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 29809000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 29809000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 29809000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 37837000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 37837000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 37837000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 39872000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 39872000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 39872000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 41394000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 41394000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 41394000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 51672000.0,
+     "narrow": null,
+     "software": null,
+     "broad": 51672000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 51672000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 52000000,
+     "narrow": null,
+     "software": null,
+     "broad": 52000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 52000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 51000000,
+     "narrow": null,
+     "software": null,
+     "broad": 51000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 51000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 44000000,
+     "narrow": null,
+     "software": null,
+     "broad": 44000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 44000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "BKNG",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 131503999.99999999,
+     "narrow": 131504000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 131504000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 173915000.0,
+     "narrow": 173915000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 173915000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 219889000.0,
+     "narrow": 219889000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 219889000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 288000000,
+     "narrow": 287805000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 287805000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 442000000,
+     "narrow": 442000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 442000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 368000000,
+     "narrow": 368000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 368000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 286000000,
+     "narrow": 286000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 286000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 304000000,
+     "narrow": 304000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 304000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 368000000,
+     "narrow": 368000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 368000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 345000000,
+     "narrow": 345000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 345000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 429000000,
+     "narrow": 429000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 429000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 322000000,
+     "narrow": 322000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 322000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "BRO",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 24923000,
+     "narrow": 24923000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 24923000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 18375000,
+     "narrow": 18375000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 18375000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 17765000,
+     "narrow": 17765000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 17765000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 24192000,
+     "narrow": 24192000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 24192000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 41520000,
+     "narrow": 41520000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 41520000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 73108000,
+     "narrow": 73108000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 73108000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 70700000,
+     "narrow": 70700000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 70700000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 45000000,
+     "narrow": 45045000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 45045000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 52000000,
+     "narrow": 52600000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 52600000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 69000000,
+     "narrow": 68900000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 68900000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 82000000,
+     "narrow": 82000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 82000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 68000000,
+     "narrow": 68000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 68000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "BSX",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 11,
+   "years_provider_understates": 2,
+   "max_understatement_pct": 0.11125,
+   "per_year": [
+    {
+     "fy": 2015,
+     "ledger": 247000000,
+     "narrow": 247000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 247000000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 376000000,
+     "narrow": 376000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 376000000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 319000000,
+     "narrow": 319000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 319000000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 316000000,
+     "narrow": 316000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 316000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 461000000,
+     "narrow": 461000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 461000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 376000000,
+     "narrow": 376000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 376000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 554000000,
+     "narrow": 554000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 554000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 612000000,
+     "narrow": 588000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 588000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 800000000,
+     "narrow": 711000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 711000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 790000000,
+     "narrow": 790000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 790000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 876000000,
+     "narrow": 876000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 876000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "BSY",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 8,
+   "years_provider_understates": 3,
+   "max_understatement_pct": 0.05782209521493281,
+   "per_year": [
+    {
+     "fy": 2018,
+     "ledger": 19493000,
+     "narrow": 18616000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 18616000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 16639000,
+     "narrow": 15804000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 15804000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 16447000,
+     "narrow": 15496000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 15496000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 17539000,
+     "narrow": 17539000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 17539000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 18546000,
+     "narrow": 18546000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 18546000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 25002000,
+     "narrow": 25002000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 25002000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 14046000,
+     "narrow": 14046000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 14046000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 18255000,
+     "narrow": 18255000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 18255000.0
+    }
+   ]
+  },
+  {
+   "ticker": "CDNS",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 3,
+   "max_understatement_pct": 0.4743146962927183,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 39810000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2015,
+     "ledger": 44808000,
+     "narrow": 39810000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 39810000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 53712000,
+     "narrow": 44808000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 44808000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 57901000,
+     "narrow": 57901000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 57901000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 61503000,
+     "narrow": 61503000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 61503000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 74605000,
+     "narrow": 74605000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 74605000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 94813000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2021,
+     "ledger": 66881000,
+     "narrow": 94813000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 94813000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 124215000,
+     "narrow": 65298000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 65298000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 102503000,
+     "narrow": 102337000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 102337000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 142542000,
+     "narrow": 142542000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 142542000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 141871000,
+     "narrow": 141871000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 141871000.0
+    }
+   ]
+  },
+  {
+   "ticker": "COR",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 9,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2017,
+     "ledger": 466397000,
+     "narrow": 466397000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 466397000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 336411000,
+     "narrow": 336411000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 336411000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 310222000,
+     "narrow": 310222000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 310222000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 369677000,
+     "narrow": 369677000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 369677000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 438217000,
+     "narrow": 438217000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 438217000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 496318000,
+     "narrow": 496318000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 496318000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 458359000,
+     "narrow": 458359000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 458359000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 487173000,
+     "narrow": 487173000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 487173000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 667981000,
+     "narrow": 667981000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 667981000.0
+    }
+   ]
+  },
+  {
+   "ticker": "DSGX",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 11,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2016,
+     "ledger": 4309000,
+     "narrow": 4309000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 4309000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 4914000,
+     "narrow": 4914000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 4914000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 5086000,
+     "narrow": 5086000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 5086000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 5244000,
+     "narrow": 5244000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 5244000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 4900000,
+     "narrow": 4900000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 4900000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 3759000,
+     "narrow": 3759000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 3759000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 4829000,
+     "narrow": 4829000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 4829000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 6071000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2024,
+     "ledger": 5563000,
+     "narrow": 5563000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 5563000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 6743000,
+     "narrow": 6743000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 6743000.0
+    },
+    {
+     "fy": 2026,
+     "ledger": 5730000,
+     "narrow": 5730000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 5730000.0
+    }
+   ]
+  },
+  {
+   "ticker": "DUOL",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 3376000,
+     "narrow": 3376000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 3376000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 3586000,
+     "narrow": 3586000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 3586000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 5562000,
+     "narrow": 5562000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 5562000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 3191000,
+     "narrow": 3191000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 3191000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 12116000,
+     "narrow": 12116000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 12116000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 18096000,
+     "narrow": 18096000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 18096000.0
+    }
+   ]
+  },
+  {
+   "ticker": "GEN",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2021,
+     "ledger": 6000000,
+     "narrow": 6000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 6000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 6000000,
+     "narrow": 6000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 6000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 6000000,
+     "narrow": 6000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 6000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 20000000,
+     "narrow": 20000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 20000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 15000000,
+     "narrow": 15000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 15000000.0
+    },
+    {
+     "fy": 2026,
+     "ledger": 22000000,
+     "narrow": 22000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 22000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "GWRE",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 9,
+   "years_provider_understates": 9,
+   "max_understatement_pct": 0.7193351258860914,
+   "per_year": [
+    {
+     "fy": 2017,
+     "ledger": 6670000,
+     "narrow": 5886000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 5886000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 12011000,
+     "narrow": 9398000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 9398000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 48857000,
+     "narrow": 44921000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 44921000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 25660000,
+     "narrow": 21377000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 21377000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 28854000,
+     "narrow": 19008000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 19008000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 21776000,
+     "narrow": 9510000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 9510000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 17427000,
+     "narrow": 5821000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 5821000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 18527000,
+     "narrow": 6362000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 6362000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 20455000,
+     "narrow": 5741000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 5741000.0
+    }
+   ]
+  },
+  {
+   "ticker": "IDXX",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 60523000,
+     "narrow": 60523000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 60523000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 82921000,
+     "narrow": 82921000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 82921000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 64787000,
+     "narrow": 64787000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 64787000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 74384000,
+     "narrow": 74384000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 74384000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 115751000,
+     "narrow": 115751000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 115751000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 154969000,
+     "narrow": 154969000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 154969000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 106958000,
+     "narrow": 106958000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 106958000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 119549000,
+     "narrow": 119549000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 119549000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 148838000,
+     "narrow": 148838000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 148838000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 133631000,
+     "narrow": 133631000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 133631000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 120922000,
+     "narrow": 120922000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 120922000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 124676000,
+     "narrow": 124676000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 124676000.0
+    }
+   ]
+  },
+  {
+   "ticker": "KEYS",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 1,
+   "max_understatement_pct": 0.005076142131979695,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 117000000,
+     "narrow": 117000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 117000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 174000000,
+     "narrow": 174000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 174000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 185000000,
+     "narrow": 185000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 185000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 197000000,
+     "narrow": 196000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 196000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 154000000,
+     "narrow": 154000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 154000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 128000000,
+     "narrow": 128000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 128000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "KLAC",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 9,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2017,
+     "ledger": 38594000,
+     "narrow": 38594000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 38594000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 66947000,
+     "narrow": 66961000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 66961000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 130498000,
+     "narrow": 130498000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 130498000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 152675000,
+     "narrow": 152675000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 152675000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 231628000,
+     "narrow": 231628000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 231628000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 307320000,
+     "narrow": 307320000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 307320000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 341591000,
+     "narrow": 341591000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 341591000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 277384000,
+     "narrow": 277384000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 277384000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 335259000,
+     "narrow": 335259000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 335259000.0
+    }
+   ]
+  },
+  {
+   "ticker": "MCK",
+   "status": "OK",
+   "reports_software_tag": true,
+   "reports_broad_tag": true,
+   "ledger_definition_kinds": [
+    "narrow+software"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 8,
+   "years_provider_understates": 8,
+   "max_understatement_pct": 0.4147651006711409,
+   "per_year": [
+    {
+     "fy": 2019,
+     "ledger": 557000000,
+     "narrow": 426000000.0,
+     "software": 131000000.0,
+     "broad": 557000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 426000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 506000000,
+     "narrow": 362000000.0,
+     "software": 144000000.0,
+     "broad": 506000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 362000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 641000000,
+     "narrow": 451000000.0,
+     "software": 190000000.0,
+     "broad": 641000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 451000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 535000000,
+     "narrow": 388000000.0,
+     "software": 147000000.0,
+     "broad": 535000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 388000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 558000000,
+     "narrow": 390000000.0,
+     "software": 168000000.0,
+     "broad": 558000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 390000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 687000000,
+     "narrow": 431000000.0,
+     "software": 256000000.0,
+     "broad": 687000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 431000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 859000000,
+     "narrow": 537000000.0,
+     "software": 322000000.0,
+     "broad": 859000000.0,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 537000000.0
+    },
+    {
+     "fy": 2026,
+     "ledger": 745000000,
+     "narrow": 436000000.0,
+     "software": 309000000.0,
+     "broad": null,
+     "ledger_matches": "narrow+software",
+     "provider_would_pick": 436000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "MNDY",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 6,
+   "max_understatement_pct": 0.24457405105650637,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 5481000,
+     "narrow": 4362000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 4362000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 13758000,
+     "narrow": 11578000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 11578000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 19001000,
+     "narrow": 16003000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 16003000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 10459000,
+     "narrow": 7901000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 7901000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 15235000,
+     "narrow": 13211000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 13211000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 23742000,
+     "narrow": 20362000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 20362000.0
+    }
+   ]
+  },
+  {
+   "ticker": "MNST",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 10,
+   "max_understatement_pct": 0.27574622428350576,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 31363000,
+     "narrow": 27952000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 27952000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 42493000,
+     "narrow": 35605000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 35605000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 105337000,
+     "narrow": 99819000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 99819000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 93128000,
+     "narrow": 83435000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 83435000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 74925000,
+     "narrow": 61941000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 61941000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 110398000,
+     "narrow": 101661000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 101661000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 67272000,
+     "narrow": 48722000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 48722000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 57453000,
+     "narrow": 43868000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 43868000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 212153000,
+     "narrow": 188726000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 188726000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 234724000,
+     "narrow": 221428000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 221428000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 264074000,
+     "narrow": 264074000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 264074000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 132275000,
+     "narrow": 132275000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 132275000.0
+    }
+   ]
+  },
+  {
+   "ticker": "PDD",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 8,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2018,
+     "ledger": 27331000,
+     "narrow": 27331000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 27331000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 27436000,
+     "narrow": 27436000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 27436000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 43046000,
+     "narrow": 43046000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 43046000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 3287232000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2022,
+     "ledger": 635716000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2023,
+     "ledger": 583879000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2024,
+     "ledger": 967137000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2025,
+     "ledger": 1145077000,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    }
+   ]
+  },
+  {
+   "ticker": "PGR",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 11,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2015,
+     "ledger": 130699999.99999999,
+     "narrow": 130700000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 130700000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 215000000.0,
+     "narrow": 215000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 215000000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 155700000.0,
+     "narrow": 155700000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 155700000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 266000000.0,
+     "narrow": 266000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 266000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 363500000.0,
+     "narrow": 363500000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 363500000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 223500000.0,
+     "narrow": 223500000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 223500000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 243500000.0,
+     "narrow": 243500000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 243500000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 292000000.0,
+     "narrow": 292000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 292000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 252000000,
+     "narrow": 252000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 252000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 285000000,
+     "narrow": 285000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 285000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 348000000,
+     "narrow": 348000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 348000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "PH",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 216340000,
+     "narrow": 216340000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 216340000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 215527000,
+     "narrow": 215527000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 215527000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 149407000,
+     "narrow": 149407000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 149407000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 203748000,
+     "narrow": 203748000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 203748000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 247667000,
+     "narrow": 247667000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 247667000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 195089000,
+     "narrow": 195089000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 195089000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 232591000,
+     "narrow": 232591000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 232591000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 209957000,
+     "narrow": 209957000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 209957000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 230044000,
+     "narrow": 230044000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 230044000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 380747000,
+     "narrow": 380747000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 380747000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 400112000,
+     "narrow": 400112000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 400112000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 435000000,
+     "narrow": 435000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 435000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "PTC",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 9,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2017,
+     "ledger": 25444000,
+     "narrow": 25444000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 25444000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 36041000,
+     "narrow": 36041000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 36041000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 64411000,
+     "narrow": 64411000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 64411000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 20196000,
+     "narrow": 20196000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 20196000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 24713000,
+     "narrow": 24713000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 24713000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 19496000,
+     "narrow": 19496000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 19496000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 23814000,
+     "narrow": 23814000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 23814000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 14378000,
+     "narrow": 14378000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 14378000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 11008000,
+     "narrow": 11008000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 11008000.0
+    }
+   ]
+  },
+  {
+   "ticker": "RMD",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 95330000,
+     "narrow": 95330000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 95330000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 102712000,
+     "narrow": 102712000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 102712000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 134835000,
+     "narrow": 134835000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 134835000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 119672000,
+     "narrow": 119672000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 119672000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 99460000,
+     "narrow": 99460000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 99460000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 89865000,
+     "narrow": 89865000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 89865000.0
+    }
+   ]
+  },
+  {
+   "ticker": "ROP",
+   "status": "NO_CACHE"
+  },
+  {
+   "ticker": "SE",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 336274000,
+     "narrow": 336274000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 336274000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 772177000,
+     "narrow": 772177000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 772177000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 924178000,
+     "narrow": 924178000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 924178000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 241605000,
+     "narrow": 241605000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 241605000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 318153000,
+     "narrow": 318153000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 318153000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 513809000,
+     "narrow": 513809000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 513809000.0
+    }
+   ]
+  },
+  {
+   "ticker": "TCOM",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 4788676371.0,
+     "narrow": 4788676371.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 4788676371.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 638133430.0,
+     "narrow": 638133430.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 638133430.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 682831310.0,
+     "narrow": 682831310.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 682831310.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 471000000,
+     "narrow": 471120452.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 471120452.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 673000000,
+     "narrow": 673000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 673000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 823000000,
+     "narrow": 823000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 823000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 532000000,
+     "narrow": 532000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 532000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 570000000,
+     "narrow": 570000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 570000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 497000000,
+     "narrow": 497000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 497000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 606000000,
+     "narrow": 606000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 606000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 591000000,
+     "narrow": 591000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 591000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 797000000,
+     "narrow": 797000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 797000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "TTD",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 74061000,
+     "narrow": 74061000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 74061000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 54804000,
+     "narrow": 54804000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 54804000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 84160000,
+     "narrow": 84160000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 84160000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 46790000,
+     "narrow": 46790000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 46790000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 98238000,
+     "narrow": 98238000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 98238000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 197011000,
+     "narrow": 197011000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 197011000.0
+    }
+   ]
+  },
+  {
+   "ticker": "TYL",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 7,
+   "max_understatement_pct": 0.6129147880548587,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 9343000,
+     "narrow": 9343000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 9343000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 12501000,
+     "narrow": 12501000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 12501000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 37726000,
+     "narrow": 37726000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 37726000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 43057000,
+     "narrow": 43057000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 43057000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 27424000,
+     "narrow": 27424000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 27424000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 42040000,
+     "narrow": 37236000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 37236000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 28466000,
+     "narrow": 22690000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 22690000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 55612000,
+     "narrow": 33919000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 33919000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 50151000,
+     "narrow": 22529000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 22529000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 53009000,
+     "narrow": 20519000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 20519000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 49936000,
+     "narrow": 20535000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 20535000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 32793000,
+     "narrow": 16015000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 16015000.0
+    }
+   ]
+  },
+  {
+   "ticker": "UBER",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 616000000,
+     "narrow": 616000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 616000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 298000000,
+     "narrow": 298000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 298000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 252000000,
+     "narrow": 252000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 252000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 223000000,
+     "narrow": 223000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 223000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 242000000,
+     "narrow": 242000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 242000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 336000000,
+     "narrow": 336000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 336000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "VRSN",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 1,
+   "max_understatement_pct": 0.8432896552537535,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 39327000,
+     "narrow": 39327000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 39327000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 40656000,
+     "narrow": 40656000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 40656000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 169574000,
+     "narrow": 26574000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 26574000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 49499000,
+     "narrow": 49499000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 49499000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 37007000,
+     "narrow": 37007000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 37007000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 40316000,
+     "narrow": 40316000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 40316000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 43395000,
+     "narrow": 43395000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 43395000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 53033000,
+     "narrow": 53033000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 53033000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 27400000,
+     "narrow": 27400000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 27400000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 45800000,
+     "narrow": 45800000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 45800000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 28100000,
+     "narrow": 28100000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 28100000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 22800000,
+     "narrow": 22800000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 22800000.0
+    }
+   ]
+  },
+  {
+   "ticker": "VRT",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2020,
+     "ledger": 44400000.0,
+     "narrow": 44400000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 44400000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 73400000.0,
+     "narrow": 73400000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 73400000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 100000000.0,
+     "narrow": 100000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 100000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 127900000.0,
+     "narrow": 127900000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 127900000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 167000000.0,
+     "narrow": 167000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 167000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 220000000.0,
+     "narrow": 220000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 220000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "WCN",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": true,
+   "ledger_definition_kinds": [
+    "broad",
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": false,
+   "years_checked": 12,
+   "years_provider_understates": 5,
+   "max_understatement_pct": 0.24222366823194916,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 241277000,
+     "narrow": 182834000.0,
+     "software": null,
+     "broad": 241277000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 182834000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 238833000,
+     "narrow": 197897000.0,
+     "software": null,
+     "broad": 238833000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 197897000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 344723000,
+     "narrow": null,
+     "software": null,
+     "broad": 344723000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 344723000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 479287000,
+     "narrow": 479287000.0,
+     "software": null,
+     "broad": 479287000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 479287000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 546145000,
+     "narrow": 546145000.0,
+     "software": null,
+     "broad": 546145000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 546145000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 666089000,
+     "narrow": 634406000.0,
+     "software": null,
+     "broad": 666089000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 634406000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 664561000,
+     "narrow": 597053000.0,
+     "software": null,
+     "broad": 664561000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 597053000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 744315000,
+     "narrow": 744315000.0,
+     "software": null,
+     "broad": 744315000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 744315000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 912677000,
+     "narrow": 912677000.0,
+     "software": null,
+     "broad": 912677000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 912677000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 934000000,
+     "narrow": 934000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 934000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 1055988000,
+     "narrow": 1055988000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 1055988000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 1194366000,
+     "narrow": 1179228000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 1179228000.0
+    }
+   ]
+  },
+  {
+   "ticker": "WDAY",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": true,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 6,
+   "years_provider_understates": 0,
+   "max_understatement_pct": 0.0,
+   "per_year": [
+    {
+     "fy": 2021,
+     "ledger": 259496000.0,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2022,
+     "ledger": 435768000.0,
+     "narrow": null,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": null
+    },
+    {
+     "fy": 2023,
+     "ledger": 364000000,
+     "narrow": 364000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 364000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 232000000,
+     "narrow": 232000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 232000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 269000000,
+     "narrow": 269000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 269000000.0
+    },
+    {
+     "fy": 2026,
+     "ledger": 162000000,
+     "narrow": 162000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 162000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "WM",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": true,
+   "ledger_definition_kinds": [
+    "broad"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 2,
+   "max_understatement_pct": 0.028799019607843136,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 1151000000,
+     "narrow": 1181000000.0,
+     "software": null,
+     "broad": 1151000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1181000000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 1233000000,
+     "narrow": 1229000000.0,
+     "software": null,
+     "broad": 1233000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1229000000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 1339000000,
+     "narrow": 1347000000.0,
+     "software": null,
+     "broad": 1339000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1347000000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 1509000000,
+     "narrow": 1568000000.0,
+     "software": null,
+     "broad": 1509000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1568000000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 1694000000,
+     "narrow": 1671000000.0,
+     "software": null,
+     "broad": 1694000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1671000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 1818000000,
+     "narrow": 1815000000.0,
+     "software": null,
+     "broad": 1818000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1815000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 1632000000,
+     "narrow": 1585000000.0,
+     "software": null,
+     "broad": 1632000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 1585000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 1904000000,
+     "narrow": 2039000000.0,
+     "software": null,
+     "broad": 1904000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 2039000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 2587000000,
+     "narrow": 2809000000.0,
+     "software": null,
+     "broad": 2587000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 2809000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 2895000000,
+     "narrow": null,
+     "software": null,
+     "broad": 2895000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 2895000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 3231000000,
+     "narrow": null,
+     "software": null,
+     "broad": 3231000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 3231000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 3227000000,
+     "narrow": null,
+     "software": null,
+     "broad": 3227000000.0,
+     "ledger_matches": "broad",
+     "provider_would_pick": 3227000000.0
+    }
+   ]
+  },
+  {
+   "ticker": "ZTS",
+   "status": "OK",
+   "reports_software_tag": false,
+   "reports_broad_tag": false,
+   "ledger_definition_kinds": [
+    "narrow",
+    "none"
+   ],
+   "ledger_definition_consistent": true,
+   "years_checked": 12,
+   "years_provider_understates": 1,
+   "max_understatement_pct": 0.07692307692307693,
+   "per_year": [
+    {
+     "fy": 2014,
+     "ledger": 195000000,
+     "narrow": 180000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "none",
+     "provider_would_pick": 180000000.0
+    },
+    {
+     "fy": 2015,
+     "ledger": 224000000,
+     "narrow": 224000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 224000000.0
+    },
+    {
+     "fy": 2016,
+     "ledger": 216000000,
+     "narrow": 216000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 216000000.0
+    },
+    {
+     "fy": 2017,
+     "ledger": 224000000,
+     "narrow": 224000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 224000000.0
+    },
+    {
+     "fy": 2018,
+     "ledger": 338000000,
+     "narrow": 338000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 338000000.0
+    },
+    {
+     "fy": 2019,
+     "ledger": 460000000,
+     "narrow": 460000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 460000000.0
+    },
+    {
+     "fy": 2020,
+     "ledger": 453000000,
+     "narrow": 453000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 453000000.0
+    },
+    {
+     "fy": 2021,
+     "ledger": 477000000,
+     "narrow": 477000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 477000000.0
+    },
+    {
+     "fy": 2022,
+     "ledger": 586000000,
+     "narrow": 586000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 586000000.0
+    },
+    {
+     "fy": 2023,
+     "ledger": 732000000,
+     "narrow": 732000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 732000000.0
+    },
+    {
+     "fy": 2024,
+     "ledger": 655000000,
+     "narrow": 655000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 655000000.0
+    },
+    {
+     "fy": 2025,
+     "ledger": 621000000,
+     "narrow": 621000000.0,
+     "software": null,
+     "broad": null,
+     "ledger_matches": "narrow",
+     "provider_would_pick": 621000000.0
+    }
+   ]
+  }
+ ]
+}
