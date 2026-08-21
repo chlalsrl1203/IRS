@@ -16,7 +16,10 @@
     "weight_final": 0.18,
     "bucket_cap_applied": 0.18000000000000002,
     "bucket_target_effective": 0.18000000000000002,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.1556139198949442,
+    "gap_sbc_adjusted_pct": 10.064231872558596
   },
   {
     "ticker": "ACGL",
@@ -35,7 +38,10 @@
     "weight_final": 0.11999999999999997,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.3075,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.024151436031331592,
+    "gap_sbc_adjusted_pct": 24.02659870097618
   },
   {
     "ticker": "PGR",
@@ -54,7 +60,10 @@
     "weight_final": 0.11999999999999997,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.3075,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.007674418604651163,
+    "gap_sbc_adjusted_pct": 21.652428524724215
   },
   {
     "ticker": "TCOM",
@@ -73,7 +82,10 @@
     "weight_final": 0.10249999999999998,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.10250000000000001,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": true,
+    "sbc_to_fcf_pct": 0.16713297010749523,
+    "gap_sbc_adjusted_pct": 5.280819544152711
   },
   {
     "ticker": "PDD",
@@ -92,7 +104,10 @@
     "weight_final": 0.09067692535472627,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.07502315853415462,
+    "gap_sbc_adjusted_pct": 28.121414184570316
   },
   {
     "ticker": "SE",
@@ -111,7 +126,10 @@
     "weight_final": 0.07390567174489178,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.13855788684452172,
+    "gap_sbc_adjusted_pct": 17.36692266095106
   },
   {
     "ticker": "BRO",
@@ -132,7 +150,10 @@
     "bucket_target_effective": 0.3075,
     "model_dependent_universe": true,
     "grade_alternative_model": "B",
-    "gap_alternative_model_pct": 6.442520141601564
+    "gap_alternative_model_pct": 6.442520141601564,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.06729377713458755,
+    "gap_sbc_adjusted_pct": 7.026228780114987
   },
   {
     "ticker": "DUOL",
@@ -151,7 +172,10 @@
     "weight_final": 0.06290683585014636,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.3717256245824622,
+    "gap_sbc_adjusted_pct": 13.960227966308597
   },
   {
     "ticker": "MNDY",
@@ -170,7 +194,10 @@
     "weight_final": 0.06272489256794993,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.5711837935863595,
+    "gap_sbc_adjusted_pct": 13.108901977539066
   },
   {
     "ticker": "UBER",
@@ -189,7 +216,10 @@
     "weight_final": 0.047706037224796674,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": false,
+    "sbc_to_fcf_pct": 0.1870326743828741,
+    "gap_sbc_adjusted_pct": 9.279132160095097
   },
   {
     "ticker": "WDAY",
@@ -208,7 +238,10 @@
     "weight_final": 0.0451059739392835,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": true,
+    "sbc_to_fcf_pct": 0.5855239467050775,
+    "gap_sbc_adjusted_pct": 1.1135962860267328
   },
   {
     "ticker": "TTD",
@@ -227,6 +260,9 @@
     "weight_final": 0.026973663318205443,
     "bucket_cap_applied": 0.12,
     "bucket_target_effective": 0.41000000000000003,
-    "model_dependent_universe": false
+    "model_dependent_universe": false,
+    "sbc_dependent_universe": true,
+    "sbc_to_fcf_pct": 0.6165902150280881,
+    "gap_sbc_adjusted_pct": 5.512619152101833
   }
 ]

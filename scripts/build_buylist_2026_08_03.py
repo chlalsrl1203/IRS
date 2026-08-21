@@ -232,6 +232,28 @@ def load_model_dependence(path=MODEL_SENSITIVITY_PATH):
         return {r["ticker"]: r for r in json.load(f)["results"]}
 
 
+SBC_HARVEST_PATH = "reports/sbc_harvest_2026-08-21.json"
+
+
+def load_sbc_dependence(path=SBC_HARVEST_PATH):
+    """
+    티커별 SBC 차감 시나리오를 읽어 dict로 돌려준다. 파일이 없으면 None.
+
+    `load_model_dependence`와 **같은 이유로** None을 돌려준다 - SBC 미확보를
+    조용히 '무해'로 처리하면 정확히 R-001 감사가 §24 False Robustness로 등록한
+    상태가 재발한다(25/34가 `FCF_DOWNSIDE_NOT_TESTED`인데 안정도는 높게 나옴).
+
+    ⚠️ SBC 차감은 Gap을 **반드시 낮춘다**(fcf0 감소 -> Implied Growth 상승).
+    따라서 이 검토는 유니버스 **이탈만** 만들 수 있고 진입은 만들 수 없다 -
+    모델선택 검토가 양방향인 것과 구조적으로 다르므로 '진입' 절을 두지 않는다.
+    """
+    if not os.path.exists(path):
+        return None
+    with open(path, encoding="utf-8") as f:
+        rows = json.load(f)["results"]
+    return {r["ticker"]: r for r in rows if r.get("status") == "OK"}
+
+
 def main():
     data = json.load(open("reports/portfolio_ranking_2026-08-02.json"))
     universe = {r["ticker"]: r for r in data if r["grade"] in ("S", "A")}
@@ -485,6 +507,76 @@ def main():
         print("  ⚠️ 어느 모델이 옳은지는 판정하지 않는다 - 34종목 실측상 관측 가능한 성장")
         print("     프로파일이 두 모델 선택집단을 분리하지 못해 판정 근거가 이 저장소에 없다.")
         print("     비중은 이 검토로 조정되지 않았다(reports/research/model_choice_2026-08-16.md).")
+
+    # ── 경계 검토 2: 유니버스 편입이 SBC 미차감 가정에 달려 있는가 ────────
+    # 2026-08-21 실험(결정 #40 재개조건 충족 - SEC 원자료 확보)의 ADOPT 결과를
+    # 같은 자리에 배선했다. 위 모델선택 검토와 완전히 같은 성질이다: **비중을
+    # 바꾸지 않고**, weight_final이 확정된 뒤 키만 덧붙이며, 어느 쪽이 옳은지
+    # 판정하지 않는다(SBC 전액차감/전액가산 둘 다 업계에서 논쟁적 - v3.23 원칙).
+    sbc_dep = load_sbc_dependence()
+    boundary["sbc"] = {"status": None, "held_but_sbc_dependent": [],
+                       "unverified": []}
+    print("\n" + "=" * 100)
+    print("경계 검토 2 - 유니버스 편입이 SBC 미차감 가정에 달려 있는 종목 (비중 미변경)")
+    print("=" * 100)
+    if sbc_dep is None:
+        boundary["sbc"]["status"] = "미확인"
+        for row in rows:
+            row["sbc_dependent_universe"] = None
+        print(f"  ⚠️ {SBC_HARVEST_PATH}가 없어 **확인하지 못했다**.")
+        print("     '의존 없음'이 아니라 '미확인'이다 - scripts/sbc_harvest_2026_08_21.py를 먼저 실행할 것.")
+    else:
+        boundary["sbc"]["status"] = "확인"
+        for row in rows:
+            s = sbc_dep.get(row["ticker"])
+            if s is None:
+                # 확보 실패를 '무해'로 적지 않는다. None은 '모른다'는 뜻이다.
+                row["sbc_dependent_universe"] = None
+                boundary["sbc"]["unverified"].append(
+                    {"ticker": row["ticker"], "weight_final": row["weight_final"]})
+                continue
+            leaves = (row["grade"] in ("S", "A")
+                      and s.get("grade_sbc_adjusted") not in ("S", "A"))
+            row["sbc_dependent_universe"] = bool(leaves)
+            row["sbc_to_fcf_pct"] = s.get("sbc_to_fcf_pct")
+            row["gap_sbc_adjusted_pct"] = (
+                s["gap_sbc_adjusted"] * 100 if s.get("gap_sbc_adjusted") is not None else None)
+            if leaves:
+                boundary["sbc"]["held_but_sbc_dependent"].append({
+                    "ticker": row["ticker"], "weight_final": row["weight_final"],
+                    "grade": row["grade"], "grade_sbc_adjusted": s["grade_sbc_adjusted"],
+                    "gap_pct": row["gap_pct"],
+                    "gap_sbc_adjusted_pct": s["gap_sbc_adjusted"] * 100,
+                    "sbc_to_fcf_pct": s["sbc_to_fcf_pct"],
+                })
+
+        held_sbc = boundary["sbc"]["held_but_sbc_dependent"]
+        if held_sbc:
+            print("  [보유 중인데 편입 근거가 'SBC를 비용으로 보지 않는다'는 가정에 달림]")
+            for h in held_sbc:
+                print(f"    {h['ticker']:6} 비중 {h['weight_final']*100:5.2f}%  "
+                      f"{h['grade']}({h['gap_pct']:+.2f}%p) -> SBC 차감시 "
+                      f"{h['grade_sbc_adjusted']}({h['gap_sbc_adjusted_pct']:+.2f}%p) 유니버스 이탈  "
+                      f"[SBC/FCF {h['sbc_to_fcf_pct']*100:.1f}%]")
+        else:
+            print("  SBC 차감으로 유니버스를 이탈하는 보유 종목 없음.")
+        if boundary["sbc"]["unverified"]:
+            print("  [SBC 미확보 - '무해'가 아니라 '미확인']")
+            for u in boundary["sbc"]["unverified"]:
+                print(f"    {u['ticker']:6} 비중 {u['weight_final']*100:5.2f}%")
+        # 경계 여유를 함께 보여준다 - 이탈하지 않았다고 안전한 것이 아니다.
+        near = sorted(
+            (r for r in rows if r.get("gap_sbc_adjusted_pct") is not None
+             and r["grade"] in ("S", "A")),
+            key=lambda r: abs(r["gap_sbc_adjusted_pct"] - 7.0))[:3]
+        if near:
+            print("  [A/B 경계(+7.00%p)까지 남은 여유 - SBC 차감 후 기준, 가까운 순]")
+            for r in near:
+                print(f"    {r['ticker']:6} 비중 {r['weight_final']*100:5.2f}%  "
+                      f"SBC차감후 {r['gap_sbc_adjusted_pct']:+.2f}%p "
+                      f"(여유 {r['gap_sbc_adjusted_pct'] - 7.0:+.2f}%p)")
+        print("  ⚠️ SBC를 비용으로 볼지는 판정하지 않는다(전액차감/전액가산 둘 다 논쟁적).")
+        print("     비중은 이 검토로 조정되지 않았다(reports/sbc_harvest_2026-08-21.json).")
 
     os.makedirs("reports", exist_ok=True)
     with open("reports/buylist_boundary_review_2026-08-16.json", "w", encoding="utf-8") as f:
