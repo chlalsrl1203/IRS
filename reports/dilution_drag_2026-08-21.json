@@ -1,0 +1,471 @@
+{
+ "generated_at": "2026-08-21",
+ "phase": "PHASE 4 — Realistic Growth information gap (dilution)",
+ "affects_official_judgment": false,
+ "gap_found": "realistic_growth는 총 FCF/매출 CAGR로 계산되는데 주주가 받는 것은 주당 흐름이다. 그 차이가 RG 어디에도 반영되지 않는다.",
+ "not_wired_into_growth": "RG·성장지속기간에 반영하지 않는다 — §13 CORE MODEL CHANGE GATE의 6번(validation strategy)이 없다(성과와의 관계 증거 0건). 결정 #29·#33이 확립한 구조 D(독립 진단축)만.",
+ "overlap_with_sbc": {
+  "spearman": -0.597,
+  "n": 25,
+  "note": "부분 중복이나 독립 성분이 크다. sbc_to_fcf_pct는 보상비용의 크기를, 희석 드래그는 주주 지분의 순변화(발행−자사주매입)를 잰다. 반례: VRT는 SBC 2.4%인데 드래그 −7.66%p, WDAY는 SBC 58.6%인데 −2.98%p."
+ },
+ "results": [
+  {
+   "ticker": "ACGL",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 410259455.0,
+   "shares_end": 375900000.0,
+   "share_count_change_pct": -0.08375055000255871,
+   "fcf_cagr_total": 0.16572861020907137,
+   "fcf_cagr_per_share": 0.1863004905840855,
+   "dilution_drag": 0.020571880375014118,
+   "per_share_declined": false,
+   "weight_final": 0.11999999999999997,
+   "sbc_to_fcf_pct": 0.024151436031331592
+  },
+  {
+   "ticker": "BKNG",
+   "status": "OK",
+   "base_year": 2019,
+   "end_year": 2025,
+   "span": 6,
+   "shares_base": 43509000.0,
+   "shares_end": 32639000.0,
+   "share_count_change_pct": -0.24983336780895904,
+   "fcf_cagr_total": 0.12438818498366344,
+   "fcf_cagr_per_share": 0.17956890734229014,
+   "dilution_drag": 0.0551807223586267,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.06745900737317047
+  },
+  {
+   "ticker": "BRO",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2021 x0.0, FY2022 x1004.3 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2021,
+     "ratio": 0.0010056077747610261
+    },
+    {
+     "fy": 2022,
+     "ratio": 1004.2751988003489
+    }
+   ],
+   "weight_final": 0.06749999999999999,
+   "sbc_to_fcf_pct": 0.06729377713458755
+  },
+  {
+   "ticker": "BSX",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 1416700000.0,
+   "shares_end": 1494500000.0,
+   "share_count_change_pct": 0.05491635490929636,
+   "fcf_cagr_total": 0.2643853490752126,
+   "fcf_cagr_per_share": 0.2509381854702093,
+   "dilution_drag": -0.01344716360500331,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.08173865500273374
+  },
+  {
+   "ticker": "BSY",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 299371129.0,
+   "shares_end": 333089213.0,
+   "share_count_change_pct": 0.11262971186510096,
+   "fcf_cagr_total": 0.16549633493129434,
+   "fcf_cagr_per_share": 0.14088214003157762,
+   "dilution_drag": -0.024614194899716724,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.13951315721181295
+  },
+  {
+   "ticker": "CDNS",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.2868310112104656
+  },
+  {
+   "ticker": "COR",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 204783000.0,
+   "shares_end": 195214000.0,
+   "share_count_change_pct": -0.04672751156101829,
+   "fcf_cagr_total": 0.11785265670487566,
+   "fcf_cagr_per_share": 0.12860287282828775,
+   "dilution_drag": 0.010750216123412093,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.04613551205607241
+  },
+  {
+   "ticker": "DSGX",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.08025226857467488
+  },
+  {
+   "ticker": "DUOL",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2021 x1.8, FY2022 x1.7 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2021,
+     "ratio": 1.8400471142520614
+    },
+    {
+     "fy": 2022,
+     "ratio": 1.6843767336661972
+    }
+   ],
+   "weight_final": 0.06290683585014636,
+   "sbc_to_fcf_pct": 0.3717256245824622
+  },
+  {
+   "ticker": "GEN",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "shares_base": 600000000.0,
+   "shares_end": 619000000.0,
+   "share_count_change_pct": 0.03166666666666673,
+   "fcf_cagr_total": 0.16820852899657845,
+   "fcf_cagr_per_share": 0.16094726551369187,
+   "dilution_drag": -0.007261263482886582,
+   "per_share_declined": false,
+   "weight_final": 0.18,
+   "sbc_to_fcf_pct": 0.1556139198949442
+  },
+  {
+   "ticker": "GWRE",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 82855392.0,
+   "shares_end": 85911653.0,
+   "share_count_change_pct": 0.0368866880745673,
+   "fcf_cagr_total": 0.2625572201253956,
+   "fcf_cagr_per_share": 0.25344363705680006,
+   "dilution_drag": -0.009113583068595554,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.5761379684178993
+  },
+  {
+   "ticker": "IDXX",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.05676979819870612
+  },
+  {
+   "ticker": "KEYS",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 189000000.0,
+   "shares_end": 173000000.0,
+   "share_count_change_pct": -0.08465608465608465,
+   "fcf_cagr_total": 0.07339084686143038,
+   "fcf_cagr_per_share": 0.09254926150927534,
+   "dilution_drag": 0.019158414647844957,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.12646370023419204
+  },
+  {
+   "ticker": "KLAC",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 158005000.0,
+   "shares_end": 133750000.0,
+   "share_count_change_pct": -0.1535078003860637,
+   "fcf_cagr_total": 0.1816667890794359,
+   "fcf_cagr_per_share": 0.22171649543801553,
+   "dilution_drag": 0.04004970635857963,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.07073290123107506
+  },
+  {
+   "ticker": "MCK",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "shares_base": 160600000.0,
+   "shares_end": 124100000.0,
+   "share_count_change_pct": -0.2272727272727273,
+   "fcf_cagr_total": 0.0675894243198174,
+   "fcf_cagr_per_share": 0.12408464359671312,
+   "dilution_drag": 0.056495219276895714,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.04565619223659889
+  },
+  {
+   "ticker": "MNDY",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2022 x1.5 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2022,
+     "ratio": 1.51011159631183
+    }
+   ],
+   "weight_final": 0.06272489256794993,
+   "sbc_to_fcf_pct": 0.5711837935863595
+  },
+  {
+   "ticker": "MNST",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.06393350228037817
+  },
+  {
+   "ticker": "PDD",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2024 x0.0, FY2025 x1002.2 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2024,
+     "ratio": 0.0010131793356381396
+    },
+    {
+     "fy": 2025,
+     "ratio": 1002.1945065672942
+    }
+   ],
+   "weight_final": 0.09067692535472627,
+   "sbc_to_fcf_pct": 0.07502315853415462
+  },
+  {
+   "ticker": "PGR",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 587600000.0,
+   "shares_end": 588100000.0,
+   "share_count_change_pct": 0.0008509189925118843,
+   "fcf_cagr_total": 0.2081562230688616,
+   "fcf_cagr_per_share": 0.2079507193619412,
+   "dilution_drag": -0.00020550370692040687,
+   "per_share_declined": false,
+   "weight_final": 0.11999999999999997,
+   "sbc_to_fcf_pct": 0.007674418604651163
+  },
+  {
+   "ticker": "PH",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.047590541753965876
+  },
+  {
+   "ticker": "PTC",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 116267000.0,
+   "shares_end": 120777000.0,
+   "share_count_change_pct": 0.03879002640474072,
+   "fcf_cagr_total": 0.3201990243696191,
+   "fcf_cagr_per_share": 0.3101887113881161,
+   "dilution_drag": -0.010010312981503011,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.252373092654502
+  },
+  {
+   "ticker": "RMD",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 145652000.0,
+   "shares_end": 147340000.0,
+   "share_count_change_pct": 0.011589267569274808,
+   "fcf_cagr_total": 0.18641617250229148,
+   "fcf_cagr_per_share": 0.1836851944539044,
+   "dilution_drag": -0.002730978048387067,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.055160216233391485
+  },
+  {
+   "ticker": "ROP",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 105700000.0,
+   "shares_end": 108200000.0,
+   "share_count_change_pct": 0.023651844843897818,
+   "fcf_cagr_total": 0.17644634792021407,
+   "fcf_cagr_per_share": 0.1709589521281467,
+   "dilution_drag": -0.005487395792067362,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.06827886352438824
+  },
+  {
+   "ticker": "SE",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 477264888.0,
+   "shares_end": 638227141.0,
+   "share_count_change_pct": 0.33725978392108336,
+   "fcf_cagr_total": 0.8303113144903451,
+   "fcf_cagr_per_share": 0.7269581274205568,
+   "dilution_drag": -0.10335318706978835,
+   "per_share_declined": false,
+   "weight_final": 0.07390567174489178,
+   "sbc_to_fcf_pct": 0.13855788684452172
+  },
+  {
+   "ticker": "TCOM",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2021 x8.4 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2021,
+     "ratio": 8.442292254135898
+    }
+   ],
+   "weight_final": 0.10249999999999998,
+   "sbc_to_fcf_pct": 0.16713297010749523
+  },
+  {
+   "ticker": "TTD",
+   "status": "STRUCTURAL_SHARE_JUMP",
+   "detail": "주식분할·IPO·ADS비율변경·단위혼재로 보이는 점프: FY2021 x10.2 — 희석으로 해석할 수 없다",
+   "jumps": [
+    {
+     "fy": 2021,
+     "ratio": 10.17677798644566
+    }
+   ],
+   "weight_final": 0.026973663318205443,
+   "sbc_to_fcf_pct": 0.6165902150280881
+  },
+  {
+   "ticker": "TYL",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 41526000.0,
+   "shares_end": 43812000.0,
+   "share_count_change_pct": 0.05504984828781967,
+   "fcf_cagr_total": 0.13703541809123143,
+   "fcf_cagr_per_share": 0.12491419505402179,
+   "dilution_drag": -0.012121223037209639,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.24369875151026985
+  },
+  {
+   "ticker": "UBER",
+   "status": "OK",
+   "base_year": 2022,
+   "end_year": 2025,
+   "span": 3,
+   "shares_base": 1974928000.0,
+   "shares_end": 2119689000.0,
+   "share_count_change_pct": 0.07329938104072653,
+   "fcf_cagr_total": 1.9253167244957807,
+   "fcf_cagr_per_share": 1.8571471036115472,
+   "dilution_drag": -0.0681696208842335,
+   "per_share_declined": false,
+   "weight_final": 0.047706037224796674,
+   "sbc_to_fcf_pct": 0.1870326743828741
+  },
+  {
+   "ticker": "VRSN",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.06524384536178976
+  },
+  {
+   "ticker": "VRT",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "shares_base": 307076397.0,
+   "shares_end": 390652824.0,
+   "share_count_change_pct": 0.27216818946849886,
+   "fcf_cagr_total": 0.6301727980423069,
+   "fcf_cagr_per_share": 0.5535482125291826,
+   "dilution_drag": -0.07662458551312423,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.02423698384201077
+  },
+  {
+   "ticker": "WCN",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.06513716863859481
+  },
+  {
+   "ticker": "WDAY",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "shares_base": 237019000.0,
+   "shares_end": 268117000.0,
+   "share_count_change_pct": 0.13120467135546088,
+   "fcf_cagr_total": 0.22445175339833945,
+   "fcf_cagr_per_share": 0.19463006262216753,
+   "dilution_drag": -0.029821690776171916,
+   "per_share_declined": false,
+   "weight_final": 0.0451059739392835,
+   "sbc_to_fcf_pct": 0.5855239467050775
+  },
+  {
+   "ticker": "WM",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.060014204545454544
+  },
+  {
+   "ticker": "ZTS",
+   "status": "NO_BASE_YEAR",
+   "detail": "cagr_5y_base_year 필드 없음(v3.19판 ledger)",
+   "weight_final": null,
+   "sbc_to_fcf_pct": 0.036355672360928605
+  }
+ ]
+}
