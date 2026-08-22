@@ -199,7 +199,7 @@ def test_audit_surfaces_unverified_rather_than_hiding_it():
     # 현재 실제 상태: 벤더·웹 출처 4건이 미확인이다. 확인되면 이 테스트가
     # 실패하며 등록부와 문서를 함께 갱신하라는 신호를 준다.
     assert set(a["unverified"]) == {
-        "alpha_vantage", "fmp", "stockanalysis", "web_research",
+        "alpha_vantage", "fmp", "stockanalysis", "web_research", "finviz",
     }
     assert "확인하지 않음" in a["note"]
 
@@ -211,3 +211,24 @@ def test_raw_redistribution_of_vendor_data_is_not_claimed_as_allowed():
     """
     for key in ("alpha_vantage", "fmp", "stockanalysis"):
         assert check_use(key, "raw_redistribution")["decision"] != "ALLOWED"
+
+
+# ── Finviz (2026-08-22, 자동 스크리닝 루틴 추가) ──────────────────────────
+def test_finviz_only_scoped_to_internal_research():
+    """
+    자동화가 Finviz 결과를 노션에 적재하는 건 raw_redistribution이 아니라
+    internal_research 범위 안이어야 한다(원자료를 그대로 재배포하는 게 아니라
+    내부 판단에만 쓰는 것).
+    """
+    assert get_source("finviz").allowed_use == ("internal_research",)
+
+
+def test_finviz_reliability_documents_the_custom_filter_prohibition():
+    """
+    robots.txt가 `Disallow: /screener?*`로 커스텀 필터(f=)를 막고 프리셋(s=)만
+    Allow한다는 사실이 사라지면, 나중에 누군가 v=121+f= 조합을 자동화에 그대로
+    쓸 위험이 있다(2026-08-22 발견 - 최초 조사 때는 커스텀 필터로 조사했었다).
+    """
+    src = get_source("finviz")
+    assert "Disallow: /screener?*" in src.reliability
+    assert "화이트리스트" in src.reliability

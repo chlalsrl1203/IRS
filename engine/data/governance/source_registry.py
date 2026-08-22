@@ -308,6 +308,37 @@ SOURCE_REGISTRY = {
         verification_note="출처가 매번 달라 일괄 검증이 불가능하다 — 개별 확인이 원칙.",
         tier=ComplianceTier.UNVERIFIED,
     ),
+    "finviz": DataSource(
+        provider="Finviz (screener/insider trading, WebFetch)",
+        authority=Authority.AGGREGATOR_WEB,
+        data_type="스크리너 후보 목록(52주 신저가·내부자매수 등 프리셋)",
+        license=UNVERIFIED,
+        commercial_use=UNVERIFIED,
+        redistribution_raw=UNVERIFIED,
+        redistribution_derived=UNVERIFIED,
+        rate_limit_per_sec=None,
+        freshness="일 단위(장중 갱신)",
+        reliability=(
+            "⚠️ 2026-08-22 robots.txt 원문 직접 확인(engine/ 아님, curl로 원문 대조): "
+            "`Disallow: /screener?*`로 커스텀 필터(`f=` 파라미터) 조회는 봇에게 "
+            "전면 금지돼 있고, 프리셋 화면(`s=` 파라미터, 예: ta_newlow·"
+            "it_latestbuys·n_earningsbefore 등 화이트리스트에 명시된 것들)만 "
+            "명시적으로 Allow돼 있다. **자동화 경로는 반드시 화이트리스트 프리셋만 "
+            "쓸 것 — 커스텀 필터 조합(v=111/121/161+f=)은 로봇 배제 규칙 위반이라 "
+            "1회성 수동 조회 외 자동 반복 조회에 쓰지 않는다.**"
+        ),
+        last_verified=UNVERIFIED,
+        allowed_use=("internal_research",),
+        source_kind="web_research",
+        hosts=("finviz.com", "www.finviz.com"),
+        terms_url="https://finviz.com/robots.txt",
+        verification_note=(
+            "2026-08-22 robots.txt 원문 확인 완료(크롤링 허용범위) - Crawl-delay "
+            "지시자는 없음. **다만 이건 크롤링 허용범위 확인이지 이용약관 전체를 "
+            "확인한 것은 아니다** - 상업이용·재배포 조항은 여전히 미확인."
+        ),
+        tier=ComplianceTier.UNVERIFIED,
+    ),
     "analyst_input": DataSource(
         provider="분석자 주관 입력",
         authority=Authority.ANALYST,
