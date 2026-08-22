@@ -74,6 +74,12 @@ def fetch_finviz_tickers():
                 links = page.locator('a[href*="quote.ashx?t="]')
                 count = links.count()
                 if count == 0:
+                    log(f"[Finviz][진단] {name} 페이지{i+1}: title={page.title()!r} "
+                        f"html길이={len(page.content())} url={page.url}")
+                    dump_path = f"/tmp/finviz_debug_{name}_{i}.html"
+                    with open(dump_path, "w", encoding="utf-8") as f:
+                        f.write(page.content())
+                    log(f"[Finviz][진단] HTML 저장: {dump_path}")
                     break
                 for j in range(count):
                     t = links.nth(j).inner_text().strip()

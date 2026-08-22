@@ -48,3 +48,10 @@ jobs:
           name: daily-screen-result
           path: /tmp/daily_screen_ci_*.json
           if-no-files-found: ignore
+      - name: upload finviz debug html (있을 때만)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: finviz-debug-html
+          path: /tmp/finviz_debug_*.html
+          if-no-files-found: ignore
