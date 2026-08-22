@@ -170,15 +170,34 @@ def _pick_by_fiscal_year(rows, years):
     회계연도별로 하나씩 고른다. 같은 연도가 여러 번 나오면 **최초 공시본**
     (min filed)을 택한다 — PIT에서 의미 있는 것은 처음 알려진 날이기 때문이며,
     `engine/filing_dates.py`의 규칙과 같다.
+
+    ⚠️ **회계연도는 종료일의 연도(`int(end[:4])`)로 정한다 — 52/53주 회계연도를
+    쓰는 회사에서 이 규약이 회사 자신의 라벨과 어긋난다.** CDNS 실측(2026-08-21):
+
+        2019-12-29~2021-01-02  (회사 기준 FY2020)  -> 여기서는 fy=2021
+        2021-01-03~2022-01-01  (회사 기준 FY2021)  -> 여기서는 fy=2022
+
+    그 결과 CDNS는 provider 출력이 ledger 대비 **한 해씩 밀린다**(FY2021 자리에
+    FY2020 값, 불일치 7~16%). 두 기간이 같은 라벨로 충돌하면 min(filed) 규칙상
+    **이른 회계연도가 이기고 늦은 쪽이 조용히 사라진다.**
+
+    **자동 재라벨링은 하지 않는다** — 회계연도 라벨 규약이 회사마다 다르고
+    (CDNS는 1월 초 종료를 전년으로, GEN은 3월 말 종료를 당해로 센다) 관측이
+    2종목뿐이라 일반 규칙을 만들 근거가 없다(§21 LEVEL 1, PHASE 3의 소프트웨어
+    태그와 같은 판단). 대신 충돌 사실을 호출부에 알린다.
+
+    반환: (picked, collisions) — collisions는 {fy: [(start, end), ...]}.
     """
-    picked = {}
+    picked, seen = {}, {}
     for start, end, filed, val in rows:
         fy = int(end[:4])
         if years is not None and fy not in years:
             continue
+        seen.setdefault(fy, set()).add((start, end))
         if fy not in picked or filed < picked[fy][2]:
             picked[fy] = (start, end, filed, val)
-    return picked
+    collisions = {fy: sorted(p) for fy, p in seen.items() if len(p) > 1}
+    return picked, collisions
 
 
 class SecCompanyFactsProvider(FinancialProvider):
@@ -233,13 +252,16 @@ class SecCompanyFactsProvider(FinancialProvider):
             #
             # 출처가 흐려지지 않는 이유: 태그는 **값마다** `FinancialFact.source`에
             # 기록되므로, 섞였다는 사실 자체가 값 단위로 드러난다.
-            picked, chosen = {}, {}
+            picked, chosen, fy_collisions = {}, {}, {}
             for taxonomy_name, taxonomy in taxonomies.items():
                 for tag in METRIC_TAGS[metric]:
                     if tag not in taxonomy:
                         continue
                     for unit_name, entries in (taxonomy[tag].get("units") or {}).items():
-                        cand = _pick_by_fiscal_year(_annual_entries(entries, metric), years)
+                        cand, coll = _pick_by_fiscal_year(
+                            _annual_entries(entries, metric), years)
+                        for fy, periods in coll.items():
+                            fy_collisions.setdefault(fy, set()).update(periods)
                         for fy, row in cand.items():
                             if fy not in picked:
                                 picked[fy] = row
@@ -258,6 +280,17 @@ class SecCompanyFactsProvider(FinancialProvider):
                 {f"{t}:{g} ({u})" for t, g, u in chosen.values()}
             )
 
+            if fy_collisions:
+                sample = sorted(fy_collisions)[:3]
+                limitations.append(
+                    f"[회계연도 라벨 충돌] {metric}: {sorted(fy_collisions)}년에 서로 "
+                    f"다른 보고기간이 같은 회계연도로 잡힌다(예: FY{sample[0]} "
+                    + " | ".join(f"{a}~{b}" for a, b in sorted(fy_collisions[sample[0]]))
+                    + "). 52/53주 회계연도를 쓰는 회사에서 이 라벨이 회사 자신의 "
+                    "회계연도와 어긋날 수 있고, 그 경우 값이 **한 해씩 밀린다** "
+                    "(CDNS 실측: ledger 대비 7~16% 불일치). 연도 정렬을 직접 확인할 것."
+                )
+
             # capex는 넓은 정의와 좁은 정의가 **같은 해에 공존**할 수 있고 값이
             # 다르다(MCK: 745M vs 436M). 넓은 쪽을 채택하되 그 사실을 조용히
             # 넘기지 않는다 — 좁은 정의를 원하는 분석에는 이 차이가 중요하다.
@@ -269,7 +302,7 @@ class SecCompanyFactsProvider(FinancialProvider):
                         continue
                     for entries in (taxonomy[tag].get("units") or {}).values():
                         for fy, row in _pick_by_fiscal_year(
-                                _annual_entries(entries, metric), years).items():
+                                _annual_entries(entries, metric), years)[0].items():
                             narrow.setdefault(fy, row[3])
                 gaps = {fy: (picked[fy][3], narrow[fy]) for fy in sorted(narrow)
                         if fy in picked and picked[fy][3]
@@ -298,7 +331,7 @@ class SecCompanyFactsProvider(FinancialProvider):
                     for entries in (taxonomy["PaymentsToAcquireSoftware"]
                                     .get("units") or {}).values():
                         for fy, row in _pick_by_fiscal_year(
-                                _annual_entries(entries, metric), years).items():
+                                _annual_entries(entries, metric), years)[0].items():
                             soft.setdefault(fy, row[3])
                 unmerged = sorted(fy for fy, v in soft.items()
                                   if fy in picked and picked[fy][3] == narrow.get(fy))

@@ -238,13 +238,13 @@ def _facts(*tag_series):
     return {"facts": {"us-gaap": facts}}
 
 
-def _fetch(facts, years):
+def _fetch(facts, years, metrics=("capex",)):
     from engine.data.providers.sec import SecCompanyFactsProvider
     p = SecCompanyFactsProvider(
         purpose="internal_research",
         fetch_facts=lambda cik, ua=None: facts,
         resolve_cik=lambda t, ua=None: "0000000000")
-    return p.fetch_annual_financials("TEST", metrics=("capex",),
+    return p.fetch_annual_financials("TEST", metrics=metrics,
                                      fiscal_years=years, retrieved_at="2026-08-21")
 
 
@@ -293,3 +293,48 @@ def test_separately_tagged_software_capex_is_flagged_not_auto_summed():
     vals = [f.value for f in r.facts if f.metric == "capex"]
     assert vals == [436.0], "소프트웨어를 자동 합산하면 안 된다"
     assert any("소프트웨어 별도 보고" in m for m in r.limitations)
+
+
+# ── PHASE 5 (2026-08-21): 회계연도 라벨 충돌 ─────────────────────────────
+def test_fiscal_year_label_collision_is_reported():
+    """
+    52/53주 회계연도를 쓰는 회사는 회계연도가 1월 초에 끝나 `int(end[:4])`가
+    다음 해를 가리킨다. CDNS 실측(2026-08-21): 2019-12-29~2021-01-02(회사 기준
+    FY2020)이 fy=2021로 잡혀 provider 출력이 ledger 대비 **한 해씩 밀린다**
+    (불일치 7~16%). 두 기간이 같은 라벨로 충돌하면 min(filed) 규칙상 이른
+    회계연도가 이기고 늦은 쪽이 조용히 사라진다.
+    """
+    facts = {"facts": {"us-gaap": {"Revenues": {"units": {"USD": [
+        # 회사 기준 FY2015 - 1월 초에 끝나 int(end[:4])가 2016을 가리킨다
+        {"form": "10-K", "start": "2015-01-04", "end": "2016-01-02",
+         "filed": "2016-02-20", "val": 100.0},
+        # 회사 기준 FY2016 - 같은 2016 라벨로 충돌한다
+        {"form": "10-K", "start": "2016-01-03", "end": "2016-12-31",
+         "filed": "2017-02-20", "val": 200.0},
+    ]}}}}}
+    r = _fetch(facts, [2015, 2016], metrics=("revenue",))
+    assert any("회계연도 라벨 충돌" in m for m in r.limitations)
+    # 충돌 시 min(filed)가 이긴다 - 늦은 회계연도가 조용히 사라진다
+    vals = {f.fiscal_year: f.value for f in r.facts if f.metric == "revenue"}
+    assert vals == {2016: 100.0}, vals
+
+
+def test_no_collision_warning_for_normal_calendar_years():
+    r = _fetch(_facts(("Revenues", {2023: 10.0, 2024: 20.0})),
+               [2023, 2024], metrics=("revenue",))
+    assert not any("회계연도 라벨 충돌" in m for m in r.limitations)
+
+
+def test_relabeling_is_not_done_automatically():
+    """
+    자동 재라벨링은 하지 않는다 - 회계연도 규약이 회사마다 다르고(CDNS는 1월 초
+    종료를 전년으로, GEN은 3월 말 종료를 당해로) 관측이 2종목뿐이다(§21 LEVEL 1).
+    경고만 내고 값은 종료일 연도 그대로 둔다.
+    """
+    facts = {"facts": {"us-gaap": {"Revenues": {"units": {"USD": [
+        {"form": "10-K", "start": "2015-01-04", "end": "2016-01-02",
+         "filed": "2016-02-20", "val": 100.0},
+    ]}}}}}
+    r = _fetch(facts, [2015, 2016], metrics=("revenue",))
+    vals = {f.fiscal_year: f.value for f in r.facts if f.metric == "revenue"}
+    assert 2016 in vals and 2015 not in vals, "종료일 연도 규약이 조용히 바뀌었다"
