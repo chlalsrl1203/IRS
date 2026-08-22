@@ -24,6 +24,7 @@ Simplicity First 원칙).
 """
 import json
 import os
+import re
 import sys
 import time
 
@@ -50,6 +51,25 @@ def log(msg):
 
 
 # ── 1) Finviz (Playwright, 화이트리스트 프리셋만) ────────────────────────
+# ⚠️ 2026-08-22 workflow_dispatch 실측(run 32571772267)으로 확인: Finviz가
+# 사이트를 리뉴얼하면서 티커 링크가 `quote.ashx?t=TICKER`에서 `stock?t=TICKER`
+# 로 바뀌었다(구 셀렉터로 첫 실행 시 후보 0개, HTML을 직접 대조해 확정).
+# DOM 순회 대신 렌더된 HTML을 정규식으로 훑는다 - 같은 티커가 차트링크
+# (내부 텍스트 없음)·인사이더 매도 링크(다른 사람 이름)에도 나타나서, 앵커
+# 텍스트가 href의 티커와 **정확히 일치**하는 것만 채택해야 오탐이 없다.
+_TICKER_LINK_RE = re.compile(
+    r'<a[^>]*href="stock\?t=([A-Za-z.]+)[^"]*"[^>]*>([^<]*)</a>')
+
+
+def _extract_tickers_from_html(html):
+    out = []
+    for href_t, text in _TICKER_LINK_RE.findall(html):
+        text = text.strip()
+        if text and text.isupper() and text == href_t:
+            out.append(text)
+    return out
+
+
 def fetch_finviz_tickers():
     from playwright.sync_api import sync_playwright
 
@@ -63,7 +83,6 @@ def fetch_finviz_tickers():
         ))
         for name, base_url in FINVIZ_PRESETS:
             for i in range(MAX_PAGES_PER_PRESET):
-                offset = i * 20 + 1  # v=340 프리셋은 페이지당 10개, r=오프셋
                 url = base_url if i == 0 else f"{base_url}&r={i * 10 + 1}"
                 try:
                     page.goto(url, wait_until="domcontentloaded", timeout=30000)
@@ -71,19 +90,17 @@ def fetch_finviz_tickers():
                 except Exception as e:  # noqa: BLE001
                     log(f"[Finviz] {name} 페이지{i+1} 로드 실패: {e}")
                     break
-                links = page.locator('a[href*="quote.ashx?t="]')
-                count = links.count()
-                if count == 0:
+                html = page.content()
+                page_tickers = _extract_tickers_from_html(html)
+                if not page_tickers:
                     log(f"[Finviz][진단] {name} 페이지{i+1}: title={page.title()!r} "
-                        f"html길이={len(page.content())} url={page.url}")
+                        f"html길이={len(html)} url={page.url} - 후보 0건")
                     dump_path = f"/tmp/finviz_debug_{name}_{i}.html"
                     with open(dump_path, "w", encoding="utf-8") as f:
-                        f.write(page.content())
-                    log(f"[Finviz][진단] HTML 저장: {dump_path}")
+                        f.write(html)
                     break
-                for j in range(count):
-                    t = links.nth(j).inner_text().strip()
-                    if t and t.isupper() and t not in seen:
+                for t in page_tickers:
+                    if t not in seen:
                         seen.add(t)
                         tickers.append(t)
         browser.close()
