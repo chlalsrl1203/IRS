@@ -1,0 +1,50 @@
+name: daily-screen
+
+# 2026-08-22 신설 - 클로드 세션의 예약실행(Routine) 기능이 이 환경에서 승인
+# 처리가 안 되는 버그로 막혀 GitHub Actions로 대체했다. 클로드 세션 상태와
+# 완전히 무관하게 GitHub 자체 서버에서 돈다.
+#
+# 필요한 저장소 시크릿(Settings -> Secrets and variables -> Actions):
+#   ALPHA_VANTAGE_API_KEY - alphavantage.co 무료 가입으로 발급(개인 키,
+#                           클로드 세션에서 저녁에 쓰는 것과 별개 쿼터)
+#   NOTION_TOKEN          - notion.so/my-integrations에서 발급, 대상 페이지에
+#                           그 연동을 공유(Share)해야 함
+#   NOTION_PAGE_ID         - 3c49073a9ba28161a5f0e740f2a4839a
+#                           ("일일 스크리닝 후보 (자동)" 페이지)
+#
+# 시크릿이 없어도 워크플로 자체는 실패하지 않는다 - Finviz+SEC 부분만 돌고
+# 로그에 "시크릿 미설정"이라고 정직하게 남긴다(scripts/daily_screen_ci.py 참고).
+
+on:
+  schedule:
+    # 00:00 UTC = 09:00 KST, 평일만(cron 요일은 UTC 기준이지만 +9시간이라
+    # 날짜가 안 바뀌므로 요일 필드 그대로 1-5 사용)
+    - cron: "0 0 * * 1-5"
+  workflow_dispatch: {}   # 수동 실행(테스트용) 버튼도 열어둔다
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install deps (CI 전용 - engine/은 여전히 stdlib만 쓴다)
+        run: |
+          pip install playwright requests
+          playwright install --with-deps chromium
+      - name: run daily screen
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_PAGE_ID: ${{ secrets.NOTION_PAGE_ID }}
+        run: python3 scripts/daily_screen_ci.py
+      - name: upload result json
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: daily-screen-result
+          path: /tmp/daily_screen_ci_*.json
+          if-no-files-found: ignore
