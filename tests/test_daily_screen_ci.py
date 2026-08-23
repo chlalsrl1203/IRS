@@ -81,6 +81,71 @@ def test_ticker_extraction_matches_finviz_redesign():
     assert MOD._extract_tickers_from_html(html) == ["LGCL"]
 
 
+# ── GitHub Issue 결과기록 (2026-08-23, Notion 401 문제로 교체) ───────────
+class _FakeResponse:
+    def __init__(self, status_code=200, json_data=None, text=""):
+        self.status_code = status_code
+        self._json = json_data if json_data is not None else {}
+        self.text = text
+
+    def json(self):
+        return self._json
+
+    def raise_for_status(self):
+        if self.status_code >= 300:
+            raise Exception(f"HTTP {self.status_code}")
+
+
+def test_find_or_create_issue_reuses_existing_open_issue(monkeypatch):
+    """같은 제목의 열린 이슈가 있으면 새로 만들지 않고 재사용한다(매일 새 이슈 금지)."""
+    calls = {"post": 0}
+
+    def fake_get(url, headers=None, params=None, timeout=None):
+        return _FakeResponse(200, json_data=[
+            {"number": 42, "title": MOD.ISSUE_TITLE},
+            {"number": 7, "title": "다른 이슈"},
+        ])
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        calls["post"] += 1
+        return _FakeResponse(201, json_data={"number": 99})
+
+    import sys, types
+    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
+    monkeypatch.setitem(sys.modules, "requests", fake_requests)
+
+    n = MOD._find_or_create_issue("tok", "chlalsrl1203", "IRS")
+    assert n == 42
+    assert calls["post"] == 0  # 재사용했으니 생성 호출이 없어야 함
+
+
+def test_find_or_create_issue_creates_when_missing(monkeypatch):
+    def fake_get(url, headers=None, params=None, timeout=None):
+        return _FakeResponse(200, json_data=[])
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        assert json["title"] == MOD.ISSUE_TITLE
+        return _FakeResponse(201, json_data={"number": 123})
+
+    import types, sys
+    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
+    monkeypatch.setitem(sys.modules, "requests", fake_requests)
+
+    n = MOD._find_or_create_issue("tok", "chlalsrl1203", "IRS")
+    assert n == 123
+
+
+def test_post_to_github_issue_no_extra_secret_needed_beyond_gh_token():
+    """
+    핵심 불변조건 - Notion류 별도 발급 절차가 필요 없다는 사실 자체를 고정한다.
+    함수 시그니처에 token/owner/repo만 있고 다른 자격증명 파라미터가 없어야 한다.
+    """
+    import inspect
+    params = list(inspect.signature(MOD.post_to_github_issue).parameters)
+    assert params[:3] == ["token", "owner", "repo"]
+    assert not any("notion" in p.lower() for p in params)
+
+
 def test_ticker_extraction_deduplicates_across_pages(tmp_path):
     """같은 종목이 여러 링크(차트+스냅샷)에 나와도 중복 없이 한 번만 나와야 한다."""
     html = (
