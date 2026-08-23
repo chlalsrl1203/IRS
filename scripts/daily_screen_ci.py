@@ -177,6 +177,26 @@ def _find_or_create_issue(token, owner, repo):
     return r.json()["number"]
 
 
+def build_monitor_section(today_str):
+    """
+    보유종목 감시 섹션(v3.64). 스크리닝과 **같은 코멘트**에 실어 하루 알림을
+    1건으로 유지한다 - 알림이 늘어나면 사람이 전체를 무시하게 되고, 그건 이
+    감시가 막으려는 실패 그 자체다.
+
+    ⚠️ 절대 예외를 밖으로 던지지 않는다. 감시는 스크리닝의 부가기능이므로
+    감시가 깨져도 스크리닝 결과 보고는 반드시 나가야 한다(반대로 만들면
+    부가기능 하나가 본체를 멈춘다).
+    """
+    try:
+        from datetime import date as _date
+
+        from daily_monitor_ci import format_monitor_section, run_monitor
+        return format_monitor_section(run_monitor(_date.fromisoformat(today_str)))
+    except Exception as e:  # noqa: BLE001
+        log(f"[monitor] 감시 섹션 생성 실패(스크리닝은 계속 진행): {e!r}")
+        return f"### 🔭 보유종목 감시\n⚠️ 감시 실행 실패: `{e!r}`"
+
+
 def post_to_github_issue(token, owner, repo, date_str, passed_results,
                           skipped_count, note):
     import requests
@@ -199,6 +219,8 @@ def post_to_github_issue(token, owner, repo, date_str, passed_results,
         f"\n(SEC 재무데이터 확보 실패로 제외된 종목 {skipped_count}개 - "
         f"1차 추정치일 뿐 정식 판정 아님)"
     )
+    lines.append("\n---\n")
+    lines.append(build_monitor_section(date_str))
 
     headers = {
         "Authorization": f"Bearer {token}",
