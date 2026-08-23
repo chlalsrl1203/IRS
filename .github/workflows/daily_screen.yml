@@ -26,7 +26,8 @@ on:
   workflow_dispatch: {}   # 수동 실행(테스트용) 버튼도 열어둔다
 
 permissions:
-  issues: write   # GITHUB_TOKEN 기본 권한은 read-only라 명시적으로 열어야 함
+  issues: write    # GITHUB_TOKEN 기본 권한은 read-only라 명시적으로 열어야 함
+  contents: write  # 2026-08-23(v3.65): reports/deep_screen/ 스냅샷을 커밋하려면 필요
 
 jobs:
   screen:
@@ -60,6 +61,26 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python3 scripts/daily_monitor_ci.py --post
+
+      # 2026-08-23(v3.65): 심층분석 스냅샷은 다음날 "전일 대비 변화"를 보려면
+      # 이 checkout 안에 남아 있어야 하는데, 러너는 매번 새로 뜬다 - 커밋하지
+      # 않으면 항상 prior=None이라 변화탐지가 영구히 작동하지 않는다.
+      # **오직 reports/deep_screen/만** 건드린다(엔진 코드·ledger·CLAUDE.md
+      # 등은 여기서 절대 커밋되지 않는다) - 판정 로직이 아니라 SEC 원자료를
+      # 재계산한 객관적 스냅샷이라 사람 검토 없이 쌓아도 안전하다(주관적
+      # 판단이 필요한 monitor/acknowledgements.json은 반대로 사람이 커밋한다).
+      - name: commit deep-screen snapshots (있을 때만)
+        if: always()
+        run: |
+          git config user.name "irs-daily-screen[bot]"
+          git config user.email "irs-daily-screen-bot@users.noreply.github.com"
+          git add reports/deep_screen/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "새 스냅샷 없음 - 커밋 건너뜀"
+          else
+            git commit -m "reports/deep_screen: $(date -u +%Y-%m-%d) 자동 스냅샷"
+            git push
+          fi
 
       - name: upload monitor json
         if: always()

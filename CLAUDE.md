@@ -4941,3 +4941,83 @@ Actions에서는 다를 수 있으나 **확인 전까지 가정하지 않는다*
 **검증**: 테스트 748 → **765개 전부 통과**(신규 17) · 34종목 골든재현 8지표
 **불일치 0건** · fingerprint `fbd34322…` **불변** · **ledger·매수리스트·공식
 판정 0건 수정** · `ENGINE_VERSION` v3.63 → **v3.64**.
+
+## v3.65 — 통과 후보 자동 심층분석(Deep Screen) (2026-08-23, 사용자가 v3.64
+아이디어의 다음 조각으로 지정: "통과 종목 자동 Fundamental Analysis")
+
+### 설계 전제 — 공식 정성판단은 자동화하지 않는다
+
+`run_analysis()`는 `model_choice_reason`·`subjective_input_basis`(경쟁강도·
+수요민감도) 없이는 **실행을 거부하도록 설계돼 있다**(v3.19). 이걸 자동
+파이프라인이 대신 채우면 "빈칸 채우기"(추측을 근거로 위장) 그 자체이고,
+2026-08-16 모델선택 연구가 이미 "이론 기준이 실제 선택을 설명하지 못한다"
+(구간 완전중첩)며 규칙화를 REJECT해뒀다. 그래서 이 단계는 **공식 ledger를
+만들지 않는다** - 대신 재무제표만으로 객관적으로 계산 가능한 부분만 공식
+엔진 함수 그대로 재계산하고, 나머지(경쟁강도·수요민감도·순부채·모델선택)는
+`screener.py`가 이미 쓰는 corpus 중앙값으로 명시적으로 고정한다.
+
+### `engine/deep_screen.py` 신규 - 새 계산 로직 0줄
+
+CAGR 윈도우 산출과 결과 조립만 새 코드고, 안에서 부르는 건 전부 기존
+검증된 함수다: `revenue_volatility_score`·`margin_volatility_score`·
+`leverage_score`·`cyclicality_score`·`DRSInputs`·`erp_from_drs`·
+`classify_lynch_type`·`structural_discount_rate`·`realistic_growth_estimate`·
+`judgment_from_gap`(engine/expectation_gap_engine.py) +
+`implied_growth_from_fcf_yield`(engine/screener.py). `screener.py`가 5개
+관측값·6개년 창만 쓰던 것을, SEC에서 **최대 11개년**을 다시 받아 실제
+3y/5y/10y CAGR로 정밀화한다 - 하루 통과 후보가 보통 0~2종목뿐이라 그 소수만
+심층분석하면 비용이 작다.
+
+### ⭐ BSX 실제 ledger로 골든 교차검증 - 설계 의도가 실측으로 확인됨
+
+BSX(2026-08-13 정식분석)의 원시 다년 데이터를 그대로 넣어 대조한 결과:
+
+| 항목 | 공식 ledger | deep_screen | 일치 |
+|---|---|---|---|
+| revenue_cagr_3y/5y/10y, fcf_cagr_5y, worst_yoy | 실측값 | 동일 | **1e-12 정밀도 완전일치** |
+| structural_discount_pct, lynch_type, realistic_growth | 실측값 | 동일 | **완전일치** |
+| drs.revenue_volatility, margin_volatility | 8.0 / 4.0 | 8.0 / 4.0 | **완전일치** |
+| drs.leverage (순부채 미실측) | 10.0(실측) | 6.0(가정) | 예상된 차이, 라벨됨 |
+| drs.competition_intensity (정성조사) | 5.4(실측) | 12.0(가정) | 예상된 차이, 라벨됨 |
+
+즉 **재무제표로 계산 가능한 모든 항목이 정확히 일치**하고, 재무제표 밖
+판단이 필요한 항목만 차이가 나며 그 차이는 `assumed_inputs`에 전부 명시된다
+- 설계 의도 그대로다.
+
+### ⚠️ 검증 중 실제로 잡은 회귀 1건
+
+초판은 margin_volatility를 확보 가능한 전 구간(최대 11개년)으로 계산해
+BSX에서 8.0이 나왔는데 공식값은 4.0이었다. 원인: `pipeline.py`는
+`margin_years = sorted(revenue_by_year)[-5:]`(최근 5개년만)로 계산하는데,
+전구간을 쓰면 **2020년 코로나 저마진**(영업이익률 6.1% vs 정상 15~20%)이
+표준편차를 부풀린다(전구간 stdev 3.5%p vs 최근5년 stdev 1.8%p - 등급 자체가
+갈림). BKNG 조회창 문제(2026-07-28)와 같은 계열의 함정을 여기서도 만날
+뻔했다 - 최근 5개년으로 고쳐 정확히 일치시켰다.
+
+### 통합 - 스크리닝 코멘트에 합쳐 나간다, 실패는 종목 단위로만 격리
+
+`daily_screen_ci.py`의 `run_deep_dive()`가 통과 후보마다 심층분석을 돌려
+`reports/deep_screen/<TICKER>_<날짜>.json`에 저장하고, **전일 스냅샷과
+대조해 Gap·판정 변화를 함께 보고**한다(사용자가 요청한 "전일/과거 대비
+의미 있는 변화 탐지"). 한 종목의 SEC 데이터 이상(Model N/A 등)이 나머지
+종목이나 기본 스크리닝 보고를 막지 않도록 종목 단위로 예외를 격리했다.
+
+**워크플로에 `reports/deep_screen/` 전용 자동 커밋 단계를 추가했다**(`contents:
+write` 권한 신규) - 러너가 매번 새로 뜨므로 커밋하지 않으면 "전일 대비"
+비교가 영구히 `prior=None`이 된다. **오직 이 디렉터리만** 건드리며(엔진
+코드·ledger·CLAUDE.md는 이 경로로 절대 안 바뀐다), 판정이 아니라 SEC 원자료
+재계산 스냅샷이라 사람 검토 없이 쌓아도 안전하다는 판단이다 - 반대로 주관적
+판단이 필요한 `monitor/acknowledgements.json`(v3.64)은 여전히 사람이
+커밋한다. 이 구분(객관적 재계산 스냅샷은 자동 커밋 / 주관적 판단은 사람
+커밋)을 명확히 유지할 것.
+
+### 부수 정리
+
+`DEFAULT_NDTE`(0.406, ledger 34종목 실측 중앙값)를 `scripts/daily_screen.py`
+에서 `engine/screener.py`로 옮겼다 - `engine/deep_screen.py`도 같은 상수가
+필요한데, `engine/`이 `scripts/`를 참조하는 역방향 의존을 만들지 않기
+위함이다(`daily_screen.py`는 재export만 해 하위호환 유지).
+
+**검증**: 테스트 765 → **786개 전부 통과**(신규 21) · 34종목 골든재현 8지표
+**불일치 0건** · fingerprint `fbd34322…` **불변** · **ledger·매수리스트·공식
+판정 0건 수정** · `ENGINE_VERSION` v3.64 → **v3.65**.

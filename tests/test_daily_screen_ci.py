@@ -7,7 +7,10 @@ Playwright/실제 네트워크/시크릿은 타지 않는다 - 그건 GitHub Act
 깨지지 않았는지, 정크 필터·상수가 의도한 대로인지만 고정한다.
 """
 import importlib.util
+import os
 import pathlib
+import sys
+import types
 
 import pytest
 
@@ -144,6 +147,101 @@ def test_post_to_github_issue_no_extra_secret_needed_beyond_gh_token():
     params = list(inspect.signature(MOD.post_to_github_issue).parameters)
     assert params[:3] == ["token", "owner", "repo"]
     assert not any("notion" in p.lower() for p in params)
+
+
+# ── 심층분석 통합 (2026-08-23, v3.65) ────────────────────────────────
+def _fake_screen_result(ticker, market_cap=50_000_000_000):
+    """screen_all()이 반환하는 ScreenResult 흉내(테스트 전용)."""
+    from engine.screener import Candidate, ScreenResult
+    c = Candidate(ticker=ticker, name=ticker, market_cap=market_cap, fcf0=1,
+                  revenue_cagr_5y=0.1, fcf_cagr_5y=0.1, net_debt_to_ebitda=0.4,
+                  worst_yoy_revenue=0.0)
+    return ScreenResult(c, fcf_yield=0.05, implied_growth_est=0.03,
+                        binding_cagr=0.1, realistic_growth_est=0.09,
+                        expectation_gap_est=0.06, passed=True, tier="A")
+
+
+def test_run_deep_dive_writes_snapshot_and_detects_no_prior_change(tmp_path, monkeypatch):
+    monkeypatch.setattr(MOD, "DEEP_SCREEN_DIR", str(tmp_path))
+
+    def fake_fetch(ticker, today):
+        years = list(range(2015, 2026))
+        return {
+            "revenue_by_year": {y: 1000 * (1.1 ** i) for i, y in enumerate(years)},
+            "operating_cashflow_by_year": {y: 300 * (1.1 ** i) for i, y in enumerate(years)},
+            "capex_by_year": {y: 50 * (1.05 ** i) for i, y in enumerate(years)},
+            "operating_income_by_year": {y: 200 * (1.1 ** i) for i, y in enumerate(years)},
+        }, []
+
+    monkeypatch.setattr(MOD.ds, "fetch_deep_series", fake_fetch)
+    rows = MOD.run_deep_dive([_fake_screen_result("TEST")], "2026-08-23")
+    assert len(rows) == 1
+    assert rows[0]["ticker"] == "TEST"
+    assert "error" not in rows[0]
+    assert "change_vs_prior" not in rows[0]  # 첫 스냅샷이니 비교대상 없음
+    assert os.path.exists(os.path.join(str(tmp_path), "TEST_2026-08-23.json"))
+
+
+def test_run_deep_dive_detects_change_vs_prior_snapshot(tmp_path, monkeypatch):
+    monkeypatch.setattr(MOD, "DEEP_SCREEN_DIR", str(tmp_path))
+    years = list(range(2015, 2026))
+    series = {
+        "revenue_by_year": {y: 1000 * (1.1 ** i) for i, y in enumerate(years)},
+        "operating_cashflow_by_year": {y: 300 * (1.1 ** i) for i, y in enumerate(years)},
+        "capex_by_year": {y: 50 * (1.05 ** i) for i, y in enumerate(years)},
+        "operating_income_by_year": {y: 200 * (1.1 ** i) for i, y in enumerate(years)},
+    }
+    monkeypatch.setattr(MOD.ds, "fetch_deep_series", lambda t, d: (series, []))
+
+    MOD.run_deep_dive([_fake_screen_result("TEST")], "2026-08-20")
+    # 이틀 뒤 재실행 - 시가총액이 달라져 Gap도 달라진다
+    rows = MOD.run_deep_dive([_fake_screen_result("TEST", market_cap=40_000_000_000)],
+                             "2026-08-22")
+    assert "change_vs_prior" in rows[0]
+    assert rows[0]["change_vs_prior"]["prior_date"] == "2026-08-20"
+    assert rows[0]["change_vs_prior"]["gap_delta"] != 0
+
+
+def test_run_deep_dive_failure_is_per_ticker_not_fatal(monkeypatch, tmp_path):
+    """
+    한 종목의 SEC 데이터가 이상해도(Model N/A 등) 나머지·기본 스크리닝
+    보고는 계속 나가야 한다 - 예외가 전체를 죽이면 안 된다.
+    """
+    monkeypatch.setattr(MOD, "DEEP_SCREEN_DIR", str(tmp_path))
+    monkeypatch.setattr(MOD.ds, "fetch_deep_series",
+                        lambda t, d: (None, ["SEC 조회 실패"]))
+    rows = MOD.run_deep_dive([_fake_screen_result("BADTICKER")], "2026-08-23")
+    assert len(rows) == 1
+    assert "error" in rows[0]
+
+
+def test_format_deep_dive_section_handles_errors_and_empty():
+    assert MOD.format_deep_dive_section([]) == ""
+    section = MOD.format_deep_dive_section([{"ticker": "X", "error": "실패사유"}])
+    assert "실패사유" in section
+
+
+def test_post_to_github_issue_includes_deep_dive_section_when_present(monkeypatch):
+    """deep_rows가 있으면 코멘트 본문에 심층분석 섹션이 실제로 포함돼야 한다."""
+    captured = {}
+
+    def fake_get(url, headers=None, params=None, timeout=None):
+        return _FakeResponse(200, json_data=[{"number": 1, "title": MOD.ISSUE_TITLE}])
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        captured["body"] = json["body"]
+        return _FakeResponse(201)
+
+    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
+    monkeypatch.setitem(sys.modules, "requests", fake_requests)
+    monkeypatch.setattr(MOD, "build_monitor_section", lambda d: "")
+
+    deep_rows = [{"ticker": "AAA", "judgment": "저평가 가능성", "realistic_growth": 0.1,
+                  "implied_growth": 0.03, "gap": 0.07, "drs": 40.0,
+                  "lynch_type": "stalwart", "data_limitations": []}]
+    MOD.post_to_github_issue("tok", "o", "r", "2026-08-23", [], 0, None, deep_rows)
+    assert "심층분석" in captured["body"]
+    assert "AAA" in captured["body"]
 
 
 def test_ticker_extraction_deduplicates_across_pages(tmp_path):

@@ -36,14 +36,14 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from engine.data.providers.sec import SecCompanyFactsProvider
-from engine.screener import Candidate, format_table, screen_all
+from engine.screener import DEFAULT_NDTE, Candidate, format_table, screen_all
 
 CACHE_DIR = os.environ.get(
     "SEC_CACHE_DIR",
     "/tmp/claude-0/-home-user-IRS/1fb7a46a-ee0b-5b39-806f-ff7ee862da26/scratchpad/secfacts",
 )
-# ledger/ 34종목 실측 중앙값(2026-08-22) - screener.py ASSUMED_* 상수와 동일 원칙
-DEFAULT_NDTE = 0.406
+# DEFAULT_NDTE는 engine/screener.py로 이전됨(v3.65) - engine/deep_screen.py도
+# 같은 상수를 쓴다. 여기 이름은 하위호환을 위해 그대로 노출한다(재export).
 
 
 def _cached_facts(ticker):
@@ -139,6 +139,61 @@ def fetch_sec_fields(ticker, retrieved_at):
     return fields, limitations
 
 
+def fetch_deep_series(ticker, retrieved_at, n_years=11):
+    """
+    심층분석(engine/deep_screen.py)용 다년 원자료 - I/O 전담(계산은 하지 않는다).
+
+    fetch_sec_fields()는 CAGR 하나만 뽑으려고 6개년(5y span)만 가져오는데,
+    이 함수는 engine/pipeline.py의 실제 3y/5y/10y CAGR 계산과 동일한 창
+    (최대 11개년, 10y span 확보용)을 가져오고 operating_income도 추가한다.
+    계산은 전혀 하지 않는다 - 연도별 원자료 dict만 반환한다(순수 I/O).
+    """
+    facts = _cached_facts(ticker)
+    if facts is None:
+        return None, ["companyfacts 조회 실패(CIK 매핑 안 됨 또는 네트워크 오류)"]
+
+    this_year = int(retrieved_at[:4])
+    years = list(range(this_year - n_years, this_year))
+
+    provider = SecCompanyFactsProvider(
+        purpose="internal_research",
+        fetch_facts=lambda cik, ua=None: facts,
+        resolve_cik=lambda t, ua=None: "unused",
+    )
+    result = provider.fetch_annual_financials(
+        ticker,
+        metrics=("revenue", "operating_cashflow", "capex", "operating_income"),
+        fiscal_years=years, retrieved_at=retrieved_at,
+    )
+    by_metric = {}
+    for f in result.facts:
+        by_metric.setdefault(f.metric, {})[f.fiscal_year] = f.value
+
+    limitations = list(result.limitations)
+    rev = by_metric.get("revenue", {})
+    ocf = by_metric.get("operating_cashflow", {})
+    capex = by_metric.get("capex", {})
+    op_income = by_metric.get("operating_income", {})
+
+    common_years = sorted(set(rev) & set(ocf) & set(capex))
+    if len(common_years) < 2:
+        limitations.append(
+            f"매출·OCF·capex 공통 확보 연도가 {len(common_years)}개뿐 - 심층분석 불가")
+        return None, limitations
+
+    series = {
+        "revenue_by_year": {y: rev[y] for y in common_years},
+        "operating_cashflow_by_year": {y: ocf[y] for y in common_years},
+        "capex_by_year": {y: capex[y] for y in common_years},
+        # operating_income은 매출/OCF/capex보다 태그 커버리지가 좁을 수 있어
+        # common_years와 별도로 있는 연도만 넘긴다 - margin_volatility 계산
+        # 가능 연도만 자연히 좁아지고, 없다고 전체가 막히지 않는다.
+        "operating_income_by_year": {y: op_income[y] for y in common_years
+                                     if y in op_income},
+    }
+    return series, limitations
+
+
 def cmd_fetch(tickers):
     import datetime
     today = datetime.date.today().isoformat()
@@ -208,6 +263,36 @@ def cmd_score(raw_path, market_caps_path):
     print(f"\n-> {out_path}")
 
 
+def cmd_deep(ticker, market_cap, net_debt_to_ebitda=None):
+    """
+    단일 종목 심층분석(engine/deep_screen.py) - CLI 수동 실행용.
+    market_cap은 원(달러) 단위 그대로 전달할 것(engine/deep_screen.py 참고).
+    """
+    import datetime
+
+    from engine.deep_screen import deep_screen
+
+    today = datetime.date.today().isoformat()
+    series, limitations = fetch_deep_series(ticker.upper(), today)
+    if series is None:
+        print(f"데이터 확보 실패: {limitations}")
+        return
+    r = deep_screen(ticker.upper(), series, market_cap=float(market_cap),
+                    net_debt_to_ebitda=net_debt_to_ebitda)
+    print(json.dumps({
+        "ticker": r.ticker, "final_year": r.final_year,
+        "n_years_available": r.n_years_available,
+        "revenue_cagr_3y": r.revenue_cagr_3y, "revenue_cagr_5y": r.revenue_cagr_5y,
+        "revenue_cagr_10y": r.revenue_cagr_10y,
+        "revenue_cagr_10y_is_fallback": r.revenue_cagr_10y_is_fallback,
+        "fcf_cagr_5y": r.fcf_cagr_5y, "drs": r.drs, "lynch_type": r.lynch_type,
+        "structural_discount_pct": r.structural_discount_pct,
+        "realistic_growth": r.realistic_growth, "implied_growth": r.implied_growth,
+        "gap": r.gap, "judgment": r.judgment,
+        "assumed_inputs": r.assumed_inputs, "data_limitations": r.data_limitations,
+    }, ensure_ascii=False, indent=2))
+
+
 def main():
     if len(sys.argv) < 2:
         print(__doc__)
@@ -216,6 +301,9 @@ def main():
         cmd_fetch(sys.argv[2:])
     elif sys.argv[1] == "score":
         cmd_score(sys.argv[2], sys.argv[3])
+    elif sys.argv[1] == "deep":
+        ndte = float(sys.argv[4]) if len(sys.argv) > 4 else None
+        cmd_deep(sys.argv[2], sys.argv[3], ndte)
     else:
         print(__doc__)
 

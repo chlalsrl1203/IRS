@@ -192,6 +192,12 @@ ASSUMED_MARGIN_VOLATILITY = 8.0          # ledger 실측 중앙값
 ASSUMED_COMPETITION_INTENSITY = 12.0     # ledger 실측 중앙값
 ASSUMED_REVENUE_VOLATILITY = 4.0         # ledger 실측 중앙값(안정성장주 기준)
 ASSUMED_DEMAND_SENSITIVITY = 0.15        # ledger 실측 중앙값
+# ledger 34종목 실측 중앙값(2026-08-22 계산) - scripts/daily_screen.py와
+# engine/deep_screen.py가 공유한다. 원래 daily_screen.py에만 있었는데
+# engine/deep_screen.py(v3.65)가 필요해지며 여기로 옮겼다 - engine/이
+# scripts/를 참조하는 역방향 의존을 만들지 않기 위함(scripts/는 engine/을
+# 참조하는 게 정상 방향이다).
+DEFAULT_NDTE = 0.406
 CAPEX_SPIKE_THRESHOLD = 0.03             # v3.7 growth_investment_capex_delta_threshold와 동일
 
 # ======================================================================

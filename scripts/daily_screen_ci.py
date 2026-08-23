@@ -177,6 +177,120 @@ def _find_or_create_issue(token, owner, repo):
     return r.json()["number"]
 
 
+DEEP_SCREEN_DIR = os.path.join(os.path.dirname(_HERE), "reports", "deep_screen")
+
+
+def run_deep_dive(passed_results, today_str):
+    """
+    2026-08-23(v3.65): screener 통과 후보(보통 0~2종목/일)에 대해
+    engine/deep_screen.py로 자동 심층분석을 돌린다.
+
+    이 단계가 하는 일과 하지 않는 일을 명확히 구분한다:
+    - 한다: SEC에서 최대 11개년을 다시 받아 실제 3y/5y/10y CAGR·구조적할인율·
+      Realistic Growth를 공식 엔진 함수로 재계산(screener.py의 6개년/상수
+      근사보다 훨씬 정밀함).
+    - 안 한다: model_choice_reason·competition_intensity·demand_sensitivity_pct
+      같은 정성적 판단을 지어내지 않는다 - engine/deep_screen.py 자체가
+      LLM 없이 이 판단들을 corpus 중앙값으로 고정하도록 설계돼 있다(문서
+      참고). 그래서 이 출력도 여전히 "심층 **추정**"이지 공식 판정이 아니다.
+
+    실패는 개별 종목 단위로만 처리한다 - 한 종목의 SEC 데이터가 이상해도
+    (`Model N/A`, 창 부족 등) 나머지 종목·기본 스크리닝 보고는 계속 나가야
+    한다.
+    """
+    from engine.deep_screen import deep_screen
+
+    os.makedirs(DEEP_SCREEN_DIR, exist_ok=True)
+    rows = []
+    for r in passed_results:
+        ticker = r.candidate.ticker
+        try:
+            series, limitations = ds.fetch_deep_series(ticker, today_str)
+            if series is None:
+                rows.append({"ticker": ticker, "error": f"데이터 부족: {limitations}"})
+                continue
+            deep = deep_screen(ticker, series, market_cap=r.candidate.market_cap)
+        except Exception as e:  # noqa: BLE001 - 종목 하나의 실패가 전체를 막으면 안 됨
+            log(f"[deep] {ticker} 심층분석 실패: {e!r}")
+            rows.append({"ticker": ticker, "error": repr(e)})
+            continue
+
+        row = {
+            "ticker": ticker, "date": today_str,
+            "revenue_cagr_3y": deep.revenue_cagr_3y,
+            "revenue_cagr_5y": deep.revenue_cagr_5y,
+            "revenue_cagr_10y": deep.revenue_cagr_10y,
+            "drs": deep.drs, "lynch_type": deep.lynch_type,
+            "structural_discount_pct": deep.structural_discount_pct,
+            "realistic_growth": deep.realistic_growth,
+            "implied_growth": deep.implied_growth, "gap": deep.gap,
+            "judgment": deep.judgment,
+            "assumed_inputs": deep.assumed_inputs,
+            "data_limitations": deep.data_limitations,
+        }
+
+        # 전일 대비 의미있는 변화 탐지 - 같은 종목의 가장 최근 스냅샷과 대조.
+        # 통과 후보가 하루이틀 연속으로 뜨는 경우(가격이 더 빠지는 중 등)에만
+        # 발생하므로 대부분은 prior=None이고 그건 정상이다.
+        prior = _latest_deep_snapshot(ticker, before_date=today_str)
+        if prior:
+            row["change_vs_prior"] = {
+                "prior_date": prior["date"],
+                "gap_delta": deep.gap - prior["gap"],
+                "realistic_growth_delta": deep.realistic_growth - prior["realistic_growth"],
+                "judgment_changed": deep.judgment != prior["judgment"],
+            }
+
+        out_path = os.path.join(DEEP_SCREEN_DIR, f"{ticker}_{today_str}.json")
+        with open(out_path, "w", encoding="utf-8") as f:
+            json.dump(row, f, ensure_ascii=False, indent=2)
+        rows.append(row)
+    return rows
+
+
+def _latest_deep_snapshot(ticker, before_date):
+    """같은 종목의 직전 심층분석 스냅샷(있으면)을 읽는다."""
+    if not os.path.isdir(DEEP_SCREEN_DIR):
+        return None
+    candidates = sorted(
+        f for f in os.listdir(DEEP_SCREEN_DIR)
+        if f.startswith(f"{ticker}_") and f.endswith(".json") and f < f"{ticker}_{before_date}.json"
+    )
+    if not candidates:
+        return None
+    with open(os.path.join(DEEP_SCREEN_DIR, candidates[-1]), encoding="utf-8") as f:
+        return json.load(f)
+
+
+def format_deep_dive_section(rows):
+    if not rows:
+        return ""
+    lines = ["\n### 🔬 통과 후보 심층분석(자동, 1차 추정 - 공식판정 아님)"]
+    for row in rows:
+        if "error" in row:
+            lines.append(f"- **{row['ticker']}**: 심층분석 실패 - {row['error']}")
+            continue
+        lines.append(
+            f"- **{row['ticker']}** [{row['judgment']}] "
+            f"현실성장(심층) {row['realistic_growth']*100:.2f}% · "
+            f"내재성장(Gordon) {row['implied_growth']*100:.2f}% · "
+            f"Gap {row['gap']*100:+.2f}%p · DRS {row['drs']:.1f} · "
+            f"{row['lynch_type']}"
+        )
+        cvp = row.get("change_vs_prior")
+        if cvp:
+            lines.append(
+                f"  전일({cvp['prior_date']}) 대비 Gap {cvp['gap_delta']*100:+.2f}%p"
+                + (" ⚠️ 판정변화" if cvp["judgment_changed"] else ""))
+        if row["data_limitations"]:
+            lines.append(f"  ⚠️ {row['data_limitations'][0]}")
+    lines.append(
+        "\n<sub>가정: 경쟁강도·수요민감도·순부채는 corpus 중앙값(정성조사 "
+        "안 함), 모델은 항상 single_stage(Gordon). run_analysis()로 정식 "
+        "확정할 것.</sub>")
+    return "\n".join(lines)
+
+
 def build_monitor_section(today_str):
     """
     보유종목 감시 섹션(v3.64). 스크리닝과 **같은 코멘트**에 실어 하루 알림을
@@ -198,7 +312,7 @@ def build_monitor_section(today_str):
 
 
 def post_to_github_issue(token, owner, repo, date_str, passed_results,
-                          skipped_count, note):
+                          skipped_count, note, deep_rows=None):
     import requests
 
     lines = [f"## {date_str} 실행 결과"]
@@ -219,6 +333,8 @@ def post_to_github_issue(token, owner, repo, date_str, passed_results,
         f"\n(SEC 재무데이터 확보 실패로 제외된 종목 {skipped_count}개 - "
         f"1차 추정치일 뿐 정식 판정 아님)"
     )
+    if deep_rows:
+        lines.append(format_deep_dive_section(deep_rows))
     lines.append("\n---\n")
     lines.append(build_monitor_section(date_str))
 
@@ -302,10 +418,23 @@ def main():
             log(f"  PASS {r.candidate.ticker} [{r.tier}] "
                 f"Gap(추정) {r.expectation_gap_est*100:+.2f}%p")
 
+    deep_rows = []
+    if passed:
+        log(f"[deep] 통과 후보 {len(passed)}종목 심층분석 시작")
+        try:
+            deep_rows = run_deep_dive(passed, today)
+        except Exception as e:  # noqa: BLE001 - 심층분석 실패가 스크리닝 보고를 막으면 안 됨
+            log(f"[deep] 전체 실패(스크리닝 결과는 그대로 보고): {e!r}")
+            deep_rows = []
+        for row in deep_rows:
+            if "error" not in row:
+                log(f"  DEEP {row['ticker']} [{row['judgment']}] "
+                    f"Gap(심층) {row['gap']*100:+.2f}%p")
+
     if gh_token and "/" in repo_full:
         owner, repo = repo_full.split("/", 1)
         post_to_github_issue(gh_token, owner, repo, today, passed,
-                              len(sec_out["skipped"]), note)
+                              len(sec_out["skipped"]), note, deep_rows)
     else:
         log("[GitHub Issue] GITHUB_TOKEN/GITHUB_REPOSITORY 미확보 - 기록을 건너뛴다"
             "(로컬 실행 등 Actions 환경이 아닐 때 발생 가능).")
@@ -315,6 +444,7 @@ def main():
         json.dump({
             "date": today, "raw_tickers": raw_tickers, "sec": sec_out,
             "passed": [r.candidate.ticker for r in passed],
+            "deep_screen": deep_rows,
         }, f, ensure_ascii=False, indent=2)
     log(f"-> {out_path}")
 
