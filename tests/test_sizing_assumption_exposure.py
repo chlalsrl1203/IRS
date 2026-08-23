@@ -85,6 +85,8 @@ def test_audit_declares_it_is_not_a_proposal():
 def test_bucket_structure_is_the_largest_unvalidated_exposure():
     """
     2026-08-21 실측: 버킷 구조(매핑+목표비중)가 turnover 18.82%로 최대다.
+    (v3.67 규모 조건부 캡으로 비중이 바뀐 뒤 17.92%로 이동했으나 순위는 불변 -
+     원 관측치를 지우지 않고 남긴다. 이 테스트는 절대값이 아니라 순위를 고정한다.)
     정성 심층조사 결과(CONFIDENCE_ADJ, 2.33%)보다 8배 크다 - 이 프로젝트가
     가장 많은 노력을 들인 축이 자본에는 가장 적게 영향을 준다는 뜻이다.
     """

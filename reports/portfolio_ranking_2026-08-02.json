@@ -1,22 +1,5 @@
 [
   {
-    "ticker": "PDD",
-    "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
-    "grade": "S",
-    "grade_label": "적극매수",
-    "judgment": "저평가 가능성",
-    "gap_pct": 29.16229248046875,
-    "realistic_growth_pct": 25.0,
-    "implied_growth_pct": -4.16229248046875,
-    "drs": 45.4,
-    "rar": 2.475741414411831,
-    "confidence": 89,
-    "robust": true,
-    "cap_bound": true,
-    "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-02"
-  },
-  {
     "ticker": "ACGL",
     "company_name": "Arch Capital Group Ltd.",
     "grade": "S",
@@ -51,21 +34,21 @@
     "analyzed_at": "2026-08-02"
   },
   {
-    "ticker": "PGR",
-    "company_name": "The Progressive Corporation",
+    "ticker": "PDD",
+    "company_name": "PDD Holdings Inc. (Pinduoduo/Temu)",
     "grade": "S",
     "grade_label": "적극매수",
     "judgment": "저평가 가능성",
-    "gap_pct": 21.757485287419527,
-    "realistic_growth_pct": 16.865269558659758,
-    "implied_growth_pct": -4.8922157287597665,
-    "drs": 46.8,
-    "rar": 1.893749410178316,
-    "confidence": 94,
+    "gap_pct": 22.03729248046872,
+    "realistic_growth_pct": 17.874999999999975,
+    "implied_growth_pct": -4.16229248046875,
+    "drs": 45.4,
+    "rar": 1.956142141831777,
+    "confidence": 89,
     "robust": true,
-    "cap_bound": false,
+    "cap_bound": true,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-03"
+    "analyzed_at": "2026-08-23"
   },
   {
     "ticker": "DUOL",
@@ -85,21 +68,21 @@
     "analyzed_at": "2026-08-02"
   },
   {
-    "ticker": "SE",
-    "company_name": "Sea Limited",
+    "ticker": "PGR",
+    "company_name": "The Progressive Corporation",
     "grade": "S",
     "grade_label": "적극매수",
     "judgment": "저평가 가능성",
-    "gap_pct": 19.18031530011122,
-    "realistic_growth_pct": 23.559721275453015,
-    "implied_growth_pct": 4.379405975341795,
-    "drs": 52.400000000000006,
-    "rar": 1.2207772070369387,
+    "gap_pct": 17.642215728759762,
+    "realistic_growth_pct": 12.749999999999995,
+    "implied_growth_pct": -4.8922157287597665,
+    "drs": 46.8,
+    "rar": 1.4115975573531248,
     "confidence": 94,
     "robust": true,
     "cap_bound": false,
     "lynch_type": "fast_grower",
-    "analyzed_at": "2026-08-03"
+    "analyzed_at": "2026-08-23"
   },
   {
     "ticker": "TTD",
@@ -117,6 +100,23 @@
     "cap_bound": false,
     "lynch_type": "fast_grower",
     "analyzed_at": "2026-08-03"
+  },
+  {
+    "ticker": "SE",
+    "company_name": "Sea Limited",
+    "grade": "A",
+    "grade_label": "매수",
+    "judgment": "저평가 가능성",
+    "gap_pct": 13.49559402465818,
+    "realistic_growth_pct": 17.874999999999975,
+    "implied_growth_pct": 4.379405975341795,
+    "drs": 52.400000000000006,
+    "rar": 0.9373710799182982,
+    "confidence": 94,
+    "robust": true,
+    "cap_bound": false,
+    "lynch_type": "fast_grower",
+    "analyzed_at": "2026-08-23"
   },
   {
     "ticker": "GEN",
@@ -236,6 +236,23 @@
     "cap_bound": false,
     "lynch_type": "stalwart",
     "analyzed_at": "2026-08-02"
+  },
+  {
+    "ticker": "BSX",
+    "company_name": "Boston Scientific Corporation",
+    "grade": "B",
+    "grade_label": "관찰대상(매수리스트 미포함)",
+    "judgment": "저평가 가능성",
+    "gap_pct": 5.865291965447208,
+    "realistic_growth_pct": 13.863186252556584,
+    "implied_growth_pct": 7.997894287109375,
+    "drs": 43.8,
+    "rar": 0.49262302607308095,
+    "confidence": 94,
+    "robust": true,
+    "cap_bound": false,
+    "lynch_type": "cyclical",
+    "analyzed_at": "2026-08-13"
   },
   {
     "ticker": "BSY",

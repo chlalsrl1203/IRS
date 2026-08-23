@@ -4,7 +4,7 @@
   "held_but_model_dependent": [
     {
       "ticker": "BRO",
-      "weight_final": 0.06749999999999999,
+      "weight_final": 0.06189992384695955,
       "grade": "A",
       "grade_alternative": "B",
       "gap_pct": 7.427728925631566,
@@ -14,6 +14,15 @@
     }
   ],
   "excluded_but_would_enter": [
+    {
+      "ticker": "BSX",
+      "grade": "B",
+      "grade_alternative": "A",
+      "gap_pct": 5.865291965447208,
+      "gap_alternative_pct": 8.075153676254047,
+      "model_chosen": "two_stage",
+      "reason_is_prior_record": false
+    },
     {
       "ticker": "DSGX",
       "grade": "C",
@@ -33,20 +42,13 @@
       "reason_is_prior_record": false
     }
   ],
-  "missing_from_ranking": [
-    {
-      "ticker": "BSX",
-      "gap_pct": 5.865291965447208,
-      "judgment": "저평가 가능성",
-      "analyzed_at": "2026-08-13"
-    }
-  ],
+  "missing_from_ranking": [],
   "sbc": {
     "status": "확인",
     "held_but_sbc_dependent": [
       {
         "ticker": "TCOM",
-        "weight_final": 0.10249999999999998,
+        "weight_final": 0.10362001523060808,
         "grade": "A",
         "grade_sbc_adjusted": "B",
         "signal_verdict": "CANCELLED",
@@ -58,7 +60,7 @@
       },
       {
         "ticker": "WDAY",
-        "weight_final": 0.0451059739392835,
+        "weight_final": 0.051088880993564505,
         "grade": "A",
         "grade_sbc_adjusted": "C",
         "signal_verdict": "SURVIVES",
@@ -70,7 +72,7 @@
       },
       {
         "ticker": "TTD",
-        "weight_final": 0.026973663318205443,
+        "weight_final": 0.03055148032230173,
         "grade": "S",
         "grade_sbc_adjusted": "B",
         "signal_verdict": "SURVIVES",

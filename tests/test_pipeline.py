@@ -1629,3 +1629,103 @@ def test_cross_check_does_not_alter_official_numbers(tmp_path):
     assert saved["prior_cross_check"]["warnings"], "테스트 전제(경고 발생)가 깨졌다"
     for key in ("expectation_gap", "rar", "judgment"):
         assert saved[key] == result[key]
+
+
+# ── v3.67: 규모 조건부 성장상한 (2026-08-23 사용자 승인) ────────────────
+def test_size_cap_does_not_replace_lynch_cap_but_takes_the_stricter():
+    """
+    린치 캡을 **대체하지 않고 함께 적용**한다(둘 중 엄격한 쪽). 대체하면
+    린치 캡이 더 낮은 종목의 동작이 조용히 느슨해진다.
+    """
+    import glob
+    import json
+
+    from engine.pipeline import run_analysis
+    from engine.thesis_monitor import inputs_from_ledger
+
+    # BRO: stalwart 12% 캡이 규모캡(3000-4500 -> 명목 23.0%)보다 엄격
+    d = json.load(open(glob.glob("ledger/BRO_*.json")[-1], encoding="utf-8"))
+    r = run_analysis(inputs_from_ledger(d))
+    assert r["growth"]["realistic_growth"] == pytest.approx(0.12, abs=1e-9)
+    assert "size_conditioned_cap_applied" not in r["growth"]["breakdown"]
+
+
+def test_size_cap_skipped_without_fx_rate_rather_than_guessing():
+    """
+    외화 표시인데 환율이 없으면 **적용하지 않고 그 사실을 남긴다.** 임의
+    환율을 지어내면 규모 구간이 잘못 배정돼 상한이 조용히 틀어진다
+    (이 프로젝트의 추측 금지 원칙).
+    """
+    import dataclasses
+    import glob
+    import json
+
+    from engine.pipeline import run_analysis
+    from engine.thesis_monitor import inputs_from_ledger
+
+    d = json.load(open(glob.glob("ledger/PDD_*.json")[-1], encoding="utf-8"))
+    inp = inputs_from_ledger(d)
+    assert inp.currency == "CNY"
+    no_fx = dataclasses.replace(inp, usd_fx_rate=None)
+    r = run_analysis(no_fx)
+    assert "size_conditioned_cap_applied" not in r["growth"]["breakdown"]
+    assert any("규모 조건부 상한 미적용" in m for m in r["data_limitations"])
+
+
+def test_size_cap_applies_with_fx_rate_and_is_recorded():
+    """PDD - 이 연구의 핵심 사례. 환율이 있으면 적용되고 근거가 기록돼야 한다."""
+    import glob
+    import json
+
+    from engine.pipeline import run_analysis
+    from engine.thesis_monitor import inputs_from_ledger
+
+    d = json.load(open(glob.glob("ledger/PDD_*.json")[-1], encoding="utf-8"))
+    inp = inputs_from_ledger(d)
+    assert inp.usd_fx_rate == pytest.approx(7.2)
+    r = run_analysis(inp)
+    sc = r["growth"]["breakdown"]["size_conditioned_cap_applied"]
+    assert sc["size_class"] == "25000+"
+    assert r["growth"]["realistic_growth"] == pytest.approx(0.1787, abs=1e-4)
+    assert r["growth"]["breakdown"]["realistic_growth_before_size_cap"] == pytest.approx(0.25)
+    assert any("규모 조건부 상한 적용" in m for m in r["data_limitations"])
+
+
+def test_realistic_growth_override_bypasses_size_cap():
+    """
+    오버라이드는 분석자가 근거를 갖고 직접 넣은 값이므로 규모 캡도 우회한다
+    (v3.28이 CAGR·린치캡을 우회하게 만든 것과 같은 이유). ROP가 실사례다.
+    """
+    import glob
+    import json
+
+    from engine.pipeline import run_analysis
+    from engine.thesis_monitor import inputs_from_ledger
+
+    d = json.load(open(glob.glob("ledger/ROP_*.json")[-1], encoding="utf-8"))
+    inp = inputs_from_ledger(d)
+    assert inp.realistic_growth_override is not None
+    r = run_analysis(inp)
+    assert r["growth"]["realistic_growth"] == pytest.approx(inp.realistic_growth_override)
+    assert "size_conditioned_cap_applied" not in r["growth"]["breakdown"]
+
+
+def test_approved_three_tickers_reproduce_and_others_unchanged():
+    """
+    2026-08-23 승인 범위 그대로인지 고정한다 - PDD·PGR·SE 3종목만 규모캡이
+    걸리고 나머지 31종목은 안 걸려야 한다. 이 집합이 커지면 승인 범위를
+    벗어난 것이다.
+    """
+    import glob
+    import json
+
+    from engine.pipeline import run_analysis
+    from engine.thesis_monitor import inputs_from_ledger
+
+    applied = set()
+    for p in sorted(glob.glob("ledger/*.json")):
+        d = json.load(open(p, encoding="utf-8"))
+        r = run_analysis(inputs_from_ledger(d))
+        if "size_conditioned_cap_applied" in r["growth"]["breakdown"]:
+            applied.add(d["meta"]["ticker"])
+    assert applied == {"PDD", "PGR", "SE"}, f"승인 범위를 벗어남: {applied}"

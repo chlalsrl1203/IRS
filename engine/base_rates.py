@@ -475,6 +475,66 @@ def assess_growth_plausibility(sales_nominal_usd: float,
     }
 
 
+#: 규모 조건부 성장상한이 허용하는 최소 base rate(%).
+#: ⚠️ **이 컷은 검증된 값이 아니다.** Mauboussin은 분포를 보라고 했지 어느
+#: base rate에서 "과도한 낙관"으로 부를지는 주지 않았다. 1.0%는 "100곳 중
+#: 1곳은 해냈다"는 서술적 기준이며, 2026-08-23 사용자 승인으로 채택됐다
+#: (승인 시점 실측 영향: PDD·PGR·SE 3종목, 매수비중 28.46%, SE가 S→A 강등).
+#: 값을 바꾸면 즉시 자본이 재배분되므로 임의 조정 금지.
+MIN_BASE_RATE_FOR_CAP = 1.0
+
+
+def size_conditioned_growth_cap(sales_nominal_usd: float,
+                                min_base_rate_pct: float = MIN_BASE_RATE_FOR_CAP,
+                                horizon_years: int = 10,
+                                inflation: float = DEFAULT_INFLATION,
+                                deflator: float = DEFAULT_DEFLATOR_2025_TO_2015) -> dict:
+    """
+    이 회사 **규모**에서 역사적으로 최소 `min_base_rate_pct`% 이상의 기업이
+    달성한 가장 높은 성장률(명목, 소수)을 돌려준다.
+
+    왜 필요한가: `LYNCH_TYPE_CAPS`의 fast_grower 25%는 린치 원저서의 분류
+    기술어에서 왔는데(2026-08-23 확인), 린치는 그 유형을 **"small, aggressive
+    companies"**로 한정했다. IRS는 그 조건을 떨어뜨리고 규모와 무관하게
+    적용했고, 그 결과 같은 25%의 10년 base rate가 DUOL($1.0B) 3.5% vs
+    PDD($60B) 0.2%로 17.5배 갈렸다.
+
+    ⚠️ 반환값은 **명목**이다(표는 실질이므로 내부에서 환산한다). Realistic
+    Growth가 명목이라 그대로 비교할 수 있어야 하기 때문 - 이 변환을 호출측에
+    맡기면 v3.35 실질/명목 함정이 재발한다.
+    """
+    sales_2015 = deflate_to_2015(sales_nominal_usd, deflator)
+    size_class = size_class_for(sales_2015)
+    best_real = None
+    for name, lo, hi in GROWTH_BINS:
+        if lo == float("-inf"):
+            continue
+        if base_rate_at_least(size_class, lo, horizon_years) >= min_base_rate_pct:
+            best_real = lo
+    if best_real is None:
+        # 어떤 성장률도 컷을 못 넘기는 경우(이론상) - 캡을 걸지 않는다.
+        return {"cap_nominal": None, "size_class": size_class,
+                "cap_real_pct": None, "min_base_rate_pct": min_base_rate_pct,
+                "note": "이 규모 구간에서 컷을 넘는 성장구간이 없어 캡 미적용"}
+    cap_nominal = (1.0 + best_real / 100.0) * (1.0 + inflation) - 1.0
+    return {
+        "cap_nominal": cap_nominal,
+        "cap_real_pct": best_real,
+        "size_class": size_class,
+        "sales_2015_usd_mn": round(sales_2015, 1),
+        "min_base_rate_pct": min_base_rate_pct,
+        "base_rate_at_cap_pct": base_rate_at_least(size_class, best_real, horizon_years),
+        "horizon_years": horizon_years,
+        "inflation_assumed": inflation,
+        "note": (
+            f"매출규모 {size_class} 구간에서 실질 {best_real:.0f}% 이상을 "
+            f"{horizon_years}년간 유지한 기업이 "
+            f"{base_rate_at_least(size_class, best_real, horizon_years):.1f}%"
+            f"(컷 {min_base_rate_pct}% 이상)라 명목 {cap_nominal*100:.2f}%를 상한으로 둔다"
+        ),
+    }
+
+
 def format_plausibility(a: dict) -> str:
     """사람이 읽는 한 줄."""
     return (

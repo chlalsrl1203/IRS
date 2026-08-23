@@ -93,6 +93,15 @@ def build_inputs() -> AnalysisInputs:
         # 문제없었지만(감사에서 확인), 이제 명시적으로 기록한다.
         currency="CNY",
 
+        # v3.67(2026-08-23): 규모 조건부 성장상한(engine/base_rates.py)이 쓰는
+        # USD 환산율. base rate 표가 USD 매출 기준이라 이 값이 없으면 매출
+        # 규모 구간을 배정할 수 없어 상한이 **적용되지 않는다**(임의 환율을
+        # 지어내지 않는다는 원칙). PDD는 이 연구의 핵심 사례라(매출 $60B
+        # 규모에서 25% 성장의 10년 base rate가 0.2%) 명시적으로 채운다.
+        # 1 USD = 7.2 CNY - 2026년 기준 대략치이며, decile 폭이 넓어
+        # ±10% 오차로는 구간 배정($25B 초과)이 바뀌지 않는다.
+        usd_fx_rate=7.2,
+
         competitor_threat_weights=[0.45, 0.40, 0.30],
         market_share_trend_pp_per_year=-1.0,
         active_antitrust_or_regulatory_case=True,

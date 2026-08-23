@@ -25,6 +25,7 @@ import os
 from dataclasses import dataclass, field, asdict
 from datetime import date, datetime, timezone
 
+from engine.base_rates import size_conditioned_growth_cap
 from engine.expectation_gap_engine import (
     DRSInputs,
     ENGINE_VERSION,
@@ -218,6 +219,14 @@ class AnalysisInputs:
     # 새 ledger부터 명시적으로 남긴다).
     price_at_analysis: float = None
     currency: str = "USD"
+
+    # v3.67: 규모 조건부 성장상한(engine/base_rates.py)이 쓰는 USD 환산율.
+    # base rate 표가 USD 매출 기준이라 외화 표시 기업은 규모 구간을 배정하려면
+    # 환산이 필요하다. 1 USD당 현지통화 단위(예: CNY면 7.2).
+    # ⚠️ currency != "USD"인데 이 값이 없으면 **규모 상한을 적용하지 않고**
+    # 그 사실을 data_limitations에 남긴다 - 임의 환율을 지어내 규모 구간을
+    # 잘못 배정하면 상한이 조용히 틀어지기 때문(추측 금지 원칙).
+    usd_fx_rate: float = None
 
     # ── 값 단위 출처 기록 - v3.50에서 배선(계약서 §6) ─────────────────────
     # `data_sources`(자유 문자열)로는 "FY2023 매출이 어느 공시에서 왔고 언제
@@ -754,6 +763,51 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
             f"결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 "
             f"자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
         )
+
+    # ── v3.67: 규모 조건부 성장상한 (2026-08-23 사용자 승인) ──────────────
+    # LYNCH_TYPE_CAPS의 fast_grower 25%는 린치 원저서의 분류 기술어에서 왔고
+    # (2026-08-23 출처 특정), 린치는 그 유형을 "small, aggressive companies"로
+    # **한정**했다. IRS가 그 조건만 떨어뜨린 결과 같은 25%의 10년 base rate가
+    # DUOL($1.0B) 3.5% vs PDD($60B) 0.2%로 17.5배 갈렸다.
+    #
+    # 린치 캡을 **대체하지 않고 함께 적용**한다(둘 중 더 엄격한 쪽) - 기존 캡이
+    # 더 낮은 종목은 동작이 그대로 유지되므로 변경 범위가 최소화된다.
+    #
+    # ⚠️ 승인 시점 실측 영향: PDD·PGR·SE 3종목(매수비중 28.46%), SE가 S→A 강등.
+    # 3단계 판정과 매수 유니버스(S/A) 이탈은 없다.
+    size_cap_info = None
+    if not inputs.realistic_growth_override:
+        fx = inputs.usd_fx_rate
+        if fx is None and inputs.currency == "USD":
+            fx = 1.0
+        if fx is None:
+            data_limitations.append(
+                f"[규모 조건부 상한 미적용] currency={inputs.currency}인데 "
+                f"usd_fx_rate가 없어 매출 규모 구간을 배정할 수 없다. 임의 "
+                f"환율을 지어내면 상한이 조용히 틀어지므로 적용하지 않는다 - "
+                f"이 종목은 린치 유형 캡만 적용된 상태다."
+            )
+        else:
+            try:
+                size_cap_info = size_conditioned_growth_cap(rev[years[-1]] / fx)
+            except (ValueError, KeyError, ZeroDivisionError) as e:  # noqa: BLE001
+                data_limitations.append(f"[규모 조건부 상한 계산 실패] {e!r}")
+        if size_cap_info and size_cap_info["cap_nominal"] is not None:
+            cap_n = size_cap_info["cap_nominal"]
+            if realistic_growth > cap_n:
+                before = realistic_growth
+                realistic_growth = cap_n
+                growth_breakdown["size_conditioned_cap_applied"] = size_cap_info
+                growth_breakdown["realistic_growth_before_size_cap"] = before
+                data_limitations.append(
+                    f"[규모 조건부 상한 적용] Realistic Growth를 "
+                    f"{before*100:.2f}% -> {cap_n*100:.2f}%로 낮췄다. "
+                    f"{size_cap_info['note']}. 출처: Credit Suisse HOLT "
+                    f"1950-2015(소멸기업 포함). 이 상한은 린치 유형 캡을 "
+                    f"대체하지 않고 함께 적용된 것이며, 컷"
+                    f"({size_cap_info['min_base_rate_pct']}%)은 검증된 값이 "
+                    f"아니라 2026-08-23 사용자 승인으로 채택된 서술적 기준이다."
+                )
 
     # ── v3.28: Realistic Growth 직접 오버라이드 배선 ────────────────────
     # 위 캡바인딩 경고까지 전부 계산된 뒤 적용한다 - "원래는 캡이 걸렸었다"는

@@ -202,3 +202,66 @@ def test_mega_cap_high_growth_has_no_precedent():
 def test_format_is_readable():
     s = format_plausibility(assess_growth_plausibility(5_000_000_000, 0.12))
     assert "%" in s and "중앙값" in s
+
+
+# ── 규모 조건부 성장상한 (v3.67, 2026-08-23 사용자 승인) ─────────────
+from engine.base_rates import (  # noqa: E402
+    MIN_BASE_RATE_FOR_CAP, size_conditioned_growth_cap,
+)
+
+
+def test_size_cap_returns_nominal_not_real():
+    """
+    반환값이 실질이면 명목 Realistic Growth와 비교할 때 인플레율만큼 조용히
+    느슨해진다(v3.35 함정). 명목이 실질보다 커야 한다.
+    """
+    c = size_conditioned_growth_cap(1_000_000_000)
+    assert c["cap_nominal"] * 100 > c["cap_real_pct"]
+    expected = (1 + c["cap_real_pct"] / 100) * (1 + c["inflation_assumed"]) - 1
+    assert c["cap_nominal"] == pytest.approx(expected)
+
+
+def test_size_cap_declines_with_company_size():
+    """Mauboussin의 핵심 관측이 캡에 실제로 반영되는가."""
+    small = size_conditioned_growth_cap(800_000_000)["cap_nominal"]
+    mid = size_conditioned_growth_cap(20_000_000_000)["cap_nominal"]
+    mega = size_conditioned_growth_cap(100_000_000_000)["cap_nominal"]
+    assert small > mid > mega
+
+
+def test_size_cap_always_clears_the_configured_threshold():
+    for sales in (2e8, 1e9, 5e9, 3e10, 2e11):
+        c = size_conditioned_growth_cap(sales)
+        assert c["base_rate_at_cap_pct"] >= MIN_BASE_RATE_FOR_CAP
+
+
+def test_threshold_is_documented_as_unvalidated():
+    """
+    1.0%는 검증된 값이 아니라 승인으로 채택된 서술적 기준이다 - 그 사실이
+    코드에 남아 있지 않으면 다음 분석자가 실증된 값으로 오해한다.
+    """
+    import engine.base_rates as br
+    src = br.__dict__["__doc__"] or ""
+    import inspect
+    body = inspect.getsource(br)
+    assert "검증된 값이 아니다" in body
+    assert MIN_BASE_RATE_FOR_CAP == 1.0
+
+
+def test_approved_impact_reproduces_exactly():
+    """
+    2026-08-23 승인 시점에 사용자에게 보고한 캡 값이 그대로 나오는지 고정한다.
+    이 값이 바뀌면 승인 근거가 달라진 것이다.
+    """
+    # PDD: 매출 CNY 431.8B / 7.2 = $60.0B -> 25000+ 구간
+    pdd = size_conditioned_growth_cap(431_845_713_000 / 7.2)
+    assert pdd["size_class"] == "25000+"
+    assert pdd["cap_nominal"] == pytest.approx(0.1787, abs=1e-4)
+    # PGR: 매출 $87.7B -> 50000+ 구간
+    pgr = size_conditioned_growth_cap(87_670_000_000)
+    assert pgr["size_class"] == "50000+"
+    assert pgr["cap_nominal"] == pytest.approx(0.1275, abs=1e-4)
+    # SE: 매출 $22.9B -> 12000-25000 구간
+    se = size_conditioned_growth_cap(22_938_469_000)
+    assert se["size_class"] == "12000-25000"
+    assert se["cap_nominal"] == pytest.approx(0.1787, abs=1e-4)

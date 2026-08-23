@@ -384,21 +384,41 @@ def main():
     # stalwart가 20%→13.04%로 미달되며 ACGL/PGR/GEN이 전부 13.04%로 상승).
     # 종목당 상한은 버킷 재분배 이후에도 다시 강제해야 한다 - 여기서도
     # 전역 PER_STOCK_CAP이 아니라 **각 종목이 속한 버킷의 상한**을 쓴다.
-    for _ in range(5):
+    # ⚠️ v3.67(2026-08-23)에 고친 수렴 버그: 예전에는 캡에 **정확히 걸린**
+    # 종목(weight == cap)을 `else` 분기에서 '미캡'으로 분류해 다음 라운드
+    # 재분배를 다시 받게 했다. 그러면 캡→초과→캡→초과가 반복돼 5회 안에
+    # 수렴하지 못하고, 루프가 반복 소진으로 빠져나갈 때 **마지막 재분배가
+    # 캡을 넘긴 상태 그대로 남는다**(GEN이 0.18000442로 상한 18%를 4.4e-6
+    # 초과한 실제 사례 - 규모 조건부 상한 도입으로 비중이 재배분되며 드러났다).
+    # 초과분을 흡수할 자격은 **상한보다 확실히 낮은** 종목만 갖는다.
+    _EPS = 1e-12
+    for _ in range(50):
         excess = 0.0
-        uncapped = []
+        absorbers = []
         for row in rows:
             cap = bucket_cap[row["bucket"]]
             if row["weight_final"] > cap:
                 excess += row["weight_final"] - cap
                 row["weight_final"] = cap
-            else:
-                uncapped.append(row)
-        if excess < 1e-9 or not uncapped:
+            elif row["weight_final"] < cap - _EPS:
+                absorbers.append(row)
+        if excess < 1e-12 or not absorbers:
             break
-        total_uncapped = sum(r["weight_final"] for r in uncapped)
-        for row in uncapped:
-            row["weight_final"] += excess * (row["weight_final"] / total_uncapped)
+        total_absorb = sum(r["weight_final"] for r in absorbers)
+        if total_absorb <= 0:
+            break
+        for row in absorbers:
+            row["weight_final"] += excess * (row["weight_final"] / total_absorb)
+    else:
+        # 50회로도 수렴하지 않으면 조용히 넘어가지 않는다 - 캡 위반 상태로
+        # 자본을 배분하느니 실패하는 게 낫다.
+        over = [(r["ticker"], r["weight_final"], bucket_cap[r["bucket"]])
+                for r in rows if r["weight_final"] > bucket_cap[r["bucket"]] + 1e-9]
+        if over:
+            raise RuntimeError(
+                f"버킷 상한 강제가 50회 안에 수렴하지 못했다: {over}. "
+                f"상한 합계가 100%에 못 미치는 구성일 수 있다 - 확인 필요."
+            )
 
     # 적용된 버킷별 상한을 행마다 기록해둔다 - 나중에 리포트만 보고도
     # "이 종목이 왜 12%를 넘겼나"를 추적할 수 있어야 한다(v3.30).
