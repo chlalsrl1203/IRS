@@ -33,7 +33,7 @@ import statistics
 #
 # **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
 # 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
-ENGINE_VERSION = "v3.65"
+ENGINE_VERSION = "v3.66"
 
 # ======================================================================
 # 모델 검증 상태 - v3.46에서 도입(2026-08-15 Phase 0 감사 C-05)
@@ -54,7 +54,18 @@ ENGINE_VERSION = "v3.65"
 # 뜻이 절대 아니며, 실현결과로 보정된 적이 한 번도 없다(계약서 50·149절).
 VALIDATION_STATUS = {
     "erp_from_drs": "SOFTWARE_VALIDATED (매핑 자체는 HEURISTIC_MAPPING - 실증근거 없음)",
-    "lynch_type_caps": "SOFTWARE_VALIDATED (상하한값 근거 없음 - v3.24 문서화)",
+    "lynch_type_caps": (
+        "SOFTWARE_VALIDATED. **출처는 2026-08-23에 특정됐다** - 린치 원저서의 "
+        "분류 기술어(stalwart '10-12%', fast grower '20-25%')와 IRS 상한(12%, "
+        "25%)이 일치한다(v3.24가 '추정'이라 적어둔 것이 사실로 확인). ⚠️ 다만 "
+        "**용도가 다르다** - 린치의 범위는 '지금 어느 유형인가'의 분류 기술어이지 "
+        "'앞으로 12년 성장 예측'의 상한이 아니며, 린치는 fast grower를 'small, "
+        "aggressive companies'로 한정했는데 IRS는 규모를 무시한다. 실측: 같은 "
+        "25% 캡의 10년 base rate가 DUOL($1.0B) 3.5% vs PDD($60B) 0.2%로 17.5배 "
+        "차이(engine/base_rates.py). stalwart 12%는 바인딩 3종목 전부 41.2%로 "
+        "실증상 문제없음. 규모 조건부 변경은 자본 재배분이라 승인 대기 - "
+        "reports/research/growth_caps_base_rates_2026-08-23.md"
+    ),
     "confidence_score": "SOFTWARE_VALIDATED / UNCALIBRATED (확률로 해석 금지)",
     "rar": "SOFTWARE_VALIDATED (ER<0 구간에서 방향 반전 - v3.26 경고 배선)",
     "judgment_band": "SOFTWARE_VALIDATED (±5%p는 33종목 관측 기반 시작점)",

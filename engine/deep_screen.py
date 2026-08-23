@@ -76,6 +76,7 @@ from engine.expectation_gap_engine import (
     revenue_volatility_score,
     structural_discount_rate,
 )
+from engine.base_rates import assess_growth_plausibility
 from engine.screener import (
     ASSUMED_COMPETITION_INTENSITY,
     ASSUMED_DEMAND_SENSITIVITY,
@@ -124,6 +125,7 @@ class DeepScreenResult:
     implied_growth: float            # single_stage(Gordon)만 - 위 docstring 참고
     gap: float
     judgment: str
+    base_rate: dict = None           # v3.66 - 성장률 역사적 빈도(병기 전용)
     assumed_inputs: dict = field(default_factory=dict)
     data_limitations: list = field(default_factory=list)
 
@@ -268,6 +270,29 @@ def deep_screen(ticker: str, series: dict, market_cap: float,
         "single_stage(Gordon) 고정 - 모델선택 규칙화는 2026-08-16 연구에서 "
         "REJECT됐음(구간 완전중첩, 규칙 불가)")
 
+    # ── v3.66: 성장률 base rate 병기 (판정에는 관여하지 않는다) ────────
+    # "이 회사 규모에서 이 성장률을 10년간 유지한 기업이 역사적으로 몇 %였나"를
+    # Credit Suisse HOLT 실측 분포로 대조한다. Mauboussin 자신이 base rate를
+    # 하드컷이 아니라 "reality check"로 쓰라고 했고, IRS는 v3.19에서 하드
+    # 필터가 이중 반영을 만든다는 것을 이미 실증했으므로 **탈락시키지 않는다**.
+    base_rate = None
+    try:
+        base_rate = assess_growth_plausibility(
+            sales_nominal_usd=rev[final_year],
+            growth_nominal=realistic_growth,
+            horizon_years=10,
+        )
+        if base_rate["tier"] in ("NO_PRECEDENT", "EXTREMELY_RARE"):
+            data_limitations.append(
+                f"[성장률 base rate {base_rate['tier']}] 매출규모 "
+                f"{base_rate['size_class']} 구간에서 실질 "
+                f"{base_rate['growth_real_pct']:.1f}% 이상을 10년간 유지한 기업은 "
+                f"역사적으로 {base_rate['base_rate_pct']:.1f}%뿐이다"
+                f"(동일 구간 중앙값 {base_rate['peer_median_real_pct']:.1f}%). "
+                f"성장률 가정을 재검토할 것 - 출처: Credit Suisse HOLT 1950-2015")
+    except (ValueError, KeyError) as e:  # noqa: BLE001 - 병기 실패가 판정을 막으면 안 됨
+        data_limitations.append(f"[base rate 대조 실패] {e!r}")
+
     return DeepScreenResult(
         ticker=ticker, final_year=final_year, n_years_available=len(common_years),
         revenue_cagr_3y=rev_cagr_3y, revenue_cagr_5y=rev_cagr_5y,
@@ -279,6 +304,6 @@ def deep_screen(ticker: str, series: dict, market_cap: float,
         structural_discount_pct=structural_discount_pct,
         realistic_growth=realistic_growth, growth_breakdown=growth_breakdown,
         fcf_yield=fcf_yield, implied_growth=implied_growth, gap=gap,
-        judgment=judgment, assumed_inputs=assumed_inputs,
+        judgment=judgment, base_rate=base_rate, assumed_inputs=assumed_inputs,
         data_limitations=data_limitations,
     )

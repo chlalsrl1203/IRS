@@ -220,6 +220,56 @@ def test_raises_on_insufficient_years():
         }, market_cap=1_000_000_000)
 
 
+# ── base rate 병기 (v3.66) ────────────────────────────────────────────
+def test_base_rate_is_attached_but_never_changes_judgment():
+    """
+    base rate는 **병기 전용**이다. Mauboussin 자신이 하드컷이 아니라
+    'reality check'로 쓰라고 했고, IRS는 v3.19에서 하드 필터가 이중 반영을
+    만든다는 걸 이미 실증했다(BRO·BSY 오탈락).
+    """
+    d, series = _bsx_series()
+    mc = d["inputs"]["market_cap"]
+    r = deep_screen("BSX", series, market_cap=mc)
+    assert r.base_rate is not None
+    assert "base_rate_pct" in r.base_rate
+    # 판정은 Gap에서만 나온다 - base rate가 붙어도 그대로여야 한다
+    from engine.expectation_gap_engine import judgment_from_gap
+    assert r.judgment == judgment_from_gap(r.gap)
+
+
+def test_extremely_rare_growth_raises_a_limitation_not_a_rejection():
+    """대형사에 고성장을 부여하면 경고는 나오되 예외가 나면 안 된다."""
+    years = list(range(2015, 2026))
+    # 매출 $40B 규모에서 연 30% 성장 - 역사적으로 거의 없는 조합
+    series = {
+        "revenue_by_year": {y: 40e9 * (1.30 ** (i - 10)) for i, y in enumerate(years)},
+        "operating_cashflow_by_year": {y: 12e9 * (1.30 ** (i - 10)) for i, y in enumerate(years)},
+        "capex_by_year": {y: 1e9 * (1.1 ** (i - 10)) for i, y in enumerate(years)},
+        "operating_income_by_year": {y: 9e9 * (1.30 ** (i - 10)) for i, y in enumerate(years)},
+    }
+    r = deep_screen("BIGFAST", series, market_cap=500e9)
+    assert r.base_rate["size_class"] in ("25000+", "50000+")
+    assert r.base_rate["tier"] in ("NO_PRECEDENT", "EXTREMELY_RARE", "RARE")
+    assert any("base rate" in m for m in r.data_limitations)
+    assert r.judgment in ("저평가 가능성", "적정가/경계선", "과대평가 가능성")
+
+
+def test_base_rate_failure_does_not_break_deep_screen():
+    """병기가 실패해도 심층분석 본체는 살아남아야 한다."""
+    import engine.deep_screen as ds_mod
+    d, series = _bsx_series()
+    orig = ds_mod.assess_growth_plausibility
+    try:
+        ds_mod.assess_growth_plausibility = lambda **kw: (_ for _ in ()).throw(
+            ValueError("의도적 파손"))
+        r = deep_screen("BSX", series, market_cap=d["inputs"]["market_cap"])
+        assert r.base_rate is None
+        assert any("base rate 대조 실패" in m for m in r.data_limitations)
+        assert r.gap == pytest.approx(r.realistic_growth - r.implied_growth)
+    finally:
+        ds_mod.assess_growth_plausibility = orig
+
+
 def test_result_is_dataclass_with_documented_fields():
     d, series = _bsx_series()
     r = deep_screen("BSX", series, market_cap=d["inputs"]["market_cap"])
