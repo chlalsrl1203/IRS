@@ -33,7 +33,7 @@ import statistics
 #
 # **새 기능을 배선하면 여기를 올릴 것** - CHANGELOG에 버전 항목을 쓰면서
 # 이 상수를 그대로 두면 ledger 전체가 다시 거짓말을 시작한다.
-ENGINE_VERSION = "v3.62"
+ENGINE_VERSION = "v3.63"
 
 # ======================================================================
 # 모델 검증 상태 - v3.46에서 도입(2026-08-15 Phase 0 감사 C-05)
@@ -58,7 +58,24 @@ VALIDATION_STATUS = {
     "confidence_score": "SOFTWARE_VALIDATED / UNCALIBRATED (확률로 해석 금지)",
     "rar": "SOFTWARE_VALIDATED (ER<0 구간에서 방향 반전 - v3.26 경고 배선)",
     "judgment_band": "SOFTWARE_VALIDATED (±5%p는 33종목 관측 기반 시작점)",
-    "implied_growth": "SOFTWARE_VALIDATED (Gordon/2단계 DCF - 수학적으로는 정확)",
+    "implied_growth": (
+        "SOFTWARE_VALIDATED (Gordon/2단계 DCF - 수학적으로는 정확). "
+        "비교 아키텍처(implied growth를 역산해 독립 추정 성장률과 대조)는 "
+        "ECONOMICALLY_SUPPORTED (Gebhardt/Lee/Swaminathan 2001 JAR '내재자본비용' "
+        "역산 방법론 + Rappaport&Mauboussin 'Expectations Investing' + Damodaran이 "
+        "3갈래로 수렴 - 2026-08-23 외부연구, reports/research/screening_criteria_"
+        "external_2026-08-23.md). ⚠️ 이 승격은 아키텍처 자체에 대한 것이고 IRS가 "
+        "고른 특정 임계값(±5%p 판정밴드 등)을 정당화하지 않는다."
+    ),
+    "default_terminal_growth": (
+        "IMPLEMENTED_NOT_VALIDATED - ceiling(4.5%)이 Damodaran의 통상 인용범위"
+        "(명목GDP성장률 앵커, 2.0~3.5%)보다 100bp 높다(2026-08-23 외부연구, "
+        "2차 출처만 확보 - 1차 원문 미대조). 34/34 ledger 실측 g_terminal은 "
+        "3.47~3.69%로 ceiling에 도달한 적이 없어 **현재 영향 0건** - 코드 무변경, "
+        "라벨만 기록(v3.52 초대형주가산과 동일 원칙). 재개조건: 어느 분석에서든 "
+        "실제 g_terminal이 4.0%를 넘으면 즉시 재검토 "
+        "(docs/research_decision_record.md #14)"
+    ),
     "structural_discount_rate": (
         "trend_delta 메커니즘: ECONOMICALLY_SUPPORTED (Chan/Karceski/Lakonishok "
         "2003 JF - 장기 이익성장은 우연 이상 지속되지 않음, 방향 일치·계수 미검증). "
@@ -533,7 +550,15 @@ def default_terminal_growth(
     floor: float = 0.02,
     ceiling: float = 0.045,
 ) -> float:
-    """g_terminal을 무위험금리(rf)에서 spread_below_rf만큼 뺀 값으로 강제(floor/ceiling으로 극단값 방지)."""
+    """
+    g_terminal을 무위험금리(rf)에서 spread_below_rf만큼 뺀 값으로 강제(floor/ceiling으로 극단값 방지).
+
+    ⚠️ ceiling(4.5%)은 Damodaran이 통상 인용하는 성숙기업 영구성장률 범위
+    (명목GDP성장률 앵커, 2.0~3.5%)보다 100bp 높다(2026-08-23 외부연구,
+    VALIDATION_STATUS["default_terminal_growth"] 참고). 34/34 ledger 실측값이
+    3.47~3.69%로 ceiling에 도달한 적이 없어 코드는 바꾸지 않았다 - 향후 rf 상승
+    등으로 실제 바인딩되면 재검토할 것(docs/research_decision_record.md #14).
+    """
     return max(floor, min(ceiling, rf - spread_below_rf))
 
 

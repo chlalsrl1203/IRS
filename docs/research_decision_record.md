@@ -30,6 +30,9 @@
 | 11 | `build_buylist`를 thesis 경로로 이관 | **DEFERRED** | 2026-08-15 | 검증된 사이징 산출물이 흔들림. 새 구조를 병렬로 두고 실사용 경험 축적 후 판단 | 신규 thesis 경로의 실사용 사례 축적 시 | `CLAUDE.md` v3.48 항목 |
 | 12 | 축 간 상관 시나리오 격자 신설 | **DEFERRED** | 2026-08-16 | 조합취약 관측 6건만으로 상관구조를 코드화할 근거 부족 | 관측 사례 축적 시 | `reports/historical_validation/combination_flip_decomposition.md` |
 | 13 | 과거기록 답습 7종목 모델 재선택(BRO 우선) | **EXPERIMENT (미실행)** | 2026-08-16 | BRO는 포트폴리오 6.75% 보유 중이고 A등급이 v3.15대 기록 답습에 근거. 그러나 **지금 모델을 바꾸면 그 자체가 근거 없는 변경** | 해당 종목의 경제적 모델선택 사유를 새로 확보한 뒤 | `reports/research/model_choice_2026-08-16.md` |
+| 14 | `default_terminal_growth` ceiling(4.5%→3.5%, Damodaran 인용) | **REJECT(지금은)** | 2026-08-23 | 34/34 ledger 실측 g_terminal이 3.47~3.69%로 ceiling에 도달한 적이 없어 실제 영향 0건. 유일한 근거(Damodaran GDP앵커 2.0~3.5%)도 2차 출처 요약만 확보, 1차 원문 미대조 | 어느 분석에서든 실제 g_terminal이 4.0%를 넘는 사례가 나오면 즉시 재검토(`tests/test_pipeline.py::test_default_terminal_growth_ceiling_never_binds_on_existing_ledgers`가 이 조건을 감시) | `reports/research/screening_criteria_external_2026-08-23.md` §6 |
+| 15 | `implied_growth`(reverse-DCF 비교 아키텍처)를 `ECONOMICALLY_SUPPORTED`로 승격 | **ADOPT** | 2026-08-23 | Gebhardt/Lee/Swaminathan(2001, JAR, 피어리뷰 2000+인용) 내재자본비용 역산 방법론과 수학적으로 동형, Rappaport&Mauboussin·Damodaran과 독립 수렴. 새 파라미터 0개, 판정 무변경 - 라벨만 갱신 | 승격은 아키텍처 한정, IRS 특정 임계값(5.5%/8%/±5%p)까지 확대 해석 금지 - 그러지 않는지 테스트로 고정 | `reports/research/screening_criteria_external_2026-08-23.md` §4 |
+| 16 | `screener.py`의 `MIN_REALISTIC_GROWTH`(8%)/`MAX_IMPLIED_GROWTH`(5.5%)/tier 경계 수치 변경 | **REJECT** | 2026-08-23 | 학술문헌·오픈소스 스크리닝 프로젝트(hjones20/fundamental-analysis, FinanceToolkit 등) 어디에도 대응하는 절대 컷오프 없음 - 조사한 오픈소스 전부 임계값을 사용자 파라미터로만 둠. 근거 없는 숫자를 근거 없는 다른 숫자로 바꾸는 것과 다르지 않음 | 34~74종목보다 훨씬 큰 corpus로 재검증하거나, 절대 성장 하한을 직접 다루는 1차 학술문헌을 확보할 때 | `reports/research/screening_criteria_external_2026-08-23.md` §5·§10 |
 
 ---
 

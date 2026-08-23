@@ -4,6 +4,9 @@ import json
 import pytest
 
 from engine.screener import (
+    MAX_IMPLIED_GROWTH,
+    MIN_REALISTIC_GROWTH,
+    VALIDATION_STATUS,
     Candidate,
     estimate_drs,
     implied_growth_from_fcf_yield,
@@ -266,3 +269,35 @@ def test_capex_flag_resolves_itself_when_capex_did_not_actually_spike():
     assert r.review_flags
     assert "해소됨" in r.review_flags[0]
     assert "margin_erosion" in r.review_flags[0]
+
+
+# ── 외부검증 (2026-08-23, 학술문헌·오픈소스 스크리너 대조) ──────────────────
+def test_thresholds_unchanged_by_external_research():
+    """
+    외부조사 결론은 REJECT(임계값 무변경)였다 - 절대 컷오프에 대응하는 학술
+    근거가 없다는 사실 자체가 '숫자를 안 바꾼다'는 결정의 근거였다. 값이
+    조용히 바뀌면 이 결정이 무력화된다.
+    """
+    assert MIN_REALISTIC_GROWTH == pytest.approx(0.08)
+    assert MAX_IMPLIED_GROWTH == pytest.approx(0.055)
+
+
+def test_validation_status_documents_lack_of_external_precedent():
+    """
+    min_realistic_growth/max_implied_growth 둘 다 '절대 컷오프 근거 없음'을
+    정직하게 라벨링해야 한다 - 조용히 EMPIRICALLY_SUPPORTED로 승격시키면
+    실제로 확보하지 못한 근거 수준을 주장하는 것이 된다.
+    """
+    assert "IMPLEMENTED_NOT_VALIDATED" in VALIDATION_STATUS["min_realistic_growth"]
+    assert "IMPLEMENTED_NOT_VALIDATED" in VALIDATION_STATUS["max_implied_growth"]
+    assert "IMPLEMENTED_NOT_VALIDATED" in VALIDATION_STATUS["tier_thresholds"]
+
+
+def test_max_implied_growth_label_does_not_overclaim_the_architecture_support():
+    """
+    implied_growth 아키텍처(reverse-DCF 비교) 자체는 ECONOMICALLY_SUPPORTED로
+    승격됐지만, 그 지지가 5.5%라는 특정 숫자까지 정당화한다고 주장하면 안 된다
+    (v3.52가 structural_discount_rate에서 이미 지킨 경계와 동일).
+    """
+    label = VALIDATION_STATUS["max_implied_growth"]
+    assert "정당화하지 않는다" in label

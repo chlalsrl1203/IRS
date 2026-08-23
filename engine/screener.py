@@ -135,6 +135,34 @@ median 대체 방식 자체가 median에서 크게 벗어난 개별종목(RMD/BS
 이 4분류는 재무데이터를 긁기 전, WebSearch로 하락 배경을 확인하는
 시점에 1줄로 판단 가능하다 - 여기서 "1번(공포과잉)"으로 분류된 것만
 Candidate로 만들어 screen()에 넣을 것.
+
+⚠️ **외부검증 완료(2026-08-23, 사용자 요청 - 저명 학술지·오픈소스 스크리닝
+프로젝트 대조)**: 상세는 `reports/research/screening_criteria_external_
+2026-08-23.md`. 요지만 남긴다 -
+
+- **MIN_REALISTIC_GROWTH(8%)/MAX_IMPLIED_GROWTH(5.5%)/tier 경계에 대응하는
+  절대 컷오프는 학술문헌에도, 조사한 오픈소스 스크리너(hjones20/fundamental-
+  analysis, FinanceToolkit 등)에도 없다.** 다들 지표 계산 함수만 제공하고
+  임계값은 사용자 파라미터로 남긴다 - "34~74종목 corpus에서 도출"이라는 지금의
+  근거 수준이 그대로 최선이며, 바꿀 이유가 없다(REJECT, 근거 없는 숫자를 근거
+  없는 다른 숫자로 바꾸지 않는다는 원칙).
+- **오히려 절대 성장 하한선이라는 설계 자체에 학계 반례가 있다** - Greenblatt
+  Magic Formula는 성장 입력을 아예 안 쓰고, Chan/Karceski/Lakonishok(2003 JF,
+  structural_discount_rate 근거로 이미 인용된 문헌)은 "장기 이익성장에 우연
+  이상의 지속성이 없다"고 본다. 8%를 없애야 한다는 뜻은 아니다(이 스크리너는
+  예측력이 아니라 34~74종목 corpus와의 상관을 근거로 쓰는 1차 필터라 그
+  반박이 직접 적용되지 않는다) - 다만 "이 하한선에 외부 학술 근거가 없다"는
+  사실은 이제 기록됐다.
+- **`implied_growth_from_fcf_yield`가 쓰는 reverse-DCF 비교 구조(시장가에서
+  성장률을 역산해 독립 추정치와 대조) 자체는 강하게 지지된다** - Gebhardt/Lee/
+  Swaminathan(2001, JAR, 피어리뷰 2000+인용)의 "내재자본비용" 역산 방법론과
+  수학적으로 동형이고, Rappaport&Mauboussin의 "Expectations Investing"·
+  Damodaran의 강의체계와 독립적으로 수렴한다. **단, 이건 아키텍처를 지지할 뿐
+  5.5%라는 특정 숫자를 정당화하지 않는다** - 이 구분을 흐리면 거짓 권위 주장이
+  된다.
+
+아래 `VALIDATION_STATUS`가 이 결론을 기계 판독 가능한 라벨로 남긴다
+(`engine/expectation_gap_engine.py`의 동명 딕셔너리와 동일 패턴).
 """
 
 from dataclasses import dataclass, field
@@ -165,6 +193,38 @@ ASSUMED_COMPETITION_INTENSITY = 12.0     # ledger 실측 중앙값
 ASSUMED_REVENUE_VOLATILITY = 4.0         # ledger 실측 중앙값(안정성장주 기준)
 ASSUMED_DEMAND_SENSITIVITY = 0.15        # ledger 실측 중앙값
 CAPEX_SPIKE_THRESHOLD = 0.03             # v3.7 growth_investment_capex_delta_threshold와 동일
+
+# ======================================================================
+# 외부검증 상태 (2026-08-23) - engine/expectation_gap_engine.py의 동명
+# 딕셔너리와 같은 패턴. 근거 수준은 위 모듈 docstring "외부검증 완료" 절 참고,
+# 전문은 reports/research/screening_criteria_external_2026-08-23.md.
+# ======================================================================
+VALIDATION_STATUS = {
+    "min_realistic_growth": (
+        "IMPLEMENTED_NOT_VALIDATED - 절대 하한(8%)에 대응하는 외부 학술 근거 "
+        "없음. Greenblatt Magic Formula(성장 입력 없음)·Chan/Karceski/Lakonishok "
+        "2003 JF(장기 성장은 우연 이상 지속 안 함)가 오히려 반대방향 - 단 이 "
+        "스크리너는 예측력이 아니라 corpus 상관을 근거로 쓰므로 직접 반박은 아님"
+    ),
+    "max_implied_growth": (
+        "IMPLEMENTED_NOT_VALIDATED - 절대 상한(5.5%)에 대응하는 외부 학술 근거 "
+        "없음. 비교 대상인 implied_growth 자체의 아키텍처는 ECONOMICALLY_SUPPORTED "
+        "(expectation_gap_engine.VALIDATION_STATUS['implied_growth'] 참고) - 그러나 "
+        "그 지지는 5.5%라는 숫자를 정당화하지 않는다"
+    ),
+    "tier_thresholds": (
+        "IMPLEMENTED_NOT_VALIDATED - ig<=0.0/ig<=0.0411 경계는 저평가군 내재성장률 "
+        "중앙값에서 도출. GARP 실무관행의 PEG<1.0 '매력적' 구간과 경계값이 느슨하게 "
+        "유사하나(IG/RG=0.6875) 지표 정의 자체가 달라(PEG는 P/E·EPS성장, IRS는 "
+        "FCF수익률·DCF역산성장) 검증으로 쓰지 않는다 - 기록만"
+    ),
+    "open_source_survey": (
+        "조사한 오픈소스 스크리닝 프로젝트(hjones20/fundamental-analysis, "
+        "FinanceToolkit, StockScreener 등) 전부 절대 컷오프를 하드코딩하지 "
+        "않음 - 임계값은 항상 사용자 파라미터. 이 스크리너의 '34~74종목 corpus "
+        "근거'가 조사 범위 내에서는 오히려 더 투명한 편"
+    ),
+}
 
 
 def estimate_drs(net_debt_to_ebitda: float, worst_yoy_revenue: float) -> float:

@@ -1306,6 +1306,57 @@ def test_validation_status_marks_confidence_as_uncalibrated():
     assert "HEURISTIC_MAPPING" in VALIDATION_STATUS["erp_from_drs"]
 
 
+def test_default_terminal_growth_ceiling_never_binds_on_existing_ledgers():
+    """
+    2026-08-23 외부검증(reports/research/screening_criteria_external_2026-08-23.md):
+    default_terminal_growth의 ceiling(4.5%)이 Damodaran이 통상 인용하는
+    성숙기업 영구성장률 범위(2.0~3.5%)보다 100bp 높다는 게 발견됐다. 코드는
+    바꾸지 않기로 했는데(v3.52 초대형주가산과 동일 원칙), 그 결정의 전제가
+    "34/34 ledger에서 ceiling이 한 번도 안 걸렸다"는 사실이다. 이 사실이
+    조용히 깨지면(향후 분석에서 실제로 4.5%에 도달) 결정을 재검토해야 한다.
+    """
+    import glob
+    import json
+
+    ceiling = 0.045
+    stale_bound = 0.04  # 결정기록 #14의 재개조건("4.0%를 넘으면")과 정확히 일치
+    hits = []
+    for path in sorted(glob.glob("ledger/*.json")):
+        d = json.load(open(path, encoding="utf-8"))
+        g = d.get("discount_rate", {}).get("g_terminal")
+        if g is not None and g >= stale_bound:
+            hits.append((d["meta"]["ticker"], g))
+    assert not hits, (
+        f"g_terminal이 재개조건(4.0%) 이상인 종목이 나왔다 - "
+        f"reports/research/screening_criteria_external_2026-08-23.md #6 재검토할 것: {hits}"
+    )
+    assert stale_bound < ceiling
+
+
+def test_validation_status_documents_terminal_growth_ceiling_gap():
+    """default_terminal_growth의 VALIDATION_STATUS 라벨이 실제로 등재됐는지 고정."""
+    from engine.expectation_gap_engine import VALIDATION_STATUS
+
+    label = VALIDATION_STATUS["default_terminal_growth"]
+    assert "IMPLEMENTED_NOT_VALIDATED" in label
+    assert "Damodaran" in label
+    assert "34/34" in label
+
+
+def test_implied_growth_architecture_support_does_not_overclaim_thresholds():
+    """
+    2026-08-23: implied_growth 비교 아키텍처는 ECONOMICALLY_SUPPORTED로
+    승격됐지만(Gebhardt/Lee/Swaminathan 2001 JAR 등 3갈래 수렴), 그 지지가
+    IRS의 특정 임계값(±5%p 판정밴드 등)을 정당화한다고 주장하면 v3.52가
+    structural_discount_rate에서 이미 지킨 경계를 깨는 것이다.
+    """
+    from engine.expectation_gap_engine import VALIDATION_STATUS
+
+    label = VALIDATION_STATUS["implied_growth"]
+    assert "ECONOMICALLY_SUPPORTED" in label
+    assert "정당화하지 않는다" in label
+
+
 def test_scale_check_silent_on_all_existing_ledgers():
     """
     v3.46 Phase 2: 스케일 탐지 밴드는 **알려진 정상 종목에서 절대 발동하면 안

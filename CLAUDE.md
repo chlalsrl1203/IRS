@@ -4770,3 +4770,92 @@ CDNS·GEN은 조용히 한 해 밀린 값을 받는다.
 **검증**: 테스트 708 → **717 통과**(신규 9 + provider 3) · 34종목 골든재현 8지표
 **불일치 0건** · fingerprint `fbd34322…` **불변** · ledger·매수리스트·공식 판정
 **0건 수정** · `ENGINE_VERSION` v3.60 → **v3.61**(sec.py 경고 추가).
+
+## v3.62 — 자동 아침 스크리닝 인프라: GitHub Actions 기반 무인 1차 스크리닝
+(2026-08-22/23, 사용자 제약 - 평일 오전 폰 접근 불가, Claude 세션 예약실행 버그로
+차단됨)
+
+Claude 세션 내 예약실행(Routine) 기능이 이 환경에서 승인 UI 자체가 뜨지 않는
+버그로 막혀(재시도해도 동일 실패) GitHub Actions로 전면 대체했다 - 클로드 세션
+상태와 완전히 무관하게 GitHub 서버에서 평일 09:00 KST에 자동 실행된다.
+
+**파이프라인**: Finviz(robots.txt 화이트리스트 프리셋만, 커스텀 필터 `f=` 금지) →
+정크 필터 → SEC XBRL(`engine/data/providers/sec.py` 재사용, 신규 계산 로직 0줄) →
+Alpha Vantage 시가총액(하루 20회 예산, 무료한도 25회 중 5회는 저녁 대화용으로
+남김) → `engine/screener.py::screen_all()` 그대로 호출 → GitHub Issue에 결과
+게시. Notion을 시도했으나 토큰 401이 반복돼(발급 절차 자체가 병목) 추가 시크릿이
+전혀 필요 없는 GitHub Issue로 교체했다 - `secrets.GITHUB_TOKEN`은 워크플로가
+자동으로 받는다.
+
+**실전에서 잡은 버그**: Finviz가 `quote.ashx?t=`에서 `stock?t=`로 링크 구조를
+바꿔 1차 시도가 후보 0건을 냈다 - `workflow_dispatch`로 실제 실행한 뒤
+`download_workflow_run_artifact`로 받은 HTML을 직접 대조해 앵커 텍스트==href
+티커 조건으로 재작성, 10/10 재현 확인 후 반영했다.
+
+`engine/data/governance/source_registry.py`에 `"finviz"` 항목 신설
+(`tier=UNVERIFIED`, `allowed_use=("internal_research",)`, robots.txt 화이트/
+블랙리스트 조사 결과를 `reliability`에 명시). 서사확인(2단계) 자동화는 검토 후
+불필요하다고 판단해 만들지 않았다 - 깔때기가 이미 하루 0~2종목으로 좁혀져
+수동 확인으로 충분하다.
+
+`ENGINE_VERSION` v3.61 → v3.62. 회사 엔진 계산 로직 무변경(신규 데이터 출처
+등록만) - 34종목 골든재현 불변.
+
+## v3.63 — 스크리닝·밸류에이션 기준 외부검증: 저명 학술문헌·오픈소스 대조
+(2026-08-23, 사용자 요청 "저명한 학술지와 논문, 기업분석 스크리닝 오픈소스
+등에서 기준을 자료조사하고 분석 후 다시 반영")
+
+`engine/screener.py`(MIN_REALISTIC_GROWTH=8%/MAX_IMPLIED_GROWTH=5.5%/tier 경계)와
+`engine/expectation_gap_engine.py`(`default_terminal_growth` ceiling=4.5%)가
+도입된 이래 외부 학술문헌·오픈소스 스크리닝 프로젝트와 대조된 적이 한 번도
+없었다. 전문은 `reports/research/screening_criteria_external_2026-08-23.md`.
+
+**Finding 1 (ADOPT, 라벨만 승격)** - `implied_growth`가 쓰는 reverse-DCF 비교
+아키텍처(시장가에서 성장률을 역산해 독립 추정치와 대조) 자체는 **Gebhardt/
+Lee/Swaminathan(2001, Journal of Accounting Research, 피어리뷰 2000+인용)**의
+"내재자본비용" 역산 방법론과 수학적으로 동형이고, Rappaport&Mauboussin의
+"Expectations Investing"·Damodaran(NYU Stern)의 강의체계와 독립적으로
+수렴한다. `VALIDATION_STATUS["implied_growth"]`를 `ECONOMICALLY_SUPPORTED`로
+승격했다 - **단, 이 승격은 아키텍처에 대한 것이지 IRS가 고른 특정 숫자(5.5%
+등)를 정당화하지 않는다**(v3.52가 structural_discount_rate에서 지킨 경계와
+동일, 테스트로 고정).
+
+**Finding 2 (REJECT, 무변경)** - `MIN_REALISTIC_GROWTH`(8%)의 절대 하한 설계
+자체에 학계 반례가 있다: Greenblatt Magic Formula는 성장 입력이 아예 없고,
+Chan/Karceski/Lakonishok(2003 JF, structural_discount_rate 근거로 이미 인용된
+문헌)은 "장기 이익성장에 우연 이상의 지속성이 없다"고 본다. 8%를 없앨 근거는
+아니다(이 스크리너는 예측력이 아니라 34~74종목 corpus 상관을 근거로 쓴다) -
+다만 이 긴장관계를 처음으로 정직하게 기록했다. `MIN_REALISTIC_GROWTH`/
+`MAX_IMPLIED_GROWTH`/tier 경계 어느 수치도 바꾸지 않았다 - 조사한 오픈소스
+스크리닝 프로젝트(hjones20/fundamental-analysis, FinanceToolkit 등) 전부
+절대 컷오프를 하드코딩하지 않고 사용자 파라미터로만 둔다는 사실도 이 결정을
+뒷받침한다(외부에 대체할 만한 "표준값" 자체가 없음).
+
+**Finding 3 (REJECT 지금은, 실측 영향 0건 확인 후 라벨만 기록)** -
+`default_terminal_growth`의 ceiling(4.5%)이 Damodaran이 통상 인용하는 성숙기업
+영구성장률 범위(명목GDP성장률 앵커, 2.0~3.5%)보다 100bp 높다. **34/34 ledger
+전수 실측 결과 g_terminal은 3.47~3.69%로 ceiling에 한 번도 도달한 적이 없다**
+(`discount_rate.g_terminal` 직접 대조) - 코드는 v3.52의 초대형주가산과 동일
+원칙으로 바꾸지 않고, VALIDATION_STATUS와 함수 docstring에 발견을 기록했다.
+재개조건(향후 실제 g_terminal이 4.0%를 넘는 사례 발생)을 테스트
+(`test_default_terminal_growth_ceiling_never_binds_on_existing_ledgers`)로
+직접 감시하게 배선했다 - 이 프로젝트가 반복 지적해온 "재개조건을 문서에만
+적어두면 아무도 안 지킨다"는 패턴(run_self_check·confidence_score·claim/lock·
+cross_check_prior_record)의 다섯 번째 재발을 막기 위함이다.
+
+**Finding 4** - Damodaran/CFA 커리큘럼 인용은 이번 조사에서 1차 원문 직접
+대조에 실패해(PDF 텍스트 추출 불가) 2차 출처 요약 수준으로만 확보했다 -
+TYL SBC 3배 오류(2차 출처 인용을 검증 없이 신뢰)와 같은 위험 계열이라
+`reports/research/`에 이 한계를 명시했다. PEG 경계값(GARP 실무관행 <1.0)과
+IRS 통과경계(IG/RG=0.6875)의 느슨한 수치 일치는 지표 정의 자체가 달라
+(PEG는 P/E·EPS성장, IRS는 FCF수익률·DCF역산성장) 검증으로 쓰지 않고
+기록만 했다 - Fama-French 38% 평균회귀율을 성장축소계수 근거로 오인했다가
+REJECTED된 결정#4와 같은 "표면 유사성≠구조적 유사성" 함정을 피하기 위함.
+
+`docs/research_decision_record.md`에 결정 #14(ceiling REJECT)·#15(implied_growth
+ADOPT)·#16(screener 임계값 REJECT) 3건을 추가했다.
+
+**검증**: 테스트 748개 전부 통과(신규 8) · 34종목 골든재현 8지표 완전 동일 ·
+fingerprint `fbd34322…` 불변 · ledger·매수리스트·공식 판정 0건 수정 ·
+`ENGINE_VERSION` v3.62 → **v3.63**(VALIDATION_STATUS 라벨 갱신 - v3.32 규칙에
+따라 `engine/` 변경 시 상수 갱신).
