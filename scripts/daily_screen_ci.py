@@ -311,16 +311,79 @@ def build_monitor_section(today_str):
         return f"### 🔭 보유종목 감시\n⚠️ 감시 실행 실패: `{e!r}`"
 
 
+# 제외 사유 분류 - **인프라 장애와 정상 제외를 구분하는 것이 목적이다.**
+# 전에는 둘 다 "SEC 재무데이터 확보 실패"로 뭉개져서, 파이프라인이 아무것도
+# 채점하지 못한 날과 후보가 정말 없는 날이 리포트상 똑같아 보였다(2026-08-23/24
+# 실측: 25종목 중 24종목 실패인데 "오늘은 통과 후보 없음"으로만 표시됨).
+#
+# ⚠️ HTTP 404는 인프라 장애가 **아니다.** ETF·펀드는 CIK는 있어도 XBRL
+# companyfacts가 없어서 404를 돌려준다(SPY 실측). 404를 장애로 세면 Finviz
+# 목록에 ETF가 섞일 때마다 가짜 경보가 뜨고, 그러면 진짜 장애가 묻힌다 -
+# 이 수정이 막으려는 알림 피로가 다른 경로로 재발한다.
+SKIP_CATEGORIES = (
+    # (라벨, 매칭 부분문자열들, 인프라 장애인가)  ※ 위에서부터 먼저 매칭
+    ("XBRL 재무제표 없음(ETF·펀드 등)", ("HTTP 404",), False),
+    ("SEC 요청 거부·네트워크", ("조회 실패",), True),
+    ("SEC 등록 없음(신규상장·비SEC 등)", ("티커 매핑표에 없음",), False),
+    ("FCF 기준·최종연도 0 이하(모델 적용불가)", ("0 이하",), False),
+    ("연도 데이터 부족", ("공통 확보 연도", "최소 구간"), False),
+)
+
+
+def classify_skips(skipped):
+    """{ticker: [limitation, ...]} -> [(라벨, [티커...], 인프라장애 여부)]"""
+    buckets = {}
+    for ticker, limitations in skipped.items():
+        text = " ".join(str(x) for x in (limitations or []) if x)
+        label, is_infra = "기타·미분류", False
+        for lbl, needles, infra in SKIP_CATEGORIES:
+            if any(n in text for n in needles):
+                label, is_infra = lbl, infra
+                break
+        buckets.setdefault((label, is_infra), []).append(ticker)
+    return [(lbl, sorted(ts), infra) for (lbl, infra), ts in buckets.items()]
+
+
+def format_funnel(funnel, skipped):
+    """깔때기 각 단계를 그대로 보여준다 - 어디서 끊겼는지 숨기지 않는다."""
+    lines = [
+        "",
+        "<details><summary>파이프라인 깔때기</summary>",
+        "",
+        f"- Finviz 수집: **{funnel['finviz']}종목** → 정크필터 후 "
+        f"**{funnel['after_junk']}종목**",
+        f"- SEC 재무계산 성공: **{funnel['sec_ok']}종목** "
+        f"(제외 {funnel['sec_skipped']}종목)",
+        f"- 시가총액 확보: **{funnel['with_cap']}종목** "
+        f"(3억달러 미만·조회실패 제외)",
+        f"- 채점: **{funnel['scored']}종목** → 통과 **{funnel['passed']}종목**",
+    ]
+    groups = sorted(classify_skips(skipped), key=lambda g: (not g[2], -len(g[1])))
+    if groups:
+        lines.append("")
+        lines.append("제외 사유:")
+        for label, tickers, infra in groups:
+            mark = "🔧 " if infra else ""
+            shown = ", ".join(tickers[:10]) + (" 외" if len(tickers) > 10 else "")
+            lines.append(f"- {mark}{label} — {len(tickers)}종목: {shown}")
+    lines.append("")
+    lines.append("</details>")
+    return "\n".join(lines)
+
+
 def post_to_github_issue(token, owner, repo, date_str, passed_results,
-                          skipped_count, note, deep_rows=None):
+                          skipped, note, deep_rows=None, funnel=None):
     import requests
 
     lines = [f"## {date_str} 실행 결과"]
     if note:
         lines.append(f"⚠️ {note}")
-    if not passed_results:
-        lines.append("오늘은 통과 후보 없음.")
-    else:
+
+    scored = (funnel or {}).get("scored")
+    groups = classify_skips(skipped)
+    infra_tickers = sorted(t for _, ts, infra in groups if infra for t in ts)
+
+    if passed_results:
         for r in passed_results:
             c = r.candidate
             lines.append(
@@ -329,10 +392,25 @@ def post_to_github_issue(token, owner, repo, date_str, passed_results,
                 f"현실성장(추정) {r.realistic_growth_est*100:.2f}% · "
                 f"Gap(추정) {r.expectation_gap_est*100:+.2f}%p"
             )
-    lines.append(
-        f"\n(SEC 재무데이터 확보 실패로 제외된 종목 {skipped_count}개 - "
-        f"1차 추정치일 뿐 정식 판정 아님)"
-    )
+    elif scored == 0:
+        # ⚠️ 이 분기가 이 수정의 핵심이다. 채점 자체가 0건인 것을 "통과 후보
+        # 없음"으로 적으면, 정상적인 빈 결과와 파이프라인 고장이 구분되지 않는다.
+        lines.append(
+            "🛑 **채점된 종목이 0개다 — '통과 후보 없음'이 아니라 스크리닝이 "
+            "실행되지 못했다는 뜻이다.** 아래 깔때기에서 끊긴 지점을 확인할 것.")
+    else:
+        lines.append(f"{scored}종목을 채점했고 통과 후보는 없음.")
+
+    if infra_tickers:
+        lines.append(
+            f"\n🔧 **인프라 장애로 제외 {len(infra_tickers)}종목** "
+            f"(데이터 문제가 아니라 조회 자체가 실패 — 조치 필요): "
+            f"{', '.join(infra_tickers[:12])}"
+            f"{' 외' if len(infra_tickers) > 12 else ''}")
+
+    if funnel:
+        lines.append(format_funnel(funnel, skipped))
+    lines.append("\n(1차 추정치일 뿐 정식 판정 아님)")
     if deep_rows:
         lines.append(format_deep_dive_section(deep_rows))
     lines.append("\n---\n")
@@ -380,6 +458,20 @@ def main():
         else:
             sec_out["candidates"][t] = fields
     log(f"[SEC] 계산 성공 {len(sec_out['candidates'])} / 실패(skip) {len(sec_out['skipped'])}")
+    for label, ts, infra in sorted(classify_skips(sec_out["skipped"]),
+                                    key=lambda g: (not g[2], -len(g[1]))):
+        log(f"[SEC] {'🔧 ' if infra else ''}{label}: {len(ts)}종목 "
+            f"({', '.join(ts[:8])}{' 외' if len(ts) > 8 else ''})")
+
+    funnel = {
+        "finviz": len(raw_tickers),
+        "after_junk": len(tickers),
+        "sec_ok": len(sec_out["candidates"]),
+        "sec_skipped": len(sec_out["skipped"]),
+        "with_cap": 0,
+        "scored": 0,
+        "passed": 0,
+    }
 
     note = None
     if not av_key:
@@ -413,6 +505,9 @@ def main():
             ))
         results = screen_all(candidates)
         passed = [r for r in results if r.passed]
+        funnel["with_cap"] = len(caps)
+        funnel["scored"] = len(candidates)
+        funnel["passed"] = len(passed)
         log(f"[판정] {len(candidates)}종목 채점, {len(passed)}종목 통과")
         for r in passed:
             log(f"  PASS {r.candidate.ticker} [{r.tier}] "
@@ -434,7 +529,7 @@ def main():
     if gh_token and "/" in repo_full:
         owner, repo = repo_full.split("/", 1)
         post_to_github_issue(gh_token, owner, repo, today, passed,
-                              len(sec_out["skipped"]), note, deep_rows)
+                              sec_out["skipped"], note, deep_rows, funnel)
     else:
         log("[GitHub Issue] GITHUB_TOKEN/GITHUB_REPOSITORY 미확보 - 기록을 건너뛴다"
             "(로컬 실행 등 Actions 환경이 아닐 때 발생 가능).")
@@ -443,6 +538,11 @@ def main():
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({
             "date": today, "raw_tickers": raw_tickers, "sec": sec_out,
+            "funnel": funnel,
+            "skip_groups": [
+                {"label": lbl, "infrastructure_failure": infra, "tickers": ts}
+                for lbl, ts, infra in classify_skips(sec_out["skipped"])
+            ],
             "passed": [r.candidate.ticker for r in passed],
             "deep_screen": deep_rows,
         }, f, ensure_ascii=False, indent=2)

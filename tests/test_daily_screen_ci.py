@@ -239,7 +239,7 @@ def test_post_to_github_issue_includes_deep_dive_section_when_present(monkeypatc
     deep_rows = [{"ticker": "AAA", "judgment": "저평가 가능성", "realistic_growth": 0.1,
                   "implied_growth": 0.03, "gap": 0.07, "drs": 40.0,
                   "lynch_type": "stalwart", "data_limitations": []}]
-    MOD.post_to_github_issue("tok", "o", "r", "2026-08-23", [], 0, None, deep_rows)
+    MOD.post_to_github_issue("tok", "o", "r", "2026-08-23", [], {}, None, deep_rows)
     assert "심층분석" in captured["body"]
     assert "AAA" in captured["body"]
 
@@ -254,3 +254,142 @@ def test_ticker_extraction_deduplicates_across_pages(tmp_path):
     result = MOD._extract_tickers_from_html(html)
     assert result == ["AAPL", "AAPL", "MSFT"]  # 추출 자체는 중복 허용
     # 중복 제거는 fetch_finviz_tickers()의 seen 집합 몫 - 여기선 추출만 검증
+
+
+# ── 실패 사유 보존 (v3.68) ────────────────────────────────────────────────
+# 2026-08-23/24 정규 실행에서 25종목 중 24종목이 SEC 단계에서 탈락했는데
+# 리포트는 "오늘은 통과 후보 없음"이라고만 적었다. 채점이 0건인 것과 후보가
+# 정말 없는 것이 구분되지 않으면, 파이프라인 고장이 정상 결과로 위장된다.
+
+def _capture_issue_body(monkeypatch, **kwargs):
+    """post_to_github_issue가 실제로 올리는 본문을 가로챈다."""
+    seen = {}
+
+    def fake_post(url, headers=None, json=None, timeout=None):
+        seen["body"] = json["body"]
+        return _FakeResponse(201, json_data={"id": 1})
+
+    fake_requests = types.SimpleNamespace(
+        get=lambda *a, **k: _FakeResponse(200, json_data=[
+            {"number": 42, "title": MOD.ISSUE_TITLE}]),
+        post=fake_post,
+        RequestException=Exception,
+    )
+    monkeypatch.setitem(sys.modules, "requests", fake_requests)
+    MOD.post_to_github_issue("tok", "o", "r", "2026-08-24", **kwargs)
+    return seen["body"]
+
+
+def test_zero_scored_is_not_reported_as_no_candidates_passed(monkeypatch):
+    """채점 0건은 '통과 후보 없음'이 아니라 실행 실패로 보고돼야 한다."""
+    body = _capture_issue_body(
+        monkeypatch,
+        passed_results=[],
+        skipped={f"T{i}": ["companyfacts 조회 실패(CIK 000): HTTP 403"]
+                 for i in range(24)},
+        note=None,
+        funnel={"finviz": 60, "after_junk": 25, "sec_ok": 1, "sec_skipped": 24,
+                "with_cap": 0, "scored": 0, "passed": 0},
+    )
+    # 경고문 자체가 그 표현을 인용하므로, "결과 한 줄로 그렇게 적었는가"를 본다.
+    assert "오늘은 통과 후보 없음." not in body.splitlines()
+    assert "채점된 종목이 0개" in body
+    assert "인프라 장애로 제외 24종목" in body
+
+
+def test_scored_but_none_passed_is_reported_as_a_normal_empty_result(monkeypatch):
+    """반대로 실제로 채점했는데 통과가 없으면 정상 결과로 적어야 한다."""
+    body = _capture_issue_body(
+        monkeypatch,
+        passed_results=[],
+        skipped={"UVV": ["FCF 기준연도(2020) 또는 최종연도(2025)가 0 이하"]},
+        note=None,
+        funnel={"finviz": 60, "after_junk": 25, "sec_ok": 24, "sec_skipped": 1,
+                "with_cap": 12, "scored": 12, "passed": 0},
+    )
+    assert "채점된 종목이 0개" not in body
+    assert "12종목을 채점했고 통과 후보는 없음" in body
+    assert "인프라 장애" not in body   # 정상 제외는 장애로 표시하지 않는다
+
+
+def test_classify_skips_separates_infrastructure_from_legitimate_exclusion():
+    groups = {lbl: (ts, infra) for lbl, ts, infra in MOD.classify_skips({
+        "A": ["companyfacts 조회 실패(CIK 1): HTTP 403"],
+        "B": ["SEC 티커 매핑표에 없음(ETF·신규상장·비SEC 등록 가능)"],
+        "C": ["FCF 기준연도(2020) 또는 최종연도(2025)가 0 이하 - CAGR 계산 불가"],
+        "D": ["매출·OCF·capex 공통 확보 연도가 1개뿐 - CAGR 계산 불가"],
+    })}
+    infra = {lbl for lbl, (_, is_infra) in groups.items() if is_infra}
+    assert len(infra) == 1, "조회 실패만 인프라 장애여야 한다"
+    assert groups["SEC 요청 거부·네트워크"][0] == ["A"]
+    # 나머지 셋은 데이터 성질상의 정상 제외 - 조치 대상이 아니다
+    assert all(not is_infra for lbl, (_, is_infra) in groups.items()
+               if lbl != "SEC 요청 거부·네트워크")
+
+
+def test_cached_facts_returns_reason_instead_of_bare_none(monkeypatch, tmp_path):
+    """실패 사유를 잃어버리면 고칠 수 없다 - None이 아니라 (None, 사유)."""
+    import urllib.error
+    monkeypatch.setattr(MOD.ds, "CACHE_DIR", str(tmp_path))
+
+    import engine.filing_dates as fd
+    monkeypatch.setattr(fd, "ticker_to_cik", lambda t, ua=None: "0000000001")
+
+    def boom(cik, user_agent=None):
+        raise RuntimeError("SEC companyfacts 조회 실패") from urllib.error.HTTPError(
+            "u", 403, "Forbidden", None, None)
+
+    monkeypatch.setattr(fd, "fetch_company_facts", boom)
+    facts, reason = MOD.ds._cached_facts("ZZZZ")
+    assert facts is None
+    assert "HTTP 403" in reason, f"HTTP 상태가 사유에 남아야 한다: {reason}"
+
+
+def test_cached_facts_distinguishes_unlisted_ticker_from_request_failure(
+        monkeypatch, tmp_path):
+    monkeypatch.setattr(MOD.ds, "CACHE_DIR", str(tmp_path))
+    import engine.filing_dates as fd
+    monkeypatch.setattr(fd, "ticker_to_cik", lambda t, ua=None: None)
+    facts, reason = MOD.ds._cached_facts("SPY")
+    assert facts is None
+    assert "매핑표에 없음" in reason
+    assert "HTTP" not in reason
+
+
+def test_sec_ticker_map_is_fetched_once_per_process():
+    """
+    티커마다 1MB 매핑표를 새로 받으면 25종목 조회가 25회 다운로드가 된다 -
+    그 자체가 차단 위험이라 프로세스 내 1회로 고정한다.
+    """
+    import engine.filing_dates as fd
+    calls = {"n": 0}
+    original = fd._http_json
+    fd._TICKER_MAP_CACHE.clear()
+    try:
+        def counting(url, user_agent=None):
+            calls["n"] += 1
+            return {"0": {"ticker": "AAPL", "cik_str": 320193},
+                    "1": {"ticker": "MSFT", "cik_str": 789019}}
+        fd._http_json = counting
+        for _ in range(10):
+            assert fd.ticker_to_cik("AAPL") == "0000320193"
+        assert fd.ticker_to_cik("MSFT") == "0000789019"
+        assert fd.ticker_to_cik("NOPE") is None
+        assert calls["n"] == 1, f"매핑표를 {calls['n']}번 받았다(1번이어야 함)"
+    finally:
+        fd._http_json = original
+        fd._TICKER_MAP_CACHE.clear()
+
+
+def test_http_404_is_not_counted_as_infrastructure_failure():
+    """
+    ETF·펀드는 CIK는 있어도 XBRL이 없어 404를 받는다(SPY 실측). 이걸 장애로
+    세면 목록에 ETF가 섞일 때마다 가짜 경보가 뜨고 진짜 장애가 묻힌다.
+    """
+    groups = {lbl: (ts, infra) for lbl, ts, infra in MOD.classify_skips({
+        "SPY": ["companyfacts 조회 실패(CIK 0000884394): HTTP 404"],
+        "AAA": ["companyfacts 조회 실패(CIK 0000000001): HTTP 403"],
+        "BBB": ["CIK 매핑표 조회 실패: 네트워크 오류(timed out)"],
+    })}
+    infra = {t for _, (ts, is_infra) in groups.items() if is_infra for t in ts}
+    assert infra == {"AAA", "BBB"}, f"404가 장애로 잘못 분류됨: {infra}"

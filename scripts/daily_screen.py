@@ -47,21 +47,56 @@ CACHE_DIR = os.environ.get(
 
 
 def _cached_facts(ticker):
+    """
+    companyfacts 원본을 (facts, reason)으로 돌려준다.
+
+    ⚠️ v3.68에서 반환형을 바꿨다 - 전에는 실패 시 그냥 `None`이라 **왜 실패했는지가
+    통째로 사라졌다.** 그 결과 GitHub Actions 일일 실행에서 25종목 중 24종목이
+    실패했는데도 리포트에는 "SEC 재무데이터 확보 실패"라는 한 줄로만 뭉개졌고,
+    "CIK가 없는 종목"(정상 - ETF·신규상장)과 "SEC가 요청을 거부함"(인프라 장애)이
+    구분되지 않았다. 실패 사유를 잃어버리면 고칠 수 없다.
+
+    User-Agent도 placeholder(`demo@example.com`)를 쓰고 있었다. SEC 공정접근
+    정책은 식별 가능한 연락처를 요구하며 generic UA는 차단 대상이다 -
+    `engine/filing_dates.DEFAULT_USER_AGENT`(실제 연락처, 환경변수로 덮어쓰기
+    가능)를 쓰도록 고쳤다.
+    """
     os.makedirs(CACHE_DIR, exist_ok=True)
     path = os.path.join(CACHE_DIR, f"{ticker}.json")
     if os.path.exists(path):
         with open(path, encoding="utf-8") as f:
-            return json.load(f)
+            return json.load(f), None
     from engine.filing_dates import fetch_company_facts, ticker_to_cik
 
-    ua = "IRS daily screener demo@example.com"
-    cik = ticker_to_cik(ticker, ua)
+    try:
+        cik = ticker_to_cik(ticker)
+    except Exception as e:  # noqa: BLE001 - 네트워크/HTTP 실패를 사유로 살려 보낸다
+        return None, f"CIK 매핑표 조회 실패: {_http_reason(e)}"
     if not cik:
-        return None
-    facts = fetch_company_facts(cik, ua)
+        return None, "SEC 티커 매핑표에 없음(ETF·신규상장·비SEC 등록 가능)"
+    try:
+        facts = fetch_company_facts(cik)
+    except Exception as e:  # noqa: BLE001
+        return None, f"companyfacts 조회 실패(CIK {cik}): {_http_reason(e)}"
     with open(path, "w", encoding="utf-8") as f:
         json.dump(facts, f)
-    return facts
+    return facts, None
+
+
+def _http_reason(exc):
+    """예외에서 사람이 읽을 수 있는 실패 사유를 뽑는다(HTTP 상태코드 우선)."""
+    import urllib.error
+
+    cur = exc
+    for _ in range(4):  # RuntimeError(...) from HTTPError 처럼 감싸인 경우
+        if isinstance(cur, urllib.error.HTTPError):
+            return f"HTTP {cur.code}"
+        if isinstance(cur, urllib.error.URLError):
+            return f"네트워크 오류({cur.reason})"
+        if cur.__cause__ is None:
+            break
+        cur = cur.__cause__
+    return f"{type(exc).__name__}: {str(exc)[:120]}"
 
 
 def _cagr(start, end, years):
@@ -80,9 +115,9 @@ def _worst_yoy(series_by_year):
 
 def fetch_sec_fields(ticker, retrieved_at):
     """SEC에서 매출·OCF·capex 6개년(5y CAGR용)을 가져와 screener 입력 필드를 만든다."""
-    facts = _cached_facts(ticker)
+    facts, reason = _cached_facts(ticker)
     if facts is None:
-        return None, ["companyfacts 조회 실패(CIK 매핑 안 됨 또는 네트워크 오류)"]
+        return None, [reason]
 
     import datetime
     this_year = int(retrieved_at[:4])
@@ -148,9 +183,9 @@ def fetch_deep_series(ticker, retrieved_at, n_years=11):
     (최대 11개년, 10y span 확보용)을 가져오고 operating_income도 추가한다.
     계산은 전혀 하지 않는다 - 연도별 원자료 dict만 반환한다(순수 I/O).
     """
-    facts = _cached_facts(ticker)
+    facts, reason = _cached_facts(ticker)
     if facts is None:
-        return None, ["companyfacts 조회 실패(CIK 매핑 안 됨 또는 네트워크 오류)"]
+        return None, [reason]
 
     this_year = int(retrieved_at[:4])
     years = list(range(this_year - n_years, this_year))

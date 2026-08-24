@@ -63,7 +63,7 @@ def test_fetch_sec_fields_computes_cagr_and_fcf0(monkeypatch, tmp_path):
         "PaymentsToAcquirePropertyPlantAndEquipment": {
             2020: 50, 2021: 55, 2022: 60, 2023: 65, 2024: 70, 2025: 75},
     })
-    monkeypatch.setattr(MOD, "_cached_facts", lambda t: facts)
+    monkeypatch.setattr(MOD, "_cached_facts", lambda t: (facts, None))
     fields, limitations = MOD.fetch_sec_fields("TEST", "2026-08-22")
     assert fields is not None
     assert fields["fcf0"] == 550 - 75  # OCF - capex, 최종연도
@@ -79,7 +79,7 @@ def test_fetch_sec_fields_rejects_negative_base_or_final_fcf(monkeypatch):
         "NetCashProvidedByUsedInOperatingActivities": {2023: 100, 2024: 120, 2025: 140},
         "PaymentsToAcquirePropertyPlantAndEquipment": {2023: 200, 2024: 50, 2025: 60},
     })
-    monkeypatch.setattr(MOD, "_cached_facts", lambda t: facts)
+    monkeypatch.setattr(MOD, "_cached_facts", lambda t: (facts, None))
     fields, limitations = MOD.fetch_sec_fields("TEST", "2026-08-22")
     assert fields is None
     assert any("0 이하" in m for m in limitations)

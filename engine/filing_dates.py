@@ -78,16 +78,31 @@ def _http_json(url: str, user_agent: str = None) -> dict:
         return json.loads(resp.read().decode("utf-8"))
 
 
+# 티커->CIK 매핑표는 **전체 목록 하나짜리 파일**(약 1MB)이라, 티커마다 새로
+# 받으면 같은 파일을 N번 내려받는다. 일일 스크리닝이 25종목을 조회하면 같은
+# 1MB를 25번 받는 셈이고, 그 자체가 레이트리밋·차단 위험이다(v3.68에서
+# 실측 확인: 25종목 조회가 10초 만에 전량 실패). 프로세스 수명 동안 1회만
+# 받아 재사용한다 - 매핑표는 하루 단위로 갱신되므로 프로세스 내 캐시는 안전하다.
+_TICKER_MAP_CACHE = {}
+
+
+def _ticker_map(user_agent: str = None) -> dict:
+    """SEC 전체 티커->CIK 매핑표(프로세스 내 1회만 조회)."""
+    key = user_agent or DEFAULT_USER_AGENT
+    if key not in _TICKER_MAP_CACHE:
+        data = _http_json(SEC_TICKERS_URL, user_agent)
+        _TICKER_MAP_CACHE[key] = {
+            row["ticker"].upper(): str(row["cik_str"]).zfill(10)
+            for row in data.values()
+        }
+    return _TICKER_MAP_CACHE[key]
+
+
 def ticker_to_cik(ticker: str, user_agent: str = None) -> str:
     """
     티커 -> 10자리 CIK. 찾지 못하면 None을 돌려준다(추측하지 않는다).
     """
-    data = _http_json(SEC_TICKERS_URL, user_agent)
-    want = ticker.strip().upper()
-    for row in data.values():
-        if row["ticker"].upper() == want:
-            return str(row["cik_str"]).zfill(10)
-    return None
+    return _ticker_map(user_agent).get(ticker.strip().upper())
 
 
 def fetch_company_facts(cik: str, user_agent: str = None) -> dict:
