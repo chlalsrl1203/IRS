@@ -62,6 +62,20 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python3 scripts/daily_monitor_ci.py --post
 
+      # 2026-08-24(v3.69): 관심종목 추적. 스크리너가 **발굴**이라면 이건 **감시**다 -
+      # watchlist.json에 사람이 정해둔 목록만 본다. 스크리너보다 뒤에 두는 이유는
+      # AV 예산 때문이다: 무료 25회/일 중 스크리너가 먼저 쓰고 남는 걸 관심종목이
+      # 쓴다(실측상 스크리너는 SEC가 후보 88%를 걸러내 하루 1~3회만 쓴다).
+      # `if: always()`인 이유 - Finviz/Playwright가 죽어도 관심종목 감시는 돌아야
+      # 한다(ledger + AV만 쓰므로 Finviz와 무관하다).
+      - name: run watchlist tracking
+        if: always()
+        env:
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/watchlist_ci.py --post
+
       # 2026-08-23(v3.65): 심층분석 스냅샷은 다음날 "전일 대비 변화"를 보려면
       # 이 checkout 안에 남아 있어야 하는데, 러너는 매번 새로 뜬다 - 커밋하지
       # 않으면 항상 prior=None이라 변화탐지가 영구히 작동하지 않는다.
@@ -69,16 +83,16 @@ jobs:
       # 등은 여기서 절대 커밋되지 않는다) - 판정 로직이 아니라 SEC 원자료를
       # 재계산한 객관적 스냅샷이라 사람 검토 없이 쌓아도 안전하다(주관적
       # 판단이 필요한 monitor/acknowledgements.json은 반대로 사람이 커밋한다).
-      - name: commit deep-screen snapshots (있을 때만)
+      - name: commit snapshots (있을 때만)
         if: always()
         run: |
           git config user.name "irs-daily-screen[bot]"
           git config user.email "irs-daily-screen-bot@users.noreply.github.com"
-          git add reports/deep_screen/ 2>/dev/null || true
+          git add reports/deep_screen/ reports/watchlist/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 스냅샷 없음 - 커밋 건너뜀"
           else
-            git commit -m "reports/deep_screen: $(date -u +%Y-%m-%d) 자동 스냅샷"
+            git commit -m "reports: $(date -u +%Y-%m-%d) 자동 스냅샷(deep_screen/watchlist)"
             git push
           fi
 
