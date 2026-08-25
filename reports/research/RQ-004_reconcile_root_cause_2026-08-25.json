@@ -1,0 +1,1838 @@
+{
+  "generated_at": "2026-08-25",
+  "research_question": "RQ-004: ledger vs SEC 불일치의 원인 분류(34종목 전수)",
+  "scope_vs_prior": "P0-07은 8종목만 대조했다 - 이번은 34종목 전수",
+  "modifies_ledger": false,
+  "n_tickers": 34,
+  "n_values": 1256,
+  "cause_tally": {
+    "일치": 1055,
+    "SEC_결측": 101,
+    "B_태그정의": 32,
+    "F_업종구조": 22,
+    "D_원인미상": 22,
+    "E_정규화의심": 12,
+    "A_라벨시프트": 8,
+    "C_재작성": 4
+  },
+  "failures": [],
+  "by_ticker": [
+    {
+      "ticker": "CDNS",
+      "n_mismatch": 17,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 1580932000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 1702091000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2020,
+          "ledger_value": 2682891000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2021,
+          "sec_value": 2682891000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2020 == SEC FY2021 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2021,
+          "ledger_value": 2988244000.0,
+          "cause": "D_원인미상",
+          "ledger": 2988244000.0,
+          "sec_latest": 2682891000,
+          "rel_diff": 0.10218476135148268
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2014,
+          "ledger_value": 206644000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2015,
+          "sec_value": 206644000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2014 == SEC FY2015 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 285430000.0,
+          "cause": "E_정규화의심",
+          "ledger": 285430000.0,
+          "sec_latest": 206644000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 645552000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2021,
+          "sec_value": 645552000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2020 == SEC FY2021 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 779089000.0,
+          "cause": "E_정규화의심",
+          "ledger": 779089000.0,
+          "sec_latest": 645552000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 1649781000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1649781000.0,
+          "sec_latest": 1492042000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 316722000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2015,
+          "sec_value": 316722000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2014 == SEC FY2015 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 378200000.0,
+          "cause": "D_원인미상",
+          "ledger": 378200000.0,
+          "sec_latest": 316722000,
+          "rel_diff": 0.1625542041248017
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2020,
+          "ledger_value": 904922000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2021,
+          "sec_value": 904922000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2020 == SEC FY2021 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2021,
+          "ledger_value": 1100958000.0,
+          "cause": "D_원인미상",
+          "ledger": 1100958000.0,
+          "sec_latest": 904922000,
+          "rel_diff": 0.17805947184179596
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2014,
+          "ledger_value": 39810000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2015,
+          "sec_value": 39810000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2014 == SEC FY2015 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2015,
+          "ledger_value": 44808000.0,
+          "cause": "D_원인미상",
+          "ledger": 44808000.0,
+          "sec_latest": 39810000,
+          "rel_diff": 0.11154258168184253
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 94813000.0,
+          "cause": "A_라벨시프트",
+          "shift": 1,
+          "sec_year_matched": 2021,
+          "sec_value": 94813000,
+          "sec_missing_at_year": true,
+          "note": "ledger FY2020 == SEC FY2021 (52/53주 회계연도 오라벨)"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 66881000.0,
+          "cause": "D_원인미상",
+          "ledger": 66881000.0,
+          "sec_latest": 94813000,
+          "rel_diff": 0.29460095134633435
+        }
+      ]
+    },
+    {
+      "ticker": "BRO",
+      "n_mismatch": 15,
+      "mismatches": [
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2014,
+          "ledger_value": 417184000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 440633000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 467032000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 471004000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2017 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 499447000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2018 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 570768000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2019 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 668900000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2020 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 854700000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 963000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 1156000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2024,
+          "ledger_value": 1367000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 1502000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 385019000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 381832000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2016,
+          "ledger_value": 411042000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "ZTS",
+      "n_mismatch": 15,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 4785000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 4765000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2014,
+          "ledger_value": 970000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 1082000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 1404000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 1727000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2017 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 1881000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2018 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 2018000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2019 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 2269000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2020 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 2803000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 2928000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 3069000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2024,
+          "ledger_value": 3392000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 3597000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2014,
+          "ledger_value": 195000000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 180000000,
+          "software": 15000000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        }
+      ]
+    },
+    {
+      "ticker": "BSX",
+      "n_mismatch": 14,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 7477000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 790000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 790000000.0,
+          "sec_latest": -283000000,
+          "pattern": "부호반대",
+          "note": "일회성 손실이 SEC(GAAP)에만 반영된 형태"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 1236000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1236000000.0,
+          "sec_latest": 447000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 1525000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1525000000.0,
+          "sec_latest": 1285000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 1737000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1737000000.0,
+          "sec_latest": 1506000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 1712000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1712000000.0,
+          "sec_latest": 1518000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 601000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 601000000.0,
+          "sec_latest": -80000000,
+          "pattern": "부호반대",
+          "note": "일회성 손실이 SEC(GAAP)에만 반영된 형태"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 1922000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1922000000.0,
+          "sec_latest": 1199000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 1824000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 1824000000.0,
+          "sec_latest": 1649000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 2181000000.0,
+          "cause": "D_원인미상",
+          "ledger": 2181000000.0,
+          "sec_latest": 2343000000,
+          "rel_diff": 0.06914212548015365
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 3971000000.0,
+          "cause": "E_정규화의심",
+          "ledger": 3971000000.0,
+          "sec_latest": 3613000000,
+          "pattern": "ledger가 큼",
+          "note": "ledger가 비용을 덜 반영한 형태(정규화 방향과 일치)"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 600000000.0,
+          "cause": "C_재작성",
+          "first_filed_value": 600000000,
+          "restated_value": 691000000,
+          "note": "ledger는 최초 공시본과 일치 - 이후 재작성됨"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2016,
+          "ledger_value": 972000000.0,
+          "cause": "C_재작성",
+          "first_filed_value": 972000000,
+          "restated_value": 1182000000,
+          "note": "ledger는 최초 공시본과 일치 - 이후 재작성됨"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 800000000.0,
+          "cause": "D_원인미상",
+          "ledger": 800000000.0,
+          "sec_latest": 711000000,
+          "rel_diff": 0.11125
+        }
+      ]
+    },
+    {
+      "ticker": "MNST",
+      "n_mismatch": 14,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 2464867000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 2722564000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 585567000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 207986000.0,
+          "cause": "D_원인미상",
+          "ledger": 207986000.0,
+          "sec_latest": 522723000,
+          "rel_diff": 0.6021104868161531
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2014,
+          "ledger_value": 31363000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 27952000,
+          "software": 3411000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2015,
+          "ledger_value": 42493000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 35605000,
+          "software": 6888000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2016,
+          "ledger_value": 105337000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 99819000,
+          "software": 5518000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2017,
+          "ledger_value": 93128000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 83435000,
+          "software": 9693000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2018,
+          "ledger_value": 74925000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 61941000,
+          "software": 12984000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2019,
+          "ledger_value": 110398000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 101661000,
+          "software": 8737000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 67272000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 48722000,
+          "software": 18550000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 57453000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 43868000,
+          "software": 13585000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 212153000.0,
+          "cause": "D_원인미상",
+          "ledger": 212153000.0,
+          "sec_latest": 188726000,
+          "rel_diff": 0.11042502345005727
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 234724000.0,
+          "cause": "D_원인미상",
+          "ledger": 234724000.0,
+          "sec_latest": 221428000,
+          "rel_diff": 0.056645251444249416
+        }
+      ]
+    },
+    {
+      "ticker": "ACGL",
+      "n_mismatch": 13,
+      "mismatches": [
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 567194000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 855552000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 757277000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 841772000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 1849110000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 1560783000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 2103351000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 1488493000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 3385000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2024,
+          "ledger_value": 4474000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 4979000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 997906000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2016,
+          "ledger_value": 1396644000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "DSGX",
+      "n_mismatch": 11,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2019,
+          "ledger_value": 275171000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2019 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2020,
+          "ledger_value": 325791000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2020 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2021,
+          "ledger_value": 348664000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2022,
+          "ledger_value": 424690000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2023,
+          "ledger_value": 486000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2024,
+          "ledger_value": 572931000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2025,
+          "ledger_value": 651000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2026,
+          "ledger_value": 728992000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2026 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 130400000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2023,
+          "ledger_value": 192400000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 6071000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "PGR",
+      "n_mismatch": 11,
+      "mismatches": [
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 1911600000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 1470700000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 2138900000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 3163600000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 5160300000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 7173200000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 4210000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 922100000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 4904000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2024,
+          "ledger_value": 10713000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 14223000000.0,
+          "cause": "F_업종구조",
+          "note": "보험업은 OperatingIncomeLoss를 보고하지 않는다(구조적, 결함 아님)"
+        }
+      ]
+    },
+    {
+      "ticker": "PH",
+      "n_mismatch": 11,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 13215971000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 12711744000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2016,
+          "ledger_value": 11360753000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2014,
+          "ledger_value": 1489230000.0,
+          "cause": "D_원인미상",
+          "ledger": 1489230000.0,
+          "sec_latest": 1790207000,
+          "rel_diff": 0.16812413313097313
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2015,
+          "ledger_value": 1468066000.0,
+          "cause": "D_원인미상",
+          "ledger": 1468066000.0,
+          "sec_latest": 1838432000,
+          "rel_diff": 0.20145754643087152
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2016,
+          "ledger_value": 1297957000.0,
+          "cause": "D_원인미상",
+          "ledger": 1297957000.0,
+          "sec_latest": 1575655000,
+          "rel_diff": 0.17624289581158312
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 1450128000.0,
+          "cause": "D_원인미상",
+          "ledger": 1450128000.0,
+          "sec_latest": 1790255000,
+          "rel_diff": 0.189988018466643
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 2123764999.0,
+          "cause": "D_원인미상",
+          "ledger": 2123764999.0,
+          "sec_latest": 2236239000,
+          "rel_diff": 0.05029605556472273
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 2814745000.0,
+          "cause": "D_원인미상",
+          "ledger": 2814745000.0,
+          "sec_latest": 2975035000,
+          "rel_diff": 0.0538783577336065
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 3220662000.0,
+          "cause": "D_원인미상",
+          "ledger": 3220662000.0,
+          "sec_latest": 3404000000,
+          "rel_diff": 0.05385957696827262
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 4060000000.0,
+          "cause": "A_라벨시프트",
+          "shift": -1,
+          "sec_year_matched": 2024,
+          "sec_value": 4069000000,
+          "sec_missing_at_year": false,
+          "note": "ledger FY2025 == SEC FY2024 (52/53주 회계연도 오라벨)"
+        }
+      ]
+    },
+    {
+      "ticker": "TYL",
+      "n_mismatch": 10,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 493101000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 591022000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 142839000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2019,
+          "ledger_value": 42040000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 37236000,
+          "software": 4804000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 28466000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 22690000,
+          "software": 5776000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 55612000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 33919000,
+          "software": 21693000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 50151000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 22529000,
+          "software": 27622000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 53009000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 20519000,
+          "software": 32490000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 49936000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 20535000,
+          "software": 29401000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 32793000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 16015000,
+          "software": 16778000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        }
+      ]
+    },
+    {
+      "ticker": "GWRE",
+      "n_mismatch": 9,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2017,
+          "ledger_value": 6670000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 5886000,
+          "software": 784000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2018,
+          "ledger_value": 12011000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 9398000,
+          "software": 2613000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2019,
+          "ledger_value": 48857000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 44921000,
+          "software": 3936000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 25660000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 21377000,
+          "software": 4283000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 28854000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 19008000,
+          "software": 9846000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 21776000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 9510000,
+          "software": 12266000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 17427000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 5821000,
+          "software": 11606000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 18527000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 6362000,
+          "software": 12165000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 20455000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 5741000,
+          "software": 14714000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        }
+      ]
+    },
+    {
+      "ticker": "KLAC",
+      "n_mismatch": 9,
+      "mismatches": [
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2017,
+          "ledger_value": 1278900000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2017 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2018,
+          "ledger_value": 1539825000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2018 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2019,
+          "ledger_value": 1389373000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2019 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2020,
+          "ledger_value": 1502201000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2020 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2021,
+          "ledger_value": 2488480000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2022,
+          "ledger_value": 3654181000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2023,
+          "ledger_value": 3994696000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2024,
+          "ledger_value": 3346210000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_income",
+          "fiscal_year": 2025,
+          "ledger_value": 4775127000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "ROP",
+      "n_mismatch": 9,
+      "mismatches": [
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2020,
+          "ledger_value": 1123200000.0,
+          "cause": "D_원인미상",
+          "ledger": 1123200000.0,
+          "sec_latest": 1525100000,
+          "rel_diff": 0.26352370336371383
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2021,
+          "ledger_value": 1655800000.0,
+          "cause": "D_원인미상",
+          "ledger": 1655800000.0,
+          "sec_latest": 2011900000,
+          "rel_diff": 0.17699686863164174
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2022,
+          "ledger_value": 606600000.0,
+          "cause": "D_원인미상",
+          "ledger": 606600000.0,
+          "sec_latest": 734600000,
+          "rel_diff": 0.17424448679553498
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 42400000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2020 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 58200000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 70300000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 108000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 111000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 104699999.99999999,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "MNDY",
+      "n_mismatch": 6,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2020,
+          "ledger_value": 5481000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 4362000,
+          "software": 1119000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 13758000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 11578000,
+          "software": 2180000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 19001000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 16003000,
+          "software": 2998000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 10459000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 7901000,
+          "software": 2558000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 15235000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 13211000,
+          "software": 2024000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 23742000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 20362000,
+          "software": 3380000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        }
+      ]
+    },
+    {
+      "ticker": "WCN",
+      "n_mismatch": 6,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 2079166000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 2117286999.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 545220000.0,
+          "cause": "D_원인미상",
+          "ledger": 545220000.0,
+          "sec_latest": 399726000,
+          "rel_diff": 0.26685374711125787
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 934000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 1055988000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 1194366000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "WDAY",
+      "n_mismatch": 6,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 259496000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 435768000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 364000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 232000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 269000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2026,
+          "ledger_value": 162000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2026 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "PDD",
+      "n_mismatch": 5,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2021,
+          "ledger_value": 3287232000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2021 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2022,
+          "ledger_value": 635716000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2022 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2023,
+          "ledger_value": 583879000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2023 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2024,
+          "ledger_value": 967137000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2024 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "capex",
+          "fiscal_year": 2025,
+          "ledger_value": 1145077000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2025 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "BKNG",
+      "n_mismatch": 4,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 8441971000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 9223987000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 2914397000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 3102231000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "IDXX",
+      "n_mismatch": 4,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 1485807000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 1601892000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2015,
+          "ledger_value": 216364000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2016,
+          "ledger_value": 334571000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "TCOM",
+      "n_mismatch": 4,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 7346918369.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 10897568061.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2016,
+          "ledger_value": 19228439814.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2016 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 1958603856.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "SE",
+      "n_mismatch": 3,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2023,
+          "ledger_value": 13063560000.0,
+          "cause": "C_재작성",
+          "first_filed_value": 13063560000,
+          "restated_value": 11453664000,
+          "note": "ledger는 최초 공시본과 일치 - 이후 재작성됨"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2024,
+          "ledger_value": 16819866000.0,
+          "cause": "C_재작성",
+          "first_filed_value": 16819866000,
+          "restated_value": 14733573000,
+          "note": "ledger는 최초 공시본과 일치 - 이후 재작성됨"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2025,
+          "ledger_value": 22938469000.0,
+          "cause": "D_원인미상",
+          "ledger": 22938469000.0,
+          "sec_latest": 19625021000,
+          "rel_diff": 0.14444939633939824
+        }
+      ]
+    },
+    {
+      "ticker": "WM",
+      "n_mismatch": 3,
+      "mismatches": [
+        {
+          "metric": "revenue",
+          "fiscal_year": 2014,
+          "ledger_value": 13996000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "revenue",
+          "fiscal_year": 2015,
+          "ledger_value": 12961000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2015 값이 없고 인접연도와도 불일치"
+        },
+        {
+          "metric": "operating_cashflow",
+          "fiscal_year": 2014,
+          "ledger_value": 2331000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2014 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "MCK",
+      "n_mismatch": 1,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2026,
+          "ledger_value": 745000000.0,
+          "cause": "SEC_결측",
+          "note": "SEC에 FY2026 값이 없고 인접연도와도 불일치"
+        }
+      ]
+    },
+    {
+      "ticker": "VRSN",
+      "n_mismatch": 1,
+      "mismatches": [
+        {
+          "metric": "capex",
+          "fiscal_year": 2016,
+          "ledger_value": 169574000.0,
+          "cause": "B_태그정의",
+          "matched": "narrow+software",
+          "narrow": 26574000,
+          "software": 143000000,
+          "note": "ledger는 유형자산 + 자본화 소프트웨어 합계와 일치"
+        }
+      ]
+    },
+    {
+      "ticker": "BSY",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "COR",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "DUOL",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "GEN",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "KEYS",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "PTC",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "RMD",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "TTD",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "UBER",
+      "n_mismatch": 0,
+      "mismatches": []
+    },
+    {
+      "ticker": "VRT",
+      "n_mismatch": 0,
+      "mismatches": []
+    }
+  ]
+}
