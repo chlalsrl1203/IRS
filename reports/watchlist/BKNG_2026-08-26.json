@@ -1,0 +1,19 @@
+{
+  "ticker": "BKNG",
+  "analyzed_at": "2026-07-28",
+  "market_cap_then": 144740000000.0,
+  "market_cap_now": 165328077000.0,
+  "market_cap_change_pct": 0.14224179217907973,
+  "gap_then": 0.05981018711677141,
+  "gap_now": 0.04369747807136125,
+  "gap_decay_pp": -0.016112709045410165,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": true,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.11508686710944717,
+  "realistic_growth_now": 0.11508686710944717,
+  "mode": "gap_decay",
+  "date": "2026-08-26"
+}

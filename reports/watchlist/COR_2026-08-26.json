@@ -1,0 +1,19 @@
+{
+  "ticker": "COR",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 60540000000.0,
+  "market_cap_now": 61784109000.0,
+  "market_cap_change_pct": 0.020550198216055415,
+  "gap_then": 0.030971756573969778,
+  "gap_now": 0.028569641705805726,
+  "gap_decay_pp": -0.0024021148681640514,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.0957796484196729,
+  "realistic_growth_now": 0.0957796484196729,
+  "mode": "gap_decay",
+  "date": "2026-08-26"
+}

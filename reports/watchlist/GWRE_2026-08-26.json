@@ -1,0 +1,19 @@
+{
+  "ticker": "GWRE",
+  "analyzed_at": "2026-08-05",
+  "market_cap_then": 13270000000.0,
+  "market_cap_now": 15976064000.0,
+  "market_cap_change_pct": 0.20392343632253196,
+  "gap_then": 0.0315386804982906,
+  "gap_now": 0.02772734360300763,
+  "gap_decay_pp": -0.0038113368952829713,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.11506636068985966,
+  "realistic_growth_now": 0.11506636068985966,
+  "mode": "gap_decay",
+  "date": "2026-08-26"
+}

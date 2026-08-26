@@ -1,0 +1,19 @@
+{
+  "ticker": "MNST",
+  "analyzed_at": "2026-07-25",
+  "market_cap_then": 91433976000,
+  "market_cap_now": 95836807000.0,
+  "market_cap_change_pct": 0.04815311761133523,
+  "gap_then": -0.006418685378330832,
+  "gap_now": -0.0074674395106105185,
+  "gap_decay_pp": -0.0010487541322796862,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.07710471404538147,
+  "realistic_growth_now": 0.07710471404538147,
+  "mode": "gap_decay",
+  "date": "2026-08-26"
+}
