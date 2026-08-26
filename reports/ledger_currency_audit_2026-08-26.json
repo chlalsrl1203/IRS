@@ -1,0 +1,427 @@
+{
+  "generated_at": "2026-08-26",
+  "question": "ledger meta.currency 라벨이 실제 값의 통화와 맞는가",
+  "method": "SEC XBRL 단위별 매출 시계열과 직접 대조(허용오차 1%, 최소 3개년)",
+  "audit_only": "이 스크립트는 감사 전용 - ledger를 수정하지 않는다",
+  "n": 34,
+  "mislabeled": [
+    {
+      "ticker": "TCOM",
+      "declared": "USD",
+      "detected": "CNY"
+    }
+  ],
+  "undetermined": [],
+  "rows": [
+    {
+      "ticker": "ACGL",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 11,
+      "compared_years": 11,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "BKNG",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "BRO",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 8,
+      "compared_years": 12,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "BSX",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "BSY",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 8,
+      "compared_years": 8,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "CDNS",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 7,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "COR",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "DSGX",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "DUOL",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "GEN",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "GWRE",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "IDXX",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "KEYS",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "KLAC",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "MCK",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 8,
+      "compared_years": 8,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "MNDY",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "MNST",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "PDD",
+      "declared": "CNY",
+      "detected": "CNY",
+      "matched_years": 8,
+      "compared_years": 8,
+      "units_available": [
+        "CNY",
+        "USD"
+      ],
+      "dual_reported": true,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "PGR",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 11,
+      "compared_years": 11,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "PH",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "PTC",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 9,
+      "compared_years": 9,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "RMD",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "ROP",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 4,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "SE",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 5,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "TCOM",
+      "declared": "USD",
+      "detected": "CNY",
+      "matched_years": 9,
+      "compared_years": 10,
+      "units_available": [
+        "CNY",
+        "USD"
+      ],
+      "dual_reported": true,
+      "verdict": "라벨 불일치"
+    },
+    {
+      "ticker": "TTD",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "TYL",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "UBER",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "VRSN",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 12,
+      "compared_years": 12,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "VRT",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "WCN",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "WDAY",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 6,
+      "compared_years": 6,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "WM",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    },
+    {
+      "ticker": "ZTS",
+      "declared": "USD",
+      "detected": "USD",
+      "matched_years": 10,
+      "compared_years": 10,
+      "units_available": [
+        "USD"
+      ],
+      "dual_reported": false,
+      "verdict": "일치"
+    }
+  ]
+}

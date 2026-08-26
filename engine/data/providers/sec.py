@@ -253,6 +253,7 @@ class SecCompanyFactsProvider(FinancialProvider):
             # 출처가 흐려지지 않는 이유: 태그는 **값마다** `FinancialFact.source`에
             # 기록되므로, 섞였다는 사실 자체가 값 단위로 드러난다.
             picked, chosen, fy_collisions = {}, {}, {}
+            units_available = set()
             for taxonomy_name, taxonomy in taxonomies.items():
                 for tag in METRIC_TAGS[metric]:
                     if tag not in taxonomy:
@@ -260,6 +261,8 @@ class SecCompanyFactsProvider(FinancialProvider):
                     for unit_name, entries in (taxonomy[tag].get("units") or {}).items():
                         cand, coll = _pick_by_fiscal_year(
                             _annual_entries(entries, metric), years)
+                        if cand:
+                            units_available.add(unit_name)
                         for fy, periods in coll.items():
                             fy_collisions.setdefault(fy, set()).update(periods)
                         for fy, row in cand.items():
@@ -279,6 +282,43 @@ class SecCompanyFactsProvider(FinancialProvider):
             used_tags[metric] = sorted(
                 {f"{t}:{g} ({u})" for t, g, u in chosen.values()}
             )
+
+            # ⚠️ 통화/단위 혼재 (2026-08-26, RQ-005 측정 중 발견)
+            #
+            # 中 발행사는 같은 태그를 **CNY와 USD 두 단위로 동시 보고**한다
+            # (PDD·TCOM 실측). 위 루프는 `if fy not in picked`라 JSON에 먼저
+            # 나온 단위가 이기는데, 그 순서에는 아무 의미가 없다.
+            #
+            # 두 경우를 구분한다:
+            #  (a) 채택된 시계열이 **한 단위로 일관** → 정보성 안내. 값 자체는
+            #      일관되므로 비율(FCF수익률·Gap)은 옳지만, 어느 통화인지 모른 채
+            #      절대값을 쓰면 틀린다 - v3.67 규모 조건부 상한이 정확히 그
+            #      경로다(TCOM ledger가 CNY 값에 currency="USD" 라벨을 달고 있어
+            #      규모구간이 25000+ vs 4500-7000으로 갈렸다. RG 12.39%가 두 상한
+            #      17.87%/23.00% 어느 쪽에도 안 걸려 실제 피해는 없었다).
+            #  (b) 채택된 시계열이 **여러 단위에 걸침** → 한 시계열 안에서 연도별로
+            #      통화가 섞였다는 뜻이라 CAGR이 7배 단위로 망가진다. 조용히
+            #      넘기지 않는다.
+            units_used = {u for _, _, u in chosen.values()}
+            if len(units_used) > 1:
+                by_unit = {}
+                for fy, (_, _, u) in chosen.items():
+                    by_unit.setdefault(u, []).append(fy)
+                limitations.append(
+                    f"[단위 혼재 - 심각] {metric}: 채택된 시계열이 여러 단위에 "
+                    f"걸쳐 있다 { {u: sorted(v) for u, v in by_unit.items()} }. "
+                    f"연도별로 통화·단위가 달라 CAGR·증감률이 무의미하다 — "
+                    f"단위를 하나로 지정해 다시 받을 것."
+                )
+            elif len(units_available) > 1:
+                limitations.append(
+                    f"[복수 단위 보고] {metric}: 이 회사는 "
+                    f"{sorted(units_available)} 단위로 같은 값을 함께 보고한다. "
+                    f"채택된 단위는 {sorted(units_used)[0] if units_used else '?'}"
+                    f"이며 시계열은 일관된다. 비율 지표는 영향이 없으나 "
+                    f"**절대값을 쓰는 경로(규모 구간 판정 등)는 이 통화를 "
+                    f"명시적으로 확인할 것.**"
+                )
 
             if fy_collisions:
                 sample = sorted(fy_collisions)[:3]
@@ -378,3 +418,114 @@ class SecCompanyFactsProvider(FinancialProvider):
         )
         result.governance = dict(result.governance, used_tags=used_tags)
         return result
+
+
+# ── 재작성 이력 (RQ-005, 2026-08-26) ────────────────────────────────────
+# 축0 L2(회계 품질)의 세 번째 진단값. 발생액·AR추세와 달리 **외부 문헌이 필요
+# 없는 직접 관측 사실**이다 - 같은 회계기간을 여러 공시가 서로 다른 값으로
+# 보고했는가.
+#
+# 여기에 두는 이유: 이 함수는 여러 공시본을 가로질러 봐야 하는데, 그 원자료
+# (companyfacts의 filed별 항목)를 파싱하는 계층이 여기다. `accounting_quality`는
+# 연도->값 dict만 받는 순수 모듈로 유지한다.
+
+# 5% 초과 변경만 '재작성'으로 센다(반올림·재분류 잡음 제외).
+RESTATEMENT_MATERIAL = 0.05
+
+# ⚠️ 10배 초과 변경은 재작성이 아니다. 감사받은 연간 수치가 10배 고쳐지는 일은
+# 사실상 없고, 그 규모는 **두 숫자가 서로 다른 실체를 가리킨다**는 뜻이다 -
+# 단위 차이이거나 같은 CIK 아래 보고주체가 바뀐 경우다(VRT가 2020년 SPAC 합병
+# 전 껍데기 법인 재무제표를 같은 CIK로 제출한 것이 실례: FY2018 영업현금흐름이
+# -710,388에서 -221,900,000으로 311배). 분자·분모 양쪽에서 빼고 따로 센다.
+#
+# 이 규칙은 VRT 사례를 본 **뒤에** 정했다 - 이 프로젝트 관행대로 숨기지 않는다.
+# 근거는 결과가 아니라 도메인 사실(감사된 연간 수치의 정정 폭 한계)이며,
+# PHASE 4가 주식분할 오염을 '인접연도 1.5배'로 막은 것과 같은 형태의 제약이다.
+ENTITY_CHANGE_THRESHOLD = 10.0
+
+RESTATEMENT_METRICS = ("revenue", "operating_cashflow", "net_income")
+
+
+def restatement_profile(facts, metrics=RESTATEMENT_METRICS):
+    """
+    companyfacts에서 **재작성 이력**을 센다.
+
+    같은 (태그, 단위, 기간)을 두 번 이상 보고한 항목만 대상이며, 최초 공시본과
+    최신 공시본의 차이가 `RESTATEMENT_MATERIAL`를 넘으면 재작성으로 센다.
+
+    ⚠️ **단위별로 따로 센다.** 초판(RQ-005 측정 스크립트)은 `units.values()`를
+    합쳐 비교했다가 PDD·TCOM이 재작성률 0.83~0.87로 나왔는데, 편차가 정확히
+    629.9%로 반복돼 확인해보니 CNY와 USD를 나란히 비교한 것이었다(7.299 =
+    위안/달러). 이 프로젝트가 반복해 밟은 단위 함정과 같은 계열이다.
+
+    ⚠️ **재작성률 0은 '깨끗하다'가 아니다.** 공시가 한 번뿐인 기간은 분모에
+    들어가지 않는다 - 상장이 짧거나 XBRL 이력이 얕으면 잴 기회 자체가 없다.
+    그래서 `multi_filed_periods`를 함께 낸다("데이터 없음을 안전으로 오독하지
+    않는다"는 이 프로젝트의 반복 원칙).
+
+    ⚠️ **연속 순위지표로 쓰지 말 것.** 34종목 실측에서 22종목이 정확히 0이라
+    중앙값이 0이다 - 사실상 '재작성 이력이 있는가'라는 이진 사실이다.
+
+    판정·점수를 내지 않는다(§31 합성점수 금지).
+    """
+    taxonomies = facts.get("facts", {}) or {}
+    total = restated = 0
+    worst = 0.0
+    detail, entity = [], []
+
+    for metric in metrics:
+        for tag in METRIC_TAGS[metric]:
+            hit = False
+            for taxonomy in taxonomies.values():
+                node = taxonomy.get(tag)
+                if not node:
+                    continue
+                hit = True
+                for unit, entries in (node.get("units") or {}).items():
+                    periods = {}
+                    for start, end, filed, val in _annual_entries(entries, metric):
+                        periods.setdefault((start, end), []).append((filed, val))
+                    for period, rows in periods.items():
+                        if len(rows) < 2:
+                            continue
+                        rows.sort()
+                        first, last = rows[0][1], rows[-1][1]
+                        if first == 0:
+                            continue
+                        dev = abs(last - first) / abs(first)
+                        rec = {"metric": metric, "unit": unit,
+                               "period": list(period), "first_reported": first,
+                               "latest_reported": last, "deviation": dev,
+                               "first_filed": rows[0][0], "latest_filed": rows[-1][0]}
+                        if dev > ENTITY_CHANGE_THRESHOLD:
+                            entity.append(rec)      # 분모에서도 뺀다
+                            continue
+                        total += 1
+                        if dev > RESTATEMENT_MATERIAL:
+                            restated += 1
+                            worst = max(worst, dev)
+                            detail.append(rec)
+            if hit:
+                break   # 지표당 첫 유효 태그만(_pick_by_fiscal_year와 같은 규약)
+
+    notes = []
+    if total == 0:
+        notes.append(
+            "[측정 불가] 두 번 이상 보고된 회계기간이 없다 - 재작성이 없었다는 "
+            "뜻이 아니라 **잴 기회가 없었다**는 뜻이다.")
+    if entity:
+        notes.append(
+            f"[실체·단위 변경 제외] 변경폭이 {ENTITY_CHANGE_THRESHOLD:.0f}배를 넘는 "
+            f"{len(entity)}건은 재작성이 아니라 보고주체 또는 단위가 바뀐 것으로 "
+            f"보고 분모·분자에서 제외했다.")
+
+    return {
+        "multi_filed_periods": total,
+        "restated_periods": restated,
+        "restatement_rate": (restated / total) if total else None,
+        "has_material_restatement": restated > 0,
+        "worst_deviation": worst if restated else None,
+        "restatements": sorted(detail, key=lambda d: -d["deviation"]),
+        "entity_or_unit_changes": sorted(entity, key=lambda d: -d["deviation"]),
+        "notes": notes,
+    }

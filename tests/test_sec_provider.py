@@ -338,3 +338,54 @@ def test_relabeling_is_not_done_automatically():
     r = _fetch(facts, [2015, 2016], metrics=("revenue",))
     vals = {f.fiscal_year: f.value for f in r.facts if f.metric == "revenue"}
     assert 2016 in vals and 2015 not in vals, "종료일 연도 규약이 조용히 바뀌었다"
+
+
+# ── 통화/단위 혼재 (RQ-005, 2026-08-26) ─────────────────────────────────
+#
+# 中 발행사(PDD·TCOM 실측)는 같은 태그를 CNY와 USD로 **동시 보고**한다.
+# provider의 선택 루프는 `if fy not in picked`라 JSON에 먼저 나온 단위가 이기는데
+# 그 순서에는 아무 의미가 없다. 두 위험이 다르므로 경고도 분리한다.
+def test_dual_currency_reporting_is_disclosed_even_when_series_is_consistent():
+    """
+    (a) 한 단위로 일관되게 채택된 경우 - 비율 지표(Gap)는 옳지만 **절대값을
+    쓰는 경로**는 통화를 알아야 한다. v3.67 규모 조건부 상한이 정확히 그
+    경로이고, TCOM ledger가 CNY 값에 currency="USD" 라벨을 달고 있었다.
+    """
+    f = facts(**{
+        "us-gaap__Revenues__CNY": [
+            unit(431_845_713_000, "2025-01-01", "2025-12-31", "2026-02-18")],
+        "us-gaap__Revenues__USD": [
+            unit(59_978_571_250, "2025-01-01", "2025-12-31", "2026-02-18")],
+    })
+    r = provider(f).fetch_annual_financials(
+        "PDD", metrics=["revenue"], fiscal_years=[2025], retrieved_at="2026-08-26")
+    lim = " ".join(r.limitations)
+    assert "복수 단위 보고" in lim
+    assert "CNY" in lim and "USD" in lim
+    assert "단위 혼재 - 심각" not in lim, "일관된 시계열을 심각으로 올리면 안 된다"
+
+
+def test_series_spanning_two_units_is_flagged_as_severe():
+    """
+    (b) 한 시계열 안에서 연도별로 통화가 갈리면 CAGR이 7배 단위로 망가진다 -
+    조용히 넘기지 않는다. CNY가 2024년만, USD가 2025년만 있는 경우.
+    """
+    f = facts(**{
+        "us-gaap__Revenues__CNY": [
+            unit(393_836_097_000, "2024-01-01", "2024-12-31", "2025-02-18")],
+        "us-gaap__Revenues__USD": [
+            unit(59_978_571_250, "2025-01-01", "2025-12-31", "2026-02-18")],
+    })
+    r = provider(f).fetch_annual_financials(
+        "PDD", metrics=["revenue"], fiscal_years=[2024, 2025],
+        retrieved_at="2026-08-26")
+    lim = " ".join(r.limitations)
+    assert "단위 혼재 - 심각" in lim
+    assert "2024" in lim and "2025" in lim
+
+
+def test_single_currency_company_gets_no_unit_warning():
+    r = provider(facts(**{"us-gaap__Revenues__USD": ANNUAL_2025})).fetch_annual_financials(
+        "BSX", metrics=["revenue"], fiscal_years=[2025], retrieved_at="2026-08-26")
+    lim = " ".join(r.limitations)
+    assert "복수 단위 보고" not in lim and "단위 혼재" not in lim

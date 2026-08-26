@@ -1,0 +1,1300 @@
+{
+  "generated_at": "2026-08-26",
+  "research_question": "RQ-005: AR/매출 추세와 재작성 이력이 IRS에 증분 정보를 주는가",
+  "measurement_only": "engine/·ledger/를 건드리지 않는다",
+  "g5_cut_fixed_before_run": {
+    "redundant_reject": 0.7,
+    "partial": 0.4,
+    "note": "결과를 보고 컷을 옮기지 않는다"
+  },
+  "coverage": {
+    "n": 34,
+    "ar_trend_relative": 30,
+    "restatement_rate": 34,
+    "accrual_ratio": 34
+  },
+  "skipped": [],
+  "correlations": {
+    "ar_trend_relative": {
+      "accrual_ratio": {
+        "rho": 0.2080088987764183,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "gap": {
+        "rho": -0.1795328142380423,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "drs": {
+        "rho": 0.07520302638592265,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "realistic_growth": {
+        "rho": -0.23987539534677493,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "margin_volatility": {
+        "rho": -0.09170030348172208,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "revenue_volatility": {
+        "rho": -0.23216836624508155,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "sbc_to_fcf": {
+        "rho": 0.047619047619047616,
+        "n": 8,
+        "verdict": "독립"
+      }
+    },
+    "ar_trend_slope": {
+      "accrual_ratio": {
+        "rho": 0.22714126807563964,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "gap": {
+        "rho": -0.16040044493882094,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "drs": {
+        "rho": 0.12548670675047446,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "realistic_growth": {
+        "rho": -0.2229639574559077,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "margin_volatility": {
+        "rho": -0.016929286796625614,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "revenue_volatility": {
+        "rho": -0.18353124322383182,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "sbc_to_fcf": {
+        "rho": -0.09523809523809523,
+        "n": 8,
+        "verdict": "독립"
+      }
+    },
+    "ar_to_revenue_latest": {
+      "accrual_ratio": {
+        "rho": 0.3579532814238043,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "gap": {
+        "rho": -0.0153503893214683,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "drs": {
+        "rho": 0.006674824827152897,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "realistic_growth": {
+        "rho": 0.05829995693956867,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "margin_volatility": {
+        "rho": 0.1641200303339539,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "revenue_volatility": {
+        "rho": 0.09324354523963345,
+        "n": 30,
+        "verdict": "독립"
+      },
+      "sbc_to_fcf": {
+        "rho": 0.38095238095238093,
+        "n": 8,
+        "verdict": "독립"
+      }
+    },
+    "restatement_rate": {
+      "accrual_ratio": {
+        "rho": -0.3834632956444806,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "gap": {
+        "rho": -0.04117344639032771,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "drs": {
+        "rho": -0.14046080657376867,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "realistic_growth": {
+        "rho": 0.10269609000265142,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "margin_volatility": {
+        "rho": 0.004590141415748,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "revenue_volatility": {
+        "rho": -0.019671080286562278,
+        "n": 34,
+        "verdict": "독립"
+      },
+      "sbc_to_fcf": {
+        "rho": 0.15842360687626786,
+        "n": 9,
+        "verdict": "독립"
+      }
+    },
+    "_between_candidates": {
+      "ar_trend_vs_restatement": {
+        "rho": -0.3449571762701684,
+        "n": 30
+      }
+    }
+  },
+  "rows": [
+    {
+      "ticker": "ACGL",
+      "ar_to_revenue_latest": null,
+      "ar_trend_slope": null,
+      "ar_trend_relative": null,
+      "ar_mean_level": null,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 42,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.021645454121627473,
+      "gap": 0.24383806952929307,
+      "drs": 48.0,
+      "realistic_growth": 0.157353923411129,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": 0.024151436031331592
+    },
+    {
+      "ticker": "BKNG",
+      "ar_to_revenue_latest": 0.09795553108005782,
+      "ar_trend_slope": 0.008946349734388029,
+      "ar_trend_relative": 0.097934192087832,
+      "ar_mean_level": 0.09135062579946053,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 8,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.07660304667948054,
+      "gap": 0.05981018711677141,
+      "drs": 56.0,
+      "realistic_growth": 0.11508686710944717,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "BRO",
+      "ar_to_revenue_latest": null,
+      "ar_trend_slope": null,
+      "ar_trend_relative": null,
+      "ar_mean_level": null,
+      "ar_notes": [],
+      "restatement_rate": 0.023255813953488372,
+      "restated_periods": 1,
+      "multi_filed_periods": 43,
+      "worst_restatement": 0.14182853759646205,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "operating_cashflow",
+          "unit": "USD",
+          "period": [
+            "2021-01-01",
+            "2021-12-31"
+          ],
+          "first_reported": 942469000,
+          "latest_reported": 808800000,
+          "deviation": 0.14182853759646205,
+          "first_filed": "2022-02-23",
+          "latest_filed": "2024-02-22"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.012730290107766317,
+      "gap": 0.07427728925631566,
+      "drs": 46.8,
+      "realistic_growth": 0.12,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "BSX",
+      "ar_to_revenue_latest": 0.1523363554847066,
+      "ar_trend_slope": -0.0017302770199616874,
+      "ar_trend_relative": -0.010836518554782551,
+      "ar_mean_level": 0.15967093224770543,
+      "ar_notes": [],
+      "restatement_rate": 0.08,
+      "restated_periods": 2,
+      "multi_filed_periods": 25,
+      "worst_restatement": 0.21604938271604937,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "operating_cashflow",
+          "unit": "USD",
+          "period": [
+            "2016-01-01",
+            "2016-12-31"
+          ],
+          "first_reported": 972000000,
+          "latest_reported": 1182000000,
+          "deviation": 0.21604938271604937,
+          "first_filed": "2017-02-23",
+          "latest_filed": "2019-02-19"
+        },
+        {
+          "metric": "operating_cashflow",
+          "unit": "USD",
+          "period": [
+            "2015-01-01",
+            "2015-12-31"
+          ],
+          "first_reported": 600000000,
+          "latest_reported": 691000000,
+          "deviation": 0.15166666666666667,
+          "first_filed": "2016-02-24",
+          "latest_filed": "2018-02-20"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.032334954495112436,
+      "gap": 0.058652919654472085,
+      "drs": 43.8,
+      "realistic_growth": 0.13863186252556584,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "BSY",
+      "ar_to_revenue_latest": 0.23325602502099177,
+      "ar_trend_slope": -0.006566623343935057,
+      "ar_trend_relative": -0.026513759574684766,
+      "ar_mean_level": 0.24766851058741754,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 18,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.054069792352926124,
+      "gap": 0.05695494807794302,
+      "drs": 46.8,
+      "realistic_growth": 0.10541108672060934,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "CDNS",
+      "ar_to_revenue_latest": 0.09304444472553877,
+      "ar_trend_slope": 0.006180898877688862,
+      "ar_trend_relative": 0.07994706341922592,
+      "ar_mean_level": 0.07731239414357852,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 40,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.017223043314827817,
+      "gap": 0.032879560479090325,
+      "drs": 36.6,
+      "realistic_growth": 0.12,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "COR",
+      "ar_to_revenue_latest": 0.07850209349453346,
+      "ar_trend_slope": -0.0008924754204607144,
+      "ar_trend_relative": -0.011108455968360735,
+      "ar_mean_level": 0.08034198659135669,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 51,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.030245126271280974,
+      "gap": 0.030971756573969778,
+      "drs": 35.12,
+      "realistic_growth": 0.0957796484196729,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "DSGX",
+      "ar_to_revenue_latest": 0.08885008340283569,
+      "ar_trend_slope": -0.003948124798311011,
+      "ar_trend_relative": -0.04075008716203103,
+      "ar_mean_level": 0.09688629088356118,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 29,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.04604621612627994,
+      "gap": 0.04248310348930688,
+      "drs": 29.4,
+      "realistic_growth": 0.13432194015922871,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "DUOL",
+      "ar_to_revenue_latest": 0.15692822495226916,
+      "ar_trend_slope": 0.009525610961020035,
+      "ar_trend_relative": 0.06304054903978892,
+      "ar_mean_level": 0.15110291877388016,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 15,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": 0.09938280038009539,
+      "gap": 0.19453125000000002,
+      "drs": 43.4,
+      "realistic_growth": 0.25,
+      "margin_volatility": 20.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": 0.3717256245824622
+    },
+    {
+      "ticker": "GEN",
+      "ar_to_revenue_latest": 0.0722,
+      "ar_trend_slope": 0.005168971412580752,
+      "ar_trend_relative": 0.10269594058856002,
+      "ar_mean_level": 0.05033277248308837,
+      "ar_notes": [],
+      "restatement_rate": 0.05,
+      "restated_periods": 2,
+      "multi_filed_periods": 40,
+      "worst_restatement": 0.4808708518283661,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2018-03-31",
+            "2019-03-29"
+          ],
+          "first_reported": 4731000000,
+          "latest_reported": 2456000000,
+          "deviation": 0.4808708518283661,
+          "first_filed": "2019-05-24",
+          "latest_filed": "2021-05-21"
+        },
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2017-04-01",
+            "2018-03-30"
+          ],
+          "first_reported": 4834000000,
+          "latest_reported": 2559000000,
+          "deviation": 0.47062474141497723,
+          "first_filed": "2019-05-24",
+          "latest_filed": "2020-05-28"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.02155449749067044,
+      "gap": 0.12182151794433595,
+      "drs": 43.0,
+      "realistic_growth": 0.12,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "GWRE",
+      "ar_to_revenue_latest": 0.11695949716372867,
+      "ar_trend_slope": -0.008299487616074389,
+      "ar_trend_relative": -0.05601507745907403,
+      "ar_mean_level": 0.14816524394058359,
+      "ar_notes": [],
+      "restatement_rate": 0.1111111111111111,
+      "restated_periods": 4,
+      "multi_filed_periods": 36,
+      "worst_restatement": 0.6029383085223948,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2012-08-01",
+            "2013-07-31"
+          ],
+          "first_reported": 15383000,
+          "latest_reported": 24658000,
+          "deviation": 0.6029383085223948,
+          "first_filed": "2013-09-27",
+          "latest_filed": "2015-09-17"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2017-08-01",
+            "2018-07-31"
+          ],
+          "first_reported": -19665000,
+          "latest_reported": -26743000,
+          "deviation": 0.35992880752606154,
+          "first_filed": "2018-09-19",
+          "latest_filed": "2020-09-28"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2011-08-01",
+            "2012-07-31"
+          ],
+          "first_reported": 15200000,
+          "latest_reported": 18664000,
+          "deviation": 0.22789473684210526,
+          "first_filed": "2012-09-25",
+          "latest_filed": "2014-09-17"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2016-08-01",
+            "2017-07-31"
+          ],
+          "first_reported": 21224000,
+          "latest_reported": 18072000,
+          "deviation": 0.14851111948737278,
+          "first_filed": "2017-09-20",
+          "latest_filed": "2019-10-01"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.028098434872669303,
+      "gap": 0.0315386804982906,
+      "drs": 39.080000000000005,
+      "realistic_growth": 0.11506636068985966,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": 0.5761379684178993
+    },
+    {
+      "ticker": "IDXX",
+      "ar_to_revenue_latest": 0.12834950003508608,
+      "ar_trend_slope": 0.003011600353272728,
+      "ar_trend_relative": 0.024752585160865165,
+      "ar_mean_level": 0.1216681140050854,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 36,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.018761621034399618,
+      "gap": 0.004138841871727902,
+      "drs": 33.8,
+      "realistic_growth": 0.08242656553743928,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "KEYS",
+      "ar_to_revenue_latest": 0.17469767441860465,
+      "ar_trend_slope": 0.005703346996427669,
+      "ar_trend_relative": 0.03447111853464558,
+      "ar_mean_level": 0.1654529135947665,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 13,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.03859990277102576,
+      "gap": -0.14364213252736793,
+      "drs": 47.68,
+      "realistic_growth": 0.014713198893530484,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "KLAC",
+      "ar_to_revenue_latest": 0.21276284887575928,
+      "ar_trend_slope": 0.0051333984916162225,
+      "ar_trend_relative": 0.027030719156950676,
+      "ar_mean_level": 0.18990980083843684,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 40,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": 0.05866424515073887,
+      "gap": 0.008613438964066245,
+      "drs": 54.72,
+      "realistic_growth": 0.10327419836763381,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "MCK",
+      "ar_to_revenue_latest": 0.07000966710457825,
+      "ar_trend_slope": 2.248526005224766e-05,
+      "ar_trend_relative": 0.0003145245272060771,
+      "ar_mean_level": 0.07148968715408091,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 41,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.06936959208899876,
+      "gap": -0.0001648937621887142,
+      "drs": 35.12,
+      "realistic_growth": 0.06160134921876831,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "MNDY",
+      "ar_to_revenue_latest": 0.024798761685296312,
+      "ar_trend_slope": -0.00045635642585626355,
+      "ar_trend_relative": -0.017689951933996407,
+      "ar_mean_level": 0.02579749382920829,
+      "ar_notes": [
+        "[얇은 채권] AR/매출 수준 0.0258가 관측 하위구간(0.05 미만)이라 상대추세가 증폭된다 - 분모가 작아 사소한 절대변화가 큰 비율변화로 찍힌다. 추세보다 원계열을 볼 것."
+      ],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 10,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.019984135472934844,
+      "gap": 0.23276233673095703,
+      "drs": 48.2,
+      "realistic_growth": 0.25,
+      "margin_volatility": 20.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": 0.5711837935863595
+    },
+    {
+      "ticker": "MNST",
+      "ar_to_revenue_latest": 0.19508139463246216,
+      "ar_trend_slope": 0.006856351281168393,
+      "ar_trend_relative": 0.04041806688982114,
+      "ar_mean_level": 0.16963580420257784,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 26,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.007573737434658189,
+      "gap": -0.006418685378330832,
+      "drs": 40.4,
+      "realistic_growth": 0.07710471404538147,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "PDD",
+      "ar_to_revenue_latest": null,
+      "ar_trend_slope": null,
+      "ar_trend_relative": null,
+      "ar_mean_level": null,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 24,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.002042466409087392,
+      "gap": 0.22037292480468723,
+      "drs": 45.4,
+      "realistic_growth": 0.17874999999999974,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "PGR",
+      "ar_to_revenue_latest": null,
+      "ar_trend_slope": null,
+      "ar_trend_relative": null,
+      "ar_mean_level": null,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 51,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.05339534233163158,
+      "gap": 0.1764221572875976,
+      "drs": 46.8,
+      "realistic_growth": 0.12749999999999995,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "PH",
+      "ar_to_revenue_latest": 0.1474487185450486,
+      "ar_trend_slope": -0.0004559051004248163,
+      "ar_trend_relative": -0.0031021092469629068,
+      "ar_mean_level": 0.14696616531837692,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 40,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.012991021579076376,
+      "gap": -0.08585815370238321,
+      "drs": 47.400000000000006,
+      "realistic_growth": 0.06508140623414017,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "PTC",
+      "ar_to_revenue_latest": 0.3654627256020496,
+      "ar_trend_slope": 0.01778764744703651,
+      "ar_trend_relative": 0.05064668318177382,
+      "ar_mean_level": 0.35121051033481565,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 39,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": 0.01269253365622842,
+      "gap": 0.0553015837082313,
+      "drs": 44.39999999999999,
+      "realistic_growth": 0.11390601486057504,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "RMD",
+      "ar_to_revenue_latest": 0.18329237599105536,
+      "ar_trend_slope": 0.0060290718649612055,
+      "ar_trend_relative": 0.0345530650785362,
+      "ar_mean_level": 0.17448732409867646,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 36,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.020791651694677487,
+      "gap": 0.05889235066261829,
+      "drs": 24.0,
+      "realistic_growth": 0.11272020863380966,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "ROP",
+      "ar_to_revenue_latest": 0.12666877570389118,
+      "ar_trend_slope": -0.004635514216780215,
+      "ar_trend_relative": -0.0347544768253978,
+      "ar_mean_level": 0.13337890942995534,
+      "ar_notes": [],
+      "restatement_rate": 0.07692307692307693,
+      "restated_periods": 3,
+      "multi_filed_periods": 39,
+      "worst_restatement": 0.2722404154077183,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2020-01-01",
+            "2020-12-31"
+          ],
+          "first_reported": 5527100000,
+          "latest_reported": 4022400000,
+          "deviation": 0.2722404154077183,
+          "first_filed": "2021-02-22",
+          "latest_filed": "2023-02-27"
+        },
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2021-01-01",
+            "2021-12-31"
+          ],
+          "first_reported": 5777800000,
+          "latest_reported": 4833800000,
+          "deviation": 0.16338398698466544,
+          "first_filed": "2022-02-22",
+          "latest_filed": "2024-02-22"
+        },
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2019-01-01",
+            "2019-12-31"
+          ],
+          "first_reported": 5366800000,
+          "latest_reported": 4727700000,
+          "deviation": 0.11908399791309533,
+          "first_filed": "2020-02-28",
+          "latest_filed": "2022-02-22"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.025418855832879443,
+      "gap": 0.012357788085937522,
+      "drs": 31.520000000000003,
+      "realistic_growth": 0.055,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": 0.06827886352438824
+    },
+    {
+      "ticker": "SE",
+      "ar_to_revenue_latest": 0.019263520788079667,
+      "ar_trend_slope": -0.004284429031545755,
+      "ar_trend_relative": -0.1812310044160398,
+      "ar_mean_level": 0.02364070676179822,
+      "ar_notes": [
+        "[얇은 채권] AR/매출 수준 0.0236가 관측 하위구간(0.05 미만)이라 상대추세가 증폭된다 - 분모가 작아 사소한 절대변화가 큰 비율변화로 찍힌다. 추세보다 원계열을 볼 것.",
+        "[관측범위 밖] 상대추세 -0.1812가 30종목 관측범위 -0.1812~+0.1027를 벗어난다 — 임계값이 아니라 '지금까지 본 적 없는 값'이라는 뜻이다."
+      ],
+      "restatement_rate": 0.08,
+      "restated_periods": 2,
+      "multi_filed_periods": 25,
+      "worst_restatement": 0.12403743287847835,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2024-01-01",
+            "2024-12-31"
+          ],
+          "first_reported": 16819866000,
+          "latest_reported": 14733573000,
+          "deviation": 0.12403743287847835,
+          "first_filed": "2025-04-17",
+          "latest_filed": "2026-04-17"
+        },
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2023-01-01",
+            "2023-12-31"
+          ],
+          "first_reported": 13063560000,
+          "latest_reported": 11453664000,
+          "deviation": 0.12323562642954906,
+          "first_filed": "2024-04-26",
+          "latest_filed": "2026-04-17"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.10852198980976546,
+      "gap": 0.1349559402465818,
+      "drs": 52.400000000000006,
+      "realistic_growth": 0.17874999999999974,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 14.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "TCOM",
+      "ar_to_revenue_latest": 0.2438169892817149,
+      "ar_trend_slope": -0.0016725494825361065,
+      "ar_trend_relative": -0.006749915438851885,
+      "ar_mean_level": 0.2477882127099056,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 32,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": 0.08308364446396636,
+      "gap": 0.07547684320764038,
+      "drs": 73.6,
+      "realistic_growth": 0.12387581476525755,
+      "margin_volatility": 20.0,
+      "revenue_volatility": 20.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "TTD",
+      "ar_to_revenue_latest": 1.3017349127364581,
+      "ar_trend_slope": -0.08997866132286654,
+      "ar_trend_relative": -0.061499726086983314,
+      "ar_mean_level": 1.4630741801289244,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 26,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.00958649496203518,
+      "gap": 0.1700962080005105,
+      "drs": 38.4,
+      "realistic_growth": 0.16703987255129174,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": 0.6165902150280881
+    },
+    {
+      "ticker": "TYL",
+      "ar_to_revenue_latest": 0.273887169109135,
+      "ar_trend_slope": -0.014382328913915943,
+      "ar_trend_relative": -0.047765564642956164,
+      "ar_mean_level": 0.3011024578359477,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 34,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.03450694676355493,
+      "gap": 0.0277231870438982,
+      "drs": 33.0,
+      "realistic_growth": 0.10153071267866381,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": 0.24369875151026985
+    },
+    {
+      "ticker": "UBER",
+      "ar_to_revenue_latest": 0.07357210142837918,
+      "ar_trend_slope": -0.014370821923415539,
+      "ar_trend_relative": -0.1536736023060868,
+      "ar_mean_level": 0.09351522777992646,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 14,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": 0.0314916051872689,
+      "gap": 0.11784205707458376,
+      "drs": 49.0,
+      "realistic_growth": 0.1595752266302478,
+      "margin_volatility": 20.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": 0.1870326743828741
+    },
+    {
+      "ticker": "VRSN",
+      "ar_to_revenue_latest": 0.004648074369189907,
+      "ar_trend_slope": 5.803297929980336e-05,
+      "ar_trend_relative": 0.013953865345690859,
+      "ar_mean_level": 0.0041589178239938174,
+      "ar_notes": [
+        "[얇은 채권] AR/매출 수준 0.0042가 관측 하위구간(0.05 미만)이라 상대추세가 증폭된다 - 분모가 작아 사소한 절대변화가 큰 비율변화로 찍힌다. 추세보다 원계열을 볼 것."
+      ],
+      "restatement_rate": 0.05263157894736842,
+      "restated_periods": 2,
+      "multi_filed_periods": 38,
+      "worst_restatement": 0.4206818775472973,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2008-01-01",
+            "2008-12-31"
+          ],
+          "first_reported": 964748000,
+          "latest_reported": 558896000,
+          "deviation": 0.4206818775472973,
+          "first_filed": "2010-02-26",
+          "latest_filed": "2011-02-24"
+        },
+        {
+          "metric": "revenue",
+          "unit": "USD",
+          "period": [
+            "2009-01-01",
+            "2009-12-31"
+          ],
+          "first_reported": 1030619000,
+          "latest_reported": 615947000,
+          "deviation": 0.40235237270028984,
+          "first_filed": "2010-02-26",
+          "latest_filed": "2012-02-24"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.09403022210426792,
+      "gap": -0.009719340999338522,
+      "drs": 29.8,
+      "realistic_growth": 0.046517359421241536,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "VRT",
+      "ar_to_revenue_latest": 0.30391303922814494,
+      "ar_trend_slope": -0.004392832926351864,
+      "ar_trend_relative": -0.014111529764773348,
+      "ar_mean_level": 0.3112938851830016,
+      "ar_notes": [],
+      "restatement_rate": 0.10526315789473684,
+      "restated_periods": 2,
+      "multi_filed_periods": 19,
+      "worst_restatement": 4.913653257517899,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "operating_cashflow",
+          "unit": "USD",
+          "period": [
+            "2019-01-01",
+            "2019-12-31"
+          ],
+          "first_reported": 9723262,
+          "latest_reported": 57500000,
+          "deviation": 4.913653257517899,
+          "first_filed": "2020-03-12",
+          "latest_filed": "2022-03-01"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2020-01-01",
+            "2020-12-31"
+          ],
+          "first_reported": -183600000,
+          "latest_reported": -327300000,
+          "deviation": 0.7826797385620915,
+          "first_filed": "2021-03-01",
+          "latest_filed": "2023-02-27"
+        }
+      ],
+      "entity_or_unit_changes": 3,
+      "entity_detail": [
+        {
+          "metric": "operating_cashflow",
+          "unit": "USD",
+          "period": [
+            "2018-01-01",
+            "2018-12-31"
+          ],
+          "first_reported": -710388,
+          "latest_reported": -221900000,
+          "deviation": 311.3645106617792,
+          "first_filed": "2019-03-13",
+          "latest_filed": "2021-04-30"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2018-01-01",
+            "2018-12-31"
+          ],
+          "first_reported": 5030748,
+          "latest_reported": -314000000,
+          "deviation": 63.416165548343905,
+          "first_filed": "2019-03-13",
+          "latest_filed": "2021-04-30"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2019-01-01",
+            "2019-12-31"
+          ],
+          "first_reported": 4389796,
+          "latest_reported": -140800000,
+          "deviation": 33.07438341098311,
+          "first_filed": "2020-03-12",
+          "latest_filed": "2022-03-01"
+        }
+      ],
+      "accrual_ratio": -0.06887828005753131,
+      "gap": 0.017187161949781066,
+      "drs": 41.2,
+      "realistic_growth": 0.18710426857819903,
+      "margin_volatility": 14.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "WCN",
+      "ar_to_revenue_latest": 0.10827096261031181,
+      "ar_trend_slope": -0.002497106069929739,
+      "ar_trend_relative": -0.022663548085414844,
+      "ar_mean_level": 0.11018160353880135,
+      "ar_notes": [],
+      "restatement_rate": 0.06666666666666667,
+      "restated_periods": 2,
+      "multi_filed_periods": 30,
+      "worst_restatement": 1.7730633859666118,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2015-01-01",
+            "2015-12-31"
+          ],
+          "first_reported": 123876000,
+          "latest_reported": -95764000,
+          "deviation": 1.7730633859666118,
+          "first_filed": "2016-03-03",
+          "latest_filed": "2018-02-15"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2014-01-01",
+            "2014-12-31"
+          ],
+          "first_reported": 126516000,
+          "latest_reported": 232525000,
+          "deviation": 0.8379098295867716,
+          "first_filed": "2015-03-30",
+          "latest_filed": "2017-02-27"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.06144815080269768,
+      "gap": 0.0100359824109255,
+      "drs": 55.0,
+      "realistic_growth": 0.09012287064860232,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 8.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "WDAY",
+      "ar_to_revenue_latest": 0.24413735343383586,
+      "ar_trend_slope": -0.0017035638552456295,
+      "ar_trend_relative": -0.007126709745729357,
+      "ar_mean_level": 0.23903932053167748,
+      "ar_notes": [],
+      "restatement_rate": 0.05555555555555555,
+      "restated_periods": 2,
+      "multi_filed_periods": 36,
+      "worst_restatement": 0.05775231582402187,
+      "has_material_restatement": true,
+      "restatement_detail": [
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2016-02-01",
+            "2017-01-31"
+          ],
+          "first_reported": -408278000,
+          "latest_reported": -384699000,
+          "deviation": 0.05775231582402187,
+          "first_filed": "2017-03-20",
+          "latest_filed": "2019-03-18"
+        },
+        {
+          "metric": "net_income",
+          "unit": "USD",
+          "period": [
+            "2015-02-01",
+            "2016-01-31"
+          ],
+          "first_reported": -289918000,
+          "latest_reported": -275048000,
+          "deviation": 0.05129036486178851,
+          "first_filed": "2016-03-22",
+          "latest_filed": "2018-03-14"
+        }
+      ],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.03439571717844165,
+      "gap": 0.11417055453507202,
+      "drs": 30.8,
+      "realistic_growth": 0.14323282565323606,
+      "margin_volatility": 8.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": 0.5855239467050775
+    },
+    {
+      "ticker": "WM",
+      "ar_to_revenue_latest": 0.1362878908109824,
+      "ar_trend_slope": 0.00418567238745884,
+      "ar_trend_relative": 0.031448809059189314,
+      "ar_mean_level": 0.13309478204980835,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 37,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.07004269817039446,
+      "gap": 0.0008904206704897916,
+      "drs": 54.8,
+      "realistic_growth": 0.0803240971798224,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    },
+    {
+      "ticker": "ZTS",
+      "ar_to_revenue_latest": 0.16795183268194783,
+      "ar_trend_slope": 0.0036300959887035356,
+      "ar_trend_relative": 0.02391910813619414,
+      "ar_mean_level": 0.1517655243679639,
+      "ar_notes": [],
+      "restatement_rate": 0.0,
+      "restated_periods": 0,
+      "multi_filed_periods": 34,
+      "worst_restatement": null,
+      "has_material_restatement": false,
+      "restatement_detail": [],
+      "entity_or_unit_changes": 0,
+      "entity_detail": [],
+      "accrual_ratio": -0.009964987880420145,
+      "gap": 0.020971515574735304,
+      "drs": 48.4,
+      "realistic_growth": 0.05620717910064688,
+      "margin_volatility": 4.0,
+      "revenue_volatility": 4.0,
+      "sbc_to_fcf": null
+    }
+  ]
+}
