@@ -1,0 +1,19 @@
+{
+  "ticker": "TYL",
+  "analyzed_at": "2026-08-05",
+  "market_cap_then": 12773093780.999998,
+  "market_cap_now": 14335752000.0,
+  "market_cap_change_pct": 0.12233983761431855,
+  "gap_then": 0.0277231870438982,
+  "gap_now": 0.014229458406202905,
+  "gap_decay_pp": -0.013493728637695296,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.10153071267866381,
+  "realistic_growth_now": 0.10153071267866381,
+  "mode": "gap_decay",
+  "date": "2026-08-27"
+}

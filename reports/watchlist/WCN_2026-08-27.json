@@ -1,0 +1,19 @@
+{
+  "ticker": "WCN",
+  "analyzed_at": "2026-07-26",
+  "market_cap_then": 42341802000,
+  "market_cap_now": 41798230000.0,
+  "market_cap_change_pct": -0.012837715314997666,
+  "gap_then": 0.0100359824109255,
+  "gap_now": 0.010429125809676656,
+  "gap_decay_pp": 0.00039314339875115567,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.09012287064860232,
+  "realistic_growth_now": 0.09012287064860232,
+  "mode": "gap_decay",
+  "date": "2026-08-27"
+}

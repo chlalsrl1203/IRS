@@ -1,0 +1,19 @@
+{
+  "ticker": "WM",
+  "analyzed_at": "2026-07-26",
+  "market_cap_then": 95870000000,
+  "market_cap_now": 88788738000.0,
+  "market_cap_change_pct": -0.0738631688745176,
+  "gap_then": 0.0008904206704897916,
+  "gap_now": 0.0033413941528239594,
+  "gap_decay_pp": 0.002450973482334168,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.0803240971798224,
+  "realistic_growth_now": 0.0803240971798224,
+  "mode": "gap_decay",
+  "date": "2026-08-27"
+}

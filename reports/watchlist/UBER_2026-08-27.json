@@ -1,0 +1,19 @@
+{
+  "ticker": "UBER",
+  "analyzed_at": "2026-08-04",
+  "market_cap_then": 143220000000.0,
+  "market_cap_now": 164119708000.0,
+  "market_cap_change_pct": 0.14592730065633286,
+  "gap_then": 0.11784205707458376,
+  "gap_now": 0.10131106647399783,
+  "gap_decay_pp": -0.016530990600585924,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.1595752266302478,
+  "realistic_growth_now": 0.1595752266302478,
+  "mode": "gap_decay",
+  "date": "2026-08-27"
+}

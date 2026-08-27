@@ -1,0 +1,19 @@
+{
+  "ticker": "VRT",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 85670000000.0,
+  "market_cap_now": 98460721000.0,
+  "market_cap_change_pct": 0.1493022178125365,
+  "gap_then": 0.017187161949781066,
+  "gap_now": 0.0011055426870857643,
+  "gap_decay_pp": -0.0160816192626953,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.18710426857819903,
+  "realistic_growth_now": 0.18710426857819903,
+  "mode": "gap_decay",
+  "date": "2026-08-27"
+}
