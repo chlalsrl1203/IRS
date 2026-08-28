@@ -1,0 +1,25 @@
+{
+  "ticker": "PH",
+  "analyzed_at": "2026-07-25",
+  "market_cap_then": 124255617000,
+  "market_cap_now": 131025084000.0,
+  "market_cap_change_pct": 0.054480168892485636,
+  "gap_then": -0.08585815370238321,
+  "gap_now": -0.09202079713500037,
+  "gap_decay_pp": -0.00616264343261716,
+  "judgment_then": "과대평가 가능성",
+  "judgment_now": "과대평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "D",
+  "realistic_growth_then": 0.06508140623414017,
+  "realistic_growth_now": 0.06508140623414017,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-27",
+    "gap_prior": -0.08940143525755904,
+    "gap_move_pp": -0.0026193618774413285,
+    "judgment_changed": false
+  },
+  "date": "2026-08-28"
+}

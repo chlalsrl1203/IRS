@@ -1,0 +1,25 @@
+{
+  "ticker": "DSGX",
+  "analyzed_at": "2026-07-26",
+  "market_cap_then": 6366490292.280001,
+  "market_cap_now": 6640182000.0,
+  "market_cap_change_pct": 0.04298941726996386,
+  "gap_then": 0.04248310348930688,
+  "gap_now": 0.037608683323291245,
+  "gap_decay_pp": -0.004874420166015636,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.13432194015922871,
+  "realistic_growth_now": 0.13432194015922871,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-26",
+    "gap_prior": 0.03615509293022483,
+    "gap_move_pp": 0.0014535903930664174,
+    "judgment_changed": false
+  },
+  "date": "2026-08-28"
+}
