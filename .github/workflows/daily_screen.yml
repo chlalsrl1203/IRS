@@ -83,16 +83,36 @@ jobs:
       # 등은 여기서 절대 커밋되지 않는다) - 판정 로직이 아니라 SEC 원자료를
       # 재계산한 객관적 스냅샷이라 사람 검토 없이 쌓아도 안전하다(주관적
       # 판단이 필요한 monitor/acknowledgements.json은 반대로 사람이 커밋한다).
+      # 2026-08-28: **오늘 실제로 무엇을 할지**를 한 코멘트로 낸다.
+      # 위 단계들이 만든 조각(감시 알림 · 매수리스트 · KRX ETF 순위 · 신규 후보)은
+      # 전부 따로 놀고 있었고, 특히 매수리스트는 비중만 있어 그대로는 주문을 낼
+      # 수 없었다. 이 단계가 그것들을 금액이 붙은 실행표로 합친다.
+      #
+      # `if: always()`이고 **네트워크 의존이 0**이다(저장된 파일만 읽는다) -
+      # Finviz·SEC·시세 API가 전부 죽어도 브리핑은 나와야 한다. 실제로
+      # v3.68에서 파이프라인이 조용히 실패하던 이력이 있어 이 성질이 중요하다.
+      - name: post daily brief (오늘 할 일)
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          IRS_CAPITAL: ${{ vars.IRS_CAPITAL }}
+        run: |
+          python3 scripts/daily_brief.py \
+            --capital "${IRS_CAPITAL:-10000000}" \
+            --out "reports/brief/$(date -u -d '+9 hours' +%Y-%m-%d).md" \
+            --post
+
       - name: commit snapshots (있을 때만)
         if: always()
         run: |
           git config user.name "irs-daily-screen[bot]"
           git config user.email "irs-daily-screen-bot@users.noreply.github.com"
-          git add reports/deep_screen/ reports/watchlist/ 2>/dev/null || true
+          git add reports/deep_screen/ reports/watchlist/ reports/brief/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 스냅샷 없음 - 커밋 건너뜀"
           else
-            git commit -m "reports: $(date -u +%Y-%m-%d) 자동 스냅샷(deep_screen/watchlist)"
+            git commit -m "reports: $(date -u +%Y-%m-%d) 자동 스냅샷(deep_screen/watchlist/brief)"
             git push
           fi
 
