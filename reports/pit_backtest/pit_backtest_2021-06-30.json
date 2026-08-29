@@ -1,0 +1,246 @@
+{
+  "as_of": "2021-06-30",
+  "generated_at": "2026-08-29",
+  "universe_total": 10391,
+  "attempted": 300,
+  "scored": 128,
+  "passed_tickers": [
+    "ABBV",
+    "AMAT",
+    "ANET",
+    "BMY",
+    "CVS",
+    "DELL",
+    "ELV",
+    "FIX",
+    "FTNT",
+    "GOOGL",
+    "ICE",
+    "KLAC",
+    "LRCX",
+    "NOC",
+    "PGR",
+    "SCHW",
+    "SHW",
+    "TDG",
+    "TER",
+    "UNH",
+    "WBD"
+  ],
+  "not_passed_tickers": [
+    "AAPL",
+    "ABT",
+    "ACN",
+    "ADBE",
+    "ADP",
+    "AEP",
+    "AJG",
+    "ALL",
+    "AMGN",
+    "AMT",
+    "AMZN",
+    "AON",
+    "APD",
+    "BKR",
+    "BNY",
+    "BRK-B",
+    "BSX",
+    "BX",
+    "CAT",
+    "CDNS",
+    "CL",
+    "CMCSA",
+    "CME",
+    "CMI",
+    "COF",
+    "COR",
+    "COST",
+    "CP",
+    "CSCO",
+    "CSX",
+    "CTAS",
+    "DE",
+    "DHR",
+    "ECL",
+    "EMR",
+    "EOG",
+    "EQIX",
+    "F",
+    "FAST",
+    "GD",
+    "GE",
+    "GILD",
+    "GM",
+    "GRMN",
+    "GWW",
+    "HLT",
+    "HON",
+    "IBM",
+    "INTC",
+    "INTU",
+    "ISRG",
+    "ITW",
+    "JCI",
+    "KMI",
+    "LLY",
+    "LMT",
+    "MA",
+    "MAR",
+    "MCD",
+    "MCK",
+    "MCO",
+    "MDLZ",
+    "MDT",
+    "META",
+    "MMM",
+    "MO",
+    "MPWR",
+    "MSFT",
+    "MSI",
+    "NEM",
+    "NKE",
+    "NOW",
+    "NSC",
+    "NXPI",
+    "ORCL",
+    "ORLY",
+    "PANW",
+    "PCAR",
+    "PEP",
+    "PG",
+    "PH",
+    "PM",
+    "QCOM",
+    "REGN",
+    "ROST",
+    "RSG",
+    "RTX",
+    "SBUX",
+    "SLB",
+    "SNPS",
+    "SPG",
+    "SPGI",
+    "STX",
+    "SYK",
+    "T",
+    "TEL",
+    "TJX",
+    "TMO",
+    "TT",
+    "TXN",
+    "UNP",
+    "UPS",
+    "URI",
+    "V",
+    "VZ",
+    "WM",
+    "WMT"
+  ],
+  "passed_detail": [
+    {
+      "ticker": "DELL",
+      "tier": "S",
+      "expectation_gap_est": 0.43237918813999715
+    },
+    {
+      "ticker": "WBD",
+      "tier": "S",
+      "expectation_gap_est": 0.19927996866772402
+    },
+    {
+      "ticker": "BMY",
+      "tier": "A",
+      "expectation_gap_est": 0.1781416818713299
+    },
+    {
+      "ticker": "FIX",
+      "tier": "S",
+      "expectation_gap_est": 0.1751922779427135
+    },
+    {
+      "ticker": "PGR",
+      "tier": "S",
+      "expectation_gap_est": 0.16916409109138142
+    },
+    {
+      "ticker": "ANET",
+      "tier": "B",
+      "expectation_gap_est": 0.15637648809523308
+    },
+    {
+      "ticker": "SCHW",
+      "tier": "S",
+      "expectation_gap_est": 0.15539930306345087
+    },
+    {
+      "ticker": "FTNT",
+      "tier": "A",
+      "expectation_gap_est": 0.15151271753909848
+    },
+    {
+      "ticker": "CVS",
+      "tier": "S",
+      "expectation_gap_est": 0.15084129547873182
+    },
+    {
+      "ticker": "ABBV",
+      "tier": "A",
+      "expectation_gap_est": 0.12638515741354292
+    },
+    {
+      "ticker": "GOOGL",
+      "tier": "B",
+      "expectation_gap_est": 0.12301772674590011
+    },
+    {
+      "ticker": "ICE",
+      "tier": "B",
+      "expectation_gap_est": 0.11807852026060314
+    },
+    {
+      "ticker": "ELV",
+      "tier": "S",
+      "expectation_gap_est": 0.11356162513800061
+    },
+    {
+      "ticker": "KLAC",
+      "tier": "B",
+      "expectation_gap_est": 0.09252384198047792
+    },
+    {
+      "ticker": "LRCX",
+      "tier": "B",
+      "expectation_gap_est": 0.08223168227925182
+    },
+    {
+      "ticker": "TER",
+      "tier": "B",
+      "expectation_gap_est": 0.0811138276747348
+    },
+    {
+      "ticker": "TDG",
+      "tier": "B",
+      "expectation_gap_est": 0.07879533087948298
+    },
+    {
+      "ticker": "AMAT",
+      "tier": "A",
+      "expectation_gap_est": 0.07445006029101336
+    },
+    {
+      "ticker": "UNH",
+      "tier": "A",
+      "expectation_gap_est": 0.0605584755969631
+    },
+    {
+      "ticker": "SHW",
+      "tier": "B",
+      "expectation_gap_est": 0.04419325104165985
+    },
+    {
+      "ticker": "NOC",
+      "tier": "B",
+      "expectation_gap_est": 0.03363789974766535
+    }
+  ]
+}

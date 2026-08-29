@@ -1,0 +1,116 @@
+[
+  {
+    "t0": "2018-06-30",
+    "n_flagged": 17,
+    "n_not_flagged": 109,
+    "benchmark_pct": 220.53979509784725,
+    "metrics": {
+      "equal_weight_portfolio_pct": {
+        "flagged": 533.3833826641411,
+        "not_flagged": 292.14376002085567,
+        "flagged_better": true
+      },
+      "median_pct": {
+        "flagged": 290.51040755786516,
+        "not_flagged": 172.55363337724873,
+        "flagged_better": true
+      },
+      "p25_pct": {
+        "flagged": 196.59556646568265,
+        "not_flagged": 113.36017008423171,
+        "flagged_better": true
+      },
+      "min_pct": {
+        "flagged": 19.56851646774127,
+        "not_flagged": -44.39922122965784,
+        "flagged_better": true
+      },
+      "beat_benchmark_rate": {
+        "flagged": 0.5294117647058824,
+        "not_flagged": 0.3577981651376147,
+        "flagged_better": true
+      },
+      "mean_excl_top5_pct": {
+        "flagged": 241.77754236250132,
+        "not_flagged": 215.68048425151122,
+        "flagged_better": true
+      }
+    }
+  },
+  {
+    "t0": "2021-06-30",
+    "n_flagged": 21,
+    "n_not_flagged": 107,
+    "benchmark_pct": 92.33701915745212,
+    "metrics": {
+      "equal_weight_portfolio_pct": {
+        "flagged": 283.13015682222164,
+        "not_flagged": 104.53956981923199,
+        "flagged_better": true
+      },
+      "median_pct": {
+        "flagged": 149.09446630787144,
+        "not_flagged": 74.1490889045989,
+        "flagged_better": true
+      },
+      "p25_pct": {
+        "flagged": 32.69517749878881,
+        "not_flagged": 28.328055497455793,
+        "flagged_better": true
+      },
+      "min_pct": {
+        "flagged": -6.225554106910036,
+        "not_flagged": -72.15659549749509,
+        "flagged_better": true
+      },
+      "beat_benchmark_rate": {
+        "flagged": 0.5714285714285714,
+        "not_flagged": 0.4485981308411215,
+        "flagged_better": true
+      },
+      "mean_excl_top5_pct": {
+        "flagged": 97.48661663493563,
+        "not_flagged": 82.82986559087558,
+        "flagged_better": true
+      }
+    }
+  },
+  {
+    "t0": "2023-06-30",
+    "n_flagged": 27,
+    "n_not_flagged": 123,
+    "benchmark_pct": 80.15539236807103,
+    "metrics": {
+      "equal_weight_portfolio_pct": {
+        "flagged": 115.18865619315426,
+        "not_flagged": 111.63736120072082,
+        "flagged_better": true
+      },
+      "median_pct": {
+        "flagged": 53.92856127987269,
+        "not_flagged": 64.80970337973284,
+        "flagged_better": false
+      },
+      "p25_pct": {
+        "flagged": 29.849487082980477,
+        "not_flagged": 26.560977698074694,
+        "flagged_better": true
+      },
+      "min_pct": {
+        "flagged": -13.137339930100133,
+        "not_flagged": -61.808146251036035,
+        "flagged_better": true
+      },
+      "beat_benchmark_rate": {
+        "flagged": 0.4074074074074074,
+        "not_flagged": 0.42276422764227645,
+        "flagged_better": false
+      },
+      "mean_excl_top5_pct": {
+        "flagged": 53.98610771927727,
+        "not_flagged": 78.56405981452691,
+        "flagged_better": false
+      }
+    }
+  }
+]
