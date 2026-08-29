@@ -153,3 +153,50 @@ def test_monitor_logic_is_reused_not_reimplemented():
     assert "from scripts.daily_monitor_ci import run_monitor" in src
     assert "scan_falsification_conditions" not in src, \
         "감시 로직을 브리핑에서 다시 구현했다 — 두 계산이 어긋난다"
+
+
+# ── 주간 대규모 스크리닝 배선(2026-08-29) ────────────────────────────────
+def test_broad_screen_section_appears_in_brief(text):
+    """
+    v3.72에서 대규모 스크리닝을 배선했으나 daily_brief가 그 결과를 한 번도
+    읽지 않았다 - "데이터는 있는데 결정 경로에 배선 안 됨" 패턴의 재발.
+    """
+    assert "주간 대규모 스크리닝" in text
+
+
+def test_broad_screen_missing_file_is_stated_not_silent(monkeypatch, tmp_path):
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_broad_screen())
+    assert "아직 결과 파일이 없다" in out
+
+
+def test_broad_screen_renders_passed_tickers(monkeypatch, tmp_path):
+    d = tmp_path / "broad_screen"
+    d.mkdir(parents=True)
+    (d / "broad_screen_2026-08-29.json").write_text(json.dumps({
+        "universe_total": 10391, "scored": 4000,
+        "passed_tickers": [
+            {"ticker": "AAA", "tier": "S", "expectation_gap_est": 0.20,
+             "market_cap": 1e10},
+            {"ticker": "BBB", "tier": "A", "expectation_gap_est": 0.09,
+             "market_cap": 5e9},
+        ]}), encoding="utf-8")
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_broad_screen())
+    assert "AAA" in out and "BBB" in out
+    assert out.index("AAA") < out.index("BBB")      # Gap 내림차순
+    assert "정식 분석이 아니다" in out
+
+
+def test_broad_screen_states_downside_framing(monkeypatch, tmp_path):
+    """백테스트가 실측한 '하방 방어가 재현성 높다'는 사실이 표시돼야 한다."""
+    d = tmp_path / "broad_screen"
+    d.mkdir(parents=True)
+    (d / "broad_screen_2026-08-29.json").write_text(json.dumps({
+        "universe_total": 1, "scored": 1,
+        "passed_tickers": [{"ticker": "AAA", "tier": "S",
+                            "expectation_gap_est": 0.2, "market_cap": 1e9}]}),
+        encoding="utf-8")
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_broad_screen())
+    assert "하방 방어" in out and "제외 근거" in out

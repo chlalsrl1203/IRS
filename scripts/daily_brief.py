@@ -264,6 +264,47 @@ def section_new_candidates(today):
     return out
 
 
+def section_broad_screen(top_n=10):
+    """
+    주간 대규모 스크리닝(scripts/broad_screen.py) 최신 결과.
+
+    ⚠️ 이게 없으면 주간 스크리닝이 **별도 이슈에만 쌓이고 실행 브리핑에는
+    안 들어온다** - 실제로 v3.72에서 배선한 뒤 daily_brief가 그 결과를 한
+    번도 읽지 않는 상태였다. 이 프로젝트가 반복해서 겪은 "데이터는 있는데
+    결정 경로에 배선이 안 된" 패턴(sbc_cross_check가 매수리스트에 안 닿던
+    것과 같은 유형)이라 즉시 연결한다.
+    """
+    path = _latest("broad_screen_", os.path.join(REPORTS, "broad_screen"))
+    d = load_json(path)
+    out = ["## 🌐 주간 대규모 스크리닝(미국 상장 전체)"]
+    if not d:
+        out += ["", "아직 결과 파일이 없다(`reports/broad_screen/`). 주간 워크플로가 "
+                    "한 번도 완주하지 않았거나 커밋되지 않았다."]
+        return out
+
+    passed = d.get("passed_tickers") or []
+    out += ["", f"기준 `{os.path.basename(path)}` · 유니버스 "
+                f"{d.get('universe_total', 0):,}종목 → 채점 {d.get('scored', 0):,}종목 "
+                f"→ 통과 **{len(passed)}종목**", ""]
+    if not passed:
+        out.append("**통과 후보 없음.**")
+    else:
+        out.append("| 종목 | 등급 | Gap(추정) | 시총(근사) |")
+        out.append("|---|:--:|---:|---:|")
+        for r in sorted(passed, key=lambda x: -x["expectation_gap_est"])[:top_n]:
+            out.append(f"| **{r['ticker']}** | {r.get('tier', '-')} "
+                       f"| {r['expectation_gap_est'] * 100:+.2f}%p "
+                       f"| ${r.get('market_cap', 0) / 1e9:.1f}B |")
+        if len(passed) > top_n:
+            out.append(f"\n(상위 {top_n}종목만 표시 · 전체 {len(passed)}종목)")
+    out += ["", "⚠️ **정식 분석이 아니다.** 시가총액은 SEC `EntityPublicFloat` "
+                "근사치이고 경쟁강도·순부채는 코퍼스 중앙값 가정이다.",
+            "⚠️ 백테스트상 이 스크린은 **상방 선택보다 하방 방어에서 재현성이 "
+            "높았다**(하위25%·최저종목 3/3, 중앙값 2/3) — 매수 확신보다 "
+            "**제외 근거**로 읽는 것이 근거에 맞다."]
+    return out
+
+
 # ── 조립 ────────────────────────────────────────────────────────────────
 def build(today, capital, top_n):
     lines = [f"# 📋 오늘의 실행 브리핑 — {today.isoformat()} "
@@ -271,6 +312,7 @@ def build(today, capital, top_n):
     today_lines, n_need = section_today(today)
     lines += today_lines + [""]
     lines += section_new_candidates(today) + [""]
+    lines += section_broad_screen() + [""]
     lines += section_overseas(capital) + [""]
     lines += section_isa(top_n) + [""]
     lines += [
