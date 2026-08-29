@@ -111,10 +111,21 @@ METRIC_TAGS = {
     # (1차 자료 기반 손입력)와 100% 일치**한다(ACGL 11/11 · MCK 7/7 · WCN 9/9 ·
     # WM 12/12). MCK는 `narrow + PaymentsToAcquireSoftware == broad`로 교차확인까지
     # 된다. 넓은 태그가 없는 종목은 그대로 좁은 정의로 폴백하므로 동작이 안 바뀐다.
+    #
+    # ⚠️ **최하위 폴백 추가(대규모 스크리닝, 2026-08-29 LLY 실측)**: LLY는 위
+    # 세 태그 어디에도 **10-K 연간치**가 없다(`PaymentsToAcquireProductiveAssets`가
+    # 10-Q 분기누계로만 채워지고 연간 항목이 아예 없다). 실제 연간 capex는
+    # `PaymentsToAcquireOtherPropertyPlantAndEquipment`(FY2025 $7,841M, 10-K)에
+    # 있었다 - 34종목 큐를 넘어 1만종목 규모로 가니 처음 마주친 태그 변형이다.
+    # **최하위(4번째) 우선순위로만 추가한다** - 우선순위 메커니즘상(연도별로
+    # 아직 안 채워진 경우에만 다음 태그를 쓴다) 이 추가는 기존 34종목의 이미
+    # 확정된 값을 절대 바꿀 수 없고 **미확보였던 연도만 채울 수 있다**(순수
+    # additive). 34종목 골든재현으로 이를 실측 확인했다(불일치 0건).
     "capex": (
         "PaymentsToAcquireProductiveAssets",
         "PaymentsToAcquirePropertyPlantAndEquipment",
         "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",  # ifrs
+        "PaymentsToAcquireOtherPropertyPlantAndEquipment",
     ),
     "net_income": (
         "NetIncomeLoss",
@@ -138,7 +149,15 @@ METRIC_TAGS = {
 
 # 시점(instant) 지표 — 구간이 아니라 특정 날짜의 잔액이다. companyfacts 항목에
 # `start`가 없다. 기간 지표와 같은 규칙(330~400일)으로 거르면 전부 탈락한다.
-INSTANT_METRICS = frozenset({"shareholders_equity"})
+# "public_float"은 METRIC_TAGS(FinancialFact 경로)에는 없지만 같은 파싱
+# 헬퍼(`_annual_entries`)를 재사용하므로 여기에도 등록한다.
+INSTANT_METRICS = frozenset({"shareholders_equity", "public_float"})
+
+# ⚠️ `public_float`은 위 METRIC_TAGS(→FinancialFact→AnalysisInputs 1:1 경로,
+# base.py의 METRICS로 강제됨)에 넣지 않는다 - `run_analysis()`가 소비하는
+# 지표가 아니라 **대규모 스크리닝(2026-08-29) 전용 시가총액 근사치**이기
+# 때문이다. 별도 얇은 함수(`public_float_by_year`)로 분리한다.
+_PUBLIC_FLOAT_TAG = "EntityPublicFloat"
 
 
 def _annual_entries(entries, metric):
@@ -529,3 +548,70 @@ def restatement_profile(facts, metrics=RESTATEMENT_METRICS):
         "entity_or_unit_changes": sorted(entity, key=lambda d: -d["deviation"]),
         "notes": notes,
     }
+
+
+# ── 시가총액 근사치 (대규모 스크리닝 전용, 2026-08-29) ─────────────────────
+#
+# 34종목 손입력 큐를 넘어서려면 수천 개 티커의 대략적인 시가총액이 필요한데,
+# Alpha Vantage는 무료 한도가 25회/일이라 애초에 스케일이 안 맞고, Yahoo
+# Finance·Stooq 같은 무료 시세원은 API 호스트 robots.txt가 **전체 봇을
+# 차단**한다(2026-08-29 원문 직접 확인: query1.finance.yahoo.com·stooq.com
+# 둘 다 `User-agent: *` / `Disallow: /`) - Finviz 때 이미 확립한 원칙
+# ("robots.txt로 자동화 허용범위를 직접 확인할 것")을 그대로 적용하면 이
+# 경로는 쓸 수 없다.
+#
+# 대신 SEC가 10-K 표지에 회사 스스로 보고하는 `EntityPublicFloat`(비계열
+# 주주 보유주식의 시가총액)을 근사치로 쓴다 - 이건 위 METRIC_TAGS 경로
+# (FinancialFact → AnalysisInputs 1:1)와 별개다. `run_analysis()`가 쓰는
+# 지표가 아니라 **스크리닝 1차 필터 전용**이라 `base.METRICS` 검증을 거치지
+# 않는 얇은 함수로 분리했다.
+def public_float_from_facts(facts_json: dict) -> dict:
+    """
+    순수 파싱 함수 - 이미 받아둔 companyfacts JSON에서 public_float만 뽑는다.
+
+    ⚠️ 대규모 스크리닝(2026-08-29) 실측에서 `public_float_by_year`가 매
+    티커마다 companyfacts를 **두 번**(financials용 1회 + 이 함수 안에서 1회)
+    받고 있어 SEC 요청량이 그대로 배로 늘고 있었다(300종목 파일럿이 180초
+    타임아웃을 넘김). 원인은 네트워크 호출과 파싱이 한 함수에 묶여 있던 것 -
+    이미 받아온 JSON을 재사용할 방법이 없었다. 파싱만 분리해 호출부가 같은
+    companyfacts를 여러 목적(재무지표 + 시총 근사)에 **한 번의 요청으로**
+    재사용할 수 있게 한다.
+
+    세 가지 한계는 `public_float_by_year`와 동일(그 함수의 docstring 참고).
+    """
+    taxonomies = facts_json.get("facts") or {}
+    node = taxonomies.get("dei", {}).get(_PUBLIC_FLOAT_TAG)
+    if not node:
+        return {}
+    out = {}
+    for entries in (node.get("units") or {}).values():
+        picked, _ = _pick_by_fiscal_year(_annual_entries(entries, "public_float"), None)
+        for fy, (_, _, _, val) in picked.items():
+            out[fy] = float(val)
+    return out
+
+
+def public_float_by_year(entity: str, retrieved_at: str, user_agent: str = None,
+                         resolve_cik=None, fetch_facts=None) -> dict:
+    """
+    티커 -> {회계연도: EntityPublicFloat(USD)}. 못 찾으면 빈 dict(추측하지 않음).
+
+    ⚠️ 세 가지 한계 - 호출부가 반드시 인지할 것:
+      (1) 계열주주(임원·대주주) 보유분 제외 - 실제 시총보다 작을 수 있다.
+      (2) 회계연도 중 한 시점(대개 2분기 말) 스냅샷 - 최대 ~18개월 낡을 수 있다.
+      (3) 10-K에만 실린다 - 20-F 외국 발행사는 대개 미보고.
+    최종 후보로 좁혀진 뒤에는 반드시 정밀한 실시간 시총으로 재확인할 것.
+
+    ⚠️ 이미 companyfacts를 받아둔 상태라면 이 함수(자체 네트워크 호출 포함)
+    대신 `public_float_from_facts(facts_json)`을 직접 쓸 것 - 안 그러면
+    같은 회사를 두 번 조회하게 된다(위 `public_float_from_facts` docstring
+    참고, 실제로 이 중복이 대규모 스크리닝을 2배 느리게 만들었다).
+    """
+    if not retrieved_at:
+        raise ValueError("retrieved_at을 반드시 넘길 것(추측 금지).")
+    resolve_cik = resolve_cik or ticker_to_cik
+    fetch_facts = fetch_facts or fetch_company_facts
+    cik = resolve_cik(entity, user_agent)
+    if not cik:
+        return {}
+    return public_float_from_facts(fetch_facts(cik, user_agent))

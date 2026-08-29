@@ -389,3 +389,61 @@ def test_single_currency_company_gets_no_unit_warning():
         "BSX", metrics=["revenue"], fiscal_years=[2025], retrieved_at="2026-08-26")
     lim = " ".join(r.limitations)
     assert "복수 단위 보고" not in lim and "단위 혼재" not in lim
+
+
+# ── public_float_by_year — 대규모 스크리닝 전용 시총 근사치(2026-08-29) ────
+from engine.data.providers.sec import public_float_by_year  # noqa: E402
+
+
+def _pf_facts(entries):
+    return {"facts": {"dei": {"EntityPublicFloat": {"units": {"USD": entries}}}}}
+
+
+def test_public_float_reads_dei_instant_tag():
+    """시점 지표라 `start` 없이 `end`만으로도 연도가 잡혀야 한다."""
+    f = _pf_facts([
+        {"val": 2_830_067_000_000, "end": "2022-03-25", "filed": "2022-10-28",
+         "form": "10-K"},
+    ])
+    out = public_float_by_year(
+        "AAPL", retrieved_at="2026-08-29",
+        fetch_facts=lambda c, ua=None: f, resolve_cik=lambda t, ua=None: "0000320193")
+    assert out == {2022: 2_830_067_000_000.0}
+
+
+def test_public_float_missing_tag_returns_empty_not_zero():
+    """20-F 외국 발행사 등 태그 자체가 없으면 0이 아니라 빈 dict(추측 금지)."""
+    out = public_float_by_year(
+        "TCOM", retrieved_at="2026-08-29",
+        fetch_facts=lambda c, ua=None: {"facts": {"us-gaap": {}}},
+        resolve_cik=lambda t, ua=None: "0001529192")
+    assert out == {}
+
+
+def test_public_float_unresolved_ticker_returns_empty():
+    out = public_float_by_year(
+        "NOPE", retrieved_at="2026-08-29", resolve_cik=lambda t, ua=None: None)
+    assert out == {}
+
+
+def test_public_float_requires_retrieved_at():
+    with pytest.raises(ValueError):
+        public_float_by_year("AAPL", retrieved_at=None)
+
+
+def test_public_float_earliest_filing_wins_for_same_fiscal_year():
+    """다른 SEC 지표들과 동일한 규약 - 같은 회계연도가 여러 번 나오면 최초본."""
+    f = _pf_facts([
+        {"val": 999, "end": "2024-03-01", "filed": "2025-02-01", "form": "10-K"},
+        {"val": 111, "end": "2024-03-01", "filed": "2024-10-01", "form": "10-K"},
+    ])
+    out = public_float_by_year(
+        "X", retrieved_at="2026-08-29",
+        fetch_facts=lambda c, ua=None: f, resolve_cik=lambda t, ua=None: "1")
+    assert out == {2024: 111.0}
+
+
+def test_public_float_not_in_financial_fact_metrics():
+    """`run_analysis()` 경로(FinancialFact/METRICS)를 오염시키지 않는다."""
+    assert "public_float" not in METRICS
+    assert "public_float" not in METRIC_TAGS

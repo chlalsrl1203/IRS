@@ -5748,3 +5748,103 @@ BRO의 모델선택 취약성 자체는 여전히 사실이라 `buy_universe_dep
 상세 근거는 `docs/research_decision_record.md` R-2 항목. `ENGINE_VERSION`은
 그대로 v3.71(엔진 코드 무변경 - 이번 작업은 ledger 입력 텍스트 필드 하나와
 문서/브리핑 표시만 수정). 테스트 930 → **931 통과**.
+
+## v3.72 — 대규모 스크리닝(Stage 1): 34종목 손입력 큐를 SEC 등록 전체
+상장기업(약 1만개)으로 확장 (2026-08-29, 사용자 요청 "34종목만 검사하잖아 -
+스크리닝과 기업분석 엔진이 최상급 수준이 되게")
+
+### 왜 - 사용자가 지목한 구조적 결함
+
+이 프로젝트가 지금까지 다룬 종목은 전부 Trefis 52주 신저가 연재 등에서 사람이
+손으로 골라온 34개뿐이었다(생존편향 있는 좁은 표본, PHASE 5 등에서 이미
+문서화). 미국 SEC 등록 티커는 약 1만개 - "스크리닝"이라 부르기엔 34개는
+통계적으로 무의미하다는 지적이 정확했다.
+
+### 시가총액 데이터 접근성 실측 - 이 작업의 핵심 설계 결정
+
+Alpha Vantage(무료 25회/일)로는 1만종목을 도저히 못 채운다. 대안 두 곳을
+robots.txt 원문으로 직접 확인했다(Finviz 때 세운 원칙 그대로):
+- **Yahoo Finance**(`query1.finance.yahoo.com`): 가격 API는 인증 없이 작동하나
+  robots.txt가 `User-agent: *` / `Disallow: /`로 **전체 봇 차단**.
+- **Stooq**: 마찬가지로 `Disallow: /`(Bing/Google만 예외) + SHA-256
+  proof-of-work JS 챌린지까지 걸려 있음 - 자동화 대상 아님.
+
+**SEC `EntityPublicFloat`**(10-K 표지, 비계열주주 보유 시총)을 근사치로 채택 -
+1차자료·완전준수·무료·무제한(SEC 8req/s 안에서). 한계 세 가지를 명시
+(계열주주분 제외·최대 낡을 수 있음·20-F 외국발행사 대개 미보고)하고 코드
+docstring에 그대로 박아뒀다.
+
+**2단계 설계**: Stage 1(신설, 전체 유니버스, SEC 전용) - `screen()`을 그대로
+돌려 수십~수백종목으로 좁힌다. Stage 2(기존 daily_screen_ci.py 경로) - Stage 1
+통과자만 정밀 실시간 시총으로 재확인한다. 이번 작업은 Stage 1까지만 배선했다.
+
+### 신규 코드 - 새 밸류에이션 로직 0줄
+
+- `engine/filing_dates.py::full_ticker_universe()` - SEC 전체 티커 목록(약
+  1만개, ticker/CIK/title). 기존 `_ticker_map()`과 원본 JSON 캐시를 공유하도록
+  리팩터링(캐시 변수명 `_TICKER_MAP_CACHE`→`_TICKER_RAW_CACHE`, 참조하던 테스트
+  갱신).
+- `engine/data/providers/sec.py::public_float_by_year()` /
+  `public_float_from_facts()` - `EntityPublicFloat` 파싱. **`run_analysis()`가
+  쓰는 `METRICS`/`FinancialFact` 경로(base.py, "AnalysisInputs 1:1" 불변조건이
+  테스트로 고정돼 있음)에는 넣지 않았다** - 스크리닝 전용 근사치를 그 경로에
+  섞으면 도메인 연결 테스트가 깨진다. 별도 얇은 함수로 분리.
+- `engine/data/providers/sec.py`의 `METRIC_TAGS["capex"]`에
+  `PaymentsToAcquireOtherPropertyPlantAndEquipment`를 **최하위(4번째)
+  우선순위로 추가**(LLY 실측 - 위 세 태그 어디에도 10-K 연간치가 없었다).
+  우선순위 메커니즘상(연도별로 안 채워진 경우에만 다음 태그) 순수 additive라
+  34종목 골든재현 불일치 0건으로 확인.
+- `scripts/broad_screen.py` - Stage 1 파이프라인. `engine.screener.screen()`/
+  `engine.deep_screen._window_cagr`을 그대로 재사용.
+- `scripts/broad_screen_post.py` - 결과를 별도 GitHub Issue
+  스레드("📈 IRS 대규모 스크리닝 결과(주간)")에 게시(일일 스크리닝 이슈와
+  분리 - 성격이 다른 정보를 섞으면 알림 피로).
+- `.github/workflows/broad_screen.yml` - 매주 토요일 자동 실행(원자료가
+  분기/연 단위로만 바뀌므로 매일 돌릴 이유가 없다).
+
+### 실측 중 잡은 결함 2건 - 둘 다 첫 파일럿에서 발견
+
+**① ASML: 시총 근사치가 17년 낡은 값을 조용히 채택.** `EntityPublicFloat`이
+FY2009 값 단 하나뿐인 종목이 있었다(외국발행사가 SEC 보고의무를 축소·중단하면
+XBRL 태깅이 그 시점에서 멈춘다) - `max(pf)`가 이를 "최신"으로 골라 시총을
+$10.4B로 잘못 계산했고, 그 오류로 ASML이 S등급 통과로 잘못 판정됐다(15종목
+파일럿에서 실제 발생). 연 1회 공시 주기의 2배(`PUBLIC_FLOAT_STALE_YEARS=2`)를
+컷오프로 걸어 해소 - RESTATEMENT_MATERIAL·ENTITY_CHANGE_THRESHOLD와 동일하게
+도메인 근거 기반 임계값.
+
+**② companyfacts 중복 요청 - 300종목 파일럿이 3분 타임아웃을 초과.** 재무지표용
+(`SecCompanyFactsProvider`)과 public_float용이 각자 별도로 SEC를 호출해 티커당
+요청이 2배였다. `public_float_by_year`를 순수 파싱(`public_float_from_facts`)과
+네트워크 조회로 분리해 한 번 받은 JSON을 재사용하도록 고쳤다 - 실측 처리속도가
+0.47초/종목으로 개선(300종목 140초).
+
+### 파일럿 실측(300종목, 유니버스 앞부분) - 신호가 실재한다는 근거
+
+15/161 통과(9.3%) - 0%도 100%도 아닌 실제 분별력. **통과 종목 중 PGR·COR는
+이 프로젝트가 이미 완전히 독립된 정밀 경로(정식 ledger 분석, 정성조사 포함)로
+저평가 판정을 내린 실제 종목**이다 - PGR은 공식 ledger에서 S등급 Gap
++17.64%p(v3.67 이후), 이 Stage 1 근사 경로에서도 S등급 +14.08%p로 같은
+방향·비슷한 크기가 독립적으로 재현됐다. 완전히 다른 데이터 경로(공식은
+Alpha Vantage 실시간 시총 + 정성 competition_intensity, 이쪽은 public_float
+근사 + corpus 중앙값)에서 같은 결론이 나온 것은 이 스크리너가 노이즈가 아니라
+실제 신호를 잡고 있다는 근거다.
+
+### 검증
+
+테스트 931 → **953 통과**(신규 22: broad_screen 9 + broad_screen_post 5 +
+filing_dates 2 + sec_provider 6). 34종목 골든재현 8지표 완전 동일, fingerprint
+`43f90b61…` 불변, ledger·매수리스트·공식 판정 0건 수정. `ENGINE_VERSION`
+v3.71 → **v3.72**(sec.py에 신규 함수·태그 추가 - v3.32 규칙).
+
+### 의도적으로 하지 않은 것
+
+- **Stage 2(정밀 재확인) 자동 연쇄 미배선** - Stage 1 통과자를 daily_screen_ci.py의
+  Alpha Vantage 경로로 자동 넘기지 않는다. Stage 1 자체가 아직 1회 파일럿만
+  거쳤고, 전체 유니버스 실제 실행 결과를 사람이 한 번 검토한 뒤 연결하는 게
+  순서라고 판단했다(측정 먼저, 배선은 그다음).
+- **이름 사전필터 정확도 개선** - 정규식 기반이라 오탐이 있다(테스트로 기록만
+  해뒀다). 정확도는 무관하다 - 다운스트림(SEC 재무제표 유무)이 실제 거름망이고,
+  사전필터는 순수 시간 절약용이라 이 이상 정교화할 근거가 아직 없다.
+- **전체 유니버스(약 8,900종목) 실제 완주** - 파일럿은 300종목까지만
+  실행했다(약 70분 예상, 이번 세션에서 실시간 확인은 안 함). 워크플로는
+  배선해뒀고 다음 토요일 자동 실행이 첫 전체 실행이 된다.
