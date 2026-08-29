@@ -10,8 +10,7 @@ BRO만 scripts/ 아래 재현용 스크립트가 없다는 사실을 확인했�
 추가한다(계산에 영향을 주는 입력값은 일절 변경하지 않음).
 
 원분석 노트(ledger meta 기준): Fiscal.ai standardized financials(2026-07-25
-조회) + WebSearch 시가총액($22.93B, 2026-07-23 기준). model_used=single_stage는
-과거 v3.15 큐28 기록과의 대조검증 목적으로 선택됐음이 ledger에 명시돼 있다.
+조회) + WebSearch 시가총액($22.93B, 2026-07-23 기준).
 lynch_type_override=stalwart는 자동분류(fast_grower)를 하향 오버라이드한
 것으로, M&A 롤업 성장과 Q1'26 오가닉 성장률 0%라는 반전신호가 근거다.
 
@@ -20,6 +19,28 @@ lynch_type_override=stalwart는 자동분류(fast_grower)를 하향 오버라이
 override 사유에 이미 명시된 "Q1'26 오가닉 0%" 반전신호가 이후 실제로 더
 악화됐음을 확인한 것이다. ROP와 동일한 유형의 발견(캡/오버라이드 근거가
 된 초기신호가 후속 데이터로 재확인·강화됨).
+
+**2026-08-29 model_choice_reason 경제적 사유로 정정(취약점 개선 로드맵 P0-2,
+결정 #41 실행)**: 기존 사유("과거 큐28 기록(v3.15) 답습")는 순환참조였다 -
+BRO는 등급 경계(A/B, +7%p) 바로 위(+7.43%p)에 있고, 모델을 바꾸면 +6.44%p로
+A→B 유니버스 이탈이 실제로 일어나는 유일한 축(1축 취약, 유니버스안정 62%,
+R-001 실측)인데도 그 근거가 복원 불가능한 상태로 6.75% 자본을 쥐고 있었다.
+
+2026-08-16 모델선택 연구는 이론기준(RG−g_terminal)만으로는 BRO를 못 가른다는
+것도 이미 확인해뒀다 - 공식 Realistic Growth(12.00%, stalwart 캡값)로 계산한
+갭은 +8.53%p인데, 정확히 같은 값을 가진 CDNS·GEN은 반대로 two_stage를
+택했다. 그런데 그 12.00%는 Lynch 캡이 만든 값이지 BRO의 실제 성장궤적이
+아니다(ROP·GEN이 이미 확립한 "M&A로 부풀린 CAGR을 유기적 성장 신호로 쓰면
+안 된다"는 원칙과 동일). 대신 회사가 직접 공시한 오가닉 성장률(7분기 연속
+감속, 최근 2개 분기 마이너스 -2.8%/-0.7%)을 쓰면, BRO의 **현재 실제 성장은
+이미 g_terminal(3.47%)보다 낮다.** 두 단계로 감속(고성장→terminal)하는
+경로를 가정하는 two_stage가 아니라, 성장이 이미 정상상태에 도달했다고
+가정하는 single_stage(Gordon)가 BRO의 현재 경제적 실상에 부합한다.
+
+**model_used=single_stage는 그대로 유지한다**(과거 기록 답습이 아니라 이
+경제적 판단으로 재확인된 것) - Gap/RAR/DRS/판정/등급/매수비중 전부 불변.
+바뀐 것은 `model_choice_reason` 텍스트 하나뿐이며, 재실행 후 다른 모든
+계산값이 동일함을 diff로 확인했다.
 
 실행: python3 scripts/analyze_bro_2026_07_25.py
 """
@@ -84,8 +105,15 @@ def build_inputs() -> AnalysisInputs:
 
         model_used="single_stage",
         model_choice_reason=(
-            "과거 큐28 기록(v3.15)이 single_stage 4.25%를 사용했음이 트래커에 "
-            "명시되어 동일 모델 채택(대조검증 목적)."
+            "공식 Realistic Growth(12.00%, stalwart 캡값)는 g_terminal(3.47%) "
+            "대비 +8.53%p로 이론기준만으로는 two_stage와 구분 안 됨(CDNS·GEN이 "
+            "동일 갭에서 반대 선택 - 2026-08-16 모델선택 연구 확인). 그러나 "
+            "회사 직접공시 오가닉 성장률(7분기 연속 감속, 최근 2개 분기 마이너스 "
+            "-2.8%/-0.7%)은 이미 g_terminal보다 낮다 - '고성장→terminal 수렴' "
+            "경로를 가정하는 two_stage가 아니라 '이미 정상상태' 가정인 "
+            "single_stage(Gordon)가 BRO의 현재 실제 성장궤적에 부합한다. "
+            "12.00%는 Lynch 캡값이지 유기적 성장 신호가 아니므로(ROP·GEN "
+            "선례) 모델 선택 판단에는 회사 공시 오가닉 성장률을 근거로 삼았다."
         ),
 
         margin_years=[2021, 2022, 2023, 2024, 2025],

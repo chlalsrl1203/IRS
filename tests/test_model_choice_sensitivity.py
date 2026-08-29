@@ -66,6 +66,14 @@ def test_held_position_bro_universe_membership_depends_on_model():
     BRO는 실제 보유종목(2026-08-03 리스트 6.75%)인데 A등급이 모델선택에 달려 있다.
     이 사실이 조용히 사라지면(예: 입력 갱신으로) 보고서의 핵심 근거가 무효가 되므로
     변화를 감지해야 한다.
+
+    ⚠️ 2026-08-29(취약점 개선 로드맵 P0-2, 결정 #41): `reason_is_prior_record`는
+    더 이상 True가 아니다 - 이건 회귀가 아니라 이 테스트가 원래 지목했던 문제의
+    **해소**다. `model_choice_reason`을 순환참조("과거 큐28 기록 답습")에서
+    경제논리(회사 공시 오가닉 성장률이 이미 g_terminal 아래로 감속)로 교체했다.
+    `model_used=single_stage` 자체는 그대로라 유니버스 의존성(취약성)은 여전히
+    사실이고 이 테스트가 계속 지켜야 하는 것도 바로 그 부분이다 - 근거가
+    복원됐다고 해서 취약성 자체가 사라진 것은 아니다.
     """
     res = _results()
     assert "BRO" in res, "BRO ledger가 존재해야 한다"
@@ -74,7 +82,10 @@ def test_held_position_bro_universe_membership_depends_on_model():
         "BRO의 유니버스 편입이 더 이상 모델선택에 의존하지 않는다면 "
         "reports/research/model_choice_2026-08-16.md의 핵심 사례를 갱신할 것"
     )
-    assert bro["reason_is_prior_record"], "BRO 선택사유는 과거기록 답습으로 분류돼야 한다"
+    assert not bro["reason_is_prior_record"], (
+        "BRO 선택사유가 다시 과거기록 답습(순환참조)으로 되돌아갔다 - "
+        "결정 #41(2026-08-29 해소)이 되돌려진 것이므로 원인을 확인할 것"
+    )
 
 
 def test_prior_record_regex_does_not_match_absence_phrasing():

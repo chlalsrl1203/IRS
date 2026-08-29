@@ -151,7 +151,7 @@ def section_overseas(capital):
     out.append("")
     out.append(f"기준 파일 `{os.path.basename(path)}` · 총 투자금 **{won(capital)}**")
     out.append("")
-    out.append("| 종목 | 비중 | 금액 | 등급 | 신뢰도 | 주의 |")
+    out.append("| 종목 | 비중 | 금액 | 등급 | 모델점수* | 주의 |")
     out.append("|---|---:|---:|:--:|---:|---|")
     total_w = 0.0
     for r in rows:
@@ -178,6 +178,9 @@ def section_overseas(capital):
     out.append("")
     out.append("⚠️ **주수는 여기서 계산하지 않는다.** 이 시스템은 실시간 시세를 "
                "보지 않으므로, 금액까지만 내고 주수는 체결 시점 시세로 정한다.")
+    out.append("⚠️ **\\*모델점수는 확률이 아니다.** `confidence_score()`는 base 50에 "
+               "가감점을 더한 미보정 순위점수일 뿐, 실현결과로 검증(calibration)된 "
+               "적이 한 번도 없다 — \"70점은 70% 확률로 맞다\"는 뜻이 아니다.")
     out.append("⚠️ ISA 계좌로는 이 종목들을 매수할 수 없다(국내 상장분만 가능). "
                "해외주식 계좌가 필요하다.")
     return out

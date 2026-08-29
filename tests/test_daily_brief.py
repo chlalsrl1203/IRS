@@ -112,6 +112,20 @@ def test_deep_screen_candidates_are_flagged_as_not_official(monkeypatch, tmp_pat
     assert "정식 분석이 아니다" in body
 
 
+# ── Confidence를 확률처럼 노출하지 않는다(P0-1, 2026-08-29) ───────────────
+def test_confidence_column_is_not_labeled_as_probability(text):
+    """
+    confidence_score()는 스스로 '확률이 아니다·실현결과로 보정된 적이 없다'고
+    말하는데, 표 열 이름이 '신뢰도'였던 것은 그 경고를 화면에서 위반하고
+    있었다 — 이름을 바꾸고 옆에 근거를 남긴다.
+    """
+    overseas = text.split("해외주식 계좌 — 매수 실행표")[1]
+    assert "| 신뢰도 |" not in overseas
+    assert "모델점수" in overseas
+    assert "확률이 아니다" in overseas
+    assert "검증(calibration)된" in overseas
+
+
 # ── 파일 선택 사고 재발 방지 ────────────────────────────────────────────
 def test_latest_prefix_does_not_match_longer_names(tmp_path):
     """
