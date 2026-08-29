@@ -93,8 +93,45 @@ def test_low_breakeven_is_not_stated_as_buy_signal(text):
 
 
 # ── ⑤ 미검증 사실이 같은 화면에 남는다 ──────────────────────────────────
-def test_unverified_performance_is_disclosed(text):
-    assert "실현 수익률을" in text and "한 번도 관측한 적이 없다" in text
+def test_performance_evidence_limits_are_disclosed(text):
+    """
+    ⚠️ 원래 이 테스트는 "실현 수익률을 한 번도 관측한 적이 없다"는 **문구**를
+    검사했다. 2026-08-29에 3개 T0 백테스트가 나오면서 그 문구가 사실이
+    아니게 됐고, 브리핑이 매일 낡은 주장을 반복하는 상태였다 - 테스트가
+    오히려 그 낡은 주장을 고정하고 있었다.
+
+    검사 대상을 **문구**에서 **의도**로 옮긴다: 성과 근거의 한계가 매수표와
+    같은 화면에 반드시 남아야 한다. 검증이 없으면 "없다"고, 있으면 "이것으로
+    시장을 이긴다고 말할 수 없다"고 남는다.
+    """
+    assert "성적표" in text
+    assert ("'시장을 이긴다'는 근거가 아니다" in text
+            or "실현 수익률 검증 없음" in text)
+
+
+def test_scorecard_absent_says_so_rather_than_implying_verified(monkeypatch, tmp_path):
+    """성적표 파일이 없으면 없는 검증을 있다고 하지 않는다."""
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_scorecard())
+    assert "실현 수익률 검증 없음" in out
+
+
+def test_scorecard_reports_replication_counts(monkeypatch, tmp_path):
+    d = tmp_path / "pit_backtest"
+    d.mkdir(parents=True)
+    (d / "pit_multi_t0_summary.json").write_text(json.dumps([
+        {"t0": "2021-06-30", "metrics": {
+            "min_pct": {"flagged": 1, "not_flagged": -5, "flagged_better": True},
+            "median_pct": {"flagged": 1, "not_flagged": 5, "flagged_better": False}}},
+        {"t0": "2023-06-30", "metrics": {
+            "min_pct": {"flagged": 1, "not_flagged": -5, "flagged_better": True},
+            "median_pct": {"flagged": 1, "not_flagged": 5, "flagged_better": False}}},
+    ]), encoding="utf-8")
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_scorecard())
+    assert "최저 종목**: 2/2" in out          # 3/3 재현 축
+    assert "중앙값**: 0/2" in out             # 재현 실패 축도 숨기지 않는다
+    assert "뭘 피하라" in out
 
 
 def test_deep_screen_candidates_are_flagged_as_not_official(monkeypatch, tmp_path):

@@ -305,6 +305,50 @@ def section_broad_screen(top_n=10):
     return out
 
 
+def section_scorecard():
+    """
+    PIT 백테스트 성적표 요약.
+
+    ⚠️ 2026-08-29까지 이 브리핑은 "실현 수익률을 **한 번도 관측한 적이 없다**"
+    라고 매일 단언했다. 그날 3개 T0 백테스트가 나오면서 그 문장은 **사실이
+    아니게 됐다** - 브리핑이 스스로 낡은 주장을 반복하는 상태였다. 이제
+    실제 성적표를 읽어 재현 횟수를 그대로 보여준다.
+
+    성적표가 없으면 원래 문구(미검증)를 유지한다 - 없는 검증을 있다고 하지
+    않는다.
+    """
+    path = os.path.join(REPORTS, "pit_backtest", "pit_multi_t0_summary.json")
+    rows = load_json(path)
+    out = ["## 📊 이 엔진의 성적표(과거시점 재현)"]
+    if not rows:
+        out += ["", "**실현 수익률 검증 없음** — 위 순위와 비중은 내부 계산의 "
+                    "결과이지 성과로 검증된 값이 아니다."]
+        return out
+
+    labels = {"min_pct": "최저 종목", "p25_pct": "하위25%",
+              "median_pct": "중앙값", "equal_weight_portfolio_pct": "동일가중",
+              "beat_benchmark_rate": "벤치마크 초과비율",
+              "mean_excl_top5_pct": "상위5 제외 평균"}
+    t0s = ", ".join(r["t0"] for r in rows)
+    out += ["", f"과거 {len(rows)}개 시점({t0s})에서 그 시점 공시자료만으로 "
+                f"판정을 재현하고 이후 실제 수익률과 대조한 결과다.", ""]
+    for key in ("min_pct", "p25_pct", "median_pct", "mean_excl_top5_pct",
+                "beat_benchmark_rate"):
+        wins = sum(1 for r in rows if (r["metrics"].get(key) or {}).get("flagged_better"))
+        have = sum(1 for r in rows if key in r["metrics"])
+        if not have:
+            continue
+        mark = "✅" if wins == have else ("⚠️" if wins else "❌")
+        out.append(f"- {mark} **{labels.get(key, key)}**: {wins}/{have} 시점에서 "
+                   f"저평가 판정군이 앞섬")
+    out += ["", "⚠️ **읽는 법** — 재현율이 높은 축(최저 종목·하위25%)은 **하방 "
+                "방어**이고, 중앙값·초과비율 같은 상방 선택력은 재현이 덜 됐다. "
+                "즉 이 엔진은 지금 근거상 *뭘 사라*보다 ***뭘 피하라***에 더 강하다.",
+            "⚠️ 시점당 표본이 수십 종목이고 단일 시장국면이라 "
+            "**'시장을 이긴다'는 근거가 아니다**(거래비용·세금 미반영)."]
+    return out
+
+
 # ── 조립 ────────────────────────────────────────────────────────────────
 def build(today, capital, top_n):
     lines = [f"# 📋 오늘의 실행 브리핑 — {today.isoformat()} "
@@ -315,13 +359,8 @@ def build(today, capital, top_n):
     lines += section_broad_screen() + [""]
     lines += section_overseas(capital) + [""]
     lines += section_isa(top_n) + [""]
+    lines += ["---", ""] + section_scorecard() + [""]
     lines += [
-        "---",
-        "",
-        "**이 브리핑이 답하지 못하는 것** — 이 시스템은 실현 수익률을 "
-        "**한 번도 관측한 적이 없다**(예측 34건 동결 · 해소 0건). "
-        "위 순위와 비중은 내부 계산의 결과이지 성과로 검증된 값이 아니다.",
-        "",
         "<sub>네트워크 의존 없이 저장된 결과만으로 생성 — 외부 API가 죽어도 "
         "이 브리핑은 항상 나온다.</sub>",
     ]
