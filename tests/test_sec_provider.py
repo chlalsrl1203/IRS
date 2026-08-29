@@ -392,7 +392,9 @@ def test_single_currency_company_gets_no_unit_warning():
 
 
 # ── public_float_by_year — 대규모 스크리닝 전용 시총 근사치(2026-08-29) ────
-from engine.data.providers.sec import public_float_by_year  # noqa: E402
+from engine.data.providers.sec import (  # noqa: E402
+    public_float_by_year, public_float_from_facts,
+)
 
 
 def _pf_facts(entries):
@@ -443,7 +445,56 @@ def test_public_float_earliest_filing_wins_for_same_fiscal_year():
     assert out == {2024: 111.0}
 
 
+def test_public_float_from_facts_as_of_truncates():
+    f = _pf_facts([
+        {"val": 900, "end": "2020-03-01", "filed": "2020-10-01", "form": "10-K"},
+        {"val": 1000, "end": "2021-03-01", "filed": "2021-10-01", "form": "10-K"},
+    ])
+    out = public_float_from_facts(f, as_of="2021-01-01")
+    assert out == {2020: 900.0}
+
+
 def test_public_float_not_in_financial_fact_metrics():
     """`run_analysis()` 경로(FinancialFact/METRICS)를 오염시키지 않는다."""
     assert "public_float" not in METRICS
     assert "public_float" not in METRIC_TAGS
+
+
+# ── as_of(PIT 백테스트, 2026-08-29) ─────────────────────────────────────
+def test_as_of_excludes_facts_filed_after_cutoff():
+    """그 시점에 아직 공시되지 않은 값은 제외해야 한다 - 미래정보 혼입 방지."""
+    f = facts(**{"us-gaap__Revenues__USD": [
+        unit(100, "2020-01-01", "2020-12-31", "2021-02-18"),
+        unit(120, "2021-01-01", "2021-12-31", "2022-02-18"),
+    ]})
+    r = provider(f).fetch_annual_financials(
+        "X", metrics=["revenue"], retrieved_at="2026-08-29", as_of="2021-06-30")
+    years = {fact.fiscal_year for fact in r.facts}
+    assert years == {2020}
+
+
+def test_as_of_none_behaves_exactly_like_before():
+    """as_of를 안 주면(기본값 None) 기존 호출부 전부 영향이 없어야 한다."""
+    f = facts(**{"us-gaap__Revenues__USD": ANNUAL_2025})
+    r1 = provider(f).fetch_annual_financials(
+        "X", metrics=["revenue"], retrieved_at="2026-08-26")
+    r2 = provider(f).fetch_annual_financials(
+        "X", metrics=["revenue"], retrieved_at="2026-08-26", as_of=None)
+    assert [f.value for f in r1.facts] == [f.value for f in r2.facts]
+
+
+def test_as_of_recorded_in_governance():
+    f = facts(**{"us-gaap__Revenues__USD": ANNUAL_2025})
+    r = provider(f).fetch_annual_financials(
+        "X", metrics=["revenue"], retrieved_at="2026-08-29", as_of="2021-06-30")
+    assert r.governance["as_of"] == "2021-06-30"
+
+
+def test_as_of_same_day_filing_is_included():
+    """규칙은 filed <= as_of - 당일 공시는 포함된다(check_lookahead와 동일 관례)."""
+    f = facts(**{"us-gaap__Revenues__USD": [
+        unit(100, "2020-01-01", "2020-12-31", "2021-06-30"),
+    ]})
+    r = provider(f).fetch_annual_financials(
+        "X", metrics=["revenue"], retrieved_at="2026-08-29", as_of="2021-06-30")
+    assert len(r.facts) == 1

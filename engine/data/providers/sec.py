@@ -238,7 +238,20 @@ class SecCompanyFactsProvider(FinancialProvider):
         self._resolve_cik = resolve_cik or ticker_to_cik
 
     def fetch_annual_financials(self, entity, metrics=None, fiscal_years=None,
-                                retrieved_at=None) -> "ProviderResult":  # noqa: F821
+                                retrieved_at=None, as_of=None) -> "ProviderResult":  # noqa: F821
+        """
+        as_of(2026-08-29, PIT 백테스트 신설): 지정하면 `filed <= as_of`인
+        항목만 쓴다 - "그 시점에 실제로 알 수 있었던 값"으로 되돌린다.
+
+        ⚠️ `retrieved_at`(오늘 이 코드를 실행한 시각)과 `as_of`(재현하려는 과거
+        시점)는 다른 개념이다. `retrieved_at`은 항상 오늘이어야 하고(추측
+        금지 원칙 그대로), `as_of`만 과거로 설정한다 - 결과의 `meta.retrieved_at`
+        은 실행 시각을 정직하게 남기고, "그 시점 재구성"이라는 사실은
+        `governance`에 별도로 기록한다(아래).
+
+        None(기본값)이면 기존 동작과 완전히 동일 - 모든 기존 호출부
+        (`run_analysis`/`deep_screen`/`broad_screen`)는 영향 없다.
+        """
         if not retrieved_at:
             raise ValueError(
                 "retrieved_at을 반드시 넘길 것 — 조회일을 자동으로 오늘로 채우면 "
@@ -278,8 +291,10 @@ class SecCompanyFactsProvider(FinancialProvider):
                     if tag not in taxonomy:
                         continue
                     for unit_name, entries in (taxonomy[tag].get("units") or {}).items():
-                        cand, coll = _pick_by_fiscal_year(
-                            _annual_entries(entries, metric), years)
+                        rows = _annual_entries(entries, metric)
+                        if as_of:
+                            rows = [r for r in rows if r[2] <= as_of]  # r=(start,end,filed,val)
+                        cand, coll = _pick_by_fiscal_year(rows, years)
                         if cand:
                             units_available.add(unit_name)
                         for fy, periods in coll.items():
@@ -435,7 +450,7 @@ class SecCompanyFactsProvider(FinancialProvider):
             entity, out, retrieved_at, limitations=limitations,
             raw_ref=f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
         )
-        result.governance = dict(result.governance, used_tags=used_tags)
+        result.governance = dict(result.governance, used_tags=used_tags, as_of=as_of)
         return result
 
 
@@ -565,7 +580,7 @@ def restatement_profile(facts, metrics=RESTATEMENT_METRICS):
 # (FinancialFact → AnalysisInputs 1:1)와 별개다. `run_analysis()`가 쓰는
 # 지표가 아니라 **스크리닝 1차 필터 전용**이라 `base.METRICS` 검증을 거치지
 # 않는 얇은 함수로 분리했다.
-def public_float_from_facts(facts_json: dict) -> dict:
+def public_float_from_facts(facts_json: dict, as_of: str = None) -> dict:
     """
     순수 파싱 함수 - 이미 받아둔 companyfacts JSON에서 public_float만 뽑는다.
 
@@ -577,6 +592,9 @@ def public_float_from_facts(facts_json: dict) -> dict:
     companyfacts를 여러 목적(재무지표 + 시총 근사)에 **한 번의 요청으로**
     재사용할 수 있게 한다.
 
+    as_of(PIT 백테스트 신설): `fetch_annual_financials`의 동명 인자와 동일한
+    의미 - `filed <= as_of`인 값만 쓴다. None(기본값)이면 기존 동작과 동일.
+
     세 가지 한계는 `public_float_by_year`와 동일(그 함수의 docstring 참고).
     """
     taxonomies = facts_json.get("facts") or {}
@@ -585,7 +603,10 @@ def public_float_from_facts(facts_json: dict) -> dict:
         return {}
     out = {}
     for entries in (node.get("units") or {}).values():
-        picked, _ = _pick_by_fiscal_year(_annual_entries(entries, "public_float"), None)
+        rows = _annual_entries(entries, "public_float")
+        if as_of:
+            rows = [r for r in rows if r[2] <= as_of]
+        picked, _ = _pick_by_fiscal_year(rows, None)
         for fy, (_, _, _, val) in picked.items():
             out[fy] = float(val)
     return out
