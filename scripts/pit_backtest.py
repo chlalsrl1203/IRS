@@ -55,9 +55,35 @@ from broad_screen import (  # noqa: E402
 
 REPORTS_DIR = os.path.join(os.path.dirname(_HERE), "reports", "pit_backtest")
 
+# companyfacts 디스크 캐시. **여러 T0를 검증하려면 필수다** - companyfacts
+# 자체는 T0와 무관하게 동일하고(T0는 `filed<=as_of`로 truncate만 한다), 캐시가
+# 없으면 T0 6개 × 티커 N개 = 6N회를 SEC에 요청하게 된다. 캐시가 있으면 N회다.
+# 이게 없으면 "T0 하나만 보고 결론내는" 함정에 비용 때문에 구조적으로 빠진다
+# (실제로 이 프로젝트가 T0=2021 하나만 보고 정반대 결론을 낼 뻔했다).
+FACTS_CACHE_DIR = os.path.join(os.path.dirname(_HERE), ".cache", "companyfacts")
+
 
 def log(msg):
     print(msg, flush=True)
+
+
+def cached_company_facts(cik, user_agent=None):
+    """companyfacts를 디스크 캐시 경유로 받는다. 실패하면 (None, 사유)."""
+    os.makedirs(FACTS_CACHE_DIR, exist_ok=True)
+    path = os.path.join(FACTS_CACHE_DIR, f"{cik}.json")
+    if os.path.exists(path):
+        try:
+            with open(path, encoding="utf-8") as f:
+                return json.load(f), None
+        except json.JSONDecodeError:
+            os.remove(path)  # 깨진 캐시는 버리고 다시 받는다
+    try:
+        facts = fetch_company_facts(cik, user_agent)
+    except Exception as e:  # noqa: BLE001 - 사유를 살려 보낸다(v3.68 원칙)
+        return None, f"companyfacts 조회 실패(CIK {cik}): {e!r}"
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(facts, f)
+    return facts, None
 
 
 def fetch_pit_series(ticker, cik, as_of, user_agent=None, retrieved_at=None):
@@ -75,10 +101,9 @@ def fetch_pit_series(ticker, cik, as_of, user_agent=None, retrieved_at=None):
     """
     ua = user_agent or DEFAULT_USER_AGENT
     retrieved_at = retrieved_at or datetime.date.today().isoformat()
-    try:
-        facts_json = fetch_company_facts(cik, ua)
-    except Exception as e:  # noqa: BLE001
-        return None, [f"companyfacts 조회 실패(CIK {cik}): {e!r}"]
+    facts_json, err = cached_company_facts(cik, ua)
+    if facts_json is None:
+        return None, [err]
 
     provider = SecCompanyFactsProvider(
         user_agent=ua,
