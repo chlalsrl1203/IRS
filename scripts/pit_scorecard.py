@@ -35,6 +35,9 @@ import statistics
 import sys
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, os.path.dirname(_HERE))
+
+from engine.after_cost import portfolio_after_cost  # noqa: E402
 
 
 def quantiles(xs):
@@ -133,6 +136,26 @@ def build(path):
         if a is None or b is None:
             continue
         lines.append(f"| 상위 {k}종목 제외 평균 | {a:+.1f}% | {b:+.1f}% |")
+
+    # 세후 - 양도세는 이익에만 붙는 비대칭 비용이라 격차를 반드시 좁힌다.
+    # 총수익으로만 읽으면 우위를 과대평가한다.
+    fl_net = portfolio_after_cost([r["return_pct"] for r in d["flagged"]])
+    nf_net = portfolio_after_cost([r["return_pct"] for r in d["not_flagged"]])
+    if fl_net is not None and nf_net is not None:
+        gross_gap = (flagged["equal_weight_portfolio_pct"]
+                     - not_flagged["equal_weight_portfolio_pct"])
+        lines += ["", "**세후·비용후(한국 투자자 기준, 원금 1,000만원 동일가중)**", "",
+                  "| | flagged | not flagged |", "|---|---:|---:|",
+                  f"| 총수익 | {flagged['equal_weight_portfolio_pct']:+.1f}% "
+                  f"| {not_flagged['equal_weight_portfolio_pct']:+.1f}% |",
+                  f"| 세후 | {fl_net:+.1f}% | {nf_net:+.1f}% |",
+                  "",
+                  f"격차 {gross_gap:+.1f}%p → 세후 {fl_net - nf_net:+.1f}%p "
+                  f"(양도세 22%가 이익에만 붙어 격차를 좁힌다)",
+                  "",
+                  "⚠️ 양도세율·기본공제는 법정값이지만 환전 스프레드(0.2%)·"
+                  "수수료(0.2%)는 **실측이 아닌 가정**이다. 배당소득세·개인별 "
+                  "다른 소득·연도 분할 매도는 미반영 — 세무 자문이 아니다."]
 
     n_un = d["n_unavailable"]
     if n_un:
