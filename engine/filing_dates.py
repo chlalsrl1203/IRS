@@ -78,6 +78,24 @@ def _http_json(url: str, user_agent: str = None) -> dict:
         return json.loads(resp.read().decode("utf-8"))
 
 
+def _http_text(url: str, user_agent: str = None) -> str:
+    """
+    SEC 텍스트 자원(full-index `.idx` 등). `_http_json`과 **같은 레이트리밋을
+    공유한다** - 별도 경로를 만들면 두 경로가 각자 8req/s를 써서 실제로는
+    상한의 2배를 때리게 된다.
+
+    ⚠️ full-index는 latin-1로 인코딩된 회사명이 섞여 있어 utf-8 strict로
+    읽으면 터진다(실측). errors="replace"로 받되, 이 함수가 파싱하는 필드
+    (서식·CIK·날짜)는 전부 ASCII라 치환이 결과에 영향을 주지 않는다.
+    """
+    rate_limiter_for(url).wait()
+    req = urllib.request.Request(
+        url, headers={"User-Agent": user_agent or DEFAULT_USER_AGENT}
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        return resp.read().decode("latin-1", errors="replace")
+
+
 # 티커->CIK 매핑표는 **전체 목록 하나짜리 파일**(약 1MB)이라, 티커마다 새로
 # 받으면 같은 파일을 N번 내려받는다. 일일 스크리닝이 25종목을 조회하면 같은
 # 1MB를 25번 받는 셈이고, 그 자체가 레이트리밋·차단 위험이다(v3.68에서

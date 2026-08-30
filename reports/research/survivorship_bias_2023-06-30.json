@@ -1,0 +1,241 @@
+{
+  "generated_at": "2026-08-30",
+  "as_of_t0": "2023-06-30",
+  "question": "백테스트가 구조적으로 못 본 집단(오늘자 티커목록에 없는 T0 공시기업)에서도 저평가 판정이 나오는가",
+  "t0_universe_size": 7149,
+  "invisible_to_backtest": 2682,
+  "invisible_share": 0.3751573646663869,
+  "sampled": 600,
+  "scored": 89,
+  "passed": 22,
+  "pass_rate_in_invisible_group": 0.24719101123595505,
+  "skipped": 511,
+  "passed_detail": [
+    {
+      "cik": "0000010254",
+      "name": "EARTHSTONE ENERGY INC",
+      "tier": "S",
+      "expectation_gap_est": 1.2541591165881023,
+      "market_cap": 586314541.0,
+      "out_of_validated_scope": [
+        "Gap +125.4%p가 코퍼스 최대(+24.4%p)의 5.1배 - 검증된 적 없는 구간",
+        "시총 $0.59B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000732834",
+      "name": "CONTINENTAL RESOURCES, INC",
+      "tier": "S",
+      "expectation_gap_est": 1.2229081753217437,
+      "market_cap": 4100000.0,
+      "out_of_validated_scope": [
+        "Gap +122.3%p가 코퍼스 최대(+24.4%p)의 5.0배 - 검증된 적 없는 구간",
+        "시총 $0.00B가 코퍼스 최소($3.74B)의 1/912 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0001156174",
+      "name": "LAKE AREA CORN PROCESSORS LLC",
+      "tier": "S",
+      "expectation_gap_est": 0.8593683561446188,
+      "market_cap": 14188125.0,
+      "out_of_validated_scope": [
+        "Gap +85.9%p가 코퍼스 최대(+24.4%p)의 3.5배 - 검증된 적 없는 구간",
+        "시총 $0.01B가 코퍼스 최소($3.74B)의 1/264 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0001135185",
+      "name": "ATLAS AIR WORLDWIDE HOLDINGS INC",
+      "tier": "S",
+      "expectation_gap_est": 0.4451115460160878,
+      "market_cap": 1263800000.0,
+      "out_of_validated_scope": [
+        "Gap +44.5%p가 코퍼스 최대(+24.4%p)의 1.8배 - 검증된 적 없는 구간",
+        "시총 $1.26B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000205402",
+      "name": "GRAYBAR ELECTRIC CO INC",
+      "tier": "S",
+      "expectation_gap_est": 0.4052126880044022,
+      "market_cap": 457116660.0,
+      "out_of_validated_scope": [
+        "Gap +40.5%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.46B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000773141",
+      "name": "M.D.C. HOLDINGS, INC.",
+      "tier": "S",
+      "expectation_gap_est": 0.4049973322904674,
+      "market_cap": 1830000000.0,
+      "out_of_validated_scope": [
+        "Gap +40.5%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $1.83B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0001038357",
+      "name": "PIONEER NATURAL RESOURCES CO",
+      "tier": "S",
+      "expectation_gap_est": 0.39557517198989656,
+      "market_cap": 53223207626.0,
+      "out_of_validated_scope": [
+        "Gap +39.6%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000850460",
+      "name": "ENCORE WIRE CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.39096447210892793,
+      "market_cap": 1391693315.0,
+      "out_of_validated_scope": [
+        "Gap +39.1%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간",
+        "시총 $1.39B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0001163302",
+      "name": "UNITED STATES STEEL CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.29320966820107397,
+      "market_cap": 4300000000.0,
+      "out_of_validated_scope": [
+        "Gap +29.3%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0001037676",
+      "name": "ARCH RESOURCES, INC.",
+      "tier": "S",
+      "expectation_gap_est": 0.29085625460174314,
+      "market_cap": 2654700000.0,
+      "out_of_validated_scope": [
+        "Gap +29.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $2.65B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0001141103",
+      "name": "CROSS COUNTRY HEALTHCARE INC",
+      "tier": "S",
+      "expectation_gap_est": 0.2820540587157435,
+      "market_cap": 729928318.0,
+      "out_of_validated_scope": [
+        "Gap +28.2%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $0.73B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000101778",
+      "name": "MARATHON OIL CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.2270343090103615,
+      "market_cap": 15437000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0001066605",
+      "name": "HEIDRICK & STRUGGLES INTERNATIONAL INC",
+      "tier": "S",
+      "expectation_gap_est": 0.1799886792142195,
+      "market_cap": 523971000.0,
+      "out_of_validated_scope": [
+        "시총 $0.52B가 코퍼스 최소($3.74B)의 1/7 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000920112",
+      "name": "HEARTLAND FINANCIAL USA INC",
+      "tier": "S",
+      "expectation_gap_est": 0.17719112180664592,
+      "market_cap": 1705115226.0,
+      "out_of_validated_scope": [
+        "시총 $1.71B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000034088",
+      "name": "EXXON MOBIL CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.15247242588895454,
+      "market_cap": 356000000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000039899",
+      "name": "TEGNA INC",
+      "tier": "S",
+      "expectation_gap_est": 0.15001288434497162,
+      "market_cap": 4639159645.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000945828",
+      "name": "AMERITYRE CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.1383845982924007,
+      "market_cap": 2074639.0,
+      "out_of_validated_scope": [
+        "시총 $0.00B가 코퍼스 최소($3.74B)의 1/1803 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000081061",
+      "name": "PUBLIX SUPER MARKETS INC",
+      "tier": "S",
+      "expectation_gap_est": 0.09794192593769273,
+      "market_cap": 31155000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0001136352",
+      "name": "Crestwood Equity Partners LP",
+      "tier": "S",
+      "expectation_gap_est": 0.09413200256340765,
+      "market_cap": 1700000000.0,
+      "out_of_validated_scope": [
+        "시총 $1.70B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000846475",
+      "name": "ZYNEX INC",
+      "tier": "A",
+      "expectation_gap_est": 0.061121724969637026,
+      "market_cap": 175200000.0,
+      "out_of_validated_scope": [
+        "시총 $0.18B가 코퍼스 최소($3.74B)의 1/21 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000794172",
+      "name": "MERIDIAN BIOSCIENCE INC",
+      "tier": "A",
+      "expectation_gap_est": 0.05529771094580921,
+      "market_cap": 1124567912.0,
+      "out_of_validated_scope": [
+        "시총 $1.12B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000912603",
+      "name": "SCHNITZER STEEL INDUSTRIES, INC.",
+      "tier": "A",
+      "expectation_gap_est": 0.04704223539350026,
+      "market_cap": 1287231031.0,
+      "out_of_validated_scope": [
+        "시총 $1.29B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    }
+  ],
+  "caveats": [
+    "폐지 사유(파산 vs 피인수)를 구분할 수 없다 - LISTING_STATUS가 사유를 주지 않는다. 따라서 편향의 **방향**은 단정하지 않는다.",
+    "이 집단의 주가 시계열은 확보 불가(폐지 종목)라 실현수익률은 여전히 측정할 수 없다 - 이 스크립트는 '빠진 판정의 개수'만 센다.",
+    "자회사 채권 필자는 public_float 부재로 자동 제외된다(제외 사유 참고)."
+  ]
+}

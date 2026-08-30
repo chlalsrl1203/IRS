@@ -1,0 +1,305 @@
+{
+  "generated_at": "2026-08-30",
+  "survivorship_exposure": {
+    "t0": "2018-06-30",
+    "listed_stocks_at_t0": 5773,
+    "delisted_since_t0": 2321,
+    "delisting_rate": 0.40204399792135803,
+    "still_in_todays_sec_list": 173,
+    "structurally_absent_from_backtest": 2148,
+    "interpretation": "백테스트 유니버스는 오늘자 SEC 티커목록에서 만들어지므로 이 종목들은 애초에 채점 대상이 되지 못했다. 죽은 회사만 빠졌으므로 flagged·not_flagged **양쪽 수익률이 모두 위로 편향**된다. 편향의 크기는 이 데이터만으로는 알 수 없다(폐지 종목의 T0 시총· 수익률이 없으므로) - 방향만 확실하다."
+  },
+  "question": "34종목 코퍼스의 관측범위를 벗어난 구간에서도 screen()의 저평가 판정이 실제 수익률과 관계있는가",
+  "prefixed_boundaries": {
+    "corpus_max_gap": 0.2438,
+    "corpus_min_market_cap": 3740000000.0,
+    "note": "34종목 ledger 실측 관측범위. PIT 수익률을 보기 전에 고정했다 - 결과에 맞춰 조정하면 이 분석은 무효다."
+  },
+  "per_t0": {
+    "2018-06-30": {
+      "benchmark_pct": 220.53979509784725,
+      "n_flagged_with_return": 56,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 46,
+        "median_pct": 165.52494321748551,
+        "mean_pct": 209.21638315443374,
+        "min_pct": -47.63784580189549,
+        "max_pct": 1229.4890277110364,
+        "positive_rate": 0.8913043478260869,
+        "beat_benchmark_rate": 0.30434782608695654
+      },
+      "gap_beyond_corpus_range": {
+        "n": 10,
+        "median_pct": 134.28187118795898,
+        "mean_pct": 447.64393604148165,
+        "min_pct": -30.44654603566662,
+        "max_pct": 1845.4562127038998,
+        "positive_rate": 0.8,
+        "beat_benchmark_rate": 0.4
+      },
+      "size_within_corpus_range": {
+        "n": 44,
+        "median_pct": 139.27783625491475,
+        "mean_pct": 266.72571863622375,
+        "min_pct": -47.63784580189549,
+        "max_pct": 1845.4562127038998,
+        "positive_rate": 0.8863636363636364,
+        "beat_benchmark_rate": 0.29545454545454547
+      },
+      "size_below_corpus_min": {
+        "n": 12,
+        "median_pct": 178.2934193427856,
+        "mean_pct": 197.03844712707698,
+        "min_pct": -30.44654603566662,
+        "max_pct": 468.3794143824586,
+        "positive_rate": 0.8333333333333334,
+        "beat_benchmark_rate": 0.4166666666666667
+      }
+    },
+    "2019-06-30": {
+      "benchmark_pct": 190.99058209463294,
+      "n_flagged_with_return": 65,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 54,
+        "median_pct": 161.8559349706687,
+        "mean_pct": 310.734862819985,
+        "min_pct": -6.572027194595287,
+        "max_pct": 2998.7051638747453,
+        "positive_rate": 0.9444444444444444,
+        "beat_benchmark_rate": 0.37037037037037035
+      },
+      "gap_beyond_corpus_range": {
+        "n": 11,
+        "median_pct": 70.86658828322521,
+        "mean_pct": 477.0952057806616,
+        "min_pct": -61.12657523154006,
+        "max_pct": 3187.0026525198937,
+        "positive_rate": 0.8181818181818182,
+        "beat_benchmark_rate": 0.45454545454545453
+      },
+      "size_within_corpus_range": {
+        "n": 52,
+        "median_pct": 136.83079229400806,
+        "mean_pct": 217.93490663282006,
+        "min_pct": -61.12657523154006,
+        "max_pct": 1644.833956422266,
+        "positive_rate": 0.9230769230769231,
+        "beat_benchmark_rate": 0.3076923076923077
+      },
+      "size_below_corpus_min": {
+        "n": 13,
+        "median_pct": 386.14312827502283,
+        "mean_pct": 822.7011316122943,
+        "min_pct": -4.534397238163168,
+        "max_pct": 3187.0026525198937,
+        "positive_rate": 0.9230769230769231,
+        "beat_benchmark_rate": 0.6923076923076923
+      }
+    },
+    "2020-06-30": {
+      "benchmark_pct": 171.0066716921581,
+      "n_flagged_with_return": 58,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 51,
+        "median_pct": 167.24152975945916,
+        "mean_pct": 336.73763809761806,
+        "min_pct": -45.52345830772383,
+        "max_pct": 3737.0577980564058,
+        "positive_rate": 0.9411764705882353,
+        "beat_benchmark_rate": 0.49019607843137253
+      },
+      "gap_beyond_corpus_range": {
+        "n": 7,
+        "median_pct": 193.64700048303155,
+        "mean_pct": 511.16001379965803,
+        "min_pct": -69.88079366324209,
+        "max_pct": 1702.963841138115,
+        "positive_rate": 0.8571428571428571,
+        "beat_benchmark_rate": 0.5714285714285714
+      },
+      "size_within_corpus_range": {
+        "n": 42,
+        "median_pct": 119.28196514219357,
+        "mean_pct": 239.84425830832703,
+        "min_pct": -69.88079366324209,
+        "max_pct": 1702.963841138115,
+        "positive_rate": 0.9047619047619048,
+        "beat_benchmark_rate": 0.38095238095238093
+      },
+      "size_below_corpus_min": {
+        "n": 16,
+        "median_pct": 258.3925439909255,
+        "mean_pct": 667.3925494141497,
+        "min_pct": 8.252793200356457,
+        "max_pct": 3737.0577980564058,
+        "positive_rate": 1.0,
+        "beat_benchmark_rate": 0.8125
+      }
+    },
+    "2021-06-30": {
+      "benchmark_pct": 92.33701915745212,
+      "n_flagged_with_return": 68,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 52,
+        "median_pct": 62.45871022024008,
+        "mean_pct": 143.4606440531115,
+        "min_pct": -55.72684571841502,
+        "max_pct": 1870.2896260754244,
+        "positive_rate": 0.8846153846153846,
+        "beat_benchmark_rate": 0.40384615384615385
+      },
+      "gap_beyond_corpus_range": {
+        "n": 16,
+        "median_pct": 146.62240766859088,
+        "mean_pct": 333.37876220852723,
+        "min_pct": -78.70677108600734,
+        "max_pct": 1849.9378367177787,
+        "positive_rate": 0.75,
+        "beat_benchmark_rate": 0.6875
+      },
+      "size_within_corpus_range": {
+        "n": 52,
+        "median_pct": 49.2783795954412,
+        "mean_pct": 105.9423179535352,
+        "min_pct": -78.70677108600734,
+        "max_pct": 893.8353627987018,
+        "positive_rate": 0.8269230769230769,
+        "beat_benchmark_rate": 0.34615384615384615
+      },
+      "size_below_corpus_min": {
+        "n": 16,
+        "median_pct": 208.30893517989995,
+        "mean_pct": 455.31332203215027,
+        "min_pct": -12.309088444815686,
+        "max_pct": 1870.2896260754244,
+        "positive_rate": 0.9375,
+        "beat_benchmark_rate": 0.875
+      }
+    },
+    "2022-06-30": {
+      "benchmark_pct": 115.17691578355608,
+      "n_flagged_with_return": 82,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 70,
+        "median_pct": 97.11484507738166,
+        "mean_pct": 203.95681018710778,
+        "min_pct": -67.21234499391716,
+        "max_pct": 2046.532846715328,
+        "positive_rate": 0.8571428571428571,
+        "beat_benchmark_rate": 0.4142857142857143
+      },
+      "gap_beyond_corpus_range": {
+        "n": 12,
+        "median_pct": 53.81513366368085,
+        "mean_pct": 125.61082080886172,
+        "min_pct": -16.383553224745416,
+        "max_pct": 458.8203133616435,
+        "positive_rate": 0.8333333333333334,
+        "beat_benchmark_rate": 0.4166666666666667
+      },
+      "size_within_corpus_range": {
+        "n": 70,
+        "median_pct": 78.01131105880721,
+        "mean_pct": 141.76116936103108,
+        "min_pct": -67.21234499391716,
+        "max_pct": 1026.9201712415008,
+        "positive_rate": 0.8428571428571429,
+        "beat_benchmark_rate": 0.35714285714285715
+      },
+      "size_below_corpus_min": {
+        "n": 12,
+        "median_pct": 215.98452562591768,
+        "mean_pct": 488.4187256276426,
+        "min_pct": -16.383553224745416,
+        "max_pct": 2046.532846715328,
+        "positive_rate": 0.9166666666666666,
+        "beat_benchmark_rate": 0.75
+      }
+    },
+    "2023-06-30": {
+      "benchmark_pct": 80.15539236807103,
+      "n_flagged_with_return": 86,
+      "market_cap_unavailable": 0,
+      "gap_within_corpus_range": {
+        "n": 69,
+        "median_pct": 49.06072733848119,
+        "mean_pct": 91.74106037961747,
+        "min_pct": -57.84383670233848,
+        "max_pct": 835.0328410330087,
+        "positive_rate": 0.8115942028985508,
+        "beat_benchmark_rate": 0.34782608695652173
+      },
+      "gap_beyond_corpus_range": {
+        "n": 17,
+        "median_pct": 59.47146280772804,
+        "mean_pct": 66.09951427911342,
+        "min_pct": -50.20588235294118,
+        "max_pct": 311.2165813536794,
+        "positive_rate": 0.7647058823529411,
+        "beat_benchmark_rate": 0.35294117647058826
+      },
+      "size_within_corpus_range": {
+        "n": 74,
+        "median_pct": 39.60640936495263,
+        "mean_pct": 57.487529660204494,
+        "min_pct": -57.84383670233848,
+        "max_pct": 340.7682641399826,
+        "positive_rate": 0.7837837837837838,
+        "beat_benchmark_rate": 0.28378378378378377
+      },
+      "size_below_corpus_min": {
+        "n": 12,
+        "median_pct": 159.44310154600154,
+        "mean_pct": 266.6456428402833,
+        "min_pct": -32.26118836744498,
+        "max_pct": 835.0328410330087,
+        "positive_rate": 0.9166666666666666,
+        "beat_benchmark_rate": 0.75
+      }
+    }
+  },
+  "pooled": {
+    "gap_in": {
+      "n": 342,
+      "median_pct": 97.69135462575281,
+      "mean_pct": 209.48631324682637,
+      "min_pct": -67.21234499391716,
+      "max_pct": 3737.0577980564058,
+      "positive_rate": 0.8830409356725146
+    },
+    "gap_out": {
+      "n": 73,
+      "median_pct": 92.18712943716886,
+      "mean_pct": 291.3381987450329,
+      "min_pct": -78.70677108600734,
+      "max_pct": 3187.0026525198937,
+      "positive_rate": 0.7945205479452054
+    },
+    "cap_in": {
+      "n": 334,
+      "median_pct": 75.98850701766773,
+      "mean_pct": 158.16875807653102,
+      "min_pct": -78.70677108600734,
+      "max_pct": 1845.4562127038998,
+      "positive_rate": 0.8532934131736527
+    },
+    "cap_out": {
+      "n": 81,
+      "median_pct": 237.69576394180757,
+      "mean_pct": 494.85978322519327,
+      "min_pct": -32.26118836744498,
+      "max_pct": 3737.0577980564058,
+      "positive_rate": 0.9259259259259259
+    }
+  },
+  "caveats": [
+    "p-value를 내지 않는다 - 같은 표본을 반복 검정해 FWER가 이미 포화 상태다(engine/quant/validation.py).",
+    "T0마다 보유기간이 다르므로 T0끼리 절대 수익률을 비교하지 말 것.",
+    "PIT 유니버스는 SEC 티커목록 앞부분 1,200종목이라 대형주 편중이다 - 코퍼스 범위 밖(소형) 표본이 실제 전체 유니버스보다 적다."
+  ]
+}

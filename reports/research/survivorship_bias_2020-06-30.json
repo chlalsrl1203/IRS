@@ -1,0 +1,140 @@
+{
+  "generated_at": "2026-08-30",
+  "as_of_t0": "2020-06-30",
+  "question": "백테스트가 구조적으로 못 본 집단(오늘자 티커목록에 없는 T0 공시기업)에서도 저평가 판정이 나오는가",
+  "t0_universe_size": 7479,
+  "invisible_to_backtest": 3420,
+  "invisible_share": 0.457280385078219,
+  "sampled": 600,
+  "scored": 114,
+  "passed": 12,
+  "pass_rate_in_invisible_group": 0.10526315789473684,
+  "skipped": 486,
+  "passed_detail": [
+    {
+      "cik": "0000010254",
+      "name": "EARTHSTONE ENERGY INC",
+      "tier": "S",
+      "expectation_gap_est": 0.9797539600879159,
+      "market_cap": 133695647.0,
+      "out_of_validated_scope": [
+        "Gap +98.0%p가 코퍼스 최대(+24.4%p)의 4.0배 - 검증된 적 없는 구간",
+        "시총 $0.13B가 코퍼스 최소($3.74B)의 1/28 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000057725",
+      "name": "LANNETT CO INC",
+      "tier": "S",
+      "expectation_gap_est": 0.6116010447633371,
+      "market_cap": 155045696.0,
+      "out_of_validated_scope": [
+        "Gap +61.2%p가 코퍼스 최대(+24.4%p)의 2.5배 - 검증된 적 없는 구간",
+        "시총 $0.16B가 코퍼스 최소($3.74B)의 1/24 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000883902",
+      "name": "Cornerstone Building Brands, Inc.",
+      "tier": "S",
+      "expectation_gap_est": 0.4854347080488757,
+      "market_cap": 252031712.0,
+      "out_of_validated_scope": [
+        "Gap +48.5%p가 코퍼스 최대(+24.4%p)의 2.0배 - 검증된 적 없는 구간",
+        "시총 $0.25B가 코퍼스 최소($3.74B)의 1/15 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000048039",
+      "name": "HollyFrontier Corp",
+      "tier": "S",
+      "expectation_gap_est": 0.3881808543492771,
+      "market_cap": 7100000000.0,
+      "out_of_validated_scope": [
+        "Gap +38.8%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000775368",
+      "name": "ALLEGHANY CORP /DE",
+      "tier": "A",
+      "expectation_gap_est": 0.3680118353270122,
+      "market_cap": 9902910301.0,
+      "out_of_validated_scope": [
+        "Gap +36.8%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000009346",
+      "name": "Protective Insurance Corp",
+      "tier": "S",
+      "expectation_gap_est": 0.35317155334835804,
+      "market_cap": 175668000.0,
+      "out_of_validated_scope": [
+        "Gap +35.3%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $0.18B가 코퍼스 최소($3.74B)의 1/21 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000912752",
+      "name": "SINCLAIR BROADCAST GROUP INC",
+      "tier": "S",
+      "expectation_gap_est": 0.23765673546394783,
+      "market_cap": 3515000000.0,
+      "out_of_validated_scope": [
+        "시총 $3.52B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000791915",
+      "name": "CYPRESS SEMICONDUCTOR CORP /DE/",
+      "tier": "A",
+      "expectation_gap_est": 0.189618885252067,
+      "market_cap": 6000000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000355019",
+      "name": "FONAR CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.16692814837298542,
+      "market_cap": 130000000.0,
+      "out_of_validated_scope": [
+        "시총 $0.13B가 코퍼스 최소($3.74B)의 1/29 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000899866",
+      "name": "ALEXION PHARMACEUTICALS, INC.",
+      "tier": "A",
+      "expectation_gap_est": 0.1224393396262662,
+      "market_cap": 28243087610.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000060977",
+      "name": "LYDALL INC /DE/",
+      "tier": "S",
+      "expectation_gap_est": 0.11921001254760308,
+      "market_cap": 340893927.0,
+      "out_of_validated_scope": [
+        "시총 $0.34B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000794619",
+      "name": "AMERICAN WOODMARK CORP",
+      "tier": "A",
+      "expectation_gap_est": 0.1165706046263808,
+      "market_cap": 1662345906.0,
+      "out_of_validated_scope": [
+        "시총 $1.66B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    }
+  ],
+  "caveats": [
+    "폐지 사유(파산 vs 피인수)를 구분할 수 없다 - LISTING_STATUS가 사유를 주지 않는다. 따라서 편향의 **방향**은 단정하지 않는다.",
+    "이 집단의 주가 시계열은 확보 불가(폐지 종목)라 실현수익률은 여전히 측정할 수 없다 - 이 스크립트는 '빠진 판정의 개수'만 센다.",
+    "자회사 채권 필자는 public_float 부재로 자동 제외된다(제외 사유 참고)."
+  ]
+}

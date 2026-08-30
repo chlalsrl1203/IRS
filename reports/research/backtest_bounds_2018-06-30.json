@@ -1,0 +1,53 @@
+{
+  "as_of_t0": "2018-06-30",
+  "benchmark_pct": 220.53979509784725,
+  "n_visible_flagged": 56,
+  "n_invisible_flagged_measured": 16,
+  "excluded_delisted_before_t0": {
+    "WESTMORELAND COAL Co": "2018-04-24",
+    "MICROSEMI CORP": "2018-05-29"
+  },
+  "delisting_name_unmatched": 8,
+  "scenarios": {
+    "as_reported_visible_only": {
+      "n": 56,
+      "median_pct": 163.65206298864882,
+      "mean_pct": 251.7927318842637,
+      "beat_benchmark_rate": 0.32142857142857145
+    },
+    "worst_all_missing_minus100": {
+      "n": 72,
+      "median_pct": 95.30269440584004,
+      "mean_pct": 173.6165692433162,
+      "beat_benchmark_rate": 0.25
+    },
+    "neutral_all_missing_benchmark": {
+      "n": 72,
+      "median_pct": 206.12488998876557,
+      "mean_pct": 244.84763482061558,
+      "beat_benchmark_rate": 0.25
+    },
+    "best_all_missing_visible_median": {
+      "n": 72,
+      "median_pct": 163.65206298864882,
+      "mean_pct": 232.20591657412706,
+      "beat_benchmark_rate": 0.25
+    }
+  },
+  "median_range_pct": [
+    95.30269440584004,
+    206.12488998876557
+  ],
+  "extrapolation": {
+    "invisible_group_size": 4118,
+    "sampled": 600,
+    "implied_total_missed_flags": 110,
+    "ratio_to_visible": 1.960952380952381,
+    "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
+  },
+  "caveats": [
+    "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+    "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
+    "놓친 판정 중 8건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
+  ]
+}

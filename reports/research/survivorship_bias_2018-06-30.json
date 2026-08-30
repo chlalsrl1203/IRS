@@ -1,0 +1,197 @@
+{
+  "generated_at": "2026-08-30",
+  "as_of_t0": "2018-06-30",
+  "question": "백테스트가 구조적으로 못 본 집단(오늘자 티커목록에 없는 T0 공시기업)에서도 저평가 판정이 나오는가",
+  "t0_universe_size": 7784,
+  "invisible_to_backtest": 4118,
+  "invisible_share": 0.5290339157245632,
+  "sampled": 600,
+  "scored": 114,
+  "passed": 18,
+  "pass_rate_in_invisible_group": 0.15789473684210525,
+  "skipped": 486,
+  "passed_detail": [
+    {
+      "cik": "0000847464",
+      "name": "China YCT International Group, Inc.",
+      "tier": "S",
+      "expectation_gap_est": 0.7483506197683908,
+      "market_cap": 7357841.0,
+      "out_of_validated_scope": [
+        "Gap +74.8%p가 코퍼스 최대(+24.4%p)의 3.1배 - 검증된 적 없는 구간",
+        "시총 $0.01B가 코퍼스 최소($3.74B)의 1/508 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000010254",
+      "name": "EARTHSTONE ENERGY INC",
+      "tier": "S",
+      "expectation_gap_est": 0.6366185156469175,
+      "market_cap": 181689218.0,
+      "out_of_validated_scope": [
+        "Gap +63.7%p가 코퍼스 최대(+24.4%p)의 2.6배 - 검증된 적 없는 구간",
+        "시총 $0.18B가 코퍼스 최소($3.74B)의 1/21 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000106455",
+      "name": "WESTMORELAND COAL Co",
+      "tier": "S",
+      "expectation_gap_est": 0.5633078595664822,
+      "market_cap": 89851140.0,
+      "out_of_validated_scope": [
+        "Gap +56.3%p가 코퍼스 최대(+24.4%p)의 2.3배 - 검증된 적 없는 구간",
+        "시총 $0.09B가 코퍼스 최소($3.74B)의 1/42 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000057725",
+      "name": "LANNETT CO INC",
+      "tier": "S",
+      "expectation_gap_est": 0.4172358442624343,
+      "market_cap": 613312878.0,
+      "out_of_validated_scope": [
+        "Gap +41.7%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.61B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000792161",
+      "name": "ROYAL HAWAIIAN ORCHARDS, L.P.",
+      "tier": "S",
+      "expectation_gap_est": 0.40443125288800064,
+      "market_cap": 6906282.0,
+      "out_of_validated_scope": [
+        "Gap +40.4%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.01B가 코퍼스 최소($3.74B)의 1/542 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000775368",
+      "name": "ALLEGHANY CORP /DE",
+      "tier": "A",
+      "expectation_gap_est": 0.37708157277797194,
+      "market_cap": 8815683664.0,
+      "out_of_validated_scope": [
+        "Gap +37.7%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000003116",
+      "name": "AKORN INC",
+      "tier": "A",
+      "expectation_gap_est": 0.20075921085869364,
+      "market_cap": 2318700000.0,
+      "out_of_validated_scope": [
+        "시총 $2.32B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000726514",
+      "name": "ELECTRO SCIENTIFIC INDUSTRIES INC",
+      "tier": "S",
+      "expectation_gap_est": 0.14002267630162002,
+      "market_cap": 402636055.0,
+      "out_of_validated_scope": [
+        "시총 $0.40B가 코퍼스 최소($3.74B)의 1/9 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000021510",
+      "name": "COHERENT INC",
+      "tier": "A",
+      "expectation_gap_est": 0.13504580446926334,
+      "market_cap": 3848333286.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000784011",
+      "name": "POPE RESOURCES LTD PARTNERSHIP",
+      "tier": "S",
+      "expectation_gap_est": 0.12921248086402304,
+      "market_cap": 241737040.0,
+      "out_of_validated_scope": [
+        "시총 $0.24B가 코퍼스 최소($3.74B)의 1/15 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000730255",
+      "name": "CalAmp Corp.",
+      "tier": "A",
+      "expectation_gap_est": 0.12266783785324391,
+      "market_cap": 641269400.0,
+      "out_of_validated_scope": [
+        "시총 $0.64B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000816284",
+      "name": "CELGENE CORP /DE/",
+      "tier": "B",
+      "expectation_gap_est": 0.11499035575782357,
+      "market_cap": 101580696211.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000721683",
+      "name": "TOTAL SYSTEM SERVICES INC",
+      "tier": "A",
+      "expectation_gap_est": 0.0872518593870738,
+      "market_cap": 10573813000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000703361",
+      "name": "INTEGRATED DEVICE TECHNOLOGY INC",
+      "tier": "A",
+      "expectation_gap_est": 0.0801017171910163,
+      "market_cap": 2620000000.0,
+      "out_of_validated_scope": [
+        "시총 $2.62B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000310568",
+      "name": "MICROSEMI CORP",
+      "tier": "A",
+      "expectation_gap_est": 0.07537743538688396,
+      "market_cap": 5950000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000820081",
+      "name": "CAMBREX CORP",
+      "tier": "B",
+      "expectation_gap_est": 0.07193944325566123,
+      "market_cap": 1936518532.0,
+      "out_of_validated_scope": [
+        "시총 $1.94B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000830524",
+      "name": "CHASE CORP",
+      "tier": "A",
+      "expectation_gap_est": 0.07070814881137603,
+      "market_cap": 653152000.0,
+      "out_of_validated_scope": [
+        "시총 $0.65B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000059440",
+      "name": "VECTOR GROUP LTD",
+      "tier": "B",
+      "expectation_gap_est": 0.030170954188193946,
+      "market_cap": 2047000000.0,
+      "out_of_validated_scope": [
+        "시총 $2.05B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    }
+  ],
+  "caveats": [
+    "폐지 사유(파산 vs 피인수)를 구분할 수 없다 - LISTING_STATUS가 사유를 주지 않는다. 따라서 편향의 **방향**은 단정하지 않는다.",
+    "이 집단의 주가 시계열은 확보 불가(폐지 종목)라 실현수익률은 여전히 측정할 수 없다 - 이 스크립트는 '빠진 판정의 개수'만 센다.",
+    "자회사 채권 필자는 public_float 부재로 자동 제외된다(제외 사유 참고)."
+  ]
+}
