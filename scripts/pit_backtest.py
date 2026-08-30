@@ -47,6 +47,7 @@ from engine.data.providers.sec import (  # noqa: E402
 )
 from engine.filing_dates import DEFAULT_USER_AGENT, fetch_company_facts  # noqa: E402
 from engine.screener import screen_all  # noqa: E402
+from engine.survival_gate import extreme_survival_risk  # noqa: E402
 
 from broad_screen import (  # noqa: E402
     PUBLIC_FLOAT_STALE_YEARS, build_candidate, full_ticker_universe,
@@ -122,7 +123,8 @@ def fetch_pit_series(ticker, cik, as_of, user_agent=None, retrieved_at=None):
         resolve_cik=lambda t, u=None: cik,
     )
     result = provider.fetch_annual_financials(
-        ticker, metrics=("revenue", "operating_cashflow", "capex"),
+        ticker,
+        metrics=("revenue", "operating_cashflow", "capex", "shareholders_equity"),
         fiscal_years=None, retrieved_at=retrieved_at, as_of=as_of,
     )
     by_metric = {}
@@ -133,11 +135,19 @@ def fetch_pit_series(ticker, cik, as_of, user_agent=None, retrieved_at=None):
     rev = by_metric.get("revenue", {})
     ocf = by_metric.get("operating_cashflow", {})
     capex = by_metric.get("capex", {})
+    equity = by_metric.get("shareholders_equity", {})
     common_years = sorted(set(rev) & set(ocf) & set(capex))
     if len(common_years) < 6:
         limitations.append(
             f"매출·OCF·capex 공통 확보 연도가 {len(common_years)}개뿐(T0={as_of} "
             f"기준) - 5년 CAGR에 최소 6개년 필요")
+        return None, limitations
+
+    # 1차 스크리닝 "B" 게이트(engine/survival_gate.py) - broad_screen.py와
+    # 동일하게 T0 시점 기준으로 적용한다(둘 다 as_of<=filed로 이미 truncate됨).
+    is_at_risk, risk_reason = extreme_survival_risk(equity, ocf)
+    if is_at_risk:
+        limitations.append(risk_reason)
         return None, limitations
 
     pf = public_float_from_facts(facts_json, as_of=as_of)
@@ -155,6 +165,7 @@ def fetch_pit_series(ticker, cik, as_of, user_agent=None, retrieved_at=None):
         "operating_cashflow_by_year": {y: ocf[y] for y in common_years},
         "capex_by_year": {y: capex[y] for y in common_years},
         "public_float_by_year": pf,
+        "shareholders_equity_by_year": dict(equity),
     }, limitations
 
 

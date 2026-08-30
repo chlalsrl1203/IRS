@@ -182,6 +182,62 @@ def test_fetch_stage1_series_rejects_stale_public_float(monkeypatch):
     assert any("public_float 낡음" in x for x in lim)
 
 
+# ── 1차 스크리닝 "B" 게이트(존속위험) 배선 회귀(2026-08-30) ────────────────
+def _facts_with_equity_and_ocf(equity_by_year, ocf_by_year):
+    """PODD 이슈를 피하려고 revenue/capex는 항상 정상 데이터로 채운다."""
+    years = range(2019, 2026)
+    return {
+        "facts": {
+            "us-gaap": {
+                "Revenues": {"units": {"USD": [
+                    {"start": f"{y}-01-01", "end": f"{y}-12-31",
+                     "filed": f"{y + 1}-02-01", "val": 100 + y, "form": "10-K"}
+                    for y in years
+                ]}},
+                "NetCashProvidedByUsedInOperatingActivities": {"units": {"USD": [
+                    {"start": f"{y}-01-01", "end": f"{y}-12-31",
+                     "filed": f"{y + 1}-02-01", "val": ocf_by_year.get(y, 30 + y),
+                     "form": "10-K"}
+                    for y in years
+                ]}},
+                "PaymentsToAcquireProductiveAssets": {"units": {"USD": [
+                    {"start": f"{y}-01-01", "end": f"{y}-12-31",
+                     "filed": f"{y + 1}-02-01", "val": 5, "form": "10-K"}
+                    for y in years
+                ]}},
+                "StockholdersEquity": {"units": {"USD": [
+                    {"end": f"{y}-12-31", "filed": f"{y + 1}-02-01",
+                     "val": equity_by_year.get(y, 200 + y), "form": "10-K"}
+                    for y in years
+                ]}},
+            },
+            "dei": {"EntityPublicFloat": {"units": {"USD": [
+                {"end": "2025-06-30", "filed": "2026-02-01", "val": 1000, "form": "10-K"},
+            ]}}},
+        }
+    }
+
+
+def test_fetch_stage1_series_excludes_extreme_survival_risk(monkeypatch):
+    """자기자본·OCF가 최신연도(2025)에 동시 마이너스면 게이트가 걸려야 한다."""
+    facts = _facts_with_equity_and_ocf(
+        equity_by_year={2025: -500}, ocf_by_year={2025: -100})
+    monkeypatch.setattr(B, "fetch_company_facts", lambda cik, ua=None: facts)
+    series, lim = B.fetch_stage1_series("X", "1", "2026-08-30")
+    assert series is None
+    assert any("극단적 존속위험" in x for x in lim)
+
+
+def test_fetch_stage1_series_keeps_negative_equity_with_positive_ocf(monkeypatch):
+    """자사주매입형 마이너스 자기자본(BRO/BSY류) - OCF가 건전하면 통과해야 한다."""
+    facts = _facts_with_equity_and_ocf(
+        equity_by_year={2025: -500}, ocf_by_year={2025: 800})
+    monkeypatch.setattr(B, "fetch_company_facts", lambda cik, ua=None: facts)
+    series, lim = B.fetch_stage1_series("X", "1", "2026-08-30")
+    assert series is not None
+    assert series["shareholders_equity_by_year"][2025] == -500
+
+
 # ── skip 분류 ────────────────────────────────────────────────────────────
 def test_classify_stage1_covers_new_categories():
     skipped = {

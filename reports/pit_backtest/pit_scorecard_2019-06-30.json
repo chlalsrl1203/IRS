@@ -1,0 +1,45 @@
+{
+  "flagged": {
+    "n": 65,
+    "mean_pct": 338.8881516287149,
+    "equal_weight_portfolio_pct": 338.8881516287149,
+    "min_pct": -61.12657523154006,
+    "p25_pct": 68.3329780430612,
+    "median_pct": 156.1292654948684,
+    "p75_pct": 259.27758535378524,
+    "max_pct": 3187.0026525198937,
+    "positive_rate": 0.9230769230769231,
+    "beat_benchmark_rate": 0.38461538461538464,
+    "concentration": {
+      "mean_excl_top1_pct": 294.3863625522902,
+      "mean_excl_top3_pct": 228.98690456531554,
+      "mean_excl_top5_pct": 193.6822824154982,
+      "top3_share_of_positive_sum": 0.3541427268049353
+    }
+  },
+  "not_flagged": {
+    "n": 326,
+    "mean_pct": 187.62460216633923,
+    "equal_weight_portfolio_pct": 187.62460216633923,
+    "min_pct": -63.85589665525262,
+    "p25_pct": 54.86199646215869,
+    "median_pct": 115.71502186234734,
+    "p75_pct": 223.04742287688296,
+    "max_pct": 2141.1319834053165,
+    "positive_rate": 0.9263803680981595,
+    "beat_benchmark_rate": 0.30368098159509205,
+    "concentration": {
+      "mean_excl_top1_pct": 181.61381022406545,
+      "mean_excl_top3_pct": 174.50431257196408,
+      "mean_excl_top5_pct": 168.85548392378462,
+      "top3_share_of_positive_sum": 0.07767792110483017
+    }
+  },
+  "benchmark": {
+    "ticker": "SPY",
+    "t0_adj_close": 264.39,
+    "latest_adj_close": 769.35,
+    "return_pct": 190.99058209463294
+  },
+  "n_unavailable": 2
+}

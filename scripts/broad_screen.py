@@ -61,6 +61,7 @@ from engine.filing_dates import (  # noqa: E402
 from engine.screener import (  # noqa: E402
     Candidate, DEFAULT_NDTE, DEFAULT_RISK_FREE_RATE, screen_all,
 )
+from engine.survival_gate import extreme_survival_risk  # noqa: E402
 from daily_screen_ci import SKIP_CATEGORIES, classify_skips  # noqa: E402
 
 REPORTS_DIR = os.path.join(os.path.dirname(_HERE), "reports", "broad_screen")
@@ -99,6 +100,11 @@ STAGE1_SKIP_CATEGORIES = SKIP_CATEGORIES + (
     # 워크 부적합) - "0 이하"(daily_screen_ci의 다른 문구)와 안 겹치게 별도 라벨.
     ("5년 CAGR 계산 불가(PODD/ONON/MU형 프레임워크 부적합)",
      ("프레임워크 부적합",), False),
+    # 1차 스크리닝 "B" 게이트(2026-08-30) - engine/survival_gate.py 참고.
+    # DRS가 이미 연속반영하는 레버리지·변동성은 다시 컷하지 않고, DRS가
+    # 원리적으로 못 보는 "자기자본+현금흐름 동시잠식"만 거른다.
+    ("극단적 존속위험(자기자본·영업현금흐름 동시 마이너스)",
+     ("극단적 존속위험",), False),
 )
 
 
@@ -144,7 +150,13 @@ def fetch_stage1_series(ticker, cik, retrieved_at, user_agent=None):
 
     반환: (series_dict_or_None, [limitation, ...])
     series_dict: {"revenue_by_year", "operating_cashflow_by_year",
-                  "capex_by_year", "public_float_by_year"}
+                  "capex_by_year", "public_float_by_year",
+                  "shareholders_equity_by_year"}
+
+    ⚠️ `shareholders_equity`는 1차 스크리닝 "B" 게이트(engine/survival_gate.py)
+    전용이다 - 밸류에이션 계산(`build_candidate`)에는 쓰이지 않는다. 확보
+    실패해도 series 자체를 실패시키지 않는다(게이트가 데이터 부재를 스스로
+    "판단 불가"로 처리한다).
     """
     ua = user_agent or DEFAULT_USER_AGENT
     try:
@@ -158,7 +170,8 @@ def fetch_stage1_series(ticker, cik, retrieved_at, user_agent=None):
         resolve_cik=lambda t, u=None: cik,
     )
     result = provider.fetch_annual_financials(
-        ticker, metrics=("revenue", "operating_cashflow", "capex"),
+        ticker,
+        metrics=("revenue", "operating_cashflow", "capex", "shareholders_equity"),
         fiscal_years=None, retrieved_at=retrieved_at,
     )
 
@@ -170,6 +183,7 @@ def fetch_stage1_series(ticker, cik, retrieved_at, user_agent=None):
     rev = by_metric.get("revenue", {})
     ocf = by_metric.get("operating_cashflow", {})
     capex = by_metric.get("capex", {})
+    equity = by_metric.get("shareholders_equity", {})
     common_years = sorted(set(rev) & set(ocf) & set(capex))
     if len(common_years) < 6:
         limitations.append(
@@ -190,11 +204,20 @@ def fetch_stage1_series(ticker, cik, retrieved_at, user_agent=None):
             f"전 - SEC 보고의무 축소·중단 추정, 이 값으로 시총을 근사하면 안 됨)")
         return None, limitations
 
+    # 1차 스크리닝 "B" 게이트 - `ocf`·`equity`는 CAGR용 common_years로 자르지
+    # 않은 원본을 쓴다(존속위험 판단은 "가장 최근 알려진 상태"를 봐야 하고,
+    # capex 태그 미확보 등으로 common_years가 최신연도보다 뒤처질 수 있다).
+    is_at_risk, risk_reason = extreme_survival_risk(equity, ocf)
+    if is_at_risk:
+        limitations.append(risk_reason)
+        return None, limitations
+
     series = {
         "revenue_by_year": {y: rev[y] for y in common_years},
         "operating_cashflow_by_year": {y: ocf[y] for y in common_years},
         "capex_by_year": {y: capex[y] for y in common_years},
         "public_float_by_year": pf,
+        "shareholders_equity_by_year": dict(equity),
     }
     return series, limitations
 
