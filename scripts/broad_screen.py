@@ -62,6 +62,7 @@ from engine.screener import (  # noqa: E402
     Candidate, DEFAULT_NDTE, DEFAULT_RISK_FREE_RATE, screen_all,
 )
 from engine.survival_gate import extreme_survival_risk  # noqa: E402
+from engine.validated_scope import out_of_scope_reasons  # noqa: E402
 from daily_screen_ci import SKIP_CATEGORIES, classify_skips  # noqa: E402
 
 REPORTS_DIR = os.path.join(os.path.dirname(_HERE), "reports", "broad_screen")
@@ -374,10 +375,16 @@ def run(limit=None, retrieved_at=None, user_agent=None):
             for lbl, ts, infra in sorted(_classify_stage1(skipped),
                                          key=lambda g: (not g[2], -len(g[1])))
         ],
+        # ⚠️ 검증 코퍼스 관측범위 밖인지 **표시만** 한다(거르지 않는다) -
+        # engine/validated_scope.py 참고. 범위 밖 = "틀렸다"가 아니라
+        # "확인된 적이 없다"는 뜻이다.
         "passed_tickers": [
             {"ticker": r.candidate.ticker, "tier": r.tier,
              "expectation_gap_est": r.expectation_gap_est,
-             "market_cap": r.candidate.market_cap, "note": r.candidate.note}
+             "market_cap": r.candidate.market_cap, "note": r.candidate.note,
+             "out_of_validated_scope": out_of_scope_reasons(
+                 gap=r.expectation_gap_est,
+                 market_cap=r.candidate.market_cap)}
             for r in passed
         ],
     }
