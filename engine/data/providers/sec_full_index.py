@@ -43,6 +43,7 @@ full-index는 **CIK를 직접** 담고 있어 매칭이 아예 필요 없다. �
 그게 이 데이터로 도달 가능한 정직한 한계다.
 """
 import re
+import time
 
 from engine.filing_dates import ANNUAL_FORMS, _http_text
 
@@ -96,7 +97,7 @@ def _quarters_back(as_of, n=4):
 
 
 def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4,
-                delisted_before=None):
+                delisted_before=None, retries=3, allow_partial=False):
     """
     T0 시점에 **연차 재무제표가 존재했던** 기업 전체.
 
@@ -120,11 +121,19 @@ def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4,
     주지 않는다)에 이 모듈이 의존하지 않게 하기 위해서다. 매핑은 호출부 책임.
     """
     fetch_text = fetch_text or (lambda url: _http_text(url, user_agent))
-    merged = {}
+    merged, failed = {}, []
     for year, qtr in _quarters_back(as_of, quarters):
-        try:
-            text = fetch_text(quarter_index_url(year, qtr))
-        except Exception:  # noqa: BLE001 - 한 분기 실패가 전체를 막지 않는다
+        text = None
+        for attempt in range(retries):
+            try:
+                text = fetch_text(quarter_index_url(year, qtr))
+                break
+            except Exception as e:  # noqa: BLE001 - 사유를 살려 보낸다
+                last = e
+                if attempt < retries - 1:
+                    time.sleep(2 ** attempt)
+        if text is None:
+            failed.append((f"{year}Q{qtr}", repr(last)))
             continue
         for cik, (name, filed) in parse_company_idx(text).items():
             if filed > as_of:
@@ -132,6 +141,17 @@ def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4,
             prev = merged.get(cik)
             if prev is None or filed > prev["last_annual_filed"]:
                 merged[cik] = {"name": name, "last_annual_filed": filed}
+    # ⚠️ **부분 실패를 조용히 삼키지 않는다.** 초판은 한 분기가 실패해도 그냥
+    # 넘어갔는데, 2026-08-30 T0=2022 실행에서 실제로 그 일이 났다 - 유니버스가
+    # 2,867개(다른 T0는 ~7,500)로 40% 수준까지 쪼그라들었는데 **출력에는 아무
+    # 표시가 없었다.** 재조회해보니 네 분기 전부 HTTP 200이라 일시적 실패였다.
+    # 이 프로젝트가 반복해서 잡아온 "인프라 장애가 정상 결과와 구별되지 않는"
+    # 패턴(v3.68)이 그대로 재현된 것이다. 재시도 후에도 실패하면 예외를 던진다.
+    if failed and not allow_partial:
+        raise RuntimeError(
+            f"full-index 분기 조회 실패로 유니버스가 불완전하다({as_of}): {failed}. "
+            f"불완전한 채로 진행하려면 allow_partial=True를 명시할 것 - 그 경우 "
+            f"유니버스가 실제보다 작아져 '사라진 기업' 집계가 과소평가된다.")
     if delisted_before:
         merged = {c: v for c, v in merged.items() if c not in delisted_before}
     return merged

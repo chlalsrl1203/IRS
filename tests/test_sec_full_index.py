@@ -101,8 +101,18 @@ def test_quarters_back_from_q1():
     assert F._quarters_back("2020-02-15", 2) == [(2019, 4), (2020, 1)]
 
 
-# ── ⑤ 부분 실패 내성 ─────────────────────────────────────────────────────
-def test_one_failing_quarter_does_not_abort_the_rest():
+# ── ⑤ 부분 실패는 삼키지 않는다 (초판 동작을 뒤집었다) ────────────────────
+def test_partial_failure_is_opt_in_not_the_default():
+    """
+    ⚠️ 이 테스트는 원래 `test_one_failing_quarter_does_not_abort_the_rest`로,
+    "한 분기가 실패해도 나머지로 계속한다"를 고정하고 있었다. **그 동작 자체가
+    결함이었다** - 2026-08-30 T0=2022 실행에서 일시적 조회 실패로 유니버스가
+    2,867개(다른 T0는 ~7,500)까지 쪼그라들었는데 출력에 아무 표시가 없었다.
+
+    회귀가 아니라 **테스트가 고정하던 문제의 해소**다(BRO model_choice_reason
+    때와 같은 상황). 계속 진행하려면 호출부가 `allow_partial=True`로 명시해야
+    한다 - 조용히가 아니라 의식적으로.
+    """
     good = HEADER + _row("GOOD CO", "10-K", "111", "2018-05-01")
 
     def flaky(url):
@@ -110,7 +120,8 @@ def test_one_failing_quarter_does_not_abort_the_rest():
             raise RuntimeError("SEC 조회 실패")
         return good
 
-    uni = F.universe_at("2018-06-30", fetch_text=flaky, quarters=4)
+    uni = F.universe_at("2018-06-30", fetch_text=flaky, quarters=4, retries=1,
+                        allow_partial=True)
     assert "0000000111" in uni
 
 
@@ -147,3 +158,50 @@ def test_delisted_before_takes_ciks_not_tickers():
     uni = F.universe_at("2018-06-30", fetch_text=lambda u: text, quarters=1,
                         delisted_before={"ANYCO"})   # 티커를 넣으면 안 걸린다
     assert "0000000111" in uni
+
+
+# ── 부분 실패를 조용히 삼키지 않는다 (2026-08-30 T0=2022 실측 사고) ────────
+def test_failed_quarter_raises_instead_of_silent_partial_universe():
+    """
+    T0=2022 실행에서 분기 조회가 일시 실패해 유니버스가 2,867개(다른 T0는
+    ~7,500)로 쪼그라들었는데 출력에 아무 표시가 없었다. 인프라 장애가 정상
+    결과와 구별되지 않던 v3.68 패턴의 재현이라 예외로 바꿨다.
+    """
+    import pytest
+    good = HEADER + _row("GOOD CO", "10-K", "111", "2018-05-01")
+
+    def flaky(url):
+        if "QTR1" in url:
+            raise RuntimeError("일시적 조회 실패")
+        return good
+
+    with pytest.raises(RuntimeError, match="불완전"):
+        F.universe_at("2018-06-30", fetch_text=flaky, quarters=4, retries=1)
+
+
+def test_allow_partial_lets_caller_opt_in_with_warning_in_message():
+    good = HEADER + _row("GOOD CO", "10-K", "111", "2018-05-01")
+
+    def flaky(url):
+        if "QTR1" in url:
+            raise RuntimeError("실패")
+        return good
+
+    uni = F.universe_at("2018-06-30", fetch_text=flaky, quarters=4, retries=1,
+                        allow_partial=True)
+    assert "0000000111" in uni
+
+
+def test_transient_failure_is_retried_before_giving_up():
+    """일시적 실패는 재시도로 흡수해야 한다 - 바로 예외를 던지면 운영이 불안정해진다."""
+    calls = {"n": 0}
+    good = HEADER + _row("GOOD CO", "10-K", "111", "2018-05-01")
+
+    def flaky_once(url):
+        calls["n"] += 1
+        if calls["n"] == 1:
+            raise RuntimeError("첫 시도만 실패")
+        return good
+
+    uni = F.universe_at("2018-06-30", fetch_text=flaky_once, quarters=1, retries=3)
+    assert "0000000111" in uni and calls["n"] == 2

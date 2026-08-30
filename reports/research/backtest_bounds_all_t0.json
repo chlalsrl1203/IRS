@@ -207,5 +207,107 @@
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 5건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
+  },
+  {
+    "as_of_t0": "2022-06-30",
+    "benchmark_pct": 115.17691578355608,
+    "n_visible_flagged": 82,
+    "n_invisible_flagged_measured": 9,
+    "excluded_delisted_before_t0": {},
+    "delisting_name_unmatched": 3,
+    "scenarios": {
+      "as_reported_visible_only": {
+        "n": 82,
+        "median_pct": 95.66293026898983,
+        "mean_pct": 192.49154344882788,
+        "beat_benchmark_rate": 0.4146341463414634
+      },
+      "worst_all_missing_minus100": {
+        "n": 91,
+        "median_pct": 70.08099094807054,
+        "mean_pct": 163.56380838246028,
+        "beat_benchmark_rate": 0.37362637362637363
+      },
+      "neutral_all_missing_benchmark": {
+        "n": 91,
+        "median_pct": 110.12726518082232,
+        "mean_pct": 184.84504181160318,
+        "beat_benchmark_rate": 0.37362637362637363
+      },
+      "best_all_missing_visible_median": {
+        "n": 91,
+        "median_pct": 95.66293026898983,
+        "mean_pct": 182.91508720027247,
+        "beat_benchmark_rate": 0.37362637362637363
+      }
+    },
+    "median_range_pct": [
+      70.08099094807054,
+      110.12726518082232
+    ],
+    "extrapolation": {
+      "invisible_group_size": 1171,
+      "sampled": 600,
+      "implied_total_missed_flags": 18,
+      "ratio_to_visible": 0.21420731707317076,
+      "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
+    },
+    "caveats": [
+      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
+      "놓친 판정 중 3건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
+    ]
+  },
+  {
+    "as_of_t0": "2023-06-30",
+    "benchmark_pct": 80.15539236807103,
+    "n_visible_flagged": 86,
+    "n_invisible_flagged_measured": 21,
+    "excluded_delisted_before_t0": {
+      "ATLAS AIR WORLDWIDE HOLDINGS INC": "2023-04-03"
+    },
+    "delisting_name_unmatched": 10,
+    "scenarios": {
+      "as_reported_visible_only": {
+        "n": 86,
+        "median_pct": 49.472170415638196,
+        "mean_pct": 86.67238266207598,
+        "beat_benchmark_rate": 0.3488372093023256
+      },
+      "worst_all_missing_minus100": {
+        "n": 107,
+        "median_pct": 30.92594837912643,
+        "mean_pct": 50.03574681250966,
+        "beat_benchmark_rate": 0.2803738317757009
+      },
+      "neutral_all_missing_benchmark": {
+        "n": 107,
+        "median_pct": 70.8953153183906,
+        "mean_pct": 85.39334718381332,
+        "beat_benchmark_rate": 0.2803738317757009
+      },
+      "best_all_missing_visible_median": {
+        "n": 107,
+        "median_pct": 49.472170415638196,
+        "mean_pct": 79.37140642679378,
+        "beat_benchmark_rate": 0.2803738317757009
+      }
+    },
+    "median_range_pct": [
+      30.92594837912643,
+      70.8953153183906
+    ],
+    "extrapolation": {
+      "invisible_group_size": 2682,
+      "sampled": 600,
+      "implied_total_missed_flags": 94,
+      "ratio_to_visible": 1.0915116279069765,
+      "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
+    },
+    "caveats": [
+      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
+      "놓친 판정 중 10건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
+    ]
   }
 ]
