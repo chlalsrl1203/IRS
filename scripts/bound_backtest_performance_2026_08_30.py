@@ -155,10 +155,67 @@ def build(t0):
     }
 
 
+def summarize_all():
+    """
+    확보된 모든 T0의 구간을 한 표로. **T0끼리 절대 수익률을 비교하지 말 것** -
+    보유기간이 다르다(pit_multi_t0_summary와 동일한 경고).
+
+    비교해도 되는 것은 **T0 안에서의 상대 변화**와 "놓친 판정 / 보이는 판정"
+    비율처럼 무차원인 값뿐이다.
+    """
+    t0s = sorted(f[len("survivorship_bias_"):-len(".json")]
+                 for f in os.listdir(RES_DIR)
+                 if f.startswith("survivorship_bias_"))
+    rows = []
+    for t0 in t0s:
+        if not os.path.exists(os.path.join(PIT_DIR, f"pit_returns_{t0}.json")):
+            continue
+        rows.append(build(t0))
+
+    print("# 생존편향 구간 — T0 교차 요약\n")
+    print("⚠️ T0마다 보유기간이 다르므로 **T0끼리 절대 수익률을 비교하지 말 것.**\n")
+    print(f"| T0 | 보이는 flagged | 놓친(실측) | 놓친/보이는(전수추정) | "
+          f"현재 중앙값 | 최악 | 중립 |")
+    print("|---|---:|---:|---:|---:|---:|---:|")
+    for r in rows:
+        s = r["scenarios"]
+        print(f"| {r['as_of_t0']} | {r['n_visible_flagged']} | "
+              f"{r['n_invisible_flagged_measured']} | "
+              f"{r['extrapolation']['ratio_to_visible']:.1f}배 | "
+              f"{s['as_reported_visible_only']['median_pct']:+.1f}% | "
+              f"{s['worst_all_missing_minus100']['median_pct']:+.1f}% | "
+              f"{s['neutral_all_missing_benchmark']['median_pct']:+.1f}% |")
+
+    print("\n**벤치마크 초과비율 변화**\n")
+    print("| T0 | 현재 | 최악 | 중립 |")
+    print("|---|---:|---:|---:|")
+    for r in rows:
+        s = r["scenarios"]
+        print(f"| {r['as_of_t0']} | "
+              f"{s['as_reported_visible_only']['beat_benchmark_rate']*100:.0f}% | "
+              f"{s['worst_all_missing_minus100']['beat_benchmark_rate']*100:.0f}% | "
+              f"{s['neutral_all_missing_benchmark']['beat_benchmark_rate']*100:.0f}% |")
+
+    ratios = [r["extrapolation"]["ratio_to_visible"] for r in rows]
+    print(f"\n>>> 놓친/보이는 비율 범위: {min(ratios):.1f}배 ~ {max(ratios):.1f}배 "
+          f"(중앙값 {statistics.median(ratios):.1f}배)")
+    print(">>> ⚠️ 전부 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.")
+
+    p = os.path.join(RES_DIR, "backtest_bounds_all_t0.json")
+    with open(p, "w", encoding="utf-8") as f:
+        json.dump(rows, f, ensure_ascii=False, indent=2)
+    print(f">>> 저장: {p}")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--as-of", default="2018-06-30")
+    ap.add_argument("--all", action="store_true",
+                    help="확보된 모든 T0를 계산해 교차 요약표를 낸다")
     args = ap.parse_args()
+    if args.all:
+        summarize_all()
+        return
     out = build(args.as_of)
 
     p = os.path.join(RES_DIR, f"backtest_bounds_{args.as_of}.json")

@@ -1,0 +1,172 @@
+{
+  "generated_at": "2026-08-30",
+  "as_of_t0": "2019-06-30",
+  "question": "백테스트가 구조적으로 못 본 집단(오늘자 티커목록에 없는 T0 공시기업)에서도 저평가 판정이 나오는가",
+  "t0_universe_size": 7619,
+  "invisible_to_backtest": 3769,
+  "invisible_share": 0.4946843417771361,
+  "sampled": 600,
+  "scored": 113,
+  "passed": 16,
+  "pass_rate_in_invisible_group": 0.1415929203539823,
+  "skipped": 487,
+  "passed_detail": [
+    {
+      "cik": "0000010254",
+      "name": "EARTHSTONE ENERGY INC",
+      "tier": "S",
+      "expectation_gap_est": 0.9180402888938303,
+      "market_cap": 188132742.0,
+      "out_of_validated_scope": [
+        "Gap +91.8%p가 코퍼스 최대(+24.4%p)의 3.8배 - 검증된 적 없는 구간",
+        "시총 $0.19B가 코퍼스 최소($3.74B)의 1/20 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000775368",
+      "name": "ALLEGHANY CORP /DE",
+      "tier": "A",
+      "expectation_gap_est": 0.3817301013226296,
+      "market_cap": 8340051394.0,
+      "out_of_validated_scope": [
+        "Gap +38.2%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000057725",
+      "name": "LANNETT CO INC",
+      "tier": "A",
+      "expectation_gap_est": 0.2506711811067259,
+      "market_cap": 661533778.0,
+      "out_of_validated_scope": [
+        "Gap +25.1%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $0.66B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000791915",
+      "name": "CYPRESS SEMICONDUCTOR CORP /DE/",
+      "tier": "A",
+      "expectation_gap_est": 0.23515179765499095,
+      "market_cap": 4400000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000877422",
+      "name": "SpartanNash Co",
+      "tier": "S",
+      "expectation_gap_est": 0.22994433291672173,
+      "market_cap": 910826011.0,
+      "out_of_validated_scope": [
+        "시총 $0.91B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000793547",
+      "name": "NAVIGATORS GROUP INC",
+      "tier": "S",
+      "expectation_gap_est": 0.20105310135848953,
+      "market_cap": 1320453310.0,
+      "out_of_validated_scope": [
+        "시총 $1.32B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000794619",
+      "name": "AMERICAN WOODMARK CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.20053441559494395,
+      "market_cap": 1043079866.0,
+      "out_of_validated_scope": [
+        "시총 $1.04B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000095552",
+      "name": "SUPERIOR INDUSTRIES INTERNATIONAL INC",
+      "tier": "S",
+      "expectation_gap_est": 0.17993319978694894,
+      "market_cap": 447709967.0,
+      "out_of_validated_scope": [
+        "시총 $0.45B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000816284",
+      "name": "CELGENE CORP /DE/",
+      "tier": "A",
+      "expectation_gap_est": 0.14594176011726007,
+      "market_cap": 55804979945.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000707388",
+      "name": "DIGIRAD CORP",
+      "tier": "A",
+      "expectation_gap_est": 0.11133459246631208,
+      "market_cap": 29700000.0,
+      "out_of_validated_scope": [
+        "시총 $0.03B가 코퍼스 최소($3.74B)의 1/126 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000721683",
+      "name": "TOTAL SYSTEM SERVICES INC",
+      "tier": "A",
+      "expectation_gap_est": 0.11034712343817271,
+      "market_cap": 9575381000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000059440",
+      "name": "VECTOR GROUP LTD",
+      "tier": "A",
+      "expectation_gap_est": 0.08883770194328988,
+      "market_cap": 1914000000.0,
+      "out_of_validated_scope": [
+        "시총 $1.91B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000804753",
+      "name": "CERNER CORP /MO/",
+      "tier": "B",
+      "expectation_gap_est": 0.06583032752263195,
+      "market_cap": 18800000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000819220",
+      "name": "MULTI COLOR Corp",
+      "tier": "A",
+      "expectation_gap_est": 0.06534290642147292,
+      "market_cap": 874000000.0,
+      "out_of_validated_scope": [
+        "시총 $0.87B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000047518",
+      "name": "Hill-Rom Holdings, Inc.",
+      "tier": "A",
+      "expectation_gap_est": 0.042092887746026125,
+      "market_cap": 4600000000.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000730255",
+      "name": "CalAmp Corp.",
+      "tier": "B",
+      "expectation_gap_est": 0.028863597157754377,
+      "market_cap": 684000000.0,
+      "out_of_validated_scope": [
+        "시총 $0.68B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    }
+  ],
+  "caveats": [
+    "폐지 사유(파산 vs 피인수)를 구분할 수 없다 - LISTING_STATUS가 사유를 주지 않는다. 따라서 편향의 **방향**은 단정하지 않는다.",
+    "이 집단의 주가 시계열은 확보 불가(폐지 종목)라 실현수익률은 여전히 측정할 수 없다 - 이 스크립트는 '빠진 판정의 개수'만 센다.",
+    "자회사 채권 필자는 public_float 부재로 자동 제외된다(제외 사유 참고)."
+  ]
+}
