@@ -50,8 +50,8 @@ from engine.screener import screen_all  # noqa: E402
 from engine.survival_gate import extreme_survival_risk  # noqa: E402
 
 from broad_screen import (  # noqa: E402
-    PUBLIC_FLOAT_STALE_YEARS, build_candidate, full_ticker_universe,
-    prefilter_universe,
+    PUBLIC_FLOAT_STALE_YEARS, build_candidate, dedupe_by_cik,
+    full_ticker_universe, prefilter_universe,
 )
 
 REPORTS_DIR = os.path.join(os.path.dirname(_HERE), "reports", "pit_backtest")
@@ -175,6 +175,9 @@ def run(as_of, limit=None, user_agent=None):
 
     universe = full_ticker_universe(user_agent)
     kept, dropped = prefilter_universe(universe)
+    # broad_screen과 동일하게 동일법인 중복을 제거한다 - 두 파이프라인이
+    # 어긋나면 PIT 검증이 실제 운영 스크리닝과 다른 것을 검증하게 된다.
+    kept, deduped = dedupe_by_cik(kept)
     if limit:
         kept = kept[:limit]
     log(f"[PIT] 유니버스 {len(universe)} -> 사전필터 후 {len(kept)}종목 시도")
