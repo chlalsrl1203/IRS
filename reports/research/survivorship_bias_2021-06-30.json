@@ -1,0 +1,137 @@
+{
+  "generated_at": "2026-08-30",
+  "as_of_t0": "2021-06-30",
+  "question": "백테스트가 구조적으로 못 본 집단(오늘자 티커목록에 없는 T0 공시기업)에서도 저평가 판정이 나오는가",
+  "t0_universe_size": 7891,
+  "invisible_to_backtest": 3431,
+  "invisible_share": 0.4347991382587758,
+  "sampled": 600,
+  "scored": 102,
+  "passed": 12,
+  "pass_rate_in_invisible_group": 0.11764705882352941,
+  "skipped": 498,
+  "passed_detail": [
+    {
+      "cik": "0000912752",
+      "name": "SINCLAIR BROADCAST GROUP INC",
+      "tier": "S",
+      "expectation_gap_est": 0.746066073572561,
+      "market_cap": 951000000.0,
+      "out_of_validated_scope": [
+        "Gap +74.6%p가 코퍼스 최대(+24.4%p)의 3.1배 - 검증된 적 없는 구간",
+        "시총 $0.95B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000883902",
+      "name": "Cornerstone Building Brands, Inc.",
+      "tier": "S",
+      "expectation_gap_est": 0.6447320901612009,
+      "market_cap": 224395667.0,
+      "out_of_validated_scope": [
+        "Gap +64.5%p가 코퍼스 최대(+24.4%p)의 2.6배 - 검증된 적 없는 구간",
+        "시총 $0.22B가 코퍼스 최소($3.74B)의 1/17 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000353569",
+      "name": "QUIDEL CORP /DE/",
+      "tier": "A",
+      "expectation_gap_est": 0.44346172577461457,
+      "market_cap": 8173089184.0,
+      "out_of_validated_scope": [
+        "Gap +44.3%p가 코퍼스 최대(+24.4%p)의 1.8배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000775368",
+      "name": "ALLEGHANY CORP /DE",
+      "tier": "S",
+      "expectation_gap_est": 0.40116085200185003,
+      "market_cap": 6775179881.0,
+      "out_of_validated_scope": [
+        "Gap +40.1%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "cik": "0000009346",
+      "name": "Protective Insurance Corp",
+      "tier": "S",
+      "expectation_gap_est": 0.3534741160748466,
+      "market_cap": 149681000.0,
+      "out_of_validated_scope": [
+        "Gap +35.3%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $0.15B가 코퍼스 최소($3.74B)의 1/25 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000814549",
+      "name": "EBIX INC",
+      "tier": "S",
+      "expectation_gap_est": 0.23850265988868527,
+      "market_cap": 500000000.0,
+      "out_of_validated_scope": [
+        "시총 $0.50B가 코퍼스 최소($3.74B)의 1/7 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000809248",
+      "name": "CARROLS RESTAURANT GROUP, INC.",
+      "tier": "S",
+      "expectation_gap_est": 0.23387153167425234,
+      "market_cap": 178742600.0,
+      "out_of_validated_scope": [
+        "시총 $0.18B가 코퍼스 최소($3.74B)의 1/21 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000899866",
+      "name": "ALEXION PHARMACEUTICALS, INC.",
+      "tier": "S",
+      "expectation_gap_est": 0.18177225904221164,
+      "market_cap": 23569192552.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000065011",
+      "name": "MEREDITH CORP",
+      "tier": "S",
+      "expectation_gap_est": 0.15684113654082127,
+      "market_cap": 1300000000.0,
+      "out_of_validated_scope": [
+        "시총 $1.30B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000813828",
+      "name": "ViacomCBS Inc.",
+      "tier": "S",
+      "expectation_gap_est": 0.13179185357880557,
+      "market_cap": 12893859999.0,
+      "out_of_validated_scope": []
+    },
+    {
+      "cik": "0000794619",
+      "name": "AMERICAN WOODMARK CORP",
+      "tier": "A",
+      "expectation_gap_est": 0.09549456179288307,
+      "market_cap": 1394021693.0,
+      "out_of_validated_scope": [
+        "시총 $1.39B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "cik": "0000804753",
+      "name": "CERNER Corp",
+      "tier": "B",
+      "expectation_gap_est": 0.04797583483989383,
+      "market_cap": 18600000000.0,
+      "out_of_validated_scope": []
+    }
+  ],
+  "caveats": [
+    "폐지 사유(파산 vs 피인수)를 구분할 수 없다 - LISTING_STATUS가 사유를 주지 않는다. 따라서 편향의 **방향**은 단정하지 않는다.",
+    "이 집단의 주가 시계열은 확보 불가(폐지 종목)라 실현수익률은 여전히 측정할 수 없다 - 이 스크립트는 '빠진 판정의 개수'만 센다.",
+    "자회사 채권 필자는 public_float 부재로 자동 제외된다(제외 사유 참고)."
+  ]
+}

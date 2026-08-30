@@ -155,5 +155,57 @@
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 4건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
+  },
+  {
+    "as_of_t0": "2021-06-30",
+    "benchmark_pct": 92.33701915745212,
+    "n_visible_flagged": 68,
+    "n_invisible_flagged_measured": 11,
+    "excluded_delisted_before_t0": {
+      "Protective Insurance Corp": "2021-06-01"
+    },
+    "delisting_name_unmatched": 5,
+    "scenarios": {
+      "as_reported_visible_only": {
+        "n": 68,
+        "median_pct": 74.04857217665408,
+        "mean_pct": 188.14726008967992,
+        "beat_benchmark_rate": 0.47058823529411764
+      },
+      "worst_all_missing_minus100": {
+        "n": 79,
+        "median_pct": 49.66596292333054,
+        "mean_pct": 148.025489697446,
+        "beat_benchmark_rate": 0.4050632911392405
+      },
+      "neutral_all_missing_benchmark": {
+        "n": 79,
+        "median_pct": 92.33701915745212,
+        "mean_pct": 174.8065936307621,
+        "beat_benchmark_rate": 0.4050632911392405
+      },
+      "best_all_missing_visible_median": {
+        "n": 79,
+        "median_pct": 74.04857217665408,
+        "mean_pct": 172.26010101318266,
+        "beat_benchmark_rate": 0.4050632911392405
+      }
+    },
+    "median_range_pct": [
+      49.66596292333054,
+      92.33701915745212
+    ],
+    "extrapolation": {
+      "invisible_group_size": 3431,
+      "sampled": 600,
+      "implied_total_missed_flags": 63,
+      "ratio_to_visible": 0.9250245098039216,
+      "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
+    },
+    "caveats": [
+      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
+      "놓친 판정 중 5건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
+    ]
   }
 ]
