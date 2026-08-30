@@ -95,7 +95,8 @@ def _quarters_back(as_of, n=4):
     return list(reversed(out))
 
 
-def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4):
+def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4,
+                delisted_before=None):
     """
     T0 시점에 **연차 재무제표가 존재했던** 기업 전체.
 
@@ -105,6 +106,18 @@ def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4):
 
     ⚠️ `filed <= as_of`인 항목만 채택한다. 분기 파일에는 as_of 이후 제출분도
     섞여 있으므로 그대로 쓰면 미래정보가 유니버스 정의에 들어온다.
+
+    ⚠️ **`delisted_before`는 T0 이전에 이미 상장폐지된 기업을 빼는 데 쓴다.**
+    초판에는 이 인자가 없었고, 그래서 2026-08-30 파일럿에서 실제로 잘못
+    들어온 사례가 나왔다 - WESTMORELAND COAL(폐지 2018-04-24)과 MICROSEMI
+    (폐지 2018-05-29)가 T0=2018-06-30 유니버스에 포함됐다. 둘 다 직전 12개월
+    안에 10-K를 냈지만 **T0 시점엔 이미 살 수 없는 종목**이었다.
+    "그 시점에 재무제표가 있었는가"와 "그 시점에 투자 가능했는가"는 다른
+    질문이고, 유니버스는 후자여야 한다.
+
+    `delisted_before`는 {티커나 CIK: 폐지일} 형태가 아니라 **이미 걸러진 CIK
+    집합**을 받는다 - 폐지 정보의 출처(Alpha Vantage LISTING_STATUS는 CIK를
+    주지 않는다)에 이 모듈이 의존하지 않게 하기 위해서다. 매핑은 호출부 책임.
     """
     fetch_text = fetch_text or (lambda url: _http_text(url, user_agent))
     merged = {}
@@ -119,4 +132,6 @@ def universe_at(as_of, user_agent=None, fetch_text=None, quarters=4):
             prev = merged.get(cik)
             if prev is None or filed > prev["last_annual_filed"]:
                 merged[cik] = {"name": name, "last_annual_filed": filed}
+    if delisted_before:
+        merged = {c: v for c, v in merged.items() if c not in delisted_before}
     return merged

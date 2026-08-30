@@ -112,3 +112,38 @@ def test_one_failing_quarter_does_not_abort_the_rest():
 
     uni = F.universe_at("2018-06-30", fetch_text=flaky, quarters=4)
     assert "0000000111" in uni
+
+
+# ── T0 이전 폐지 기업 배제 (2026-08-30 파일럿에서 실제로 잡힌 결함) ────────
+def test_universe_excludes_companies_already_delisted_at_t0():
+    """
+    WESTMORELAND COAL(폐지 2018-04-24)·MICROSEMI(2018-05-29)이 T0=2018-06-30
+    유니버스에 들어왔던 실제 사고의 회귀 테스트. 직전 12개월에 10-K를 냈어도
+    T0 시점에 이미 폐지됐으면 **살 수 없는 종목**이라 유니버스가 아니다.
+    """
+    text = HEADER + "\n".join([
+        _row("WESTMORELAND COAL Co", "10-K", "106455", "2018-03-01"),
+        _row("ALIVE CO", "10-K", "111", "2018-03-01"),
+    ])
+    uni = F.universe_at("2018-06-30", fetch_text=lambda u: text, quarters=1,
+                        delisted_before={"0000106455"})
+    assert "0000106455" not in uni, "T0 이전 폐지 기업이 유니버스에 남았다"
+    assert "0000000111" in uni
+
+
+def test_delisted_before_defaults_to_no_exclusion():
+    """기본값은 기존 동작 유지 - 폐지 정보가 없다고 조용히 다르게 굴면 안 된다."""
+    text = HEADER + _row("ANY CO", "10-K", "111", "2018-03-01")
+    assert "0000000111" in F.universe_at(
+        "2018-06-30", fetch_text=lambda u: text, quarters=1)
+
+
+def test_delisted_before_takes_ciks_not_tickers():
+    """
+    폐지 정보 출처(LISTING_STATUS)는 CIK를 주지 않는다 - 매핑 책임을 호출부에
+    두어 이 모듈이 특정 데이터 출처에 의존하지 않게 한다.
+    """
+    text = HEADER + _row("ANY CO", "10-K", "111", "2018-03-01")
+    uni = F.universe_at("2018-06-30", fetch_text=lambda u: text, quarters=1,
+                        delisted_before={"ANYCO"})   # 티커를 넣으면 안 걸린다
+    assert "0000000111" in uni
