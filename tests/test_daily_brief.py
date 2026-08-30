@@ -237,3 +237,53 @@ def test_broad_screen_states_downside_framing(monkeypatch, tmp_path):
     monkeypatch.setattr(B, "REPORTS", str(tmp_path))
     out = "\n".join(B.section_broad_screen())
     assert "하방 방어" in out and "제외 근거" in out
+
+
+# ── 연구 우선순위 큐 배선(2026-08-30) — 스크리닝↔매수리스트 연결 ────────────
+def test_research_queue_section_appears_in_brief(text):
+    """
+    스크리닝 통과 목록과 매수리스트 사이에 아무 연결이 없던 것을 잇는 칸이다.
+    브리핑에 안 나오면 큐가 결정 경로에 도달하지 않는다.
+    """
+    assert "다음에 분석할 종목" in text
+
+
+def test_research_queue_missing_file_is_stated(monkeypatch, tmp_path):
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_research_queue())
+    assert "아직 큐 파일이 없다" in out
+
+
+def test_research_queue_is_not_presented_as_a_buy_instruction(monkeypatch, tmp_path):
+    """
+    큐는 연구 **순서**이지 매수 지시가 아니다 - 정식분석·정성조사를 거쳐야
+    매수리스트에 들어간다(run_analysis가 주관적 입력 없이는 실행을 거부한다).
+    """
+    (tmp_path / "research_queue.json").write_text(json.dumps({
+        "latest_run": "2026-08-30",
+        "counts": {"total": 2, "QUEUED": 2},
+        "persistence": {"n_runs": 1, "discriminating": False},
+        "next_to_research": [
+            {"ticker": "CROX", "tier": "S", "latest_gap": 0.2397,
+             "market_cap": 4.8e9, "priority_reason": "검증범위 안 · 미분석"},
+        ],
+    }), encoding="utf-8")
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_research_queue())
+    assert "CROX" in out
+    assert "매수 지시가 아니라 연구 순서" in out
+    # 비중·금액 열이 생기면 사이징을 지어낸 것이다
+    header = [ln for ln in out.splitlines() if ln.startswith("| # |")][0]
+    assert "비중" not in header and "금액" not in header
+
+
+def test_research_queue_warns_when_persistence_not_discriminating(monkeypatch, tmp_path):
+    (tmp_path / "research_queue.json").write_text(json.dumps({
+        "latest_run": "2026-08-30", "counts": {"total": 1, "QUEUED": 1},
+        "persistence": {"n_runs": 1, "discriminating": False},
+        "next_to_research": [{"ticker": "X", "tier": "S", "latest_gap": 0.1,
+                              "market_cap": 1e9, "priority_reason": "x"}],
+    }), encoding="utf-8")
+    monkeypatch.setattr(B, "REPORTS", str(tmp_path))
+    out = "\n".join(B.section_research_queue())
+    assert "아직 아무것도 구분하지 못한다" in out

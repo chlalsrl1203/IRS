@@ -87,6 +87,16 @@ jobs:
           fi
           python3 scripts/broad_screen.py $ARGS
 
+      # 스크리닝 결과를 **연구 우선순위 큐**에 병합한다(engine/research_queue.py).
+      # 259개 통과 목록 자체는 사람이 쓸 수 없다 - 검증범위·미분석 여부·주간
+      # 지속성으로 정렬해 "다음에 무엇을 분석할 것인가"로 바꾼다. 매수리스트는
+      # 건드리지 않는다(정식분석에는 사람의 주관적 입력이 필요하므로).
+      - name: update research queue
+        if: always()
+        env:
+          SEC_USER_AGENT: "IRS Research chlalsrl1203@gmail.com"
+        run: python3 scripts/update_research_queue.py
+
       - name: post result to GitHub Issue
         if: always()
         env:
@@ -99,7 +109,7 @@ jobs:
         run: |
           git config user.name "irs-broad-screen[bot]"
           git config user.email "irs-broad-screen-bot@users.noreply.github.com"
-          git add reports/broad_screen/ 2>/dev/null || true
+          git add reports/broad_screen/ reports/research_queue.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 리포트 없음 - 커밋 건너뜀"
           else
