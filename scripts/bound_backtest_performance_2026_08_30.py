@@ -36,8 +36,10 @@ T0=2018-06-30 유니버스에 들어와 있었다 - 직전 12개월에 10-K를 �
 늘어나므로 실제 구간은 여기서 계산된 것보다 **더 넓다.**
 """
 import argparse
+import csv
 import json
 import os
+import re
 import statistics
 import sys
 
@@ -48,12 +50,39 @@ sys.path.insert(0, ROOT)
 PIT_DIR = os.path.join(ROOT, "reports", "pit_backtest")
 RES_DIR = os.path.join(ROOT, "reports", "research")
 
-# T0 이전에 이미 폐지돼 유니버스에 잘못 들어온 종목(파일럿 실측).
-# LISTING_STATUS의 delistingDate < T0으로 확인했다.
-DELISTED_BEFORE_T0 = {
-    "2018-06-30": {"WESTMORELAND COAL Co": "2018-04-24",
-                   "MICROSEMI CORP": "2018-05-29"},
-}
+LISTING_DIR = os.path.join(ROOT, "data", "listing_status")
+
+# ⚠️ 초판은 T0 이전 폐지 종목 2건을 **손으로 적어뒀다**(WESTMORELAND·MICROSEMI).
+# T0가 6개로 늘면 손으로 채울 수 없어 이름 매칭으로 자동화한다 - 다만 매칭
+# 대상이 flagged 수십 건뿐이라(전체 유니버스가 아니라) 오탐 위험이 작다.
+# 전체 유니버스에 이름 매칭을 쓰지 않는 이유는 단일 CIK 확정률이 65.9%밖에
+# 안 되기 때문이다(v3.77 실측) - 여기서는 CIK가 아니라 "폐지일"만 붙이면
+# 되므로 그 한계가 적용되지 않는다.
+_STRIP = re.compile(
+    r"\b(INC|CORP|CORPORATION|CO|COMPANY|LTD|LLC|LP|PLC|DE|GROUP|THE|"
+    r"HOLDINGS?|CLASS [A-Z])\b")
+
+
+def _norm(s):
+    s = re.sub(r"[^A-Z0-9 ]", " ", s.upper())
+    return re.sub(r"\s+", " ", _STRIP.sub(" ", s)).strip()
+
+
+def delisting_dates():
+    """{정규화 회사명: 폐지일}. 파일이 없으면 빈 dict(조용히 다르게 굴지 않게 경고)."""
+    p = os.path.join(LISTING_DIR, "delisted_all_2026-08-30.csv")
+    if not os.path.exists(p):
+        return {}, f"폐지 목록 파일 없음({p}) - T0 이전 폐지 종목을 걸러내지 못했다"
+    out = {}
+    with open(p, encoding="utf-8") as f:
+        for r in csv.DictReader(f):
+            if r.get("assetType") != "Stock":
+                continue
+            n = _norm(r.get("name", ""))
+            d = r.get("delistingDate") or ""
+            if n and (n not in out or d < out[n]):   # 가장 이른 폐지일 채택
+                out[n] = d
+    return out, None
 
 
 def summarize(xs, bench):
@@ -71,7 +100,15 @@ def build(t0):
     bench = rt["benchmark"]["return_pct"]
     visible = [r["return_pct"] for r in rt["flagged"]]
 
-    pre = DELISTED_BEFORE_T0.get(t0, {})
+    # T0 시점에 이미 폐지된 종목은 그때 살 수 없었으므로 유니버스가 아니다
+    dd, warn = delisting_dates()
+    pre, unmatched = {}, 0
+    for x in sv["passed_detail"]:
+        d = dd.get(_norm(x["name"]))
+        if d is None:
+            unmatched += 1
+        elif d < t0:
+            pre[x["name"]] = d
     invisible = [x for x in sv["passed_detail"] if x["name"] not in pre]
     n_inv = len(invisible)
     vis_median = statistics.median(visible)
@@ -94,6 +131,7 @@ def build(t0):
         "n_visible_flagged": len(visible),
         "n_invisible_flagged_measured": n_inv,
         "excluded_delisted_before_t0": pre,
+        "delisting_name_unmatched": unmatched,
         "scenarios": scenarios,
         "median_range_pct": [min(meds), max(meds)],
         "extrapolation": {
@@ -110,8 +148,10 @@ def build(t0):
             "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 "
             "실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 "
             "피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
-            "T0=2018 하나만 계산했다 - 나머지 5개 T0는 미측정.",
-        ],
+            f"놓친 판정 중 {unmatched}건은 폐지목록에서 이름 매칭이 안 돼 "
+            "T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 "
+            "근거 없이 표본을 줄이는 것이 된다).",
+        ] + ([warn] if warn else []),
     }
 
 
