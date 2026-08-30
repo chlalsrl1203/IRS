@@ -65,7 +65,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
-      # engine/은 여전히 stdlib만 쓴다 - 이 워크플로도 추가 설치가 없다.
+      # ⚠️ 2026-08-30 첫 실행에서 잡힌 결함: 원래 이 자리에 설치 단계가 없었고
+      # 주석에 "이 워크플로도 추가 설치가 없다"고 적혀 있었다. 스크리닝 본체
+      # (broad_screen.py -> engine/)는 실제로 stdlib만 쓰므로 그 부분은 맞지만,
+      # **결과를 GitHub Issue에 올리는 broad_screen_post.py가 `requests`를 쓴다.**
+      # 그래서 첫 실행에서 스크리닝은 55분간 정상 완주했는데 게시 단계만
+      # `ModuleNotFoundError: No module named 'requests'`로 죽었다(결과 커밋·
+      # 아티팩트는 `if: always()` 덕에 살아남아 실패가 눈에 잘 안 띄었다).
+      # daily_screen.yml은 이미 같은 이유로 requests를 설치하고 있었다 -
+      # 그쪽 게시가 계속 정상 작동한 것이 대조 증거다.
+      - name: install deps (게시 단계 전용 - 스크리닝 본체는 stdlib만 쓴다)
+        run: pip install requests
       - name: run broad screen (Stage 1, SEC 전용)
         id: screen
         env:

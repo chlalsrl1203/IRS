@@ -250,3 +250,58 @@ def test_classify_stage1_covers_new_categories():
     assert "B" in groups["시가총액 근사치(public_float) 낡음(SEC 보고의무 축소·중단 추정)"]
     assert "C" in groups["5년 CAGR 계산 불가(PODD/ONON/MU형 프레임워크 부적합)"]
     assert "기타·미분류" not in groups
+
+
+# ── 동일법인(CIK) 중복 제거 — 2026-08-30 첫 전체실행 실측 결함 ──────────────
+def test_dedupe_by_cik_keeps_one_row_per_company():
+    """
+    Opendoor(OPEN/OPENW/OPENL/OPENZ)·Capital One(COF/COF-PI/...)처럼 한 법인이
+    여러 티커를 갖는 경우 companyfacts·public_float이 전부 동일하므로 같은
+    계산을 반복하게 된다 - 실측 1,780건(20%)이 이 낭비였다.
+    """
+    rows = [
+        {"ticker": "OPENW", "cik": "0000001", "title": "Opendoor"},
+        {"ticker": "OPEN", "cik": "0000001", "title": "Opendoor"},
+        {"ticker": "OPENZ", "cik": "0000001", "title": "Opendoor"},
+        {"ticker": "AAPL", "cik": "0000002", "title": "Apple Inc."},
+    ]
+    kept, removed = B.dedupe_by_cik(rows)
+    assert removed == 2
+    assert sorted(r["ticker"] for r in kept) == ["AAPL", "OPEN"]
+
+
+def test_dedupe_prefers_shortest_ticker_then_alphabetical():
+    """보통주가 파생증권보다 짧은 심볼을 쓰는 관행을 따른다(길이 같으면 알파벳)."""
+    rows = [
+        {"ticker": "COF-PI", "cik": "1", "title": "Capital One"},
+        {"ticker": "COF", "cik": "1", "title": "Capital One"},
+        {"ticker": "ZZZZ", "cik": "2", "title": "Tie Co"},
+        {"ticker": "AAAA", "cik": "2", "title": "Tie Co"},
+    ]
+    kept, _ = B.dedupe_by_cik(rows)
+    assert sorted(r["ticker"] for r in kept) == ["AAAA", "COF"]
+
+
+def test_dedupe_is_deterministic_regardless_of_input_order():
+    """실행마다 대표 티커가 달라지면 결과 비교가 불가능해진다."""
+    a = [{"ticker": "BBB", "cik": "1", "title": "X"},
+         {"ticker": "AAA", "cik": "1", "title": "X"}]
+    b = list(reversed(a))
+    assert B.dedupe_by_cik(a)[0][0]["ticker"] == B.dedupe_by_cik(b)[0][0]["ticker"]
+
+
+def test_dedupe_preserves_original_order_of_survivors():
+    rows = [
+        {"ticker": "MMM", "cik": "1", "title": "A"},
+        {"ticker": "ZZ", "cik": "2", "title": "B"},
+        {"ticker": "ZZZZ", "cik": "2", "title": "B"},
+    ]
+    kept, _ = B.dedupe_by_cik(rows)
+    assert [r["ticker"] for r in kept] == ["MMM", "ZZ"]
+
+
+def test_dedupe_no_duplicates_is_noop():
+    rows = [{"ticker": "A", "cik": "1", "title": "x"},
+            {"ticker": "B", "cik": "2", "title": "y"}]
+    kept, removed = B.dedupe_by_cik(rows)
+    assert removed == 0 and len(kept) == 2

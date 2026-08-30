@@ -137,6 +137,49 @@ def prefilter_universe(universe):
     return kept, dropped
 
 
+def dedupe_by_cik(rows):
+    """
+    같은 CIK(=같은 회사)의 티커를 하나로 합친다. 반환 (kept, 제거수).
+
+    ## 왜 필요한가 — 2026-08-30 첫 전체실행에서 실측된 결함
+
+    이 스크리너가 쓰는 재무데이터(companyfacts)와 시총 근사치(public_float)는
+    **둘 다 CIK 단위(법인 단위)**다. 그래서 한 회사가 보통주·우선주·워런트·
+    베이비본드로 여러 티커를 갖고 있으면 **같은 값을 그 수만큼 반복 계산**하게
+    된다. 실측:
+
+      - 사전필터 후 8,897티커 = 고유 7,117개 법인 -> **1,780건(20%)이 중복**
+      - 통과 299티커도 실제로는 259개 법인(중복 40건)
+      - 실례: Opendoor가 OPEN·OPENW·OPENL·OPENZ 4개로, Capital One이
+        COF·COF-PI·COF-PJ·COF-PK·COF-PL·COF-PN 6개로 각각 따로 집계됐다
+        (Gap·시총이 전부 동일한 것이 중복의 증거였다).
+
+    피해는 둘이다: (1) SEC 요청 20%가 순수 낭비, (2) 통과 목록에서 한 회사가
+    여러 줄을 차지해 **후보 개수가 실제보다 부풀려 보인다.**
+
+    ## 어느 티커를 남기는가 — 계산 결과는 어차피 같다
+
+    같은 CIK면 재무·시총이 동일하므로 어느 티커를 남겨도 **판정은 완전히
+    같다.** 티커 선택은 순수하게 "무엇으로 표시할 것인가"의 문제다. 보통주가
+    파생증권보다 짧은 심볼을 쓰는 관행(OPEN < OPENW, COF < COF-PI, ACGL <
+    ACGLN)을 따라 **가장 짧은 티커**를 남기고, 길이가 같으면 알파벳순으로
+    고정한다(실행마다 결과가 달라지지 않게).
+
+    ⚠️ 이건 **휴리스틱이다.** 보통주가 아닌 티커가 대표로 남을 수 있다 -
+    다만 그 경우에도 밸류에이션 값 자체는 정확하며, 실제 매수 시 어느 증권을
+    사는지는 사람이 확인해야 한다(원래도 그랬다).
+    """
+    best = {}
+    for row in rows:
+        cik = row.get("cik")
+        key = (len(row.get("ticker", "")), row.get("ticker", ""))
+        cur = best.get(cik)
+        if cur is None or key < (len(cur.get("ticker", "")), cur.get("ticker", "")):
+            best[cik] = row
+    kept = [r for r in rows if best.get(r.get("cik")) is r]
+    return kept, len(rows) - len(kept)
+
+
 def fetch_stage1_series(ticker, cik, retrieved_at, user_agent=None):
     """
     SEC에서 revenue/OCF/capex(5y CAGR용 6개년) + public_float을 받는다.
@@ -285,7 +328,11 @@ def run(limit=None, retrieved_at=None, user_agent=None):
 
     kept, dropped = prefilter_universe(universe)
     log(f"[Stage1] 이름 사전필터: {dropped}종목 제외(펀드/신탁/ETF류 이름패턴) "
-        f"-> {len(kept)}종목 시도")
+        f"-> {len(kept)}종목")
+
+    kept, deduped = dedupe_by_cik(kept)
+    log(f"[Stage1] 동일법인(CIK) 중복 제거: {deduped}티커 병합 "
+        f"(우선주·워런트 등) -> {len(kept)}종목 시도")
 
     if limit:
         kept = kept[:limit]
@@ -315,6 +362,7 @@ def run(limit=None, retrieved_at=None, user_agent=None):
         "retrieved_at": retrieved_at,
         "universe_total": len(universe),
         "prefiltered_out": dropped,
+        "deduped_share_classes": deduped,
         "attempted": len(kept),
         "sec_ok": len(candidates),
         "sec_skipped": len(skipped),
