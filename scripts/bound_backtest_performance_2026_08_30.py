@@ -124,6 +124,30 @@ def build(t0):
     }
     meds = [s["median_pct"] for s in scenarios.values()]
 
+    # ⚠️ **대칭 보정** — 위 시나리오는 놓친 flagged만 더해 flagged 쪽에만
+    # 불이익을 준다. 사라진 집단에는 not_flagged도 같이 있었으므로(2018 기준
+    # 채점 114 중 flagged 18, not_flagged 96) 한쪽만 더하면 비교가 기울어진다.
+    # 두 그룹에 같은 가정을 넣어야 "flagged가 not_flagged보다 나았는가"라는
+    # 원래 질문이 유지된다.
+    nf_visible = [r["return_pct"] for r in rt["not_flagged"]]
+    n_inv_nf = sv["scored"] - sv["passed"]
+    symmetric = {}
+    for tag, fill in (("worst_minus100", -100.0), ("neutral_benchmark", bench)):
+        f_xs = visible + [fill] * n_inv
+        nf_xs = nf_visible + [fill] * n_inv_nf
+        symmetric[tag] = {
+            "flagged": summarize(f_xs, bench),
+            "not_flagged": summarize(nf_xs, bench),
+            "flagged_median_advantage_pp": (statistics.median(f_xs)
+                                            - statistics.median(nf_xs)),
+        }
+    symmetric["as_reported"] = {
+        "flagged": summarize(visible, bench),
+        "not_flagged": summarize(nf_visible, bench),
+        "flagged_median_advantage_pp": (statistics.median(visible)
+                                        - statistics.median(nf_visible)),
+    }
+
     scale = sv["invisible_to_backtest"] / sv["sampled"]
     return {
         "as_of_t0": t0,
@@ -133,6 +157,8 @@ def build(t0):
         "excluded_delisted_before_t0": pre,
         "delisting_name_unmatched": unmatched,
         "scenarios": scenarios,
+        "symmetric": symmetric,
+        "n_invisible_not_flagged": n_inv_nf,
         "median_range_pct": [min(meds), max(meds)],
         "extrapolation": {
             "invisible_group_size": sv["invisible_to_backtest"],
@@ -144,7 +170,9 @@ def build(t0):
                      "가정에 의존하므로 정밀한 값이 아니다."),
         },
         "caveats": [
-            "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+            "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+            "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 "
+            "있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
             "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 "
             "실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 "
             "피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
@@ -195,6 +223,20 @@ def summarize_all():
               f"{s['as_reported_visible_only']['beat_benchmark_rate']*100:.0f}% | "
               f"{s['worst_all_missing_minus100']['beat_benchmark_rate']*100:.0f}% | "
               f"{s['neutral_all_missing_benchmark']['beat_benchmark_rate']*100:.0f}% |")
+
+    print("\n**대칭 보정 — flagged 중앙값 우위(%p), 두 그룹에 같은 가정 적용**\n")
+    print("| T0 | 현재 | 최악(양쪽 -100%) | 중립(양쪽 벤치마크) |")
+    print("|---|---:|---:|---:|")
+    for r in rows:
+        sy = r["symmetric"]
+        print(f"| {r['as_of_t0']} | "
+              f"{sy['as_reported']['flagged_median_advantage_pp']:+.1f}%p | "
+              f"{sy['worst_minus100']['flagged_median_advantage_pp']:+.1f}%p | "
+              f"{sy['neutral_benchmark']['flagged_median_advantage_pp']:+.1f}%p |")
+    adv = [r["symmetric"]["worst_minus100"]["flagged_median_advantage_pp"]
+           for r in rows]
+    print(f"\n>>> 최악 시나리오에서도 flagged 우위가 유지된 T0: "
+          f"{sum(1 for a in adv if a > 0)}/{len(adv)}")
 
     ratios = [r["extrapolation"]["ratio_to_visible"] for r in rows]
     print(f"\n>>> 놓친/보이는 비율 범위: {min(ratios):.1f}배 ~ {max(ratios):.1f}배 "

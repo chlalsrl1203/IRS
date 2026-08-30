@@ -35,6 +35,54 @@
         "beat_benchmark_rate": 0.25
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 72,
+          "median_pct": 95.30269440584004,
+          "mean_pct": 173.6165692433162,
+          "beat_benchmark_rate": 0.25
+        },
+        "not_flagged": {
+          "n": 411,
+          "median_pct": 113.36017008423171,
+          "mean_pct": 150.8570643706392,
+          "beat_benchmark_rate": 0.2360097323600973
+        },
+        "flagged_median_advantage_pp": -18.05747567839167
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 72,
+          "median_pct": 206.12488998876557,
+          "mean_pct": 244.84763482061558,
+          "beat_benchmark_rate": 0.25
+        },
+        "not_flagged": {
+          "n": 411,
+          "median_pct": 200.73720400574473,
+          "mean_pct": 225.7276734445889,
+          "beat_benchmark_rate": 0.2360097323600973
+        },
+        "flagged_median_advantage_pp": 5.387685983020845
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 56,
+          "median_pct": 163.65206298864882,
+          "mean_pct": 251.7927318842637,
+          "beat_benchmark_rate": 0.32142857142857145
+        },
+        "not_flagged": {
+          "n": 315,
+          "median_pct": 149.49028774465498,
+          "mean_pct": 227.30874113121493,
+          "beat_benchmark_rate": 0.30793650793650795
+        },
+        "flagged_median_advantage_pp": 14.161775243993844
+      }
+    },
+    "n_invisible_not_flagged": 96,
     "median_range_pct": [
       95.30269440584004,
       206.12488998876557
@@ -47,7 +95,8 @@
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 8건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
@@ -87,6 +136,54 @@
         "beat_benchmark_rate": 0.3125
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 80,
+          "median_pct": 106.0253343224685,
+          "mean_pct": 256.59662319833086,
+          "beat_benchmark_rate": 0.3125
+        },
+        "not_flagged": {
+          "n": 423,
+          "median_pct": 78.10740349601969,
+          "mean_pct": 121.6681331116468,
+          "beat_benchmark_rate": 0.23404255319148937
+        },
+        "flagged_median_advantage_pp": 27.91793082644881
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 80,
+          "median_pct": 185.6930214300663,
+          "mean_pct": 311.15735734107454,
+          "beat_benchmark_rate": 0.3125
+        },
+        "not_flagged": {
+          "n": 423,
+          "median_pct": 173.18030830165162,
+          "mean_pct": 188.39646990403304,
+          "beat_benchmark_rate": 0.23404255319148937
+        },
+        "flagged_median_advantage_pp": 12.512713128414674
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 65,
+          "median_pct": 156.1292654948684,
+          "mean_pct": 338.8881516287149,
+          "beat_benchmark_rate": 0.38461538461538464
+        },
+        "not_flagged": {
+          "n": 326,
+          "median_pct": 115.71502186234734,
+          "mean_pct": 187.62460216633923,
+          "beat_benchmark_rate": 0.30368098159509205
+        },
+        "flagged_median_advantage_pp": 40.414243632521064
+      }
+    },
+    "n_invisible_not_flagged": 97,
     "median_range_pct": [
       106.0253343224685,
       185.6930214300663
@@ -99,7 +196,8 @@
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 7건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
@@ -139,6 +237,54 @@
         "beat_benchmark_rate": 0.5797101449275363
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 69,
+          "median_pct": 121.62407105310855,
+          "mean_pct": 284.80782086342214,
+          "beat_benchmark_rate": 0.42028985507246375
+        },
+        "not_flagged": {
+          "n": 433,
+          "median_pct": 82.24141452205365,
+          "mean_pct": 119.46688985465352,
+          "beat_benchmark_rate": 0.3071593533487298
+        },
+        "flagged_median_advantage_pp": 39.382656531054906
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 69,
+          "median_pct": 171.0066716921581,
+          "mean_pct": 328.0117830172445,
+          "beat_benchmark_rate": 0.42028985507246375
+        },
+        "not_flagged": {
+          "n": 433,
+          "median_pct": 171.0066716921581,
+          "mean_pct": 183.30679865973462,
+          "beat_benchmark_rate": 0.3071593533487298
+        },
+        "flagged_median_advantage_pp": 0.0
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 58,
+          "median_pct": 180.44426512124534,
+          "mean_pct": 357.78861447545046,
+          "beat_benchmark_rate": 0.5
+        },
+        "not_flagged": {
+          "n": 331,
+          "median_pct": 125.05929358983097,
+          "mean_pct": 187.09717011197876,
+          "beat_benchmark_rate": 0.40181268882175225
+        },
+        "flagged_median_advantage_pp": 55.384971531414365
+      }
+    },
+    "n_invisible_not_flagged": 102,
     "median_range_pct": [
       121.62407105310855,
       180.44426512124534
@@ -151,7 +297,8 @@
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 4건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
@@ -191,6 +338,54 @@
         "beat_benchmark_rate": 0.4050632911392405
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 79,
+          "median_pct": 49.66596292333054,
+          "mean_pct": 148.025489697446,
+          "beat_benchmark_rate": 0.4050632911392405
+        },
+        "not_flagged": {
+          "n": 426,
+          "median_pct": 32.1909252643288,
+          "mean_pct": 50.31774811015281,
+          "beat_benchmark_rate": 0.27230046948356806
+        },
+        "flagged_median_advantage_pp": 17.475037659001742
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 79,
+          "median_pct": 92.33701915745212,
+          "mean_pct": 174.8065936307621,
+          "beat_benchmark_rate": 0.4050632911392405
+        },
+        "not_flagged": {
+          "n": 426,
+          "median_pct": 88.46996191929847,
+          "mean_pct": 90.95232962229058,
+          "beat_benchmark_rate": 0.27230046948356806
+        },
+        "flagged_median_advantage_pp": 3.8670572381536488
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 68,
+          "median_pct": 74.04857217665408,
+          "mean_pct": 188.14726008967992,
+          "beat_benchmark_rate": 0.47058823529411764
+        },
+        "not_flagged": {
+          "n": 336,
+          "median_pct": 59.80658213434589,
+          "mean_pct": 90.58143063965802,
+          "beat_benchmark_rate": 0.34523809523809523
+        },
+        "flagged_median_advantage_pp": 14.241990042308188
+      }
+    },
+    "n_invisible_not_flagged": 90,
     "median_range_pct": [
       49.66596292333054,
       92.33701915745212
@@ -203,7 +398,8 @@
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 5건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
@@ -212,9 +408,11 @@
     "as_of_t0": "2022-06-30",
     "benchmark_pct": 115.17691578355608,
     "n_visible_flagged": 82,
-    "n_invisible_flagged_measured": 9,
-    "excluded_delisted_before_t0": {},
-    "delisting_name_unmatched": 3,
+    "n_invisible_flagged_measured": 16,
+    "excluded_delisted_before_t0": {
+      "GUARANTY FEDERAL BANCSHARES INC": "2022-03-31"
+    },
+    "delisting_name_unmatched": 2,
     "scenarios": {
       "as_reported_visible_only": {
         "n": 82,
@@ -223,39 +421,88 @@
         "beat_benchmark_rate": 0.4146341463414634
       },
       "worst_all_missing_minus100": {
-        "n": 91,
-        "median_pct": 70.08099094807054,
-        "mean_pct": 163.56380838246028,
-        "beat_benchmark_rate": 0.37362637362637363
+        "n": 98,
+        "median_pct": 57.022718404214324,
+        "mean_pct": 144.7378220694274,
+        "beat_benchmark_rate": 0.3469387755102041
       },
       "neutral_all_missing_benchmark": {
-        "n": 91,
-        "median_pct": 110.12726518082232,
-        "mean_pct": 184.84504181160318,
-        "beat_benchmark_rate": 0.37362637362637363
+        "n": 98,
+        "median_pct": 115.17691578355608,
+        "mean_pct": 179.86874709531412,
+        "beat_benchmark_rate": 0.3469387755102041
       },
       "best_all_missing_visible_median": {
-        "n": 91,
+        "n": 98,
         "median_pct": 95.66293026898983,
-        "mean_pct": 182.91508720027247,
-        "beat_benchmark_rate": 0.37362637362637363
+        "mean_pct": 176.6827902766094,
+        "beat_benchmark_rate": 0.3469387755102041
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 98,
+          "median_pct": 57.022718404214324,
+          "mean_pct": 144.7378220694274,
+          "beat_benchmark_rate": 0.3469387755102041
+        },
+        "not_flagged": {
+          "n": 495,
+          "median_pct": 55.02743772893892,
+          "mean_pct": 86.49203881480429,
+          "beat_benchmark_rate": 0.2909090909090909
+        },
+        "flagged_median_advantage_pp": 1.9952806752754029
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 98,
+          "median_pct": 115.17691578355608,
+          "mean_pct": 179.86874709531412,
+          "beat_benchmark_rate": 0.3469387755102041
+        },
+        "not_flagged": {
+          "n": 495,
+          "median_pct": 98.46659132631996,
+          "mean_pct": 122.57220853204703,
+          "beat_benchmark_rate": 0.2909090909090909
+        },
+        "flagged_median_advantage_pp": 16.710324457236126
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 82,
+          "median_pct": 95.66293026898983,
+          "mean_pct": 192.49154344882788,
+          "beat_benchmark_rate": 0.4146341463414634
+        },
+        "not_flagged": {
+          "n": 412,
+          "median_pct": 73.53541978520917,
+          "mean_pct": 124.0620369255537,
+          "beat_benchmark_rate": 0.34951456310679613
+        },
+        "flagged_median_advantage_pp": 22.127510483780654
+      }
+    },
+    "n_invisible_not_flagged": 83,
     "median_range_pct": [
-      70.08099094807054,
-      110.12726518082232
+      57.022718404214324,
+      115.17691578355608
     ],
     "extrapolation": {
-      "invisible_group_size": 1171,
+      "invisible_group_size": 3722,
       "sampled": 600,
-      "implied_total_missed_flags": 18,
-      "ratio_to_visible": 0.21420731707317076,
+      "implied_total_missed_flags": 99,
+      "ratio_to_visible": 1.2104065040650407,
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
-      "놓친 판정 중 3건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
+      "놓친 판정 중 2건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
   },
   {
@@ -293,6 +540,54 @@
         "beat_benchmark_rate": 0.2803738317757009
       }
     },
+    "symmetric": {
+      "worst_minus100": {
+        "flagged": {
+          "n": 107,
+          "median_pct": 30.92594837912643,
+          "mean_pct": 50.03574681250966,
+          "beat_benchmark_rate": 0.2803738317757009
+        },
+        "not_flagged": {
+          "n": 475,
+          "median_pct": 32.73295335997777,
+          "mean_pct": 53.664007827564205,
+          "beat_benchmark_rate": 0.2968421052631579
+        },
+        "flagged_median_advantage_pp": -1.8070049808513389
+      },
+      "neutral_benchmark": {
+        "flagged": {
+          "n": 107,
+          "median_pct": 70.8953153183906,
+          "mean_pct": 85.39334718381332,
+          "beat_benchmark_rate": 0.2803738317757009
+        },
+        "not_flagged": {
+          "n": 475,
+          "median_pct": 63.16155988857939,
+          "mean_pct": 79.07540001421843,
+          "beat_benchmark_rate": 0.2968421052631579
+        },
+        "flagged_median_advantage_pp": 7.733755429811211
+      },
+      "as_reported": {
+        "flagged": {
+          "n": 86,
+          "median_pct": 49.472170415638196,
+          "mean_pct": 86.67238266207598,
+          "beat_benchmark_rate": 0.3488372093023256
+        },
+        "not_flagged": {
+          "n": 408,
+          "median_pct": 45.07458205734935,
+          "mean_pct": 78.89804832865931,
+          "beat_benchmark_rate": 0.34558823529411764
+        },
+        "flagged_median_advantage_pp": 4.397588358288843
+      }
+    },
+    "n_invisible_not_flagged": 67,
     "median_range_pct": [
       30.92594837912643,
       70.8953153183906
@@ -305,7 +600,8 @@
       "note": "표본 확대 시 놓친 판정이 이만큼일 수 있다는 **단순 비례 추정**이다 - 사라진 집단 안에서 판정률이 균일하다는 가정에 의존하므로 정밀한 값이 아니다."
     },
     "caveats": [
-      "산출 구간은 **하한**이다 - 사라진 4,118개 중 600개만 표본조사했다.",
+      "산출 구간은 **하한**이다 - 사라진 집단 중 600개만 표본조사했다.",
+      "`scenarios`는 놓친 flagged만 더하므로 flagged에 불리하게 기울어져 있다 - 두 그룹에 같은 가정을 넣은 `symmetric`을 함께 볼 것.",
       "폐지 사유(파산 vs 피인수)를 구분할 데이터가 없어 어느 시나리오가 실제에 가까운지 알 수 없다. 명단에 파산(AKORN·LANNETT)과 프리미엄 피인수(ALLEGHANY·CELGENE)가 둘 다 있다.",
       "놓친 판정 중 10건은 폐지목록에서 이름 매칭이 안 돼 T0 이전 폐지 여부를 확인하지 못했다 - 그대로 포함시켰다(빼면 근거 없이 표본을 줄이는 것이 된다)."
     ]
