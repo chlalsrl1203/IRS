@@ -267,7 +267,8 @@ SOURCE_REGISTRY = {
     "stockanalysis": DataSource(
         provider="stockanalysis.com",
         authority=Authority.AGGREGATOR_WEB,
-        data_type="ETF P/E·보수율·보유종목 top10·지수 구성",
+        data_type=("ETF P/E·보수율·보유종목 top10·지수 구성, "
+                   "주식 배당조정 월봉 종가(PIT 백테스트 수익률 검증)"),
         license=UNVERIFIED,
         commercial_use=UNVERIFIED,
         redistribution_raw=UNVERIFIED,
@@ -277,13 +278,20 @@ SOURCE_REGISTRY = {
         reliability=(
             "ETF 엔진(v3.33~)의 주 출처. IWM에서 같은 지표가 다른 출처와 29.5% "
             "괴리(트레일링 vs forward)를 보인 사례가 있어 **단일 출처 신뢰 금지** "
-            "원칙이 여기서 나왔다. 값 자체가 틀렸다는 뜻은 아니고 집계방식이 다르다."
+            "원칙이 여기서 나왔다. 값 자체가 틀렸다는 뜻은 아니고 집계방식이 다르다. "
+            "가격 시계열은 2026-08-29 교차확인 완료 - AAPL 2021-06 배당조정 종가가 "
+            "여기 133.387, FMP historical-price-eod-dividend-adjusted 133.39로 일치."
         ),
         last_verified=UNVERIFIED,
         allowed_use=("internal_research",),
         source_kind="web_research",
         hosts=("stockanalysis.com",),
-        verification_note="2026-08-19 약관 미확인. 웹 집계 출처이므로 1차 대조 필요.",
+        verification_note=(
+            "2026-08-19 약관 미확인(상업이용·재배포 조항). 2026-08-29 robots.txt "
+            "원문 직접 확인: `User-agent: *`에 대해 `/e/`·`/p/`만 Disallow이고 "
+            "나머지 경로는 허용, Crawl-delay 지시자 없음 - 이는 크롤링 허용범위 "
+            "확인이지 약관 전체 확인이 아니다. 자발적으로 0.7초 간격을 둔다."
+        ),
         tier=ComplianceTier.UNVERIFIED,
     ),
     "web_research": DataSource(

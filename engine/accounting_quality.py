@@ -76,12 +76,36 @@ VALIDATION_STATUS = {
         "회전)가 섞여 있어 **기업 간 절대 비교보다 같은 기업의 시계열 변화**가 "
         "더 해석 가능하다. 34종목 관측 기반 시작점이며 임계값은 검증되지 않았다."
     ),
+    "ar_to_revenue_trend": (
+        "PROXY_ONLY / ECONOMICALLY_SUPPORTED — 외상매출 증가는 Sloan(1996)이 "
+        "지속성이 낮다고 본 운전자본 발생액의 주요 구성요소다. Beneish(1999) "
+        "M-score의 DSRI가 같은 구성을 쓰지만 **원문 계산식을 검증하지 못해 "
+        "특정 공식을 구현하지 않고** 원자료 비율과 그 추세만 낸다. "
+        "IRS 표본에서 투자성과와의 관계는 **검증된 바 없다**."
+    ),
+    "restatement_history": (
+        "DIRECT_OBSERVATION — 외부 문헌이 필요 없는 직접 관측 사실이다"
+        "(같은 기간을 여러 공시가 다른 값으로 보고했는가). 다만 **연속 순위"
+        "지표로는 해상도가 낮다** — 34종목 중 22종목이 정확히 0이라 중앙값이 "
+        "0이며, 사실상 '재작성 이력이 있는가'라는 이진 사실로 읽어야 한다. "
+        "투자성과와의 관계는 **검증된 바 없다**."
+    ),
 }
 
 # 34종목 실측 분포(2026-08-24, SBC 되돌린 형태)에서 나온 관측 기반 시작점.
 # ⚠️ 검증된 컷이 아니다 - LYNCH_TYPE_CAPS·P/B 임계값과 동일하게 취급할 것.
 OBSERVED_MEDIAN = -0.0259
 OBSERVED_RANGE = (-0.0829, 0.0169)
+
+# AR/매출 상대추세(RQ-005, 2026-08-26, 30종목 - 보험 3사와 PDD는 AR 태그 미보고).
+# 마찬가지로 검증된 컷이 아니라 '지금까지 본 범위'다.
+AR_TREND_OBSERVED_MEDIAN = -0.0049
+AR_TREND_OBSERVED_RANGE = (-0.1812, 0.1027)
+# AR/매출 **수준**이 이 값보다 작으면 상대추세가 불안정하다 - 분모가 작아
+# 사소한 절대변화가 큰 상대변화로 증폭된다. 관측 최소는 VRSN 0.0042(매출의
+# 0.4%, 약 1.5일치)이고 SE(0.0236)의 -18.12%/yr가 이 증폭의 실례로 보인다.
+# ⚠️ 이 값은 관측 하위구간의 경계일 뿐 **검증된 임계값이 아니다**.
+AR_LEVEL_THIN = 0.05
 
 
 def _require_series(name, by_year):
@@ -123,6 +147,78 @@ def accrual_ratio_series(net_income_by_year, operating_cashflow_by_year,
             continue                      # 자산이 0 이하면 비율이 정의되지 않는다
         out[y] = (ni[y] - ocf[y] + sbc.get(y, 0.0)) / avg_assets
     return out
+
+
+def _lstsq_slope(points):
+    """(x, y) 최소자승 기울기. x가 연도라 단위는 '연당 변화'."""
+    n = len(points)
+    if n < 2:
+        return None
+    mx = sum(p[0] for p in points) / n
+    my = sum(p[1] for p in points) / n
+    den = sum((p[0] - mx) ** 2 for p in points)
+    if den == 0:
+        return None
+    return sum((p[0] - mx) * (p[1] - my) for p in points) / den
+
+
+def ar_to_revenue_trend(receivables_by_year, revenue_by_year, window=5):
+    """
+    매출채권/매출 비율과 그 **상대** 추세. 매출이 현금회수보다 빨리 늘고 있는가.
+
+    ⚠️ **수준이 아니라 추세를, 그것도 상대추세를 본다.** 수준은 사업모델에 따라
+    구조적으로 갈려(구독 선불 vs 기업 외상) 기업 간 비교가 무의미하다. 절대
+    %p 기울기도 안 된다 - 기울기는 수준에 비례해 커지기 때문이다. 실측 사례:
+    TTD는 AR/매출 수준이 1.30~1.95로 다른 종목(0.004~0.39)의 수 배~수십 배인데,
+    이는 광고중개업이 채권을 총액(광고주 청구)으로 잡고 매출을 순액으로 잡기
+    때문이지 매출인식이 공격적이어서가 아니다. 절대 기울기로 재면 TTD가
+    -9.00%p/yr로 코퍼스 최대 이상치가 되지만, 상대추세로 재면 -6.15%/yr로
+    평범한 개선 구간에 들어온다(RQ-005에서 실측 확인).
+
+    부호 규약: **양수 = 채권이 매출보다 빨리 늘고 있다**(주의 방향),
+    음수 = 회수가 개선되고 있다.
+
+    반환값에 판정·점수는 없다 - 어느 추세가 "나쁜가"에 대한 외부 컷을 확보하지
+    못했고 IRS 표본으로 검증한 적도 없다.
+    """
+    ar = _require_series("receivables_by_year", receivables_by_year)
+    rev = _require_series("revenue_by_year", revenue_by_year)
+    ratio = {y: ar[y] / rev[y] for y in sorted(set(ar) & set(rev)) if rev[y] > 0}
+    notes = []
+    if len(ratio) < 3:
+        return {"ar_to_revenue_by_year": ratio, "latest": None,
+                "trend_relative": None, "mean_level": None,
+                "notes": ["[계산 불가] 공통 연도가 3개 미만이다."]}
+
+    ys = sorted(ratio)[-window:]
+    slope = _lstsq_slope([(y, ratio[y]) for y in ys])
+    mean_level = sum(ratio[y] for y in ys) / len(ys)
+    rel = (slope / mean_level) if (slope is not None and mean_level) else None
+
+    if mean_level < AR_LEVEL_THIN:
+        notes.append(
+            f"[얇은 채권] AR/매출 수준 {mean_level:.4f}가 관측 하위구간"
+            f"({AR_LEVEL_THIN:.2f} 미만)이라 상대추세가 증폭된다 - 분모가 작아 "
+            f"사소한 절대변화가 큰 비율변화로 찍힌다. 추세보다 원계열을 볼 것.")
+    if rel is not None and not (AR_TREND_OBSERVED_RANGE[0] <= rel
+                                <= AR_TREND_OBSERVED_RANGE[1]):
+        notes.append(
+            f"[관측범위 밖] 상대추세 {rel:+.4f}가 30종목 관측범위 "
+            f"{AR_TREND_OBSERVED_RANGE[0]:+.4f}~{AR_TREND_OBSERVED_RANGE[1]:+.4f}를 "
+            f"벗어난다 — 임계값이 아니라 '지금까지 본 적 없는 값'이라는 뜻이다.")
+
+    return {
+        "ar_to_revenue_by_year": ratio,
+        "latest": ratio[ys[-1]],
+        "latest_year": ys[-1],
+        "trend_slope_pp": slope,      # 참고용 - 비교에는 쓰지 말 것
+        "trend_relative": rel,        # 비교는 이쪽
+        "mean_level": mean_level,
+        "window_years": ys,
+        "observed_median": AR_TREND_OBSERVED_MEDIAN,
+        "notes": notes,
+        "validation_status": VALIDATION_STATUS,
+    }
 
 
 def accounting_quality_profile(net_income_by_year, operating_cashflow_by_year,

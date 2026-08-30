@@ -364,7 +364,7 @@ def test_sec_ticker_map_is_fetched_once_per_process():
     import engine.filing_dates as fd
     calls = {"n": 0}
     original = fd._http_json
-    fd._TICKER_MAP_CACHE.clear()
+    fd._TICKER_RAW_CACHE.clear()
     try:
         def counting(url, user_agent=None):
             calls["n"] += 1
@@ -378,7 +378,7 @@ def test_sec_ticker_map_is_fetched_once_per_process():
         assert calls["n"] == 1, f"매핑표를 {calls['n']}번 받았다(1번이어야 함)"
     finally:
         fd._http_json = original
-        fd._TICKER_MAP_CACHE.clear()
+        fd._TICKER_RAW_CACHE.clear()
 
 
 def test_http_404_is_not_counted_as_infrastructure_failure():

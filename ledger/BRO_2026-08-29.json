@@ -2,8 +2,8 @@
   "meta": {
     "ticker": "BRO",
     "company_name": "Brown & Brown, Inc.",
-    "analyzed_at": "2026-08-04T01:31:19.621120+00:00",
-    "engine_version": "v3.27",
+    "analyzed_at": "2026-08-29T05:51:14.241357+00:00",
+    "engine_version": "v3.71",
     "data_sources": [
       "Fiscal.ai standardized financials (2026-07-25)",
       "WebSearch: BRO 시가총액 $22.93B (2026-07-23 기준)",
@@ -11,10 +11,22 @@
     ],
     "falsification_conditions": "1) 오가닉 성장률(ex-contingents)이 H2 2026 가이던스(Retail 1.5-2.5%/Specialty Distribution 2-4%) 대비 추가로 악화되면 stalwart 분류를 넘어 성장서사 자체를 재검토. 2) 순부채/EBITDA(~2.77x, Accession 인수 후)가 추가 상승하거나 신용등급 조정이 발생하면 레버리지 리스크 반영. 3) Gallagher/Aon/Marsh 등 경쟁사의 대형 M&A가 BRO의 타겟 인수 풀 가격을 추가로 밀어올리는 정황이 확인되면 M&A 자본배분 규율 재검토.",
     "price_at_analysis": null,
-    "currency": "USD"
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_UNKNOWN",
+      "analysis_as_of": null,
+      "filing_dates_by_year": null,
+      "violations": [],
+      "note": "analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다."
+    },
+    "provenance": {
+      "status": "PROVENANCE_UNKNOWN"
+    }
   },
   "data_limitations": [
-    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1)."
+    "[PIT 미검증] analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다. 이 분석은 Historical Replay 대상이 될 수 없다(계약서 70절 조건 미충족). 새 분석부터 analysis_as_of와 filing_dates_by_year를 채워나갈 것.",
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
   ],
   "inputs": {
     "ticker": "BRO",
@@ -89,7 +101,7 @@
     "demand_sensitivity_pct": 0.2,
     "subjective_input_basis": "보험중개. Marsh McLennan 0.50, Aon 0.45, AJG 0.40. 점유율추세 0.0(M&A 롤업 성장이나 유기적 점유율 변화 근거 없음), 수요민감도 0.20(보험중개 수수료는 방어적이나 보험료 사이클 노출). 전부 [추정치].",
     "model_used": "single_stage",
-    "model_choice_reason": "과거 큐28 기록(v3.15)이 single_stage 4.25%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "model_choice_reason": "공식 Realistic Growth(12.00%, stalwart 캡값)는 g_terminal(3.47%) 대비 +8.53%p로 이론기준만으로는 two_stage와 구분 안 됨(CDNS·GEN이 동일 갭에서 반대 선택 - 2026-08-16 모델선택 연구 확인). 그러나 회사 직접공시 오가닉 성장률(7분기 연속 감속, 최근 2개 분기 마이너스 -2.8%/-0.7%)은 이미 g_terminal보다 낮다 - '고성장→terminal 수렴' 경로를 가정하는 two_stage가 아니라 '이미 정상상태' 가정인 single_stage(Gordon)가 BRO의 현재 실제 성장궤적에 부합한다. 12.00%는 Lynch 캡값이지 유기적 성장 신호가 아니므로(ROP·GEN 선례) 모델 선택 판단에는 회사 공시 오가닉 성장률을 근거로 삼았다.",
     "margin_years": [
       2021,
       2022,
@@ -118,7 +130,13 @@
     "sbc_by_year": null,
     "falsification_conditions": "1) 오가닉 성장률(ex-contingents)이 H2 2026 가이던스(Retail 1.5-2.5%/Specialty Distribution 2-4%) 대비 추가로 악화되면 stalwart 분류를 넘어 성장서사 자체를 재검토. 2) 순부채/EBITDA(~2.77x, Accession 인수 후)가 추가 상승하거나 신용등급 조정이 발생하면 레버리지 리스크 반영. 3) Gallagher/Aon/Marsh 등 경쟁사의 대형 M&A가 BRO의 타겟 인수 풀 가격을 추가로 밀어올리는 정황이 확인되면 M&A 자본배분 규율 재검토.",
     "price_at_analysis": null,
-    "currency": "USD"
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": null,
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": null,
+    "filing_dates_by_year": null
   },
   "derived": {
     "revenue_cagr_3y": 0.17384548109418518,
@@ -211,7 +229,7 @@
       "divergence_warning": null
     },
     "model_used": "single_stage",
-    "model_choice_reason": "과거 큐28 기록(v3.15)이 single_stage 4.25%를 사용했음이 트래커에 명시되어 동일 모델 채택(대조검증 목적).",
+    "model_choice_reason": "공식 Realistic Growth(12.00%, stalwart 캡값)는 g_terminal(3.47%) 대비 +8.53%p로 이론기준만으로는 two_stage와 구분 안 됨(CDNS·GEN이 동일 갭에서 반대 선택 - 2026-08-16 모델선택 연구 확인). 그러나 회사 직접공시 오가닉 성장률(7분기 연속 감속, 최근 2개 분기 마이너스 -2.8%/-0.7%)은 이미 g_terminal보다 낮다 - '고성장→terminal 수렴' 경로를 가정하는 two_stage가 아니라 '이미 정상상태' 가정인 single_stage(Gordon)가 BRO의 현재 실제 성장궤적에 부합한다. 12.00%는 Lynch 캡값이지 유기적 성장 신호가 아니므로(ROP·GEN 선례) 모델 선택 판단에는 회사 공시 오가닉 성장률을 근거로 삼았다.",
     "value": 0.04572271074368433
   },
   "expectation_gap": 0.07427728925631566,
@@ -271,7 +289,8 @@
       "section_5_7_aligned": 15,
       "data_completeness": 14,
       "lynch_type_cap_applied": -5,
-      "stalwart_two_stage_bias_flagged": 0
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
     },
     "raw_score": 89,
     "final": 89
@@ -279,5 +298,10 @@
   "judgment": "저평가 가능성",
   "judgment_grade": "A",
   "insurer_cross_check": null,
-  "sbc_cross_check": null
+  "sbc_cross_check": null,
+  "prior_cross_check": {
+    "prior_ledger": "BRO_2026-08-04.json",
+    "warnings": [],
+    "checked": true
+  }
 }

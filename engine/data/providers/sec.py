@@ -111,10 +111,21 @@ METRIC_TAGS = {
     # (1차 자료 기반 손입력)와 100% 일치**한다(ACGL 11/11 · MCK 7/7 · WCN 9/9 ·
     # WM 12/12). MCK는 `narrow + PaymentsToAcquireSoftware == broad`로 교차확인까지
     # 된다. 넓은 태그가 없는 종목은 그대로 좁은 정의로 폴백하므로 동작이 안 바뀐다.
+    #
+    # ⚠️ **최하위 폴백 추가(대규모 스크리닝, 2026-08-29 LLY 실측)**: LLY는 위
+    # 세 태그 어디에도 **10-K 연간치**가 없다(`PaymentsToAcquireProductiveAssets`가
+    # 10-Q 분기누계로만 채워지고 연간 항목이 아예 없다). 실제 연간 capex는
+    # `PaymentsToAcquireOtherPropertyPlantAndEquipment`(FY2025 $7,841M, 10-K)에
+    # 있었다 - 34종목 큐를 넘어 1만종목 규모로 가니 처음 마주친 태그 변형이다.
+    # **최하위(4번째) 우선순위로만 추가한다** - 우선순위 메커니즘상(연도별로
+    # 아직 안 채워진 경우에만 다음 태그를 쓴다) 이 추가는 기존 34종목의 이미
+    # 확정된 값을 절대 바꿀 수 없고 **미확보였던 연도만 채울 수 있다**(순수
+    # additive). 34종목 골든재현으로 이를 실측 확인했다(불일치 0건).
     "capex": (
         "PaymentsToAcquireProductiveAssets",
         "PaymentsToAcquirePropertyPlantAndEquipment",
         "PurchaseOfPropertyPlantAndEquipmentClassifiedAsInvestingActivities",  # ifrs
+        "PaymentsToAcquireOtherPropertyPlantAndEquipment",
     ),
     "net_income": (
         "NetIncomeLoss",
@@ -138,7 +149,15 @@ METRIC_TAGS = {
 
 # 시점(instant) 지표 — 구간이 아니라 특정 날짜의 잔액이다. companyfacts 항목에
 # `start`가 없다. 기간 지표와 같은 규칙(330~400일)으로 거르면 전부 탈락한다.
-INSTANT_METRICS = frozenset({"shareholders_equity"})
+# "public_float"은 METRIC_TAGS(FinancialFact 경로)에는 없지만 같은 파싱
+# 헬퍼(`_annual_entries`)를 재사용하므로 여기에도 등록한다.
+INSTANT_METRICS = frozenset({"shareholders_equity", "public_float"})
+
+# ⚠️ `public_float`은 위 METRIC_TAGS(→FinancialFact→AnalysisInputs 1:1 경로,
+# base.py의 METRICS로 강제됨)에 넣지 않는다 - `run_analysis()`가 소비하는
+# 지표가 아니라 **대규모 스크리닝(2026-08-29) 전용 시가총액 근사치**이기
+# 때문이다. 별도 얇은 함수(`public_float_by_year`)로 분리한다.
+_PUBLIC_FLOAT_TAG = "EntityPublicFloat"
 
 
 def _annual_entries(entries, metric):
@@ -219,7 +238,20 @@ class SecCompanyFactsProvider(FinancialProvider):
         self._resolve_cik = resolve_cik or ticker_to_cik
 
     def fetch_annual_financials(self, entity, metrics=None, fiscal_years=None,
-                                retrieved_at=None) -> "ProviderResult":  # noqa: F821
+                                retrieved_at=None, as_of=None) -> "ProviderResult":  # noqa: F821
+        """
+        as_of(2026-08-29, PIT 백테스트 신설): 지정하면 `filed <= as_of`인
+        항목만 쓴다 - "그 시점에 실제로 알 수 있었던 값"으로 되돌린다.
+
+        ⚠️ `retrieved_at`(오늘 이 코드를 실행한 시각)과 `as_of`(재현하려는 과거
+        시점)는 다른 개념이다. `retrieved_at`은 항상 오늘이어야 하고(추측
+        금지 원칙 그대로), `as_of`만 과거로 설정한다 - 결과의 `meta.retrieved_at`
+        은 실행 시각을 정직하게 남기고, "그 시점 재구성"이라는 사실은
+        `governance`에 별도로 기록한다(아래).
+
+        None(기본값)이면 기존 동작과 완전히 동일 - 모든 기존 호출부
+        (`run_analysis`/`deep_screen`/`broad_screen`)는 영향 없다.
+        """
         if not retrieved_at:
             raise ValueError(
                 "retrieved_at을 반드시 넘길 것 — 조회일을 자동으로 오늘로 채우면 "
@@ -253,13 +285,18 @@ class SecCompanyFactsProvider(FinancialProvider):
             # 출처가 흐려지지 않는 이유: 태그는 **값마다** `FinancialFact.source`에
             # 기록되므로, 섞였다는 사실 자체가 값 단위로 드러난다.
             picked, chosen, fy_collisions = {}, {}, {}
+            units_available = set()
             for taxonomy_name, taxonomy in taxonomies.items():
                 for tag in METRIC_TAGS[metric]:
                     if tag not in taxonomy:
                         continue
                     for unit_name, entries in (taxonomy[tag].get("units") or {}).items():
-                        cand, coll = _pick_by_fiscal_year(
-                            _annual_entries(entries, metric), years)
+                        rows = _annual_entries(entries, metric)
+                        if as_of:
+                            rows = [r for r in rows if r[2] <= as_of]  # r=(start,end,filed,val)
+                        cand, coll = _pick_by_fiscal_year(rows, years)
+                        if cand:
+                            units_available.add(unit_name)
                         for fy, periods in coll.items():
                             fy_collisions.setdefault(fy, set()).update(periods)
                         for fy, row in cand.items():
@@ -279,6 +316,43 @@ class SecCompanyFactsProvider(FinancialProvider):
             used_tags[metric] = sorted(
                 {f"{t}:{g} ({u})" for t, g, u in chosen.values()}
             )
+
+            # ⚠️ 통화/단위 혼재 (2026-08-26, RQ-005 측정 중 발견)
+            #
+            # 中 발행사는 같은 태그를 **CNY와 USD 두 단위로 동시 보고**한다
+            # (PDD·TCOM 실측). 위 루프는 `if fy not in picked`라 JSON에 먼저
+            # 나온 단위가 이기는데, 그 순서에는 아무 의미가 없다.
+            #
+            # 두 경우를 구분한다:
+            #  (a) 채택된 시계열이 **한 단위로 일관** → 정보성 안내. 값 자체는
+            #      일관되므로 비율(FCF수익률·Gap)은 옳지만, 어느 통화인지 모른 채
+            #      절대값을 쓰면 틀린다 - v3.67 규모 조건부 상한이 정확히 그
+            #      경로다(TCOM ledger가 CNY 값에 currency="USD" 라벨을 달고 있어
+            #      규모구간이 25000+ vs 4500-7000으로 갈렸다. RG 12.39%가 두 상한
+            #      17.87%/23.00% 어느 쪽에도 안 걸려 실제 피해는 없었다).
+            #  (b) 채택된 시계열이 **여러 단위에 걸침** → 한 시계열 안에서 연도별로
+            #      통화가 섞였다는 뜻이라 CAGR이 7배 단위로 망가진다. 조용히
+            #      넘기지 않는다.
+            units_used = {u for _, _, u in chosen.values()}
+            if len(units_used) > 1:
+                by_unit = {}
+                for fy, (_, _, u) in chosen.items():
+                    by_unit.setdefault(u, []).append(fy)
+                limitations.append(
+                    f"[단위 혼재 - 심각] {metric}: 채택된 시계열이 여러 단위에 "
+                    f"걸쳐 있다 { {u: sorted(v) for u, v in by_unit.items()} }. "
+                    f"연도별로 통화·단위가 달라 CAGR·증감률이 무의미하다 — "
+                    f"단위를 하나로 지정해 다시 받을 것."
+                )
+            elif len(units_available) > 1:
+                limitations.append(
+                    f"[복수 단위 보고] {metric}: 이 회사는 "
+                    f"{sorted(units_available)} 단위로 같은 값을 함께 보고한다. "
+                    f"채택된 단위는 {sorted(units_used)[0] if units_used else '?'}"
+                    f"이며 시계열은 일관된다. 비율 지표는 영향이 없으나 "
+                    f"**절대값을 쓰는 경로(규모 구간 판정 등)는 이 통화를 "
+                    f"명시적으로 확인할 것.**"
+                )
 
             if fy_collisions:
                 sample = sorted(fy_collisions)[:3]
@@ -376,5 +450,189 @@ class SecCompanyFactsProvider(FinancialProvider):
             entity, out, retrieved_at, limitations=limitations,
             raw_ref=f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json",
         )
-        result.governance = dict(result.governance, used_tags=used_tags)
+        result.governance = dict(result.governance, used_tags=used_tags, as_of=as_of)
         return result
+
+
+# ── 재작성 이력 (RQ-005, 2026-08-26) ────────────────────────────────────
+# 축0 L2(회계 품질)의 세 번째 진단값. 발생액·AR추세와 달리 **외부 문헌이 필요
+# 없는 직접 관측 사실**이다 - 같은 회계기간을 여러 공시가 서로 다른 값으로
+# 보고했는가.
+#
+# 여기에 두는 이유: 이 함수는 여러 공시본을 가로질러 봐야 하는데, 그 원자료
+# (companyfacts의 filed별 항목)를 파싱하는 계층이 여기다. `accounting_quality`는
+# 연도->값 dict만 받는 순수 모듈로 유지한다.
+
+# 5% 초과 변경만 '재작성'으로 센다(반올림·재분류 잡음 제외).
+RESTATEMENT_MATERIAL = 0.05
+
+# ⚠️ 10배 초과 변경은 재작성이 아니다. 감사받은 연간 수치가 10배 고쳐지는 일은
+# 사실상 없고, 그 규모는 **두 숫자가 서로 다른 실체를 가리킨다**는 뜻이다 -
+# 단위 차이이거나 같은 CIK 아래 보고주체가 바뀐 경우다(VRT가 2020년 SPAC 합병
+# 전 껍데기 법인 재무제표를 같은 CIK로 제출한 것이 실례: FY2018 영업현금흐름이
+# -710,388에서 -221,900,000으로 311배). 분자·분모 양쪽에서 빼고 따로 센다.
+#
+# 이 규칙은 VRT 사례를 본 **뒤에** 정했다 - 이 프로젝트 관행대로 숨기지 않는다.
+# 근거는 결과가 아니라 도메인 사실(감사된 연간 수치의 정정 폭 한계)이며,
+# PHASE 4가 주식분할 오염을 '인접연도 1.5배'로 막은 것과 같은 형태의 제약이다.
+ENTITY_CHANGE_THRESHOLD = 10.0
+
+RESTATEMENT_METRICS = ("revenue", "operating_cashflow", "net_income")
+
+
+def restatement_profile(facts, metrics=RESTATEMENT_METRICS):
+    """
+    companyfacts에서 **재작성 이력**을 센다.
+
+    같은 (태그, 단위, 기간)을 두 번 이상 보고한 항목만 대상이며, 최초 공시본과
+    최신 공시본의 차이가 `RESTATEMENT_MATERIAL`를 넘으면 재작성으로 센다.
+
+    ⚠️ **단위별로 따로 센다.** 초판(RQ-005 측정 스크립트)은 `units.values()`를
+    합쳐 비교했다가 PDD·TCOM이 재작성률 0.83~0.87로 나왔는데, 편차가 정확히
+    629.9%로 반복돼 확인해보니 CNY와 USD를 나란히 비교한 것이었다(7.299 =
+    위안/달러). 이 프로젝트가 반복해 밟은 단위 함정과 같은 계열이다.
+
+    ⚠️ **재작성률 0은 '깨끗하다'가 아니다.** 공시가 한 번뿐인 기간은 분모에
+    들어가지 않는다 - 상장이 짧거나 XBRL 이력이 얕으면 잴 기회 자체가 없다.
+    그래서 `multi_filed_periods`를 함께 낸다("데이터 없음을 안전으로 오독하지
+    않는다"는 이 프로젝트의 반복 원칙).
+
+    ⚠️ **연속 순위지표로 쓰지 말 것.** 34종목 실측에서 22종목이 정확히 0이라
+    중앙값이 0이다 - 사실상 '재작성 이력이 있는가'라는 이진 사실이다.
+
+    판정·점수를 내지 않는다(§31 합성점수 금지).
+    """
+    taxonomies = facts.get("facts", {}) or {}
+    total = restated = 0
+    worst = 0.0
+    detail, entity = [], []
+
+    for metric in metrics:
+        for tag in METRIC_TAGS[metric]:
+            hit = False
+            for taxonomy in taxonomies.values():
+                node = taxonomy.get(tag)
+                if not node:
+                    continue
+                hit = True
+                for unit, entries in (node.get("units") or {}).items():
+                    periods = {}
+                    for start, end, filed, val in _annual_entries(entries, metric):
+                        periods.setdefault((start, end), []).append((filed, val))
+                    for period, rows in periods.items():
+                        if len(rows) < 2:
+                            continue
+                        rows.sort()
+                        first, last = rows[0][1], rows[-1][1]
+                        if first == 0:
+                            continue
+                        dev = abs(last - first) / abs(first)
+                        rec = {"metric": metric, "unit": unit,
+                               "period": list(period), "first_reported": first,
+                               "latest_reported": last, "deviation": dev,
+                               "first_filed": rows[0][0], "latest_filed": rows[-1][0]}
+                        if dev > ENTITY_CHANGE_THRESHOLD:
+                            entity.append(rec)      # 분모에서도 뺀다
+                            continue
+                        total += 1
+                        if dev > RESTATEMENT_MATERIAL:
+                            restated += 1
+                            worst = max(worst, dev)
+                            detail.append(rec)
+            if hit:
+                break   # 지표당 첫 유효 태그만(_pick_by_fiscal_year와 같은 규약)
+
+    notes = []
+    if total == 0:
+        notes.append(
+            "[측정 불가] 두 번 이상 보고된 회계기간이 없다 - 재작성이 없었다는 "
+            "뜻이 아니라 **잴 기회가 없었다**는 뜻이다.")
+    if entity:
+        notes.append(
+            f"[실체·단위 변경 제외] 변경폭이 {ENTITY_CHANGE_THRESHOLD:.0f}배를 넘는 "
+            f"{len(entity)}건은 재작성이 아니라 보고주체 또는 단위가 바뀐 것으로 "
+            f"보고 분모·분자에서 제외했다.")
+
+    return {
+        "multi_filed_periods": total,
+        "restated_periods": restated,
+        "restatement_rate": (restated / total) if total else None,
+        "has_material_restatement": restated > 0,
+        "worst_deviation": worst if restated else None,
+        "restatements": sorted(detail, key=lambda d: -d["deviation"]),
+        "entity_or_unit_changes": sorted(entity, key=lambda d: -d["deviation"]),
+        "notes": notes,
+    }
+
+
+# ── 시가총액 근사치 (대규모 스크리닝 전용, 2026-08-29) ─────────────────────
+#
+# 34종목 손입력 큐를 넘어서려면 수천 개 티커의 대략적인 시가총액이 필요한데,
+# Alpha Vantage는 무료 한도가 25회/일이라 애초에 스케일이 안 맞고, Yahoo
+# Finance·Stooq 같은 무료 시세원은 API 호스트 robots.txt가 **전체 봇을
+# 차단**한다(2026-08-29 원문 직접 확인: query1.finance.yahoo.com·stooq.com
+# 둘 다 `User-agent: *` / `Disallow: /`) - Finviz 때 이미 확립한 원칙
+# ("robots.txt로 자동화 허용범위를 직접 확인할 것")을 그대로 적용하면 이
+# 경로는 쓸 수 없다.
+#
+# 대신 SEC가 10-K 표지에 회사 스스로 보고하는 `EntityPublicFloat`(비계열
+# 주주 보유주식의 시가총액)을 근사치로 쓴다 - 이건 위 METRIC_TAGS 경로
+# (FinancialFact → AnalysisInputs 1:1)와 별개다. `run_analysis()`가 쓰는
+# 지표가 아니라 **스크리닝 1차 필터 전용**이라 `base.METRICS` 검증을 거치지
+# 않는 얇은 함수로 분리했다.
+def public_float_from_facts(facts_json: dict, as_of: str = None) -> dict:
+    """
+    순수 파싱 함수 - 이미 받아둔 companyfacts JSON에서 public_float만 뽑는다.
+
+    ⚠️ 대규모 스크리닝(2026-08-29) 실측에서 `public_float_by_year`가 매
+    티커마다 companyfacts를 **두 번**(financials용 1회 + 이 함수 안에서 1회)
+    받고 있어 SEC 요청량이 그대로 배로 늘고 있었다(300종목 파일럿이 180초
+    타임아웃을 넘김). 원인은 네트워크 호출과 파싱이 한 함수에 묶여 있던 것 -
+    이미 받아온 JSON을 재사용할 방법이 없었다. 파싱만 분리해 호출부가 같은
+    companyfacts를 여러 목적(재무지표 + 시총 근사)에 **한 번의 요청으로**
+    재사용할 수 있게 한다.
+
+    as_of(PIT 백테스트 신설): `fetch_annual_financials`의 동명 인자와 동일한
+    의미 - `filed <= as_of`인 값만 쓴다. None(기본값)이면 기존 동작과 동일.
+
+    세 가지 한계는 `public_float_by_year`와 동일(그 함수의 docstring 참고).
+    """
+    taxonomies = facts_json.get("facts") or {}
+    node = taxonomies.get("dei", {}).get(_PUBLIC_FLOAT_TAG)
+    if not node:
+        return {}
+    out = {}
+    for entries in (node.get("units") or {}).values():
+        rows = _annual_entries(entries, "public_float")
+        if as_of:
+            rows = [r for r in rows if r[2] <= as_of]
+        picked, _ = _pick_by_fiscal_year(rows, None)
+        for fy, (_, _, _, val) in picked.items():
+            out[fy] = float(val)
+    return out
+
+
+def public_float_by_year(entity: str, retrieved_at: str, user_agent: str = None,
+                         resolve_cik=None, fetch_facts=None) -> dict:
+    """
+    티커 -> {회계연도: EntityPublicFloat(USD)}. 못 찾으면 빈 dict(추측하지 않음).
+
+    ⚠️ 세 가지 한계 - 호출부가 반드시 인지할 것:
+      (1) 계열주주(임원·대주주) 보유분 제외 - 실제 시총보다 작을 수 있다.
+      (2) 회계연도 중 한 시점(대개 2분기 말) 스냅샷 - 최대 ~18개월 낡을 수 있다.
+      (3) 10-K에만 실린다 - 20-F 외국 발행사는 대개 미보고.
+    최종 후보로 좁혀진 뒤에는 반드시 정밀한 실시간 시총으로 재확인할 것.
+
+    ⚠️ 이미 companyfacts를 받아둔 상태라면 이 함수(자체 네트워크 호출 포함)
+    대신 `public_float_from_facts(facts_json)`을 직접 쓸 것 - 안 그러면
+    같은 회사를 두 번 조회하게 된다(위 `public_float_from_facts` docstring
+    참고, 실제로 이 중복이 대규모 스크리닝을 2배 느리게 만들었다).
+    """
+    if not retrieved_at:
+        raise ValueError("retrieved_at을 반드시 넘길 것(추측 금지).")
+    resolve_cik = resolve_cik or ticker_to_cik
+    fetch_facts = fetch_facts or fetch_company_facts
+    cik = resolve_cik(entity, user_agent)
+    if not cik:
+        return {}
+    return public_float_from_facts(fetch_facts(cik, user_agent))

@@ -14,7 +14,7 @@
     "confidence"
   ],
   "n_tickers": 34,
-  "fingerprint": "2419df22facc7b0a80c598cd9335ef5324860d9235f19438bb41eb322fdebabe",
+  "fingerprint": "43f90b61a652d9fd4e24b55ec1beb5d4bf7fbf50950ef6cac9b95915afd7a050",
   "rows": {
     "ACGL": {
       "engine_version": "v3.27",
@@ -39,7 +39,7 @@
       "confidence": 94
     },
     "BRO": {
-      "engine_version": "v3.27",
+      "engine_version": "v3.71",
       "realistic_growth": 0.12,
       "implied_growth": 0.04572271074368433,
       "expectation_gap": 0.07427728925631566,

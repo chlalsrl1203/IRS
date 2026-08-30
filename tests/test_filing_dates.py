@@ -150,3 +150,50 @@ def test_string_years_accepted():
     """ledger의 JSON 키는 문자열이므로 그대로 넘어와도 동작해야 한다."""
     out = check_lookahead({2025: "2026-02-18"}, "2026-07-25", ["2025"])
     assert out["violations"] == [] and out["unknown_years"] == []
+
+
+# ──────────────────────────────────────────────────────────────────
+# 전체 티커 유니버스 (2026-08-29, 대규모 스크리닝 신설)
+# ──────────────────────────────────────────────────────────────────
+
+def test_full_ticker_universe_fetched_once_and_shares_cache_with_ticker_map(
+        monkeypatch):
+    """
+    `full_ticker_universe()`와 `ticker_to_cik()`이 같은 원본 캐시를 공유해야
+    한다 - 안 그러면 대규모 스크리닝(유니버스 조회 1회 + 티커별 CIK 해석
+    수천 회)이 같은 1MB 파일을 두 번 받는다(v3.68이 잡은 것과 같은 유형의
+    낭비).
+    """
+    import engine.filing_dates as fd
+
+    calls = {"n": 0}
+
+    def counting(url, user_agent=None):
+        calls["n"] += 1
+        return {
+            "0": {"ticker": "AAPL", "cik_str": 320193, "title": "Apple Inc."},
+            "1": {"ticker": "MSFT", "cik_str": 789019, "title": "MICROSOFT CORP"},
+        }
+
+    monkeypatch.setattr(fd, "_http_json", counting)
+    fd._TICKER_RAW_CACHE.clear()
+
+    universe = fd.full_ticker_universe()
+    assert fd.ticker_to_cik("AAPL") == "0000320193"
+    assert calls["n"] == 1, f"원본을 {calls['n']}번 받았다(1번이어야 함)"
+
+    fd._TICKER_RAW_CACHE.clear()
+
+
+def test_full_ticker_universe_includes_title_and_padded_cik(monkeypatch):
+    import engine.filing_dates as fd
+
+    monkeypatch.setattr(fd, "_http_json", lambda url, user_agent=None: {
+        "0": {"ticker": "aapl", "cik_str": 320193, "title": "Apple Inc."},
+    })
+    fd._TICKER_RAW_CACHE.clear()
+    universe = fd.full_ticker_universe()
+    assert universe == [
+        {"ticker": "AAPL", "cik": "0000320193", "title": "Apple Inc."}
+    ]
+    fd._TICKER_RAW_CACHE.clear()

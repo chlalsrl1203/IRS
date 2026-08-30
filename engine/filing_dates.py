@@ -83,19 +83,43 @@ def _http_json(url: str, user_agent: str = None) -> dict:
 # 1MB를 25번 받는 셈이고, 그 자체가 레이트리밋·차단 위험이다(v3.68에서
 # 실측 확인: 25종목 조회가 10초 만에 전량 실패). 프로세스 수명 동안 1회만
 # 받아 재사용한다 - 매핑표는 하루 단위로 갱신되므로 프로세스 내 캐시는 안전하다.
-_TICKER_MAP_CACHE = {}
+_TICKER_RAW_CACHE = {}
+
+
+def _ticker_raw(user_agent: str = None) -> dict:
+    """SEC 전체 티커 목록 원본 JSON(프로세스 내 1회만 조회, 하위 함수들이 공유)."""
+    key = user_agent or DEFAULT_USER_AGENT
+    if key not in _TICKER_RAW_CACHE:
+        _TICKER_RAW_CACHE[key] = _http_json(SEC_TICKERS_URL, user_agent)
+    return _TICKER_RAW_CACHE[key]
 
 
 def _ticker_map(user_agent: str = None) -> dict:
-    """SEC 전체 티커->CIK 매핑표(프로세스 내 1회만 조회)."""
-    key = user_agent or DEFAULT_USER_AGENT
-    if key not in _TICKER_MAP_CACHE:
-        data = _http_json(SEC_TICKERS_URL, user_agent)
-        _TICKER_MAP_CACHE[key] = {
-            row["ticker"].upper(): str(row["cik_str"]).zfill(10)
-            for row in data.values()
-        }
-    return _TICKER_MAP_CACHE[key]
+    """SEC 전체 티커->CIK 매핑표."""
+    return {
+        row["ticker"].upper(): str(row["cik_str"]).zfill(10)
+        for row in _ticker_raw(user_agent).values()
+    }
+
+
+def full_ticker_universe(user_agent: str = None) -> list:
+    """
+    SEC에 등록된 전체 티커 목록(2026-08-29, 대규모 스크리닝 신설).
+
+    `{"ticker": ..., "cik": <10자리 문자열>, "title": ...}` 딕셔너리 리스트를
+    돌려준다 - 34종목짜리 손입력 큐가 아니라 **미국 SEC 등록기업 전체**(약
+    1만개, ETF·펀드·SPAC 포함)가 스크리닝 모집단이 되게 하는 진입점이다.
+
+    title은 펀드/ETF를 이름 기준으로 사전 걸러내는 용도로만 쓸 것 - 정확한
+    필터는 아니다. 진짜 걸러내는 힘은 다운스트림(재무제표 태그 자체가 없으면
+    자연히 탈락)에 있다.
+    """
+    return [
+        {"ticker": row["ticker"].upper(),
+         "cik": str(row["cik_str"]).zfill(10),
+         "title": row.get("title", "")}
+        for row in _ticker_raw(user_agent).values()
+    ]
 
 
 def ticker_to_cik(ticker: str, user_agent: str = None) -> str:
