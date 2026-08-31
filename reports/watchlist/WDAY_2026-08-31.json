@@ -1,0 +1,25 @@
+{
+  "ticker": "WDAY",
+  "analyzed_at": "2026-08-04",
+  "market_cap_then": 39600000000.0,
+  "market_cap_now": 49337520000.0,
+  "market_cap_change_pct": 0.24589696969696972,
+  "gap_then": 0.11417055453507202,
+  "gap_now": 0.08791628207413452,
+  "gap_decay_pp": -0.026254272460937506,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.14323282565323606,
+  "realistic_growth_now": 0.14323282565323606,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-27",
+    "gap_prior": 0.09112978305069702,
+    "gap_move_pp": -0.0032135009765625056,
+    "judgment_changed": false
+  },
+  "date": "2026-08-31"
+}
