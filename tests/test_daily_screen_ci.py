@@ -99,43 +99,9 @@ class _FakeResponse:
             raise Exception(f"HTTP {self.status_code}")
 
 
-def test_find_or_create_issue_reuses_existing_open_issue(monkeypatch):
-    """같은 제목의 열린 이슈가 있으면 새로 만들지 않고 재사용한다(매일 새 이슈 금지)."""
-    calls = {"post": 0}
-
-    def fake_get(url, headers=None, params=None, timeout=None):
-        return _FakeResponse(200, json_data=[
-            {"number": 42, "title": MOD.ISSUE_TITLE},
-            {"number": 7, "title": "다른 이슈"},
-        ])
-
-    def fake_post(url, headers=None, json=None, timeout=None):
-        calls["post"] += 1
-        return _FakeResponse(201, json_data={"number": 99})
-
-    import sys, types
-    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
-    monkeypatch.setitem(sys.modules, "requests", fake_requests)
-
-    n = MOD._find_or_create_issue("tok", "chlalsrl1203", "IRS")
-    assert n == 42
-    assert calls["post"] == 0  # 재사용했으니 생성 호출이 없어야 함
-
-
-def test_find_or_create_issue_creates_when_missing(monkeypatch):
-    def fake_get(url, headers=None, params=None, timeout=None):
-        return _FakeResponse(200, json_data=[])
-
-    def fake_post(url, headers=None, json=None, timeout=None):
-        assert json["title"] == MOD.ISSUE_TITLE
-        return _FakeResponse(201, json_data={"number": 123})
-
-    import types, sys
-    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
-    monkeypatch.setitem(sys.modules, "requests", fake_requests)
-
-    n = MOD._find_or_create_issue("tok", "chlalsrl1203", "IRS")
-    assert n == 123
+# 이슈 탐색·생성 로직은 2026-09-01에 scripts/issue_reporting.py로 옮겼다
+# (일일·주간·감시·관심종목이 같은 규칙을 쓰도록). 그쪽 테스트는
+# tests/test_issue_reporting.py에 있다.
 
 
 def test_post_to_github_issue_no_extra_secret_needed_beyond_gh_token():
@@ -226,15 +192,18 @@ def test_post_to_github_issue_includes_deep_dive_section_when_present(monkeypatc
     captured = {}
 
     def fake_get(url, headers=None, params=None, timeout=None):
-        return _FakeResponse(200, json_data=[{"number": 1, "title": MOD.ISSUE_TITLE}])
+        return _FakeResponse(200, json_data=[
+            {"number": 1, "title": "2026-08-23 · 📊 일일 스크리닝 · ⚪ 정상"}])
 
     def fake_post(url, headers=None, json=None, timeout=None):
         captured["body"] = json["body"]
         return _FakeResponse(201)
 
-    fake_requests = types.SimpleNamespace(get=fake_get, post=fake_post)
+    fake_requests = types.SimpleNamespace(
+        get=fake_get, post=fake_post,
+        patch=lambda *a, **k: _FakeResponse(200))
     monkeypatch.setitem(sys.modules, "requests", fake_requests)
-    monkeypatch.setattr(MOD, "build_monitor_section", lambda d: "")
+    monkeypatch.setattr(MOD, "run_monitor_safe", lambda d: (None, ""))
 
     deep_rows = [{"ticker": "AAA", "judgment": "저평가 가능성", "realistic_growth": 0.1,
                   "implied_growth": 0.03, "gap": 0.07, "drs": 40.0,
@@ -271,11 +240,13 @@ def _capture_issue_body(monkeypatch, **kwargs):
 
     fake_requests = types.SimpleNamespace(
         get=lambda *a, **k: _FakeResponse(200, json_data=[
-            {"number": 42, "title": MOD.ISSUE_TITLE}]),
+            {"number": 42, "title": "2026-08-24 · 📊 일일 스크리닝 · 🛑 긴급"}]),
         post=fake_post,
+        patch=lambda *a, **k: _FakeResponse(200),
         RequestException=Exception,
     )
     monkeypatch.setitem(sys.modules, "requests", fake_requests)
+    monkeypatch.setattr(MOD, "run_monitor_safe", lambda d: (None, ""))
     MOD.post_to_github_issue("tok", "o", "r", "2026-08-24", **kwargs)
     return seen["body"]
 

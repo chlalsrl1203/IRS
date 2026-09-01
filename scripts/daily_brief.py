@@ -305,6 +305,55 @@ def section_broad_screen(top_n=10):
     return out
 
 
+def section_research_queue(top_n=8):
+    """
+    다음에 **정식분석할 종목** 상위 n개(engine/research_queue.py).
+
+    ⚠️ 이게 이 브리핑에서 유일하게 "스크리닝 -> 매수리스트"를 잇는 칸이다.
+    스크리닝 통과 259개는 그대로는 쓸 수 없고, 매수리스트에 넣으려면
+    `run_analysis()`(주관적 입력 필수)와 정성조사가 필요하다. 큐는 그 사람
+    작업의 **순서**를 정한다 - 비중이나 판정을 내놓지 않는다.
+    """
+    path = os.path.join(REPORTS, "research_queue.json")
+    L = ["## 다음에 분석할 종목 (연구 우선순위 큐)", ""]
+    if not os.path.exists(path):
+        L.append("아직 큐 파일이 없다 — 주간 대규모 스크리닝이 한 번 돌아야 생긴다.")
+        return L
+    try:
+        with open(path, encoding="utf-8") as f:
+            q = json.load(f)
+    except (OSError, json.JSONDecodeError) as e:
+        L.append(f"큐 파일을 읽지 못했다: {e!r}")
+        return L
+
+    c = q.get("counts") or {}
+    L.append(f"<sub>스크린 통과 {c.get('total', 0)}종목 · 미분석 "
+             f"{c.get('QUEUED', 0)} · 분석완료 {c.get('ANALYZED', 0)} · "
+             f"보유중 {c.get('IN_BUYLIST', 0)} (기준 {q.get('latest_run', '?')})</sub>")
+    L.append("")
+
+    nxt = (q.get("next_to_research") or [])[:top_n]
+    if not nxt:
+        L.append("검증범위 안에서 아직 분석 안 된 후보가 없다.")
+        return L
+    L += ["| # | 종목 | 등급 | Gap(추정) | 시총 | 근거 |",
+          "|---:|---|---|---:|---:|---|"]
+    for i, e in enumerate(nxt, 1):
+        L.append(f"| {i} | **{e['ticker']}** | {e.get('tier', '-')} | "
+                 f"{(e.get('latest_gap') or 0) * 100:+.2f}%p | "
+                 f"${(e.get('market_cap') or 0) / 1e9:,.1f}B | "
+                 f"{e.get('priority_reason', '')} |")
+
+    pers = q.get("persistence") or {}
+    if not pers.get("discriminating"):
+        L += ["", f"⚠️ 스크린 실행이 {pers.get('n_runs', 0)}회뿐이라 "
+                  "'연속통과' 축이 아직 아무것도 구분하지 못한다 — 주가 쌓이면 작동한다."]
+    L += ["", "<sub>순위는 합성 점수가 아니라 사전식 정렬이다(검증범위 → 미분석 → "
+              "연속통과 → Gap). **이 표는 매수 지시가 아니라 연구 순서다** — "
+              "정식분석과 정성조사를 거쳐야 매수리스트에 들어간다.</sub>"]
+    return L
+
+
 def section_scorecard():
     """
     PIT 백테스트 성적표 요약.
@@ -357,6 +406,7 @@ def build(today, capital, top_n):
     lines += today_lines + [""]
     lines += section_new_candidates(today) + [""]
     lines += section_broad_screen() + [""]
+    lines += section_research_queue() + [""]
     lines += section_overseas(capital) + [""]
     lines += section_isa(top_n) + [""]
     lines += ["---", ""] + section_scorecard() + [""]
@@ -371,32 +421,20 @@ def post(text, today_str):
     """
     브리핑을 GitHub Issue 코멘트로 올린다 — 이게 평일 아침 폰에 도착하는 것이다.
 
-    이슈 탐색은 `daily_screen_ci._find_or_create_issue`를 재사용한다(같은 이슈에
-    쌓여야 하루치 기록이 한 곳에 모인다).
+    **그날 이슈**(`날짜 · 📊 일일 스크리닝 · 긴급도`)에 댓글로 붙는다. 그날
+    먼저 올린 쪽이 이슈를 만들었으면 그것을 찾아 쓰고, 브리핑이 첫 주자면
+    브리핑이 만든다 - 하루 알림을 1건으로 유지하기 위해서다.
+
+    ⚠️ 브리핑은 **긴급도를 올리지 않는다**(`routine`으로 올린다). 브리핑은
+    이미 다른 단계가 만들어낸 결과를 모아 보여줄 뿐이라 새 사실을 발견하지
+    않는데, 여기서 등급을 매기면 스크리닝·감시가 붙인 등급과 이중으로 셀 수
+    있다. 긴급도는 올라가기만 하므로 이 호출이 기존 제목을 낮추지는 않는다.
     """
-    token = os.environ.get("GITHUB_TOKEN")
-    repo_full = os.environ.get("GITHUB_REPOSITORY", "")
-    if not token or "/" not in repo_full:
-        print("[brief] GITHUB_TOKEN/REPOSITORY 미확보 - 게시 건너뜀", file=sys.stderr)
-        return False
-    owner, repo = repo_full.split("/", 1)
-    try:
-        import requests
-        from scripts.daily_screen_ci import _find_or_create_issue
-        num = _find_or_create_issue(token, owner, repo)
-        r = requests.post(
-            f"https://api.github.com/repos/{owner}/{repo}/issues/{num}/comments",
-            headers={"Authorization": f"Bearer {token}",
-                     "Accept": "application/vnd.github+json"},
-            json={"body": text}, timeout=15)
-        if r.status_code >= 300:
-            print(f"[brief] 게시 실패 {r.status_code}: {r.text[:200]}", file=sys.stderr)
-            return False
-    except Exception as e:  # noqa: BLE001
-        print(f"[brief] 게시 실패: {e!r}", file=sys.stderr)
-        return False
-    print(f"[brief] Issue #{num}에 게시 완료", file=sys.stderr)
-    return True
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import issue_reporting as IR
+
+    return IR.report("daily", today_str, text, urgency_key="routine",
+                     log=lambda m: print(m, file=sys.stderr)) is not None
 
 
 def main():

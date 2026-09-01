@@ -175,34 +175,21 @@ def post_standalone(result: dict, today_str: str) -> bool:
     날짜만 본다) 스크리닝 하류에 있다는 이유로 같이 멈추면, 이 감시가
     막으려는 실패("아무도 안 본다")가 그대로 재발한다.
     """
-    token = os.environ.get("GITHUB_TOKEN")
-    repo_full = os.environ.get("GITHUB_REPOSITORY", "")
-    if not token or "/" not in repo_full:
-        print("[monitor] GITHUB_TOKEN/REPOSITORY 미확보 - 단독 게시 건너뜀")
-        return False
-    owner, repo = repo_full.split("/", 1)
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-    from daily_screen_ci import _find_or_create_issue  # 이슈 탐색 로직 재사용
+    import issue_reporting as IR
 
-    import requests
     body = (f"## {today_str} 감시 단독 실행\n"
             f"⚠️ 스크리닝 단계가 실패해 감시만 별도로 보고한다.\n\n"
             + format_monitor_section(result))
-    try:
-        num = _find_or_create_issue(token, owner, repo)
-        r = requests.post(
-            f"https://api.github.com/repos/{owner}/{repo}/issues/{num}/comments",
-            headers={"Authorization": f"Bearer {token}",
-                     "Accept": "application/vnd.github+json"},
-            json={"body": body}, timeout=15)
-        if r.status_code >= 300:
-            print(f"[monitor] 게시 실패 {r.status_code}: {r.text[:200]}")
-            return False
-    except Exception as e:  # noqa: BLE001
-        print(f"[monitor] 게시 실패: {e!r}")
-        return False
-    print(f"[monitor] Issue #{num}에 단독 게시 완료")
-    return True
+    # ⚠️ 스크리닝이 죽어서 이 경로로 들어왔더라도 **감시 결과가 긴급도를
+    # 정한다.** 감시는 네트워크 의존이 없어 스크리닝 장애와 무관하게 신뢰할 수
+    # 있고, 조치사항이 있는데 제목이 `🔧 장애`로만 뜨면 사람이 "오늘은 데이터가
+    # 없구나"로 읽고 넘긴다.
+    urgency, detail = IR.daily_urgency(monitor_result=result)
+    if urgency == "routine":
+        urgency, detail = "broken", "스크리닝 실패·감시만"
+    return IR.report("daily", today_str, body, urgency_key=urgency,
+                     detail=detail) is not None
 
 
 def main():
