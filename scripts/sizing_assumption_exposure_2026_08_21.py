@@ -70,7 +70,12 @@ def _weights(rows):
 
 
 def _compare(base, alt):
-    tickers = set(base) | set(alt)
+    # 정렬된 순서로 순회한다 - `set(base) | set(alt)`는 문자열 해시가
+    # 프로세스마다 랜덤화(PYTHONHASHSEED)되어 순회 순서가 실행마다 달라지고,
+    # 그 결과 아래 `sum()`의 덧셈 순서가 바뀌어 turnover가 말단자리에서
+    # 매번 다른 값(1e-17 수준 ULP 노이즈)을 내고 있었다 - 실행마다 리포트가
+    # 미세하게 달라 커밋 노이즈를 반복 유발한 원인.
+    tickers = sorted(set(base) | set(alt))
     shifts = {t: alt.get(t, 0.0) - base.get(t, 0.0) for t in tickers}
     return {
         "turnover": sum(abs(v) for v in shifts.values()) / 2,
