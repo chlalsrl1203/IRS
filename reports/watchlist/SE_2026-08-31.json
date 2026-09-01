@@ -1,0 +1,25 @@
+{
+  "ticker": "SE",
+  "analyzed_at": "2026-08-23",
+  "market_cap_then": 66370000000.0,
+  "market_cap_now": 73106153000.0,
+  "market_cap_change_pct": 0.10149394304655712,
+  "gap_then": 0.1349559402465818,
+  "gap_now": 0.1231740570068357,
+  "gap_decay_pp": -0.011781883239746105,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.17874999999999974,
+  "realistic_growth_now": 0.17874999999999974,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-27",
+    "gap_prior": 0.11935764312744117,
+    "gap_move_pp": 0.003816413879394534,
+    "judgment_changed": false
+  },
+  "date": "2026-08-31"
+}
