@@ -1,0 +1,25 @@
+{
+  "ticker": "MNDY",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 3740000000.0,
+  "market_cap_now": 4257427000.0,
+  "market_cap_change_pct": 0.13834946524064162,
+  "gap_then": 0.23276233673095703,
+  "gap_now": 0.21670570373535158,
+  "gap_decay_pp": -0.016056632995605447,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.25,
+  "realistic_growth_now": 0.25,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-28",
+    "gap_prior": 0.22714672088623047,
+    "gap_move_pp": -0.01044101715087889,
+    "judgment_changed": false
+  },
+  "date": "2026-09-01"
+}
