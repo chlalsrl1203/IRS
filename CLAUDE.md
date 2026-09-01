@@ -6517,3 +6517,80 @@ fingerprint `43f90b61…` 불변, ledger·매수리스트 0건 수정.
 안 바뀌면 버전도 안 바뀐다). 테스트 1,058 → **1,080개**(신규 24, 이관·정리 2),
 34종목 골든재현 8지표 완전 동일, fingerprint `43f90b61…` 불변, ledger·
 매수리스트·공식 판정 0건 수정.
+
+## CROX 정식 분석 — 연구 우선순위 큐 1호 실행, 그리고 잠복 버그 3건
+(2026-09-01, 사용자 요청 "최대한효율적으로 분석실행")
+
+### 결과 — 스크리너 추정치가 크게 틀렸다, 원인이 정확히 예측한 대로였다
+
+`reports/research_queue.json` 1순위(스크린 Gap 추정 +23.97%p, S등급)를
+SEC XBRL 1차자료 + 실제 시가총액 + 실측 경쟁구도로 정식 분석했다.
+
+| | 스크리너 추정 | 정식분석 |
+|---|---|---|
+| Gap | +23.97%p | **+9.89%p** |
+| 등급 | S | **A** |
+| Realistic Growth | ~24%(5y CAGR 그대로) | **10.34%** |
+
+**원인은 M&A 단계상승이었다**(GEN/BRO/ROP/SNPS/NRG/RBA/NOW/AVGO와 동일
+패턴) — HEYDUDE 인수(2022-02 종결)가 5y CAGR 구간(2020->2025) 한가운데
+걸려 매출 5y CAGR이 **23.86%**로 나오는데(스크리너가 그대로 인용한 값과
+정확히 일치), 인수 종결 이후로만 깨끗한 3y CAGR(2022->2025)은 **4.36%**
+뿐이다. `realistic_growth_estimate()`의 3y/5y/10y 가중평균(0.5/0.3/0.2)이
+3y에 과반 가중치를 줘 왜곡을 상당 부분 자동 흡수했다(10.34%는 4.36%와
+23.86% 사이) - `cagr_base_year_override`는 쓰지 않았다(세그먼트 완전분리
+데이터 없이 3y 단독 강제는 근거 부족).
+
+부수 발견: FY2025 영업이익 붕괴($1,021.9M->$149.5M, -85.4%)는 HEYDUDE
+상표권·영업권 손상차손 $738.1M(전부 비현금, 회사 공시로 확인) - 영업현금
+흐름은 견조(FY2025 $710.4M)했다. 손상차손 조정 없이 GAAP 그대로 썼다
+(margin_volatility·leverage 양쪽 다 - is_insurer/sbc_cross_check와 동일
+"임의 정규화 안 함" 원칙). PIT_VALID(위반 0건), SBC 차감 시에도 판정
+불변(+9.31%p), 강건성점검 flip 없음, Confidence 94.
+
+### ⭐ 실데이터가 처음 들어오면서 드러난 잠복 버그 3건 (R-001/PHASE5와 같은 계열)
+
+**① `inputs_from_ledger()`가 `filing_dates_by_year`를 정수로 안 돌려주고
+있었다.** v3.47(PIT)이 이 필드를 만든 뒤 실제로 채운 ledger가 CROX가
+처음이라(v3.49~v3.72가 반복 기록한 "PIT 필드는 있는데 34종목 전부
+미기입") 이 경로가 한 번도 실행되지 않았다 - `_YEAR_KEYED_FIELDS`
+(engine/thesis_monitor.py)에 목록을 추가해 해소했다.
+
+**② `sbc_harvest_2026-08-21.json`은 "SBC 미확보 25종목"이 아니라 그 시점
+ledger 전수(34종목) 스냅샷이었다.** 새 ledger가 추가되면 문자 그대로
+`==` 비교가 깨진다 - BSX 거짓탈락·TCOM 통화라벨과 동일한 "알려진 예외"
+패턴(`KNOWN_POST_SNAPSHOT_LEDGERS`)으로 등록. 겸사겸사 `main()`이 인라인
+으로 쓰던 "sbc_cross_check 없는 것만" 필터를 `_missing_sbc_ledgers()`로
+뽑아 재사용 가능하게 했다.
+
+**③ `test_all_existing_ledgers_are_provenance_unknown`이 "저장소의 모든
+ledger는 UNKNOWN"을 문자 그대로 강제하고 있었다.** v3.59가 처음부터
+provenance를 채운 정당한 신규 분석까지 막을 근거는 없다(§6이 금지하는
+건 **소급** 생성이지 신규 분석의 provenance가 아니다) - 동일한 "알려진
+예외" 패턴(`KNOWN_PROVENANCE_RECORDED_LEDGERS`)으로 CROX를 등록했다.
+
+셋 다 "34종목 고정"을 문자 그대로 코드에 박아둔 채 아무도 35번째를
+넣어본 적이 없어서 드러나지 않았던 결함이다 - 이 프로젝트가 반복 겪은
+"실데이터가 들어와야만 드러나는 잠복 결함"의 다섯 번째(R-001 fcf0 오타·
+PHASE 1 fcf0 오타 재발견·PHASE 2 기본인자 바인딩·PHASE 5 필드경로 오류에
+이어)이자 규모로는 최대(3건 동시 발견)다.
+
+### 배선
+
+- `watchlist.json`에 CROX 추가(34->35, ledger 전수 자동추적 원칙 유지).
+- `reports/research_queue.json` 재생성 - CROX가 `QUEUED`->`ANALYZED`로
+  전환되며 큐 1순위에서 자동으로 빠졌다(LNTH가 새 1순위).
+- **매수리스트는 건드리지 않았다** - `run_analysis()`는 여기까지만
+  하고, 편입에는 `BUCKET`·`CONFIDENCE_ADJ`(정성 심층조사)가 별도로
+  필요하다(v3.79가 이미 확립한 경계, research_queue.py의 "자동 승격
+  경로는 원리적으로 없다" 원칙 그대로).
+
+### 검증
+
+baseline을 35종목으로 재동결(`--freeze`, `engine_version_at_freeze`는
+v3.58 보존 - v3.68이 고친 대로). fingerprint `43f90b61…` ->
+**`81a8a0f5…`**(34종목 기존 값 전부 불변 확인 후 CROX 추가분만 반영).
+테스트 1,080개 전부 통과(신규 실패 3건을 위 버그 수정으로 해소, 신규
+테스트 추가 없이 기존 불변조건을 35종목 현실에 맞게 정정). `ledger/`에
+CROX 1건 신규 추가(그 외 34종목 0건 수정), `engine/` 변경(thesis_monitor.py
+버그수정)이라 `ENGINE_VERSION` v3.79 -> **v3.80**.

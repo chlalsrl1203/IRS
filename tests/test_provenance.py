@@ -210,6 +210,15 @@ def test_recorded_ledger_reports_coverage():
     assert cov["n_covered"] == 1 and cov["n_missing"] == 1
 
 
+# v3.50 34종목은 P0-08(2026-08-19) 이전 분석이라 원자료 스냅샷이 없다 -
+# 소급 생성하면 §6 위반(허위 출처)이므로 전부 PROVENANCE_UNKNOWN으로 남아야
+# 한다. 이후 **처음부터** provenance를 채워 분석한 신규 ledger는 소급이
+# 아니라 정당한 신규 분석이라 이 규칙 대상이 아니다 - BSX 거짓탈락
+# (`KNOWN_SCREENER_FALSE_REJECTIONS`)·TCOM 통화라벨(`KNOWN_CURRENCY_LABEL_
+# DIVERGENCE`)과 동일한 "알려진 예외" 패턴으로 등록한다.
+KNOWN_PROVENANCE_RECORDED_LEDGERS = {"CROX"}  # 2026-09-01, 분석 시점에 확보
+
+
 def test_all_existing_ledgers_are_provenance_unknown():
     """
     저장소의 현재 상태를 사실 그대로 고정한다 - 누군가 소급 생성하면 여기서
@@ -220,6 +229,14 @@ def test_all_existing_ledgers_are_provenance_unknown():
 
     for path in sorted(glob.glob("ledger/*.json")):
         led = json.load(open(path, encoding="utf-8"))
+        ticker = led["meta"]["ticker"]
+        if ticker in KNOWN_PROVENANCE_RECORDED_LEDGERS:
+            assert provenance_coverage(led)["status"] != PROVENANCE_UNKNOWN, (
+                f"{ticker}는 알려진 예외 목록에 있는데 실제로는 여전히 "
+                f"UNKNOWN이다 - 목록에서 빼야 한다"
+            )
+            continue
         assert provenance_coverage(led)["status"] == PROVENANCE_UNKNOWN, (
-            f"{path}에 provenance가 소급 생성됐다 - §6은 이를 금지한다"
+            f"{path}에 provenance가 소급 생성됐다 - §6은 이를 금지한다. "
+            f"정당한 신규 분석이면 KNOWN_PROVENANCE_RECORDED_LEDGERS에 추가할 것"
         )
