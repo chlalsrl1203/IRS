@@ -1,0 +1,25 @@
+{
+  "ticker": "KLAC",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 249240000000.0,
+  "market_cap_now": 229351227000.0,
+  "market_cap_change_pct": -0.0797976769378912,
+  "gap_then": 0.008613438964066245,
+  "gap_now": 0.010017460989144425,
+  "gap_decay_pp": 0.0014040220250781804,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.10327419836763381,
+  "realistic_growth_now": 0.10327419836763381,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-28",
+    "gap_prior": 0.009224449065588516,
+    "gap_move_pp": 0.0007930119235559085,
+    "judgment_changed": false
+  },
+  "date": "2026-09-01"
+}
