@@ -421,32 +421,20 @@ def post(text, today_str):
     """
     브리핑을 GitHub Issue 코멘트로 올린다 — 이게 평일 아침 폰에 도착하는 것이다.
 
-    이슈 탐색은 `daily_screen_ci._find_or_create_issue`를 재사용한다(같은 이슈에
-    쌓여야 하루치 기록이 한 곳에 모인다).
+    **그날 이슈**(`날짜 · 📊 일일 스크리닝 · 긴급도`)에 댓글로 붙는다. 그날
+    먼저 올린 쪽이 이슈를 만들었으면 그것을 찾아 쓰고, 브리핑이 첫 주자면
+    브리핑이 만든다 - 하루 알림을 1건으로 유지하기 위해서다.
+
+    ⚠️ 브리핑은 **긴급도를 올리지 않는다**(`routine`으로 올린다). 브리핑은
+    이미 다른 단계가 만들어낸 결과를 모아 보여줄 뿐이라 새 사실을 발견하지
+    않는데, 여기서 등급을 매기면 스크리닝·감시가 붙인 등급과 이중으로 셀 수
+    있다. 긴급도는 올라가기만 하므로 이 호출이 기존 제목을 낮추지는 않는다.
     """
-    token = os.environ.get("GITHUB_TOKEN")
-    repo_full = os.environ.get("GITHUB_REPOSITORY", "")
-    if not token or "/" not in repo_full:
-        print("[brief] GITHUB_TOKEN/REPOSITORY 미확보 - 게시 건너뜀", file=sys.stderr)
-        return False
-    owner, repo = repo_full.split("/", 1)
-    try:
-        import requests
-        from scripts.daily_screen_ci import _find_or_create_issue
-        num = _find_or_create_issue(token, owner, repo)
-        r = requests.post(
-            f"https://api.github.com/repos/{owner}/{repo}/issues/{num}/comments",
-            headers={"Authorization": f"Bearer {token}",
-                     "Accept": "application/vnd.github+json"},
-            json={"body": text}, timeout=15)
-        if r.status_code >= 300:
-            print(f"[brief] 게시 실패 {r.status_code}: {r.text[:200]}", file=sys.stderr)
-            return False
-    except Exception as e:  # noqa: BLE001
-        print(f"[brief] 게시 실패: {e!r}", file=sys.stderr)
-        return False
-    print(f"[brief] Issue #{num}에 게시 완료", file=sys.stderr)
-    return True
+    sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+    import issue_reporting as IR
+
+    return IR.report("daily", today_str, text, urgency_key="routine",
+                     log=lambda m: print(m, file=sys.stderr)) is not None
 
 
 def main():

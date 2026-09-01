@@ -144,37 +144,11 @@ def fetch_market_cap_av(ticker, api_key):
 # 토큰이 계속 401로 거부돼 완전자동화의 병목이 됐다. GitHub Actions는
 # `secrets.GITHUB_TOKEN`을 실행마다 자동으로 만들어 넘겨주므로 이 경로는
 # 발급·등록 절차 자체가 없다 - 실패 지점 하나가 통째로 사라진다.
-ISSUE_TITLE = "📊 IRS 일일 스크리닝 결과"
-
-
-def _find_or_create_issue(token, owner, repo):
-    import requests
-
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-    }
-    r = requests.get(
-        f"https://api.github.com/repos/{owner}/{repo}/issues",
-        headers=headers, params={"state": "open", "per_page": 100}, timeout=15,
-    )
-    r.raise_for_status()
-    for issue in r.json():
-        if issue.get("title") == ISSUE_TITLE and "pull_request" not in issue:
-            return issue["number"]
-
-    body = (
-        "매일 아침 자동 스크리닝 결과가 이 이슈에 댓글로 쌓입니다.\n\n"
-        "⚠️ **1차 추정치일 뿐 정식 판정이 아닙니다** - "
-        "`engine/screener.py`의 근사 계산(estimate_drs 등)이며, "
-        "정식 분석은 `engine/pipeline.py`의 `run_analysis()`로만 확정됩니다."
-    )
-    r = requests.post(
-        f"https://api.github.com/repos/{owner}/{repo}/issues",
-        headers=headers, json={"title": ISSUE_TITLE, "body": body}, timeout=15,
-    )
-    r.raise_for_status()
-    return r.json()["number"]
+# 2026-09-01: 고정 제목 단일 이슈(`📊 IRS 일일 스크리닝 결과`)에 매일 댓글을
+# 쌓던 방식을 **날짜별 이슈**로 바꿨다 - 제목이 매일 똑같으면 폰 알림만 보고는
+# 오늘 볼 게 있는지 없는지 알 수 없고, 그러면 며칠 뒤부터 안 열어보게 된다.
+# 제목 생성·긴급도 판정·이슈 탐색은 전부 scripts/issue_reporting.py에 있다
+# (일일·주간·감시·관심종목이 같은 규칙을 쓰도록 한 곳에 모았다).
 
 
 DEEP_SCREEN_DIR = os.path.join(os.path.dirname(_HERE), "reports", "deep_screen")
@@ -301,14 +275,26 @@ def build_monitor_section(today_str):
     감시가 깨져도 스크리닝 결과 보고는 반드시 나가야 한다(반대로 만들면
     부가기능 하나가 본체를 멈춘다).
     """
+    return run_monitor_safe(today_str)[1]
+
+
+def run_monitor_safe(today_str):
+    """
+    감시를 돌려 `(결과dict|None, 표시용 텍스트)`를 준다.
+
+    결과 dict가 필요한 이유는 이슈 **제목의 긴급도**를 정하기 위해서다 -
+    텍스트만 받으면 조치사항이 있는지를 문자열 파싱으로 되짚어야 하고, 그건
+    v3.42가 반증조건 날짜 추출에서 이미 겪은 오탐 경로다.
+    """
     try:
         from datetime import date as _date
 
         from daily_monitor_ci import format_monitor_section, run_monitor
-        return format_monitor_section(run_monitor(_date.fromisoformat(today_str)))
+        result = run_monitor(_date.fromisoformat(today_str))
+        return result, format_monitor_section(result)
     except Exception as e:  # noqa: BLE001
         log(f"[monitor] 감시 섹션 생성 실패(스크리닝은 계속 진행): {e!r}")
-        return f"### 🔭 보유종목 감시\n⚠️ 감시 실행 실패: `{e!r}`"
+        return None, f"### 🔭 보유종목 감시\n⚠️ 감시 실행 실패: `{e!r}`"
 
 
 # 제외 사유 분류 - **인프라 장애와 정상 제외를 구분하는 것이 목적이다.**
@@ -373,7 +359,7 @@ def format_funnel(funnel, skipped):
 
 def post_to_github_issue(token, owner, repo, date_str, passed_results,
                           skipped, note, deep_rows=None, funnel=None):
-    import requests
+    import issue_reporting as IR
 
     lines = [f"## {date_str} 실행 결과"]
     if note:
@@ -414,27 +400,18 @@ def post_to_github_issue(token, owner, repo, date_str, passed_results,
     if deep_rows:
         lines.append(format_deep_dive_section(deep_rows))
     lines.append("\n---\n")
-    lines.append(build_monitor_section(date_str))
+    monitor_result, monitor_text = run_monitor_safe(date_str)
+    lines.append(monitor_text)
 
-    headers = {
-        "Authorization": f"Bearer {token}",
-        "Accept": "application/vnd.github+json",
-    }
-    try:
-        issue_number = _find_or_create_issue(token, owner, repo)
-        resp = requests.post(
-            f"https://api.github.com/repos/{owner}/{repo}/issues/"
-            f"{issue_number}/comments",
-            headers=headers, json={"body": "\n".join(lines)}, timeout=15,
-        )
-        if resp.status_code >= 300:
-            log(f"[GitHub Issue] 기록 실패 {resp.status_code}: {resp.text[:300]}")
-            return False
-    except requests.RequestException as e:  # noqa: BLE001
-        log(f"[GitHub Issue] 기록 실패: {e}")
-        return False
-    log(f"[GitHub Issue] #{issue_number}에 오늘자 결과 기록 완료")
-    return True
+    # 제목에 박을 긴급도. 감시 조치사항 > 파이프라인 장애 > 통과 후보 > 정상
+    # (근거는 issue_reporting 모듈 docstring 참고).
+    urgency, detail = IR.daily_urgency(
+        monitor_result=monitor_result, n_passed=len(passed_results or []),
+        scored=scored, infra_failures=len(infra_tickers))
+    num = IR.report("daily", date_str, "\n".join(lines),
+                    urgency_key=urgency, detail=detail, log=log,
+                    creds=(token, owner, repo))
+    return num is not None
 
 
 def main():

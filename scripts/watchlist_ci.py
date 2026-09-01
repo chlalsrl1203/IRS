@@ -291,21 +291,16 @@ def main():
     log(f"-> {out_path}")
 
     if "--post" in sys.argv:
-        token = os.environ.get("GITHUB_TOKEN")
-        repo_full = os.environ.get("GITHUB_REPOSITORY", "")
-        if token and "/" in repo_full:
-            owner, repo = repo_full.split("/", 1)
-            body = format_watchlist_section(rows, len(tickers))
-            issue = ci._find_or_create_issue(token, owner, repo)
-            import requests
-            requests.post(
-                f"https://api.github.com/repos/{owner}/{repo}/issues/{issue}/comments",
-                headers={"Authorization": f"Bearer {token}",
-                         "Accept": "application/vnd.github+json"},
-                json={"body": f"## {today} 관심종목 추적\n{body}"}, timeout=20)
-            log(f"[GitHub Issue] #{issue}에 기록 완료")
-        else:
-            log("[GitHub Issue] 토큰/저장소 미확보 - 기록 건너뜀")
+        import issue_reporting as IR
+
+        # 관심종목 추적도 그날 이슈에 붙는다(하루 알림 1건 유지). 긴급도는
+        # 올리지 않는다 - 여기서 나오는 Gap 부식은 반증조건 감시와 **함께**
+        # 봐야 의미가 있고(주가가 빠지면 Gap은 반드시 벌어진다, v3.42 가치함정),
+        # 단독으로 긴급 신호를 만들면 정확히 그 오독을 제목에 박게 된다.
+        IR.report("daily", today,
+                  f"## {today} 관심종목 추적\n"
+                  + format_watchlist_section(rows, len(tickers)),
+                  urgency_key="routine", log=log)
 
 
 if __name__ == "__main__":
