@@ -196,7 +196,7 @@ def test_real_repo_today_has_no_unreviewed_backlog():
     result = RUNNER.run_monitor(TODAY, ledger_dir=str(ROOT / "ledger"),
                                 ack_path=str(ROOT / "monitor" / "acknowledgements.json"),
                                 predictions_dir=str(ROOT / "predictions"))
-    assert result["n_ledgers"] == 34
+    assert result["n_ledgers"] == 35  # 2026-09-01: CROX 정식분석 추가(34->35)
     assert result["falsification"]["needs_review"] == []
     assert result["action_required"] is False
 

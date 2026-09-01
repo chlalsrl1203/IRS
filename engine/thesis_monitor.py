@@ -167,10 +167,16 @@ def scan_falsification_conditions(ledger: dict, today: date) -> dict:
 
 # 연도별 시계열 입력 필드 - JSON 왕복하면 키가 전부 문자열이 되므로 정수로
 # 되돌려야 한다(v3.38에서 KRX 래퍼가 "2014"-"2015" TypeError로 실제로 겪은 함정).
+#
+# ⚠️ `filing_dates_by_year`가 2026-09-01까지 빠져 있었다 - v3.47(PIT)이 이
+# 필드를 만든 뒤로 실제로 채운 ledger가 CROX가 처음이라(v3.49~v3.72가 반복
+# 기록한 "PIT 필드는 있는데 34종목 전부 미기입") 이 경로가 한 번도 실행되지
+# 않았고, 그래서 버그가 잠복해 있었다 - R-001의 `fcf0` 키 오타와 같은 유형
+# (실데이터가 들어와야만 드러나는 결함).
 _YEAR_KEYED_FIELDS = (
     "revenue_by_year", "operating_income_by_year", "operating_cashflow_by_year",
     "capex_by_year", "net_income_by_year", "shareholders_equity_by_year",
-    "dividends_paid_by_year", "sbc_by_year",
+    "dividends_paid_by_year", "sbc_by_year", "filing_dates_by_year",
 )
 
 

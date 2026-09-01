@@ -76,6 +76,21 @@ def _load_ledgers():
     return out
 
 
+def _missing_sbc_ledgers(ledgers=None):
+    """
+    이 실험이 실제로 다루는 모집단 - `sbc_by_year`를 이미 갖춰
+    `run_analysis()`가 자체적으로 `sbc_cross_check`를 채운 ledger는 제외한다.
+
+    2026-09-01: CROX가 처음부터 `sbc_by_year`를 채워 분석돼(정식분석 시점에
+    이미 SBC를 확보) 이 harvest가 다룰 대상이 아니게 됐다 - `_load_ledgers()`
+    가 반환하는 전체 집합과 이 실험의 모집단(당시 미확보 25종목)이 갈라지는
+    첫 사례다. `main()`이 이미 이 필터를 인라인으로 썼는데, 테스트도 같은
+    필터가 필요해 여기로 뽑아 재사용한다(중복 구현하면 둘이 어긋난다).
+    """
+    ledgers = ledgers if ledgers is not None else _load_ledgers()
+    return {t: v for t, v in ledgers.items() if not v[1].get("sbc_cross_check")}
+
+
 def _cached_facts(ticker, user_agent=None):
     """companyfacts 원본을 로컬에 캐시한다(수 MB · 재실행 시 재조회 방지)."""
     os.makedirs(CACHE_DIR, exist_ok=True)
@@ -246,7 +261,7 @@ def rows_from_existing(ledgers):
 
 def main():
     ledgers = _load_ledgers()
-    missing = {t: v for t, v in ledgers.items() if not v[1].get("sbc_cross_check")}
+    missing = _missing_sbc_ledgers(ledgers)
     print(f"ledger {len(ledgers)}종목 · SBC 미확보 {len(missing)}종목\n")
 
     rows = []
