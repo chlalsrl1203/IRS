@@ -1,0 +1,25 @@
+{
+  "ticker": "GEN",
+  "analyzed_at": "2026-08-04",
+  "market_cap_then": 16110000000.0,
+  "market_cap_now": 18556197000.0,
+  "market_cap_change_pct": 0.15184338919925522,
+  "gap_then": 0.12182151794433595,
+  "gap_now": 0.10408737182617189,
+  "gap_decay_pp": -0.017734146118164054,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.12,
+  "realistic_growth_now": 0.12,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-01",
+    "gap_prior": 0.10400726318359377,
+    "gap_move_pp": 8.0108642578125e-05,
+    "judgment_changed": false
+  },
+  "date": "2026-09-02"
+}

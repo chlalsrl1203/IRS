@@ -1,0 +1,19 @@
+{
+  "ticker": "CROX",
+  "analyzed_at": "2026-09-01",
+  "market_cap_then": 5771628128.5,
+  "market_cap_now": 5771628000.0,
+  "market_cap_change_pct": -2.226408168937155e-08,
+  "gap_then": 0.09889103376656783,
+  "gap_now": 0.09889103605905361,
+  "gap_decay_pp": 2.292485784538556e-09,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.10339477176711484,
+  "realistic_growth_now": 0.10339477176711484,
+  "mode": "gap_decay",
+  "date": "2026-09-02"
+}
