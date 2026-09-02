@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 253,
-    "ANALYZED": 4,
+    "QUEUED": 252,
+    "ANALYZED": 5,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -49,25 +49,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.21397977686203412,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 3,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "OKTA",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.20647656178590862,
-      "tier": "B",
-      "market_cap": 16400000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.20647656178590862,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 3,
@@ -300,6 +281,25 @@
       "in_validated_scope": true,
       "days_since_seen": 3,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "COF",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.1629655789055858,
+      "tier": "S",
+      "market_cap": 135200000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.1629655789055858,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 3,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     }
   ],
   "entries": {
@@ -336,25 +336,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.21397977686203412,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 3,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "OKTA": {
-      "ticker": "OKTA",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.20647656178590862,
-      "tier": "B",
-      "market_cap": 16400000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.20647656178590862,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 3,
@@ -1856,6 +1837,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.2135939476241476,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 3,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "OKTA": {
+      "ticker": "OKTA",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.20647656178590862,
+      "tier": "B",
+      "market_cap": 16400000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.20647656178590862,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 3,
