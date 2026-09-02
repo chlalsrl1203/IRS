@@ -6845,3 +6845,59 @@ sbc_harvest/monitor_state 신규 ledger 계열** 두 갈래가 동시에 갱신�
 baseline 38종목으로 재동결(fingerprint `da16197b…`→`52bf1b90…`). 테스트
 1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## RYAN 정식 분석 — Up-C 이중클래스 구조의 시가총액 함정 (2026-09-02)
+
+큐 다음 순위 RYAN(Ryan Specialty Holdings, 특수보험 도매유통, tier A,
+스크리너 Gap 추정 +18.83%p)을 정식분석했다.
+
+### ⭐ 핵심 발견 — Class A 주식만으로 시총을 잡으면 FCF수익률이 2배로
+왜곡된다
+
+RYAN은 2021-07 IPO 시 전형적인 Up-C 구조로 상장했다 - 재무제표는 운영LLC
+전체(100% 연결)를 담는데, 상장주식(Class A)은 지분의 일부일 뿐이고 나머지는
+사전IPO 소유주가 LLC Unit(Class A와 1:1 교환가능, 경제적 지분 동일)+
+Class B 무경제권 의결주 형태로 보유한다. **Class A만으로 시총을 잡으면
+분자(전체 FCF)와 분모(부분 지분가치)가 어긋나 FCF수익률이 실제의 약
+2배로 부풀고 내재성장률이 허위로 낮게 나온다.** 2026-07-27 10-Q 표지
+(WebSearch 재인용): Class A 122,077,702주 + Class B 133,737,083주 = 총
+경제적 지분 255,814,785주 - **총주식수 기준 시총(~$10.83B)**을 채택했다
+(Class A만 쓰면 ~$5.43B로 실제로 일부 데이터소스가 이렇게 잘못 보고하고
+있음을 확인).
+
+### 결과 — "저평가 가능성"(A등급), Gap +13.77%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+DRS 36.56(leverage 20.0 - 최고위험, net_debt/EBITDA ≈4.08x로 실제로 높은
+레버리지가 정확히 반영됨). PIT_VALID. 모델괴리 0.84%p(경고 임계값 3%p 미만,
+양호한 일치).
+
+### 부수 발견 1 — 2021년 capex $343.2M은 M&A 관련 일회성 항목(계산에는
+영향 없음)
+
+All Risk 인수(2021, IPO와 동시 진행) 관련 지급으로 추정되나
+`PaymentsToAcquireBusinessesNetOfCashAcquired` 태그가 비어있어 확정은
+못했다. LNTH IPR&D 사례와 같은 계열의 태그 오분류 의심이나, `capex_years`
+경로는 opt-in(`capex_classification`)에서만 호출되고 fcf0는 2025년 정상
+capex($3.0M)만 쓰므로 **계산에는 전혀 영향 없음** - 원자료 그대로 사용.
+
+### 부수 발견 2 — 오가닉성장 가이던스(5~7%)가 trailing CAGR(20.5%/24.1%)
+보다 훨씬 낮다 - GEN/BRO/TCOM 계열이나 override 기준 미달
+
+Q2 2026 오가닉 +6.7%(총성장 +7.2%와 근접), FY2026 가이던스 5~7%. ROP가
+확립한 override 기준(다년 실현실적 필요)에 못 미쳐(1개 분기+1개년
+가이던스뿐) `realistic_growth_override`는 쓰지 않고 괴리만
+falsification_conditions에 병기했다.
+
+### 배선
+
+`watchlist.json`에 RYAN 추가(38→39, ROP-SE 사이). 여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 38→39),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RYAN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RYAN 추가) - 이번엔
+screener 거짓탈락(BSX/MEDP 유형)에는 해당하지 않아 `test_screener.py`는
+무변경.
+
+baseline 39종목으로 재동결(fingerprint `52bf1b90…`→`5c5af7e4…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

@@ -88,7 +88,7 @@ def test_sbc_adjustment_can_only_lower_the_gap():
 # status="OK"인 것도 이미 sbc_cross_check가 있던 것도 섞여 있음 - "미확보만"이
 # 아니었다). 그래서 이후 추가된 ledger는 이 스냅샷에 없는 게 정상이다 -
 # BSX 거짓탈락·TCOM 통화라벨과 동일한 "알려진 예외" 패턴으로 등록한다.
-KNOWN_POST_SNAPSHOT_LEDGERS = {"CROX", "SIGI", "OKTA", "MEDP"}  # 2026-09-01/02, 스냅샷(2026-08-21) 이후 신규
+KNOWN_POST_SNAPSHOT_LEDGERS = {"CROX", "SIGI", "OKTA", "MEDP", "RYAN"}  # 2026-09-01/02, 스냅샷(2026-08-21) 이후 신규
 
 
 def test_harvest_covers_every_ledger_ticker():
