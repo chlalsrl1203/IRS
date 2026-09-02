@@ -1,0 +1,25 @@
+{
+  "ticker": "BSY",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 9047468213.66,
+  "market_cap_now": 11101914000.0,
+  "market_cap_change_pct": 0.22707410933350047,
+  "gap_then": 0.05695494807794302,
+  "gap_now": 0.04629855380730252,
+  "gap_decay_pp": -0.010656394270640496,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": true,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.10541108672060934,
+  "realistic_growth_now": 0.10541108672060934,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-31",
+    "gap_prior": 0.04559907453799464,
+    "gap_move_pp": 0.0006994792693078844,
+    "judgment_changed": false
+  },
+  "date": "2026-09-02"
+}

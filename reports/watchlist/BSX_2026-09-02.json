@@ -1,0 +1,25 @@
+{
+  "ticker": "BSX",
+  "analyzed_at": "2026-08-13",
+  "market_cap_then": 74190000000.0,
+  "market_cap_now": 69997789000.0,
+  "market_cap_change_pct": -0.05650641595902417,
+  "gap_then": 0.058652919654472085,
+  "gap_now": 0.06556686771355412,
+  "gap_decay_pp": 0.006913948059082034,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "B",
+  "grade_now": "B",
+  "realistic_growth_then": 0.13863186252556584,
+  "realistic_growth_now": 0.13863186252556584,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-31",
+    "gap_prior": 0.0692264975353315,
+    "gap_move_pp": -0.00365962982177738,
+    "judgment_changed": false
+  },
+  "date": "2026-09-02"
+}

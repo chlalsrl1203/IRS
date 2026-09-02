@@ -1,0 +1,25 @@
+{
+  "ticker": "MCK",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 99530000000.0,
+  "market_cap_now": 103219782000.0,
+  "market_cap_change_pct": 0.03707205867577623,
+  "gap_then": -0.0001648937621887142,
+  "gap_now": -0.004469016686993413,
+  "gap_decay_pp": -0.004304122924804699,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.06160134921876831,
+  "realistic_growth_now": 0.06160134921876831,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-01",
+    "gap_prior": -0.005540183679180896,
+    "gap_move_pp": 0.0010711669921874833,
+    "judgment_changed": false
+  },
+  "date": "2026-09-02"
+}
