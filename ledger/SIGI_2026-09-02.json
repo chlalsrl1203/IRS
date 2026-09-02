@@ -1,0 +1,574 @@
+{
+  "meta": {
+    "ticker": "SIGI",
+    "company_name": "Selective Insurance Group, Inc.",
+    "analyzed_at": "2026-09-02T08:49:44.378662+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts(CIK 0000230557), 2026-09-01 조회",
+      "Alpha Vantage GLOBAL_QUOTE, 2026-09-01 조회",
+      "WebSearch: SIGI/Travelers/Cincinnati Financial 2026 Q1/Q2 실적발표(합산비율·NPW), 2026-09-01 조회"
+    ],
+    "falsification_conditions": "(1) 2026 Q3/Q4 실적에서 순보험료(NPW) 역성장이 추가로 확대되거나(현재 -5%YoY) 회사가 2026 가이던스(합산비율 96.5~97.5%)를 재차 하향하면 재검토. (2) Travelers·Cincinnati Financial 대비 합산비율 격차가 더 벌어지면(현재 SIGI Q2 98% vs Travelers 84%대) competition_intensity 상향 재검토. (3) is_insurer 교차검증(지속가능성장률 vs Realistic Growth) 괴리가 5%p를 넘으면 재검토.",
+    "price_at_analysis": 91.21,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-01",
+      "filing_dates_by_year": {
+        "2018": "2019-02-15",
+        "2019": "2020-02-12",
+        "2020": "2021-02-12",
+        "2021": "2022-02-11",
+        "2022": "2023-02-10",
+        "2023": "2024-02-09",
+        "2024": "2025-02-10",
+        "2025": "2026-02-09"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-01",
+      "n_covered": 8,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2586080000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-15",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2846491000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-12",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 2922274000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-12",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 3379164000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-11",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 3558062000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-10",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 4232106000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-09",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 4861664000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-10",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 5336928000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-09",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(12.80%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것.",
+    "[보험업 교차검증] Realistic Growth(12.00%)와 지속가능성장률(8.24%)이 3.76%p 이내로 근접해 FCF-DCF 성장추정이 비교적 정합적이다(PGR 선례). P/B=1.51배는 별도로 판정 신뢰도 판단에 참고할 것."
+  ],
+  "inputs": {
+    "ticker": "SIGI",
+    "company_name": "Selective Insurance Group, Inc.",
+    "revenue_by_year": {
+      "2018": 2586080000.0,
+      "2019": 2846491000.0,
+      "2020": 2922274000.0,
+      "2021": 3379164000.0,
+      "2022": 3558062000.0,
+      "2023": 4232106000.0,
+      "2024": 4861664000.0,
+      "2025": 5336928000.0
+    },
+    "operating_income_by_year": {
+      "2018": 211721000.0,
+      "2019": 336390000.0,
+      "2020": 302988000.0,
+      "2021": 505310000.0,
+      "2022": 280186000.0,
+      "2023": 458412000.0,
+      "2024": 258034000.0,
+      "2025": 589597000.0
+    },
+    "operating_cashflow_by_year": {
+      "2018": 454944000.0,
+      "2019": 477495000.0,
+      "2020": 554045000.0,
+      "2021": 771422000.0,
+      "2022": 802409000.0,
+      "2023": 758908000.0,
+      "2024": 1099888000.0,
+      "2025": 1233021000.0
+    },
+    "capex_by_year": {
+      "2018": 16110000.0,
+      "2019": 30986000.0,
+      "2020": 22064000.0,
+      "2021": 22163000.0,
+      "2022": 26019000.0,
+      "2023": 22631000.0,
+      "2024": 30810000.0,
+      "2025": 38742000.0
+    },
+    "market_cap": 5433299343.99,
+    "net_debt": 883915000.0,
+    "ebitda": 615897000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.35,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": -1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.18,
+    "subjective_input_basis": "경쟁강도 - Travelers 0.35(2026 Q1/Q2 합산비율 84.1~84.7%로 'best-in-class' 언더라이팅 규율, SIGI/CINF 대비 10%p 이상 우위 - PGR이 자사 최대경쟁자에 부여한 0.35와 동일 수준[추정치]). Cincinnati Financial 0.20(SIGI와 유사한 처지 - 2026 Q1 합산비율 98.6%(전년 91.9% 대비 6.7%p 악화)로 업계 공통의 언더라이팅사이클 둔화를 함께 겪는 근접 동종 경쟁자[추정치]). market_share_trend=-1.0pp: SIGI 자체 순보험료(NPW)가 경쟁압력+의도적 언더라이팅 조정으로 2026 Q2 전년比 -5% 역성장(회사 자체 실적발표로 확인된 실측 신호, ACGL의 -1.5pp보다는 완만하게 설정 - SIGI는 스스로 2026 가이던스에서 합산비율 개선을 전망 중이라 완전한 구조적 후퇴로 보진 않음[추정치]). active_antitrust_or_regulatory_case=False: 2026-09 WebSearch로 확인한 진행 중인 반독점·경쟁당국 조사 없음. demand_sensitivity=0.18: 상업용일반배상책임・자동차보험 등 상당부분이 법적・계약적 의무가입이라 재량소비재보다 훨씬 둔감 - PGR(개인용 자동차, 0.15)과 ACGL(전문보험・재보험, 0.20) 중간값으로 설정했다(SIGI는 상업용비중이 커 완전히 의무가입 성격인 개인용 자동차보다는 다소 높게, 그러나 초과보험(E&S) 비중이 있는 ACGL보다는 낮게)[추정치, 신규 관측치].",
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR·ACGL 선례와 동일하게 two_stage를 채택한다 - 18개년(2008~2025) 매출이 M&A 단계상승이나 극단적 사이클 없이 꾸준히 성장해왔고($1.59B->$5.34B), 최근 5개년(2020->2025) 성장률이 직전 구간보다 오히려 가속(보험료 인상 사이클 반영)돼 있어 '현재 고성장 -> 장기 수렴'을 모델링하는 two_stage가 이 궤적에 이론적으로 부합한다고 판단. 언더라이팅 이익(세전이익) 자체는 사이클로 진동하지만 매출(순보험료)은 안정적 성장 궤적을 보인다는 점에서 CROX(3y CAGR이 이미 한자릿수로 정체돼 single_stage 채택)와는 반대 상황.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts(CIK 0000230557), 2026-09-01 조회",
+      "Alpha Vantage GLOBAL_QUOTE, 2026-09-01 조회",
+      "WebSearch: SIGI/Travelers/Cincinnati Financial 2026 Q1/Q2 실적발표(합산비율·NPW), 2026-09-01 조회"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": true,
+    "net_income_by_year": {
+      "2018": 178939000.0,
+      "2019": 271623000.0,
+      "2020": 246355000.0,
+      "2021": 403837000.0,
+      "2022": 224886000.0,
+      "2023": 365238000.0,
+      "2024": 207012000.0,
+      "2025": 466411000.0
+    },
+    "shareholders_equity_by_year": {
+      "2018": 1791802000.0,
+      "2019": 2194936000.0,
+      "2020": 2738889000.0,
+      "2021": 2982885000.0,
+      "2022": 2527564000.0,
+      "2023": 2954381000.0,
+      "2024": 3120076000.0,
+      "2025": 3608975000.0
+    },
+    "dividends_paid_by_year": {
+      "2018": 42097000.0,
+      "2019": 47675000.0,
+      "2020": 54486000.0,
+      "2021": 60136000.0,
+      "2022": 66920000.0,
+      "2023": 73827000.0,
+      "2024": 84936000.0,
+      "2025": 92884000.0
+    },
+    "sbc_by_year": {
+      "2018": 14507000.0,
+      "2019": 19077000.0,
+      "2020": 16227000.0,
+      "2021": 15893000.0,
+      "2022": 18428000.0,
+      "2023": 18346000.0,
+      "2024": 22763000.0,
+      "2025": 23104000.0
+    },
+    "falsification_conditions": "(1) 2026 Q3/Q4 실적에서 순보험료(NPW) 역성장이 추가로 확대되거나(현재 -5%YoY) 회사가 2026 가이던스(합산비율 96.5~97.5%)를 재차 하향하면 재검토. (2) Travelers·Cincinnati Financial 대비 합산비율 격차가 더 벌어지면(현재 SIGI Q2 98% vs Travelers 84%대) competition_intensity 상향 재검토. (3) is_insurer 교차검증(지속가능성장률 vs Realistic Growth) 괴리가 5%p를 넘으면 재검토.",
+    "price_at_analysis": 91.21,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-01",
+      "n_covered": 8,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2586080000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-15",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2846491000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-12",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 2922274000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-12",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 3379164000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-11",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 3558062000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-10",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 4232106000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-09",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 4861664000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-10",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 5336928000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-09",
+          "retrieval_date": "2026-09-01",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-01",
+    "filing_dates_by_year": {
+      "2018": "2019-02-15",
+      "2019": "2020-02-12",
+      "2020": "2021-02-12",
+      "2021": "2022-02-11",
+      "2022": "2023-02-10",
+      "2023": "2024-02-09",
+      "2024": "2025-02-10",
+      "2025": "2026-02-09"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.14470244588196746,
+    "revenue_cagr_5y": 0.1280129406785233,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.17555224404613656,
+    "fcf0": 1194279000.0,
+    "fcf_by_year": {
+      "2018": 438834000.0,
+      "2019": 446509000.0,
+      "2020": 531981000.0,
+      "2021": 749259000.0,
+      "2022": 776390000.0,
+      "2023": 736277000.0,
+      "2024": 1069078000.0,
+      "2025": 1194279000.0
+    },
+    "worst_yoy_revenue_growth": 0.02662330567705995,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      0.14953698607111107,
+      0.0787468009270215,
+      0.10831770281746252,
+      0.053075243373462255,
+      0.11047497736525581
+    ],
+    "net_debt_to_ebitda": 1.4351669191439478
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 8.0,
+      "leverage": 10.0,
+      "cyclicality": 8.72,
+      "competition_intensity": 12.6
+    },
+    "score": 43.32
+  },
+  "lynch": {
+    "auto_classified": "stalwart",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.062996,
+    "r": 0.110496,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.09165524739827793,
+    "realistic_growth": 0.12,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.14470244588196746,
+        "5y": 0.1280129406785233,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.1384438814306759,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.1384438814306759,
+      "structural_discount_pct": 0.09165524739827793,
+      "discounted_growth": 0.12575477322736944,
+      "lynch_type": "stalwart",
+      "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.12
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": -0.08961360015080905,
+      "two_stage": -0.11672077178955079,
+      "errors": {},
+      "divergence": 0.02710717163874174,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR·ACGL 선례와 동일하게 two_stage를 채택한다 - 18개년(2008~2025) 매출이 M&A 단계상승이나 극단적 사이클 없이 꾸준히 성장해왔고($1.59B->$5.34B), 최근 5개년(2020->2025) 성장률이 직전 구간보다 오히려 가속(보험료 인상 사이클 반영)돼 있어 '현재 고성장 -> 장기 수렴'을 모델링하는 two_stage가 이 궤적에 이론적으로 부합한다고 판단. 언더라이팅 이익(세전이익) 자체는 사이클로 진동하지만 매출(순보험료)은 안정적 성장 궤적을 보인다는 점에서 CROX(3y CAGR이 이미 한자릿수로 정체돼 single_stage 채택)와는 반대 상황.",
+    "value": -0.11672077178955079
+  },
+  "expectation_gap": 0.23672077178955078,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12,
+      "g_bull": 0.12,
+      "g_bear": 0.06,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": 0.841982539071159,
+      "base": 0.841982539071159,
+      "bear": 0.5552339379345079
+    },
+    "probabilities": {
+      "bull": 0.32004,
+      "base": 0.5,
+      "bear": 0.17996
+    },
+    "probability_rationale": "DRS=43.3 (중립점 50 대비 편차 -0.13) 기준: p_bull=32.0%, p_base=50.0%, p_bear=18.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.7903792608106073
+  },
+  "rar": 1.8245135291103585,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.110496,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": -0.11672077178955079,
+    "implied_growth_without_drs": -0.13336772918701173,
+    "gap_with_drs": 0.23672077178955078,
+    "gap_without_drs": 0.2533677291870117,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.110496,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": -0.11672077178955079,
+      "implied_growth_without_drs": -0.13336772918701173,
+      "gap_with_drs": 0.23672077178955078,
+      "gap_without_drs": 0.2533677291870117,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": {
+    "roe_years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "avg_roe": 0.10871376314780061,
+    "dividend_years_used": [
+      2023,
+      2024,
+      2025
+    ],
+    "payout_ratio": 0.2422802049946999,
+    "retention_ratio": 0.7577197950053001,
+    "sustainable_growth": 0.08237457032660622,
+    "price_to_book": 1.505496531283813
+  },
+  "sbc_cross_check": {
+    "sbc0": 23104000.0,
+    "sbc_to_fcf_pct": 0.019345563306396578,
+    "fcf0_sbc_adjusted": 1171175000.0,
+    "implied_growth_sbc_adjusted": -0.11367969512939453,
+    "gap_sbc_adjusted": 0.23367969512939452,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}
