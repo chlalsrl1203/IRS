@@ -6772,3 +6772,76 @@ SBC/FCF **62.2%**(TTD·WDAY급) - SBC를 실제 비용으로 차감하면 Gap
 baseline 37종목으로 재동결(fingerprint `af6fda7d…`→`da16197b…`). 테스트
 1,080개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## CDE 제외 — FRAMEWORK_MISMATCH(M&A 단계상승 + 귀금속 가격 사이클
+이중고, EQT와 동일 유형) (2026-09-02)
+
+연구 우선순위 큐 다음 순위 CDE(Coeur Mining, 은/금 광산업체, tier S, 스크리너
+Gap 추정 +20.13%p)를 조사했다. SEC XBRL 매출 시계열에서 **2024→2025
++96.4%YoY**($1,054M→$2,070M)라는 극단적 단계상승을 확인 - WebSearch로
+확인한 결과 2025-02-14 종결된 SilverCrest Metals 인수($1.58B, 전량주식
+대가, 2억3,933만주 신주발행, 고품위 저비용 Las Chispas 은·금 광산 편입)가
+원인이었다. 회사 자체 가이던스도 2025년 생산량이 금 +20%YoY·은 +62%YoY
+증가할 것으로 명시 - 인수 효과가 그대로 매출 성장으로 잡힌다.
+
+EQT와 동일한 이중고 구조다 - (1) M&A 단계상승이 5y CAGR 구간
+(2020→2025) 종료연도에 걸려 있고, (2) 귀금속(은/금) 채굴업 자체가 상품
+가격 사이클에 극심하게 노출돼(CLAUDE.md에 이미 기록된 AA(Alcoa)·NRG·
+MP Materials급 "자본집약 원자재" 업종 문제) `demand_sensitivity_pct`·
+`competitor_threat_weights` 같은 경쟁구도 기반 주관 입력 자체가 이
+업종에는 부적합하다. 정량모델(FCF-DCF)로는 다룰 수 없다고 판단해
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다(LNTH/EQT와 동일한 축약
+경로).
+
+## MEDP 정식 분석 — BSX와 동일한 스크리너 거짓탈락 메커니즘의 두 번째
+실사례 (2026-09-02)
+
+큐 다음 순위 MEDP(Medpace Holdings, CRO/임상시험수탁기관, tier A, 스크리너
+Gap 추정 +19.21%p, 시총 근사 ~$7.00B)를 정식분석했다.
+
+### 발견 1 — 2018년 매출 태그 정의 전환(ASC 606) - M&A 아님
+
+2017→2018 매출 +61.5% 급증을 provider가 `[태그 혼재]` 경고로 자동 표시.
+WebSearch로 확인: Medpace가 2018-01-01자로 ASC 606을 전면 도입하며 총액
+표시(gross) 방식으로 전환됐다(회사 자체 2018 가이던스는 "2017 순용역매출
+$386.5M 대비 19.3~22.4% 성장"). CROX/BSX가 겪은 것과 같은 계열의 정의불연속
+이지만, **3y(2022→2025)/5y(2020→2025) CAGR 창이 이 경계를 건드리지 않아
+실제 채택되는 성장률은 오염되지 않는다** - 10y 창(가중치 0.2)만 영향을
+받아 `cagr_base_year_override`는 쓰지 않았다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +9.80%p, Confidence 94, 강건성점검
+flip 없음, SBC 교차검증도 flip 없음(SBC/FCF 5.1%로 매우 낮음)
+
+부채 전액 상환(FY2019 이후 $0), 순현금 -$497M, 공격적 자사주매입(발행주식
+2024→2026 30.76M→28.38M). PIT_VALID. 실시간 시총($16.55B)이 스크리너의
+`EntityPublicFloat` 스냅샷(2025-06-30, $7.00B)보다 14개월 이상 최신이라
+크게 다르다 - OKTA와 같은 계열의 "스크리너 근사치 시차" 사례이지만 원인은
+실적급등이 아니라 순수 float 스냅샷 노후화.
+
+### ⭐ 발견 2 — BSX와 완전히 동일한 스크리너 거짓탈락 메커니즘, 두 번째
+실사례
+
+정식분석(DRS 23.0, competition_intensity=4.2)과 달리 `screen()`은 MEDP를
+탈락시킨다(`estimate_drs()`의 상수 competition_intensity=12.0 가정 때문에
+DRS가 34.6까지 과대평가). BSX(RMD와 동일하게 5.4)에 이은 두 번째로,
+"median 대체 방식이 median에서 크게 벗어난 개별종목에서는 구조적으로
+오분류한다"(screener.py 문서화된 한계)는 진단이 재확인됐다. 상수 자체는
+조정하지 않는다(median 12.0 여전히 정확) - `tests/test_screener.py`의
+`KNOWN_SCREENER_FALSE_REJECTIONS`에 MEDP 추가 + BSX와 동일한 회귀 테스트
+(`test_medp_false_rejection_is_still_reproducible`) 신설.
+
+### 배선
+
+`watchlist.json`에 MEDP 추가(37→38, MCK-MNDY 사이). 다섯 번째 "알려진
+예외" 세트 확장(BSX 거짓탈락 → TCOM 통화라벨 → CROX → SIGI → OKTA →
+**MEDP**, 이번엔 처음으로 **screener 거짓탈락 계열**과 **provenance/
+sbc_harvest/monitor_state 신규 ledger 계열** 두 갈래가 동시에 갱신됨):
+`test_monitor_state.py`(n_ledgers 37→38), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 MEDP 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 MEDP 추가), `test_screener.py`
+(`KNOWN_SCREENER_FALSE_REJECTIONS`에 MEDP 추가 + 회귀 테스트 신설).
+
+baseline 38종목으로 재동결(fingerprint `da16197b…`→`52bf1b90…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

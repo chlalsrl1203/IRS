@@ -66,10 +66,16 @@ def test_required_fcf_yield_is_inverse_of_implied_growth():
 # 를 상수(12.0)로 가정하는데 BSX의 실제 연구된 값(5.4, RMD와 동일 - 경쟁자 2곳
 # 모두 위협도가 낮음)이 그보다 훨씬 낮아 DRS가 50.6까지 과대평가되기 때문이다.
 # ledger 34종목 전수 재확인 결과 상수 12.0 자체는 여전히 정확한 중앙값(median
-# 12.0)이라 상수를 조정할 문제가 아니다 - median 대체 방식의 구조적 한계가
-# 실제로 판정을 뒤집은 첫 사례라 여기 문서화된 예외로 남긴다(screen()을 고쳐서
-# 억지로 통과시키면 다른 종목의 판정이 조용히 바뀔 위험이 있다).
-KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX"}
+# 12.0)이라 상수를 조정할 문제가 아니다 - median 대체 방식의 구조적 한계이 첫
+# 실제 사례라 여기 문서화된 예외로 남긴다(screen()을 고쳐서 억지로 통과시키면
+# 다른 종목의 판정이 조용히 바뀔 위험이 있다).
+#
+# MEDP(2026-09-02): 정식분석 "저평가 가능성"(Gap +9.80%p)이나 screen()은
+# 탈락한다(estimate_drs()가 상수 competition_intensity=12.0을 가정하는데,
+# 실제 연구된 값 4.2 - CRO 업종 내 중소형 바이오텍 특화 니치, IQVIA/ICON과의
+# 직접경쟁 강도가 낮음 - 가 그보다 훨씬 낮아 DRS가 34.6까지 과대평가된다).
+# BSX와 정확히 같은 메커니즘의 두 번째 실사례.
+KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP"}
 
 
 def test_screener_reproduces_known_buy_verdicts():
@@ -102,6 +108,24 @@ def test_bsx_false_rejection_is_still_reproducible():
         assert r.drs_est == pytest.approx(50.6, abs=0.01)
         return
     pytest.fail("ledger/BSX_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
+
+
+def test_medp_false_rejection_is_still_reproducible():
+    """
+    KNOWN_SCREENER_FALSE_REJECTIONS에 MEDP를 넣어둔 근거가 아직 유효한지
+    확인한다. BSX와 동일 메커니즘(competition_intensity 상수 12.0이 실제
+    연구된 값 4.2보다 훨씬 높음) - 이 테스트가 실패하면 예외 목록에서
+    빼야 한다는 신호다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "MEDP":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert r.drs_est == pytest.approx(34.6, abs=0.01)
+        return
+    pytest.fail("ledger/MEDP_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
 
 
 def test_screener_rejects_known_overvalued():
