@@ -7281,6 +7281,45 @@ baseline 46종목으로 재동결(fingerprint `dfdb686b…`→`8258fefe…`). �
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
 
+## ROKU 정식 분석 — SBC 차감 시 판정이 뒤집히는 다섯 번째 사례
+(2026-09-03)
+
+FRAMEWORK_MISMATCH 12종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE/XYZ) 제외 뒤 큐 다음 순위 ROKU(커넥티드TV 플랫폼, tier B, 스크리너
+Gap 추정 +14.15%p)를 정식분석했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -2.60%p, Confidence 94, 강건성점검
+경고(모델괴리 9.96%p)
+
+무차입(FY2023 이후), 순현금 -$1.59B. PIT_VALID. YoY 성장률이 COVID붐
+(2018~2021 44.8~57.5%) 이후 안정화(2022~2025 11.5~18.0%)된 깨끗한
+다년 감속 패턴.
+
+### ⭐ 스크리너 근사치가 실시간 시총의 40%에 불과했다
+
+실시간 시총(~$23.95B)이 스크리너 근사(~$9.70B)의 **2.47배** -
+OKTA/MEDP/NBIX/NXT급의 극단적 float 스냅샷 노후화 사례. 실시간 시총을
+반영하니 스크리너의 +14.15%p 추정이 -2.60%p로 완전히 뒤집혔다 - FIX와
+같은 "이미 비쌈" 패턴.
+
+### ⭐ SBC 교차검증 - 다섯 번째 판정뒤집힘 사례(WDAY·OKTA·PATH·PINS에 이어)
+
+SBC/FCF **74.0%**(PATH/PINS급) - SBC를 실제 비용으로 차감하면 Gap
+-2.60%p→**-18.60%p**, 판정이 "적정가/경계선"→**"과대평가 가능성"**으로
+뒤집힌다. 기대수익률이 음수(-3.86%)라 RAR 방향성 경고도 함께 발동 -
+RAR 절대값 대신 Expectation Gap을 우선 참고할 것을 명시.
+
+### 배선
+
+`watchlist.json`에 ROKU 추가(46→47, RMD-ROP 사이). 열네 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 46→47),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 ROKU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 ROKU 추가).
+
+baseline 47종목으로 재동결(fingerprint `8258fefe…`→`d37d298f…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
 ## XYZ(Block Inc, 舊 Square) 제외 — 비트코인 패스스루 매출이 GAAP
 매출을 오도한다(신규 유형) (2026-09-03)
 
