@@ -6901,3 +6901,55 @@ screener 거짓탈락(BSX/MEDP 유형)에는 해당하지 않아 `test_screener.
 baseline 39종목으로 재동결(fingerprint `52bf1b90…`→`5c5af7e4…`). 테스트
 1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## FIX 정식 분석 — AMD/AMAT급 "이미 비쌈" 신호가 실측으로 재확인됨,
+규모조건부 상한 대상이 4번째로 확장 (2026-09-02)
+
+큐 다음 순위 FIX(Comfort Systems USA, 데이터센터 MEP 시공업체, tier B,
+스크리너 Gap 추정 +18.51%p, 시총 근사 ~$18.64B)를 정식분석했다.
+
+### ⭐ 핵심 발견 — 스크리너 근사치가 AI 데이터센터 붐발 +1,240%(3년) 랠리를
+거의 놓쳤다
+
+2022년 이후 데이터센터·첨단기술向 수요 폭발로 매출성장률이 다년 가속됐다
+(YoY 2022 +34.7%→2025 +29.5%, 단일연도 단계상승이 아닌 진짜 다년 가속 -
+M&A 왜곡과 다른 유형). Q1 2026 매출 +56%YoY·EPS 2배 이상, 백로그 $12.5B
+(2026년 예상 연매출과 맞먹음). 주가는 3년간 +1,240%, 2026 YTD만 +116% -
+실시간 시총(~$54.67B)이 스크리너 근사치의 2.9배다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +4.22%p, 외부 애널리스트의 밸류에이션
+경고("43x 2026 EPS, 업종중앙값 2배 이상, 이미 낙관 선반영")가 정량적으로
+재확인됨 - AMD(FCF수익률 0.79%)·AMAT(1.30%)에 이은 세 번째 "펀더멘털은
+훌륭한데 이미 비쌈"(4분류 2번) 사례.
+
+Lynch fast_grower 상한(25%)과 v3.67 규모조건부 상한(시총 $54.67B, base_rates
+"4500-7000" 구간 - 명목 23.00%로 추가 하향)이 **함께** 바인딩 - 원시 CAGR
+(3y 30.03%/5y 26.08%)을 그대로 신뢰하지 않는 것이 정확했음이 base_rates
+외부실증으로 뒷받침됨. 모델괴리 10.00%p(경고 임계값의 3배 이상, 강건성점검
+flip=True) - single_stage(8.78%)와 two_stage(18.78%)가 크게 갈려
+Confidence 74로 반영. SBC 교차검증은 flip 없음(SBC/FCF 2.1%, 낮음).
+
+### ⭐ 부수 — 규모조건부 상한 적용 대상이 v3.67 승인범위(PDD·PGR·SE 3종목)
+밖에서 처음 발동
+
+`size_conditioned_growth_cap()`은 opt-in이 아니라 fast_grower 유형+대형
+시총이면 상시 평가되는 메커니즘이라, v3.67 이후 신규 분석된 티커가 새로
+걸리는 것은 정상 동작이다. `tests/test_pipeline.py`의
+`test_approved_three_tickers_reproduce_and_others_unchanged`가 "PDD·PGR·SE
+정확히 3종목"만 검증하는 스냅샷 방식이라 FIX 추가로 실패했고,
+`APPROVED_SIZE_CAPPED_TICKERS`(회귀 감시, 원 3종목 반드시 유지) +
+`KNOWN_ADDITIONAL_SIZE_CAPPED_TICKERS`(신규 등록, FIX 추가)로 이원화해
+"승인범위 이탈"과 "정당한 신규 발동"을 구분하도록 고쳤다 - BSX 거짓탈락과
+동일한 "알려진 확장" 등록 패턴.
+
+### 배선
+
+`watchlist.json`에 FIX 추가(39→40, DUOL-GEN 사이). 일곱 번째 "알려진
+예외" 세트 확장 + 규모조건부 상한 등록 확장: `test_monitor_state.py`
+(n_ledgers 39→40), `test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_
+LEDGERS`에 FIX 추가), `test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_
+LEDGERS`에 FIX 추가), `test_pipeline.py`(위 이원화 + FIX 등록).
+
+baseline 40종목으로 재동결(fingerprint `5c5af7e4…`→`c3557660…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

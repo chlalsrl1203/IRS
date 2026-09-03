@@ -1710,11 +1710,23 @@ def test_realistic_growth_override_bypasses_size_cap():
     assert "size_conditioned_cap_applied" not in r["growth"]["breakdown"]
 
 
+# v3.67 승인(2026-08-23) 당시 34종목 코퍼스에서 규모캡이 걸린 3종목 -
+# 이 셋은 반드시 계속 걸려야 한다(회귀 감시). v3.67 **이후** 신규 분석된
+# 티커가 이 상시활성 메커니즘(opt-in 아님 - fast_grower + 대형 시총이면
+# 항상 평가된다)에 새로 걸리는 것은 승인범위 이탈이 아니라 정상 동작이다 -
+# FIX(2026-09-02, 시총 $54.67B·fast_grower)가 첫 사례. 새로 걸리는 티커가
+# 생기면 여기 추가하고 그 근거를 CLAUDE.md에 남길 것(BSX 거짓탈락 등과
+# 동일한 "알려진 확장" 등록 패턴).
+APPROVED_SIZE_CAPPED_TICKERS = {"PDD", "PGR", "SE"}
+KNOWN_ADDITIONAL_SIZE_CAPPED_TICKERS = {"FIX"}  # 2026-09-02, v3.67 이후 신규분석
+
+
 def test_approved_three_tickers_reproduce_and_others_unchanged():
     """
-    2026-08-23 승인 범위 그대로인지 고정한다 - PDD·PGR·SE 3종목만 규모캡이
-    걸리고 나머지 31종목은 안 걸려야 한다. 이 집합이 커지면 승인 범위를
-    벗어난 것이다.
+    2026-08-23 승인 범위(PDD·PGR·SE)가 계속 유효한지, 그리고 그 외에 규모캡이
+    걸리는 티커는 전부 `KNOWN_ADDITIONAL_SIZE_CAPPED_TICKERS`에 명시적으로
+    등록된 것뿐인지 고정한다. 등록되지 않은 새 티커가 걸리면(=이 메커니즘이
+    의도치 않게 더 넓게 발동하면) 이 테스트가 실패해 알려준다.
     """
     import glob
     import json
@@ -1728,4 +1740,8 @@ def test_approved_three_tickers_reproduce_and_others_unchanged():
         r = run_analysis(inputs_from_ledger(d))
         if "size_conditioned_cap_applied" in r["growth"]["breakdown"]:
             applied.add(d["meta"]["ticker"])
-    assert applied == {"PDD", "PGR", "SE"}, f"승인 범위를 벗어남: {applied}"
+    allowed = APPROVED_SIZE_CAPPED_TICKERS | KNOWN_ADDITIONAL_SIZE_CAPPED_TICKERS
+    assert APPROVED_SIZE_CAPPED_TICKERS <= applied, (
+        f"원 승인 3종목 중 일부가 더 이상 안 걸림: {APPROVED_SIZE_CAPPED_TICKERS - applied}"
+    )
+    assert applied <= allowed, f"등록되지 않은 신규 발동: {applied - allowed}"

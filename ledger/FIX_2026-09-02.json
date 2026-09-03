@@ -1,0 +1,542 @@
+{
+  "meta": {
+    "ticker": "FIX",
+    "company_name": "Comfort Systems USA, Inc.",
+    "analyzed_at": "2026-09-02T09:16:56.167108+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001035983, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-01 종가 $1,554.37)",
+      "WebSearch: FIX Q1 2026 실적발표·데이터센터 수요 서사·밸류에이션 경고(Motley Fool/Seeking Alpha/TIKR/Yahoo Finance, 2026-09-02 재인용)"
+    ],
+    "falsification_conditions": "다음 분기(Q3 2026) 동일점포 매출성장률이 가이던스 하단(20%대 중반)을 밑돌거나, 백로그 증가세가 정체·역전되거나, 하이퍼스케일러(Microsoft/Google/Amazon/Meta 등) 데이터센터 capex 가이던스가 하향되면 이 판정을 재검토할 것 - 밸류에이션이 이미 다년 낙관을 선반영했다는 외부 지적(43x 2026 EPS, 업종중앙값 2배 이상)이 실현될 신호다.",
+    "price_at_analysis": 1554.37,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-02",
+      "filing_dates_by_year": {
+        "2009": "2012-02-29",
+        "2010": "2012-02-29",
+        "2011": "2012-02-29",
+        "2012": "2013-02-28",
+        "2013": "2014-02-28",
+        "2014": "2015-02-26",
+        "2015": "2016-02-23",
+        "2016": "2017-02-23",
+        "2017": "2018-02-22",
+        "2018": "2019-02-21",
+        "2019": "2020-02-26",
+        "2020": "2021-02-25",
+        "2021": "2022-02-23",
+        "2022": "2023-02-22",
+        "2023": "2024-02-22",
+        "2024": "2025-02-20",
+        "2025": "2026-02-19"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 3,
+      "n_missing": 14,
+      "missing_fields": [
+        "revenue_by_year[2009]",
+        "revenue_by_year[2010]",
+        "revenue_by_year[2011]",
+        "revenue_by_year[2012]",
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]",
+        "revenue_by_year[2017]",
+        "revenue_by_year[2021]",
+        "revenue_by_year[2022]",
+        "revenue_by_year[2023]",
+        "revenue_by_year[2024]",
+        "revenue_by_year[2025]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2182879000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2615277000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-26",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 2856659000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[규모 조건부 상한 적용] Realistic Growth를 25.00% -> 23.00%로 낮췄다. 매출규모 4500-7000 구간에서 실질 20% 이상을 10년간 유지한 기업이 1.5%(컷 1.0% 이상)라 명목 23.00%를 상한으로 둔다. 출처: Credit Suisse HOLT 1950-2015(소멸기업 포함). 이 상한은 린치 유형 캡을 대체하지 않고 함께 적용된 것이며, 컷(1.0%)은 검증된 값이 아니라 2026-08-23 사용자 승인으로 채택된 서술적 기준이다.",
+    "[모델 괴리 경고] single_stage(8.78%)와 two_stage(18.78%)가 10.00%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "FIX",
+    "company_name": "Comfort Systems USA, Inc.",
+    "revenue_by_year": {
+      "2009": 1128907000.0,
+      "2010": 1108282000.0,
+      "2011": 1240020000.0,
+      "2012": 1331185000.0,
+      "2013": 1357272000.0,
+      "2014": 1410795000.0,
+      "2015": 1580519000.0,
+      "2016": 1634340000.0,
+      "2017": 1787922000.0,
+      "2018": 2182879000.0,
+      "2019": 2615277000.0,
+      "2020": 2856659000.0,
+      "2021": 3073636000.0,
+      "2022": 4140364000.0,
+      "2023": 5206760000.0,
+      "2024": 7027476000.0,
+      "2025": 9101641000.0
+    },
+    "operating_income_by_year": {
+      "2009": 56633000.0,
+      "2010": 20042000.0,
+      "2011": -49368000.0,
+      "2012": 22303000.0,
+      "2013": 46258000.0,
+      "2014": 42222000.0,
+      "2015": 90044000.0,
+      "2016": 101569000.0,
+      "2017": 99260000.0,
+      "2018": 150238000.0,
+      "2019": 163639000.0,
+      "2020": 190651000.0,
+      "2021": 188438000.0,
+      "2022": 253849000.0,
+      "2023": 418388000.0,
+      "2024": 749369000.0,
+      "2025": 1314589000.0
+    },
+    "operating_cashflow_by_year": {
+      "2009": 54251000.0,
+      "2010": 32149000.0,
+      "2011": 29680000.0,
+      "2012": 30510000.0,
+      "2013": 38423000.0,
+      "2014": 42552000.0,
+      "2015": 97867000.0,
+      "2016": 91188000.0,
+      "2017": 114090000.0,
+      "2018": 147190000.0,
+      "2019": 142028000.0,
+      "2020": 286510000.0,
+      "2021": 180151000.0,
+      "2022": 301531000.0,
+      "2023": 639568000.0,
+      "2024": 849057000.0,
+      "2025": 1186356000.0
+    },
+    "capex_by_year": {
+      "2009": 9457000.0,
+      "2010": 7089000.0,
+      "2011": 8666000.0,
+      "2012": 11782000.0,
+      "2013": 17403000.0,
+      "2014": 19183000.0,
+      "2015": 20808000.0,
+      "2016": 23217000.0,
+      "2017": 35467000.0,
+      "2018": 27268000.0,
+      "2019": 31750000.0,
+      "2020": 24131000.0,
+      "2021": 22330000.0,
+      "2022": 48359000.0,
+      "2023": 94838000.0,
+      "2024": 111071000.0,
+      "2025": 154903000.0
+    },
+    "market_cap": 54674913455.78999,
+    "net_debt": -836672000.0,
+    "ebitda": 1456548000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.25,
+      0.1
+    ],
+    "market_share_trend_pp_per_year": 0.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.45,
+    "subjective_input_basis": "competitor_threat_weights=[0.25(EMCOR Group), 0.10(MYR Group/Quanta Services)] - EMCOR이 더 크고 다각화된 MEP/시설관리 업체로 최대 위협, MYR/Quanta는 전력인프라 인접세그먼트라 낮게 반영. market_share_trend_pp_per_year=+0.5 - 데이터센터 붐은 업종 전반의 공유된 순풍(FIX 고유 해자 아님)이나 백로그 $12.5B(2026년 예상 연매출과 맞먹음)로 peer 대비 다소 우위를 보여 완만한 양(+)값만 반영. demand_sensitivity_pct=0.45 - CLAUDE.md 업종앵커표 '자본재/데이터센터 인프라(설비투자 사이클)' 버킷(VRT, 앵커 0.45)과 동일 테마·동일 앵커 적용 - 하이퍼스케일러 capex 사이클에 직접 노출돼 경기민감도가 높음(2026-09-02 WebSearch, '데이터센터 지출이 2020년대 이후 이동하면 성장 둔화 가능'이라는 외부 경고와 일치).",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 30.03%/5y 26.08%/10y 19.13%)이 default_terminal_growth(2.0~4.5%)보다 극도로 높고, 외부 애널리스트도 '데이터센터 지출 사이클 이동 시 성장 둔화 가능'을 명시적으로 경고해 다년 수렴 경로(two_stage)가 필요하다고 판단. Lynch fast_grower 상한(25%) 또는 v3.67 규모조건부 상한(시총 $54.67B, base_rates 최상위 구간)이 바인딩될 가능성이 높아 원시 CAGR을 그대로 신뢰하지 않는다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001035983, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-01 종가 $1,554.37)",
+      "WebSearch: FIX Q1 2026 실적발표·데이터센터 수요 서사·밸류에이션 경고(Motley Fool/Seeking Alpha/TIKR/Yahoo Finance, 2026-09-02 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2009": 34182000.0,
+      "2010": 14740000.0,
+      "2011": -36492000.0,
+      "2012": 11849000.0,
+      "2013": 27269000.0,
+      "2014": 23063000.0,
+      "2015": 49364000.0,
+      "2016": 64896000.0,
+      "2017": 55272000.0,
+      "2018": 112903000.0,
+      "2019": 114324000.0,
+      "2020": 150139000.0,
+      "2021": 143348000.0,
+      "2022": 245947000.0,
+      "2023": 323398000.0,
+      "2024": 522433000.0,
+      "2025": 1022558000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2009": 3454000.0,
+      "2010": 3687000.0,
+      "2011": 3604000.0,
+      "2012": 2797000.0,
+      "2013": 3974000.0,
+      "2014": 4806000.0,
+      "2015": 5609000.0,
+      "2016": 5041000.0,
+      "2017": 6377000.0,
+      "2018": 7161000.0,
+      "2019": 5878000.0,
+      "2020": 6934000.0,
+      "2021": 10593000.0,
+      "2022": 10532000.0,
+      "2023": 12939000.0,
+      "2024": 16646000.0,
+      "2025": 21809000.0
+    },
+    "falsification_conditions": "다음 분기(Q3 2026) 동일점포 매출성장률이 가이던스 하단(20%대 중반)을 밑돌거나, 백로그 증가세가 정체·역전되거나, 하이퍼스케일러(Microsoft/Google/Amazon/Meta 등) 데이터센터 capex 가이던스가 하향되면 이 판정을 재검토할 것 - 밸류에이션이 이미 다년 낙관을 선반영했다는 외부 지적(43x 2026 EPS, 업종중앙값 2배 이상)이 실현될 신호다.",
+    "price_at_analysis": 1554.37,
+    "currency": "USD",
+    "usd_fx_rate": 1.0,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 3,
+      "n_missing": 14,
+      "missing_fields": [
+        "revenue_by_year[2009]",
+        "revenue_by_year[2010]",
+        "revenue_by_year[2011]",
+        "revenue_by_year[2012]",
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]",
+        "revenue_by_year[2017]",
+        "revenue_by_year[2021]",
+        "revenue_by_year[2022]",
+        "revenue_by_year[2023]",
+        "revenue_by_year[2024]",
+        "revenue_by_year[2025]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2182879000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2615277000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-26",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 2856659000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-02",
+    "filing_dates_by_year": {
+      "2009": "2012-02-29",
+      "2010": "2012-02-29",
+      "2011": "2012-02-29",
+      "2012": "2013-02-28",
+      "2013": "2014-02-28",
+      "2014": "2015-02-26",
+      "2015": "2016-02-23",
+      "2016": "2017-02-23",
+      "2017": "2018-02-22",
+      "2018": "2019-02-21",
+      "2019": "2020-02-26",
+      "2020": "2021-02-25",
+      "2021": "2022-02-23",
+      "2022": "2023-02-22",
+      "2023": "2024-02-22",
+      "2024": "2025-02-20",
+      "2025": "2026-02-19"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.30025058911956903,
+    "revenue_cagr_5y": 0.2608175923604037,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.1913297798451692,
+    "fcf_cagr_5y": 0.3149343608446671,
+    "fcf0": 1031453000.0,
+    "fcf_by_year": {
+      "2009": 44794000.0,
+      "2010": 25060000.0,
+      "2011": 21014000.0,
+      "2012": 18728000.0,
+      "2013": 21020000.0,
+      "2014": 23369000.0,
+      "2015": 77059000.0,
+      "2016": 67971000.0,
+      "2017": 78623000.0,
+      "2018": 119922000.0,
+      "2019": 110278000.0,
+      "2020": 262379000.0,
+      "2021": 157821000.0,
+      "2022": 253172000.0,
+      "2023": 544730000.0,
+      "2024": 737986000.0,
+      "2025": 1031453000.0
+    },
+    "worst_yoy_revenue_growth": -0.018269884055993946,
+    "worst_yoy_year": 2010,
+    "operating_margins": [
+      0.061307845170996175,
+      0.061310792964096875,
+      0.08035476956879134,
+      0.10663415997436348,
+      0.14443428388353266
+    ],
+    "net_debt_to_ebitda": -0.5744211656601773
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 2.0,
+      "cyclicality": 13.8,
+      "competition_intensity": 4.2
+    },
+    "score": 36.0
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.0608,
+    "r": 0.10830000000000001,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.05,
+    "realistic_growth": 0.22999999999999976,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.30025058911956903,
+        "5y": 0.2608175923604037,
+        "10y": 0.1913297798451692
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.2666365282369395,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.2666365282369395,
+      "structural_discount_pct": 0.05,
+      "discounted_growth": 0.2533047018250925,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25,
+      "size_conditioned_cap_applied": {
+        "cap_nominal": 0.22999999999999976,
+        "cap_real_pct": 20.0,
+        "size_class": "4500-7000",
+        "sales_2015_usd_mn": 6742.0,
+        "min_base_rate_pct": 1.0,
+        "base_rate_at_cap_pct": 1.5,
+        "horizon_years": 10,
+        "inflation_assumed": 0.025,
+        "note": "매출규모 4500-7000 구간에서 실질 20% 이상을 10년간 유지한 기업이 1.5%(컷 1.0% 이상)라 명목 23.00%를 상한으로 둔다"
+      },
+      "realistic_growth_before_size_cap": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.08777883818975626,
+      "two_stage": 0.1877769470214844,
+      "errors": {},
+      "divergence": 0.09999810883172813,
+      "divergence_warning": "[모델 괴리 경고] single_stage(8.78%)와 two_stage(18.78%)가 10.00%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 30.03%/5y 26.08%/10y 19.13%)이 default_terminal_growth(2.0~4.5%)보다 극도로 높고, 외부 애널리스트도 '데이터센터 지출 사이클 이동 시 성장 둔화 가능'을 명시적으로 경고해 다년 수렴 경로(two_stage)가 필요하다고 판단. Lynch fast_grower 상한(25%) 또는 v3.67 규모조건부 상한(시총 $54.67B, base_rates 최상위 구간)이 바인딩될 가능성이 높아 원시 CAGR을 그대로 신뢰하지 않는다.",
+    "value": 0.1877769470214844
+  },
+  "expectation_gap": 0.04222305297851536,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.22999999999999976,
+      "g_bull": 0.25,
+      "g_bear": 0.11499999999999988,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.19579557583406082,
+      "base": 0.12927619983952487,
+      "bear": -0.18937967630679042
+    },
+    "probabilities": {
+      "bull": 0.34199999999999997,
+      "base": 0.5,
+      "bear": 0.158
+    },
+    "probability_rationale": "DRS=36.0 (중립점 50 대비 편차 -0.28) 기준: p_bull=34.2%, p_base=50.0%, p_bear=15.8%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.10167819799853835
+  },
+  "rar": 0.28243943888482875,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10830000000000001,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.1877769470214844,
+    "implied_growth_without_drs": 0.16405353546142576,
+    "gap_with_drs": 0.04222305297851536,
+    "gap_without_drs": 0.065946464538574,
+    "judgment_with_drs": "적정가/경계선",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": true
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10830000000000001,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.1877769470214844,
+      "implied_growth_without_drs": 0.16405353546142576,
+      "gap_with_drs": 0.04222305297851536,
+      "gap_without_drs": 0.065946464538574,
+      "judgment_with_drs": "적정가/경계선",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": true
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 0,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 74,
+    "final": 74
+  },
+  "judgment": "적정가/경계선",
+  "judgment_grade": "C",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 21809000.0,
+    "sbc_to_fcf_pct": 0.021143959055817375,
+    "fcf0_sbc_adjusted": 1009644000.0,
+    "implied_growth_sbc_adjusted": 0.1902442932128906,
+    "gap_sbc_adjusted": 0.03975570678710916,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}
