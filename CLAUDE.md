@@ -7320,6 +7320,15 @@ baseline 47종목으로 재동결(fingerprint `8258fefe…`→`d37d298f…`). �
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
 
+## NEM(Newmont) 제외 — 금광업 원자재 가격사이클 (2026-09-03)
+
+큐 다음 순위 NEM(Newmont Corporation, 세계 최대 금광업체, tier S,
+스크리너 Gap 추정 +13.45%p)을 확인했다. CDE(은/금 광산)와 동일한
+자본집약 원자재(귀금속) 업종 - 이미 9건 확정된 패턴(AA/NRG/MP/EQT/
+CDE/COP/DINO/EOG/EXE)에 해당해 추가 재무데이터 확인 없이
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다.
+
 ## XYZ(Block Inc, 舊 Square) 제외 — 비트코인 패스스루 매출이 GAAP
 매출을 오도한다(신규 유형) (2026-09-03)
 
