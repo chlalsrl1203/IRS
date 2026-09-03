@@ -1,0 +1,25 @@
+{
+  "ticker": "VRSN",
+  "analyzed_at": "2026-07-25",
+  "market_cap_then": 23803779000,
+  "market_cap_now": 26068648000.0,
+  "market_cap_change_pct": 0.09514745536832625,
+  "gap_then": -0.009719340999338522,
+  "gap_now": -0.01367565413061405,
+  "gap_decay_pp": -0.003956313131275528,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.046517359421241536,
+  "realistic_growth_now": 0.046517359421241536,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-31",
+    "gap_prior": -0.014184862627953605,
+    "gap_move_pp": 0.0005092084973395555,
+    "judgment_changed": false
+  },
+  "date": "2026-09-03"
+}

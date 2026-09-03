@@ -1,0 +1,25 @@
+{
+  "ticker": "TTD",
+  "analyzed_at": "2026-08-03",
+  "market_cap_then": 8480000000.0,
+  "market_cap_now": 6474949000.0,
+  "market_cap_change_pct": -0.23644469339622642,
+  "gap_then": 0.1700962080005105,
+  "gap_now": 0.20490341320070582,
+  "gap_decay_pp": 0.03480720520019531,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.16703987255129174,
+  "realistic_growth_now": 0.16703987255129174,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-08-31",
+    "gap_prior": 0.20693817272219017,
+    "gap_move_pp": -0.002034759521484353,
+    "judgment_changed": false
+  },
+  "date": "2026-09-03"
+}
