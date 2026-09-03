@@ -7338,6 +7338,23 @@ baseline 47종목으로 재동결(fingerprint `8258fefe…`→`d37d298f…`). �
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
 
+## AMP(Ameriprise Financial) 제외 — 다각화 금융지주 구조적 부적합
+(COF와 동일 계열, 순수보험사 아님) (2026-09-03)
+
+큐 다음 순위 AMP(Ameriprise Financial, 자산관리·보험·연금 다각화
+금융지주, tier S, 스크리너 Gap 추정 +13.15%p)를 조사했다. SEC XBRL
+실측에서 `operating_income`이 통째로 미확보(COF와 동일한 결측 패턴)임을
+확인했다 - Ameriprise는 자산관리 수수료 사업과 연금·보장성보험 사업이
+혼재된 다각화 금융지주라 표준 손익구조(영업이익 라인)가 없다.
+
+PGR/ACGL/BRO/SIGI가 성공적으로 쓴 `is_insurer=True` 경로는 순수
+보험사(손해보험 위주)를 전제로 하는데, AMP는 자산관리 수수료 수익이
+상당 비중을 차지하는 하이브리드 구조라 그 경로를 그대로 적용하기엔
+근거가 부족하다고 판단했다. COF와 동일한 근본 이유(예금취급기관·
+다각화 금융지주 전반이 이 엔진의 "FCF 재투자를 통한 성장" 가정과
+안 맞음)로 FRAMEWORK_MISMATCH로 분류 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
 ## NEM(Newmont) 제외 — 금광업 원자재 가격사이클 (2026-09-03)
 
 큐 다음 순위 NEM(Newmont Corporation, 세계 최대 금광업체, tier S,
