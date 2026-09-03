@@ -7764,3 +7764,18 @@ Confidence 94, PIT_VALID(위반 0건), 강건성점검 flip 없음.
 baseline 54종목으로 재동결(fingerprint `f8efb3b6…`→`1ac66dbe…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## CF(CF Industries) 제외 — FRAMEWORK_MISMATCH(원자재 가격사이클,
+질소비료 업종) (2026-09-03)
+
+큐 다음 순위 CF(CF Industries Holdings, 세계 최대 질소비료 생산업체,
+tier S, 스크리너 Gap 추정 +11.35%p)를 조사했다. SEC XBRL 매출 실측
+(2007~2025)에서 극심한 원자재 가격사이클 변동을 확인: 2020년 $4.12B
+→2021년 $6.54B(+59%)→2022년 $11.19B(+71%, 러시아-우크라이나 전쟁발
+천연가스 가격급등)→2023년 $6.63B(-41%)→2024년 $5.94B(-10%)→2025년
+$7.08B(+19%). 질소비료(암모니아·요소·UAN·AN) 가격이 글로벌 천연가스
+가격(핵심 원가요소)과 농산물 사이클에 직결돼 있어 AA/NRG/MP/EQT/CDE/
+COP/DINO/EOG/EXE/NEM/OVV와 동일한 "자본집약 원자재 업종" 유형으로
+확정, 재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 -
+ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지
+않았다.
