@@ -7504,3 +7504,51 @@ DRS 21.8, Realistic Growth 15.44%(3y/5y CAGR 15.70%/19.42%, M&A 왜곡
 baseline 49종목으로 재동결(fingerprint `37d254a3…`→`a2166dac…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## TW(Tradeweb Markets) 정식 분석 — 4중 주식클래스, RYAN과 정반대의
+경제적 지분 함정 (2026-09-03)
+
+큐 다음 순위 TW(Tradeweb Markets Inc., 전자 채권거래 플랫폼, tier A,
+스크리너 Gap 추정 +12.69%p, 시총 근사 ~$16.9B)를 정식분석했다.
+
+### ⭐ 핵심 발견 — Class A/B/C/D 4중 구조, RYAN 선례의 정반대 함정
+
+TW는 Class A/B/C/D 4중 주식클래스 구조(RYAN의 Up-C와 비슷해 보였으나
+정반대)다. 2026-09-03 WebSearch로 회사 증권신고서(S-1) 원문을 확인한
+결과 **"Class C·D 보통주 보유자는 Class A가 갖는 배당·청산분배 등
+경제적 권리를 전혀 갖지 않는다"**(회사 공시 원문) - Class C/D는 순수
+의결권 전용 주식(각 1표/10표)으로 LSEG(런던증권거래소그룹)의 지배력
+확보 수단일 뿐 경제적 지분은 0이다. **경제적 지분은 Class A
+(114,140,240주)+Class B(96,933,192주, LLC지분과 1:1 교환권+배당권)
+뿐**이라 Class C(18,000,000)+D(5,056,868)를 명시적으로 제외했다 - RYAN
+이 "전 클래스 합산 필요"였다면 TW는 "일부 클래스만 합산 필요"인
+정반대 사례로, 다중클래스 구조를 만날 때마다 경제적 권리 구조를
+매번 개별 확인해야 함을 재확인했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +11.16%p
+
+DRS 22.8, Realistic Growth 17.52%(3y/5y CAGR 19.94%/18.15%, 2018년
+IPO 이전 자료 없어 10y 미산출 - 5y로 자동 대체), Implied Growth 6.37%
+(two_stage, 모델괴리 1.35%p로 경고 임계값 미만), RAR +2.0741,
+Confidence 94, 강건성점검·SBC교차검증(SBC/FCF 9.2%, 낮음) 모두 flip
+없음, PIT_VALID(위반 0건). 대차대조표는 무차입 순현금(현금 $2,084.7M).
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+**2026-07 ICE(Intercontinental Exchange)가 MarketAxess를 $60억에
+인수** - Tradeweb·Bloomberg와 경쟁하던 MarketAxess가 ICE의 자본력을
+등에 업은 통합경쟁자로 재편되는 구조적 변화. 다만 **2026-06 TW가 美
+신용채권 전자거래 시장점유율에서 20년간 1위였던 MarketAxess를 사상
+최초로 추월** - 실질적 점유율 확대가 실측 확인됨(Rates/IRS 부문은
+이미 선두, Credit 부문은 개선 중).
+
+### 배선
+
+`watchlist.json`에 TW 추가(49→50, TTD-TYL 사이). 열 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 49→50), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TW 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TW 추가).
+
+baseline 50종목으로 재동결(fingerprint `a2166dac…`→`11a91387…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

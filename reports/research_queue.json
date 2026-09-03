@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 240,
-    "ANALYZED": 17,
+    "QUEUED": 239,
+    "ANALYZED": 18,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -583,25 +583,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.13151660698484371,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "TW": {
-      "ticker": "TW",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.12689392058499813,
-      "tier": "A",
-      "market_cap": 16900000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.12689392058499813,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -1875,6 +1856,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.12759331520645664,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "TW": {
+      "ticker": "TW",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.12689392058499813,
+      "tier": "A",
+      "market_cap": 16900000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.12689392058499813,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 4,
