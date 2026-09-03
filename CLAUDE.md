@@ -7669,3 +7669,54 @@ $350억+로 성장 전망. 다만 "AI 에이전트가 계약 워크플로 전체
 baseline 52종목으로 재동결(fingerprint `0d97b30c…`→`8d51a0ad…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## CINF(Cincinnati Financial) 정식 분석 — 엔진 자동경고가 외부 애널리스트
+평가와 반대방향으로 신중함을 요구한 사례 (2026-09-03)
+
+큐 다음 순위 CINF(Cincinnati Financial Corporation, 손해보험사, tier S,
+스크리너 Gap 추정 +12.04%p, 시총 근사 ~$22.85B)를 정식분석했다.
+`is_insurer=True` 경로(v3.22, PGR/ACGL/BRO/SIGI/RLI 선례)를 그대로 따랐다.
+
+### ⚠️ 결과 자체는 S등급이나, 두 개의 독립 경고가 액면가 신뢰를 막는다
+
+Gap +16.78%p, "저평가 가능성"(**S등급**). DRS 67.4(cyclical 자동분류 -
+2022년 세전손실 -$693M 등 변동성 반영), Realistic Growth 15.22%,
+Implied Growth -1.56%(two_stage, 모델괴리 1.68%p로 경고 임계값 미만),
+Confidence 94, PIT_VALID(위반 0건), SBC 교차검증 flip 없음(SBC/FCF
+1.5%, 매우 낮음).
+
+**그러나 엔진의 `insurer_cross_check`가 자동으로 경고를 냈다** -
+Realistic Growth(15.22%)와 지속가능성장률(ROE×유보율=10.01%, 평균ROE
+12.92%×유보율 77.50%)이 **5.21%p** 벌어져 경고임계값(5%p)을 넘었다 -
+"FCF-DCF가 보험업의 플로트 성장을 유기적 성장으로 착각했을 가능성"
+(ACGL 선례, Gap 31.44%p가 이 방식으로 과장 확인됨). P/B=1.67배는
+ACGL(1.46배, '정상범위')에 가까워 심각한 재평가 신호는 아니나, 성장
+추정 자체의 신뢰도는 낮춰야 한다.
+
+**동시에 외부 애널리스트 평가는 정반대 방향을 가리킨다** -
+2026-09-03 WebSearch(Seeking Alpha/GuruFocus)가 "8~9% ROE 전망 대비
+1.6배 P/B는 동종업계(1.2~1.3배) 대비 고평가"라고 명시적으로 평가했다.
+**엔진의 S등급 저평가 판정과 외부 애널리스트의 고평가 평가가 정면으로
+충돌**한다 - 이 프로젝트가 반복 확립한 "병기, 자동판정 안 함" 원칙대로
+공식 판정은 그대로 두되, 이 상충을 falsification_conditions에 최우선
+재검토 사유로 명시했다.
+
+### 언더라이팅 규율 - 동종 보험사 대비 뚜렷이 열위
+
+2026 Q2 합산비율 **100.8%**(전년比 +5.9%p 악화, 재해손해 증가로
+**언더라이팅 손실 구간**) - SIGI(98%대)·RLI(85.6%)보다도 나쁘고
+Travelers(84%대)와는 격차가 크다. 신규계약보험료 전체 -11%·개인보험
+-40% 급감(경쟁심화+선별적 언더라이팅 확인). 투자포트폴리오의 약 40%가
+보통주(동종 보험사 대비 이례적으로 높은 주식비중)로 자본시장 변동성에
+특히 취약 - 2022년 세전손실이 그 결과.
+
+### 배선
+
+`watchlist.json`에 CINF 추가(52→53, CDNS-COR 사이). 열세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 52→53),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 CINF 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 CINF 추가).
+
+baseline 53종목으로 재동결(fingerprint `8d51a0ad…`→`f8efb3b6…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
