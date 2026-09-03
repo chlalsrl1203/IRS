@@ -7607,3 +7607,24 @@ Capital Group(ACGL)·Kinsale Capital Group·W.R. Berkley 등 대형
 baseline 51종목으로 재동결(fingerprint `11a91387…`→`0d97b30c…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## OVV(Ovintiv) 제외 — FRAMEWORK_MISMATCH(원자재 가격사이클 + M&A
+단계상승 이중고, EQT/CDE와 동일 유형) (2026-09-03)
+
+큐 다음 순위 OVV(Ovintiv Inc., 舊 Encana, 북미 석유·천연가스 E&P,
+tier S, 스크리너 Gap 추정 +12.35%p)를 조사했다. SEC XBRL 매출 실측
+(2017~2025)에서 극심한 원자재 가격사이클 변동을 확인: 2020년 $5.51B
+→2021년 $10.47B(+90%)→2022년 $14.26B(+36%)→2023년 $10.66B(-25%)→2024년
+$8.94B(-16%)→2025년 $8.66B(-3%). AA/NRG/MP/EQT/CDE/COP/DINO/EOG/EXE/NEM
+과 동일한 "자본집약 원자재 업종" 유형.
+
+**여기에 M&A 단계상승까지 이중으로 겹친다** - 2023-2024년 Permian
+분지 자산 $43억 인수(EnCap Investments 산하 3개사, 주식+현금 대가) +
+2024-11 Paramount Resources Montney 자산 $23.77억 인수(전액 현금).
+GEN/BRO/ROP/CROX/CDE/CHDN/WSC/EQT와 동일한 'M&A가 5y CAGR 구간에
+걸리는' 패턴이 원자재 사이클과 동시에 발생 - 5y 구간(2020→2025)이
+가격저점(2020)에서 시작해 두 차례 대규모 인수 이후(2025)로 끝나
+어느 창으로도 깨끗한 CAGR을 얻을 수 없다. 세그먼트 분리(Permian/
+Montney 신규자산 vs 기존자산) 데이터 없이는 재무데이터를 더 긁지
+않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
