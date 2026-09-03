@@ -7779,3 +7779,17 @@ COP/DINO/EOG/EXE/NEM/OVV와 동일한 "자본집약 원자재 업종" 유형으�
 확정, 재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 -
 ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지
 않았다.
+
+## HL(Hecla Mining) 제외 — FRAMEWORK_MISMATCH(귀금속 가격사이클 +
+M&A 단계상승, CDE와 동일 유형) (2026-09-03)
+
+큐 다음 순위 HL(Hecla Mining Company, 미국·캐나다 최대 은 생산업체,
+tier A, 스크리너 Gap 추정 +11.08%p)를 조사했다. SEC XBRL 매출 실측
+(2011~2025)에서 2024년 $929.9M(사상최대) → 2025년 $1,423.0M(+53%,
+은 가격 급등 + 생산량 가이던스 상단 달성)로 급증 - CDE와 동일한
+귀금속 가격사이클 노출을 확인했다. 여기에 2022년 Alexco Resource
+인수(은 매장량 약 5천만 온스 추가, 캐나다 최대 1급 은광 확보)가
+5y CAGR 구간에 겹쳐 M&A 단계상승까지 이중으로 작용 - CDE/EQT/OVV와
+동일한 "원자재 가격사이클 + M&A 단계상승 이중고" 패턴으로 확정.
+재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를
+만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
