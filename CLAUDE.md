@@ -6980,3 +6980,33 @@ WebSearch(2026-09-02)로 확인: CHDN은 2026년에도 United Tote 인수를
 자체가 불가능한 상태라 정량모델에 넣지 않고 FRAMEWORK_MISMATCH로
 분류했다 - ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도
 건드리지 않았다(LNTH/EQT/CDE와 동일한 축약 경로).
+
+## VICI·COP·DINO·EOG 제외 — 4종목 일괄 (2026-09-02)
+
+**VICI(VICI Properties) - REIT 구조적 부적합(신규 유형).** 카지노
+부동산을 트리플넷리스로 임대하는 REIT다. `OperatingIncomeLoss` 태그가
+FY2020 이후 회사 스스로 공시를 중단(REIT 특유의 손익계산서 표시방식
+변경 - PGR/ACGL/SIGI가 겪은 보험업 패턴과 유사하나 대체 프록시가
+검증된 적이 없다). 더 근본적으로 **REIT capex가 거의 0(연 $1~8M, OCF
+$2.5B 대비)** - 임차인(카지노 운영사)이 유지보수를 부담하는 트리플넷
+구조 때문이지 자본효율이 좋아서가 아니며, `FCF=OCF-capex`가 실제 배분
+가능 현금을 측정하지 못한다. REIT은 법적으로 과세소득의 90%+를
+배당해야 해 성장이 유보FCF 재투자가 아니라 **신규 자본조달(증자·기채)로
+이뤄지는 자산군**이라 이 엔진의 핵심 가정(FCF 재투자를 통한 성장) 자체가
+안 맞는다. 업계 표준(P/FFO·AFFO·배당수익률)과 이 엔진(FCF-DCF)이
+근본적으로 다른 질문에 답한다 - `is_insurer`처럼 REIT 전용 경로를
+만들려면 실증사례가 더 필요하다(Simplicity First).
+
+**COP·DINO·EOG - 자본집약 원자재(석유/가스) 이중고, AA/NRG/MP/EQT/CDE와
+동일 유형.** SEC XBRL 매출 실측으로 극심한 가격사이클을 확인:
+- COP(ConocoPhillips): 2014 $55.5B->2015 $30.9B(-44%), 2020 $18.8B->2021
+  $45.8B(+144%).
+- DINO(HF Sinclair, 정유): 2020 $11.2B->2022 $38.2B(+242%)->2025 $26.9B(-30%,
+  고점대비).
+- EOG(EOG Resources): 2008/2014/2019 고점·2009/2015/2020 저점의 전형적
+  boom/bust 패턴(예: 2014 $18.0B->2015 $8.8B, -51%).
+
+셋 다 `demand_sensitivity_pct`·`competitor_threat_weights` 같은 경쟁구도
+기반 주관 입력이 원자재 가격사이클 앞에서 무의미해지는 업종 - 정량모델에
+넣지 않고 FRAMEWORK_MISMATCH로 분류했다. 4종목 전부 ledger를 만들지
+않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
