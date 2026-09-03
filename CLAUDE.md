@@ -7160,3 +7160,36 @@ VICI(REIT)와 동일한 근본 이유 - **예금취급기관은 이 엔진이 �
 전부 "부채"로 잡으면 무의미해진다. 업계 표준(P/TBV·ROE·NIM)과 이 엔진이
 근본적으로 다른 질문에 답한다. FRAMEWORK_MISMATCH로 분류 - ledger를
 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## PCTY 정식 분석 — 깨끗한 다년 성장곡선, 강건성 최상급 (2026-09-03)
+
+FRAMEWORK_MISMATCH 9종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF)을 제외한
+뒤 큐 다음 순위 PCTY(Paylocity Holding, HCM/급여관리 SaaS, tier A, 스크리너
+Gap 추정 +16.28%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +10.78%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음(모델괴리 단 0.49%p)
+
+15개년 원자료 확보(2012~2026, 10y CAGR 산출 가능), 무차입·순현금 -$272M.
+PIT_VALID. YoY 성장률이 2013~2016년 40%대 고성장에서 2023~2026년
+29.5%->16.7%->14.8%->12.2%로 완만히 감속하는 깨끗한 다년 패턴(단일연도
+단계상승 없음 - 2024년 Airbase 인수는 매출 대비 소규모 볼트온이라 CAGR
+왜곡 미미). 이번 배치 9번째 정식분석 중 모델괴리·SBC 양쪽 모두 flip이
+전혀 없는 가장 강건한 결과.
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+Paylocity가 "ADP의 최대 도전자"로 꾸준히 점유율을 확보해온 궤적이나,
+비상장 신흥 플랫폼 Rippling이 ~78%YoY 초고성장으로 부상 중 - 회사 자체
+가이던스도 성장둔화를 시사(Q2 2026 +11%YoY -> 다음분기 +8.3%YoY).
+
+### 배선
+
+`watchlist.json`에 PCTY 추가(43→44, PATH-PDD 사이). 열한 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 43→44),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PCTY 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PCTY 추가).
+
+baseline 44종목으로 재동결(fingerprint `eca83ddf…`→`87e87c04…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
