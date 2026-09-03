@@ -13,8 +13,8 @@
     "drs_score",
     "confidence"
   ],
-  "n_tickers": 41,
-  "fingerprint": "f89135e04ff062d63cd6fa4bb29bdacbc1b6817765c46d159a8120c6cf24dae3",
+  "n_tickers": 42,
+  "fingerprint": "d65fb51db6c704efd183bfb12485dd995ec824f2da47d5f4e6d478d12820afaf",
   "rows": {
     "ACGL": {
       "engine_version": "v3.27",
@@ -245,6 +245,17 @@
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 27.839999999999996,
+      "confidence": 94
+    },
+    "NXT": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.21158458033600352,
+      "implied_growth": 0.09665756225585934,
+      "expectation_gap": 0.11492701808014419,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.200000000000003,
       "confidence": 94
     },
     "OKTA": {

@@ -7045,3 +7045,44 @@ per_year`에 이 상쇄관계(가격경쟁 vs 데이터우위)를 반영했다.
 baseline 41종목으로 재동결(fingerprint `c3557660…`→`f89135e0…`). 테스트
 1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## NXT 정식 분석 — 스크리너 거짓탈락 세 번째 실사례, 관세리스크 실측반영
+(2026-09-02/03)
+
+큐 다음 순위 NXT(Nextpower Inc., 舊 Nextracker, 태양광 트래커, tier B,
+스크리너 Gap 추정 +16.43%p)를 정식분석했다. 2023-02 IPO(Flex Ltd에서
+분사)라 공개기업 이력이 6개년뿐이고, 2026년 중 사명이 Nextracker Inc.에서
+Nextpower Inc.로 변경됐음을 SEC 등록명 확인으로 발견했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +11.49%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+부채 전액 상환(FY2025 이후 $0), 순현금 -$1.09B. PIT_VALID. YoY 성장률이
+2024년 +31.4% 정점 이후 완만히 감속(2025 +18.4%, 2026 +20.3%) - 단일연도
+단계상승 없는 진짜 다년 패턴(M&A 왜곡 아님). 관세·재생에너지 정책
+불확실성(ITC 세액공제 변경 우려)으로 주가가 고점(~$160) 대비 약 48%
+하락한 상태($82.55)에서 실시간 시총(~$12.81B)을 그대로 채택 - 관세가
+Q2 실적에서 300bp 마진 역풍으로 실제 작용한 사실이 확인돼 순수 "공포과잉"
+과는 결이 다른 사례로 판단했다.
+
+### ⭐ 스크리너 거짓탈락 세 번째 실사례
+
+BSX·MEDP와 동일 메커니즘 - `estimate_drs()`의 상수 competition_
+intensity(12.0)가 NXT·Array Technologies·Arctech 3사 과점시장에서 NXT의
+시장선도 지위를 반영한 실제 연구값보다 높아 DRS가 30.6까지 과대평가돼
+screen()이 탈락시킨다. `KNOWN_SCREENER_FALSE_REJECTIONS`에 NXT 추가 +
+회귀 테스트(`test_nxt_false_rejection_is_still_reproducible`) 신설.
+
+### 배선
+
+`watchlist.json`에 NXT 추가(41→42, NBIX-OKTA 사이). 아홉 번째 "알려진
+예외" 세트 확장(이번엔 provenance/sbc_harvest/monitor_state 신규 ledger
+계열 + screener 거짓탈락 계열 둘 다 갱신): `test_monitor_state.py`
+(n_ledgers 41→42), `test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_
+LEDGERS`에 NXT 추가), `test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_
+LEDGERS`에 NXT 추가), `test_screener.py`(`KNOWN_SCREENER_FALSE_
+REJECTIONS`에 NXT 추가 + 회귀 테스트 신설).
+
+baseline 42종목으로 재동결(fingerprint `f89135e0…`→`d65fb51d…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

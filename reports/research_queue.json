@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 248,
-    "ANALYZED": 9,
+    "QUEUED": 247,
+    "ANALYZED": 10,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -169,25 +169,6 @@
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
-      "ticker": "NXT",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.16428217049736957,
-      "tier": "B",
-      "market_cap": 10800000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.16428217049736957,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
       "ticker": "PATH",
       "first_seen": "2026-08-30",
       "times_seen": 1,
@@ -296,6 +277,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.14744879217169815,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "PINS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.14456494309593018,
+      "tier": "A",
+      "market_cap": 18700000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.14456494309593018,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -450,25 +450,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.16571444005529232,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "NXT": {
-      "ticker": "NXT",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.16428217049736957,
-      "tier": "B",
-      "market_cap": 10800000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.16428217049736957,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -1856,6 +1837,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.1715948221696296,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "NXT": {
+      "ticker": "NXT",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.16428217049736957,
+      "tier": "B",
+      "market_cap": 10800000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.16428217049736957,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 4,

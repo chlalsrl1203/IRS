@@ -75,7 +75,12 @@ def test_required_fcf_yield_is_inverse_of_implied_growth():
 # 실제 연구된 값 4.2 - CRO 업종 내 중소형 바이오텍 특화 니치, IQVIA/ICON과의
 # 직접경쟁 강도가 낮음 - 가 그보다 훨씬 낮아 DRS가 34.6까지 과대평가된다).
 # BSX와 정확히 같은 메커니즘의 두 번째 실사례.
-KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP"}
+#
+# NXT(2026-09-02): 정식분석 "저평가 가능성"(Gap +11.49%p)이나 screen()은
+# 탈락한다(competition_intensity 상수 12.0 vs 실제 연구된 값 - 태양광
+# 트래커 3사 과점 시장에서 NXT가 시장선도라 위협도를 낮게 평가 - 가 그보다
+# 낮아 DRS가 30.6까지 과대평가된다). 세 번째 실사례.
+KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP", "NXT"}
 
 
 def test_screener_reproduces_known_buy_verdicts():
@@ -126,6 +131,23 @@ def test_medp_false_rejection_is_still_reproducible():
         assert r.drs_est == pytest.approx(34.6, abs=0.01)
         return
     pytest.fail("ledger/MEDP_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
+
+
+def test_nxt_false_rejection_is_still_reproducible():
+    """
+    KNOWN_SCREENER_FALSE_REJECTIONS에 NXT를 넣어둔 근거가 아직 유효한지
+    확인한다. BSX/MEDP와 동일 메커니즘 - 이 테스트가 실패하면 예외
+    목록에서 빼야 한다는 신호다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "NXT":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert r.drs_est == pytest.approx(30.6, abs=0.01)
+        return
+    pytest.fail("ledger/NXT_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
 
 
 def test_screener_rejects_known_overvalued():
