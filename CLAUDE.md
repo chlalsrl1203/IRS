@@ -7408,3 +7408,59 @@ $260.2M 중 $103.7M이 신규계약·중재 관련 "캐치업 항목"(일회성 
 다르다. 정량모델(3y/5y CAGR)로는 신뢰할 수 있는 성장률을 추출할 수
 없다고 판단해 FRAMEWORK_MISMATCH로 분류 - ledger를 만들지 않았고
 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## HLNE(Hamilton Lane) 정식 분석 — OperatingExpenses 태그로 영업이익 직접
+파생, Up-C 완전전환 확인 (2026-09-03)
+
+큐 다음 순위 HLNE(Hamilton Lane Incorporated, 사모시장 투자자문·자산운용사,
+tier A, 스크리너 Gap 추정 +12.80%p, 시총 근사 ~$5.47B)를 정식분석했다.
+FRAMEWORK_MISMATCH 15종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE/XYZ/NEM/WSC/AMP) 제외 뒤 큐 순서상 다음 후보였다.
+
+### 데이터 함정 — operating_income 미확보를 COF/AMP와 다르게 처리했다
+
+SEC XBRL 실측에서 `OperatingIncomeLoss` 태그가 없었다 - 얼핏 COF/AMP와
+같은 결측으로 보였으나 원인이 달랐다. COF/AMP는 은행·다각화 금융지주라
+표준 손익구조(영업이익 라인) 자체가 원리적으로 없는 데 반해, HLNE는
+`OperatingExpenses` 태그가 2016~2026 전 연도 일관되게 확보돼 있어
+`revenue - OperatingExpenses`로 영업이익을 직접 파생할 수 있었다(MCK
+capex 파생(v3.60)과 동일한 "회사 자신의 태그 구조로 직접 계산" 원칙).
+파생 마진이 42.8~50.4%로 극히 안정적이라(고정비 위주 자산운용업 특성과
+부합) 파생값의 타당성을 확인했다.
+
+### Up-C 구조 확인 — RYAN과 달리 이미 완전 전환
+
+HLNE는 과거 Class A/B/C 다중클래스 Up-C 구조였으나(RYAN 선례가 제기한
+우려와 동일 유형), 2026-09-03 WebSearch로 "Class B·C 유닛의 완전 교환이
+이미 GAAP 희석주식수(Class A 기준)에 전부 반영됐다"(회사 자체 실적발표
+언급)는 사실을 확인했다 - 즉 현재는 사실상 단일 경제적 지분 구조로
+완전 전환됐다. SEC 10-Q 표지(2026-07-31 기준) Class A 43,349,167주가
+곧 전체 경제적 지분이라 RYAN처럼 별도 합산이 불필요함을 확인했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +13.31%p
+
+DRS 27.2(경쟁강도 낮음), Realistic Growth 12.72%(3y/5y CAGR 11.07%/
+17.32%, M&A 단계상승 없는 유기적 성장), Implied Growth -0.59%(two_stage,
+모델괴리 1.68%p로 경고 임계값 미만), RAR +1.9523, Confidence 94, 강건성
+점검·SBC 교차검증(SBC/FCF 12.1%, 낮음) 모두 flip 없음, PIT_VALID(위반
+0건). 10년치 데이터가 없어(2017~2026 10개년) 10y CAGR을 5y CAGR로 대체
+(엔진이 자동으로 `data_limitations`에 기록).
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+HLNE는 사모시장 솔루션·자문 분야 "Top 3" 글로벌 사업자로 평가되나,
+Blackstone·KKR 등 초대형 대체투자사가 에버그린/리테일 펀드 시장에
+규모 우위로 공격적 진출 중이고, StepStone Group이 동일 비즈니스모델의
+직접 경쟁자. 업계 전반의 수수료 압박이 구조적 리스크로 지목됨. AUM
+$1.1조(2026-06-30 기준), 2022~2026 AUM CAGR 7%.
+
+### 배선
+
+`watchlist.json`에 HLNE 추가(47→48, GWRE-IDXX 사이). 여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 47→48),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 HLNE 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 HLNE 추가).
+
+baseline 48종목으로 재동결(fingerprint `d37d298f…`→`37d254a3…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
