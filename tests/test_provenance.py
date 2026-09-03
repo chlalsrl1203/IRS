@@ -216,7 +216,7 @@ def test_recorded_ledger_reports_coverage():
 # 아니라 정당한 신규 분석이라 이 규칙 대상이 아니다 - BSX 거짓탈락
 # (`KNOWN_SCREENER_FALSE_REJECTIONS`)·TCOM 통화라벨(`KNOWN_CURRENCY_LABEL_
 # DIVERGENCE`)과 동일한 "알려진 예외" 패턴으로 등록한다.
-KNOWN_PROVENANCE_RECORDED_LEDGERS = {"CROX", "SIGI", "OKTA", "MEDP", "RYAN", "FIX", "NBIX", "NXT", "PATH", "PCTY", "EXEL", "PINS", "ROKU", "HLNE", "FIVE", "TW"}  # 2026-09-01/03, 분석 시점에 확보
+KNOWN_PROVENANCE_RECORDED_LEDGERS = {"CROX", "SIGI", "OKTA", "MEDP", "RYAN", "FIX", "NBIX", "NXT", "PATH", "PCTY", "EXEL", "PINS", "ROKU", "HLNE", "FIVE", "TW", "RLI"}  # 2026-09-01/03, 분석 시점에 확보
 
 
 def test_all_existing_ledgers_are_provenance_unknown():

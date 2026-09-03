@@ -7552,3 +7552,58 @@ Confidence 94, 강건성점검·SBC교차검증(SBC/FCF 9.2%, 낮음) 모두 fli
 baseline 50종목으로 재동결(fingerprint `a2166dac…`→`11a91387…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## RLI(RLI Corp) 정식 분석 — 30년 연속 언더라이팅 흑자, WebSearch 2차
+출처 오류를 채택 전에 잡은 사례 (2026-09-03)
+
+큐 다음 순위 RLI(RLI Corp, 특수(E&S)손해보험사, tier S, 스크리너 Gap
+추정 +12.66%p, 시총 근사 ~$5.49B)를 정식분석했다. `is_insurer=True`
+경로(v3.22, PGR/ACGL/BRO/SIGI 선례)를 그대로 따랐다.
+
+### ⚠️ WebSearch 2차 출처 오류를 채택 전에 잡았다
+
+부채 조회 1차 WebSearch가 "$1,067,908천 선순위채"라는 수치를 반환했으나,
+RLI(시총 ~$5.8B, 자산 ~$6.25B)의 규모에 비해 명백히 과대해 의심 - 실제
+SEC XBRL 원자료(CIK 0000084246)를 직접 대조하니 `LongTermDebt` 태그
+최종 확정값은 $100M(2023-12-31)이었고, 2차 독립 WebSearch로 "PNC
+Bank·FHLB Chicago 차입금 합계 $100백만"이 재확인됐다 - 1차 검색결과가
+다른 보험사(추정 CIK 890926) 데이터와 혼동된 것으로 보인다. TYL SBC
+3배 오류와 동일한 "2차 출처 무검증 인용" 위험을 이번엔 채택하기 전에
+직접 대조로 잡았다.
+
+### 데이터 확인 — SIGI형 Q4단독 오염 없음, SBC는 확보 실패로 정직하게 생략
+
+세전이익(operating_income 대용) 태그의 raw entries를 전수 확인해 SIGI가
+겪은 "Q4 단독 수치 혼입"이 없음을 확인(정직한 미확보였을 뿐). SBC는
+`AllocatedShareBasedCompensationExpense` 태그가 2020년 이후 XBRL에서
+사라져(2019년 $4.5M이 마지막) 정확한 최근 수치를 확보하지 못했다 -
+추측으로 채우지 않고 `sbc_by_year`를 생략, SBC 교차검증 없이 진행했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +7.70%p
+
+DRS 48.92(cyclical 자동분류 - 2022년 세전이익 급등($720.7M)→2023년
+정상화($377.3M) 등 언더라이팅 사이클성 변동이 반영됨), Realistic
+Growth 6.73%, Implied Growth -0.98%(two_stage, 모델괴리 1.66%p로 경고
+임계값 미만), RAR +0.5004, Confidence 94, PIT_VALID(위반 0건).
+보험업 교차검증: 지속가능성장률 11.53%(평균ROE 27.85%×유보율 41.42%)가
+Realistic Growth와 4.81%p 이내로 근접(PGR형 정합적 사례), P/B 3.27배는
+참고용으로 병기.
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+RLI는 2025년 합산비율 83.6%·**30년 연속 언더라이팅 흑자**, 2026 Q2
+합산비율 85.6%로 업계 최상위권 규율(SIGI 98%대와 대비). 다만 Arch
+Capital Group(ACGL)·Kinsale Capital Group·W.R. Berkley 등 대형
+자본력을 갖춘 경쟁자들이 E&S 특수시장으로 잠식 확대 중 - E&S부동산
+보험료 -6%(경쟁압력) vs Casualty +11%(성장)로 세그먼트별 방향이 엇갈림.
+
+### 배선
+
+`watchlist.json`에 RLI 추가(50→51, RMD 앞). 열한 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 50→51), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RLI 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RLI 추가).
+
+baseline 51종목으로 재동결(fingerprint `11a91387…`→`0d97b30c…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
