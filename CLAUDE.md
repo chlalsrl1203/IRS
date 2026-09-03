@@ -6953,3 +6953,30 @@ LEDGERS`에 FIX 추가), `test_pipeline.py`(위 이원화 + FIX 등록).
 baseline 40종목으로 재동결(fingerprint `5c5af7e4…`→`c3557660…`). 테스트
 1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## CHDN 제외 — FRAMEWORK_MISMATCH(COVID 저점 기저효과 + M&A 단계상승
+이중고, BKNG와 GEN의 결합형) (2026-09-02)
+
+큐 다음 순위 CHDN(Churchill Downs, 경마·카지노, tier A, 스크리너 Gap
+추정 +18.04%p)을 조사했다. SEC XBRL 매출 시계열(2016~2025, 2011~2015는
+0으로 잡히는 데이터 결측 확인)에서 두 가지 왜곡이 동시에 발견됐다:
+
+1. **COVID 저점 기저효과(BKNG 유형)** - 5y CAGR의 기본 기준연도(years[-6]
+   =2020)가 COVID로 매출이 -20.7%YoY 급감한 저점이다. 기준연도를 코로나
+   이전 고점(2019)으로 바꾸면 5y(6년으로 재계산) CAGR이 22.65%->14.05%로
+   8.6%p 줄어든다 - BKNG(v3.21)가 확립한 정확히 같은 함정.
+2. **M&A 단계상승이 override로도 못 피해진다(GEN/ROP 유형의 강화판)** -
+   2022-11 Peninsula Pacific Entertainment 인수($2.75B, 버지니아·뉴욕·
+   아이오와 카지노 자산)가 종결되며 2023년 매출이 +36.0%YoY 급증했다.
+   문제는 이 왜곡이 **3y CAGR 창(2022->2025)의 시작연도 자체**에 걸려
+   있어(`rev_cagr_3y`는 `years[-4]`를 항상 쓰므로 `cagr_base_year_
+   override`로 못 피한다) override 하나로는 두 왜곡 중 하나만 해소된다.
+
+WebSearch(2026-09-02)로 확인: CHDN은 2026년에도 United Tote 인수를
+진행하는 등 **상시적 볼트온 M&A 전략**을 쓰고 있어 회사 자체 가이던스도
+동일점포(same-store)/오가닉 성장 지표를 별도 공시하지 않는다(Q2 2026
+연결매출 +4.9%YoY만 확인 - trailing CAGR 17~22%대와 크게 괴리되나 이를
+분해할 공시 자료가 없음). GEN/BRO/ROP가 요구했던 "세그먼트 공시 대조"
+자체가 불가능한 상태라 정량모델에 넣지 않고 FRAMEWORK_MISMATCH로
+분류했다 - ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도
+건드리지 않았다(LNTH/EQT/CDE와 동일한 축약 경로).
