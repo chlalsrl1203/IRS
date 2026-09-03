@@ -7193,3 +7193,47 @@ Paylocity가 "ADP의 최대 도전자"로 꾸준히 점유율을 확보해온 �
 baseline 44종목으로 재동결(fingerprint `eca83ddf…`→`87e87c04…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## EXEL 정식 분석 — 52/53주 회계연도 라벨 충돌을 수동 재구성으로 해소
+(2026-09-03)
+
+큐 다음 순위 EXEL(Exelixis, 종양학 바이오제약, tier A, 스크리너 Gap
+추정 +15.24%p)을 정식분석했다.
+
+### ⚠️ 원자료 함정 - v3.61이 CDNS/GEN에서 발견한 패턴의 세 번째(가장
+심한) 실사례
+
+`SecCompanyFactsProvider` 자동 추출이 2019·2024년 매출을 통째로
+누락시키고(2018->2020, 2023->2025로 건너뜀) 2020/2021년 값을 서로
+바꿔치기했다 - Exelixis가 52/53주 회계연도를 쓰는데 자동 추출이 `end`
+날짜의 달력연도로 회계연도를 추정해 회사 자신의 `fy` 필드와 어긋났다.
+**SEC XBRL의 `fy` 필드를 직접 사용해 12개월 단위(355~375일) 항목만
+수동으로 재구성**했다 - 재구성한 FY2021 매출 $1,434,970,000은 자동추출이
+잘못 부여했던 $987,538,000(실은 FY2020 값)과 크게 달라, 재구성 없이
+그대로 썼다면 성장률이 심각하게 왜곡됐을 것이다.
+
+**부수 발견 - PIT 자동조회(`pit_inputs_for()`)도 같은 결함을 겪는다**:
+`filing_dates_by_year`가 2019·2024년을 여전히 누락시킨 채 반환됐으나
+(8/10년만 확보), `evaluate_point_in_time()`은 이를 위반으로 잡지 않고
+`PIT_VALID`(violations=[])를 반환한다 - **누락된 연도는 검증 대상에서
+빠질 뿐 오류로 표시되지 않는다는 뜻**이라 향후 참고할 것. 재무데이터
+자체는 수동 재구성했으므로 계산 결과에는 영향 없음.
+
+### 결과 — "저평가 가능성"(B등급), Gap +6.98%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음(모델괴리 1.16%p)
+
+무차입(FY2016 이후), 순현금 -$482M. Cabometyx(카보잔티닙) 프랜차이즈가
+핵심 매출원, 파이프라인 후보 zanzalintinib("$5B 기회"로 평가, 대장암
+적응증 2026-12 PDUFA 심사 예정)은 아직 승인 전이라 상당한 규제리스크가
+남아있음을 falsification_conditions에 명시.
+
+### 배선
+
+`watchlist.json`에 EXEL 추가(44→45, DUOL-FIX 사이). 열두 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 44→45),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 EXEL 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 EXEL 추가).
+
+baseline 45종목으로 재동결(fingerprint `87e87c04…`→`dfdb686b…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

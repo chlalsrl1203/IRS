@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 245,
-    "ANALYZED": 12,
+    "QUEUED": 244,
+    "ANALYZED": 13,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -188,25 +188,6 @@
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
-      "ticker": "EXEL",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.15235917362733864,
-      "tier": "A",
-      "market_cap": 9400000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.15235917362733864,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
       "ticker": "IDCC",
       "first_seen": "2026-08-30",
       "times_seen": 1,
@@ -296,6 +277,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.141467277052827,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "NEM",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.13447297521693094,
+      "tier": "S",
+      "market_cap": 64108664771.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.13447297521693094,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -469,25 +469,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.1629655789055858,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "EXEL": {
-      "ticker": "EXEL",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.15235917362733864,
-      "tier": "A",
-      "market_cap": 9400000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.15235917362733864,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -1856,6 +1837,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.16281099325393256,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "EXEL": {
+      "ticker": "EXEL",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.15235917362733864,
+      "tier": "A",
+      "market_cap": 9400000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.15235917362733864,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 4,
