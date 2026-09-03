@@ -7464,3 +7464,43 @@ $1.1조(2026-06-30 기준), 2022~2026 AUM CAGR 7%.
 baseline 48종목으로 재동결(fingerprint `d37d298f…`→`37d254a3…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## FIVE(Five Below) 정식 분석 — 스크리너 근사 시총이 실적 랠리를 크게
+놓친 아홉 번째 사례 (2026-09-03)
+
+큐 다음 순위 FIVE(Five Below, Inc., 할인 버라이어티 소매업, tier B,
+스크리너 Gap 추정 +12.76%p, 시총 근사 ~$7.26B)를 정식분석했다.
+
+### 데이터 정합성 — 52/53주 회계연도지만 라벨충돌 없음을 직접 확인
+
+FIVE는 FYE가 매년 1월 말~2월 초로 일관돼(EXEL/CDNS/GEN처럼 캘린더연도
+경계 부근에서 갈리는 케이스와 달리) `end` 날짜의 캘린더연도가 회계연도와
+항상 일치한다 - 원자료 raw entries를 직접 대조해 확인했다. `revenue`/
+`operating_cashflow` 태그 전환 경고([태그 혼재])는 경계연도에서 완전히
+중복되는 재확인 값이라 실질 왜곡이 없음도 확인했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +3.11%p
+
+실시간 시총(~$13.44B, Alpha Vantage 종가 + 10-Q 표지 주식수)이 스크리너
+근사의 1.85배 - OKTA/MEDP/NBIX/NXT/ROKU에 이은 아홉 번째 float 스냅샷
+노후화 사례. 신임 CEO 체제(Gen Z/Alpha 타겟, "Five Beyond" 가격구조 확장)
+에서 실적이 크게 개선(2025 홀리데이 comps +14.5%, 2026 Q2 매출
++22.9%YoY)돼 주가가 이를 선반영했다 - Gap이 스크리너 추정보다 크게
+축소된 결과가 그 반영을 정량적으로 보여준다.
+
+DRS 21.8, Realistic Growth 15.44%(3y/5y CAGR 15.70%/19.42%, M&A 왜곡
+없는 유기적 성장), 모델괴리 5.21%p(경고 임계값 3%p 초과 - two_stage
+채택 근거를 `model_choice_reason`에 명시), Confidence 94, PIT_VALID(위반
+0건). 대차대조표는 무차입 순현금(`LongTermDebt` 태그 최근 연도 없음 -
+임차기반 매장확장 구조).
+
+### 배선
+
+`watchlist.json`에 FIVE 추가(48→49, EXEL-FIX 사이). 아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 48→49),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 FIVE 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 FIVE 추가).
+
+baseline 49종목으로 재동결(fingerprint `37d254a3…`→`a2166dac…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

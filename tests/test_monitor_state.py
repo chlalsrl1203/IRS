@@ -196,7 +196,7 @@ def test_real_repo_today_has_no_unreviewed_backlog():
     result = RUNNER.run_monitor(TODAY, ledger_dir=str(ROOT / "ledger"),
                                 ack_path=str(ROOT / "monitor" / "acknowledgements.json"),
                                 predictions_dir=str(ROOT / "predictions"))
-    assert result["n_ledgers"] == 48  # 2026-09-01/03: CROX·SIGI·OKTA·MEDP·RYAN·FIX·NBIX·NXT·PATH·PCTY·EXEL·PINS·ROKU·HLNE 정식분석 추가(34->48)
+    assert result["n_ledgers"] == 49  # 2026-09-01/03: CROX·SIGI·OKTA·MEDP·RYAN·FIX·NBIX·NXT·PATH·PCTY·EXEL·PINS·ROKU·HLNE·FIVE 정식분석 추가(34->49)
     assert result["falsification"]["needs_review"] == []
     assert result["action_required"] is False
 
