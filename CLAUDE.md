@@ -7010,3 +7010,38 @@ $2.5B 대비)** - 임차인(카지노 운영사)이 유지보수를 부담하는
 기반 주관 입력이 원자재 가격사이클 앞에서 무의미해지는 업종 - 정량모델에
 넣지 않고 FRAMEWORK_MISMATCH로 분류했다. 4종목 전부 ledger를 만들지
 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## NBIX 정식 분석 — 지연성운동장애 시장 방어 성공이 실측으로 확인됨
+(2026-09-02/03)
+
+FRAMEWORK_MISMATCH 8종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG)을 제외한
+뒤 큐 순서상 처음으로 제외 사유가 없는 종목 NBIX(Neurocrine Biosciences,
+바이오제약, tier A, 스크리너 Gap 추정 +17.16%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +14.05%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+부채 전액 상환(FY2022 이후 $0), 순현금 -$713M. 모델괴리 1.91%p(경고
+임계값 미만, 양호한 일치). PIT_VALID. 실시간 시총(~$15.46B, WebSearch
+확보)이 스크리너 근사(~$9.52B)보다 1.6배 커 OKTA/MEDP와 같은 계열의
+float 스냅샷 노후화가 재확인됐다(Alpha Vantage가 이번엔 일일 한도
+초과로 WebSearch 대체 확보).
+
+### 경쟁구도 발견 — Teva의 가격공세에도 점유율 방어 성공이 정량 확인됨
+
+Ingrezza(VMAT2 억제제)가 Teva Austedo의 38% 가격인하 공세에도 지연성
+운동장애 시장 **53~55% 점유율**을 유지 - 실사용데이터(치료지속률 우위)가
+방어 근거로 확인됐다. 신제품 Crenessity(CAH 치료제)는 2026 상반기
++400%YoY 급성장. `competitor_threat_weights`/`market_share_trend_pp_
+per_year`에 이 상쇄관계(가격경쟁 vs 데이터우위)를 반영했다.
+
+### 배선
+
+`watchlist.json`에 NBIX 추가(40→41, MNST-OKTA 사이). 여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 40→41),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 NBIX 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 NBIX 추가).
+
+baseline 41종목으로 재동결(fingerprint `c3557660…`→`f89135e0…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
