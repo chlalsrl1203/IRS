@@ -7249,6 +7249,38 @@ baseline 45종목으로 재동결(fingerprint `87e87c04…`→`dfdb686b…`). �
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
 
+## PINS 정식 분석 — SBC 차감 시 판정이 뒤집히는 네 번째 사례 (2026-09-03)
+
+FRAMEWORK_MISMATCH 11종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE) 제외 뒤 큐 다음 순위 PINS(Pinterest, 소셜미디어 광고, tier A,
+스크리너 Gap 추정 +14.46%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(S등급), Gap +16.22%p, Confidence 94, 강건성점검
+flip 없음
+
+무차입, 순현금 -$969M. PIT_VALID. YoY 성장률이 COVID붐(2018~2021
+48~60%대) 이후 2022~2023년 9%대로 급감속했다가 2024~2025년 19.3%/15.8%로
+재가속하는 비단조 패턴 - Snap/X/LinkedIn 대비 빠른 광고매출 성장률
+(+31%YoY, 2년 연속)이라는 외부평가와 일치.
+
+### ⭐ SBC 교차검증 - 네 번째 판정뒤집힘 사례(WDAY·OKTA·PATH에 이어)
+
+SBC/FCF **70.3%**(PATH급 트래커 최상위권) - SBC를 실제 비용으로 차감하면
+Gap +16.22%p→**+1.65%p**, 판정이 "저평가 가능성"→**"적정가/경계선"**으로
+뒤집힌다. 공식 판정은 SBC 미차감 기준으로 유지(병기 원칙)하되, 이 종목도
+액면 그대로 신뢰하지 말 것을 최우선으로 명시했다.
+
+### 배선
+
+`watchlist.json`에 PINS 추가(45→46, PH-PTC 사이). 열세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 45→46),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PINS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PINS 추가).
+
+baseline 46종목으로 재동결(fingerprint `dfdb686b…`→`8258fefe…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
 ## IDCC(InterDigital) 제외 — 특허라이선싱 매출의 구조적 변동성(신규 유형)
 (2026-09-03)
 

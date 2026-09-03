@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 244,
-    "ANALYZED": 13,
+    "QUEUED": 243,
+    "ANALYZED": 14,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -226,25 +226,6 @@
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
-      "ticker": "PINS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.14456494309593018,
-      "tier": "A",
-      "market_cap": 18700000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.14456494309593018,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
       "ticker": "XYZ",
       "first_seen": "2026-08-30",
       "times_seen": 1,
@@ -296,6 +277,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.13447297521693094,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "WSC",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.13237784390885435,
+      "tier": "S",
+      "market_cap": 4900000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.13237784390885435,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -507,25 +507,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.14744879217169815,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "PINS": {
-      "ticker": "PINS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.14456494309593018,
-      "tier": "A",
-      "market_cap": 18700000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.14456494309593018,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -1856,6 +1837,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.15235917362733864,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "PINS": {
+      "ticker": "PINS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.14456494309593018,
+      "tier": "A",
+      "market_cap": 18700000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.14456494309593018,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 4,
