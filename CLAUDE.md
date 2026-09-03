@@ -7628,3 +7628,44 @@ GEN/BRO/ROP/CROX/CDE/CHDN/WSC/EQT와 동일한 'M&A가 5y CAGR 구간에
 Montney 신규자산 vs 기존자산) 데이터 없이는 재무데이터를 더 긁지
 않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## DOCU(DocuSign) 정식 분석 — SBC 차감 시 판정이 뒤집히는 여섯 번째
+사례, WDAY 선례가 자동 인용됨 (2026-09-03)
+
+큐 다음 순위 DOCU(DocuSign, Inc., 전자서명·계약관리 SaaS, tier A,
+스크리너 Gap 추정 +12.12%p, 시총 근사 ~$15.1B)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +8.63%p, 그러나 SBC 차감 시 뒤집힘
+
+FY2024(영업이익 최초 흑자 $31.6M)까지 만성 적자 이후 FY2026 $298.6M로
+빠르게 개선, FCF 3y/5y CAGR 35.10%/37.63%로 견조한 유기적 성장(M&A
+왜곡 없음). 2018년 발행 전환사채($722.9M)가 FY2024에 전액상환돼 현재
+무차입 순현금. DRS 39.8, Realistic Growth 10.13%, Implied Growth 1.50%
+(two_stage, 모델괴리 0.92%p로 경고 임계값 미만), Confidence 94,
+PIT_VALID(위반 0건), 강건성점검 flip 없음.
+
+**SBC/FCF 58.8%로 WDAY급 - SBC 차감 시 Gap +8.63%p→**-1.96%p**, 판정
+'저평가 가능성'→**'적정가/경계선'**로 실제 뒤집힌다.** 엔진이 자동으로
+"2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가
+있음"이라는 경고를 `data_limitations`에 생성 - 이번 세션 OKTA/PATH/
+PINS/ROKU에 이은 **여섯 번째 SBC 플립 사례**(WDAY 원본 포함). 공식
+판정은 SBC 미차감 기준으로 유지(병기 원칙).
+
+### 경쟁구도(2026-09-03 WebSearch) - 전자서명·CLM SaaS 업종
+
+DocuSign이 e서명 시장 56.84% 점유로 여전히 압도적 1위(2위 SignRequest
+10.60%, Adobe Sign 10.15%) - 글로벌 시장 자체는 2025년 $70억→2030년
+$350억+로 성장 전망. 다만 "AI 에이전트가 계약 워크플로 전체를
+자동화한다"는 구조적 위협 서사가 업계에 제기 중(WDAY의 AI네이티브
+경쟁 서사와 유사한 계열) - 구체적 점유율 잠식 증거는 아직 미확인.
+
+### 배선
+
+`watchlist.json`에 DOCU 추가(51→52, CROX-DSGX 사이). 열두 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 51→52),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 DOCU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 DOCU 추가).
+
+baseline 52종목으로 재동결(fingerprint `0d97b30c…`→`8d51a0ad…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

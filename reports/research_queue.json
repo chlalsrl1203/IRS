@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 238,
-    "ANALYZED": 19,
+    "QUEUED": 237,
+    "ANALYZED": 20,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -602,25 +602,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.12347890085475224,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 4,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "DOCU": {
-      "ticker": "DOCU",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.12124396713194648,
-      "tier": "A",
-      "market_cap": 15100000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.12124396713194648,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 4,
@@ -1875,6 +1856,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.12658483721547287,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 4,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "DOCU": {
+      "ticker": "DOCU",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.12124396713194648,
+      "tier": "A",
+      "market_cap": 15100000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.12124396713194648,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 4,
