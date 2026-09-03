@@ -7172,6 +7172,24 @@ COP/DINO/EOG와 동일한 자본집약 원자재(천연가스) 업종으로, 이
 확인 없이 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
 
+## WSC(WillScot Mobile Mini) 제외 — M&A 단계상승이 CAGR 창 내부에 있음
+(GEN/ROP 유형) (2026-09-03)
+
+큐 다음 순위 WSC(WillScot Mobile Mini Holdings, 모듈러 공간·이동식 창고
+임대, tier S, 스크리너 Gap 추정 +13.24%p)를 조사했다. SEC XBRL 매출
+실측에서 2020->2021 +38.6%($527.3M 증가) 급등을 확인 - WebSearch(2026-
+09-03)로 원인 확인: WillScot과 Mobile Mini가 2020-07-01 "동등합병"으로
+결합했고, 회사 스스로 10-K에서 이 매출 증가를 **"Mobile Mini 매출 편입 +
+유기적 성장 둘 다"에 기인**한다고 명시해 분리 불가능함을 인정한다.
+2024-01에는 McGrath 인수까지 발표돼 **상시적 볼트온 M&A**가 계속
+진행 중임도 확인했다(GEN/BRO/RYAN과 동일 패턴).
+
+합병 연도(2020)가 5y CAGR 기본 기준연도(`years[-6]`)에 걸려 있어
+`cagr_base_year_override`로도 못 피하며, 회사가 오가닉/M&A 성장을
+분리 공시하지 않아 세그먼트 대조도 불가능하다. FRAMEWORK_MISMATCH로
+분류 - ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도
+건드리지 않았다.
+
 ## PCTY 정식 분석 — 깨끗한 다년 성장곡선, 강건성 최상급 (2026-09-03)
 
 FRAMEWORK_MISMATCH 9종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF)을 제외한
