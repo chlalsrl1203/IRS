@@ -7161,6 +7161,17 @@ VICI(REIT)와 동일한 근본 이유 - **예금취급기관은 이 엔진이 �
 근본적으로 다른 질문에 답한다. FRAMEWORK_MISMATCH로 분류 - ledger를
 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
 
+## EXE(Expand Energy, 舊 Chesapeake Energy) 제외 — 천연가스 E&P
+원자재 가격사이클 (2026-09-03)
+
+큐 다음 순위 EXE(Expand Energy Corp, 舊 Chesapeake Energy, 천연가스
+E&P, tier A, 스크리너 Gap 추정 +14.74%p)를 확인했다. SEC 등록명이
+"Chesapeake Energy"에서 "Expand Energy Corp"로 변경된 것을 확인 -
+COP/DINO/EOG와 동일한 자본집약 원자재(천연가스) 업종으로, 이미 8건
+확정된 패턴(AA/NRG/MP/EQT/CDE/COP/DINO/EOG)에 해당해 추가 재무데이터
+확인 없이 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
 ## PCTY 정식 분석 — 깨끗한 다년 성장곡선, 강건성 최상급 (2026-09-03)
 
 FRAMEWORK_MISMATCH 9종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF)을 제외한
