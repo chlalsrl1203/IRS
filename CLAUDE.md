@@ -7086,3 +7086,55 @@ REJECTIONS`에 NXT 추가 + 회귀 테스트 신설).
 baseline 42종목으로 재동결(fingerprint `f89135e0…`→`d65fb51d…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## PATH 정식 분석 — SBC 차감 시 판정이 극적으로 뒤집히는 세 번째 사례
+(2026-09-03)
+
+큐 다음 순위 PATH(UiPath, RPA/에이전틱 자동화, tier A, 스크리너 Gap
+추정 +16.40%p)를 정식분석했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +3.56%p(경계선에 근접), Confidence
+79, 강건성점검 flip(모델괴리 4.40%p)
+
+무차입, 순현금 -$871M. PIT_VALID. 매출성장률이 2021년 +80.8%에서
+2025/2026년 +9.3%/+12.7%로 급격히 둔화된 성숙화 국면. FY2026 최초
+GAAP 영업흑자 전환($56.8M)은 긍정적 반전 신호.
+
+### ⭐ 핵심 발견 - 생성형/에이전틱 AI의 RPA 대체 우려로 주가가 사상최고가
+대비 -87%(2026년 한 해만 -35%) 폭락
+
+Gartner MQ 2025에서 Microsoft Power Automate(종합점수 4.5)가 UiPath
+(4.1)를 처음 앞섰으나, UiPath는 6년 연속 RPA 부문 1위 유지 - "가벼운
+사무자동화"는 Microsoft, "SAP/Oracle/레거시 메인프레임 포함 중대형
+엔터프라이즈 프로세스"는 UiPath 우위로 시장이 이분화됐다는 평가.
+2026-05 "UiPath for Coding Agents" 출시로 경쟁 AI 코딩에이전트 위의
+오케스트레이션 레이어로 포지셔닝 전환 중.
+
+### ⭐⭐ SBC 교차검증 - 트래커 최대폭 뒤집힘(WDAY·OKTA에 이은 세 번째)
+
+SBC/FCF **82.5%**(트래커 최상위권) - SBC를 실제 비용으로 차감하면 Gap
++3.56%p→**-16.92%p**, 판정이 "적정가/경계선"→**"과대평가 가능성"**으로
+뒤집힌다. 뒤집힘 폭(20.48%p)이 WDAY·OKTA보다 훨씬 크다 - AI대체 우려·
+성장둔화·극단적 SBC 의존이 겹친 조합이 실제로 가장 취약한 판정을
+만든다는 것이 실측으로 확인됐다. 공식 판정은 SBC 미차감 기준으로 유지
+(병기 원칙)하되, 이 종목은 액면 그대로 신뢰하지 말 것을 최우선으로
+명시했다.
+
+### 부수 발견 - FCF 5y CAGR 근사-0 기준연도 아티팩트(계산에는 무영향)
+
+FCF(2021) $27.2M(거의 0)→FCF(2026) $352.2M로 FCF 5y CAGR 66.86%라는
+비현실적 수치가 나오나, `realistic_growth_estimate()`의 min(매출가중
+CAGR, FCF CAGR) 로직이 자동으로 버렸다(매출가중CAGR 채택) - MU/MNDY/
+UBER와 동일한 "보호가 우연적" 아티팩트 유형.
+
+### 배선
+
+`watchlist.json`에 PATH 추가(42→43, OKTA-PDD 사이). 열 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 42→43),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PATH 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PATH 추가) - C등급
+"적정가/경계선"이라 screener 거짓탈락 테스트는 무변경.
+
+baseline 43종목으로 재동결(fingerprint `d65fb51d…`→`eca83ddf…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
