@@ -7720,3 +7720,47 @@ Travelers(84%대)와는 격차가 크다. 신규계약보험료 전체 -11%·개
 baseline 53종목으로 재동결(fingerprint `8d51a0ad…`→`f8efb3b6…`). 테스트
 1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## TENB(Tenable Holdings) 정식 분석 — SBC 차감 시 두 등급을 건너뛰어
+'과대평가'로 뒤집히는 최초 사례 (2026-09-03)
+
+큐 다음 순위 TENB(Tenable Holdings, Inc., 취약점·노출관리 사이버보안,
+tier A, 스크리너 Gap 추정 +11.97%p, 시총 근사 ~$4.1B)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +9.90%p
+
+여전한 GAAP 영업적자(FY2025 -$9.2M, FY2022 -$67.8M에서 크게 개선)이나
+OCF는 견조하게 성장(FCF 3y/5y CAGR 27.88%/42.09%) - 전형적 성장기 SaaS
+패턴. DRS 26.32, Realistic Growth 13.29%, Implied Growth 3.39%
+(two_stage, 모델괴리 0.17%p로 사실상 완전 일치), RAR +1.5287,
+Confidence 94, PIT_VALID(위반 0건), 강건성점검 flip 없음.
+
+### ⭐ SBC/FCF 75.3% - 판정이 두 등급을 건너뛰어 '과대평가'로 뒤집힌
+최초 사례
+
+이번 세션 SBC 플립 사례 중 가장 극적이다 - SBC 차감 시 Gap
+**+9.90%p→-6.31%p**, 판정이 "저평가 가능성"에서 곧장 **"과대평가
+가능성"**으로 뒤집힌다(WDAY/OKTA/PATH/PINS/ROKU/DOCU는 전부 '저평가'→
+'적정가'까지만 이동했는데, TENB는 처음으로 '적정가' 구간을 건너뛰어
+반대 극단까지 이동한다). 이 프로젝트 SBC 플립 사례 중 **일곱 번째**
+(WDAY 원본 포함)이자 최대폭. 공식 판정은 SBC 미차감 기준으로 유지
+(병기 원칙), falsification_conditions에 최우선 재확인 사유로 명시.
+
+### 경쟁구도(2026-09-03 WebSearch) - 노출관리·취약점관리 업종
+
+**Tenable이 IDC 세계 취약점·노출관리 시장점유율 조사 7년 연속 1위**
+(2024년 기준), 통합플랫폼 'Tenable One'이 신규영업의 41%(+8%p YoY)를
+차지하며 점유율 확대 중. 직접경쟁자 Qualys·Rapid7(Tenable이 Rapid7의
+'1순위 경쟁상대'로 우위 확인), 인접 위협은 CrowdStrike(엔드포인트→
+노출관리 확장)와 Palo Alto Networks/Wiz(클라우드 보안 대형사 잠식).
+
+### 배선
+
+`watchlist.json`에 TENB 추가(53→54, TCOM-TTD 사이). 열네 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 53→54),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TENB 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TENB 추가).
+
+baseline 54종목으로 재동결(fingerprint `f8efb3b6…`→`1ac66dbe…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
