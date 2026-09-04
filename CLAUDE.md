@@ -7938,3 +7938,69 @@ baseline 56종목으로 재동결(fingerprint `8a390e63…`→`4ceaca7c…`). �
 
 기존 Notion 트래커(SIGI~SKYW 20건)에 RMBS 1건을 추가했다. 이 요청은
 이후 완료되는 모든 신규 정식분석에 계속 적용되는 상시 작업으로 취급한다.
+
+## BYD(Boyd Gaming) 정식 분석 — 이중 왜곡(COVID 저점 기저효과 + capex
+성장투자) 동시 해소 사례 (2026-09-04)
+
+큐 다음 순위 BYD(Boyd Gaming Corporation, 지역 카지노 운영사, tier A,
+스크리너 Gap 추정 +10.30%p)를 정식분석했다.
+
+### ⭐ 이중 왜곡 - BKNG형(COVID 저점 기저효과)과 NVO형(capex 급증)이 동시에
+걸린 첫 사례
+
+**(1) 5년 CAGR 기준연도(2020)가 COVID 저점** - 매출이 2019년 $3,326M
+(+26.6%, Pinnacle Entertainment 인수 완전편입 첫해로 추정) -> 2020년
+$2,178M(-34.5%, 셧다운) -> 2021년 $3,370M(+54.7%, 회복)로 요동쳤다.
+기본 5y 기준연도(2020, 저점)를 그대로 쓰면 5y CAGR 13.44%로 3y(4.80%)·
+10y(6.41%)와 크게 어긋난다(v3.21 BKNG 원칙 재현). **2019년을 기준연도로
+오버라이드**(6y CAGR 3.51%, 3y/10y와 훨씬 정합적) - 2018->2019 M&A
+단계상승 자체는 6y 창(2019->2025) 바깥에 있어 새 왜곡을 끌어들이지 않는다.
+
+**(2) capex/매출 비중이 최근5년평균 9.61%->2025년 14.37%(+4.76%p) 급증** -
+WebSearch로 확인한 구체 근거: Norfolk VA 리조트($7.5억 총사업비, 2027년
+정식개장 예정)·Cadence Crossing 신규카지노·호텔 리노베이션 3개 시설.
+2026년 가이던스도 $6.5~7.0억으로 지속 예정 - 일시적 급증이 아니라 명명된
+다년 성장프로젝트라 `capex_classification="growth_investment"`로 분류
+(정합성가드 통과: 매출감속 1.61%p < 3%p 허용범위).
+
+두 왜곡을 각각 해소한 뒤(FCF CAGR 2.18%->2.94%로 조정) 최종 Realistic
+Growth 2.63%(cyclical 자동분류, structural discount 10.80% 적용) - 스크리너
+추정치(원시 5y CAGR 그대로 사용)의 정반대 방향(더 낮게)으로 크게 정정됐다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -1.88%p, Confidence 94
+
+모델괴리 0.34%p(사실상 완전 일치). 강건성점검 flip 없음(DRS 포함/제외
+둘 다 적정가/경계선). SBC 교차검증 flip 없음(SBC/FCF 8.3%, 낮음). PIT_VALID
+(위반 0건). 기대수익률 음수(-4.62%)라 RAR 방향성 경고 발동 - Expectation
+Gap을 우선 참고할 것으로 명시.
+
+### 영업이익 감소(2024->2025, -19.3%) 원인 - 대부분 비현금 손상차손
+
+$1.284억 손상차손(Las Vegas Locals ~$0.501억 + Midwest&South ~$0.783억,
+2026-09-04 WebSearch로 10-K 확인) - CROX(HEYDUDE 손상차손) 선례와 동일하게
+GAAP 그대로 사용(임의 정규화 안 함 원칙). 나머지는 실질 마진압박(EBITDA
+마진 31.07%->약 27.4%, 인플레이션 인건비·마케팅비 + Red Rock Resorts의
+신규 Durango Casino&Resort발 라스베이거스 로컬 경쟁심화).
+
+### 부수 발견 - 순이익 급증(+219%YoY)은 FanDuel 지분매각 일회성 이익, FCF
+계산에는 무영향
+
+2025-07-10 Flutter Entertainment에 FanDuel Group 5% 지분을 $17.55억
+현금에 매각(2025 Q3 종결, 세전이익 $17.48억 인식) - 영업이익·OCF 경로에
+들어가지 않아 FCF-DCF 계산에는 영향 없음. 매각 이후 온라인부문 EBITDAR
+가이던스가 오히려 $0.50~0.55억->$0.30억으로 **축소** - 향후 성장서사는
+온라인이 아니라 육상 카지노 확장(Norfolk·Cadence Crossing)에 있음을
+falsification_conditions에 명시.
+
+### 배선
+
+`watchlist.json`에 BYD 추가(56→57, BSY-CDNS 사이). 열여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 56→57),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 BYD 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 BYD 추가).
+
+baseline 57종목으로 재동결(fingerprint `4ceaca7c…`→`a714b752…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영(계속) — BYD 추가(2026-09-04)
