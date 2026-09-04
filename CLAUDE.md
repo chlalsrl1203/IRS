@@ -7860,3 +7860,29 @@ CLAUDE.md 기록의 핵심 발견을 압축)를 채웠다. SKYW는 이번 기록
 ⚠️ 트래커의 "판정"·"등급"·"Lynch유형" select 옵션은 기존 스키마
 그대로 사용했다(예: Lynch유형 영문 Title Case "Fast Grower" 등 -
 ledger 내부의 snake_case "fast_grower"와 다름, 매핑해서 입력).
+
+## DAR(Darling Ingredients) 제외 — FRAMEWORK_MISMATCH(재생디젤 연방
+세액공제 정책리스크 + 과거 M&A 단계상승, 신규 하위유형) (2026-09-04)
+
+큐 다음 순위 DAR(Darling Ingredients Inc., 렌더링·재생디젤 원료가공업체,
+tier S, 스크리너 Gap 추정 +10.65%p)를 조사했다. SEC XBRL 매출 실측
+(2009~2026)에서 2011년 $724.9M→2012년 $1,701.4M(+135%, VION
+Ingredients 인수로 사업규모 사실상 2배)와 2013년 $1,723.5M→2015년
+$3,956.4M(+130%, 2014년 자료 결측) 등 오래된 구간의 M&A 단계상승을
+확인 - GEN/BRO/ROP/CROX/CDE/CHDN/WSC/EQT/OVV와 동일한 유형이나, 이번엔
+여기에 **새로운 하위유형**이 겹친다.
+
+**재생디젤 합작사(DGD, Diamond Green Diesel, 50% 지분)가 2026-09-04
+WebSearch로 확인한 실측 붕괴를 겪었다** - DGD의 조정EBITDA가 2025년
+-64%(2024년 대비), 갤런당 EBITDA가 2025 Q1 6센트로 2024 Q1 69센트
+대비 -91% 급감, JV 자체가 2024년 $2.98억 흑자에서 2025년 $0.68억
+**순손실로 전환**. 원인은 시장가격 변동이 아니라 **연방 재생연료
+세액공제 정책 전환**(blenders credit → Section 45Z producer's
+credit) - 이는 AA/NRG/MP/EQT/CDE/COP/DINO/EOG/EXE/NEM/OVV/CF/HL이
+공유하는 "시장가격 사이클"과도 다른, **입법·행정 정책 리스크가 주된
+변동요인인 신규 하위유형**이다(demand_sensitivity·competition_
+intensity 같은 이 엔진의 주관적 입력으로는 규제정책 전환 리스크를
+포착할 수 없음). 영업이익도 2023년 $949.7M→2024년 $468.2M(-51%)
+→2026년 $273.4M로 지속 급감. 재무데이터를 더 긁지 않고
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다.
