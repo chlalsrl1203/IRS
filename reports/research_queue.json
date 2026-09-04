@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 232,
-    "ANALYZED": 25,
+    "QUEUED": 231,
+    "ANALYZED": 26,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -659,25 +659,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.1065147823818495,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "CRM": {
-      "ticker": "CRM",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.10098156251599227,
-      "tier": "A",
-      "market_cap": 191800000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.10098156251599227,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 5,
@@ -1894,6 +1875,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.10304558843305997,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "CRM": {
+      "ticker": "CRM",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.10098156251599227,
+      "tier": "A",
+      "market_cap": 191800000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.10098156251599227,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 5,
