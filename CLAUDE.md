@@ -8089,3 +8089,56 @@ Claude를 직접 호출하는 새 인프라를 만드는 것도 검토했으나,
 하고, 필요한 경쟁구도·최근뉴스 확인은 직접 WebSearch 1~2회로 대체하는
 것으로 전환 - 종목당 30만 토큰 이상 절감된다. 이후 분석부터 이 방식을
 적용한다.
+
+## DECK·QCOM·EAT 정식 분석 + HBAN·CNM·CVX·AXP·GLPI 배제 (2026-09-04, 배치 처리
+- 리서치 에이전트 생략 전환 후 첫 배치)
+
+효율화 방침(위 항목)에 따라 종목당 전담 리서치 에이전트를 생략하고 직접
+WebSearch로 대체, 배선 단계(테스트·baseline재동결·git커밋)도 3종목씩 모아
+처리하는 첫 배치.
+
+**DECK(Deckers, HOKA·UGG)** - "저평가 가능성"(A등급), Gap +13.23%p,
+Confidence 94. 무차입 순현금(FY2026말 $19.07억), M&A 왜곡 없는 깨끗한
+다년성장(3y 14.69%/5y 16.54%). FY2026 성장둔화(+9.76%)는 회사 발표상
+일회성 도매타이밍 이슈. 관세부담($1.5억, 매출총이익률 -80bp) 실측반영,
+FY2027 가이던스도 관세환급 미가정. ⚠️ 실시간 시총($115.3억)이 스크리너
+근사($147.6억)보다 **22% 낮은 이번 세션 첫 역방향 사례**(자사주매입으로
+발행주식 9개월새 -6.6%). On Holding이 HOKA보다 빠르게 성장(+43% vs
++10%YoY)하는 경쟁열위 신호 반영. SBC flip 없음(4.1%).
+
+**QCOM(Qualcomm)** - "적정가/경계선"(C등급), Gap +0.44%p, Confidence 94.
+MU(이미 배제)와 달리 계산 아티팩트 없이 실제 반도체 사이클(3y CAGR 0.06%
+[2022 정점기준] vs 5y 13.48%[2020 저점기준])을 cyclical 분류로 정상
+처리. Apple 모뎀사업 구조적 손실(2027년까지 완전대체 목표, 연 $57~78억
+소멸)이 자동차(+61%YoY)·데이터센터AI($50억 FY2027 목표) 다각화로
+상쇄되는 전환기 - falsification_conditions에 회사 자체 목표(비핸드셋
++60%YoY) 명시. 저레버리지(net_debt/EBITDA≈0.67x). SBC flip 없음(21.7%).
+
+**EAT(Brinker/Chili's)** - "적정가/경계선"(C등급), Gap +4.22%p,
+Confidence 79. Chili's 21분기 연속 동일매장매출 성장(FY2025 +26%->FY2026
+4~5%대 감속)이 M&A 없는 순수 오가닉 턴어라운드임을 확인 - 10년 넘게
+자기자본잠식 상태였던 대차대조표도 FY2024부터 플러스 전환. 저레버리지
+(net_debt/EBITDA≈0.40x). 강건성점검에서 DRS 포함시 적정가/경계선,
+제외시 저평가 가능성로 갈림(C등급이라 유니버스 영향 없음). SBC flip
+없음(5.8%).
+
+**배제 5건**(재무데이터 확인만으로 즉시 판정, 전담 리서치 없이):
+- **HBAN(Huntington Bancshares)**: operating_income 전무 - COF/AMP와
+  동일한 예금취급기관 구조.
+- **CNM(Core & Main)**: 2021~2023년 M&A 롤업 단계상승(3y CAGR 4.76% vs
+  5y 16.0%, 11.2%p 괴리) + 최근 오가닉 볼륨 실제 감소(Q1 2026 -1%YoY,
+  2026-09-04 WebSearch 확인) - GEN/BRO/ROP/WSC와 동일 유형.
+- **CVX(Chevron)**: 원자재(원유) 가격사이클(2020 $945억 저점->2022
+  $2,357억 정점) - COP/EOG/DINO 등과 동일 유형.
+- **AXP(American Express)**: operating_income 전무 - COF/AMP/HBAN과
+  동일한 카드발급사/대출기관 구조.
+- **GLPI(Gaming and Leisure Properties)**: 카지노 REIT, capex 거의
+  0(트리플넷리스 구조) - VICI와 동일한 REIT 구조적 부적합.
+
+### 배선
+
+`watchlist.json`에 DECK·EAT·QCOM 추가(58→61). test 레지스트리 3종
+(`test_monitor_state.py` n_ledgers 58→61, `test_provenance.py`,
+`test_sbc_harvest.py`)에 3종목 일괄 추가. baseline 61종목으로 재동결
+(fingerprint `f7211482…`→`51888f8e…`). 테스트 1,082개 전부 통과.
+`ENGINE_VERSION` 무변경(v3.80 유지).

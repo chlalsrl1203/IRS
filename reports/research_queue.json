@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 231,
-    "ANALYZED": 26,
+    "QUEUED": 228,
+    "ANALYZED": 29,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -664,25 +664,6 @@
       "days_since_seen": 5,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
-    "DECK": {
-      "ticker": "DECK",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.09825607205774288,
-      "tier": "A",
-      "market_cap": 14764483936.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.09825607205774288,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
     "HBAN": {
       "ticker": "HBAN",
       "first_seen": "2026-08-30",
@@ -716,25 +697,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.09076129172048425,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "QCOM": {
-      "ticker": "QCOM",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.0902102331368604,
-      "tier": "A",
-      "market_cap": 167900000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.0902102331368604,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 5,
@@ -792,25 +754,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.08426082204693591,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "EAT": {
-      "ticker": "EAT",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.08393112590316726,
-      "tier": "A",
-      "market_cap": 6521752786.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.08393112590316726,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 5,
@@ -1899,6 +1842,44 @@
       "days_since_seen": 5,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
+    "DECK": {
+      "ticker": "DECK",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.09825607205774288,
+      "tier": "A",
+      "market_cap": 14764483936.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.09825607205774288,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "QCOM": {
+      "ticker": "QCOM",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.0902102331368604,
+      "tier": "A",
+      "market_cap": 167900000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.0902102331368604,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
     "BSY": {
       "ticker": "BSY",
       "first_seen": "2026-08-30",
@@ -1913,6 +1894,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.08487667595100234,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "EAT": {
+      "ticker": "EAT",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.08393112590316726,
+      "tier": "A",
+      "market_cap": 6521752786.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.08393112590316726,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 5,
