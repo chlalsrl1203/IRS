@@ -7886,3 +7886,55 @@ intensity 같은 이 엔진의 주관적 입력으로는 규제정책 전환 리
 →2026년 $273.4M로 지속 급감. 재무데이터를 더 긁지 않고
 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
 테스트·baseline 어느 것도 건드리지 않았다.
+
+## RMBS(Rambus) 정식 분석 — IDCC 배제와 대비되는 "과거엔 위험했으나 최근
+해소됨" 판단 사례 (2026-09-04)
+
+큐 다음 순위 RMBS(Rambus Inc., 메모리 인터페이스 IP·칩, tier B, 스크리너
+Gap 추정 +10.48%p)를 정식분석했다.
+
+### ⭐ IDCC(특허라이선싱, FRAMEWORK_MISMATCH 배제)와의 대비 - 같은 유형의
+과거 리스크를 다르게 판단한 근거
+
+RMBS도 2008~2018년엔 소송합의금·일시불 라이선스 비중이 커 매출이 들쭉날쭉
+했다(2017년 $393.1M→2018년 $231.2M, -41%) - IDCC를 배제한 것과 같은 유형의
+리스크였다. 그러나 **최근(2019~2025) 반복적 로열티 기반 매출구조(DDR5
+메모리인터페이스 IP·칩)로 전환**되며 이 변동성이 해소됐다 - YoY 성장률이
+여전히 높지만(2024 +20.7%/2025 +27.1%) IDCC처럼 단일분기 캐치업 항목이
+40%를 차지하는 급락·급등이 없다. 3y/5y CAGR 창(2022→2025, 2020→2025)이
+변동성 높았던 구간을 건드리지 않아 정량모델 적용이 타당하다고 판단했다.
+IDCC와 RMBS는 "과거 리스크 유형이 같다고 자동으로 같은 결론을 내지 않는다"
+는 사례 쌍으로 남긴다 - 판단 기준은 그 리스크가 CAGR 창에 실제로 걸리는지,
+그리고 최근 행태가 실제로 바뀌었는지다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +2.00%p, Confidence 79
+
+무차입 순현금($182.8M). PIT_VALID(위반 0건). SBC 교차검증 flip 없음
+(SBC/FCF 16.3%, 낮음). 모델괴리 4.71%p(경고 임계값 3%p 초과 - two_stage
+채택 근거를 명시: trailing CAGR이 default_terminal_growth보다 높고 AI메모리
+수요 가속 국면이라 다년 수렴 경로가 적절). 강건성점검에서 DRS 포함시
+'적정가/경계선', DRS 제외시 '저평가 가능성'로 갈려(cyclical 자동분류 -
+매출 변동성이 과거 라이선싱 급락구간을 여전히 일부 반영) 판정경계 취약
+플래그가 붙었다 - C등급이라 매수 유니버스(S/A)에는 영향 없음.
+
+### 경쟁구도(2026-09-04 WebSearch)
+
+DDR5 RCD(레지스터드 클록 드라이버) 시장점유율 약 40~45%로 확대 중,
+"잠식 조짐 없음"으로 평가됨. 메모리 인터페이스 칩 경쟁자는 Monolithic
+Power Systems·Montage Technology·Renesas·Texas Instruments.
+
+### 배선
+
+`watchlist.json`에 RMBS 추가(55→56, RLI-RMD 사이). 열다섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 55→56),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RMBS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RMBS 추가).
+
+baseline 56종목으로 재동결(fingerprint `8a390e63…`→`4ceaca7c…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영(계속) — RMBS 추가(2026-09-04)
+
+기존 Notion 트래커(SIGI~SKYW 20건)에 RMBS 1건을 추가했다. 이 요청은
+이후 완료되는 모든 신규 정식분석에 계속 적용되는 상시 작업으로 취급한다.
