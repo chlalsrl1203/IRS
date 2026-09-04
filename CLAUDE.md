@@ -7793,3 +7793,70 @@ tier A, 스크리너 Gap 추정 +11.08%p)를 조사했다. SEC XBRL 매출 실�
 동일한 "원자재 가격사이클 + M&A 단계상승 이중고" 패턴으로 확정.
 재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를
 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## SKYW(SkyWest) 정식 분석 — CPA 구조가 수요변동성을 원리적으로
+차단하는 지역항공 업종 (2026-09-04)
+
+큐 다음 순위 SKYW(SkyWest, Inc., 지역항공사, tier A, 스크리너 Gap
+추정 +10.98%p, 시총 근사 ~$4.16B)를 정식분석했다.
+
+### ⚠️ capex 정의 공존 - MCK와 반대로 넓은 정의가 명백히 옳은 사례
+
+`[capex 정의 공존]` 경고 발생 - 넓은 정의(생산자산 취득)와 좁은 정의
+(유형자산 취득)가 FY2025 기준 548,984,000 vs 32,023,000로 17배 차이.
+넓은 정의를 채택했다 - 항공사의 핵심 자본자산인 **항공기 취득**이
+좁은 정의(지상장비만)에서 통째로 빠지기 때문에, 좁은 정의를 쓰면
+FCF가 사실상 OCF와 같아져 항공사의 자본집약적 성격 자체가 사라진다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +10.29%p
+
+DRS 53.6(cyclical 자동분류), Realistic Growth 9.35%, Implied Growth
+-0.95%(two_stage, 모델괴리 1.62%p로 경고 임계값 미만), RAR +0.6334,
+Confidence 94, PIT_VALID(위반 0건), 강건성점검·SBC교차검증(SBC/FCF
+4.8%, 항공사답게 매우 낮음) 모두 flip 없음. 순부채 $2,269.4M
+(net_debt/EBITDA≈2.31x, 항공사 기준 준수한 수준).
+
+### ⭐ 경쟁구도(2026-09-03 WebSearch) - CPA(용량구매계약) 구조가
+demand_sensitivity를 원리적으로 낮춘다
+
+지역항공사는 본선항공사(Delta/United/American/Alaska)와의 CPA로
+운항하는데, **요금·수요·연료위험을 본선항공사가 부담하고 지역항공사는
+고정 용량기반 수수료만 받는 구조**라 수요변동성으로부터 원리적으로
+절연된다(회사 자체 계약구조 설명) - demand_sensitivity_pct를
+CLAUDE.md 업종앵커표 어느 버킷보다 낮게(0.10) 채택한 근거. SkyWest·
+Republic Airways가 독립계 지역항공 운항의 약 84%를 양분(사실상
+복점), 조종사 부족(2026년 북미 약 24,000명 부족 전망)은 업계 전반
+비용리스크이지 SkyWest 고유 경쟁열위는 아님. United Express 확장이
+SkyWest Leasing 이익을 +23.8%(Q1 2026) 견인 중.
+
+### 배선
+
+`watchlist.json`에 SKYW 추가(54→55, SIGI-TCOM 사이). 열다섯 번째
+"알려진 예외" 세트 확장: `test_monitor_state.py`(n_ledgers 54→55),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 SKYW 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 SKYW 추가).
+
+baseline 55종목으로 재동결(fingerprint `1ac66dbe…`→`8a390e63…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영 (2026-09-04, 사용자 요청
+"기업분석한 것들은 노션에 저장해")
+
+이 세션에서 정식분석한 19종목(SIGI/OKTA/MEDP/RYAN/FIX/NBIX/NXT/PATH/
+PCTY/EXEL/PINS/ROKU/HLNE/FIVE/TW/RLI/DOCU/CINF/TENB)을 Notion
+"기업분석 결과 트래커" 데이터베이스(Investment Research System (IRS)
+허브 하위)에 행으로 추가했다. 기존 트래커는 2026-07월 말 수준에서
+멈춰 있었고(104행, 최신 항목이 WCN/GEN 등) 이번 세션 신규분석은 전무
+했었다 - 사전에 SQL 쿼리로 중복 없음을 확인 후 진행.
+
+각 행에 Ticker/회사명/판정/등급/DRS/Realistic Growth/Implied Growth/
+Expectation Gap/RAR/Lynch유형/강건성점검/엔진버전/분석일/Ledger경로/
+작업상태(완료)/핵심노트(SBC플립·screen()거짓탈락·데이터함정 등 이번
+CLAUDE.md 기록의 핵심 발견을 압축)를 채웠다. SKYW는 이번 기록 시점
+분석이 진행 중이라 이번 배치에는 포함하지 않았다(다음 배치에서 추가
+예정).
+
+⚠️ 트래커의 "판정"·"등급"·"Lynch유형" select 옵션은 기존 스키마
+그대로 사용했다(예: Lynch유형 영문 Title Case "Fast Grower" 등 -
+ledger 내부의 snake_case "fast_grower"와 다름, 매핑해서 입력).

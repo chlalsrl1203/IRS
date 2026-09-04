@@ -1,0 +1,611 @@
+{
+  "meta": {
+    "ticker": "SKYW",
+    "company_name": "SkyWest, Inc.",
+    "analyzed_at": "2026-09-04T03:12:56.777112+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0000793733, 조회 2026-09-03/04)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-08-31 종가 근사 $94.96)",
+      "WebSearch: SKYW 자사주매입 반영 주식수(2026-08월말 근사), CPA구조·경쟁구도(2026-09-03 재인용)"
+    ],
+    "falsification_conditions": "다음 분기 SkyWest Leasing 이익 성장률이 뚜렷이 둔화되거나 조종사 부족 심화로 신규 CPA 항공기 배치가 지연되는 구체 증거가 나오면 이 판정을 재검토할 것.",
+    "price_at_analysis": 94.96,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-04",
+      "filing_dates_by_year": {
+        "2011": "2012-02-24",
+        "2012": "2013-02-15",
+        "2013": "2014-02-14",
+        "2014": "2015-02-18",
+        "2015": "2016-02-26",
+        "2016": "2017-02-27",
+        "2017": "2018-02-26",
+        "2018": "2019-02-21",
+        "2019": "2020-02-18",
+        "2020": "2021-02-22",
+        "2021": "2022-02-17",
+        "2022": "2023-02-16",
+        "2023": "2024-02-15",
+        "2024": "2025-02-13",
+        "2025": "2026-02-17"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 8,
+      "n_missing": 7,
+      "missing_fields": [
+        "revenue_by_year[2016]",
+        "revenue_by_year[2020]",
+        "revenue_by_year[2021]",
+        "revenue_by_year[2022]",
+        "revenue_by_year[2023]",
+        "revenue_by_year[2024]",
+        "revenue_by_year[2025]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2011]",
+          "value": 3654923000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2011-01-01~2011-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2012-02-24",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2012]",
+          "value": 3534372000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2012-01-01~2012-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2013-02-15",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2013]",
+          "value": 3297725000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2013-01-01~2013-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2014-02-14",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2014]",
+          "value": 3237447000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2014-01-01~2014-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2015-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2015]",
+          "value": 3095563000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2015-01-01~2015-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2016-02-26",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 3122592000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 3221679000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2971963000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "SKYW",
+    "company_name": "SkyWest, Inc.",
+    "revenue_by_year": {
+      "2011": 3654923000.0,
+      "2012": 3534372000.0,
+      "2013": 3297725000.0,
+      "2014": 3237447000.0,
+      "2015": 3095563000.0,
+      "2016": 3063702000.0,
+      "2017": 3122592000.0,
+      "2018": 3221679000.0,
+      "2019": 2971963000.0,
+      "2020": 2127106000.0,
+      "2021": 2713491000.0,
+      "2022": 3004925000.0,
+      "2023": 2935432000.0,
+      "2024": 3527920000.0,
+      "2025": 4058202000.0
+    },
+    "operating_income_by_year": {
+      "2011": 41105000.0,
+      "2012": 165987000.0,
+      "2013": 153111000.0,
+      "2014": 24848000.0,
+      "2015": 234515000.0,
+      "2016": -172684000.0,
+      "2017": 388199000.0,
+      "2018": 474280000.0,
+      "2019": 512258000.0,
+      "2020": 108802000.0,
+      "2021": 275867000.0,
+      "2022": 181162000.0,
+      "2023": 104069000.0,
+      "2024": 494657000.0,
+      "2025": 617846000.0
+    },
+    "operating_cashflow_by_year": {
+      "2011": 162126000.0,
+      "2012": 288824000.0,
+      "2013": 289890000.0,
+      "2014": 285539000.0,
+      "2015": 417325000.0,
+      "2016": 506665000.0,
+      "2017": 684124000.0,
+      "2018": 802534000.0,
+      "2019": 721030000.0,
+      "2020": 633563000.0,
+      "2021": 831820000.0,
+      "2022": 480376000.0,
+      "2023": 736334000.0,
+      "2024": 692462000.0,
+      "2025": 940364000.0
+    },
+    "capex_by_year": {
+      "2011": 199756000.0,
+      "2012": 94840000.0,
+      "2013": 142044000.0,
+      "2014": 696923000.0,
+      "2015": 715089000.0,
+      "2016": 1159001000.0,
+      "2017": 689398000.0,
+      "2018": 1156276000.0,
+      "2019": 846470000.0,
+      "2020": 460483000.0,
+      "2021": 567037000.0,
+      "2022": 662317000.0,
+      "2023": 263909000.0,
+      "2024": 439220000.0,
+      "2025": 548984000.0
+    },
+    "market_cap": 3687296799.9999995,
+    "net_debt": 2269411000.0,
+    "ebitda": 982343000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.2,
+      0.1
+    ],
+    "market_share_trend_pp_per_year": 0.3,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.1,
+    "subjective_input_basis": "competitor_threat_weights=[0.20(Republic Airways - 독립계 지역항공 운항에서 SkyWest와 함께 약 84% 양분, CPA수주·조종사·항공기경제성에서 가장 직접적으로 경쟁), 0.10(본선항공사 산하 캡티브 지역자회사(Envoy/PSA/Piedmont/Endeavor) - 별도 상장 경쟁사는 아니나 CPA 슬롯을 구조적으로 잠식할 수 있어 낮게 반영)]. market_share_trend_pp_per_year=+0.3 - United Express 확장으로 SkyWest Leasing 이익이 +23.8%(Q1 2026) 성장 중(2026-09-03 WebSearch). demand_sensitivity_pct=0.10 - CPA(용량구매계약) 구조상 본선항공사가 요금·수요·연료위험을 부담하고 지역항공사는 고정 용량기반 수수료만 받아 수요 변동성으로부터 원리적으로 절연됨(회사 자체 CPA 계약구조 설명, WebSearch 재확인) - CLAUDE.md 업종앵커표 어느 버킷보다 낮게 채택.",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 11.42%/5y 13.85%/10y 이용가능)이 default_terminal_growth(2.0~4.5%)보다 높고, CPA 신규체결·기존기재 대체(E175 등)로 지속적 매출 성장이 예상되는 국면이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0000793733, 조회 2026-09-03/04)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-08-31 종가 근사 $94.96)",
+      "WebSearch: SKYW 자사주매입 반영 주식수(2026-08월말 근사), CPA구조·경쟁구도(2026-09-03 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2015": 117817000.0,
+      "2016": -161586000.0,
+      "2017": 428907000.0,
+      "2018": 280372000.0,
+      "2019": 340099000.0,
+      "2020": -8515000.0,
+      "2021": 111910000.0,
+      "2022": 72953000.0,
+      "2023": 34342000.0,
+      "2024": 322962000.0,
+      "2025": 428334000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2011": 5365000.0,
+      "2012": 4693000.0,
+      "2013": 4363000.0,
+      "2014": 5318000.0,
+      "2015": 5368000.0,
+      "2016": 7568000.0,
+      "2017": 10580000.0,
+      "2018": 13105000.0,
+      "2019": 10274000.0,
+      "2020": 6802000.0,
+      "2021": 8685000.0,
+      "2022": 9159000.0,
+      "2023": 17125000.0,
+      "2024": 19864000.0,
+      "2025": 18729000.0
+    },
+    "falsification_conditions": "다음 분기 SkyWest Leasing 이익 성장률이 뚜렷이 둔화되거나 조종사 부족 심화로 신규 CPA 항공기 배치가 지연되는 구체 증거가 나오면 이 판정을 재검토할 것.",
+    "price_at_analysis": 94.96,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 8,
+      "n_missing": 7,
+      "missing_fields": [
+        "revenue_by_year[2016]",
+        "revenue_by_year[2020]",
+        "revenue_by_year[2021]",
+        "revenue_by_year[2022]",
+        "revenue_by_year[2023]",
+        "revenue_by_year[2024]",
+        "revenue_by_year[2025]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2011]",
+          "value": 3654923000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2011-01-01~2011-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2012-02-24",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2012]",
+          "value": 3534372000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2012-01-01~2012-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2013-02-15",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2013]",
+          "value": 3297725000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2013-01-01~2013-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2014-02-14",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2014]",
+          "value": 3237447000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2014-01-01~2014-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2015-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2015]",
+          "value": 3095563000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2015-01-01~2015-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2016-02-26",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 3122592000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 3221679000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 2971963000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-04",
+    "filing_dates_by_year": {
+      "2011": "2012-02-24",
+      "2012": "2013-02-15",
+      "2013": "2014-02-14",
+      "2014": "2015-02-18",
+      "2015": "2016-02-26",
+      "2016": "2017-02-27",
+      "2017": "2018-02-26",
+      "2018": "2019-02-21",
+      "2019": "2020-02-18",
+      "2020": "2021-02-22",
+      "2021": "2022-02-17",
+      "2022": "2023-02-16",
+      "2023": "2024-02-15",
+      "2024": "2025-02-13",
+      "2025": "2026-02-17"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.10535048945299885,
+    "revenue_cagr_5y": 0.13791259799985234,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.027446935989319243,
+    "fcf_cagr_5y": 0.1772544709618864,
+    "fcf0": 391380000.0,
+    "fcf_by_year": {
+      "2011": -37630000.0,
+      "2012": 193984000.0,
+      "2013": 147846000.0,
+      "2014": -411384000.0,
+      "2015": -297764000.0,
+      "2016": -652336000.0,
+      "2017": -5274000.0,
+      "2018": -353742000.0,
+      "2019": -125440000.0,
+      "2020": 173080000.0,
+      "2021": 264783000.0,
+      "2022": -181941000.0,
+      "2023": 472425000.0,
+      "2024": 253242000.0,
+      "2025": 391380000.0
+    },
+    "worst_yoy_revenue_growth": -0.2842757463669635,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      0.10166497696141244,
+      0.06028835994242785,
+      0.035452703384033425,
+      0.14021207963899407,
+      0.15224624106932086
+    ],
+    "net_debt_to_ebitda": 2.3102022409687857
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 14.0,
+      "cyclicality": 20.0,
+      "competition_intensity": 3.6000000000000005
+    },
+    "score": 53.6
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.06608,
+    "r": 0.11358,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.0610482232681602,
+    "realistic_growth": 0.09346176816603399,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.10535048945299885,
+        "5y": 0.13791259799985234,
+        "10y": 0.027446935989319243
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.09953841132431898,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.09953841132431898,
+      "structural_discount_pct": 0.0610482232681602,
+      "discounted_growth": 0.09346176816603399,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.09346176816603399
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.00672354586762059,
+      "two_stage": -0.00945968627929689,
+      "errors": {},
+      "divergence": 0.01618323214691748,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 11.42%/5y 13.85%/10y 이용가능)이 default_terminal_growth(2.0~4.5%)보다 높고, CPA 신규체결·기존기재 대체(E175 등)로 지속적 매출 성장이 예상되는 국면이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "value": -0.00945968627929689
+  },
+  "expectation_gap": 0.10292145444533088,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.09346176816603399,
+      "g_bull": 0.14019265224905098,
+      "g_bear": 0.046730884083016996,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.505418837949333,
+      "base": 0.31936577978942915,
+      "bear": 0.15976225134785826
+    },
+    "probabilities": {
+      "bull": 0.2892,
+      "base": 0.5,
+      "bear": 0.21080000000000002
+    },
+    "probability_rationale": "DRS=53.6 (중립점 50 대비 편차 +0.07) 기준: p_bull=28.9%, p_base=50.0%, p_bear=21.1%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.3395279004137902
+  },
+  "rar": 0.6334475753988624,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11358,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": -0.00945968627929689,
+    "implied_growth_without_drs": -0.03498630523681641,
+    "gap_with_drs": 0.10292145444533088,
+    "gap_without_drs": 0.12844807340285042,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11358,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": -0.00945968627929689,
+      "implied_growth_without_drs": -0.03498630523681641,
+      "gap_with_drs": 0.10292145444533088,
+      "gap_without_drs": 0.12844807340285042,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 18729000.0,
+    "sbc_to_fcf_pct": 0.04785374827533344,
+    "fcf0_sbc_adjusted": 372651000.0,
+    "implied_growth_sbc_adjusted": -0.0030805587768554825,
+    "gap_sbc_adjusted": 0.09654232694288947,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}
