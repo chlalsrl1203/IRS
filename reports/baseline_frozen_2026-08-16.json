@@ -13,8 +13,8 @@
     "drs_score",
     "confidence"
   ],
-  "n_tickers": 61,
-  "fingerprint": "51888f8eac8572fe51583bfba4dfc9988d10722ef3fb26a46d2c186bc7db7d54",
+  "n_tickers": 64,
+  "fingerprint": "f80ba74796721f2edcaebc762bdb88a7ae674f4daa33732bf053538686105b27",
   "rows": {
     "ACGL": {
       "engine_version": "v3.27",
@@ -25,6 +25,17 @@
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 48.0,
+      "confidence": 94
+    },
+    "ADBE": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.10952847546187847,
+      "implied_growth": 0.004822921752929674,
+      "expectation_gap": 0.1047055537089488,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.439999999999998,
       "confidence": 94
     },
     "BKNG": {
@@ -92,6 +103,17 @@
       "n": 12,
       "drs_score": 36.6,
       "confidence": 69
+    },
+    "CHWY": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.08160085984157919,
+      "implied_growth": 0.05790367126464842,
+      "expectation_gap": 0.023697188576930775,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 32.64,
+      "confidence": 94
     },
     "CINF": {
       "engine_version": "v3.80",
@@ -311,6 +333,17 @@
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 23.0,
+      "confidence": 94
+    },
+    "MMS": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.06113417614610206,
+      "implied_growth": -0.036268997192382815,
+      "expectation_gap": 0.09740317333848487,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.119999999999997,
       "confidence": 94
     },
     "MNDY": {

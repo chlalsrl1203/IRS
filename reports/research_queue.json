@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 228,
-    "ANALYZED": 29,
+    "QUEUED": 225,
+    "ANALYZED": 32,
     "IN_BUYLIST": 3
   },
   "next_to_research": [
@@ -816,25 +816,6 @@
       "days_since_seen": 5,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
-    "ADBE": {
-      "ticker": "ADBE",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07831705788896728,
-      "tier": "A",
-      "market_cap": 144940000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07831705788896728,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
     "MKL": {
       "ticker": "MKL",
       "first_seen": "2026-08-30",
@@ -892,25 +873,6 @@
       "days_since_seen": 5,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
-    "MMS": {
-      "ticker": "MMS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07567552073973044,
-      "tier": "A",
-      "market_cap": 3801184315.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07567552073973044,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
     "DHI": {
       "ticker": "DHI",
       "first_seen": "2026-08-30",
@@ -925,25 +887,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.07550892111129258,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 5,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "CHWY": {
-      "ticker": "CHWY",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07438061075756518,
-      "tier": "A",
-      "market_cap": 8000000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07438061075756518,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 5,
@@ -1932,6 +1875,63 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.0786812992181047,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "ADBE": {
+      "ticker": "ADBE",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.07831705788896728,
+      "tier": "A",
+      "market_cap": 144940000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.07831705788896728,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "MMS": {
+      "ticker": "MMS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.07567552073973044,
+      "tier": "A",
+      "market_cap": 3801184315.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.07567552073973044,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 5,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "CHWY": {
+      "ticker": "CHWY",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.07438061075756518,
+      "tier": "A",
+      "market_cap": 8000000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.07438061075756518,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 5,

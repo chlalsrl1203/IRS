@@ -8142,3 +8142,63 @@ Confidence 79. Chili's 21분기 연속 동일매장매출 성장(FY2025 +26%->FY
 `test_sbc_harvest.py`)에 3종목 일괄 추가. baseline 61종목으로 재동결
 (fingerprint `f7211482…`→`51888f8e…`). 테스트 1,082개 전부 통과.
 `ENGINE_VERSION` 무변경(v3.80 유지).
+
+## ADBE·MMS·CHWY 정식 분석 + IBP·APTV·MLI·MKL·FCFS·ADI·DHI 배제 (2026-09-04,
+배치 처리 2차)
+
+**ADBE(Adobe)** - "저평가 가능성"(A등급), Gap +10.47%p, Confidence 94.
+M&A 왜곡·사이클성 없는 깨끗한 다년성장(3y 10.52%/5y 13.06%/10y 17.36%,
+매끄러운 감속). 'SaaSpocalypse' 서사(Canva·Figma·Sora가 크리에이티브
+전문가층 잠식 우려)로 주가 큰 폭 하락(트레일링PER 약 12배)했으나, AI중심
+ARR이 오히려 전년比 3배($5억+)로 확장 중임을 실측 확인 - 서사가 실측보다
+비관적인 패턴(BSX·NBIX와 동일 계열). 실시간 시총($1,136억)이 스크리너
+근사($1,449억)보다 22% 낮은 DECK와 동일 방향 사례. SBC flip 없음(19.7%).
+
+**MMS(Maximus)** - "저평가 가능성"(A등급), Gap +9.74%p, Confidence 94.
+정부위탁 Medicaid/실업급여 행정서비스. 주가 -33%YTD의 직접 원인은 VA
+(재향군인부) 프로그램 실적인센티브 일시중단(실측 확인) - 동시에 $504억
+영업파이프라인·AI활용 신규입찰 비중 75~80%·FY2027 신규연방법(Medicaid
+근로요건 등)에 따른 구조적 수요확대 전망도 함께 확인됨. FY2016/2017
+capex 데이터 미확보로 2018년부터 사용(10y는 5y로 자동대체). SBC flip
+없음(11.2%).
+
+**CHWY(Chewy)** - "적정가/경계선"(C등급), Gap +2.37%p, Confidence 94.
+반려동물 온라인 2위 사업자(Amazon 1위 ~50%, Chewy 41%, Walmart 33%).
+⚠️ FCF 5y창 기준연도(2021)가 근사-0($201만)이라 FCF CAGR이 비현실적
+(약208%)이나 min() 로직이 자동 배제 - PATH(같은 세션)와 동일한 아티팩트
+유형, 계산 결과에는 무영향. Autoship 구독비중 66.2%(2018)→84.4%(현재)로
+확대, FCF $5.624억(+24%YoY, WebSearch와 재무데이터 정확히 일치). ⭐ SBC
+교차검증 flip(SBC/FCF 53.0%, "적정가/경계선"→"과대평가 가능성") - C등급
+이라 유니버스 영향 없음.
+
+**배제 7건**:
+- **IBP(Installed Building Products)**: M&A롤업(2021→2022 +35.6%) +
+  최근 오가닉 실제악화(Q1 2026 잔여branch 매출 residential -6.1%YoY,
+  2026-09-04 WebSearch 확인) - CNM과 동일 유형.
+- **APTV(Aptiv)**: **진행중 기업분할**(Electrical Distribution Systems
+  사업부를 "Versigent"(VGNT)로 2026-04-01까지 스핀오프 예정, 2026-09-04
+  WebSearch 확인) - 현재 연결재무제표로 DCF하면 곧 존재하지 않을 회사를
+  평가하는 셈. LNTH(피인수예정) 배제와 대칭되는 신규 사유(부모회사
+  분할판).
+- **MLI(Mueller Industries)**: 구리가격 사이클성(2021년 매출+57.2%/
+  영업이익+167%, 2021 구리가격 급등과 정확히 일치) - CDE/HL/NEM/COP/
+  EOG/CVX와 동일 유형.
+- **MKL(Markel Group)**: 매출 태그 불연속(2016 -75.6%, 2023 +201.8% -
+  2023년 Markel Corporation→Markel Group 재편에 따른 정의변경으로 추정)
+  + 순이익이 투자포트폴리오 시가평가 변동에 좌우(2018·2022 적자) - 보험
+  언더라이팅+Markel Ventures+대규모 투자포트폴리오 복합 콘글로머리트라
+  is_insurer 경로로도 단순 처리 불가.
+- **FCFS(First Citizens BancShares)**: operating_income 전무 - COF/AMP/
+  HBAN/AXP와 동일한 은행지주 구조.
+- **ADI(Analog Devices)**: M&A 단계상승 2건(Linear Technology 2017
+  +53.3%, Maxim Integrated 2021→2022 +64.2%) + 반도체 사이클성
+  (FY2023→24 -23.4%) 복합 - AVGO와 동일 유형.
+- **DHI(D.R. Horton)**: 주택건설업(금리환경에 업종전체가 동시에 눌리는
+  매크로 현상, 2026-08-14 이미 CLAUDE.md에 확인전 제외 카테고리로 기록됨).
+
+### 배선
+
+`watchlist.json`에 ADBE·CHWY·MMS 추가(61→64). test 레지스트리 3종
+일괄 추가. baseline 64종목으로 재동결(fingerprint `51888f8e…`→
+`f80ba747…`). 테스트 1,082개 전부 통과. `ENGINE_VERSION` 무변경
+(v3.80 유지).
