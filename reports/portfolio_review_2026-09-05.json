@@ -1,0 +1,544 @@
+{
+  "as_of": "2026-09-05",
+  "rule_status": "PRE_REGISTERED_NOT_VALIDATED",
+  "holdings_as_of": "2026-09-04",
+  "currency": "KRW",
+  "total_market_value": 5802074,
+  "reconciliation": {
+    "reported_total": 5802074,
+    "sum_of_positions": 5802071,
+    "difference": 3,
+    "relative_difference": 5.170564870423921e-07
+  },
+  "n_positions": 8,
+  "coverage": {
+    "positions_with_judgment": 6,
+    "weight_with_judgment": 0.912399255852304,
+    "weight_without_judgment": 0.08760074414769603
+  },
+  "grade_distribution": {
+    "A": [
+      "NOW",
+      "SE"
+    ],
+    "C": [
+      "PTC",
+      "VRT"
+    ],
+    "S": [
+      "ACGL",
+      "DLO"
+    ]
+  },
+  "positions": [
+    {
+      "ticker": "PTC",
+      "weight": 0.3839096157684304,
+      "return_pct": -0.6,
+      "has_judgment": true,
+      "judgment": "적정가/경계선",
+      "grade": "C",
+      "expectation_gap": 0.040768922270243035,
+      "confidence": 79,
+      "analyzed_at": "2026-09-04",
+      "engine_version": "v3.80",
+      "age_days": 1,
+      "flags": [
+        {
+          "code": "CONCENTRATION",
+          "rule": "단일 종목 비중이 25%를 넘는다",
+          "detail": "비중 38.39%"
+        }
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "weight": 0.19219024093798184,
+      "return_pct": 11.4,
+      "has_judgment": true,
+      "judgment": "적정가/경계선",
+      "grade": "C",
+      "expectation_gap": -0.01241755911955486,
+      "confidence": 94,
+      "analyzed_at": "2026-09-04",
+      "engine_version": "v3.80",
+      "age_days": 1,
+      "flags": [
+        {
+          "code": "MODEL_FRAGILE",
+          "rule": "내재성장률 모델 간 괴리가 3%p 이상이다 - 판정이 모델 선택에 좌우된다",
+          "detail": "single 9.07% vs two 19.95% (괴리 10.88%p)"
+        }
+      ]
+    },
+    {
+      "ticker": "SE",
+      "weight": 0.13437832747393433,
+      "return_pct": 1.4,
+      "has_judgment": true,
+      "judgment": "저평가 가능성",
+      "grade": "A",
+      "expectation_gap": 0.12330089569091772,
+      "confidence": 94,
+      "analyzed_at": "2026-09-05",
+      "engine_version": "v3.81",
+      "age_days": 0,
+      "flags": []
+    },
+    {
+      "ticker": "DLO",
+      "weight": 0.11120471748550605,
+      "return_pct": -5.7,
+      "has_judgment": true,
+      "judgment": "저평가 가능성",
+      "grade": "S",
+      "expectation_gap": 0.23736248016357422,
+      "confidence": 89,
+      "analyzed_at": "2026-09-04",
+      "engine_version": "v3.80",
+      "age_days": 1,
+      "flags": [
+        {
+          "code": "GROWTH_CAP_BINDING",
+          "rule": "Realistic Growth가 상한값 그 자체다 - 성장분석이 결과에 기여하지 않고 Gap이 사실상 Implied Growth 단독으로 결정된다",
+          "detail": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요"
+        }
+      ]
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.06730851760939278,
+      "return_pct": 8.9,
+      "has_judgment": true,
+      "judgment": "저평가 가능성",
+      "grade": "A",
+      "expectation_gap": 0.08296327724967925,
+      "confidence": 94,
+      "analyzed_at": "2026-09-05",
+      "engine_version": "v3.81",
+      "age_days": 0,
+      "flags": [
+        {
+          "code": "SBC_FLIP",
+          "rule": "SBC를 실제 비용으로 차감하면 판정이 뒤집힌다 - 회계 가정 하나에 판정이 달려 있다",
+          "detail": "SBC/FCF 42.7%, Gap +8.30%p -> +1.88%p (저평가 가능성 -> 적정가/경계선)"
+        },
+        {
+          "code": "MODEL_FRAGILE",
+          "rule": "내재성장률 모델 간 괴리가 3%p 이상이다 - 판정이 모델 선택에 좌우된다",
+          "detail": "single 7.36% vs two 12.71% (괴리 5.35%p)"
+        }
+      ]
+    },
+    {
+      "ticker": "MU",
+      "weight": 0.05649755587398575,
+      "return_pct": 111.7,
+      "has_judgment": false,
+      "judgment": null,
+      "grade": null,
+      "expectation_gap": null,
+      "confidence": null,
+      "analyzed_at": null,
+      "engine_version": null,
+      "age_days": null,
+      "flags": [
+        {
+          "code": "NO_JUDGMENT",
+          "rule": "이 종목에 대한 공식 ledger가 없다 - 엔진이 판정한 적이 없거나 FRAMEWORK_MISMATCH로 제외됐다",
+          "detail": "ledger/에 이 티커의 공식 분석이 없다"
+        }
+      ]
+    },
+    {
+      "ticker": "ALB",
+      "weight": 0.03110267121722336,
+      "return_pct": -34.3,
+      "has_judgment": false,
+      "judgment": null,
+      "grade": null,
+      "expectation_gap": null,
+      "confidence": null,
+      "analyzed_at": null,
+      "engine_version": null,
+      "age_days": null,
+      "flags": [
+        {
+          "code": "NO_JUDGMENT",
+          "rule": "이 종목에 대한 공식 ledger가 없다 - 엔진이 판정한 적이 없거나 FRAMEWORK_MISMATCH로 제외됐다",
+          "detail": "ledger/에 이 티커의 공식 분석이 없다"
+        },
+        {
+          "code": "DEEP_LOSS_NO_JUDGMENT",
+          "rule": "수익률이 -20% 이하인데 공식 판정이 없다 - 손실 원인을 엔진이 설명하지 못하는 상태",
+          "detail": "수익률 -34.3%"
+        }
+      ]
+    },
+    {
+      "ticker": "ACGL",
+      "weight": 0.02340783657705848,
+      "return_pct": 0.5,
+      "has_judgment": true,
+      "judgment": "저평가 가능성",
+      "grade": "S",
+      "expectation_gap": 0.24452910193896105,
+      "confidence": 94,
+      "analyzed_at": "2026-09-05",
+      "engine_version": "v3.81",
+      "age_days": 0,
+      "flags": []
+    }
+  ],
+  "review_queue": [
+    {
+      "ticker": "NOW",
+      "weight": 0.06730851760939278,
+      "n_flags": 2,
+      "flags": [
+        "SBC_FLIP",
+        "MODEL_FRAGILE"
+      ]
+    },
+    {
+      "ticker": "ALB",
+      "weight": 0.03110267121722336,
+      "n_flags": 2,
+      "flags": [
+        "NO_JUDGMENT",
+        "DEEP_LOSS_NO_JUDGMENT"
+      ]
+    },
+    {
+      "ticker": "PTC",
+      "weight": 0.3839096157684304,
+      "n_flags": 1,
+      "flags": [
+        "CONCENTRATION"
+      ]
+    },
+    {
+      "ticker": "VRT",
+      "weight": 0.19219024093798184,
+      "n_flags": 1,
+      "flags": [
+        "MODEL_FRAGILE"
+      ]
+    },
+    {
+      "ticker": "DLO",
+      "weight": 0.11120471748550605,
+      "n_flags": 1,
+      "flags": [
+        "GROWTH_CAP_BINDING"
+      ]
+    },
+    {
+      "ticker": "MU",
+      "weight": 0.05649755587398575,
+      "n_flags": 1,
+      "flags": [
+        "NO_JUDGMENT"
+      ]
+    },
+    {
+      "ticker": "SE",
+      "weight": 0.13437832747393433,
+      "n_flags": 0,
+      "flags": []
+    },
+    {
+      "ticker": "ACGL",
+      "weight": 0.02340783657705848,
+      "n_flags": 0,
+      "flags": []
+    }
+  ],
+  "unheld_sa_candidates": [
+    {
+      "ticker": "SIGI",
+      "grade": "S",
+      "expectation_gap": 0.23672077178955078,
+      "confidence": 89,
+      "analyzed_at": "2026-09-02",
+      "sbc_flip": false,
+      "model_divergence": 0.02710717163874174,
+      "growth_cap_binding": true
+    },
+    {
+      "ticker": "MNDY",
+      "grade": "S",
+      "expectation_gap": 0.23276233673095703,
+      "confidence": 89,
+      "analyzed_at": "2026-08-02",
+      "sbc_flip": false,
+      "model_divergence": 0.007048455259257232,
+      "growth_cap_binding": true
+    },
+    {
+      "ticker": "PDD",
+      "grade": "S",
+      "expectation_gap": 0.22037292480468723,
+      "confidence": 89,
+      "analyzed_at": "2026-08-23",
+      "sbc_flip": false,
+      "model_divergence": 0.022999861298675355,
+      "growth_cap_binding": true
+    },
+    {
+      "ticker": "DUOL",
+      "grade": "S",
+      "expectation_gap": 0.19453125000000002,
+      "confidence": 89,
+      "analyzed_at": "2026-08-02",
+      "sbc_flip": false,
+      "model_divergence": 0.009899123215764444,
+      "growth_cap_binding": true
+    },
+    {
+      "ticker": "PGR",
+      "grade": "S",
+      "expectation_gap": 0.1764221572875976,
+      "confidence": 94,
+      "analyzed_at": "2026-08-23",
+      "sbc_flip": false,
+      "model_divergence": 0.023966644107564012,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "TTD",
+      "grade": "S",
+      "expectation_gap": 0.1700962080005105,
+      "confidence": 94,
+      "analyzed_at": "2026-08-03",
+      "sbc_flip": false,
+      "model_divergence": 0.014380061611420915,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "CINF",
+      "grade": "S",
+      "expectation_gap": 0.16781962062278197,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.016809770661867923,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "PINS",
+      "grade": "S",
+      "expectation_gap": 0.1622094065462275,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": true,
+      "model_divergence": 0.019398934277407503,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "NBIX",
+      "grade": "A",
+      "expectation_gap": 0.14051410543895676,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.01914507258542323,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "RYAN",
+      "grade": "A",
+      "expectation_gap": 0.1376697121870132,
+      "confidence": 94,
+      "analyzed_at": "2026-09-02",
+      "sbc_flip": false,
+      "model_divergence": 0.008403915988085466,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "HLNE",
+      "grade": "A",
+      "expectation_gap": 0.13309650164355719,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.016835807509008177,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "DECK",
+      "grade": "A",
+      "expectation_gap": 0.13228701711181728,
+      "confidence": 94,
+      "analyzed_at": "2026-09-04",
+      "sbc_flip": false,
+      "model_divergence": 0.016381540278856514,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "GEN",
+      "grade": "A",
+      "expectation_gap": 0.12182151794433595,
+      "confidence": 89,
+      "analyzed_at": "2026-08-04",
+      "sbc_flip": false,
+      "model_divergence": 0.013755732201694314,
+      "growth_cap_binding": true
+    },
+    {
+      "ticker": "UBER",
+      "grade": "A",
+      "expectation_gap": 0.11784205707458376,
+      "confidence": 94,
+      "analyzed_at": "2026-08-04",
+      "sbc_flip": false,
+      "model_divergence": 0.0031323577007520698,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "NXT",
+      "grade": "A",
+      "expectation_gap": 0.11492701808014419,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.03305427409338338,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "WDAY",
+      "grade": "A",
+      "expectation_gap": 0.11417055453507202,
+      "confidence": 94,
+      "analyzed_at": "2026-08-04",
+      "sbc_flip": true,
+      "model_divergence": 0.0025356239664337324,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "TW",
+      "grade": "A",
+      "expectation_gap": 0.11156004145007234,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.013528276361133969,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "PCTY",
+      "grade": "A",
+      "expectation_gap": 0.10780934544939036,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.004899422060310368,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "ADBE",
+      "grade": "A",
+      "expectation_gap": 0.1047055537089488,
+      "confidence": 94,
+      "analyzed_at": "2026-09-04",
+      "sbc_flip": false,
+      "model_divergence": 0.013208749526390565,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "SKYW",
+      "grade": "A",
+      "expectation_gap": 0.10292145444533088,
+      "confidence": 94,
+      "analyzed_at": "2026-09-04",
+      "sbc_flip": false,
+      "model_divergence": 0.01618323214691748,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "TENB",
+      "grade": "A",
+      "expectation_gap": 0.099036030826151,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": true,
+      "model_divergence": 0.001664422678882456,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "CROX",
+      "grade": "A",
+      "expectation_gap": 0.09889103376656783,
+      "confidence": 94,
+      "analyzed_at": "2026-09-01",
+      "sbc_flip": false,
+      "model_divergence": 0.015417586877500148,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "MEDP",
+      "grade": "A",
+      "expectation_gap": 0.09795899541169606,
+      "confidence": 94,
+      "analyzed_at": "2026-09-02",
+      "sbc_flip": false,
+      "model_divergence": 0.029278523601181543,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "MMS",
+      "grade": "A",
+      "expectation_gap": 0.09740317333848487,
+      "confidence": 94,
+      "analyzed_at": "2026-09-04",
+      "sbc_flip": false,
+      "model_divergence": 0.02425441715181437,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "DOCU",
+      "grade": "A",
+      "expectation_gap": 0.08627269445104728,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": true,
+      "model_divergence": 0.009171944878395264,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "RLI",
+      "grade": "A",
+      "expectation_gap": 0.07704845900034454,
+      "confidence": 94,
+      "analyzed_at": "2026-09-03",
+      "sbc_flip": false,
+      "model_divergence": 0.016562317607891053,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "TCOM",
+      "grade": "A",
+      "expectation_gap": 0.07547684320764038,
+      "confidence": 94,
+      "analyzed_at": "2026-08-04",
+      "sbc_flip": false,
+      "model_divergence": 0.005800286404803859,
+      "growth_cap_binding": false
+    },
+    {
+      "ticker": "BRO",
+      "grade": "A",
+      "expectation_gap": 0.07427728925631566,
+      "confidence": 89,
+      "analyzed_at": "2026-08-29",
+      "sbc_flip": false,
+      "model_divergence": 0.009852087840300026,
+      "growth_cap_binding": true
+    }
+  ],
+  "not_provided": [
+    "액션(BUY/SELL 등) - 분석자가 고른다(engine/thesis.py v3.48 경계)",
+    "목표비중 - 새 배분 공식을 만들지 않는다(2026-08-21 PHASE 2 감사)",
+    "성과 예측 - 실현수익률 관측이 0건이라 근거가 없다"
+  ]
+}

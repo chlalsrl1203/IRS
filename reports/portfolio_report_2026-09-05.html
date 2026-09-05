@@ -1,0 +1,531 @@
+<title>보유 포트폴리오 판정 원장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&family=Noto+Serif+KR:wght@500;700&display=swap">
+
+<style>
+:root{
+  --paper:#f5f6f7; --surface:#ffffff; --sunk:#eceef0;
+  --ink:#14181c; --ink-2:#39424b; --muted:#5b6670; --hair:#d9dde1;
+  --accent:#1f6f5c; --accent-soft:#e3efeb;
+  --under:#1f6f5c; --neutral:#8a6a1c; --unknown:#6b5b8a; --over:#a33a3a;
+  --band:#e7eaed;
+  --sans:"IBM Plex Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --serif:"Noto Serif KR",Georgia,"Times New Roman",serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#0f1216; --surface:#161a1f; --sunk:#1c2127;
+    --ink:#e7eaee; --ink-2:#bcc4cc; --muted:#8e99a4; --hair:#2a3037;
+    --accent:#5aa791; --accent-soft:#182a26;
+    --under:#5aa791; --neutral:#c39a3f; --unknown:#9d8ac2; --over:#d1706e;
+    --band:#232930;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0f1216; --surface:#161a1f; --sunk:#1c2127;
+  --ink:#e7eaee; --ink-2:#bcc4cc; --muted:#8e99a4; --hair:#2a3037;
+  --accent:#5aa791; --accent-soft:#182a26;
+  --under:#5aa791; --neutral:#c39a3f; --unknown:#9d8ac2; --over:#d1706e;
+  --band:#232930;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--paper); color:var(--ink);
+  font-family:var(--sans); font-weight:400; font-size:16px; line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1060px; margin:0 auto; padding:56px 28px 96px}
+.prose{max-width:68ch}
+
+h1,h2,h3{font-family:var(--serif); font-weight:700; text-wrap:balance; margin:0}
+h1{font-size:clamp(28px,4.4vw,42px); line-height:1.25; letter-spacing:-.01em}
+h2{font-size:23px; line-height:1.35; margin-bottom:6px}
+h3{font-size:17px; font-weight:500; line-height:1.4}
+p{margin:0}
+a{color:var(--accent)}
+
+.eyebrow{
+  font-family:var(--mono); font-size:11px; letter-spacing:.14em;
+  text-transform:uppercase; color:var(--muted);
+}
+.stamp{
+  font-family:var(--mono); font-size:12px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:6px 18px; align-items:baseline;
+}
+.stamp b{color:var(--ink-2); font-weight:500}
+
+header{display:flex; flex-direction:column; gap:14px;
+  padding-bottom:26px; border-bottom:2px solid var(--ink)}
+header .lede{font-size:17px; color:var(--ink-2); max-width:60ch}
+
+section{margin-top:52px; display:flex; flex-direction:column; gap:18px}
+.sec-head{display:flex; flex-direction:column; gap:4px}
+.sec-head .note{font-size:14px; color:var(--muted); max-width:66ch}
+
+/* ── 커버리지 ─────────────────────────────────────────────── */
+.coverage{
+  display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:1px; background:var(--hair); border:1px solid var(--hair);
+}
+.cov{background:var(--surface); padding:18px 20px;
+  display:flex; flex-direction:column; gap:5px}
+.cov .k{font-family:var(--mono); font-size:11px; letter-spacing:.1em;
+  text-transform:uppercase; color:var(--muted)}
+.cov .v{font-family:var(--mono); font-size:26px; font-weight:500;
+  font-variant-numeric:tabular-nums; line-height:1.1}
+.cov .d{font-size:13px; color:var(--muted); line-height:1.45}
+.cov.warn .v{color:var(--unknown)}
+
+/* ── 표 ───────────────────────────────────────────────────── */
+.tablewrap{overflow-x:auto; border:1px solid var(--hair); background:var(--surface)}
+table{border-collapse:collapse; width:100%; min-width:840px}
+th,td{padding:11px 14px; text-align:left; vertical-align:middle;
+  border-bottom:1px solid var(--hair)}
+thead th{
+  font-family:var(--mono); font-size:11px; letter-spacing:.09em;
+  text-transform:uppercase; color:var(--muted); font-weight:500;
+  background:var(--sunk); border-bottom:1px solid var(--hair);
+  white-space:nowrap;
+}
+tbody tr:last-child td{border-bottom:none}
+td.num{font-family:var(--mono); font-variant-numeric:tabular-nums;
+  text-align:right; white-space:nowrap}
+td.tk{font-family:var(--mono); font-weight:600; font-size:15px}
+.sub{font-size:12px; color:var(--muted); font-family:var(--sans)}
+
+.pill{display:inline-block; font-family:var(--mono); font-size:11px;
+  font-weight:500; letter-spacing:.04em; padding:2px 8px; border-radius:2px;
+  border:1px solid currentColor; white-space:nowrap}
+.pill.u{color:var(--under)} .pill.n{color:var(--neutral)}
+.pill.x{color:var(--unknown)} .pill.o{color:var(--over)}
+
+/* Gap 막대 — ±5%p 중립밴드가 실제 판정 경계다 */
+.gapcell{width:190px; min-width:190px}
+.gapbar{position:relative; height:22px; background:var(--sunk)}
+.gapbar .band{position:absolute; top:0; bottom:0; left:41.667%;
+  width:16.667%; background:var(--band)}
+.gapbar .zero{position:absolute; top:0; bottom:0; left:50%;
+  width:1px; background:var(--muted); opacity:.55}
+.gapbar .fill{position:absolute; top:5px; height:12px}
+.gapbar .fill.u{background:var(--under)}
+.gapbar .fill.n{background:var(--neutral)}
+.gapbar .fill.o{background:var(--over)}
+.gapbar .none{position:absolute; inset:0; display:flex; align-items:center;
+  justify-content:center; font-family:var(--mono); font-size:11px;
+  color:var(--unknown); letter-spacing:.06em}
+.axis{display:flex; justify-content:space-between; font-family:var(--mono);
+  font-size:10px; color:var(--muted); margin-top:3px}
+
+/* ── 플래그 ───────────────────────────────────────────────── */
+.flags{display:flex; flex-direction:column; gap:0;
+  border:1px solid var(--hair); background:var(--surface)}
+.flagrow{display:grid; grid-template-columns:88px 1fr; gap:0;
+  border-bottom:1px solid var(--hair)}
+.flagrow:last-child{border-bottom:none}
+.flagrow .tkcol{padding:16px 14px; background:var(--sunk);
+  font-family:var(--mono); font-weight:600; display:flex;
+  flex-direction:column; gap:2px; align-items:flex-start}
+.flagrow .tkcol span{font-size:11px; font-weight:400; color:var(--muted)}
+.flagrow .body{padding:14px 16px; display:flex; flex-direction:column; gap:9px}
+.flag{display:flex; flex-direction:column; gap:2px}
+.flag .code{font-family:var(--mono); font-size:11.5px; font-weight:600;
+  letter-spacing:.05em; color:var(--accent)}
+.flag .txt{font-size:13.5px; color:var(--ink-2); line-height:1.55}
+.flag .det{font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  line-height:1.5; word-break:break-word}
+
+/* ── 종목 노트 ────────────────────────────────────────────── */
+.notes{display:flex; flex-direction:column; gap:0;
+  border-top:1px solid var(--hair)}
+.note-item{padding:22px 0; border-bottom:1px solid var(--hair);
+  display:grid; grid-template-columns:150px 1fr; gap:26px}
+.note-item .side{display:flex; flex-direction:column; gap:6px}
+.note-item .side .t{font-family:var(--mono); font-size:19px; font-weight:600}
+.note-item .side .w{font-family:var(--mono); font-size:12px; color:var(--muted);
+  font-variant-numeric:tabular-nums}
+.note-item .txt{font-size:15px; color:var(--ink-2); line-height:1.72}
+.note-item .txt strong{color:var(--ink); font-weight:600}
+.note-item .txt em{font-style:normal; font-family:var(--mono);
+  font-size:13.5px; color:var(--ink)}
+
+/* ── 후보 ─────────────────────────────────────────────────── */
+.cands{columns:2; column-gap:26px; font-family:var(--mono); font-size:12.5px}
+.cand{break-inside:avoid; display:flex; gap:8px; align-items:baseline;
+  padding:4px 0; border-bottom:1px solid var(--hair)}
+.cand .g{width:14px; font-weight:600}
+.cand .g.S{color:var(--under)} .cand .g.A{color:var(--ink-2)}
+.cand .t{width:52px; font-weight:500}
+.cand .v{width:64px; text-align:right; font-variant-numeric:tabular-nums}
+.cand .m{color:var(--muted); font-size:11px; flex:1}
+
+/* ── 한계 ─────────────────────────────────────────────────── */
+.limits{border:1px solid var(--over); background:var(--surface)}
+.limits .lhead{padding:14px 18px; border-bottom:1px solid var(--hair);
+  font-family:var(--serif); font-weight:700; font-size:17px; color:var(--over)}
+.limits ul{margin:0; padding:16px 18px 18px 34px;
+  display:flex; flex-direction:column; gap:11px}
+.limits li{font-size:14.5px; color:var(--ink-2); line-height:1.65}
+.limits li strong{color:var(--ink)}
+
+pre{margin:0; padding:16px 18px; background:var(--sunk); overflow-x:auto;
+  font-family:var(--mono); font-size:12.5px; line-height:1.75;
+  border-left:2px solid var(--accent); color:var(--ink-2)}
+
+footer{margin-top:64px; padding-top:20px; border-top:1px solid var(--hair);
+  font-family:var(--mono); font-size:11.5px; color:var(--muted);
+  display:flex; flex-wrap:wrap; gap:6px 20px}
+
+@media (max-width:640px){
+  .wrap{padding:36px 18px 72px}
+  .note-item{grid-template-columns:1fr; gap:10px}
+  .cands{columns:1}
+  .flagrow{grid-template-columns:1fr}
+  .flagrow .tkcol{flex-direction:row; gap:10px; align-items:baseline;
+    padding:10px 14px}
+}
+</style>
+
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Investment Research System · 보유 포트폴리오 점검</div>
+  <h1>보유 포트폴리오 판정 원장</h1>
+  <p class="lede">보유 8종목을 SEC 1차자료로 전부 다시 계산했다. 이 문서는 <em>어느 종목을 왜 다시 봐야 하는가</em>까지만 답한다 &mdash; 사거나 팔라고 말하지 않는다.</p>
+  <div class="stamp">
+    <span>기준일 <b>2026-09-05</b></span>
+    <span>보유 스냅샷 <b>2026-09-04</b></span>
+    <span>평가액 <b>₩5,802,074</b></span>
+    <span>엔진 <b>v3.82</b></span>
+    <span>테스트 <b>1,098 통과</b></span>
+  </div>
+</header>
+
+<section>
+  <div class="coverage">
+    <div class="cov">
+      <div class="k">판정 커버리지</div>
+      <div class="v">91.2%</div>
+      <div class="d">8종목 중 6종목에 현재 유효한 공식 판정이 있다</div>
+    </div>
+    <div class="cov warn">
+      <div class="k">판정 불가</div>
+      <div class="v">8.8%</div>
+      <div class="d">MU·ALB &mdash; 이 엔진이 원리적으로 값을 낼 수 없는 상태</div>
+    </div>
+    <div class="cov">
+      <div class="k">등급 분포</div>
+      <div class="v">S2 A2 C2</div>
+      <div class="d">ACGL·DLO / NOW·SE / PTC·VRT</div>
+    </div>
+    <div class="cov">
+      <div class="k">상위 2종목 집중도</div>
+      <div class="v">57.6%</div>
+      <div class="d">PTC 38.4% + VRT 19.2% &mdash; 둘 다 중립밴드 안이다</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>판정 표</h2>
+    <p class="note">Expectation Gap = 현실적 성장률 − 시장이 요구하는 내재성장률. 막대의 회색 구간이 ±5%p 중립밴드이고, 이 밴드가 곧 판정 경계다. <strong>SBC 차감</strong> 열은 주식보상비용을 실제 비용으로 볼 때의 같은 계산이다.</p>
+  </div>
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th>종목</th><th class="num">비중</th><th class="num">수익률</th>
+          <th class="gapcell">Expectation Gap &nbsp;<span style="text-transform:none;letter-spacing:0">−30 … 0 … +30%p</span></th>
+          <th class="num">Gap</th><th>판정</th><th class="num">SBC 차감</th>
+          <th class="num">DRS</th><th class="num">신뢰점수</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tk">PTC<div class="sub">PTC Inc.</div></td>
+          <td class="num">38.39%</td><td class="num">−0.6%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill n" style="left:50%;width:6.8%"></div></div></td>
+          <td class="num">+4.08%p</td>
+          <td><span class="pill n">C · 적정가</span></td>
+          <td class="num">+0.64%p</td><td class="num">44.4</td><td class="num">79</td>
+        </tr>
+        <tr>
+          <td class="tk">VRT<div class="sub">Vertiv Holdings</div></td>
+          <td class="num">19.22%</td><td class="num">+11.4%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill n" style="left:47.93%;width:2.07%"></div></div></td>
+          <td class="num">−1.24%p</td>
+          <td><span class="pill n">C · 적정가</span></td>
+          <td class="num">−1.53%p</td><td class="num">41.2</td><td class="num">94</td>
+        </tr>
+        <tr>
+          <td class="tk">SE<div class="sub">Sea Limited</div></td>
+          <td class="num">13.44%</td><td class="num">+1.4%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill u" style="left:50%;width:20.55%"></div></div></td>
+          <td class="num">+12.33%p</td>
+          <td><span class="pill u">A · 저평가</span></td>
+          <td class="num">+10.52%p</td><td class="num">52.4</td><td class="num">94</td>
+        </tr>
+        <tr>
+          <td class="tk">DLO<div class="sub">DLocal Limited</div></td>
+          <td class="num">11.12%</td><td class="num">−5.7%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill u" style="left:50%;width:39.56%"></div></div></td>
+          <td class="num">+23.74%p</td>
+          <td><span class="pill u">S · 저평가</span></td>
+          <td class="num">+22.97%p</td><td class="num">56.2</td><td class="num">89</td>
+        </tr>
+        <tr>
+          <td class="tk">NOW<div class="sub">ServiceNow</div></td>
+          <td class="num">6.73%</td><td class="num">+8.9%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill u" style="left:50%;width:13.83%"></div></div></td>
+          <td class="num">+8.30%p</td>
+          <td><span class="pill u">A · 저평가</span></td>
+          <td class="num">+1.88%p</td><td class="num">32.4</td><td class="num">94</td>
+        </tr>
+        <tr>
+          <td class="tk">MU<div class="sub">Micron Technology</div></td>
+          <td class="num">5.65%</td><td class="num">+111.7%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="none">판정 불가</div></div></td>
+          <td class="num">—</td>
+          <td><span class="pill x">프레임 부적합</span></td>
+          <td class="num">—</td><td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="tk">ALB<div class="sub">Albemarle</div></td>
+          <td class="num">3.11%</td><td class="num">−34.3%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="none">판정 불가</div></div></td>
+          <td class="num">—</td>
+          <td><span class="pill x">프레임 부적합</span></td>
+          <td class="num">—</td><td class="num">—</td><td class="num">—</td>
+        </tr>
+        <tr>
+          <td class="tk">ACGL<div class="sub">Arch Capital</div></td>
+          <td class="num">2.34%</td><td class="num">+0.5%</td>
+          <td class="gapcell"><div class="gapbar"><div class="band"></div><div class="zero"></div><div class="fill u" style="left:50%;width:40.75%"></div></div></td>
+          <td class="num">+24.45%p</td>
+          <td><span class="pill u">S · 저평가</span></td>
+          <td class="num">+24.09%p</td><td class="num">48.0</td><td class="num">94</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="axis" style="max-width:190px;margin-left:0">
+    <span>−30%p</span><span>0</span><span>+30%p</span>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>검토 우선순위</h2>
+    <p class="note">규칙은 이 모듈을 처음 실행하기 <strong>전에</strong> 고정했다(결과를 보고 조정하면 사후합리화와 구분되지 않는다). 정렬은 플래그 수 → 비중 사전식이며 합성 점수를 쓰지 않는다.</p>
+  </div>
+  <div class="flags">
+    <div class="flagrow">
+      <div class="tkcol">NOW<span>6.73%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">SBC_FLIP</div>
+          <div class="txt">SBC를 실제 비용으로 차감하면 판정이 뒤집힌다 &mdash; 회계 가정 하나에 판정이 달려 있다.</div>
+          <div class="det">SBC/FCF 42.7% · Gap +8.30%p → +1.88%p · 저평가 가능성 → 적정가/경계선</div></div>
+        <div class="flag"><div class="code">MODEL_FRAGILE</div>
+          <div class="txt">내재성장률 모델 간 괴리가 3%p 이상이다 &mdash; 판정이 모델 선택에 좌우된다.</div>
+          <div class="det">single 7.36% vs two 12.71% (괴리 5.35%p)</div></div>
+      </div>
+    </div>
+    <div class="flagrow">
+      <div class="tkcol">ALB<span>3.11%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">NO_JUDGMENT</div>
+          <div class="txt">공식 ledger가 없다 &mdash; 엔진이 판정한 적이 없거나 프레임 부적합으로 제외됐다.</div>
+          <div class="det">FCF가 최근 11년 중 7년 음수 · v3.19 CAGR 가드가 실행을 거부(실행으로 확인)</div></div>
+        <div class="flag"><div class="code">DEEP_LOSS_NO_JUDGMENT</div>
+          <div class="txt">수익률이 −20% 이하인데 공식 판정이 없다 &mdash; 손실 원인을 엔진이 설명하지 못하는 상태.</div>
+          <div class="det">수익률 −34.3%</div></div>
+      </div>
+    </div>
+    <div class="flagrow">
+      <div class="tkcol">PTC<span>38.39%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">CONCENTRATION</div>
+          <div class="txt">단일 종목 비중이 25%를 넘는다.</div>
+          <div class="det">비중 38.39% · 판정은 중립밴드 한가운데(+4.08%p)</div></div>
+      </div>
+    </div>
+    <div class="flagrow">
+      <div class="tkcol">VRT<span>19.22%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">MODEL_FRAGILE</div>
+          <div class="txt">내재성장률 모델 간 괴리가 3%p 이상이다 &mdash; 판정이 모델 선택에 좌우된다.</div>
+          <div class="det">single 9.07% vs two 19.95% (괴리 10.88%p) · 모델만 바꾸면 −1.24%p → +9.64%p(A등급)</div></div>
+      </div>
+    </div>
+    <div class="flagrow">
+      <div class="tkcol">DLO<span>11.12%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">GROWTH_CAP_BINDING</div>
+          <div class="txt">현실적 성장률이 상한값 그 자체다 &mdash; 성장분석이 결과에 기여하지 않고 Gap이 사실상 내재성장률 단독으로 결정된다.</div>
+          <div class="det">Lynch fast_grower 상한 25.00% 적용(원시 계산값 36.37%)</div></div>
+      </div>
+    </div>
+    <div class="flagrow">
+      <div class="tkcol">MU<span>5.65%</span></div>
+      <div class="body">
+        <div class="flag"><div class="code">NO_JUDGMENT</div>
+          <div class="txt">공식 ledger가 없다 &mdash; 연차 데이터가 이미 3배 낡아 계산이 의미를 잃었다.</div>
+          <div class="det">FY2026 Q3 단독 매출 $41.5B &gt; FY2025 연간 $37.4B</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:-4px">SE와 ACGL에는 플래그가 없다. &ldquo;문제를 못 찾았다&rdquo;는 뜻이지 &ldquo;검증됐다&rdquo;는 뜻이 아니다.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>종목별 핵심 발견</h2>
+    <p class="note">전부 SEC XBRL 1차자료를 새로 받아 재계산했다. 주관적 입력(경쟁강도·수요민감도·모델선택)은 기존 분석 그대로 두어, 변화의 원인이 데이터인지 가정인지 분리되게 했다.</p>
+  </div>
+  <div class="notes">
+
+    <div class="note-item">
+      <div class="side"><div class="t">PTC</div><div class="w">38.39% · 최대 보유</div>
+        <span class="pill n">C · 적정가</span></div>
+      <div class="txt">판정 이동의 원인이 <strong>전적으로 시가총액</strong>임을 분리 확인했다. 데이터 창을 FY2015까지 넓혀보니 DRS가 44.4→56.4로 뛰었는데, 파고들어 보니 FY2016 매출 감소는 경기순환이 아니라 <strong>영구라이선스→구독 전환의 회계적 착시</strong>였다(SEC 공시로 확인). 창을 FY2017~2025로 되돌리자 DRS와 성장률이 그대로였다. 회사 자체 ARR 성장률(7.5~9.5%)과 SBC 차감을 교차한 <em>9개 시나리오 전부가 중립밴드 안</em>이다 &mdash; 가장 보수적인 조합에서도 −3.25%p.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">VRT</div><div class="w">19.22%</div>
+        <span class="pill n">C · 적정가</span></div>
+      <div class="txt">현실적 성장률과 DRS가 <strong>소수점까지 불변</strong>인데 Gap만 +1.72%p→−1.24%p로 내려갔다 &mdash; 원인이 100% 시가총액(+26%)이다. 순부채가 $1,085M→$129M으로 급감했지만 이 엔진의 내재성장률은 기업가치가 아니라 시가총액에 직접 역산하므로 순부채는 DRS의 레버리지 항목으로만 들어간다(초판 서술을 정정했다). 회사 FY2026 가이던스는 오가닉 <strong>+30~32%</strong>, 수주잔고 $15B(전년比 2배)인데, 매출 규모($10.2B) 구간에서 실질 20% 이상을 10년 유지한 기업은 역사적으로 <em>1.1%</em>뿐이다.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">SE</div><div class="w">13.44%</div>
+        <span class="pill u">A · 저평가</span></div>
+      <div class="txt">SBC를 <strong>처음 배선</strong>했다(FCF의 13.9%) &mdash; 이전 분석에는 아예 없던 항목이고, 웹서치 추정치와 SEC 1차자료가 정확히 일치했다. 발행주식수 기준도 희석(638.2M)으로 명시해 더 보수적으로 옮겼다. 성장률 17.87%는 CAGR 계산값(23.56%)이 아니라 <em>규모 조건부 상한 그 자체</em>다.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">DLO</div><div class="w">11.12% · 최초 분석</div>
+        <span class="pill u">S · 저평가</span></div>
+      <div class="txt">이 프로젝트가 한 번도 분석한 적 없던 종목이다 &mdash; 비중 11.1%가 아무 정량 근거 없이 유지되고 있었다. S등급에는 <strong>세 겹의 유보</strong>가 붙는다. ① 성장률이 상한값 그 자체다. ② 결제대행업이라 영업현금흐름이 가맹점 정산 타이밍에 관통당한다(FY2024 −$34.5M → FY2025 +$413.2M, 대차대조표상 매입채무 $854M &gt; 현금 $720M). ③ <strong>TPV는 +92%인데 총이익은 +29%</strong> &mdash; 테이크레이트가 실측으로 압축 중이다. 다만 FCF0를 3년 평균으로 정규화한 4개 시나리오 전부 저평가를 유지한다(+16.2~26.2%p).</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">NOW</div><div class="w">6.73% · 제외 정정</div>
+        <span class="pill u">A · 저평가</span></div>
+      <div class="txt"><strong>이전 제외 판정이 틀렸다.</strong> 8월에 &ldquo;연쇄 M&amp;A로 성장이 오염됐다&rdquo;며 제외했는데, 연도를 확인하니 그 인수(Armis $7.75B 등)는 <strong>전부 FY2026 사건</strong>이고 엔진이 쓰는 연차 시계열(FY2015~2025)은 38.4%→20.9%로 단계상승이 한 번도 없는 매끄러운 단조 감속이었다. 분기 대차대조표를 보고 연차 손익의 오염을 추정한 것이 오류다. 회사는 &lsquo;AI가 좌석형 SaaS를 죽인다&rsquo;는 서사에 대해 신규계약의 <em>50% 이상을 비좌석 가격모델</em>로 옮기며 실적으로 반박 중이다. 단 SBC/FCF 42.7%로 차감 시 판정이 뒤집힌다.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">MU</div><div class="w">5.65% · +111.7%</div>
+        <span class="pill x">프레임 부적합</span></div>
+      <div class="txt">제외는 유지하되 <strong>사유를 정정했다</strong>. 기존 사유(FCF CAGR 82% 아티팩트)는 엔진의 min() 로직이 자동으로 걸러 성립하지 않는다. 진짜 사유는 <strong>연차 데이터 노후화</strong>다 &mdash; FY2026 Q3 <em>단독 분기</em> 매출 $41.5B가 FY2025 <em>연간</em> $37.4B를 넘어섰고 9개월 누적은 그 2.1배다. FCF 기준을 뭘로 잡느냐에 따라 F등급(−44.5%p)에서 C등급(+1.1%p)까지 갈리고, P/E도 134배(FY2025)에서 10배(Q3 연율화)까지 벌어진다. 정식분석 재개는 FY2026 10-K 이후.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">ALB</div><div class="w">3.11% · −34.3%</div>
+        <span class="pill x">프레임 부적합</span></div>
+      <div class="txt">엔진이 <strong>실제로 실행을 거부</strong>한다(스크립트로 확인). FCF가 최근 11년 중 7년 음수라 5년 CAGR 기준연도(FY2020 −$51M)에서 가드가 걸린다. 리튬 사이클(매출 고점 대비 −47%, 2년 연속 영업손실)에 더해, Q2 2026 조정 EBITDA가 +155%로 <strong>사이클이 이미 전환</strong>해 연차 데이터가 반대 방향으로 낡았다. 재개 조건: FCF가 2개 회계연도 연속 플러스가 되어 기준연도를 정상적으로 잡을 수 있을 때.</div>
+    </div>
+
+    <div class="note-item">
+      <div class="side"><div class="t">ACGL</div><div class="w">2.34%</div>
+        <span class="pill u">S · 저평가</span></div>
+      <div class="txt">엔진 <strong>54개 버전 변경(v3.27→v3.81)</strong>을 한꺼번에 통과했는데 DRS와 성장률이 소수점까지 불변이었다 &mdash; 이 종목의 판정이 엔진 변경에 둔감함이 확인된 셈이다. 보험 교차검증에서 지속가능성장률(ROE×유보율) 15.46%가 현실적 성장률 15.74%와 <em>0.28%p 이내</em>로 근접했다. 과거 &ldquo;보험 플로트를 유기적 성장으로 착각할 수 있다&rdquo;던 경고가 현 데이터로는 뒷받침되지 않는다. 다만 대재해 리스크는 평활화된 FCF에 전혀 반영되지 않는다.</div>
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>미보유 S/A 후보 28종목</h2>
+    <p class="note">엔진이 S·A로 판정했으나 보유하지 않은 종목. <strong>매수 권고가 아니다</strong> &mdash; 대부분 버킷 분류와 정성 심층조사를 아직 통과하지 않았다. 표시: <span style="color:var(--under)">SBC</span>=SBC 차감 시 뒤집힘 · <span style="color:var(--neutral)">CAP</span>=성장상한 바인딩 · <span style="color:var(--unknown)">MOD</span>=모델 괴리 3%p+</p>
+  </div>
+  <div class="cands">
+    <div class="cand"><span class="g S">S</span><span class="t">SIGI</span><span class="v">+23.67</span><span class="m">CAP</span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">MNDY</span><span class="v">+23.28</span><span class="m">CAP</span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">PDD</span><span class="v">+22.04</span><span class="m">CAP</span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">DUOL</span><span class="v">+19.45</span><span class="m">CAP</span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">PGR</span><span class="v">+17.64</span><span class="m"></span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">TTD</span><span class="v">+17.01</span><span class="m">반증조건 발동 이력</span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">CINF</span><span class="v">+16.78</span><span class="m"></span></div>
+    <div class="cand"><span class="g S">S</span><span class="t">PINS</span><span class="v">+16.22</span><span class="m">SBC</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">NBIX</span><span class="v">+14.05</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">RYAN</span><span class="v">+13.77</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">HLNE</span><span class="v">+13.31</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">DECK</span><span class="v">+13.23</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">GEN</span><span class="v">+12.18</span><span class="m">CAP</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">UBER</span><span class="v">+11.78</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">NXT</span><span class="v">+11.49</span><span class="m">MOD 3.3%p</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">WDAY</span><span class="v">+11.42</span><span class="m">SBC</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">TW</span><span class="v">+11.16</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">PCTY</span><span class="v">+10.78</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">ADBE</span><span class="v">+10.47</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">SKYW</span><span class="v">+10.29</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">TENB</span><span class="v">+9.90</span><span class="m">SBC</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">CROX</span><span class="v">+9.89</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">MEDP</span><span class="v">+9.80</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">MMS</span><span class="v">+9.74</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">DOCU</span><span class="v">+8.63</span><span class="m">SBC</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">RLI</span><span class="v">+7.70</span><span class="m"></span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">TCOM</span><span class="v">+7.55</span><span class="m">가이던스 괴리</span></div>
+    <div class="cand"><span class="g A">A</span><span class="t">BRO</span><span class="v">+7.43</span><span class="m">CAP</span></div>
+  </div>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>이 리포트가 답하지 않는 것</h2>
+  </div>
+  <div class="limits">
+    <div class="lhead">읽기 전에 반드시 알아야 할 네 가지</div>
+    <ul>
+      <li><strong>신뢰점수는 확률이 아니다.</strong> 79·89·94 같은 값은 <em>UNCALIBRATED</em> 상태로, 실현 결과와 대조해 보정된 적이 한 번도 없다. &ldquo;94점이면 94% 확률&rdquo;로 읽으면 안 된다.</li>
+      <li><strong>이 엔진이 맞았는지 확인된 적이 없다.</strong> 예측 34건이 동결돼 있고 <em>해소된 것은 0건</em>이다. 성과 검증 실험은 진입가 기록 부족으로 차단 상태다.</li>
+      <li><strong>과거 시점 백테스트를 성과 근거로 쓸 수 없다.</strong> 6개 시점 재현 결과는 생존편향 위에 서 있다 &mdash; 각 시점 상장주식의 약 40%가 이후 상장폐지돼 표본에서 구조적으로 빠졌고, 파산과 프리미엄 피인수가 섞여 있어 편향의 방향조차 정할 수 없다.</li>
+      <li><strong>검토 플래그 규칙은 사전등록됐을 뿐 검증되지 않았다.</strong> 플래그가 붙은 종목이 실제로 더 나쁜 결과를 냈는지 확인하려면 실현수익률 관측이 필요한데 그게 0건이다. 플래그는 &lsquo;위험 신호&rsquo;가 아니라 <em>&lsquo;아직 확인하지 않은 것&rsquo;</em>으로 읽을 것.</li>
+    </ul>
+  </div>
+  <p class="note">그리고 이 시스템은 설계상 <strong>액션(매수/매도)도 목표비중도 산출하지 않는다</strong>. Gap을 넣으면 매수가 나오는 함수를 만드는 순간 검증되지 않은 신호가 곧바로 자본배분이 되기 때문이고, 과거 감사에서 근거 없는 배분 상수가 자본의 16.75~18.82%를 좌우한 반면 가장 공들인 정성조사 축은 2.33%만 움직인 것이 실측됐기 때문이다. 두 경계 모두 테스트로 고정돼 있다.</p>
+</section>
+
+<section>
+  <div class="sec-head">
+    <h2>재현</h2>
+    <p class="note">이 문서의 모든 숫자는 저장소에서 재생성된다. 보유 상태(<em>portfolio/holdings.json</em>)는 사람이 유지하며 코드에는 쓰기 경로가 없다.</p>
+  </div>
+<pre># 포트폴리오 점검 (플래그·커버리지·미보유 후보)
+python3 scripts/portfolio_review.py 2026-09-05
+
+# 보유 종목 개별 재분석
+python3 scripts/analyze_ptc_2026_09_04.py     # PTC  → ledger/PTC_2026-09-04.json
+python3 scripts/analyze_vrt_2026_09_04.py     # VRT
+python3 scripts/analyze_se_2026_09_04.py      # SE
+python3 scripts/analyze_dlo_2026_09_04.py     # DLO
+python3 scripts/analyze_now_2026_09_04.py     # NOW
+python3 scripts/analyze_acgl_2026_09_05.py    # ACGL
+
+# 판정 불가 2종목 - ledger를 만들지 않는 참조 계산
+python3 scripts/mu_reference_check_2026_09_04.py
+python3 scripts/alb_reference_check_2026_09_05.py
+
+# 시나리오 교차검증 (공식 판정은 건드리지 않는다)
+python3 scripts/ptc_scenario_crosscheck_2026_09_04.py
+python3 scripts/vrt_scenario_crosscheck_2026_09_04.py
+python3 scripts/dlo_scenario_crosscheck_2026_09_04.py
+
+# 전건 검증
+python3 -m pytest tests/ -q                        # 1,098 통과
+python3 scripts/freeze_baseline_2026_08_16.py      # 66종목 골든 재현</pre>
+</section>
+
+<footer>
+  <span>Investment Research System · 엔진 v3.82</span>
+  <span>원자료: SEC XBRL companyfacts (1차자료)</span>
+  <span>시세: Alpha Vantage GLOBAL_QUOTE, latestDay 2026-09-04</span>
+  <span>ledger 66종목 · 종목당 1건</span>
+</footer>
+
+</div>
