@@ -8449,3 +8449,21 @@ transition/industrial_stalwart/travel 각 ~2%대 - growth_platform이
 공식 ledger·매수리스트(`reports/buylist_2026-08-03.json`)는 건드리지
 않았다 - 이 스크립트는 완전히 독립된 신규 산출물이다. `engine/` 무변경,
 `ENGINE_VERSION` v3.82 유지.
+
+## IRS 전용 Claude Code Skill 4종 신설 (2026-09-05, 사용자 요청 "GitHub의
+Claude Code Skills를 조사해 IRS에 최적화된 코딩 환경을 구축하라")
+
+15개 후보 skill명을 조사한 결과 하나로 정리된 패키지가 없어(여러
+3rd-party 저장소에 흩어짐, 품질 편차 큼) 개념만 추출해 `.claude/skills/
+irs-*` 4개(systematic-debugging·fresh-eyes-verification·test-gap-
+analysis·token-efficient-research)를 IRS 전용으로 새로 작성했다.
+code-review/security-review/refactor/comprehensive-review/design-review는
+이 하니스의 내장 skill과 중복이라 제외, git-commit/github-standards는
+이 저장소의 기존 컨벤션과 상충 위험이 있어 제외, codex-review는 외부
+모델 의존을 요구해 P0-03 무의존성 원칙에 위배돼 제외했다. 위험도 기반
+호출정책(engine/ 변경은 Opus+fresh-eyes 필수, 단순탐색은 skill 없이
+직접호출)과 전체 판정 근거는 `.claude/skills/README.md`에 기록했다 -
+CLAUDE.md 비대화를 피하려 전문을 여기 옮기지 않는다. 기존 설치분
+`task-observer`(매 작업 상시호출을 자체 요구)가 이번 목표(위험도 기반
+선택호출)와 충돌함을 발견해 상시자동호출 대상에서 제외하도록 정책에
+명시했다(삭제는 하지 않음 - 이번 요청 범위 밖). `engine/` 무변경.
