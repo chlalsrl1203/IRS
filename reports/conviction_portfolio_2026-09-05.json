@@ -1,0 +1,462 @@
+{
+  "generated_at": "2026-09-05",
+  "stage": "2-3 (정성 심층조사 반영 + 비중 확정)",
+  "pipeline": "S/A 32종목 → Stage1 게이트 20 → Stage2 G6 게이트 18종목",
+  "methodology": "quality_score = Gap%p × (Confidence_adj/100) × 캡바인딩할인(0.85). 목표비중 없음(PHASE 2 감사), 종목당 상한 12%. 새 밸류에이션 로직 0줄.",
+  "not_provided": [
+    "공분산 기반 최적화 (수익률 상관행렬이 이 저장소에 없다)",
+    "군집 목표비중 (의도적 - PHASE 2 감사가 근거 없는 목표비중의 자본영향을 실측)",
+    "실현수익률 검증 (관측 0건 - 이 포트폴리오 자체가 사전등록 예측이다)",
+    "Confidence의 확률적 해석 (VALIDATION_STATUS = UNCALIBRATED)"
+  ],
+  "n_final": 18,
+  "positions": [
+    {
+      "ticker": "ACGL",
+      "company": "Arch Capital Group Ltd.",
+      "cluster": "insurance_underwriting",
+      "grade": "S",
+      "gap_pct": 24.452910193896106,
+      "gap_min_pct": 20.90538170433002,
+      "confidence_engine": 94,
+      "confidence_adj": 83,
+      "confidence_status": "검증(2026-08-03)",
+      "confidence_basis": "준비금 적정성·자본배분(BVPS +22.6%)·거버넌스 전부 양호, 신용등급 상향. 재보험 ex-cat 컴바인드레이쇼 2분기 연속 소폭 악화, 대재해리스크는 평활화된 FCF로 미반영.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 20.295915460933767,
+      "analyzed_at": "2026-09-05",
+      "weight": 0.09355757278473437
+    },
+    {
+      "ticker": "DLO",
+      "company": "DLocal Limited",
+      "cluster": "financial_services_other",
+      "grade": "S",
+      "gap_pct": 23.736248016357422,
+      "gap_min_pct": 21.60449981689453,
+      "confidence_engine": 89,
+      "confidence_adj": 84,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⭐성장상한(25%)이 회사 가이던스로 정당화됨 - 2H2026 TPV 성장 60~70%, 총이익 성장 25~30%, FY2026 영업이익 성장 27.5~32.5%로 회사 스스로 캡 이상을 제시한다(ROP형 하방 괴리가 아니라 상방). 다만 테이크레이트가 0.84%까지 압축됐고 TPV 확대에도 처리비용이 안 떨어지는 점, 신흥국 통화·자본통제·규제 리스크는 그대로.",
+      "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": false,
+      "quality_score": 19.938448333740233,
+      "analyzed_at": "2026-09-04",
+      "weight": 0.09190976552839589
+    },
+    {
+      "ticker": "PGR",
+      "company": "The Progressive Corporation",
+      "cluster": "insurance_underwriting",
+      "grade": "S",
+      "gap_pct": 17.642215728759762,
+      "gap_min_pct": 14.366134604598985,
+      "confidence_engine": 94,
+      "confidence_adj": 87,
+      "confidence_status": "검증(2026-08-03)",
+      "confidence_basis": "지속가능성장률이 Realistic Growth와 2%p 이내로 성장추정 정합. 텔레매틱스 데이터우위가 손해율 우위로 미연결(합산비율 3위), 신규계약 증가율 11%→8% 둔화.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 15.348727684020993,
+      "analyzed_at": "2026-08-23",
+      "weight": 0.07075264529037385
+    },
+    {
+      "ticker": "SIGI",
+      "company": "Selective Insurance Group, Inc.",
+      "cluster": "insurance_underwriting",
+      "grade": "S",
+      "gap_pct": 23.672077178955078,
+      "gap_min_pct": 20.141558413049747,
+      "confidence_engine": 89,
+      "confidence_adj": 74,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⚠️성장상한(12%)이 실현과 정면 배치 - 순보험료가 전년比 **−5% 역성장**($1.221B, 표준상업 −6%). 회사는 '2년간 언더라이팅 포트폴리오 품질 개선을 위한 의도적 조치'라 설명하고 실제로 Q2 전년도 준비금 발전이 중립(전년 −3.8%p 불리에서 개선), FY 합산비율 가이던스 96.5~97.5%. 그러나 갱신 순수요율 +6.5%가 전년比 3.4%p 둔화해 연화 국면 진입 신호. Gap이 A를 유지하는 근거는 Implied Growth −11.67%가 워낙 음수라서인데, 그 음수 자체가 보험 플로트로 부풀려진 FCF의 산물일 수 있다(ACGL v3.13 경고).",
+      "cap_bound": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": true,
+      "quality_score": 14.889736545562744,
+      "analyzed_at": "2026-09-02",
+      "weight": 0.06863684534399982
+    },
+    {
+      "ticker": "PDD",
+      "company": "PDD Holdings Inc. (Pinduoduo/Temu)",
+      "cluster": "growth_platform",
+      "grade": "S",
+      "gap_pct": 22.03729248046872,
+      "gap_min_pct": 18.85184282337621,
+      "confidence_engine": 89,
+      "confidence_adj": 75,
+      "confidence_status": "검증(2026-08-02)",
+      "confidence_basis": "희석 문제없음(SBC 6~8%, 트래커 하위권). 2026-01 SAMR 물리적 충돌·임원 체포로 확대된 사기·탈세 조사, 2026-04 RMB15.1억 벌금 - 거버넌스·컴플라이언스 리스크.",
+      "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": true,
+      "quality_score": 14.04877395629881,
+      "analyzed_at": "2026-08-23",
+      "weight": 0.06476028117493131
+    },
+    {
+      "ticker": "DUOL",
+      "company": "Duolingo, Inc.",
+      "cluster": "growth_platform",
+      "grade": "S",
+      "gap_pct": 19.453125,
+      "gap_min_pct": 16.401462554931644,
+      "confidence_engine": 89,
+      "confidence_adj": 78,
+      "confidence_status": "검증(2026-08-02)",
+      "confidence_basis": "주가 66~80% 하락 구간 내내 내부자 순매도만, 매수 전무. 성장서사 과장 의혹 증권소송 진행. OpenAI 펀드 투자 경쟁사 Speak 급성장하나 DAU는 여전히 +21%YoY.",
+      "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": true,
+      "quality_score": 12.897421875,
+      "analyzed_at": "2026-08-02",
+      "weight": 0.05945292234431796
+    },
+    {
+      "ticker": "MNDY",
+      "company": "monday.com Ltd.",
+      "cluster": "growth_platform",
+      "grade": "S",
+      "gap_pct": 23.276233673095703,
+      "gap_min_pct": 20.963592529296875,
+      "confidence_engine": 89,
+      "confidence_adj": 65,
+      "confidence_status": "검증(2026-08-02)",
+      "confidence_basis": "가장 우려스러운 케이스 - FY2027 매출목표 철회 + 주가 하루 -21% 급락이 원분석에 누락, 증권소송 진행(S.D.N.Y.). 회사 자체 FY2026 조정FCF 가이던스도 전년대비 감소 제시.",
+      "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": true,
+      "quality_score": 12.860119104385376,
+      "analyzed_at": "2026-08-02",
+      "weight": 0.05928096869760676
+    },
+    {
+      "ticker": "CINF",
+      "company": "Cincinnati Financial Corporation",
+      "cluster": "insurance_underwriting",
+      "grade": "S",
+      "gap_pct": 16.781962062278197,
+      "gap_min_pct": 14.20526771489502,
+      "confidence_engine": 94,
+      "confidence_adj": 76,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "원분석 가정보다 실제가 나았다 - 1H2026 합산비율 98.2%(전년 103.8%에서 5.6%p 개선), 유리한 전년도 준비금 발전 Q1 $81M·Q2 $42M 확인, Q2 주식 평가익 세후 $882M. 그러나 ①외부 밸류에이션 모델이 초과수익 기준 약 21% 고평가로 평가(P/B 1.62)해 엔진 S등급과 정면 충돌하고 ②지속가능성장률 10.01% vs RG 15.22% 괴리 5.21%p가 미해소이며 ③주식 40% 포트폴리오가 BVPS 변동성의 구조적 원천이다.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 12.754291167331429,
+      "analyzed_at": "2026-09-03",
+      "weight": 0.058793136308738135
+    },
+    {
+      "ticker": "NBIX",
+      "company": "Neurocrine Biosciences, Inc.",
+      "cluster": "healthcare_lifesci",
+      "grade": "A",
+      "gap_pct": 14.051410543895676,
+      "gap_min_pct": 10.512325155712082,
+      "confidence_engine": 94,
+      "confidence_adj": 88,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⭐특허절벽 우려 해소 - ANDA 소송 합의로 제네릭 진입일이 **2038-03-01**로 확정(핵심물질특허 8,039,627은 PTE 552일 반영해 2031 만료, Orange Book 22개 특허가 2027~2040 분포). 엔진의 n=12년 성장기간 가정이 정확히 성립한다. 남는 리스크는 Ingrezza 단일제품 의존과 SBC/FCF 29.1%.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 12.365241278628195,
+      "analyzed_at": "2026-09-03",
+      "weight": 0.056999742788287844
+    },
+    {
+      "ticker": "HLNE",
+      "company": "Hamilton Lane Incorporated",
+      "cluster": "financial_services_other",
+      "grade": "A",
+      "gap_pct": 13.309650164355718,
+      "gap_min_pct": 10.711752363288717,
+      "confidence_engine": 94,
+      "confidence_adj": 87,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⭐DCF의 반복현금흐름 가정이 성립 - FY2026 관리·자문보수 $584M(+14%)가 수수료수익의 77%, 성과보수 $175M은 23%. FRE +25% $345M, FEAUM $82B (+13%), 에버그린 $17.5B(+64%)로 성장이 반복매출 쪽에서 나온다. 엔진 RG 12.72%가 관리보수 +14%·FEAUM +13%와 정합. 성과보수 23% 변동성은 잔존 리스크.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 11.579395642989475,
+      "analyzed_at": "2026-09-03",
+      "weight": 0.053377249858843366
+    },
+    {
+      "ticker": "DECK",
+      "company": "Deckers Outdoor Corporation",
+      "cluster": "consumer_brand",
+      "grade": "A",
+      "gap_pct": 13.228701711181728,
+      "gap_min_pct": 10.677469653534164,
+      "confidence_engine": 94,
+      "confidence_adj": 74,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⚠️감속이 실현으로 확인 - HOKA 성장이 24%→mid-teens→high-single로 단계적 둔화, 연결 매출 YoY도 16.3%(FY25)→9.8%(FY26). FY2027 가이던스 매출 $5.86~5.91B(FY26 $5.47B 대비 +7.2~8.0%), EPS 성장 4~6%로 FY26의 11%에서 반토막, 관세 $120M·마케팅 증액이 마진 압박. 가이던스 기준으로 재계산해도 Gap +8.6%p로 A는 유지되나 여유가 얇다.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 9.789239266274478,
+      "analyzed_at": "2026-09-04",
+      "weight": 0.045125210879229674
+    },
+    {
+      "ticker": "UBER",
+      "company": "Uber Technologies, Inc.",
+      "cluster": "growth_platform",
+      "grade": "A",
+      "gap_pct": 11.784205707458376,
+      "gap_min_pct": 9.043956073669312,
+      "confidence_engine": 94,
+      "confidence_adj": 83,
+      "confidence_status": "검증(2026-08-04)",
+      "confidence_basis": "Prop 22 CA대법원 만장일치 합헌으로 최대 과거리스크 durably 해소. 반대로 Waymo Phoenix 철수완료·Atlanta/Austin 배타권 종료로 '파트너' 프레이밍 약화. EU Platform Work Directive 미해결.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 9.780890737190452,
+      "analyzed_at": "2026-08-04",
+      "weight": 0.04508672687396626
+    },
+    {
+      "ticker": "SE",
+      "company": "Sea Limited",
+      "cluster": "growth_platform",
+      "grade": "A",
+      "gap_pct": 12.330089569091772,
+      "gap_min_pct": 9.4120178222656,
+      "confidence_engine": 94,
+      "confidence_adj": 79,
+      "confidence_status": "검증(2026-08-03)",
+      "confidence_basis": "Shopee EBITDA가 사상최대 GMV에도 전년比 감소(TikTok Shop 방어비용), 그룹 이익성장이 사실상 Garena 단독부담. SBC/희석 양호(FCF의 14%).",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 9.7407707595825,
+      "analyzed_at": "2026-09-05",
+      "weight": 0.044901786818790985
+    },
+    {
+      "ticker": "ADBE",
+      "company": "Adobe Inc.",
+      "cluster": "enterprise_software",
+      "grade": "A",
+      "gap_pct": 10.47055537089488,
+      "gap_min_pct": 8.229494008318012,
+      "confidence_engine": 94,
+      "confidence_adj": 84,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "성장추정이 정합 - 최근 4년 매출 YoY가 10.2~11.5%로 극히 안정적이고 FY2026 가이던스 +9%가 엔진 RG 10.95%와 근접. AI First ARR이 전년比 3배 $500M 돌파, Firefly ARR $300M 근접(+50%QoQ)으로 'SaaSpocalypse' 서사가 실측으로 뒷받침되지 않는다. 다만 organic ARR 성장이 6분기 연속 감속(10.9%→10.5%)이고 freemium 전환으로 단기 ARR을 의도적으로 희생 중.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 8.795266511551699,
+      "analyzed_at": "2026-09-04",
+      "weight": 0.04054331958563335
+    },
+    {
+      "ticker": "SKYW",
+      "company": "SkyWest, Inc.",
+      "cluster": "transportation",
+      "grade": "A",
+      "gap_pct": 10.292145444533087,
+      "gap_min_pct": 7.769779820793388,
+      "confidence_engine": 94,
+      "confidence_adj": 85,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "CPA 계약 기반이 오히려 강화 - 2026-01 United E175 40대·Delta 13대 만기 연장, Embraer와 2028~2032년 E175 44대 인도포지션 확보, 2028년말 300대+ 목표. 엔진 RG 9.35%가 최근 실현(2024 +20.2%, 2025 +15.0%)보다 이미 보수적이다. 시총 $3.69B가 코퍼스 최소($3.74B) 바로 아래라 estimate_drs 중앙값 대체가 이 규모에서 검증된 적 없다는 점만 남는다.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 8.748323627853123,
+      "analyzed_at": "2026-09-04",
+      "weight": 0.04032692815126773
+    },
+    {
+      "ticker": "NXT",
+      "company": "Nextpower Inc.",
+      "cluster": "industrial_energy_transition",
+      "grade": "A",
+      "gap_pct": 11.492701808014418,
+      "gap_min_pct": 7.494021693268326,
+      "confidence_engine": 94,
+      "confidence_adj": 70,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⚠️회사 가이던스가 엔진을 10%p 하회 - FY2027 매출 가이던스 $3.8~4.1B(2026-05 상향)는 FY2026 실적 $3.56B 대비 중간값 기준 **+11.0%**인데 엔진 RG는 21.16%다. 가이던스 기준 Gap은 +1.3%p로 C등급. 다년 실현(2025 +18.4%, 2026 +20.3%)이 아직 뒷받침해 배제하지 않았으나 취약. 백로그 $5.25B 사상최고·100% 미국산 트래커로 ITC 국내조달 10% 보너스 확보는 긍정. 반면 회사 스스로 'ITC 요건 강화 시 활동 둔화'를 예고했고 모델괴리 3.31%p로 판정이 모델선택에도 민감하다.\n⚠️조사 중 2차 출처 오류를 잡았다 - 첫 검색이 '$4.1~4.4B'를 보고했으나 회사 IR 원문 재확인 결과 $3.8~4.1B였다(TYL SBC 3배 오류와 같은 유형).",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 8.044891265610092,
+      "analyzed_at": "2026-09-03",
+      "weight": 0.03708433362251312
+    },
+    {
+      "ticker": "TW",
+      "company": "Tradeweb Markets Inc.",
+      "cluster": "enterprise_software",
+      "grade": "A",
+      "gap_pct": 11.156004145007234,
+      "gap_min_pct": 7.765463068347078,
+      "confidence_engine": 94,
+      "confidence_adj": 70,
+      "confidence_status": "검증(2026-09-05)",
+      "confidence_basis": "⚠️급격한 감속과 경쟁구도 재편이 동시에 - Q2 2026 매출 $559M(+9%YoY)로 다년 실현(3y CAGR 19.97%)의 절반 이하, 매출 미스로 주가 -12%. 2026-07 ICE가 MarketAxess를 $60억에 인수해 자본력을 갖춘 통합 경쟁자 등장. 반면 점유율은 계속 확대 중(글로벌 스왑 24.1% 사상최고 +207bp, 美국채 9분기 연속 50%+, 2026-06 신용채권에서 MarketAxess 사상 첫 추월). 최근 분기 성장률(+9%)로 재계산하면 Gap +2.6%p로 C등급이 되나, 1개 분기는 KEYS 기준상 다년 개념을 대체할 근거가 못 돼 배제하지 않고 비중으로 반영.",
+      "cap_bound": null,
+      "cap_discount_applied": false,
+      "quality_score": 7.8092029015050635,
+      "analyzed_at": "2026-09-03",
+      "weight": 0.03599788687800856
+    },
+    {
+      "ticker": "GEN",
+      "company": "Gen Digital Inc.",
+      "cluster": "industrial_stalwart",
+      "grade": "A",
+      "gap_pct": 12.182151794433596,
+      "gap_min_pct": 9.892950717404865,
+      "confidence_engine": 89,
+      "confidence_adj": 70,
+      "confidence_status": "검증(2026-08-04)",
+      "confidence_basis": "ROIC 9.15%로 5y평균 20.74% 대비 급락 추정(단일출처, 10-K 미대조). MoneyLion 세그먼트 마진 30%로 Cyber Safety(61%)의 절반. 매도데스크 2곳이 beat-and-raise 이후에도 중립 유지. SBC/FCF 15.6%는 양호.",
+      "cap_bound": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "cap_discount_applied": true,
+      "quality_score": 7.248380317687988,
+      "analyzed_at": "2026-08-04",
+      "weight": 0.03341267707036114
+    }
+  ],
+  "excluded_stage2": [
+    {
+      "ticker": "RYAN",
+      "company": "Ryan Specialty Holdings, Inc.",
+      "grade": "A",
+      "gap": 0.1376697121870132,
+      "confidence_engine": 94,
+      "confidence_researched": null,
+      "drs": 36.56,
+      "market_cap": 10826081701.2,
+      "analyzed_at": "2026-09-02",
+      "gap_min": 0.10702624905224759,
+      "gap_max": 0.17030101406689602,
+      "grade_at_gap_min": "A",
+      "gap_range_status": "COMPUTED",
+      "flip_drivers": {},
+      "gap_sbc_adjusted": 0.12400928127881009,
+      "grade_sbc_adjusted": "A",
+      "sbc_to_fcf_pct": 0.1084065789124534,
+      "sbc_signal_verdict": null,
+      "cap_applied": null,
+      "model_divergence": 0.008403915988085466,
+      "insurer_divergence": null,
+      "out_of_scope": [],
+      "n_data_limitations": 2,
+      "pit_status": "PIT_VALID",
+      "excluded_by": [],
+      "survives": true,
+      "g6": {
+        "engine_rg": 0.1926,
+        "company_growth": 0.05,
+        "basis": "회사 별도공시 오가닉 성장률",
+        "detail": "FY2026 오가닉 성장 가이던스를 high-single-digit에서 **mid-single-digit(4~6%)**으로 하향, Q2 오가닉은 **0% 근처**로 안내. 경영진이 '2026년 의미 있는 인수 없음'을 명시하고 M&A 대신 자사주매입(Q2 $260M + 신규 $300M 승인)으로 선회 - 엔진 RG 19.26%를 떠받치던 M&A 기여분이 사라진다. 연결 매출 YoY는 2022~2025년 내내 +18~22%였으나 그 격차가 곧 인수효과다. 부동산 요율 하락·경쟁심화로 조정EBITDAC 마진도 100~150bp 하향. ROP(v3.28)가 확립한 구조와 정확히 동일 - 회사가 오가닉을 매 분기 별도 공시하는 다년 지표이므로 1개년 가이던스 한계(KEYS 기준)에 걸리지 않는다.",
+        "implied_growth": 0.05493028781298678,
+        "gap_at_company_growth": -0.0049302878129867805,
+        "grade_at_company_growth": "C"
+      }
+    },
+    {
+      "ticker": "CROX",
+      "company": "Crocs, Inc.",
+      "grade": "A",
+      "gap": 0.09889103376656783,
+      "confidence_engine": 94,
+      "confidence_researched": null,
+      "drs": 72.44,
+      "market_cap": 5771628128.5,
+      "analyzed_at": "2026-09-01",
+      "gap_min": 0.08991609614862492,
+      "gap_max": 0.14594466800734923,
+      "grade_at_gap_min": "A",
+      "gap_range_status": "COMPUTED",
+      "flip_drivers": {},
+      "gap_sbc_adjusted": 0.09312538492232808,
+      "grade_sbc_adjusted": "A",
+      "sbc_to_fcf_pct": 0.05567506067961165,
+      "sbc_signal_verdict": null,
+      "cap_applied": null,
+      "model_divergence": 0.015417586877500148,
+      "insurer_divergence": null,
+      "out_of_scope": [],
+      "n_data_limitations": 1,
+      "pit_status": "PIT_VALID",
+      "excluded_by": [],
+      "survives": true,
+      "g6": {
+        "engine_rg": 0.1034,
+        "company_growth": 0.03,
+        "basis": "인수효과 제거 후 다년 실현 CAGR + 회사 가이던스",
+        "detail": "HEYDUDE 인수(2022-02) 이후로만 깨끗한 3년 실현 CAGR이 **4.36%**이고, 최근 2년 실현 YoY는 +3.5%(2025) → **−1.5%(2026)**로 이미 역성장 전환. 회사 FY2026 가이던스도 매출 **+1~2%**에 그친다. 엔진 RG 10.34%는 5년 CAGR 23.86%(HEYDUDE 단계상승 포함)에 끌려간 값이다. HEYDUDE는 Q2 매출 −5.7%($179M)에 FY 가이던스 −2~4%이며 상표권·영업권 손상차손까지 인식했다(구조적 훼손 확인). Crocs 본 브랜드만 +4.3%. 다년 실현 실적이 뒷받침하므로 ROP 기준 충족.",
+        "implied_growth": 0.0045089662334321795,
+        "gap_at_company_growth": 0.02549103376656782,
+        "grade_at_company_growth": "C"
+      }
+    }
+  ],
+  "cluster_diagnostics": {
+    "insurance_underwriting": {
+      "weight": 0.29174019972784615,
+      "tickers": [
+        "ACGL",
+        "PGR",
+        "SIGI",
+        "CINF"
+      ]
+    },
+    "financial_services_other": {
+      "weight": 0.14528701538723926,
+      "tickers": [
+        "DLO",
+        "HLNE"
+      ]
+    },
+    "growth_platform": {
+      "weight": 0.2734826859096133,
+      "tickers": [
+        "PDD",
+        "DUOL",
+        "MNDY",
+        "UBER",
+        "SE"
+      ]
+    },
+    "healthcare_lifesci": {
+      "weight": 0.056999742788287844,
+      "tickers": [
+        "NBIX"
+      ]
+    },
+    "consumer_brand": {
+      "weight": 0.045125210879229674,
+      "tickers": [
+        "DECK"
+      ]
+    },
+    "enterprise_software": {
+      "weight": 0.0765412064636419,
+      "tickers": [
+        "ADBE",
+        "TW"
+      ]
+    },
+    "transportation": {
+      "weight": 0.04032692815126773,
+      "tickers": [
+        "SKYW"
+      ]
+    },
+    "industrial_energy_transition": {
+      "weight": 0.03708433362251312,
+      "tickers": [
+        "NXT"
+      ]
+    },
+    "industrial_stalwart": {
+      "weight": 0.03341267707036114,
+      "tickers": [
+        "GEN"
+      ]
+    }
+  }
+}
