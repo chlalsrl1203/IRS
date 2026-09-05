@@ -8394,3 +8394,58 @@ DLO(1) > MU(1). 미보유 S/A 후보 28종목을 함께 낸다(**매수 권고 �
 **검증**: 테스트 1,084 → **1,098개 전부 통과**. 골든 재현은 이번에 의도적으로
 재계산한 7종목 외 59종목 완전 동일. baseline 66종목 재동결
 (`f80ba747` → `4edb2298` → `2b71adf2`). `ENGINE_VERSION` v3.80 → **v3.82**.
+
+## S/A등급 32종목 신규 포트폴리오 - 목표비중 없는 quality_score 순위배분
+(2026-09-05, 사용자 요청 "s/a 종목으로 새로운 포트폴리오 만들어봐. 최대한
+진절성있으면서 합리적이고 근거가 있게")
+
+`scripts/build_buylist_2026_08_03.py`는 2026-08-02 스냅샷(`reports/
+portfolio_ranking_2026-08-02.json`)을 읽어 그 뒤 20종목 신규분석을 구조적
+으로 못 본다 - `ledger/` 전수(32종목 S/A)에서 다시 시작했다.
+
+**PHASE 2 감사(2026-08-21)의 교훈을 이번 설계에 직접 반영**: 근거 없는
+버킷 목표비중(40/30/20/10)이 자본의 16.75~18.82%를 좌우한 반면 가장
+공들인 축(`CONFIDENCE_ADJ`)은 2.33%만 움직였다. 32종목·11개 위험군집으로
+유니버스가 커진 지금 그 메커니즘을 확장하면 근거 없는 숫자 4개가 11개로
+늘어날 뿐이다 - **그래서 버킷 목표비중 자체를 두지 않았다.**
+`quality_score = Gap%p x (Confidence_adj/100)`(기존 공식 그대로 재사용)로
+32종목을 한 번에 순위매김하고 종목당 상한 12%만 강제, 위험군집은 배분이
+아니라 **진단**(배분 후 실제 집중도 관찰)에만 쓴다.
+
+**재사용한 것**: `PER_STOCK_CAP=0.12`, 상한흡수 알고리즘(v3.67 수렴버그
+수정판), 12종목의 기존 `CONFIDENCE_ADJ`(TTD 45 하향판 포함, 근거 문구
+그대로), `cap_bound`/`SEVERE_FLAG`/`THESIS_BROKEN_FLAG` x0.85 할인.
+**새로 추가한 할인(값은 기존 0.85 재사용, 숫자를 새로 발명하지 않음)**:
+`SBC_FRAGILE_UNVERIFIED`(SBC 차감시 flip하나 PHASE 1식 일관적용 검증이
+안 된 신규종목 PINS/TENB/DOCU/NOW만 - **TCOM은 PHASE 1에서 이미
+CANCELLED로 확인돼 제외**, WDAY는 CONFIDENCE_ADJ=81 근거에 이미 반영돼
+중복할인 안 함), `MODEL_FRAGILE`(모델괴리 >=3%p인데 Confidence에 반영
+안 된 신규종목 - NXT 3.3%p, NOW 5.4%p).
+
+**32종목 중 20종목(비중 63.4%)은 정성 심층조사 미실시** - 엔진 원시
+Confidence(94/89)를 그대로 쓰고 `conf_status="미검증"`으로 명시했다
+(2026-08-04 이전 A등급 6종목이 정성조사 전 받았던 것과 동일 표시).
+
+**결과**(`reports/sa_portfolio_2026-09-05.json`): 상위 ACGL 5.84%(검증,
+보험 언더라이팅 최우량) · DLO 5.16%(미검증, cap바인딩) · SIGI 5.15%
+(미검증, cap바인딩) · CINF 4.54%(미검증) · PGR 4.41%(검증) ... 하위
+TTD 1.59%(45 하향+이중 0.85할인, severe+thesis_broken) · BRO 1.27%
+(70 하향+cap바인딩 0.85할인). 종목당 상한(12%)에 걸린 종목 없음(가장
+높은 ACGL도 5.84%로, 32종목 분산 자체가 자연스럽게 상한 밑에 위치).
+
+위험군집 진단: growth_platform 25.03%(8종목) > insurance_underwriting
+22.01%(5종목) > enterprise_software 14.64%(6종목) > healthcare_lifesci
+9.08% > financial_services_other 8.76% > consumer_brand 6.25% >
+insurance_distribution 4.99% > transportation/industrial_energy_
+transition/industrial_stalwart/travel 각 ~2%대 - growth_platform이
+여전히 최대 단일군집이나(구 버킷 방식의 40% 명목목표보다 훨씬 낮은
+25%), 목표를 두지 않았는데도 8개 군집에 걸쳐 자연 분산됐다.
+
+**제공하지 않는 것**: 공분산 최적화(수익률 상관행렬 없음), 위험군집
+목표비중(의도적 설계), 실현수익률 검증(0건, 이 포트폴리오 자체가
+사전등록 예측), Confidence의 확률적 해석(UNCALIBRATED), 20종목
+미검증분의 정성 심층조사(다음 우선순위로 남김).
+
+공식 ledger·매수리스트(`reports/buylist_2026-08-03.json`)는 건드리지
+않았다 - 이 스크립트는 완전히 독립된 신규 산출물이다. `engine/` 무변경,
+`ENGINE_VERSION` v3.82 유지.
