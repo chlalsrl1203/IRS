@@ -1745,3 +1745,41 @@ def test_approved_three_tickers_reproduce_and_others_unchanged():
         f"원 승인 3종목 중 일부가 더 이상 안 걸림: {APPROVED_SIZE_CAPPED_TICKERS - applied}"
     )
     assert applied <= allowed, f"등록되지 않은 신규 발동: {applied - allowed}"
+
+
+# ----------------------------------------------------------------------
+# v3.81: SBC 차감 후 내재성장률이 수렴하지 않는 경우 (MU에서 처음 드러남)
+# ----------------------------------------------------------------------
+
+def test_sbc_cross_check_survives_non_converging_adjusted_implied_growth():
+    """
+    SBC/FCF가 30% 이상이면서 **SBC 차감 후 내재성장률이 수렴하지 않는** 경우,
+    v3.80까지는 경고 문자열이 `None`을 포맷하다 TypeError로 죽었다.
+
+    실제 발생 조건(2026-09-04 MU): SBC가 FCF0의 58%인데 시가총액이 $1.15조라
+    차감 후 FCF0로는 어떤 성장률로도 그 시총을 정당화할 수 없어 이분탐색이
+    탐색범위 안에서 수렴하지 못했다(`ig_sbc is None` -> `gap_sbc is None`).
+
+    고정하는 것: (1) 예외로 죽지 않는다, (2) 조용히 넘어가지 않고 **'계산
+    불가'라는 사실 자체**를 경고로 남긴다 - "데이터 없음을 안전으로 오독하지
+    않는다"(is_insurer·sbc_cross_check·holdings_overlap와 같은 원칙).
+    """
+    from engine.pipeline import run_analysis
+
+    fcf0 = CDNS_OCF[2025] - CDNS_CAPEX[2025]
+    result = run_analysis(cdns_inputs(
+        # 기본 FCF0로는 수렴하지만 SBC 차감 후에는 수렴 못 하는 시총
+        market_cap=92952756000 * 3,
+        sbc_by_year={y: (fcf0 * 0.97 if y == 2025 else 1.0) for y in CDNS_REVENUE},
+        # 미수렴은 two_stage 이분탐색에서만 발생한다(single_stage는 닫힌 해)
+        model_used="two_stage",
+        model_choice_reason="회귀 테스트용 - 수렴 실패 경로를 타게 하기 위함.",
+    ))
+    cc = result["sbc_cross_check"]
+    assert cc["sbc_to_fcf_pct"] >= 0.30
+    assert cc["implied_growth_sbc_adjusted"] is None
+    assert cc["gap_sbc_adjusted"] is None
+    assert cc["judgment_flipped"] is False    # '안 뒤집혔다'가 아니라 '못 쟀다'
+    assert any("SBC 교차검증 계산 불가" in x for x in result["data_limitations"]), (
+        "수렴 실패를 조용히 넘기면 독자가 'SBC 영향 없음'으로 오독한다"
+    )

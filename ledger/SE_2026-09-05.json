@@ -1,0 +1,486 @@
+{
+  "meta": {
+    "ticker": "SE",
+    "company_name": "Sea Limited",
+    "analyzed_at": "2026-09-05T04:36:25.360517+00:00",
+    "engine_version": "v3.81",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001703399 Sea Limited, 조회 2026-09-04)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $112.09)",
+      "ledger/SE_2026-08-23.json (net_debt·EBITDA·주관적 입력 승계)",
+      "2026-08-03 S등급 정성 심층조사(Shopee EBITDA·TikTok Shop 잠식·SBC 교차검증) - CLAUDE.md 기록"
+    ],
+    "falsification_conditions": "(1) FY2026 실적(2027-04경 20-F)에서 Shopee 조정 EBITDA가 전년比 다시 감소하면 - 직전 정성 심층조사가 지목한 'TikTok Shop 방어 비용으로 이익성장이 Garena 단독부담'이라는 우려가 재확인되는 것이므로 재검토. (2) 동남아 주요국(인도네시아·베트남·태국) Shopee 점유율이 추가로 5%p 이상 하락하면 - market_share_trend_pp_per_year=-2.0 가정보다 빠른 잠식이다. (3) 희석주식수가 FY2026에도 +5% 이상 늘면 - 이 엔진이 다루지 않는 별도 다일루션 채널이 계속 주주가치를 잠식하고 있다는 뜻. (4) 인도네시아 등에서 과거와 같은 이커머스 규제 제동이 재발하면.",
+    "price_at_analysis": 112.09,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-05",
+      "filing_dates_by_year": {
+        "2020": "2021-04-16",
+        "2021": "2022-04-22",
+        "2022": "2023-04-06",
+        "2023": "2024-04-26",
+        "2024": "2025-04-17",
+        "2025": "2026-04-17"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-05",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4375664000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-04-16",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 9955190000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-04-22",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 12449705000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-04-06",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 13063560000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-04-26",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 16819866000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-04-17",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 19625021000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-04-17",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(39.28%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[규모 조건부 상한 적용] Realistic Growth를 23.56% -> 17.87%로 낮췄다. 매출규모 12000-25000 구간에서 실질 15% 이상을 10년간 유지한 기업이 3.4%(컷 1.0% 이상)라 명목 17.87%를 상한으로 둔다. 출처: Credit Suisse HOLT 1950-2015(소멸기업 포함). 이 상한은 린치 유형 캡을 대체하지 않고 함께 적용된 것이며, 컷(1.0%)은 검증된 값이 아니라 2026-08-23 사용자 승인으로 채택된 서술적 기준이다.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "SE",
+    "company_name": "Sea Limited",
+    "revenue_by_year": {
+      "2020": 4375664000.0,
+      "2021": 9955190000.0,
+      "2022": 12449705000.0,
+      "2023": 13063560000.0,
+      "2024": 16819866000.0,
+      "2025": 22938469000.0
+    },
+    "operating_income_by_year": {
+      "2020": -1303325000.0,
+      "2021": -1583060000.0,
+      "2022": -1487508000.0,
+      "2023": 224778000.0,
+      "2024": 662152000.0,
+      "2025": 1985306000.0
+    },
+    "operating_cashflow_by_year": {
+      "2020": 555868000.0,
+      "2021": 208649000.0,
+      "2022": -1055692000.0,
+      "2023": 2079688000.0,
+      "2024": 3277420000.0,
+      "2025": 5024523000.0
+    },
+    "capex_by_year": {
+      "2020": 336274000.0,
+      "2021": 772177000.0,
+      "2022": 924178000.0,
+      "2023": 241605000.0,
+      "2024": 318153000.0,
+      "2025": 513809000.0
+    },
+    "market_cap": 71538880234.69,
+    "net_debt": -8728533000.0,
+    "ebitda": 2357477000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.35,
+      0.15,
+      0.1
+    ],
+    "market_share_trend_pp_per_year": -2.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.3,
+    "subjective_input_basis": "기존 ledger(2026-08-23)의 주관적 입력을 **의도적으로 그대로** 유지했다 - 이번 재분석의 목적이 '시가총액 갱신 + SBC 배선이 판정을 어떻게 바꾸는가'를 분리해 보는 것이라, 주관 입력을 동시에 손대면 원인 분해가 불가능해진다(PTC·VRT와 같은 통제 설계). competitor_threat_weights=[0.35(TikTok Shop), 0.15(Lazada/Tokopedia 등 역내 이커머스), 0.10(Garena 게임 부문 경쟁)] - 2026-08-03 정성 심층조사가 TikTok Shop의 동남아 점유율 잠식을 최대 위협으로 확인했다. market_share_trend_pp_per_year=-2.0 - 같은 조사에서 베트남 Shopee 점유율이 52%->41%로 실제 하락한 것이 관측됐다(음수 = 점유율 하락 반영). demand_sensitivity_pct=0.30 - CLAUDE.md 업종앵커표 '소비자 구독/플랫폼(재량소비, 대체재 존재)' 버킷 앵커값 그대로.",
+    "model_used": "two_stage",
+    "model_choice_reason": "기존 ledger(2026-08-23)와 동일하게 two_stage를 유지한다 - 매출 3y/5y CAGR이 default_terminal_growth를 크게 웃도는 고성장 국면이고, v3.67 규모조건부 상한(매출 $22.9B, base_rates $12-25B 구간에서 명목 17.875%)이 **실제로 바인딩**돼 언젠가 수렴이 불가피함을 엔진 스스로 명시하고 있어 고성장->수렴 경로 모형이 구조에 맞다. 통제 설계상 모델을 바꾸지 않는다(바꾸면 시총 갱신 효과와 모델 효과가 섞인다).",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001703399 Sea Limited, 조회 2026-09-04)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $112.09)",
+      "ledger/SE_2026-08-23.json (net_debt·EBITDA·주관적 입력 승계)",
+      "2026-08-03 S등급 정성 심층조사(Shopee EBITDA·TikTok Shop 잠식·SBC 교차검증) - CLAUDE.md 기록"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2020": -1618056000.0,
+      "2021": -2046759000.0,
+      "2022": -1651421000.0,
+      "2023": 150726000.0,
+      "2024": 444321000.0,
+      "2025": 1578149000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2020": 290246000.0,
+      "2021": 470324000.0,
+      "2022": 705896000.0,
+      "2023": 685030000.0,
+      "2024": 715839000.0,
+      "2025": 624995000.0
+    },
+    "falsification_conditions": "(1) FY2026 실적(2027-04경 20-F)에서 Shopee 조정 EBITDA가 전년比 다시 감소하면 - 직전 정성 심층조사가 지목한 'TikTok Shop 방어 비용으로 이익성장이 Garena 단독부담'이라는 우려가 재확인되는 것이므로 재검토. (2) 동남아 주요국(인도네시아·베트남·태국) Shopee 점유율이 추가로 5%p 이상 하락하면 - market_share_trend_pp_per_year=-2.0 가정보다 빠른 잠식이다. (3) 희석주식수가 FY2026에도 +5% 이상 늘면 - 이 엔진이 다루지 않는 별도 다일루션 채널이 계속 주주가치를 잠식하고 있다는 뜻. (4) 인도네시아 등에서 과거와 같은 이커머스 규제 제동이 재발하면.",
+    "price_at_analysis": 112.09,
+    "currency": "USD",
+    "usd_fx_rate": 1.0,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-05",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4375664000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-04-16",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 9955190000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-04-22",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 12449705000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-04-06",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 13063560000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-04-26",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 16819866000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-04-17",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 19625021000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-04-17",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-05",
+    "filing_dates_by_year": {
+      "2020": "2021-04-16",
+      "2021": "2022-04-22",
+      "2022": "2023-04-06",
+      "2023": "2024-04-26",
+      "2024": "2025-04-17",
+      "2025": "2026-04-17"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.2259378555374607,
+    "revenue_cagr_5y": 0.392849178706584,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.8303113144903451,
+    "fcf0": 4510714000.0,
+    "fcf_by_year": {
+      "2020": 219594000.0,
+      "2021": -563528000.0,
+      "2022": -1979870000.0,
+      "2023": 1838083000.0,
+      "2024": 2959267000.0,
+      "2025": 4510714000.0
+    },
+    "worst_yoy_revenue_growth": 0.049306790803476774,
+    "worst_yoy_year": 2023,
+    "operating_margins": [
+      -0.15901856217711566,
+      -0.11948138530190072,
+      0.01720648888970541,
+      0.039367257741530166,
+      0.08654919384550032
+    ],
+    "net_debt_to_ebitda": -3.7024891441146615
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 14.0,
+      "margin_volatility": 14.0,
+      "leverage": 2.0,
+      "cyclicality": 9.2,
+      "competition_intensity": 13.2
+    },
+    "score": 52.400000000000006
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.06572,
+    "r": 0.11322,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.18345566158456164,
+    "realistic_growth": 0.17874999999999974,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.2259378555374607,
+        "5y": 0.392849178706584,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.2885296017258819,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.2885296017258819,
+      "structural_discount_pct": 0.18345566158456164,
+      "discounted_growth": 0.23559721275453016,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.23559721275453016,
+      "size_conditioned_cap_applied": {
+        "cap_nominal": 0.17874999999999974,
+        "cap_real_pct": 15.0,
+        "size_class": "12000-25000",
+        "sales_2015_usd_mn": 16991.5,
+        "min_base_rate_pct": 1.0,
+        "base_rate_at_cap_pct": 3.4,
+        "horizon_years": 10,
+        "inflation_assumed": 0.025,
+        "note": "매출규모 12000-25000 구간에서 실질 15% 이상을 10년간 유지한 기업이 3.4%(컷 1.0% 이상)라 명목 17.87%를 상한으로 둔다"
+      },
+      "realistic_growth_before_size_cap": 0.23559721275453016
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.047191810242881195,
+      "two_stage": 0.05544910430908202,
+      "errors": {},
+      "divergence": 0.008257294066200828,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "기존 ledger(2026-08-23)와 동일하게 two_stage를 유지한다 - 매출 3y/5y CAGR이 default_terminal_growth를 크게 웃도는 고성장 국면이고, v3.67 규모조건부 상한(매출 $22.9B, base_rates $12-25B 구간에서 명목 17.875%)이 **실제로 바인딩**돼 언젠가 수렴이 불가피함을 엔진 스스로 명시하고 있어 고성장->수렴 경로 모형이 구조에 맞다. 통제 설계상 모델을 바꾸지 않는다(바꾸면 시총 갱신 효과와 모델 효과가 섞인다).",
+    "value": 0.05544910430908202
+  },
+  "expectation_gap": 0.12330089569091772,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.17874999999999974,
+      "g_bull": 0.25,
+      "g_bear": 0.08937499999999987,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.733533197463923,
+      "base": 0.41532147985015255,
+      "bear": 0.09845075368187839
+    },
+    "probabilities": {
+      "bull": 0.29279999999999995,
+      "base": 0.5,
+      "bear": 0.20720000000000002
+    },
+    "probability_rationale": "DRS=52.4 (중립점 50 대비 편차 +0.05) 기준: p_bull=29.3%, p_base=50.0%, p_bear=20.7%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.4428382563053981
+  },
+  "rar": 0.8451111761553398,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11322,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.05544910430908202,
+    "implied_growth_without_drs": 0.027472686767578105,
+    "gap_with_drs": 0.12330089569091772,
+    "gap_without_drs": 0.15127731323242163,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11322,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.05544910430908202,
+      "implied_growth_without_drs": 0.027472686767578105,
+      "gap_with_drs": 0.12330089569091772,
+      "gap_without_drs": 0.15127731323242163,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 624995000.0,
+    "sbc_to_fcf_pct": 0.13855788684452172,
+    "fcf0_sbc_adjusted": 3885719000.0,
+    "implied_growth_sbc_adjusted": 0.07350158691406249,
+    "gap_sbc_adjusted": 0.10524841308593726,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

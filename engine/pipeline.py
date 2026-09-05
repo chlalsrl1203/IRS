@@ -1090,6 +1090,21 @@ def run_analysis(inputs: AnalysisInputs) -> dict:
                     f"이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 "
                     f"민감하므로 액면 그대로 신뢰하지 말 것."
                 )
+            elif gap_sbc is None:
+                # v3.81: SBC 차감 후 FCF0가 너무 작아 이분탐색이 탐색범위 안에서
+                # 수렴하지 못한 경우다(ig_sbc is None). 이전 코드는 이 경우를
+                # 막지 않아 아래 elif가 None을 포맷하다 TypeError로 죽었다 -
+                # MU(SBC/FCF 58%, 시총 $1.15T)에서 처음 드러났다. 조용히
+                # 넘기지 않고 '계산 불가'라는 사실 자체를 경고로 남긴다
+                # ("데이터 없음을 안전으로 오독하지 않는다" 원칙).
+                data_limitations.append(
+                    f"[SBC 교차검증 계산 불가] SBC가 FCF0의 {sbc_pct*100:.0f}%를 "
+                    f"차지해 차감 후 FCF0(${fcf0_sbc_adjusted:,.0f})가 시가총액 대비 "
+                    f"너무 작아졌고, 그 시가총액을 정당화하는 내재성장률이 "
+                    f"탐색범위를 벗어나 수렴하지 않았다. **'SBC 영향이 없다'는 "
+                    f"뜻이 아니라 '너무 커서 모형이 답을 못 낸다'는 뜻이다** - "
+                    f"SBC 비중 자체가 경고 신호다."
+                )
             elif sbc_pct >= 0.30:
                 data_limitations.append(
                     f"[SBC 교차검증] SBC가 FCF0의 {sbc_pct*100:.0f}%로 상당히 크다 "

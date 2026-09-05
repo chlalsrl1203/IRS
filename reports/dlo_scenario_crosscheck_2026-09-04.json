@@ -1,0 +1,56 @@
+{
+  "ticker": "DLO",
+  "as_of": "2026-09-04",
+  "purpose": "최초 정식분석 S등급이 어떤 가정 위에 서 있는지 드러내기",
+  "official_ledger": "ledger/DLO_2026-09-04.json",
+  "affects_official_judgment": false,
+  "scenarios": [
+    {
+      "fcf0_scenario": "official_최근연도",
+      "fcf0": 413175000.0,
+      "rg_scenario": "cap_25.00(공식)",
+      "realistic_growth": 0.25,
+      "implied_growth_two_stage": 0.012637519836425769,
+      "implied_growth_single_stage": 0.022099917039467763,
+      "gap": 0.23736248016357422,
+      "judgment": "저평가 가능성",
+      "grade": "S"
+    },
+    {
+      "fcf0_scenario": "official_최근연도",
+      "fcf0": 413175000.0,
+      "rg_scenario": "guidance_27.50",
+      "realistic_growth": 0.275,
+      "implied_growth_two_stage": 0.012637519836425769,
+      "implied_growth_single_stage": 0.022099917039467763,
+      "gap": 0.2623624801635743,
+      "judgment": "저평가 가능성",
+      "grade": "S"
+    },
+    {
+      "fcf0_scenario": "avg3y_정규화",
+      "fcf0": 223724666.66666666,
+      "rg_scenario": "cap_25.00(공식)",
+      "realistic_growth": 0.25,
+      "implied_growth_two_stage": 0.0881507873535156,
+      "implied_growth_single_stage": 0.06243201498610684,
+      "gap": 0.16184921264648439,
+      "judgment": "저평가 가능성",
+      "grade": "S"
+    },
+    {
+      "fcf0_scenario": "avg3y_정규화",
+      "fcf0": 223724666.66666666,
+      "rg_scenario": "guidance_27.50",
+      "realistic_growth": 0.275,
+      "implied_growth_two_stage": 0.0881507873535156,
+      "implied_growth_single_stage": 0.06243201498610684,
+      "gap": 0.1868492126464844,
+      "judgment": "저평가 가능성",
+      "grade": "S"
+    }
+  ],
+  "n_scenarios_differing_from_official": 0,
+  "reading": "네 칸 전부 '저평가 가능성'이 유지된다 - **Gap의 크기는 FCF0 정규화에 크게 반응하지만(약 -8%p) 판정 방향은 뒤집히지 않는다**. 이 종목의 저평가 신호 자체는 FCF0 한 해짜리 극단값 때문에 생긴 것이 아니라는 뜻이므로, S등급을 액면 그대로 믿지는 않되 방향은 유지해도 된다. ⚠️ 단, Realistic Growth 25.00%가 Lynch 상한 그 자체라 이 Gap은 사실상 '상한 - Implied Growth'이며, 상한값의 근거는 이 저장소 어디에도 검증돼 있지 않다(M-1). 상한을 회사 가이던스 수준(27.5%)으로 올려도 결론이 같다는 점만 확인된다.",
+  "known_limitation": "(1) 결제대행업의 OCF는 가맹점 정산 타이밍에 관통당해 FCF-DCF의 전제(FCF가 주주 귀속 현금)를 정확히 만족하지 않는다 - 보험업 플로트(v3.22)와 같은 계열의 구조적 왜곡이며 전용 경로를 만들 만큼 실증사례가 쌓이지 않았다. (2) 3년평균 FCF0는 정규화의 한 방법일 뿐 검증된 기준이 아니다. (3) guidance_27.50은 회사의 1개년 영업이익 성장 예측이고 Realistic Growth는 n=12년 개념이라 기간이 다르다 - ROP가 확립한 override 자격(다년 실현실적)에 못 미치므로 공식 판정으로 승격하지 않는다."
+}

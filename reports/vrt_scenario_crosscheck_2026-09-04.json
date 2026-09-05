@@ -1,0 +1,84 @@
+{
+  "ticker": "VRT",
+  "as_of": "2026-09-04",
+  "purpose": "보유 2순위(19.2%) 종목의 판정 취약성 2차원 점검",
+  "official_ledger": "ledger/VRT_2026-09-04.json",
+  "official": {
+    "realistic_growth_scenario": "official_18.71",
+    "implied_growth_model": "two_stage(공식)",
+    "realistic_growth": 0.18710426857819903,
+    "implied_growth": 0.1995218276977539,
+    "gap": -0.01241755911955486,
+    "judgment": "적정가/경계선",
+    "grade": "C"
+  },
+  "affects_official_judgment": false,
+  "scenarios": [
+    {
+      "realistic_growth_scenario": "official_18.71",
+      "implied_growth_model": "two_stage(공식)",
+      "realistic_growth": 0.18710426857819903,
+      "implied_growth": 0.1995218276977539,
+      "gap": -0.01241755911955486,
+      "judgment": "적정가/경계선",
+      "grade": "C"
+    },
+    {
+      "realistic_growth_scenario": "official_18.71",
+      "implied_growth_model": "single_stage",
+      "realistic_growth": 0.18710426857819903,
+      "implied_growth": 0.09073390858795194,
+      "gap": 0.0963703599902471,
+      "judgment": "저평가 가능성",
+      "grade": "A"
+    },
+    {
+      "realistic_growth_scenario": "size_cap_23.00",
+      "implied_growth_model": "two_stage(공식)",
+      "realistic_growth": 0.23,
+      "implied_growth": 0.1995218276977539,
+      "gap": 0.030478172302246115,
+      "judgment": "적정가/경계선",
+      "grade": "C"
+    },
+    {
+      "realistic_growth_scenario": "size_cap_23.00",
+      "implied_growth_model": "single_stage",
+      "realistic_growth": 0.23,
+      "implied_growth": 0.09073390858795194,
+      "gap": 0.13926609141204807,
+      "judgment": "저평가 가능성",
+      "grade": "A"
+    },
+    {
+      "realistic_growth_scenario": "guidance_30.00",
+      "implied_growth_model": "two_stage(공식)",
+      "realistic_growth": 0.3,
+      "implied_growth": 0.1995218276977539,
+      "gap": 0.1004781723022461,
+      "judgment": "저평가 가능성",
+      "grade": "A"
+    },
+    {
+      "realistic_growth_scenario": "guidance_30.00",
+      "implied_growth_model": "single_stage",
+      "realistic_growth": 0.3,
+      "implied_growth": 0.09073390858795194,
+      "gap": 0.20926609141204805,
+      "judgment": "저평가 가능성",
+      "grade": "S"
+    },
+    {
+      "realistic_growth_scenario": "official_18.71",
+      "implied_growth_model": "two_stage(공식) + SBC차감",
+      "realistic_growth": 0.18710426857819903,
+      "implied_growth": 0.20236797332763673,
+      "gap": -0.015263704749437695,
+      "judgment": "적정가/경계선",
+      "grade": "C"
+    }
+  ],
+  "n_scenarios_differing_from_official": 4,
+  "reading": "실측 격자 7칸 중 공식 판정('적정가/경계선')이 나오는 것은 **Implied Growth를 two_stage로 잡은 3칸뿐**이고, 나머지 4칸은 전부 '저평가 가능성'(A 3칸, S 1칸)이다. 특히 **RG를 엔진 계산값 그대로 두고 모델만 single_stage로 바꾸면 -1.24%p -> +9.64%p(A등급)로 뒤집힌다** - 이 종목의 판정을 실제로 결정하는 것은 성장률 추정이 아니라 **모델 선택**이라는 뜻이다. ⚠️ 이것을 '사실은 저평가'로 읽으면 안 된다 - 반대로 **이 종목의 판정은 가정에 심하게 좌우되며 어떤 방향으로도 확신할 근거가 없다**는 뜻이다(v3.51 robust=False 종목). 2026-08-16 모델선택 연구가 '이론 기준이 실제 선택을 전혀 분리하지 못한다'며 규칙화를 REJECT한 축이 바로 이것이다.",
+  "known_limitation": "guidance_30.00은 회사의 **1개년 예측**이고 엔진 Realistic Growth는 n≈12년 개념이라 기간이 다르다. 두 값을 같은 자리에 대입하는 것은 근사이며, ROP처럼 다년 실현 오가닉 실적으로 검증된 대체가 아니다 - 그래서 공식 판정으로 승격하지 않는다(KEYS 크로스체크가 확립한 기준). size_cap_23.00도 Credit Suisse HOLT base rate에서 나온 역사적 분포의 상한일 뿐 이 회사의 예측치가 아니다."
+}

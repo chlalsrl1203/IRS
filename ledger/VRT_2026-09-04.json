@@ -1,0 +1,479 @@
+{
+  "meta": {
+    "ticker": "VRT",
+    "company_name": "Vertiv Holdings Co",
+    "analyzed_at": "2026-09-04T23:02:06.657640+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001674101, 조회 2026-09-04)",
+      "SEC 10-Q 표지 (2026-07-27, 발행주식수 384,988,173주)",
+      "SEC 10-Q 대차대조표 (2026-06-30, 차입금 $2,939.8M / 현금 $2,810.6M)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $280.53)",
+      "WebSearch: VRT Q2 2026 실적·FY2026 가이던스·데이터센터 전력 시장 점유율(investors.vertiv.com/PRNewswire/MarketsandMarkets, 2026-09-04 재인용)"
+    ],
+    "falsification_conditions": "(1) 2026-11월경 Q3 2026 실적에서 수주잔고($15B)가 전분기 대비 감소하거나 book-to-bill이 1.0x 아래로 떨어지면 - AI 데이터센터 수주 사이클의 정점 통과 신호이므로 이 판정을 재검토할 것. (2) FY2026 오가닉 성장이 가이던스 하단(+30%)을 밑돌면 - 회사 자체 가이던스가 trailing CAGR을 크게 웃도는 상태(KEYS/KLAC와 같은 계열)이므로, 그 괴리가 실현되지 않으면 성장 전제 자체가 무너진다. (3) 하이퍼스케일러(Microsoft/Google/Amazon/Meta) 데이터센터 capex 가이던스가 하향되면 - demand_sensitivity 0.45의 근거가 되는 외생 수요원이다. (4) 조정영업마진이 가이던스 하단(23.3%)을 밑돌면 - Schneider/Eaton과의 경쟁이 가격으로 번지고 있다는 신호.",
+    "price_at_analysis": 280.53,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-04",
+      "filing_dates_by_year": {
+        "2020": "2021-03-01",
+        "2021": "2022-03-01",
+        "2022": "2023-02-27",
+        "2023": "2024-02-23",
+        "2024": "2025-02-18",
+        "2025": "2026-02-13"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4370600000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-01",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 4998100000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-01",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 5691500000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-27",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 6863200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-23",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 8011800000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 10229900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-13",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(18.54%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[모델 괴리 경고] single_stage(9.07%)와 two_stage(19.95%)가 10.88%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
+    "[RAR 방향성 경고] 기대수익률이 음수(-1.23%)라 RAR=ER/DRS 공식이 의도와 반대로 움직이는 구간이다 - DRS(위험도)가 높을수록 음수 RAR이 0에 가깝게 압축돼 실제로는 위험이 클수록 '덜 나빠 보이는' 착시가 생긴다(2026-08-02 방법론 감사 M-2, CDNS 원자료로 기계적 검증: DRS 20→80일 때 같은 종목 RAR이 -0.95→-0.36로 개선돼 보임). 이 종목은 RAR 절대값만으로 판단하지 말고 Expectation Gap을 우선 참고할 것.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "VRT",
+    "company_name": "Vertiv Holdings Co",
+    "revenue_by_year": {
+      "2020": 4370600000.0,
+      "2021": 4998100000.0,
+      "2022": 5691500000.0,
+      "2023": 6863200000.0,
+      "2024": 8011800000.0,
+      "2025": 10229900000.0
+    },
+    "operating_income_by_year": {
+      "2020": 213500000.0,
+      "2021": 259900000.0,
+      "2022": 223400000.0,
+      "2023": 872200000.0,
+      "2024": 1367400000.0,
+      "2025": 1829700000.0
+    },
+    "operating_cashflow_by_year": {
+      "2020": 208900000.0,
+      "2021": 210900000.0,
+      "2022": -152800000.0,
+      "2023": 900500000.0,
+      "2024": 1319300000.0,
+      "2025": 2113800000.0
+    },
+    "capex_by_year": {
+      "2020": 44400000.0,
+      "2021": 73400000.0,
+      "2022": 100000000.0,
+      "2023": 127900000.0,
+      "2024": 167000000.0,
+      "2025": 220000000.0
+    },
+    "market_cap": 108000732171.68999,
+    "net_debt": 129200000.0,
+    "ebitda": 2138300000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.45,
+      0.3,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.45,
+    "subjective_input_basis": "기존 ledger(2026-08-02)의 주관적 입력을 **의도적으로 그대로** 유지했다 - 이번 재분석의 목적이 '데이터 갱신이 판정을 어떻게 바꾸는가'를 분리해 보는 것이라, 주관 입력을 동시에 손대면 원인 분해가 불가능해진다(PTC 재분석과 같은 통제 설계). competitor_threat_weights=[0.45(Schneider Electric), 0.30(Eaton), 0.20(ABB/Delta 등)] - 2026-09-04 WebSearch 재확인: 데이터센터 전력 시장을 Schneider·ABB·Eaton·Vertiv·Delta가 합계 41~43%로 나눠 갖는 과점이고 Schneider가 최대 경쟁자, Eaton은 2025-07 Resilient Power Systems 인수로 UPS 경쟁력 보강. market_share_trend_pp_per_year=0.0 - 정밀냉각 점유율 23%로 선두권이나 대형 경쟁사들도 같은 AI 순풍을 받고 있어 상대 점유율의 뚜렷한 추세 증거를 확인하지 못했다(모른다를 0으로 두는 것이지 '변화 없음'을 확인한 것이 아니다). demand_sensitivity_pct=0.45 - CLAUDE.md 업종앵커표 '자본재/데이터센터 인프라(설비투자 사이클)' 버킷 앵커값 그대로. 하이퍼스케일러 capex 사이클에 직접 노출되며, FY2022 영업현금흐름 -$152.8M이 그 변동성의 실측 증거다.",
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️ 이 종목은 **모델선택 취약 종목**이다 - 기존 ledger 실측 모델괴리 8.68%p(single_stage 8.31% vs two_stage 16.99%)로 경고 임계값 3%p의 약 3배이고, v3.51 gap_range 분석이 '모델선택 단독으로 Gap이 12~20%p 움직이는 9종목'에 VRT를 포함시켰다. 그럼에도 two_stage를 유지하는 근거는 (1) trailing 매출 CAGR(3y 21.6%/5y 18.5%)이 default_terminal_growth(2.0~4.5%)를 압도적으로 웃돌아 Gordon 정상상태 가정이 성립하지 않고, (2) 회사 자신이 FY2026 오가닉 +30~32%를 가이던스하며 수주잔고가 전년比 2배($15B, book-to-bill 2.9x)로 현재가 명백한 고성장 국면임을 보여주며, (3) 동시에 v3.67 규모조건부 상한이 이 매출규모에서 역사적 지속가능 상한을 명목 23.00%로 제시해(base rate 1.1%) 언젠가 수렴이 불가피함을 시사하기 때문이다. 고성장->수렴 경로를 명시적으로 모형화하는 two_stage가 이 구조에 맞다. **단, 판정은 이 선택에 민감하므로 Gap 절대값을 액면 그대로 신뢰하지 말 것**(v3.51 robust=False 종목).",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001674101, 조회 2026-09-04)",
+      "SEC 10-Q 표지 (2026-07-27, 발행주식수 384,988,173주)",
+      "SEC 10-Q 대차대조표 (2026-06-30, 차입금 $2,939.8M / 현금 $2,810.6M)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $280.53)",
+      "WebSearch: VRT Q2 2026 실적·FY2026 가이던스·데이터센터 전력 시장 점유율(investors.vertiv.com/PRNewswire/MarketsandMarkets, 2026-09-04 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2020": -327300000.0,
+      "2021": 119600000.0,
+      "2022": 76600000.0,
+      "2023": 460200000.0,
+      "2024": 495800000.0,
+      "2025": 1332800000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2020": 13000000.0,
+      "2021": 23200000.0,
+      "2022": 24700000.0,
+      "2023": 25000000.0,
+      "2024": 34600000.0,
+      "2025": 45900000.0
+    },
+    "falsification_conditions": "(1) 2026-11월경 Q3 2026 실적에서 수주잔고($15B)가 전분기 대비 감소하거나 book-to-bill이 1.0x 아래로 떨어지면 - AI 데이터센터 수주 사이클의 정점 통과 신호이므로 이 판정을 재검토할 것. (2) FY2026 오가닉 성장이 가이던스 하단(+30%)을 밑돌면 - 회사 자체 가이던스가 trailing CAGR을 크게 웃도는 상태(KEYS/KLAC와 같은 계열)이므로, 그 괴리가 실현되지 않으면 성장 전제 자체가 무너진다. (3) 하이퍼스케일러(Microsoft/Google/Amazon/Meta) 데이터센터 capex 가이던스가 하향되면 - demand_sensitivity 0.45의 근거가 되는 외생 수요원이다. (4) 조정영업마진이 가이던스 하단(23.3%)을 밑돌면 - Schneider/Eaton과의 경쟁이 가격으로 번지고 있다는 신호.",
+    "price_at_analysis": 280.53,
+    "currency": "USD",
+    "usd_fx_rate": 1.0,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4370600000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-01",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 4998100000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-01",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 5691500000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-27",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 6863200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-23",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 8011800000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 10229900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-13",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-04",
+    "filing_dates_by_year": {
+      "2020": "2021-03-01",
+      "2021": "2022-03-01",
+      "2022": "2023-02-27",
+      "2023": "2024-02-23",
+      "2024": "2025-02-18",
+      "2025": "2026-02-13"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.2158543401649824,
+    "revenue_cagr_5y": 0.18540311841994384,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.6301727980423069,
+    "fcf0": 1893800000.0,
+    "fcf_by_year": {
+      "2020": 164500000.0,
+      "2021": 137500000.0,
+      "2022": -252800000.0,
+      "2023": 772600000.0,
+      "2024": 1152300000.0,
+      "2025": 1893800000.0
+    },
+    "worst_yoy_revenue_growth": 0.1387327184330045,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      0.05199975990876533,
+      0.03925151541772819,
+      0.1270835761743793,
+      0.17067325694600463,
+      0.1788580533534052
+    ],
+    "net_debt_to_ebitda": 0.06042183042603938
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 14.0,
+      "leverage": 6.0,
+      "cyclicality": 5.8,
+      "competition_intensity": 11.4
+    },
+    "score": 41.2
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.062360000000000006,
+    "r": 0.10986000000000001,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.08477438912748073,
+    "realistic_growth": 0.18710426857819903,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.2158543401649824,
+        "5y": 0.18540311841994384,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.20443513201059293,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.20443513201059293,
+      "structural_discount_pct": 0.08477438912748073,
+      "discounted_growth": 0.18710426857819903,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.18710426857819903
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.09073390858795194,
+      "two_stage": 0.1995218276977539,
+      "errors": {},
+      "divergence": 0.10878791910980196,
+      "divergence_warning": "[모델 괴리 경고] single_stage(9.07%)와 two_stage(19.95%)가 10.88%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "⚠️ 이 종목은 **모델선택 취약 종목**이다 - 기존 ledger 실측 모델괴리 8.68%p(single_stage 8.31% vs two_stage 16.99%)로 경고 임계값 3%p의 약 3배이고, v3.51 gap_range 분석이 '모델선택 단독으로 Gap이 12~20%p 움직이는 9종목'에 VRT를 포함시켰다. 그럼에도 two_stage를 유지하는 근거는 (1) trailing 매출 CAGR(3y 21.6%/5y 18.5%)이 default_terminal_growth(2.0~4.5%)를 압도적으로 웃돌아 Gordon 정상상태 가정이 성립하지 않고, (2) 회사 자신이 FY2026 오가닉 +30~32%를 가이던스하며 수주잔고가 전년比 2배($15B, book-to-bill 2.9x)로 현재가 명백한 고성장 국면임을 보여주며, (3) 동시에 v3.67 규모조건부 상한이 이 매출규모에서 역사적 지속가능 상한을 명목 23.00%로 제시해(base rate 1.1%) 언젠가 수렴이 불가피함을 시사하기 때문이다. 고성장->수렴 경로를 명시적으로 모형화하는 two_stage가 이 구조에 맞다. **단, 판정은 이 선택에 민감하므로 Gap 절대값을 액면 그대로 신뢰하지 말 것**(v3.51 robust=False 종목).",
+    "value": 0.1995218276977539
+  },
+  "expectation_gap": -0.01241755911955486,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.18710426857819903,
+      "g_bull": 0.25,
+      "g_bear": 0.09355213428909952,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.15543087460561544,
+      "base": -0.03507947987522497,
+      "bear": -0.2620485150312867
+    },
+    "probabilities": {
+      "bull": 0.32639999999999997,
+      "base": 0.49999999999999994,
+      "bear": 0.17360000000000003
+    },
+    "probability_rationale": "DRS=41.2 (중립점 50 대비 편차 -0.18) 기준: p_bull=32.6%, p_base=50.0%, p_bear=17.4%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.012298724675770985
+  },
+  "rar": -0.02985127348488103,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10986000000000001,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.1995218276977539,
+    "implied_growth_without_drs": 0.17226314544677734,
+    "gap_with_drs": -0.01241755911955486,
+    "gap_without_drs": 0.01484112313142169,
+    "judgment_with_drs": "적정가/경계선",
+    "judgment_without_drs": "적정가/경계선",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10986000000000001,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.1995218276977539,
+      "implied_growth_without_drs": 0.17226314544677734,
+      "gap_with_drs": -0.01241755911955486,
+      "gap_without_drs": 0.01484112313142169,
+      "judgment_with_drs": "적정가/경계선",
+      "judgment_without_drs": "적정가/경계선",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "적정가/경계선",
+  "judgment_grade": "C",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 45900000.0,
+    "sbc_to_fcf_pct": 0.02423698384201077,
+    "fcf0_sbc_adjusted": 1847900000.0,
+    "implied_growth_sbc_adjusted": 0.20236797332763673,
+    "gap_sbc_adjusted": -0.015263704749437695,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": "VRT_2026-08-02.json",
+    "warnings": [
+      "[RAR 부호 반전] 과거 +0.1836 -> 재계산 -0.0299. 부호가 바뀌면 5·7번 정합성 판정과 confidence가 함께 달라진다. 입력값 차이인지 로직 변경인지 특정할 것."
+    ],
+    "checked": true
+  }
+}

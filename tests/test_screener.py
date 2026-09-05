@@ -80,7 +80,17 @@ def test_required_fcf_yield_is_inverse_of_implied_growth():
 # 탈락한다(competition_intensity 상수 12.0 vs 실제 연구된 값 - 태양광
 # 트래커 3사 과점 시장에서 NXT가 시장선도라 위협도를 낮게 평가 - 가 그보다
 # 낮아 DRS가 30.6까지 과대평가된다). 세 번째 실사례.
-KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP", "NXT"}
+# NOW(2026-09-04): 정식분석 "저평가 가능성"(Gap +8.30%p)이나 screen()은
+# 탈락한다. ⚠️ **앞의 셋과 원인이 다르다** - DRS 추정(30.6)이 과대평가된
+# 게 아니라 `MAX_IMPLIED_GROWTH`(5.5%)라는 **절대 컷오프**에 걸린다
+# (내재성장률 추정 7.03% > 5.5%, FCF수익률 3.13% < 필요 4.63%). 정식분석이
+# 통과한 이유는 Realistic Growth가 21.01%로 높아 Gap이 크게 벌어지기
+# 때문인데, screen()의 절대 임계값은 그 성장률을 참조하지 않는다.
+# 2026-08-23 외부검증(v3.63 Finding 2)이 이미 "MIN_REALISTIC_GROWTH/
+# MAX_IMPLIED_GROWTH의 절대 하한 설계에는 학계 반례가 있다"고 기록해둔
+# 한계의 첫 실사례다. 임계값은 바꾸지 않는다(바꾸면 다른 종목 판정이
+# 조용히 이동한다 - v3.63 결정 #16 REJECT 유지).
+KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP", "NXT", "NOW"}
 
 
 def test_screener_reproduces_known_buy_verdicts():
@@ -347,3 +357,27 @@ def test_max_implied_growth_label_does_not_overclaim_the_architecture_support():
     """
     label = VALIDATION_STATUS["max_implied_growth"]
     assert "정당화하지 않는다" in label
+
+
+def test_now_false_rejection_is_a_threshold_not_a_drs_problem():
+    """
+    NOW를 예외 목록에 넣은 근거가 아직 유효한지 확인한다.
+
+    ⚠️ BSX/MEDP/NXT와 **다른 메커니즘**임을 고정하는 것이 이 테스트의 요점이다.
+    저 셋은 `estimate_drs()`의 competition_intensity 상수(12.0)가 실제 연구값보다
+    높아 DRS가 과대평가된 사례인데, NOW는 DRS가 아니라 `MAX_IMPLIED_GROWTH`
+    (5.5%) 절대 컷오프에 걸린다. 원인을 뭉뚱그리면 나중에 엉뚱한 곳을 고치게 된다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "NOW":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert any("내재성장률 추정" in f for f in r.failures), (
+            f"NOW의 탈락 사유가 절대 임계값이 아니게 바뀌었다: {r.failures}"
+        )
+        # DRS 과대평가가 원인이 아님을 명시적으로 고정한다
+        assert r.drs_est == pytest.approx(30.6, abs=0.01)
+        return
+    pytest.fail("ledger/NOW_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")

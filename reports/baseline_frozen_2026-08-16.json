@@ -13,8 +13,8 @@
     "drs_score",
     "confidence"
   ],
-  "n_tickers": 64,
-  "fingerprint": "f80ba74796721f2edcaebc762bdb88a7ae674f4daa33732bf053538686105b27",
+  "n_tickers": 66,
+  "fingerprint": "4edb2298108d5a1793c45cf7adce4774d14b3f20111122c74f3e6aa0b28782ed",
   "rows": {
     "ACGL": {
       "engine_version": "v3.27",
@@ -169,6 +169,17 @@
       "n": 12,
       "drs_score": 32.2,
       "confidence": 94
+    },
+    "DLO": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.25,
+      "implied_growth": 0.012637519836425769,
+      "expectation_gap": 0.23736248016357422,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 56.2,
+      "confidence": 89
     },
     "DOCU": {
       "engine_version": "v3.80",
@@ -379,6 +390,17 @@
       "drs_score": 27.839999999999996,
       "confidence": 94
     },
+    "NOW": {
+      "engine_version": "v3.81",
+      "realistic_growth": 0.2100590719274136,
+      "implied_growth": 0.12709579467773435,
+      "expectation_gap": 0.08296327724967925,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 32.4,
+      "confidence": 94
+    },
     "NXT": {
       "engine_version": "v3.80",
       "realistic_growth": 0.21158458033600352,
@@ -468,15 +490,15 @@
       "confidence": 94
     },
     "PTC": {
-      "engine_version": "v3.25",
+      "engine_version": "v3.80",
       "realistic_growth": 0.11390601486057504,
-      "implied_growth": 0.05860443115234374,
-      "expectation_gap": 0.0553015837082313,
-      "judgment": "저평가 가능성",
+      "implied_growth": 0.073137092590332,
+      "expectation_gap": 0.040768922270243035,
+      "judgment": "적정가/경계선",
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 44.39999999999999,
-      "confidence": 94
+      "confidence": 79
     },
     "QCOM": {
       "engine_version": "v3.80",
@@ -556,10 +578,10 @@
       "confidence": 94
     },
     "SE": {
-      "engine_version": "v3.67",
+      "engine_version": "v3.81",
       "realistic_growth": 0.17874999999999974,
-      "implied_growth": 0.04379405975341795,
-      "expectation_gap": 0.1349559402465818,
+      "implied_growth": 0.05544910430908202,
+      "expectation_gap": 0.12330089569091772,
       "judgment": "저평가 가능성",
       "model_used": "two_stage",
       "n": 12,
@@ -666,10 +688,10 @@
       "confidence": 89
     },
     "VRT": {
-      "engine_version": "v3.25",
+      "engine_version": "v3.80",
       "realistic_growth": 0.18710426857819903,
-      "implied_growth": 0.16991710662841797,
-      "expectation_gap": 0.017187161949781066,
+      "implied_growth": 0.1995218276977539,
+      "expectation_gap": -0.01241755911955486,
       "judgment": "적정가/경계선",
       "model_used": "two_stage",
       "n": 12,

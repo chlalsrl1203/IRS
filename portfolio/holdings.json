@@ -1,0 +1,25 @@
+{
+  "_note": [
+    "실제 보유 포지션. **사람이 유지하는 파일이며 코드는 읽기만 한다**",
+    "(watchlist.json·monitor/acknowledgements.json와 동일 원칙, v3.64",
+    "'확인은 사람의 행위'). engine/portfolio.py에 쓰기 경로가 없다는 것을",
+    "테스트로 고정한다 - 시스템이 조용히 '거래'하는 것을 구조적으로 막는다.",
+    "",
+    "quantity/market_value_krw는 2026-09-04 증권앱 스크린샷 기준.",
+    "cost basis는 앱이 수익률(%)만 제공해 역산값이며 근사치다."
+  ],
+  "as_of": "2026-09-04",
+  "source": "증권앱 스크린샷(사용자 제공, 2026-09-04 07:18 KST)",
+  "currency": "KRW",
+  "total_market_value_krw": 5802074,
+  "positions": [
+    {"ticker": "PTC",  "name": "PTC Inc.",                "quantity": 11.0,      "market_value_krw": 2227472, "return_pct": -0.6},
+    {"ticker": "VRT",  "name": "Vertiv Holdings Co",      "quantity": 3.0,       "market_value_krw": 1115102, "return_pct": 11.4},
+    {"ticker": "SE",   "name": "Sea Limited (ADR)",       "quantity": 5.0,       "market_value_krw": 779673,  "return_pct": 1.4},
+    {"ticker": "DLO",  "name": "DLocal Limited",          "quantity": 30.0,      "market_value_krw": 645218,  "return_pct": -5.7},
+    {"ticker": "NOW",  "name": "ServiceNow, Inc.",        "quantity": 2.0,       "market_value_krw": 390529,  "return_pct": 8.9},
+    {"ticker": "MU",   "name": "Micron Technology, Inc.", "quantity": 0.247113,  "market_value_krw": 327803,  "return_pct": 111.7},
+    {"ticker": "ALB",  "name": "Albemarle Corporation",   "quantity": 1.025732,  "market_value_krw": 180460,  "return_pct": -34.3},
+    {"ticker": "ACGL", "name": "Arch Capital Group Ltd.", "quantity": 1.0,       "market_value_krw": 135814,  "return_pct": 0.5}
+  ]
+}

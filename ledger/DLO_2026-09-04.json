@@ -1,0 +1,505 @@
+{
+  "meta": {
+    "ticker": "DLO",
+    "company_name": "DLocal Limited",
+    "analyzed_at": "2026-09-04T23:10:41.099370+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001846832 DLocal Limited, ifrs-full, 조회 2026-09-04)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $15.52)",
+      "WebSearch: DLO Q2 2026 실적·TPV/총이익 괴리·테이크레이트 압축·FY2026 가이던스(Investing.com/StockTitan/Yahoo Finance 실적발표 요약, 2026-09-04 재인용)"
+    ],
+    "falsification_conditions": "(1) 2026-11경 Q3 2026 실적에서 **총이익 성장률이 가이던스 하단(+25%)을 밑돌면** 재검토 - 이 종목의 핵심 리스크는 물량이 아니라 테이크레이트다. (2) 순 테이크레이트가 두 분기 연속 하락하면 - 회사는 '대형 승차공유 가맹점 한 곳의 가격구간 이동'이라는 일회성 설명을 내놨는데, 두 분기 더 이어지면 구조적 경쟁압력으로 봐야 한다. (3) NRR이 140% 아래로 떨어지면 - 5분기 연속 140%+가 land-and-expand 모델의 근거였다. (4) FY2026 영업현금흐름이 다시 음수로 돌아서면 - 위 '가맹점 예치금' 한계가 일시적 타이밍이 아니라 반복적 패턴임을 뜻하므로 FCF-DCF 적용 자체를 재검토해야 한다. (5) 중남미 주요국(브라질·멕시코·아르헨티나)에서 결제 라이선스·외환 규제가 강화되면.",
+    "price_at_analysis": 15.52,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-04",
+      "filing_dates_by_year": {
+        "2019": "2022-05-02",
+        "2020": "2022-05-02",
+        "2021": "2022-05-02",
+        "2022": "2023-04-05",
+        "2023": "2024-03-19",
+        "2024": "2025-04-24",
+        "2025": "2026-03-18"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 7,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 55289000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 104143000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 244120000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 418925000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-04-05",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 650351000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-19",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 745974000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-04-24",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 1093587000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(7개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(60.05%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "DLO",
+    "company_name": "DLocal Limited",
+    "revenue_by_year": {
+      "2019": 55289000.0,
+      "2020": 104143000.0,
+      "2021": 244120000.0,
+      "2022": 418925000.0,
+      "2023": 650351000.0,
+      "2024": 745974000.0,
+      "2025": 1093587000.0
+    },
+    "operating_income_by_year": {
+      "2019": 17564000.0,
+      "2020": 30945000.0,
+      "2021": 83838000.0,
+      "2022": 127910000.0,
+      "2023": 179657000.0,
+      "2024": 140500000.0,
+      "2025": 219915000.0
+    },
+    "operating_cashflow_by_year": {
+      "2019": 30723000.0,
+      "2020": 88486000.0,
+      "2021": 108486000.0,
+      "2022": 154451000.0,
+      "2023": 293453000.0,
+      "2024": -32784000.0,
+      "2025": 415457000.0
+    },
+    "capex_by_year": {
+      "2019": 152000.0,
+      "2020": 876000.0,
+      "2021": 1949000.0,
+      "2022": 987000.0,
+      "2023": 965000.0,
+      "2024": 1705000.0,
+      "2025": 2282000.0
+    },
+    "market_cap": 4577343957.12,
+    "net_debt": 86713000.0,
+    "ebitda": 246175000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.4,
+      0.3,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 1.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.35,
+    "subjective_input_basis": "competitor_threat_weights=[0.40(Adyen - 글로벌 대형 결제사, 신흥국 확장 중), 0.30(Ebanx - 중남미 직접 경쟁), 0.20(Stripe/Nuvei/Payoneer 등 인접 위협)] - 2026-09-04 WebSearch로 **테이크레이트 압축이 이미 실측**됨을 확인했다(신규 물량 증분 테이크레이트 Q1 ~57bp -> Q2 ~33bp). 경쟁강도를 낮게 잡을 근거가 없다. market_share_trend_pp_per_year=+1.0 - TPV가 +92%YoY로 시장 성장률을 크게 웃돌고 NRR 153%·TPV유지율 188%라 **물량 점유율은 분명히 확대 중**이나, 같은 기간 총이익 증가율은 +29%에 그쳐 **단위당 수익성은 오히려 후퇴**했다. 물량 점유율 확대를 온전히 반영하면 가격결정력 상실을 무시하게 되므로 절반 수준(+1.0)만 반영한다. demand_sensitivity_pct=0.35 - CLAUDE.md 업종앵커표 '광고·전자상거래·경기민감 산업재' 버킷(0.35) 채택. 신흥국(중남미·아프리카·아시아) 소비자 결제 물량이라 현지 경기·환율 변동에 직접 노출되며, 회사 스스로 Q2 가이던스에서 '예상치 못한 환율 역풍'을 영업이익 성장 제약요인으로 명시했다.",
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 3y CAGR 37.7% / 5y 60.1%가 default_terminal_growth(2.0~4.5%)를 압도적으로 웃도는 명백한 고성장 국면이라 Gordon 정상상태 가정(single_stage)이 성립하지 않는다. 동시에 회사 자신의 이익성장 가이던스(+25~32.5%)가 과거 매출 CAGR보다 낮고 테이크레이트 압축이 실측되고 있어 **수렴이 이미 진행 중**이다 - 고성장에서 terminal로 수렴하는 경로를 명시적으로 모형화하는 two_stage가 이 구조에 맞다. ⚠️ 다만 이 종목은 FCF 자체가 가맹점 정산 타이밍에 크게 흔들려(2024 -$34.5M -> 2025 +$413.2M) 어느 모델을 쓰든 Implied Growth의 정밀도가 다른 종목보다 낮다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001846832 DLocal Limited, ifrs-full, 조회 2026-09-04)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $15.52)",
+      "WebSearch: DLO Q2 2026 실적·TPV/총이익 괴리·테이크레이트 압축·FY2026 가이던스(Investing.com/StockTitan/Yahoo Finance 실적발표 요약, 2026-09-04 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2019": 15602000.0,
+      "2020": 28187000.0,
+      "2021": 77853000.0,
+      "2022": 108697000.0,
+      "2023": 149086000.0,
+      "2024": 120469000.0,
+      "2025": 196902000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2019": 716000.0,
+      "2020": 7295000.0,
+      "2021": 7590000.0,
+      "2022": 8684000.0,
+      "2023": 11922000.0,
+      "2024": 23780000.0,
+      "2025": 24136000.0
+    },
+    "falsification_conditions": "(1) 2026-11경 Q3 2026 실적에서 **총이익 성장률이 가이던스 하단(+25%)을 밑돌면** 재검토 - 이 종목의 핵심 리스크는 물량이 아니라 테이크레이트다. (2) 순 테이크레이트가 두 분기 연속 하락하면 - 회사는 '대형 승차공유 가맹점 한 곳의 가격구간 이동'이라는 일회성 설명을 내놨는데, 두 분기 더 이어지면 구조적 경쟁압력으로 봐야 한다. (3) NRR이 140% 아래로 떨어지면 - 5분기 연속 140%+가 land-and-expand 모델의 근거였다. (4) FY2026 영업현금흐름이 다시 음수로 돌아서면 - 위 '가맹점 예치금' 한계가 일시적 타이밍이 아니라 반복적 패턴임을 뜻하므로 FCF-DCF 적용 자체를 재검토해야 한다. (5) 중남미 주요국(브라질·멕시코·아르헨티나)에서 결제 라이선스·외환 규제가 강화되면.",
+    "price_at_analysis": 15.52,
+    "currency": "USD",
+    "usd_fx_rate": 1.0,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-04",
+      "n_covered": 7,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 55289000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 104143000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 244120000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-02",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 418925000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-04-05",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 650351000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-19",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 745974000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-04-24",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 1093587000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL ifrs-full:Revenue",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-18",
+          "retrieval_date": "2026-09-04",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-04",
+    "filing_dates_by_year": {
+      "2019": "2022-05-02",
+      "2020": "2022-05-02",
+      "2021": "2022-05-02",
+      "2022": "2023-04-05",
+      "2023": "2024-03-19",
+      "2024": "2025-04-24",
+      "2025": "2026-03-18"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.37691042101675043,
+    "revenue_cagr_5y": 0.6004593609916231,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.3636913039693008,
+    "fcf0": 413175000.0,
+    "fcf_by_year": {
+      "2019": 30571000.0,
+      "2020": 87610000.0,
+      "2021": 106537000.0,
+      "2022": 153464000.0,
+      "2023": 292488000.0,
+      "2024": -34489000.0,
+      "2025": 413175000.0
+    },
+    "worst_yoy_revenue_growth": 0.14703290992095042,
+    "worst_yoy_year": 2024,
+    "operating_margins": [
+      0.3434294609208586,
+      0.30532911619024883,
+      0.27624621166108765,
+      0.1883443658894278,
+      0.20109511177437187
+    ],
+    "net_debt_to_ebitda": 0.35224129176398905
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 20.0,
+      "margin_volatility": 14.0,
+      "leverage": 6.0,
+      "cyclicality": 5.4,
+      "competition_intensity": 10.8
+    },
+    "score": 56.2
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.06686,
+    "r": 0.11436,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.21177446998743635,
+    "realistic_growth": 0.25,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.37691042101675043,
+        "5y": 0.6004593609916231,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.4607412735073277,
+      "fcf_conservatism_applied": "FCF CAGR(36.37%) < Revenue 가중평균(46.07%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.3636913039693008,
+      "structural_discount_pct": 0.21177446998743635,
+      "discounted_growth": 0.2866707708321625,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.022099917039467763,
+      "two_stage": 0.012637519836425769,
+      "errors": {},
+      "divergence": 0.009462397203041994,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 3y CAGR 37.7% / 5y 60.1%가 default_terminal_growth(2.0~4.5%)를 압도적으로 웃도는 명백한 고성장 국면이라 Gordon 정상상태 가정(single_stage)이 성립하지 않는다. 동시에 회사 자신의 이익성장 가이던스(+25~32.5%)가 과거 매출 CAGR보다 낮고 테이크레이트 압축이 실측되고 있어 **수렴이 이미 진행 중**이다 - 고성장에서 terminal로 수렴하는 경로를 명시적으로 모형화하는 two_stage가 이 구조에 맞다. ⚠️ 다만 이 종목은 FCF 자체가 가맹점 정산 타이밍에 크게 흔들려(2024 -$34.5M -> 2025 +$413.2M) 어느 모델을 쓰든 Implied Growth의 정밀도가 다른 종목보다 낮다.",
+    "value": 0.012637519836425769
+  },
+  "expectation_gap": 0.23736248016357422,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.25,
+      "g_bull": 0.25,
+      "g_bear": 0.125,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.9402782078194856,
+      "base": 0.9402782078194856,
+      "bear": 0.3605386696977557
+    },
+    "probabilities": {
+      "bull": 0.2814,
+      "base": 0.5,
+      "bear": 0.21860000000000002
+    },
+    "probability_rationale": "DRS=56.2 (중립점 50 대비 편차 +0.12) 기준: p_bull=28.1%, p_base=50.0%, p_bear=21.9%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.8135471447860754
+  },
+  "rar": 1.44759278431686,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11436,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.012637519836425769,
+    "implied_growth_without_drs": -0.015094375610351575,
+    "gap_with_drs": 0.23736248016357422,
+    "gap_without_drs": 0.2650943756103516,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11436,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.012637519836425769,
+      "implied_growth_without_drs": -0.015094375610351575,
+      "gap_with_drs": 0.23736248016357422,
+      "gap_without_drs": 0.2650943756103516,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 24136000.0,
+    "sbc_to_fcf_pct": 0.05841592545531554,
+    "fcf0_sbc_adjusted": 389039000.0,
+    "implied_growth_sbc_adjusted": 0.02028121948242186,
+    "gap_sbc_adjusted": 0.22971878051757813,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}
