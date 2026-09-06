@@ -55,8 +55,22 @@ def test_generation_does_not_import_requests_at_module_level():
 
 
 # ── ② 금액까지 낸다 ─────────────────────────────────────────────────────
+def _top_weight_amount(capital):
+    """`_latest('buylist_')`가 실제로 가리키는 파일에서 최상위 비중을 읽어
+    기대 금액을 계산한다. 특정 buylist 스냅샷의 최상위 비중(예: 구
+    buylist_2026-08-03.json의 GEN 18.00%)을 하드코딩하면, 그 뒤에 새
+    buylist_<날짜>.json이 나올 때마다(2026-09-06 발행 등) 테스트가 매번
+    깨진다 - 이 테스트가 고정해야 할 불변조건은 '금액으로 환산됐는가'이지
+    '어느 스냅샷이 최신인가'가 아니다."""
+    path = B._latest("buylist_")
+    data = B.load_json(path)
+    rows = data if isinstance(data, list) else data.get("positions") or []
+    top_w = max(r["weight_final"] for r in rows)
+    return B.won(capital * top_w)
+
+
 def test_buylist_renders_actual_amounts(text):
-    assert "1,800,000원" in text, "비중을 금액으로 환산하지 못했다"
+    assert _top_weight_amount(10_000_000) in text, "비중을 금액으로 환산하지 못했다"
     assert "10,000,000원" in text
     assert "**합계** | **100.00%**" in text
 
@@ -65,7 +79,8 @@ def test_amounts_scale_with_capital():
     os.chdir(ROOT)
     a, _ = B.build(date(2026, 8, 28), 10_000_000, 8)
     b, _ = B.build(date(2026, 8, 28), 20_000_000, 8)
-    assert "1,800,000원" in a and "3,600,000원" in b
+    assert _top_weight_amount(10_000_000) in a
+    assert _top_weight_amount(20_000_000) in b
 
 
 def test_share_count_is_not_invented(text):
