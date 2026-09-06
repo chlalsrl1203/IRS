@@ -11,9 +11,9 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 194,
-    "ANALYZED": 35,
-    "EXCLUDED": 31
+    "QUEUED": 192,
+    "ANALYZED": 36,
+    "EXCLUDED": 32
   },
   "next_to_research": [
     {
@@ -49,25 +49,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.07232970761735968,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 7,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "CAH",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07071996004702397,
-      "tier": "A",
-      "market_cap": 48192692777.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07071996004702397,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 7,
@@ -144,25 +125,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.05999480556621136,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 7,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "EPR",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.05792896699778416,
-      "tier": "B",
-      "market_cap": 4458055841.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.05792896699778416,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 7,
@@ -300,6 +262,44 @@
       "in_validated_scope": true,
       "days_since_seen": 7,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "OSIS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.03835118838580941,
+      "tier": "B",
+      "market_cap": 4020393452.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.03835118838580941,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 7,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "LULU",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.03811350434280857,
+      "tier": "B",
+      "market_cap": 17576000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.03811350434280857,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 7,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     }
   ],
   "entries": {
@@ -336,25 +336,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.07232970761735968,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 7,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "CAH": {
-      "ticker": "CAH",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07071996004702397,
-      "tier": "A",
-      "market_cap": 48192692777.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07071996004702397,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 7,
@@ -431,25 +412,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.05999480556621136,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 7,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "EPR": {
-      "ticker": "EPR",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.05792896699778416,
-      "tier": "B",
-      "market_cap": 4458055841.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.05792896699778416,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 7,
@@ -2091,6 +2053,50 @@
       "in_validated_scope": true,
       "days_since_seen": 7,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "CAH": {
+      "ticker": "CAH",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.07071996004702397,
+      "tier": "A",
+      "market_cap": 48192692777.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.07071996004702397,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 7,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "EPR": {
+      "ticker": "EPR",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.05792896699778416,
+      "tier": "B",
+      "market_cap": 4458055841.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.05792896699778416,
+      "state": "EXCLUDED",
+      "in_validated_scope": true,
+      "days_since_seen": 7,
+      "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
+      "exclusion_reason": {
+        "name": "EPR Properties",
+        "reason_category": "FRAMEWORK_MISMATCH",
+        "reason": "경험형 부동산(영화관·놀이시설·스키리조트) 트리플넷리스 REIT - VICI(카지노 부동산)·GLPI(게이밍 부동산)와 동일한 구조적 부적합. (1) capex가 임차인 부담이라 FCF=OCF-capex가 실제 배분 가능 현금을 측정하지 못하고, (2) REIT은 과세소득의 90%+를 배당해야 해 성장이 유보FCF 재투자가 아니라 신규 자본조달(증자·기채)로 이뤄지므로 이 엔진의 핵심 가정 자체가 성립하지 않는다. (3) 실측 확인: SEC XBRL에서 operating_income이 18개년 중 6개년만 확보되고(REIT 손익표시 방식), 매출은 2020년 -36%(코로나 극장 폐쇄)로 극심한 변동. 업계 표준(P/FFO·AFFO·배당수익률)과 이 엔진(FCF-DCF)이 근본적으로 다른 질문에 답한다.",
+        "excluded_at": "2026-09-06"
+      }
     },
     "VATE": {
       "ticker": "VATE",

@@ -197,6 +197,12 @@
       "reason_category": "FRAMEWORK_MISMATCH",
       "reason": "주택건설업 - 금리환경에 업종 전체가 동시에 눌리는 매크로 현상, 개별종목 미스프라이싱 탐지라는 스크리닝 목적과 안 맞음.",
       "excluded_at": "2026-08-14"
+    },
+    "EPR": {
+      "name": "EPR Properties",
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "경험형 부동산(영화관·놀이시설·스키리조트) 트리플넷리스 REIT - VICI(카지노 부동산)·GLPI(게이밍 부동산)와 동일한 구조적 부적합. (1) capex가 임차인 부담이라 FCF=OCF-capex가 실제 배분 가능 현금을 측정하지 못하고, (2) REIT은 과세소득의 90%+를 배당해야 해 성장이 유보FCF 재투자가 아니라 신규 자본조달(증자·기채)로 이뤄지므로 이 엔진의 핵심 가정 자체가 성립하지 않는다. (3) 실측 확인: SEC XBRL에서 operating_income이 18개년 중 6개년만 확보되고(REIT 손익표시 방식), 매출은 2020년 -36%(코로나 극장 폐쇄)로 극심한 변동. 업계 표준(P/FFO·AFFO·배당수익률)과 이 엔진(FCF-DCF)이 근본적으로 다른 질문에 답한다.",
+      "excluded_at": "2026-09-06"
     }
   }
 }
