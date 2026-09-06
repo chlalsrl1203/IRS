@@ -1,7 +1,6 @@
 {
   "generated_at": "2026-09-06",
-  "source": "conviction_portfolio_2026-09-05.json",
-  "note": "확신 포트폴리오(v3.82, G1/G2/G3 게이트 통과 18종목)를 daily_brief.py 스키마로 변환한 발행본. 새 밸류에이션/사이징 로직 없음 - conviction_portfolio_2026-09-05.json을 그대로 재매핑.",
+  "source": "engine/portfolio_pipeline.py",
   "n_positions": 18,
   "positions": [
     {
@@ -14,8 +13,7 @@
       "cap_bound": null,
       "cluster": "insurance_underwriting",
       "gap_pct": 24.452910193896106,
-      "analyzed_at": "2026-09-05",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-05"
     },
     {
       "ticker": "DLO",
@@ -27,8 +25,7 @@
       "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "financial_services_other",
       "gap_pct": 23.736248016357422,
-      "analyzed_at": "2026-09-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-04"
     },
     {
       "ticker": "PGR",
@@ -40,8 +37,7 @@
       "cap_bound": null,
       "cluster": "insurance_underwriting",
       "gap_pct": 17.642215728759762,
-      "analyzed_at": "2026-08-23",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-23"
     },
     {
       "ticker": "SIGI",
@@ -53,8 +49,7 @@
       "cap_bound": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "insurance_underwriting",
       "gap_pct": 23.672077178955078,
-      "analyzed_at": "2026-09-02",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-02"
     },
     {
       "ticker": "PDD",
@@ -66,8 +61,7 @@
       "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "growth_platform",
       "gap_pct": 22.03729248046872,
-      "analyzed_at": "2026-08-23",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-23"
     },
     {
       "ticker": "DUOL",
@@ -79,8 +73,7 @@
       "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "growth_platform",
       "gap_pct": 19.453125,
-      "analyzed_at": "2026-08-02",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-02"
     },
     {
       "ticker": "MNDY",
@@ -92,8 +85,7 @@
       "cap_bound": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "growth_platform",
       "gap_pct": 23.276233673095703,
-      "analyzed_at": "2026-08-02",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-02"
     },
     {
       "ticker": "CINF",
@@ -105,8 +97,7 @@
       "cap_bound": null,
       "cluster": "insurance_underwriting",
       "gap_pct": 16.781962062278197,
-      "analyzed_at": "2026-09-03",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-03"
     },
     {
       "ticker": "NBIX",
@@ -118,8 +109,7 @@
       "cap_bound": null,
       "cluster": "healthcare_lifesci",
       "gap_pct": 14.051410543895676,
-      "analyzed_at": "2026-09-03",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-03"
     },
     {
       "ticker": "HLNE",
@@ -131,8 +121,7 @@
       "cap_bound": null,
       "cluster": "financial_services_other",
       "gap_pct": 13.309650164355718,
-      "analyzed_at": "2026-09-03",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-03"
     },
     {
       "ticker": "DECK",
@@ -144,8 +133,7 @@
       "cap_bound": null,
       "cluster": "consumer_brand",
       "gap_pct": 13.228701711181728,
-      "analyzed_at": "2026-09-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-04"
     },
     {
       "ticker": "UBER",
@@ -157,8 +145,7 @@
       "cap_bound": null,
       "cluster": "growth_platform",
       "gap_pct": 11.784205707458376,
-      "analyzed_at": "2026-08-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-04"
     },
     {
       "ticker": "SE",
@@ -170,8 +157,7 @@
       "cap_bound": null,
       "cluster": "growth_platform",
       "gap_pct": 12.330089569091772,
-      "analyzed_at": "2026-09-05",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-05"
     },
     {
       "ticker": "ADBE",
@@ -183,8 +169,7 @@
       "cap_bound": null,
       "cluster": "enterprise_software",
       "gap_pct": 10.47055537089488,
-      "analyzed_at": "2026-09-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-04"
     },
     {
       "ticker": "SKYW",
@@ -196,8 +181,7 @@
       "cap_bound": null,
       "cluster": "transportation",
       "gap_pct": 10.292145444533087,
-      "analyzed_at": "2026-09-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-04"
     },
     {
       "ticker": "NXT",
@@ -209,8 +193,7 @@
       "cap_bound": null,
       "cluster": "industrial_energy_transition",
       "gap_pct": 11.492701808014418,
-      "analyzed_at": "2026-09-03",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-03"
     },
     {
       "ticker": "TW",
@@ -222,8 +205,7 @@
       "cap_bound": null,
       "cluster": "enterprise_software",
       "gap_pct": 11.156004145007234,
-      "analyzed_at": "2026-09-03",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-09-03"
     },
     {
       "ticker": "GEN",
@@ -235,8 +217,7 @@
       "cap_bound": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
       "cluster": "industrial_stalwart",
       "gap_pct": 12.182151794433596,
-      "analyzed_at": "2026-08-04",
-      "source_pipeline": "conviction_portfolio_2026-09-05"
+      "analyzed_at": "2026-08-04"
     }
   ]
 }

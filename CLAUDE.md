@@ -8609,3 +8609,88 @@ GEN 3.34%(합계 100.00%, 상한 위반 0건).
 
 `engine/`·`ledger/`·공식 판정 **0건 수정**(스크립트는 읽기만 한다),
 `ENGINE_VERSION` v3.82 유지, 테스트 1,098개 전부 통과.
+
+## v3.83 — 포트폴리오 계층 통합: 스크리닝→기업분석→포트폴리오 재정렬 1단계
+(2026-09-06, 사용자 요청 "포트폴리오 계층을 진짜로 하나로 합친다")
+
+### 왜 - 2026-09-05 하루 만에 산출물 5개가 생겼다
+
+`build_buylist_2026_08_03.py`(구, 12종목) / `build_sa_portfolio_2026_09_05.py`
+(32종목, 미필터) / `portfolio_screen_2026_09_05.py`(Stage 0-1 게이트, 20종목) /
+`build_conviction_portfolio_2026_09_05.py`(Stage 2-3, 18종목) /
+`publish_buylist_2026_09_06.py`(스키마변환) - screener.py·deep_screen.py·
+research_queue.py는 이미 engine/으로 승격돼 재사용되는데, 포트폴리오 계층만
+"반복되는 작업"이 "한 번짜리 스크립트"로 남아 있었다. ledger가 하나 늘 때마다
+이 체인을 손으로 순서대로 돌려야 했다.
+
+### `engine/portfolio_pipeline.py` 신설 - 새 밸류에이션 로직 0줄
+
+`portfolio_screen_2026_09_05.py`(G1 등급취약·G2 SBC거짓편입·G3 반증확정) +
+`build_conviction_portfolio_2026_09_05.py`(G6 회사공시 대체·quality_score
+사이징·상한흡수) + `publish_buylist_2026_09_06.py`(스키마변환)의 **로직을
+그대로 옮겼을 뿐**이다. `screen_universe()`/`apply_g6()`/`size_portfolio()`/
+`apply_cap()`/`to_buylist_rows()` 다섯 함수로 구성.
+
+### ⭐ 핵심 - 하드코딩된 사전을 "파생 가능한 소스"로 바꿨다
+
+`FALSIFICATION_CONFIRMED = {"TTD": "..."}` (G3)는 이미 `monitor/
+acknowledgements.json`에 `verdict: "TRIGGERED"`로 기록된 사실의 **두 번째
+사본**이었다 - 새 TRIGGERED가 확인돼도 스크립트를 손으로 안 고치면 반영이
+안 된다. `confirmed_falsifications()`가 그 파일에서 직접 파생하도록 고쳤다
+(테스트로 AST 검사 - "TTD"가 dict 리터럴 키로 소스에 하드코딩돼 있으면
+실패한다).
+
+### `portfolio/qualitative_overrides.json` 신설 - 진짜 사람 판단만 남김
+
+`RESEARCH`(Confidence 조정치+근거)/`CLUSTER`(군집)/`G6_EXCLUDED`(회사공시
+대체) 세 딕셔너리는 정말 파생할 수 없는 사람 판단(`model_choice_reason`/
+`subjective_input_basis`와 같은 성격)이라 스크립트에서 분리해 사람이 유지하는
+레지스트리로 옮겼다(`portfolio/holdings.json`과 같은 성격). `g6_substitutes`의
+`engine_rg` 필드는 제거했다 - ledger가 이미 갖고 있는 값(`realistic_growth`)을
+`evidence_row()`가 그대로 넘기므로 레지스트리에 중복 저장할 이유가 없었다.
+
+`cap_discount_exempt`(DLO 전용, 성장상한이 회사 가이던스로 정당화됨)도
+스크립트 안의 `if t != "DLO"` 하드코딩에서 레지스트리 데이터 필드로 옮겼다 -
+티커 이름을 직접 비교하는 특례 분기를 없앴다.
+
+### `scripts/build_portfolio.py` 신설 - 유일한 재실행 진입점
+
+`daily_screen_ci.py`/`update_research_queue.py`와 같은 성격의 **반복 실행
+스크립트**(날짜 붙은 일회성 아님) - ledger가 늘 때마다 이것 하나만 다시
+돌리면 `reports/buylist_<날짜>.json`이 나온다. 레지스트리에 없는 신규
+Stage-1 생존종목은 크래시하지 않고 엔진 원시 Confidence로 폴백하며
+`confidence_status="미검증"`을 명시한다(`build_buylist_2026_08_03.py`가
+이미 쓰던 폴백과 동일 원칙) - CLI가 미검증 종목 수를 경고로 출력한다.
+
+### ⭐ 골든 재현 검증 - 통합이 계산을 하나도 안 바꿨다
+
+`build_portfolio.py`를 오늘 실행해 `conviction_portfolio_2026-09-05.json`의
+18종목·비중과 **정확히 1e-9 이내로(실측: 정확히 0.0)** 일치함을 확인했다.
+G6 배제 종목(RYAN·CROX)도 동일했다. `reports/buylist_2026-09-06.json`을 이
+경로로 재생성해 `publish_buylist_2026_09_06.py`(2026-09-06 오전, 스키마
+변환 전용)의 역할을 대체했다 - 그 스크립트 자체는 날짜 붙은 재현성
+아티팩트라 손대지 않고 그대로 남겨둔다.
+
+### 옛 산출물의 지위 - 손대지 않는다, 격상하지도 않는다
+
+`build_buylist_2026_08_03.py`/`build_sa_portfolio_2026_09_05.py`/
+`portfolio_screen_2026_09_05.py`/`build_conviction_portfolio_2026_09_05.py`
+전부 재현성 아티팩트로 그대로 둔다. `build_buylist_2026_08_03.py`를
+참조하는 PHASE 2 감사류 테스트(`test_buylist_boundary_review.py`·
+`test_sizing_assumption_exposure.py` 등)는 **그 스크립트 자체의 메커니즘을
+검증하는 역사적 감사**라 건드리지 않았다 - "지금 daily_brief가 읽는 공식
+매수리스트가 무엇인가"와는 다른 질문이다.
+
+### 의도적으로 하지 않은 것
+
+- **GitHub Actions 자동화에 배선하지 않았다.** 매주 스크리닝은 새 후보를
+  찾을 뿐이고, 매수리스트 재발행은 새 정식분석+정성조사가 끝난 뒤의 **의도적
+  행위**여야 한다 - 자동 스케줄에 걸면 아무 정보 변화 없이 매주 buylist가
+  새 날짜로 republish되는 낭비가 생긴다.
+- **홀딩 재조정(실제 보유 vs 이 포트폴리오)** - 별도 사용자 판단 사안으로
+  남겨둔다.
+
+테스트 1,110 → **1,127개 전부 통과**(신규 17: portfolio_pipeline 14 +
+build_portfolio 3). 34종목 골든재현 8지표·baseline fingerprint 불변,
+`ledger/`·`portfolio/holdings.json` 0건 수정. `ENGINE_VERSION` v3.82 →
+**v3.83**.
