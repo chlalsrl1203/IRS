@@ -1,0 +1,202 @@
+{
+  "_note": [
+    "research_queue.py가 파생하지 못하는 유일한 사실 - '조사했고 제외했다'.",
+    "IN_BUYLIST/ANALYZED는 ledger·buylist 파일에서 파생되지만, 제외 결정은",
+    "그 시점까지 CLAUDE.md 산문에만 있었다 - 2026-08-30~09-04 사이 스크리닝",
+    "큐가 만들어지기 전에도, 만들어진 뒤에도 마찬가지였다. 그 결과 LNTH가",
+    "실제로 큐에 재등장해 사람이 다시 조사해야 했다(CLAUDE.md 'LNTH 제외' 항목).",
+    "",
+    "이 파일이 담는 것은 '구조적'(FRAMEWORK_MISMATCH) 또는 '거래 확정형'",
+    "(PENDING_ACQUISITION) 배제뿐이다 - 회사의 사업구조 자체가 이 엔진의",
+    "FCF-DCF 가정과 안 맞거나, 이미 인수합병이 확정된 경우. '4분류 3번'",
+    "(실적이 실제로 나빠진 종목, 예: KR·AGCO·NKE·HON 등)은 여기 넣지 않는다 -",
+    "그 배제는 시점부 실적 판단이라 나중에 실적이 개선되면 재조사할 가치가",
+    "있고, 큐가 그런 종목을 다시 골라내는 것은 버그가 아니라 정확히 의도된",
+    "동작이다(턴어라운드 발굴이 스크리닝의 목적 중 하나).",
+    "",
+    "reason_category 어휘: FRAMEWORK_MISMATCH(DCF 가정 자체가 안 맞음) /",
+    "PENDING_ACQUISITION(피인수 확정, 시장에서 곧 사라짐).",
+    "",
+    "PODD/APP/RBA/ONON은 research_queue.py(2026-08-30) 생성 이전인",
+    "2026-08-13/14 배치에서 이미 FRAMEWORK_MISMATCH로 확정됐지만, 대규모",
+    "스크리닝이 SEC 전체 유니버스를 매주 훑으므로 재등장 가능성이 있어 함께",
+    "등록한다."
+  ],
+  "entries": {
+    "PODD": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "FCF가 2019~2022년 4개년 연속 적자였다가 2023년 최초 흑자전환 - 5y CAGR 프레임(시작값 음수)이 성립하지 않는다.",
+      "excluded_at": "2026-08-13"
+    },
+    "APP": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "2024년 모바일게임 Apps 사업부 매각(Tripledot)이 분기 매출에 구조단절을 남겨 5y CAGR이 왜곡된다. 세그먼트조정 없이는 신뢰 가능한 CAGR을 만들 수 없다.",
+      "excluded_at": "2026-08-13"
+    },
+    "RBA": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "IAA(자동차경매) 인수(2023 종결)가 5y CAGR 구간에 걸려 매출 5y CAGR(27~28%)이 유기적성장이 아니라 대부분 인수 단계상승.",
+      "excluded_at": "2026-08-14"
+    },
+    "ONON": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "FCF 5y CAGR의 두 표준 시작연도(2020·2021) 후보가 둘 다 음수라 CAGR 자체가 정의되지 않는다(v3.19 가드 해당).",
+      "excluded_at": "2026-08-14"
+    },
+    "LNTH": {
+      "reason_category": "PENDING_ACQUISITION",
+      "reason": "2026-08-03 Curium이 확정 인수계약 체결($102.50/주 현금+최대 $12.00/주 CVR, 2027년 상반기 종결 예정). 주가가 회사 성장전망이 아니라 딜 조건·성사확률을 반영한다.",
+      "excluded_at": "2026-09-01"
+    },
+    "EQT": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "Equitrans Midstream 인수(2024-07 완료)가 5y CAGR 구간에 걸리고, 천연가스 E&P 자체가 극심한 원자재 가격사이클(2018~2021 4개년 연속 영업손실 후 2022 급등) 노출.",
+      "excluded_at": "2026-09-02"
+    },
+    "CDE": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "SilverCrest Metals 인수(2025-02 종결)로 매출 +96.4%YoY 단계상승 + 은/금 채굴업 자체의 극심한 가격사이클.",
+      "excluded_at": "2026-09-02"
+    },
+    "CHDN": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "COVID 저점(2020)이 기본 5y 기준연도에 걸리고, Peninsula Pacific Entertainment 인수(2022-11)가 3y CAGR 시작연도 자체에 걸려 override로도 못 피한다. 상시적 볼트온 M&A 전략이라 오가닉 분리 공시도 없다.",
+      "excluded_at": "2026-09-02"
+    },
+    "VICI": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "카지노 트리플넷리스 REIT - capex가 거의 0(임차인이 유지보수 부담)이라 FCF=OCF-capex가 실제 배분가능현금을 측정하지 못한다. REIT은 P/FFO·AFFO가 표준이지 FCF-DCF가 아니다.",
+      "excluded_at": "2026-09-02"
+    },
+    "COP": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "원유 E&P, 극심한 가격사이클(2014 $55.5B->2015 $30.9B, -44%).",
+      "excluded_at": "2026-09-02"
+    },
+    "DINO": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "정유업, 극심한 가격사이클(2020 $11.2B->2022 $38.2B, +242%).",
+      "excluded_at": "2026-09-02"
+    },
+    "EOG": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "원유 E&P, 전형적 boom/bust 패턴(예: 2014 $18.0B->2015 $8.8B, -51%).",
+      "excluded_at": "2026-09-02"
+    },
+    "COF": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "은행/예금취급기관 - operating_income 표준 태그 자체가 없고, 예금을 전부 부채로 잡으면 레버리지 지표가 무의미해진다.",
+      "excluded_at": "2026-09-03"
+    },
+    "EXE": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "천연가스 E&P(舊 Chesapeake Energy) - 자본집약 원자재 업종, 이미 확정된 패턴과 동일.",
+      "excluded_at": "2026-09-03"
+    },
+    "WSC": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "WillScot+Mobile Mini 동등합병(2020-07)이 5y CAGR 기본 기준연도에 걸리고, 회사 스스로 매출증가가 '합병+유기적성장 둘 다'에 기인한다고 명시해 분리 불가능함을 인정. 상시적 볼트온 M&A(McGrath 2024 발표 등) 지속.",
+      "excluded_at": "2026-09-03"
+    },
+    "AMP": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "자산관리+연금·보장성보험 다각화 금융지주 - operating_income 미확보(COF와 동일 패턴), is_insurer 경로는 순수 손해보험사 전제라 적용 근거 부족.",
+      "excluded_at": "2026-09-03"
+    },
+    "NEM": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "금광업, CDE와 동일한 귀금속 가격사이클 노출.",
+      "excluded_at": "2026-09-03"
+    },
+    "XYZ": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "Block Cash App이 비트코인 거래를 총액(gross) 기준으로 매출 인식(2026 Q2 마진 약 3.8%) - 회사 자체 핵심지표는 총이익인데 이 엔진의 revenue_by_year 스키마는 그 대안지표를 담을 필드가 없다.",
+      "excluded_at": "2026-09-03"
+    },
+    "IDCC": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "특허 라이선싱 매출이 소급인식·중재타이밍으로 연도별 극심하게 등락(예: 2024 $869M->2025 $834M, Q2 실적의 40%가 일회성 캐치업). 회사 자체 ARR 지표가 더 안정적이나 과거 이력 재구성 불가.",
+      "excluded_at": "2026-09-03"
+    },
+    "OVV": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "원자재(원유·천연가스) 가격사이클 + Permian/Montney 대규모 인수(2023~2024)가 5y CAGR 구간에 이중으로 걸림.",
+      "excluded_at": "2026-09-03"
+    },
+    "CF": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "질소비료 생산 - 천연가스 원가·농산물 사이클에 직결(2020 $4.12B->2022 $11.19B, +172%).",
+      "excluded_at": "2026-09-03"
+    },
+    "HL": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "은 생산업체, Alexco Resource 인수(2022)가 5y CAGR 구간에 걸린 귀금속 가격사이클.",
+      "excluded_at": "2026-09-04"
+    },
+    "DAR": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "재생디젤 합작사(DGD)가 연방 세액공제 정책전환(blenders->Section 45Z)으로 EBITDA -64%(2025) - 시장가격이 아니라 입법·행정 정책리스크가 주된 변동요인인 신규 하위유형. 과거 VION Ingredients 인수(2012)도 CAGR 구간에 걸림.",
+      "excluded_at": "2026-09-04"
+    },
+    "HBAN": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "은행지주 - operating_income 전무.",
+      "excluded_at": "2026-09-04"
+    },
+    "CNM": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "2021~2023년 M&A 롤업 단계상승(3y CAGR 4.76% vs 5y 16.0%) + 최근 오가닉 볼륨 실제 감소(Q1 2026 -1%YoY).",
+      "excluded_at": "2026-09-04"
+    },
+    "CVX": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "원유 가격사이클(2020 $945억 저점->2022 $2,357억 정점).",
+      "excluded_at": "2026-09-04"
+    },
+    "AXP": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "카드발급/대출기관 - operating_income 전무.",
+      "excluded_at": "2026-09-04"
+    },
+    "GLPI": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "카지노 REIT, VICI와 동일한 트리플넷리스 구조적 부적합(capex 거의 0).",
+      "excluded_at": "2026-09-04"
+    },
+    "IBP": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "M&A롤업(2021->2022 +35.6%) + 최근 오가닉 실제악화(Q1 2026 residential -6.1%YoY).",
+      "excluded_at": "2026-09-04"
+    },
+    "APTV": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "진행중 기업분할 - Electrical Distribution Systems 사업부를 'Versigent'로 2026-04-01까지 스핀오프 예정. 현재 연결재무제표로 DCF하면 곧 존재하지 않을 회사를 평가하는 셈.",
+      "excluded_at": "2026-09-04"
+    },
+    "MLI": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "구리가격 사이클성(2021 매출+57.2%/영업이익+167%, 2021 구리가격 급등과 정확히 일치).",
+      "excluded_at": "2026-09-04"
+    },
+    "MKL": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "매출 태그 불연속(2023년 Markel Corp->Markel Group 재편) + 순이익이 투자포트폴리오 시가평가 변동에 좌우(2018·2022 적자) - 보험+Ventures+대규모 투자포트폴리오 복합 콘글로머리트라 is_insurer 경로로도 단순처리 불가.",
+      "excluded_at": "2026-09-04"
+    },
+    "FCFS": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "은행지주(First Citizens BancShares) - operating_income 전무.",
+      "excluded_at": "2026-09-04"
+    },
+    "ADI": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "Linear Technology(2017)·Maxim Integrated(2021->2022) 두 차례 M&A 단계상승 + 반도체 사이클성(FY2023->24 -23.4%) 복합.",
+      "excluded_at": "2026-09-04"
+    },
+    "DHI": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "주택건설업 - 금리환경에 업종 전체가 동시에 눌리는 매크로 현상, 개별종목 미스프라이싱 탐지라는 스크리닝 목적과 안 맞음.",
+      "excluded_at": "2026-08-14"
+    }
+  }
+}

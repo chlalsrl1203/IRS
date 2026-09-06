@@ -38,6 +38,19 @@ QUEUE_PATH = os.path.join(ROOT, "reports", "research_queue.json")
 BROAD_GLOB = os.path.join(ROOT, "reports", "broad_screen", "broad_screen_*.json")
 LEDGER_GLOB = os.path.join(ROOT, "ledger", "*.json")
 BUYLIST_GLOB = os.path.join(ROOT, "reports", "buylist_[0-9]*.json")
+EXCLUDED_PATH = os.path.join(ROOT, "data", "excluded_tickers.json")
+
+
+def excluded_tickers():
+    """`data/excluded_tickers.json`을 읽는다. 없으면 빈 dict(기존 동작
+    그대로 - EXCLUDED 상태가 나오지 않을 뿐 실행이 막히지 않는다)."""
+    if not os.path.exists(EXCLUDED_PATH):
+        return {}
+    try:
+        return json.load(open(EXCLUDED_PATH, encoding="utf-8")).get("entries", {})
+    except (OSError, json.JSONDecodeError) as e:
+        log(f"[큐] 제외종목 레지스트리를 읽지 못했다({e!r}) - EXCLUDED 없이 진행")
+        return {}
 
 
 def log(m):
@@ -111,7 +124,8 @@ def run(broad_path=None, queue_path=QUEUE_PATH, today=None, user_agent=None):
             log(f"[큐] 기존 큐를 읽지 못했다({e!r}) - 새로 시작한다")
 
     queue = merge_run(queue, passed, run_date)
-    entries = annotate(queue, ledger_tickers(), buylist_tickers(), today)
+    excl = excluded_tickers()
+    entries = annotate(queue, ledger_tickers(), buylist_tickers(), today, excl)
     ordered = priority_order(list(entries.values()))
     persistence = persistence_available(entries)
 
