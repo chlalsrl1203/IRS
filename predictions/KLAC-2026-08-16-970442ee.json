@@ -13,9 +13,9 @@
   },
   "core_hash": "970442ee6987f6eebae26a220cf7691d8ef2b5d5f8db4e0d20e6222e56771c38",
   "source": "KLAC_2026-08-02.json (engine_version=v3.25, 원분석일=2026-08-02)",
-  "status": "OPEN",
-  "actual_value": null,
-  "actual_date": null,
-  "forecast_error": null,
-  "resolution_note": null
+  "status": "HIT",
+  "actual_value": 0.1170858038910636,
+  "actual_date": "2026-07-28",
+  "forecast_error": 0.0,
+  "resolution_note": "SEC XBRL companyfacts(CIK 0000319201) FY2026(FYE 2026-06-30) 매출 $13,579,476,000 vs FY2025 $12,156,162,000. 실적 발표(8-K item 2.02) 2026-07-28(⚠️원분석일 2026-08-02보다 5일 앞서 이미 공개된 정보 - 원 ledger KLAC_2026-08-02.json의 revenue_by_year가 FY2025까지만 담고 있어 분석 시점에 이미 나와 있던 FY2026 실적을 반영하지 못한 채 분석됐다는 뜻. 이 사실 자체는 CLAUDE.md에 별도 기록 - 원 ledger의 Gap/판정은 소급 수정하지 않는다). 이 예측의 expected_low/high는 원 ledger에 저장된 CAGR 구성요소에서만 파생됐고 이 FY2026 실측치를 참조하지 않았으므로 범위 자체에는 정보유출이 없다. 2026-09-07 조회."
 }
