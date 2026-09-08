@@ -8874,3 +8874,54 @@ status가 그 부호와 일치하는지)을 검증하는
 **검증**: 해시락 재검증(같은 파일 재해소 시도 → `ValueError`로 정상
 거부 확인), 테스트 1133 → **1134개 전부 통과**. `engine/` 무변경,
 `ENGINE_VERSION` v3.83 그대로(예측/테스트 데이터만 변경).
+
+## thesis.py 최초 실사용 - ACGL/DLO/PGR 3종목 정식 Investment Thesis + Decision
+기록 (2026-09-07, "ㄱㄱ" - 우선순위 2 실행)
+
+v3.48이 만든 `engine/thesis.py`(Investment Thesis / Decision / Evidence
+인프라, 6게이트 강제·append-only·자동판정 함수 없음)가 22일간 **실사용
+0건**이었다(`thesis/` 디렉터리 자체가 없었음 - 2026-08-16 Historical Replay
+감사가 이미 이 공백을 지적했었다). 새 계산 로직은 0줄 - 기존 ledger·
+`portfolio/qualitative_overrides.json`의 값만 인용해 `save_thesis()`→
+`build_decision()`→`record_decision()`을 실제로 호출했다.
+
+**선정 사유**: ACGL·DLO는 `portfolio/holdings.json`의 실보유 종목(각 2.34%·
+11.12%)인데 지금까지 Gap·quality_score만으로 확신 포트폴리오에 들어갔을 뿐
+6게이트를 거친 적이 없었다. PGR은 미보유이나 확신 포트폴리오 상위권(비중
+7.08%, 성장추정 정합성 최상위권)이라 "왜 아직 안 샀는가"를 명시적으로
+남길 가치가 있었다.
+
+**액션은 분석자(나)가 골랐다** - `thesis.py`에는 Gap을 액션으로 매핑하는
+함수가 원래 없다(`test_no_function_maps_gap_to_action`이 이를 강제):
+- **ACGL → HOLD**: 지속가능성장률(ROE×유보율)과 Realistic Growth의 괴리가
+  0.28%p로 34종목 중 가장 정합적(v3.13 ACGL 원 우려 - "보험 플로트를 유기적
+  성장으로 착각" - 가 이번 데이터로는 뒷받침되지 않음). 반증조건 미발동.
+- **DLO → HOLD**: 성장상한(25%) 바인딩의 정당성을 2026-09-06 1차출처로
+  재확인(2H2026 TPV +60~70%·영업이익 +27.5~32.5% 가이던스가 캡 이상을
+  제시 - ROP형 하방 괴리의 정반대). 반증조건 4개 전부 미발동.
+- **PGR → WATCH**: 신호·근거는 강하나(성장추정 정합성 최상위권) 미보유
+  신규편입은 `insurance_underwriting` 군집이 이미 ACGL·SIGI·CINF로
+  22%+를 차지해 추가 집중 여부를 별도로 판단해야 한다는 이유로 즉시
+  BUY 대신 WATCH로 기록.
+
+**`invalidation_conditions`는 각 ledger의 `falsification_conditions`
+자유텍스트를 `{"condition": str, "check_by": None}` 이산 항목으로
+재구조화**했다(ACGL 3건·DLO 4건·PGR 3건) - v3.42 원칙대로 발동 여부는
+분석자가 `mark_invalidation_triggered()`로 명시 호출해야만 하고, 코드가
+텍스트를 파싱해 자동 판정하지 않는다.
+
+**append-only·중복거부 불변조건을 실제로 트리거해 확인했다** - 같은
+날짜에 ACGL thesis를 다시 저장 시도하니 `FileExistsError`(*"thesis 코어는
+변경 불가다"*)로 정상 거부됐고, `evaluate_thesis_status()`는 3종목 전부
+`STABLE`(evidence 0건이라 지지·반박 증거 수 0). `daily_brief.py` 실행에는
+영향 없음(`thesis/`를 아직 읽지 않으므로).
+
+**의도적으로 하지 않은 것**: 확신 포트폴리오 18종목 전체에 thesis를
+소급 작성하지 않았다 - 소급 작성 자체가 사후합리화 원칙에 위배될 위험이
+있어(falsification_conditions와 동일 원칙), 실보유+최상위 후보 3종목만
+우선 기록하고 나머지는 필요해질 때(반증조건 재확인·정기 검토 시점)
+채워나가는 쪽을 택했다.
+
+`engine/` 무변경, `ENGINE_VERSION` v3.83 그대로(순수 데이터 기록).
+테스트 1134개 그대로(신규 테스트 불필요 - 기존 `tests/test_thesis*.py`가
+이미 이 경로 전체를 검증한다).

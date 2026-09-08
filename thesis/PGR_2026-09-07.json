@@ -1,0 +1,72 @@
+{
+  "thesis": {
+    "ticker": "PGR",
+    "thesis_date": "2026-09-07",
+    "why_buy": "Gap +17.64%p(S등급, v3.67 규모조건부 상한 반영 후). 지속가능성장률이 Realistic Growth와 2%p 이내로 근접해 34종목 중 가장 정합적인 성장 추정 사례 중 하나다(2026-08-03 정성조사).",
+    "market_assumption": "Implied Growth가 두 시나리오 모두 음수(-4.9%~-7.0%)로 역산된다 - 시장이 이미 보수적인 성장 가정을 반영 중.",
+    "irs_view": "텔레매틱스 데이터 우위(Snapshot)가 아직 손해율 우위로 완전히 전환되지 못했다(점유율 1위, 손해율은 GEICO·Allstate 대비 3위) - 이 격차가 좁혀지면 추가 상방, 안 좁혀지면 서사 재검토가 필요한 '검증 중'인 논거다. 신규계약 증가율 둔화(11%→8%)는 성장 감속 신호로 이미 반영.",
+    "key_drivers": [
+      "텔레매틱스(Snapshot) 데이터 우위의 손해율 개선 전환 여부",
+      "상업용차 라인 준비금 안정성",
+      "신규계약(PIF) 증가율 추세"
+    ],
+    "expected_outcomes": [
+      "손해율 격차(GEICO·Allstate 대비)가 확대되지 않고 안정화 또는 개선",
+      "상업용차 역발전 준비금이 $140M 수준에서 확대되지 않음",
+      "컴바인드레이쇼가 90 미만 유지"
+    ],
+    "catalysts": [
+      "다음 분기 실적발표(컴바인드레이쇼·PIF 증가율 공개)"
+    ],
+    "risks": [
+      "신규계약 증가율이 한 자릿수 초반까지 추가 둔화될 위험",
+      "텔레매틱스 데이터 우위가 손해율 우위로 끝내 전환되지 않을 위험",
+      "상업용차 역발전 준비금이 개인용차 라인까지 번질 위험"
+    ],
+    "invalidation_conditions": [
+      {
+        "condition": "신규계약(PIF) 증가율이 한 자릿수 초반까지 추가 둔화되거나 GEICO/Allstate 대비 손해율 열위가 확대되면 텔레매틱스 모트 서사 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      }
+    ],
+    "holding_horizon": "12-24개월",
+    "linked_ledger": "PGR_2026-08-23.json",
+    "author_note": "portfolio/holdings.json에는 없음(미보유) - 확신 포트폴리오(2026-09-05)에서 7.08%로 3위 편입된 후보다. 이 thesis는 매수 실행을 의미하지 않는다 - 사이징·집행은 build_portfolio.py/사람의 판단 영역이며 이 모듈은 신호와 결정을 분리한다(§5).",
+    "stale_after": null,
+    "must_refresh_if": null,
+    "thesis_id": "PGR-2026-09-07"
+  },
+  "decisions": [
+    {
+      "thesis_id": "PGR-2026-09-07",
+      "decision_date": "2026-09-07",
+      "action": "WATCH",
+      "action_source": "analyst_recorded (엔진이 계산한 값이 아님)",
+      "gates": {
+        "signal_summary": "Gap +17.64%p(S등급, 규모조건부 상한 적용 후), RAR +1.412, Confidence 94(엔진)/87(정성조사 반영).",
+        "business_quality": "자동차보험 대형사, 시장점유율 1위. 텔레매틱스(Snapshot) 데이터 우위가 핵심 경쟁 논거이나 손해율 순위(3위)에는 아직 완전히 반영되지 않음.",
+        "financial_quality": "지속가능성장률(ROE x 유보율 18.88%)이 Realistic Growth와 2%p 이내 근접 - is_insurer 교차검증 통과.",
+        "risk_assessment": "신규계약 증가율 둔화(11%→8%YoY), 상업용차 라인 소폭 역발전 준비금($140M). 둘 다 추세 확정은 아니나 감시 필요.",
+        "valuation_assessment": "Implied Growth -4.9%~-7.0%로 시장이 이미 보수적 가정을 반영 중 - Gap의 크기는 성장 낙관이 아니라 시장의 과도한 비관에서 온다는 방향.",
+        "portfolio_context": "미보유. insurance_underwriting 군집(ACGL·SIGI·CINF·RLI·BRO와 동일 군집)에 신규 편입하면 업종 집중도가 추가로 올라간다 - ACGL을 이미 실보유 중이므로 군집 합산 리스크를 함께 고려해야 한다."
+      },
+      "rationale": "매수를 실행하지 않고 관찰한다(WATCH). 신호와 근거는 충분히 강하나(성장추정 정합성 최상위권), 미보유 신규 편입은 insurance_underwriting 군집 집중도를 추가로 높인다는 포트폴리오 맥락상의 이유로 사이징 판단을 미룬다.",
+      "position_pct": null
+    }
+  ],
+  "evidence": []
+}

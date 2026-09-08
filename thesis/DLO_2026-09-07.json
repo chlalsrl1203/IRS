@@ -1,0 +1,78 @@
+{
+  "thesis": {
+    "ticker": "DLO",
+    "thesis_date": "2026-09-07",
+    "why_buy": "Gap +23.74%p(S등급). fast_grower 25% 성장상한이 바인딩됐지만 회사 자체 FY2026 가이던스(총이익 +25~30%, 영업이익 +27.5~32.5%)가 그 상한 자체를 상회한다고 명시해, 이 종목의 cap 바인딩은 ROP/BRO형 '회사 실적이 캡보다 낮은' 하방 괴리가 아니라 정반대인 상방 신호다 - 캡바인딩 할인(0.85x)을 유일하게 면제받은 이유.",
+    "market_assumption": "Implied Growth가 두 시나리오에서 약 +1.3%/-1.5%(DRS 포함/제외)로 낮게 형성돼 있다 - 시장이 신흥국 결제처리업체 특유의 규제·통화 리스크를 크게 할인해 반영 중이라는 뜻.",
+    "irs_view": "2026-09-06 1차출처(globenewswire Q2 2026 보도자료) 대조로 가이던스 수치를 직접 재확인했다 - TPV 60-70%/총이익 25-30%/영업이익 27.5-32.5% 전부 정확히 일치. 시장의 할인이 회사가 직접 제시한 가속 국면과 정합적이지 않다고 판단한다.",
+    "key_drivers": [
+      "TPV(총결제액) 고성장 지속(2H2026 가이던스 +60~70%)",
+      "테이크레이트 압축(0.84%)에도 불구한 총이익률 확대",
+      "FY2026 영업현금흐름 흑자 전환 지속"
+    ],
+    "expected_outcomes": [
+      "Q3 2026 실적에서 총이익 성장률이 가이던스 하단(+25%) 이상 유지",
+      "순 테이크레이트가 추가로 2분기 연속 하락하지 않음",
+      "NRR 140% 이상 유지"
+    ],
+    "catalysts": [
+      "다음 분기 실적발표(총이익·NRR·테이크레이트 공개)"
+    ],
+    "risks": [
+      "테이크레이트가 이미 0.84%까지 압축돼 추가 압축 여지가 크지 않음",
+      "신흥국 통화·자본통제·규제 리스크(구조적, 상시 존재)",
+      "'대형 승차공유 가맹점 가격구간 이동'이라는 일회성 설명이 반복되면 구조적 경쟁압력으로 재해석 필요"
+    ],
+    "invalidation_conditions": [
+      {
+        "condition": "Q3 2026 실적에서 총이익 성장률이 가이던스 하단(+25%)을 밑돌면 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "순 테이크레이트가 두 분기 연속 하락하면 구조적 경쟁 압력으로 재평가",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "NRR이 140% 아래로 떨어지면 land-and-expand 서사 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "FY2026 영업현금흐름이 다시 음수로 전환되면 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      }
+    ],
+    "holding_horizon": "12-18개월",
+    "linked_ledger": "DLO_2026-09-04.json",
+    "author_note": "이미 portfolio/holdings.json에 실보유 중(11.12%, 8종목 중 4위 비중). 확신 포트폴리오에서도 9.19%로 2위 편입 - 실보유와 목표 비중이 비교적 근접한 몇 안 되는 종목.",
+    "stale_after": null,
+    "must_refresh_if": null,
+    "thesis_id": "DLO-2026-09-07"
+  },
+  "decisions": [
+    {
+      "thesis_id": "DLO-2026-09-07",
+      "decision_date": "2026-09-07",
+      "action": "HOLD",
+      "action_source": "analyst_recorded (엔진이 계산한 값이 아님)",
+      "gates": {
+        "signal_summary": "Gap +23.74%p(S등급), RAR +1.448, Confidence 94(엔진)/84(정성조사 반영, cap_discount_exempt 적용).",
+        "business_quality": "신흥국(라틴아메리카·아프리카·아시아) 특화 크로스보더 결제처리. TPV 고성장 지속, 다만 테이크레이트 압축 추세.",
+        "financial_quality": "SBC/FCF 낮음(엔진 무flip 확인). FY2026 영업현금흐름 흑자 전환. 성장상한 바인딩이 회사 가이던스로 1차출처 검증됨(2026-09-06).",
+        "risk_assessment": "신흥국 통화·자본통제·규제 리스크가 상시 존재(구조적, 축소 불가). 테이크레이트 압축이 계속되면 총이익률 방어가 관건.",
+        "valuation_assessment": "Implied Growth 약 -1.5%~+1.3%로 시장이 신흥국 리스크를 상당폭 할인 중 - 회사 자체 가이던스(총이익 +25~30%)와의 괴리가 Gap의 원천.",
+        "portfolio_context": "실보유 11.12%(전체 8종목 중 2위 비중) - 이미 상당히 집중돼 있어 추가 매수보다는 유지가 적절. financial_services_other 군집 단일 종목."
+      },
+      "rationale": "실보유 포지션을 유지한다. 성장상한 바인딩의 정당성을 1차출처로 재확인했고(2026-09-06), 반증조건 4개 중 어느 것도 발동하지 않았다.",
+      "position_pct": null
+    }
+  ],
+  "evidence": []
+}
