@@ -8925,3 +8925,69 @@ v3.48이 만든 `engine/thesis.py`(Investment Thesis / Decision / Evidence
 `engine/` 무변경, `ENGINE_VERSION` v3.83 그대로(순수 데이터 기록).
 테스트 1134개 그대로(신규 테스트 불필요 - 기존 `tests/test_thesis*.py`가
 이미 이 경로 전체를 검증한다).
+
+## QSR 제외 + HQY 정식 분석 — CHDN 이중왜곡 패턴의 두 번째 사례, 여섯 번째
+SBC 플립 사례 (2026-09-08)
+
+큐 1순위 QSR(Restaurant Brands International, tier S, 스크리너 Gap 추정 미상)을
+먼저 조사했다. **CHDN(2026-09-02, "COVID 저점 기저효과 + M&A 단계상승 이중고")과
+정확히 같은 구조**를 확인했다 - (1) COVID 저점(2020, 매출 -11.3%YoY)이 5y CAGR
+기본 기준연도에 걸리고, (2) Carrols Restaurant Group 인수(2024-05-16 종결,
+$648M, 최대 BK 프랜차이지 편입)가 **3y CAGR 시작연도(2022, `years[-4]`는
+override 불가)와 5y 구간 양쪽에 걸려** FY2024 매출 +19.7%의 대부분을 차지한다
+(회사 자체 10-K/실적발표가 "primarily driven by RH 편입"이라 명시, 오가닉
+조정영업이익은 +6.1%뿐). override로 하나(5y 기준연도)는 고칠 수 있어도 다른
+하나(3y 시작연도)는 CHDN과 동일하게 코드 구조상 불가능하다. 회사가 오가닉
+성장률을 별도 공시하나 다년 실현 시계열이 아니라(FY2024 1개년 비교뿐) ROP
+기준(다년 실현)에 못 미치고, 브랜드별 이질성(2026 Q2 동일점포매출: BK +8.5%/
+Tim Hortons +0.1%/Popeyes -5.2%)도 단일 연결 CAGR 대표성을 떨어뜨린다.
+`data/excluded_tickers.json`에 `FRAMEWORK_MISMATCH`로 등록 - ledger를 만들지
+않았고 `scripts/update_research_queue.py` 재실행으로 QSR이 큐에서 정상
+제외됨을 확인했다.
+
+**HQY(HealthEquity, HSA 수탁관리) 정식 분석 - "저평가 가능성"(B등급),
+Gap +5.05%p, Confidence 89.** M&A 왜곡 사전점검을 CROX/CHDN 선례대로
+통과했다 - 2019-08 WageWorks 인수(매출 FY2019 $287.2M→FY2020 $532.0M,
++85.2%)가 3y(`years[-4]`=2023)/5y(`years[-6]`=2021) CAGR 창 어디에도
+걸리지 않고 10y 창(가중치 0.2)에만 남아 희석된다.
+
+핵심 발견 - **영업이익 극심한 변동(FY2022 -$24.2M 적자→FY2026 $322.5M)의
+원인이 금리 사이클**이다: HQY 매출 상당부분이 HSA 현금잔고 수탁/이자수익
+(custodial/interest revenue)인데 2021~2022 제로금리 시대에 붕괴했다가
+2023~2026 고금리 국면에서 급팽창했다(회사 자신이 10-K에 금리하락 리스크
+명시). 엔진의 `margin_volatility`(최근 5개년 창)가 이 사이클을 DRS 변동성
+점수에 자동 반영한다 - BSX의 COVID 저마진(2020)이 cyclicality를 밀어올린
+것과 같은 메커니즘, 별도 조치 없이 진행. Lynch 유형 stalwart, 성장상한
+12.00%가 바인딩(원시 CAGR 가중평균 16.52%를 덮어씀). PIT_VALID(위반 0건).
+
+**⭐ SBC 교차검증 - 이번 세션 여섯 번째 판정flip 사례(WDAY 원본 포함).**
+SBC/FCF 16.1% - SBC를 실제 비용으로 차감하면 Gap +5.05%p→**+2.94%p**, 판정이
+"저평가 가능성"→**"적정가/경계선"**으로 뒤집힌다. 공식 판정은 SBC 미차감
+기준으로 유지(병기 원칙).
+
+경쟁구도(2026-09-08 WebSearch): HQY가 미국 HSA 수탁자산 1위(2021년 Optum
+추월, $37.9B/+14%YoY), 상위 4개사가 시장($159B)의 약 2/3 점유. 신규 HSA
+판매 +24%YoY로 시장성장률 상회. 2024-03 데이터브리치 집단소송(벤더
+Conduent 경유, 430만명)은 재무영향 미확인 상태 - `active_antitrust_or_
+regulatory_case`는 이 소송이 반독점·규제경쟁 사건이 아니라는 이유로 False
+유지(범위가 좁게 설계된 필드라는 v3.19 원칙 그대로 적용).
+
+⚠️ **반증조건 문구에서 서술적 날짜 함정을 실행 중 직접 잡았다** - 최초
+초안이 "(2) 2024-03 데이터브리치 집단소송..."이라 적어 `thesis_monitor`의
+날짜추출 정규식이 이를 감시 트리거로 오탐했다(TCOM 소송 집단기간과 동일
+유형). "2024년 초 발생한 데이터브리치..."로 정정한 뒤 재실행 - 계산값은
+완전히 동일(falsification_conditions 텍스트만 변경), `save_ledger` 파일을
+삭제 후 재생성해 반영했다.
+
+### 배선
+
+`watchlist.json`에 HQY 추가(67→68, HLNE-IDXX 사이). 열여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 67→68), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 HQY 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 HQY 추가) - B등급이라 `test_pipeline.py`의
+`APPROVED_SIZE_CAPPED_TICKERS`(size_conditioned_growth_cap 전용, HQY는 일반
+Lynch stalwart 캡이라 해당 없음)는 무변경.
+
+baseline 68종목으로 재동결(fingerprint `e871f8b3…`→`a441c043…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
