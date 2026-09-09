@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-08",
+  "updated_at": "2026-09-09",
   "latest_run": "2026-08-30",
   "source": "broad_screen_2026-08-30.json",
   "persistence": {
@@ -11,9 +11,9 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 190,
-    "ANALYZED": 37,
-    "EXCLUDED": 33
+    "QUEUED": 188,
+    "ANALYZED": 38,
+    "EXCLUDED": 34
   },
   "next_to_research": [
     {
@@ -32,26 +32,7 @@
       "best_gap": 0.06998768401920451,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "URBN",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.06991760153594281,
-      "tier": "A",
-      "market_cap": 4829187910.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.06991760153594281,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -70,26 +51,7 @@
       "best_gap": 0.06643908100145982,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "TTEK",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.05999480556621136,
-      "tier": "B",
-      "market_cap": 7600000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.05999480556621136,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -108,7 +70,7 @@
       "best_gap": 0.05423260087130338,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -127,7 +89,7 @@
       "best_gap": 0.05305016928730573,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -146,7 +108,7 @@
       "best_gap": 0.05088928563462626,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -165,7 +127,7 @@
       "best_gap": 0.047666539847283654,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -184,7 +146,7 @@
       "best_gap": 0.046490996906985375,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -203,7 +165,7 @@
       "best_gap": 0.045346627501754715,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -222,7 +184,7 @@
       "best_gap": 0.04086194011136619,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -241,7 +203,7 @@
       "best_gap": 0.03835118838580941,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -260,7 +222,7 @@
       "best_gap": 0.03811350434280857,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -279,7 +241,7 @@
       "best_gap": 0.037959823386795856,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     {
@@ -298,7 +260,26 @@
       "best_gap": 0.03747007330878171,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
+      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
+    },
+    {
+      "ticker": "PSN",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.037096612222589614,
+      "tier": "B",
+      "market_cap": 7700000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.037096612222589614,
+      "state": "QUEUED",
+      "in_validated_scope": true,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     }
   ],
@@ -319,26 +300,7 @@
       "best_gap": 0.06998768401920451,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "URBN": {
-      "ticker": "URBN",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.06991760153594281,
-      "tier": "A",
-      "market_cap": 4829187910.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.06991760153594281,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "REGN": {
@@ -357,26 +319,7 @@
       "best_gap": 0.06643908100145982,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "TTEK": {
-      "ticker": "TTEK",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.05999480556621136,
-      "tier": "B",
-      "market_cap": 7600000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.05999480556621136,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "LFUS": {
@@ -395,7 +338,7 @@
       "best_gap": 0.05423260087130338,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "STRL": {
@@ -414,7 +357,7 @@
       "best_gap": 0.05305016928730573,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "ERIE": {
@@ -433,7 +376,7 @@
       "best_gap": 0.05088928563462626,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "ULTA": {
@@ -452,7 +395,7 @@
       "best_gap": 0.047666539847283654,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "EME": {
@@ -471,7 +414,7 @@
       "best_gap": 0.046490996906985375,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "PAYX": {
@@ -490,7 +433,7 @@
       "best_gap": 0.045346627501754715,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "NYT": {
@@ -509,7 +452,7 @@
       "best_gap": 0.04086194011136619,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "OSIS": {
@@ -528,7 +471,7 @@
       "best_gap": 0.03835118838580941,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "LULU": {
@@ -547,7 +490,7 @@
       "best_gap": 0.03811350434280857,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "WTS": {
@@ -566,7 +509,7 @@
       "best_gap": 0.037959823386795856,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "TEAM": {
@@ -585,7 +528,7 @@
       "best_gap": 0.03747007330878171,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "PSN": {
@@ -604,7 +547,7 @@
       "best_gap": 0.037096612222589614,
       "state": "QUEUED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
     },
     "CROX": {
@@ -623,7 +566,7 @@
       "best_gap": 0.2397192728735001,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "LNTH": {
@@ -642,7 +585,7 @@
       "best_gap": 0.22961490662296474,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "PENDING_ACQUISITION",
@@ -666,7 +609,7 @@
       "best_gap": 0.21397977686203412,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -690,7 +633,7 @@
       "best_gap": 0.21394504000138595,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "SIGI": {
@@ -709,7 +652,7 @@
       "best_gap": 0.2135939476241476,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "OKTA": {
@@ -728,7 +671,7 @@
       "best_gap": 0.20647656178590862,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CDE": {
@@ -747,7 +690,7 @@
       "best_gap": 0.20128535250928078,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -771,7 +714,7 @@
       "best_gap": 0.19211680588068708,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "COP": {
@@ -790,7 +733,7 @@
       "best_gap": 0.18864412973691466,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -814,7 +757,7 @@
       "best_gap": 0.18834857981416114,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "FIX": {
@@ -833,7 +776,7 @@
       "best_gap": 0.18506462373227162,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CHDN": {
@@ -852,7 +795,7 @@
       "best_gap": 0.18035208526275656,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -876,7 +819,7 @@
       "best_gap": 0.17711512173476532,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -900,7 +843,7 @@
       "best_gap": 0.1747439049683896,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -924,7 +867,7 @@
       "best_gap": 0.1715948221696296,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "EOG": {
@@ -943,7 +886,7 @@
       "best_gap": 0.16571444005529232,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -967,7 +910,7 @@
       "best_gap": 0.16428217049736957,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "PATH": {
@@ -986,7 +929,7 @@
       "best_gap": 0.1639658429220924,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "COF": {
@@ -1005,7 +948,7 @@
       "best_gap": 0.1629655789055858,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1029,7 +972,7 @@
       "best_gap": 0.16281099325393256,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "EXEL": {
@@ -1048,7 +991,7 @@
       "best_gap": 0.15235917362733864,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "IDCC": {
@@ -1067,7 +1010,7 @@
       "best_gap": 0.14929339123835142,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1091,7 +1034,7 @@
       "best_gap": 0.14744879217169815,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1115,7 +1058,7 @@
       "best_gap": 0.14456494309593018,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "XYZ": {
@@ -1134,7 +1077,7 @@
       "best_gap": 0.14159404811975915,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1158,7 +1101,7 @@
       "best_gap": 0.141467277052827,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "PGR": {
@@ -1177,7 +1120,7 @@
       "best_gap": 0.14079489005331994,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "NEM": {
@@ -1196,7 +1139,7 @@
       "best_gap": 0.13447297521693094,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1220,7 +1163,7 @@
       "best_gap": 0.13237784390885435,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1244,7 +1187,7 @@
       "best_gap": 0.13151660698484371,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1268,7 +1211,7 @@
       "best_gap": 0.1280491052028037,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "FIVE": {
@@ -1287,7 +1230,7 @@
       "best_gap": 0.12759331520645664,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "TW": {
@@ -1306,7 +1249,7 @@
       "best_gap": 0.12689392058499813,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "RLI": {
@@ -1325,7 +1268,7 @@
       "best_gap": 0.12658483721547287,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "OVV": {
@@ -1344,7 +1287,7 @@
       "best_gap": 0.12347890085475224,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1368,7 +1311,7 @@
       "best_gap": 0.12124396713194648,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CINF": {
@@ -1387,7 +1330,7 @@
       "best_gap": 0.12040684145294969,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "TENB": {
@@ -1406,7 +1349,7 @@
       "best_gap": 0.1197320124043218,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "GEN": {
@@ -1425,7 +1368,7 @@
       "best_gap": 0.11877453484854686,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CF": {
@@ -1444,7 +1387,7 @@
       "best_gap": 0.11350296698501758,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1468,7 +1411,7 @@
       "best_gap": 0.11077033783141893,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1492,7 +1435,7 @@
       "best_gap": 0.10977266264739553,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "DAR": {
@@ -1511,7 +1454,7 @@
       "best_gap": 0.1065147823818495,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1535,7 +1478,7 @@
       "best_gap": 0.10481380122179837,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "BYD": {
@@ -1554,7 +1497,7 @@
       "best_gap": 0.10304558843305997,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CRM": {
@@ -1573,7 +1516,7 @@
       "best_gap": 0.10098156251599227,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "DECK": {
@@ -1592,7 +1535,7 @@
       "best_gap": 0.09825607205774288,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "HBAN": {
@@ -1611,7 +1554,7 @@
       "best_gap": 0.09304850956187576,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1635,7 +1578,7 @@
       "best_gap": 0.09076129172048425,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1659,7 +1602,7 @@
       "best_gap": 0.0902102331368604,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CVX": {
@@ -1678,7 +1621,7 @@
       "best_gap": 0.08874717814850339,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1702,7 +1645,7 @@
       "best_gap": 0.08592139356485343,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1726,7 +1669,7 @@
       "best_gap": 0.08487667595100234,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "GLPI": {
@@ -1745,7 +1688,7 @@
       "best_gap": 0.08426082204693591,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1769,7 +1712,7 @@
       "best_gap": 0.08393112590316726,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "IBP": {
@@ -1788,7 +1731,7 @@
       "best_gap": 0.08073237701935876,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1812,7 +1755,7 @@
       "best_gap": 0.07899990385744728,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1836,7 +1779,7 @@
       "best_gap": 0.0786812992181047,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "MLI": {
@@ -1855,7 +1798,7 @@
       "best_gap": 0.07852916662980422,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1879,7 +1822,7 @@
       "best_gap": 0.07831705788896728,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "MKL": {
@@ -1898,7 +1841,7 @@
       "best_gap": 0.07747678086057852,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1922,7 +1865,7 @@
       "best_gap": 0.07626059644024262,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1946,7 +1889,7 @@
       "best_gap": 0.07611879241422109,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1970,7 +1913,7 @@
       "best_gap": 0.07567552073973044,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "DHI": {
@@ -1989,7 +1932,7 @@
       "best_gap": 0.07550892111129258,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -2013,7 +1956,7 @@
       "best_gap": 0.07438061075756518,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "QSR": {
@@ -2032,7 +1975,7 @@
       "best_gap": 0.07298435364211928,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "name": "Restaurant Brands International",
@@ -2057,7 +2000,7 @@
       "best_gap": 0.07232970761735968,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CAH": {
@@ -2076,8 +2019,52 @@
       "best_gap": 0.07071996004702397,
       "state": "ANALYZED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "URBN": {
+      "ticker": "URBN",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.06991760153594281,
+      "tier": "A",
+      "market_cap": 4829187910.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.06991760153594281,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 10,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "TTEK": {
+      "ticker": "TTEK",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.05999480556621136,
+      "tier": "B",
+      "market_cap": 7600000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.05999480556621136,
+      "state": "EXCLUDED",
+      "in_validated_scope": true,
+      "days_since_seen": 10,
+      "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
+      "exclusion_reason": {
+        "name": "Tetra Tech, Inc.",
+        "reason_category": "FRAMEWORK_MISMATCH",
+        "reason": "RPS Group 인수(2023 종결)로 매출이 FY2022 $3,504.0M -> FY2023 $4,522.6M(+29.1%)로 단계상승했는데, 이 단계상승이 override 불가능한 3년 CAGR 고정창(years[-4]=FY2022, end=FY2025)에 정확히 걸린다 - 3년 CAGR(15.8%)이 회사가 별도 공시하는 organic 성장률(USAID/DOS·허리케인 등 일회성 제외 기준 약 +8%YoY, 단일 분기 비교치)보다 훨씬 높게 나온다. `cagr_base_year_override`는 5년 창의 기준연도만 바꿀 수 있고 3년 창(`years[-4]`, 고정)에는 적용되지 않으므로 이 왜곡은 구조적으로 해소 불가능하다. 회사가 공시하는 'organic' 지표도 ROP가 확립한 override 기준(다년 실현 시계열)에 못 미치는 단일 분기 비교치뿐이다(GEN/BRO/ROP/CHDN/QSR와 동일 유형).",
+        "excluded_at": "2026-09-09"
+      }
     },
     "EPR": {
       "ticker": "EPR",
@@ -2095,7 +2082,7 @@
       "best_gap": 0.05792896699778416,
       "state": "EXCLUDED",
       "in_validated_scope": true,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "검증범위 안 · 제외됨 · 1회 연속통과",
       "exclusion_reason": {
         "name": "EPR Properties",
@@ -2123,7 +2110,7 @@
       "best_gap": 0.9309165216517967,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "OPEN": {
@@ -2145,7 +2132,7 @@
       "best_gap": 0.8097498304842445,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "JANL": {
@@ -2167,7 +2154,7 @@
       "best_gap": 0.7814787578309426,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SNEX": {
@@ -2189,7 +2176,7 @@
       "best_gap": 0.7170410095503809,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HTZ": {
@@ -2211,7 +2198,7 @@
       "best_gap": 0.709710753826342,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PGY": {
@@ -2233,7 +2220,7 @@
       "best_gap": 0.6999471305887348,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "QSP": {
@@ -2255,7 +2242,7 @@
       "best_gap": 0.6899952051217287,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PR": {
@@ -2276,7 +2263,7 @@
       "best_gap": 0.6607154211694829,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RM": {
@@ -2298,7 +2285,7 @@
       "best_gap": 0.6212837978570741,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "EGY": {
@@ -2320,7 +2307,7 @@
       "best_gap": 0.6176855479786171,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PED": {
@@ -2342,7 +2329,7 @@
       "best_gap": 0.616487825207358,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "NOG": {
@@ -2364,7 +2351,7 @@
       "best_gap": 0.6050574085129066,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "OWL": {
@@ -2385,7 +2372,7 @@
       "best_gap": 0.5575219969355846,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "KOS": {
@@ -2407,7 +2394,7 @@
       "best_gap": 0.5431614503479038,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GCT": {
@@ -2429,7 +2416,7 @@
       "best_gap": 0.5104331264678521,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SPFX": {
@@ -2451,7 +2438,7 @@
       "best_gap": 0.5098800409013378,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "STGW": {
@@ -2473,7 +2460,7 @@
       "best_gap": 0.49559194281479924,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HGTY": {
@@ -2495,7 +2482,7 @@
       "best_gap": 0.4955334417529541,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "NRDS": {
@@ -2517,7 +2504,7 @@
       "best_gap": 0.44447737148766375,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GSAT": {
@@ -2539,7 +2526,7 @@
       "best_gap": 0.4363750288575501,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SND": {
@@ -2561,7 +2548,7 @@
       "best_gap": 0.4183810019985462,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "QRHC": {
@@ -2583,7 +2570,7 @@
       "best_gap": 0.41766876797608693,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "WLFC": {
@@ -2605,7 +2592,7 @@
       "best_gap": 0.4111562815508748,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "EVCM": {
@@ -2627,7 +2614,7 @@
       "best_gap": 0.38802036883504004,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MCY": {
@@ -2649,7 +2636,7 @@
       "best_gap": 0.38261351864793125,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HALO": {
@@ -2670,7 +2657,7 @@
       "best_gap": 0.381403129090842,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MXC": {
@@ -2692,7 +2679,7 @@
       "best_gap": 0.3719391739563115,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "COLL": {
@@ -2714,7 +2701,7 @@
       "best_gap": 0.363291486434721,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TRLV": {
@@ -2736,7 +2723,7 @@
       "best_gap": 0.3569020577399865,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FOUR": {
@@ -2757,7 +2744,7 @@
       "best_gap": 0.35496468155653693,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "NTST": {
@@ -2779,7 +2766,7 @@
       "best_gap": 0.3530041858359401,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PLMR": {
@@ -2800,7 +2787,7 @@
       "best_gap": 0.34777662319999886,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "QCRH": {
@@ -2822,7 +2809,7 @@
       "best_gap": 0.3372838907125322,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FSBW": {
@@ -2844,7 +2831,7 @@
       "best_gap": 0.3343245928502452,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HCI": {
@@ -2866,7 +2853,7 @@
       "best_gap": 0.33405531364972224,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MELI": {
@@ -2887,7 +2874,7 @@
       "best_gap": 0.32894669157216416,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ANIP": {
@@ -2909,7 +2896,7 @@
       "best_gap": 0.3205480899120393,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "VVX": {
@@ -2931,7 +2918,7 @@
       "best_gap": 0.3173676362521425,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SAH": {
@@ -2953,7 +2940,7 @@
       "best_gap": 0.31704728894546674,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PAYS": {
@@ -2975,7 +2962,7 @@
       "best_gap": 0.3132172193909726,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CSTL": {
@@ -2997,7 +2984,7 @@
       "best_gap": 0.3105715192567807,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RSVR": {
@@ -3019,7 +3006,7 @@
       "best_gap": 0.3051065911130819,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RSI": {
@@ -3041,7 +3028,7 @@
       "best_gap": 0.3042960122778769,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DVN": {
@@ -3062,7 +3049,7 @@
       "best_gap": 0.3007203710833409,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "IMMR": {
@@ -3084,7 +3071,7 @@
       "best_gap": 0.2992887831271902,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PAY": {
@@ -3106,7 +3093,7 @@
       "best_gap": 0.298026777170048,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TASK": {
@@ -3128,7 +3115,7 @@
       "best_gap": 0.2943796190054043,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "KNSL": {
@@ -3149,7 +3136,7 @@
       "best_gap": 0.2823043003522139,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "VTS": {
@@ -3171,7 +3158,7 @@
       "best_gap": 0.2810809035730335,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SCCO": {
@@ -3192,7 +3179,7 @@
       "best_gap": 0.28065158655324857,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PRTH": {
@@ -3214,7 +3201,7 @@
       "best_gap": 0.2771463803198371,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DSP": {
@@ -3236,7 +3223,7 @@
       "best_gap": 0.2754080583150839,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PANL": {
@@ -3258,7 +3245,7 @@
       "best_gap": 0.2751128815370475,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GM": {
@@ -3279,7 +3266,7 @@
       "best_gap": 0.27461668330941313,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GOLD": {
@@ -3301,7 +3288,7 @@
       "best_gap": 0.27443837599679244,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PGNY": {
@@ -3323,7 +3310,7 @@
       "best_gap": 0.2663457216368322,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MBLY": {
@@ -3345,7 +3332,7 @@
       "best_gap": 0.2652809423431118,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SACH": {
@@ -3367,7 +3354,7 @@
       "best_gap": 0.26493724666270035,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CLVT": {
@@ -3389,7 +3376,7 @@
       "best_gap": 0.264743576880066,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BOOM": {
@@ -3411,7 +3398,7 @@
       "best_gap": 0.2610248228325736,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BANC": {
@@ -3433,7 +3420,7 @@
       "best_gap": 0.25926044735239173,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GMED": {
@@ -3454,7 +3441,7 @@
       "best_gap": 0.2547644733969441,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FIVN": {
@@ -3476,7 +3463,7 @@
       "best_gap": 0.25129293404233505,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "IESC": {
@@ -3498,7 +3485,7 @@
       "best_gap": 0.2503630783586863,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PTEN": {
@@ -3520,7 +3507,7 @@
       "best_gap": 0.24967746408634459,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TH": {
@@ -3542,7 +3529,7 @@
       "best_gap": 0.2467886671234709,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DSGR": {
@@ -3564,7 +3551,7 @@
       "best_gap": 0.24588268737636443,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DCBG": {
@@ -3585,7 +3572,7 @@
       "best_gap": 0.2384218033945264,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PMTS": {
@@ -3606,7 +3593,7 @@
       "best_gap": 0.23694902452477185,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FA": {
@@ -3627,7 +3614,7 @@
       "best_gap": 0.23358848598992038,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "IPAR": {
@@ -3648,7 +3635,7 @@
       "best_gap": 0.23025200753644026,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BWMN": {
@@ -3669,7 +3656,7 @@
       "best_gap": 0.22749498206419258,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "WSFS": {
@@ -3690,7 +3677,7 @@
       "best_gap": 0.22360018958970632,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RNGR": {
@@ -3711,7 +3698,7 @@
       "best_gap": 0.2231263908572927,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FRSH": {
@@ -3732,7 +3719,7 @@
       "best_gap": 0.22034923284482485,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FET": {
@@ -3753,7 +3740,7 @@
       "best_gap": 0.2184223502799259,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "IA": {
@@ -3774,7 +3761,7 @@
       "best_gap": 0.2161282048140851,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ISSC": {
@@ -3795,7 +3782,7 @@
       "best_gap": 0.2161282048140851,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ZETA": {
@@ -3816,7 +3803,7 @@
       "best_gap": 0.2142180119133616,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RES": {
@@ -3837,7 +3824,7 @@
       "best_gap": 0.2131889487291108,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BOTJ": {
@@ -3858,7 +3845,7 @@
       "best_gap": 0.211686528631568,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GTBIF": {
@@ -3879,7 +3866,7 @@
       "best_gap": 0.21067427538728611,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GPOR": {
@@ -3900,7 +3887,7 @@
       "best_gap": 0.2096427188783035,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "AMPH": {
@@ -3921,7 +3908,7 @@
       "best_gap": 0.20920387455522782,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GTM": {
@@ -3942,7 +3929,7 @@
       "best_gap": 0.2085007797874614,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DH": {
@@ -3963,7 +3950,7 @@
       "best_gap": 0.2079851469579349,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DV": {
@@ -3984,7 +3971,7 @@
       "best_gap": 0.20707603605677175,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "LPG": {
@@ -4005,7 +3992,7 @@
       "best_gap": 0.20438493778033037,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "QNST": {
@@ -4026,7 +4013,7 @@
       "best_gap": 0.20379333013157594,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "OPXS": {
@@ -4047,7 +4034,7 @@
       "best_gap": 0.20151769854574447,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "AGX": {
@@ -4068,7 +4055,7 @@
       "best_gap": 0.20084894160039257,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GOGO": {
@@ -4089,7 +4076,7 @@
       "best_gap": 0.19779925068329618,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HGV": {
@@ -4110,7 +4097,7 @@
       "best_gap": 0.19506220348020709,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "YELP": {
@@ -4131,7 +4118,7 @@
       "best_gap": 0.19480433791186907,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "INSW": {
@@ -4152,7 +4139,7 @@
       "best_gap": 0.19028253356491356,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CXM": {
@@ -4173,7 +4160,7 @@
       "best_gap": 0.18754342340138347,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "XPEL": {
@@ -4194,7 +4181,7 @@
       "best_gap": 0.1865945758133553,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "LRN": {
@@ -4215,7 +4202,7 @@
       "best_gap": 0.18414432042550002,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "UPWK": {
@@ -4236,7 +4223,7 @@
       "best_gap": 0.17951412074903528,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CNXC": {
@@ -4257,7 +4244,7 @@
       "best_gap": 0.17449729899045457,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SHBI": {
@@ -4278,7 +4265,7 @@
       "best_gap": 0.17384759971541874,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BUKS": {
@@ -4299,7 +4286,7 @@
       "best_gap": 0.17307147093428266,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TCMD": {
@@ -4320,7 +4307,7 @@
       "best_gap": 0.17019297341870665,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "FIGS": {
@@ -4341,7 +4328,7 @@
       "best_gap": 0.1693106087475545,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PFS": {
@@ -4362,7 +4349,7 @@
       "best_gap": 0.16810683045795968,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PAYO": {
@@ -4383,7 +4370,7 @@
       "best_gap": 0.1680268455457474,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TRUP": {
@@ -4404,7 +4391,7 @@
       "best_gap": 0.16521168189868488,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PCRX": {
@@ -4425,7 +4412,7 @@
       "best_gap": 0.1627590887412957,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ORRF": {
@@ -4446,7 +4433,7 @@
       "best_gap": 0.16030878458643383,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PUBM": {
@@ -4467,7 +4454,7 @@
       "best_gap": 0.15660891815115413,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BFST": {
@@ -4488,7 +4475,7 @@
       "best_gap": 0.15603838732138686,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ASTH": {
@@ -4509,7 +4496,7 @@
       "best_gap": 0.15467458901048292,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "EVER": {
@@ -4530,7 +4517,7 @@
       "best_gap": 0.15440867254554655,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "USLM": {
@@ -4551,7 +4538,7 @@
       "best_gap": 0.1530502390393534,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "AZZ": {
@@ -4572,7 +4559,7 @@
       "best_gap": 0.1511858382110946,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DGICA": {
@@ -4593,7 +4580,7 @@
       "best_gap": 0.15083522752383305,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GRBK": {
@@ -4614,7 +4601,7 @@
       "best_gap": 0.1497295039455463,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MITK": {
@@ -4635,7 +4622,7 @@
       "best_gap": 0.1491171018569524,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "POWL": {
@@ -4656,7 +4643,7 @@
       "best_gap": 0.1475295170075905,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TNL": {
@@ -4677,7 +4664,7 @@
       "best_gap": 0.14441360483879773,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CARG": {
@@ -4698,7 +4685,7 @@
       "best_gap": 0.14244355646564352,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SCIA": {
@@ -4719,7 +4706,7 @@
       "best_gap": 0.14002353484059388,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TR": {
@@ -4740,7 +4727,7 @@
       "best_gap": 0.13955663033984342,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PD": {
@@ -4761,7 +4748,7 @@
       "best_gap": 0.13915319884382726,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CNX": {
@@ -4782,7 +4769,7 @@
       "best_gap": 0.13896398651432446,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GRC": {
@@ -4803,7 +4790,7 @@
       "best_gap": 0.13855142235188858,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DRVN": {
@@ -4824,7 +4811,7 @@
       "best_gap": 0.13803584409581393,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "LQDT": {
@@ -4845,7 +4832,7 @@
       "best_gap": 0.1371166426965169,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RICK": {
@@ -4866,7 +4853,7 @@
       "best_gap": 0.13646333414271183,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BKTI": {
@@ -4887,7 +4874,7 @@
       "best_gap": 0.13609663760744367,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "NMIH": {
@@ -4908,7 +4895,7 @@
       "best_gap": 0.13217695212222316,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PRM": {
@@ -4929,7 +4916,7 @@
       "best_gap": 0.12894384952895155,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CPF": {
@@ -4950,7 +4937,7 @@
       "best_gap": 0.12806527321709066,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "EZPW": {
@@ -4971,7 +4958,7 @@
       "best_gap": 0.12712524376401108,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MYE": {
@@ -4992,7 +4979,7 @@
       "best_gap": 0.12320745989498555,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MQ": {
@@ -5013,7 +5000,7 @@
       "best_gap": 0.11178679810471787,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ODC": {
@@ -5034,7 +5021,7 @@
       "best_gap": 0.11024657924861159,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CVSA": {
@@ -5055,7 +5042,7 @@
       "best_gap": 0.10982506181754265,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "SHOO": {
@@ -5076,7 +5063,7 @@
       "best_gap": 0.10854649807680081,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HLX": {
@@ -5097,7 +5084,7 @@
       "best_gap": 0.10741755997940496,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CVCO": {
@@ -5118,7 +5105,7 @@
       "best_gap": 0.10720671626523257,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "UCB": {
@@ -5139,7 +5126,7 @@
       "best_gap": 0.10696808256925441,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "TEX": {
@@ -5160,7 +5147,7 @@
       "best_gap": 0.10610787790109204,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "INTT": {
@@ -5181,7 +5168,7 @@
       "best_gap": 0.10484676428693161,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CNMD": {
@@ -5202,7 +5189,7 @@
       "best_gap": 0.10300982368527475,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RRR": {
@@ -5223,7 +5210,7 @@
       "best_gap": 0.10261376521316104,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PEBO": {
@@ -5244,7 +5231,7 @@
       "best_gap": 0.10236926737802304,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CHH": {
@@ -5265,7 +5252,7 @@
       "best_gap": 0.10026172746023211,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "EXFY": {
@@ -5286,7 +5273,7 @@
       "best_gap": 0.09684222212077168,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "LZ": {
@@ -5307,7 +5294,7 @@
       "best_gap": 0.09613617865122281,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "QLYS": {
@@ -5328,7 +5315,7 @@
       "best_gap": 0.09562227522196362,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BBW": {
@@ -5349,7 +5336,7 @@
       "best_gap": 0.09526545946859061,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HAE": {
@@ -5370,7 +5357,7 @@
       "best_gap": 0.08755557345253313,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "VCTR": {
@@ -5391,7 +5378,7 @@
       "best_gap": 0.0864658617162409,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BLZE": {
@@ -5412,7 +5399,7 @@
       "best_gap": 0.08321867201371526,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "GHC": {
@@ -5433,7 +5420,7 @@
       "best_gap": 0.08252564582784822,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "MYRG": {
@@ -5454,7 +5441,7 @@
       "best_gap": 0.08186101590814399,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CWCO": {
@@ -5475,7 +5462,7 @@
       "best_gap": 0.08082958091812807,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "BL": {
@@ -5496,7 +5483,7 @@
       "best_gap": 0.07904208963022372,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "DGII": {
@@ -5517,7 +5504,7 @@
       "best_gap": 0.07717176263918113,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "OII": {
@@ -5538,7 +5525,7 @@
       "best_gap": 0.07629224889014088,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PRGS": {
@@ -5559,7 +5546,7 @@
       "best_gap": 0.07592383755751023,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "OOMA": {
@@ -5580,7 +5567,7 @@
       "best_gap": 0.07262235260056296,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CENX": {
@@ -5601,7 +5588,7 @@
       "best_gap": 0.06708067094906277,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "LWAY": {
@@ -5622,7 +5609,7 @@
       "best_gap": 0.06707466797502587,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CERT": {
@@ -5643,7 +5630,7 @@
       "best_gap": 0.0666957266057871,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CALX": {
@@ -5664,7 +5651,7 @@
       "best_gap": 0.06557643198054737,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "PATK": {
@@ -5685,7 +5672,7 @@
       "best_gap": 0.06445551937889017,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "WLDN": {
@@ -5706,7 +5693,7 @@
       "best_gap": 0.06344460900913904,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "AVO": {
@@ -5727,7 +5714,7 @@
       "best_gap": 0.05891946989770939,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ALRM": {
@@ -5748,7 +5735,7 @@
       "best_gap": 0.057657746536138824,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "CLFD": {
@@ -5769,7 +5756,7 @@
       "best_gap": 0.04606425205763917,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "NATH": {
@@ -5790,7 +5777,7 @@
       "best_gap": 0.038465294590717944,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RSSS": {
@@ -5811,7 +5798,7 @@
       "best_gap": 0.03510289620637267,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 9,
+      "days_since_seen": 10,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     }
   },

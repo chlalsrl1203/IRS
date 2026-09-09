@@ -8991,3 +8991,63 @@ Lynch stalwart 캡이라 해당 없음)는 무변경.
 baseline 68종목으로 재동결(fingerprint `e871f8b3…`→`a441c043…`). 테스트
 1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## BLDR 4분류3번 문서화 + TTEK 제외(FRAMEWORK_MISMATCH) + URBN 정식분석
+(2026-09-09)
+
+큐 1순위 BLDR(Builders FirstSource, 건자재 유통)을 SEC XBRL로 확인한 결과
+2022~2025년 매출·FCF가 각각 약 -12.5%/-36% 실제로 감소하는 중이었다 -
+2021년 BMC Stock Holdings 합병(+132.5%)은 3년 CAGR 창(`years[-4]`=2022,
+합병 이후) 바깥이라 이번엔 M&A 왜곡이 아니라 **진짜 주택경기 하강 사이클**
+이었다. WebSearch로 외부 확인: 회사가 2026년 매출가이던스를 $14.6~15.6B->
+$14~14.8B로 하향, 2026 Q2 매출 -8.8%YoY, Zacks 컨센서스 EPS $4.13->$3.15로
+24% 삭감, 애널리스트가 목표가를 $150->$129.22로 하향 - 업계 전체(단독주택
+착공 중고한자릿수 감소 전망) 동시 하강이 외부 애널리스트로도 확인됐다.
+**4분류 3번(진짜나빠짐, 확정)** - `GENUINELY_WORSENED_NOT_STRUCTURAL`
+(tests/test_excluded_tickers_registry.py)에 등록했다. KR/AGCO/NKE 등과
+동일하게 시점부 판단이라 **`data/excluded_tickers.json`(영구배제
+레지스트리)에는 넣지 않는다** - 주택경기가 반등하면 재조사할 가치가 있고,
+`update_research_queue.py`가 큐에서 BLDR을 계속 1순위로 보여주는 것은
+버그가 아니라 턴어라운드 발굴이라는 설계 의도 그대로다(ledger 미생성).
+
+TTEK(Tetra Tech, 환경컨설팅)는 RPS Group 인수(2023 종결)로 매출이
+FY2022 $3,504.0M->FY2023 $4,522.6M(+29.1%)로 단계상승했는데, 이 단계상승이
+**override 불가능한 3년 CAGR 고정창**(`years[-4]`=FY2022, end=FY2025)에
+정확히 걸린다 - 3년 CAGR(15.8%)이 회사가 별도 공시하는 organic 성장률(약
++8%YoY, 단일 분기 비교치뿐)보다 훨씬 높게 나온다. `cagr_base_year_override`는
+5년 창의 기준연도만 바꿀 수 있고 3년 창에는 적용되지 않으므로 이 왜곡은
+구조적으로 해소 불가능하다(GEN/BRO/ROP/CHDN/QSR와 동일 유형) -
+`data/excluded_tickers.json`에 FRAMEWORK_MISMATCH로 등록.
+
+**URBN(Urban Outfitters) 정식분석 - "적정가/경계선"(C등급), Gap -1.91%p,
+Confidence 94.** SEC XBRL 매출 실측(FY2009~2026)에서 5년 CAGR 기본
+기준연도(`years[-6]`=FY2021)가 코로나 셧다운 저점(매출 -13.4%YoY, 영업이익
+사실상 0)에 정확히 걸려 회복반등을 성장으로 착각할 위험을 확인 - **기준연도를
+FY2020(코로나 직전 마지막 정상연도)으로 override**했다(v3.21 BKNG 원칙의
+문자 그대로의 적용 - "고점을 찾는" 게 아니라 "붕괴 직전 해"를 택한다). 3년
+CAGR(override 불가, 8.74%)은 이 저점 구간을 안 건드려 애초에 깨끗했고,
+override 후 3y/6y/10y가 8.74%/7.55%/5.99%로 서로 근접해 M&A 왜곡 없는 정상
+다년 성장임을 뒷받침했다.
+
+실시간 시총($7.12B)이 스크리너 근사($4.83B)의 1.47배(OKTA/MEDP/ROKU/CAH와
+동일한 EntityPublicFloat 스냅샷 노후화 패턴), Lynch 유형은 cyclical
+자동분류(코로나 매출 변동성이 cyclicality 점수를 밀어올림 - BSX와 동일
+메커니즘). 세 브랜드(Urban Outfitters·Anthropologie·Free People) 전부
+양(+) 동일점포성장(+4.8~7.3%, FY26 Q4)에 Nuuly 구독사업 +50.2%YoY까지
+겹쳐 서사는 건강하나, 시총 재평가 + 저점기저효과 정정이 결합돼 스크리너
+추정(A등급 +6.99%p)보다 크게 내려왔다. 순부채는 회사 자체 공시("무차입,
+신용한도 미사용, 유동성 $1.1B+")를 근거로 근사(NET_DEBT≈$126M) - 정밀
+현금+증권 합계 미확보를 falsification_conditions에 명시. SBC/FCF 9.7%로
+낮아 SBC 차감해도 판정 불변, 강건성점검 flip 없음, PIT_VALID(위반 0건).
+
+### 배선
+
+`watchlist.json`에 URBN 추가(68→69, UBER-VRSN 사이). 열아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 68→69),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 URBN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 URBN 추가) - C등급
+이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 69종목으로 재동결(fingerprint `a441c043…`→`e1773c67…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).

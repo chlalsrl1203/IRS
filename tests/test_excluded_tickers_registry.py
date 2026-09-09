@@ -22,6 +22,7 @@ ALLOWED_CATEGORIES = {"FRAMEWORK_MISMATCH", "PENDING_ACQUISITION"}
 # 판단이라 여기 있으면 안 된다. 턴어라운드하면 재조사할 가치가 있다.
 GENUINELY_WORSENED_NOT_STRUCTURAL = {
     "KR", "AGCO", "NKE", "UAA", "HON", "UWM", "AI", "ALGN", "LMB", "PTON",
+    "BLDR",
 }
 
 
