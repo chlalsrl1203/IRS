@@ -11,30 +11,11 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 191,
-    "ANALYZED": 36,
+    "QUEUED": 190,
+    "ANALYZED": 37,
     "EXCLUDED": 33
   },
   "next_to_research": [
-    {
-      "ticker": "HQY",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.07232970761735968,
-      "tier": "A",
-      "market_cap": 7000000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.07232970761735968,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 9,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
     {
       "ticker": "BLDR",
       "first_seen": "2026-08-30",
@@ -300,28 +281,28 @@
       "in_validated_scope": true,
       "days_since_seen": 9,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    }
-  ],
-  "entries": {
-    "HQY": {
-      "ticker": "HQY",
+    },
+    {
+      "ticker": "TEAM",
       "first_seen": "2026-08-30",
       "times_seen": 1,
       "runs_seen": [
         "2026-08-30"
       ],
       "last_seen": "2026-08-30",
-      "latest_gap": 0.07232970761735968,
-      "tier": "A",
-      "market_cap": 7000000000.0,
+      "latest_gap": 0.03747007330878171,
+      "tier": "B",
+      "market_cap": 27600000000.0,
       "scope_recomputed": true,
       "out_of_validated_scope": [],
-      "best_gap": 0.07232970761735968,
+      "best_gap": 0.03747007330878171,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 9,
       "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
+    }
+  ],
+  "entries": {
     "BLDR": {
       "ticker": "BLDR",
       "first_seen": "2026-08-30",
@@ -2059,6 +2040,25 @@
         "reason": "CHDN과 동일한 이중왜곡 구조 - override로 하나만 고칠 수 있고 둘 다는 못 고친다. (1) COVID 저점(2020, 매출 -11.3%YoY)이 기본 5y 기준연도에 걸린다. (2) Carrols Restaurant Group 인수(2024-05-16 완료, $648M, 최대 BK 프랜차이지 편입)가 3y CAGR 시작연도(2022, years[-4]는 override 불가)와 5y 구간 양쪽에 걸려 FY2024 매출 +19.7%의 대부분을 차지한다(회사 자체 10-K/실적발표가 'primarily driven by RH 편입'이라 명시, 오가닉 조정영업이익은 +6.1%뿐). 회사가 'organic revenue growth'·'system-wide sales growth'를 별도 공시하나 다년 실현 시계열이 아니라(FY2024 1개년 비교 + 2026 Q1/Q2 동일점포매출뿐) ROP가 확립한 override 기준(다년 실현 오가닉)에 못 미친다. 브랜드별 이질성도 크다(2026 Q2 동일점포매출: BK +8.5%/Tim Hortons +0.1%/Popeyes -5.2%) - 단일 연결 CAGR로는 대표할 수 없다.",
         "excluded_at": "2026-09-08"
       }
+    },
+    "HQY": {
+      "ticker": "HQY",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.07232970761735968,
+      "tier": "A",
+      "market_cap": 7000000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.07232970761735968,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 9,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "CAH": {
       "ticker": "CAH",
