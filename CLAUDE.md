@@ -9051,3 +9051,69 @@ override 후 3y/6y/10y가 8.74%/7.55%/5.99%로 서로 근접해 M&A 왜곡 없�
 baseline 69종목으로 재동결(fingerprint `a441c043…`→`e1773c67…`). 테스트
 1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## REGN(Regeneron) 정식분석 - COVID 일회성 스파이크가 창 경계를 안 건드리는
+사전점검 사례 (2026-09-09)
+
+큐 다음 순위 REGN(Regeneron Pharmaceuticals, 바이오제약, tier A, 스크리너
+Gap 추정 +6.64%p)을 정식분석했다.
+
+### 사전점검 - 2021 COVID 항체(REGEN-COV) 급증이 CAGR 창을 왜곡하지 않음을
+확인 후 진행(CROX/CHDN/QSR와 반대 결론)
+
+2021년 매출이 REGEN-COV(코로나 항체치료제) 일회성 수요로 +89.2%YoY
+급증(2020 $8.50B→2021 $16.07B)했다가 2022년 -24.3%로 급락한다 - GEN/
+BRO/ROP/CROX/CHDN/QSR가 반복 확인한 'M&A/일회성이 CAGR 창에 걸리는'
+패턴처럼 보였으나, 실제로 3y(`years[-4]`=2022)/5y(`years[-6]`=2020)/
+10y(`years[-11]`=2015) 어느 창의 시작·종료연도도 **2021(피크연도) 자체가
+아니다** - CAGR은 시작·종료값에만 의존하므로, 창 경계가 아니라 창
+중간에 낀 스파이크는 직접 왜곡을 만들지 않는다. 매출 CAGR 3y/5y/10y
+(5.62%/11.04%/13.33%)가 완만히 벌어져 override 불필요로 확정했다.
+
+### FCF CAGR 3년이 음수(-2.66%)로 나온 원인 - min() 로직이 설계대로 흡수
+
+FCF(=OCF-capex) 3y CAGR이 -2.66%로 음수인 이유는 시작연도(2022)가
+REGEN-COV 매출 정산으로 운전자본이 부풀려진 고점이었기 때문(FCF 2022
+$4.42B→2025 $4.08B로 오히려 감소). `realistic_growth_estimate()`의
+min(FCF가중 7.28%, 매출가중 8.79%) 로직이 FCF가중을 그대로 채택 -
+CROX/PATH가 이미 확립한 "min()이 근사-0/왜곡 기저연도를 자동으로
+보호"하는 설계가 이번엔 왜곡의 방향이 반대(FCF가 매출보다 낮게 나오는
+정상적인 보수화)라 별도 개입 없이 그대로 작동했다. capex/매출 5년평균
+대비 2025 델타(+1.00%p)도 v3.20 재검토 임계값(3%p) 미달로 미발동.
+
+### 결과 - "적정가/경계선"(C등급), Gap -1.45%p, Confidence 94
+
+DRS 63.80(cyclical 자동분류 - COVID 매출·마진 변동성이 cyclicality·
+margin_volatility 둘 다 만점(20.0)을 밀어올림, BSX·URBN과 동일
+메커니즘). 순현금 대규모(net_debt/EBITDA -4.02배, leverage 2.0 최저권).
+모델괴리 2.62%p(경고 임계값 미만). 강건성점검 flip 없음. PIT_VALID(위반
+0건). 실시간 시총($81.95B)이 스크리너 근사(EntityPublicFloat 스냅샷,
+$54.80B)의 1.50배 - OKTA/MEDP/ROKU/CAH/URBN과 동일한 노후화 패턴.
+
+### 경쟁구도(2026-09-09 WebSearch) - Eylea 침식을 Dupixent가 상쇄 중
+
+legacy Eylea 매출이 최근분기 -45%YoY로 바이오시밀러 실측 침식 중(다수
+화해·승인으로 유럽·APAC·美 후반부 출시경로 확보) - ZTS Elanco형 실측
+침식과 유사하나, Eylea HD(연장투여간격 라벨 강화)의 대체와 Dupixent
+(+32~38%YoY)의 전사 성장견인이 뚜렷해 CLAUDE.md 헬스케어 앵커표
+(0.10~0.15) 중간값(0.12)을 채택했다. SBC 교차검증 flip 없음(SBC/FCF
+24.4%, Gap -1.45%p→-4.79%p로 이동해도 여전히 적정가/경계선).
+
+⚠️ **falsification_conditions 작성 중 v3.42 함정을 실제로 밟았다** -
+초안이 "(NET_DEBT 약 -$165.5억, **2026-03-31 기준** 대차대조표 스냅샷)"
+이라 적어 서술적 ISO 날짜가 `thesis_monitor`의 감시 트리거로 오탐됐다
+(TCOM 소송 집단기간·HQY 데이터브리치와 동일 유형). "최근 분기"로
+정정한 뒤 ledger를 삭제·재생성했다(계산값은 완전히 동일, 텍스트만
+변경).
+
+### 배선
+
+`watchlist.json`에 REGN 추가(69→70, QCOM-RLI 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 69→70,
+`test_provenance.py`·`test_sbc_harvest.py`에 REGN 추가) - C등급이고
+Lynch cyclical(fast_grower 아님)이라 `test_pipeline.py`/`test_screener.py`는
+무변경.
+
+baseline 70종목으로 재동결(fingerprint `e1773c67…`→`cee7065f…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).

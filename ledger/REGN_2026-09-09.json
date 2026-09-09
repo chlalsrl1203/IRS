@@ -1,0 +1,611 @@
+{
+  "meta": {
+    "ticker": "REGN",
+    "company_name": "Regeneron Pharmaceuticals, Inc.",
+    "analyzed_at": "2026-09-09T10:37:49.306873+00:00",
+    "engine_version": "v3.83",
+    "data_sources": [
+      "SEC XBRL companyfacts, 2026-09-09 조회 - 매출·영업이익·영업현금흐름·capex·SBC 전부 1차자료(FY2015~2025, 11개년)",
+      "SEC XBRL DepreciationDepletionAndAmortization, FY2025 $543.7M(2026-02-04 제출)",
+      "Alpha Vantage GLOBAL_QUOTE 종가 $810.31(2026-09-08), TREASURY_YIELD 10Y 4.78%(2026-09-04)",
+      "SEC 10-Q(2026-06-30 기준, 2026-07-30 제출) 표지 dei:EntityCommonStockSharesOutstanding 101,137,842주(2026-07-23 기준)",
+      "WebSearch: SEC 10-Q(2026-03-31 기준) 대차대조표 - 장기부채 $1,986.2M, 현금+시장성증권 합계 $18,539.6M, 2026-09-09 조회",
+      "WebSearch: Eylea/Dupixent 2026 실적발표·컨퍼런스 자료(legacy Eylea -45%YoY, Dupixent +32~38%YoY, 바이오시밀러 경쟁구도), 2026-09-09 조회"
+    ],
+    "falsification_conditions": "(1) FY2026 4분기 실적(2027년 2월경 예상)에서 legacy Eylea 매출 감소율이 -45%YoY보다 더 가팔라지고 Eylea HD 성장이 이를 상쇄하지 못하면 이 분석이 채택한 market_share_trend=-0.3%p·demand_sensitivity =0.12 가정을 재검토한다. (2) Dupixent 성장률이 +32%YoY(최근 분기) 대비 절반 이하로 둔화하면 회사 전체 성장서사(Eylea 침식을 Dupixent가 상쇄)의 핵심축이 약화된다. (3) 아플리버셉트(Eylea) 바이오시밀러의 미국 시장 실제 출시가 확정되면 (현재는 유럽·APAC 우선, 美 후반부 예상) 침식 속도 가정을 즉시 재확인. (4) 순현금 추정치(NET_DEBT 약 -$165.5억, 최근 분기 대차대조표 스냅샷)가 다음 분기 대비 크게 달라지면(예: 대규모 M&A로 순현금 소진) leverage_score 영향을 재확인할 것.",
+    "price_at_analysis": 810.31,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-09",
+      "filing_dates_by_year": {
+        "2015": "2016-02-11",
+        "2016": "2017-02-09",
+        "2017": "2018-02-08",
+        "2018": "2019-02-07",
+        "2019": "2020-02-07",
+        "2020": "2021-02-08",
+        "2021": "2022-02-07",
+        "2022": "2023-02-06",
+        "2023": "2024-02-05",
+        "2024": "2025-02-05",
+        "2025": "2026-02-04"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-09",
+      "n_covered": 10,
+      "n_missing": 1,
+      "missing_fields": [
+        "revenue_by_year[2015]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 4860400000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 5872200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 6710800000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 7863400000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 8497100000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-08",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 16071700000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 12172900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-06",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 13117200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-05",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 14202000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-05",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 14342900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-04",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[RAR 방향성 경고] 기대수익률이 음수(-3.41%)라 RAR=ER/DRS 공식이 의도와 반대로 움직이는 구간이다 - DRS(위험도)가 높을수록 음수 RAR이 0에 가깝게 압축돼 실제로는 위험이 클수록 '덜 나빠 보이는' 착시가 생긴다(2026-08-02 방법론 감사 M-2, CDNS 원자료로 기계적 검증: DRS 20→80일 때 같은 종목 RAR이 -0.95→-0.36로 개선돼 보임). 이 종목은 RAR 절대값만으로 판단하지 말고 Expectation Gap을 우선 참고할 것.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "REGN",
+    "company_name": "Regeneron Pharmaceuticals, Inc.",
+    "revenue_by_year": {
+      "2015": 4103728000.0,
+      "2016": 4860400000.0,
+      "2017": 5872200000.0,
+      "2018": 6710800000.0,
+      "2019": 7863400000.0,
+      "2020": 8497100000.0,
+      "2021": 16071700000.0,
+      "2022": 12172900000.0,
+      "2023": 13117200000.0,
+      "2024": 14202000000.0,
+      "2025": 14342900000.0
+    },
+    "operating_income_by_year": {
+      "2015": 1251916000.0,
+      "2016": 1330741000.0,
+      "2017": 2079591000.0,
+      "2018": 2534400000.0,
+      "2019": 2209800000.0,
+      "2020": 3576600000.0,
+      "2021": 8946800000.0,
+      "2022": 4738900000.0,
+      "2023": 4047100000.0,
+      "2024": 3990700000.0,
+      "2025": 3577900000.0
+    },
+    "operating_cashflow_by_year": {
+      "2015": 1330780000.0,
+      "2016": 1473396000.0,
+      "2017": 1307112000.0,
+      "2018": 2195100000.0,
+      "2019": 2430000000.0,
+      "2020": 2618100000.0,
+      "2021": 7081300000.0,
+      "2022": 5014900000.0,
+      "2023": 4594000000.0,
+      "2024": 4420500000.0,
+      "2025": 4978900000.0
+    },
+    "capex_by_year": {
+      "2015": 677933000.0,
+      "2016": 511941000.0,
+      "2017": 272626000.0,
+      "2018": 383100000.0,
+      "2019": 429600000.0,
+      "2020": 614600000.0,
+      "2021": 551900000.0,
+      "2022": 590100000.0,
+      "2023": 718600000.0,
+      "2024": 755900000.0,
+      "2025": 898400000.0
+    },
+    "market_cap": 81953004751.01999,
+    "net_debt": -16553400000.0,
+    "ebitda": 4121600000.0,
+    "risk_free_rate": 0.0478,
+    "competitor_threat_weights": [
+      0.3,
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -0.3,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.12,
+    "subjective_input_basis": "competitor_threat_weights: Eylea(legacy) 매출이 최근분기 -45%YoY로 실측 침식 중(바이오시밀러 다수 화해·승인으로 유럽·APAC·美 후반부 출시경로 확보) - ZTS Elanco형 실측 침식과 유사한 1순위 위협. 다만 Eylea HD(연장투여간격 라벨 강화)가 legacy 대체 진행 중이고 Dupixent가 +32~38%YoY로 회사 성장을 이미 견인하는 분산효과가 뚜렷해 - CLAUDE.md 헬스케어 앵커표(IDXX·ZTS·MNST·RMD, 0.10~0.15)에서 중간값 채택. market_share_trend는 legacy Eylea 프랜차이즈 단독 기준 소폭 음수(-0.3%p/yr)로 잡되 Dupixent 성장이 전사 실적에서 이를 상쇄하는 점을 falsification_conditions에 별도 명시. active_antitrust_or_regulatory_case=False - 바이오시밀러 특허소송은 지식재산권 분쟁이지 반독점·규제경쟁 사건이 아니다(HQY 데이터브리치 소송을 이 필드에서 제외한 것과 동일한 범위 판단).",
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 CAGR 3y/5y/10y(5.62%/11.04%/13.33%)가 완만히 감속하는 다년 궤적이고, min(FCF가중 7.28%, 매출가중 8.79%) 로직으로 채택된 base_growth(7.28%)가 default_terminal_growth(3.5%대)보다 뚜렷이 높다 - Eylea 바이오시밀러 침식이 legacy 프랜차이즈를 정상화 경로로 이끄는 중이라(위 subjective_input_basis) 무기한 고정성장을 가정하는 single_stage보다 성장이 터미널로 수렴하는 경로를 명시하는 two_stage가 이 회사의 실제 궤적에 더 부합한다. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts, 2026-09-09 조회 - 매출·영업이익·영업현금흐름·capex·SBC 전부 1차자료(FY2015~2025, 11개년)",
+      "SEC XBRL DepreciationDepletionAndAmortization, FY2025 $543.7M(2026-02-04 제출)",
+      "Alpha Vantage GLOBAL_QUOTE 종가 $810.31(2026-09-08), TREASURY_YIELD 10Y 4.78%(2026-09-04)",
+      "SEC 10-Q(2026-06-30 기준, 2026-07-30 제출) 표지 dei:EntityCommonStockSharesOutstanding 101,137,842주(2026-07-23 기준)",
+      "WebSearch: SEC 10-Q(2026-03-31 기준) 대차대조표 - 장기부채 $1,986.2M, 현금+시장성증권 합계 $18,539.6M, 2026-09-09 조회",
+      "WebSearch: Eylea/Dupixent 2026 실적발표·컨퍼런스 자료(legacy Eylea -45%YoY, Dupixent +32~38%YoY, 바이오시밀러 경쟁구도), 2026-09-09 조회"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2015": 459049000.0,
+      "2016": 559878000.0,
+      "2017": 507277000.0,
+      "2018": 427400000.0,
+      "2019": 464300000.0,
+      "2020": 432000000.0,
+      "2021": 601700000.0,
+      "2022": 725000000.0,
+      "2023": 885000000.0,
+      "2024": 982800000.0,
+      "2025": 993700000.0
+    },
+    "falsification_conditions": "(1) FY2026 4분기 실적(2027년 2월경 예상)에서 legacy Eylea 매출 감소율이 -45%YoY보다 더 가팔라지고 Eylea HD 성장이 이를 상쇄하지 못하면 이 분석이 채택한 market_share_trend=-0.3%p·demand_sensitivity =0.12 가정을 재검토한다. (2) Dupixent 성장률이 +32%YoY(최근 분기) 대비 절반 이하로 둔화하면 회사 전체 성장서사(Eylea 침식을 Dupixent가 상쇄)의 핵심축이 약화된다. (3) 아플리버셉트(Eylea) 바이오시밀러의 미국 시장 실제 출시가 확정되면 (현재는 유럽·APAC 우선, 美 후반부 예상) 침식 속도 가정을 즉시 재확인. (4) 순현금 추정치(NET_DEBT 약 -$165.5억, 최근 분기 대차대조표 스냅샷)가 다음 분기 대비 크게 달라지면(예: 대규모 M&A로 순현금 소진) leverage_score 영향을 재확인할 것.",
+    "price_at_analysis": 810.31,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-09",
+      "n_covered": 10,
+      "n_missing": 1,
+      "missing_fields": [
+        "revenue_by_year[2015]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 4860400000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 5872200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 6710800000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 7863400000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 8497100000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-08",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 16071700000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-07",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 12172900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-06",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 13117200000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-05",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 14202000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-05",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 14342900000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-04",
+          "retrieval_date": "2026-09-09",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-09",
+    "filing_dates_by_year": {
+      "2015": "2016-02-11",
+      "2016": "2017-02-09",
+      "2017": "2018-02-08",
+      "2018": "2019-02-07",
+      "2019": "2020-02-07",
+      "2020": "2021-02-08",
+      "2021": "2022-02-07",
+      "2022": "2023-02-06",
+      "2023": "2024-02-05",
+      "2024": "2025-02-05",
+      "2025": "2026-02-04"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.05620358857997587,
+    "revenue_cagr_5y": 0.11038413551359794,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.1333024830413807,
+    "fcf_cagr_5y": 0.15288186330766362,
+    "fcf0": 4080500000.0,
+    "fcf_by_year": {
+      "2015": 652847000.0,
+      "2016": 961455000.0,
+      "2017": 1034486000.0,
+      "2018": 1812000000.0,
+      "2019": 2000400000.0,
+      "2020": 2003500000.0,
+      "2021": 6529400000.0,
+      "2022": 4424800000.0,
+      "2023": 3875400000.0,
+      "2024": 3664600000.0,
+      "2025": 4080500000.0
+    },
+    "worst_yoy_revenue_growth": -0.2425879029598611,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      0.5566803760647598,
+      0.3892991809675591,
+      0.3085338334400634,
+      0.28099563441768766,
+      0.24945443390109392
+    ],
+    "net_debt_to_ebitda": -4.016255822981367
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 20.0,
+      "leverage": 2.0,
+      "cyclicality": 20.0,
+      "competition_intensity": 13.8
+    },
+    "score": 63.8
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0478,
+    "erp": 0.06914000000000001,
+    "r": 0.11694000000000002,
+    "n": 12,
+    "g_terminal": 0.0378
+  },
+  "growth": {
+    "structural_discount_pct": 0.13854944723070242,
+    "realistic_growth": 0.07570214813176766,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.05620358857997587,
+        "5y": 0.11038413551359794,
+        "10y": 0.1333024830413807
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.08787753155234346,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.08787753155234346,
+      "structural_discount_pct": 0.13854944723070242,
+      "discounted_growth": 0.07570214813176766,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.07570214813176766
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.06396443329270549,
+      "two_stage": 0.09015312194824218,
+      "errors": {},
+      "divergence": 0.026188688655536696,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 CAGR 3y/5y/10y(5.62%/11.04%/13.33%)가 완만히 감속하는 다년 궤적이고, min(FCF가중 7.28%, 매출가중 8.79%) 로직으로 채택된 base_growth(7.28%)가 default_terminal_growth(3.5%대)보다 뚜렷이 높다 - Eylea 바이오시밀러 침식이 legacy 프랜차이즈를 정상화 경로로 이끄는 중이라(위 subjective_input_basis) 무기한 고정성장을 가정하는 single_stage보다 성장이 터미널로 수렴하는 경로를 명시하는 two_stage가 이 회사의 실제 궤적에 더 부합한다. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "value": 0.09015312194824218
+  },
+  "expectation_gap": -0.014450973816474519,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.07570214813176766,
+      "g_bull": 0.11355322219765149,
+      "g_bear": 0.03785107406588383,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.06718696157384252,
+      "base": -0.03897762892598722,
+      "bear": -0.13234388776029415
+    },
+    "probabilities": {
+      "bull": 0.2586,
+      "base": 0.5,
+      "bear": 0.2414
+    },
+    "probability_rationale": "DRS=63.8 (중립점 50 대비 편차 +0.28) 기준: p_bull=25.9%, p_base=50.0%, p_bear=24.1%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": -0.03406208070533294
+  },
+  "rar": -0.05338884123092937,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11694000000000002,
+    "r_without_drs": 0.0978,
+    "implied_growth_with_drs": 0.09015312194824218,
+    "implied_growth_without_drs": 0.0549833297729492,
+    "gap_with_drs": -0.014450973816474519,
+    "gap_without_drs": 0.02071881835881846,
+    "judgment_with_drs": "적정가/경계선",
+    "judgment_without_drs": "적정가/경계선",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11694000000000002,
+      "r_without_drs": 0.0978,
+      "implied_growth_with_drs": 0.09015312194824218,
+      "implied_growth_without_drs": 0.0549833297729492,
+      "gap_with_drs": -0.014450973816474519,
+      "gap_without_drs": 0.02071881835881846,
+      "judgment_with_drs": "적정가/경계선",
+      "judgment_without_drs": "적정가/경계선",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "적정가/경계선",
+  "judgment_grade": "C",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 993700000.0,
+    "sbc_to_fcf_pct": 0.24352407793162603,
+    "fcf0_sbc_adjusted": 3086800000.0,
+    "implied_growth_sbc_adjusted": 0.1235593795776367,
+    "gap_sbc_adjusted": -0.047857231445869036,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}
