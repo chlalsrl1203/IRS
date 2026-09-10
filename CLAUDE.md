@@ -9117,3 +9117,75 @@ Lynch cyclical(fast_grower 아님)이라 `test_pipeline.py`/`test_screener.py`�
 baseline 70종목으로 재동결(fingerprint `e1773c67…`→`cee7065f…`). 테스트
 1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## LFUS(Littelfuse) 정식분석 - 52/53주 라벨 재구성 + 모델선택 자체정정
+사례(RG≈g_terminal이면 single_stage가 정답) (2026-09-09)
+
+큐 다음 순위 LFUS(Littelfuse, 전력관리·회로보호 반도체·수동소자, tier A,
+스크리너 Gap 추정 +5.42%p)를 정식분석했다.
+
+### 52/53주 회계연도 라벨 재구성 - CDNS/GEN 선례의 세 번째 재현, 이번엔
+2개년이 통째로 누락
+
+SEC 자동추출이 `[회계연도 라벨 충돌]` 경고를 내고 2015·2021년을 통째로
+빠뜨렸다(EXEL·MEDP보다 심한 사례 - 누락 연도가 2개). 원자료(start,end)
+각 기간의 **중간일자가 속한 달력연도**로 17개년(FY2009~2025) 전체를
+재구성한 뒤, WebSearch로 두 지점을 교차검증했다: FY2021 "총매출 +44%/
+오가닉 +33%"(회사 보도자료 원문과 정확히 일치), FY2024 "$2,190.8M,
+-7.3%YoY"(정확히 일치). 재구성이 정확함을 확인했다.
+
+### ⭐ QCOM(2026-08-14) 선례의 두 번째 재현 - 반도체 사이클이 3y/5y 창을
+반대방향으로 왜곡, override 없이 진행
+
+3y CAGR 기준연도(2022)가 반도체 공급망 부족발 수요폭증의 **사이클
+정점**(매출 $2,514M, 사상최고)이라 3y CAGR이 음수(-1.72%)로 나오고,
+5y 기준연도(2020)는 반대로 코로나 저점이라 5y CAGR이 높게(10.54%) 나온다
+- 두 왜곡이 반대방향이라 완전상쇄는 아니지만, QCOM이 이미 같은 구조를
+"계산 아티팩트 없이 실제 반도체 사이클을 cyclical 분류로 정상 처리"한
+선례가 있어 override 없이 진행했다. 10y CAGR(10.64%, 2015년 기준 - 양끝
+다 사이클 극단이 아님)이 가장 신뢰할 만한 장기 신호였다.
+
+### FY2025 영업이익 급감(-76.4%)은 비현금 영업권손상 - CROX/BYD 선례대로
+GAAP 그대로 사용
+
+FY2025 영업이익 $158.8M→$37.5M(-76.4%YoY)의 원인은 반도체 사업부 대상
+비현금 영업권손상 $301.2M(회사 공시: "지속되는 연약한 시장환경") - OCF는
+오히려 개선(+18%, $367.6M→$433.8M)돼 FCF-DCF 계산 자체에는 영향이
+제한적이고 margin_volatility/DRS 경로에서만 반영된다.
+
+### ⭐⭐ 모델선택 자체정정 - "10y CAGR이 터미널보다 높다"는 잘못된 기준으로
+two_stage를 골랐다가, RG 자체를 확인하고 뒤집었다
+
+초판에서 "10y CAGR(10.64%)이 default_terminal_growth(3.5%대)보다 높으니
+two_stage"라고 판단했으나, 이는 **원시 CAGR과 g_terminal을 비교하는
+잘못된 기준**이었다 - 구조적할인을 거친 뒤의 실제 Realistic Growth(3.71%)
+는 g_terminal(3.78%)과 **사실상 동일**했다(cyclical 분류로 구조적할인이
+16.18%까지 크게 걸려 원시 CAGR 변동성을 이미 흡수했기 때문). 2026-08-16
+모델선택 연구가 확립한 기준(RG가 터미널에 근접하면 Gordon/single_stage가
+이론적으로 맞고, 터미널보다 뚜렷이 높을 때만 two_stage가 정당화됨)을
+그대로 적용해 `model_used`를 `single_stage`로 정정했다.
+
+**결과 차이가 등급을 갈랐다** - two_stage 기준 Gap -9.46%p(D등급,
+과대평가 가능성) vs single_stage 기준 Gap -4.11%p(C등급, 적정가/경계선).
+이 자체정정을 하지 않았다면 실제로는 판정경계 안쪽인 종목을 과대평가로
+잘못 분류할 뻔했다 - REGN(같은 세션)이 확립한 "RG를 g_terminal과 직접
+대조하라"는 원칙이 실전에서 처음으로 판정을 실제로 뒤집은 사례다.
+
+### 결과 - "적정가/경계선"(C등급), Gap -4.11%p, Confidence 94
+
+순부채 거의 0(net_debt/EBITDA 0.008배, 2026-03 $300M 텀론 상환으로
+레버리지 대폭 축소). 실시간 시총($10.74B)이 스크리너 근사(EntityPublicFloat
+스냅샷, $5.59B)의 1.92배 - 이번 세션 최대폭의 노후화 사례. SBC 교차검증
+flip 없음(SBC/FCF 7.8%, Gap -4.39%p로 이동해도 여전히 적정가/경계선).
+기대수익률 음수(-22.75%)라 RAR 방향성 경고 발동.
+
+### 배선
+
+`watchlist.json`에 LFUS 추가(70→71, KLAC-MCK 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 70→71,
+`test_provenance.py`·`test_sbc_harvest.py`에 LFUS 추가) - C등급이고
+Lynch cyclical이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 71종목으로 재동결(fingerprint `cee7065f…`→`570ae5e6…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
