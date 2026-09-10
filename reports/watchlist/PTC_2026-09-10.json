@@ -1,0 +1,28 @@
+{
+  "ticker": "PTC",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 16284619650.880001,
+  "market_cap_now": 13985371980.289999,
+  "market_cap_change_pct": -0.14119136460554382,
+  "gap_then": 0.040768922270243035,
+  "gap_now": 0.05902930587620007,
+  "gap_decay_pp": 0.018260383605957033,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": true,
+  "grade_then": "C",
+  "grade_now": "B",
+  "realistic_growth_then": 0.11390601486057504,
+  "realistic_growth_now": 0.11390601486057504,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-01",
+    "gap_prior": 0.03784610122532116,
+    "gap_move_pp": 0.02118320465087891,
+    "judgment_changed": true
+  },
+  "date": "2026-09-10",
+  "price_used": 128.89,
+  "shares_out_used": 108506261,
+  "price_source": "Alpha Vantage GLOBAL_QUOTE (2026-09-09 종가 $128.89), 발행주식수 2026-07-29 10-Q 표지 108,506,261주(2026-09-04 분석과 동일)"
+}
