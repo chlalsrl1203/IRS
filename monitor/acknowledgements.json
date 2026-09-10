@@ -65,6 +65,15 @@
       "acknowledged_on": "2026-08-13",
       "note": "4개 조건 중 3개 동시 발동. (4) Q2 매출 $715M으로 가이던스 $750M 하회 - 조건 문구 그대로 발동. (3) 매출성장 +3%YoY에 그쳤고 Q3 가이던스 $650M(중간값)은 컨센서스 $804.8M을 크게 밑돌며 -12.1%YoY 역성장을 회사 스스로 제시 - '낮은 한자릿수 밑으로 재차 둔화'를 넘어 아예 역성장이라 조건 충족. (2) 실적발표와 동시에 CFO·CMO· 커머셜총괄 교체 - CLAUDE.md에 기록된 '14개월새 CFO 4명'에 이어 5번째 교체라 조건 충족. 주가는 발표 후 -21.8%.\n[조치] 재검토 완료(2026-08-13, 사용자 승인): 매수리스트 CONFIDENCE_ADJ 72->45 하향 + THESIS_BROKEN_FLAG 추가(0.85x) - 비중 4.80%->2.70%로 축소(scripts/build_buylist_2026_08_03.py). 공식 ledger의 Gap/RAR/판정은 변경하지 않음(growth_scorecard 원칙상 realized_quarterly· guidance_annual은 usable_as_override 아님 - 다년 실적 확인 전까지 병기만).",
       "evidence_ref": "reports/thesis_monitor_2026-08-13.json"
+    },
+    {
+      "item_key": "MNDY:2026-08-10",
+      "ticker": "MNDY",
+      "trigger_date": "2026-08-10",
+      "verdict": "NOT_TRIGGERED",
+      "acknowledged_on": "2026-09-10",
+      "note": "2026-08-13 INCONCLUSIVE 판정(코호트별 NDR 미확보)을 해소한다. 회사 Q2 2026 실적자료 원문 확인 결과 $50K+ ARR 코호트 NDR 115%, $100K+ ARR 코호트 NDR 115% - 둘 다 조건(1)의 임계값(110%)을 넉넉히 상회한다. $500K+ 대형고객도 114개(+68%YoY)로 확대. 전사 블렌디드 NDR 108~109%(당시 공개치)는 하단 코호트 약세를 상단 코호트가 상쇄하는 기존 서사 그대로이며, 조건이 실제로 지정한 상단 코호트 자체는 악화되지 않았다. 조건(2)(증권소송 실손해배상 판결/대규모 화해)도 여전히 미발동(계류 중). 가격하락(2026-08-02 분석 대비 -6.93%, 2026-09-10 기준)은 전사 블렌디드 NDR 헤드라인에 대한 시장의 과민반응으로 판단되며, 등록된 반증조건 자체는 오히려 강화됐다.",
+      "evidence_ref": "reports/s_grade_reanalysis_2026-09-10.json"
     }
   ]
 }

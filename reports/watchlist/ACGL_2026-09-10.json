@@ -1,0 +1,21 @@
+{
+  "ticker": "ACGL",
+  "analyzed_at": "2026-09-05",
+  "market_cap_then": 33474577260.6,
+  "market_cap_now": 32797237445.489998,
+  "market_cap_change_pct": -0.020234454638124344,
+  "gap_then": 0.24452910193896105,
+  "gap_now": 0.2475598789165001,
+  "gap_decay_pp": 0.0030307769775390625,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.157353923411129,
+  "realistic_growth_now": 0.157353923411129,
+  "mode": "gap_decay",
+  "date": "2026-09-10",
+  "price_source": "Alpha Vantage GLOBAL_QUOTE (2026-09-09 종가 $96.115), 발행주식수는 price_at_analysis($98.10, 2026-09-05)와 동일 시가총액 비율로 역산",
+  "price_used": 96.115
+}
