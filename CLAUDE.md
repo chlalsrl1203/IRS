@@ -9342,3 +9342,91 @@ NOT_TRIGGERED로 해소했다(append-only - 원 INCONCLUSIVE 시드 엔트리는
 **검증**: 테스트 1134 → **1135개 전부 통과**(신규 1건). `engine/`·
 `ledger/`·`portfolio/holdings.json`·공식 매수리스트 **0건 수정**,
 `ENGINE_VERSION` v3.83 그대로(순수 데이터/모니터링 기록).
+
+## STRL 제외(FRAMEWORK_MISMATCH) + ERIE 정식분석 - fee기반 보험관리업이라는
+새 사업모델 유형 (2026-09-11, 큐 순서상 다음 후보 처리)
+
+큐 1순위 BLDR(4분류3번, 시점부 배제라 영구등록 안 함, 2026-09-09 이미
+CLAUDE.md에 기록) 다음 후보 **STRL(Sterling Infrastructure)**을 SEC
+XBRL로 먼저 확인했다 - FY2009~2025 연차 매출·FCF는 M&A 단계상승 없이
+깨끗해 보였으나(3y/5y CAGR 창 어느 경계도 안 건드림), **2026년 들어 CEC·
+Stone Ridge(데이터센터向 미션크리티컬 전기인프라) 인수가 완료되며 Q2 2026
+매출이 YoY +90%(인수기여 약 40%p+조직성장 약 50%)로 급증**했다(회사
+실적발표 명시). FY2026 가이던스도 $4.0~4.15B로 FY2025($2.49B) 대비
++65% - 아직 SEC 연차 XBRL에 반영 안 된 FY2026이 완결되면 이 단계상승이
+정확히 5y/3y CAGR 창 종료연도에 걸려 GEN/BRO/ROP/CROX/CHDN/QSR/WSC/EQT/
+CDE/OVV/CF/HL/TTEK와 동일 유형이 된다. 시장은 이미 $22B 시총·상향
+가이던스로 이 인수효과를 가격에 반영했는데, FY2025 트레일링 FCF(인수 전
+사업믹스)를 분모로 쓰면 이미 실현된 성장을 미실현 저평가로 착각하게
+된다 - LNTH(피인수예정)의 반대 방향 함정(피취득이 아니라 대규모 취득이
+아직 재무제표에 안 잡힌 경우). `data/excluded_tickers.json`에
+FRAMEWORK_MISMATCH로 등록 - ledger 미생성.
+
+**ERIE(Erie Indemnity) 정식 분석 - "적정가/경계선"(C등급), Gap
++2.13%p, Confidence 94.**
+
+### ⭐ 사업모델이 기존 5개 보험사(PGR/ACGL/SIGI/CINF/RLI)와 다르다 -
+is_insurer=False 채택(신규 판단 근거)
+
+Erie Indemnity는 손해보험 언더라이터가 아니라 **Erie Insurance
+Exchange**(상호보험조합)를 대신해 판매·언더라이팅·보험금처리 등 관리
+서비스를 제공하고 그 대가로 직접·인수 보험료의 최대 25%(계약상 상한,
+2026-01-01자로도 25% 유지 확인)를 관리수수료로 받는 **fee-based
+서비스업체**다. 언더라이팅 리스크(준비금·손해율·재보험)는 전부
+Exchange가 부담하고 Indemnity 대차대조표에는 없다 - PGR/ACGL/SIGI/
+CINF/RLI가 쓰는 `is_insurer=True`(플로트 성장으로 OCF가 부풀려지는
+문제를 보정)의 전제 자체가 성립하지 않는다. 대신 RYAN/BRO(보험중개·
+유통사, 마찬가지로 리스크를 직접 부담하지 않음)의 선례를 따라
+`is_insurer=False`로 일반 FCF-DCF 경로를 그대로 썼다.
+
+### 회계정의 단절(2014→2015, -75.4%) - 창 밖에 두어 회피
+
+2008~2014년 매출은 Erie Insurance Exchange의 보험료를 연결 매출로
+잡던 구시대 표시방식이고, 2015년부터 관리수수료·서비스수수료만
+인식하는 방식으로 바뀌어 매출이 $6.12B→$1.51B로 75.4% 급락한다
+(CROX/CHDN급이 아니라 그보다 훨씬 큰 순수 정의 단절 - M&A가 아니라
+회계표시 방법 변경). 2016년부터만 입력값을 채택해(3y/5y 창이 각각
+2022/2020 기준이라 무관, 10y 창은 데이터가 10개년뿐이라 자동으로 5y와
+동일 가중치로 재정규화돼 이 문제를 원천 회피) `cagr_base_year_
+override` 없이 진행했다. capex도 2015~2017년 태그가 존재하지 않아
+전 계열을 2016년으로 통일했다(`data_limitations`에 10y 대체 사실 자동
+기록).
+
+### ⭐ 핵심 리스크 - 트레일링 CAGR이 2026년 실제 감속을 못 본다
+(KEYS/KLAC의 정반대 원인, 같은 구조)
+
+2026-09-11 WebSearch 확인: Q1 2026 직접보험료(DWP) +3.6%YoY·정책건수
+-1.7%YoY(공격적 보험료 인상이 유지율을 88%까지 끌어내림), 2026 상반기
+대리점수수료가 전년동기 대비 $72.7M 증가(대리점 인센티브 확대+보험료
+증가)로 마진 압박. 3y/5y CAGR(매출 12.72%/9.92%, FCF 23.94%/14.74%)은
+전부 FY2025까지의 연차 실적이라 이 2026년 실제 감속(유지율 하락+수수료
+비용 급증)을 반영하지 못한다 - KEYS/KLAC이 'trailing CAGR이 AI 수요
+인플렉션을 과소추정'했던 것과 원인은 정반대(여기는 과대추정 위험)지만
+구조는 동일하다(최근 1~2개 분기 변곡점이 5년 CAGR에 few-quarter
+영향만 줘 희석됨). 1개 분기뿐이라 KEYS 기준(다년 실현 필요)에 못
+미쳐 override는 쓰지 않고 falsification_conditions 최우선 사유로
+명시했다. **결과적으로 이 우려는 시장가격에 이미 상당히 반영돼 있었다**
+- Gap이 판정경계 근처(+2.13%p)에 그쳐 트레일링 CAGR 과대추정 우려와
+현재 저평가/고평가 신호가 서로 상쇄된 것으로 해석된다.
+
+demand_sensitivity_pct=0.20(CINF/SIGI/RLI의 0.18 대비 소폭 상향 - 공격적
+가격인상에 실제 고객이탈이 확인된 유일한 사례라 순수 추정이 아닌 실측
+근거), competitor_threat_weights=[0.30(State Farm), 0.20(Progressive/
+GEICO - 유지율 하락의 주된 도피처로 추정)], market_share_trend_pp_
+per_year=-0.5(Q1 2026 정책건수 역성장 실측, 단일분기라 극단값은 피함).
+model_used="two_stage"(PGR/ACGL/SIGI/CINF/RLI 선례와 동일 - M&A 단계상승
+없는 완만한 다년 성장궤적). PIT_VALID(위반 0건), 강건성점검 flip 없음,
+sbc_cross_check/insurer_cross_check 둘 다 None(전자는 SBC 데이터 미확보,
+후자는 is_insurer=False라 원리적으로 미실행).
+
+### 배선
+
+`watchlist.json`에 ERIE 추가(71→72, EAT-EXEL 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 71→72,
+`test_provenance.py`·`test_sbc_harvest.py`에 ERIE 추가) - C등급이고
+Lynch stalwart(사이즈캡·screener 거짓탈락 무관)라 `test_pipeline.py`/
+`test_screener.py`는 무변경.
+
+baseline 72종목으로 재동결(fingerprint `570ae5e6…`→`60b83865…`). 테스트
+1135개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드
+변경 없음, 데이터 배선만).

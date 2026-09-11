@@ -23,6 +23,12 @@
     "등록한다."
   ],
   "entries": {
+    "STRL": {
+      "name": "Sterling Infrastructure",
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "FY2009~2025 연차 매출·FCF는 M&A 단계상승 없이 깨끗해 보였으나(3y/5y CAGR 창 어느 경계도 안 건드림), 2026년 들어 CEC·Stone Ridge(데이터센터向 미션크리티컬 전기인프라) 인수가 완료되며 Q2 2026 매출이 YoY +90%(그중 인수기여 약 40%p, 조직성장 약 50%)로 급증했다 - 회사 자체 실적발표가 명시. FY2026 전사 가이던스도 $4.0~4.15B로 FY2025($2.49B) 대비 약 +65% - 아직 SEC 연차 XBRL에는 반영되지 않은 FY2026이 완결되면 이 단계상승이 정확히 5y/3y CAGR 창 종료연도에 걸려 GEN/BRO/ROP/CROX/CHDN/QSR/WSC/EQT/CDE/OVV/CF/HL/TTEK와 동일한 유형이 된다. 시장은 이미 이 인수효과를 $22B 시총·상향된 가이던스로 가격에 반영했는데, FY2025 트레일링 FCF(인수 전 사업믹스)를 그대로 분모로 쓰면 이미 실현된 성장을 미실현 저평가로 착각하게 된다 - LNTH(피인수예정)의 반대 방향 함정(피취득이 아니라 대규모 취득이 아직 재무제표에 안 잡힌 경우). FY2026 연차 실적(10-K)이 SEC XBRL에 반영된 뒤(2027년 초 예상) 통합 후 정상화 성장률로 재조사할 것.",
+      "excluded_at": "2026-09-11"
+    },
     "PODD": {
       "reason_category": "FRAMEWORK_MISMATCH",
       "reason": "FCF가 2019~2022년 4개년 연속 적자였다가 2023년 최초 흑자전환 - 5y CAGR 프레임(시작값 음수)이 성립하지 않는다.",

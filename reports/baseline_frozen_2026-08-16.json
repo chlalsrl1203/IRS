@@ -13,8 +13,8 @@
     "drs_score",
     "confidence"
   ],
-  "n_tickers": 71,
-  "fingerprint": "570ae5e63aad343bee6471b2320a4ad38f66dd189222beeb7068db9aacd35b67",
+  "n_tickers": 72,
+  "fingerprint": "60b83865a8a6354f8f88a687a3574d6f15d33e052eeaf5776fa59dad73577bf8",
   "rows": {
     "ACGL": {
       "engine_version": "v3.81",
@@ -235,6 +235,17 @@
       "n": 12,
       "drs_score": 37.84,
       "confidence": 79
+    },
+    "ERIE": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.10659748824638111,
+      "implied_growth": 0.08529930114746093,
+      "expectation_gap": 0.021298187098920188,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 34.8,
+      "confidence": 94
     },
     "EXEL": {
       "engine_version": "v3.80",
