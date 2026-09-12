@@ -25,6 +25,28 @@ from scripts.sbc_harvest_2026_08_21 import _cached_facts, _load_ledgers  # noqa:
 OUT_PATH = "reports/dilution_drag.json"
 SBC_PATH = "reports/sbc_harvest_2026-08-21.json"
 
+# 2026-09-12 종목별 원자료 진단 결과. 셋 다 **이 출처(SEC companyfacts)로는
+# 원리적으로 못 채우는** 공백이라 "아직 안 가져왔다"와 구분해 기록한다.
+RESIDUAL_CAUSE = {
+    "STRUCTURAL_SHARE_JUMP": {
+        "recoverable_from_companyfacts": False,
+        "cause": ("IPO가 RG 창 안에 들어 있다 — 상장 전 가중평균 주식수는 전환 전 "
+                  "우선주를 제외하므로 상장 후와 같은 기준이 아니다. 창을 상장 "
+                  "이후로 옮기면 RG가 쓴 창과 달라져 비교 자체가 성립하지 않는다."),
+    },
+    "NO_SHARE_DATA": {
+        "recoverable_from_companyfacts": False,
+        "cause": ("다중클래스·Up-C 구조라 주식수가 클래스별 차원(dimension)으로 "
+                  "보고되는데 companyfacts는 무차원 사실만 담는다. 같은 캐시에 "
+                  "연차 매출은 정상적으로 들어 있어 캐시 누락이 아님을 확인했다."),
+    },
+    "MISSING_YEAR": {
+        "recoverable_from_companyfacts": False,
+        "cause": ("기준연도에 그 회사가 아직 독립 등록인이 아니었다(NXT는 2023-02 "
+                  "Flex 분사) — 존재하지 않았던 해의 주식수는 어떤 출처에도 없다."),
+    },
+}
+
 
 def latest_buylist(folder="reports"):
     """가장 최근 매수리스트. 옛 날짜 파일에 고정하면 새 종목이 조용히 빠진다.
@@ -116,6 +138,17 @@ def main():
               + f"가 측정 불가 — 측정된 종목 주식수 변화 중앙값은 {med_ok * 100:+.1f}%뿐이라"
               " 부분집합이 희석을 과소평가한다")
 
+    # 남은 공백을 '아직 안 가져왔다'와 '이 출처로는 원리적으로 못 가져온다'로
+    # 나눈다 — 둘을 섞으면 닫을 수 없는 공백을 계속 닫으려 하게 된다.
+    residual = {}
+    for r in skipped:
+        residual.setdefault(r["status"], {"tickers": [], "held_weight": 0.0})
+        residual[r["status"]]["tickers"].append(r["ticker"])
+        residual[r["status"]]["held_weight"] += r["weight_final"] or 0.0
+    for st, why in RESIDUAL_CAUSE.items():
+        if st in residual:
+            residual[st].update(why)
+
     out = {
         "generated_at": None,  # 아래에서 채움
         "engine_module": "engine/dilution.py",
@@ -141,6 +174,7 @@ def main():
             "held_unmeasured_weight": unmeasured_w,
         },
         "coverage_bias": bias,
+        "residual_gap": residual,
         "results": rows,
     }
     from datetime import date

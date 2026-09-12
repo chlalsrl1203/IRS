@@ -51,10 +51,41 @@ PHASE 4 초판이 그 검증 없이 계산해 완전히 틀린 값을 냈고 **�
 ⚠️ 계수 탐지는 **계산 구간 [base, end] 안으로 한정**한다. 구간 밖의 오래된
 분할·단위오류까지 끌어들이면 계수가 서로 달라져 정규화 자체가 무산된다(RLI·
 MNST가 실제로 그랬다 — 2010년대 초 단위오류가 2022년 2:1 분할 탐지를 가렸다).
+
+## v3.85에서 더한 두 경로 — 둘 다 "증명되면 쓰고, 아니면 거부한다"
+
+**① 회계연도 재라벨링(FY_LABEL_COLLISION 해소).** 52/53주 결산이 연초로 밀리면
+`end_year`가 두 회계연도를 한 라벨로 묶는다(v3.61 CDNS·GEN). v3.61은 **일반적인
+자동 재라벨링을 금지**했는데 규약이 회사마다 반대이기 때문이다(CDNS는 1월 초
+결산을 전년으로, GEN은 3월 말 결산을 당해로 센다). 그 금지는 그대로 유효하다 —
+여기서 답하는 질문이 다르다. 필요한 것은 "이 회사의 규약이 무엇인가"가 아니라
+**"이 라벨링이 ledger의 연도 키와 맞는가"** 이고, 그 답은 같은 companyfacts의
+매출을 같은 규칙으로 라벨해 `inputs.revenue_by_year`와 대조하면 나온다.
+2026-09-12 실측 — 중간일자 라벨링이 CDNS 14/0, EXEL 12/0, LFUS 22/0(일치/불일치)
+으로 완전 재현했고 `end_year`는 셋 다 불일치를 냈다.
+
+**② 공시본 스플라이스(공시본 하나가 통째로 다른 단위).** PDD 2025-04-28 20-F가
+FY2022~24를 전부 1/1000 스케일로 보고했고 **다음 공시(2026-04-29)가 되돌렸다**.
+"연도별 최신값" 규칙은 그 해만 오염된 채로 남긴다. 되돌려진다는 것이 분할(영구
+소급재표시)과 구분되는 지점이라, 공시본을 최신 것부터 겹침 비율로 이어붙이면
+기준이 통일된다. ⚠️ **마지막 수단으로만** 탄다 — 값을 비율로 재계산하므로 이미
+매끄러운 종목의 기존 측정값을 미세하게 흔들고(실측 4~5번째 자리) 겹침 없는
+공시본을 버려 오래된 연도를 잃을 수 있다(DSGX 실측).
+
+## 남은 공백은 '아직 안 가져온 것'이 아니다(2026-09-12 전수 진단)
+
+7종목이 남았고 셋 다 이 출처로는 **원리적으로** 못 채운다 — IPO가 RG 창 안에
+있어 상장 전/후 가중평균의 기준이 다른 경우(DUOL·MNDY·PATH), 다중클래스·Up-C라
+주식수가 클래스별 차원으로 보고돼 무차원 companyfacts에 총계가 없는 경우
+(ERIE·HLNE·RYAN, 같은 캐시에 연차 매출은 정상적으로 있어 캐시 누락이 아님을
+확인했다), 기준연도에 아직 독립 등록인이 아니었던 경우(NXT, 2023-02 Flex 분사).
 """
 
+import collections
 import statistics
+from datetime import date
 
+from engine.data.providers.sec import METRIC_TAGS
 from engine.filing_dates import ANNUAL_FORMS, _days_between
 
 # us-gaap 희석주식수를 1순위로, IFRS 발행사(20-F)는 ifrs-full 대응 태그로 대체한다.
@@ -76,6 +107,9 @@ RESTATEMENT_TOL = 0.02
 # 재표시 계수가 연도마다 이보다 더 흩어지면 단일 분할이 아니다 -> 정규화 포기.
 FACTOR_CONSISTENCY_TOL = 0.05
 
+# 재라벨링을 채택하려면 ledger 매출을 이만큼은 재현해야 한다(불일치는 0이어야 한다).
+RELABEL_MIN_MATCHES = 5
+
 # 이 지표의 인식론적 지위(계약서 40절 5단계 사다리).
 VALIDATION_STATUS = {
     "dilution_drag": "IMPLEMENTED_NOT_VALIDATED",  # 성과와의 관계 증거 0건
@@ -91,8 +125,25 @@ STATUS_JUMP = "STRUCTURAL_SHARE_JUMP"
 STATUS_FY_COLLISION = "FY_LABEL_COLLISION"
 
 
-def annual_share_facts(facts, tag):
-    """{회계연도: [(공시일, 값), ...]} — 같은 해의 모든 공시본을 버리지 않는다.
+def end_year(start, end):
+    """결산일의 달력연도 — 엔진 전체가 쓰는 기본 라벨 규칙."""
+    return int(end[:4])
+
+
+def midpoint_year(start, end):
+    """회계기간 **중간일자**의 달력연도.
+
+    52/53주 결산이 연초로 밀려 `end_year`가 두 회계연도를 한 라벨로 묶을 때의
+    대안이다. ⚠️ 이것을 기본으로 삼지 않는다 — `verify_year_labeling()`이
+    해당 종목 ledger의 연도 키를 실제로 재현한다고 증명했을 때만 쓴다.
+    """
+    a = date(int(start[:4]), int(start[5:7]), int(start[8:10]))
+    b = date(int(end[:4]), int(end[5:7]), int(end[8:10]))
+    return (a + (b - a) / 2).year
+
+
+def annual_facts(facts, tag, label=end_year):
+    """{회계연도: [(공시일, 결산일, 값), ...]} — 같은 해의 모든 공시본을 버리지 않는다.
 
     소급재표시 계수를 읽으려면 한 해의 여러 공시본이 **전부** 필요하다. 하나만
     고르는 순간(최초든 최신이든) 계수를 복원할 수 없다.
@@ -114,8 +165,41 @@ def annual_share_facts(facts, tag):
                         continue
                 except ValueError:
                     continue
-                out.setdefault(int(end[:4]), []).append((filed, end, float(val)))
+                out.setdefault(label(start, end), []).append(
+                    (filed, end, float(val)))
     return {y: sorted(v) for y, v in out.items()}
+
+
+def annual_share_facts(facts, tag):
+    """기본(결산일) 라벨로 읽은 연차 주식수."""
+    return annual_facts(facts, tag, end_year)
+
+
+def verify_year_labeling(facts, ledger, label):
+    """이 라벨 규칙이 **해당 ledger 자신의 연도 키**를 재현하는가.
+
+    희석 드래그가 성립하려면 `shares[y]`와 `fcf[y]`가 같은 회계기간이어야 한다.
+    그러므로 검증해야 할 명제는 "이 회사의 회계연도 규약이 무엇인가"라는 일반론이
+    아니라 **"이 라벨링이 ledger의 연도 키와 맞는가"** 다. companyfacts 매출을
+    같은 규칙으로 라벨해 ledger `inputs.revenue_by_year`와 대조한다.
+
+    반환 (일치, 불일치). ⚠️ 불일치가 하나라도 있으면 채택하지 않는다.
+    """
+    want = {int(k): v for k, v in
+            ((ledger.get("inputs") or {}).get("revenue_by_year") or {}).items()}
+    if not want:
+        return 0, 0
+    hits = misses = 0
+    for tag in METRIC_TAGS["revenue"]:
+        got = annual_facts(facts, tag, label)
+        for y, v in want.items():
+            if y not in got:
+                continue
+            if any(abs(x[2] - v) <= max(1.0, abs(v) * 1e-9) for x in got[y]):
+                hits += 1
+            else:
+                misses += 1
+    return hits, misses
 
 
 def detect_fy_label_collision(per_year):
@@ -178,6 +262,49 @@ def normalize_to_latest_basis(per_year, base, end):
                     "basis": f"latest_filed x{factor:.4f} (FY{oldest} 이전)"}
 
 
+def splice_filings_to_latest_basis(per_year):
+    """공시본을 최신 것부터 겹침 비율로 이어붙여 하나의 기준으로 맞춘다.
+
+    `normalize_to_latest_basis()`는 "연도별 최신값"을 쓰므로 **특정 공시본 하나가
+    통째로 잘못된 단위**로 보고하면 그 해만 오염된 채로 남는다. PDD 2025-04-28
+    20-F가 실측 사례다 — FY2022/23/24를 전부 1/1000 스케일로 보고했고 바로 다음
+    공시(2026-04-29)가 원래 단위로 되돌렸다:
+
+        2024-04-25  FY2023 = 5,839,629,562
+        2025-04-28  FY2023 =     5,839,630   <- 이 공시본만 1/1000
+        2026-04-29  FY2023 = 5,839,630,000
+
+    겹침 비율로 이어붙이면 그 공시본의 고유 연도(FY2022)도 x1000으로 되돌아와
+    전 구간이 하나의 기준이 된다. 비율은 회사 자신의 겹침에서 읽으므로 추측이
+    아니다. ⚠️ 값의 **절대 크기**는 최신 공시본 기준을 따르지만 드래그는
+    `shares[end]/shares[base]` 비율만 쓰므로 그 선택에 영향받지 않는다.
+    """
+    by_filing = collections.defaultdict(dict)
+    for y, rows in per_year.items():
+        for filed, _e, v in rows:
+            by_filing[filed][y] = v
+    filings = sorted(by_filing, reverse=True)
+    if not filings:
+        return {}, {}
+    series = dict(by_filing[filings[0]])
+    ratios = {}
+    for filed in filings[1:]:
+        rows = by_filing[filed]
+        overlap = [series[y] / rows[y] for y in rows if y in series and rows[y]]
+        if not overlap:
+            continue  # 겹침이 없으면 기준을 맞출 수단이 없다 - 이어붙이지 않는다
+        r = statistics.median(overlap)
+        # ⚠️ 1에 가까운 비율은 그냥 1로 둔다 — 재표시 반올림 차이(예: 5,839,629,562
+        #    vs 5,839,630,000)로 생긴 1.00000008 배를 곱하면 **어느 공시본에도
+        #    없는 숫자**가 기록에 남는다. 기준이 실제로 바뀐 경우에만 재계산한다.
+        if abs(r - 1.0) <= RESTATEMENT_TOL:
+            r = 1.0
+        ratios[filed] = r
+        for y, v in rows.items():
+            series.setdefault(y, v * r if r != 1.0 else v)
+    return series, ratios
+
+
 def consistent_share_series(per_year, base, end):
     """정규화를 **실제로 더 매끄러워질 때만** 채택한다.
 
@@ -206,6 +333,24 @@ def consistent_share_series(per_year, base, end):
     meta["adopted"] = False
     meta["basis"] = "latest_filed"
     meta["jumps_before_after"] = [n_raw, n_adj]
+
+    # 위 두 경로로도 점프가 남을 때만 공시본 스플라이스를 시도한다.
+    # ⚠️ 마지막 수단으로 두는 이유 — 스플라이스는 값을 비율로 재계산하므로
+    #    이미 매끄러운 종목의 기존 측정값을 미세하게 흔들고(실측 4~5번째 자리),
+    #    겹침이 없는 공시본을 버려 오래된 연도를 잃을 수 있다(DSGX 실측).
+    #    근거 없이 손대지 않는다는 이 모듈의 원칙 그대로다.
+    if min(n_raw, n_adj) > 0:
+        spliced, ratios = splice_filings_to_latest_basis(per_year)
+        n_sp = len(structural_jumps(spliced, base, end))
+        if n_sp < min(n_raw, n_adj) and base in spliced and end in spliced:
+            return spliced, {
+                "adopted": True, "basis": "spliced_filings",
+                "filing_ratios": {k: v for k, v in ratios.items()
+                                  if abs(v - 1.0) > RESTATEMENT_TOL},
+                "jumps_before_after": [min(n_raw, n_adj), n_sp],
+                "note": ("공시본별 겹침 비율로 이어붙여 기준을 통일했다 — "
+                         "공시본 하나가 통째로 다른 단위로 보고한 경우"),
+            }
     return raw, meta
 
 
@@ -271,14 +416,37 @@ def dilution_drag(ticker, ledger, facts):
             per_year, used_tag = got, tag
 
     if not per_year:
+        rev_years = sum(len(annual_facts(facts, t)) for t in METRIC_TAGS["revenue"])
         return {"ticker": ticker, "status": STATUS_NO_SHARES,
-                "detail": f"주식수 태그 {SHARE_TAGS} 어느 것도 연차 보고가 없다"}
+                "annual_revenue_years_in_facts": rev_years,
+                "detail": (f"주식수 태그 {SHARE_TAGS} 어느 것도 연차 보고가 없다"
+                           + (f" — 같은 companyfacts에 연차 매출은 {rev_years}건 "
+                              "있으므로 캐시 누락이 아니다(다중클래스·Up-C 종목은 "
+                              "클래스별 차원 데이터로 보고되는데 companyfacts는 "
+                              "무차원 사실만 담는다)" if rev_years else ""))}
 
+    labeling = "end_year"
     collisions = [y for y in detect_fy_label_collision(per_year) if base <= y <= end]
     if collisions:
-        return {"ticker": ticker, "status": STATUS_FY_COLLISION, "share_tag": used_tag,
-                "detail": (f"회계연도 라벨 충돌 FY{collisions} — 52/53주 결산이 "
-                           f"같은 라벨로 묶여 어느 해 값인지 특정 불가(v3.61)")}
+        # ⚠️ 일반적인 자동 재라벨링이 아니다(v3.61이 금지한 것) — 이 라벨링이
+        #    **이 ledger의 연도 키를 실제로 재현하는지** 매출로 증명될 때만 쓴다.
+        alt = annual_facts(facts, used_tag, midpoint_year)
+        hits, misses = verify_year_labeling(facts, ledger, midpoint_year)
+        base_hits, base_misses = verify_year_labeling(facts, ledger, end_year)
+        ok = (misses == 0 and hits >= RELABEL_MIN_MATCHES and hits > base_hits
+              and not detect_fy_label_collision(alt)
+              and base in alt and end in alt)
+        if not ok:
+            return {"ticker": ticker, "status": STATUS_FY_COLLISION,
+                    "share_tag": used_tag,
+                    "labeling_check": {"midpoint": [hits, misses],
+                                       "end_year": [base_hits, base_misses]},
+                    "detail": (f"회계연도 라벨 충돌 FY{collisions} — 52/53주 결산이 "
+                               f"같은 라벨로 묶였고, 중간일자 재라벨링이 ledger "
+                               f"매출을 재현하지 못해 어느 해 값인지 특정 불가(v3.61)")}
+        per_year, labeling = alt, "midpoint"
+        labeling_meta = {"midpoint": [hits, misses], "end_year": [base_hits, base_misses],
+                         "collided_years": collisions}
 
     missing = [y for y in (base, end) if y not in per_year or y not in fcf]
     if missing:
@@ -308,6 +476,8 @@ def dilution_drag(ticker, ledger, facts):
         "ticker": ticker, "status": STATUS_OK,
         "base_year": base, "end_year": end, "span": span,
         "window_source": how, "share_tag": used_tag, "normalization": meta,
+        "year_labeling": labeling,
+        **({"year_labeling_check": labeling_meta} if labeling == "midpoint" else {}),
         "shares_base": shares[base], "shares_end": shares[end],
         "share_count_change_pct": shares[end] / shares[base] - 1,
         "fcf_cagr_total": total, "fcf_cagr_per_share": per,

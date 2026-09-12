@@ -57,7 +57,7 @@ def year_entries(pairs, filed):
     return [(f"{y}-01-01", f"{y}-12-31", filed, v) for y, v in pairs]
 
 
-def ledger(fcf_by_year, base=None, span=None, fcf_cagr_5y=None):
+def ledger(fcf_by_year, base=None, span=None, fcf_cagr_5y=None, revenue=None):
     d = {"derived": {"fcf_by_year": {str(k): v for k, v in fcf_by_year.items()}}}
     if base is not None:
         d["derived"]["cagr_5y_base_year"] = base
@@ -65,7 +65,32 @@ def ledger(fcf_by_year, base=None, span=None, fcf_cagr_5y=None):
         d["derived"]["cagr_5y_span"] = span
     if fcf_cagr_5y is not None:
         d["derived"]["fcf_cagr_5y"] = fcf_cagr_5y
+    if revenue is not None:
+        d["inputs"] = {"revenue_by_year": {str(k): v for k, v in revenue.items()}}
     return d
+
+
+def merge_facts(*docs):
+    out = {"facts": {"us-gaap": {}}}
+    for d in docs:
+        for tax, tags in d["facts"].items():
+            out["facts"].setdefault(tax, {}).update(tags)
+    return out
+
+
+def fifty_three_week_entries(years, filed_offset_days=40):
+    """결산일이 연초로 밀리는 52/53주 회계연도 — `end_year`가 두 해를 한 라벨로 묶는다.
+
+    FY2020: 2020-01-02 ~ 2020-12-31   (라벨 2020)
+    FY2021: 2021-01-01 ~ 2022-01-01   (라벨 2022 <- 밀림)
+    FY2022: 2022-01-02 ~ 2022-12-31   (라벨 2022 <- 충돌)
+    """
+    out = []
+    for fy, val in years.items():
+        start = f"{fy}-01-01" if fy % 2 else f"{fy}-01-02"
+        end = f"{fy + 1}-01-01" if fy % 2 else f"{fy}-12-31"
+        out.append((start, end, f"{fy + 1}-02-10", val))
+    return out
 
 
 # ── ① 계수를 공시에서 읽는다 ─────────────────────────────────────────────
@@ -240,6 +265,63 @@ def test_fy_label_collision_is_reported_not_silently_resolved():
     assert "dilution_drag" not in r
 
 
+def test_relabeling_is_adopted_only_when_it_reproduces_the_ledger():
+    """
+    ⚠️ v3.61이 금지한 것은 **일반적인 자동 재라벨링**이다(규약이 회사마다 반대라
+    어느 쪽이 옳은지 코드가 알 수 없다). 여기서 하는 것은 다른 질문이다 —
+    "이 라벨링이 **이 ledger의 연도 키**를 재현하는가"이고, 그 답은 같은
+    companyfacts의 매출로 증명된다. 증명되지 않으면 종전대로 측정을 거부한다.
+    """
+    rev = {y: 1_000_000.0 * (y - 2014) for y in range(2015, 2026)}
+    fcf = {y: 100.0 for y in range(2015, 2026)}
+
+    f_ok = merge_facts(
+        facts(SHARE_TAGS[0], fifty_three_week_entries(
+            {y: 100 + y - 2015 for y in range(2015, 2026)})),
+        facts("Revenues", fifty_three_week_entries(rev)))
+    r = dilution_drag("X", ledger(fcf, base=2020, span=5, revenue=rev), f_ok)
+    assert r["status"] == STATUS_OK
+    assert r["year_labeling"] == "midpoint"
+    assert r["year_labeling_check"]["midpoint"][1] == 0      # 불일치 0
+    assert r["shares_base"] == 105 and r["shares_end"] == 110
+
+    # 같은 주식수인데 ledger 매출이 재라벨링과 맞지 않으면 -> 채택하지 않는다.
+    f_bad = merge_facts(
+        facts(SHARE_TAGS[0], fifty_three_week_entries(
+            {y: 100 + y - 2015 for y in range(2015, 2026)})),
+        facts("Revenues", fifty_three_week_entries(
+            {y: v * 3 for y, v in rev.items()})))
+    r2 = dilution_drag("X", ledger(fcf, base=2020, span=5, revenue=rev), f_bad)
+    assert r2["status"] == STATUS_FY_COLLISION
+    assert r2["labeling_check"]["midpoint"][1] > 0   # 불일치가 실제로 잡혔다
+
+
+def test_splice_is_a_last_resort_that_leaves_clean_series_untouched():
+    """
+    스플라이스는 값을 비율로 재계산하므로 이미 매끄러운 종목을 건드리면 기존
+    측정값이 흔들린다(실측 4~5번째 자리). 점프가 남은 경우에만 탄다.
+    """
+    clean = annual_share_facts(
+        facts(SHARE_TAGS[0],
+              year_entries([(y, 100 + y - 2020) for y in range(2020, 2026)],
+                           "2026-02-01")), SHARE_TAGS[0])
+    series, meta = consistent_share_series(clean, 2020, 2025)
+    assert meta["basis"] == "latest_filed"
+    assert series[2020] == 100 and series[2025] == 105
+
+    # 공시본 하나가 통째로 1/1000 스케일 -> 스플라이스가 기준을 되돌린다(PDD 형태).
+    f = facts(SHARE_TAGS[0],
+              year_entries([(2020, 1_000), (2021, 1_010), (2022, 1_020)], "2023-02-01")
+              + year_entries([(2022, 1.020), (2023, 1.030)], "2024-02-01")
+              + year_entries([(2023, 1_030), (2024, 1_040), (2025, 1_050)], "2026-02-01"))
+    per_year = annual_share_facts(f, SHARE_TAGS[0])
+    series2, meta2 = consistent_share_series(per_year, 2020, 2025)
+    assert meta2["basis"] == "spliced_filings"
+    assert meta2["filing_ratios"]["2024-02-01"] == pytest.approx(1000.0)
+    assert structural_jumps(series2, 2020, 2025) == []
+    assert series2[2020] == 1_000  # 공시된 값 그대로 — 재계산 근사치가 아니다
+
+
 def test_same_year_amendments_are_not_a_collision():
     """같은 기간의 정정공시는 충돌이 아니다 — 충돌로 세면 멀쩡한 종목이 탈락한다."""
     f = facts(SHARE_TAGS[0], [
@@ -281,22 +363,30 @@ def test_real_report_satisfies_the_sign_identity():
 
 
 # ── PHASE 4 회귀 방지 — 오염 종목은 여전히 측정 불가여야 한다 ────────────
-def test_ipo_and_unit_mixing_tickers_remain_unmeasurable():
+def test_ipo_era_tickers_remain_unmeasurable():
     """
-    DUOL·MNDY·PATH는 IPO 직후 가중평균 주식수가 비교 불가이고, PDD는 ADS/보통주
-    단위가 섞여 있다. 이들이 'OK'로 바뀌면 PHASE 4의 오염이 되살아난 것이다.
+    DUOL·MNDY·PATH는 IPO가 RG 창 **안에** 들어 있어 상장 전/후 가중평균 주식수의
+    기준이 다르다(상장 전은 전환 전 우선주를 제외한다). 이들이 'OK'로 바뀌면
+    PHASE 4의 오염이 되살아난 것이다.
+
+    ⚠️ PDD는 여기서 빠졌다 — v3.84가 'ADS/보통주 단위 혼재'로 적은 진단이
+    2026-09-12 원자료 확인에서 **틀린 것으로 드러났다**. 실제 원인은 20-F 한
+    건(2025-04-28)이 FY2022~24를 통째로 1/1000 스케일로 보고하고 다음 공시가
+    되돌린 것이라, 공시본 스플라이스로 정당하게 회복된다.
     """
     rows = {r["ticker"]: r
             for r in json.loads(REPORT.read_text(encoding="utf-8"))["results"]}
-    for t in ("DUOL", "MNDY", "PATH", "PDD"):
+    for t in ("DUOL", "MNDY", "PATH"):
         assert rows[t]["status"] != STATUS_OK, t
         assert rows[t].get("detail")
 
 
-def test_recovered_tickers_carry_the_split_factor_as_evidence():
+def test_recovered_tickers_carry_their_evidence():
     """
-    회복된 종목은 '왜 회복됐는지'가 남아야 한다 — 계수가 없으면 나중에
-    검증할 수 없다. 탐지된 계수가 깔끔한 분할비인 것 자체가 근거다.
+    회복된 종목은 '왜 회복됐는지'가 남아야 한다 — 근거가 없으면 나중에 검증할
+    수 없다. 경로마다 남겨야 할 근거가 다르다:
+      - 소급재표시 정규화 -> 계수와 재표시 연도
+      - 공시본 스플라이스 -> 어느 공시본이 어떤 비율로 어긋났는지
     """
     rows = {r["ticker"]: r
             for r in json.loads(REPORT.read_text(encoding="utf-8"))["results"]}
@@ -305,8 +395,41 @@ def test_recovered_tickers_carry_the_split_factor_as_evidence():
                and (r.get("normalization") or {}).get("adopted")]
     assert adopted, "정규화로 회복된 종목이 하나도 없다면 경로가 죽은 것"
     for r in adopted:
-        assert r["normalization"]["factor"] > 1.0, r["ticker"]
-        assert r["normalization"]["restated_years"], r["ticker"]
+        norm = r["normalization"]
+        if norm.get("basis") == "spliced_filings":
+            assert norm["filing_ratios"], r["ticker"]
+        else:
+            assert norm["factor"] > 1.0, r["ticker"]
+            assert norm["restated_years"], r["ticker"]
+
+
+def test_pdd_recovered_because_one_filing_was_off_by_a_thousand():
+    """
+    PDD 2025-04-28 20-F는 FY2022~24를 1/1000 스케일로 보고했고 **다음 공시가
+    되돌렸다**. 되돌려진다는 것이 분할(영구 소급재표시)과 구분되는 지점이다.
+    """
+    r = {x["ticker"]: x
+         for x in json.loads(REPORT.read_text(encoding="utf-8"))["results"]}["PDD"]
+    assert r["status"] == STATUS_OK
+    assert r["normalization"]["basis"] == "spliced_filings"
+    assert r["normalization"]["filing_ratios"]["2025-04-28"] == pytest.approx(1000.0)
+    # 회복된 값은 회사가 실제로 공시한 숫자여야 한다 — 비율로 재계산한 근사치가
+    # 기록에 남으면 어느 공시본에도 없는 숫자를 인용하게 된다.
+    assert r["shares_base"] == 4_768_343_300
+
+
+def test_residual_gap_is_declared_unrecoverable_not_merely_missing():
+    """
+    남은 공백을 '아직 안 가져왔다'로 두면 닫을 수 없는 것을 계속 닫으려 하게 된다.
+    2026-09-12 원자료 진단 결과 셋 다 이 출처로는 원리적으로 못 채운다.
+    """
+    doc = json.loads(REPORT.read_text(encoding="utf-8"))
+    residual = doc["residual_gap"]
+    assert residual, "측정 불가 종목이 있는 한 사유가 비어 있으면 안 된다"
+    for status, info in residual.items():
+        assert info["tickers"]
+        assert info["recoverable_from_companyfacts"] is False, status
+        assert info["cause"]
 
 
 def test_tcom_per_share_decline_was_an_ads_ratio_artifact():
