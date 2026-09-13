@@ -9676,3 +9676,72 @@ BRO `model_choice_reason`·`test_every_prediction_starts_open`과 같은 처리 
 **검증**: 테스트 1166 → **1177 통과**(신규 11) · 72종목 골든재현 8지표 완전 동일 ·
 fingerprint `60b83865…` **불변** · **ledger·매수리스트·공식 판정 0건 수정** ·
 `ENGINE_VERSION` v3.85 → **v3.86**.
+
+## ULTA(Ulta Beauty) 정식 분석 — COVID 저점 override + LFUS 모델선택 기준
+재적용, 3.5%p Gap이 등급을 갈랐다 (2026-09-13)
+
+연구 큐 다음 순위 ULTA(Ulta Beauty, Inc., 뷰티 전문 소매업, tier B, 스크리너 Gap
+추정 +4.77%p)를 정식분석했다.
+
+### COVID 저점 기저효과 - BKNG/URBN/CHDN/QSR와 동일 패턴
+
+5년 CAGR 기본 기준연도(`years[-6]`=2021, 회계기간 2020-02-02~2021-01-30)가 COVID
+셧다운 저점이다(매출 $6.152B, 전년 $7.398B 대비 -16.9%YoY) - 다음해(2022, 회계기간
+2021-01-31~2022-01-29)에 +40.3% 급반등한 것 자체가 회복반등이지 성장이 아니다.
+기준연도를 코로나 직전 마지막 정상연도 2020(매출 $7.398B)으로 **override**(매출·
+FCF 동일 적용, v3.21 원칙) - 5y CAGR이 15.04%(왜곡)→**8.98%**(6년 창)로 정정되어
+3y(6.68%)·10y(12.19%)와 훨씬 정합적이다.
+
+### 모델선택 - LFUS(2026-09-09) 기준의 두 번째 재적용
+
+FCF 3y CAGR이 실제로 음수(-2.99%, capex는 v3.20 재검토 임계값 미달)이고 영업이익률이
+16.05%→12.37%로 4년 연속 하락(Sephora-Kohl's 850개+ 매장 확장·e.l.f. 등 'dupe'
+저가대체재·Amazon의 온라인 뷰티 replenishment 1위 등장)해 처음엔 "고성장→수렴"
+서사로 two_stage를 골랐으나, 구조적할인(12.76%)까지 반영한 최종 Realistic
+Growth(4.25%)가 g_terminal(3.25%)과 겨우 **1.00%p** 차이임을 확인하고
+`single_stage`로 정정했다 - 2026-08-16 모델선택 연구·LFUS 자체정정이 확립한 기준
+(RG가 g_terminal에 근접하면 Gordon이 이론적으로 맞다)의 재적용이다. 두 모델의 Gap
+차이(two_stage -4.25%p vs single_stage -1.48%p)는 등급을 가르지 않았다(둘 다
+C등급, divergence 2.76%p로 경고 임계값 미만) - 그래도 이론적으로 옳은 쪽을 택했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -1.48%p, Confidence 94
+
+DRS 43.6(cyclical 자동분류 - COVID 매출 급락이 cyclicality를 만점(20.0)까지
+밀어올림, BSX·URBN·REGN과 동일 메커니즘). 순현금(2026-08-01 기준 현금 $158.5M,
+장기부채 없음 - 2020년 COVID 대비 $800M 텀론은 이미 상환됨). 강건성점검·SBC
+교차검증(SBC/FCF 3.5%, 매우 낮음) 모두 flip 없음. PIT_VALID(위반 0건). 실시간
+시총(~$23.40B, 2026-08-01 발행주식 42,805,000주 × 2026-09-11 종가 $546.78)이
+스크리너 근사(EntityPublicFloat 스냅샷, $16.87B)의 1.39배 - OKTA/MEDP/NBIX/
+NXT/ROKU/CAH/LFUS와 동일한 float 스냅샷 노후화 패턴.
+
+### 경쟁구도(2026-09-13 WebSearch) - 서사와 최신 실적이 갈린다
+
+Sephora의 Kohl's 파트너십(850개+ 매장)이 프리미엄 브랜드를 ULTA의 전통적
+강세지역에 배치해 잠식 중이고, e.l.f. 등 'dupe' 문화·Amazon의 온라인 뷰티
+replenishment 1위 등극이 겹쳐 2026년 3월 가이던스 발표 당시 "마진압박"
+서사로 주가가 -14.2% 급락했다. **그런데 2026-08-27 발표된 최신 분기(Ulta
+자체 회계연도 FY2026 Q2)는 매출 +8.9%YoY·comps +3.8%·EPS +13.3%YoY로
+컨센서스를 상회했고 전사 가이던스도 상향됐다**(순매출 6.7~7.2%, 영업이익
+8.3~9.3%, EPS 11.9~13.1%) - BSX·NBIX·ADBE와 같은 계열의 "서사가 최신
+실측보다 비관적" 패턴. 이 최신 분기는 1개 분기+1개년 가이던스뿐이라 KEYS
+기준(다년 실현 필요)에 못 미쳐 `realistic_growth_override`는 쓰지 않고
+falsification_conditions에 재검토 트리거로만 병기했다.
+
+### 배선
+
+`watchlist.json`에 ULTA 추가(72→73, UBER-URBN 사이). 열여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 72→73), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 ULTA 추가, provenance 10/17년 확보 -
+2010~2016년은 ANNUAL_FORMS 창 밖이라 결측), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 ULTA 추가) - C등급이고 Lynch cyclical(사이즈
+캡·screener 거짓탈락 무관)이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+⚠️ **작성 중 v3.42 함정을 실제로 밟았다** - falsification_conditions 초안에
+"FY2026(Ulta 자체 라벨, **2026-02~2027-01**)"이라 적어 `thesis_monitor`의
+날짜추출 정규식이 "2026-02"를 감시 트리거로 오탐했다(TCOM 소송 집단기간·HQY
+데이터브리치·REGN 대차대조표 스냅샷과 동일 유형, 이번 세션 세 번째 재현).
+"다음 회계연도"로 정정한 뒤 ledger를 재생성했다(계산값 완전 동일).
+
+baseline 73종목으로 재동결(fingerprint `60b83865…`→`371f17f9…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
