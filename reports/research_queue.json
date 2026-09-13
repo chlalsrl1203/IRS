@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 180,
-    "ANALYZED": 44,
+    "QUEUED": 179,
+    "ANALYZED": 45,
     "EXCLUDED": 36
   },
   "next_to_research": [
@@ -30,25 +30,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "OSIS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.03835118838580941,
-      "tier": "B",
-      "market_cap": 4020393452.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.03835118838580941,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -146,25 +127,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "OSIS": {
-      "ticker": "OSIS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.03835118838580941,
-      "tier": "B",
-      "market_cap": 4020393452.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.03835118838580941,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -1946,6 +1908,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.04086194011136619,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 14,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "OSIS": {
+      "ticker": "OSIS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.03835118838580941,
+      "tier": "B",
+      "market_cap": 4020393452.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.03835118838580941,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 14,
