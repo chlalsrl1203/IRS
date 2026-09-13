@@ -9745,3 +9745,63 @@ falsification_conditions에 재검토 트리거로만 병기했다.
 baseline 73종목으로 재동결(fingerprint `60b83865…`→`371f17f9…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## EME(EMCOR Group) 정식 분석 — FCF만 골라 훼손하는 새 유형의 기준연도
+왜곡, 매출은 멀쩡했다 (2026-09-13)
+
+연구 큐 다음 순위 EME(EMCOR Group, Inc., 전기·기계 건설 및 시설서비스,
+tier A, 스크리너 Gap 추정 +4.65%p)를 정식분석했다.
+
+### ⭐ 새로운 유형의 기준연도 왜곡 - 매출은 정상, FCF만 이상치
+
+5년 CAGR 기본 기준연도(2020)에서 **매출**은 -4.1%YoY로 완만한 코로나 조정일
+뿐이었으나(BKNG/URBN/CHDN/QSR처럼 극단적 저점이 아님), 같은 해 **FCF는 정반대로
+급등**했다($758.4M, 전년 $307.3M 대비 +146.7% - 코로나기 프로젝트 지연에 따른
+일시적 운전자본 개선으로 추정, 다음해 2021년 $282.6M로 -62.8% 급반락). 이
+급등한 값을 5y 창 기준연도로 쓰면 FCF 5y CAGR이 9.42%로 나와 3y(38.4%)·
+10y(17.8%) **양쪽보다 낮은 이상치**가 된다 - 지금까지의 사례들(매출·FCF가
+같은 방향으로 왜곡됨)과 달리 이번엔 두 계열이 반대 방향으로 어긋났다.
+
+v3.21 원칙(매출·FCF 동일 기준연도 적용)에 따라 기준연도를 코로나 직전 마지막
+정상연도 2019로 override - 매출 6y CAGR(10.81%)·FCF 6y CAGR(25.30%) 둘 다
+각자의 3y·10y 사이에 자연스럽게 위치해 정합성이 개선됐다. override 전후
+Realistic Growth 8.74%→**11.92%**, Gap -2.90%p→**+0.28%p**(등급은 C로 불변이나
+왜곡의 크기가 3.18%p였다 - min() 로직이 FCF 이상치를 그대로 채택해버린
+사례라는 점에서 CROX/QSR/CHDN와 달리 override 없이는 조용히 넘어갔을 것).
+
+### 모델선택 - override 후 RG-g_terminal 격차가 크다
+
+override 후 Realistic Growth(11.92%)가 g_terminal(3.25%)보다 8.67%p 높아
+`two_stage`를 채택했다(ULTA/LFUS와 반대 결론이지만 같은 기준의 적용 - RG가
+터미널에서 뚜렷이 멀면 다단계가 맞다). 데이터센터/AI 인프라 설비투자
+수퍼사이클(RPO $17.14B, +43.9%YoY 기록경신, 전기부문 매출 +50%YoY)이 근거.
+
+### 결과 — "적정가/경계선"(C등급), Gap +0.28%p, Confidence 94
+
+DRS 41.0(cyclical 자동분류 - 2020년 완만한 매출조정이 cyclicality를 밀어올림).
+순현금(장기부채 사실상 없음 - 파이낸스리스 부채 $6.1M만 확인, 운영리스는
+부채로 계상 안 함). 강건성점검 flip 없음(DRS 포함/제외 둘 다 C등급). SBC 데이터
+미확보(2009~2011년 옛 태그만 존재, 최근 연도 태그 없음) - sbc_cross_check
+없이 진행. PIT_VALID(위반 0건). 매출·영업이익 전 구간(2008~2025) M&A 단계상승
+없는 매끄러운 다년 성장(영업이익률 2.92%→10.09%, 데이터센터向 고마진 프로젝트
+믹스 전환으로 5년새 3배 이상 확장).
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+Sterling Infrastructure(STRL, 2026-09 M&A단계상승으로 이 프로젝트에서
+FRAMEWORK_MISMATCH 배제된 종목)와 Quanta Services가 데이터센터 미션크리티컬
+인프라 시장의 주요 경쟁자. demand_sensitivity_pct=0.40 - FIX(0.45, 같은
+데이터센터 테마)보다 소폭 낮게 채택한 이유는 EMCOR가 전기·기계·빌딩서비스·
+산업서비스·유틸리티 5개 세그먼트로 FIX보다 다각화돼 있어서다.
+
+### 배선
+
+`watchlist.json`에 EME 추가(73→74, EAT-ERIE 사이). 열일곱 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 73→74), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 EME 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 EME 추가) - C등급이고 Lynch cyclical이라
+`test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 74종목으로 재동결(fingerprint `371f17f9…`→`8aed3a1e…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
