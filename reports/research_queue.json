@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 181,
-    "ANALYZED": 43,
+    "QUEUED": 180,
+    "ANALYZED": 44,
     "EXCLUDED": 36
   },
   "next_to_research": [
@@ -30,25 +30,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "NYT",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.04086194011136619,
-      "tier": "B",
-      "market_cap": 9000000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.04086194011136619,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -165,25 +146,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "NYT": {
-      "ticker": "NYT",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.04086194011136619,
-      "tier": "B",
-      "market_cap": 9000000000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.04086194011136619,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -1969,6 +1931,25 @@
         "reason": "STRL과 동일 유형이나 이번엔 인수가 이미 SEC 연차 XBRL에 완전히 반영돼 있다 - Paycor 전액현금 인수($4.1B, 2025-04-14 종결)로 FY2026(2025-06~2026-05) 매출이 +16.5%YoY로 직전 5개년(4.6~13.9%) 대비 뚜렷이 가속했다. 회사 자체 실적발표가 \"Paycor가 Q3 FY2026 Management Solutions 매출성장의 약 19%를 기여\"라고 명시 - 3y/5y/10y CAGR 창(years[-4]/[-6]/[-11]) 전부 종료연도가 FY2026이라 세 창 모두 이 인수효과를 동일하게 흡수한다. cagr_base_year_override는 시작연도만 바꿀 수 있고 종료연도의 왜곡은 구조적으로 해소 불가능(STRL이 확립한 정확히 같은 문제 - 유일한 차이는 STRL은 왜곡이 아직 발생 전이었고 PAYX는 이미 실현돼 있다는 점). 회사가 공시하는 \"Paycor 기여분\"도 단일분기 비교치뿐이라 ROP 기준(다년 실현 오가닉 필요)에 못 미친다. FY2027 실적(Paycor 완전 편입 첫 정상연도)이 나온 뒤 통합 후 성장률로 재조사할 것.",
         "excluded_at": "2026-09-13"
       }
+    },
+    "NYT": {
+      "ticker": "NYT",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.04086194011136619,
+      "tier": "B",
+      "market_cap": 9000000000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.04086194011136619,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 14,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
     },
     "VATE": {
       "ticker": "VATE",
