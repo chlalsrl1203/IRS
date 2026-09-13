@@ -9805,3 +9805,26 @@ FRAMEWORK_MISMATCH 배제된 종목)와 Quanta Services가 데이터센터 미�
 baseline 74종목으로 재동결(fingerprint `371f17f9…`→`8aed3a1e…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## PAYX(Paychex) 제외 — STRL과 같은 유형이나 이번엔 왜곡이 이미 실현됨
+(2026-09-13)
+
+큐 다음 순위 PAYX(Paychex, Inc., 급여·HR 아웃소싱, tier A, 스크리너 Gap
+추정 +4.53%p)를 조사했다. SEC XBRL 매출 실측(FY2008~2026)에서 FY2026
+(2025-06~2026-05) 매출이 +16.5%YoY로 직전 5개년(4.6~13.9%) 대비 뚜렷이
+가속함을 확인 - WebSearch로 원인 확인: **Paycor 전액현금 인수($4.1B,
+2025-04-14 종결)**가 원인이며, 회사 자체 실적발표가 "Paycor가 Q3 FY2026
+Management Solutions 매출성장의 약 19%를 기여"했다고 명시한다.
+
+**STRL(2026-09-11)과 정확히 같은 구조적 문제이나, 이번엔 왜곡이 이미
+실현돼 있다는 점이 다르다** - 3y/5y/10y CAGR 창(`years[-4]`/`[-6]`/`[-11]`)
+전부 종료연도가 FY2026이라 세 창 모두 이 인수효과를 동일하게 흡수한다.
+`cagr_base_year_override`는 시작연도만 바꿀 수 있고 **종료연도**의 왜곡은
+구조적으로 해소 불가능하다(EME가 같은 세션에서 확인한 "시작연도 왜곡은
+override로 해결 가능" 사례와 정반대). STRL은 이 왜곡이 아직 발생 전이라
+장부에 반영되기를 기다렸지만, PAYX는 이미 FY2026 실적이 확정돼 있어
+당장 재조사할 방법이 없다. 회사가 공시하는 "Paycor 기여분"도 단일분기
+비교치뿐이라 ROP 기준(다년 실현 오가닉 필요)에 못 미친다. `data/
+excluded_tickers.json`에 FRAMEWORK_MISMATCH로 등록 - ledger를 만들지
+않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다. FY2027
+실적(Paycor 완전 편입 첫 정상연도)이 나온 뒤 재조사할 것.
