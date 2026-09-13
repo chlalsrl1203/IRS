@@ -11,8 +11,8 @@
   },
   "counts": {
     "total": 260,
-    "QUEUED": 178,
-    "ANALYZED": 46,
+    "QUEUED": 177,
+    "ANALYZED": 47,
     "EXCLUDED": 36
   },
   "next_to_research": [
@@ -30,25 +30,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    {
-      "ticker": "WTS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.037959823386795856,
-      "tier": "B",
-      "market_cap": 6695455530.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.037959823386795856,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -108,25 +89,6 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.06998768401920451,
-      "state": "QUEUED",
-      "in_validated_scope": true,
-      "days_since_seen": 14,
-      "priority_reason": "검증범위 안 · 미분석 · 1회 연속통과"
-    },
-    "WTS": {
-      "ticker": "WTS",
-      "first_seen": "2026-08-30",
-      "times_seen": 1,
-      "runs_seen": [
-        "2026-08-30"
-      ],
-      "last_seen": "2026-08-30",
-      "latest_gap": 0.037959823386795856,
-      "tier": "B",
-      "market_cap": 6695455530.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [],
-      "best_gap": 0.037959823386795856,
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 14,
@@ -1908,6 +1870,25 @@
       "scope_recomputed": true,
       "out_of_validated_scope": [],
       "best_gap": 0.03811350434280857,
+      "state": "ANALYZED",
+      "in_validated_scope": true,
+      "days_since_seen": 14,
+      "priority_reason": "검증범위 안 · 분석완료 · 1회 연속통과"
+    },
+    "WTS": {
+      "ticker": "WTS",
+      "first_seen": "2026-08-30",
+      "times_seen": 1,
+      "runs_seen": [
+        "2026-08-30"
+      ],
+      "last_seen": "2026-08-30",
+      "latest_gap": 0.037959823386795856,
+      "tier": "B",
+      "market_cap": 6695455530.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [],
+      "best_gap": 0.037959823386795856,
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 14,
