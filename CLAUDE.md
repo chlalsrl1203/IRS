@@ -9883,3 +9883,53 @@ Q2 2026 순증 디지털구독자 28만(전분기 31만에서 둔화) - 회사 �
 baseline 75종목으로 재동결(fingerprint `8aed3a1e…`→`685ecac8…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## OSIS(OSI Systems) 정식 분석 - 이번 배치 첫 A등급, 보안검색 과점시장의
+저평가 발견 (2026-09-13)
+
+큐 다음 순위 OSIS(OSI Systems, Inc., 보안검색·전자부품, tier B, 스크리너
+Gap 추정 +3.84%p)를 정식분석했다.
+
+### 사전점검 - FY2024 마이너스 OCF, M&A가 아니라 성장투자용 운전자본이었다
+
+FY2024 OCF가 -$87.5M로 급락(직전 3개년 모두 강한 양수)했으나, WebSearch로
+확인한 원인은 M&A가 아니라 **신규 수주 대응을 위한 운전자본 투자**(매출채권
+$293.6M 증가, 회사 자체 실적발표가 "최근 수주를 지원하기 위한 운전자본
+투자"로 명시)였다 - 같은 해 매출 +20.4%·영업이익률 확장(10.58%→12.29%)이
+동반된 성장통이지 실적 악화가 아니다. CAGR 창(3y/5y/10y 시작연도 2023/
+2021/2016, 종료연도 2026)이 이 2024년 값을 시작·종료점으로 쓰지 않아
+계산에는 애초에 영향이 없었다 - override 불필요.
+
+### 결과 — "저평가 가능성"(A등급), Gap +7.06%p, Confidence 94
+
+DRS 41.72(leverage 14.0 - net_debt/EBITDA 2.45배로 이번 배치 처음으로
+순부채 보유 종목, cyclical 자동분류). Realistic Growth 9.44%가
+g_terminal(3.25%)보다 6.19%p 높아 two_stage 채택(FY2024~2026 매출가속
++20.4%/+11.3%/+4.3%). 단, 모델 divergence가 0.37%p로 극히 작아
+single_stage였어도 Gap +6.69%p로 여전히 A등급 - 모델선택이 판정에 실질적
+영향을 주지 않는 드문 사례. 강건성점검·SBC교차검증(SBC/FCF 10.8%) 모두
+flip 없음. PIT_VALID(위반 0건). RAR +0.5964(강하게 양수).
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+보안검색 시장은 OSI Systems·Smiths Detection·Thales·NEC·Leidos 5개
+사업자가 합산 40~50% 점유하는 과점구조(시장 자체는 2025 $9.92B→2030
+$13.80B, CAGR 6.8% 성장 전망). 2026-04 Leidos Security Enterprise
+Solutions+Analogic이 Altaris와 합작법인을 결성해 신규 통합 경쟁자로 부상
+중 - competitor_threat_weights에 반영. 2026-06 북미고객 $5천만 유지보수
+주문이 시사하듯 반복 서비스매출 비중 확대가 구조적 긍정 요인.
+
+### 배선
+
+`watchlist.json`에 OSIS 추가(75→76, OKTA-PATH 사이). 열아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 75→76),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 OSIS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 OSIS 추가) - A등급
+이나 Lynch cyclical(사이즈캡 무관)이고 screen()과의 거짓탈락/승인여부는
+확인하지 않아 `test_pipeline.py`/`test_screener.py`는 무변경.
+⚠️ A등급 신규 발견이라 매수리스트 편입 전 정성 심층조사가 필요하다
+(v3.83 원칙 - `run_analysis()` 통과만으로는 자동 편입되지 않음).
+
+baseline 76종목으로 재동결(fingerprint `685ecac8…`→`0ec35e3c…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
