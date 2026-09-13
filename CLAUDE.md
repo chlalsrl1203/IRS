@@ -9613,3 +9613,66 @@ false`·사유)을 1급 필드로 남긴다 — **"아직 안 가져왔다"와 "
 테스트 1162 -> **1166개 전부 통과**. 72종목 골든재현 8지표 완전 동일,
 fingerprint `60b83865…` **불변**, ledger·매수리스트·공식 판정 **0건 수정**.
 `ENGINE_VERSION` v3.84 -> **v3.85**.
+
+## v3.86 — 희석 드래그 배선: 진단축까지, 자본까지는 아니다 (2026-09-13, 사용자
+요청 "배선 진행")
+
+v3.85 보고가 *"배선은 여전히 안 합니다 — 공백이 구조적임이 밝혀졌을 뿐 편향
+방향은 그대로"*로 끝난 직후 사용자가 배선을 지시했다. 거부 사유가 **어느 층에
+적용되는지**를 갈라서 처리했다.
+
+### 두 층을 나눴다 — 하나는 여전히 REJECT, 하나는 ADOPT
+
+| 층 | 결정 | 사유 |
+|---|---|---|
+| RG·Gap·판정·quality_score 반영 | **REJECT(유지)** | §13 게이트 6번(validation strategy) 부재 — 실현수익률 관계 증거 **0건**. 게다가 편향이 불리한 방향이다: 매수 유니버스 최고 SBC 2종목(DUOL 37%·MNDY 57%)이 **구조적으로** 측정 불가라 측정된 부분집합은 희석을 **과소**평가한다. 이대로 감점하면 **측정된 종목만 벌하고 진짜 위험한 종목은 무사한 역선택**이 된다 |
+| 경계검토에 F6 플래그로 병기 | **ADOPT** | is_insurer·sbc_cross_check·holdings_overlap·`model_dependent_universe`가 확립한 "병기, 자동판정 안 함" 그대로 |
+
+### 왜 플래그는 안전한가 — 설계로 보장된다(믿음이 아니라)
+
+`engine/portfolio_pipeline.py`는 `excluded_by`(유니버스를 바꾼다)와
+`flags`(아무 데서도 읽히지 않는다)를 이미 분리해 두고 있었다. `size_portfolio()`가
+`flags`를 보지 않으므로 **플래그를 아무리 더해도 비중이 구조적으로 바뀔 수
+없다.** 실측으로도 확인했다 — 희석 데이터를 넣은 실행과 뺀 실행의 비중·생존·배제가
+**완전히 동일**(max abs diff **0.0**), `reports/buylist_2026-09-06.json`은
+**md5 불변**(`132ad14c…`), 진단 JSON은 249줄 **순수 추가**(삭제 0).
+
+새 계산은 0줄이다 — `reports/dilution_drag.json`(엔진이 이미 계산해둔 값)을
+`load_sbc_verdicts()`와 **똑같은 방식으로 읽기만** 한다. 중복 구현이 두 계산을
+어긋나게 만든다는 반복 교훈 그대로다.
+
+### ⭐ 부수 발견 — 진단 플래그가 계산만 되고 아무 데도 나가지 않았다
+
+`apply_gates()`가 만든 F1~F5를 `build_portfolio.py`가 진단 JSON에서 제외
+(`if k != "flags"`)하고 콘솔에도 찍지 않아, **생존종목의 플래그는 어디서도 볼 수
+없었다.** F6만 얹었으면 죽은 코드에 배선하는 셈이라 `boundary_review` 섹션을 함께
+신설했다 — 문서로만 둔 규칙이 무력화된 사례를 이미 다섯 번 겪었다(run_self_check·
+confidence_score·claim/lock·cross_check_prior_record·sbc_cross_check 미배선).
+
+실측 F6: 드래그 **SE −10.34%p · UBER −6.82%p · PDD −5.56%p**, 측정 불가
+**DUOL·MNDY(IPO가 RG 창 안) · HLNE·RYAN(다중클래스) · NXT(분사 전)**.
+**PDD가 여기 나온다는 것 자체가 v3.85 스플라이스 회복이 결정 경로까지 도달했다는
+뜻이다.** 미측정은 '무해'가 아니라 **'미확인'**으로 적는다 — 리포트가 없을 때도
+조용히 '희석 없음'이 되지 않는 것을 테스트로 고정했다.
+
+### ⚠️ 테스트 하나를 약화가 아니라 강화 방향으로 교체했다
+
+`test_engine_judgment_path_does_not_import_dilution`이 `portfolio_pipeline.py`에
+**문자열 'dilution'이 없을 것**을 요구하고 있었다. 그런데 그 파일에서 지켜야 할
+불변조건은 문자열 부재가 아니라 **"비중과 배제가 바뀌지 않는다"**이다 — grep은
+우회되지만 후자는 안 된다. 밸류에이션 엔진 두 파일(`pipeline.py`·
+`expectation_gap_engine.py`)에는 문자열 규칙을 **그대로 두고**,
+`portfolio_pipeline.py`에 대해서만 희석 데이터 유/무 실행의 산출물이 동일한지를
+검증하는 행동 테스트로 대체했다(`tests/test_portfolio_dilution_wiring.py`, 10건).
+BRO `model_choice_reason`·`test_every_prediction_starts_open`과 같은 처리 — 상태를
+단언하던 테스트를 진짜 불변조건으로 다시 쓴다.
+
+**임계값 단일화**: `-0.05`가 `scripts/dilution_drag.py`에 리터럴로 박혀 있던 것을
+`engine.dilution.DRAG_MATERIAL_PCT`로 올려 리포트와 경계검토가 같은 값을
+참조하게 했다(v3.35 ①에서 판정 경계값이 실제로 갈렸던 재발 방지). **이 값은
+검증된 컷오프가 아니다** — PHASE 4가 쓰던 표시선 그대로이며, 넘었다고 배제·감점
+근거가 되지 않는다.
+
+**검증**: 테스트 1166 → **1177 통과**(신규 11) · 72종목 골든재현 8지표 완전 동일 ·
+fingerprint `60b83865…` **불변** · **ledger·매수리스트·공식 판정 0건 수정** ·
+`ENGINE_VERSION` v3.85 → **v3.86**.

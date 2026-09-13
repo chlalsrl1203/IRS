@@ -16,6 +16,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from engine.dilution import (  # noqa: E402
+    DRAG_MATERIAL_PCT,
     STATUS_OK,
     VALIDATION_STATUS,
     dilution_drag,
@@ -109,7 +110,7 @@ def main():
     held = [r for r in rows if r["weight_final"]]
     held_ok = [r for r in held if r["status"] == STATUS_OK]
     held_bad = [r for r in held if r["status"] != STATUS_OK]
-    exposed = [r for r in held_ok if r["dilution_drag"] < -0.05]
+    exposed = [r for r in held_ok if r["dilution_drag"] < DRAG_MATERIAL_PCT]
     unmeasured_w = sum(r["weight_final"] for r in held_bad)
     print(f"\n매수 유니버스 {len(held)}종목 중 측정 {len(held_ok)}종목"
           f"(미측정 비중 {unmeasured_w * 100:.2f}%) · "

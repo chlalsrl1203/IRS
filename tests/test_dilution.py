@@ -447,14 +447,29 @@ def test_tcom_per_share_decline_was_an_ads_ratio_artifact():
 
 
 # ── ⑥ 공식 판정 경로에 배선돼 있지 않다 ──────────────────────────────────
-def test_engine_judgment_path_does_not_import_dilution():
+def test_valuation_engine_does_not_import_dilution():
     """
     §13 게이트 6번(validation strategy)이 없다 — 성과와의 관계 증거가 0건이다.
-    구조 D(독립 진단축)만 유지한다.
+    Gap·RG·판정을 만드는 두 파일은 이 지표를 **이름으로도** 참조하지 않는다.
+
+    ⚠️ v3.86 이전에는 `portfolio_pipeline.py`도 이 목록에 있었다. 거기서 뺀
+    이유는 규칙이 느슨해져서가 아니라, 그 파일에서 지켜야 할 불변조건이
+    "문자열이 없다"가 아니라 **"비중과 배제가 바뀌지 않는다"**이기 때문이다 —
+    `test_portfolio_dilution_wiring.py`가 그 강한 쪽을 실행으로 검증한다.
     """
-    for name in ("pipeline.py", "expectation_gap_engine.py", "portfolio_pipeline.py"):
+    for name in ("pipeline.py", "expectation_gap_engine.py"):
         src = (ROOT / "engine" / name).read_text(encoding="utf-8")
         assert "dilution" not in src, f"engine/{name}이 희석 드래그를 참조한다"
+
+
+def test_material_threshold_has_a_single_source():
+    """리포트와 포트폴리오 경계검토가 같은 선을 쓴다(v3.35 ① 재발 방지)."""
+    from engine.dilution import DRAG_MATERIAL_PCT
+
+    src = (ROOT / "scripts" / "dilution_drag.py").read_text(encoding="utf-8")
+    assert "DRAG_MATERIAL_PCT" in src
+    assert "-0.05" not in src, "임계값 리터럴이 스크립트에 복사돼 있다"
+    assert DRAG_MATERIAL_PCT == -0.05
 
 
 def test_module_exposes_no_verdict_or_weight_function():

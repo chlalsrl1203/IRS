@@ -33,6 +33,7 @@ from engine.portfolio import load_ledgers  # noqa: E402
 from engine.portfolio_pipeline import (  # noqa: E402
     apply_g6,
     confirmed_falsifications,
+    load_dilution_drag,
     load_qualitative_overrides,
     load_sbc_verdicts,
     screen_universe,
@@ -55,13 +56,26 @@ def run(today: str | None = None) -> dict:
     qual = load_qualitative_overrides()
     overrides, g6_subs = qual["overrides"], qual["g6_substitutes"]
 
+    dilution = load_dilution_drag()
+
     survivors, excluded_stage1 = screen_universe(
-        ledgers, sbc_verdicts, falsification_confirmed, overrides)
+        ledgers, sbc_verdicts, falsification_confirmed, overrides, dilution["rows"])
     kept, excluded_g6 = apply_g6(survivors, g6_subs)
     sized = size_portfolio(kept, overrides)
     rows = to_buylist_rows(sized)
 
     n_unresearched = sum(1 for r in sized if r["confidence_status"] == "미검증")
+
+    # 생존종목의 진단 플래그(F1~F6)를 산출물에 남긴다. 이전에는 계산만 하고
+    # 어디에도 내보내지 않아 아무도 볼 수 없었다 - 문서로만 둔 규칙이
+    # 무력화된 사례를 이미 다섯 번 겪었다(run_self_check·confidence_score·
+    # claim/lock·cross_check_prior_record·sbc_cross_check 미배선).
+    final_tickers = {r["ticker"] for r in sized}
+    boundary_review = [
+        {"ticker": r["ticker"], "grade": r["grade"], "gap": r["gap"],
+         "in_final": r["ticker"] in final_tickers, "flags": r["flags"]}
+        for r in survivors if r["flags"]
+    ]
 
     diagnostics = {
         "generated_at": today,
@@ -78,6 +92,19 @@ def run(today: str | None = None) -> dict:
             "실현수익률 검증 (관측 0건)",
             "Confidence의 확률적 해석 (VALIDATION_STATUS = UNCALIBRATED)",
         ],
+        "boundary_review": boundary_review,
+        "dilution_annotation": {
+            "source": "reports/dilution_drag.json",
+            "generated_at": dilution["generated_at"],
+            "affects_weights": False,
+            "affects_exclusion": False,
+            "note": ("F6 플래그로만 병기한다 - §13 게이트 6번(validation strategy)이 "
+                     "없어(실현수익률과의 관계 증거 0건) 배제·감점 근거로 쓰지 않는다. "
+                     "미측정은 '무해'가 아니라 '미확인'이다."),
+            "coverage": dilution["coverage"],
+            "coverage_bias": dilution["coverage_bias"],
+            "residual_gap": dilution["residual_gap"],
+        },
         "stage1_excluded": [
             {k: v for k, v in r.items() if k != "flags"} for r in excluded_stage1
         ],
@@ -138,6 +165,26 @@ def main():
         print(f"  {r['ticker']:6s} {r['cluster']:26s} {r['grade']:3s} "
               f"{r['gap_pct']:+8.2f}%p  conf={r['confidence_adj']:>3d}  "
               f"비중={r['weight']*100:6.2f}%{conf_flag}")
+
+    if d["boundary_review"]:
+        print(f"\n[경계검토 - 생존종목 진단 플래그 {len(d['boundary_review'])}종목]"
+              " ⚠️ 배제도 감점도 아니다, 확인 대상일 뿐")
+        for r in d["boundary_review"]:
+            mark = "" if r["in_final"] else "  (최종 미편입)"
+            print(f"  {r['ticker']:6s}{mark}")
+            for f in r["flags"]:
+                print(f"         └ {f}")
+
+    dil = d["dilution_annotation"]
+    if dil["coverage"]:
+        c, b = dil["coverage"], dil["coverage_bias"]
+        print(f"\n[희석 드래그 병기] 측정 {c['measured']}/{c['total']}종목 · "
+              f"매수 유니버스 {c['held_measured']}/{c['held_total']} "
+              f"(미측정 비중 {c['held_unmeasured_weight']*100:.2f}%)")
+        if b and b.get("unmeasured_high_sbc"):
+            print(f"  ⚠️ 미측정 집단이 무작위가 아니다 - 고SBC "
+                  f"{', '.join(b['unmeasured_high_sbc'])}가 측정 불가라 "
+                  f"측정된 부분집합은 희석을 과소평가한다(비중·판정에는 미반영)")
 
     if d["n_unresearched_in_final"]:
         print(f"\n⚠️ {d['n_unresearched_in_final']}종목이 정성 심층조사 없이 "

@@ -548,6 +548,49 @@ companyfacts: false`·사유)을 1급 필드로 남겨 "아직 안 가져왔다"
 
 ---
 
+### 결정 #72~#73 (2026-09-13, v3.86) — 배선: 진단축까지, 자본까지는 아니다
+
+#68·#71이 "배선 REJECT"로 남긴 것을 **두 층으로 갈라서** 처리했다. 거부 사유가
+적용되는 층(Gap·RG·판정·비중)과 적용되지 않는 층(경계검토 병기)이 다르기 때문이다.
+
+| # | 대상 | 결정 | 근거 | 남는 한계 |
+|---|---|---|---|---|
+| 72 | RG·Gap·판정·quality_score에 반영 | **REJECT(#68 유지)** | §13 게이트 6번(validation strategy) 부재 — 실현수익률과의 관계 증거 **0건**. 게다가 편향 방향이 불리하다: 매수 유니버스 최고 SBC 2종목(DUOL 37%·MNDY 57%)이 **구조적으로** 측정 불가라(#71) 측정된 부분집합은 희석을 **과소**평가한다. 이 상태로 감점하면 측정된 종목만 벌하고 진짜 위험한 종목은 무사한 역선택이 된다 | 재개조건 불변: 실현수익률 관측 + 편향 해소 |
+| 73 | `portfolio_pipeline` 경계검토에 **F6 플래그로 병기** | **ADOPT** | is_insurer·sbc_cross_check·holdings_overlap·`model_dependent_universe`가 확립한 "병기, 자동판정 안 함" 그대로. `flags`는 `size_portfolio()`가 **읽지 않는** 필드라 비중이 구조적으로 바뀔 수 없다 — 실측으로 확인(비중·생존·배제 전부 동일, 차이 0.0) | 플래그는 "확인 대상"이지 "나쁘다"가 아니다 |
+
+**⚠️ 테스트 하나를 약화가 아니라 강화 방향으로 교체했다.**
+`test_engine_judgment_path_does_not_import_dilution`이 `portfolio_pipeline.py`에
+**문자열 'dilution'이 없을 것**을 요구하고 있었다. 그런데 그 파일에서 지켜야 할
+불변조건은 문자열 부재가 아니라 **"비중과 배제가 바뀌지 않는다"** 이다 — grep은
+우회되지만 후자는 안 된다. 밸류에이션 엔진 두 파일(`pipeline.py`·
+`expectation_gap_engine.py`)에는 문자열 규칙을 그대로 두고,
+`portfolio_pipeline.py`에 대해서는 **희석 데이터를 넣은 실행과 뺀 실행의 산출물이
+동일한지**를 검증하는 행동 테스트로 대체했다(`tests/test_portfolio_dilution_wiring.py`).
+BRO `model_choice_reason`·`test_every_prediction_starts_open`과 같은 처리 —
+상태를 단언하던 테스트를 진짜 불변조건으로 다시 쓴다.
+
+**부수 발견 — 진단 플래그(F1~F5)가 계산만 되고 아무 데도 나가지 않았다.**
+`apply_gates()`가 만든 `flags`를 `build_portfolio.py`가 진단 JSON에서 제외
+(`if k != "flags"`)하고 콘솔에도 찍지 않아, **생존종목의 플래그는 어디서도 볼 수
+없었다.** F6만 더했으면 죽은 코드에 배선하는 셈이라 `boundary_review` 섹션을
+함께 신설했다 — 문서로만 둔 규칙이 무력화된 사례를 이미 다섯 번 겪었다.
+
+실측 F6(18종목 최종 기준): 드래그 **SE −10.34%p · UBER −6.82%p · PDD −5.56%p**,
+측정 불가 **DUOL·MNDY(IPO 창) · HLNE·RYAN(다중클래스) · NXT(분사 전)**.
+PDD가 여기 나온다는 것 자체가 v3.85 스플라이스 회복이 결정 경로까지 도달했다는 뜻이다.
+
+**임계값 단일화**: `-0.05`가 `scripts/dilution_drag.py`에 리터럴로 박혀 있던 것을
+`engine.dilution.DRAG_MATERIAL_PCT`로 올려 리포트와 경계검토가 같은 값을
+참조하게 했다(v3.35 ①에서 판정 경계값이 실제로 갈렸던 재발 방지, 테스트 고정).
+**이 값은 검증된 컷오프가 아니다** — PHASE 4가 쓰던 표시선 그대로다.
+
+**검증**: 테스트 1166 → **1177 통과** · 희석 데이터 유/무 실행의 비중·생존·배제
+**완전 동일**(max abs diff 0.0) · `reports/buylist_2026-09-06.json` **md5 불변**
+(`132ad14c…`) · 진단 JSON은 249줄 **순수 추가**(삭제 0) · fingerprint
+`60b83865…` **불변** · ledger 0건 수정 · `ENGINE_VERSION` v3.85 → **v3.86**.
+
+---
+
 ## PHASE 5 — Historical Replay readiness (2026-08-21)
 
 **Historical Replay를 구현하지 않았다**(§14). readiness만 10축으로 판정했다.

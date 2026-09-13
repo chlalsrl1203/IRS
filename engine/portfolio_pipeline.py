@@ -43,6 +43,22 @@ research_queue.py가 이미 engine/으로 승격돼 재사용되는 것과 달�
   항목이 없으면 크래시하지 않고 엔진 원시 Confidence로 폴백하며
   `confidence_status="미검증"`을 명시한다 - `build_buylist_2026_08_03.py`가
   이미 쓰던 폴백과 동일 원칙.
+
+## 진단 플래그(F1~F6)와 하드 게이트(G1/G2/G3/G6)의 경계
+
+`excluded_by`에 들어가는 것만 유니버스를 바꾸고 따라서 비중을 바꾼다.
+`flags`는 **어디에서도 읽히지 않는다** - `size_portfolio()`는 `flags`를 보지
+않으므로 플래그를 아무리 더해도 비중이 구조적으로 바뀔 수 없다. 미검증
+지표를 "병기하되 자동판정하지 않는" 이 프로젝트의 원칙(is_insurer·
+sbc_cross_check·holdings_overlap)이 여기서는 그 두 필드의 분리로 구현돼 있다.
+
+**희석 드래그(F6, v3.86 배선)가 그 경계의 실례다.** `reports/dilution_drag.json`
+(엔진이 이미 계산해둔 값)을 읽어 플래그로만 붙인다 - 새로 계산하지 않고,
+배제하지 않고, quality_score에 들어가지 않는다. §13 게이트 6번(validation
+strategy)이 없어(실현수익률과의 관계 증거 0건) 그 이상은 할 수 없고,
+**측정된 부분집합이 희석을 과소평가하는 방향으로 치우쳐 있다**(고SBC
+DUOL·MNDY가 구조적으로 측정 불가) - 그래서 미측정을 '무해'가 아니라
+'미확인'으로 표시한다.
 """
 from __future__ import annotations
 
@@ -50,6 +66,7 @@ import glob
 import json
 import os
 
+from engine.dilution import DRAG_MATERIAL_PCT, STATUS_OK as DILUTION_OK
 from engine.expectation_gap_engine import judgment_grade_from_gap
 from engine.gap_analysis import gap_range_over_assumptions
 from engine.monitor_state import load_acknowledgements
@@ -82,6 +99,31 @@ def load_sbc_verdicts(reports_dir: str = REPORTS) -> dict:
             for row in data.get("results", []) if row.get("ticker")}
 
 
+def load_dilution_drag(reports_dir: str = REPORTS) -> dict:
+    """희석 드래그(v3.84~85)를 **읽기만** 한다 - 여기서 다시 계산하지 않는다.
+
+    `scripts/dilution_drag.py`가 이미 SEC 원자료로 계산해 저장해둔
+    `reports/dilution_drag.json`에서 종목별 행과 커버리지 메타를 가져온다.
+    중복 구현은 두 계산이 미묘하게 어긋나는 새 버그를 만든다(Simplicity First).
+
+    파일이 없으면 빈 dict - 그 경우 모든 종목이 '미측정'으로 표시되며
+    **조용히 '희석 없음'이 되지 않는다**(is_insurer·sbc_cross_check와 동일한
+    "데이터 없음 ≠ 안전" 원칙).
+    """
+    path = os.path.join(reports_dir, "dilution_drag.json")
+    if not os.path.exists(path):
+        return {"rows": {}, "coverage": None, "coverage_bias": None,
+                "residual_gap": None, "generated_at": None}
+    doc = json.loads(open(path, encoding="utf-8").read())
+    return {
+        "rows": {r["ticker"]: r for r in doc.get("results", []) if r.get("ticker")},
+        "coverage": doc.get("coverage"),
+        "coverage_bias": doc.get("coverage_bias"),
+        "residual_gap": doc.get("residual_gap"),
+        "generated_at": doc.get("generated_at"),
+    }
+
+
 def confirmed_falsifications(acks: dict | None = None) -> dict:
     """
     v3.42 thesis_monitor 반증조건 중 **사람이 TRIGGERED로 확인**한 것만
@@ -111,8 +153,13 @@ def load_qualitative_overrides(path: str = QUALITATIVE_PATH) -> dict:
 
 # ── Stage 0-1: 사전등록 게이트(G1/G2/G3) ────────────────────────────────
 
-def evidence_row(led: dict, sbc_verdicts: dict, overrides: dict) -> dict:
-    """한 종목의 취약성 신호를 전부 모은다. 판정은 하지 않는다."""
+def evidence_row(led: dict, sbc_verdicts: dict, overrides: dict,
+                  dilution: dict | None = None) -> dict:
+    """한 종목의 취약성 신호를 전부 모은다. 판정은 하지 않는다.
+
+    `dilution`은 `load_dilution_drag()["rows"]`(없으면 None) - 값을 넣어도
+    배제·비중에는 도달하지 않고 F6 플래그로만 나간다.
+    """
     t = led["meta"]["ticker"]
     gap = led["expectation_gap"]
     grade = led["judgment_grade"]
@@ -135,6 +182,7 @@ def evidence_row(led: dict, sbc_verdicts: dict, overrides: dict) -> dict:
         ins_div = abs(ins["sustainable_growth"] - led["growth"]["realistic_growth"])
 
     ov = overrides.get(t, {})
+    dil = (dilution or {}).get(t) or {}
 
     return {
         "ticker": t,
@@ -160,6 +208,9 @@ def evidence_row(led: dict, sbc_verdicts: dict, overrides: dict) -> dict:
         "cap_applied": cap,
         "model_divergence": div,
         "insurer_divergence": ins_div,
+        "dilution_status": dil.get("status"),
+        "dilution_drag": dil.get("dilution_drag"),
+        "share_count_change_pct": dil.get("share_count_change_pct"),
         "out_of_scope": out_of_scope_reasons(gap=gap, market_cap=mc),
         "n_data_limitations": len(led.get("data_limitations") or []),
         "pit_status": (led["meta"].get("point_in_time") or {}).get("status"),
@@ -213,6 +264,22 @@ def apply_gates(row: dict, falsification_confirmed: dict) -> dict:
     if row["confidence_researched"] is None:
         flags.append("F5 Confidence 미검증 - 정성 심층조사 이력 없음")
 
+    # F6 희석 드래그 - **배제하지 않는다.** 실현수익률과의 관계 증거가 0건이라
+    # (§13 게이트 6번 부재) 이 값으로 종목을 거르거나 감점하면 미검증 지표가
+    # 곧바로 자본을 움직인다. 미측정은 '무해'가 아니라 '미확인'으로 적는다.
+    dstat = row["dilution_status"]
+    if dstat is None:
+        flags.append("F6 희석 드래그 미산출(리포트 없음) - '무해'가 아니라 '미확인'")
+    elif dstat != DILUTION_OK:
+        flags.append(f"F6 희석 드래그 측정 불가({dstat}) - '무해'가 아니라 '미확인'")
+    elif row["dilution_drag"] is not None and row["dilution_drag"] <= DRAG_MATERIAL_PCT:
+        flags.append(
+            f"F6 희석 드래그 {row['dilution_drag']*100:+.2f}%p"
+            f"(주당 FCF CAGR − 총 FCF CAGR), 주식수 "
+            f"{row['share_count_change_pct']*100:+.1f}% - RG는 총 FCF 기준이라 "
+            f"이 차이를 보지 못한다"
+        )
+
     row["excluded_by"] = excluded
     row["flags"] = flags
     row["survives"] = not excluded
@@ -220,11 +287,16 @@ def apply_gates(row: dict, falsification_confirmed: dict) -> dict:
 
 
 def screen_universe(ledgers: dict, sbc_verdicts: dict, falsification_confirmed: dict,
-                     overrides: dict) -> tuple[list, list]:
-    """Stage 0-1 전체 실행. (생존, 배제) 튜플을 Gap 내림차순으로 반환."""
+                     overrides: dict, dilution: dict | None = None) -> tuple[list, list]:
+    """Stage 0-1 전체 실행. (생존, 배제) 튜플을 Gap 내림차순으로 반환.
+
+    `dilution`을 넣든 안 넣든 생존/배제와 비중은 동일하다(F6은 플래그 전용) -
+    테스트로 고정돼 있다.
+    """
     universe = [led for led in ledgers.values()
                 if led.get("judgment_grade") in UNIVERSE_GRADES]
-    rows = [apply_gates(evidence_row(led, sbc_verdicts, overrides), falsification_confirmed)
+    rows = [apply_gates(evidence_row(led, sbc_verdicts, overrides, dilution),
+                        falsification_confirmed)
             for led in universe]
     rows.sort(key=lambda r: -r["gap"])
     survivors = [r for r in rows if r["survives"]]
