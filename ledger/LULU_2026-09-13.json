@@ -1,0 +1,653 @@
+{
+  "meta": {
+    "ticker": "LULU",
+    "company_name": "Lululemon Athletica Inc.",
+    "analyzed_at": "2026-09-13T07:34:21.150645+00:00",
+    "engine_version": "v3.86",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001397187, 조회 2026-09-13)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-11 종가 $98.97)",
+      "SEC 10-Q(2026-08-02 분기) 표지: 발행주식 106,566,000주 · 현금+제한현금 $1,389,737,000",
+      "WebSearch: Lululemon FY2026 가이던스 5~7%(사상최저), Alo Yoga(프리미엄 DTC 14% 점유)·Vuori(남성라인 잠식) 경쟁구도, 관세부담·CEO 공백 (2026-09-13 조회)"
+    ],
+    "falsification_conditions": "(1) 다음 회계연도 매출성장률이 회사 가이던스(5~7%) 하단을 크게 하회하거나 마이너스로 전환하면 재검토. (2) 신규 CEO 선임 후 전략 방향이 명확해지지 않고 리더십 공백이 장기화되면 거버넌스 리스크로 재검토. (3) 영업이익률이 FY2026 수준(19.91%)에서 추가 하락하면(관세· 마진압박 지속 확인) 재검토.",
+    "price_at_analysis": 98.97,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-13",
+      "filing_dates_by_year": {
+        "2009": "2011-03-17",
+        "2010": "2011-03-17",
+        "2011": "2011-03-17",
+        "2012": "2012-03-22",
+        "2013": "2013-03-21",
+        "2014": "2014-03-27",
+        "2015": "2015-03-26",
+        "2016": "2016-03-30",
+        "2017": "2017-03-29",
+        "2018": "2018-03-27",
+        "2019": "2019-03-27",
+        "2020": "2020-03-26",
+        "2021": "2021-03-30",
+        "2022": "2022-03-29",
+        "2023": "2023-03-28",
+        "2024": "2024-03-21",
+        "2025": "2025-03-27",
+        "2026": "2026-03-17"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-13",
+      "n_covered": 9,
+      "n_missing": 9,
+      "missing_fields": [
+        "revenue_by_year[2009]",
+        "revenue_by_year[2010]",
+        "revenue_by_year[2011]",
+        "revenue_by_year[2012]",
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]",
+        "revenue_by_year[2017]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2649181000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-30~2018-01-28",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 3288319000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-29~2019-02-03",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 3979296000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-02-04~2020-02-02",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 4401879000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-02-03~2021-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-30",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 6256617000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-02-01~2022-01-30",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-29",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 8110518000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-31~2023-01-29",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-03-28",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 9619278000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-30~2024-01-28",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-21",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 10588126000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-29~2025-02-02",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-03-27",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 11102600000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-02-03~2026-02-01",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-17",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "LULU",
+    "company_name": "Lululemon Athletica Inc.",
+    "revenue_by_year": {
+      "2009": 353488000.0,
+      "2010": 452898000.0,
+      "2011": 711704000.0,
+      "2012": 1000839000.0,
+      "2013": 1370358000.0,
+      "2014": 1591188000.0,
+      "2015": 1797213000.0,
+      "2016": 2060523000.0,
+      "2017": 2344392000.0,
+      "2018": 2649181000.0,
+      "2019": 3288319000.0,
+      "2020": 3979296000.0,
+      "2021": 4401879000.0,
+      "2022": 6256617000.0,
+      "2023": 8110518000.0,
+      "2024": 9619278000.0,
+      "2025": 10588126000.0,
+      "2026": 11102600000.0
+    },
+    "operating_income_by_year": {
+      "2009": 56564000.0,
+      "2010": 86546000.0,
+      "2011": 180391000.0,
+      "2012": 286958000.0,
+      "2013": 376439000.0,
+      "2014": 391358000.0,
+      "2015": 376033000.0,
+      "2016": 369076000.0,
+      "2017": 421152000.0,
+      "2018": 456001000.0,
+      "2019": 705836000.0,
+      "2020": 889110000.0,
+      "2021": 819986000.0,
+      "2022": 1333355000.0,
+      "2023": 1328408000.0,
+      "2024": 2132676000.0,
+      "2025": 2505697000.0,
+      "2026": 2210615000.0
+    },
+    "operating_cashflow_by_year": {
+      "2009": 46438000.0,
+      "2010": 117960000.0,
+      "2011": 179995000.0,
+      "2012": 203615000.0,
+      "2013": 280113000.0,
+      "2014": 278339000.0,
+      "2015": 314449000.0,
+      "2016": 298740000.0,
+      "2017": 385119000.0,
+      "2018": 489337000.0,
+      "2019": 742779000.0,
+      "2020": 669316000.0,
+      "2021": 803336000.0,
+      "2022": 1389108000.0,
+      "2023": 966463000.0,
+      "2024": 2296164000.0,
+      "2025": 2272713000.0,
+      "2026": 1602477000.0
+    },
+    "capex_by_year": {
+      "2009": 40530000.0,
+      "2010": 15497000.0,
+      "2011": 30357000.0,
+      "2012": 116657000.0,
+      "2013": 93229000.0,
+      "2014": 106408000.0,
+      "2015": 119733000.0,
+      "2016": 143487000.0,
+      "2017": 149511000.0,
+      "2018": 157864000.0,
+      "2019": 225807000.0,
+      "2020": 283048000.0,
+      "2021": 229226000.0,
+      "2022": 394502000.0,
+      "2023": 638657000.0,
+      "2024": 651865000.0,
+      "2025": 689232000.0,
+      "2026": 680802000.0
+    },
+    "market_cap": 10546837020.0,
+    "net_debt": -1389737000,
+    "ebitda": 2706843000,
+    "risk_free_rate": 0.0425,
+    "competitor_threat_weights": [
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -0.6,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.32,
+    "subjective_input_basis": "competitor_threat_weights=[0.20(Alo Yoga - 프리미엄 DTC 세그먼트 점유율 약 14%까지 확대, Gen Z·밀레니얼 세대의 '쿨함' 포지셔닝을 성공적으로 선점), 0.15(Vuori - 기업가치 $50억+, 2026년 IPO 검토 중, LULU의 핵심 성장동력인 남성라인에 구체적으로 잠식 중)] - 둘 다 정성적 우려가 아니라 수치화된 점유율·밸류에이션 근거가 있어 다른 소비재 종목(DECK 0.15/0.10)보다 높게 잡았다. demand_sensitivity_pct=0.32 - 프리미엄 애슬레저는 재량소비 성격이 강하고(회사 자체가 소비둔화를 실적 부진 원인으로 명시), CLAUDE.md '소비자 구독/플랫폼' 앵커(0.30)보다 약간 높게 채택. market_share_trend_pp_per_year=-0.6 - CEO 공백·핵심 여성라인 수요약화·부정적 온라인 여론까지 겹친 복합적 서사가 DECK(-0.3)보다 뚜렷한 구조적 잠식을 시사해 크게 잡았다.",
+    "model_used": "two_stage",
+    "model_choice_reason": "2026-08-16 모델선택 연구 기준을 적용 - Realistic Growth(8.57%)가 g_terminal(3.25%)보다 5.32%p 높고, Lynch 자동분류도 fast_grower로 나와(캡 미바인딩) 아직 성장기업 구간이라는 근거가 있어 two_stage를 채택했다. 두 모델 간 divergence가 1.15%p로 작아(경고 임계값 3%p 미만) 판정 자체(A등급)는 모델선택과 무관하게 안정적이다(single_stage였어도 Gap +7.07%p로 여전히 A등급).",
+    "margin_years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001397187, 조회 2026-09-13)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-11 종가 $98.97)",
+      "SEC 10-Q(2026-08-02 분기) 표지: 발행주식 106,566,000주 · 현금+제한현금 $1,389,737,000",
+      "WebSearch: Lululemon FY2026 가이던스 5~7%(사상최저), Alo Yoga(프리미엄 DTC 14% 점유)·Vuori(남성라인 잠식) 경쟁구도, 관세부담·CEO 공백 (2026-09-13 조회)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2009": 6532000.0,
+      "2010": 5616000.0,
+      "2011": 7273000.0,
+      "2012": 10340000.0,
+      "2013": 15637000.0,
+      "2014": 10087000.0,
+      "2015": 8269000.0,
+      "2016": 10356000.0,
+      "2017": 16822000.0,
+      "2018": 17610000.0,
+      "2019": 28568000.0,
+      "2020": 45593000.0,
+      "2021": 50797000.0,
+      "2022": 69137000.0,
+      "2023": 78075000.0,
+      "2024": 93560000.0,
+      "2025": 90011000.0,
+      "2026": 62203000.0
+    },
+    "falsification_conditions": "(1) 다음 회계연도 매출성장률이 회사 가이던스(5~7%) 하단을 크게 하회하거나 마이너스로 전환하면 재검토. (2) 신규 CEO 선임 후 전략 방향이 명확해지지 않고 리더십 공백이 장기화되면 거버넌스 리스크로 재검토. (3) 영업이익률이 FY2026 수준(19.91%)에서 추가 하락하면(관세· 마진압박 지속 확인) 재검토.",
+    "price_at_analysis": 98.97,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-13",
+      "n_covered": 9,
+      "n_missing": 9,
+      "missing_fields": [
+        "revenue_by_year[2009]",
+        "revenue_by_year[2010]",
+        "revenue_by_year[2011]",
+        "revenue_by_year[2012]",
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]",
+        "revenue_by_year[2017]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2649181000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-30~2018-01-28",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 3288319000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-29~2019-02-03",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 3979296000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-02-04~2020-02-02",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-26",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 4401879000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-02-03~2021-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-30",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 6256617000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-02-01~2022-01-30",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-29",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 8110518000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-31~2023-01-29",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-03-28",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 9619278000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-30~2024-01-28",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-21",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 10588126000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-29~2025-02-02",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-03-27",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 11102600000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-02-03~2026-02-01",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-17",
+          "retrieval_date": "2026-09-13",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-13",
+    "filing_dates_by_year": {
+      "2009": "2011-03-17",
+      "2010": "2011-03-17",
+      "2011": "2011-03-17",
+      "2012": "2012-03-22",
+      "2013": "2013-03-21",
+      "2014": "2014-03-27",
+      "2015": "2015-03-26",
+      "2016": "2016-03-30",
+      "2017": "2017-03-29",
+      "2018": "2018-03-27",
+      "2019": "2019-03-27",
+      "2020": "2020-03-26",
+      "2021": "2021-03-30",
+      "2022": "2022-03-29",
+      "2023": "2023-03-28",
+      "2024": "2024-03-21",
+      "2025": "2025-03-27",
+      "2026": "2026-03-17"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.11034694078962404,
+    "revenue_cagr_5y": 0.2032540125801856,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.18343585382899352,
+    "fcf_cagr_5y": 0.09930078781039131,
+    "fcf0": 921675000.0,
+    "fcf_by_year": {
+      "2009": 5908000.0,
+      "2010": 102463000.0,
+      "2011": 149638000.0,
+      "2012": 86958000.0,
+      "2013": 186884000.0,
+      "2014": 171931000.0,
+      "2015": 194716000.0,
+      "2016": 155253000.0,
+      "2017": 235608000.0,
+      "2018": 331473000.0,
+      "2019": 516972000.0,
+      "2020": 386268000.0,
+      "2021": 574110000.0,
+      "2022": 994606000.0,
+      "2023": 327806000.0,
+      "2024": 1644299000.0,
+      "2025": 1583481000.0,
+      "2026": 921675000.0
+    },
+    "worst_yoy_revenue_growth": 0.048589712664922846,
+    "worst_yoy_year": 2026,
+    "operating_margins": [
+      0.21311117493687085,
+      0.16378830550650403,
+      0.22170853155507098,
+      0.23665160388155562,
+      0.19910786662583538
+    ],
+    "net_debt_to_ebitda": -0.5134161826156892
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 2.0,
+      "cyclicality": 9.28,
+      "competition_intensity": 10.2
+    },
+    "score": 37.480000000000004
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0425,
+    "erp": 0.06124400000000001,
+    "r": 0.103744,
+    "n": 12,
+    "g_terminal": 0.0325
+  },
+  "growth": {
+    "structural_discount_pct": 0.13654445651968475,
+    "realistic_growth": 0.0857418157068449,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.11034694078962404,
+        "5y": 0.2032540125801856,
+        "10y": 0.18343585382899352
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.15283684493466643,
+      "fcf_conservatism_applied": "FCF CAGR(9.93%) < Revenue 가중평균(15.28%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.09930078781039131,
+      "structural_discount_pct": 0.13654445651968475,
+      "discounted_growth": 0.0857418157068449,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.0857418157068449
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.015040840477131057,
+      "two_stage": 0.0035308837890624858,
+      "errors": {},
+      "divergence": 0.011509956688068571,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "2026-08-16 모델선택 연구 기준을 적용 - Realistic Growth(8.57%)가 g_terminal(3.25%)보다 5.32%p 높고, Lynch 자동분류도 fast_grower로 나와(캡 미바인딩) 아직 성장기업 구간이라는 근거가 있어 two_stage를 채택했다. 두 모델 간 divergence가 1.15%p로 작아(경고 임계값 3%p 미만) 판정 자체(A등급)는 모델선택과 무관하게 안정적이다(single_stage였어도 Gap +7.07%p로 여전히 A등급).",
+    "value": 0.0035308837890624858
+  },
+  "expectation_gap": 0.08221093191778242,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.0857418157068449,
+      "g_bull": 0.12861272356026734,
+      "g_bear": 0.04287090785342245,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.421169248387931,
+      "base": 0.25645646926248045,
+      "bear": 0.1134355349021301
+    },
+    "probabilities": {
+      "bull": 0.33755999999999997,
+      "base": 0.5,
+      "bear": 0.16244000000000003
+    },
+    "probability_rationale": "DRS=37.5 (중립점 50 대비 편차 -0.25) 기준: p_bull=33.8%, p_base=50.0%, p_bear=16.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.2888245944065722
+  },
+  "rar": 0.770609910369723,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.103744,
+    "r_without_drs": 0.0925,
+    "implied_growth_with_drs": 0.0035308837890624858,
+    "implied_growth_without_drs": -0.015429687500000015,
+    "gap_with_drs": 0.08221093191778242,
+    "gap_without_drs": 0.10117150320684491,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.103744,
+      "r_without_drs": 0.0925,
+      "implied_growth_with_drs": 0.0035308837890624858,
+      "implied_growth_without_drs": -0.015429687500000015,
+      "gap_with_drs": 0.08221093191778242,
+      "gap_without_drs": 0.10117150320684491,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 62203000.0,
+    "sbc_to_fcf_pct": 0.0674890823771937,
+    "fcf0_sbc_adjusted": 859472000.0,
+    "implied_growth_sbc_adjusted": 0.012187957763671858,
+    "gap_sbc_adjusted": 0.07355385794317304,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

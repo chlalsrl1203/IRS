@@ -9933,3 +9933,56 @@ Solutions+Analogic이 Altaris와 합작법인을 결성해 신규 통합 경쟁�
 baseline 76종목으로 재동결(fingerprint `685ecac8…`→`0ec35e3c…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## LULU(Lululemon) 정식 분석 - 두 번째 연속 A등급, 실제 경쟁잠식 수치를
+확보한 사례 (2026-09-13)
+
+큐 다음 순위 LULU(Lululemon Athletica Inc., 프리미엄 애슬레저, tier B,
+스크리너 Gap 추정 +3.81%p)를 정식분석했다.
+
+### 사전점검 - COVID 트로프 없음, 실제 성장둔화 서사와 정합
+
+FY2021(2020-02-03~2021-01-31, 코로나 회계연도)는 매출 -하락이 아니라
++10.6%(감속이지 트로프 아님, e-commerce가 매장폐쇄를 상쇄한 잘 알려진
+서사)이라 override 불필요. 매출 3y(11.03%)/5y(20.33%)/10y(18.34%)가
+최근으로 갈수록 감속하는 자연스러운 패턴 - FY2026 실측 +4.9%가 회사
+가이던스(5~7%, "사상 최저 성장률")와 정합적이라 왜곡이 아니라 진짜
+성장둔화로 확인.
+
+### 결과 — "저평가 가능성"(A등급), Gap +8.22%p, Confidence 94
+
+Lynch 자동분류 fast_grower(캡 미바인딩). RG(8.57%)가 g_terminal(3.25%)
+보다 5.32%p 높아 two_stage 채택하나 divergence 1.15%p로 작아 모델선택이
+등급을 바꾸지 않음(single_stage여도 Gap +7.07%p로 A등급 유지). DRS
+37.48(competition_intensity 10.2 - 이번 세션 최고 수준, 아래 경쟁구도
+참고). 순현금(장기부채 없음). SBC/FCF 6.7%(낮음) - 차감해도 flip 없음.
+PIT_VALID(위반 0건). RAR +0.7706(강하게 양수).
+
+### 경쟁구도(2026-09-13 WebSearch) - 정성적 우려가 아니라 수치화된 잠식
+
+**Alo Yoga**가 프리미엄 DTC 세그먼트 점유율 약 14%까지 확대하며 Gen Z·
+밀레니얼 세대의 '쿨함' 포지셔닝을 성공적으로 선점했고, **Vuori**(기업가치
+$50억+, 2026년 IPO 검토 중)가 LULU 핵심 성장동력인 남성라인을 구체적으로
+잠식 중이다 - 둘 다 추상적 우려가 아니라 수치화된 점유율·밸류에이션
+근거가 있어 competitor_threat_weights를 DECK(0.15/0.10)보다 높은
+0.20/0.15로 채택했다. 여기에 CEO 공백(신규 CEO 탐색 중)·관세로 인한
+마진압박·핵심 여성라인 수요약화·부정적 온라인 여론까지 복합적으로
+겹쳐 FY2026 가이던스가 "사상 최저 성장률"(5~7%)로 하향됐다 - 이 복합적
+악재 서사에도 불구하고 엔진은 여전히 저평가로 판정(시장이 요구하는
+성장률(0.35~1.5%)이 엔진이 계산한 지속가능 성장(8.57%)보다 훨씬
+낮다는 뜻).
+
+### 배선
+
+`watchlist.json`에 LULU 추가(76→77, LFUS-MCK 사이). 스무 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 76→77),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 LULU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 LULU 추가) - A등급
+이나 Lynch fast_grower(캡 미바인딩이라 사이즈캡 무관)이고 screen()과의
+거짓탈락/승인여부는 확인하지 않아 `test_pipeline.py`/`test_screener.py`는
+무변경. ⚠️ A등급 신규 발견이라 매수리스트 편입 전 정성 심층조사가 필요
+하다(v3.83 원칙 - `run_analysis()` 통과만으로는 자동 편입되지 않음).
+
+baseline 77종목으로 재동결(fingerprint `0ec35e3c…`→`0b2b68e1…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
