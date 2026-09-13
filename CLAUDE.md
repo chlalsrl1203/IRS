@@ -9828,3 +9828,58 @@ override로 해결 가능" 사례와 정반대). STRL은 이 왜곡이 아직 �
 excluded_tickers.json`에 FRAMEWORK_MISMATCH로 등록 - ledger를 만들지
 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다. FY2027
 실적(Paycor 완전 편입 첫 정상연도)이 나온 뒤 재조사할 것.
+
+## NYT(뉴욕타임스) 정식 분석 - 3y FCF 이상치는 애초에 계산에 안 쓰인다는
+것을 확인한 사례 (2026-09-13)
+
+큐 다음 순위 NYT(The New York Times Company, 디지털 구독 미디어, tier B,
+스크리너 Gap 추정 +4.09%p)를 정식분석했다.
+
+### 사전점검 - FCF 3y 이상치(69.16%)를 걱정했으나 애초에 안 쓰이는 값이었다
+
+2022년 OCF가 전년 대비 -44% 급감($269.1M→$150.7M, 원인 미확인 운전자본
+변동으로 추정)해 FCF 3y CAGR이 69.16%로 튀었다 - 5y(15.88%)·10y(14.01%)
+와 크게 괴리돼 EME와 비슷한 이상치인 줄 알았으나, `realistic_growth_
+estimate()` 코드를 직접 확인한 결과 **FCF는 5y CAGR 하나만 보수성 체크에
+쓰이고 3y/10y FCF 값은 함수에 아예 전달되지 않는다** - 3y 이상치가 계산에
+영향을 줄 수 없는 구조임을 확인한 뒤 override 없이 진행했다. 매출
+3y(6.96%)/5y(9.63%)/10y(5.99%)는 서로 정합적(2013년 뉴잉글랜드미디어
+그룹 매각 등 과거 M&A는 CAGR 창 훨씬 밖).
+
+### 모델선택 - EME(같은 세션, 8.67%p 격차)와 대비되는 애매한 구간
+
+Realistic Growth(6.85%)가 g_terminal(3.25%)보다 3.60%p 높아 EME만큼
+명확한 "고성장" 신호는 아니었다. 회사 자체 서사(디지털 구독 순증가입자가
+경쟁심화로 둔화 중 - Q1 31만→Q2 28만, 2026)가 "아직 고성장"이 아니라
+"성숙기 둔화"에 가까워 `single_stage`를 채택했다 - 두 모델 다 판정은
+"적정가/경계선"(C등급)으로 불변(two_stage Gap -0.30%p, single_stage Gap
++1.68%p, divergence 1.97%p로 경고 임계값 미만). 부수적으로 Gap과 RAR의
+부호가 어긋나면 Confidence에서 15점이 깎이는 `section_5_7_aligned` 체크가
+two_stage(Confidence 79)에서만 걸렸고 single_stage(94)에서는 안 걸렸다 -
+Gap이 0 근처인 경계 케이스의 부호 아티팩트로 판단, 모델선택 자체 근거로
+쓰지 않았다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +1.68%p, Confidence 94
+
+DRS 43.0(cyclical 자동분류). 순현금(장기부채 없음, 2019~2020년경 완전
+상환 확인). SBC/FCF 13.5%(중간 수준) - SBC 차감해도 flip 없음(Gap
++0.98%p로 유지). PIT_VALID(위반 0건). 강건성점검 flip 없음.
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+Q2 2026 순증 디지털구독자 28만(전분기 31만에서 둔화) - 회사 스스로
+"경쟁심화·독자 지출 신중화"를 원인으로 지목(스트리밍·뉴스레터 등 광범위한
+구독경제와 소비자 지갑을 놓고 경쟁). Q3 가이던스는 여전히 견조(디지털
+구독매출 +12~15%YoY). 티어드 번들 가격인상($25→$30)이 ARPU +3.1% 견인.
+
+### 배선
+
+`watchlist.json`에 NYT 추가(74→75, NXT-OKTA 사이). 열여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 74→75),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 NYT 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 NYT 추가) - C등급
+이고 Lynch cyclical이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 75종목으로 재동결(fingerprint `8aed3a1e…`→`685ecac8…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
