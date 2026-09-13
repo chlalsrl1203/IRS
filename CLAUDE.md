@@ -9986,3 +9986,82 @@ $50억+, 2026년 IPO 검토 중)가 LULU 핵심 성장동력인 남성라인을 
 baseline 77종목으로 재동결(fingerprint `0ec35e3c…`→`0b2b68e1…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
 없음, 데이터 배선만).
+
+## WTS(Watts Water Technologies) 정식 분석 - 모델선택이 판정을 실질적으로
+좌우한 사례, 데이터센터 사이클 서사 확인 (2026-09-13)
+
+큐 다음 순위 WTS(Watts Water Technologies, Inc., 수처리·배관 인프라
+제품, tier B, 스크리너 Gap 추정 +3.80%p)를 정식분석했다. BLDR은 이미
+2026-09-09에 GENUINELY_WORSENED_NOT_STRUCTURAL로 문서화돼 있어(시점부
+판단, 영구 배제 아님) 새 정보 없이 건너뛰었다.
+
+### 사전점검 - M&A 왜곡·COVID 트로프 없음, 이중클래스 경제적 권리 확인
+
+SEC XBRL 18개년(FY2008~2025) 매출·FCF 전 구간에서 25% 초과 단계상승이
+없다(YoY 최대 +19.9%, 2021년 코로나 회복). 3y/5y/10y CAGR 기준연도
+(2022/2020/2015) 어느 해도 매출·FCF가 음수이거나 극단적 저점/고점이
+아니다 - override 불필요. capex/매출 5년평균 대비 델타 +0.32%p로
+v3.20 재검토 임계값(3%p) 한참 미달.
+
+**Class A/Class B 이중클래스 구조 확인 - RYAN/TW와 다른 유형(경제적
+권리 완전동일).** WebSearch로 회사 공시 원문 확인: Class B는 1주당
+10표(Class A는 1표)로 의결권만 다르고, 배당·청산분배는 두 클래스가
+**pro rata 동일**(Class A 27,466,829주 + Class B 5,916,290주 =
+33,383,119주 전체가 경제적 지분) - TW(Class C/D 경제권 0%)·RYAN(전
+클래스 합산 필요)과 달리 이번엔 "합산해야 하는가"라는 질문 자체가
+간단했다(전부 동일 경제권이라 단순 합산).
+
+### ⭐ 모델선택이 이 종목에서 판정 자체를 좌우 - 2026-08-16 연구 기준의
+경계선 재현
+
+Realistic Growth(6.97%, cyclical 자동분류)가 g_terminal(3.25%)보다
+3.72%p 높아 NYT(3.60%p, single_stage 채택)와 거의 동일한 경계 구간에
+위치했다. Lynch 유형이 fast_grower가 아니라 **cyclical로 자동분류**된
+점(2015년 일회성 영업손실 등 변동성 반영), 그리고 최근 가속의 상당부분이
+자본재 사이클 성격이 강한 단일 세그먼트(데이터센터, 매출의 중~고한자릿수
+%대)에 집중된 점을 근거로 single_stage를 채택했다.
+
+**두 모델의 판정 차이가 이번 세션에서 가장 극적이다** - two_stage
+채택시 Gap -5.86%p(D등급, 과대평가 가능성)인데 single_stage 채택시
+Gap -0.09%p(C등급, 적정가/경계선)로 **등급이 두 단계 갈린다**
+(divergence 5.77%p, 경고 임계값의 거의 2배 - 이번 세션 EME/OSIS/LULU의
+divergence 0.37~1.15%p와 대비되는 최대폭).
+
+### 결과 - "적정가/경계선"(C등급), Gap -0.09%p, Confidence 94
+
+강건성점검(DRS 포함/제외) flip 없음(judgment_flipped=False). SBC
+교차검증도 flip 없음(SBC/FCF 5.95%, 낮음). 순현금(net_debt/EBITDA
+-0.47배, 2026-06-28 10-Q 기준 장기부채 $108M vs 현금 $347.9M). PIT_VALID
+(위반 0건). RAR 방향성 경고 발동(기대수익률 음수 -13.61%) - RAR
+절대값 대신 Expectation Gap을 우선 참고.
+
+### 경쟁구도(2026-09-13 WebSearch) - 데이터센터 수요 서사 확인, 다만
+단일 세그먼트 집중 위험 명시
+
+2026 Q2 오가닉 성장 +12%(데이터센터 매출 전년比 3배 급증), FY2026
+가이던스 총매출 +14~17%/오가닉 +8~11%로 상향. 반면 주택·비기관
+신규건설은 지속 약세로 명시(회사 자체 실적발표 확인) - KEYS/KLAC과
+유사한 "trailing CAGR이 특정 세그먼트 수요 인플렉션을 완전히 반영하지
+못할 수 있다"는 구도이나, 데이터센터 비중이 아직 매출의 일부(중~고
+한자릿수%)라 그 정도의 override 근거는 아니라고 판단해 falsification_
+conditions에만 명시했다. 2025년 5건 볼트온 인수(Superior Boiler·Haws·
+Saudi Cast·EasyWater·I-CON)는 대부분 2025년 11월 종결이라 이번 CAGR
+창(FY2025까지)에는 실질 영향이 없으나, FY2026/2027 CAGR 창에는
+본격 반영될 것 - GEN/BRO/RYAN과 동일한 'M&A가 CAGR 구간에 걸리는'
+왜곡 여부를 다음 분석 시 재점검할 것을 falsification_conditions에
+명시했다. 경쟁사: Mueller Water Products(수처리 인프라·밸브 직접경쟁),
+A.O. Smith(Superior Boiler 인수 이후 보일러·온수기 라인 신규 중복),
+Pentair(수처리·필터링).
+
+### 배선
+
+`watchlist.json`에 WTS 추가(77→78, WM-ZTS 사이). 스물한 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 77→78),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 WTS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 WTS 추가) - C등급
+이고 Lynch cyclical(사이즈캡·screener 거짓탈락 무관)이라
+`test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 78종목으로 재동결(fingerprint `0b2b68e1…`→`1a933182…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
