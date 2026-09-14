@@ -10065,3 +10065,103 @@ Pentair(수처리·필터링).
 baseline 78종목으로 재동결(fingerprint `0b2b68e1…`→`1a933182…`). 테스트
 1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드
 변경 없음, 데이터 배선만).
+
+## v3.87 — TEAM(Atlassian) 정식 분석: IFRS 매출 태그 공백을 실제로 메운 첫
+사례 (2026-09-14)
+
+큐 다음 순위 TEAM(Atlassian Corporation, 엔터프라이즈 협업·개발도구 SaaS,
+tier S)을 정식분석했다. WTS까지 이어진 ~20종목 배치가 전부 데이터 배선
+뿐이었던 것과 달리, 이번엔 실제 **엔진 코드 결함**을 하나 고쳤다.
+
+### 엔진 결함 발견·수정 - IFRS 15 채택 이후 태그가 `METRIC_TAGS`에 없었다
+
+`SecCompanyFactsProvider.fetch_annual_financials('TEAM', ...)`가 매출을
+2016~2018·2021~2026만 채우고 **2019·2020 두 개년이 통째로 빠졌다**. SEC
+원자료를 직접 대조해 원인을 특정했다 - Atlassian은 영국 20-F 발행사에서
+미국 10-K 발행사로 전환하는 과도기(대략 2019~2022년)에 IFRS 15 채택
+이후 태그인 **`ifrs-full:RevenueFromContractsWithCustomers`**(복수형
+"Contracts")로 매출을 보고했는데, 이 태그가 `METRIC_TAGS["revenue"]`
+어디에도 등록돼 있지 않았다 - 기존 `ifrs-full:Revenue`(단수형)는 IPO
+직후 20-F까지만, `us-gaap:RevenueFromContractWithCustomerExcluding
+AssessedTax`는 완전한 10-K 체제 이후부터만 채워 그 사이 공백이 남았다.
+
+**BSX FY2015 사고와 같은 진단 절차**(공급자의 폴백 로직을 믿지 않고
+SEC 원자료 JSON을 직접 열어본다)로 잡았다. `METRIC_TAGS["revenue"]`
+최하위 우선순위에 새 태그를 추가(연도별로 이미 채워진 값은 안 건드리고
+빈 연도만 채우는 fill-forward 설계라 순수 additive)하고, v3.32 규칙에
+따라 `ENGINE_VERSION`을 v3.86→**v3.87**로 올렸다. 전체 테스트(1177개)가
+0건 회귀로 통과해 78종목 기존 매출 시계열이 전혀 안 바뀌었음을 확인한
+뒤 진행했다 - Simplicity First 판단상 관측 1건(TEAM)뿐이지만, 이건
+IFRS 15 채택이라는 보편적 회계전환 패턴이라 순수 추가·저위험 변경으로
+정당화된다(v3.60 MCK capex 태그 재우선순위와 동일 판단).
+
+### 이중클래스 구조 확인 - WTS와 같은 유형(경제적 권리 완전동일)
+
+Class A(1주 1표) + Class B(1주 10표, 창업자 보유)가 배당·청산분배
+**pari passu 동일**함을 WebSearch로 확인(WTS Class A/B와 동일 패턴) -
+전체 주식수(159,005,198 + 94,133,617 = 253,138,815주)를 그대로 합산해
+시가총액을 계산했다.
+
+### 모델선택 - 2026-08-16 연구 기준의 재확인(EME/OSIS/LULU와 같은 구간)
+
+Realistic Growth(8.84%)가 g_terminal(3.25%)보다 5.59%p 높아 EME
+(8.67%p)·OSIS(6.19%p)·LULU(5.32%p)와 같은 "뚜렷이 높음" 구간에 들어가고
+Lynch 자동분류도 fast_grower(캡 미바인딩)라 `two_stage`를 채택했다.
+모델괴리 5.82%p(경고 임계값의 거의 2배)이나 등급 자체는 불변
+(single_stage였어도 Gap -2.27%p로 같은 C등급) - WTS처럼 모델선택이
+등급을 가르는 경계 사례는 아니었다.
+
+### FCF 보수화 로직이 SBC 희석을 자동으로 걸러냈다
+
+매출가중 base growth(25.32%)를 FCF CAGR(10.25%)이 눌러 최종 실질성장이
+10.25%p 낮아졌다(`fcf_conservatism_applied`) - SaaS 특유의 SBC 대규모
+발행으로 현금전환이 회계이익보다 훨씬 보수적임을 그대로 반영한 것으로,
+별도 조정 없이 엔진 설계대로 작동했다.
+
+### FY2026 FCF -6.8%YoY(매출 +26.0%에도 불구) - 구조조정 지급액 증가로
+확인, 일회성
+
+회사 자체 FY2026 실적발표 언어로 원인 확인 - Data Center EOL 라이선스
+수익인식·pull-forward 효과가 매출 재가속(+26.0%)의 상당부분을 차지하는
+반면(일회성일 가능성), FCF 감소는 구조조정 관련 직원 지급액 증가가
+직접 원인. 데이터 아티팩트로 오판하지 않고 회사 공시 그대로 채택했다.
+
+### ⭐ SBC/FCF 121.8% - 이 트래커 관측 최고치, v3.23 가드가 정확히
+작동함을 확인
+
+SBC($1,606,561,000)가 FCF0($1,319,075,000)보다 **커서** SBC차감
+시나리오의 FCF0가 음수(-$287,486,000)가 된다 - `sbc_cross_check`가
+`implied_growth_sbc_adjusted`/`gap_sbc_adjusted`/`judgment_sbc_adjusted`
+전부 `None`으로 정확히 반환하고 `[Model Not Applicable]` 경고를 남겼다.
+이 임계값(SBC>100%)을 실제로 넘긴 최초 관측 사례라 v3.23 가드의 설계가
+실전에서 처음 발동을 확인했다.
+
+### 결과 - "적정가/경계선"(C등급), Gap -3.92%p, Confidence 94
+
+DRS 26.4(fast_grower, 캡 미바인딩). 강건성점검 flip 없음(DRS 포함/제외
+둘 다 C등급). PIT_VALID(위반 0건). RAR 방향성 경고 발동(기대수익률
+음수 -7.61%) - RAR 절대값 대신 Expectation Gap을 우선 참고.
+
+### 경쟁구도(2026-09-14 WebSearch)
+
+`competitor_threat_weights=[0.20(Microsoft - 365/Teams/Loop/Planner
+생태계에 AI를 결합한 번들링 위협이 이 트래커가 다룬 SaaS 경쟁자 중
+최고 수준), 0.10(monday.com/Notion - 프로젝트관리·문서협업 직접 잠식,
+monday.com은 이미 MNDY로 별도 분석돼 있음)]`. Rovo(AI) 도입 고객의
+ARR 확장속도가 미도입 고객 대비 약 2배로 확인돼 `market_share_trend_
+pp_per_year=0.2`로 반영하되, Microsoft의 구조적 번들링 우위를 고려해
+과도하게 높이지 않았다.
+
+### 배선
+
+`watchlist.json`에 TEAM 추가(78→79, TCOM-TENB 사이). 스물두 번째
+"알려진 예외" 세트 확장: `test_monitor_state.py`(n_ledgers 78→79),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TEAM 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TEAM 추가) - C등급
+이고 Lynch fast_grower(캡 미바인딩이라 사이즈캡 무관)이고 screen()과의
+거짓탈락/승인여부는 확인하지 않아 `test_pipeline.py`/`test_screener.py`는
+무변경.
+
+baseline 79종목으로 재동결(fingerprint `1a933182…`→`90acc2d3…`,
+`v3.87:1` 스탬프 신규). 테스트 1177개 전부 통과. `ENGINE_VERSION`
+v3.86 → **v3.87**(METRIC_TAGS 수정 - v3.32 규칙에 따라 상수 갱신).

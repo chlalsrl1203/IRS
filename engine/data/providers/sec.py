@@ -87,6 +87,7 @@ METRIC_TAGS = {
         "RevenueFromContractWithCustomerIncludingAssessedTax",
         "SalesRevenueNet",
         "Revenue",                                     # ifrs-full
+        "RevenueFromContractsWithCustomers",            # ifrs-full, IFRS 15 채택 이후
     ),
     "operating_income": (
         "OperatingIncomeLoss",
