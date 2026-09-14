@@ -1,0 +1,25 @@
+{
+  "ticker": "PTC",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 14730000000.0,
+  "market_cap_now": 14190449000.0,
+  "market_cap_change_pct": -0.03662939579090296,
+  "gap_then": 0.0553015837082313,
+  "gap_now": 0.059784043730203976,
+  "gap_decay_pp": 0.004482460021972674,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "B",
+  "realistic_growth_then": 0.11390601486057504,
+  "realistic_growth_now": 0.11390601486057504,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-10",
+    "gap_prior": 0.057530129850809436,
+    "gap_move_pp": 0.0022539138793945396,
+    "judgment_changed": false
+  },
+  "date": "2026-09-14"
+}

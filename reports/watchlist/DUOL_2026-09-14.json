@@ -1,0 +1,25 @@
+{
+  "ticker": "DUOL",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 6220000000.0,
+  "market_cap_now": 6694499000.0,
+  "market_cap_change_pct": 0.07628601286173642,
+  "gap_then": 0.19453125000000002,
+  "gap_now": 0.1857320785522461,
+  "gap_decay_pp": -0.008799171447753912,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.25,
+  "realistic_growth_now": 0.25,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-10",
+    "gap_prior": 0.18301067352294925,
+    "gap_move_pp": 0.002721405029296853,
+    "judgment_changed": false
+  },
+  "date": "2026-09-14"
+}
