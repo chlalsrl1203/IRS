@@ -10165,3 +10165,67 @@ pp_per_year=0.2`로 반영하되, Microsoft의 구조적 번들링 우위를 고
 baseline 79종목으로 재동결(fingerprint `1a933182…`→`90acc2d3…`,
 `v3.87:1` 스탬프 신규). 테스트 1177개 전부 통과. `ENGINE_VERSION`
 v3.86 → **v3.87**(METRIC_TAGS 수정 - v3.32 규칙에 따라 상수 갱신).
+
+## PSN(Parsons Corporation) 정식 분석 - M&A 우려를 실측으로 기각한 사례,
+falsification_conditions의 "Q2 2026" 표현이 감시 트리거를 오탐시킨 새 실례
+(2026-09-14)
+
+큐 다음 순위 PSN(Parsons Corporation, 국방·인프라·사이버보안 엔지니어링,
+tier A)을 정식분석했다.
+
+### 사전점검 - Xator 인수($400M, 2022-06 종결) 우려를 실측으로 기각
+
+FY2023(+29.7%YoY)·FY2024(+24.0%YoY) 매출 급증을 보고 GEN/BRO/ROP/CROX/
+CHDN/QSR/WSC/EQT류의 'M&A가 CAGR 구간에 걸림' 패턴을 의심했으나,
+WebSearch로 회사 자체 공시를 확인한 결과 **정반대였다** - FY2023 조직
+성장률 **+34%**(총성장 29.7%보다 오히려 높음, Xator 기여를 감안해도
+성장의 대부분이 유기적), FY2024 조직성장 **+22%**(총 24.0%와 거의
+일치). 즉 Xator($400M, 연매출 ~$300M 규모)는 회사 규모($4.2B→$6.75B,
++$2.5B 증가) 대비 작아 CAGR을 실질적으로 왜곡하지 않았다 - override
+불필요로 확정.
+
+### ⭐ 대신 실제로 발견한 것 - 3년 연속 극심한 감속과 "기밀계약" 리스크
+
+FY2023 +34% → FY2024 +22% → **FY2025 −9%**(기밀계약 감소가 원인, 제외
+시 +8%)로 조직성장률이 3년 연속 급감속했고, 가장 최근 분기(회사 자체
+공시 기준)도 총매출 +8%/기밀계약 제외 조직성장 **+3%**까지 내려왔다
+(회사 장기목표는 "중간 한자릿수%대 이상"). trailing CAGR(3y 14.90%/5y
+10.18%)이 이 감속을 아직 다 반영하지 못할 위험을 `model_choice_reason`·
+`subjective_input_basis`·`falsification_conditions`에 전부 명시했다 -
+다만 다년 안정적 오가닉 수치가 아니라 매년 큰 폭으로 바뀌는 수치라
+`realistic_growth_override`는 쓰지 않았다(KEYS가 확립한 "1개년
+가이던스만으로는 override 부적격" 원칙과 동일).
+
+### 결과 - "저평가 가능성"(A등급), Gap +8.15%p, Confidence 94
+
+DRS 41.52(cyclical 자동분류). 모델괴리 0.88%p(경고 임계값 미만 - 어느
+모델을 써도 A등급 불변). 강건성점검·SBC교차검증(SBC/FCF 10.5%, 낮음)
+모두 flip 없음. PIT_VALID(위반 0건). 10년 데이터 미확보(9개년만 존재)로
+5년 CAGR 대체 사실을 `data_limitations`에 자동 기록. 순부채
+$771.4M(net_debt/EBITDA≈1.44배), 단일클래스 주식구조(발행주식
+106,978,521주, 2026-04-21 10-Q 표지 기준).
+
+### ⚠️ 실행 중 잡은 새 실례 - "Q2 2026" 표기가 감시 트리거로 오탐됨
+
+`falsification_conditions` 초안에 "(현재 Q2 2026 수준이 이미 하단)"이라
+적었더니 `thesis_monitor`의 날짜추출 정규식(`Q3 2026`/`Q2 FY2026`류
+패턴)이 이를 **분기말 날짜(2026-06-30)로 오인**해 `test_real_repo_
+today_has_no_unreviewed_backlog`가 실패했다 - TCOM 소송 집단기간·HQY
+데이터브리치·REGN 대차대조표 스냅샷·ULTA 회계연도 라벨에 이어 **다섯
+번째 재현**이지만, 이번엔 날짜 자체가 아니라 **"Q+숫자 연도" 분기표기가
+날짜로 파싱된 새 변종**이다. "직전 분기 실적 수준이 이미 하단"으로
+정정한 뒤 ledger를 삭제·재생성했다(계산값은 완전히 동일).
+
+### 배선
+
+`watchlist.json`에 PSN 추가(79→80, PINS-PTC 사이). 스물세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 79→80),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PSN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PSN 추가) - A등급
+이고 Lynch cyclical(사이즈캡·screener 거짓탈락 무관)이라
+`test_pipeline.py`/`test_screener.py`는 무변경. ⚠️ A등급 신규 발견이라
+매수리스트 편입 전 정성 심층조사가 필요하다(v3.83 원칙).
+
+baseline 80종목으로 재동결(fingerprint `90acc2d3…`→`f5709edf…`,
+`v3.87:2` 스탬프). 테스트 1177개 전부 통과. `ENGINE_VERSION` 무변경
+(v3.87 유지 - engine/ 코드 변경 없음, 데이터 배선만).

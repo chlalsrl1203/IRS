@@ -229,7 +229,7 @@ def test_real_repo_today_has_no_unreviewed_backlog():
     result = RUNNER.run_monitor(TODAY, ledger_dir=str(ROOT / "ledger"),
                                 ack_path=str(ROOT / "monitor" / "acknowledgements.json"),
                                 predictions_dir=str(ROOT / "predictions"))
-    assert result["n_ledgers"] == 79  # 2026-09-01/04: CROX·SIGI·OKTA·MEDP·RYAN·FIX·NBIX·NXT·PATH·PCTY·EXEL·PINS·ROKU·HLNE·FIVE·TW·RLI·DOCU·CINF·TENB·SKYW·RMBS·BYD·CRM·DECK·QCOM·EAT·ADBE·MMS·CHWY 정식분석 추가 + 2026-09-04 포트폴리오 재검토로 DLO·NOW 신규(34->66) + 2026-09-06 CAH(67) + 2026-09-08 HQY(68) + 2026-09-09 URBN(69)·REGN(70)·LFUS(71) + 2026-09-11 ERIE(72) + 2026-09-13 ULTA(73)·EME(74)·NYT(75)·OSIS(76)·LULU(77)·WTS(78) + 2026-09-14 TEAM(79)
+    assert result["n_ledgers"] == 80  # 2026-09-01/04: CROX·SIGI·OKTA·MEDP·RYAN·FIX·NBIX·NXT·PATH·PCTY·EXEL·PINS·ROKU·HLNE·FIVE·TW·RLI·DOCU·CINF·TENB·SKYW·RMBS·BYD·CRM·DECK·QCOM·EAT·ADBE·MMS·CHWY 정식분석 추가 + 2026-09-04 포트폴리오 재검토로 DLO·NOW 신규(34->66) + 2026-09-06 CAH(67) + 2026-09-08 HQY(68) + 2026-09-09 URBN(69)·REGN(70)·LFUS(71) + 2026-09-11 ERIE(72) + 2026-09-13 ULTA(73)·EME(74)·NYT(75)·OSIS(76)·LULU(77)·WTS(78) + 2026-09-14 TEAM(79)·PSN(80)
     assert result["falsification"]["needs_review"] == []
     assert result["action_required"] is False
 
