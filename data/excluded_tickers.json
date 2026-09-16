@@ -227,6 +227,18 @@
       "reason_category": "FRAMEWORK_MISMATCH",
       "reason": "STRL과 동일 유형이나 이번엔 인수가 이미 SEC 연차 XBRL에 완전히 반영돼 있다 - Paycor 전액현금 인수($4.1B, 2025-04-14 종결)로 FY2026(2025-06~2026-05) 매출이 +16.5%YoY로 직전 5개년(4.6~13.9%) 대비 뚜렷이 가속했다. 회사 자체 실적발표가 \"Paycor가 Q3 FY2026 Management Solutions 매출성장의 약 19%를 기여\"라고 명시 - 3y/5y/10y CAGR 창(years[-4]/[-6]/[-11]) 전부 종료연도가 FY2026이라 세 창 모두 이 인수효과를 동일하게 흡수한다. cagr_base_year_override는 시작연도만 바꿀 수 있고 종료연도의 왜곡은 구조적으로 해소 불가능(STRL이 확립한 정확히 같은 문제 - 유일한 차이는 STRL은 왜곡이 아직 발생 전이었고 PAYX는 이미 실현돼 있다는 점). 회사가 공시하는 \"Paycor 기여분\"도 단일분기 비교치뿐이라 ROP 기준(다년 실현 오가닉 필요)에 못 미친다. FY2027 실적(Paycor 완전 편입 첫 정상연도)이 나온 뒤 통합 후 성장률로 재조사할 것.",
       "excluded_at": "2026-09-13"
+    },
+    "MU": {
+      "name": "Micron Technology",
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "excluded_at": "2026-09-16",
+      "reason": "메모리 반도체 가격사이클로 '정상 상태 FCF'를 특정할 수 없다. 2026-09-16 실측: FY2025 연차 FCF $1.668B(OCF $17.525B - capex $15.860B) vs TTM FCF $26.169B(FY2025 Q4 + FY2026 9M) - **15.7배 차이**이고 TTM 매출은 연차의 2.42배다($90.274B vs $37.378B). FY2026 분기 매출이 Q1 $13.643B -> Q2 $23.860B -> Q3 $41.456B로 폭증하는 국면이라 연차는 사이클 저점, TTM은 사이클 고점이며 어느 쪽도 영구 성장모형의 분자로 정당화되지 않는다. worst_yoy_revenue -49.5%(FY2023, 동시에 영업손실 -$5.75B)로 이 스크리너가 가정하는 '완만한 경기민감도'와 성격이 다르다 - AA/NRG/MP/EQT/CDE/COP/DINO/EOG/EXE/NEM/OVV/CF/HL/MLI와 동일한 자본집약 사이클 업종 유형. **단, 판정 자체는 이 축에 강건하다**: FCF0를 세 국면(연차/TTM/9M연환산) 어디서 잡아도 Gap -3.85 ~ -0.44%p로 전부 '적정가/경계선'(C)에 머문다(reports/holdings_deep_review_2026-09-16.json). 즉 '싸다'는 근거가 어느 FCF0 선택으로도 나오지 않는다는 것이 이 배제의 실질적 함의다. 재조사 조건: 사이클이 한 바퀴 돈 뒤(고점->저점->회복) 여러 연차에 걸친 정상화 FCF를 추정할 근거가 생기면. FY2026 10-K(2026-10월경 예상) 하나만으로는 충분하지 않다 - 그 해가 정확히 고점이기 때문이다."
+    },
+    "ALB": {
+      "name": "Albemarle Corporation",
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "excluded_at": "2026-09-16",
+      "reason": "리튬 가격사이클 + v3.19 CAGR 가드 동시 발동. 매출이 FY2021 $3.33B -> FY2023 $9.62B(+189%) -> FY2025 $5.14B(-47%)로 요동치고(worst_yoy -44.1%), FCF가 최근 11년 중 7년 음수라 5년 CAGR 기준연도(FY2020 FCF -$52M)에서 `run_analysis()`가 ValueError로 실행을 거부한다. 회피 가능한 기준연도는 FY2016(+$537M)뿐인데 그건 리튬 사이클 국면을 임의로 고르는 것이라 근거가 없다 - AA/MP/CF/HL/NEM/CDE와 동일한 자본집약 원자재 업종 유형이며 경쟁구도 기반 주관 입력(demand_sensitivity·competitor_threat_weights) 자체가 이 업종에서 의미를 잃는다. `deep_screen` 참조 스크린(2026-09-16, 시총 $13.39B)은 FCF 5y CAGR을 건너뛰고 매출 가중평균만으로 계산해 Gap -7.56%p '과대평가 가능성'(D)을 내놓는다 - Realistic Growth가 **음수(-1.42%)**인데(3년 매출 CAGR -11.1%) 이는 사이클 고점(FY2023)에서 시작한 창의 산물이라 그대로 믿을 수 없다. DRS 72(cyclicality·margin_volatility 둘 다 만점 20.0). 긍정 신호 하나는 실측했다: FY2025 FCF가 +$692M으로 3년 만에 흑자 전환했고 capex가 $1.69B -> $0.59B로 급감(리튬 증설 규율)하며 OCF는 $0.70B -> $1.28B로 개선됐다. 재조사 조건: FCF 흑자가 3년 이상 이어져 5년 창 기준연도가 양수가 되고 사이클 저점이 창 경계에서 빠지면."
     }
   }
 }

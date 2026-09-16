@@ -1,0 +1,574 @@
+{
+  "as_of": "2026-09-16",
+  "holdings_as_of": "2026-09-04",
+  "price_source": "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-15 종가)",
+  "affects_official_judgment": false,
+  "_note": [
+    "보유 포트폴리오 심화 재분석. ledger/를 수정하지 않는다(v3.42).",
+    "가격 재계산·시나리오는 공식 판정이 아니라 모니터링 신호다",
+    "(is_insurer·sbc_cross_check와 동일한 '병기, 자동판정 안 함' 원칙)."
+  ],
+  "positions": [
+    {
+      "ticker": "PTC",
+      "weight": 0.3839096157684304,
+      "market_value_krw": 2227472,
+      "return_pct_app": -0.6,
+      "ledger": "ledger/PTC_2026-09-04.json",
+      "ledger_analyzed_at": "2026-09-04T11:07:37.356547+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "PTC",
+        "analyzed_at": "2026-09-04",
+        "market_cap_then": 16284619650.880001,
+        "market_cap_now": 14404206147.75,
+        "market_cap_change_pct": -0.11547174840085295,
+        "gap_then": 0.040768922270243035,
+        "gap_now": 0.05547133773655163,
+        "gap_decay_pp": 0.014702415466308592,
+        "judgment_then": "적정가/경계선",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": true,
+        "grade_then": "C",
+        "grade_now": "B",
+        "realistic_growth_then": 0.11390601486057504,
+        "realistic_growth_now": 0.11390601486057504,
+        "price_then": 150.08,
+        "price_now": 132.75,
+        "price_change_pct": -0.11547174840085295
+      },
+      "model_divergence": 0.01783363680865746,
+      "sbc_cross_check": {
+        "sbc0": 216205000.0,
+        "sbc_to_fcf_pct": 0.252373092654502,
+        "fcf0_sbc_adjusted": 640483000.0,
+        "implied_growth_sbc_adjusted": 0.10752334594726559,
+        "gap_sbc_adjusted": 0.00638266891330945,
+        "judgment_sbc_adjusted": "적정가/경계선",
+        "judgment_flipped": false
+      }
+    },
+    {
+      "ticker": "VRT",
+      "weight": 0.19219024093798184,
+      "market_value_krw": 1115102,
+      "return_pct_app": 11.4,
+      "ledger": "ledger/VRT_2026-09-04.json",
+      "ledger_analyzed_at": "2026-09-04T23:02:06.657640+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "VRT",
+        "analyzed_at": "2026-09-04",
+        "market_cap_then": 108000732171.68999,
+        "market_cap_now": 90322075267.53,
+        "market_cap_change_pct": -0.16369015791537433,
+        "gap_then": -0.01241755911955486,
+        "gap_now": 0.008296628502515474,
+        "gap_decay_pp": 0.020714187622070335,
+        "judgment_then": "적정가/경계선",
+        "judgment_now": "적정가/경계선",
+        "judgment_flipped": false,
+        "grade_then": "C",
+        "grade_now": "C",
+        "realistic_growth_then": 0.18710426857819903,
+        "realistic_growth_now": 0.18710426857819903,
+        "price_then": 280.53,
+        "price_now": 234.61,
+        "price_change_pct": -0.16369015791537433
+      },
+      "model_divergence": 0.10878791910980196,
+      "sbc_cross_check": {
+        "sbc0": 45900000.0,
+        "sbc_to_fcf_pct": 0.02423698384201077,
+        "fcf0_sbc_adjusted": 1847900000.0,
+        "implied_growth_sbc_adjusted": 0.20236797332763673,
+        "gap_sbc_adjusted": -0.015263704749437695,
+        "judgment_sbc_adjusted": "적정가/경계선",
+        "judgment_flipped": false
+      }
+    },
+    {
+      "ticker": "SE",
+      "weight": 0.13437832747393433,
+      "market_value_krw": 779673,
+      "return_pct_app": 1.4,
+      "ledger": "ledger/SE_2026-09-05.json",
+      "ledger_analyzed_at": "2026-09-05T04:36:25.360517+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [
+          {
+            "fiscal_year": 2025,
+            "ledger": 22938469000.0,
+            "sec_now": 19625021000.0,
+            "delta_pct": -0.14444939633939824
+          }
+        ],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "SE",
+        "analyzed_at": "2026-09-05",
+        "market_cap_then": 71538880234.69,
+        "market_cap_now": 65514016023.65,
+        "market_cap_change_pct": -0.08421803907574277,
+        "gap_then": 0.12330089569091772,
+        "gap_now": 0.13406482696533178,
+        "gap_decay_pp": 0.010763931274414065,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "A",
+        "grade_now": "A",
+        "realistic_growth_then": 0.17874999999999974,
+        "realistic_growth_now": 0.17874999999999974,
+        "price_then": 112.09,
+        "price_now": 102.65,
+        "price_change_pct": -0.08421803907574266
+      },
+      "model_divergence": 0.008257294066200828,
+      "sbc_cross_check": {
+        "sbc0": 624995000.0,
+        "sbc_to_fcf_pct": 0.13855788684452172,
+        "fcf0_sbc_adjusted": 3885719000.0,
+        "implied_growth_sbc_adjusted": 0.07350158691406249,
+        "gap_sbc_adjusted": 0.10524841308593726,
+        "judgment_sbc_adjusted": "저평가 가능성",
+        "judgment_flipped": false
+      }
+    },
+    {
+      "ticker": "DLO",
+      "weight": 0.11120471748550605,
+      "market_value_krw": 645218,
+      "return_pct_app": -5.7,
+      "ledger": "ledger/DLO_2026-09-04.json",
+      "ledger_analyzed_at": "2026-09-04T23:10:41.099370+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "DLO",
+        "analyzed_at": "2026-09-04",
+        "market_cap_then": 4577343957.12,
+        "market_cap_now": 4261766764.2,
+        "market_cap_change_pct": -0.06894329896907214,
+        "gap_then": 0.23736248016357422,
+        "gap_now": 0.24652271270751955,
+        "gap_decay_pp": 0.009160232543945324,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.25,
+        "realistic_growth_now": 0.25,
+        "price_then": 15.52,
+        "price_now": 14.45,
+        "price_change_pct": -0.06894329896907214
+      },
+      "model_divergence": 0.009462397203041994,
+      "sbc_cross_check": {
+        "sbc0": 24136000.0,
+        "sbc_to_fcf_pct": 0.05841592545531554,
+        "fcf0_sbc_adjusted": 389039000.0,
+        "implied_growth_sbc_adjusted": 0.02028121948242186,
+        "gap_sbc_adjusted": 0.22971878051757813,
+        "judgment_sbc_adjusted": "저평가 가능성",
+        "judgment_flipped": false
+      }
+    },
+    {
+      "ticker": "NOW",
+      "weight": 0.06730851760939278,
+      "market_value_krw": 390529,
+      "return_pct_app": 8.9,
+      "ledger": "ledger/NOW_2026-09-05.json",
+      "ledger_analyzed_at": "2026-09-05T04:36:25.010810+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "NOW",
+        "analyzed_at": "2026-09-05",
+        "market_cap_then": 146062840000.0,
+        "market_cap_now": 146724600000.0,
+        "market_cap_change_pct": 0.004530652697154247,
+        "gap_then": 0.08296327724967925,
+        "gap_now": 0.08244142666374174,
+        "gap_decay_pp": -0.0005218505859375111,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "A",
+        "grade_now": "A",
+        "realistic_growth_then": 0.2100590719274136,
+        "realistic_growth_now": 0.2100590719274136,
+        "price_then": 141.26,
+        "price_now": 141.9,
+        "price_change_pct": 0.004530652697154247
+      },
+      "model_divergence": 0.053510139711193186,
+      "sbc_cross_check": {
+        "sbc0": 1955000000.0,
+        "sbc_to_fcf_pct": 0.427229020979021,
+        "fcf0_sbc_adjusted": 2621000000.0,
+        "implied_growth_sbc_adjusted": 0.19125633239746095,
+        "gap_sbc_adjusted": 0.01880273952995265,
+        "judgment_sbc_adjusted": "적정가/경계선",
+        "judgment_flipped": true
+      }
+    },
+    {
+      "ticker": "MU",
+      "weight": 0.05649755587398575,
+      "market_value_krw": 327803,
+      "return_pct_app": 111.7,
+      "ledger": null,
+      "ledger_analyzed_at": null,
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": null
+      },
+      "reference_screen": {
+        "ticker": "MU",
+        "final_year": 2025,
+        "n_years_available": 17,
+        "revenue_cagr_3y": 0.06713489726936261,
+        "revenue_cagr_5y": 0.11763119291842661,
+        "revenue_cagr_10y": 0.08725535776233184,
+        "revenue_cagr_10y_is_fallback": false,
+        "fcf_cagr_5y": 0.8223155907808515,
+        "fcf0": 1668000000.0,
+        "worst_yoy_revenue": -0.4947655894401457,
+        "op_margins": [
+          0.22678216928352282,
+          0.3154301319981793,
+          -0.3696911196911197,
+          0.05192943331607662,
+          0.2613837016426775
+        ],
+        "drs_components": {
+          "revenue_volatility": 8.0,
+          "leverage": 6.0,
+          "cyclicality": 20.0,
+          "competition_intensity": 12.0,
+          "margin_volatility": 20.0
+        },
+        "drs": 66.0,
+        "r": 0.11449999999999999,
+        "lynch_type": "cyclical",
+        "lynch_note": null,
+        "structural_discount_pct": 0.14006023024648462,
+        "realistic_growth": 0.07421957678913178,
+        "growth_breakdown": {
+          "revenue_cagr_inputs": {
+            "3y": 0.06713489726936261,
+            "5y": 0.11763119291842661,
+            "10y": 0.08725535776233184
+          },
+          "weights_used": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "base_growth_before_fcf_check": 0.08630787806267565,
+          "fcf_conservatism_applied": null,
+          "base_growth_after_fcf_check": 0.08630787806267565,
+          "structural_discount_pct": 0.14006023024648462,
+          "discounted_growth": 0.07421957678913178,
+          "lynch_type": "cyclical",
+          "cap_applied": null,
+          "final_realistic_growth": 0.07421957678913178
+        },
+        "fcf_yield": 0.0015921726397248863,
+        "implied_growth": 0.11272834437464033,
+        "gap": -0.038508767585508544,
+        "judgment": "적정가/경계선",
+        "base_rate": {
+          "sales_2015_usd_mn": 27687.4,
+          "size_class": "25000+",
+          "growth_nominal_pct": 7.42,
+          "growth_real_pct": 4.8,
+          "horizon_years": 10,
+          "base_rate_pct": 64.6,
+          "tier": "COMMON",
+          "tier_note": "드물지 않음",
+          "peer_median_real_pct": 1.95,
+          "inflation_assumed": 0.025,
+          "source": "Credit Suisse HOLT / Mauboussin & Callahan, Base Rate Book (2016-09-26)",
+          "caveat": "과거 빈도이지 미래 확률이 아니다. 표는 실질 기준이라 명목 성장률을 인플레 2.5% 가정으로 환산해 비교했다."
+        },
+        "assumed_inputs": {
+          "net_debt_to_ebitda": "0.406 (corpus 중앙값 - SEC 태그 미등록으로 실측 불가)",
+          "demand_sensitivity_pct": "0.15 (corpus 중앙값 - 정성판단 불가)",
+          "competition_intensity": "12.0 (corpus 중앙값 - 정성판단 불가, BSX 거짓탈락 사례처럼 이 값이 실제와 크게 다를 수 있음)",
+          "model_used": "single_stage(Gordon) 고정 - 모델선택 규칙화는 2026-08-16 연구에서 REJECT됐음(구간 완전중첩, 규칙 불가)"
+        },
+        "data_limitations": [],
+        "market_cap": 1047625086867.6,
+        "shares_outstanding": 1129393151
+      },
+      "official_judgment": null
+    },
+    {
+      "ticker": "ALB",
+      "weight": 0.03110267121722336,
+      "market_value_krw": 180460,
+      "return_pct_app": -34.3,
+      "ledger": null,
+      "ledger_analyzed_at": null,
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": null
+      },
+      "reference_screen": {
+        "ticker": "ALB",
+        "final_year": 2025,
+        "n_years_available": 18,
+        "revenue_cagr_3y": -0.11101948515436078,
+        "revenue_cagr_5y": 0.10448598383827279,
+        "revenue_cagr_10y": 0.03484243623573269,
+        "revenue_cagr_10y_is_fallback": false,
+        "fcf_cagr_5y": null,
+        "fcf0": 692466000.0,
+        "worst_yoy_revenue": -0.44084303929115354,
+        "op_margins": [
+          0.2399171623912208,
+          0.33743523316062174,
+          0.026190671029820208,
+          -0.33036474393615206,
+          -0.0713791674582367
+        ],
+        "drs_components": {
+          "revenue_volatility": 14.0,
+          "leverage": 6.0,
+          "cyclicality": 20.0,
+          "competition_intensity": 12.0,
+          "margin_volatility": 20.0
+        },
+        "drs": 72.0,
+        "r": 0.11629999999999999,
+        "lynch_type": "cyclical",
+        "lynch_note": null,
+        "structural_discount_pct": 0.17293096069504674,
+        "realistic_growth": -0.014221832730281592,
+        "growth_breakdown": {
+          "revenue_cagr_inputs": {
+            "3y": -0.11101948515436078,
+            "5y": 0.10448598383827279,
+            "10y": 0.03484243623573269
+          },
+          "weights_used": [
+            0.5,
+            0.3,
+            0.2
+          ],
+          "base_growth_before_fcf_check": -0.017195460178552013,
+          "fcf_conservatism_applied": null,
+          "base_growth_after_fcf_check": -0.017195460178552013,
+          "structural_discount_pct": 0.17293096069504674,
+          "discounted_growth": -0.014221832730281592,
+          "lynch_type": "cyclical",
+          "cap_applied": null,
+          "final_realistic_growth": -0.014221832730281592
+        },
+        "fcf_yield": 0.051724146752903974,
+        "implied_growth": 0.06139999109696937,
+        "gap": -0.07562182382725097,
+        "judgment": "과대평가 가능성",
+        "base_rate": {
+          "sales_2015_usd_mn": 3809.4,
+          "size_class": "3000-4500",
+          "growth_nominal_pct": -1.42,
+          "growth_real_pct": -3.83,
+          "horizon_years": 10,
+          "base_rate_pct": 96.3,
+          "tier": "COMMON",
+          "tier_note": "드물지 않음",
+          "peer_median_real_pct": 3.94,
+          "inflation_assumed": 0.025,
+          "source": "Credit Suisse HOLT / Mauboussin & Callahan, Base Rate Book (2016-09-26)",
+          "caveat": "과거 빈도이지 미래 확률이 아니다. 표는 실질 기준이라 명목 성장률을 인플레 2.5% 가정으로 환산해 비교했다."
+        },
+        "assumed_inputs": {
+          "net_debt_to_ebitda": "0.406 (corpus 중앙값 - SEC 태그 미등록으로 실측 불가)",
+          "demand_sensitivity_pct": "0.15 (corpus 중앙값 - 정성판단 불가)",
+          "competition_intensity": "12.0 (corpus 중앙값 - 정성판단 불가, BSX 거짓탈락 사례처럼 이 값이 실제와 크게 다를 수 있음)",
+          "model_used": "single_stage(Gordon) 고정 - 모델선택 규칙화는 2026-08-16 연구에서 REJECT됐음(구간 완전중첩, 규칙 불가)"
+        },
+        "data_limitations": [
+          "5년 FCF CAGR 계산 불가(기준연도 또는 최종연도 FCF <= 0) - realistic_growth_estimate가 매출 가중평균만으로 계산됨"
+        ],
+        "market_cap": 13387673716.65,
+        "shares_outstanding": 118005057
+      },
+      "official_judgment": null
+    },
+    {
+      "ticker": "ACGL",
+      "weight": 0.02340783657705848,
+      "market_value_krw": 135814,
+      "return_pct_app": 0.5,
+      "ledger": "ledger/ACGL_2026-09-05.json",
+      "ledger_analyzed_at": "2026-09-05T04:41:13.350953+00:00",
+      "staleness": {
+        "status": "OK",
+        "sec_latest_fy": 2025,
+        "mismatches": [],
+        "ledger_latest_fy": 2025,
+        "new_annual_available": false
+      },
+      "price_drift": {
+        "ticker": "ACGL",
+        "analyzed_at": "2026-09-05",
+        "market_cap_then": 33474577260.6,
+        "market_cap_now": 33112874387.04,
+        "market_cap_change_pct": -0.010805300713557564,
+        "gap_then": 0.24452910193896105,
+        "gap_now": 0.2461375690410118,
+        "gap_decay_pp": 0.001608467102050759,
+        "judgment_then": "저평가 가능성",
+        "judgment_now": "저평가 가능성",
+        "judgment_flipped": false,
+        "grade_then": "S",
+        "grade_now": "S",
+        "realistic_growth_then": 0.157353923411129,
+        "realistic_growth_now": 0.157353923411129,
+        "price_then": 98.1,
+        "price_now": 97.04,
+        "price_change_pct": -0.010805300713557453
+      },
+      "model_divergence": 0.027022658936414694,
+      "sbc_cross_check": {
+        "sbc0": 148000000.0,
+        "sbc_to_fcf_pct": 0.024151436031331592,
+        "fcf0_sbc_adjusted": 5980000000.0,
+        "implied_growth_sbc_adjusted": -0.08357505798339845,
+        "gap_sbc_adjusted": 0.24092898139452745,
+        "judgment_sbc_adjusted": "저평가 가능성",
+        "judgment_flipped": false
+      }
+    }
+  ],
+  "scenarios": {
+    "SE_revenue_tag_definition": {
+      "issue": "Sea Limited가 FY2025 20-F(2026-04-17 제출)에서 매출 태깅을 재분류했다. `us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax`는 FY2024까지 총매출이었으나 FY2025부터 ASC 606 계약매출만 담고(19.625B), 총매출은 `us-gaap:Revenues`(22.938B)로 옮겨졌다. 차액 3.313B은 Monee(구 SeaMoney) 이자수익 등 비계약 매출이다.",
+      "primary_source_check": "회사 FY2025 실적발표 원문: GAAP 총매출 US$22.9B(+36.4% YoY), Monee GAAP 매출 US$3.8B(+60.1%) - ledger의 22,938,469,000이 맞다.",
+      "hazard_class": "⚠️ 신규 유형 - **같은 태그 안에서 정의가 바뀐다**. provider의 `[태그 혼재]` 경고는 여러 태그에 걸칠 때만 발동하므로 이 경우 아무 경고도 나오지 않는다(FY2016~2025 전부 같은 태그).",
+      "runs": [
+        {
+          "label": "① ledger 그대로(총매출)",
+          "gap": 0.12330089569091772,
+          "grade": "A",
+          "judgment": "저평가 가능성",
+          "drs": 52.400000000000006,
+          "realistic_growth": 0.17874999999999974,
+          "implied_growth": 0.05544910430908202
+        },
+        {
+          "label": "② provider 현재 시리즈(정의 혼재)",
+          "gap": 0.12330089569091772,
+          "grade": "A",
+          "judgment": "저평가 가능성",
+          "drs": 52.400000000000006,
+          "realistic_growth": 0.17874999999999974,
+          "implied_growth": 0.05544910430908202
+        }
+      ]
+    },
+    "VRT_utilityinnovation_acquisition": {
+      "issue": "2026-09-02 UtilityInnovation Group 인수 발표($1.45B 현금 + 최대 $1.15B 언아웃). ledger(2026-09-04)의 순부채는 2026-06-30 10-Q 기준이라 이 현금유출이 반영돼 있지 않다.",
+      "runs": [
+        {
+          "label": "① ledger 그대로(순부채 $129.2M)",
+          "gap": -0.01241755911955486,
+          "grade": "C",
+          "judgment": "적정가/경계선",
+          "drs": 41.2,
+          "realistic_growth": 0.18710426857819903,
+          "implied_growth": 0.1995218276977539
+        },
+        {
+          "label": "② 인수대금 $1.45B 현금유출 반영",
+          "gap": -0.01241755911955486,
+          "grade": "C",
+          "judgment": "적정가/경계선",
+          "drs": 41.2,
+          "realistic_growth": 0.18710426857819903,
+          "implied_growth": 0.1995218276977539
+        },
+        {
+          "label": "③ + 언아웃 전액 $1.15B까지",
+          "gap": -0.014932779761644699,
+          "grade": "C",
+          "judgment": "적정가/경계선",
+          "drs": 45.199999999999996,
+          "realistic_growth": 0.18710426857819903,
+          "implied_growth": 0.20203704833984373
+        }
+      ]
+    },
+    "MU_fcf0_cycle_phase": {
+      "issue": "메모리 사이클 - FY2025 연차 FCF $1.668B vs TTM FCF $26.169B(15.7배). 어느 쪽도 정상 상태 FCF가 아니다.",
+      "runs": [
+        {
+          "label": "FY2025 연차",
+          "note": "메모리 사이클 저점 국면(현재 deep_screen 경로)",
+          "fcf0": 1668000000.0,
+          "fcf_yield": 0.0015921726397248863,
+          "implied_growth": 0.11272834437464033,
+          "gap": -0.038508767585508544,
+          "grade": "C",
+          "judgment": "적정가/경계선"
+        },
+        {
+          "label": "TTM",
+          "note": "FY2025 Q4 + FY2026 9M - 사이클 고점 국면",
+          "fcf0": 26169000000.0,
+          "fcf_yield": 0.02497935600057587,
+          "implied_growth": 0.0873389727074404,
+          "gap": -0.013119395918308616,
+          "grade": "C",
+          "judgment": "적정가/경계선"
+        },
+        {
+          "label": "FY2026 9M 연환산",
+          "note": "9M FCF x 4/3",
+          "fcf0": 34800000000.0,
+          "fcf_yield": 0.03321799032519547,
+          "implied_growth": 0.07866879055137414,
+          "gap": -0.00444921376224236,
+          "grade": "C",
+          "judgment": "적정가/경계선"
+        }
+      ]
+    }
+  }
+}
