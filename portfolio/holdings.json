@@ -12,8 +12,8 @@
   "source": "증권앱 스크린샷(사용자 제공, 2026-09-17 07:42 KST)",
   "currency": "KRW",
   "total_market_value_krw": 5325685,
-  "daily_change_krw": -293278,
-  "daily_change_pct": -5.2,
+  "total_unrealized_pnl_krw": -293278,
+  "total_unrealized_pnl_pct": -5.2,
   "positions": [
     {"ticker": "PTC",  "name": "PTC Inc.",                "quantity": 11.0,      "market_value_krw": 2007843, "return_pct": -10.4},
     {"ticker": "VRT",  "name": "Vertiv Holdings Co",      "quantity": 3.0,       "market_value_krw": 1018015, "return_pct": 1.7},
