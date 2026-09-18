@@ -119,7 +119,9 @@ def daily_urgency(monitor_result=None, n_passed=0, scored=None, infra_failures=0
         # tests/test_issue_reporting.py::test_daily_urgency_reads_real_monitor_keys
         t = monitor_result.get("falsification") or {}
         p = monitor_result.get("predictions") or {}
-        n = len(t.get("needs_review") or []) + len(p.get("due") or [])
+        c = monitor_result.get("thesis_checkpoints") or {}
+        n = (len(t.get("needs_review") or []) + len(p.get("due") or [])
+             + len(c.get("due") or []))
         return "action", (f"감시 {n}건" if n else "감시 조치필요")
     if scored == 0 or infra_failures:
         if scored == 0:
