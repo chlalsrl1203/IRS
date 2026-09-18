@@ -1,0 +1,25 @@
+{
+  "ticker": "KEYS",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 50710000000.0,
+  "market_cap_now": 54825619000.0,
+  "market_cap_change_pct": 0.08115990928810879,
+  "gap_then": -0.14364213252736793,
+  "gap_now": -0.1527041366167234,
+  "gap_decay_pp": -0.00906200408935548,
+  "judgment_then": "과대평가 가능성",
+  "judgment_now": "과대평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "F",
+  "realistic_growth_then": 0.014713198893530484,
+  "realistic_growth_now": 0.014713198893530484,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-16",
+    "gap_prior": -0.15012292171193822,
+    "gap_move_pp": -0.0025812149047851896,
+    "judgment_changed": false
+  },
+  "date": "2026-09-18"
+}
