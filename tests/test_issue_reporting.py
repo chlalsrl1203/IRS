@@ -155,10 +155,11 @@ def test_pull_requests_are_not_mistaken_for_issues():
 
 
 # ── ④⑤ 일일 긴급도 판정 ──────────────────────────────────────────────────
-def _monitor(action=True, needs=2, due=1):
+def _monitor(action=True, needs=2, due=1, checkpoints=0):
     return {"action_required": action,
             "falsification": {"needs_review": ["x"] * needs},
-            "predictions": {"due": ["y"] * due}}
+            "predictions": {"due": ["y"] * due},
+            "thesis_checkpoints": {"due": ["z"] * checkpoints}}
 
 
 def test_daily_urgency_reads_real_monitor_keys():
@@ -174,15 +175,29 @@ def test_daily_urgency_reads_real_monitor_keys():
     from daily_monitor_ci import run_monitor
     real = run_monitor(date(2026, 9, 1))
     assert "falsification" in real and "predictions" in real
+    assert "thesis_checkpoints" in real
     assert "needs_review" in real["falsification"]
     assert "due" in real["predictions"]
+    assert "due" in real["thesis_checkpoints"]
 
     # 조치사항이 있는 실제 스키마를 만들어 건수가 실제로 세어지는지 확인
     forced = dict(real, action_required=True)
     forced["falsification"] = dict(real["falsification"], needs_review=["a", "b"])
     forced["predictions"] = dict(real["predictions"], due=["c"])
+    forced["thesis_checkpoints"] = dict(real["thesis_checkpoints"], due=["d"])
     key, detail = IR.daily_urgency(monitor_result=forced)
-    assert key == "action" and detail == "감시 3건"
+    assert key == "action" and detail == "감시 4건"
+
+
+def test_thesis_checkpoint_alone_escalates_to_action():
+    """
+    thesis 기한만 도래하고 반증조건·예측은 조용한 날 - 제목이 ⚪ 정상으로
+    나가면 안 된다. v3.64가 막으려던 알림 피로의 정반대 실패(진짜 조치사항이
+    조용한 제목에 묻히는 것)다.
+    """
+    key, detail = IR.daily_urgency(
+        monitor_result=_monitor(action=True, needs=0, due=0, checkpoints=2))
+    assert key == "action" and detail == "감시 2건"
 
 
 def test_monitor_action_outranks_infrastructure_failure():

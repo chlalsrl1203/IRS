@@ -40,6 +40,8 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from engine.monitor_state import (  # noqa: E402
     STATE_PATH, load_acknowledgements, triage,
 )
+from engine.thesis import THESIS_DIR  # noqa: E402
+from engine.thesis_checkpoints import due_conditions  # noqa: E402
 from engine.thesis_monitor import scan_falsification_conditions  # noqa: E402
 
 LEDGER_DIR = "ledger"
@@ -105,19 +107,34 @@ def check_predictions_due(predictions_dir: str, today: date) -> dict:
 
 def run_monitor(today: date, ledger_dir: str = LEDGER_DIR,
                 ack_path: str = STATE_PATH,
-                predictions_dir: str = PREDICTIONS_DIR) -> dict:
-    """일일 감시 1회 실행. 순수 함수 - 파일을 쓰지 않는다."""
+                predictions_dir: str = PREDICTIONS_DIR,
+                thesis_dir: str = THESIS_DIR) -> dict:
+    """
+    일일 감시 1회 실행. 순수 함수 - 파일을 쓰지 않는다.
+
+    세 축을 본다: ledger의 반증조건(`falsification`) · 동결 예측의 해소기한
+    (`predictions`) · thesis의 `check_by` 기한(`thesis_checkpoints`).
+
+    ⚠️ thesis 축은 `due_conditions()`만 쓰고 `enrich_with_sec_freshness()`는
+    **쓰지 않는다.** 후자는 SEC 조회가 필요한데, 이 감시의 핵심 성질이
+    "네트워크 의존이 전혀 없어 스크리닝이 통째로 죽어도 정상 작동한다"는
+    것이다(`post_standalone` 주석 참고). SEC 신선도 확인은 사람이 의도적으로
+    돌리는 `scripts/thesis_checkpoint_prep.py`에 남겨둔다.
+    """
     ledgers = _iter_ledgers(ledger_dir)
     scans = [scan_falsification_conditions(d, today) for d in ledgers]
     acks = load_acknowledgements(ack_path)
     t = triage(scans, acks, today)
     preds = check_predictions_due(predictions_dir, today)
+    checkpoints = due_conditions(today, thesis_dir=thesis_dir)
     return {
         "generated_for": today.isoformat(),
         "n_ledgers": len(ledgers),
         "falsification": t,
         "predictions": preds,
-        "action_required": bool(t["needs_review"]) or bool(preds["due"]),
+        "thesis_checkpoints": checkpoints,
+        "action_required": (bool(t["needs_review"]) or bool(preds["due"])
+                            or bool(checkpoints["due"])),
     }
 
 
@@ -156,12 +173,26 @@ def format_monitor_section(result: dict) -> str:
                 f"- {d['ticker']} · {d['metric']} · 기한 {d['resolution_date']} "
                 f"({d['days_past']}일 경과)")
 
+    cp = result.get("thesis_checkpoints") or {}
+    if cp.get("due"):
+        L.append(f"**📋 thesis 반증조건 기한 도래 {len(cp['due'])}건**")
+        for e in cp["due"][:10]:
+            L.append(
+                f"- {e['ticker']} · 기한 {e['check_by']} "
+                f"({-e['days_until_check_by']}일 경과)")
+            L.append(f"  > {str(e.get('condition') or '')[:180]}")
+    if cp.get("approaching"):
+        names = ", ".join(f"{e['ticker']}({e['check_by']})"
+                          for e in cp["approaching"][:10])
+        L.append(f"📅 thesis 기한 임박 {len(cp['approaching'])}건: {names}")
+
     L.append(
         f"\n<sub>대기 {len(t['pending_future'])} · 확인완료 "
         f"{len(t['acknowledged'])} · 날짜없는 사건기반 {len(t['undated'])} · "
         f"반증조건 미기재 {len(t['no_conditions'])} "
         f"(⚠️ 미기재는 '안전'이 아니라 '감시근거 없음') · "
-        f"예측 미도래 {p['pending']}</sub>")
+        f"예측 미도래 {p['pending']} · thesis 날짜없는 상시감시 "
+        f"{len(cp.get('no_date') or [])}</sub>")
     return "\n".join(L)
 
 

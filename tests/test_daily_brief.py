@@ -377,3 +377,135 @@ def test_reconciliation_reuses_pipeline_exclusion_reasons():
     for t in excluded_and_held:
         line = next(l for l in section.splitlines() if l.startswith(f"| **{t}**"))
         assert "G1" in line or "G2" in line or "G3" in line, line
+
+
+# ── ⑥ thesis 반증조건 check_by 기한 (2026-09-18 배선) ────────────────────
+def _thesis_dir_with(tmp_path, check_by, ticker="ZZZ"):
+    """check_by 하나만 가진 최소 thesis 레코드를 tmp에 만든다."""
+    d = tmp_path / "thesis"
+    d.mkdir()
+    (d / f"{ticker}_2026-01-01.json").write_text(json.dumps({
+        "thesis": {
+            "ticker": ticker,
+            "thesis_id": f"{ticker}_2026-01-01",
+            "invalidation_conditions": [
+                {"condition": "합성 테스트 조건", "check_by": check_by,
+                 "triggered": False},
+                {"condition": "날짜 없는 상시감시", "check_by": None,
+                 "triggered": False},
+            ],
+        },
+        "decisions": [], "evidence": [],
+    }, ensure_ascii=False), encoding="utf-8")
+    return str(d)
+
+
+def test_due_thesis_checkpoint_reaches_the_brief_and_counts(tmp_path, monkeypatch):
+    """
+    기한이 도래한 thesis 조건이 브리핑 본문에 뜨고 `n_need`에도 들어가야 한다.
+    `n_need`는 `action_required`로 이어져 이슈 제목 긴급도를 올린다 - 본문에만
+    뜨고 카운트에서 빠지면 조용한 제목에 묻힌다.
+    """
+    os.chdir(ROOT)
+    from scripts import daily_monitor_ci as M
+
+    today = date(2026, 6, 1)
+    tdir = _thesis_dir_with(tmp_path, "2026-05-01")  # 31일 경과
+    monkeypatch.setattr(B, "run_monitor",
+                        lambda t: M.run_monitor(t, thesis_dir=tdir))
+    lines, n_need = B.section_today(today)
+    text = "\n".join(lines)
+
+    assert "ZZZ" in text and "2026-05-01" in text
+    assert "합성 테스트 조건" in text
+    assert n_need >= 1
+
+
+def test_brief_never_claims_a_thesis_condition_fired(tmp_path, monkeypatch):
+    """
+    «기한이 됐다»와 «조건이 맞았다»는 다르다 - v3.42가 확립한 원칙
+    (정규식은 트리거 날짜와 서술적 날짜를 구분 못 한다)의 thesis판.
+    브리핑은 판정 어휘를 쓰지 않고, 판단 경로를 사람에게 되돌린다.
+    """
+    os.chdir(ROOT)
+    from scripts import daily_monitor_ci as M
+
+    tdir = _thesis_dir_with(tmp_path, "2026-05-01")
+    monkeypatch.setattr(B, "run_monitor",
+                        lambda t: M.run_monitor(t, thesis_dir=tdir))
+    text = "\n".join(B.section_today(date(2026, 6, 1))[0])
+
+    assert "기한이 됐다는 뜻이지 조건이 맞았다는 뜻이 아니다" in text
+    assert "mark_invalidation_triggered" in text
+    for word in ("반증 확정", "발동 확정", "논거 무효"):
+        assert word not in text
+
+
+def test_zero_due_does_not_read_as_nothing_to_watch(tmp_path, monkeypatch):
+    """
+    현재 thesis 조건 21건 중 17건이 `check_by=None`(사건기반 상시감시)이다.
+    «기한 도래 0건»만 보이면 «볼 게 없다»로 읽힌다 - 이 프로젝트가 반복
+    경계해온 «데이터 없음을 안전으로 오독»의 같은 형태다.
+    """
+    os.chdir(ROOT)
+    from scripts import daily_monitor_ci as M
+
+    tdir = _thesis_dir_with(tmp_path, "2027-12-31")  # 도래·임박 둘 다 아님
+    monkeypatch.setattr(B, "run_monitor",
+                        lambda t: M.run_monitor(t, thesis_dir=tdir))
+    lines, n_need = B.section_today(date(2026, 6, 1))
+    text = "\n".join(lines)
+
+    assert n_need == 0
+    assert "날짜없는 상시감시 1건" in text
+    assert "기한 0건이 '볼 게 없다'는 뜻은 아니다" in text
+
+
+def test_brief_does_not_use_the_network_bound_sec_enrichment():
+    """
+    ⚠️ 브리핑의 핵심 불변조건은 «네트워크 의존 0»이다. thesis 체크포인트는
+    `due_conditions()`(순수 날짜 산술)만 써야 하고, SEC를 조회하는
+    `enrich_with_sec_freshness()`를 끌어들이면 그 하나 때문에 브리핑 전체가
+    외부 API 장애에 묶인다.
+
+    ⚠️ 단순 문자열 검색으로 막지 않는다 - 그러면 «왜 안 쓰는가»를 설명하는
+    주석까지 위반으로 잡혀, 판단 근거를 코드에서 지우는 쪽으로 압력이 생긴다.
+    실제로 **호출·import 하는지**를 AST로 확인한다.
+    """
+    import ast
+    import inspect
+
+    from scripts import daily_monitor_ci as M
+
+    banned = "enrich_with_sec_freshness"
+    for mod in (B, M):
+        tree = ast.parse(inspect.getsource(mod))
+        for node in ast.walk(tree):
+            if isinstance(node, ast.Name) and node.id == banned:
+                raise AssertionError(f"{mod.__name__}가 {banned}를 참조한다")
+            if isinstance(node, ast.Attribute) and node.attr == banned:
+                raise AssertionError(f"{mod.__name__}가 {banned}를 참조한다")
+            if isinstance(node, ast.ImportFrom):
+                names = {a.name for a in node.names}
+                assert banned not in names, f"{mod.__name__}가 {banned}를 import한다"
+
+
+def test_brief_does_not_claim_a_thesis_condition_total(tmp_path, monkeypatch):
+    """
+    `due_conditions()`는 도래·임박·날짜없음 세 갈래만 돌려주고 **경고창 밖의
+    미래 기한은 어느 갈래에도 없다.** 세 갈래를 더해 «총 N건»이라 쓰면 실제보다
+    적은 수가 총계로 찍힌다(실측: 저장소 thesis 조건 23건, 세 갈래 합 19건).
+    여기서는 조건 2건 중 1건만 세 갈래에 들어가는 상황을 만들어 고정한다.
+    """
+    os.chdir(ROOT)
+    from scripts import daily_monitor_ci as M
+
+    tdir = _thesis_dir_with(tmp_path, "2027-12-31")  # 창 밖 미래 + 날짜없음 1건
+    monkeypatch.setattr(B, "run_monitor",
+                        lambda t: M.run_monitor(t, thesis_dir=tdir))
+    text = "\n".join(B.section_today(date(2026, 6, 1))[0])
+
+    cp = M.run_monitor(date(2026, 6, 1), thesis_dir=tdir)["thesis_checkpoints"]
+    assert len(cp["no_date"]) == 1 and not cp["due"] and not cp["approaching"]
+    assert "thesis 조건 1건" not in text  # 세 갈래 합을 총계로 쓰지 않는다
+    assert "날짜없는 상시감시 1건" in text

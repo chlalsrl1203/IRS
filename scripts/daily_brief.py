@@ -26,6 +26,9 @@
 - **네트워크 의존 0.** 저장된 파일만 읽는다. Finviz·SEC·시세 API가 전부
   죽어도 브리핑은 항상 나온다. 자동화가 조용히 실패하던 경로(v3.68)를
   브리핑까지 전파시키지 않기 위해서다.
+  ⚠️ 그래서 thesis 체크포인트(2026-09-18 배선)도 `due_conditions()`(순수 날짜
+  산술)만 쓰고 `enrich_with_sec_freshness()`(SEC 조회)는 쓰지 않는다 - 그
+  하나를 위해 브리핑 전체가 네트워크에 묶이면 위 불변조건이 깨진다.
 - **새 배분 규칙을 만들지 않는다.** 미국 개별주는 이미 근거가 기록된
   `weight_final`을 금액으로 환산할 뿐이고, KRX ETF는 **비중 배분 규칙이
   존재하지 않으므로 후보 순위만** 낸다(없는 규칙을 지어내지 않는다).
@@ -105,14 +108,17 @@ def won(x):
 def section_today(today):
     r = run_monitor(today)
     t, p = r["falsification"], r["predictions"]
+    cp = r.get("thesis_checkpoints") or {}
     need, due = t["needs_review"], p["due"]
+    cp_due = cp.get("due") or []
 
     out = ["## 🚨 오늘 확인할 것"]
     if t.get("state_file_missing"):
         out += ["", "⚠️ `monitor/acknowledgements.json`이 없어 **전부 미확인**으로 "
                     "취급 중이다."]
-    if not need and not due:
-        out += ["", "**없음.** 기한이 도래한 반증조건·예측 중 미확인 항목이 없다."]
+    if not need and not due and not cp_due:
+        out += ["", "**없음.** 기한이 도래한 반증조건·예측·thesis 체크포인트 중 "
+                    "미확인 항목이 없다."]
     if need:
         out += ["", f"### 반증조건 {len(need)}건",
                 "확인 전에는 해당 종목 비중을 늘리지 말 것.", ""]
@@ -129,13 +135,34 @@ def section_today(today):
         for d in due[:10]:
             out.append(f"- **{d['ticker']}** · {d['metric']} · 기한 "
                        f"{d['resolution_date']} ({d['days_past']}일 경과)")
+    if cp_due:
+        out += ["", f"### thesis 반증조건 기한 {len(cp_due)}건",
+                "기한이 됐다는 뜻이지 조건이 맞았다는 뜻이 아니다 — 실적을 보고 "
+                "판단한 뒤 `mark_invalidation_triggered()`로 기록한다.", ""]
+        for e in cp_due[:10]:
+            out.append(f"- **{e['ticker']}** · 기한 {e['check_by']} "
+                       f"({-e['days_until_check_by']}일 경과)")
+            out.append(f"  > {str(e.get('condition') or '')[:200]}")
     if t["triggered"]:
         names = ", ".join(f"{x['ticker']}({x['trigger_date']})" for x in t["triggered"])
         out += ["", f"🔴 반증조건 발동상태 유지: {names} — 조치 완료분, 재알림 아님."]
+
+    cp_soon = cp.get("approaching") or []
+    if cp_soon:
+        names = ", ".join(f"{e['ticker']}({e['check_by']}, "
+                          f"D-{e['days_until_check_by']})" for e in cp_soon[:10])
+        out += ["", f"📅 thesis 기한 임박 {len(cp_soon)}건: {names}"]
+
+    # ⚠️ 여기서 «thesis 조건 총 N건»이라고 쓰지 않는다. `due_conditions()`는
+    # 도래·임박·날짜없음 세 갈래만 돌려주고, **경고창(30일) 밖의 미래 기한은
+    # 어느 갈래에도 들어가지 않는다** - 세 갈래를 더해 총계라고 부르면 실제보다
+    # 적은 수가 총계로 찍힌다(실측: 조건 23건 중 세 갈래 합은 19건).
     out += ["", f"<sub>감시 대상 {r['n_ledgers']}종목 · 반증조건 미기재 "
                 f"{len(t['no_conditions'])}종목 (⚠️ 미기재는 '안전'이 아니라 "
-                f"'감시근거 없음')</sub>"]
-    return out, len(need) + len(due)
+                f"'감시근거 없음') · thesis 날짜없는 상시감시 "
+                f"{len(cp.get('no_date') or [])}건 (⚠️ 기한 0건이 "
+                f"'볼 게 없다'는 뜻은 아니다)</sub>"]
+    return out, len(need) + len(due) + len(cp_due)
 
 
 # ── ①-b 실제 보유 vs 시스템 목표 ────────────────────────────────────────
