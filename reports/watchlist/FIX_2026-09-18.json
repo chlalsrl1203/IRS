@@ -1,0 +1,19 @@
+{
+  "ticker": "FIX",
+  "analyzed_at": "2026-09-02",
+  "market_cap_then": 54674913455.78999,
+  "market_cap_now": 55865717000.0,
+  "market_cap_change_pct": 0.021779706065248483,
+  "gap_then": 0.04222305297851536,
+  "gap_now": 0.039735488891601334,
+  "gap_decay_pp": -0.002487564086914029,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.22999999999999976,
+  "realistic_growth_now": 0.22999999999999976,
+  "mode": "gap_decay",
+  "date": "2026-09-18"
+}

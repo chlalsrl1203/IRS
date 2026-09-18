@@ -1,0 +1,19 @@
+{
+  "ticker": "MMS",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 3059264092.09,
+  "market_cap_now": 3016331000.0,
+  "market_cap_change_pct": -0.014033797278570237,
+  "gap_then": 0.09740317333848487,
+  "gap_now": 0.09925406445176613,
+  "gap_decay_pp": 0.0018508911132812528,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.06113417614610206,
+  "realistic_growth_now": 0.06113417614610206,
+  "mode": "gap_decay",
+  "date": "2026-09-18"
+}
