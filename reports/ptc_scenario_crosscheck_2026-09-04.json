@@ -1,0 +1,83 @@
+{
+  "ticker": "PTC",
+  "as_of": "2026-09-04",
+  "purpose": "보유 포트폴리오 최대비중(38.4%) 종목의 판정 취약성 점검",
+  "official_ledger": "ledger/PTC_2026-09-04.json",
+  "affects_official_judgment": false,
+  "scenarios": [
+    {
+      "scenario": "공식(GAAP 매출 CAGR, SBC 미차감)",
+      "realistic_growth": 0.11390601486057504,
+      "implied_growth": 0.073137092590332,
+      "gap": 0.040768922270243035,
+      "judgment": "적정가/경계선",
+      "note": "ledger/PTC_2026-09-04.json 그대로"
+    },
+    {
+      "scenario": "SBC 차감(성장률은 GAAP CAGR 그대로)",
+      "realistic_growth": 0.11390601486057504,
+      "implied_growth": 0.10752334594726559,
+      "gap": 0.00638266891330945,
+      "judgment": "적정가/경계선",
+      "note": "SBC/FCF 25.2%"
+    },
+    {
+      "scenario": "ARR성장 guidance_low_7.5",
+      "realistic_growth": 0.075,
+      "implied_growth": 0.073137092590332,
+      "gap": 0.001862907409667991,
+      "judgment": "적정가/경계선",
+      "note": "회사 자체 지표(매각분 제외 CC), SBC 미차감"
+    },
+    {
+      "scenario": "ARR성장 guidance_low_7.5 + SBC차감",
+      "realistic_growth": 0.075,
+      "implied_growth": 0.10752334594726559,
+      "gap": -0.032523345947265594,
+      "judgment": "적정가/경계선",
+      "note": "가장 보수적인 조합"
+    },
+    {
+      "scenario": "ARR성장 q3_26_actual_9.1",
+      "realistic_growth": 0.091,
+      "implied_growth": 0.073137092590332,
+      "gap": 0.01786290740966799,
+      "judgment": "적정가/경계선",
+      "note": "회사 자체 지표(매각분 제외 CC), SBC 미차감"
+    },
+    {
+      "scenario": "ARR성장 q3_26_actual_9.1 + SBC차감",
+      "realistic_growth": 0.091,
+      "implied_growth": 0.10752334594726559,
+      "gap": -0.016523345947265594,
+      "judgment": "적정가/경계선",
+      "note": "가장 보수적인 조합"
+    },
+    {
+      "scenario": "ARR성장 guidance_high_9.5",
+      "realistic_growth": 0.095,
+      "implied_growth": 0.073137092590332,
+      "gap": 0.021862907409667995,
+      "judgment": "적정가/경계선",
+      "note": "회사 자체 지표(매각분 제외 CC), SBC 미차감"
+    },
+    {
+      "scenario": "ARR성장 guidance_high_9.5 + SBC차감",
+      "realistic_growth": 0.095,
+      "implied_growth": 0.10752334594726559,
+      "gap": -0.01252334594726559,
+      "judgment": "적정가/경계선",
+      "note": "가장 보수적인 조합"
+    },
+    {
+      "scenario": "[미채택 참고] FY2015~2025 창(구독전환기 포함)",
+      "realistic_growth": 0.10878436127881694,
+      "implied_growth": 0.07942199707031249,
+      "gap": 0.02936236420850445,
+      "judgment": "적정가/경계선",
+      "note": "DRS 56.40(+12.0), Lynch cyclical - FY2016 감소가 회계전환 착시임이 확인돼 채택하지 않음. 실행 실측값 기록."
+    }
+  ],
+  "n_scenarios_differing_from_official": 0,
+  "known_limitation": "ARR과 GAAP 매출은 정의가 다른 지표다(ARR은 영구라이선스·전문서비스 제외). 두 값을 같은 자리에 대입하는 것은 근사이며, ROP처럼 다년 실현 오가닉 실적으로 검증된 대체가 아니다 - 그래서 공식 판정으로 승격하지 않는다(KEYS 선례)."
+}

@@ -14,7 +14,8 @@ import pytest
 
 from engine.monitor_state import (
     CLOSED_VERDICTS, DEFAULT_RECHECK_DAYS, OPEN_VERDICTS, VERDICTS,
-    build_acknowledgement, is_open, item_key, latest_verdict, triage,
+    build_acknowledgement, is_open, item_key, latest_verdict,
+    load_acknowledgements, triage,
 )
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -162,14 +163,22 @@ def test_no_conditions_is_reported_as_absence_of_basis_not_safety():
 # ── 실제 저장소 상태 회귀 ────────────────────────────────────────────
 def test_seeded_state_matches_recorded_2026_08_13_verdicts():
     """
-    monitor/acknowledgements.json은 08-13 리포트에서 전사한 것이다.
-    누군가 verdict를 나중에 고쳐 쓰면(사후합리화) 이 테스트가 잡는다.
+    monitor/acknowledgements.json의 **2026-08-13 시드 엔트리**는 그날 리포트에서
+    전사한 것이다. 누군가 그 시드 엔트리 자체를 나중에 고쳐 쓰면(사후합리화)
+    이 테스트가 잡는다.
+
+    ⚠️ 같은 item_key로 **새 엔트리를 append**하는 것(INCONCLUSIVE 재부상 -
+    이 모듈의 핵심 설계 목적, docstring 4번 참고)은 여기서 막지 않는다 -
+    append-only 원칙상 그건 사후수정이 아니라 새로운 확인 행위다. 그래서
+    acknowledged_on=="2026-08-13"인 엔트리만 걸러 검사한다(naive item_key
+    dict는 재부상 시 최신 엔트리로 덮여써져 시드 자체의 무결성을 못 본다).
     """
     ack_path = ROOT / "monitor" / "acknowledgements.json"
     if not ack_path.exists():
         pytest.skip("확인 기록 파일 없음")
     data = json.loads(ack_path.read_text(encoding="utf-8"))
-    by_key = {a["item_key"]: a for a in data["acknowledgements"]}
+    seeded = {a["item_key"]: a for a in data["acknowledgements"]
+              if a.get("acknowledged_on") == "2026-08-13"}
     expected = {
         "DUOL:2026-08-05": "NOT_TRIGGERED",
         "MNDY:2026-08-10": "INCONCLUSIVE",
@@ -180,11 +189,35 @@ def test_seeded_state_matches_recorded_2026_08_13_verdicts():
         "TTD:2026-08-06": "TRIGGERED",
     }
     for key, verdict in expected.items():
-        assert key in by_key, f"{key} 확인 기록이 사라졌다"
-        assert by_key[key]["verdict"] == verdict, (
-            f"{key}: 기록된 판정이 {verdict}에서 "
-            f"{by_key[key]['verdict']}로 바뀌었다 - 사후 수정 금지")
-        assert by_key[key]["note"].strip(), f"{key}: 근거가 비었다"
+        assert key in seeded, f"{key} 시드 확인 기록이 사라졌다"
+        assert seeded[key]["verdict"] == verdict, (
+            f"{key}: 시드 판정이 {verdict}에서 "
+            f"{seeded[key]['verdict']}로 바뀌었다 - 사후 수정 금지")
+        assert seeded[key]["note"].strip(), f"{key}: 근거가 비었다"
+
+
+def test_mndy_inconclusive_reopened_2026_09_10_without_erasing_seed():
+    """
+    2026-09-10 S등급 전수 재분석에서 MNDY:2026-08-10의 INCONCLUSIVE가
+    실제로 재부상해 코호트별 NDR 데이터로 NOT_TRIGGERED로 해소됐다 -
+    이 모듈이 설계한 대로 처음 실사용된 사례. append-only이므로 원 시드
+    엔트리(INCONCLUSIVE)는 그대로 남고, 최신 조회는 새 엔트리를 반환해야
+    한다.
+    """
+    ack_path = ROOT / "monitor" / "acknowledgements.json"
+    data = json.loads(ack_path.read_text(encoding="utf-8"))
+    entries = [a for a in data["acknowledgements"]
+               if a["item_key"] == "MNDY:2026-08-10"]
+    assert len(entries) == 2, "재부상 엔트리가 추가됐어야 한다(append-only)"
+    by_date = {e["acknowledged_on"]: e for e in entries}
+    assert by_date["2026-08-13"]["verdict"] == "INCONCLUSIVE"
+    assert by_date["2026-09-10"]["verdict"] == "NOT_TRIGGERED"
+    assert "115%" in by_date["2026-09-10"]["note"]
+
+    acks = load_acknowledgements(str(ack_path))
+    latest = latest_verdict(acks, "MNDY:2026-08-10")
+    assert latest["verdict"] == "NOT_TRIGGERED", (
+        "latest_verdict()는 최신 엔트리를 반환해야 한다")
 
 
 def test_real_repo_today_has_no_unreviewed_backlog():
@@ -196,7 +229,7 @@ def test_real_repo_today_has_no_unreviewed_backlog():
     result = RUNNER.run_monitor(TODAY, ledger_dir=str(ROOT / "ledger"),
                                 ack_path=str(ROOT / "monitor" / "acknowledgements.json"),
                                 predictions_dir=str(ROOT / "predictions"))
-    assert result["n_ledgers"] == 35  # 2026-09-01: CROX 정식분석 추가(34->35)
+    assert result["n_ledgers"] == 80  # 2026-09-01/04: CROX·SIGI·OKTA·MEDP·RYAN·FIX·NBIX·NXT·PATH·PCTY·EXEL·PINS·ROKU·HLNE·FIVE·TW·RLI·DOCU·CINF·TENB·SKYW·RMBS·BYD·CRM·DECK·QCOM·EAT·ADBE·MMS·CHWY 정식분석 추가 + 2026-09-04 포트폴리오 재검토로 DLO·NOW 신규(34->66) + 2026-09-06 CAH(67) + 2026-09-08 HQY(68) + 2026-09-09 URBN(69)·REGN(70)·LFUS(71) + 2026-09-11 ERIE(72) + 2026-09-13 ULTA(73)·EME(74)·NYT(75)·OSIS(76)·LULU(77)·WTS(78) + 2026-09-14 TEAM(79)·PSN(80)
     assert result["falsification"]["needs_review"] == []
     assert result["action_required"] is False
 

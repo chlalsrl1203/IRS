@@ -1,0 +1,70 @@
+{
+  "thesis": {
+    "ticker": "ACGL",
+    "thesis_date": "2026-09-07",
+    "why_buy": "Gap +24.45%p(S등급, 2026-09-05 재실행) - Realistic Growth 15.74%가 지속가능성장률(ROE x 유보율 15.46%)과 0.28%p 이내로 근접해 성장추정 자체가 정합적이다. 준비금 적정성·자본배분(BVPS +22.6%)·거버넌스가 모두 양호하고 신용등급이 오히려 상향됐다(2026-08-03 정성조사).",
+    "market_assumption": "Implied Growth가 두 시나리오 모두 음수(-8.7%~-10.7%, r 포함/제외)로 역산된다 - 시장가가 이미 매출 역성장을 전제한 밸류에이션에 근접해 있다는 뜻이다. 보험업 FCF-DCF가 플로트 성장을 유기적 성장으로 과대평가할 위험(ACGL v3.13 원 경고)을 감안해도, 시장의 가격설정이 그 위험을 이미 상당폭 반영한 상태로 보인다.",
+    "irs_view": "엔진의 `insurer_cross_check`가 지속가능성장률과 Realistic Growth의 괴리를 5%p 경고 임계값 안(0.28%p)으로 확인해줬다는 게 이 종목이 34종목 중 드물게 '성장 추정 자체는 의심할 이유가 약한' 사례라는 뜻이다. 재보험 ex-cat 컴바인드레이쇼 소폭 악화는 실재하나 추세로 확정된 것은 아니다(2분기 연속 소폭).",
+    "key_drivers": [
+      "재보험·1차보험 언더라이팅 마진 유지",
+      "BVPS(주당순자산) 지속 성장(+22.6%, 자본배분 규율의 직접 증거)",
+      "신용등급 상향 추세"
+    ],
+    "expected_outcomes": [
+      "재보험 ex-cat 컴바인드레이즈가 3분기 연속 악화되지 않고 안정화",
+      "대재해(허리케인·산불 등) 관련 대형 단일사건 손실 없이 분기 경과"
+    ],
+    "catalysts": [
+      "다음 분기 실적발표에서 컴바인드레이쇼·준비금 발전 공개"
+    ],
+    "risks": [
+      "대재해 리스크가 평활화된 FCF에 구조적으로 반영되지 않음(엔진의 알려진 한계)",
+      "보험 플로트 성장이 유기적 성장으로 과대평가될 위험(ACGL v3.13 핵심노트 - 이번엔 지표상 5%p 경고 임계값 안이지만 여전히 감시 필요)"
+    ],
+    "invalidation_conditions": [
+      {
+        "condition": "재보험 ex-cat 컴바인드레이쇼가 세 분기 연속 전년比 악화되면 텔레매틱스/언더라이팅 규율 서사 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "단일 대재해로 분기 세전손실이 발생하면 재검토 (엔진 FCF가 이 리스크를 구조적으로 못 봄)",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "insurer_cross_check 괴리(RG vs 지속가능성장률)가 5%p를 넘으면 성장 추정 신뢰도 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      }
+    ],
+    "holding_horizon": "12-24개월(보험업 사이클 감안 장기 보유 전제)",
+    "linked_ledger": "ACGL_2026-09-05.json",
+    "author_note": "이미 portfolio/holdings.json에 실보유 중(2.34%). 확신 포트폴리오(2026-09-05)에서는 9.36%로 최상위 편입 - 실보유 비중과 목표 비중의차이는 daily_brief.py의 reconciliation 섹션이 이미 드러내고 있으며,이 thesis는 사이징을 다루지 않는다(§5 범위 밖 - build_portfolio.py 소관).",
+    "stale_after": null,
+    "must_refresh_if": null,
+    "thesis_id": "ACGL-2026-09-07"
+  },
+  "decisions": [
+    {
+      "thesis_id": "ACGL-2026-09-07",
+      "decision_date": "2026-09-07",
+      "action": "HOLD",
+      "action_source": "analyst_recorded (엔진이 계산한 값이 아님)",
+      "gates": {
+        "signal_summary": "Gap +24.45%p(S등급), RAR +2.056, Confidence 94(엔진 원값)/83(정성조사 반영값). 34종목 중 상위권 Gap.",
+        "business_quality": "특수보험·재보험 복합 언더라이터. BVPS +22.6%로 자본배분 규율 확인, 신용등급 상향. 준비금 적정성·거버넌스 정성조사(2026-08-03) 전부 양호 판정.",
+        "financial_quality": "insurer_cross_check: 지속가능성장률(ROE 평균 x 유보율)이 Realistic Growth와 0.28%p 이내 근접 - 성장 추정이 보험 플로트 착시 우려에 비해 상대적으로 견고. SBC 교차검증 미실시(보험업 특성상 낮을 것으로 예상되나 미확인).",
+        "risk_assessment": "대재해 리스크가 FCF-DCF의 평활화 구조로 원리적으로 미반영 - 이 엔진이 구조적으로 못 보는 유일한 축. ex-cat 컴바인드레이쇼 2분기 연속 소폭 악화(추세 확정 아님).",
+        "valuation_assessment": "Implied Growth 두 시나리오(DRS 포함/제외) 모두 음수(-8.7%~-10.7%)로 이미 상당히 비관적인 시장가정을 시사 - 추가 하방 여지가 제한적이라는 방향의 신호.",
+        "portfolio_context": "이미 실보유 중(holdings.json 2.34%, insurance_underwriting 군집). 같은 군집 내 PGR·SIGI·CINF·RLI·BRO도 확신 포트폴리오에 동시 편입돼 있어 보험업 군집 집중도를 감안해야 함(단일종목 리스크는 아니나 업종 공통 리스크(금리·재해) 노출은 군집 합산 기준으로 볼 것)."
+      },
+      "rationale": "실보유 포지션을 유지한다. 지속가능성장률과 Realistic Growth의 근접(0.28%p)이 34종목 중에서도 드물게 견고한 신호이고, 반증조건 3개(컴바인드레이쇼 3분기 연속 악화·대재해 단일손실·괴리 5%p 초과) 중 어느 것도 아직 발동하지 않았다.",
+      "position_pct": null
+    }
+  ],
+  "evidence": []
+}

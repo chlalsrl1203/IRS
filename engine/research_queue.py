@@ -56,25 +56,53 @@ research_queue.py (2026-08-30) — 스크리닝과 매수리스트 **사이의 �
 
     IN_BUYLIST : 현재 매수리스트에 있음
     ANALYZED   : ledger에 정식분석이 있음(매수리스트에는 없음)
-    QUEUED     : 위 둘 다 아님 — 사람이 아직 안 본 종목
+    EXCLUDED   : 조사했고 정량모델 대상이 아니라고 결정함(아래 참고)
+    QUEUED     : 위 셋 다 아님 — 사람이 아직 안 본 종목
 
-사람이 손댈 것은 없다.
+## ⚠️ EXCLUDED는 이 원칙의 유일한 예외다 - 파생할 소스가 없기 때문
+
+IN_BUYLIST/ANALYZED는 다른 파일(매수리스트/ledger)이 이미 진실을 담고
+있어 거기서 읽기만 하면 된다. 그런데 "조사했고 FRAMEWORK_MISMATCH로
+제외했다"는 사실은 **ledger를 안 만드는 게 결정 그 자체라서** 파생할
+소스가 원리적으로 없다 - 2026-08-30~09-04 사이 30개 넘는 종목이 이렇게
+제외됐는데 전부 CLAUDE.md 산문에만 남아, LNTH가 실제로 큐에 재등장해
+사람이 또 조사해야 했다.
+
+그래서 `data/excluded_tickers.json`(사람이 유지하는 작은 레지스트리,
+`portfolio/holdings.json`과 같은 성격)을 뒀다 - 단, **은행/REIT/원자재
+사이클처럼 회사의 사업구조 자체가 DCF 가정과 안 맞는 "구조적" 배제**와
+**피인수 확정처럼 시장에서 곧 사라지는 배제**만 담는다. "실적이 실제로
+나빠져서" 뺀 종목(예: KR·AGCO)은 넣지 않는다 - 그건 시점부 판단이라
+나중에 실적이 개선되면 재조사할 가치가 있고, 큐가 그런 턴어라운드
+후보를 다시 골라내는 건 버그가 아니라 스크리닝의 목적 중 하나다.
+
+ledger/매수리스트에 등재된 종목이 우선한다(과거 제외 결정이 나중에
+번복된 경우 - 예: NOW는 2026-08-14 FRAMEWORK_MISMATCH로 잘못 판단됐다가
+2026-09-05 정정돼 정식 ledger가 생겼다) - EXCLUDED는 그 둘 다 없을
+때만 적용된다.
 """
 import datetime
 
 from engine.validated_scope import out_of_scope_reasons
 
-STATES = ("IN_BUYLIST", "ANALYZED", "QUEUED")
+STATES = ("IN_BUYLIST", "ANALYZED", "EXCLUDED", "QUEUED")
 
 _MISSING = object()
 
 
-def derive_state(ticker, ledger_tickers, buylist_tickers):
-    """상태를 저장소의 사실에서 파생한다(손으로 관리하는 상태 파일 없음)."""
+def derive_state(ticker, ledger_tickers, buylist_tickers, excluded_tickers=None):
+    """상태를 저장소의 사실에서 파생한다(EXCLUDED만 예외 - 모듈 docstring 참고).
+
+    ledger·매수리스트 사실이 excluded_tickers보다 우선한다 - 과거 제외
+    결정이 나중에 번복돼 정식분석이 생긴 경우(NOW 선례) 그 최신 사실을
+    따라야 한다.
+    """
     if ticker in buylist_tickers:
         return "IN_BUYLIST"
     if ticker in ledger_tickers:
         return "ANALYZED"
+    if excluded_tickers and ticker in excluded_tickers:
+        return "EXCLUDED"
     return "QUEUED"
 
 
@@ -127,13 +155,21 @@ def merge_run(queue, passed_rows, run_date):
     return queue
 
 
-def annotate(queue, ledger_tickers, buylist_tickers, today=None):
-    """큐 항목에 파생 상태와 경과 주수를 붙인다."""
+def annotate(queue, ledger_tickers, buylist_tickers, today=None, excluded_tickers=None):
+    """큐 항목에 파생 상태와 경과 주수를 붙인다.
+
+    excluded_tickers: {ticker: {"reason_category": ..., "reason": ...}} 형태의
+    `data/excluded_tickers.json` 항목들(선택). 넘기지 않으면 기존 동작 그대로
+    (EXCLUDED 상태가 나오지 않는다) - opt-in.
+    """
     today = today or datetime.date.today().isoformat()
+    excluded_tickers = excluded_tickers or {}
     out = {}
     for t, e in queue.items():
         e = dict(e)
-        e["state"] = derive_state(t, ledger_tickers, buylist_tickers)
+        e["state"] = derive_state(t, ledger_tickers, buylist_tickers, excluded_tickers)
+        if e["state"] == "EXCLUDED":
+            e["exclusion_reason"] = excluded_tickers[t]
         e["in_validated_scope"] = not e.get("out_of_validated_scope")
         try:
             d0 = datetime.date.fromisoformat(e.get("last_seen", today))
@@ -165,7 +201,7 @@ def priority_order(entries):
         bits = []
         bits.append("검증범위 안" if e.get("in_validated_scope") else "범위 밖")
         bits.append({"QUEUED": "미분석", "ANALYZED": "분석완료",
-                     "IN_BUYLIST": "보유중"}[e["state"]])
+                     "IN_BUYLIST": "보유중", "EXCLUDED": "제외됨"}[e["state"]])
         bits.append(f"{e.get('times_seen', 0)}회 연속통과")
         e["priority_reason"] = " · ".join(bits)
     return ordered

@@ -1,0 +1,620 @@
+{
+  "meta": {
+    "ticker": "NOW",
+    "company_name": "ServiceNow, Inc.",
+    "analyzed_at": "2026-09-05T04:36:25.010810+00:00",
+    "engine_version": "v3.81",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001373715 ServiceNow, 조회 2026-09-04)",
+      "SEC 10-Q (2026-06-30 대차대조표: 차입금/현금/매도가능증권, 표지 발행주식수 1,034,000,000주)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $141.26)",
+      "WebSearch: NOW Q2 2026 실적(구독매출 +24.5%, cRPO +21.5% cc)·FY2026 가이던스·ServiceNow AI ACV $1B·비좌석 가격모델 50%+·Armis 인수 종결일(investor.servicenow.com/TradingView/CNBC/TechTimes, 2026-09-04 재인용)"
+    ],
+    "falsification_conditions": "(1) **FY2026 10-K(2027-01경)에서 유기적/비유기적 성장을 반드시 분리 대조할 것** - Armis($7.75B, 이미 종결)·Veza·Moveworks가 FY2026부터 연결에 들어와 GEN/BRO/ROP와 같은 M&A CAGR 왜곡이 **다음 분석부터는 실제로 발생한다**. 회사 공시 구독매출 유기적 성장률이 연결 성장률보다 3%p 이상 낮으면 이 판정을 재검토. (2) cRPO 상수통화 성장률이 두 분기 연속 20% 아래로 떨어지면 - cRPO는 매출보다 먼저 움직이는 선행지표다. (3) 비좌석(non-seat) 가격모델 신규계약 비중이 50%에서 후퇴하면 - 'AI가 좌석 수를 줄인다'는 위협에 대한 회사의 대응이 실패하고 있다는 신호. (4) ServiceNow AI ACV 성장이 정체되면. (5) 차입금이 Armis 인수 자금조달($1,491M -> $5,435M) 이후 추가로 크게 늘면 - 연쇄 M&A 자금조달이 재무 유연성을 잠식한다.",
+    "price_at_analysis": 141.26,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-05",
+      "filing_dates_by_year": {
+        "2015": "2016-02-25",
+        "2016": "2017-02-28",
+        "2017": "2018-02-28",
+        "2018": "2019-02-27",
+        "2019": "2020-02-20",
+        "2020": "2021-02-12",
+        "2021": "2022-02-03",
+        "2022": "2023-01-31",
+        "2023": "2024-01-25",
+        "2024": "2025-01-30",
+        "2025": "2026-01-29"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-05",
+      "n_covered": 10,
+      "n_missing": 1,
+      "missing_fields": [
+        "revenue_by_year[2015]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 1390985000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 1918494000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2608816000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 3460437000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-20",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4519484000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-12",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 5896000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-03",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 7245000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-01-31",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 8971000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-01-25",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 10984000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-01-30",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 13278000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-01-29",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[모델 괴리 경고] single_stage(7.36%)와 two_stage(12.71%)가 5.35%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것.",
+    "[SBC 교차검증 경고] SBC가 FCF0의 43%를 차지한다. SBC를 실제 비용으로 차감하면 판정이 '저평가 가능성' -> '적정가/경계선'로 **뒤집힌다**(Gap +8.30%p -> +1.88%p, 2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 민감하므로 액면 그대로 신뢰하지 말 것."
+  ],
+  "inputs": {
+    "ticker": "NOW",
+    "company_name": "ServiceNow, Inc.",
+    "revenue_by_year": {
+      "2015": 1005500000.0,
+      "2016": 1391000000.0,
+      "2017": 1918500000.0,
+      "2018": 2608800000.0,
+      "2019": 3460000000.0,
+      "2020": 4519000000.0,
+      "2021": 5896000000.0,
+      "2022": 7245000000.0,
+      "2023": 8971000000.0,
+      "2024": 10984000000.0,
+      "2025": 13278000000.0
+    },
+    "operating_income_by_year": {
+      "2015": -166400000.0,
+      "2016": -382200000.0,
+      "2017": -64400000.0,
+      "2018": -42400000.0,
+      "2019": 42000000.0,
+      "2020": 199000000.0,
+      "2021": 257000000.0,
+      "2022": 355000000.0,
+      "2023": 762000000.0,
+      "2024": 1364000000.0,
+      "2025": 1824000000.0
+    },
+    "operating_cashflow_by_year": {
+      "2015": 317800000.0,
+      "2016": 159100000.0,
+      "2017": 642900000.0,
+      "2018": 811100000.0,
+      "2019": 1236000000.0,
+      "2020": 1786000000.0,
+      "2021": 2191000000.0,
+      "2022": 2723000000.0,
+      "2023": 3398000000.0,
+      "2024": 4267000000.0,
+      "2025": 5444000000.0
+    },
+    "capex_by_year": {
+      "2015": 87500000.0,
+      "2016": 105600000.0,
+      "2017": 150500000.0,
+      "2018": 224500000.0,
+      "2019": 265000000.0,
+      "2020": 419000000.0,
+      "2021": 392000000.0,
+      "2022": 550000000.0,
+      "2023": 694000000.0,
+      "2024": 852000000.0,
+      "2025": 868000000.0
+    },
+    "market_cap": 146062840000.0,
+    "net_debt": -1281000000.0,
+    "ebitda": 2562000000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.35,
+      0.25,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.2,
+    "subjective_input_basis": "competitor_threat_weights=[0.35(Microsoft - Power Platform + Copilot 번들, 엔터프라이즈 전반 침투력이 가장 큰 위협), 0.25(Salesforce - 인접 워크플로/CRM에서 중첩), 0.20(AI네이티브 자동화 스타트업 - 서사상 위협이나 아직 점유율 실측 증거 없음)]. market_share_trend_pp_per_year=+0.5 - 2026-09-04 WebSearch로 확인한 Q2 2026 cRPO +21.5%(상수통화)가 가이던스를 2%p 이상 초과했고 ServiceNow AI ACV가 $10억을 넘겨 점유율이 후퇴하고 있다는 증거가 없다. 다만 '워크플로 SW 시장에서 점유율이 얼마나 늘고 있는가'를 직접 측정한 자료를 확보하지 못해 완만한 양(+)값만 반영한다(모르는 것을 크게 반영하지 않는다). demand_sensitivity_pct=0.20 - CLAUDE.md 업종앵커표 '기업용 필수 SW·전문서비스(계약기반, 전환비용 높음)' 버킷 앵커값 그대로 (CDNS·WDAY·GWRE·PTC 등과 같은 버킷). RPO $29.0B / cRPO $13.2B의 계약잔액이 이 낮은 민감도를 뒷받침한다.",
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 CAGR(3y 22.4% / 5y 24.1% / 10y 29.4%)이 default_terminal_growth(2.0~4.5%)를 크게 웃도는 고성장 국면이라 Gordon 정상상태 가정이 성립하지 않는다. 동시에 **11개년 YoY가 38.4%에서 20.9%로 단조 감속하는 교과서적 수렴 경로**를 이미 그리고 있고 회사 자신의 FY2026 가이던스(+21% 상수통화)도 그 연장선에 있어, 고성장->terminal 수렴을 명시적으로 모형화하는 two_stage가 이 구조에 정확히 맞는다. 이 종목은 감속 자체가 관측 가능하므로 모델 선택의 자의성이 VRT(모델괴리 10.88%p) 같은 종목보다 작다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001373715 ServiceNow, 조회 2026-09-04)",
+      "SEC 10-Q (2026-06-30 대차대조표: 차입금/현금/매도가능증권, 표지 발행주식수 1,034,000,000주)",
+      "Alpha Vantage GLOBAL_QUOTE (latestDay 2026-09-04, $141.26)",
+      "WebSearch: NOW Q2 2026 실적(구독매출 +24.5%, cRPO +21.5% cc)·FY2026 가이던스·ServiceNow AI ACV $1B·비좌석 가격모델 50%+·Armis 인수 종결일(investor.servicenow.com/TradingView/CNBC/TechTimes, 2026-09-04 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2015": -198400000.0,
+      "2016": -414200000.0,
+      "2017": -116800000.0,
+      "2018": -26700000.0,
+      "2019": 626700000.0,
+      "2020": 119000000.0,
+      "2021": 230000000.0,
+      "2022": 325000000.0,
+      "2023": 1731000000.0,
+      "2024": 1425000000.0,
+      "2025": 1748000000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2015": 257700000.0,
+      "2016": 317700000.0,
+      "2017": 394000000.0,
+      "2018": 544000000.0,
+      "2019": 662000000.0,
+      "2020": 870000000.0,
+      "2021": 1131000000.0,
+      "2022": 1401000000.0,
+      "2023": 1604000000.0,
+      "2024": 1746000000.0,
+      "2025": 1955000000.0
+    },
+    "falsification_conditions": "(1) **FY2026 10-K(2027-01경)에서 유기적/비유기적 성장을 반드시 분리 대조할 것** - Armis($7.75B, 이미 종결)·Veza·Moveworks가 FY2026부터 연결에 들어와 GEN/BRO/ROP와 같은 M&A CAGR 왜곡이 **다음 분석부터는 실제로 발생한다**. 회사 공시 구독매출 유기적 성장률이 연결 성장률보다 3%p 이상 낮으면 이 판정을 재검토. (2) cRPO 상수통화 성장률이 두 분기 연속 20% 아래로 떨어지면 - cRPO는 매출보다 먼저 움직이는 선행지표다. (3) 비좌석(non-seat) 가격모델 신규계약 비중이 50%에서 후퇴하면 - 'AI가 좌석 수를 줄인다'는 위협에 대한 회사의 대응이 실패하고 있다는 신호. (4) ServiceNow AI ACV 성장이 정체되면. (5) 차입금이 Armis 인수 자금조달($1,491M -> $5,435M) 이후 추가로 크게 늘면 - 연쇄 M&A 자금조달이 재무 유연성을 잠식한다.",
+    "price_at_analysis": 141.26,
+    "currency": "USD",
+    "usd_fx_rate": 1.0,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-05",
+      "n_covered": 10,
+      "n_missing": 1,
+      "missing_fields": [
+        "revenue_by_year[2015]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 1390985000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 1918494000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 2608816000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-27",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 3460437000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-20",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 4519484000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-12",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 5896000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-03",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 7245000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-01-31",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 8971000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-01-25",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 10984000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-01-30",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 13278000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-01-29",
+          "retrieval_date": "2026-09-05",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-05",
+    "filing_dates_by_year": {
+      "2015": "2016-02-25",
+      "2016": "2017-02-28",
+      "2017": "2018-02-28",
+      "2018": "2019-02-27",
+      "2019": "2020-02-20",
+      "2020": "2021-02-12",
+      "2021": "2022-02-03",
+      "2022": "2023-01-31",
+      "2023": "2024-01-25",
+      "2024": "2025-01-30",
+      "2025": "2026-01-29"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.22376517864742618,
+    "revenue_cagr_5y": 0.24056083043090437,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.29441953611830685,
+    "fcf_cagr_5y": 0.2733374147765524,
+    "fcf0": 4576000000.0,
+    "fcf_by_year": {
+      "2015": 230300000.0,
+      "2016": 53500000.0,
+      "2017": 492400000.0,
+      "2018": 586600000.0,
+      "2019": 971000000.0,
+      "2020": 1367000000.0,
+      "2021": 1799000000.0,
+      "2022": 2173000000.0,
+      "2023": 2704000000.0,
+      "2024": 3415000000.0,
+      "2025": 4576000000.0
+    },
+    "worst_yoy_revenue_growth": 0.20884923525127452,
+    "worst_yoy_year": 2025,
+    "operating_margins": [
+      0.04358887381275441,
+      0.04899930986887509,
+      0.08494036339315572,
+      0.12418062636562273,
+      0.13737008585630367
+    ],
+    "net_debt_to_ebitda": -0.5
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 8.0,
+      "leverage": 2.0,
+      "cyclicality": 4.8,
+      "competition_intensity": 9.6
+    },
+    "score": 32.4
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.05972,
+    "r": 0.10722000000000001,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.13532717873544034,
+    "realistic_growth": 0.2100590719274136,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.22376517864742618,
+        "5y": 0.24056083043090437,
+        "10y": 0.29441953611830685
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.24293474567664577,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.24293474567664577,
+      "structural_discount_pct": 0.13532717873544034,
+      "discounted_growth": 0.2100590719274136,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.2100590719274136
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.07358565496654117,
+      "two_stage": 0.12709579467773435,
+      "errors": {},
+      "divergence": 0.053510139711193186,
+      "divergence_warning": "[모델 괴리 경고] single_stage(7.36%)와 two_stage(12.71%)가 5.35%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "매출 CAGR(3y 22.4% / 5y 24.1% / 10y 29.4%)이 default_terminal_growth(2.0~4.5%)를 크게 웃도는 고성장 국면이라 Gordon 정상상태 가정이 성립하지 않는다. 동시에 **11개년 YoY가 38.4%에서 20.9%로 단조 감속하는 교과서적 수렴 경로**를 이미 그리고 있고 회사 자신의 FY2026 가이던스(+21% 상수통화)도 그 연장선에 있어, 고성장->terminal 수렴을 명시적으로 모형화하는 two_stage가 이 구조에 정확히 맞는다. 이 종목은 감속 자체가 관측 가능하므로 모델 선택의 자의성이 VRT(모델괴리 10.88%p) 같은 종목보다 작다.",
+    "value": 0.12709579467773435
+  },
+  "expectation_gap": 0.08296327724967925,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.2100590719274136,
+      "g_bull": 0.25,
+      "g_bear": 0.1050295359637068,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.4260224056589532,
+      "base": 0.27137448762185046,
+      "bear": -0.06157907862988754
+    },
+    "probabilities": {
+      "bull": 0.3528,
+      "base": 0.5,
+      "bear": 0.1472
+    },
+    "probability_rationale": "DRS=32.4 (중립점 50 대비 편차 -0.35) 기준: p_bull=35.3%, p_base=50.0%, p_bear=14.7%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.2769235081530845
+  },
+  "rar": 0.8547021856576682,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10722000000000001,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.12709579467773435,
+    "implied_growth_without_drs": 0.10716361999511717,
+    "gap_with_drs": 0.08296327724967925,
+    "gap_without_drs": 0.10289545193229643,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10722000000000001,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.12709579467773435,
+      "implied_growth_without_drs": 0.10716361999511717,
+      "gap_with_drs": 0.08296327724967925,
+      "gap_without_drs": 0.10289545193229643,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 1955000000.0,
+    "sbc_to_fcf_pct": 0.427229020979021,
+    "fcf0_sbc_adjusted": 2621000000.0,
+    "implied_growth_sbc_adjusted": 0.19125633239746095,
+    "gap_sbc_adjusted": 0.01880273952995265,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": true
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

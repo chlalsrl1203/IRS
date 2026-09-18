@@ -1,0 +1,138 @@
+{
+  "as_of": "2026-09-10",
+  "scope": "ledger/*.json 전수에서 judgment_grade=='S'인 10종목 전수 재검토",
+  "method": "engine.thesis_monitor.recompute_gap_at_market_cap(가격재계산) + 각 종목 고유 falsification_conditions 대조(WebSearch 1~2회/종목)",
+  "findings": {
+    "ACGL": {
+      "in_buylist": true,
+      "weight": 0.09355757278473437,
+      "gap_then": 0.24452910193896105,
+      "gap_now": 0.24762,
+      "price_move_pct": -0.0202,
+      "falsification_check": {
+        "condition_1_ex_cat_cr_trend": "NEAR-TRIGGER — Q2 2026 ex-cat CR 82.5% vs Q2 2025 80.9% (+1.6pp YoY), 계속되는 악화추세(2026-08-03 정성조사가 이미 2분기 연속 소폭악화로 지목). 3분기 연속 여부는 다음 분기(Q3, ~2026-11월경) 확인 필요 - 지금은 근접이지 확정 트리거 아님.",
+        "condition_2_single_cat_pretax_loss": "NOT TRIGGERED — Q2 2026 Iran 분쟁+대류성폭풍 cat손실 $201M(consolidated CR 83.5%)에도 순이익 $1.0B 흑자 유지, 분기 세전손실 없음."
+      },
+      "verdict": "STABLE_WITH_WATCH — 공식판정 불변, ex-cat CR 추세를 다음 분기 실적에서 재확인할 것"
+    },
+    "CINF": {
+      "in_buylist": true,
+      "weight": 0.058793136308738135,
+      "gap_then": 0.16781962062278197,
+      "gap_now": 0.16981,
+      "price_move_pct": -0.0144,
+      "falsification_check": {
+        "condition_1_cr_105_or_new_biz_decline": "NOT TRIGGERED — Q3 2026 실적 미발표(10월말 예정), Q2 100.8%가 최신치로 이미 ledger에 반영됨. 신규 악화 정보 없음."
+      },
+      "verdict": "STABLE — 신규 정보 없음, 재확인 불필요(다음 체크포인트 Q3 실적)"
+    },
+    "DLO": {
+      "in_buylist": true,
+      "weight": 0.09190976552839589,
+      "gap_then": 0.23736248016357422,
+      "gap_now": 0.24461,
+      "price_move_pct": -0.0551,
+      "falsification_check": {
+        "all_5_conditions": "NOT TRIGGERED — WebSearch로 확인한 최근 뉴스에 부정적 촉매 없음, 애널리스트 컨센서스 Strong Buy/Buy 유지, 시장심리 '중립~강세'로 평가됨. 다음 실적(Q3, 2026-11-18) 전까지 신규 정보 없음."
+      },
+      "verdict": "STABLE — 가격하락(-5.51%)은 특정 악재 없는 통상적 변동으로 판단"
+    },
+    "DUOL": {
+      "in_buylist": true,
+      "weight": 0.05945292234431796,
+      "gap_then": 0.19453125000000002,
+      "gap_now": 0.19533,
+      "price_move_pct": -0.0066,
+      "falsification_check": {
+        "condition_1_net_adds": "확인불가(정확한 순증 수치 미확보, 유료구독자 +17%YoY로 총량은 견조) — 다음 체크에서 정밀 확인 필요",
+        "condition_2_dau_growth": "NOT TRIGGERED, 오히려 강화 — DAU +23%YoY(가속, 2026-08-03 조사 시점 +21%YoY에서 상승), 'Evercore Turns Bullish on Duolingo Stock as AI Fears Fade' 등 AI대체 서사 약화 신호 다수 확인.",
+        "condition_3_speak_scale": "확인불가(Speak 관련 최신 매출/사용자 규모 데이터 미확보)"
+      },
+      "verdict": "STRENGTHENED — DAU 가속·시장의 AI공포서사 완화가 기존 '병기, 자동판정 안 함' 우려를 오히려 반박"
+    },
+    "MNDY": {
+      "in_buylist": true,
+      "weight": 0.05928096869760676,
+      "gap_then": 0.23276233673095703,
+      "gap_now": 0.24176,
+      "price_move_pct": -0.0693,
+      "falsification_check": {
+        "condition_1_cohort_ndr": "NOT TRIGGERED, 명확히 강화 — $50K+/$100K+ ARR 코호트 NDR 둘 다 115%(조건 임계값 110% 상회), $500K+ 대형고객 +68%YoY. Q2 2026 보도된 '전사 NDR 108~109%'는 하단코호트 약세를 상단코호트가 상쇄하는 기존 서사 그대로.",
+        "condition_2_lawsuit": "NOT TRIGGERED — 증권소송 여전히 계류 중(2025-09-17~2026-02-06 집단기간), 실제 손해배상 판결이나 대규모 화해금 소식 없음."
+      },
+      "verdict": "STRENGTHENED — 가격하락(-6.93%)은 전사 블렌디드 NDR 헤드라인에 대한 과민반응으로 보이며, 등록된 반증조건(코호트 NDR)은 오히려 임계값을 넉넉히 상회"
+    },
+    "PDD": {
+      "in_buylist": true,
+      "weight": 0.06476028117493131,
+      "gap_then": 0.22037292480468723,
+      "gap_now": 0.22243,
+      "price_move_pct": -0.015,
+      "falsification_check": {
+        "condition_1_revenue_profit": "NOT TRIGGERED — Q2 2026(분석일 이후 신규 실적) 매출 +8%YoY(임계값 5% 상회 유지), 순이익 -12%(임계값 -15%보다 양호). 마진압박은 여전히 '전략적 재투자' 해석과 정합.",
+        "condition_2_eu_samr": "확인불가(EU DSA 후속 제재·SAMR 조사 확대 여부에 대한 신규 뉴스 미확보) - 다음 체크에서 재확인"
+      },
+      "verdict": "CONFIRMED_NOT_FALSIFIED — 분석일 이후 실제 실적으로 조건(1)이 직접 대조·확인됨"
+    },
+    "PGR": {
+      "in_buylist": true,
+      "weight": 0.07075264529037385,
+      "gap_then": 0.1764221572875976,
+      "gap_now": 0.17663,
+      "price_move_pct": -0.0012,
+      "falsification_check": {
+        "condition_1_pif_deceleration": "NOT TRIGGERED, 강화 — Q2 2026 PIF +7%(개인용차 +8~10%), 오히려 가속. 텔레매틱스 모트 서사 유지.",
+        "condition_3_cr_above_90": "NOT TRIGGERED — Q2 2026 합산비율 87.3%(임계값 90 아래)."
+      },
+      "verdict": "STRENGTHENED — 시가총액도 사실상 불변(-0.12%), 텔레매틱스 서사·손해율 규율 모두 유지"
+    },
+    "SIGI": {
+      "in_buylist": true,
+      "weight": 0.06863684534399982,
+      "gap_then": 0.23672077178955078,
+      "gap_now": 0.23859,
+      "price_move_pct": -0.012,
+      "falsification_check": {
+        "condition_1_npw_or_guidance": "NOT TRIGGERED — Q2 2026 NPW -5%YoY(기존 알려진 수준과 동일, 추가 확대 아님), 가이던스(96.5~97.5%) 유지."
+      },
+      "verdict": "STABLE — 기존 알려진 수준에서 정체, 신규 악화 없음"
+    },
+    "PINS": {
+      "in_buylist": false,
+      "weight": null,
+      "exclusion_reason": "G2(SBC 거짓편입 게이트) - SBC/FCF 70.3%로 SBC차감시 S->B 등급이탈, 포트폴리오 스크리닝 단계에서 이미 배제됨",
+      "gap_then": 0.1622094065462275,
+      "gap_now": 0.18163,
+      "price_move_pct": -0.1385,
+      "falsification_check": {
+        "condition_1_ad_growth_decel": "부분 TRIGGERED 근접 — Q3 2026 가이던스 매출성장 13~15%YoY로 Q2 18.2%에서 뚜렷이 둔화(회사 CEO가 국제시장 압박·Prime Day 타이밍·환율 역풍을 원인으로 제시, Goldman Sachs 컨퍼런스에서 가이던스 갱신 거부). 경쟁사 Reddit·Snap도 같은 날 동반 하락(섹터 전반 프리미엄 멀티플 조정 가능성도 혼재).",
+        "new_info_cfo_departure": "CFO Julia Brau Donnelly 2026-10-30 퇴사 발표(신규 발견, 원 falsification_conditions에 없던 정보) - 거버넌스 리스크 신규 축적."
+      },
+      "verdict": "WATCH_ESCALATED — 이미 매수 유니버스 밖(G2 배제)이라 자본 영향은 0이지만, 등록된 반증조건에 직접 해당하는 새 증거(성장률 둔화+CFO 이탈)가 나왔다. 공식 ledger/판정은 불변(1개 분기 가이던스만으로는 재검토 근거 미달 - KEYS 기준과 동일). 다음 체크포인트: Q3 2026 실적(~2026-11월경) 실제 착지 확인."
+    },
+    "TTD": {
+      "in_buylist": false,
+      "weight": null,
+      "exclusion_reason": "G3(반증확정 게이트) - 2026-08-13 정성재검토에서 falsification_conditions 4개 중 3개 이미 TRIGGERED로 확정(monitor/acknowledgements.json), 매수 유니버스 영구 배제",
+      "gap_then": 0.1700962080005105,
+      "gap_now": 0.20396,
+      "price_move_pct": -0.2311,
+      "falsification_check": {
+        "condition_2_cfo_cro_5th_change": "여전히 NOT TRIGGERED(4명째, 임계값 5명 미달) — Nate Olmstead가 2026-07-09 취임한 CFO로 확인, 'Ross→Grayson→Schenkein→Kayyal→Davis(대행)→Olmstead' 흐름 중 14개월 내 4번째 CFO로 카운트(2026-08-03 정성조사 수치와 일치, 신규 이탈 아님).",
+        "new_info_restructuring": "신규 발견 — 2026-09-03 인력 15% 구조조정 발표($39~51M 비용), Q2 실적 미스(EPS $0.34 vs 컨센서스 $0.40, 매출 $715M vs $751M) 이후 조치. 기존 THESIS_BROKEN 서사와 정합적인 지속 악화 신호이나 새 번호 조건을 추가로 트리거하지는 않음."
+      },
+      "verdict": "CONTINUED_DETERIORATION_NOT_NEW_TRIGGER — 이미 매수 유니버스 밖(G3 배제)이라 자본 영향은 0. 시가총액 -23.1%(2026-08-03 이후)로 기존 가치함정 패턴(v3.42, 주가하락이 Gap을 기계적으로 벌림)이 재확인됨. 구조조정 발표는 기존 판단(Confidence 45, THESIS_BROKEN)을 강화할 뿐 새로운 조치 필요 없음."
+    }
+  },
+  "summary": {
+    "n_reviewed": 10,
+    "n_grade_flipped": 0,
+    "note_on_zero_flips": "구조적으로 당연함 - S등급은 최상위 티어라 Gap이 벌어지는 가격하락으로는 등급이 못 내려간다(v3.42 가치함정 성질). 등급 하락은 가격 상승(Gap 축소)에서만 가능.",
+    "n_in_official_buylist": 8,
+    "n_strengthened_or_confirmed": 5,
+    "n_stable_no_new_info": 3,
+    "n_watch_flagged": 1,
+    "n_already_excluded_continued_deterioration": 1,
+    "n_already_excluded_new_watch": 1
+  }
+}

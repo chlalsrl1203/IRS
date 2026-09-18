@@ -1,0 +1,625 @@
+{
+  "meta": {
+    "ticker": "HQY",
+    "company_name": "HealthEquity, Inc.",
+    "analyzed_at": "2026-09-08T10:31:06.320987+00:00",
+    "engine_version": "v3.83",
+    "data_sources": [
+      "SEC XBRL companyfacts(CIK 0001428336), 2026-09-08 조회 - 매출·영업이익·영업현금흐름·capex·SBC·D&A·현금·장기부채·발행주식수 전부 1차자료",
+      "SEC 10-Q(2026-08-27 제출) dei 발행주식수 82,909,000주(2026-07-31 기준)",
+      "Alpha Vantage GLOBAL_QUOTE 종가 $96.07(2026-09-04), TREASURY_YIELD 10Y 4.77%(2026-09-03)",
+      "WebSearch: HSA 시장점유율(Devenir 2025중반 자료)·2024-03 데이터브리치 경과·금리민감도 관련 회사 10-K 공시·FY2027 가이던스(2026-08-31 Q2 FY2027 실적발표), 2026-09-08 조회"
+    ],
+    "falsification_conditions": "(1) FY2027 실제 매출성장률이 회사 가이던스(+7.4~8.1%) 대비 5% 미만으로 크게 미달하면 재검토 - 이 분석의 Realistic Growth가 trailing CAGR에 기반해 가이던스보다 여전히 높을 수 있다. (2) 2024년 초 발생한 데이터브리치 집단소송(주피고 벤더 Conduent)에서 HealthEquity 자신에게 중대한 배상책임·규제제재가 확정되거나, 회사가 고객 이탈을 공시하면 즉시 재검토 - 현재는 재무영향이 확인되지 않은 미해결 불확실성이다. (3) 연준이 2026~2027년 금리를 큰 폭 인하하고 회사의 수탁/이자수익이 실제로 뚜렷이 감소하면 영업이익 경로 재검토 - FY2022~2026 이익 확장의 상당 부분이 물량 증가가 아니라 금리 상승에 기인했을 수 있다(회사 자신이 이 리스크를 10-K에 명시). (4) Optum·Fidelity가 HSA 수탁자산 점유율을 HQY로부터 유의미하게 뺏어온다는 공시·데이터가 나오면 competitor_threat_weights 상향 재검토.",
+    "price_at_analysis": 96.07,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-08",
+      "filing_dates_by_year": {
+        "2013": "2015-03-31",
+        "2014": "2015-03-31",
+        "2015": "2015-03-31",
+        "2016": "2016-03-31",
+        "2017": "2017-03-30",
+        "2018": "2018-03-28",
+        "2019": "2019-03-28",
+        "2020": "2020-03-31",
+        "2021": "2021-03-31",
+        "2022": "2022-03-31",
+        "2023": "2023-03-30",
+        "2024": "2024-03-22",
+        "2025": "2025-03-18",
+        "2026": "2026-03-17"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-08",
+      "n_covered": 10,
+      "n_missing": 4,
+      "missing_fields": [
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 178370000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-02-01~2017-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 229525000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-02-01~2018-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 287243000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-02-01~2019-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 531993000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-02-01~2020-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 733570000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-02-01~2021-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 756556000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-02-01~2022-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 861748000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-02-01~2023-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-03-30",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 999587000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-02-01~2024-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-22",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 1199774000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-02-01~2025-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-03-18",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 1313429000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-02-01~2026-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-17",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[성장상한 바인딩] stalwart 유형의 성장상한(12.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것.",
+    "[SBC 교차검증 경고] SBC가 FCF0의 16%를 차지한다. SBC를 실제 비용으로 차감하면 판정이 '저평가 가능성' -> '적정가/경계선'로 **뒤집힌다**(Gap +5.05%p -> +2.94%p, 2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가 있음). 이 종목의 판정은 SBC 처리방식에 민감하므로 액면 그대로 신뢰하지 말 것."
+  ],
+  "inputs": {
+    "ticker": "HQY",
+    "company_name": "HealthEquity, Inc.",
+    "revenue_by_year": {
+      "2013": 46088000.0,
+      "2014": 62015000.0,
+      "2015": 87855000.0,
+      "2016": 126786000.0,
+      "2017": 178370000.0,
+      "2018": 229525000.0,
+      "2019": 287243000.0,
+      "2020": 531993000.00000006,
+      "2021": 733570000.0,
+      "2022": 756556000.0,
+      "2023": 861748000.0,
+      "2024": 999587000.0,
+      "2025": 1199774000.0,
+      "2026": 1313429000.0
+    },
+    "operating_income_by_year": {
+      "2013": 7092000.0,
+      "2014": 11524000.0,
+      "2015": 16873000.0,
+      "2016": 26143000.0,
+      "2017": 41212000.0,
+      "2018": 54418000.0,
+      "2019": 77670000.0,
+      "2020": 77006000.0,
+      "2021": 34014000.0,
+      "2022": -24238000.0,
+      "2023": 9057000.0,
+      "2024": 117699000.0,
+      "2025": 162334000.0,
+      "2026": 322456000.0
+    },
+    "operating_cashflow_by_year": {
+      "2013": 11770000.0,
+      "2014": 18015000.0,
+      "2015": 15046000.0,
+      "2016": 26541000.0,
+      "2017": 45591000.0,
+      "2018": 81702000.0,
+      "2019": 113422000.0,
+      "2020": 105010000.0,
+      "2021": 181619000.0,
+      "2022": 140995000.0,
+      "2023": 150650000.0,
+      "2024": 242826000.0,
+      "2025": 339856000.0,
+      "2026": 457094000.0
+    },
+    "capex_by_year": {
+      "2013": 831000.0,
+      "2014": 1595000.0,
+      "2015": 1712000.0,
+      "2016": 2376000.0,
+      "2017": 3645000.0,
+      "2018": 5458000.0,
+      "2019": 3869000.0,
+      "2020": 7286000.0,
+      "2021": 13093000.0,
+      "2022": 8908000.0,
+      "2023": 3371000.0,
+      "2024": 1694000.0,
+      "2025": 2084000.0,
+      "2026": 1969000.0
+    },
+    "market_cap": 7965067629.999999,
+    "net_debt": 638452000.0,
+    "ebitda": 477113000.0,
+    "risk_free_rate": 0.0477,
+    "competitor_threat_weights": [
+      0.3,
+      0.3,
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.15,
+    "subjective_input_basis": "competitor_threat_weights=[0.30, 0.30, 0.20][전부 추정치] - HQY는 미국 HSA 수탁자산 1위(2021년 Optum 추월, $37.9B/+14%YoY, 계좌 ~1,070만개)이나 상위 4개사(HQY/Optum/Fidelity/HSA Bank)가 시장의 약 2/3을 점유하는 과점구조. Optum(UnitedHealth 계열, 대형 통합 경쟁자) 0.30, Fidelity(대형 브랜드·유통망 기반 진출) 0.30, WEX·HSA Bank 등 기타(0.20). CAH/MCK/COR(3사 완전과점, [0.35,0.30,0.25])보다 다소 낮춘 이유는 HQY가 실제 시장선도자이고 신규HSA 판매(+24%YoY)가 시장성장률을 상회해 점유율이 확대 국면이기 때문이다. market_share_trend=0.0[추정치] - 정밀 pp 추세 데이터는 미확보이나 최근 자산성장률·신규판매 증가율이 시장평균을 상회해 하락으로 볼 근거가 없어 중립(하락 벌점 없음, 상승 가점도 없음) 채택. active_antitrust_or_regulatory_case=False - 2024-03 데이터브리치(벤더 Conduent 경유, 430만명 개인정보 유출) 집단소송이 진행 중이나 반독점·경쟁규제 소송이 아니라 별도 리스크로 falsification_conditions에 반영했다. demand_sensitivity_pct=0.15[추정치, 앵커 이탈] - CLAUDE.md 앵커표의 '헬스케어·필수소비재 반복매출'(0.12)과 '기업용 필수 SW·전문서비스(계약기반, 전환비용 높음)'(0.20) 사이 값을 택했다 - HSA 관리는 건강 관련 필수성과 B2B 다년계약(고용주가 수탁자를 선택하면 직원 계좌 이전 복잡성 때문에 전환비용이 높음)을 동시에 갖는 하이브리드 성격이라 어느 한쪽 앵커에도 완전히 들어맞지 않는다.",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 3y/5y 매출 CAGR(약 15%/12%)이 회사 자체 FY2027 가이던스(매출 +7.4~8.1%YoY, Q2 FY27 실적 +8%YoY로 이미 부합)보다 뚜렷이 높다 - 회사 스스로 이 감속을 WageWorks 인수 기저효과 소진과 정상화로 설명한다(1개년 가이던스뿐이라 ROP 기준(다년 실현)에 못 미쳐 realistic_growth_override는 쓰지 않았다). trailing 고성장이 무기한 지속된다고 가정하는 single_stage보다 터미널 성장률로 수렴하는 경로를 명시하는 two_stage가 이 정상화 신호와 정합적이다. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "margin_years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts(CIK 0001428336), 2026-09-08 조회 - 매출·영업이익·영업현금흐름·capex·SBC·D&A·현금·장기부채·발행주식수 전부 1차자료",
+      "SEC 10-Q(2026-08-27 제출) dei 발행주식수 82,909,000주(2026-07-31 기준)",
+      "Alpha Vantage GLOBAL_QUOTE 종가 $96.07(2026-09-04), TREASURY_YIELD 10Y 4.77%(2026-09-03)",
+      "WebSearch: HSA 시장점유율(Devenir 2025중반 자료)·2024-03 데이터브리치 경과·금리민감도 관련 회사 10-K 공시·FY2027 가이던스(2026-08-31 Q2 FY2027 실적발표), 2026-09-08 조회"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2026": 73063000.0
+    },
+    "falsification_conditions": "(1) FY2027 실제 매출성장률이 회사 가이던스(+7.4~8.1%) 대비 5% 미만으로 크게 미달하면 재검토 - 이 분석의 Realistic Growth가 trailing CAGR에 기반해 가이던스보다 여전히 높을 수 있다. (2) 2024년 초 발생한 데이터브리치 집단소송(주피고 벤더 Conduent)에서 HealthEquity 자신에게 중대한 배상책임·규제제재가 확정되거나, 회사가 고객 이탈을 공시하면 즉시 재검토 - 현재는 재무영향이 확인되지 않은 미해결 불확실성이다. (3) 연준이 2026~2027년 금리를 큰 폭 인하하고 회사의 수탁/이자수익이 실제로 뚜렷이 감소하면 영업이익 경로 재검토 - FY2022~2026 이익 확장의 상당 부분이 물량 증가가 아니라 금리 상승에 기인했을 수 있다(회사 자신이 이 리스크를 10-K에 명시). (4) Optum·Fidelity가 HSA 수탁자산 점유율을 HQY로부터 유의미하게 뺏어온다는 공시·데이터가 나오면 competitor_threat_weights 상향 재검토.",
+    "price_at_analysis": 96.07,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-08",
+      "n_covered": 10,
+      "n_missing": 4,
+      "missing_fields": [
+        "revenue_by_year[2013]",
+        "revenue_by_year[2014]",
+        "revenue_by_year[2015]",
+        "revenue_by_year[2016]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 178370000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-02-01~2017-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 229525000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-02-01~2018-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 287243000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-02-01~2019-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-03-28",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 531993000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-02-01~2020-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 733570000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-02-01~2021-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 756556000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-02-01~2022-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-03-31",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 861748000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-02-01~2023-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-03-30",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 999587000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-02-01~2024-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-03-22",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 1199774000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-02-01~2025-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-03-18",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 1313429000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-02-01~2026-01-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-03-17",
+          "retrieval_date": "2026-09-08",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-08",
+    "filing_dates_by_year": {
+      "2013": "2015-03-31",
+      "2014": "2015-03-31",
+      "2015": "2015-03-31",
+      "2016": "2016-03-31",
+      "2017": "2017-03-30",
+      "2018": "2018-03-28",
+      "2019": "2019-03-28",
+      "2020": "2020-03-31",
+      "2021": "2021-03-31",
+      "2022": "2022-03-31",
+      "2023": "2023-03-30",
+      "2024": "2024-03-22",
+      "2025": "2025-03-18",
+      "2026": "2026-03-17"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.15082363421815814,
+    "revenue_cagr_5y": 0.12355156185822458,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.26337864025238256,
+    "fcf_cagr_5y": 0.21981159096912362,
+    "fcf0": 455125000.0,
+    "fcf_by_year": {
+      "2013": 10939000.0,
+      "2014": 16420000.0,
+      "2015": 13334000.0,
+      "2016": 24165000.0,
+      "2017": 41946000.0,
+      "2018": 76244000.0,
+      "2019": 109553000.0,
+      "2020": 97724000.0,
+      "2021": 168526000.0,
+      "2022": 132087000.0,
+      "2023": 147279000.0,
+      "2024": 241132000.0,
+      "2025": 337772000.0,
+      "2026": 455125000.0
+    },
+    "worst_yoy_revenue_growth": 0.03133443297844796,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      -0.03203728474825393,
+      0.010510033095522125,
+      0.11774762977109546,
+      0.13530381555192894,
+      0.24550698971927679
+    ],
+    "net_debt_to_ebitda": 1.338156788852955
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 14.0,
+      "margin_volatility": 14.0,
+      "leverage": 10.0,
+      "cyclicality": 8.6,
+      "competition_intensity": 9.6
+    },
+    "score": 56.2
+  },
+  "lynch": {
+    "auto_classified": "stalwart",
+    "auto_note": null,
+    "used": "stalwart",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0477,
+    "erp": 0.06686,
+    "r": 0.11456,
+    "n": 12,
+    "g_terminal": 0.0377
+  },
+  "growth": {
+    "structural_discount_pct": 0.1562775030171122,
+    "realistic_growth": 0.12,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.15082363421815814,
+        "5y": 0.12355156185822458,
+        "10y": 0.26337864025238256
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.16515301371702296,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.16515301371702296,
+      "structural_discount_pct": 0.1562775030171122,
+      "discounted_growth": 0.13934331311757572,
+      "lynch_type": "stalwart",
+      "cap_applied": "상한 캡 적용(12.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.12
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.054316233344034535,
+      "two_stage": 0.06951866149902342,
+      "errors": {},
+      "divergence": 0.01520242815498888,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 3y/5y 매출 CAGR(약 15%/12%)이 회사 자체 FY2027 가이던스(매출 +7.4~8.1%YoY, Q2 FY27 실적 +8%YoY로 이미 부합)보다 뚜렷이 높다 - 회사 스스로 이 감속을 WageWorks 인수 기저효과 소진과 정상화로 설명한다(1개년 가이던스뿐이라 ROP 기준(다년 실현)에 못 미쳐 realistic_growth_override는 쓰지 않았다). trailing 고성장이 무기한 지속된다고 가정하는 single_stage보다 터미널 성장률로 수렴하는 경로를 명시하는 two_stage가 이 정상화 신호와 정합적이다. 첫 정식분석이라 대조할 과거 기록 없음.",
+    "value": 0.06951866149902342
+  },
+  "expectation_gap": 0.05048133850097658,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12,
+      "g_bull": 0.12,
+      "g_bear": 0.06,
+      "bull_capped_at_base": true,
+      "lynch_type_cap_max": 0.12
+    },
+    "returns": {
+      "bull": 0.1512161899080664,
+      "base": 0.1512161899080664,
+      "bear": -0.025762325000939335
+    },
+    "probabilities": {
+      "bull": 0.2814,
+      "base": 0.5,
+      "bear": 0.21860000000000002
+    },
+    "probability_rationale": "DRS=56.2 (중립점 50 대비 편차 +0.12) 기준: p_bull=28.1%, p_base=50.0%, p_bear=21.9%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.11252868654895774
+  },
+  "rar": 0.20022897962447997,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11456,
+    "r_without_drs": 0.09770000000000001,
+    "implied_growth_with_drs": 0.06951866149902342,
+    "implied_growth_without_drs": 0.03906726837158202,
+    "gap_with_drs": 0.05048133850097658,
+    "gap_without_drs": 0.08093273162841798,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11456,
+      "r_without_drs": 0.09770000000000001,
+      "implied_growth_with_drs": 0.06951866149902342,
+      "implied_growth_without_drs": 0.03906726837158202,
+      "gap_with_drs": 0.05048133850097658,
+      "gap_without_drs": 0.08093273162841798,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "B",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 73063000.0,
+    "sbc_to_fcf_pct": 0.1605339192529525,
+    "fcf0_sbc_adjusted": 382062000.0,
+    "implied_growth_sbc_adjusted": 0.09058303833007812,
+    "gap_sbc_adjusted": 0.029416961669921873,
+    "judgment_sbc_adjusted": "적정가/경계선",
+    "judgment_flipped": true
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

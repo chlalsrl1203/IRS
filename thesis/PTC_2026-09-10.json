@@ -1,0 +1,80 @@
+{
+  "thesis": {
+    "ticker": "PTC",
+    "thesis_date": "2026-09-10",
+    "why_buy": "실보유 중인 포트폴리오 최대비중(38.39%, holdings.json 2026-09-04 기준)의 정기 재검토 - Q3 FY2026 실적발표(2026-09-03) 이후 주가가 $150.08->$128.89로 6거래일 만에 -14.1% 급락, 이를 시가총액에 그대로 반영하면 Gap이 +4.08%p(C등급 적정가/경계선)->+5.90%p(B등급 저평가 가능성)로 판정경계를 넘는다. GAAP 매출은 -6.8%YoY($600.05M, 컨센서스 $611.62M 미달)로 헤드라인 미스가 났으나, 회사가 실제로 관리하는 지표(CC ARR ex-Kepware/ThingWorx $2.448B, +9.1%YoY)는 직전 가이던스 상단을 상회했고 FY2026 전사 가이던스가 ARR·FCF·자사주매입 전부 상향됐다 - v3.42가 확립한 '주가하락은 반드시 Gap을 벌린다'는 기계적 성질과 '사업이 실제로 나빠졌는가'를 구분해야 하는 교과서적 사례.",
+    "market_assumption": "시장은 GAAP 매출 헤드라인 미스(-6.8%YoY)와 소프트웨어 섹터 전반의 동반 매도(2026-09-08 -5.4% '섹터 전반 매도세')를 근거로 실제 사업 둔화를 가격에 반영하고 있는 것으로 보인다. 그러나 이 매출 미스는 (1) Kepware/ThingWorx 매각(2026-03-13 종결) 이후 FY2026이 매각 이전분만 담아 FY2025 풀이어 대비 기저효과가 발생한 것, (2) 단일 대형계약의 확장기간이 예상보다 짧았던 일회성 타이밍, (3) 이미 오래전부터 축소 중인 영구라이선스 매출($0.69M, -91.1%YoY, 소액 노이즈) 세 가지로 대부분 설명된다 - 전부 회사 자신이 실적발표에서 명시한 사유다.",
+    "irs_view": "PTC ledger(2026-09-04)의 falsification_conditions는 이미 이 시나리오를 예견하고 있었다 - '①ARR 성장률이 가이던스 하단(7.5% CC) 밑돌면 재검토'는 오히려 가이던스가 8.5%->9~9.5%(중간값 9.25%)로 상향되며 반대방향으로 강화됐고, '②FY2026 FCF가 가이던스(약 $10억, 매각유출 $1.5억 반영후)를 크게 하회하면 재검토'는 실제 헤드라인 가이던스 $850M(일회성 항목 제외 시 정상화 $950M)로 원 조건이 예상한 범위와 근접해 확인됐다(하회가 아니라 정합). PLM ARR +8%YoY, CAD ARR +6%YoY로 핵심사업 성장도 견조 - 시장이 헤드라인 GAAP 숫자에 과잉반응했을 가능성이 있고, 그렇다면 가격 하락으로 벌어진 Gap은 가치함정이 아니라 실제 저평가 신호일 수 있다. 다만 이 결론은 Realistic Growth(11.39%)가 FY2017-2025 CAGR 기반으로 불변이고 FY2026 전체 연차실적이 아직 반영되지 않았다는 한계 위에 서 있다(FYE 2026-09-30, 연차 데이터는 11월경 반영 가능).",
+    "key_drivers": [
+      "PLM/CAD ARR 견조 성장(+8%/+6%YoY) - 핵심 사업 건강",
+      "AI 기능(코드명 미상 다수) 기반 ARR 가속 모멘텀 - FY2026 가이던스 상향의 근거",
+      "Kepware/ThingWorx 매각 이후 자사주매입 확대($1.625B로 상향)로 자본배분 지속"
+    ],
+    "expected_outcomes": [
+      "FY2026 Q4(11월경 발표)에서 매각분 제외 CC ARR 성장률이 가이던스 범위(9~9.5%) 안에서 마감",
+      "Q4 순증ARR이 가이던스($79~92M)를 충족, FCF가 $850M 안팎(정상화 $950M)으로 확인",
+      "소프트웨어 섹터 전반 셀오프가 진정되며 PTC 개별 서사(ARR/FCF 견조)가 재평가"
+    ],
+    "catalysts": [
+      "FY2026 Q4/연차 실적발표(2026-11월경 예상) - falsification_conditions ①②③ 최종 확인 시점",
+      "FY2027 가이던스 최초 제시 시 GAAP CAGR이 아니라 ARR 성장률 기준으로 재검토(조건③)"
+    ],
+    "risks": [
+      "GAAP 매출·ARR 괴리(ASC 606 라이선스 인식 타이밍)가 향후에도 분기별로 반복돼 헤드라인 미스가 재발할 구조적 가능성 - 이미 model_choice_reason에 명시된 알려진 특성",
+      "강건성점검(sensitivity_check)에서 DRS 포함/제외에 따라 판정이 '적정가/경계선'<->'저평가 가능성'로 갈림(judgment_flipped=True) - 밴드 경계 바로 위에 있어 가정 하나로 흔들리는 상태가 여전함",
+      "**CONCENTRATION 플래그 활성**(portfolio_review 2026-09-05: 비중 38.39%로 25% 임계값 초과) - 이번 가격급락으로 오히려 포트폴리오 내 비중이 자연히 축소됐으나 여전히 단일종목 집중도가 구조적으로 높다",
+      "소프트웨어 섹터 전반 매도가 계속될 경우 PTC 개별 펀더멘털과 무관하게 추가 하락 가능"
+    ],
+    "invalidation_conditions": [
+      {
+        "condition": "FY2026 Q4 실적에서 매각분 제외 ARR 성장률이 가이던스 하단(9%)을 밑돌면 재검토",
+        "check_by": "2026-11-30",
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "FY2026 FCF가 최종 가이던스($850M 헤드라인/$950M 정상화)를 크게 하회하면 재검토",
+        "check_by": "2026-11-30",
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "FY2027 최초 가이던스가 ARR 기준 한자릿수 초반으로 제시되면 GAAP CAGR 기반 Realistic Growth(11.39%)를 그대로 신뢰하지 말고 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "이후 2개 분기 연속으로 GAAP 매출이 ARR 성장률 대비 5%p 이상 하회하는 패턴이 반복되면(이번처럼 일회성으로 설명되지 않으면) 라이선스 인식 타이밍이 아니라 실제 수요 둔화 가능성으로 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      }
+    ],
+    "holding_horizon": "12개월 이상(FY2026 Q4/연차 실적 확인 후 재평가)",
+    "linked_ledger": "PTC_2026-09-04.json",
+    "author_note": "portfolio/holdings.json 실보유 38.39%(최대비중). 2026-09-05 확신 포트폴리오에는 PTC가 포함되지 않음(quality_score 기반 S/A 32종목 유니버스에서 PTC 자체가 C등급이라 제외 대상 - 이는 build_portfolio.py의 별개 산출물이며 실보유와 목표배분의 괴리는 daily_brief.py의 reconciliation 섹션이 이미 드러낸다). 이 thesis는 사이징을 다루지 않는다(§5 범위 밖). 가격 재계산(reports/watchlist/PTC_2026-09-10.json)은 ledger를 새로 만들지 않았다 - FY2026 연차 데이터가 아직 없어 Realistic Growth 재계산 근거가 없기 때문(v3.42 설계원칙).",
+    "stale_after": null,
+    "must_refresh_if": null,
+    "thesis_id": "PTC-2026-09-10"
+  },
+  "decisions": [
+    {
+      "thesis_id": "PTC-2026-09-10",
+      "decision_date": "2026-09-10",
+      "action": "HOLD",
+      "action_source": "analyst_recorded (엔진이 계산한 값이 아님)",
+      "gates": {
+        "signal_summary": "Gap +4.08%p(C, ledger 기준 2026-09-04) -> 가격재계산 +5.90%p(B, 2026-09-10 시총 기준, 판정경계를 넘음). RAR +0.2203. Confidence 79(강건성 이미 반영됨).",
+        "business_quality": "PLM ARR +8%YoY, CAD ARR +6%YoY, 클라우드/서포트 안정 또는 성장. AI 기능 기반 ARR 가속이 FY2026 가이던스 상향의 근거로 회사가 명시. Kepware/ThingWorx 매각 이후 핵심 PLM/CAD 사업 집중도가 오히려 높아짐.",
+        "financial_quality": "GAAP 매출 -6.8%YoY 미스는 (1)매각 기저효과 (2)단일 대형계약 타이밍 (3)영구라이선스 축소(소액) 세 가지로 대부분 설명되며 전부 회사가 명시적으로 밝힌 사유. SBC/FCF 25.2%로 SBC 차감해도 Gap +0.64%p로 판정 불변(과거 ledger 확인). sensitivity_check에서 DRS 포함/제외로 판정이 갈리는 강건성 취약이 이미 알려져 있음(Confidence 79에 반영됨).",
+        "risk_assessment": "구조적 리스크: GAAP-ARR 괴리 반복 가능성(라이선스 인식 타이밍), 강건성 취약(판정경계 근접), 소프트웨어 섹터 동반 매도 지속 가능성. 이번 급락 자체가 PTC 고유 악재라는 증거는 찾지 못함(회사의 ARR/FCF 가이던스는 오히려 상향됨).",
+        "valuation_assessment": "가격재계산 기준 Gap +5.90%p(B등급)로 판정경계 진입. 단 이 값은 FY2025까지의 정적 Realistic Growth(11.39%)에 신규 시총만 반영한 것이라, FY2026 실제 연차 실적이 아직 밸류에이션에 반영되지 않은 상태 - 공식판정(C등급, +4.08%p)은 그대로 유지하며 이 값은 병기 신호일 뿐이다.",
+        "portfolio_context": "이미 실보유 최대비중(38.39%) - CONCENTRATION 플래그 활성(2026-09-05 portfolio_review, 25% 임계값 초과). 이번 가격하락으로 비중이 소폭 자연 축소됐으나 추가 매수(ADD)는 집중도 리스크를 심화시킨다. Gap이 개선됐다고 해서 추가 편입 근거로 삼지 않는다 - 신호(Gap)와 사이징 결정은 분리(§5 원칙)."
+      },
+      "rationale": "실보유 포지션을 유지한다(HOLD). 이번 -14.1% 급락은 GAAP 헤드라인 미스에 대한 시장의 과잉반응으로 보이며, PTC 자신의 falsification_conditions ①(ARR 가이던스) 은 오히려 강화됐고 ②(FCF 가이던스)는 원 예상범위와 정합한다 - 사업이 실제로 나빠졌다는 증거는 찾지 못했다. 그러나 (1) FY2026 연차 실적이 아직 확정되지 않아 공식 Realistic Growth를 갱신할 근거가 없고, (2) 이미 CONCENTRATION 플래그가 걸린 최대비중 종목이라 가격하락을 근거로 추가 편입(ADD)하는 것은 신호-결정 분리 원칙에 어긋난다. FY2026 Q4/연차 실적(2026-11월경)에서 invalidation_conditions를 재확인할 것.",
+      "position_pct": 0.3839096157684304
+    }
+  ],
+  "evidence": []
+}

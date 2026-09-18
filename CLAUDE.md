@@ -6594,3 +6594,3798 @@ v3.58 보존 - v3.68이 고친 대로). fingerprint `43f90b61…` ->
 테스트 추가 없이 기존 불변조건을 35종목 현실에 맞게 정정). `ledger/`에
 CROX 1건 신규 추가(그 외 34종목 0건 수정), `engine/` 변경(thesis_monitor.py
 버그수정)이라 `ENGINE_VERSION` v3.79 -> **v3.80**.
+
+## LNTH 제외 — 정식분석 대상 아님(피인수 확정, 진행중 인수합병) (2026-09-01)
+
+연구 우선순위 큐 2순위(스크린 Gap 추정 +22.96%p, B등급)를 조사하던 중,
+2026-08-03에 **Curium이 Lantheus를 인수하는 확정 계약**이 체결됐음을 확인했다
+(WebSearch: CNBC/Curium 공식발표/GlobeNewswire, $102.50/주 현금 + 최대 $12.00/주
+CVR(총 최대 $114.50/주, 거래총액 최대 ~$80억), 2027년 상반기 종결 예정, 주주·
+규제 승인 대기 중).
+
+**FRAMEWORK_MISMATCH로 분류하고 ledger를 만들지 않았다** - 이 프로젝트가 이미
+확립한 원칙(PODD/ONON/MU/RBA/NOW/AVGO 등)과 같은 계열이나 사유는 새롭다: 확정된
+피인수 대상의 주가는 회사의 독립적 성장전망이 아니라 **딜 조건(현금+CVR)과
+거래 성사 확률·시점**을 반영한다. Implied Growth(시가총액 역산)가 "시장이 이
+회사의 성장을 얼마로 보는가"가 아니라 "시장이 딜이 예정대로 끝날 확률을 얼마로
+보는가"를 담게 되므로, Gap을 계산해도 저평가/과대평가 판정이 성립하지 않는다 -
+정확히는 "이 인수가격이 공정한가"라는 전혀 다른 질문이 되어버린다.
+
+**부수 발견 - 데이터 함정 하나 (엔진 코드는 안 고침, n=1)**: 조사 과정에서
+SEC XBRL `PaymentsToAcquireProductiveAssets`(METRIC_TAGS 1순위 capex 태그,
+v3.60에서 MCK 사례로 승격)가 LNTH FY2022에 **$260.0M**을 담고 있었는데, 이는
+실제 PP&E capex가 아니라 **POINT Biopharma 라이선스 계약의 IPR&D 일시상각
+비용**(R&D비용으로 손익계산서에 계상, 대체 용도 없는 취득 IPR&D는 GAAP상 즉시
+비용화)이었다(WebSearch로 10-K 본문 확인). 실제 그 해 routine capex는
+`PaymentsForCapitalImprovements` 태그의 $18.347M이 맞다 - 이 태그로 2020~2025년
+전체가 일관되게 커버된다. **MCK 사례(넓은 정의 채택이 옳았음)와 정반대로, 이번엔
+"넓은" 태그가 오분류된 사례**라 METRIC_TAGS 우선순위는 바꾸지 않는다(단일
+관측치로 근거 없는 재조정을 하지 않는다는 이 프로젝트의 반복 원칙) - 다음에
+비슷한 사례가 또 나오면(n=2) 태그 우선순위 재검토를 고려할 것.
+
+`watchlist.json`·`reports/research_queue.json` 어느 쪽도 건드리지 않았다 -
+LNTH는 QUEUED 상태로 남고, 다음 주 스크리닝에서도 다시 상위권에 뜰 수 있다
+(이 프로젝트에 "조사했지만 제외" 상태를 기록하는 필드가 아직 없다 - 필요성이
+더 쌓이면 추가를 검토할 것, 지금은 이 CLAUDE.md 기록이 유일한 근거다).
+
+## EQT 제외 — FRAMEWORK_MISMATCH(M&A 단계상승 + 원자재 가격 사이클 이중고)
+(2026-09-01)
+
+큐 3순위(스크린 Gap 추정 +21.40%p, A등급). SEC XBRL 실측: 매출이
+2018년 $4.71B -> 2020년 $2.65B -> 2022년 $12.11B -> 2023년 $5.04B로
+극심하게 요동친다(천연가스 E&P, 원자재 가격 사이클 - 2018~2021년 영업손실
+4개년 연속, 2022년 유럽 에너지위기로 영업이익 +$2.72B 급등). AA/NRG와
+동일한 "자본집약 원자재 업종" 유형.
+
+**여기에 M&A 단계상승까지 겹친다** - **2024-07-22 Equitrans Midstream
+인수 완료**(올스톡 $5.5B, 회사 스스로 "변혁적 인수"라 명명, 파이프라인·
+가스처리 자산을 E&P에 수직통합). GEN/BRO/ROP/SNPS/NRG/RBA/NOW/AVGO/CROX와
+동일한 'M&A가 CAGR 구간에 걸림' 패턴이 원자재 사이클과 동시에 발생 - 5y
+구간(2020->2025)은 가격저점(2020)에서 시작해 인수 이후(2025)로 끝나고,
+3y 구간(2022->2025)은 가격고점(2022)에서 시작해 역시 인수 이후로 끝나
+어느 창으로도 깨끗한 CAGR을 얻을 수 없다. 세그먼트 분리(E&P vs 미드스트림)
+데이터 없이는 재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다.
+
+## SIGI 정식 분석 — 세 번째 예외 세트 확장, 보험업 FCF-DCF 왜곡의 극단 사례
+(2026-09-01/02)
+
+큐 3순위(LNTH·EQT는 각각 진행중 인수합병·M&A+원자재 사이클로
+FRAMEWORK_MISMATCH). Selective Insurance Group(SIGI, 손해보험) 정식분석
+결과: **Gap +23.67%p, S등급**(Realistic Growth 12.00%[stalwart 캡 바인딩],
+Implied Growth **-11.67%**, RAR +1.8245, DRS 43.32, Confidence 89).
+
+### ⚠️ 데이터 함정 - "회계연도 라벨 충돌"의 새 변종(Q4단독 vs 연차)
+
+SEC 자동 fetch가 `operating_income`(세전이익, PGR/ACGL 선례대로 영업이익
+대용)을 통째로 `[미확보]` 처리했다 - **안전한 실패**였다. 원인: 2016~2020년
+`IncomeLossFromContinuingOperationsBeforeIncomeTaxes...` 태그에 같은
+회계연도로 두 값이 동시 존재(예: 2016년 219,955,000 vs 50,326,000) - 큰
+쪽은 `start=1월1일`(정상 12개월), 작은 쪽은 `start=10월1일`(4분기 단독
+3개월)이었다. CDNS/GEN의 "회계연도 라벨이 한 해 밀림"과는 다른 함정
+(52/53주 문제가 아니라 분기-연차 혼재)이라 별도 기록해둔다. 자동 피커가
+조용히 틀린 값을 고르지 않고 정직하게 실패를 반환한 것도 확인 - 설계대로
+작동함.
+
+### ⭐ 핵심 발견 - 보험업 FCF-DCF 왜곡이 이번엔 부호까지 뒤집었다
+
+v3.13(ACGL) 노트가 "Gap+31.44%p는 FCF-DCF를 보험업에 적용한 데서 오는
+과장일 가능성"이라 추정했던 것을, SIGI가 **더 극단적으로** 보여준다 - FCF
+수익률(fcf0 $1.19B / 시총 $5.43B ≈ 22%)이 할인율(r=11.05%)의 **2배**에
+달해, 역DCF가 이를 정당화하려면 Implied Growth가 **음수(-11.67%)**여야
+했다. 성장중인 기업의 내재성장률이 음수로 나오는 것은 경제적으로
+비정상적인 신호이고, 원인은 원자료 오류가 아니라 **보험업 OCF가 플로트
+(보험료 선수취) 성장으로 구조적으로 부풀려진다**는 이미 알려진 문제
+(v3.22)가 이번 사례에서 특히 두드러진 것으로 판단된다.
+
+`insurer_cross_check`(is_insurer=True)가 그 완충 역할을 확인해준다 -
+지속가능성장률(ROE 10.87% × 유보율 75.8% = **8.24%**)이 Realistic
+Growth(12.00%, stalwart 캡)와 3.76%p 이내로 근접해 **성장 추정 자체는
+합리적**임을 보여준다. 즉 이번 사례의 극단적인 Gap은 성장 과대추정이
+아니라 **밸류에이션 쪽(FCF-DCF의 분모)의 구조적 왜곡**에서 온다는 것이
+분리 확인됐다 - PGR·ACGL과 동일한 진단 패턴이 세 번째로 재현됨.
+
+**공식 판정은 그대로 두었다**(is_insurer/sbc_cross_check와 동일 "병기,
+자동판정 안 함" 원칙) - 다만 이 종목은 셋 중 가장 왜곡이 커 Implied
+Growth 부호 자체가 뒤집혔다는 점에서, 향후 매수리스트 편입을 검토할
+경우 이 캐비어트를 반드시 최우선으로 확인할 것.
+
+### 경쟁구도(2026-09 WebSearch)
+
+Travelers(합산비율 84%대, 업계 최고 수준 규율) > Cincinnati Financial(SIGI와
+유사하게 98%대로 악화 중) > SIGI 자신(Q2 2026 합산비율 98%, 순보험료
+전년比 -5% 역성장 - 경쟁압력+의도적 언더라이팅 조정이 실측으로 확인됨).
+
+### 배선
+
+`watchlist.json`에 SIGI 추가(35->36). 세 번째 "알려진 예외" 세트 확장
+(BSX 거짓탈락 → TCOM 통화라벨 → CROX → **SIGI**로 이어지는 패턴):
+`test_monitor_state.py`(n_ledgers 35→36), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 SIGI 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 SIGI 추가) - CROX 때 이미 만든 예외 등록
+패턴이 두 번째 신규 ledger에도 그대로 재사용 가능함을 확인했다(1회성
+땜질이 아니라 실제로 재사용되는 설계였음).
+
+baseline 36종목으로 재동결(fingerprint `81a8a0f5…`→`af6fda7d…`). 테스트
+1,080개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## OKTA 정식 분석 — 스크리너 추정치가 실적발표 급등을 놓친 사례
+(2026-09-02)
+
+연구 우선순위 큐 다음 순위(LNTH/EQT는 이미 FRAMEWORK_MISMATCH로 제외 -
+큐 자체에는 "제외" 상태 필드가 아직 없어 계속 상위에 남아있으므로 건너뜀)
+인 OKTA를 정식분석했다(스크리너 추정 Gap +20.65%p, tier B, 시총 근사
+~$16.4B).
+
+### ⭐ 핵심 발견 — 스크리너 시총 근사치가 8개월 전 스냅샷이라 최근 +29%
+실적 랠리를 완전히 놓쳤다
+
+스크리너가 쓰는 `EntityPublicFloat`(2025-07-31 시점 $16.4B)는 이번에도
+v3.72가 이미 명시한 한계(최대 낡을 수 있음)를 그대로 보여준 사례다.
+2026-08-27 Okta가 FY2027 Q2 실적을 발표(매출 $805M 컨센서스 상회, 신제품이
+전체 예약의 약 30%·ACV +40%, FY2027 가이던스 $3.216B~$3.226B로 상향) -
+주가가 2026-08-26 $134.42 → 2026-08-27 $172.91로 **하루 만에 +28.6%**
+급등했다(8개 대형 증권사가 목표가를 최대 $180까지 일제 상향). 분석 시점
+(2026-09-02) 주가 $166.43 기준 실시간 시총(~$29.76B, 희석가중주식수
+178.808M 적용)은 스크리너 추정치의 **1.8배**다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +2.80%p, 방향은 유지되나 크기는
+스크리너의 1/7
+
+| | 스크리너 추정 | 정식분석 |
+|---|---|---|
+| Gap | +20.65%p | **+2.80%p** |
+| 등급 | B | **C** |
+| 시총 | ~$16.4B(낡음) | $29.76B(실시간) |
+
+**PTC 사례("분석시점 주가가 실적발표 후 +21% 랠리구간에 걸려있어 Gap이
+stale일 가능성")와 같은 함정이지만, 이번엔 랠리가 정식분석 대상 시점
+자체에 이미 반영돼 있어 그 함정을 자동으로 피했다** - 실시간 시총을 그대로
+쓴 덕분에 판정이 급등 이후 수준으로 정확히 재조정됐다.
+
+### 부수 발견 — 가이던스가 trailing CAGR보다 낮다(KEYS/KLAC와 반대 방향)
+
+FY2026→FY2027 가이던스 중간값 성장률 +10.35%YoY인데 trailing 매출 CAGR은
+3y 16.26%/5y 28.43%로 훨씬 높다 - trailing CAGR이 최근 감속을 과소반영하는
+KEYS/KLAC 계열과 정확히 반대(여기서는 trailing이 가이던스보다 낙관적).
+Realistic Growth(17.47%)가 가이던스보다 여전히 높게 나와 model_choice_reason·
+falsification_conditions에 이 괴리를 명시적으로 기록했다(1개년 가이던스는
+override 자격 없음 - v3.43 원칙).
+
+### SBC 교차검증 — 판정이 뒤집힌다(WDAY와 같은 유형)
+
+SBC/FCF **62.2%**(TTD·WDAY급) - SBC를 실제 비용으로 차감하면 Gap
++2.80%p→**-8.59%p**, 판정이 "적정가/경계선"→**"과대평가 가능성"**으로
+뒤집힌다(WDAY가 이 경로로 실제 뒤집힌 유일한 선례였는데, OKTA가 두 번째
+사례가 됐다). 공식 판정은 SBC 미차감 기준으로 유지(병기 원칙), 강건성점검도
+모델선택(single_stage 8.17% vs two_stage 14.67%, 괴리 6.50%p) 축에서 flip
+발생 - Confidence 79로 두 경고가 함께 반영됐다.
+
+### 배선
+
+`watchlist.json`에 OKTA 추가(36→37, MNST-PDD 사이). 네 번째 "알려진 예외"
+세트 확장(BSX 거짓탈락 → TCOM 통화라벨 → CROX → SIGI → **OKTA**):
+`test_monitor_state.py`(n_ledgers 36→37), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 OKTA 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 OKTA 추가).
+
+baseline 37종목으로 재동결(fingerprint `af6fda7d…`→`da16197b…`). 테스트
+1,080개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## CDE 제외 — FRAMEWORK_MISMATCH(M&A 단계상승 + 귀금속 가격 사이클
+이중고, EQT와 동일 유형) (2026-09-02)
+
+연구 우선순위 큐 다음 순위 CDE(Coeur Mining, 은/금 광산업체, tier S, 스크리너
+Gap 추정 +20.13%p)를 조사했다. SEC XBRL 매출 시계열에서 **2024→2025
++96.4%YoY**($1,054M→$2,070M)라는 극단적 단계상승을 확인 - WebSearch로
+확인한 결과 2025-02-14 종결된 SilverCrest Metals 인수($1.58B, 전량주식
+대가, 2억3,933만주 신주발행, 고품위 저비용 Las Chispas 은·금 광산 편입)가
+원인이었다. 회사 자체 가이던스도 2025년 생산량이 금 +20%YoY·은 +62%YoY
+증가할 것으로 명시 - 인수 효과가 그대로 매출 성장으로 잡힌다.
+
+EQT와 동일한 이중고 구조다 - (1) M&A 단계상승이 5y CAGR 구간
+(2020→2025) 종료연도에 걸려 있고, (2) 귀금속(은/금) 채굴업 자체가 상품
+가격 사이클에 극심하게 노출돼(CLAUDE.md에 이미 기록된 AA(Alcoa)·NRG·
+MP Materials급 "자본집약 원자재" 업종 문제) `demand_sensitivity_pct`·
+`competitor_threat_weights` 같은 경쟁구도 기반 주관 입력 자체가 이
+업종에는 부적합하다. 정량모델(FCF-DCF)로는 다룰 수 없다고 판단해
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다(LNTH/EQT와 동일한 축약
+경로).
+
+## MEDP 정식 분석 — BSX와 동일한 스크리너 거짓탈락 메커니즘의 두 번째
+실사례 (2026-09-02)
+
+큐 다음 순위 MEDP(Medpace Holdings, CRO/임상시험수탁기관, tier A, 스크리너
+Gap 추정 +19.21%p, 시총 근사 ~$7.00B)를 정식분석했다.
+
+### 발견 1 — 2018년 매출 태그 정의 전환(ASC 606) - M&A 아님
+
+2017→2018 매출 +61.5% 급증을 provider가 `[태그 혼재]` 경고로 자동 표시.
+WebSearch로 확인: Medpace가 2018-01-01자로 ASC 606을 전면 도입하며 총액
+표시(gross) 방식으로 전환됐다(회사 자체 2018 가이던스는 "2017 순용역매출
+$386.5M 대비 19.3~22.4% 성장"). CROX/BSX가 겪은 것과 같은 계열의 정의불연속
+이지만, **3y(2022→2025)/5y(2020→2025) CAGR 창이 이 경계를 건드리지 않아
+실제 채택되는 성장률은 오염되지 않는다** - 10y 창(가중치 0.2)만 영향을
+받아 `cagr_base_year_override`는 쓰지 않았다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +9.80%p, Confidence 94, 강건성점검
+flip 없음, SBC 교차검증도 flip 없음(SBC/FCF 5.1%로 매우 낮음)
+
+부채 전액 상환(FY2019 이후 $0), 순현금 -$497M, 공격적 자사주매입(발행주식
+2024→2026 30.76M→28.38M). PIT_VALID. 실시간 시총($16.55B)이 스크리너의
+`EntityPublicFloat` 스냅샷(2025-06-30, $7.00B)보다 14개월 이상 최신이라
+크게 다르다 - OKTA와 같은 계열의 "스크리너 근사치 시차" 사례이지만 원인은
+실적급등이 아니라 순수 float 스냅샷 노후화.
+
+### ⭐ 발견 2 — BSX와 완전히 동일한 스크리너 거짓탈락 메커니즘, 두 번째
+실사례
+
+정식분석(DRS 23.0, competition_intensity=4.2)과 달리 `screen()`은 MEDP를
+탈락시킨다(`estimate_drs()`의 상수 competition_intensity=12.0 가정 때문에
+DRS가 34.6까지 과대평가). BSX(RMD와 동일하게 5.4)에 이은 두 번째로,
+"median 대체 방식이 median에서 크게 벗어난 개별종목에서는 구조적으로
+오분류한다"(screener.py 문서화된 한계)는 진단이 재확인됐다. 상수 자체는
+조정하지 않는다(median 12.0 여전히 정확) - `tests/test_screener.py`의
+`KNOWN_SCREENER_FALSE_REJECTIONS`에 MEDP 추가 + BSX와 동일한 회귀 테스트
+(`test_medp_false_rejection_is_still_reproducible`) 신설.
+
+### 배선
+
+`watchlist.json`에 MEDP 추가(37→38, MCK-MNDY 사이). 다섯 번째 "알려진
+예외" 세트 확장(BSX 거짓탈락 → TCOM 통화라벨 → CROX → SIGI → OKTA →
+**MEDP**, 이번엔 처음으로 **screener 거짓탈락 계열**과 **provenance/
+sbc_harvest/monitor_state 신규 ledger 계열** 두 갈래가 동시에 갱신됨):
+`test_monitor_state.py`(n_ledgers 37→38), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 MEDP 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 MEDP 추가), `test_screener.py`
+(`KNOWN_SCREENER_FALSE_REJECTIONS`에 MEDP 추가 + 회귀 테스트 신설).
+
+baseline 38종목으로 재동결(fingerprint `da16197b…`→`52bf1b90…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## RYAN 정식 분석 — Up-C 이중클래스 구조의 시가총액 함정 (2026-09-02)
+
+큐 다음 순위 RYAN(Ryan Specialty Holdings, 특수보험 도매유통, tier A,
+스크리너 Gap 추정 +18.83%p)을 정식분석했다.
+
+### ⭐ 핵심 발견 — Class A 주식만으로 시총을 잡으면 FCF수익률이 2배로
+왜곡된다
+
+RYAN은 2021-07 IPO 시 전형적인 Up-C 구조로 상장했다 - 재무제표는 운영LLC
+전체(100% 연결)를 담는데, 상장주식(Class A)은 지분의 일부일 뿐이고 나머지는
+사전IPO 소유주가 LLC Unit(Class A와 1:1 교환가능, 경제적 지분 동일)+
+Class B 무경제권 의결주 형태로 보유한다. **Class A만으로 시총을 잡으면
+분자(전체 FCF)와 분모(부분 지분가치)가 어긋나 FCF수익률이 실제의 약
+2배로 부풀고 내재성장률이 허위로 낮게 나온다.** 2026-07-27 10-Q 표지
+(WebSearch 재인용): Class A 122,077,702주 + Class B 133,737,083주 = 총
+경제적 지분 255,814,785주 - **총주식수 기준 시총(~$10.83B)**을 채택했다
+(Class A만 쓰면 ~$5.43B로 실제로 일부 데이터소스가 이렇게 잘못 보고하고
+있음을 확인).
+
+### 결과 — "저평가 가능성"(A등급), Gap +13.77%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+DRS 36.56(leverage 20.0 - 최고위험, net_debt/EBITDA ≈4.08x로 실제로 높은
+레버리지가 정확히 반영됨). PIT_VALID. 모델괴리 0.84%p(경고 임계값 3%p 미만,
+양호한 일치).
+
+### 부수 발견 1 — 2021년 capex $343.2M은 M&A 관련 일회성 항목(계산에는
+영향 없음)
+
+All Risk 인수(2021, IPO와 동시 진행) 관련 지급으로 추정되나
+`PaymentsToAcquireBusinessesNetOfCashAcquired` 태그가 비어있어 확정은
+못했다. LNTH IPR&D 사례와 같은 계열의 태그 오분류 의심이나, `capex_years`
+경로는 opt-in(`capex_classification`)에서만 호출되고 fcf0는 2025년 정상
+capex($3.0M)만 쓰므로 **계산에는 전혀 영향 없음** - 원자료 그대로 사용.
+
+### 부수 발견 2 — 오가닉성장 가이던스(5~7%)가 trailing CAGR(20.5%/24.1%)
+보다 훨씬 낮다 - GEN/BRO/TCOM 계열이나 override 기준 미달
+
+Q2 2026 오가닉 +6.7%(총성장 +7.2%와 근접), FY2026 가이던스 5~7%. ROP가
+확립한 override 기준(다년 실현실적 필요)에 못 미쳐(1개 분기+1개년
+가이던스뿐) `realistic_growth_override`는 쓰지 않고 괴리만
+falsification_conditions에 병기했다.
+
+### 배선
+
+`watchlist.json`에 RYAN 추가(38→39, ROP-SE 사이). 여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 38→39),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RYAN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RYAN 추가) - 이번엔
+screener 거짓탈락(BSX/MEDP 유형)에는 해당하지 않아 `test_screener.py`는
+무변경.
+
+baseline 39종목으로 재동결(fingerprint `52bf1b90…`→`5c5af7e4…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## FIX 정식 분석 — AMD/AMAT급 "이미 비쌈" 신호가 실측으로 재확인됨,
+규모조건부 상한 대상이 4번째로 확장 (2026-09-02)
+
+큐 다음 순위 FIX(Comfort Systems USA, 데이터센터 MEP 시공업체, tier B,
+스크리너 Gap 추정 +18.51%p, 시총 근사 ~$18.64B)를 정식분석했다.
+
+### ⭐ 핵심 발견 — 스크리너 근사치가 AI 데이터센터 붐발 +1,240%(3년) 랠리를
+거의 놓쳤다
+
+2022년 이후 데이터센터·첨단기술向 수요 폭발로 매출성장률이 다년 가속됐다
+(YoY 2022 +34.7%→2025 +29.5%, 단일연도 단계상승이 아닌 진짜 다년 가속 -
+M&A 왜곡과 다른 유형). Q1 2026 매출 +56%YoY·EPS 2배 이상, 백로그 $12.5B
+(2026년 예상 연매출과 맞먹음). 주가는 3년간 +1,240%, 2026 YTD만 +116% -
+실시간 시총(~$54.67B)이 스크리너 근사치의 2.9배다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +4.22%p, 외부 애널리스트의 밸류에이션
+경고("43x 2026 EPS, 업종중앙값 2배 이상, 이미 낙관 선반영")가 정량적으로
+재확인됨 - AMD(FCF수익률 0.79%)·AMAT(1.30%)에 이은 세 번째 "펀더멘털은
+훌륭한데 이미 비쌈"(4분류 2번) 사례.
+
+Lynch fast_grower 상한(25%)과 v3.67 규모조건부 상한(시총 $54.67B, base_rates
+"4500-7000" 구간 - 명목 23.00%로 추가 하향)이 **함께** 바인딩 - 원시 CAGR
+(3y 30.03%/5y 26.08%)을 그대로 신뢰하지 않는 것이 정확했음이 base_rates
+외부실증으로 뒷받침됨. 모델괴리 10.00%p(경고 임계값의 3배 이상, 강건성점검
+flip=True) - single_stage(8.78%)와 two_stage(18.78%)가 크게 갈려
+Confidence 74로 반영. SBC 교차검증은 flip 없음(SBC/FCF 2.1%, 낮음).
+
+### ⭐ 부수 — 규모조건부 상한 적용 대상이 v3.67 승인범위(PDD·PGR·SE 3종목)
+밖에서 처음 발동
+
+`size_conditioned_growth_cap()`은 opt-in이 아니라 fast_grower 유형+대형
+시총이면 상시 평가되는 메커니즘이라, v3.67 이후 신규 분석된 티커가 새로
+걸리는 것은 정상 동작이다. `tests/test_pipeline.py`의
+`test_approved_three_tickers_reproduce_and_others_unchanged`가 "PDD·PGR·SE
+정확히 3종목"만 검증하는 스냅샷 방식이라 FIX 추가로 실패했고,
+`APPROVED_SIZE_CAPPED_TICKERS`(회귀 감시, 원 3종목 반드시 유지) +
+`KNOWN_ADDITIONAL_SIZE_CAPPED_TICKERS`(신규 등록, FIX 추가)로 이원화해
+"승인범위 이탈"과 "정당한 신규 발동"을 구분하도록 고쳤다 - BSX 거짓탈락과
+동일한 "알려진 확장" 등록 패턴.
+
+### 배선
+
+`watchlist.json`에 FIX 추가(39→40, DUOL-GEN 사이). 일곱 번째 "알려진
+예외" 세트 확장 + 규모조건부 상한 등록 확장: `test_monitor_state.py`
+(n_ledgers 39→40), `test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_
+LEDGERS`에 FIX 추가), `test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_
+LEDGERS`에 FIX 추가), `test_pipeline.py`(위 이원화 + FIX 등록).
+
+baseline 40종목으로 재동결(fingerprint `5c5af7e4…`→`c3557660…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## CHDN 제외 — FRAMEWORK_MISMATCH(COVID 저점 기저효과 + M&A 단계상승
+이중고, BKNG와 GEN의 결합형) (2026-09-02)
+
+큐 다음 순위 CHDN(Churchill Downs, 경마·카지노, tier A, 스크리너 Gap
+추정 +18.04%p)을 조사했다. SEC XBRL 매출 시계열(2016~2025, 2011~2015는
+0으로 잡히는 데이터 결측 확인)에서 두 가지 왜곡이 동시에 발견됐다:
+
+1. **COVID 저점 기저효과(BKNG 유형)** - 5y CAGR의 기본 기준연도(years[-6]
+   =2020)가 COVID로 매출이 -20.7%YoY 급감한 저점이다. 기준연도를 코로나
+   이전 고점(2019)으로 바꾸면 5y(6년으로 재계산) CAGR이 22.65%->14.05%로
+   8.6%p 줄어든다 - BKNG(v3.21)가 확립한 정확히 같은 함정.
+2. **M&A 단계상승이 override로도 못 피해진다(GEN/ROP 유형의 강화판)** -
+   2022-11 Peninsula Pacific Entertainment 인수($2.75B, 버지니아·뉴욕·
+   아이오와 카지노 자산)가 종결되며 2023년 매출이 +36.0%YoY 급증했다.
+   문제는 이 왜곡이 **3y CAGR 창(2022->2025)의 시작연도 자체**에 걸려
+   있어(`rev_cagr_3y`는 `years[-4]`를 항상 쓰므로 `cagr_base_year_
+   override`로 못 피한다) override 하나로는 두 왜곡 중 하나만 해소된다.
+
+WebSearch(2026-09-02)로 확인: CHDN은 2026년에도 United Tote 인수를
+진행하는 등 **상시적 볼트온 M&A 전략**을 쓰고 있어 회사 자체 가이던스도
+동일점포(same-store)/오가닉 성장 지표를 별도 공시하지 않는다(Q2 2026
+연결매출 +4.9%YoY만 확인 - trailing CAGR 17~22%대와 크게 괴리되나 이를
+분해할 공시 자료가 없음). GEN/BRO/ROP가 요구했던 "세그먼트 공시 대조"
+자체가 불가능한 상태라 정량모델에 넣지 않고 FRAMEWORK_MISMATCH로
+분류했다 - ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도
+건드리지 않았다(LNTH/EQT/CDE와 동일한 축약 경로).
+
+## VICI·COP·DINO·EOG 제외 — 4종목 일괄 (2026-09-02)
+
+**VICI(VICI Properties) - REIT 구조적 부적합(신규 유형).** 카지노
+부동산을 트리플넷리스로 임대하는 REIT다. `OperatingIncomeLoss` 태그가
+FY2020 이후 회사 스스로 공시를 중단(REIT 특유의 손익계산서 표시방식
+변경 - PGR/ACGL/SIGI가 겪은 보험업 패턴과 유사하나 대체 프록시가
+검증된 적이 없다). 더 근본적으로 **REIT capex가 거의 0(연 $1~8M, OCF
+$2.5B 대비)** - 임차인(카지노 운영사)이 유지보수를 부담하는 트리플넷
+구조 때문이지 자본효율이 좋아서가 아니며, `FCF=OCF-capex`가 실제 배분
+가능 현금을 측정하지 못한다. REIT은 법적으로 과세소득의 90%+를
+배당해야 해 성장이 유보FCF 재투자가 아니라 **신규 자본조달(증자·기채)로
+이뤄지는 자산군**이라 이 엔진의 핵심 가정(FCF 재투자를 통한 성장) 자체가
+안 맞는다. 업계 표준(P/FFO·AFFO·배당수익률)과 이 엔진(FCF-DCF)이
+근본적으로 다른 질문에 답한다 - `is_insurer`처럼 REIT 전용 경로를
+만들려면 실증사례가 더 필요하다(Simplicity First).
+
+**COP·DINO·EOG - 자본집약 원자재(석유/가스) 이중고, AA/NRG/MP/EQT/CDE와
+동일 유형.** SEC XBRL 매출 실측으로 극심한 가격사이클을 확인:
+- COP(ConocoPhillips): 2014 $55.5B->2015 $30.9B(-44%), 2020 $18.8B->2021
+  $45.8B(+144%).
+- DINO(HF Sinclair, 정유): 2020 $11.2B->2022 $38.2B(+242%)->2025 $26.9B(-30%,
+  고점대비).
+- EOG(EOG Resources): 2008/2014/2019 고점·2009/2015/2020 저점의 전형적
+  boom/bust 패턴(예: 2014 $18.0B->2015 $8.8B, -51%).
+
+셋 다 `demand_sensitivity_pct`·`competitor_threat_weights` 같은 경쟁구도
+기반 주관 입력이 원자재 가격사이클 앞에서 무의미해지는 업종 - 정량모델에
+넣지 않고 FRAMEWORK_MISMATCH로 분류했다. 4종목 전부 ledger를 만들지
+않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## NBIX 정식 분석 — 지연성운동장애 시장 방어 성공이 실측으로 확인됨
+(2026-09-02/03)
+
+FRAMEWORK_MISMATCH 8종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG)을 제외한
+뒤 큐 순서상 처음으로 제외 사유가 없는 종목 NBIX(Neurocrine Biosciences,
+바이오제약, tier A, 스크리너 Gap 추정 +17.16%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +14.05%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+부채 전액 상환(FY2022 이후 $0), 순현금 -$713M. 모델괴리 1.91%p(경고
+임계값 미만, 양호한 일치). PIT_VALID. 실시간 시총(~$15.46B, WebSearch
+확보)이 스크리너 근사(~$9.52B)보다 1.6배 커 OKTA/MEDP와 같은 계열의
+float 스냅샷 노후화가 재확인됐다(Alpha Vantage가 이번엔 일일 한도
+초과로 WebSearch 대체 확보).
+
+### 경쟁구도 발견 — Teva의 가격공세에도 점유율 방어 성공이 정량 확인됨
+
+Ingrezza(VMAT2 억제제)가 Teva Austedo의 38% 가격인하 공세에도 지연성
+운동장애 시장 **53~55% 점유율**을 유지 - 실사용데이터(치료지속률 우위)가
+방어 근거로 확인됐다. 신제품 Crenessity(CAH 치료제)는 2026 상반기
++400%YoY 급성장. `competitor_threat_weights`/`market_share_trend_pp_
+per_year`에 이 상쇄관계(가격경쟁 vs 데이터우위)를 반영했다.
+
+### 배선
+
+`watchlist.json`에 NBIX 추가(40→41, MNST-OKTA 사이). 여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 40→41),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 NBIX 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 NBIX 추가).
+
+baseline 41종목으로 재동결(fingerprint `c3557660…`→`f89135e0…`). 테스트
+1,081개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## NXT 정식 분석 — 스크리너 거짓탈락 세 번째 실사례, 관세리스크 실측반영
+(2026-09-02/03)
+
+큐 다음 순위 NXT(Nextpower Inc., 舊 Nextracker, 태양광 트래커, tier B,
+스크리너 Gap 추정 +16.43%p)를 정식분석했다. 2023-02 IPO(Flex Ltd에서
+분사)라 공개기업 이력이 6개년뿐이고, 2026년 중 사명이 Nextracker Inc.에서
+Nextpower Inc.로 변경됐음을 SEC 등록명 확인으로 발견했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +11.49%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음
+
+부채 전액 상환(FY2025 이후 $0), 순현금 -$1.09B. PIT_VALID. YoY 성장률이
+2024년 +31.4% 정점 이후 완만히 감속(2025 +18.4%, 2026 +20.3%) - 단일연도
+단계상승 없는 진짜 다년 패턴(M&A 왜곡 아님). 관세·재생에너지 정책
+불확실성(ITC 세액공제 변경 우려)으로 주가가 고점(~$160) 대비 약 48%
+하락한 상태($82.55)에서 실시간 시총(~$12.81B)을 그대로 채택 - 관세가
+Q2 실적에서 300bp 마진 역풍으로 실제 작용한 사실이 확인돼 순수 "공포과잉"
+과는 결이 다른 사례로 판단했다.
+
+### ⭐ 스크리너 거짓탈락 세 번째 실사례
+
+BSX·MEDP와 동일 메커니즘 - `estimate_drs()`의 상수 competition_
+intensity(12.0)가 NXT·Array Technologies·Arctech 3사 과점시장에서 NXT의
+시장선도 지위를 반영한 실제 연구값보다 높아 DRS가 30.6까지 과대평가돼
+screen()이 탈락시킨다. `KNOWN_SCREENER_FALSE_REJECTIONS`에 NXT 추가 +
+회귀 테스트(`test_nxt_false_rejection_is_still_reproducible`) 신설.
+
+### 배선
+
+`watchlist.json`에 NXT 추가(41→42, NBIX-OKTA 사이). 아홉 번째 "알려진
+예외" 세트 확장(이번엔 provenance/sbc_harvest/monitor_state 신규 ledger
+계열 + screener 거짓탈락 계열 둘 다 갱신): `test_monitor_state.py`
+(n_ledgers 41→42), `test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_
+LEDGERS`에 NXT 추가), `test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_
+LEDGERS`에 NXT 추가), `test_screener.py`(`KNOWN_SCREENER_FALSE_
+REJECTIONS`에 NXT 추가 + 회귀 테스트 신설).
+
+baseline 42종목으로 재동결(fingerprint `f89135e0…`→`d65fb51d…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## PATH 정식 분석 — SBC 차감 시 판정이 극적으로 뒤집히는 세 번째 사례
+(2026-09-03)
+
+큐 다음 순위 PATH(UiPath, RPA/에이전틱 자동화, tier A, 스크리너 Gap
+추정 +16.40%p)를 정식분석했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +3.56%p(경계선에 근접), Confidence
+79, 강건성점검 flip(모델괴리 4.40%p)
+
+무차입, 순현금 -$871M. PIT_VALID. 매출성장률이 2021년 +80.8%에서
+2025/2026년 +9.3%/+12.7%로 급격히 둔화된 성숙화 국면. FY2026 최초
+GAAP 영업흑자 전환($56.8M)은 긍정적 반전 신호.
+
+### ⭐ 핵심 발견 - 생성형/에이전틱 AI의 RPA 대체 우려로 주가가 사상최고가
+대비 -87%(2026년 한 해만 -35%) 폭락
+
+Gartner MQ 2025에서 Microsoft Power Automate(종합점수 4.5)가 UiPath
+(4.1)를 처음 앞섰으나, UiPath는 6년 연속 RPA 부문 1위 유지 - "가벼운
+사무자동화"는 Microsoft, "SAP/Oracle/레거시 메인프레임 포함 중대형
+엔터프라이즈 프로세스"는 UiPath 우위로 시장이 이분화됐다는 평가.
+2026-05 "UiPath for Coding Agents" 출시로 경쟁 AI 코딩에이전트 위의
+오케스트레이션 레이어로 포지셔닝 전환 중.
+
+### ⭐⭐ SBC 교차검증 - 트래커 최대폭 뒤집힘(WDAY·OKTA에 이은 세 번째)
+
+SBC/FCF **82.5%**(트래커 최상위권) - SBC를 실제 비용으로 차감하면 Gap
++3.56%p→**-16.92%p**, 판정이 "적정가/경계선"→**"과대평가 가능성"**으로
+뒤집힌다. 뒤집힘 폭(20.48%p)이 WDAY·OKTA보다 훨씬 크다 - AI대체 우려·
+성장둔화·극단적 SBC 의존이 겹친 조합이 실제로 가장 취약한 판정을
+만든다는 것이 실측으로 확인됐다. 공식 판정은 SBC 미차감 기준으로 유지
+(병기 원칙)하되, 이 종목은 액면 그대로 신뢰하지 말 것을 최우선으로
+명시했다.
+
+### 부수 발견 - FCF 5y CAGR 근사-0 기준연도 아티팩트(계산에는 무영향)
+
+FCF(2021) $27.2M(거의 0)→FCF(2026) $352.2M로 FCF 5y CAGR 66.86%라는
+비현실적 수치가 나오나, `realistic_growth_estimate()`의 min(매출가중
+CAGR, FCF CAGR) 로직이 자동으로 버렸다(매출가중CAGR 채택) - MU/MNDY/
+UBER와 동일한 "보호가 우연적" 아티팩트 유형.
+
+### 배선
+
+`watchlist.json`에 PATH 추가(42→43, OKTA-PDD 사이). 열 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 42→43),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PATH 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PATH 추가) - C등급
+"적정가/경계선"이라 screener 거짓탈락 테스트는 무변경.
+
+baseline 43종목으로 재동결(fingerprint `d65fb51d…`→`eca83ddf…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## COF(Capital One) 제외 — 은행/예금취급기관 구조적 부적합(신규 유형,
+VICI와 동일 계열) (2026-09-03)
+
+큐 다음 순위 COF(Capital One Financial, tier S, 스크리너 Gap 추정
++16.30%p)를 조사했다. SEC XBRL 실측에서 두 가지 구조적 문제를 확인:
+
+1. **`operating_income`이 통째로 미확보** - 은행은 표준 "영업이익" 라인을
+   보고하지 않는다(순이자이익-대손충당금-비이자비용 구조라 표준 태그
+   ('OperatingIncomeLoss' 등) 자체가 없음).
+2. **`revenue` 시계열에 극심한 정의불연속** - 2017년 $27.2B -> 2018년
+   $3.4B(-87%)로 급락하는데, 이는 실적 붕괴가 아니라 순보고(net revenue,
+   이자비용 차감 후) 방식으로 회계표시가 바뀐 것으로 판단된다(은행업
+   보고관행 변경 - CROX/MEDP가 겪은 ASC 606 전환과 유사하나 훨씬 큰 폭).
+
+VICI(REIT)와 동일한 근본 이유 - **예금취급기관은 이 엔진이 가정하는
+"영업활동 FCF 재투자를 통한 성장" 모델 자체가 안 맞는다.** 은행 자본은
+규제자본비율(CET1 등)로 관리되고, "capex"는 지점·IT설비 정도로 실제
+비즈니스 성장(대출 확대)과 무관하며, 레버리지(net_debt/EBITDA)는 예금을
+전부 "부채"로 잡으면 무의미해진다. 업계 표준(P/TBV·ROE·NIM)과 이 엔진이
+근본적으로 다른 질문에 답한다. FRAMEWORK_MISMATCH로 분류 - ledger를
+만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## EXE(Expand Energy, 舊 Chesapeake Energy) 제외 — 천연가스 E&P
+원자재 가격사이클 (2026-09-03)
+
+큐 다음 순위 EXE(Expand Energy Corp, 舊 Chesapeake Energy, 천연가스
+E&P, tier A, 스크리너 Gap 추정 +14.74%p)를 확인했다. SEC 등록명이
+"Chesapeake Energy"에서 "Expand Energy Corp"로 변경된 것을 확인 -
+COP/DINO/EOG와 동일한 자본집약 원자재(천연가스) 업종으로, 이미 8건
+확정된 패턴(AA/NRG/MP/EQT/CDE/COP/DINO/EOG)에 해당해 추가 재무데이터
+확인 없이 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## WSC(WillScot Mobile Mini) 제외 — M&A 단계상승이 CAGR 창 내부에 있음
+(GEN/ROP 유형) (2026-09-03)
+
+큐 다음 순위 WSC(WillScot Mobile Mini Holdings, 모듈러 공간·이동식 창고
+임대, tier S, 스크리너 Gap 추정 +13.24%p)를 조사했다. SEC XBRL 매출
+실측에서 2020->2021 +38.6%($527.3M 증가) 급등을 확인 - WebSearch(2026-
+09-03)로 원인 확인: WillScot과 Mobile Mini가 2020-07-01 "동등합병"으로
+결합했고, 회사 스스로 10-K에서 이 매출 증가를 **"Mobile Mini 매출 편입 +
+유기적 성장 둘 다"에 기인**한다고 명시해 분리 불가능함을 인정한다.
+2024-01에는 McGrath 인수까지 발표돼 **상시적 볼트온 M&A**가 계속
+진행 중임도 확인했다(GEN/BRO/RYAN과 동일 패턴).
+
+합병 연도(2020)가 5y CAGR 기본 기준연도(`years[-6]`)에 걸려 있어
+`cagr_base_year_override`로도 못 피하며, 회사가 오가닉/M&A 성장을
+분리 공시하지 않아 세그먼트 대조도 불가능하다. FRAMEWORK_MISMATCH로
+분류 - ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도
+건드리지 않았다.
+
+## PCTY 정식 분석 — 깨끗한 다년 성장곡선, 강건성 최상급 (2026-09-03)
+
+FRAMEWORK_MISMATCH 9종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF)을 제외한
+뒤 큐 다음 순위 PCTY(Paylocity Holding, HCM/급여관리 SaaS, tier A, 스크리너
+Gap 추정 +16.28%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +10.78%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음(모델괴리 단 0.49%p)
+
+15개년 원자료 확보(2012~2026, 10y CAGR 산출 가능), 무차입·순현금 -$272M.
+PIT_VALID. YoY 성장률이 2013~2016년 40%대 고성장에서 2023~2026년
+29.5%->16.7%->14.8%->12.2%로 완만히 감속하는 깨끗한 다년 패턴(단일연도
+단계상승 없음 - 2024년 Airbase 인수는 매출 대비 소규모 볼트온이라 CAGR
+왜곡 미미). 이번 배치 9번째 정식분석 중 모델괴리·SBC 양쪽 모두 flip이
+전혀 없는 가장 강건한 결과.
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+Paylocity가 "ADP의 최대 도전자"로 꾸준히 점유율을 확보해온 궤적이나,
+비상장 신흥 플랫폼 Rippling이 ~78%YoY 초고성장으로 부상 중 - 회사 자체
+가이던스도 성장둔화를 시사(Q2 2026 +11%YoY -> 다음분기 +8.3%YoY).
+
+### 배선
+
+`watchlist.json`에 PCTY 추가(43→44, PATH-PDD 사이). 열한 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 43→44),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PCTY 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PCTY 추가).
+
+baseline 44종목으로 재동결(fingerprint `eca83ddf…`→`87e87c04…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## EXEL 정식 분석 — 52/53주 회계연도 라벨 충돌을 수동 재구성으로 해소
+(2026-09-03)
+
+큐 다음 순위 EXEL(Exelixis, 종양학 바이오제약, tier A, 스크리너 Gap
+추정 +15.24%p)을 정식분석했다.
+
+### ⚠️ 원자료 함정 - v3.61이 CDNS/GEN에서 발견한 패턴의 세 번째(가장
+심한) 실사례
+
+`SecCompanyFactsProvider` 자동 추출이 2019·2024년 매출을 통째로
+누락시키고(2018->2020, 2023->2025로 건너뜀) 2020/2021년 값을 서로
+바꿔치기했다 - Exelixis가 52/53주 회계연도를 쓰는데 자동 추출이 `end`
+날짜의 달력연도로 회계연도를 추정해 회사 자신의 `fy` 필드와 어긋났다.
+**SEC XBRL의 `fy` 필드를 직접 사용해 12개월 단위(355~375일) 항목만
+수동으로 재구성**했다 - 재구성한 FY2021 매출 $1,434,970,000은 자동추출이
+잘못 부여했던 $987,538,000(실은 FY2020 값)과 크게 달라, 재구성 없이
+그대로 썼다면 성장률이 심각하게 왜곡됐을 것이다.
+
+**부수 발견 - PIT 자동조회(`pit_inputs_for()`)도 같은 결함을 겪는다**:
+`filing_dates_by_year`가 2019·2024년을 여전히 누락시킨 채 반환됐으나
+(8/10년만 확보), `evaluate_point_in_time()`은 이를 위반으로 잡지 않고
+`PIT_VALID`(violations=[])를 반환한다 - **누락된 연도는 검증 대상에서
+빠질 뿐 오류로 표시되지 않는다는 뜻**이라 향후 참고할 것. 재무데이터
+자체는 수동 재구성했으므로 계산 결과에는 영향 없음.
+
+### 결과 — "저평가 가능성"(B등급), Gap +6.98%p, Confidence 94, 강건성점검·
+SBC 교차검증 모두 flip 없음(모델괴리 1.16%p)
+
+무차입(FY2016 이후), 순현금 -$482M. Cabometyx(카보잔티닙) 프랜차이즈가
+핵심 매출원, 파이프라인 후보 zanzalintinib("$5B 기회"로 평가, 대장암
+적응증 2026-12 PDUFA 심사 예정)은 아직 승인 전이라 상당한 규제리스크가
+남아있음을 falsification_conditions에 명시.
+
+### 배선
+
+`watchlist.json`에 EXEL 추가(44→45, DUOL-FIX 사이). 열두 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 44→45),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 EXEL 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 EXEL 추가).
+
+baseline 45종목으로 재동결(fingerprint `87e87c04…`→`dfdb686b…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## PINS 정식 분석 — SBC 차감 시 판정이 뒤집히는 네 번째 사례 (2026-09-03)
+
+FRAMEWORK_MISMATCH 11종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE) 제외 뒤 큐 다음 순위 PINS(Pinterest, 소셜미디어 광고, tier A,
+스크리너 Gap 추정 +14.46%p)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(S등급), Gap +16.22%p, Confidence 94, 강건성점검
+flip 없음
+
+무차입, 순현금 -$969M. PIT_VALID. YoY 성장률이 COVID붐(2018~2021
+48~60%대) 이후 2022~2023년 9%대로 급감속했다가 2024~2025년 19.3%/15.8%로
+재가속하는 비단조 패턴 - Snap/X/LinkedIn 대비 빠른 광고매출 성장률
+(+31%YoY, 2년 연속)이라는 외부평가와 일치.
+
+### ⭐ SBC 교차검증 - 네 번째 판정뒤집힘 사례(WDAY·OKTA·PATH에 이어)
+
+SBC/FCF **70.3%**(PATH급 트래커 최상위권) - SBC를 실제 비용으로 차감하면
+Gap +16.22%p→**+1.65%p**, 판정이 "저평가 가능성"→**"적정가/경계선"**으로
+뒤집힌다. 공식 판정은 SBC 미차감 기준으로 유지(병기 원칙)하되, 이 종목도
+액면 그대로 신뢰하지 말 것을 최우선으로 명시했다.
+
+### 배선
+
+`watchlist.json`에 PINS 추가(45→46, PH-PTC 사이). 열세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 45→46),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PINS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PINS 추가).
+
+baseline 46종목으로 재동결(fingerprint `dfdb686b…`→`8258fefe…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## ROKU 정식 분석 — SBC 차감 시 판정이 뒤집히는 다섯 번째 사례
+(2026-09-03)
+
+FRAMEWORK_MISMATCH 12종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE/XYZ) 제외 뒤 큐 다음 순위 ROKU(커넥티드TV 플랫폼, tier B, 스크리너
+Gap 추정 +14.15%p)를 정식분석했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -2.60%p, Confidence 94, 강건성점검
+경고(모델괴리 9.96%p)
+
+무차입(FY2023 이후), 순현금 -$1.59B. PIT_VALID. YoY 성장률이 COVID붐
+(2018~2021 44.8~57.5%) 이후 안정화(2022~2025 11.5~18.0%)된 깨끗한
+다년 감속 패턴.
+
+### ⭐ 스크리너 근사치가 실시간 시총의 40%에 불과했다
+
+실시간 시총(~$23.95B)이 스크리너 근사(~$9.70B)의 **2.47배** -
+OKTA/MEDP/NBIX/NXT급의 극단적 float 스냅샷 노후화 사례. 실시간 시총을
+반영하니 스크리너의 +14.15%p 추정이 -2.60%p로 완전히 뒤집혔다 - FIX와
+같은 "이미 비쌈" 패턴.
+
+### ⭐ SBC 교차검증 - 다섯 번째 판정뒤집힘 사례(WDAY·OKTA·PATH·PINS에 이어)
+
+SBC/FCF **74.0%**(PATH/PINS급) - SBC를 실제 비용으로 차감하면 Gap
+-2.60%p→**-18.60%p**, 판정이 "적정가/경계선"→**"과대평가 가능성"**으로
+뒤집힌다. 기대수익률이 음수(-3.86%)라 RAR 방향성 경고도 함께 발동 -
+RAR 절대값 대신 Expectation Gap을 우선 참고할 것을 명시.
+
+### 배선
+
+`watchlist.json`에 ROKU 추가(46→47, RMD-ROP 사이). 열네 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 46→47),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 ROKU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 ROKU 추가).
+
+baseline 47종목으로 재동결(fingerprint `8258fefe…`→`d37d298f…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## AMP(Ameriprise Financial) 제외 — 다각화 금융지주 구조적 부적합
+(COF와 동일 계열, 순수보험사 아님) (2026-09-03)
+
+큐 다음 순위 AMP(Ameriprise Financial, 자산관리·보험·연금 다각화
+금융지주, tier S, 스크리너 Gap 추정 +13.15%p)를 조사했다. SEC XBRL
+실측에서 `operating_income`이 통째로 미확보(COF와 동일한 결측 패턴)임을
+확인했다 - Ameriprise는 자산관리 수수료 사업과 연금·보장성보험 사업이
+혼재된 다각화 금융지주라 표준 손익구조(영업이익 라인)가 없다.
+
+PGR/ACGL/BRO/SIGI가 성공적으로 쓴 `is_insurer=True` 경로는 순수
+보험사(손해보험 위주)를 전제로 하는데, AMP는 자산관리 수수료 수익이
+상당 비중을 차지하는 하이브리드 구조라 그 경로를 그대로 적용하기엔
+근거가 부족하다고 판단했다. COF와 동일한 근본 이유(예금취급기관·
+다각화 금융지주 전반이 이 엔진의 "FCF 재투자를 통한 성장" 가정과
+안 맞음)로 FRAMEWORK_MISMATCH로 분류 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## NEM(Newmont) 제외 — 금광업 원자재 가격사이클 (2026-09-03)
+
+큐 다음 순위 NEM(Newmont Corporation, 세계 최대 금광업체, tier S,
+스크리너 Gap 추정 +13.45%p)을 확인했다. CDE(은/금 광산)와 동일한
+자본집약 원자재(귀금속) 업종 - 이미 9건 확정된 패턴(AA/NRG/MP/EQT/
+CDE/COP/DINO/EOG/EXE)에 해당해 추가 재무데이터 확인 없이
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다.
+
+## XYZ(Block Inc, 舊 Square) 제외 — 비트코인 패스스루 매출이 GAAP
+매출을 오도한다(신규 유형) (2026-09-03)
+
+큐 다음 순위 XYZ(Block Inc, 결제·핀테크, tier B, 스크리너 Gap 추정
++14.16%p)를 조사했다. SEC XBRL 매출 실측에서 2019 $4.7B -> 2020
+$9.5B(+101.5%) -> 2021 $17.7B(+85.5%) 급등 후 2022~2025 거의 정체
+(-0.7%/+25.0%/+10.1%/+0.3%)라는 극심한 비단조 패턴을 확인했다.
+
+WebSearch(2026-09-03)로 원인 확인 - Block Cash App의 **비트코인 거래를
+총액(gross) 기준으로 매출 인식**하는데, 이 세그먼트는 마진이 극히 얇다
+(2026 Q2 비트코인 매출 $1.89B에 총이익은 단 $72M - 마진 약 3.8%). 회사
+스스로 "총이익(gross profit)"을 핵심 성과지표로 명시적으로 채택하고
+있으며(2026 가이던스 총이익 $12.51B/+21% - GAAP매출 성장률과 전혀 다른
+숫자), 실적발표에서 비트코인 관련 활동을 핵심 지표와 분리해 별도
+공시한다고 밝혔다.
+
+**RYAN(Up-C 시총 함정)·CROX/MEDP(ASC 606 정의전환)와 같은 계열의
+"매출 정의 문제"이지만, 이번엔 SEC 태그 선택으로 해결되지 않는다** -
+왜곡의 원인이 태그가 아니라 사업 자체의 회계처리(총액 인식)이고, 회사가
+쓰는 대안지표(총이익)는 이 엔진의 `revenue_by_year` 입력 스키마에
+대응하는 필드가 없다. 새 입력 스키마(예: `gross_profit_by_year`)를
+만들려면 Simplicity First 원칙상 실증사례가 더 필요하다고 판단해
+FRAMEWORK_MISMATCH로 분류 - ledger를 만들지 않았고 watchlist·테스트·
+baseline 어느 것도 건드리지 않았다.
+
+## IDCC(InterDigital) 제외 — 특허라이선싱 매출의 구조적 변동성(신규 유형)
+(2026-09-03)
+
+큐 다음 순위 IDCC(InterDigital, 무선통신 특허 라이선싱, tier A, 스크리너
+Gap 추정 +14.93%p)를 조사했다. SEC XBRL 매출 실측(2008~2025)에서 극심한
+연도별 등락을 확인(2012 $663M -> 2013 $325M, 2016 $666M -> 2018 $307M,
+2024 $869M -> 2025 $834M) - WebSearch(2026-09-03)로 원인을 확인했다:
+회사 자체 공시가 "매출 변동성이 지속 중"이라 명시하며, 2026 Q2 매출
+$260.2M 중 $103.7M이 신규계약·중재 관련 "캐치업 항목"(일회성 소급인식)
+이었다. 회사가 별도 공시하는 연간반복매출(ARR, ~$626M, +13%YoY)이
+보고매출(~$834M)보다 훨씬 안정적이지만, ARR은 최근에야 공시되기 시작한
+비GAAP 지표라 과거 연도 이력을 재구성할 수 없다.
+
+특허 라이선싱 계약(고정금액 라이선스+변동로열티)의 소급인식·중재타이밍이
+매출을 근본적으로 들쭉날쭉하게 만드는 업종 특성 - GEN의 M&A 왜곡과
+유사한 계열이나 원인이 M&A가 아니라 특허소송/협상 타이밍이라는 점이
+다르다. 정량모델(3y/5y CAGR)로는 신뢰할 수 있는 성장률을 추출할 수
+없다고 판단해 FRAMEWORK_MISMATCH로 분류 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## HLNE(Hamilton Lane) 정식 분석 — OperatingExpenses 태그로 영업이익 직접
+파생, Up-C 완전전환 확인 (2026-09-03)
+
+큐 다음 순위 HLNE(Hamilton Lane Incorporated, 사모시장 투자자문·자산운용사,
+tier A, 스크리너 Gap 추정 +12.80%p, 시총 근사 ~$5.47B)를 정식분석했다.
+FRAMEWORK_MISMATCH 15종목(LNTH/EQT/CDE/CHDN/VICI/COP/DINO/EOG/COF/IDCC/
+EXE/XYZ/NEM/WSC/AMP) 제외 뒤 큐 순서상 다음 후보였다.
+
+### 데이터 함정 — operating_income 미확보를 COF/AMP와 다르게 처리했다
+
+SEC XBRL 실측에서 `OperatingIncomeLoss` 태그가 없었다 - 얼핏 COF/AMP와
+같은 결측으로 보였으나 원인이 달랐다. COF/AMP는 은행·다각화 금융지주라
+표준 손익구조(영업이익 라인) 자체가 원리적으로 없는 데 반해, HLNE는
+`OperatingExpenses` 태그가 2016~2026 전 연도 일관되게 확보돼 있어
+`revenue - OperatingExpenses`로 영업이익을 직접 파생할 수 있었다(MCK
+capex 파생(v3.60)과 동일한 "회사 자신의 태그 구조로 직접 계산" 원칙).
+파생 마진이 42.8~50.4%로 극히 안정적이라(고정비 위주 자산운용업 특성과
+부합) 파생값의 타당성을 확인했다.
+
+### Up-C 구조 확인 — RYAN과 달리 이미 완전 전환
+
+HLNE는 과거 Class A/B/C 다중클래스 Up-C 구조였으나(RYAN 선례가 제기한
+우려와 동일 유형), 2026-09-03 WebSearch로 "Class B·C 유닛의 완전 교환이
+이미 GAAP 희석주식수(Class A 기준)에 전부 반영됐다"(회사 자체 실적발표
+언급)는 사실을 확인했다 - 즉 현재는 사실상 단일 경제적 지분 구조로
+완전 전환됐다. SEC 10-Q 표지(2026-07-31 기준) Class A 43,349,167주가
+곧 전체 경제적 지분이라 RYAN처럼 별도 합산이 불필요함을 확인했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +13.31%p
+
+DRS 27.2(경쟁강도 낮음), Realistic Growth 12.72%(3y/5y CAGR 11.07%/
+17.32%, M&A 단계상승 없는 유기적 성장), Implied Growth -0.59%(two_stage,
+모델괴리 1.68%p로 경고 임계값 미만), RAR +1.9523, Confidence 94, 강건성
+점검·SBC 교차검증(SBC/FCF 12.1%, 낮음) 모두 flip 없음, PIT_VALID(위반
+0건). 10년치 데이터가 없어(2017~2026 10개년) 10y CAGR을 5y CAGR로 대체
+(엔진이 자동으로 `data_limitations`에 기록).
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+HLNE는 사모시장 솔루션·자문 분야 "Top 3" 글로벌 사업자로 평가되나,
+Blackstone·KKR 등 초대형 대체투자사가 에버그린/리테일 펀드 시장에
+규모 우위로 공격적 진출 중이고, StepStone Group이 동일 비즈니스모델의
+직접 경쟁자. 업계 전반의 수수료 압박이 구조적 리스크로 지목됨. AUM
+$1.1조(2026-06-30 기준), 2022~2026 AUM CAGR 7%.
+
+### 배선
+
+`watchlist.json`에 HLNE 추가(47→48, GWRE-IDXX 사이). 여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 47→48),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 HLNE 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 HLNE 추가).
+
+baseline 48종목으로 재동결(fingerprint `d37d298f…`→`37d254a3…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## FIVE(Five Below) 정식 분석 — 스크리너 근사 시총이 실적 랠리를 크게
+놓친 아홉 번째 사례 (2026-09-03)
+
+큐 다음 순위 FIVE(Five Below, Inc., 할인 버라이어티 소매업, tier B,
+스크리너 Gap 추정 +12.76%p, 시총 근사 ~$7.26B)를 정식분석했다.
+
+### 데이터 정합성 — 52/53주 회계연도지만 라벨충돌 없음을 직접 확인
+
+FIVE는 FYE가 매년 1월 말~2월 초로 일관돼(EXEL/CDNS/GEN처럼 캘린더연도
+경계 부근에서 갈리는 케이스와 달리) `end` 날짜의 캘린더연도가 회계연도와
+항상 일치한다 - 원자료 raw entries를 직접 대조해 확인했다. `revenue`/
+`operating_cashflow` 태그 전환 경고([태그 혼재])는 경계연도에서 완전히
+중복되는 재확인 값이라 실질 왜곡이 없음도 확인했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +3.11%p
+
+실시간 시총(~$13.44B, Alpha Vantage 종가 + 10-Q 표지 주식수)이 스크리너
+근사의 1.85배 - OKTA/MEDP/NBIX/NXT/ROKU에 이은 아홉 번째 float 스냅샷
+노후화 사례. 신임 CEO 체제(Gen Z/Alpha 타겟, "Five Beyond" 가격구조 확장)
+에서 실적이 크게 개선(2025 홀리데이 comps +14.5%, 2026 Q2 매출
++22.9%YoY)돼 주가가 이를 선반영했다 - Gap이 스크리너 추정보다 크게
+축소된 결과가 그 반영을 정량적으로 보여준다.
+
+DRS 21.8, Realistic Growth 15.44%(3y/5y CAGR 15.70%/19.42%, M&A 왜곡
+없는 유기적 성장), 모델괴리 5.21%p(경고 임계값 3%p 초과 - two_stage
+채택 근거를 `model_choice_reason`에 명시), Confidence 94, PIT_VALID(위반
+0건). 대차대조표는 무차입 순현금(`LongTermDebt` 태그 최근 연도 없음 -
+임차기반 매장확장 구조).
+
+### 배선
+
+`watchlist.json`에 FIVE 추가(48→49, EXEL-FIX 사이). 아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 48→49),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 FIVE 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 FIVE 추가).
+
+baseline 49종목으로 재동결(fingerprint `37d254a3…`→`a2166dac…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## TW(Tradeweb Markets) 정식 분석 — 4중 주식클래스, RYAN과 정반대의
+경제적 지분 함정 (2026-09-03)
+
+큐 다음 순위 TW(Tradeweb Markets Inc., 전자 채권거래 플랫폼, tier A,
+스크리너 Gap 추정 +12.69%p, 시총 근사 ~$16.9B)를 정식분석했다.
+
+### ⭐ 핵심 발견 — Class A/B/C/D 4중 구조, RYAN 선례의 정반대 함정
+
+TW는 Class A/B/C/D 4중 주식클래스 구조(RYAN의 Up-C와 비슷해 보였으나
+정반대)다. 2026-09-03 WebSearch로 회사 증권신고서(S-1) 원문을 확인한
+결과 **"Class C·D 보통주 보유자는 Class A가 갖는 배당·청산분배 등
+경제적 권리를 전혀 갖지 않는다"**(회사 공시 원문) - Class C/D는 순수
+의결권 전용 주식(각 1표/10표)으로 LSEG(런던증권거래소그룹)의 지배력
+확보 수단일 뿐 경제적 지분은 0이다. **경제적 지분은 Class A
+(114,140,240주)+Class B(96,933,192주, LLC지분과 1:1 교환권+배당권)
+뿐**이라 Class C(18,000,000)+D(5,056,868)를 명시적으로 제외했다 - RYAN
+이 "전 클래스 합산 필요"였다면 TW는 "일부 클래스만 합산 필요"인
+정반대 사례로, 다중클래스 구조를 만날 때마다 경제적 권리 구조를
+매번 개별 확인해야 함을 재확인했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +11.16%p
+
+DRS 22.8, Realistic Growth 17.52%(3y/5y CAGR 19.94%/18.15%, 2018년
+IPO 이전 자료 없어 10y 미산출 - 5y로 자동 대체), Implied Growth 6.37%
+(two_stage, 모델괴리 1.35%p로 경고 임계값 미만), RAR +2.0741,
+Confidence 94, 강건성점검·SBC교차검증(SBC/FCF 9.2%, 낮음) 모두 flip
+없음, PIT_VALID(위반 0건). 대차대조표는 무차입 순현금(현금 $2,084.7M).
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+**2026-07 ICE(Intercontinental Exchange)가 MarketAxess를 $60억에
+인수** - Tradeweb·Bloomberg와 경쟁하던 MarketAxess가 ICE의 자본력을
+등에 업은 통합경쟁자로 재편되는 구조적 변화. 다만 **2026-06 TW가 美
+신용채권 전자거래 시장점유율에서 20년간 1위였던 MarketAxess를 사상
+최초로 추월** - 실질적 점유율 확대가 실측 확인됨(Rates/IRS 부문은
+이미 선두, Credit 부문은 개선 중).
+
+### 배선
+
+`watchlist.json`에 TW 추가(49→50, TTD-TYL 사이). 열 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 49→50), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TW 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TW 추가).
+
+baseline 50종목으로 재동결(fingerprint `a2166dac…`→`11a91387…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## RLI(RLI Corp) 정식 분석 — 30년 연속 언더라이팅 흑자, WebSearch 2차
+출처 오류를 채택 전에 잡은 사례 (2026-09-03)
+
+큐 다음 순위 RLI(RLI Corp, 특수(E&S)손해보험사, tier S, 스크리너 Gap
+추정 +12.66%p, 시총 근사 ~$5.49B)를 정식분석했다. `is_insurer=True`
+경로(v3.22, PGR/ACGL/BRO/SIGI 선례)를 그대로 따랐다.
+
+### ⚠️ WebSearch 2차 출처 오류를 채택 전에 잡았다
+
+부채 조회 1차 WebSearch가 "$1,067,908천 선순위채"라는 수치를 반환했으나,
+RLI(시총 ~$5.8B, 자산 ~$6.25B)의 규모에 비해 명백히 과대해 의심 - 실제
+SEC XBRL 원자료(CIK 0000084246)를 직접 대조하니 `LongTermDebt` 태그
+최종 확정값은 $100M(2023-12-31)이었고, 2차 독립 WebSearch로 "PNC
+Bank·FHLB Chicago 차입금 합계 $100백만"이 재확인됐다 - 1차 검색결과가
+다른 보험사(추정 CIK 890926) 데이터와 혼동된 것으로 보인다. TYL SBC
+3배 오류와 동일한 "2차 출처 무검증 인용" 위험을 이번엔 채택하기 전에
+직접 대조로 잡았다.
+
+### 데이터 확인 — SIGI형 Q4단독 오염 없음, SBC는 확보 실패로 정직하게 생략
+
+세전이익(operating_income 대용) 태그의 raw entries를 전수 확인해 SIGI가
+겪은 "Q4 단독 수치 혼입"이 없음을 확인(정직한 미확보였을 뿐). SBC는
+`AllocatedShareBasedCompensationExpense` 태그가 2020년 이후 XBRL에서
+사라져(2019년 $4.5M이 마지막) 정확한 최근 수치를 확보하지 못했다 -
+추측으로 채우지 않고 `sbc_by_year`를 생략, SBC 교차검증 없이 진행했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +7.70%p
+
+DRS 48.92(cyclical 자동분류 - 2022년 세전이익 급등($720.7M)→2023년
+정상화($377.3M) 등 언더라이팅 사이클성 변동이 반영됨), Realistic
+Growth 6.73%, Implied Growth -0.98%(two_stage, 모델괴리 1.66%p로 경고
+임계값 미만), RAR +0.5004, Confidence 94, PIT_VALID(위반 0건).
+보험업 교차검증: 지속가능성장률 11.53%(평균ROE 27.85%×유보율 41.42%)가
+Realistic Growth와 4.81%p 이내로 근접(PGR형 정합적 사례), P/B 3.27배는
+참고용으로 병기.
+
+### 경쟁구도(2026-09-03 WebSearch)
+
+RLI는 2025년 합산비율 83.6%·**30년 연속 언더라이팅 흑자**, 2026 Q2
+합산비율 85.6%로 업계 최상위권 규율(SIGI 98%대와 대비). 다만 Arch
+Capital Group(ACGL)·Kinsale Capital Group·W.R. Berkley 등 대형
+자본력을 갖춘 경쟁자들이 E&S 특수시장으로 잠식 확대 중 - E&S부동산
+보험료 -6%(경쟁압력) vs Casualty +11%(성장)로 세그먼트별 방향이 엇갈림.
+
+### 배선
+
+`watchlist.json`에 RLI 추가(50→51, RMD 앞). 열한 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 50→51), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RLI 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RLI 추가).
+
+baseline 51종목으로 재동결(fingerprint `11a91387…`→`0d97b30c…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## OVV(Ovintiv) 제외 — FRAMEWORK_MISMATCH(원자재 가격사이클 + M&A
+단계상승 이중고, EQT/CDE와 동일 유형) (2026-09-03)
+
+큐 다음 순위 OVV(Ovintiv Inc., 舊 Encana, 북미 석유·천연가스 E&P,
+tier S, 스크리너 Gap 추정 +12.35%p)를 조사했다. SEC XBRL 매출 실측
+(2017~2025)에서 극심한 원자재 가격사이클 변동을 확인: 2020년 $5.51B
+→2021년 $10.47B(+90%)→2022년 $14.26B(+36%)→2023년 $10.66B(-25%)→2024년
+$8.94B(-16%)→2025년 $8.66B(-3%). AA/NRG/MP/EQT/CDE/COP/DINO/EOG/EXE/NEM
+과 동일한 "자본집약 원자재 업종" 유형.
+
+**여기에 M&A 단계상승까지 이중으로 겹친다** - 2023-2024년 Permian
+분지 자산 $43억 인수(EnCap Investments 산하 3개사, 주식+현금 대가) +
+2024-11 Paramount Resources Montney 자산 $23.77억 인수(전액 현금).
+GEN/BRO/ROP/CROX/CDE/CHDN/WSC/EQT와 동일한 'M&A가 5y CAGR 구간에
+걸리는' 패턴이 원자재 사이클과 동시에 발생 - 5y 구간(2020→2025)이
+가격저점(2020)에서 시작해 두 차례 대규모 인수 이후(2025)로 끝나
+어느 창으로도 깨끗한 CAGR을 얻을 수 없다. 세그먼트 분리(Permian/
+Montney 신규자산 vs 기존자산) 데이터 없이는 재무데이터를 더 긁지
+않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고
+watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## DOCU(DocuSign) 정식 분석 — SBC 차감 시 판정이 뒤집히는 여섯 번째
+사례, WDAY 선례가 자동 인용됨 (2026-09-03)
+
+큐 다음 순위 DOCU(DocuSign, Inc., 전자서명·계약관리 SaaS, tier A,
+스크리너 Gap 추정 +12.12%p, 시총 근사 ~$15.1B)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +8.63%p, 그러나 SBC 차감 시 뒤집힘
+
+FY2024(영업이익 최초 흑자 $31.6M)까지 만성 적자 이후 FY2026 $298.6M로
+빠르게 개선, FCF 3y/5y CAGR 35.10%/37.63%로 견조한 유기적 성장(M&A
+왜곡 없음). 2018년 발행 전환사채($722.9M)가 FY2024에 전액상환돼 현재
+무차입 순현금. DRS 39.8, Realistic Growth 10.13%, Implied Growth 1.50%
+(two_stage, 모델괴리 0.92%p로 경고 임계값 미만), Confidence 94,
+PIT_VALID(위반 0건), 강건성점검 flip 없음.
+
+**SBC/FCF 58.8%로 WDAY급 - SBC 차감 시 Gap +8.63%p→**-1.96%p**, 판정
+'저평가 가능성'→**'적정가/경계선'**로 실제 뒤집힌다.** 엔진이 자동으로
+"2026-08-01 방법론 감사에서 WDAY가 실제로 이 경로로 뒤집힌 선례가
+있음"이라는 경고를 `data_limitations`에 생성 - 이번 세션 OKTA/PATH/
+PINS/ROKU에 이은 **여섯 번째 SBC 플립 사례**(WDAY 원본 포함). 공식
+판정은 SBC 미차감 기준으로 유지(병기 원칙).
+
+### 경쟁구도(2026-09-03 WebSearch) - 전자서명·CLM SaaS 업종
+
+DocuSign이 e서명 시장 56.84% 점유로 여전히 압도적 1위(2위 SignRequest
+10.60%, Adobe Sign 10.15%) - 글로벌 시장 자체는 2025년 $70억→2030년
+$350억+로 성장 전망. 다만 "AI 에이전트가 계약 워크플로 전체를
+자동화한다"는 구조적 위협 서사가 업계에 제기 중(WDAY의 AI네이티브
+경쟁 서사와 유사한 계열) - 구체적 점유율 잠식 증거는 아직 미확인.
+
+### 배선
+
+`watchlist.json`에 DOCU 추가(51→52, CROX-DSGX 사이). 열두 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 51→52),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 DOCU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 DOCU 추가).
+
+baseline 52종목으로 재동결(fingerprint `0d97b30c…`→`8d51a0ad…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## CINF(Cincinnati Financial) 정식 분석 — 엔진 자동경고가 외부 애널리스트
+평가와 반대방향으로 신중함을 요구한 사례 (2026-09-03)
+
+큐 다음 순위 CINF(Cincinnati Financial Corporation, 손해보험사, tier S,
+스크리너 Gap 추정 +12.04%p, 시총 근사 ~$22.85B)를 정식분석했다.
+`is_insurer=True` 경로(v3.22, PGR/ACGL/BRO/SIGI/RLI 선례)를 그대로 따랐다.
+
+### ⚠️ 결과 자체는 S등급이나, 두 개의 독립 경고가 액면가 신뢰를 막는다
+
+Gap +16.78%p, "저평가 가능성"(**S등급**). DRS 67.4(cyclical 자동분류 -
+2022년 세전손실 -$693M 등 변동성 반영), Realistic Growth 15.22%,
+Implied Growth -1.56%(two_stage, 모델괴리 1.68%p로 경고 임계값 미만),
+Confidence 94, PIT_VALID(위반 0건), SBC 교차검증 flip 없음(SBC/FCF
+1.5%, 매우 낮음).
+
+**그러나 엔진의 `insurer_cross_check`가 자동으로 경고를 냈다** -
+Realistic Growth(15.22%)와 지속가능성장률(ROE×유보율=10.01%, 평균ROE
+12.92%×유보율 77.50%)이 **5.21%p** 벌어져 경고임계값(5%p)을 넘었다 -
+"FCF-DCF가 보험업의 플로트 성장을 유기적 성장으로 착각했을 가능성"
+(ACGL 선례, Gap 31.44%p가 이 방식으로 과장 확인됨). P/B=1.67배는
+ACGL(1.46배, '정상범위')에 가까워 심각한 재평가 신호는 아니나, 성장
+추정 자체의 신뢰도는 낮춰야 한다.
+
+**동시에 외부 애널리스트 평가는 정반대 방향을 가리킨다** -
+2026-09-03 WebSearch(Seeking Alpha/GuruFocus)가 "8~9% ROE 전망 대비
+1.6배 P/B는 동종업계(1.2~1.3배) 대비 고평가"라고 명시적으로 평가했다.
+**엔진의 S등급 저평가 판정과 외부 애널리스트의 고평가 평가가 정면으로
+충돌**한다 - 이 프로젝트가 반복 확립한 "병기, 자동판정 안 함" 원칙대로
+공식 판정은 그대로 두되, 이 상충을 falsification_conditions에 최우선
+재검토 사유로 명시했다.
+
+### 언더라이팅 규율 - 동종 보험사 대비 뚜렷이 열위
+
+2026 Q2 합산비율 **100.8%**(전년比 +5.9%p 악화, 재해손해 증가로
+**언더라이팅 손실 구간**) - SIGI(98%대)·RLI(85.6%)보다도 나쁘고
+Travelers(84%대)와는 격차가 크다. 신규계약보험료 전체 -11%·개인보험
+-40% 급감(경쟁심화+선별적 언더라이팅 확인). 투자포트폴리오의 약 40%가
+보통주(동종 보험사 대비 이례적으로 높은 주식비중)로 자본시장 변동성에
+특히 취약 - 2022년 세전손실이 그 결과.
+
+### 배선
+
+`watchlist.json`에 CINF 추가(52→53, CDNS-COR 사이). 열세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 52→53),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 CINF 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 CINF 추가).
+
+baseline 53종목으로 재동결(fingerprint `8d51a0ad…`→`f8efb3b6…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## TENB(Tenable Holdings) 정식 분석 — SBC 차감 시 두 등급을 건너뛰어
+'과대평가'로 뒤집히는 최초 사례 (2026-09-03)
+
+큐 다음 순위 TENB(Tenable Holdings, Inc., 취약점·노출관리 사이버보안,
+tier A, 스크리너 Gap 추정 +11.97%p, 시총 근사 ~$4.1B)를 정식분석했다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +9.90%p
+
+여전한 GAAP 영업적자(FY2025 -$9.2M, FY2022 -$67.8M에서 크게 개선)이나
+OCF는 견조하게 성장(FCF 3y/5y CAGR 27.88%/42.09%) - 전형적 성장기 SaaS
+패턴. DRS 26.32, Realistic Growth 13.29%, Implied Growth 3.39%
+(two_stage, 모델괴리 0.17%p로 사실상 완전 일치), RAR +1.5287,
+Confidence 94, PIT_VALID(위반 0건), 강건성점검 flip 없음.
+
+### ⭐ SBC/FCF 75.3% - 판정이 두 등급을 건너뛰어 '과대평가'로 뒤집힌
+최초 사례
+
+이번 세션 SBC 플립 사례 중 가장 극적이다 - SBC 차감 시 Gap
+**+9.90%p→-6.31%p**, 판정이 "저평가 가능성"에서 곧장 **"과대평가
+가능성"**으로 뒤집힌다(WDAY/OKTA/PATH/PINS/ROKU/DOCU는 전부 '저평가'→
+'적정가'까지만 이동했는데, TENB는 처음으로 '적정가' 구간을 건너뛰어
+반대 극단까지 이동한다). 이 프로젝트 SBC 플립 사례 중 **일곱 번째**
+(WDAY 원본 포함)이자 최대폭. 공식 판정은 SBC 미차감 기준으로 유지
+(병기 원칙), falsification_conditions에 최우선 재확인 사유로 명시.
+
+### 경쟁구도(2026-09-03 WebSearch) - 노출관리·취약점관리 업종
+
+**Tenable이 IDC 세계 취약점·노출관리 시장점유율 조사 7년 연속 1위**
+(2024년 기준), 통합플랫폼 'Tenable One'이 신규영업의 41%(+8%p YoY)를
+차지하며 점유율 확대 중. 직접경쟁자 Qualys·Rapid7(Tenable이 Rapid7의
+'1순위 경쟁상대'로 우위 확인), 인접 위협은 CrowdStrike(엔드포인트→
+노출관리 확장)와 Palo Alto Networks/Wiz(클라우드 보안 대형사 잠식).
+
+### 배선
+
+`watchlist.json`에 TENB 추가(53→54, TCOM-TTD 사이). 열네 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 53→54),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TENB 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TENB 추가).
+
+baseline 54종목으로 재동결(fingerprint `f8efb3b6…`→`1ac66dbe…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## CF(CF Industries) 제외 — FRAMEWORK_MISMATCH(원자재 가격사이클,
+질소비료 업종) (2026-09-03)
+
+큐 다음 순위 CF(CF Industries Holdings, 세계 최대 질소비료 생산업체,
+tier S, 스크리너 Gap 추정 +11.35%p)를 조사했다. SEC XBRL 매출 실측
+(2007~2025)에서 극심한 원자재 가격사이클 변동을 확인: 2020년 $4.12B
+→2021년 $6.54B(+59%)→2022년 $11.19B(+71%, 러시아-우크라이나 전쟁발
+천연가스 가격급등)→2023년 $6.63B(-41%)→2024년 $5.94B(-10%)→2025년
+$7.08B(+19%). 질소비료(암모니아·요소·UAN·AN) 가격이 글로벌 천연가스
+가격(핵심 원가요소)과 농산물 사이클에 직결돼 있어 AA/NRG/MP/EQT/CDE/
+COP/DINO/EOG/EXE/NEM/OVV와 동일한 "자본집약 원자재 업종" 유형으로
+확정, 재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 -
+ledger를 만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지
+않았다.
+
+## HL(Hecla Mining) 제외 — FRAMEWORK_MISMATCH(귀금속 가격사이클 +
+M&A 단계상승, CDE와 동일 유형) (2026-09-03)
+
+큐 다음 순위 HL(Hecla Mining Company, 미국·캐나다 최대 은 생산업체,
+tier A, 스크리너 Gap 추정 +11.08%p)를 조사했다. SEC XBRL 매출 실측
+(2011~2025)에서 2024년 $929.9M(사상최대) → 2025년 $1,423.0M(+53%,
+은 가격 급등 + 생산량 가이던스 상단 달성)로 급증 - CDE와 동일한
+귀금속 가격사이클 노출을 확인했다. 여기에 2022년 Alexco Resource
+인수(은 매장량 약 5천만 온스 추가, 캐나다 최대 1급 은광 확보)가
+5y CAGR 구간에 겹쳐 M&A 단계상승까지 이중으로 작용 - CDE/EQT/OVV와
+동일한 "원자재 가격사이클 + M&A 단계상승 이중고" 패턴으로 확정.
+재무데이터를 더 긁지 않고 FRAMEWORK_MISMATCH로 분류했다 - ledger를
+만들지 않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다.
+
+## SKYW(SkyWest) 정식 분석 — CPA 구조가 수요변동성을 원리적으로
+차단하는 지역항공 업종 (2026-09-04)
+
+큐 다음 순위 SKYW(SkyWest, Inc., 지역항공사, tier A, 스크리너 Gap
+추정 +10.98%p, 시총 근사 ~$4.16B)를 정식분석했다.
+
+### ⚠️ capex 정의 공존 - MCK와 반대로 넓은 정의가 명백히 옳은 사례
+
+`[capex 정의 공존]` 경고 발생 - 넓은 정의(생산자산 취득)와 좁은 정의
+(유형자산 취득)가 FY2025 기준 548,984,000 vs 32,023,000로 17배 차이.
+넓은 정의를 채택했다 - 항공사의 핵심 자본자산인 **항공기 취득**이
+좁은 정의(지상장비만)에서 통째로 빠지기 때문에, 좁은 정의를 쓰면
+FCF가 사실상 OCF와 같아져 항공사의 자본집약적 성격 자체가 사라진다.
+
+### 결과 — "저평가 가능성"(A등급), Gap +10.29%p
+
+DRS 53.6(cyclical 자동분류), Realistic Growth 9.35%, Implied Growth
+-0.95%(two_stage, 모델괴리 1.62%p로 경고 임계값 미만), RAR +0.6334,
+Confidence 94, PIT_VALID(위반 0건), 강건성점검·SBC교차검증(SBC/FCF
+4.8%, 항공사답게 매우 낮음) 모두 flip 없음. 순부채 $2,269.4M
+(net_debt/EBITDA≈2.31x, 항공사 기준 준수한 수준).
+
+### ⭐ 경쟁구도(2026-09-03 WebSearch) - CPA(용량구매계약) 구조가
+demand_sensitivity를 원리적으로 낮춘다
+
+지역항공사는 본선항공사(Delta/United/American/Alaska)와의 CPA로
+운항하는데, **요금·수요·연료위험을 본선항공사가 부담하고 지역항공사는
+고정 용량기반 수수료만 받는 구조**라 수요변동성으로부터 원리적으로
+절연된다(회사 자체 계약구조 설명) - demand_sensitivity_pct를
+CLAUDE.md 업종앵커표 어느 버킷보다 낮게(0.10) 채택한 근거. SkyWest·
+Republic Airways가 독립계 지역항공 운항의 약 84%를 양분(사실상
+복점), 조종사 부족(2026년 북미 약 24,000명 부족 전망)은 업계 전반
+비용리스크이지 SkyWest 고유 경쟁열위는 아님. United Express 확장이
+SkyWest Leasing 이익을 +23.8%(Q1 2026) 견인 중.
+
+### 배선
+
+`watchlist.json`에 SKYW 추가(54→55, SIGI-TCOM 사이). 열다섯 번째
+"알려진 예외" 세트 확장: `test_monitor_state.py`(n_ledgers 54→55),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 SKYW 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 SKYW 추가).
+
+baseline 55종목으로 재동결(fingerprint `1ac66dbe…`→`8a390e63…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영 (2026-09-04, 사용자 요청
+"기업분석한 것들은 노션에 저장해")
+
+이 세션에서 정식분석한 19종목(SIGI/OKTA/MEDP/RYAN/FIX/NBIX/NXT/PATH/
+PCTY/EXEL/PINS/ROKU/HLNE/FIVE/TW/RLI/DOCU/CINF/TENB)을 Notion
+"기업분석 결과 트래커" 데이터베이스(Investment Research System (IRS)
+허브 하위)에 행으로 추가했다. 기존 트래커는 2026-07월 말 수준에서
+멈춰 있었고(104행, 최신 항목이 WCN/GEN 등) 이번 세션 신규분석은 전무
+했었다 - 사전에 SQL 쿼리로 중복 없음을 확인 후 진행.
+
+각 행에 Ticker/회사명/판정/등급/DRS/Realistic Growth/Implied Growth/
+Expectation Gap/RAR/Lynch유형/강건성점검/엔진버전/분석일/Ledger경로/
+작업상태(완료)/핵심노트(SBC플립·screen()거짓탈락·데이터함정 등 이번
+CLAUDE.md 기록의 핵심 발견을 압축)를 채웠다. SKYW는 이번 기록 시점
+분석이 진행 중이라 이번 배치에는 포함하지 않았다(다음 배치에서 추가
+예정).
+
+⚠️ 트래커의 "판정"·"등급"·"Lynch유형" select 옵션은 기존 스키마
+그대로 사용했다(예: Lynch유형 영문 Title Case "Fast Grower" 등 -
+ledger 내부의 snake_case "fast_grower"와 다름, 매핑해서 입력).
+
+## DAR(Darling Ingredients) 제외 — FRAMEWORK_MISMATCH(재생디젤 연방
+세액공제 정책리스크 + 과거 M&A 단계상승, 신규 하위유형) (2026-09-04)
+
+큐 다음 순위 DAR(Darling Ingredients Inc., 렌더링·재생디젤 원료가공업체,
+tier S, 스크리너 Gap 추정 +10.65%p)를 조사했다. SEC XBRL 매출 실측
+(2009~2026)에서 2011년 $724.9M→2012년 $1,701.4M(+135%, VION
+Ingredients 인수로 사업규모 사실상 2배)와 2013년 $1,723.5M→2015년
+$3,956.4M(+130%, 2014년 자료 결측) 등 오래된 구간의 M&A 단계상승을
+확인 - GEN/BRO/ROP/CROX/CDE/CHDN/WSC/EQT/OVV와 동일한 유형이나, 이번엔
+여기에 **새로운 하위유형**이 겹친다.
+
+**재생디젤 합작사(DGD, Diamond Green Diesel, 50% 지분)가 2026-09-04
+WebSearch로 확인한 실측 붕괴를 겪었다** - DGD의 조정EBITDA가 2025년
+-64%(2024년 대비), 갤런당 EBITDA가 2025 Q1 6센트로 2024 Q1 69센트
+대비 -91% 급감, JV 자체가 2024년 $2.98억 흑자에서 2025년 $0.68억
+**순손실로 전환**. 원인은 시장가격 변동이 아니라 **연방 재생연료
+세액공제 정책 전환**(blenders credit → Section 45Z producer's
+credit) - 이는 AA/NRG/MP/EQT/CDE/COP/DINO/EOG/EXE/NEM/OVV/CF/HL이
+공유하는 "시장가격 사이클"과도 다른, **입법·행정 정책 리스크가 주된
+변동요인인 신규 하위유형**이다(demand_sensitivity·competition_
+intensity 같은 이 엔진의 주관적 입력으로는 규제정책 전환 리스크를
+포착할 수 없음). 영업이익도 2023년 $949.7M→2024년 $468.2M(-51%)
+→2026년 $273.4M로 지속 급감. 재무데이터를 더 긁지 않고
+FRAMEWORK_MISMATCH로 분류했다 - ledger를 만들지 않았고 watchlist·
+테스트·baseline 어느 것도 건드리지 않았다.
+
+## RMBS(Rambus) 정식 분석 — IDCC 배제와 대비되는 "과거엔 위험했으나 최근
+해소됨" 판단 사례 (2026-09-04)
+
+큐 다음 순위 RMBS(Rambus Inc., 메모리 인터페이스 IP·칩, tier B, 스크리너
+Gap 추정 +10.48%p)를 정식분석했다.
+
+### ⭐ IDCC(특허라이선싱, FRAMEWORK_MISMATCH 배제)와의 대비 - 같은 유형의
+과거 리스크를 다르게 판단한 근거
+
+RMBS도 2008~2018년엔 소송합의금·일시불 라이선스 비중이 커 매출이 들쭉날쭉
+했다(2017년 $393.1M→2018년 $231.2M, -41%) - IDCC를 배제한 것과 같은 유형의
+리스크였다. 그러나 **최근(2019~2025) 반복적 로열티 기반 매출구조(DDR5
+메모리인터페이스 IP·칩)로 전환**되며 이 변동성이 해소됐다 - YoY 성장률이
+여전히 높지만(2024 +20.7%/2025 +27.1%) IDCC처럼 단일분기 캐치업 항목이
+40%를 차지하는 급락·급등이 없다. 3y/5y CAGR 창(2022→2025, 2020→2025)이
+변동성 높았던 구간을 건드리지 않아 정량모델 적용이 타당하다고 판단했다.
+IDCC와 RMBS는 "과거 리스크 유형이 같다고 자동으로 같은 결론을 내지 않는다"
+는 사례 쌍으로 남긴다 - 판단 기준은 그 리스크가 CAGR 창에 실제로 걸리는지,
+그리고 최근 행태가 실제로 바뀌었는지다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +2.00%p, Confidence 79
+
+무차입 순현금($182.8M). PIT_VALID(위반 0건). SBC 교차검증 flip 없음
+(SBC/FCF 16.3%, 낮음). 모델괴리 4.71%p(경고 임계값 3%p 초과 - two_stage
+채택 근거를 명시: trailing CAGR이 default_terminal_growth보다 높고 AI메모리
+수요 가속 국면이라 다년 수렴 경로가 적절). 강건성점검에서 DRS 포함시
+'적정가/경계선', DRS 제외시 '저평가 가능성'로 갈려(cyclical 자동분류 -
+매출 변동성이 과거 라이선싱 급락구간을 여전히 일부 반영) 판정경계 취약
+플래그가 붙었다 - C등급이라 매수 유니버스(S/A)에는 영향 없음.
+
+### 경쟁구도(2026-09-04 WebSearch)
+
+DDR5 RCD(레지스터드 클록 드라이버) 시장점유율 약 40~45%로 확대 중,
+"잠식 조짐 없음"으로 평가됨. 메모리 인터페이스 칩 경쟁자는 Monolithic
+Power Systems·Montage Technology·Renesas·Texas Instruments.
+
+### 배선
+
+`watchlist.json`에 RMBS 추가(55→56, RLI-RMD 사이). 열다섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 55→56),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 RMBS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 RMBS 추가).
+
+baseline 56종목으로 재동결(fingerprint `8a390e63…`→`4ceaca7c…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영(계속) — RMBS 추가(2026-09-04)
+
+기존 Notion 트래커(SIGI~SKYW 20건)에 RMBS 1건을 추가했다. 이 요청은
+이후 완료되는 모든 신규 정식분석에 계속 적용되는 상시 작업으로 취급한다.
+
+## BYD(Boyd Gaming) 정식 분석 — 이중 왜곡(COVID 저점 기저효과 + capex
+성장투자) 동시 해소 사례 (2026-09-04)
+
+큐 다음 순위 BYD(Boyd Gaming Corporation, 지역 카지노 운영사, tier A,
+스크리너 Gap 추정 +10.30%p)를 정식분석했다.
+
+### ⭐ 이중 왜곡 - BKNG형(COVID 저점 기저효과)과 NVO형(capex 급증)이 동시에
+걸린 첫 사례
+
+**(1) 5년 CAGR 기준연도(2020)가 COVID 저점** - 매출이 2019년 $3,326M
+(+26.6%, Pinnacle Entertainment 인수 완전편입 첫해로 추정) -> 2020년
+$2,178M(-34.5%, 셧다운) -> 2021년 $3,370M(+54.7%, 회복)로 요동쳤다.
+기본 5y 기준연도(2020, 저점)를 그대로 쓰면 5y CAGR 13.44%로 3y(4.80%)·
+10y(6.41%)와 크게 어긋난다(v3.21 BKNG 원칙 재현). **2019년을 기준연도로
+오버라이드**(6y CAGR 3.51%, 3y/10y와 훨씬 정합적) - 2018->2019 M&A
+단계상승 자체는 6y 창(2019->2025) 바깥에 있어 새 왜곡을 끌어들이지 않는다.
+
+**(2) capex/매출 비중이 최근5년평균 9.61%->2025년 14.37%(+4.76%p) 급증** -
+WebSearch로 확인한 구체 근거: Norfolk VA 리조트($7.5억 총사업비, 2027년
+정식개장 예정)·Cadence Crossing 신규카지노·호텔 리노베이션 3개 시설.
+2026년 가이던스도 $6.5~7.0억으로 지속 예정 - 일시적 급증이 아니라 명명된
+다년 성장프로젝트라 `capex_classification="growth_investment"`로 분류
+(정합성가드 통과: 매출감속 1.61%p < 3%p 허용범위).
+
+두 왜곡을 각각 해소한 뒤(FCF CAGR 2.18%->2.94%로 조정) 최종 Realistic
+Growth 2.63%(cyclical 자동분류, structural discount 10.80% 적용) - 스크리너
+추정치(원시 5y CAGR 그대로 사용)의 정반대 방향(더 낮게)으로 크게 정정됐다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -1.88%p, Confidence 94
+
+모델괴리 0.34%p(사실상 완전 일치). 강건성점검 flip 없음(DRS 포함/제외
+둘 다 적정가/경계선). SBC 교차검증 flip 없음(SBC/FCF 8.3%, 낮음). PIT_VALID
+(위반 0건). 기대수익률 음수(-4.62%)라 RAR 방향성 경고 발동 - Expectation
+Gap을 우선 참고할 것으로 명시.
+
+### 영업이익 감소(2024->2025, -19.3%) 원인 - 대부분 비현금 손상차손
+
+$1.284억 손상차손(Las Vegas Locals ~$0.501억 + Midwest&South ~$0.783억,
+2026-09-04 WebSearch로 10-K 확인) - CROX(HEYDUDE 손상차손) 선례와 동일하게
+GAAP 그대로 사용(임의 정규화 안 함 원칙). 나머지는 실질 마진압박(EBITDA
+마진 31.07%->약 27.4%, 인플레이션 인건비·마케팅비 + Red Rock Resorts의
+신규 Durango Casino&Resort발 라스베이거스 로컬 경쟁심화).
+
+### 부수 발견 - 순이익 급증(+219%YoY)은 FanDuel 지분매각 일회성 이익, FCF
+계산에는 무영향
+
+2025-07-10 Flutter Entertainment에 FanDuel Group 5% 지분을 $17.55억
+현금에 매각(2025 Q3 종결, 세전이익 $17.48억 인식) - 영업이익·OCF 경로에
+들어가지 않아 FCF-DCF 계산에는 영향 없음. 매각 이후 온라인부문 EBITDAR
+가이던스가 오히려 $0.50~0.55억->$0.30억으로 **축소** - 향후 성장서사는
+온라인이 아니라 육상 카지노 확장(Norfolk·Cadence Crossing)에 있음을
+falsification_conditions에 명시.
+
+### 배선
+
+`watchlist.json`에 BYD 추가(56→57, BSY-CDNS 사이). 열여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 56→57),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 BYD 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 BYD 추가).
+
+baseline 57종목으로 재동결(fingerprint `4ceaca7c…`→`a714b752…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 결과를 Notion 트래커에 반영(계속) — BYD 추가(2026-09-04)
+
+## CRM(Salesforce) 정식 분석 — 부채조달 자사주매입 레버리지 급증 + SBC
+차감 시 여덟 번째 판정flip 사례 (2026-09-04)
+
+큐 다음 순위 CRM(Salesforce, Inc., 엔터프라이즈 CRM/SaaS, tier A, 스크리너
+Gap 추정 +10.10%p)를 정식분석했다.
+
+### ⭐ 핵심 발견 - $250억 부채조달 자사주매입으로 레버리지가 급변
+
+2026-03 이사회가 $500억 자사주매입 승인, 즉시 $250억 규모 가속자사주매입
+(ASR)을 **$250억 선순위채(쿠폰 4.5~6.7%) 발행으로 조달**해 집행(발행주식
+-12%, 923M→819M) - WebSearch로 확인한 이 사실이 실측으로도 확인됨:
+LongTermDebt가 $144.39억(2026-01-31)→$392.88억(2026-07-31)로 급증.
+net_debt/EBITDA가 매입 이전(~0.75x)에서 이후 **약 3.25x**로 급등 -
+시가총액·순부채 모두 매입 **이후** 최신값을 사용해 내부 일관성을
+유지했다(어느 한쪽만 과거값을 쓰면 레버리지가 과소평가된다). 회사 스스로
+이 부채 서비스 비용 때문에 **FCF성장 가이던스를 절반 수준으로 하향**
+(2026-09-04 WebSearch, Motley Fool).
+
+### 5y CAGR 창에 Slack 인수(2021) 단계상승 일부 포함 - BYD와 달리
+오버라이드 미적용
+
+매출 YoY FY2021→FY2022 +24.65%(Slack $277억 인수 완전편입 첫해)가 5y
+CAGR(14.34%)을 3y(9.82%)·10y(20.07%)보다 다소 높게 만든다. **같은 세션
+BYD와 달리 오버라이드하지 않았다** - BYD의 2020년은 COVID라는 일시적
+외생충격(BKNG형 저점)이었지만, Salesforce의 M&A(MuleSoft·Tableau·Slack·
+Informatica)는 회사의 상시적 핵심 성장전략 자체라 "저점을 피하고 고점을
+택한다"는 원칙이 깔끔하게 적용되지 않는다(어느 인수를 "제외"할 근거가
+없음). 왜곡폭도 BYD(8.6%p)보다 완만해(4.5%p) CROX 선례처럼
+realistic_growth_estimate의 3y 0.5 가중치가 자연히 희석하도록 뒀다.
+FY2027(아직 미완결) Informatica 인수(매출기여 4%)는 이번 CAGR 창(전부
+FY2026 종료)에 거의 반영되지 않는다.
+
+### 데이터 함정 - FY2021 capex 태그 오류(MCK와 정반대 방향)
+
+`PaymentsToAcquireProductiveAssets`(v3.60 1순위)가 FY2021에 $1.5억을
+보고했는데 `PaymentsToAcquirePropertyPlantAndEquipment`(2순위)는 $7.1억 -
+앞뒤 연도 추세(FY2020 $6.43억, FY2022 $7.17억)와 정합적인 건 $7.1억
+쪽이다. MCK 선례("넓은 정의가 옳음")와 정반대로 여기선 좁은 정의가 더
+신뢰할 만해 직접 정정했다(LNTH IPR&D와 동일 계열의 태그 함정). ⚠️ 이
+정정은 최종 Realistic Growth에 영향 없음(FCF CAGR이 어느 값을 쓰든
+매출가중평균보다 높아 FCF조건 비바인딩 - RYAN capex 사례와 동일 유형).
+
+### 결과 — "저평가 가능성"(B등급), Gap +6.03%p, Confidence 94
+
+실시간 시총(~$217.6B)이 스크리너 근사($191.8B)의 1.13배(OKTA/MEDP/NBIX급
+float 스냅샷 노후화 재확인). stalwart 자동분류. 모델괴리 0.59%p(사실상
+완전일치). 강건성점검 flip 없음. PIT_VALID(위반 0건).
+
+### ⭐ SBC 교차검증 - 이번 세션 여덟 번째 판정flip 사례(WDAY 원본 포함)
+
+SBC/FCF **24.4%** - SBC를 실제 비용으로 차감하면 Gap +6.03%p→+2.65%p,
+판정이 "저평가 가능성"→**"적정가/경계선"**으로 뒤집힌다. B등급이라 매수
+유니버스(S/A) 영향은 없다. 공식 판정은 SBC 미차감 기준으로 유지(병기
+원칙).
+
+### 배선
+
+`watchlist.json`에 CRM 추가(57→58, COR-CROX 사이). 열일곱 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 57→58),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 CRM 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 CRM 추가).
+
+baseline 58종목으로 재동결(fingerprint `a714b752…`→`f7211482…`). 테스트
+1,082개 전부 통과. `ENGINE_VERSION` 무변경(v3.80 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## 기업분석 워크플로 효율성 논의 — 종목당 리서치 에이전트 생략으로 전환
+(2026-09-04, 사용자 요청)
+
+사용자가 종목당 토큰 소모(웹서치 리서치 서브에이전트 1개당 30~35만
+토큰)를 지적했다. GitHub Actions로 우회하는 방안을 검토했으나 - 저장소의
+기존 워크플로(`daily_screen.yml`·`broad_screen.yml`)는 이미 순수 Python
+스크립트만 실행하고 Claude/Anthropic API 키가 연결돼 있지 않으며, 그
+부분(1차 스크리닝)은 이미 토큰 소모 없이 자동화돼 있다. 문제는 그 이후
+**판단 작업**(M&A 왜곡 식별, capex 재분류, model_choice_reason 등)인데
+이건 v3.19 설계 원칙상 순수 스크립트로 자동화가 막혀 있다(근거 없이
+자동 채워지는 것을 막기 위해 의도적으로 그렇게 설계됨). GitHub Actions가
+Claude를 직접 호출하는 새 인프라를 만드는 것도 검토했으나, 총 토큰
+비용이 줄지 않고(청구처만 바뀜) 새 인프라 구축·시크릿 관리 부담이
+추가되며 실시간 판단 검토 채널이 약해진다는 점에서 권장하지 않는다고
+판단했다. **대신 이 세션 안에서 종목당 전담 리서치 에이전트를 생략**
+하고, 필요한 경쟁구도·최근뉴스 확인은 직접 WebSearch 1~2회로 대체하는
+것으로 전환 - 종목당 30만 토큰 이상 절감된다. 이후 분석부터 이 방식을
+적용한다.
+
+## DECK·QCOM·EAT 정식 분석 + HBAN·CNM·CVX·AXP·GLPI 배제 (2026-09-04, 배치 처리
+- 리서치 에이전트 생략 전환 후 첫 배치)
+
+효율화 방침(위 항목)에 따라 종목당 전담 리서치 에이전트를 생략하고 직접
+WebSearch로 대체, 배선 단계(테스트·baseline재동결·git커밋)도 3종목씩 모아
+처리하는 첫 배치.
+
+**DECK(Deckers, HOKA·UGG)** - "저평가 가능성"(A등급), Gap +13.23%p,
+Confidence 94. 무차입 순현금(FY2026말 $19.07억), M&A 왜곡 없는 깨끗한
+다년성장(3y 14.69%/5y 16.54%). FY2026 성장둔화(+9.76%)는 회사 발표상
+일회성 도매타이밍 이슈. 관세부담($1.5억, 매출총이익률 -80bp) 실측반영,
+FY2027 가이던스도 관세환급 미가정. ⚠️ 실시간 시총($115.3억)이 스크리너
+근사($147.6억)보다 **22% 낮은 이번 세션 첫 역방향 사례**(자사주매입으로
+발행주식 9개월새 -6.6%). On Holding이 HOKA보다 빠르게 성장(+43% vs
++10%YoY)하는 경쟁열위 신호 반영. SBC flip 없음(4.1%).
+
+**QCOM(Qualcomm)** - "적정가/경계선"(C등급), Gap +0.44%p, Confidence 94.
+MU(이미 배제)와 달리 계산 아티팩트 없이 실제 반도체 사이클(3y CAGR 0.06%
+[2022 정점기준] vs 5y 13.48%[2020 저점기준])을 cyclical 분류로 정상
+처리. Apple 모뎀사업 구조적 손실(2027년까지 완전대체 목표, 연 $57~78억
+소멸)이 자동차(+61%YoY)·데이터센터AI($50억 FY2027 목표) 다각화로
+상쇄되는 전환기 - falsification_conditions에 회사 자체 목표(비핸드셋
++60%YoY) 명시. 저레버리지(net_debt/EBITDA≈0.67x). SBC flip 없음(21.7%).
+
+**EAT(Brinker/Chili's)** - "적정가/경계선"(C등급), Gap +4.22%p,
+Confidence 79. Chili's 21분기 연속 동일매장매출 성장(FY2025 +26%->FY2026
+4~5%대 감속)이 M&A 없는 순수 오가닉 턴어라운드임을 확인 - 10년 넘게
+자기자본잠식 상태였던 대차대조표도 FY2024부터 플러스 전환. 저레버리지
+(net_debt/EBITDA≈0.40x). 강건성점검에서 DRS 포함시 적정가/경계선,
+제외시 저평가 가능성로 갈림(C등급이라 유니버스 영향 없음). SBC flip
+없음(5.8%).
+
+**배제 5건**(재무데이터 확인만으로 즉시 판정, 전담 리서치 없이):
+- **HBAN(Huntington Bancshares)**: operating_income 전무 - COF/AMP와
+  동일한 예금취급기관 구조.
+- **CNM(Core & Main)**: 2021~2023년 M&A 롤업 단계상승(3y CAGR 4.76% vs
+  5y 16.0%, 11.2%p 괴리) + 최근 오가닉 볼륨 실제 감소(Q1 2026 -1%YoY,
+  2026-09-04 WebSearch 확인) - GEN/BRO/ROP/WSC와 동일 유형.
+- **CVX(Chevron)**: 원자재(원유) 가격사이클(2020 $945억 저점->2022
+  $2,357억 정점) - COP/EOG/DINO 등과 동일 유형.
+- **AXP(American Express)**: operating_income 전무 - COF/AMP/HBAN과
+  동일한 카드발급사/대출기관 구조.
+- **GLPI(Gaming and Leisure Properties)**: 카지노 REIT, capex 거의
+  0(트리플넷리스 구조) - VICI와 동일한 REIT 구조적 부적합.
+
+### 배선
+
+`watchlist.json`에 DECK·EAT·QCOM 추가(58→61). test 레지스트리 3종
+(`test_monitor_state.py` n_ledgers 58→61, `test_provenance.py`,
+`test_sbc_harvest.py`)에 3종목 일괄 추가. baseline 61종목으로 재동결
+(fingerprint `f7211482…`→`51888f8e…`). 테스트 1,082개 전부 통과.
+`ENGINE_VERSION` 무변경(v3.80 유지).
+
+## ADBE·MMS·CHWY 정식 분석 + IBP·APTV·MLI·MKL·FCFS·ADI·DHI 배제 (2026-09-04,
+배치 처리 2차)
+
+**ADBE(Adobe)** - "저평가 가능성"(A등급), Gap +10.47%p, Confidence 94.
+M&A 왜곡·사이클성 없는 깨끗한 다년성장(3y 10.52%/5y 13.06%/10y 17.36%,
+매끄러운 감속). 'SaaSpocalypse' 서사(Canva·Figma·Sora가 크리에이티브
+전문가층 잠식 우려)로 주가 큰 폭 하락(트레일링PER 약 12배)했으나, AI중심
+ARR이 오히려 전년比 3배($5억+)로 확장 중임을 실측 확인 - 서사가 실측보다
+비관적인 패턴(BSX·NBIX와 동일 계열). 실시간 시총($1,136억)이 스크리너
+근사($1,449억)보다 22% 낮은 DECK와 동일 방향 사례. SBC flip 없음(19.7%).
+
+**MMS(Maximus)** - "저평가 가능성"(A등급), Gap +9.74%p, Confidence 94.
+정부위탁 Medicaid/실업급여 행정서비스. 주가 -33%YTD의 직접 원인은 VA
+(재향군인부) 프로그램 실적인센티브 일시중단(실측 확인) - 동시에 $504억
+영업파이프라인·AI활용 신규입찰 비중 75~80%·FY2027 신규연방법(Medicaid
+근로요건 등)에 따른 구조적 수요확대 전망도 함께 확인됨. FY2016/2017
+capex 데이터 미확보로 2018년부터 사용(10y는 5y로 자동대체). SBC flip
+없음(11.2%).
+
+**CHWY(Chewy)** - "적정가/경계선"(C등급), Gap +2.37%p, Confidence 94.
+반려동물 온라인 2위 사업자(Amazon 1위 ~50%, Chewy 41%, Walmart 33%).
+⚠️ FCF 5y창 기준연도(2021)가 근사-0($201만)이라 FCF CAGR이 비현실적
+(약208%)이나 min() 로직이 자동 배제 - PATH(같은 세션)와 동일한 아티팩트
+유형, 계산 결과에는 무영향. Autoship 구독비중 66.2%(2018)→84.4%(현재)로
+확대, FCF $5.624억(+24%YoY, WebSearch와 재무데이터 정확히 일치). ⭐ SBC
+교차검증 flip(SBC/FCF 53.0%, "적정가/경계선"→"과대평가 가능성") - C등급
+이라 유니버스 영향 없음.
+
+**배제 7건**:
+- **IBP(Installed Building Products)**: M&A롤업(2021→2022 +35.6%) +
+  최근 오가닉 실제악화(Q1 2026 잔여branch 매출 residential -6.1%YoY,
+  2026-09-04 WebSearch 확인) - CNM과 동일 유형.
+- **APTV(Aptiv)**: **진행중 기업분할**(Electrical Distribution Systems
+  사업부를 "Versigent"(VGNT)로 2026-04-01까지 스핀오프 예정, 2026-09-04
+  WebSearch 확인) - 현재 연결재무제표로 DCF하면 곧 존재하지 않을 회사를
+  평가하는 셈. LNTH(피인수예정) 배제와 대칭되는 신규 사유(부모회사
+  분할판).
+- **MLI(Mueller Industries)**: 구리가격 사이클성(2021년 매출+57.2%/
+  영업이익+167%, 2021 구리가격 급등과 정확히 일치) - CDE/HL/NEM/COP/
+  EOG/CVX와 동일 유형.
+- **MKL(Markel Group)**: 매출 태그 불연속(2016 -75.6%, 2023 +201.8% -
+  2023년 Markel Corporation→Markel Group 재편에 따른 정의변경으로 추정)
+  + 순이익이 투자포트폴리오 시가평가 변동에 좌우(2018·2022 적자) - 보험
+  언더라이팅+Markel Ventures+대규모 투자포트폴리오 복합 콘글로머리트라
+  is_insurer 경로로도 단순 처리 불가.
+- **FCFS(First Citizens BancShares)**: operating_income 전무 - COF/AMP/
+  HBAN/AXP와 동일한 은행지주 구조.
+- **ADI(Analog Devices)**: M&A 단계상승 2건(Linear Technology 2017
+  +53.3%, Maxim Integrated 2021→2022 +64.2%) + 반도체 사이클성
+  (FY2023→24 -23.4%) 복합 - AVGO와 동일 유형.
+- **DHI(D.R. Horton)**: 주택건설업(금리환경에 업종전체가 동시에 눌리는
+  매크로 현상, 2026-08-14 이미 CLAUDE.md에 확인전 제외 카테고리로 기록됨).
+
+### 배선
+
+`watchlist.json`에 ADBE·CHWY·MMS 추가(61→64). test 레지스트리 3종
+일괄 추가. baseline 64종목으로 재동결(fingerprint `51888f8e…`→
+`f80ba747…`). 테스트 1,082개 전부 통과. `ENGINE_VERSION` 무변경
+(v3.80 유지).
+
+## v3.81~v3.82 — 보유 포트폴리오 정밀 재검토 8종목 + 포트폴리오 관리 시스템
+신설 (2026-09-04/05, 사용자 요청 "내 포트폴리오를 보여줄테니까 보유종목
+기업분석하고(이건 다른거보다 훨씬 더 자세하고 꼼꼼하게) 결과 알려줘 ...
+이후에는 저평가나 등급이 s,a인 기업들을 한번 더 분석해서 포트폴리오
+꾸준히 갱신하는 시스템을 구축")
+
+### 이 세션이 다룬 것이 기존 배치와 다른 점
+
+지금까지의 분석은 전부 **스크리닝 큐에서 뽑은 후보**를 대상으로 했다. 이번엔
+처음으로 **사용자가 실제로 보유한 종목**을 대상으로 했고, 그래서 "모델이 안
+맞으니 제외"라는 답이 허용되지 않았다 - 보유 중인 자본에는 어떤 형태로든
+판단을 줘야 한다. 그 제약이 아래 세 가지를 낳았다.
+
+`portfolio/holdings.json`(신규, 사람이 유지) - 미국 개별주 8종목,
+평가액 ₩5,802,074(2026-09-04 증권앱 스크린샷 기준).
+
+### 8종목 실측 결과
+
+| 종목 | 비중 | Gap | 등급 | SBC차감 Gap | 비고 |
+|---|---:|---:|:--:|---:|---|
+| PTC | 38.39% | +4.08%p | C | +0.64%p | 9개 시나리오 전부 중립밴드 |
+| VRT | 19.22% | −1.24%p | C | −1.53%p | 모델괴리 10.88%p |
+| SE | 13.44% | +12.33%p | A | +10.52%p | SBC 최초 배선 |
+| DLO | 11.12% | +23.74%p | S | +22.97%p | 최초 분석, 3중 유보 |
+| NOW | 6.73% | +8.30%p | A | **+1.88%p(뒤집힘)** | 제외 판정 정정 |
+| MU | 5.65% | — | — | — | FRAMEWORK_MISMATCH(사유 정정) |
+| ALB | 3.11% | — | — | — | FRAMEWORK_MISMATCH(가드 발동) |
+| ACGL | 2.34% | +24.45%p | S | +24.09%p | 엔진 54개 버전 통과, 불변 |
+
+**판정 커버리지 91.2%, 판정 불가 8.8%.**
+
+### ⭐ 발견 1 - PTC: 데이터 창을 넓혔다가 회계 착시를 밟을 뻔했다
+
+최대 보유(38.4%)라 데이터 창을 FY2015~2025로 넓혀 실행했더니 DRS가
+44.4 → **56.4**(+12), Lynch 유형이 stalwart → cyclical로 바뀌고 Gap이
++4.08%p → +2.94%p가 됐다. 원인을 분해하니 `revenue_volatility` +4와
+`cyclicality` +8이었고, 그 근원은 FY2016 매출 −9.1%였다. WebSearch로
+SEC 공시 원문을 확인한 결과 **영구라이선스 → 구독 전환의 회계적 착시**였다
+(회사 공시: *"Revenue was down year over year due to a higher mix of
+subscription revenue in 2016 compared to 2015 as the company transitioned
+from selling perpetual licenses to a subscription-based licensing model."*
+영구라이선스는 2018-01-01 판매 중단, FY2019 매출이 FY2015와 거의 같다).
+
+창을 FY2017~2025로 되돌리자 DRS·성장률이 **정확히 원래대로** 돌아왔고,
+그제서야 이번 판정 이동의 원인이 **100% 시가총액(+10.5%)**임이 분리됐다.
+CROX/MEDP가 겪은 '태그 전환이 실제 정의 변경이었던' 사례와 반대로, 여기서는
+**정의 변경이 경기순환으로 오인될 뻔한** 경우다. 미채택 시나리오의 실측값을
+크로스체크 리포트에 그대로 기록해뒀다(숨기지 않는다).
+
+### ⭐ 발견 2 - VRT: SPAC 잔존 오염을 v3.71 '추정'에서 '확정'으로
+
+v3.71은 VRT 재작성률 0.105를 보고 "SPAC 잔존 오염 가능성이 높다"고 추정만
+남겼는데, 이번에 companyfacts를 직접 열어 확정했다 - CIK 0001674101은 원래
+**GS Acquisition Holdings Corp**(SPAC)이고 2020-02-07 합병하며 개명했다.
+같은 CIK 안에 두 법인이 섞여 있다: `operating_cashflow` FY2016 = **−25,000** /
+FY2018 = **−710,388**(껍데기 규모)인데 같은 해 `revenue` FY2018 =
+**$4,285,600,000**(실제 예비법인)이고 `revenue` FY2017 = **0**.
+FY2020(합병 완료) 이후만 사용한다.
+
+### ⭐ 발견 3 - `net_debt`은 기업가치에 들어가지 않는다(서술 정정)
+
+VRT 순부채가 $1,085.1M → $129.2M으로 8배 넘게 줄었는데 DRS가 41.20으로
+**정확히 불변**이었다. 확인해보니 이 엔진의 `implied_growth_*()`는 기업가치가
+아니라 **시가총액에 직접** 역산하고(`pipeline.py:848`), `net_debt`는 오직
+DRS의 `leverage` 항목으로만 들어간다. 초판 docstring에 "순부채 감소가
+기업가치를 낮춰 Gap을 넓힌다"고 적었던 것을 VRT·DLO 양쪽에서 정정했다.
+**반대로 말하면 이 엔진은 순부채가 큰 회사를 밸류에이션 자체에서 전혀
+벌하지 않는다** - 알려진 구조적 한계로 기록한다.
+
+### ⭐ 발견 4 - NOW: 2026-08-14 FRAMEWORK_MISMATCH 제외가 틀렸다
+
+당시 제외 사유는 "goodwill이 Q1'26 $4.54B → Q2'26 $9.84B로 급증 ... 가속하는
+분기 매출이 순수 유기적성장이 아닐 수 있다"였다. **연도 확인이 빠져 있었다** -
+인수(Moveworks 2025-12, Veza 2026H1, Armis 2026-04-20)는 전부 FY2026
+사건이고, 엔진이 쓰는 연차 시계열 FY2015~2025의 매출 YoY는 38.4% → 36.0% →
+32.6% → 30.6% → 30.5% → 22.9% → 23.8% → 22.4% → **20.9%**로 단계상승이 한
+번도 없는 교과서적 단조 감속이다. **분기 대차대조표를 보고 연차 손익의 오염을
+추정한 것**이 오류였다(WM/WCN FCF CAGR 교훈의 재발). Gap +8.30%p A등급으로
+정정. 단 SBC/FCF 42.7%로 차감 시 판정이 뒤집혀 WDAY 계열에 합류한다.
+
+### ⭐ 발견 5 - MU: 제외는 유지, 사유는 정정(연차 데이터 노후화)
+
+2026-08-14 사유("FCF 5y CAGR 82.23% 아티팩트")는 **부정확하다** -
+`realistic_growth_estimate()`의 `min()`이 그 값을 자동으로 버린다(실측:
+매출 가중평균 8.63% 채택). 진짜 사유는 **연차 데이터가 이미 3배 낡았다**:
+
+| 기간 | 매출 | 순이익 |
+|---|---:|---:|
+| FY2025 연간 | $37,378M | $8,539M |
+| **FY2026 Q3 단독** | **$41,456M** | **$28,243M** |
+| FY2026 9개월 누적 | $78,959M | $47,268M |
+
+FCF0 기준을 바꾸면 판정이 F등급(−44.51%p)에서 C등급(+1.09%p)까지, P/E가
+134배에서 10배까지 갈린다. **ledger를 만들지 않고** 참조 계산만 남겼다
+(`scripts/mu_reference_check_2026_09_04.py`, `run_analysis()`를 메모리에서만
+실행하고 `save_ledger()`를 부르지 않는다 - v3.42 thesis_monitor 원칙).
+KEYS/KLAC 계열의 네 번째이자 최악 사례다.
+
+### ⭐ 발견 6 - ALB: 엔진이 실제로 실행을 거부한다
+
+FCF가 최근 11년 중 **7년 음수**(2017·2018·2019·2020·2021·2023·2024)라
+5년 CAGR 기준연도 FY2020(−$51M)에서 v3.19 가드가 `ValueError`를 던진다.
+override로 피할 기준연도가 FY2016(+$539M) 하나뿐인데 그건 리튬 사이클 국면을
+임의로 고르는 것이라 근거가 없다. 여기에 리튬 가격 사이클(매출 고점 대비
+−47%, 2년 연속 영업손실)과 MU형 노후화(Q2 2026 조정EBITDA +155%로 사이클이
+이미 전환, 방향은 반대)까지 겹친다.
+
+⚠️ **자체 정정**: 검증 스크립트 초판이 존재하지 않는 심볼의 `ImportError`를
+'가드 발동'으로 세고 있었다 - 검증한 척이 되는 전형적 오류라 실제 가드 함수
+(`engine.pipeline._cagr`)를 부르고 `ValueError`만 세도록 고쳤다.
+
+### ⭐ 발견 7 - ACGL: 엔진 54개 버전을 통과했는데 불변
+
+v3.27 ledger를 v3.81로 재실행했다(v3.32 판정규칙 단일화, v3.60 capex 태그
+우선순위 역전, v3.67 규모조건부 상한 등 계산을 바꾸는 변경이 여럿 포함).
+**DRS 48.00·Realistic Growth 15.74%가 소수점까지 불변**이었고 Gap만
++24.38%p → +24.45%p(시총 −2%)로 움직였다. 보험 교차검증에서 지속가능성장률
+(ROE×유보율) **15.46%**가 Realistic Growth 15.74%와 **0.28%p 이내**로
+근접 - v3.13이 경고한 "보험 플로트를 유기적 성장으로 착각" 우려가 현
+데이터로는 뒷받침되지 않는다(당시 10.1%였던 것이 개선됐다).
+
+### 엔진 수정 v3.81 - SBC 교차검증 미수렴 가드(MU에서 드러난 잠복 버그)
+
+`sbc_cross_check`의 `elif sbc_pct >= 0.30` 분기가 `gap_sbc=None`을 막지 않아
+`TypeError`로 죽었다. 발생 조건: SBC/FCF ≥30%이면서 **차감 후 이분탐색이
+탐색범위 안에서 수렴하지 못하는** 경우(MU: SBC/FCF 58%, 시총 $1.15조).
+조용히 넘기지 않고 "**'SBC 영향이 없다'는 뜻이 아니라 '너무 커서 모형이 답을
+못 낸다'는 뜻**"이라는 경고를 남기도록 고쳤다. 회귀 테스트 추가
+(`test_sbc_cross_check_survives_non_converging_adjusted_implied_growth`).
+
+### v3.82 - `engine/portfolio.py` 신설: 포트폴리오 관리 시스템
+
+**새 밸류에이션 로직 0줄.** 저장된 ledger를 읽어 대조만 한다.
+
+**설계상 하지 않는 것 셋(전부 테스트로 고정)**:
+1. **액션을 고르지 않는다** - `decide(gap) -> BUY` 같은 함수를 만들지 않는다
+   (AST 테스트로 `decide/recommend/should_buy/...` 이름의 공개 함수를 금지).
+   `engine/thesis.py` v3.48이 확립한 경계 그대로다.
+2. **목표비중을 계산하지 않는다** - 2026-08-21 PHASE 2 감사가 실측한 대로,
+   근거 없는 버킷 상수가 자본의 **16.75~18.82%**를 좌우하는 반면 가장 노력
+   들인 축(`CONFIDENCE_ADJ`, 정성조사 33종목)은 **2.33%**만 움직인다. 새
+   배분 공식은 그 8배 역비례를 복제할 뿐이다.
+3. **`holdings.json`에 쓰지 않는다** - AST로 쓰기 모드 `open`/`write_text`
+   부재를 검사하고, 실제 실행 후 ledger·holdings의 mtime·내용 불변도 확인한다.
+
+**왜 가격 드리프트가 1차 트리거가 아닌가**: 주가가 빠지면 Gap은 **반드시**
+벌어진다(IG만 내려가고 RG는 재무제표에서만 나온다). 즉 사업이 나빠져서 빠진
+경우에도 이 엔진의 핵심 지표는 "더 사라"고 말한다 - TTD 실례(주가 −26.3%에
+Gap +17.01→+20.96%p, 동시에 반증조건 3개 발동). 리밸런싱 문헌의 임계값
+방식은 **자산배분 드리프트**용이라 집중형 개별주 포트폴리오로 그대로
+전이되지 않는다. 따라서 1차 트리거는 **논거·데이터 유효성**이다.
+
+**사전등록 플래그 규칙**(결과를 보기 **전에** 고정): `NO_JUDGMENT` /
+`JUDGMENT_STALE`(90일, 분기 실적 주기) / `SBC_FLIP` / `MODEL_FRAGILE`(3%p,
+**엔진이 이미 쓰는 v3.19 경고 임계값 재사용** - 새 숫자를 발명하지 않는다.
+테스트가 엔진 경고와 플래그가 항상 일치하는지 검사한다) /
+`GROWTH_CAP_BINDING` / `CONCENTRATION`(25%) / `DEEP_LOSS_NO_JUDGMENT`(−20%) /
+`OVERVALUED`. `RULE_STATUS = PRE_REGISTERED_NOT_VALIDATED` - 플래그가 붙은
+종목이 실제로 더 나빴는지 확인할 수단이 없다(실현수익률 관측 0건).
+
+검토 큐 정렬은 (플래그 수, 비중) **사전식**이며 합성 점수를 만들지 않는다
+(§31 안티기능 등록부). 실측 큐: NOW(2) > ALB(2) > PTC(1) > VRT(1) >
+DLO(1) > MU(1). 미보유 S/A 후보 28종목을 함께 낸다(**매수 권고 아님** -
+`build_buylist`가 요구하는 버킷·정성조사를 통과하지 않았다).
+
+**부수**: 보유 합계(증권앱 표시)와 개별 평가금액 합이 반올림으로 3원
+어긋나는 것을 조용히 정규화해 1.0으로 맞추지 않고 `reconciliation`으로
+드러낸다(P0-07 "불일치를 자동 해소하지 않는다" 원칙).
+
+### 그 밖의 자체 정정 2건
+
+- **SE 매출값을 반올림된 출력에서 옮겨 적었다**(4,375.7M → 4375700000).
+  5년 CAGR이 기존 ledger·frozen prediction과 1.9e-6 어긋나 회귀 테스트가
+  잡아냈다 - TYL SBC 3배 오류의 축소판이다. SEC 정수값으로 정정.
+- **`falsification_conditions`의 서술적 날짜가 감시 트리거로 오탐된다**.
+  NOW의 "Armis(2026-04-20 종결)"·SE/ACGL의 "2026-08-03 정성조사가 지목한"이
+  전부 기한도래 항목으로 잡혔다(v3.42 TCOM 소송 집단기간과 같은 유형).
+  **반증조건 본문에는 서술적 ISO 날짜를 쓰지 않는다**는 관행으로 정리하고
+  해당 문구에서 날짜를 뺐다. ⚠️ "2026년 4월"처럼 한글 연월도 파싱된다.
+
+### 산출물
+
+- ledger 신규/갱신 7건(PTC·VRT·SE·DLO·NOW·ACGL, 구 파일 git rm)
+- `reports/{ptc,vrt,dlo}_scenario_crosscheck_*.json`(병기, 공식판정 불변)
+- `reports/{mu,alb}_reference_check_*.json`(ledger 미생성)
+- `reports/portfolio_review_2026-09-05.json`
+- `reports/portfolio_report_2026-09-05.html`(리포트 페이지)
+
+**검증**: 테스트 1,084 → **1,098개 전부 통과**. 골든 재현은 이번에 의도적으로
+재계산한 7종목 외 59종목 완전 동일. baseline 66종목 재동결
+(`f80ba747` → `4edb2298` → `2b71adf2`). `ENGINE_VERSION` v3.80 → **v3.82**.
+
+## S/A등급 32종목 신규 포트폴리오 - 목표비중 없는 quality_score 순위배분
+(2026-09-05, 사용자 요청 "s/a 종목으로 새로운 포트폴리오 만들어봐. 최대한
+진절성있으면서 합리적이고 근거가 있게")
+
+`scripts/build_buylist_2026_08_03.py`는 2026-08-02 스냅샷(`reports/
+portfolio_ranking_2026-08-02.json`)을 읽어 그 뒤 20종목 신규분석을 구조적
+으로 못 본다 - `ledger/` 전수(32종목 S/A)에서 다시 시작했다.
+
+**PHASE 2 감사(2026-08-21)의 교훈을 이번 설계에 직접 반영**: 근거 없는
+버킷 목표비중(40/30/20/10)이 자본의 16.75~18.82%를 좌우한 반면 가장
+공들인 축(`CONFIDENCE_ADJ`)은 2.33%만 움직였다. 32종목·11개 위험군집으로
+유니버스가 커진 지금 그 메커니즘을 확장하면 근거 없는 숫자 4개가 11개로
+늘어날 뿐이다 - **그래서 버킷 목표비중 자체를 두지 않았다.**
+`quality_score = Gap%p x (Confidence_adj/100)`(기존 공식 그대로 재사용)로
+32종목을 한 번에 순위매김하고 종목당 상한 12%만 강제, 위험군집은 배분이
+아니라 **진단**(배분 후 실제 집중도 관찰)에만 쓴다.
+
+**재사용한 것**: `PER_STOCK_CAP=0.12`, 상한흡수 알고리즘(v3.67 수렴버그
+수정판), 12종목의 기존 `CONFIDENCE_ADJ`(TTD 45 하향판 포함, 근거 문구
+그대로), `cap_bound`/`SEVERE_FLAG`/`THESIS_BROKEN_FLAG` x0.85 할인.
+**새로 추가한 할인(값은 기존 0.85 재사용, 숫자를 새로 발명하지 않음)**:
+`SBC_FRAGILE_UNVERIFIED`(SBC 차감시 flip하나 PHASE 1식 일관적용 검증이
+안 된 신규종목 PINS/TENB/DOCU/NOW만 - **TCOM은 PHASE 1에서 이미
+CANCELLED로 확인돼 제외**, WDAY는 CONFIDENCE_ADJ=81 근거에 이미 반영돼
+중복할인 안 함), `MODEL_FRAGILE`(모델괴리 >=3%p인데 Confidence에 반영
+안 된 신규종목 - NXT 3.3%p, NOW 5.4%p).
+
+**32종목 중 20종목(비중 63.4%)은 정성 심층조사 미실시** - 엔진 원시
+Confidence(94/89)를 그대로 쓰고 `conf_status="미검증"`으로 명시했다
+(2026-08-04 이전 A등급 6종목이 정성조사 전 받았던 것과 동일 표시).
+
+**결과**(`reports/sa_portfolio_2026-09-05.json`): 상위 ACGL 5.84%(검증,
+보험 언더라이팅 최우량) · DLO 5.16%(미검증, cap바인딩) · SIGI 5.15%
+(미검증, cap바인딩) · CINF 4.54%(미검증) · PGR 4.41%(검증) ... 하위
+TTD 1.59%(45 하향+이중 0.85할인, severe+thesis_broken) · BRO 1.27%
+(70 하향+cap바인딩 0.85할인). 종목당 상한(12%)에 걸린 종목 없음(가장
+높은 ACGL도 5.84%로, 32종목 분산 자체가 자연스럽게 상한 밑에 위치).
+
+위험군집 진단: growth_platform 25.03%(8종목) > insurance_underwriting
+22.01%(5종목) > enterprise_software 14.64%(6종목) > healthcare_lifesci
+9.08% > financial_services_other 8.76% > consumer_brand 6.25% >
+insurance_distribution 4.99% > transportation/industrial_energy_
+transition/industrial_stalwart/travel 각 ~2%대 - growth_platform이
+여전히 최대 단일군집이나(구 버킷 방식의 40% 명목목표보다 훨씬 낮은
+25%), 목표를 두지 않았는데도 8개 군집에 걸쳐 자연 분산됐다.
+
+**제공하지 않는 것**: 공분산 최적화(수익률 상관행렬 없음), 위험군집
+목표비중(의도적 설계), 실현수익률 검증(0건, 이 포트폴리오 자체가
+사전등록 예측), Confidence의 확률적 해석(UNCALIBRATED), 20종목
+미검증분의 정성 심층조사(다음 우선순위로 남김).
+
+공식 ledger·매수리스트(`reports/buylist_2026-08-03.json`)는 건드리지
+않았다 - 이 스크립트는 완전히 독립된 신규 산출물이다. `engine/` 무변경,
+`ENGINE_VERSION` v3.82 유지.
+
+## IRS 전용 Claude Code Skill 4종 신설 (2026-09-05, 사용자 요청 "GitHub의
+Claude Code Skills를 조사해 IRS에 최적화된 코딩 환경을 구축하라")
+
+15개 후보 skill명을 조사한 결과 하나로 정리된 패키지가 없어(여러
+3rd-party 저장소에 흩어짐, 품질 편차 큼) 개념만 추출해 `.claude/skills/
+irs-*` 4개(systematic-debugging·fresh-eyes-verification·test-gap-
+analysis·token-efficient-research)를 IRS 전용으로 새로 작성했다.
+code-review/security-review/refactor/comprehensive-review/design-review는
+이 하니스의 내장 skill과 중복이라 제외, git-commit/github-standards는
+이 저장소의 기존 컨벤션과 상충 위험이 있어 제외, codex-review는 외부
+모델 의존을 요구해 P0-03 무의존성 원칙에 위배돼 제외했다. 위험도 기반
+호출정책(engine/ 변경은 Opus+fresh-eyes 필수, 단순탐색은 skill 없이
+직접호출)과 전체 판정 근거는 `.claude/skills/README.md`에 기록했다 -
+CLAUDE.md 비대화를 피하려 전문을 여기 옮기지 않는다. 기존 설치분
+`task-observer`(매 작업 상시호출을 자체 요구)가 이번 목표(위험도 기반
+선택호출)와 충돌함을 발견해 상시자동호출 대상에서 제외하도록 정책에
+명시했다(삭제는 하지 않음 - 이번 요청 범위 밖). `engine/` 무변경.
+
+## 확신 포트폴리오 - 3단계 게이트로 S/A 32종목을 18종목으로 선별 (2026-09-05,
+사용자 요청 "선별하고 선별해서 필요한 종목들만, 비중을 합리적으로")
+
+같은 날 오전 만든 S/A 32종목 포트폴리오를 사용자가 "심층 조사 없이 어물쩡
+만든 것"이라 지적했다. 확인해보니 정확한 지적이었다 - **비중의 63.4%가 정성
+심층조사를 한 번도 받지 않은 Confidence 94 위에 있었고**, S/A 32종목이 하나도
+걸러지지 않았다. 게다가 이 저장소에는 이미 측정된 반증이 있었다: **정성조사를
+받은 13종목이 전부 Confidence가 내려갔다**(94→65~87, 중앙값 −15점). 즉 미검증
+종목은 "아직 아무도 문제를 안 찾아서" 높은 점수를 받고 그게 비중을 밀어올리는
+구조적 편향이었다.
+
+### 게이트를 결과 보기 전에 코드로 고정했다
+
+`scripts/portfolio_screen_2026_09_05.py` docstring에 G1~G3을 먼저 쓰고 실행했다.
+**전부 이 저장소가 실제 사고·감사로 확립한 것만** 썼다(새 임계값 발명 금지):
+
+- **G1 등급취약**: v3.51 `ASSUMPTION_GRID` 전체에서 최악값 `gap_min`의 등급이
+  S/A를 벗어나면 배제. 판정 경계(±5%p)가 아니라 **등급 경계(+7%p)** 를 쓴 이유는
+  2026-08-16 모델선택 연구와 R-001이 "판정 취약 ≠ 자본 취약"을 실측으로 구분
+  했고, 자본에 닿는 건 매수 유니버스 경계라고 확정했기 때문이다.
+- **G2 SBC 거짓편입**: SBC 차감 시 등급이 S/A를 벗어나면 배제. 단 PHASE 1이
+  CANCELLED로 판정한 종목은 면제(부분적용 아티팩트). 근거는 RQ-002 - SBC>0이면
+  Gap은 반드시 감소하므로(34종목 위반 0건) 이 검증은 **거짓편입만** 걸러내고
+  거짓탈락을 만들지 않는다.
+- **G3 반증확정**: 사전등록 반증조건이 실제 발동한 종목 배제. ⚠️2026-08-13에는
+  TTD를 **기존 보유분 축소**(4.80%→2.70%)로 처리했으나, 이번은 **신규 편입
+  여부** 판단이라 결론이 다르다 - "반증조건이 이미 발동한 종목을 지금 새로 살
+  것인가"의 답은 아니오다.
+
+**결과 32 → 20종목.** 배제 사유가 무작위가 아니었다 - G2가 걸러낸 7종목
+(TTD·PINS·WDAY·PCTY·TENB·DOCU·NOW)은 전부 고SBC SaaS/플랫폼(SBC/FCF
+27.9~75.3%)으로, v3.23이 "현행 FCF 정의가 SBC 의존 SaaS를 구조적으로 유리하게
+평가한다"고 기록한 편향 그 자체다. G1이 걸러낸 7종목(MEDP·MMS·DOCU·NOW·RLI·
+TCOM·BRO)은 전부 +7%p 경계 근처였고, **과거 감사가 독립적으로 "진짜 자본 취약"
+으로 지목했던 TCOM·BRO가 여기 포함됐다** - 신호가 실재한다는 교차 증거다.
+
+### ⚠️ 병렬 리서치 에이전트 6개가 전부 세션 한도로 실패했다
+
+2026-08-02와 같은 사고가 재발했다(리셋 14:30 UTC). 기다리지 않고
+`irs-token-efficient-research`가 실측으로 확립한 대체 경로(전담 에이전트 →
+직접 WebSearch)로 전환해 12종목을 **종목당 1~2회 검색**으로 처리했다. 지침이
+"종목 1개의 경쟁구도 확인은 WebSearch 1~2회로 충분"이라 적어둔 그대로다.
+
+### Stage 2 게이트 - G6 회사공시 성장률 배치
+
+조건: 회사가 별도 공시하는 **다년 실현** 성장률로 Realistic Growth를 대체했을
+때 등급이 S/A를 벗어나면 배제(근거: ROP v3.28).
+⚠️ **1개년 가이던스만으로는 적용하지 않는다** - KEYS(2026-08-04)가 확립한 기준.
+1개년 괴리는 배제가 아니라 Confidence 하향으로 반영한다(quality_score를 통해
+비중이 자동으로 줄어든다).
+
+**배제 2종목:**
+- **RYAN** (Gap +13.77%p A → **−0.49%p C**): FY2026 오가닉 가이던스를
+  high-single → **mid-single(4~6%)** 로 하향, Q2 오가닉 **0% 근처**, 경영진이
+  **"2026년 의미 있는 인수 없음"** 을 명시하고 M&A 대신 자사주매입으로 선회 -
+  엔진 RG 19.26%를 떠받치던 M&A 기여가 사라진다. 연결 YoY는 2022~2025년 내내
+  +18~22%였는데 그 격차가 곧 인수효과다. ROP 구조와 정확히 동일하며, 회사가
+  오가닉을 매 분기 별도 공시하므로 KEYS의 1개년 한계에 걸리지 않는다.
+- **CROX** (Gap +9.89%p A → **+2.55%p C**): HEYDUDE 인수 이후로만 깨끗한 3년
+  실현 CAGR이 **4.36%**, 최근 2년 실현 YoY가 +3.5%→**−1.5%** 로 이미 역성장
+  전환, FY2026 가이던스도 **+1~2%**. 엔진 RG 10.34%는 5y CAGR 23.86%(HEYDUDE
+  단계상승 포함)에 끌려간 값. HEYDUDE는 상표권·영업권 손상차손까지 인식했다.
+
+**유지하되 Confidence 대폭 하향(1개년 근거라 배제 기준 미달):**
+- **TW 94→70**: Q2 매출 **+9%YoY**로 다년 실현(3y CAGR 19.97%)의 절반 이하,
+  매출 미스로 주가 −12%. ICE가 MarketAxess를 $60억에 인수해 통합 경쟁자 등장.
+  반면 점유율은 계속 확대(글로벌 스왑 24.1% 사상최고, 2026-06 신용채권에서
+  MarketAxess 사상 첫 추월). +9%로 재계산하면 C등급이 되나 1개 분기다.
+- **NXT 94→70**: FY2027 가이던스 $3.8~4.1B가 FY2026 $3.56B 대비 **+11.0%**로
+  엔진 RG 21.16%를 10%p 하회(가이던스 기준 Gap +1.3%p = C). 다년 실현
+  (2025 +18.4%, 2026 +20.3%)이 아직 뒷받침해 유지. ⚠️**조사 중 2차 출처 오류를
+  잡았다** - 첫 검색이 "$4.1~4.4B"를 보고했으나 회사 IR 원문 재확인 결과
+  $3.8~4.1B였다(TYL SBC 3배 오류와 같은 유형, 검증 없이 썼으면 판정이 반대로
+  갔을 것).
+- **DECK 94→74**: HOKA 성장이 24%→mid-teens→high-single로 단계 둔화, 연결 YoY도
+  16.3%→9.8%. FY2027 EPS 성장 4~6%로 FY26의 11%에서 반토막, 관세 $120M.
+  가이던스 기준으로도 Gap +8.6%p라 A는 유지.
+- **SIGI 89→74**: 순보험료 **−5% 역성장**(의도적 포트폴리오 정리라고 회사가
+  설명, 준비금 발전은 실제로 개선). 갱신 순수요율 +6.5%가 3.4%p 둔화해 연화
+  국면 신호. Gap이 A를 유지하는 근거가 Implied Growth −11.67%인데 그 음수 자체가
+  보험 플로트로 부풀려진 FCF의 산물일 수 있다(ACGL v3.13 경고).
+- **CINF 94→76**: 원 가정보다 실제가 나았다(1H 합산비율 98.2%, 전년 103.8%에서
+  개선 + 유리한 준비금 발전 $81M/$42M). 그러나 외부 밸류에이션 모델이 약 21%
+  고평가로 평가해 엔진 S등급과 정면 충돌하고, 지속가능성장률 괴리 5.21%p
+  미해소, 주식 40% 포트폴리오 변동성이 남는다.
+
+**강화 4종목:**
+- **NBIX 94→88**: ⭐특허절벽 우려가 해소됐다 - ANDA 소송 합의로 제네릭 진입일이
+  **2038-03-01**로 확정(핵심물질특허는 PTE 552일 반영해 2031 만료). 엔진의
+  n=12년 성장기간 가정이 정확히 성립한다.
+- **HLNE 94→87**: DCF의 반복현금흐름 가정 성립 - 관리·자문보수 $584M(+14%)이
+  수수료수익의 **77%**, 성과보수는 23%. FRE +25%, FEAUM $82B(+13%). 엔진 RG
+  12.72%가 관리보수 +14%·FEAUM +13%와 정합.
+- **DLO 89→84**: ⭐성장상한(25%)이 회사 가이던스로 **정당화**됐다 - 2H2026 TPV
+  +60~70%, 총이익 +25~30%, FY2026 영업이익 +27.5~32.5%로 회사 스스로 캡 이상을
+  제시(ROP형 하방 괴리의 정반대). 캡바인딩 할인을 이 종목만 면제한 근거다.
+- **SKYW 94→85**: CPA 기반 강화(United E175 40대·Delta 13대 만기연장, Embraer
+  44대 인도포지션, 2028년말 300대+). 엔진 RG 9.35%가 최근 실현(15~20%)보다 이미
+  보수적.
+- **ADBE 94→84**: 4년 연속 매출 YoY 10.2~11.5%로 극히 안정, FY2026 가이던스
+  +9%가 RG 10.95%와 근접. AI First ARR 전년比 3배 $500M 돌파로 'SaaSpocalypse'
+  서사가 실측으로 뒷받침되지 않는다. organic ARR 6분기 연속 감속은 잔존 리스크.
+
+### Stage 3 비중 - 목표비중을 두지 않았다
+
+`quality_score = Gap%p × (Confidence_adj/100) × 캡바인딩할인(0.85)`,
+종목당 상한 12%. **전부 기존 `build_buylist_2026_08_03.py`의 공식·상수를 그대로
+재사용했고 새 숫자를 하나도 발명하지 않았다.**
+
+**버킷 목표비중을 아예 두지 않은 이유는 PHASE 2 감사(2026-08-21) 실측이다** -
+근거 없는 버킷 목표비중이 자본의 16.75~18.82%를 좌우한 반면 가장 노력을 들인
+축(`CONFIDENCE_ADJ`)은 2.33%만 움직였다(8배 역비례). 목표비중을 다시 두면 그
+역비례를 복제할 뿐이라, 군집은 **배분이 아니라 진단**으로만 쓴다.
+
+**기계적 할인은 캡바인딩 하나만 남겼다** - SBC 취약·등급 취약은 Stage 1 게이트가
+이미 배제했고, 모델취약·정책리스크는 Confidence에 직접 반영했다. 같은 증거로 두
+번 벌점을 주지 않는다(v3.19 이중반영 회피). DLO는 캡이 회사 가이던스로 정당화돼
+할인을 면제했다.
+
+**최종 18종목**: ACGL 9.36% · DLO 9.19% · PGR 7.08% · SIGI 6.86% · PDD 6.48% ·
+DUOL 5.95% · MNDY 5.93% · CINF 5.88% · NBIX 5.70% · HLNE 5.34% · DECK 4.51% ·
+UBER 4.51% · SE 4.49% · ADBE 4.05% · SKYW 4.03% · NXT 3.71% · TW 3.60% ·
+GEN 3.34%(합계 100.00%, 상한 위반 0건).
+
+군집(진단): 보험언더라이팅 29.17%(4) > 성장플랫폼 27.35%(5) > 금융서비스기타
+14.53%(2) > 엔터프라이즈SW 7.65%(2) > 나머지 5개 군집 각 3~6%. **목표를 두지
+않았는데도 9개 군집에 분산됐고, 오전판의 최대 군집(성장플랫폼 25%)과 달리
+보험언더라이팅이 최대가 됐다** - 게이트가 고SBC 성장주를 걸러낸 직접적 결과다.
+
+**미검증 비중 63.36% → 0.00%.** 조정 Confidence 범위 65~88(중앙값 79) -
+엔진 원값은 전원 89~94였다.
+
+### 제공하지 않는 것
+
+공분산 최적화(수익률 상관행렬 부재) · 군집 목표비중(의도적) · 실현수익률
+검증(관측 0건 - 이 포트폴리오 자체가 사전등록 예측이다) · Confidence의 확률적
+해석(`UNCALIBRATED`). 정성조사는 전부 WebSearch 기반 2차 출처이며, 판정을 바꿀
+수 있는 수치는 NXT처럼 1차 출처로 재확인해야 한다.
+
+`engine/`·`ledger/`·공식 판정 **0건 수정**(스크립트는 읽기만 한다),
+`ENGINE_VERSION` v3.82 유지, 테스트 1,098개 전부 통과.
+
+## v3.83 — 포트폴리오 계층 통합: 스크리닝→기업분석→포트폴리오 재정렬 1단계
+(2026-09-06, 사용자 요청 "포트폴리오 계층을 진짜로 하나로 합친다")
+
+### 왜 - 2026-09-05 하루 만에 산출물 5개가 생겼다
+
+`build_buylist_2026_08_03.py`(구, 12종목) / `build_sa_portfolio_2026_09_05.py`
+(32종목, 미필터) / `portfolio_screen_2026_09_05.py`(Stage 0-1 게이트, 20종목) /
+`build_conviction_portfolio_2026_09_05.py`(Stage 2-3, 18종목) /
+`publish_buylist_2026_09_06.py`(스키마변환) - screener.py·deep_screen.py·
+research_queue.py는 이미 engine/으로 승격돼 재사용되는데, 포트폴리오 계층만
+"반복되는 작업"이 "한 번짜리 스크립트"로 남아 있었다. ledger가 하나 늘 때마다
+이 체인을 손으로 순서대로 돌려야 했다.
+
+### `engine/portfolio_pipeline.py` 신설 - 새 밸류에이션 로직 0줄
+
+`portfolio_screen_2026_09_05.py`(G1 등급취약·G2 SBC거짓편입·G3 반증확정) +
+`build_conviction_portfolio_2026_09_05.py`(G6 회사공시 대체·quality_score
+사이징·상한흡수) + `publish_buylist_2026_09_06.py`(스키마변환)의 **로직을
+그대로 옮겼을 뿐**이다. `screen_universe()`/`apply_g6()`/`size_portfolio()`/
+`apply_cap()`/`to_buylist_rows()` 다섯 함수로 구성.
+
+### ⭐ 핵심 - 하드코딩된 사전을 "파생 가능한 소스"로 바꿨다
+
+`FALSIFICATION_CONFIRMED = {"TTD": "..."}` (G3)는 이미 `monitor/
+acknowledgements.json`에 `verdict: "TRIGGERED"`로 기록된 사실의 **두 번째
+사본**이었다 - 새 TRIGGERED가 확인돼도 스크립트를 손으로 안 고치면 반영이
+안 된다. `confirmed_falsifications()`가 그 파일에서 직접 파생하도록 고쳤다
+(테스트로 AST 검사 - "TTD"가 dict 리터럴 키로 소스에 하드코딩돼 있으면
+실패한다).
+
+### `portfolio/qualitative_overrides.json` 신설 - 진짜 사람 판단만 남김
+
+`RESEARCH`(Confidence 조정치+근거)/`CLUSTER`(군집)/`G6_EXCLUDED`(회사공시
+대체) 세 딕셔너리는 정말 파생할 수 없는 사람 판단(`model_choice_reason`/
+`subjective_input_basis`와 같은 성격)이라 스크립트에서 분리해 사람이 유지하는
+레지스트리로 옮겼다(`portfolio/holdings.json`과 같은 성격). `g6_substitutes`의
+`engine_rg` 필드는 제거했다 - ledger가 이미 갖고 있는 값(`realistic_growth`)을
+`evidence_row()`가 그대로 넘기므로 레지스트리에 중복 저장할 이유가 없었다.
+
+`cap_discount_exempt`(DLO 전용, 성장상한이 회사 가이던스로 정당화됨)도
+스크립트 안의 `if t != "DLO"` 하드코딩에서 레지스트리 데이터 필드로 옮겼다 -
+티커 이름을 직접 비교하는 특례 분기를 없앴다.
+
+### `scripts/build_portfolio.py` 신설 - 유일한 재실행 진입점
+
+`daily_screen_ci.py`/`update_research_queue.py`와 같은 성격의 **반복 실행
+스크립트**(날짜 붙은 일회성 아님) - ledger가 늘 때마다 이것 하나만 다시
+돌리면 `reports/buylist_<날짜>.json`이 나온다. 레지스트리에 없는 신규
+Stage-1 생존종목은 크래시하지 않고 엔진 원시 Confidence로 폴백하며
+`confidence_status="미검증"`을 명시한다(`build_buylist_2026_08_03.py`가
+이미 쓰던 폴백과 동일 원칙) - CLI가 미검증 종목 수를 경고로 출력한다.
+
+### ⭐ 골든 재현 검증 - 통합이 계산을 하나도 안 바꿨다
+
+`build_portfolio.py`를 오늘 실행해 `conviction_portfolio_2026-09-05.json`의
+18종목·비중과 **정확히 1e-9 이내로(실측: 정확히 0.0)** 일치함을 확인했다.
+G6 배제 종목(RYAN·CROX)도 동일했다. `reports/buylist_2026-09-06.json`을 이
+경로로 재생성해 `publish_buylist_2026_09_06.py`(2026-09-06 오전, 스키마
+변환 전용)의 역할을 대체했다 - 그 스크립트 자체는 날짜 붙은 재현성
+아티팩트라 손대지 않고 그대로 남겨둔다.
+
+### 옛 산출물의 지위 - 손대지 않는다, 격상하지도 않는다
+
+`build_buylist_2026_08_03.py`/`build_sa_portfolio_2026_09_05.py`/
+`portfolio_screen_2026_09_05.py`/`build_conviction_portfolio_2026_09_05.py`
+전부 재현성 아티팩트로 그대로 둔다. `build_buylist_2026_08_03.py`를
+참조하는 PHASE 2 감사류 테스트(`test_buylist_boundary_review.py`·
+`test_sizing_assumption_exposure.py` 등)는 **그 스크립트 자체의 메커니즘을
+검증하는 역사적 감사**라 건드리지 않았다 - "지금 daily_brief가 읽는 공식
+매수리스트가 무엇인가"와는 다른 질문이다.
+
+### 의도적으로 하지 않은 것
+
+- **GitHub Actions 자동화에 배선하지 않았다.** 매주 스크리닝은 새 후보를
+  찾을 뿐이고, 매수리스트 재발행은 새 정식분석+정성조사가 끝난 뒤의 **의도적
+  행위**여야 한다 - 자동 스케줄에 걸면 아무 정보 변화 없이 매주 buylist가
+  새 날짜로 republish되는 낭비가 생긴다.
+- **홀딩 재조정(실제 보유 vs 이 포트폴리오)** - 별도 사용자 판단 사안으로
+  남겨둔다.
+
+테스트 1,110 → **1,127개 전부 통과**(신규 17: portfolio_pipeline 14 +
+build_portfolio 3). 34종목 골든재현 8지표·baseline fingerprint 불변,
+`ledger/`·`portfolio/holdings.json` 0건 수정. `ENGINE_VERSION` v3.82 →
+**v3.83**.
+
+## 브리핑 보유 대조 + G6 근거 1차출처 재검증 + CAH 정식분석 (2026-09-06,
+v3.83 통합 직후 "남은거 실행")
+
+### ① 브리핑이 처음으로 «지금 무엇을 들고 있는가»를 읽는다
+
+`daily_brief.py`는 `portfolio/holdings.json`을 **한 번도 읽지 않았다** -
+«무엇을 사야 하는가»(매수리스트)만 있고 보유 포지션이 빠져 있어 둘의 차이를
+사람이 매번 머리로 맞춰봐야 했다. `section_reconciliation()`이 세 갈래로
+나눠 보여준다(실측, 2026-09-04 보유 기준 vs `buylist_2026-09-06.json`):
+
+| 구분 | 비중 | 내용 |
+|---|---:|---|
+| 겹침 3종목 | 보유 26.9% / 목표 23.0% | SE(13.44 vs 4.49) · DLO(11.12 vs 9.19) · ACGL(2.34 vs 9.36) |
+| 보유하나 목표 밖 | **73.1%** | PTC 38.39%(C) · VRT 19.22%(C) · NOW 6.73%(A지만 G1+G2 배제) · MU 5.65%·ALB 3.11%(**판정 불가**) |
+| 목표에 있으나 미보유 | **77.0%** | 15종목(PGR 7.08% 이하) |
+
+⚠️ **이 표에 매수/매도 열이 없다.** 차이를 «조치»로 번역하는 순간 실현수익률
+관측이 0건인 신호가 곧바로 자본배분이 된다 - `engine/portfolio.py`(v3.82)·
+`engine/thesis.py`(v3.48)가 구조로 못박은 것과 같은 경계다. **«목표에 없다»는
+«지금 새로 편입하지 않는다»이지 «청산하라»가 아니다**(TTD를 2026-08-13에 전량
+제외가 아니라 비중 축소로 처리한 것과 같은 구분). 리밸런싱은 사람이 정한다.
+
+판정 불가 종목(MU·ALB)을 표에서 빼지 않는 것도 테스트로 고정했다 - 빼면
+«문제 없음»으로 보인다. 배제 사유는 재계산하지 않고 `portfolio_pipeline_
+*.json`에서 읽는다(중복 구현 금지).
+
+### ⭐ ② G6 근거 1차출처 재검증 - RYAN 성장률이 틀렸다(결론은 불변)
+
+2026-09-05 정성조사 결과 중 **실제로 자본을 움직이는 3개 주장**만 골라 1차
+출처로 대조했다. 하나가 틀렸다.
+
+| 종목 | 초판 근거 | 1차출처 실측 |
+|---|---|---|
+| **RYAN** | 가이던스 high-single→mid-single(4~6%) **하향**, Q2 오가닉 **0% 근처** | 가이던스 **유지**(경영진 'high end' 언급), Q2 오가닉 **+6.7%**(전년 7.1%), 1H **+8.9%**, EBITDAC 마진 가이던스는 -100~150bp→**-50~100bp 개선** |
+| DLO | FY2026 TPV +60~70%, 총이익 +25~30%, 영업이익 +27.5~32.5% | **전부 일치**(보도자료 원문). Q2 실적 TPV +92%/총이익 +29% |
+| CROX | 3년 CAGR 4.36%, YoY +3.5%→-1.5%, 가이던스 +1~2% | **소수점까지 일치**(ledger의 SEC 실측으로 재계산). ⚠️ 초판이 두 YoY를 '2025→2026'으로 적었으나 실제 회계연도는 2024→2025 |
+
+**RYAN은 TYL SBC 3배 오류와 정확히 같은 유형**(2차출처 무검증 인용)이다.
+정정 후에도 G6 배제는 유지된다 - 대체값을 회사가 공시한 **가장 관대한**
+실현치(1H 오가닉 8.9%)로 올려도 Gap +3.41%p로 C등급이다(A등급 진입에 필요한
+오가닉은 12.5% 이상). **결론을 만드는 것은 엔진 RG 19.26%와 회사 실제 오가닉의
+격차이지 초판의 잘못된 0%가 아니었다** - 그래도 근거가 틀린 상태로 두지
+않는다(BRO `model_choice_reason` 정정 때와 같은 판단: 모델은 유지하되 사유는
+다시 쓴다).
+
+`portfolio/qualitative_overrides.json`에 `primary_source_verified` 필드를
+신설해 «무엇을 어떤 1차출처로 언제 확인했는가»를 남긴다. 최종 18종목·비중은
+전부 불변.
+
+### ③ CAH 정식분석 - 의약품유통 3사가 전부 중립밴드로 모였다
+
+연구 큐 신규 후보 15종목(QSR/HQY/CAH/BLDR/URBN/REGN/TTEK/EPR/LFUS/STRL/
+ERIE/ULTA/EME/PAYX/NYT)을 SEC 매출 시계열로 일괄 구조 선별한 뒤 가장 깨끗한
+CAH를 정식분석했다(19개년 전 구간에서 25% 초과 단계상승이 **한 번도 없다**).
+
+**결과: "적정가/경계선"(C등급), Gap +4.87%p, Confidence 79, PIT_VALID.**
+스크리너 추정 +7.07%p(A)에서 크게 내려왔고 원인은 시가총액 근사 노후화
+($48.19B float 스냅샷 vs 실제 $57.49B) - OKTA/MEDP/ROKU/NBIX와 같은 v3.72
+문서화된 한계의 반복이다.
+
+⭐ **동일 산업 peer 2종목이 이미 ledger에 있어 주관적 입력을 MCK·COR와 정확히
+동일하게 맞췄다**(경쟁강도 [0.35, 0.30, 0.25], demand_sensitivity 0.08,
+two_stage, 반독점 True). 같은 산업구조에 다른 가정을 쓰면 세 종목의 Gap 차이가
+사업 차이인지 분석자 입력 차이인지 구분되지 않는다 - COR가 MCK 가중치를 그대로
+쓴 논리의 3번째 확장이다. 결과적으로 **3사가 전부 중립밴드에 들어왔다**
+(MCK -0.02%p / COR +3.10%p / CAH +4.87%p).
+
+⚠️ **이 종목 최대 취약점 - FY2026 영업현금흐름이 전년의 2.16배**($2,397M →
+$5,174M, 유통업 운전자본 스윙). 최근연도 FCF0 관례는 지켰으나 그 결과
+FCF수익률 7.87%가 3년평균 기준(약 5.6%)을 크게 상회한다 - 반증조건 1번에
+«FY2027 OCF가 연환산 $3.5B 아래로 되돌아가면 재검토»로 박아뒀다.
+그 밖에 영업이익이 2018/2020/2022에 붕괴하고(오피오이드 충당금·Medical
+손상차손, GAAP 원자료 그대로 사용) 자기자본이 FY2022부터 음수다(자사주매입 -
+OCF 강세라 존속위험 아님, v3.75 B게이트가 «자기자본<0 AND OCF<0»을 함께
+요구하도록 설계된 이유가 정확히 이 패턴이다).
+
+SBC 태그 2종이 3배 갈리나(`ShareBasedCompensation` 367 vs
+`AllocatedShareBasedCompensationExpense` 122) **어느 쪽을 써도 SBC/FCF가
+8.1% vs 2.7%로 판정이 불변임을 확인한 뒤** 현금흐름표 가산액을 채택했다 -
+TYL 사고와 달리 이번엔 «불일치가 판정을 흔들지 않는다»는 것까지 확인하고
+넘어간다.
+
+**EPR은 FRAMEWORK_MISMATCH로 등록**(VICI/GLPI와 동일한 REIT 구조적 부적합 -
+트리플넷리스라 capex가 임차인 부담이고, 과세소득 90%+ 배당의무로 성장이
+유보FCF 재투자가 아닌 신규 자본조달로 이뤄진다. SEC 실측으로도
+operating_income이 18개년 중 6개년만 확보되고 2020년 매출 -36%).
+나머지 13종목은 구조적 배제 사유가 없어 QUEUED로 남긴다 - 다만 BLDR(2021
++132%, BMC 합병)·REGN(2021 +89%, 코로나 항체 일회성)·TTEK(2023 +29%, RPS
+인수)는 단계상승이 CAGR 창에 걸릴 소지가 있어 분석 시 먼저 확인할 것.
+
+watchlist 66→67, baseline 재동결(`2b71adf2…`→`e871f8b3…`, CAH만 변경분).
+`engine/` 무변경이라 `ENGINE_VERSION`은 **v3.83 그대로**. 테스트 1127 →
+**1133개 통과**.
+
+## 예측원장 최초 해소 — 34건 중 3건, 그리고 KLAC에서 발견한 원분석 데이터
+신선도 결함 (2026-09-07, "1순위부터 실행" - v3.48 예측 인프라를 실제로 돌림)
+
+2026-08-16 동결 이후 **22일간 해소 0건**이었던 예측 34건을 실제로 열어봤다.
+새 계산 로직은 0줄 - `engine/prediction_ledger.py::resolve_prediction()`을
+그대로 썼다.
+
+**방법 - 추측하지 않고 SEC 제출이력으로 판별**: 각 티커의 회계연도 종료월과
+SEC 제출 이력(10-K/20-F + 8-K item 코드)을 직접 조회해 "다음 회계연도
+실적발표"가 실제로 일어났는지 확인했다. 단순 10-K 제출일이 아니라 **8-K
+item 2.02(Results of Operations)**를 실제 실적발표일로 썼다 - 10-K는
+발표 후 며칠~몇 주 뒤에 제출되는 경우가 많아, 10-K 날짜만 보면 발표시점을
+늦게 잡는 오류가 생긴다(실제로 PH·RMD·KLAC 전부 8-K가 10-K보다 앞섰다).
+34종목 대부분(달력연도 FYE)은 다음 FY2026이 2027년 1~5월에나 발표돼
+당연히 미해소이나, **6월 말 FYE 3종목(PH·KLAC·RMD)의 FY2026이 이미
+발표돼 있었다.** GWRE(7월말 FYE)도 확인했으나 9/3 8-K는 item 5.02(임원
+변경)일 뿐 실적발표(2.02)가 아니라 아직 미해소로 정직하게 남겼다.
+
+### 해소 결과 3건
+
+| 종목 | 실적발표일 | 사전등록범위 | 실제 YoY | 판정 | 오차 |
+|---|---|---|---|---|---|
+| PH(Parker Hannifin) | 2026-08-06 | 4.56~7.76% | **8.31%** | MISS | +0.54%p |
+| KLAC(KLA Corp) | 2026-07-28 | 9.69~15.93% | **11.71%** | HIT | 0.00%p |
+| RMD(ResMed) | 2026-08-06 | 11.72~12.88% | **9.85%** | MISS | -1.87%p |
+
+`n_resolved=3, n_hit=1, hit_rate=33%` - **⚠️표본 3건으로 확률을 주장하지
+않는다**(prediction_ledger.py가 이미 `calibration_status`에 명시).
+
+### ⭐ KLAC에서 발견한 것 - 원분석 자체가 이미 공개된 정보를 놓쳤다
+
+KLAC의 실적발표(2026-07-28)가 **원분석일(2026-08-02)보다 5일 앞선다.**
+그런데 `ledger/KLAC_2026-08-02.json`의 `revenue_by_year`는 **FY2025까지만**
+담고 있다 - 분석 시점에 이미 5일 전 공개된 FY2026 실적을 반영하지 못한
+채 분석됐다는 뜻이다(OKTA/MEDP/ROKU/CAH가 겪은 "EntityPublicFloat
+시가총액 스냅샷 노후화"와 같은 계열이지만, 이번엔 시총이 아니라 **매출
+시계열 자체**가 노후화된 사례라는 점이 다르다).
+
+**원 ledger의 Gap/판정은 소급 수정하지 않는다**(v3.32 원칙 - 과거 스탬프는
+그 시점 코드/데이터를 정확히 반영한다). 다만 이 예측의 expected_low/high는
+그 오래된 CAGR 구성요소에서만 파생됐고 KLAC의 FY2026 실측치를 전혀
+참조하지 않았으므로(원 ledger가 몰랐던 값이니 참조할 수도 없었다), 예측
+범위 자체에는 정보유출이 없다 - 해소는 그대로 유효하다. RMD는 반대로
+실적발표(8/6)가 원분석일(8/2)보다 뒤라 이 문제가 없다.
+
+### H-006 참고관측(공식 검정 아님 - n=15 미달)
+
+H-006(`experiments/H-006.json`)의 entry_rule대로 `realistic_growth` vs
+실제 YoY 부호를 계산해두되, exit_rule이 **최소 15건**을 요구하므로 공식
+판정은 하지 않는다:
+
+| 종목 | RG(원분석 당시) | 실제 | RG-실제 | 방향 |
+|---|---|---|---|---|
+| PH | 6.51% | 8.31% | -1.80%p | 과소추정 |
+| KLAC | 10.33% | 11.71% | -1.38%p | 과소추정 |
+| RMD | 11.27% | 9.85% | +1.42%p | 과대추정 |
+
+**H-006을 만든 동기표본(n=10, 8/10 과대추정)과 정반대 방향(3건 중 2건
+과소추정)이 지금 나왔다** - 이게 정확히 exit_rule이 n≥15를 요구하는
+이유를 실증한다. 표본 3건으로 어느 쪽 결론도 내리지 않는다.
+
+### 나머지 31건은 왜 아직인가
+
+전부 달력연도 FYE라 다음 FY2026 실적이 2027년 1~5월에나 나온다(예:
+ACGL·DUOL·TTD 등 대부분 2월, MNDY·TCOM 3~4월). SE는 CIK 매핑
+확인이 더 필요하나 어차피 달력연도라 마찬가지로 시기상조. DSGX는
+`revenue_by_year`가 이미 FY2026까지 담고 있어(1월말 FYE, 원분석 시점에
+이미 최신) "다음 회계연도"가 FY2027이라 더더욱 멀다.
+
+### 테스트 정정 - "전부 OPEN"이 더 이상 사실이 아니게 됐다
+
+`tests/test_frozen_predictions.py::test_every_prediction_starts_open_
+with_no_prefilled_outcome`가 지금 상태를 그대로 단언하고 있어 해소가
+시작되자 실패했다 - 이 모듈의 존재 이유(`resolve_prediction()`)가
+정확히 이 전이를 만드는 것이므로, "동결 시점엔 전부 OPEN이었다"만 남기고
+지금 OPEN인 것만 검사하도록 고쳤다(`test_open_predictions_have_no_
+prefilled_outcome`). 대신 해소된 예측의 내부 정합성(저장된
+forecast_error가 `forecast_error()`를 재적용한 값과 정확히 일치하는지,
+status가 그 부호와 일치하는지)을 검증하는
+`test_resolved_predictions_have_internally_consistent_forecast_error`를
+신설했다.
+
+**검증**: 해시락 재검증(같은 파일 재해소 시도 → `ValueError`로 정상
+거부 확인), 테스트 1133 → **1134개 전부 통과**. `engine/` 무변경,
+`ENGINE_VERSION` v3.83 그대로(예측/테스트 데이터만 변경).
+
+## thesis.py 최초 실사용 - ACGL/DLO/PGR 3종목 정식 Investment Thesis + Decision
+기록 (2026-09-07, "ㄱㄱ" - 우선순위 2 실행)
+
+v3.48이 만든 `engine/thesis.py`(Investment Thesis / Decision / Evidence
+인프라, 6게이트 강제·append-only·자동판정 함수 없음)가 22일간 **실사용
+0건**이었다(`thesis/` 디렉터리 자체가 없었음 - 2026-08-16 Historical Replay
+감사가 이미 이 공백을 지적했었다). 새 계산 로직은 0줄 - 기존 ledger·
+`portfolio/qualitative_overrides.json`의 값만 인용해 `save_thesis()`→
+`build_decision()`→`record_decision()`을 실제로 호출했다.
+
+**선정 사유**: ACGL·DLO는 `portfolio/holdings.json`의 실보유 종목(각 2.34%·
+11.12%)인데 지금까지 Gap·quality_score만으로 확신 포트폴리오에 들어갔을 뿐
+6게이트를 거친 적이 없었다. PGR은 미보유이나 확신 포트폴리오 상위권(비중
+7.08%, 성장추정 정합성 최상위권)이라 "왜 아직 안 샀는가"를 명시적으로
+남길 가치가 있었다.
+
+**액션은 분석자(나)가 골랐다** - `thesis.py`에는 Gap을 액션으로 매핑하는
+함수가 원래 없다(`test_no_function_maps_gap_to_action`이 이를 강제):
+- **ACGL → HOLD**: 지속가능성장률(ROE×유보율)과 Realistic Growth의 괴리가
+  0.28%p로 34종목 중 가장 정합적(v3.13 ACGL 원 우려 - "보험 플로트를 유기적
+  성장으로 착각" - 가 이번 데이터로는 뒷받침되지 않음). 반증조건 미발동.
+- **DLO → HOLD**: 성장상한(25%) 바인딩의 정당성을 2026-09-06 1차출처로
+  재확인(2H2026 TPV +60~70%·영업이익 +27.5~32.5% 가이던스가 캡 이상을
+  제시 - ROP형 하방 괴리의 정반대). 반증조건 4개 전부 미발동.
+- **PGR → WATCH**: 신호·근거는 강하나(성장추정 정합성 최상위권) 미보유
+  신규편입은 `insurance_underwriting` 군집이 이미 ACGL·SIGI·CINF로
+  22%+를 차지해 추가 집중 여부를 별도로 판단해야 한다는 이유로 즉시
+  BUY 대신 WATCH로 기록.
+
+**`invalidation_conditions`는 각 ledger의 `falsification_conditions`
+자유텍스트를 `{"condition": str, "check_by": None}` 이산 항목으로
+재구조화**했다(ACGL 3건·DLO 4건·PGR 3건) - v3.42 원칙대로 발동 여부는
+분석자가 `mark_invalidation_triggered()`로 명시 호출해야만 하고, 코드가
+텍스트를 파싱해 자동 판정하지 않는다.
+
+**append-only·중복거부 불변조건을 실제로 트리거해 확인했다** - 같은
+날짜에 ACGL thesis를 다시 저장 시도하니 `FileExistsError`(*"thesis 코어는
+변경 불가다"*)로 정상 거부됐고, `evaluate_thesis_status()`는 3종목 전부
+`STABLE`(evidence 0건이라 지지·반박 증거 수 0). `daily_brief.py` 실행에는
+영향 없음(`thesis/`를 아직 읽지 않으므로).
+
+**의도적으로 하지 않은 것**: 확신 포트폴리오 18종목 전체에 thesis를
+소급 작성하지 않았다 - 소급 작성 자체가 사후합리화 원칙에 위배될 위험이
+있어(falsification_conditions와 동일 원칙), 실보유+최상위 후보 3종목만
+우선 기록하고 나머지는 필요해질 때(반증조건 재확인·정기 검토 시점)
+채워나가는 쪽을 택했다.
+
+`engine/` 무변경, `ENGINE_VERSION` v3.83 그대로(순수 데이터 기록).
+테스트 1134개 그대로(신규 테스트 불필요 - 기존 `tests/test_thesis*.py`가
+이미 이 경로 전체를 검증한다).
+
+## QSR 제외 + HQY 정식 분석 — CHDN 이중왜곡 패턴의 두 번째 사례, 여섯 번째
+SBC 플립 사례 (2026-09-08)
+
+큐 1순위 QSR(Restaurant Brands International, tier S, 스크리너 Gap 추정 미상)을
+먼저 조사했다. **CHDN(2026-09-02, "COVID 저점 기저효과 + M&A 단계상승 이중고")과
+정확히 같은 구조**를 확인했다 - (1) COVID 저점(2020, 매출 -11.3%YoY)이 5y CAGR
+기본 기준연도에 걸리고, (2) Carrols Restaurant Group 인수(2024-05-16 종결,
+$648M, 최대 BK 프랜차이지 편입)가 **3y CAGR 시작연도(2022, `years[-4]`는
+override 불가)와 5y 구간 양쪽에 걸려** FY2024 매출 +19.7%의 대부분을 차지한다
+(회사 자체 10-K/실적발표가 "primarily driven by RH 편입"이라 명시, 오가닉
+조정영업이익은 +6.1%뿐). override로 하나(5y 기준연도)는 고칠 수 있어도 다른
+하나(3y 시작연도)는 CHDN과 동일하게 코드 구조상 불가능하다. 회사가 오가닉
+성장률을 별도 공시하나 다년 실현 시계열이 아니라(FY2024 1개년 비교뿐) ROP
+기준(다년 실현)에 못 미치고, 브랜드별 이질성(2026 Q2 동일점포매출: BK +8.5%/
+Tim Hortons +0.1%/Popeyes -5.2%)도 단일 연결 CAGR 대표성을 떨어뜨린다.
+`data/excluded_tickers.json`에 `FRAMEWORK_MISMATCH`로 등록 - ledger를 만들지
+않았고 `scripts/update_research_queue.py` 재실행으로 QSR이 큐에서 정상
+제외됨을 확인했다.
+
+**HQY(HealthEquity, HSA 수탁관리) 정식 분석 - "저평가 가능성"(B등급),
+Gap +5.05%p, Confidence 89.** M&A 왜곡 사전점검을 CROX/CHDN 선례대로
+통과했다 - 2019-08 WageWorks 인수(매출 FY2019 $287.2M→FY2020 $532.0M,
++85.2%)가 3y(`years[-4]`=2023)/5y(`years[-6]`=2021) CAGR 창 어디에도
+걸리지 않고 10y 창(가중치 0.2)에만 남아 희석된다.
+
+핵심 발견 - **영업이익 극심한 변동(FY2022 -$24.2M 적자→FY2026 $322.5M)의
+원인이 금리 사이클**이다: HQY 매출 상당부분이 HSA 현금잔고 수탁/이자수익
+(custodial/interest revenue)인데 2021~2022 제로금리 시대에 붕괴했다가
+2023~2026 고금리 국면에서 급팽창했다(회사 자신이 10-K에 금리하락 리스크
+명시). 엔진의 `margin_volatility`(최근 5개년 창)가 이 사이클을 DRS 변동성
+점수에 자동 반영한다 - BSX의 COVID 저마진(2020)이 cyclicality를 밀어올린
+것과 같은 메커니즘, 별도 조치 없이 진행. Lynch 유형 stalwart, 성장상한
+12.00%가 바인딩(원시 CAGR 가중평균 16.52%를 덮어씀). PIT_VALID(위반 0건).
+
+**⭐ SBC 교차검증 - 이번 세션 여섯 번째 판정flip 사례(WDAY 원본 포함).**
+SBC/FCF 16.1% - SBC를 실제 비용으로 차감하면 Gap +5.05%p→**+2.94%p**, 판정이
+"저평가 가능성"→**"적정가/경계선"**으로 뒤집힌다. 공식 판정은 SBC 미차감
+기준으로 유지(병기 원칙).
+
+경쟁구도(2026-09-08 WebSearch): HQY가 미국 HSA 수탁자산 1위(2021년 Optum
+추월, $37.9B/+14%YoY), 상위 4개사가 시장($159B)의 약 2/3 점유. 신규 HSA
+판매 +24%YoY로 시장성장률 상회. 2024-03 데이터브리치 집단소송(벤더
+Conduent 경유, 430만명)은 재무영향 미확인 상태 - `active_antitrust_or_
+regulatory_case`는 이 소송이 반독점·규제경쟁 사건이 아니라는 이유로 False
+유지(범위가 좁게 설계된 필드라는 v3.19 원칙 그대로 적용).
+
+⚠️ **반증조건 문구에서 서술적 날짜 함정을 실행 중 직접 잡았다** - 최초
+초안이 "(2) 2024-03 데이터브리치 집단소송..."이라 적어 `thesis_monitor`의
+날짜추출 정규식이 이를 감시 트리거로 오탐했다(TCOM 소송 집단기간과 동일
+유형). "2024년 초 발생한 데이터브리치..."로 정정한 뒤 재실행 - 계산값은
+완전히 동일(falsification_conditions 텍스트만 변경), `save_ledger` 파일을
+삭제 후 재생성해 반영했다.
+
+### 배선
+
+`watchlist.json`에 HQY 추가(67→68, HLNE-IDXX 사이). 열여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 67→68), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 HQY 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 HQY 추가) - B등급이라 `test_pipeline.py`의
+`APPROVED_SIZE_CAPPED_TICKERS`(size_conditioned_growth_cap 전용, HQY는 일반
+Lynch stalwart 캡이라 해당 없음)는 무변경.
+
+baseline 68종목으로 재동결(fingerprint `e871f8b3…`→`a441c043…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## BLDR 4분류3번 문서화 + TTEK 제외(FRAMEWORK_MISMATCH) + URBN 정식분석
+(2026-09-09)
+
+큐 1순위 BLDR(Builders FirstSource, 건자재 유통)을 SEC XBRL로 확인한 결과
+2022~2025년 매출·FCF가 각각 약 -12.5%/-36% 실제로 감소하는 중이었다 -
+2021년 BMC Stock Holdings 합병(+132.5%)은 3년 CAGR 창(`years[-4]`=2022,
+합병 이후) 바깥이라 이번엔 M&A 왜곡이 아니라 **진짜 주택경기 하강 사이클**
+이었다. WebSearch로 외부 확인: 회사가 2026년 매출가이던스를 $14.6~15.6B->
+$14~14.8B로 하향, 2026 Q2 매출 -8.8%YoY, Zacks 컨센서스 EPS $4.13->$3.15로
+24% 삭감, 애널리스트가 목표가를 $150->$129.22로 하향 - 업계 전체(단독주택
+착공 중고한자릿수 감소 전망) 동시 하강이 외부 애널리스트로도 확인됐다.
+**4분류 3번(진짜나빠짐, 확정)** - `GENUINELY_WORSENED_NOT_STRUCTURAL`
+(tests/test_excluded_tickers_registry.py)에 등록했다. KR/AGCO/NKE 등과
+동일하게 시점부 판단이라 **`data/excluded_tickers.json`(영구배제
+레지스트리)에는 넣지 않는다** - 주택경기가 반등하면 재조사할 가치가 있고,
+`update_research_queue.py`가 큐에서 BLDR을 계속 1순위로 보여주는 것은
+버그가 아니라 턴어라운드 발굴이라는 설계 의도 그대로다(ledger 미생성).
+
+TTEK(Tetra Tech, 환경컨설팅)는 RPS Group 인수(2023 종결)로 매출이
+FY2022 $3,504.0M->FY2023 $4,522.6M(+29.1%)로 단계상승했는데, 이 단계상승이
+**override 불가능한 3년 CAGR 고정창**(`years[-4]`=FY2022, end=FY2025)에
+정확히 걸린다 - 3년 CAGR(15.8%)이 회사가 별도 공시하는 organic 성장률(약
++8%YoY, 단일 분기 비교치뿐)보다 훨씬 높게 나온다. `cagr_base_year_override`는
+5년 창의 기준연도만 바꿀 수 있고 3년 창에는 적용되지 않으므로 이 왜곡은
+구조적으로 해소 불가능하다(GEN/BRO/ROP/CHDN/QSR와 동일 유형) -
+`data/excluded_tickers.json`에 FRAMEWORK_MISMATCH로 등록.
+
+**URBN(Urban Outfitters) 정식분석 - "적정가/경계선"(C등급), Gap -1.91%p,
+Confidence 94.** SEC XBRL 매출 실측(FY2009~2026)에서 5년 CAGR 기본
+기준연도(`years[-6]`=FY2021)가 코로나 셧다운 저점(매출 -13.4%YoY, 영업이익
+사실상 0)에 정확히 걸려 회복반등을 성장으로 착각할 위험을 확인 - **기준연도를
+FY2020(코로나 직전 마지막 정상연도)으로 override**했다(v3.21 BKNG 원칙의
+문자 그대로의 적용 - "고점을 찾는" 게 아니라 "붕괴 직전 해"를 택한다). 3년
+CAGR(override 불가, 8.74%)은 이 저점 구간을 안 건드려 애초에 깨끗했고,
+override 후 3y/6y/10y가 8.74%/7.55%/5.99%로 서로 근접해 M&A 왜곡 없는 정상
+다년 성장임을 뒷받침했다.
+
+실시간 시총($7.12B)이 스크리너 근사($4.83B)의 1.47배(OKTA/MEDP/ROKU/CAH와
+동일한 EntityPublicFloat 스냅샷 노후화 패턴), Lynch 유형은 cyclical
+자동분류(코로나 매출 변동성이 cyclicality 점수를 밀어올림 - BSX와 동일
+메커니즘). 세 브랜드(Urban Outfitters·Anthropologie·Free People) 전부
+양(+) 동일점포성장(+4.8~7.3%, FY26 Q4)에 Nuuly 구독사업 +50.2%YoY까지
+겹쳐 서사는 건강하나, 시총 재평가 + 저점기저효과 정정이 결합돼 스크리너
+추정(A등급 +6.99%p)보다 크게 내려왔다. 순부채는 회사 자체 공시("무차입,
+신용한도 미사용, 유동성 $1.1B+")를 근거로 근사(NET_DEBT≈$126M) - 정밀
+현금+증권 합계 미확보를 falsification_conditions에 명시. SBC/FCF 9.7%로
+낮아 SBC 차감해도 판정 불변, 강건성점검 flip 없음, PIT_VALID(위반 0건).
+
+### 배선
+
+`watchlist.json`에 URBN 추가(68→69, UBER-VRSN 사이). 열아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 68→69),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 URBN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 URBN 추가) - C등급
+이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 69종목으로 재동결(fingerprint `a441c043…`→`e1773c67…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## REGN(Regeneron) 정식분석 - COVID 일회성 스파이크가 창 경계를 안 건드리는
+사전점검 사례 (2026-09-09)
+
+큐 다음 순위 REGN(Regeneron Pharmaceuticals, 바이오제약, tier A, 스크리너
+Gap 추정 +6.64%p)을 정식분석했다.
+
+### 사전점검 - 2021 COVID 항체(REGEN-COV) 급증이 CAGR 창을 왜곡하지 않음을
+확인 후 진행(CROX/CHDN/QSR와 반대 결론)
+
+2021년 매출이 REGEN-COV(코로나 항체치료제) 일회성 수요로 +89.2%YoY
+급증(2020 $8.50B→2021 $16.07B)했다가 2022년 -24.3%로 급락한다 - GEN/
+BRO/ROP/CROX/CHDN/QSR가 반복 확인한 'M&A/일회성이 CAGR 창에 걸리는'
+패턴처럼 보였으나, 실제로 3y(`years[-4]`=2022)/5y(`years[-6]`=2020)/
+10y(`years[-11]`=2015) 어느 창의 시작·종료연도도 **2021(피크연도) 자체가
+아니다** - CAGR은 시작·종료값에만 의존하므로, 창 경계가 아니라 창
+중간에 낀 스파이크는 직접 왜곡을 만들지 않는다. 매출 CAGR 3y/5y/10y
+(5.62%/11.04%/13.33%)가 완만히 벌어져 override 불필요로 확정했다.
+
+### FCF CAGR 3년이 음수(-2.66%)로 나온 원인 - min() 로직이 설계대로 흡수
+
+FCF(=OCF-capex) 3y CAGR이 -2.66%로 음수인 이유는 시작연도(2022)가
+REGEN-COV 매출 정산으로 운전자본이 부풀려진 고점이었기 때문(FCF 2022
+$4.42B→2025 $4.08B로 오히려 감소). `realistic_growth_estimate()`의
+min(FCF가중 7.28%, 매출가중 8.79%) 로직이 FCF가중을 그대로 채택 -
+CROX/PATH가 이미 확립한 "min()이 근사-0/왜곡 기저연도를 자동으로
+보호"하는 설계가 이번엔 왜곡의 방향이 반대(FCF가 매출보다 낮게 나오는
+정상적인 보수화)라 별도 개입 없이 그대로 작동했다. capex/매출 5년평균
+대비 2025 델타(+1.00%p)도 v3.20 재검토 임계값(3%p) 미달로 미발동.
+
+### 결과 - "적정가/경계선"(C등급), Gap -1.45%p, Confidence 94
+
+DRS 63.80(cyclical 자동분류 - COVID 매출·마진 변동성이 cyclicality·
+margin_volatility 둘 다 만점(20.0)을 밀어올림, BSX·URBN과 동일
+메커니즘). 순현금 대규모(net_debt/EBITDA -4.02배, leverage 2.0 최저권).
+모델괴리 2.62%p(경고 임계값 미만). 강건성점검 flip 없음. PIT_VALID(위반
+0건). 실시간 시총($81.95B)이 스크리너 근사(EntityPublicFloat 스냅샷,
+$54.80B)의 1.50배 - OKTA/MEDP/ROKU/CAH/URBN과 동일한 노후화 패턴.
+
+### 경쟁구도(2026-09-09 WebSearch) - Eylea 침식을 Dupixent가 상쇄 중
+
+legacy Eylea 매출이 최근분기 -45%YoY로 바이오시밀러 실측 침식 중(다수
+화해·승인으로 유럽·APAC·美 후반부 출시경로 확보) - ZTS Elanco형 실측
+침식과 유사하나, Eylea HD(연장투여간격 라벨 강화)의 대체와 Dupixent
+(+32~38%YoY)의 전사 성장견인이 뚜렷해 CLAUDE.md 헬스케어 앵커표
+(0.10~0.15) 중간값(0.12)을 채택했다. SBC 교차검증 flip 없음(SBC/FCF
+24.4%, Gap -1.45%p→-4.79%p로 이동해도 여전히 적정가/경계선).
+
+⚠️ **falsification_conditions 작성 중 v3.42 함정을 실제로 밟았다** -
+초안이 "(NET_DEBT 약 -$165.5억, **2026-03-31 기준** 대차대조표 스냅샷)"
+이라 적어 서술적 ISO 날짜가 `thesis_monitor`의 감시 트리거로 오탐됐다
+(TCOM 소송 집단기간·HQY 데이터브리치와 동일 유형). "최근 분기"로
+정정한 뒤 ledger를 삭제·재생성했다(계산값은 완전히 동일, 텍스트만
+변경).
+
+### 배선
+
+`watchlist.json`에 REGN 추가(69→70, QCOM-RLI 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 69→70,
+`test_provenance.py`·`test_sbc_harvest.py`에 REGN 추가) - C등급이고
+Lynch cyclical(fast_grower 아님)이라 `test_pipeline.py`/`test_screener.py`는
+무변경.
+
+baseline 70종목으로 재동결(fingerprint `e1773c67…`→`cee7065f…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## LFUS(Littelfuse) 정식분석 - 52/53주 라벨 재구성 + 모델선택 자체정정
+사례(RG≈g_terminal이면 single_stage가 정답) (2026-09-09)
+
+큐 다음 순위 LFUS(Littelfuse, 전력관리·회로보호 반도체·수동소자, tier A,
+스크리너 Gap 추정 +5.42%p)를 정식분석했다.
+
+### 52/53주 회계연도 라벨 재구성 - CDNS/GEN 선례의 세 번째 재현, 이번엔
+2개년이 통째로 누락
+
+SEC 자동추출이 `[회계연도 라벨 충돌]` 경고를 내고 2015·2021년을 통째로
+빠뜨렸다(EXEL·MEDP보다 심한 사례 - 누락 연도가 2개). 원자료(start,end)
+각 기간의 **중간일자가 속한 달력연도**로 17개년(FY2009~2025) 전체를
+재구성한 뒤, WebSearch로 두 지점을 교차검증했다: FY2021 "총매출 +44%/
+오가닉 +33%"(회사 보도자료 원문과 정확히 일치), FY2024 "$2,190.8M,
+-7.3%YoY"(정확히 일치). 재구성이 정확함을 확인했다.
+
+### ⭐ QCOM(2026-08-14) 선례의 두 번째 재현 - 반도체 사이클이 3y/5y 창을
+반대방향으로 왜곡, override 없이 진행
+
+3y CAGR 기준연도(2022)가 반도체 공급망 부족발 수요폭증의 **사이클
+정점**(매출 $2,514M, 사상최고)이라 3y CAGR이 음수(-1.72%)로 나오고,
+5y 기준연도(2020)는 반대로 코로나 저점이라 5y CAGR이 높게(10.54%) 나온다
+- 두 왜곡이 반대방향이라 완전상쇄는 아니지만, QCOM이 이미 같은 구조를
+"계산 아티팩트 없이 실제 반도체 사이클을 cyclical 분류로 정상 처리"한
+선례가 있어 override 없이 진행했다. 10y CAGR(10.64%, 2015년 기준 - 양끝
+다 사이클 극단이 아님)이 가장 신뢰할 만한 장기 신호였다.
+
+### FY2025 영업이익 급감(-76.4%)은 비현금 영업권손상 - CROX/BYD 선례대로
+GAAP 그대로 사용
+
+FY2025 영업이익 $158.8M→$37.5M(-76.4%YoY)의 원인은 반도체 사업부 대상
+비현금 영업권손상 $301.2M(회사 공시: "지속되는 연약한 시장환경") - OCF는
+오히려 개선(+18%, $367.6M→$433.8M)돼 FCF-DCF 계산 자체에는 영향이
+제한적이고 margin_volatility/DRS 경로에서만 반영된다.
+
+### ⭐⭐ 모델선택 자체정정 - "10y CAGR이 터미널보다 높다"는 잘못된 기준으로
+two_stage를 골랐다가, RG 자체를 확인하고 뒤집었다
+
+초판에서 "10y CAGR(10.64%)이 default_terminal_growth(3.5%대)보다 높으니
+two_stage"라고 판단했으나, 이는 **원시 CAGR과 g_terminal을 비교하는
+잘못된 기준**이었다 - 구조적할인을 거친 뒤의 실제 Realistic Growth(3.71%)
+는 g_terminal(3.78%)과 **사실상 동일**했다(cyclical 분류로 구조적할인이
+16.18%까지 크게 걸려 원시 CAGR 변동성을 이미 흡수했기 때문). 2026-08-16
+모델선택 연구가 확립한 기준(RG가 터미널에 근접하면 Gordon/single_stage가
+이론적으로 맞고, 터미널보다 뚜렷이 높을 때만 two_stage가 정당화됨)을
+그대로 적용해 `model_used`를 `single_stage`로 정정했다.
+
+**결과 차이가 등급을 갈랐다** - two_stage 기준 Gap -9.46%p(D등급,
+과대평가 가능성) vs single_stage 기준 Gap -4.11%p(C등급, 적정가/경계선).
+이 자체정정을 하지 않았다면 실제로는 판정경계 안쪽인 종목을 과대평가로
+잘못 분류할 뻔했다 - REGN(같은 세션)이 확립한 "RG를 g_terminal과 직접
+대조하라"는 원칙이 실전에서 처음으로 판정을 실제로 뒤집은 사례다.
+
+### 결과 - "적정가/경계선"(C등급), Gap -4.11%p, Confidence 94
+
+순부채 거의 0(net_debt/EBITDA 0.008배, 2026-03 $300M 텀론 상환으로
+레버리지 대폭 축소). 실시간 시총($10.74B)이 스크리너 근사(EntityPublicFloat
+스냅샷, $5.59B)의 1.92배 - 이번 세션 최대폭의 노후화 사례. SBC 교차검증
+flip 없음(SBC/FCF 7.8%, Gap -4.39%p로 이동해도 여전히 적정가/경계선).
+기대수익률 음수(-22.75%)라 RAR 방향성 경고 발동.
+
+### 배선
+
+`watchlist.json`에 LFUS 추가(70→71, KLAC-MCK 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 70→71,
+`test_provenance.py`·`test_sbc_harvest.py`에 LFUS 추가) - C등급이고
+Lynch cyclical이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 71종목으로 재동결(fingerprint `cee7065f…`→`570ae5e6…`). 테스트
+1134개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## PTC 실보유 최대비중 재검토 - Investment Thesis 최초 실사용(HOLD)
+(2026-09-10, 사용자 요청 "ptc 기업재분석")
+
+### 왜 - 6거래일 -14.1% 급락이 실보유 최대비중(38.39%)에서 발생
+
+Alpha Vantage 실시간 시세 확인 결과 PTC가 $150.08(2026-09-03, 2026-09-04
+ledger 분석가) → $128.89(2026-09-09 종가)로 **6거래일 만에 -14.1%** 급락해
+있었다. `engine.thesis_monitor.recompute_gap_at_market_cap`(v3.42, ledger는
+건드리지 않고 시총만 갱신)으로 재계산하니 Gap +4.08%p(C, 적정가/경계선) →
+**+5.90%p(B, 저평가 가능성)**로 판정경계를 넘는다 - v3.42가 확립한 "주가하락은
+Gap을 반드시 벌린다"는 기계적 성질이 실보유 최대비중 종목에서 그대로
+재현됐다(가치함정 신호일 수도, 정당한 저평가 신호일 수도 있어 원인 규명이
+필수).
+
+### 원인 규명 - GAAP 헤드라인 미스, ARR/FCF 가이던스는 오히려 상향
+
+2026-09-03 발표된 Q3 FY2026 실적: GAAP 매출 -6.8%YoY($600.05M, 컨센서스
+$611.62M 미달)로 헤드라인 미스가 주가 초기 하락(9/4 -6.1%)을 촉발했고,
+소프트웨어 섹터 전반 매도(9/8 -5.4%)가 하락을 더했다. 그러나 매출 미스는
+회사가 직접 밝힌 세 요인으로 대부분 설명된다: ①Kepware/ThingWorx 매각
+(2026-03-13 종결) 기저효과(FY2026은 매각 전분만 포함 vs FY2025 풀이어)
+②단일 대형계약의 확장기간이 예상보다 짧았던 일회성 타이밍 ③영구라이선스
+($0.69M, -91.1%YoY - 이미 오래전부터 축소 중인 소액 레거시 라인).
+
+**동시에 회사가 실제로 관리하는 지표는 전부 개선됐다** - CC ARR(ex-Kepware/
+ThingWorx) $2.448B/+9.1%YoY로 직전 가이던스 상단 상회, FY2026 전사 가이던스
+상향(CC ARR성장 8.5%→9~9.5%, 순증ARR ~$214M, FCF ~$850M[정상화 $950M],
+자사주매입 $1.225~1.325B→$1.625B). PLM ARR +8%/CAD ARR +6%YoY로 핵심사업도
+견조.
+
+### PTC 자신의 falsification_conditions 3개 중 발동 0건
+
+2026-09-04 ledger가 이미 이 시나리오를 예견해뒀다 - ①"ARR 성장률이 가이던스
+하단(7.5% CC) 밑돌면 재검토"는 **오히려 반대방향으로 강화**(9~9.5%로 상향)
+②"FY2026 FCF가 가이던스(약 $10억, 매각유출 $1.5억 반영후)를 크게 하회하면
+재검토"는 실제 헤드라인 $850M(정상화 $950M)이 원 예상범위와 **정합**
+③FY2027 가이던스는 아직 미제시. 사업이 실제로 나빠졌다는 증거를 찾지 못했다.
+
+### `engine/thesis.py`(v3.48) 최초의 실보유 최대비중 적용
+
+ACGL·DLO·PGR(2026-09-07)에 이은 네 번째 thesis이자, **실제 최대비중
+종목에 처음 적용**됐다. `thesis/PTC_2026-09-10.json`에 6게이트 전부 채워
+`record_decision(action="HOLD")` 기록. ADD가 아니라 HOLD를 택한 이유는
+신호-결정 분리 원칙 그대로다 - Gap이 판정경계를 넘었다는 사실이 **이미
+CONCENTRATION 플래그가 걸린 최대비중 종목**(2026-09-05 portfolio_review:
+38.39%로 25% 임계값 초과)의 추가 편입 근거가 될 수 없다.
+
+**공식 ledger는 건드리지 않았다** - FY2026 연차 실적이 아직 확정되지 않아
+Realistic Growth(11.39%, FY2017-2025 CAGR 기반)를 갱신할 근거가 없다
+(v3.42 설계원칙: 재계산 결과를 ledger/에 저장하지 않는다). 가격재계산은
+`reports/watchlist/PTC_2026-09-10.json`에 병기만 했다. 부수 취약점도
+thesis에 명시했다 - `sensitivity_check`에서 DRS 포함/제외로 판정이
+갈리는 강건성 취약(`judgment_flipped=True`)이 판정경계 근접 상태와 겹쳐
+있어 Confidence(79)에 이미 반영돼 있다.
+
+invalidation_conditions 4개(원 3개 + GAAP-ARR 괴리 반복패턴 신규 1개)를
+FY2026 Q4/연차 실적(2026-11월경) 시점 재확인 대상으로 등록했다.
+
+**검증**: 테스트 1134개 전부 통과(신규 테스트 불필요 - 기존
+`tests/test_thesis*.py`가 이 경로 전체를 검증한다). `engine/`·`ledger/`
+무변경, `ENGINE_VERSION` v3.83 그대로(순수 데이터 기록).
+
+## S등급 10종목 전수 재분석 - 등급flip 0건이 구조적으로 당연함을 확인하고,
+MNDY의 12일 묵은 INCONCLUSIVE를 재부상시켜 처음으로 해소 (2026-09-10, 사용자
+요청 "지금 s판정 나온 기업들 재분석해봐")
+
+### 대상 확정 - ledger 71건 전수에서 `judgment_grade=="S"` 필터링
+
+ACGL·CINF·DLO·DUOL·MNDY·PDD·PGR·PINS·SIGI·TTD 10종목. 이 중 **8종목이
+공식 매수리스트(`reports/buylist_2026-09-06.json`, 18종목) 보유분**이고
+(ACGL 9.36%·CINF 5.88%·DLO 9.19%·DUOL 5.95%·MNDY 5.93%·PDD 6.48%·
+PGR 7.08%·SIGI 6.86%, 합계 56.72%), **PINS·TTD 2종목은 이미 매수 유니버스
+밖**이다(각각 G2 SBC거짓편입 게이트·G3 반증확정 게이트로 배제 -
+`engine/portfolio_pipeline.py`, v3.83).
+
+### 방법 - PTC와 동일 절차를 10종목에 적용
+
+`engine.thesis_monitor.recompute_gap_at_market_cap()`으로 가격재계산
+(`reports/watchlist/<TICKER>_2026-09-10.json`, ledger 미수정) +
+각 종목 고유 `falsification_conditions` 원문을 최신 실적/뉴스와 대조
+(`irs-token-efficient-research` 원칙대로 종목당 WebSearch 1~2회, 전담
+리서치에이전트 미사용). 가격 출처가 갈리는 경우(특히 PINS - WebSearch
+요약이 $32.52로 잘못 나옴, TYL SBC 3배 오류와 동일 유형) Google Finance로
+2차 교차확인 후 채택($18.28로 정정).
+
+### ⭐ 등급flip 0/10 - 가치함정 성질의 구조적 필연
+
+**10종목 전부 가격이 하락(-0.12%~-23.11%)했는데 등급은 전부 S로 불변이다.**
+이건 우연이 아니라 v3.42가 이미 실증한 성질의 필연적 귀결이다 - S는
+6단계 중 최상위 등급(Gap≥+15%p)이라 가격하락이 만드는 Gap **확대**로는
+구조적으로 하위등급으로 못 내려간다(등급 하락은 가격 **상승**에서만 가능).
+Gap decay 폭은 TTD +3.39%p > PINS +1.94%p > MNDY +0.90%p > DLO +0.73%p >
+ACGL +0.30%p 순.
+
+### 반증조건 대조 결과 - 8개 보유종목 중 5개 강화·확인, 3개 안정, 1개 근접관찰
+
+| 종목 | 판정 | 근거 |
+|---|---|---|
+| **MNDY** | **강화(INCONCLUSIVE 해소)** | $50K+/$100K+ ARR 코호트 NDR 둘 다 **115%**(조건 임계값 110% 상회, 2026-08-13 당시 미확보였던 수치를 이번에 확보). 전사 블렌디드 NDR 108~109% 헤드라인은 하단약세를 상단강세가 상쇄하는 기존 서사 그대로 - 가격하락(-6.93%)은 헤드라인 과민반응으로 판단 |
+| **PGR** | 강화 | Q2 2026 CR 87.3%(임계값 90 아래), PIF +7% 가속(개인용차 +8~10%) - 텔레매틱스 모트 서사·손해율 규율 유지 |
+| **DUOL** | 강화 | DAU +23%YoY(2026-08-03 시점 +21%YoY에서 가속), 'AI Fears Fade' 애널리스트 평가 다수 - AI대체 서사 약화 |
+| **PDD** | 확인 | 분석일 이후 신규 Q2 실적(매출+8%YoY, 순이익-12%) 모두 조건(1) 미달 범위 내 - 조건이 직접 검정됨 |
+| **ACGL** | **근접관찰** | Q2 2026 ex-cat CR 82.5% vs 전년 80.9%(+1.6pp), 2026-08-03 정성조사가 지목한 '2분기 연속 악화'가 이번으로 3분기째에 근접 - 조건(1) 확정 트리거는 아니나 다음 분기(~11월) 확인 필요 |
+| CINF·DLO·SIGI | 안정 | 신규 악화 정보 없음(CINF는 Q3 미발표, DLO는 부정적 촉매 미발견, SIGI는 NPW -5%로 기존과 동일 수준) |
+
+### 유니버스 밖 2종목 - 배제가 옳았음이 재확인됨
+
+**PINS**(G2 배제, SBC/FCF 70.3%): Q3 가이던스 매출성장 13~15%YoY로 Q2
+18.2%에서 뚜렷이 둔화(CEO가 국제시장 압박·환율역풍 언급, Goldman
+컨퍼런스에서 가이던스 갱신 거부) + **CFO Julia Brau Donnelly 2026-10-30
+퇴사 발표**(신규 거버넌스 리스크). falsification_conditions 조건(1)에
+직접 해당하는 새 증거이나, 1개 분기 가이던스만으로는 재검토 근거 미달
+(KEYS 기준과 동일) - 공식판정 불변, 다음 체크포인트는 Q3 실적.
+
+**TTD**(G3 배제, 2026-08-13 falsification TRIGGERED 확정): CFO 타임라인
+직접 확인 결과 Ross→Grayson→Schenkein→Kayyal→Davis(대행)→**Olmstead**
+(2026-07-09 취임)로 14개월 내 4번째 CFO - 기존 기록(2026-08-03)과 정확히
+일치, 조건(2)의 5번째 임계값은 아직 미달. **2026-09-03 인력 15%
+구조조정**($39~51M 비용) 신규 확인 - 기존 THESIS_BROKEN 서사를 강화할
+뿐 새 트리거는 아니다. 시가총액 -23.1%(2026-08-03 이후)로 v3.42 가치함정
+패턴 재확인.
+
+### `monitor/acknowledgements.json`에 새 엔트리 추가 - 이 모듈 설계 목적의
+첫 실사용
+
+v3.64가 만든 INCONCLUSIVE 재부상 메커니즘("닫힌 게 아니다")이 지금까지
+실제로 쓰인 적이 없었는데, MNDY:2026-08-10 항목을 이번에 처음 재부상시켜
+NOT_TRIGGERED로 해소했다(append-only - 원 INCONCLUSIVE 시드 엔트리는
+그대로 보존, 새 엔트리를 덧붙임).
+
+**이 과정에서 `test_seeded_state_matches_recorded_2026_08_13_verdicts`의
+설계결함을 발견·수정했다** - 이 테스트는 `{item_key: entry}` 나이브
+딕셔너리 컴프리헨션으로 "시드값이 사후수정됐는지"를 검사하려 했는데,
+같은 item_key로 **정당하게 재부상**한 새 엔트리가 append되면 딕셔너리가
+최신 엔트리로 덮어써져 시드 자체의 무결성을 더 이상 못 본다 - 이
+메커니즘을 실제로 처음 써보고 나서야 드러난 결함이다(R-001 fcf0 키
+오타·PHASE 2 기본인자 바인딩과 같은 계열 - "도구를 실제로 써봐야
+드러나는 잠복 결함"). `acknowledged_on=="2026-08-13"`인 시드 엔트리만
+걸러 검사하도록 고치고, MNDY 재부상 자체(원 시드 보존 + 새 엔트리 +
+`latest_verdict()`가 최신을 반환하는지)를 검증하는 회귀 테스트를
+신설했다.
+
+### 공식 ledger·매수리스트 0건 수정
+
+전부 "병기, 자동판정 안 함" 원칙 - 어느 조건도 명확한 자동판정 트리거가
+아니라 분석자 판단이 필요한 수준이었다(ACGL 근접관찰·PINS 신규감시는
+그대로 기록만). `reports/s_grade_reanalysis_2026-09-10.json`에 10종목
+전체 대조 결과를 저장했다.
+
+**검증**: 테스트 1134 → **1135개 전부 통과**(신규 1건). `engine/`·
+`ledger/`·`portfolio/holdings.json`·공식 매수리스트 **0건 수정**,
+`ENGINE_VERSION` v3.83 그대로(순수 데이터/모니터링 기록).
+
+## STRL 제외(FRAMEWORK_MISMATCH) + ERIE 정식분석 - fee기반 보험관리업이라는
+새 사업모델 유형 (2026-09-11, 큐 순서상 다음 후보 처리)
+
+큐 1순위 BLDR(4분류3번, 시점부 배제라 영구등록 안 함, 2026-09-09 이미
+CLAUDE.md에 기록) 다음 후보 **STRL(Sterling Infrastructure)**을 SEC
+XBRL로 먼저 확인했다 - FY2009~2025 연차 매출·FCF는 M&A 단계상승 없이
+깨끗해 보였으나(3y/5y CAGR 창 어느 경계도 안 건드림), **2026년 들어 CEC·
+Stone Ridge(데이터센터向 미션크리티컬 전기인프라) 인수가 완료되며 Q2 2026
+매출이 YoY +90%(인수기여 약 40%p+조직성장 약 50%)로 급증**했다(회사
+실적발표 명시). FY2026 가이던스도 $4.0~4.15B로 FY2025($2.49B) 대비
++65% - 아직 SEC 연차 XBRL에 반영 안 된 FY2026이 완결되면 이 단계상승이
+정확히 5y/3y CAGR 창 종료연도에 걸려 GEN/BRO/ROP/CROX/CHDN/QSR/WSC/EQT/
+CDE/OVV/CF/HL/TTEK와 동일 유형이 된다. 시장은 이미 $22B 시총·상향
+가이던스로 이 인수효과를 가격에 반영했는데, FY2025 트레일링 FCF(인수 전
+사업믹스)를 분모로 쓰면 이미 실현된 성장을 미실현 저평가로 착각하게
+된다 - LNTH(피인수예정)의 반대 방향 함정(피취득이 아니라 대규모 취득이
+아직 재무제표에 안 잡힌 경우). `data/excluded_tickers.json`에
+FRAMEWORK_MISMATCH로 등록 - ledger 미생성.
+
+**ERIE(Erie Indemnity) 정식 분석 - "적정가/경계선"(C등급), Gap
++2.13%p, Confidence 94.**
+
+### ⭐ 사업모델이 기존 5개 보험사(PGR/ACGL/SIGI/CINF/RLI)와 다르다 -
+is_insurer=False 채택(신규 판단 근거)
+
+Erie Indemnity는 손해보험 언더라이터가 아니라 **Erie Insurance
+Exchange**(상호보험조합)를 대신해 판매·언더라이팅·보험금처리 등 관리
+서비스를 제공하고 그 대가로 직접·인수 보험료의 최대 25%(계약상 상한,
+2026-01-01자로도 25% 유지 확인)를 관리수수료로 받는 **fee-based
+서비스업체**다. 언더라이팅 리스크(준비금·손해율·재보험)는 전부
+Exchange가 부담하고 Indemnity 대차대조표에는 없다 - PGR/ACGL/SIGI/
+CINF/RLI가 쓰는 `is_insurer=True`(플로트 성장으로 OCF가 부풀려지는
+문제를 보정)의 전제 자체가 성립하지 않는다. 대신 RYAN/BRO(보험중개·
+유통사, 마찬가지로 리스크를 직접 부담하지 않음)의 선례를 따라
+`is_insurer=False`로 일반 FCF-DCF 경로를 그대로 썼다.
+
+### 회계정의 단절(2014→2015, -75.4%) - 창 밖에 두어 회피
+
+2008~2014년 매출은 Erie Insurance Exchange의 보험료를 연결 매출로
+잡던 구시대 표시방식이고, 2015년부터 관리수수료·서비스수수료만
+인식하는 방식으로 바뀌어 매출이 $6.12B→$1.51B로 75.4% 급락한다
+(CROX/CHDN급이 아니라 그보다 훨씬 큰 순수 정의 단절 - M&A가 아니라
+회계표시 방법 변경). 2016년부터만 입력값을 채택해(3y/5y 창이 각각
+2022/2020 기준이라 무관, 10y 창은 데이터가 10개년뿐이라 자동으로 5y와
+동일 가중치로 재정규화돼 이 문제를 원천 회피) `cagr_base_year_
+override` 없이 진행했다. capex도 2015~2017년 태그가 존재하지 않아
+전 계열을 2016년으로 통일했다(`data_limitations`에 10y 대체 사실 자동
+기록).
+
+### ⭐ 핵심 리스크 - 트레일링 CAGR이 2026년 실제 감속을 못 본다
+(KEYS/KLAC의 정반대 원인, 같은 구조)
+
+2026-09-11 WebSearch 확인: Q1 2026 직접보험료(DWP) +3.6%YoY·정책건수
+-1.7%YoY(공격적 보험료 인상이 유지율을 88%까지 끌어내림), 2026 상반기
+대리점수수료가 전년동기 대비 $72.7M 증가(대리점 인센티브 확대+보험료
+증가)로 마진 압박. 3y/5y CAGR(매출 12.72%/9.92%, FCF 23.94%/14.74%)은
+전부 FY2025까지의 연차 실적이라 이 2026년 실제 감속(유지율 하락+수수료
+비용 급증)을 반영하지 못한다 - KEYS/KLAC이 'trailing CAGR이 AI 수요
+인플렉션을 과소추정'했던 것과 원인은 정반대(여기는 과대추정 위험)지만
+구조는 동일하다(최근 1~2개 분기 변곡점이 5년 CAGR에 few-quarter
+영향만 줘 희석됨). 1개 분기뿐이라 KEYS 기준(다년 실현 필요)에 못
+미쳐 override는 쓰지 않고 falsification_conditions 최우선 사유로
+명시했다. **결과적으로 이 우려는 시장가격에 이미 상당히 반영돼 있었다**
+- Gap이 판정경계 근처(+2.13%p)에 그쳐 트레일링 CAGR 과대추정 우려와
+현재 저평가/고평가 신호가 서로 상쇄된 것으로 해석된다.
+
+demand_sensitivity_pct=0.20(CINF/SIGI/RLI의 0.18 대비 소폭 상향 - 공격적
+가격인상에 실제 고객이탈이 확인된 유일한 사례라 순수 추정이 아닌 실측
+근거), competitor_threat_weights=[0.30(State Farm), 0.20(Progressive/
+GEICO - 유지율 하락의 주된 도피처로 추정)], market_share_trend_pp_
+per_year=-0.5(Q1 2026 정책건수 역성장 실측, 단일분기라 극단값은 피함).
+model_used="two_stage"(PGR/ACGL/SIGI/CINF/RLI 선례와 동일 - M&A 단계상승
+없는 완만한 다년 성장궤적). PIT_VALID(위반 0건), 강건성점검 flip 없음,
+sbc_cross_check/insurer_cross_check 둘 다 None(전자는 SBC 데이터 미확보,
+후자는 is_insurer=False라 원리적으로 미실행).
+
+### 배선
+
+`watchlist.json`에 ERIE 추가(71→72, EAT-EXEL 사이). 세 개 테스트
+레지스트리 갱신(`test_monitor_state.py` n_ledgers 71→72,
+`test_provenance.py`·`test_sbc_harvest.py`에 ERIE 추가) - C등급이고
+Lynch stalwart(사이즈캡·screener 거짓탈락 무관)라 `test_pipeline.py`/
+`test_screener.py`는 무변경.
+
+baseline 72종목으로 재동결(fingerprint `570ae5e6…`→`60b83865…`). 테스트
+1135개 전부 통과. `ENGINE_VERSION` 무변경(v3.83 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## v3.84 — 희석 드래그 축 재도전: PHASE 4 헤드라인 하나가 오염이었음을 확인
+(2026-09-11, 사용자 요청 "1번 실행" — 엔진 업그레이드 후보 3건 중 1번)
+
+PHASE 4(2026-08-21)가 "SBC와 독립인 신호(순위상관 −0.597)임은 확인했으나
+커버리지 부족으로 배선 철회"로 남긴 항목을 재개했다. **새 밸류에이션 로직은
+0줄** — 1회성 스크립트를 `engine/dilution.py` + 상시 스크립트로 승격하고,
+측정을 막던 원인 세 갈래를 각각 해소했다.
+
+### ⭐ 재개조건의 전제가 사실이 아니었다
+
+결정 #64의 재개조건은 *"주식분할 조정 주식수 시계열 확보"* 였고 괄호에
+*"(SEC companyfacts는 분할 조정본을 소급 제공하지 않는다)"* 가 달려 있었다.
+**틀렸다.** 분할은 GAAP상 소급 재표시되므로 companyfacts에는 같은 회계연도가
+**두 기준으로** 들어 있다 — 분할 전 공시본과 분할 후 비교표. 그 둘의 비율이
+곧 분할 계수이며 **회사가 스스로 보고한 사실이지 추정이 아니다**:
+
+    TTD FY2019 : 47,806,000(분할 전) vs 478,061,000(분할 후 비교표) -> 정확히 x10
+
+탐지된 계수가 전부 깔끔한 분할비였다는 것 자체가 근거다 — TTD **x10.0000** ·
+TCOM **x8.0000** · DECK **x5.9998** · NOW **x5.0000** · RLI/MNST **x2.00**.
+무작위 데이터 손상은 정수를 만들지 않는다.
+
+⚠️ 처음 세운 가설("최신 공시본을 쓰면 점프가 사라진다")은 **실측으로 기각됐다** —
+점프가 사라지는 게 아니라 **앞으로 이동할** 뿐이었다(TTD FY2021 -> FY2019).
+분할 후 10-K가 비교표 2~3년치만 담기 때문이며, 그래서 그보다 오래된 해에만
+계수를 소급 적용하는 방식으로 바꿨다.
+
+### ⚠️ 정규화는 스스로를 검증한 뒤에만 채택된다 — 구현 중 실제로 잡은 결함
+
+한 해만 재표시됐으면 **계수 일관성 검사가 표본 1개라 자동으로 통과한다.**
+BRO FY2021이 정확히 그 경우였다(277,414 -> 277,400,000, 단위 오타 정정).
+x1000이 '분할'로 채택돼 이전 연도가 1000배로 부풀었고, **측정 가능하던 종목이
+측정 불가가 됐다.** 계수를 믿는 대신 **결과로 판정**하도록 고쳤다 — 조정 전후의
+잔여 점프 수를 세어 줄어들 때만 채택하고, 같으면 손대지 않는다. 실측: NOW·RLI·
+MNST·DECK·TCOM은 채택, BRO는 기각(=원본 유지, 측정 성공).
+
+### ⭐ PHASE 4 헤드라인 주장 하나가 뒤집혔다
+
+PHASE 4는 *"TTD와 TCOM은 총 FCF가 성장했는데 주당 FCF는 **감소**했다"* 를 핵심
+발견으로 적었다. TCOM 쪽은 **2021년 ADS 비율변경(x8) 오염이었다**:
+
+| TCOM | 총 FCF CAGR | 주당 FCF CAGR | 드래그 |
+|---|---|---|---|
+| PHASE 4 보고 | +13.04% | **−21.18%** | **−34.22%p** |
+| 정규화 후(실측) | +13.04% | **+11.46%** | **−1.58%p** |
+
+오염 검출(v3.36 시점)은 그 종목을 '측정 불가'로 돌렸을 뿐 **값을 정정하지는
+않아** 서술이 그대로 남아 있었다. 측정 불가로 미루는 것과 정정하는 것은 다르다.
+
+### 해소한 원인 세 갈래
+
+1. **창 파생**(v3.19판 ledger 9종목) — `cagr_5y_base_year`가 없던 ledger는
+   엔진과 같은 규칙(`years[-6]`)으로 파생하되 **저장된 `fcf_cagr_5y`를
+   재현하는지 확인**한다. 9종목 전부 1e-9 이내 일치 — 추측이 아니라 증명이다.
+   재현하지 못하면 창을 특정할 수 없다는 뜻이므로 거부한다.
+2. **소급재표시 정규화** — 위 메커니즘.
+3. **IFRS 태그 대체** — DLO(20-F 발행사)는 `ifrs-full:AdjustedWeightedAverageShares`로
+   해소. **매수리스트 최대 보유(9.19%)인데 그때까지 측정 불가였다.**
+   ⚠️ 기본(basic)주식수로는 내려가지 않는다 — 희석/기본을 연도별로 섞으면 그
+   자체가 기준 불일치가 되어 이 모듈이 막으려는 오류를 다른 경로로 재발시킨다.
+
+**결과: 측정 48/72 -> 61/72, 매수 유니버스 6/12 -> 13/18(미측정 비중 41.33% ->
+27.40%).**
+
+### 부수 — 잠복 결함 2건과 회계연도 라벨 충돌
+
+- **`fcf[end] <= 0`을 막지 않고 있었다.** 파이썬은 음수의 실수제곱을 **복소수로
+  조용히 돌려준다**(v3.19가 잡은 함정). 기준연도만 막고 종료연도를 안 막아
+  복소수가 결과에 섞일 수 있었다 — 현재 72종목 중 해당 사례가 없어 드러나지
+  않았을 뿐이다. 가드 추가.
+- **스크립트가 `buylist_2026-08-03.json`(12종목)에 고정돼 있었다** — 그 뒤 늘어난
+  종목을 구조적으로 보지 못했다. 최신 매수리스트를 자동으로 찾도록 고쳤고
+  (두 스키마 모두 지원), 어느 리스트 기준인지 리포트에 남긴다.
+- **CDNS·EXEL·LFUS는 `FY_LABEL_COLLISION`으로 정직하게 측정 불가 처리**했다.
+  52/53주 결산이 `int(end[:4])` 규칙에서 같은 라벨로 묶이는 v3.61 문제다.
+  EXEL·LFUS는 이전 구현에서 **값이 나오고 있었는데**, 그건 충돌 시 한쪽을 조용히
+  고른 결과라 어느 해 값인지 보증되지 않았다 — 커버리지는 2종목 줄지만 정직성은
+  올라간다. ⚠️ **자동 재라벨링은 하지 않는다**(규약이 회사마다 반대, v3.61 판단 유지).
+
+### ⚠️ 배선하지 않았다 — 사유가 '커버리지'에서 '편향'으로 바뀌었다
+
+커버리지는 해소됐지만 **미측정 집단이 무작위가 아니다**. 매수 유니버스에서
+SBC/FCF가 가장 높은 두 종목 **DUOL(37%)·MNDY(57%)가 둘 다 측정 불가**인데
+(IPO 직후 주식수 급증 자체가 측정을 막는다), 측정된 13종목의 주식수 변화
+중앙값은 **+1.3%**뿐이다. 즉 측정된 부분집합은 희석을 **과소**평가하는 방향으로
+치우쳐 있어, "매수 유니버스 희석은 온건하다"고 읽으면 정확히 틀린다.
+`coverage_bias`로 리포트에 1급 필드로 남기고 테스트로 고정했다.
+
+§13 조건 6(validation strategy)도 여전히 없다 — 이 지표가 실현수익률과
+관계있다는 증거는 **0건**이다. 구조 D(독립 진단축)만 유지하며, `engine/pipeline.py`·
+`expectation_gap_engine.py`·`portfolio_pipeline.py`가 이 모듈을 참조하지 않는
+것과 판정·비중 함수가 없는 것을 AST 테스트로 고정했다.
+
+**측정 구간 상위 신호**(공식 판정과 무관): SE −10.34%p · OKTA −9.96%p ·
+VRT −7.66%p · PINS −7.20%p · UBER −6.82%p · ROKU −5.73%p.
+
+`reports/dilution_drag.json`(날짜 없는 상시 산출물). PHASE 4의 날짜 붙은
+`reports/dilution_drag_2026-08-21.json`과 옛 스크립트는 **재현성 아티팩트로
+그대로 둔다** — 작업 초반 기준선 측정으로 그 파일을 덮어쓴 것을 발견해 즉시
+복원했다(`git checkout`, 34종목·2026-08-21 확인).
+
+테스트 1135 -> **1162개 전부 통과**. 72종목 골든재현 8지표 완전 동일,
+fingerprint `60b83865…` **불변**, ledger·매수리스트·공식 판정 **0건 수정**.
+`ENGINE_VERSION` v3.83 -> **v3.84**(신규 엔진 모듈 - growth_quality v3.53·
+accounting_quality v3.70과 동일하게 미배선이어도 상수를 올린다).
+
+## v3.85 — 미측정 11종목 전수 진단: 4건 회복, 7건은 구조적 공백으로 확정
+(2026-09-12, 사용자 요청 "보완 부분 확실하게 보완하고 진단해")
+
+v3.84가 *"커버리지는 해소됐지만 **미측정 집단이 무작위가 아니다**"* 로 남긴
+11종목의 **원자료를 종목별로 직접 열어** 회복 가능한 것과 원리적으로 불가능한
+것을 갈랐다. 새 밸류에이션 로직은 0줄이다.
+
+**커버리지 61/72 -> 65/72**, 매수 유니버스 13/18 -> **14/18**, 미측정 비중
+27.40% -> **20.92%**. **기존 61종목 측정값은 전 필드 불변**(git diff로 확인).
+
+### ⭐ 회복 ① CDNS·EXEL·LFUS — v3.61의 금지를 어기지 않고 라벨 충돌을 푼다
+
+52/53주 결산이 연초로 밀리면 `int(end[:4])` 규칙이 두 회계연도를 한 라벨로 묶는다.
+v3.61은 **일반적인 자동 재라벨링을 금지**했고 그 판단은 지금도 옳다 — 규약이
+회사마다 반대라(CDNS는 1월 초 결산을 전년으로, GEN은 3월 말 결산을 당해로 센다)
+어느 쪽이 옳은지 코드가 알 수 없다.
+
+**그런데 여기서 답해야 할 질문은 그게 아니었다.** 희석 드래그가 성립하려면
+`shares[y]`와 `fcf[y]`가 같은 회계기간이면 된다. 즉 필요한 명제는 "이 회사의
+규약이 무엇인가"가 아니라 **"이 라벨링이 이 ledger의 연도 키와 맞는가"** 이고,
+그건 같은 companyfacts의 **매출**을 같은 규칙으로 라벨해 `inputs.revenue_by_year`와
+대조하면 증명된다. 실측(일치/불일치):
+
+| 종목 | 중간일자 라벨 | `end_year` 라벨 |
+|---|---|---|
+| CDNS | **14 / 0** | 10 / 2 |
+| EXEL | **12 / 0** | 8 / 2 |
+| LFUS | **22 / 0** | 18 / 1 |
+
+증명되지 않으면 종전대로 측정을 거부한다(합성 테스트로 양방향 고정). 기준연도
+파생을 저장된 `fcf_cagr_5y` 재현으로 검증하는 것과 **같은 패턴**이다 —
+추측하지 않고 증명한다.
+
+### ⭐ 회복 ② PDD — v3.84의 진단이 틀렸다(오진 정정)
+
+v3.84는 PDD를 *"ADS/보통주 단위 혼재"* 로 적었다. 원자료를 공시본별로 뒤집어
+보니 전혀 다른 것이었다 — **20-F 한 건(2025-04-28)이 FY2022~24를 통째로 1/1000
+스케일로 보고했고 다음 공시가 되돌렸다**:
+
+    2024-04-25  FY2023 = 5,839,629,562
+    2025-04-28  FY2023 =     5,839,630   <- 이 공시본만 1/1000
+    2026-04-29  FY2023 = 5,839,630,000   <- 되돌아옴
+
+**되돌려진다는 것이 분할과 구분되는 지점이다** — 분할은 영구 소급재표시라 이후
+모든 공시가 새 기준을 유지한다. 공시본을 최신 것부터 겹침 비율로 이어붙이면
+기준이 통일된다(FY2022가 x1000으로 복원). ⚠️ **마지막 수단으로만** 탄다 — 값을
+비율로 재계산하므로 이미 매끄러운 종목의 기존 측정값을 미세하게 흔들고(실측
+4~5번째 자리) 겹침 없는 공시본을 버려 오래된 연도를 잃는다(DSGX 실측). 1에
+가까운 비율은 1로 스냅한다 — 재표시 반올림 차이로 생긴 1.00000008배를 곱하면
+**어느 공시본에도 없는 숫자**가 기록에 남는다(PDD 기준 주식수가 실제로
+4,768,343,117로 찍혔다가 정정).
+
+### 남은 7종목은 '아직 안 가져온 것'이 아니다 — 셋 다 구조적
+
+| 사유 | 종목 | 왜 못 채우나 |
+|---|---|---|
+| IPO가 RG 창 **안에** 있음 | DUOL·MNDY·PATH | 상장 전 가중평균 주식수는 전환 전 우선주를 제외해 상장 후와 기준이 다르다. 창을 상장 이후로 옮기면 **RG가 쓴 창과 달라져 비교 자체가 성립하지 않는다** |
+| 다중클래스·Up-C | ERIE·HLNE·RYAN | 주식수가 클래스별 **차원(dimension)** 으로 보고되는데 companyfacts는 무차원 사실만 담는다. 같은 캐시에 연차 매출은 10~20건 정상 존재해 **캐시 누락이 아님을 확인**했다(희석주식수 항목 0~1건 vs 코퍼스 중앙값 191건) |
+| 기준연도에 독립 등록인이 아니었음 | NXT | 2023-02 Flex 분사 — 존재하지 않았던 해의 주식수는 어떤 출처에도 없다 |
+
+리포트에 `residual_gap`(상태별 티커·보유비중·`recoverable_from_companyfacts:
+false`·사유)을 1급 필드로 남긴다 — **"아직 안 가져왔다"와 "이 출처로는 원리적으로
+못 가져온다"를 섞으면 닫을 수 없는 공백을 계속 닫으려 하게 된다.**
+
+### ⚠️ 배선은 여전히 하지 않는다 — 편향의 방향이 그대로다
+
+공백이 구조적이라는 것이 밝혀졌을 뿐 **편향은 사라지지 않았다.** 매수 유니버스
+최고 SBC 2종목 **DUOL(37%)·MNDY(57%)가 여전히 측정 불가**이고, 측정된 종목의
+주식수 변화 중앙값은 **+2.2%**뿐이라 부분집합은 희석을 **과소**평가한다.
+즉 **가장 닫아야 할 공백이 정확히 닫을 수 없는 공백이다.** §13 조건 6
+(validation strategy)도 여전히 없다(실현수익률과의 관계 증거 0건) — 구조 D
+(독립 진단축)를 유지하고, 그 경계는 AST 테스트로 고정돼 있다.
+
+테스트 1162 -> **1166개 전부 통과**. 72종목 골든재현 8지표 완전 동일,
+fingerprint `60b83865…` **불변**, ledger·매수리스트·공식 판정 **0건 수정**.
+`ENGINE_VERSION` v3.84 -> **v3.85**.
+
+## v3.86 — 희석 드래그 배선: 진단축까지, 자본까지는 아니다 (2026-09-13, 사용자
+요청 "배선 진행")
+
+v3.85 보고가 *"배선은 여전히 안 합니다 — 공백이 구조적임이 밝혀졌을 뿐 편향
+방향은 그대로"*로 끝난 직후 사용자가 배선을 지시했다. 거부 사유가 **어느 층에
+적용되는지**를 갈라서 처리했다.
+
+### 두 층을 나눴다 — 하나는 여전히 REJECT, 하나는 ADOPT
+
+| 층 | 결정 | 사유 |
+|---|---|---|
+| RG·Gap·판정·quality_score 반영 | **REJECT(유지)** | §13 게이트 6번(validation strategy) 부재 — 실현수익률 관계 증거 **0건**. 게다가 편향이 불리한 방향이다: 매수 유니버스 최고 SBC 2종목(DUOL 37%·MNDY 57%)이 **구조적으로** 측정 불가라 측정된 부분집합은 희석을 **과소**평가한다. 이대로 감점하면 **측정된 종목만 벌하고 진짜 위험한 종목은 무사한 역선택**이 된다 |
+| 경계검토에 F6 플래그로 병기 | **ADOPT** | is_insurer·sbc_cross_check·holdings_overlap·`model_dependent_universe`가 확립한 "병기, 자동판정 안 함" 그대로 |
+
+### 왜 플래그는 안전한가 — 설계로 보장된다(믿음이 아니라)
+
+`engine/portfolio_pipeline.py`는 `excluded_by`(유니버스를 바꾼다)와
+`flags`(아무 데서도 읽히지 않는다)를 이미 분리해 두고 있었다. `size_portfolio()`가
+`flags`를 보지 않으므로 **플래그를 아무리 더해도 비중이 구조적으로 바뀔 수
+없다.** 실측으로도 확인했다 — 희석 데이터를 넣은 실행과 뺀 실행의 비중·생존·배제가
+**완전히 동일**(max abs diff **0.0**), `reports/buylist_2026-09-06.json`은
+**md5 불변**(`132ad14c…`), 진단 JSON은 249줄 **순수 추가**(삭제 0).
+
+새 계산은 0줄이다 — `reports/dilution_drag.json`(엔진이 이미 계산해둔 값)을
+`load_sbc_verdicts()`와 **똑같은 방식으로 읽기만** 한다. 중복 구현이 두 계산을
+어긋나게 만든다는 반복 교훈 그대로다.
+
+### ⭐ 부수 발견 — 진단 플래그가 계산만 되고 아무 데도 나가지 않았다
+
+`apply_gates()`가 만든 F1~F5를 `build_portfolio.py`가 진단 JSON에서 제외
+(`if k != "flags"`)하고 콘솔에도 찍지 않아, **생존종목의 플래그는 어디서도 볼 수
+없었다.** F6만 얹었으면 죽은 코드에 배선하는 셈이라 `boundary_review` 섹션을 함께
+신설했다 — 문서로만 둔 규칙이 무력화된 사례를 이미 다섯 번 겪었다(run_self_check·
+confidence_score·claim/lock·cross_check_prior_record·sbc_cross_check 미배선).
+
+실측 F6: 드래그 **SE −10.34%p · UBER −6.82%p · PDD −5.56%p**, 측정 불가
+**DUOL·MNDY(IPO가 RG 창 안) · HLNE·RYAN(다중클래스) · NXT(분사 전)**.
+**PDD가 여기 나온다는 것 자체가 v3.85 스플라이스 회복이 결정 경로까지 도달했다는
+뜻이다.** 미측정은 '무해'가 아니라 **'미확인'**으로 적는다 — 리포트가 없을 때도
+조용히 '희석 없음'이 되지 않는 것을 테스트로 고정했다.
+
+### ⚠️ 테스트 하나를 약화가 아니라 강화 방향으로 교체했다
+
+`test_engine_judgment_path_does_not_import_dilution`이 `portfolio_pipeline.py`에
+**문자열 'dilution'이 없을 것**을 요구하고 있었다. 그런데 그 파일에서 지켜야 할
+불변조건은 문자열 부재가 아니라 **"비중과 배제가 바뀌지 않는다"**이다 — grep은
+우회되지만 후자는 안 된다. 밸류에이션 엔진 두 파일(`pipeline.py`·
+`expectation_gap_engine.py`)에는 문자열 규칙을 **그대로 두고**,
+`portfolio_pipeline.py`에 대해서만 희석 데이터 유/무 실행의 산출물이 동일한지를
+검증하는 행동 테스트로 대체했다(`tests/test_portfolio_dilution_wiring.py`, 10건).
+BRO `model_choice_reason`·`test_every_prediction_starts_open`과 같은 처리 — 상태를
+단언하던 테스트를 진짜 불변조건으로 다시 쓴다.
+
+**임계값 단일화**: `-0.05`가 `scripts/dilution_drag.py`에 리터럴로 박혀 있던 것을
+`engine.dilution.DRAG_MATERIAL_PCT`로 올려 리포트와 경계검토가 같은 값을
+참조하게 했다(v3.35 ①에서 판정 경계값이 실제로 갈렸던 재발 방지). **이 값은
+검증된 컷오프가 아니다** — PHASE 4가 쓰던 표시선 그대로이며, 넘었다고 배제·감점
+근거가 되지 않는다.
+
+**검증**: 테스트 1166 → **1177 통과**(신규 11) · 72종목 골든재현 8지표 완전 동일 ·
+fingerprint `60b83865…` **불변** · **ledger·매수리스트·공식 판정 0건 수정** ·
+`ENGINE_VERSION` v3.85 → **v3.86**.
+
+## ULTA(Ulta Beauty) 정식 분석 — COVID 저점 override + LFUS 모델선택 기준
+재적용, 3.5%p Gap이 등급을 갈랐다 (2026-09-13)
+
+연구 큐 다음 순위 ULTA(Ulta Beauty, Inc., 뷰티 전문 소매업, tier B, 스크리너 Gap
+추정 +4.77%p)를 정식분석했다.
+
+### COVID 저점 기저효과 - BKNG/URBN/CHDN/QSR와 동일 패턴
+
+5년 CAGR 기본 기준연도(`years[-6]`=2021, 회계기간 2020-02-02~2021-01-30)가 COVID
+셧다운 저점이다(매출 $6.152B, 전년 $7.398B 대비 -16.9%YoY) - 다음해(2022, 회계기간
+2021-01-31~2022-01-29)에 +40.3% 급반등한 것 자체가 회복반등이지 성장이 아니다.
+기준연도를 코로나 직전 마지막 정상연도 2020(매출 $7.398B)으로 **override**(매출·
+FCF 동일 적용, v3.21 원칙) - 5y CAGR이 15.04%(왜곡)→**8.98%**(6년 창)로 정정되어
+3y(6.68%)·10y(12.19%)와 훨씬 정합적이다.
+
+### 모델선택 - LFUS(2026-09-09) 기준의 두 번째 재적용
+
+FCF 3y CAGR이 실제로 음수(-2.99%, capex는 v3.20 재검토 임계값 미달)이고 영업이익률이
+16.05%→12.37%로 4년 연속 하락(Sephora-Kohl's 850개+ 매장 확장·e.l.f. 등 'dupe'
+저가대체재·Amazon의 온라인 뷰티 replenishment 1위 등장)해 처음엔 "고성장→수렴"
+서사로 two_stage를 골랐으나, 구조적할인(12.76%)까지 반영한 최종 Realistic
+Growth(4.25%)가 g_terminal(3.25%)과 겨우 **1.00%p** 차이임을 확인하고
+`single_stage`로 정정했다 - 2026-08-16 모델선택 연구·LFUS 자체정정이 확립한 기준
+(RG가 g_terminal에 근접하면 Gordon이 이론적으로 맞다)의 재적용이다. 두 모델의 Gap
+차이(two_stage -4.25%p vs single_stage -1.48%p)는 등급을 가르지 않았다(둘 다
+C등급, divergence 2.76%p로 경고 임계값 미만) - 그래도 이론적으로 옳은 쪽을 택했다.
+
+### 결과 — "적정가/경계선"(C등급), Gap -1.48%p, Confidence 94
+
+DRS 43.6(cyclical 자동분류 - COVID 매출 급락이 cyclicality를 만점(20.0)까지
+밀어올림, BSX·URBN·REGN과 동일 메커니즘). 순현금(2026-08-01 기준 현금 $158.5M,
+장기부채 없음 - 2020년 COVID 대비 $800M 텀론은 이미 상환됨). 강건성점검·SBC
+교차검증(SBC/FCF 3.5%, 매우 낮음) 모두 flip 없음. PIT_VALID(위반 0건). 실시간
+시총(~$23.40B, 2026-08-01 발행주식 42,805,000주 × 2026-09-11 종가 $546.78)이
+스크리너 근사(EntityPublicFloat 스냅샷, $16.87B)의 1.39배 - OKTA/MEDP/NBIX/
+NXT/ROKU/CAH/LFUS와 동일한 float 스냅샷 노후화 패턴.
+
+### 경쟁구도(2026-09-13 WebSearch) - 서사와 최신 실적이 갈린다
+
+Sephora의 Kohl's 파트너십(850개+ 매장)이 프리미엄 브랜드를 ULTA의 전통적
+강세지역에 배치해 잠식 중이고, e.l.f. 등 'dupe' 문화·Amazon의 온라인 뷰티
+replenishment 1위 등극이 겹쳐 2026년 3월 가이던스 발표 당시 "마진압박"
+서사로 주가가 -14.2% 급락했다. **그런데 2026-08-27 발표된 최신 분기(Ulta
+자체 회계연도 FY2026 Q2)는 매출 +8.9%YoY·comps +3.8%·EPS +13.3%YoY로
+컨센서스를 상회했고 전사 가이던스도 상향됐다**(순매출 6.7~7.2%, 영업이익
+8.3~9.3%, EPS 11.9~13.1%) - BSX·NBIX·ADBE와 같은 계열의 "서사가 최신
+실측보다 비관적" 패턴. 이 최신 분기는 1개 분기+1개년 가이던스뿐이라 KEYS
+기준(다년 실현 필요)에 못 미쳐 `realistic_growth_override`는 쓰지 않고
+falsification_conditions에 재검토 트리거로만 병기했다.
+
+### 배선
+
+`watchlist.json`에 ULTA 추가(72→73, UBER-URBN 사이). 열여섯 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 72→73), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 ULTA 추가, provenance 10/17년 확보 -
+2010~2016년은 ANNUAL_FORMS 창 밖이라 결측), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 ULTA 추가) - C등급이고 Lynch cyclical(사이즈
+캡·screener 거짓탈락 무관)이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+⚠️ **작성 중 v3.42 함정을 실제로 밟았다** - falsification_conditions 초안에
+"FY2026(Ulta 자체 라벨, **2026-02~2027-01**)"이라 적어 `thesis_monitor`의
+날짜추출 정규식이 "2026-02"를 감시 트리거로 오탐했다(TCOM 소송 집단기간·HQY
+데이터브리치·REGN 대차대조표 스냅샷과 동일 유형, 이번 세션 세 번째 재현).
+"다음 회계연도"로 정정한 뒤 ledger를 재생성했다(계산값 완전 동일).
+
+baseline 73종목으로 재동결(fingerprint `60b83865…`→`371f17f9…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## EME(EMCOR Group) 정식 분석 — FCF만 골라 훼손하는 새 유형의 기준연도
+왜곡, 매출은 멀쩡했다 (2026-09-13)
+
+연구 큐 다음 순위 EME(EMCOR Group, Inc., 전기·기계 건설 및 시설서비스,
+tier A, 스크리너 Gap 추정 +4.65%p)를 정식분석했다.
+
+### ⭐ 새로운 유형의 기준연도 왜곡 - 매출은 정상, FCF만 이상치
+
+5년 CAGR 기본 기준연도(2020)에서 **매출**은 -4.1%YoY로 완만한 코로나 조정일
+뿐이었으나(BKNG/URBN/CHDN/QSR처럼 극단적 저점이 아님), 같은 해 **FCF는 정반대로
+급등**했다($758.4M, 전년 $307.3M 대비 +146.7% - 코로나기 프로젝트 지연에 따른
+일시적 운전자본 개선으로 추정, 다음해 2021년 $282.6M로 -62.8% 급반락). 이
+급등한 값을 5y 창 기준연도로 쓰면 FCF 5y CAGR이 9.42%로 나와 3y(38.4%)·
+10y(17.8%) **양쪽보다 낮은 이상치**가 된다 - 지금까지의 사례들(매출·FCF가
+같은 방향으로 왜곡됨)과 달리 이번엔 두 계열이 반대 방향으로 어긋났다.
+
+v3.21 원칙(매출·FCF 동일 기준연도 적용)에 따라 기준연도를 코로나 직전 마지막
+정상연도 2019로 override - 매출 6y CAGR(10.81%)·FCF 6y CAGR(25.30%) 둘 다
+각자의 3y·10y 사이에 자연스럽게 위치해 정합성이 개선됐다. override 전후
+Realistic Growth 8.74%→**11.92%**, Gap -2.90%p→**+0.28%p**(등급은 C로 불변이나
+왜곡의 크기가 3.18%p였다 - min() 로직이 FCF 이상치를 그대로 채택해버린
+사례라는 점에서 CROX/QSR/CHDN와 달리 override 없이는 조용히 넘어갔을 것).
+
+### 모델선택 - override 후 RG-g_terminal 격차가 크다
+
+override 후 Realistic Growth(11.92%)가 g_terminal(3.25%)보다 8.67%p 높아
+`two_stage`를 채택했다(ULTA/LFUS와 반대 결론이지만 같은 기준의 적용 - RG가
+터미널에서 뚜렷이 멀면 다단계가 맞다). 데이터센터/AI 인프라 설비투자
+수퍼사이클(RPO $17.14B, +43.9%YoY 기록경신, 전기부문 매출 +50%YoY)이 근거.
+
+### 결과 — "적정가/경계선"(C등급), Gap +0.28%p, Confidence 94
+
+DRS 41.0(cyclical 자동분류 - 2020년 완만한 매출조정이 cyclicality를 밀어올림).
+순현금(장기부채 사실상 없음 - 파이낸스리스 부채 $6.1M만 확인, 운영리스는
+부채로 계상 안 함). 강건성점검 flip 없음(DRS 포함/제외 둘 다 C등급). SBC 데이터
+미확보(2009~2011년 옛 태그만 존재, 최근 연도 태그 없음) - sbc_cross_check
+없이 진행. PIT_VALID(위반 0건). 매출·영업이익 전 구간(2008~2025) M&A 단계상승
+없는 매끄러운 다년 성장(영업이익률 2.92%→10.09%, 데이터센터向 고마진 프로젝트
+믹스 전환으로 5년새 3배 이상 확장).
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+Sterling Infrastructure(STRL, 2026-09 M&A단계상승으로 이 프로젝트에서
+FRAMEWORK_MISMATCH 배제된 종목)와 Quanta Services가 데이터센터 미션크리티컬
+인프라 시장의 주요 경쟁자. demand_sensitivity_pct=0.40 - FIX(0.45, 같은
+데이터센터 테마)보다 소폭 낮게 채택한 이유는 EMCOR가 전기·기계·빌딩서비스·
+산업서비스·유틸리티 5개 세그먼트로 FIX보다 다각화돼 있어서다.
+
+### 배선
+
+`watchlist.json`에 EME 추가(73→74, EAT-ERIE 사이). 열일곱 번째 "알려진 예외"
+세트 확장: `test_monitor_state.py`(n_ledgers 73→74), `test_provenance.py`
+(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 EME 추가), `test_sbc_harvest.py`
+(`KNOWN_POST_SNAPSHOT_LEDGERS`에 EME 추가) - C등급이고 Lynch cyclical이라
+`test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 74종목으로 재동결(fingerprint `371f17f9…`→`8aed3a1e…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## PAYX(Paychex) 제외 — STRL과 같은 유형이나 이번엔 왜곡이 이미 실현됨
+(2026-09-13)
+
+큐 다음 순위 PAYX(Paychex, Inc., 급여·HR 아웃소싱, tier A, 스크리너 Gap
+추정 +4.53%p)를 조사했다. SEC XBRL 매출 실측(FY2008~2026)에서 FY2026
+(2025-06~2026-05) 매출이 +16.5%YoY로 직전 5개년(4.6~13.9%) 대비 뚜렷이
+가속함을 확인 - WebSearch로 원인 확인: **Paycor 전액현금 인수($4.1B,
+2025-04-14 종결)**가 원인이며, 회사 자체 실적발표가 "Paycor가 Q3 FY2026
+Management Solutions 매출성장의 약 19%를 기여"했다고 명시한다.
+
+**STRL(2026-09-11)과 정확히 같은 구조적 문제이나, 이번엔 왜곡이 이미
+실현돼 있다는 점이 다르다** - 3y/5y/10y CAGR 창(`years[-4]`/`[-6]`/`[-11]`)
+전부 종료연도가 FY2026이라 세 창 모두 이 인수효과를 동일하게 흡수한다.
+`cagr_base_year_override`는 시작연도만 바꿀 수 있고 **종료연도**의 왜곡은
+구조적으로 해소 불가능하다(EME가 같은 세션에서 확인한 "시작연도 왜곡은
+override로 해결 가능" 사례와 정반대). STRL은 이 왜곡이 아직 발생 전이라
+장부에 반영되기를 기다렸지만, PAYX는 이미 FY2026 실적이 확정돼 있어
+당장 재조사할 방법이 없다. 회사가 공시하는 "Paycor 기여분"도 단일분기
+비교치뿐이라 ROP 기준(다년 실현 오가닉 필요)에 못 미친다. `data/
+excluded_tickers.json`에 FRAMEWORK_MISMATCH로 등록 - ledger를 만들지
+않았고 watchlist·테스트·baseline 어느 것도 건드리지 않았다. FY2027
+실적(Paycor 완전 편입 첫 정상연도)이 나온 뒤 재조사할 것.
+
+## NYT(뉴욕타임스) 정식 분석 - 3y FCF 이상치는 애초에 계산에 안 쓰인다는
+것을 확인한 사례 (2026-09-13)
+
+큐 다음 순위 NYT(The New York Times Company, 디지털 구독 미디어, tier B,
+스크리너 Gap 추정 +4.09%p)를 정식분석했다.
+
+### 사전점검 - FCF 3y 이상치(69.16%)를 걱정했으나 애초에 안 쓰이는 값이었다
+
+2022년 OCF가 전년 대비 -44% 급감($269.1M→$150.7M, 원인 미확인 운전자본
+변동으로 추정)해 FCF 3y CAGR이 69.16%로 튀었다 - 5y(15.88%)·10y(14.01%)
+와 크게 괴리돼 EME와 비슷한 이상치인 줄 알았으나, `realistic_growth_
+estimate()` 코드를 직접 확인한 결과 **FCF는 5y CAGR 하나만 보수성 체크에
+쓰이고 3y/10y FCF 값은 함수에 아예 전달되지 않는다** - 3y 이상치가 계산에
+영향을 줄 수 없는 구조임을 확인한 뒤 override 없이 진행했다. 매출
+3y(6.96%)/5y(9.63%)/10y(5.99%)는 서로 정합적(2013년 뉴잉글랜드미디어
+그룹 매각 등 과거 M&A는 CAGR 창 훨씬 밖).
+
+### 모델선택 - EME(같은 세션, 8.67%p 격차)와 대비되는 애매한 구간
+
+Realistic Growth(6.85%)가 g_terminal(3.25%)보다 3.60%p 높아 EME만큼
+명확한 "고성장" 신호는 아니었다. 회사 자체 서사(디지털 구독 순증가입자가
+경쟁심화로 둔화 중 - Q1 31만→Q2 28만, 2026)가 "아직 고성장"이 아니라
+"성숙기 둔화"에 가까워 `single_stage`를 채택했다 - 두 모델 다 판정은
+"적정가/경계선"(C등급)으로 불변(two_stage Gap -0.30%p, single_stage Gap
++1.68%p, divergence 1.97%p로 경고 임계값 미만). 부수적으로 Gap과 RAR의
+부호가 어긋나면 Confidence에서 15점이 깎이는 `section_5_7_aligned` 체크가
+two_stage(Confidence 79)에서만 걸렸고 single_stage(94)에서는 안 걸렸다 -
+Gap이 0 근처인 경계 케이스의 부호 아티팩트로 판단, 모델선택 자체 근거로
+쓰지 않았다.
+
+### 결과 — "적정가/경계선"(C등급), Gap +1.68%p, Confidence 94
+
+DRS 43.0(cyclical 자동분류). 순현금(장기부채 없음, 2019~2020년경 완전
+상환 확인). SBC/FCF 13.5%(중간 수준) - SBC 차감해도 flip 없음(Gap
++0.98%p로 유지). PIT_VALID(위반 0건). 강건성점검 flip 없음.
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+Q2 2026 순증 디지털구독자 28만(전분기 31만에서 둔화) - 회사 스스로
+"경쟁심화·독자 지출 신중화"를 원인으로 지목(스트리밍·뉴스레터 등 광범위한
+구독경제와 소비자 지갑을 놓고 경쟁). Q3 가이던스는 여전히 견조(디지털
+구독매출 +12~15%YoY). 티어드 번들 가격인상($25→$30)이 ARPU +3.1% 견인.
+
+### 배선
+
+`watchlist.json`에 NYT 추가(74→75, NXT-OKTA 사이). 열여덟 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 74→75),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 NYT 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 NYT 추가) - C등급
+이고 Lynch cyclical이라 `test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 75종목으로 재동결(fingerprint `8aed3a1e…`→`685ecac8…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## OSIS(OSI Systems) 정식 분석 - 이번 배치 첫 A등급, 보안검색 과점시장의
+저평가 발견 (2026-09-13)
+
+큐 다음 순위 OSIS(OSI Systems, Inc., 보안검색·전자부품, tier B, 스크리너
+Gap 추정 +3.84%p)를 정식분석했다.
+
+### 사전점검 - FY2024 마이너스 OCF, M&A가 아니라 성장투자용 운전자본이었다
+
+FY2024 OCF가 -$87.5M로 급락(직전 3개년 모두 강한 양수)했으나, WebSearch로
+확인한 원인은 M&A가 아니라 **신규 수주 대응을 위한 운전자본 투자**(매출채권
+$293.6M 증가, 회사 자체 실적발표가 "최근 수주를 지원하기 위한 운전자본
+투자"로 명시)였다 - 같은 해 매출 +20.4%·영업이익률 확장(10.58%→12.29%)이
+동반된 성장통이지 실적 악화가 아니다. CAGR 창(3y/5y/10y 시작연도 2023/
+2021/2016, 종료연도 2026)이 이 2024년 값을 시작·종료점으로 쓰지 않아
+계산에는 애초에 영향이 없었다 - override 불필요.
+
+### 결과 — "저평가 가능성"(A등급), Gap +7.06%p, Confidence 94
+
+DRS 41.72(leverage 14.0 - net_debt/EBITDA 2.45배로 이번 배치 처음으로
+순부채 보유 종목, cyclical 자동분류). Realistic Growth 9.44%가
+g_terminal(3.25%)보다 6.19%p 높아 two_stage 채택(FY2024~2026 매출가속
++20.4%/+11.3%/+4.3%). 단, 모델 divergence가 0.37%p로 극히 작아
+single_stage였어도 Gap +6.69%p로 여전히 A등급 - 모델선택이 판정에 실질적
+영향을 주지 않는 드문 사례. 강건성점검·SBC교차검증(SBC/FCF 10.8%) 모두
+flip 없음. PIT_VALID(위반 0건). RAR +0.5964(강하게 양수).
+
+### 경쟁구도(2026-09-13 WebSearch)
+
+보안검색 시장은 OSI Systems·Smiths Detection·Thales·NEC·Leidos 5개
+사업자가 합산 40~50% 점유하는 과점구조(시장 자체는 2025 $9.92B→2030
+$13.80B, CAGR 6.8% 성장 전망). 2026-04 Leidos Security Enterprise
+Solutions+Analogic이 Altaris와 합작법인을 결성해 신규 통합 경쟁자로 부상
+중 - competitor_threat_weights에 반영. 2026-06 북미고객 $5천만 유지보수
+주문이 시사하듯 반복 서비스매출 비중 확대가 구조적 긍정 요인.
+
+### 배선
+
+`watchlist.json`에 OSIS 추가(75→76, OKTA-PATH 사이). 열아홉 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 75→76),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 OSIS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 OSIS 추가) - A등급
+이나 Lynch cyclical(사이즈캡 무관)이고 screen()과의 거짓탈락/승인여부는
+확인하지 않아 `test_pipeline.py`/`test_screener.py`는 무변경.
+⚠️ A등급 신규 발견이라 매수리스트 편입 전 정성 심층조사가 필요하다
+(v3.83 원칙 - `run_analysis()` 통과만으로는 자동 편입되지 않음).
+
+baseline 76종목으로 재동결(fingerprint `685ecac8…`→`0ec35e3c…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## LULU(Lululemon) 정식 분석 - 두 번째 연속 A등급, 실제 경쟁잠식 수치를
+확보한 사례 (2026-09-13)
+
+큐 다음 순위 LULU(Lululemon Athletica Inc., 프리미엄 애슬레저, tier B,
+스크리너 Gap 추정 +3.81%p)를 정식분석했다.
+
+### 사전점검 - COVID 트로프 없음, 실제 성장둔화 서사와 정합
+
+FY2021(2020-02-03~2021-01-31, 코로나 회계연도)는 매출 -하락이 아니라
++10.6%(감속이지 트로프 아님, e-commerce가 매장폐쇄를 상쇄한 잘 알려진
+서사)이라 override 불필요. 매출 3y(11.03%)/5y(20.33%)/10y(18.34%)가
+최근으로 갈수록 감속하는 자연스러운 패턴 - FY2026 실측 +4.9%가 회사
+가이던스(5~7%, "사상 최저 성장률")와 정합적이라 왜곡이 아니라 진짜
+성장둔화로 확인.
+
+### 결과 — "저평가 가능성"(A등급), Gap +8.22%p, Confidence 94
+
+Lynch 자동분류 fast_grower(캡 미바인딩). RG(8.57%)가 g_terminal(3.25%)
+보다 5.32%p 높아 two_stage 채택하나 divergence 1.15%p로 작아 모델선택이
+등급을 바꾸지 않음(single_stage여도 Gap +7.07%p로 A등급 유지). DRS
+37.48(competition_intensity 10.2 - 이번 세션 최고 수준, 아래 경쟁구도
+참고). 순현금(장기부채 없음). SBC/FCF 6.7%(낮음) - 차감해도 flip 없음.
+PIT_VALID(위반 0건). RAR +0.7706(강하게 양수).
+
+### 경쟁구도(2026-09-13 WebSearch) - 정성적 우려가 아니라 수치화된 잠식
+
+**Alo Yoga**가 프리미엄 DTC 세그먼트 점유율 약 14%까지 확대하며 Gen Z·
+밀레니얼 세대의 '쿨함' 포지셔닝을 성공적으로 선점했고, **Vuori**(기업가치
+$50억+, 2026년 IPO 검토 중)가 LULU 핵심 성장동력인 남성라인을 구체적으로
+잠식 중이다 - 둘 다 추상적 우려가 아니라 수치화된 점유율·밸류에이션
+근거가 있어 competitor_threat_weights를 DECK(0.15/0.10)보다 높은
+0.20/0.15로 채택했다. 여기에 CEO 공백(신규 CEO 탐색 중)·관세로 인한
+마진압박·핵심 여성라인 수요약화·부정적 온라인 여론까지 복합적으로
+겹쳐 FY2026 가이던스가 "사상 최저 성장률"(5~7%)로 하향됐다 - 이 복합적
+악재 서사에도 불구하고 엔진은 여전히 저평가로 판정(시장이 요구하는
+성장률(0.35~1.5%)이 엔진이 계산한 지속가능 성장(8.57%)보다 훨씬
+낮다는 뜻).
+
+### 배선
+
+`watchlist.json`에 LULU 추가(76→77, LFUS-MCK 사이). 스무 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 76→77),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 LULU 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 LULU 추가) - A등급
+이나 Lynch fast_grower(캡 미바인딩이라 사이즈캡 무관)이고 screen()과의
+거짓탈락/승인여부는 확인하지 않아 `test_pipeline.py`/`test_screener.py`는
+무변경. ⚠️ A등급 신규 발견이라 매수리스트 편입 전 정성 심층조사가 필요
+하다(v3.83 원칙 - `run_analysis()` 통과만으로는 자동 편입되지 않음).
+
+baseline 77종목으로 재동결(fingerprint `0ec35e3c…`→`0b2b68e1…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드 변경
+없음, 데이터 배선만).
+
+## WTS(Watts Water Technologies) 정식 분석 - 모델선택이 판정을 실질적으로
+좌우한 사례, 데이터센터 사이클 서사 확인 (2026-09-13)
+
+큐 다음 순위 WTS(Watts Water Technologies, Inc., 수처리·배관 인프라
+제품, tier B, 스크리너 Gap 추정 +3.80%p)를 정식분석했다. BLDR은 이미
+2026-09-09에 GENUINELY_WORSENED_NOT_STRUCTURAL로 문서화돼 있어(시점부
+판단, 영구 배제 아님) 새 정보 없이 건너뛰었다.
+
+### 사전점검 - M&A 왜곡·COVID 트로프 없음, 이중클래스 경제적 권리 확인
+
+SEC XBRL 18개년(FY2008~2025) 매출·FCF 전 구간에서 25% 초과 단계상승이
+없다(YoY 최대 +19.9%, 2021년 코로나 회복). 3y/5y/10y CAGR 기준연도
+(2022/2020/2015) 어느 해도 매출·FCF가 음수이거나 극단적 저점/고점이
+아니다 - override 불필요. capex/매출 5년평균 대비 델타 +0.32%p로
+v3.20 재검토 임계값(3%p) 한참 미달.
+
+**Class A/Class B 이중클래스 구조 확인 - RYAN/TW와 다른 유형(경제적
+권리 완전동일).** WebSearch로 회사 공시 원문 확인: Class B는 1주당
+10표(Class A는 1표)로 의결권만 다르고, 배당·청산분배는 두 클래스가
+**pro rata 동일**(Class A 27,466,829주 + Class B 5,916,290주 =
+33,383,119주 전체가 경제적 지분) - TW(Class C/D 경제권 0%)·RYAN(전
+클래스 합산 필요)과 달리 이번엔 "합산해야 하는가"라는 질문 자체가
+간단했다(전부 동일 경제권이라 단순 합산).
+
+### ⭐ 모델선택이 이 종목에서 판정 자체를 좌우 - 2026-08-16 연구 기준의
+경계선 재현
+
+Realistic Growth(6.97%, cyclical 자동분류)가 g_terminal(3.25%)보다
+3.72%p 높아 NYT(3.60%p, single_stage 채택)와 거의 동일한 경계 구간에
+위치했다. Lynch 유형이 fast_grower가 아니라 **cyclical로 자동분류**된
+점(2015년 일회성 영업손실 등 변동성 반영), 그리고 최근 가속의 상당부분이
+자본재 사이클 성격이 강한 단일 세그먼트(데이터센터, 매출의 중~고한자릿수
+%대)에 집중된 점을 근거로 single_stage를 채택했다.
+
+**두 모델의 판정 차이가 이번 세션에서 가장 극적이다** - two_stage
+채택시 Gap -5.86%p(D등급, 과대평가 가능성)인데 single_stage 채택시
+Gap -0.09%p(C등급, 적정가/경계선)로 **등급이 두 단계 갈린다**
+(divergence 5.77%p, 경고 임계값의 거의 2배 - 이번 세션 EME/OSIS/LULU의
+divergence 0.37~1.15%p와 대비되는 최대폭).
+
+### 결과 - "적정가/경계선"(C등급), Gap -0.09%p, Confidence 94
+
+강건성점검(DRS 포함/제외) flip 없음(judgment_flipped=False). SBC
+교차검증도 flip 없음(SBC/FCF 5.95%, 낮음). 순현금(net_debt/EBITDA
+-0.47배, 2026-06-28 10-Q 기준 장기부채 $108M vs 현금 $347.9M). PIT_VALID
+(위반 0건). RAR 방향성 경고 발동(기대수익률 음수 -13.61%) - RAR
+절대값 대신 Expectation Gap을 우선 참고.
+
+### 경쟁구도(2026-09-13 WebSearch) - 데이터센터 수요 서사 확인, 다만
+단일 세그먼트 집중 위험 명시
+
+2026 Q2 오가닉 성장 +12%(데이터센터 매출 전년比 3배 급증), FY2026
+가이던스 총매출 +14~17%/오가닉 +8~11%로 상향. 반면 주택·비기관
+신규건설은 지속 약세로 명시(회사 자체 실적발표 확인) - KEYS/KLAC과
+유사한 "trailing CAGR이 특정 세그먼트 수요 인플렉션을 완전히 반영하지
+못할 수 있다"는 구도이나, 데이터센터 비중이 아직 매출의 일부(중~고
+한자릿수%)라 그 정도의 override 근거는 아니라고 판단해 falsification_
+conditions에만 명시했다. 2025년 5건 볼트온 인수(Superior Boiler·Haws·
+Saudi Cast·EasyWater·I-CON)는 대부분 2025년 11월 종결이라 이번 CAGR
+창(FY2025까지)에는 실질 영향이 없으나, FY2026/2027 CAGR 창에는
+본격 반영될 것 - GEN/BRO/RYAN과 동일한 'M&A가 CAGR 구간에 걸리는'
+왜곡 여부를 다음 분석 시 재점검할 것을 falsification_conditions에
+명시했다. 경쟁사: Mueller Water Products(수처리 인프라·밸브 직접경쟁),
+A.O. Smith(Superior Boiler 인수 이후 보일러·온수기 라인 신규 중복),
+Pentair(수처리·필터링).
+
+### 배선
+
+`watchlist.json`에 WTS 추가(77→78, WM-ZTS 사이). 스물한 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 77→78),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 WTS 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 WTS 추가) - C등급
+이고 Lynch cyclical(사이즈캡·screener 거짓탈락 무관)이라
+`test_pipeline.py`/`test_screener.py`는 무변경.
+
+baseline 78종목으로 재동결(fingerprint `0b2b68e1…`→`1a933182…`). 테스트
+1177개 전부 통과. `ENGINE_VERSION` 무변경(v3.86 유지 - engine/ 코드
+변경 없음, 데이터 배선만).
+
+## v3.87 — TEAM(Atlassian) 정식 분석: IFRS 매출 태그 공백을 실제로 메운 첫
+사례 (2026-09-14)
+
+큐 다음 순위 TEAM(Atlassian Corporation, 엔터프라이즈 협업·개발도구 SaaS,
+tier S)을 정식분석했다. WTS까지 이어진 ~20종목 배치가 전부 데이터 배선
+뿐이었던 것과 달리, 이번엔 실제 **엔진 코드 결함**을 하나 고쳤다.
+
+### 엔진 결함 발견·수정 - IFRS 15 채택 이후 태그가 `METRIC_TAGS`에 없었다
+
+`SecCompanyFactsProvider.fetch_annual_financials('TEAM', ...)`가 매출을
+2016~2018·2021~2026만 채우고 **2019·2020 두 개년이 통째로 빠졌다**. SEC
+원자료를 직접 대조해 원인을 특정했다 - Atlassian은 영국 20-F 발행사에서
+미국 10-K 발행사로 전환하는 과도기(대략 2019~2022년)에 IFRS 15 채택
+이후 태그인 **`ifrs-full:RevenueFromContractsWithCustomers`**(복수형
+"Contracts")로 매출을 보고했는데, 이 태그가 `METRIC_TAGS["revenue"]`
+어디에도 등록돼 있지 않았다 - 기존 `ifrs-full:Revenue`(단수형)는 IPO
+직후 20-F까지만, `us-gaap:RevenueFromContractWithCustomerExcluding
+AssessedTax`는 완전한 10-K 체제 이후부터만 채워 그 사이 공백이 남았다.
+
+**BSX FY2015 사고와 같은 진단 절차**(공급자의 폴백 로직을 믿지 않고
+SEC 원자료 JSON을 직접 열어본다)로 잡았다. `METRIC_TAGS["revenue"]`
+최하위 우선순위에 새 태그를 추가(연도별로 이미 채워진 값은 안 건드리고
+빈 연도만 채우는 fill-forward 설계라 순수 additive)하고, v3.32 규칙에
+따라 `ENGINE_VERSION`을 v3.86→**v3.87**로 올렸다. 전체 테스트(1177개)가
+0건 회귀로 통과해 78종목 기존 매출 시계열이 전혀 안 바뀌었음을 확인한
+뒤 진행했다 - Simplicity First 판단상 관측 1건(TEAM)뿐이지만, 이건
+IFRS 15 채택이라는 보편적 회계전환 패턴이라 순수 추가·저위험 변경으로
+정당화된다(v3.60 MCK capex 태그 재우선순위와 동일 판단).
+
+### 이중클래스 구조 확인 - WTS와 같은 유형(경제적 권리 완전동일)
+
+Class A(1주 1표) + Class B(1주 10표, 창업자 보유)가 배당·청산분배
+**pari passu 동일**함을 WebSearch로 확인(WTS Class A/B와 동일 패턴) -
+전체 주식수(159,005,198 + 94,133,617 = 253,138,815주)를 그대로 합산해
+시가총액을 계산했다.
+
+### 모델선택 - 2026-08-16 연구 기준의 재확인(EME/OSIS/LULU와 같은 구간)
+
+Realistic Growth(8.84%)가 g_terminal(3.25%)보다 5.59%p 높아 EME
+(8.67%p)·OSIS(6.19%p)·LULU(5.32%p)와 같은 "뚜렷이 높음" 구간에 들어가고
+Lynch 자동분류도 fast_grower(캡 미바인딩)라 `two_stage`를 채택했다.
+모델괴리 5.82%p(경고 임계값의 거의 2배)이나 등급 자체는 불변
+(single_stage였어도 Gap -2.27%p로 같은 C등급) - WTS처럼 모델선택이
+등급을 가르는 경계 사례는 아니었다.
+
+### FCF 보수화 로직이 SBC 희석을 자동으로 걸러냈다
+
+매출가중 base growth(25.32%)를 FCF CAGR(10.25%)이 눌러 최종 실질성장이
+10.25%p 낮아졌다(`fcf_conservatism_applied`) - SaaS 특유의 SBC 대규모
+발행으로 현금전환이 회계이익보다 훨씬 보수적임을 그대로 반영한 것으로,
+별도 조정 없이 엔진 설계대로 작동했다.
+
+### FY2026 FCF -6.8%YoY(매출 +26.0%에도 불구) - 구조조정 지급액 증가로
+확인, 일회성
+
+회사 자체 FY2026 실적발표 언어로 원인 확인 - Data Center EOL 라이선스
+수익인식·pull-forward 효과가 매출 재가속(+26.0%)의 상당부분을 차지하는
+반면(일회성일 가능성), FCF 감소는 구조조정 관련 직원 지급액 증가가
+직접 원인. 데이터 아티팩트로 오판하지 않고 회사 공시 그대로 채택했다.
+
+### ⭐ SBC/FCF 121.8% - 이 트래커 관측 최고치, v3.23 가드가 정확히
+작동함을 확인
+
+SBC($1,606,561,000)가 FCF0($1,319,075,000)보다 **커서** SBC차감
+시나리오의 FCF0가 음수(-$287,486,000)가 된다 - `sbc_cross_check`가
+`implied_growth_sbc_adjusted`/`gap_sbc_adjusted`/`judgment_sbc_adjusted`
+전부 `None`으로 정확히 반환하고 `[Model Not Applicable]` 경고를 남겼다.
+이 임계값(SBC>100%)을 실제로 넘긴 최초 관측 사례라 v3.23 가드의 설계가
+실전에서 처음 발동을 확인했다.
+
+### 결과 - "적정가/경계선"(C등급), Gap -3.92%p, Confidence 94
+
+DRS 26.4(fast_grower, 캡 미바인딩). 강건성점검 flip 없음(DRS 포함/제외
+둘 다 C등급). PIT_VALID(위반 0건). RAR 방향성 경고 발동(기대수익률
+음수 -7.61%) - RAR 절대값 대신 Expectation Gap을 우선 참고.
+
+### 경쟁구도(2026-09-14 WebSearch)
+
+`competitor_threat_weights=[0.20(Microsoft - 365/Teams/Loop/Planner
+생태계에 AI를 결합한 번들링 위협이 이 트래커가 다룬 SaaS 경쟁자 중
+최고 수준), 0.10(monday.com/Notion - 프로젝트관리·문서협업 직접 잠식,
+monday.com은 이미 MNDY로 별도 분석돼 있음)]`. Rovo(AI) 도입 고객의
+ARR 확장속도가 미도입 고객 대비 약 2배로 확인돼 `market_share_trend_
+pp_per_year=0.2`로 반영하되, Microsoft의 구조적 번들링 우위를 고려해
+과도하게 높이지 않았다.
+
+### 배선
+
+`watchlist.json`에 TEAM 추가(78→79, TCOM-TENB 사이). 스물두 번째
+"알려진 예외" 세트 확장: `test_monitor_state.py`(n_ledgers 78→79),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 TEAM 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 TEAM 추가) - C등급
+이고 Lynch fast_grower(캡 미바인딩이라 사이즈캡 무관)이고 screen()과의
+거짓탈락/승인여부는 확인하지 않아 `test_pipeline.py`/`test_screener.py`는
+무변경.
+
+baseline 79종목으로 재동결(fingerprint `1a933182…`→`90acc2d3…`,
+`v3.87:1` 스탬프 신규). 테스트 1177개 전부 통과. `ENGINE_VERSION`
+v3.86 → **v3.87**(METRIC_TAGS 수정 - v3.32 규칙에 따라 상수 갱신).
+
+## PSN(Parsons Corporation) 정식 분석 - M&A 우려를 실측으로 기각한 사례,
+falsification_conditions의 "Q2 2026" 표현이 감시 트리거를 오탐시킨 새 실례
+(2026-09-14)
+
+큐 다음 순위 PSN(Parsons Corporation, 국방·인프라·사이버보안 엔지니어링,
+tier A)을 정식분석했다.
+
+### 사전점검 - Xator 인수($400M, 2022-06 종결) 우려를 실측으로 기각
+
+FY2023(+29.7%YoY)·FY2024(+24.0%YoY) 매출 급증을 보고 GEN/BRO/ROP/CROX/
+CHDN/QSR/WSC/EQT류의 'M&A가 CAGR 구간에 걸림' 패턴을 의심했으나,
+WebSearch로 회사 자체 공시를 확인한 결과 **정반대였다** - FY2023 조직
+성장률 **+34%**(총성장 29.7%보다 오히려 높음, Xator 기여를 감안해도
+성장의 대부분이 유기적), FY2024 조직성장 **+22%**(총 24.0%와 거의
+일치). 즉 Xator($400M, 연매출 ~$300M 규모)는 회사 규모($4.2B→$6.75B,
++$2.5B 증가) 대비 작아 CAGR을 실질적으로 왜곡하지 않았다 - override
+불필요로 확정.
+
+### ⭐ 대신 실제로 발견한 것 - 3년 연속 극심한 감속과 "기밀계약" 리스크
+
+FY2023 +34% → FY2024 +22% → **FY2025 −9%**(기밀계약 감소가 원인, 제외
+시 +8%)로 조직성장률이 3년 연속 급감속했고, 가장 최근 분기(회사 자체
+공시 기준)도 총매출 +8%/기밀계약 제외 조직성장 **+3%**까지 내려왔다
+(회사 장기목표는 "중간 한자릿수%대 이상"). trailing CAGR(3y 14.90%/5y
+10.18%)이 이 감속을 아직 다 반영하지 못할 위험을 `model_choice_reason`·
+`subjective_input_basis`·`falsification_conditions`에 전부 명시했다 -
+다만 다년 안정적 오가닉 수치가 아니라 매년 큰 폭으로 바뀌는 수치라
+`realistic_growth_override`는 쓰지 않았다(KEYS가 확립한 "1개년
+가이던스만으로는 override 부적격" 원칙과 동일).
+
+### 결과 - "저평가 가능성"(A등급), Gap +8.15%p, Confidence 94
+
+DRS 41.52(cyclical 자동분류). 모델괴리 0.88%p(경고 임계값 미만 - 어느
+모델을 써도 A등급 불변). 강건성점검·SBC교차검증(SBC/FCF 10.5%, 낮음)
+모두 flip 없음. PIT_VALID(위반 0건). 10년 데이터 미확보(9개년만 존재)로
+5년 CAGR 대체 사실을 `data_limitations`에 자동 기록. 순부채
+$771.4M(net_debt/EBITDA≈1.44배), 단일클래스 주식구조(발행주식
+106,978,521주, 2026-04-21 10-Q 표지 기준).
+
+### ⚠️ 실행 중 잡은 새 실례 - "Q2 2026" 표기가 감시 트리거로 오탐됨
+
+`falsification_conditions` 초안에 "(현재 Q2 2026 수준이 이미 하단)"이라
+적었더니 `thesis_monitor`의 날짜추출 정규식(`Q3 2026`/`Q2 FY2026`류
+패턴)이 이를 **분기말 날짜(2026-06-30)로 오인**해 `test_real_repo_
+today_has_no_unreviewed_backlog`가 실패했다 - TCOM 소송 집단기간·HQY
+데이터브리치·REGN 대차대조표 스냅샷·ULTA 회계연도 라벨에 이어 **다섯
+번째 재현**이지만, 이번엔 날짜 자체가 아니라 **"Q+숫자 연도" 분기표기가
+날짜로 파싱된 새 변종**이다. "직전 분기 실적 수준이 이미 하단"으로
+정정한 뒤 ledger를 삭제·재생성했다(계산값은 완전히 동일).
+
+### 배선
+
+`watchlist.json`에 PSN 추가(79→80, PINS-PTC 사이). 스물세 번째 "알려진
+예외" 세트 확장: `test_monitor_state.py`(n_ledgers 79→80),
+`test_provenance.py`(`KNOWN_PROVENANCE_RECORDED_LEDGERS`에 PSN 추가),
+`test_sbc_harvest.py`(`KNOWN_POST_SNAPSHOT_LEDGERS`에 PSN 추가) - A등급
+이고 Lynch cyclical(사이즈캡·screener 거짓탈락 무관)이라
+`test_pipeline.py`/`test_screener.py`는 무변경. ⚠️ A등급 신규 발견이라
+매수리스트 편입 전 정성 심층조사가 필요하다(v3.83 원칙).
+
+baseline 80종목으로 재동결(fingerprint `90acc2d3…`→`f5709edf…`,
+`v3.87:2` 스탬프). 테스트 1177개 전부 통과. `ENGINE_VERSION` 무변경
+(v3.87 유지 - engine/ 코드 변경 없음, 데이터 배선만).
+
+## 보유 포트폴리오 8종목 심화 재분석 — 미판정 자본 8.76%를 처음으로 채우고,
+새로운 데이터 함정 1건을 발견 (2026-09-16, 사용자 요청 "내 원래 포트폴리오
+기업들 심화 재분석")
+
+지금까지의 배치는 전부 **스크리닝 큐 후보**를 대상으로 했다. 이번엔 사용자가
+실제로 보유한 8종목(`portfolio/holdings.json`, 평가액 ₩5,802,074)이 대상이라
+"프레임워크가 안 맞으니 제외"라는 답이 허용되지 않는다 — 보유 중인 자본에는
+어떤 형태로든 판단을 줘야 한다. 그 제약이 아래 세 가지를 낳았다.
+
+`scripts/holdings_deep_review_2026_09_16.py`(신규, 새 밸류에이션 로직 0줄) —
+`recompute_gap_at_market_cap`·`inputs_from_ledger`·`run_analysis`·`deep_screen`을
+호출만 한다. **`ledger/`에 한 줄도 쓰지 않는다**(v3.42) — 산출물은
+`reports/holdings_deep_review_2026-09-16.json`.
+
+### ① 가격 드리프트 — 8종목 중 7종목이 하락, 등급 변동은 1건
+
+| 종목 | 비중 | 주가(ledger→현재) | Gap | 등급 |
+|---|---:|---|---|---|
+| **PTC** | 38.39% | $150.08→$132.75 (**−11.5%**) | +4.08→**+5.55%p** | **C→B** |
+| VRT | 19.22% | $280.53→$234.61 (**−16.4%**) | −1.24→+0.83%p | C→C |
+| SE | 13.44% | $112.09→$102.65 (−8.4%) | +12.33→+13.41%p | A→A |
+| DLO | 11.12% | $15.52→$14.45 (−6.9%) | +23.74→+24.65%p | S→S |
+| NOW | 6.73% | $141.26→$141.90 (+0.5%) | +8.30→+8.24%p | A→A |
+| ACGL | 2.34% | $98.10→$97.04 (−1.1%) | +24.45→+24.61%p | S→S |
+
+⚠️ **이 표를 "더 싸졌다"로 읽으면 안 된다** — 주가가 빠지면 Gap은 **반드시**
+벌어진다(IG만 내려가고 RG는 재무제표에서만 나온다). v3.42가 TTD에서 실측한
+가치함정의 수학적 원리 그대로이며, 반증조건과 **반드시 함께** 봐야 한다.
+PTC는 2026-09-10에 이미 같은 이유로 C→B를 확인하고 `thesis/PTC_2026-09-10.json`에
+**HOLD**(ADD 아님)로 기록했다 — CONCENTRATION 플래그가 걸린 최대비중 종목의
+추가 편입 근거가 될 수 없다는 판단은 그대로 유효하다.
+
+### ⭐ ② 신규 데이터 함정 — **같은 태그 안에서 정의가 바뀐다**(경고 불가 유형)
+
+SEC 원자료 전수 대조에서 **SE 한 종목만** 불일치했다: ledger FY2025 매출
+$22.938B vs provider 현재 $19.625B(**−14.4%**).
+
+원인: Sea Limited가 FY2025 20-F(2026-04-17 제출)에서 매출 태깅을 재분류했다.
+`us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax`가 FY2024까지는
+총매출이었는데 FY2025부터 **ASC 606 계약매출만** 담고, 총매출은
+`us-gaap:Revenues`로 옮겨졌다. 차액 $3.313B은 Monee(구 SeaMoney) 이자수익 등
+비계약 매출이다(회사 공시 Monee GAAP 매출 $3.8B와 정합).
+
+**ledger가 옳다** — 회사 FY2025 실적발표 원문이 "GAAP 총매출 US$22.9B
+(+36.4% YoY)"로 명시한다(TYL SBC 3배 오류 교훈대로 1차 출처로 확인했다).
+
+⚠️ **이 함정이 위험한 이유는 아무 경고도 나오지 않는다는 것이다.** provider의
+`[태그 혼재]` 경고는 시리즈가 **여러 태그에 걸칠 때만** 발동하는데, SE는
+FY2016~2025가 **전부 같은 태그**라 경고가 원리적으로 못 뜬다. 지금까지 기록된
+유형과 전부 다르다:
+  - v3.61/RQ-004 `A_라벨시프트`: 회계연도 라벨 충돌 → 연도가 밀린다
+  - RQ-004 `B_태그정의`: 연도마다 **다른 태그** → `[태그 혼재]` 발동
+  - RQ-004 `E_정규화의심`: 벤더 vs SEC 정의 차이
+  - **신규: 같은 태그, 발행사가 중간에 정의를 재분류 → 탐지 수단 없음**
+
+**`METRIC_TAGS` 우선순위는 바꾸지 않았다** — 순서를 뒤집으면 80종목 전체가
+조용히 움직인다(v3.60 MCK capex 재우선순위가 *순수 추가*라 안전했던 것과
+성격이 다르다). 관측 1건으로 근거 없는 재조정을 하지 않는다는 반복 원칙 그대로.
+
+**⭐ 그런데 판정은 전혀 안 바뀐다 — v3.67 규모조건부 상한이 오류를 통째로 흡수했다.**
+provider의 잘못된 시리즈로 재실행하면 원시 성장률이 실제로 달라지지만
+(`final_realistic_growth` 23.56% → 18.85%), **최종 RG는 양쪽 다 17.87%**로
+동일하다 — SE는 $12~25B 규모 구간의 상한(명목 17.87%)에 바인딩돼 있어 그
+아래 계산이 결과에 도달하지 못한다. Gap +12.33%p·A등급 완전 불변.
+**M-1이 "캡이 바인딩되면 성장분석이 결과에 기여하지 않는다"고 경고한 성질이
+여기서는 14.4% 데이터 오류를 막아준 방패로 작동했다** — 두 서술은 동시에
+참이며, 뒤집어 말하면 SE의 Gap은 성장분석이 아니라 `상한 − IG`가 만든다.
+
+### ③ VRT — 인수 발표가 ledger에 없지만, 밸류에이션에는 무해함을 실측
+
+2026-09-02 UtilityInnovation Group 인수 발표($1.45B 현금 + 최대 $1.15B 언아웃)가
+ledger(2026-09-04)의 순부채($129.2M, 2026-06-30 10-Q 기준)에 반영돼 있지 않다.
+시나리오 재계산 결과:
+
+| 시나리오 | 순부채 | DRS | Gap |
+|---|---|---|---|
+| ① ledger 그대로 | $129.2M | 41.20 | −1.24%p |
+| ② 인수대금 $1.45B 반영 | $1,579M | 41.20 | **−1.24%p(불변)** |
+| ③ + 언아웃 전액 | $2,729M | 45.20 | −1.49%p |
+
+②에서 아무것도 안 움직이는 이유는 `leverage_score`가 계단함수라 0.06배와
+0.74배가 같은 최저 구간에 들어가기 때문이다. 판정은 셋 다 C(적정가/경계선).
+**즉 이 인수는 이 엔진에서 밸류에이션 사건이 아니다** — 정직하게 그대로 적는다.
+다만 (a) 향후 GEN/BRO/ROP식 M&A CAGR 왜곡의 씨앗이고, (b) 주가 −16.4%의 실제
+원인은 인수 조건 미공개 + Q2 매출 미스 + AI 인프라 복합 멀티플 압축이다
+(5월 고점 대비 −31%). VRT는 모델괴리 **10.88%p**로 보유 8종목 중 최대라
+Gap 절대값 자체를 신뢰하면 안 되는 종목이기도 하다.
+
+### ⭐ ④ 미판정 2종목(MU·ALB) — 문제는 "분석 불가"가 아니라 **경로 누락**이었다
+
+MU(5.65%)·ALB(3.11%), 합계 **8.76%의 자본이 ledger에도 watchlist에도 없어
+어떤 자동 경로에도 안 걸리는 상태**였다. `run_analysis()`는 실제로 거부하지만
+(ALB는 v3.19 CAGR 가드가 `ValueError`), **`deep_screen`은 둘 다 정상 실행된다** —
+ALB의 경우 `'5년 FCF CAGR 계산 불가 ... 매출 가중평균만으로 계산됨'`을
+`data_limitations`에 남기고 우아하게 강등(graceful degradation)한다. 즉 둘은
+처음부터 분석 불가능했던 게 아니라, **그걸 처리할 수 있는 경로(watchlist →
+deep_screen)에 등록되지 않았을 뿐**이다. 둘 다 `watchlist.json`에 추가했다.
+
+- **MU 참조 스크린**: Gap **−3.85%p, 적정가/경계선(C)**. 시총 $1,047.6B
+  (1,129,393,151주 × $927.60), FCF수익률 0.16%, DRS 66.0(cyclicality·
+  margin_volatility 만점).
+  **⭐ FCF0를 어느 국면에서 잡아도 판정이 안 바뀐다**(이번 재분석의 핵심 측정):
+
+  | FCF0 기준 | 값 | FCF수익률 | Gap | 판정 |
+  |---|---:|---:|---:|---|
+  | FY2025 연차(사이클 저점) | $1.668B | 0.16% | −3.85%p | 적정가/경계선 |
+  | TTM(FY25 Q4+FY26 9M, 고점) | $26.169B | 2.50% | −1.31%p | 적정가/경계선 |
+  | FY2026 9M 연환산 | $34.80B | 3.32% | −0.44%p | 적정가/경계선 |
+
+  2026-08-14/09-04 기록은 이 축에서 "F등급(−44.51%p)~C등급(+1.09%p)"까지
+  갈린다고 봤는데, 현재 가격·현재 데이터로는 그 범위가 **−3.85 ~ −0.44%p로
+  붕괴**해 전부 C에 들어온다. **+111.7% 수익 중인 최대 승자에 대해 엔진이
+  내놓는 답은 어느 FCF0 선택으로도 "싸다"가 아니라 "적정가"다.**
+  연차/TTM FCF 격차는 **15.7배**(매출 2.42배) — FY2026 분기 매출이
+  Q1 $13.6B → Q2 $23.9B → Q3 $41.5B로 폭증하는 사이클 고점 국면이다.
+- **ALB 참조 스크린**: Gap **−7.56%p, 과대평가 가능성(D)**. RG가 **음수(−1.42%)**
+  인데 3년 매출 CAGR −11.1%(FY2023 고점에서 시작한 창의 산물이라 액면 그대로
+  믿을 수 없다). DRS **72.0**(보유 8종목 중 최고). 긍정 신호도 실측했다 —
+  **FY2025 FCF가 +$692M으로 3년 만에 흑자 전환**했고 capex가 $1.69B→$0.59B로
+  급감(리튬 증설 규율)하며 OCF는 $0.70B→$1.28B로 개선됐다.
+
+⚠️ **이 둘은 공식 판정이 아니다** — `deep_screen`은 competition_intensity 12.0·
+demand_sensitivity 0.15·net_debt/EBITDA 0.406(전부 corpus 중앙값)을 대체 입력하고
+모델을 single_stage로 고정한다. BSX 거짓탈락이 보여준 대로 이 대체값이 실제와
+크게 다를 수 있다. 그래도 **"판정 없음"보다는 훨씬 낫다**는 것이 이번 처리의
+요지다.
+
+둘 다 `data/excluded_tickers.json`에 **FRAMEWORK_MISMATCH로 등록**했다(42건) —
+큐 재등장 방지. ⚠️ **레지스트리 등록과 watchlist 등록은 상충하지 않는다**:
+전자는 "스크리닝 후보로 다시 올리지 마라", 후자는 "보유 중이니 감시하라"로
+목적이 다르다. MU/ALB가 두 곳에 동시에 있는 첫 사례다.
+MU 재조사 조건은 **FY2026 10-K(2026-10월경) 하나로는 부족하다** — 그 해가
+정확히 사이클 고점이기 때문이며, 사이클이 한 바퀴 돌아 정상화 FCF를 추정할
+근거가 생겨야 한다.
+
+### ⚠️ 테스트 하나를 약화가 아니라 강화 방향으로 교체했다
+
+`test_watchlist_file_exists_and_seeds_from_ledger`가 **watchlist == ledger 전수
+일치**를 요구해 MU/ALB 추가로 실패했다. 그런데 `watchlist.json`은 스스로
+*"ledger가 없는 티커는 SEC 원자료로 전면 재계산한다(engine/deep_screen)"*·
+*"시작점일 뿐이며 자유롭게 편집할 것"*이라 적고 있다 — 그 테스트는 **불변조건이
+아니라 씨앗 상태를 단언**하고 있었다. 진짜 불변조건 둘로 나눠 다시 썼다:
+`test_every_analyzed_ticker_is_watched`(ledger 있는 종목이 감시에서 빠지면 실패 —
+전보다 **강한** 조건)와 `test_ledgerless_watchlist_entries_are_declared`
+(ledger 없는 감시 대상은 선언된 것만 — 오타 티커가 매일 네트워크 호출을
+유발하고 실패를 조용히 쌓는 것을 막는다). BRO `model_choice_reason`·
+`test_every_prediction_starts_open`과 같은 처리다.
+
+### 부수 확인
+
+SE의 −8.4%는 신규 펀더멘털 악재가 아니라 8월 랠리 후 차익실현 + 임원
+10b5-1 매도(COO·CCO·Shopee CPO)로 확인됐다 — SE 반증조건 4개 중 발동 0건.
+나머지 5종목의 반증조건은 전부 트리거 시점이 2026-11월경(Q3 실적) 이후라
+이번 회차에 새로 확정할 수 있는 항목이 없다. PTC·ACGL·S등급 10종목은
+2026-09-10에 이미 전수 대조를 마쳤다.
+
+**검증**: 테스트 1,177 → **1,178개 전부 통과** · **`ledger/` 0건 수정** ·
+baseline fingerprint `f5709edf…` **불변** · `portfolio/holdings.json` 무변경 ·
+`engine/` 무변경이라 `ENGINE_VERSION`은 **v3.87 그대로**(v3.32 규칙).

@@ -55,8 +55,22 @@ def test_generation_does_not_import_requests_at_module_level():
 
 
 # ── ② 금액까지 낸다 ─────────────────────────────────────────────────────
+def _top_weight_amount(capital):
+    """`_latest('buylist_')`가 실제로 가리키는 파일에서 최상위 비중을 읽어
+    기대 금액을 계산한다. 특정 buylist 스냅샷의 최상위 비중(예: 구
+    buylist_2026-08-03.json의 GEN 18.00%)을 하드코딩하면, 그 뒤에 새
+    buylist_<날짜>.json이 나올 때마다(2026-09-06 발행 등) 테스트가 매번
+    깨진다 - 이 테스트가 고정해야 할 불변조건은 '금액으로 환산됐는가'이지
+    '어느 스냅샷이 최신인가'가 아니다."""
+    path = B._latest("buylist_")
+    data = B.load_json(path)
+    rows = data if isinstance(data, list) else data.get("positions") or []
+    top_w = max(r["weight_final"] for r in rows)
+    return B.won(capital * top_w)
+
+
 def test_buylist_renders_actual_amounts(text):
-    assert "1,800,000원" in text, "비중을 금액으로 환산하지 못했다"
+    assert _top_weight_amount(10_000_000) in text, "비중을 금액으로 환산하지 못했다"
     assert "10,000,000원" in text
     assert "**합계** | **100.00%**" in text
 
@@ -65,7 +79,8 @@ def test_amounts_scale_with_capital():
     os.chdir(ROOT)
     a, _ = B.build(date(2026, 8, 28), 10_000_000, 8)
     b, _ = B.build(date(2026, 8, 28), 20_000_000, 8)
-    assert "1,800,000원" in a and "3,600,000원" in b
+    assert _top_weight_amount(10_000_000) in a
+    assert _top_weight_amount(20_000_000) in b
 
 
 def test_share_count_is_not_invented(text):
@@ -287,3 +302,78 @@ def test_research_queue_warns_when_persistence_not_discriminating(monkeypatch, t
     monkeypatch.setattr(B, "REPORTS", str(tmp_path))
     out = "\n".join(B.section_research_queue())
     assert "아직 아무것도 구분하지 못한다" in out
+
+
+# ── 실제 보유 vs 시스템 목표 ────────────────────────────────────────────
+def test_reconciliation_section_appears_in_brief(text):
+    assert "실제 보유 vs 시스템 목표" in text
+
+
+def test_reconciliation_lists_every_held_ticker(text):
+    """
+    «판정 불가라 표에서 뺀다»가 가장 나쁜 처리다 - 판정 불가가 «문제 없음»으로
+    보이게 된다(is_insurer·sbc_cross_check·holdings_overlap이 매번 경계해온
+    «데이터 없음을 안전으로 오독» 원칙). 보유 종목은 하나도 빠짐없이 표에
+    올라와야 한다.
+    """
+    os.chdir(ROOT)
+    holdings = B.load_json(B.HOLDINGS_PATH)
+    if not holdings:
+        pytest.skip("holdings.json 없음")
+    section = "\n".join(B.section_reconciliation())
+    for p in holdings["positions"]:
+        assert f"**{p['ticker']}**" in section, p["ticker"]
+
+
+def test_reconciliation_has_no_buy_or_sell_column():
+    """
+    차이를 «조치»로 번역하는 순간, 실현수익률 관측이 0건인 신호가 곧바로
+    자본배분이 된다 - engine/portfolio.py(v3.82)·engine/thesis.py(v3.48)가
+    구조로 못박은 것과 같은 경계다.
+    """
+    os.chdir(ROOT)
+    section = "\n".join(B.section_reconciliation())
+    header = next(l for l in section.splitlines() if l.startswith("| 종목 |"))
+    for banned in ("매도", "매수", "조치", "액션", "추천"):
+        assert banned not in header, header
+    assert "청산하라»가 아니다" in section
+
+
+def test_reconciliation_missing_holdings_degrades_gracefully(monkeypatch, tmp_path):
+    os.chdir(ROOT)
+    monkeypatch.setattr(B, "HOLDINGS_PATH", str(tmp_path / "nope.json"))
+    out = "\n".join(B.section_reconciliation())
+    assert "찾지 못해" in out
+
+
+def test_reconciliation_never_writes_to_holdings_or_ledger():
+    """보유 상태는 사람이 유지한다(v3.64 «확인은 사람의 행위»)."""
+    os.chdir(ROOT)
+    hp = ROOT / B.HOLDINGS_PATH
+    before = (os.path.getmtime(hp), hp.read_bytes())
+    led_before = {p: os.path.getmtime(p)
+                  for p in sorted((ROOT / "ledger").glob("*.json"))}
+    B.section_reconciliation()
+    assert (os.path.getmtime(hp), hp.read_bytes()) == before
+    assert {p: os.path.getmtime(p)
+            for p in sorted((ROOT / "ledger").glob("*.json"))} == led_before
+
+
+def test_reconciliation_reuses_pipeline_exclusion_reasons():
+    """
+    «왜 목표에 없는가»를 다시 계산하지 않는다 - 파이프라인 진단 리포트가 이미
+    갖고 있는 사유를 그대로 읽는다(중복 구현이 두 계산을 어긋나게 만든다).
+    """
+    os.chdir(ROOT)
+    diag_path = B._latest("portfolio_pipeline_")
+    if not diag_path:
+        pytest.skip("파이프라인 진단 리포트 없음")
+    diag = B.load_json(diag_path)
+    section = "\n".join(B.section_reconciliation())
+    holdings = B.load_json(B.HOLDINGS_PATH)
+    held = {p["ticker"] for p in holdings["positions"]}
+    excluded_and_held = [r["ticker"] for r in diag.get("stage1_excluded", [])
+                         if r["ticker"] in held]
+    for t in excluded_and_held:
+        line = next(l for l in section.splitlines() if l.startswith(f"| **{t}**"))
+        assert "G1" in line or "G2" in line or "G3" in line, line

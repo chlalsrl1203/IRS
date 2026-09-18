@@ -1,0 +1,439 @@
+{
+  "meta": {
+    "ticker": "RYAN",
+    "company_name": "Ryan Specialty Holdings, Inc.",
+    "analyzed_at": "2026-09-02T09:13:17.457489+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001849253, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-01 종가 $42.32)",
+      "WebSearch: RYAN 2026-07-27 10-Q 표지(Class A/B 주식수), Q2 2026 실적발표(2026-07-30 전후), 경쟁구도"
+    ],
+    "falsification_conditions": "다음 분기(Q3 2026) 오가닉 성장률이 FY2026 가이던스 하단(5%)을 밑돌거나, 손해보험 요율(특히 재산보험 property pricing)이 계속 하락하며 캐주얼티/바인딩 세그먼트 경쟁이 심화돼 EBITDA 마진 가이던스(2025년 36.1% 대비 -50~100bp)를 추가로 하회하면 이 판정을 재검토할 것.",
+    "price_at_analysis": 42.32,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-02",
+      "filing_dates_by_year": {
+        "2019": "2022-03-16",
+        "2020": "2022-03-16",
+        "2021": "2022-03-16",
+        "2022": "2023-03-01",
+        "2023": "2024-02-28",
+        "2024": "2025-02-21",
+        "2025": "2026-02-13"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 4,
+      "n_missing": 3,
+      "missing_fields": [
+        "revenue_by_year[2019]",
+        "revenue_by_year[2020]",
+        "revenue_by_year[2021]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1711861000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 2026596000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 2455671000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2994582000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-13",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(7개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(24.08%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "RYAN",
+    "company_name": "Ryan Specialty Holdings, Inc.",
+    "revenue_by_year": {
+      "2019": 765111000.0,
+      "2020": 1018274000.0,
+      "2021": 1432771000.0,
+      "2022": 1711861000.0,
+      "2023": 2026596000.0,
+      "2024": 2455671000.0,
+      "2025": 2994582000.0
+    },
+    "operating_income_by_year": {
+      "2019": 101038000.0,
+      "2020": 158538000.0,
+      "2021": 186624000.0,
+      "2022": 289508000.0,
+      "2023": 359081000.0,
+      "2024": 427812000.0,
+      "2025": 493640000.0
+    },
+    "operating_cashflow_by_year": {
+      "2019": 149507000.0,
+      "2020": 135393000.0,
+      "2021": 273493000.0,
+      "2022": 335514000.0,
+      "2023": 477203000.0,
+      "2024": 514868000.0,
+      "2025": 643667000.0
+    },
+    "capex_by_year": {
+      "2019": 100000.0,
+      "2020": 5236000.0,
+      "2021": 343158000.0,
+      "2022": 7714000.0,
+      "2023": 0.0,
+      "2024": 0.0,
+      "2025": 3014000.0
+    },
+    "market_cap": 10826081701.2,
+    "net_debt": 3187954000.0,
+    "ebitda": 781129000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.2,
+      0.12
+    ],
+    "market_share_trend_pp_per_year": 0.3,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.18,
+    "subjective_input_basis": "competitor_threat_weights=[0.20(AmWINS), 0.12(CRC Group)] - AmWINS가 업계 최대(비상장, 압도적 글로벌 플레이스먼트 역량·독점적 데이터분석 플랫폼)로 최대 위협, CRC Group(Truist Insurance 소유)이 2선 - RYAN은 MGA(총괄대리점) 비중이 높은 독자 언더라이팅 시설로 차별화돼 완전 직접경쟁보다는 낮게 반영. market_share_trend_pp_per_year=+0.3 - 업계 전반 M&A 통합 국면(EBITDA 15배+ 거래 다수)에서 RYAN도 지속적 볼트온 인수로 점유율 확대 중이나 오가닉 성장이 최근 둔화(아래 참고)돼 완만한 값만 반영(2026-09-02 WebSearch, 정량 점유율 데이터 미확보). demand_sensitivity_pct=0.18 - CLAUDE.md 업종앵커표 '기업용 필수 SW·전문서비스(계약기반, 전환비용 높음)' 버킷(BRO·PGR 등, 앵커 0.20) 보다 약간 낮게 - E&S 특수보험 배치는 갱신형 계약구조라 전환비용이 특히 높음(BRO가 같은 버킷에서 0.20 사용, RYAN은 특수보험 도매유통 특유의 더 높은 재계약 지속성을 반영해 소폭 하향).",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 20.49%/5y 24.08%)이 default_terminal_growth(2.0~4.5%)보다 크게 높아 다년 수렴 경로가 필요하다고 판단. 다만 회사 자체 FY2026 오가닉성장 가이던스(5~7%, Q2 실측 오가닉 +6.7%)가 trailing CAGR보다 훨씬 낮다 - GEN/BRO/TCOM과 유사한 괴리이지만 ROP가 확립한 override 기준(다년 실현실적 필요)에는 못 미쳐(1개 분기+1개년 가이던스뿐) `realistic_growth_override`는 쓰지 않고 이 괴리를 falsification_conditions에 명시적으로 남긴다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001849253, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-01 종가 $42.32)",
+      "WebSearch: RYAN 2026-07-27 10-Q 표지(Class A/B 주식수), Q2 2026 실적발표(2026-07-30 전후), 경쟁구도"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2019": 64166000.0,
+      "2020": 68104000.0,
+      "2021": 65873000.0,
+      "2022": 61052000.0,
+      "2023": 61037000.0,
+      "2024": 94665000.0,
+      "2025": 63399000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2019": 8153000.0,
+      "2020": 10800000.0,
+      "2021": 67534000.0,
+      "2022": 77480000.0,
+      "2023": 69743000.0,
+      "2024": 78995000.0,
+      "2025": 69451000.0
+    },
+    "falsification_conditions": "다음 분기(Q3 2026) 오가닉 성장률이 FY2026 가이던스 하단(5%)을 밑돌거나, 손해보험 요율(특히 재산보험 property pricing)이 계속 하락하며 캐주얼티/바인딩 세그먼트 경쟁이 심화돼 EBITDA 마진 가이던스(2025년 36.1% 대비 -50~100bp)를 추가로 하회하면 이 판정을 재검토할 것.",
+    "price_at_analysis": 42.32,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 4,
+      "n_missing": 3,
+      "missing_fields": [
+        "revenue_by_year[2019]",
+        "revenue_by_year[2020]",
+        "revenue_by_year[2021]"
+      ],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1711861000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 2026596000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 2455671000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-21",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2994582000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-13",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-02",
+    "filing_dates_by_year": {
+      "2019": "2022-03-16",
+      "2020": "2022-03-16",
+      "2021": "2022-03-16",
+      "2022": "2023-03-01",
+      "2023": "2024-02-28",
+      "2024": "2025-02-21",
+      "2025": "2026-02-13"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.20491359344042936,
+    "revenue_cagr_5y": 0.24077864709873498,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.37540648229780627,
+    "fcf0": 640653000.0,
+    "fcf_by_year": {
+      "2019": 149407000.0,
+      "2020": 130157000.0,
+      "2021": -69665000.0,
+      "2022": 327800000.0,
+      "2023": 477203000.0,
+      "2024": 514868000.0,
+      "2025": 640653000.0
+    },
+    "worst_yoy_revenue_growth": 0.18385546490047955,
+    "worst_yoy_year": 2023,
+    "operating_margins": [
+      0.1302538926318302,
+      0.1691188712167635,
+      0.17718430313688568,
+      0.17421389103019094,
+      0.16484437560901655
+    ],
+    "net_debt_to_ebitda": 4.081213218303251
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 4.0,
+      "leverage": 20.0,
+      "cyclicality": 4.72,
+      "competition_intensity": 3.8400000000000003
+    },
+    "score": 36.56
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.060968,
+    "r": 0.10846800000000001,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.11793252682915281,
+    "realistic_growth": 0.19261088955517724,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.20491359344042936,
+        "5y": 0.24077864709873498,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.21836298856229397,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.21836298856229397,
+      "structural_discount_pct": 0.11793252682915281,
+      "discounted_growth": 0.19261088955517724,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.19261088955517724
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.046537261380078576,
+      "two_stage": 0.05494117736816404,
+      "errors": {},
+      "divergence": 0.008403915988085466,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 20.49%/5y 24.08%)이 default_terminal_growth(2.0~4.5%)보다 크게 높아 다년 수렴 경로가 필요하다고 판단. 다만 회사 자체 FY2026 오가닉성장 가이던스(5~7%, Q2 실측 오가닉 +6.7%)가 trailing CAGR보다 훨씬 낮다 - GEN/BRO/TCOM과 유사한 괴리이지만 ROP가 확립한 override 기준(다년 실현실적 필요)에는 못 미쳐(1개 분기+1개년 가이던스뿐) `realistic_growth_override`는 쓰지 않고 이 괴리를 falsification_conditions에 명시적으로 남긴다.",
+    "value": 0.05494117736816404
+  },
+  "expectation_gap": 0.1376697121870132,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.19261088955517724,
+      "g_bull": 0.25,
+      "g_bear": 0.09630544477758862,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7485736957420301,
+      "base": 0.4828985541277957,
+      "bear": 0.12380590932452851
+    },
+    "probabilities": {
+      "bull": 0.34031999999999996,
+      "base": 0.5,
+      "bear": 0.15968000000000002
+    },
+    "probability_rationale": "DRS=36.6 (중립점 50 대비 편차 -0.27) 기준: p_bull=34.0%, p_base=50.0%, p_bear=16.0%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.5159732047997663
+  },
+  "rar": 1.4113052647696014,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10846800000000001,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.05494117736816404,
+    "implied_growth_without_drs": 0.03483886718749999,
+    "gap_with_drs": 0.1376697121870132,
+    "gap_without_drs": 0.15777202236767726,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10846800000000001,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.05494117736816404,
+      "implied_growth_without_drs": 0.03483886718749999,
+      "gap_with_drs": 0.1376697121870132,
+      "gap_without_drs": 0.15777202236767726,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 69451000.0,
+    "sbc_to_fcf_pct": 0.1084065789124534,
+    "fcf0_sbc_adjusted": 571202000.0,
+    "implied_growth_sbc_adjusted": 0.06860160827636716,
+    "gap_sbc_adjusted": 0.12400928127881009,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

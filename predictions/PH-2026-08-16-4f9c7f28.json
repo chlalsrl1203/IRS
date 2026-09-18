@@ -13,9 +13,9 @@
   },
   "core_hash": "4f9c7f28f62574dc3ed665e62a94a3f4bfa133900787f04ec9166fcb989b3e57",
   "source": "PH_2026-07-25.json (engine_version=v3.19, 원분석일=2026-07-25)",
-  "status": "OPEN",
-  "actual_value": null,
-  "actual_date": null,
-  "forecast_error": null,
-  "resolution_note": null
+  "status": "MISS",
+  "actual_value": 0.0830730478589421,
+  "actual_date": "2026-08-06",
+  "forecast_error": 0.0054390478589421,
+  "resolution_note": "SEC XBRL companyfacts(CIK 0000076334) FY2026(FYE 2026-06-30) 매출 $21,499,000,000 vs FY2025 $19,850,000,000. 실적 발표(8-K item 2.02) 2026-08-06, 10-K 제출 2026-08-21(원 ledger는 PH_2026-07-25.json, revenue_by_year가 FY2025까지만 담고 있어 이 FY2026이 정의상 '다음 회계연도'다). 2026-09-07 조회."
 }

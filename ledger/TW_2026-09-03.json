@@ -1,0 +1,536 @@
+{
+  "meta": {
+    "ticker": "TW",
+    "company_name": "Tradeweb Markets Inc.",
+    "analyzed_at": "2026-09-03T10:14:21.040566+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001758730, 조회 2026-09-03)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $103.47)",
+      "WebSearch: TW 10-Q 표지 클래스별 주식수(2026-06-30 기준), S-1 경제적 권리 구조, ICE-MarketAxess 인수·경쟁구도(2026-09-03 재인용)"
+    ],
+    "falsification_conditions": "ICE-MarketAxess 통합법인이 향후 분기 신용채권 전자거래 시장점유율을 재역전하는 구체 증거가 나오거나, TW의 거래대금(ADV) 성장률이 뚜렷이 둔화되면 이 판정을 재검토할 것.",
+    "price_at_analysis": 103.47,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-03",
+      "filing_dates_by_year": {
+        "2017": "2020-02-21",
+        "2019": "2020-02-21",
+        "2020": "2021-02-25",
+        "2021": "2022-02-24",
+        "2022": "2023-02-24",
+        "2023": "2024-02-09",
+        "2024": "2025-02-07",
+        "2025": "2026-02-05"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 8,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 562968000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 775566000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 892659000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 1076447000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1188781000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 1338219000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-09",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 1725949000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-07",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2052429000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-05",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(18.12%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "TW",
+    "company_name": "Tradeweb Markets Inc.",
+    "revenue_by_year": {
+      "2017": 562968000.0,
+      "2019": 775566000.0,
+      "2020": 892659000.0,
+      "2021": 1076447000.0,
+      "2022": 1188781000.0,
+      "2023": 1338219000.0,
+      "2024": 1725949000.0,
+      "2025": 2052429000.0
+    },
+    "operating_income_by_year": {
+      "2017": 89092000.0,
+      "2019": 189819000.0,
+      "2020": 263355000.0,
+      "2021": 358828000.0,
+      "2022": 412573000.0,
+      "2023": 505269000.0,
+      "2024": 678028000.0,
+      "2025": 835338000.0
+    },
+    "operating_cashflow_by_year": {
+      "2017": 224580000.0,
+      "2019": 311003000.0,
+      "2020": 443234000.0,
+      "2021": 578021000.0,
+      "2022": 632822000.0,
+      "2023": 746089000.0,
+      "2024": 897741000.0,
+      "2025": 1167646000.0
+    },
+    "capex_by_year": {
+      "2017": 13461000.0,
+      "2019": 15781000.0,
+      "2020": 11490000.0,
+      "2021": 16878000.0,
+      "2022": 23214000.0,
+      "2023": 18529000.0,
+      "2024": 40960000.0,
+      "2025": 40552000.0
+    },
+    "market_cap": 21839768009.04,
+    "net_debt": -2084739000.0,
+    "ebitda": 1085527000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": 0.2,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.15,
+    "subjective_input_basis": "competitor_threat_weights=[0.20(ICE-MarketAxess 통합체 - 2026-07 ICE가 MarketAxess를 $60억에 인수해 자본력을 등에 업은 강력한 신규 위협으로 재편), 0.15(Bloomberg - 터미널 기반 압도적 진입장벽을 가진 기존 강자)]. market_share_trend_pp_per_year=+0.2 - 2026-06 美 신용채권 전자거래 시장점유율에서 TW가 20년간 1위였던 MarketAxess를 사상 최초로 추월한 실측을 긍정적으로 반영하되 ICE 인수 리스크를 감안해 완만한 값 채택 (2026-09-03 WebSearch). demand_sensitivity_pct=0.15 - 전자 채권거래 플랫폼은 거래대금 연동 매출구조라 시장변동성 확대 시 오히려 거래량이 늘어나는 반경기순환적 요소가 있어 CLAUDE.md 업종앵커표 '필수/의무 지출'(0.08)보다는 높고 '기업용 필수 SW·전문서비스'(0.20)보다는 낮게 채택.",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 19.94%/5y 18.15%)이 default_terminal_growth(2.0~4.5%)보다 크게 높고, 다중 자산군(금리·크레딧·ETF·파생상품)으로의 지속적 확장 국면이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001758730, 조회 2026-09-03)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $103.47)",
+      "WebSearch: TW 10-Q 표지 클래스별 주식수(2026-06-30 기준), S-1 경제적 권리 구조, ICE-MarketAxess 인수·경쟁구도(2026-09-03 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2017": 83648000.0,
+      "2019": 83769000.0,
+      "2020": 166296000.0,
+      "2021": 226828000.0,
+      "2022": 309338000.0,
+      "2023": 364866000.0,
+      "2024": 501507000.0,
+      "2025": 812792000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2017": 26100000.0,
+      "2019": 49824000.0,
+      "2020": 39286000.0,
+      "2021": 51943000.0,
+      "2022": 66644000.0,
+      "2023": 65128000.0,
+      "2024": 89649000.0,
+      "2025": 103537000.0
+    },
+    "falsification_conditions": "ICE-MarketAxess 통합법인이 향후 분기 신용채권 전자거래 시장점유율을 재역전하는 구체 증거가 나오거나, TW의 거래대금(ADV) 성장률이 뚜렷이 둔화되면 이 판정을 재검토할 것.",
+    "price_at_analysis": 103.47,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 8,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 562968000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 775566000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 892659000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 1076447000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1188781000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 1338219000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-09",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 1725949000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-07",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2052429000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-05",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-03",
+    "filing_dates_by_year": {
+      "2017": "2020-02-21",
+      "2019": "2020-02-21",
+      "2020": "2021-02-25",
+      "2021": "2022-02-24",
+      "2022": "2023-02-24",
+      "2023": "2024-02-09",
+      "2024": "2025-02-07",
+      "2025": "2026-02-05"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.1996524051734807,
+    "revenue_cagr_5y": 0.18118115889565,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.21156512992287868,
+    "fcf0": 1127094000.0,
+    "fcf_by_year": {
+      "2017": 211119000.0,
+      "2019": 295222000.0,
+      "2020": 431744000.0,
+      "2021": 561143000.0,
+      "2022": 609608000.0,
+      "2023": 727560000.0,
+      "2024": 856781000.0,
+      "2025": 1127094000.0
+    },
+    "worst_yoy_revenue_growth": 0.10435627578505957,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      0.33334479077929524,
+      0.34705551316853145,
+      0.3775682455562206,
+      0.3928435892369937,
+      0.4069997062017736
+    ],
+    "net_debt_to_ebitda": -1.9204856258757268
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 8.0,
+      "leverage": 2.0,
+      "cyclicality": 4.6,
+      "competition_intensity": 4.2
+    },
+    "score": 22.800000000000004
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.05684,
+    "r": 0.10434,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.09076437686108466,
+    "realistic_growth": 0.17523306085925203,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.1996524051734807,
+        "5y": 0.18118115889565,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.1927256878192942,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.1927256878192942,
+      "structural_discount_pct": 0.09076437686108466,
+      "discounted_growth": 0.17523306085925203,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.17523306085925203
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.05014474304804572,
+      "two_stage": 0.06367301940917969,
+      "errors": {},
+      "divergence": 0.013528276361133969,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 19.94%/5y 18.15%)이 default_terminal_growth(2.0~4.5%)보다 크게 높고, 다중 자산군(금리·크레딧·ETF·파생상품)으로의 지속적 확장 국면이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "value": 0.06367301940917969
+  },
+  "expectation_gap": 0.11156004145007234,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.17523306085925203,
+      "g_bull": 0.25,
+      "g_bear": 0.08761653042962601,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7166366740127066,
+      "base": 0.38202141692794944,
+      "bear": 0.07103822051472997
+    },
+    "probabilities": {
+      "bull": 0.3816,
+      "base": 0.5,
+      "bear": 0.11840000000000002
+    },
+    "probability_rationale": "DRS=22.8 (중립점 50 대비 편차 -0.54) 기준: p_bull=38.2%, p_base=50.0%, p_bear=11.8%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.4728901885761676
+  },
+  "rar": 2.074079774456875,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10434,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.06367301940917969,
+    "implied_growth_without_drs": 0.050608062744140606,
+    "gap_with_drs": 0.11156004145007234,
+    "gap_without_drs": 0.12462499811511142,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10434,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.06367301940917969,
+      "implied_growth_without_drs": 0.050608062744140606,
+      "gap_with_drs": 0.11156004145007234,
+      "gap_without_drs": 0.12462499811511142,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 103537000.0,
+    "sbc_to_fcf_pct": 0.09186190326627593,
+    "fcf0_sbc_adjusted": 1023557000.0,
+    "implied_growth_sbc_adjusted": 0.07491359710693359,
+    "gap_sbc_adjusted": 0.10031946375231844,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

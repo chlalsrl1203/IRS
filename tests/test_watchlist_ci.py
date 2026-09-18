@@ -126,12 +126,38 @@ def test_price_drop_widens_gap_the_value_trap_property():
 
 
 # ── ④ watchlist.json 로딩 ───────────────────────────────────────────────
-def test_watchlist_file_exists_and_seeds_from_ledger():
-    tickers = W.load_watchlist(str(ROOT / "watchlist.json"))
+# watchlist.json은 사람이 유지하는 파일이고 스스로 "시작점일 뿐이며 자유롭게
+# 편집할 것"이라 적고 있다. 실제 불변조건은 '전수 일치'가 아니라 **공식 분석이
+# 있는 종목이 감시에서 빠지지 않는다**는 쪽이다 - ledger 없는 티커는 파일의
+# `_note`가 명시한 대로 deep_screen 경로로 처리되도록 설계돼 있다.
+#
+# 2026-09-16 보유 포트폴리오 심화 재분석에서 MU·ALB가 **ledger도 watchlist도
+# 없어 어떤 자동 경로에도 안 걸리는 상태**임이 드러났다(보유 비중 합계 8.76%).
+# 둘 다 FRAMEWORK_MISMATCH라 공식 ledger를 만들 수 없지만, 보유 중인 이상
+# 감시는 되어야 해서 watchlist에 넣었다.
+LEDGERLESS_WATCHLIST_TICKERS = {"MU", "ALB"}
+
+
+def test_every_analyzed_ticker_is_watched():
+    """ledger가 있는 종목은 하나도 빠짐없이 감시 대상이어야 한다."""
+    tickers = set(W.load_watchlist(str(ROOT / "watchlist.json")))
     ledger_tickers = {json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
                       ["meta"]["ticker"]
                       for p in glob.glob(str(ROOT / "ledger" / "*.json"))}
-    assert set(tickers) == ledger_tickers, "초기 관심종목이 ledger 전수와 다르다"
+    missing = ledger_tickers - tickers
+    assert not missing, f"공식 분석이 있는데 감시 목록에 없다: {sorted(missing)}"
+
+
+def test_ledgerless_watchlist_entries_are_declared():
+    """
+    ledger 없는 감시 대상은 의도된 것만 있어야 한다 - 오타로 들어온 티커가
+    매일 deep_screen 네트워크 호출을 유발하고 실패를 조용히 쌓지 않도록.
+    """
+    tickers = set(W.load_watchlist(str(ROOT / "watchlist.json")))
+    ledger_tickers = {json.loads(pathlib.Path(p).read_text(encoding="utf-8"))
+                      ["meta"]["ticker"]
+                      for p in glob.glob(str(ROOT / "ledger" / "*.json"))}
+    assert tickers - ledger_tickers == LEDGERLESS_WATCHLIST_TICKERS
 
 
 def test_load_watchlist_dedupes_and_preserves_order(tmp_path):

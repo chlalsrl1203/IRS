@@ -13,18 +13,29 @@
     "drs_score",
     "confidence"
   ],
-  "n_tickers": 35,
-  "fingerprint": "81a8a0f5e1dd30a77e98e2fceb2e115fabf36daa87b2f80351b2e9578f4ee663",
+  "n_tickers": 80,
+  "fingerprint": "f5709edf670707f7c0b016f05c13a675d82632728a9a725fca061ffd6bb23800",
   "rows": {
     "ACGL": {
-      "engine_version": "v3.27",
+      "engine_version": "v3.81",
       "realistic_growth": 0.157353923411129,
-      "implied_growth": -0.08648414611816407,
-      "expectation_gap": 0.24383806952929307,
+      "implied_growth": -0.08717517852783203,
+      "expectation_gap": 0.24452910193896105,
       "judgment": "저평가 가능성",
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 48.0,
+      "confidence": 94
+    },
+    "ADBE": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.10952847546187847,
+      "implied_growth": 0.004822921752929674,
+      "expectation_gap": 0.1047055537089488,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.439999999999998,
       "confidence": 94
     },
     "BKNG": {
@@ -71,6 +82,28 @@
       "drs_score": 46.8,
       "confidence": 94
     },
+    "BYD": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.02626603567584799,
+      "implied_growth": 0.04509620666503906,
+      "expectation_gap": -0.01883017098919107,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 52.8,
+      "confidence": 94
+    },
+    "CAH": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.07246958659844725,
+      "implied_growth": 0.023769569396972643,
+      "expectation_gap": 0.04870001720147461,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 43.11999999999999,
+      "confidence": 79
+    },
     "CDNS": {
       "engine_version": "v3.19",
       "realistic_growth": 0.12,
@@ -81,6 +114,28 @@
       "n": 12,
       "drs_score": 36.6,
       "confidence": 69
+    },
+    "CHWY": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.08160085984157919,
+      "implied_growth": 0.05790367126464842,
+      "expectation_gap": 0.023697188576930775,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 32.64,
+      "confidence": 94
+    },
+    "CINF": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.15217096949973508,
+      "implied_growth": -0.015648651123046888,
+      "expectation_gap": 0.16781962062278197,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 67.4,
+      "confidence": 94
     },
     "COR": {
       "engine_version": "v3.25",
@@ -93,6 +148,17 @@
       "drs_score": 35.12,
       "confidence": 79
     },
+    "CRM": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.11092292105414853,
+      "implied_growth": 0.05057945251464842,
+      "expectation_gap": 0.06034346853950011,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 54.480000000000004,
+      "confidence": 94
+    },
     "CROX": {
       "engine_version": "v3.79",
       "realistic_growth": 0.10339477176711484,
@@ -102,6 +168,39 @@
       "model_used": "single_stage",
       "n": 12,
       "drs_score": 72.44,
+      "confidence": 94
+    },
+    "DECK": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.12682894826416102,
+      "implied_growth": -0.005458068847656263,
+      "expectation_gap": 0.13228701711181728,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 32.2,
+      "confidence": 94
+    },
+    "DLO": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.25,
+      "implied_growth": 0.012637519836425769,
+      "expectation_gap": 0.23736248016357422,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 56.2,
+      "confidence": 89
+    },
+    "DOCU": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.10126674352331289,
+      "implied_growth": 0.014994049072265609,
+      "expectation_gap": 0.08627269445104728,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 39.8,
       "confidence": 94
     },
     "DSGX": {
@@ -126,6 +225,72 @@
       "drs_score": 43.4,
       "confidence": 89
     },
+    "EAT": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.09959471511382502,
+      "implied_growth": 0.057357978820800765,
+      "expectation_gap": 0.042236736293024255,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 37.84,
+      "confidence": 79
+    },
+    "EME": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.11922380484097737,
+      "implied_growth": 0.11639976501464841,
+      "expectation_gap": 0.002824039826328964,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 41.0,
+      "confidence": 94
+    },
+    "ERIE": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.10659748824638111,
+      "implied_growth": 0.08529930114746093,
+      "expectation_gap": 0.021298187098920188,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 34.8,
+      "confidence": 94
+    },
+    "EXEL": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.13129580970313953,
+      "implied_growth": 0.06147632598876952,
+      "expectation_gap": 0.06981948371437001,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 42.92,
+      "confidence": 94
+    },
+    "FIVE": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.15441968147389193,
+      "implied_growth": 0.12333183288574218,
+      "expectation_gap": 0.031087848588149752,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 21.8,
+      "confidence": 94
+    },
+    "FIX": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.22999999999999976,
+      "implied_growth": 0.1877769470214844,
+      "expectation_gap": 0.04222305297851536,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 36.0,
+      "confidence": 74
+    },
     "GEN": {
       "engine_version": "v3.27",
       "realistic_growth": 0.12,
@@ -147,6 +312,28 @@
       "n": 12,
       "drs_score": 39.080000000000005,
       "confidence": 74
+    },
+    "HLNE": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.12718448382129155,
+      "implied_growth": -0.005912017822265639,
+      "expectation_gap": 0.13309650164355719,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 27.199999999999996,
+      "confidence": 94
+    },
+    "HQY": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.12,
+      "implied_growth": 0.06951866149902342,
+      "expectation_gap": 0.05048133850097658,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 56.2,
+      "confidence": 89
     },
     "IDXX": {
       "engine_version": "v3.19",
@@ -181,6 +368,28 @@
       "drs_score": 54.72,
       "confidence": 79
     },
+    "LFUS": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.037137923130594656,
+      "implied_growth": 0.07821192725228586,
+      "expectation_gap": -0.0410740041216912,
+      "judgment": "적정가/경계선",
+      "model_used": "single_stage",
+      "n": 12,
+      "drs_score": 57.199999999999996,
+      "confidence": 94
+    },
+    "LULU": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.0857418157068449,
+      "implied_growth": 0.0035308837890624858,
+      "expectation_gap": 0.08221093191778242,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 37.480000000000004,
+      "confidence": 94
+    },
     "MCK": {
       "engine_version": "v3.25",
       "realistic_growth": 0.06160134921876831,
@@ -191,6 +400,28 @@
       "n": 12,
       "drs_score": 35.12,
       "confidence": 79
+    },
+    "MEDP": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.18794198186189134,
+      "implied_growth": 0.08998298645019528,
+      "expectation_gap": 0.09795899541169606,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 23.0,
+      "confidence": 94
+    },
+    "MMS": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.06113417614610206,
+      "implied_growth": -0.036268997192382815,
+      "expectation_gap": 0.09740317333848487,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.119999999999997,
+      "confidence": 94
     },
     "MNDY": {
       "engine_version": "v3.27",
@@ -213,6 +444,94 @@
       "n": 12,
       "drs_score": 40.4,
       "confidence": 89
+    },
+    "NBIX": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.21442729818798018,
+      "implied_growth": 0.07391319274902342,
+      "expectation_gap": 0.14051410543895676,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 27.839999999999996,
+      "confidence": 94
+    },
+    "NOW": {
+      "engine_version": "v3.81",
+      "realistic_growth": 0.2100590719274136,
+      "implied_growth": 0.12709579467773435,
+      "expectation_gap": 0.08296327724967925,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 32.4,
+      "confidence": 94
+    },
+    "NXT": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.21158458033600352,
+      "implied_growth": 0.09665756225585934,
+      "expectation_gap": 0.11492701808014419,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 29.200000000000003,
+      "confidence": 94
+    },
+    "NYT": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.06849245263070951,
+      "implied_growth": 0.051724414787768055,
+      "expectation_gap": 0.016768037842941452,
+      "judgment": "적정가/경계선",
+      "model_used": "single_stage",
+      "n": 12,
+      "drs_score": 43.0,
+      "confidence": 94
+    },
+    "OKTA": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.17468431477737686,
+      "implied_growth": 0.1466989517211914,
+      "expectation_gap": 0.02798536305618546,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 53.4,
+      "confidence": 79
+    },
+    "OSIS": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.09436533946939582,
+      "implied_growth": 0.02376327514648436,
+      "expectation_gap": 0.07060206432291147,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 41.72,
+      "confidence": 94
+    },
+    "PATH": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.1514205937555331,
+      "implied_growth": 0.11579856872558592,
+      "expectation_gap": 0.035622025029947185,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 46.88000000000001,
+      "confidence": 79
+    },
+    "PCTY": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.1554743692531013,
+      "implied_growth": 0.047665023803710925,
+      "expectation_gap": 0.10780934544939036,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 28.2,
+      "confidence": 94
     },
     "PDD": {
       "engine_version": "v3.67",
@@ -247,16 +566,82 @@
       "drs_score": 47.400000000000006,
       "confidence": 94
     },
-    "PTC": {
-      "engine_version": "v3.25",
-      "realistic_growth": 0.11390601486057504,
-      "implied_growth": 0.05860443115234374,
-      "expectation_gap": 0.0553015837082313,
+    "PINS": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.1454857737337275,
+      "implied_growth": -0.016723632812500014,
+      "expectation_gap": 0.1622094065462275,
       "judgment": "저평가 가능성",
       "model_used": "two_stage",
       "n": 12,
-      "drs_score": 44.39999999999999,
+      "drs_score": 34.199999999999996,
       "confidence": 94
+    },
+    "PSN": {
+      "engine_version": "v3.87",
+      "realistic_growth": 0.09212734044558663,
+      "implied_growth": 0.010621261596679673,
+      "expectation_gap": 0.08150607884890695,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 41.519999999999996,
+      "confidence": 94
+    },
+    "PTC": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.11390601486057504,
+      "implied_growth": 0.073137092590332,
+      "expectation_gap": 0.040768922270243035,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 44.39999999999999,
+      "confidence": 79
+    },
+    "QCOM": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.04556980632481482,
+      "implied_growth": 0.041155242919921856,
+      "expectation_gap": 0.004414563404892963,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 57.96,
+      "confidence": 94
+    },
+    "REGN": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.07570214813176766,
+      "implied_growth": 0.09015312194824218,
+      "expectation_gap": -0.014450973816474519,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 63.8,
+      "confidence": 94
+    },
+    "RLI": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.06725460524057891,
+      "implied_growth": -0.009793853759765637,
+      "expectation_gap": 0.07704845900034454,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 48.92,
+      "confidence": 94
+    },
+    "RMBS": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.1413008407494102,
+      "implied_growth": 0.12133502960205075,
+      "expectation_gap": 0.019965811147359458,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 53.0,
+      "confidence": 79
     },
     "RMD": {
       "engine_version": "v3.25",
@@ -267,6 +652,17 @@
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 24.0,
+      "confidence": 94
+    },
+    "ROKU": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.16481543435700588,
+      "implied_growth": 0.1908161163330078,
+      "expectation_gap": -0.026000681976001916,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 51.599999999999994,
       "confidence": 94
     },
     "ROP": {
@@ -280,15 +676,48 @@
       "drs_score": 31.520000000000003,
       "confidence": 89
     },
+    "RYAN": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.19261088955517724,
+      "implied_growth": 0.05494117736816404,
+      "expectation_gap": 0.1376697121870132,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 36.56,
+      "confidence": 94
+    },
     "SE": {
-      "engine_version": "v3.67",
+      "engine_version": "v3.81",
       "realistic_growth": 0.17874999999999974,
-      "implied_growth": 0.04379405975341795,
-      "expectation_gap": 0.1349559402465818,
+      "implied_growth": 0.05544910430908202,
+      "expectation_gap": 0.12330089569091772,
       "judgment": "저평가 가능성",
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 52.400000000000006,
+      "confidence": 94
+    },
+    "SIGI": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.12,
+      "implied_growth": -0.11672077178955079,
+      "expectation_gap": 0.23672077178955078,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 43.32,
+      "confidence": 89
+    },
+    "SKYW": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.09346176816603399,
+      "implied_growth": -0.00945968627929689,
+      "expectation_gap": 0.10292145444533088,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 53.6,
       "confidence": 94
     },
     "TCOM": {
@@ -302,6 +731,28 @@
       "drs_score": 73.6,
       "confidence": 94
     },
+    "TEAM": {
+      "engine_version": "v3.87",
+      "realistic_growth": 0.0883614454768222,
+      "implied_growth": 0.12760124206542967,
+      "expectation_gap": -0.03923979658860746,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 26.400000000000002,
+      "confidence": 94
+    },
+    "TENB": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.13292599206882677,
+      "implied_growth": 0.033889961242675765,
+      "expectation_gap": 0.099036030826151,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 26.32,
+      "confidence": 94
+    },
     "TTD": {
       "engine_version": "v3.27",
       "realistic_growth": 0.16703987255129174,
@@ -311,6 +762,17 @@
       "model_used": "two_stage",
       "n": 12,
       "drs_score": 38.4,
+      "confidence": 94
+    },
+    "TW": {
+      "engine_version": "v3.80",
+      "realistic_growth": 0.17523306085925203,
+      "implied_growth": 0.06367301940917969,
+      "expectation_gap": 0.11156004145007234,
+      "judgment": "저평가 가능성",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 22.800000000000004,
       "confidence": 94
     },
     "TYL": {
@@ -335,6 +797,28 @@
       "drs_score": 49.0,
       "confidence": 94
     },
+    "ULTA": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.04250869848609533,
+      "implied_growth": 0.05733452165397739,
+      "expectation_gap": -0.014825823167882064,
+      "judgment": "적정가/경계선",
+      "model_used": "single_stage",
+      "n": 12,
+      "drs_score": 43.6,
+      "confidence": 94
+    },
+    "URBN": {
+      "engine_version": "v3.83",
+      "realistic_growth": 0.07157248068614842,
+      "implied_growth": 0.09062728881835935,
+      "expectation_gap": -0.01905480813221093,
+      "judgment": "적정가/경계선",
+      "model_used": "two_stage",
+      "n": 12,
+      "drs_score": 38.4,
+      "confidence": 94
+    },
     "VRSN": {
       "engine_version": "v3.19",
       "realistic_growth": 0.046517359421241536,
@@ -347,10 +831,10 @@
       "confidence": 89
     },
     "VRT": {
-      "engine_version": "v3.25",
+      "engine_version": "v3.80",
       "realistic_growth": 0.18710426857819903,
-      "implied_growth": 0.16991710662841797,
-      "expectation_gap": 0.017187161949781066,
+      "implied_growth": 0.1995218276977539,
+      "expectation_gap": -0.01241755911955486,
       "judgment": "적정가/경계선",
       "model_used": "two_stage",
       "n": 12,
@@ -389,6 +873,17 @@
       "n": 12,
       "drs_score": 54.8,
       "confidence": 79
+    },
+    "WTS": {
+      "engine_version": "v3.86",
+      "realistic_growth": 0.06974778303321212,
+      "implied_growth": 0.0706045405621401,
+      "expectation_gap": -0.0008567575289279844,
+      "judgment": "적정가/경계선",
+      "model_used": "single_stage",
+      "n": 12,
+      "drs_score": 34.0,
+      "confidence": 94
     },
     "ZTS": {
       "engine_version": "v3.19",

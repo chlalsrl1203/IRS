@@ -1,0 +1,21 @@
+{
+  "ticker": "PDD",
+  "analyzed_at": "2026-08-23",
+  "market_cap_then": 817873848000.0,
+  "market_cap_now": 805608000000.0,
+  "market_cap_change_pct": -0.01499723708001477,
+  "gap_then": 0.22037292480468723,
+  "gap_now": 0.22240959167480445,
+  "gap_decay_pp": 0.002036666870117221,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.17874999999999974,
+  "realistic_growth_now": 0.17874999999999974,
+  "mode": "gap_decay",
+  "date": "2026-09-10",
+  "price_source": "stockanalysis.com (2026-09-09 종가 $78.61, 시총 $111.89B USD) x usd_fx_rate 7.2(ledger 기존값) = CNY 환산. price_at_analysis가 원래 None(추측 없이 비워둔 상태)이라 시총 직접 대체.",
+  "market_cap_used_direct": 805608000000.0
+}

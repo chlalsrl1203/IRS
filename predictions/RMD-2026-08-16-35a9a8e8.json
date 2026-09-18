@@ -13,9 +13,9 @@
   },
   "core_hash": "35a9a8e81eb9aa962e495d44cae8450c753a327c5e4e2a83a35c8a8c4143169a",
   "source": "RMD_2026-08-02.json (engine_version=v3.25, 원분석일=2026-08-02)",
-  "status": "OPEN",
-  "actual_value": null,
-  "actual_date": null,
-  "forecast_error": null,
-  "resolution_note": null
+  "status": "MISS",
+  "actual_value": 0.09853940489984403,
+  "actual_date": "2026-08-06",
+  "forecast_error": -0.018655595100155964,
+  "resolution_note": "SEC XBRL companyfacts(CIK 0000943819) FY2026(FYE 2026-06-30) 매출 $5,653,443,000 vs FY2025 $5,146,327,000. 실적 발표(8-K item 2.02) 2026-08-06(원분석일 2026-08-02보다 4일 뒤 - 원 ledger RMD_2026-08-02.json 작성 시점엔 아직 미공개였으므로 KLAC과 달리 원분석 자체의 데이터 신선도 문제는 없다). 2026-09-07 조회."
 }

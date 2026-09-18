@@ -66,10 +66,31 @@ def test_required_fcf_yield_is_inverse_of_implied_growth():
 # 를 상수(12.0)로 가정하는데 BSX의 실제 연구된 값(5.4, RMD와 동일 - 경쟁자 2곳
 # 모두 위협도가 낮음)이 그보다 훨씬 낮아 DRS가 50.6까지 과대평가되기 때문이다.
 # ledger 34종목 전수 재확인 결과 상수 12.0 자체는 여전히 정확한 중앙값(median
-# 12.0)이라 상수를 조정할 문제가 아니다 - median 대체 방식의 구조적 한계가
-# 실제로 판정을 뒤집은 첫 사례라 여기 문서화된 예외로 남긴다(screen()을 고쳐서
-# 억지로 통과시키면 다른 종목의 판정이 조용히 바뀔 위험이 있다).
-KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX"}
+# 12.0)이라 상수를 조정할 문제가 아니다 - median 대체 방식의 구조적 한계이 첫
+# 실제 사례라 여기 문서화된 예외로 남긴다(screen()을 고쳐서 억지로 통과시키면
+# 다른 종목의 판정이 조용히 바뀔 위험이 있다).
+#
+# MEDP(2026-09-02): 정식분석 "저평가 가능성"(Gap +9.80%p)이나 screen()은
+# 탈락한다(estimate_drs()가 상수 competition_intensity=12.0을 가정하는데,
+# 실제 연구된 값 4.2 - CRO 업종 내 중소형 바이오텍 특화 니치, IQVIA/ICON과의
+# 직접경쟁 강도가 낮음 - 가 그보다 훨씬 낮아 DRS가 34.6까지 과대평가된다).
+# BSX와 정확히 같은 메커니즘의 두 번째 실사례.
+#
+# NXT(2026-09-02): 정식분석 "저평가 가능성"(Gap +11.49%p)이나 screen()은
+# 탈락한다(competition_intensity 상수 12.0 vs 실제 연구된 값 - 태양광
+# 트래커 3사 과점 시장에서 NXT가 시장선도라 위협도를 낮게 평가 - 가 그보다
+# 낮아 DRS가 30.6까지 과대평가된다). 세 번째 실사례.
+# NOW(2026-09-04): 정식분석 "저평가 가능성"(Gap +8.30%p)이나 screen()은
+# 탈락한다. ⚠️ **앞의 셋과 원인이 다르다** - DRS 추정(30.6)이 과대평가된
+# 게 아니라 `MAX_IMPLIED_GROWTH`(5.5%)라는 **절대 컷오프**에 걸린다
+# (내재성장률 추정 7.03% > 5.5%, FCF수익률 3.13% < 필요 4.63%). 정식분석이
+# 통과한 이유는 Realistic Growth가 21.01%로 높아 Gap이 크게 벌어지기
+# 때문인데, screen()의 절대 임계값은 그 성장률을 참조하지 않는다.
+# 2026-08-23 외부검증(v3.63 Finding 2)이 이미 "MIN_REALISTIC_GROWTH/
+# MAX_IMPLIED_GROWTH의 절대 하한 설계에는 학계 반례가 있다"고 기록해둔
+# 한계의 첫 실사례다. 임계값은 바꾸지 않는다(바꾸면 다른 종목 판정이
+# 조용히 이동한다 - v3.63 결정 #16 REJECT 유지).
+KNOWN_SCREENER_FALSE_REJECTIONS = {"BSX", "MEDP", "NXT", "NOW"}
 
 
 def test_screener_reproduces_known_buy_verdicts():
@@ -102,6 +123,41 @@ def test_bsx_false_rejection_is_still_reproducible():
         assert r.drs_est == pytest.approx(50.6, abs=0.01)
         return
     pytest.fail("ledger/BSX_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
+
+
+def test_medp_false_rejection_is_still_reproducible():
+    """
+    KNOWN_SCREENER_FALSE_REJECTIONS에 MEDP를 넣어둔 근거가 아직 유효한지
+    확인한다. BSX와 동일 메커니즘(competition_intensity 상수 12.0이 실제
+    연구된 값 4.2보다 훨씬 높음) - 이 테스트가 실패하면 예외 목록에서
+    빼야 한다는 신호다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "MEDP":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert r.drs_est == pytest.approx(34.6, abs=0.01)
+        return
+    pytest.fail("ledger/MEDP_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
+
+
+def test_nxt_false_rejection_is_still_reproducible():
+    """
+    KNOWN_SCREENER_FALSE_REJECTIONS에 NXT를 넣어둔 근거가 아직 유효한지
+    확인한다. BSX/MEDP와 동일 메커니즘 - 이 테스트가 실패하면 예외
+    목록에서 빼야 한다는 신호다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "NXT":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert r.drs_est == pytest.approx(30.6, abs=0.01)
+        return
+    pytest.fail("ledger/NXT_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")
 
 
 def test_screener_rejects_known_overvalued():
@@ -301,3 +357,27 @@ def test_max_implied_growth_label_does_not_overclaim_the_architecture_support():
     """
     label = VALIDATION_STATUS["max_implied_growth"]
     assert "정당화하지 않는다" in label
+
+
+def test_now_false_rejection_is_a_threshold_not_a_drs_problem():
+    """
+    NOW를 예외 목록에 넣은 근거가 아직 유효한지 확인한다.
+
+    ⚠️ BSX/MEDP/NXT와 **다른 메커니즘**임을 고정하는 것이 이 테스트의 요점이다.
+    저 셋은 `estimate_drs()`의 competition_intensity 상수(12.0)가 실제 연구값보다
+    높아 DRS가 과대평가된 사례인데, NOW는 DRS가 아니라 `MAX_IMPLIED_GROWTH`
+    (5.5%) 절대 컷오프에 걸린다. 원인을 뭉뚱그리면 나중에 엉뚱한 곳을 고치게 된다.
+    """
+    for c, d in _ledger_candidates():
+        if c.ticker != "NOW":
+            continue
+        assert d["judgment"] == "저평가 가능성"
+        r = screen(c)
+        assert not r.passed
+        assert any("내재성장률 추정" in f for f in r.failures), (
+            f"NOW의 탈락 사유가 절대 임계값이 아니게 바뀌었다: {r.failures}"
+        )
+        # DRS 과대평가가 원인이 아님을 명시적으로 고정한다
+        assert r.drs_est == pytest.approx(30.6, abs=0.01)
+        return
+    pytest.fail("ledger/NOW_*.json을 찾지 못했다 - 예외 근거를 재확인할 수 없음")

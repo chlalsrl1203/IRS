@@ -1,0 +1,602 @@
+{
+  "meta": {
+    "ticker": "HLNE",
+    "company_name": "Hamilton Lane Incorporated",
+    "analyzed_at": "2026-09-03T10:06:46.167093+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001433642, 조회 2026-09-03) - operating_income은 revenue-OperatingExpenses로 직접 파생",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $103.16)",
+      "WebSearch: HLNE 10-Q 표지 Class A 주식수(2026-07-31 기준), AUM·경쟁구도(2026-09-03 재인용)"
+    ],
+    "falsification_conditions": "다음 분기 AUM 성장률이 뚜렷이 둔화되거나 Blackstone/KKR류 초대형사의 사모시장 솔루션 부문 진출로 수수료율(fee rate)이 가시적으로 압박받는 증거가 나오면 이 판정을 재검토할 것.",
+    "price_at_analysis": 103.16,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-03",
+      "filing_dates_by_year": {
+        "2017": "2018-06-14",
+        "2018": "2018-06-14",
+        "2019": "2019-05-30",
+        "2020": "2020-05-28",
+        "2021": "2021-05-27",
+        "2022": "2022-05-26",
+        "2023": "2023-05-25",
+        "2024": "2024-05-23",
+        "2025": "2025-05-30",
+        "2026": "2026-05-21"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 10,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 179820000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-04-01~2017-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 244033000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-04-01~2018-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 252179000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-04-01~2019-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 274048000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-04-01~2020-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-05-28",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 341635000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-04-01~2021-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-05-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 367919000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-04-01~2022-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 528753000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-04-01~2023-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-05-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 553842000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-04-01~2024-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-05-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 712963000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-04-01~2025-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 758993000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-04-01~2026-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-05-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(10개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(17.31%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "HLNE",
+    "company_name": "Hamilton Lane Incorporated",
+    "revenue_by_year": {
+      "2017": 179820000.0,
+      "2018": 244033000.0,
+      "2019": 252179000.0,
+      "2020": 274048000.0,
+      "2021": 341635000.0,
+      "2022": 367919000.0,
+      "2023": 528753000.0,
+      "2024": 553842000.0,
+      "2025": 712963000.0,
+      "2026": 758993000.0
+    },
+    "operating_income_by_year": {
+      "2017": 76115000.0,
+      "2018": 122953000.0,
+      "2019": 104224000.0,
+      "2020": 116429000.0,
+      "2021": 155728000.0,
+      "2022": 169564000.0,
+      "2023": 240040000.0,
+      "2024": 245818000.0,
+      "2025": 316552000.0,
+      "2026": 324943000.0
+    },
+    "operating_cashflow_by_year": {
+      "2017": 81679000.0,
+      "2018": 96692000.0,
+      "2019": 111622000.0,
+      "2020": 116373000.0,
+      "2021": 188158000.0,
+      "2022": 169523000.0,
+      "2023": 226589000.0,
+      "2024": 120852000.0,
+      "2025": 300820000.0,
+      "2026": 424917000.0
+    },
+    "capex_by_year": {
+      "2017": 1275000.0,
+      "2018": 2254000.0,
+      "2019": 5366000.0,
+      "2020": 1978000.0,
+      "2021": 18637000.0,
+      "2022": 8526000.0,
+      "2023": 4747000.0,
+      "2024": 11073000.0,
+      "2025": 12156000.0,
+      "2026": 5844000.0
+    },
+    "market_cap": 4471900067.72,
+    "net_debt": -93484000.0,
+    "ebitda": 334821000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.2,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.25,
+    "subjective_input_basis": "competitor_threat_weights=[0.20(Blackstone/KKR류 초대형 대체투자사), 0.15(StepStone Group)] - 초대형사가 에버그린/리테일 펀드 시장에 규모 우위로 공격적 진출 중이라 비중있게 반영, StepStone은 동일 비즈니스모델(사모시장 솔루션·자문)의 직접 경쟁자. market_share_trend_pp_per_year=0.0 - 'Top 3' 지위 유지·AUM CAGR 7% 성장 지속 중이나 업계 전반 수수료압박이 구조적 리스크로 지목돼 뚜렷한 방향성 근거가 부족해 중립값 채택(2026-09-03 WebSearch). demand_sensitivity_pct=0.25 - 관리보수(management fee)는 약정자본 기준 계약형이라 상대적으로 안정적이나, 성과보수(incentive fee)는 시장 사이클·펀드 성과에 연동돼 변동성이 있어 CLAUDE.md 업종앵커표 '기업용 필수 SW·전문서비스'(0.20) 앵커보다 다소 높게 조정.",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 11.07%/5y 17.32%)이 default_terminal_growth(2.0~4.5%)보다 크게 높고, AUM 기반 사업 특성상 향후 여러 해에 걸쳐 성장률이 완만히 수렴할 것으로 예상돼 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "margin_years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001433642, 조회 2026-09-03) - operating_income은 revenue-OperatingExpenses로 직접 파생",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $103.16)",
+      "WebSearch: HLNE 10-Q 표지 Class A 주식수(2026-07-31 기준), AUM·경쟁구도(2026-09-03 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2017": 612000.0,
+      "2018": 17341000.0,
+      "2019": 33573000.0,
+      "2020": 60825000.0,
+      "2021": 98022000.0,
+      "2022": 145986000.0,
+      "2023": 109120000.0,
+      "2024": 140858000.0,
+      "2025": 217417000.0,
+      "2026": 249180000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2017": 4681000.0,
+      "2018": 5544000.0,
+      "2019": 6382000.0,
+      "2020": 7183000.0,
+      "2021": 7079000.0,
+      "2022": 7404000.0,
+      "2023": 9950000.0,
+      "2024": 12133000.0,
+      "2025": 31407000.0,
+      "2026": 50867000.0
+    },
+    "falsification_conditions": "다음 분기 AUM 성장률이 뚜렷이 둔화되거나 Blackstone/KKR류 초대형사의 사모시장 솔루션 부문 진출로 수수료율(fee rate)이 가시적으로 압박받는 증거가 나오면 이 판정을 재검토할 것.",
+    "price_at_analysis": 103.16,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 10,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 179820000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-04-01~2017-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 244033000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-04-01~2018-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 252179000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-04-01~2019-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 274048000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-04-01~2020-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-05-28",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 341635000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-04-01~2021-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-05-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 367919000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-04-01~2022-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-05-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 528753000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-04-01~2023-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-05-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 553842000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-04-01~2024-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-05-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 712963000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-04-01~2025-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-05-30",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 758993000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-04-01~2026-03-31",
+          "source": "SEC XBRL us-gaap:RevenueFromContractWithCustomerExcludingAssessedTax",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-05-21",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-03",
+    "filing_dates_by_year": {
+      "2017": "2018-06-14",
+      "2018": "2018-06-14",
+      "2019": "2019-05-30",
+      "2020": "2020-05-28",
+      "2021": "2021-05-27",
+      "2022": "2022-05-26",
+      "2023": "2023-05-25",
+      "2024": "2024-05-23",
+      "2025": "2025-05-30",
+      "2026": "2026-05-21"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.12804989305506598,
+    "revenue_cagr_5y": 0.17310012936050678,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.19843155362463305,
+    "fcf0": 419073000.0,
+    "fcf_by_year": {
+      "2017": 80404000.0,
+      "2018": 94438000.0,
+      "2019": 106256000.0,
+      "2020": 114395000.0,
+      "2021": 169521000.0,
+      "2022": 160997000.0,
+      "2023": 221842000.0,
+      "2024": 109779000.0,
+      "2025": 288664000.0,
+      "2026": 419073000.0
+    },
+    "worst_yoy_revenue_growth": 0.033380731294538,
+    "worst_yoy_year": 2019,
+    "operating_margins": [
+      0.46087318132523736,
+      0.4539737836002822,
+      0.4438413843659383,
+      0.4439949899223382,
+      0.4281238430393956
+    ],
+    "net_debt_to_ebitda": -0.27920590405022383
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 8.0,
+      "margin_volatility": 4.0,
+      "leverage": 2.0,
+      "cyclicality": 9.0,
+      "competition_intensity": 4.2
+    },
+    "score": 27.199999999999996
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.05816,
+    "r": 0.10566,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.12252511815272041,
+    "realistic_growth": 0.12718448382129155,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.12804989305506598,
+        "5y": 0.17310012936050678,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.14494373166960625,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.14494373166960625,
+      "structural_discount_pct": 0.12252511815272041,
+      "discounted_growth": 0.12718448382129155,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.12718448382129155
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.010923789686742538,
+      "two_stage": -0.005912017822265639,
+      "errors": {},
+      "divergence": 0.016835807509008177,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR(3y 11.07%/5y 17.32%)이 default_terminal_growth(2.0~4.5%)보다 크게 높고, AUM 기반 사업 특성상 향후 여러 해에 걸쳐 성장률이 완만히 수렴할 것으로 예상돼 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "value": -0.005912017822265639
+  },
+  "expectation_gap": 0.13309650164355719,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.12718448382129155,
+      "g_bull": 0.19077672573193732,
+      "g_bear": 0.06359224191064577,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.7495043654402196,
+      "base": 0.4542169736847075,
+      "bear": 0.21131778280432156
+    },
+    "probabilities": {
+      "bull": 0.3684,
+      "base": 0.49999999999999994,
+      "bear": 0.1316
+    },
+    "probability_rationale": "DRS=27.2 (중립점 50 대비 편차 -0.46) 기준: p_bull=36.8%, p_base=50.0%, p_bear=13.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.5310353152875793
+  },
+  "rar": 1.9523357179690417,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10566,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": -0.005912017822265639,
+    "implied_growth_without_drs": -0.019651794433593765,
+    "gap_with_drs": 0.13309650164355719,
+    "gap_without_drs": 0.14683627825488532,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10566,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": -0.005912017822265639,
+      "implied_growth_without_drs": -0.019651794433593765,
+      "gap_with_drs": 0.13309650164355719,
+      "gap_without_drs": 0.14683627825488532,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 50867000.0,
+    "sbc_to_fcf_pct": 0.12137980733666927,
+    "fcf0_sbc_adjusted": 368206000.0,
+    "implied_growth_sbc_adjusted": 0.010127258300781235,
+    "gap_sbc_adjusted": 0.11705722552051032,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

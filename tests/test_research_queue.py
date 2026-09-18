@@ -104,6 +104,62 @@ def test_buylist_membership_wins_over_ledger():
     assert Q.derive_state("ACGL", {"ACGL"}, {"ACGL"}) == "IN_BUYLIST"
 
 
+# ── ③b EXCLUDED - 파생 원칙의 유일한 예외 ────────────────────────────────
+def test_excluded_ticker_gets_excluded_state():
+    """제외 레지스트리에만 있고 ledger·매수리스트에 없으면 EXCLUDED다."""
+    excl = {"LNTH": {"reason_category": "PENDING_ACQUISITION", "reason": "..."}}
+    assert Q.derive_state("LNTH", set(), set(), excl) == "EXCLUDED"
+
+
+def test_ledger_wins_over_stale_exclusion():
+    """
+    과거 제외 결정이 나중에 번복돼 정식분석이 생긴 경우(NOW 선례) -
+    ledger 사실이 낡은 제외 기록보다 우선해야 한다.
+    """
+    excl = {"NOW": {"reason_category": "FRAMEWORK_MISMATCH", "reason": "..."}}
+    assert Q.derive_state("NOW", {"NOW"}, set(), excl) == "ANALYZED"
+
+
+def test_excluded_is_opt_in_backward_compatible():
+    """excluded_tickers를 안 넘기면 기존 3상태 동작 그대로다."""
+    assert Q.derive_state("X", set(), set()) == "QUEUED"
+    assert Q.derive_state("X", set(), set(), None) == "QUEUED"
+    assert Q.derive_state("X", set(), set(), {}) == "QUEUED"
+
+
+def test_annotate_attaches_exclusion_reason():
+    q = Q.merge_run({}, [_row("LNTH", 0.10, 10e9, scope=[])], "2026-09-06")
+    excl = {"LNTH": {"reason_category": "PENDING_ACQUISITION",
+                      "reason": "피인수 확정"}}
+    e = Q.annotate(q, set(), set(), "2026-09-06", excl)["LNTH"]
+    assert e["state"] == "EXCLUDED"
+    assert e["exclusion_reason"]["reason_category"] == "PENDING_ACQUISITION"
+
+
+def test_excluded_never_resurfaces_in_next_to_research():
+    """
+    EXCLUDED된 종목이 다시 스크리닝을 통과해도 next_to_research 후보로
+    올라오면 안 된다 - 이게 이 기능의 존재 이유다(LNTH 재등장 사고).
+    """
+    q = Q.merge_run({}, [_row("LNTH", 0.20, 10e9, scope=[]),
+                          _row("FRESH", 0.10, 10e9, scope=[])], "2026-09-06")
+    excl = {"LNTH": {"reason_category": "PENDING_ACQUISITION", "reason": "..."}}
+    entries = Q.annotate(q, set(), set(), "2026-09-06", excl)
+    nxt = Q.next_to_research(list(entries.values()), n=10)
+    tickers = [e["ticker"] for e in nxt]
+    assert "LNTH" not in tickers
+    assert "FRESH" in tickers
+
+
+def test_excluded_priority_reason_does_not_crash():
+    """priority_order의 상태->라벨 딕셔너리가 EXCLUDED를 몰라 KeyError 나면 안 된다."""
+    q = Q.merge_run({}, [_row("LNTH", 0.10, 10e9, scope=[])], "2026-09-06")
+    excl = {"LNTH": {"reason_category": "PENDING_ACQUISITION", "reason": "..."}}
+    entries = Q.annotate(q, set(), set(), "2026-09-06", excl)
+    ordered = Q.priority_order(list(entries.values()))
+    assert "제외됨" in ordered[0]["priority_reason"]
+
+
 # ── ④ 안 나온 종목을 지우지 않는다 ───────────────────────────────────────
 def test_absent_ticker_is_kept_so_persistence_survives():
     """

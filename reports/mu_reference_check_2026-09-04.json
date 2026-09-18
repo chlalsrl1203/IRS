@@ -1,0 +1,69 @@
+{
+  "ticker": "MU",
+  "as_of": "2026-09-04",
+  "status": "FRAMEWORK_MISMATCH",
+  "ledger_written": false,
+  "exclusion_reason_corrected": "2026-08-14 배치의 제외 사유('FCF 5y CAGR 82.23% 아티팩트')는 부정확하다 - realistic_growth_estimate()의 min() 로직이 그 값을 자동으로 버린다(실측: 매출 가중평균 8.63% 채택). 진짜 사유는 **연차 데이터 노후화**다: FY2026 Q3 단독 매출($41,456M)이 FY2025 연간($37,378M)을 넘어섰고 9개월 누적은 그 2.1배다.",
+  "market_cap": 1148136746000.0,
+  "price_at_check": 1016.59,
+  "discount_rate": {
+    "r": 0.11574,
+    "n": 12,
+    "g_terminal": 0.0375,
+    "drs": 60.8
+  },
+  "realistic_growth": 0.07421957678913178,
+  "fcf0_scenarios": [
+    {
+      "fcf0_basis": "FY2025_연간(엔진 표준)",
+      "fcf0": 1668000000.0,
+      "fcf_yield": 0.0014527886210515904,
+      "implied_growth_two_stage": 0.5193328857421875,
+      "implied_growth_single_stage": 0.11412141708279223,
+      "gap": -0.44511330895305573,
+      "judgment": "과대평가 가능성",
+      "grade": "F"
+    },
+    {
+      "fcf0_basis": "FY2026_9개월누적",
+      "fcf0": 26100000000.0,
+      "fcf_yield": 0.022732483818613015,
+      "implied_growth_two_stage": 0.18115921020507814,
+      "implied_growth_single_stage": 0.09094021912174088,
+      "gap": -0.10693963341594635,
+      "judgment": "과대평가 가능성",
+      "grade": "D"
+    },
+    {
+      "fcf0_basis": "FY2026Q3_연율화",
+      "fcf0": 70248000000.0,
+      "fcf_yield": 0.061184349551338196,
+      "implied_growth_two_stage": 0.06333656311035155,
+      "implied_growth_single_stage": 0.051410153637987184,
+      "gap": 0.010883013678780237,
+      "judgment": "적정가/경계선",
+      "grade": "C"
+    }
+  ],
+  "pe_reference": {
+    "FY2025_연간": 134.4579864152711,
+    "FY2026_9개월_연율화": 18.217452811627318,
+    "FY2026Q3_연율화": 10.163020447544524
+  },
+  "interim_actuals": {
+    "quarterly_revenue": {
+      "FY26Q1": 13643000000.0,
+      "FY26Q2": 23860000000.0,
+      "FY26Q3": 41456000000.0
+    },
+    "quarterly_net_income": {
+      "FY26Q1": 5240000000.0,
+      "FY26Q2": 13785000000.0,
+      "FY26Q3": 28243000000.0
+    },
+    "ytd9m_ocf": 45702000000.0,
+    "ytd9m_capex": 19602000000.0
+  },
+  "reopen_condition": "FY2026 10-K 제출(2026-10경 예상) 이후 정식분석",
+  "known_limitation": "이 참조 계산의 DRS·할인율·Realistic Growth는 전부 FY2015~2025 연차 시계열에서 나온 값이라 위 노후화 문제를 똑같이 안고 있다. FCF0만 바꿔 끼운 것이므로 세 행의 Gap 차이는 'FCF0 기준을 바꾸면 얼마나 달라지는가'만 보여줄 뿐 어느 것도 공정가치 추정이 아니다."
+}

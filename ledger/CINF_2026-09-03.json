@@ -1,0 +1,858 @@
+{
+  "meta": {
+    "ticker": "CINF",
+    "company_name": "Cincinnati Financial Corporation",
+    "analyzed_at": "2026-09-03T10:25:04.583097+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0000020286, 조회 2026-09-03)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $171.69)",
+      "WebSearch: CINF 10-Q 표지 주식수(2026-04-22 기준), SBC 세전환산(10-K 원문 인용), 합산비율·경쟁구도·P/B 외부평가(2026 Q2 실적발표/Seeking Alpha/GuruFocus, 2026-09-03 재인용)"
+    ],
+    "falsification_conditions": "(1) 2026 하반기 실적에서 합산비율이 105%를 넘거나(현재 100.8%) 신규계약 감소가 추가로 확대되면 재검토. (2) is_insurer 교차검증(지속가능성장률 vs Realistic Growth) 괴리가 5%p를 넘거나 P/B가 외부평가(1.6배, '동종업계 대비 고평가')와 판정이 상충하면 최우선 재검토.",
+    "price_at_analysis": 171.69,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-03",
+      "filing_dates_by_year": {
+        "2008": "2011-02-25",
+        "2009": "2011-02-25",
+        "2010": "2011-02-25",
+        "2011": "2012-02-29",
+        "2012": "2013-02-27",
+        "2013": "2014-02-27",
+        "2014": "2015-02-27",
+        "2015": "2016-02-26",
+        "2016": "2017-02-24",
+        "2017": "2018-02-23",
+        "2018": "2019-02-22",
+        "2019": "2020-02-25",
+        "2020": "2021-02-25",
+        "2021": "2022-02-24",
+        "2022": "2023-02-23",
+        "2023": "2024-02-26",
+        "2024": "2025-02-24",
+        "2025": "2026-02-23"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 18,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2008]",
+          "value": 3824000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2008-01-01~2008-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2009]",
+          "value": 3903000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2009-01-01~2009-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2010]",
+          "value": 3772000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2010-01-01~2010-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2011]",
+          "value": 3803000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2011-01-01~2011-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2012-02-29",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2012]",
+          "value": 4111000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2012-01-01~2012-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2013-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2013]",
+          "value": 4531000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2013-01-01~2013-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2014-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2014]",
+          "value": 4945000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2014-01-01~2014-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2015-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2015]",
+          "value": 5142000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2015-01-01~2015-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2016-02-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 5449000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2017-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 5732000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2018-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 5407000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-22",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 7924000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 7536000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 9630000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 6557000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 10013000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 11337000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 12631000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것.",
+    "[보험업 교차검증 경고] Realistic Growth(15.22%)와 지속가능성장률(ROE x 유보율=10.01%, 평균ROE 12.92%/유보율 77.50%)이 5.21%p 벌어져 있다(경고임계값 5%p). FCF-DCF가 보험업의 플로트 성장을 유기적 성장으로 착각했을 가능성이 있다(ACGL 선례: Gap 31.44%p가 이 방식으로 과장 확인됨). P/B=1.67배도 함께 참고할 것 - 낮으면(~1.5배 이하) 시장이 아직 재평가하지 않았다는 뜻이라 방향은 유지하되 크기를 할인, 높으면(~3배 이상) 이미 재평가됐을 수 있어 판정 신뢰도를 더 낮출 것."
+  ],
+  "inputs": {
+    "ticker": "CINF",
+    "company_name": "Cincinnati Financial Corporation",
+    "revenue_by_year": {
+      "2008": 3824000000.0,
+      "2009": 3903000000.0,
+      "2010": 3772000000.0,
+      "2011": 3803000000.0,
+      "2012": 4111000000.0,
+      "2013": 4531000000.0,
+      "2014": 4945000000.0,
+      "2015": 5142000000.0,
+      "2016": 5449000000.0,
+      "2017": 5732000000.0,
+      "2018": 5407000000.0,
+      "2019": 7924000000.0,
+      "2020": 7536000000.0,
+      "2021": 9630000000.0,
+      "2022": 6557000000.0,
+      "2023": 10013000000.0,
+      "2024": 11337000000.0,
+      "2025": 12631000000.0
+    },
+    "operating_income_by_year": {
+      "2019": 2472000000.0,
+      "2020": 1499000000.0,
+      "2021": 3670000000.0,
+      "2022": -693000000.0,
+      "2023": 2276000000.0,
+      "2024": 2858000000.0,
+      "2025": 2980000000.0
+    },
+    "operating_cashflow_by_year": {
+      "2008": 484000000.0,
+      "2009": 525000000.0,
+      "2010": 531000000.0,
+      "2011": 247000000.0,
+      "2012": 638000000.0,
+      "2013": 796000000.0,
+      "2014": 873000000.0,
+      "2015": 1064000000.0,
+      "2016": 1103000000.0,
+      "2017": 1052000000.0,
+      "2018": 1181000000.0,
+      "2019": 1208000000.0,
+      "2020": 1491000000.0,
+      "2021": 1981000000.0,
+      "2022": 2052000000.0,
+      "2023": 2052000000.0,
+      "2024": 2649000000.0,
+      "2025": 3112000000.0
+    },
+    "capex_by_year": {
+      "2008": 36000000.0,
+      "2009": 42000000.0,
+      "2010": 17000000.0,
+      "2011": 7000000.0,
+      "2012": 6000000.0,
+      "2013": 7000000.0,
+      "2014": 9000000.0,
+      "2015": 10000000.0,
+      "2016": 13000000.0,
+      "2017": 16000000.0,
+      "2018": 20000000.0,
+      "2019": 24000000.0,
+      "2020": 20000000.0,
+      "2021": 15000000.0,
+      "2022": 15000000.0,
+      "2023": 18000000.0,
+      "2024": 22000000.0,
+      "2025": 20000000.0
+    },
+    "market_cap": 26558166733.98,
+    "net_debt": -641000000.0,
+    "ebitda": 3016000000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.3,
+      0.15
+    ],
+    "market_share_trend_pp_per_year": -1.5,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.18,
+    "subjective_input_basis": "competitor_threat_weights=[0.30(Travelers - 합산비율 84%대의 'best-in-class' 규율, CINF 자체 100.8%와 극명한 격차라 최대 경쟁위협으로 비중있게 반영), 0.15(Chubb - 대형 다각화 손해보험사)]. market_share_trend_pp_per_year=-1.5 - 신규계약보험료가 전체 -11%·개인보험 -40% 급감(2026 Q2 실적발표로 확인된 실측, SIGI의 -1.0pp보다 더 부정적으로 설정 - CINF는 합산비율까지 100.8%로 손실전환해 SIGI보다 상황이 나쁘다고 판단[추정치]). demand_sensitivity_pct=0.18 - 상업용·개인용 혼합 손해보험 구조로 SIGI(0.18)·RLI(0.18)와 유사한 사업믹스.",
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR·ACGL·SIGI·RLI 선례와 동일하게 two_stage를 채택한다 - 18개년(2008~2025) 매출이 시장가치 반영 변동(특히 2022년 주식시장 급락)으로 진동하지만 순보험료 기반 장기추세는 꾸준히 성장해왔다는 점에서 다년 수렴 모델이 적절.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0000020286, 조회 2026-09-03)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $171.69)",
+      "WebSearch: CINF 10-Q 표지 주식수(2026-04-22 기준), SBC 세전환산(10-K 원문 인용), 합산비율·경쟁구도·P/B 외부평가(2026 Q2 실적발표/Seeking Alpha/GuruFocus, 2026-09-03 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": true,
+    "net_income_by_year": {
+      "2021": 2946000000.0,
+      "2022": -486000000.0,
+      "2023": 1843000000.0,
+      "2024": 2292000000.0,
+      "2025": 2393000000.0
+    },
+    "shareholders_equity_by_year": {
+      "2021": 13105000000.0,
+      "2022": 10531000000.0,
+      "2023": 12098000000.0,
+      "2024": 13935000000.0,
+      "2025": 15911000000.0
+    },
+    "dividends_paid_by_year": {
+      "2021": 395000000.0,
+      "2022": 423000000.0,
+      "2023": 454000000.0,
+      "2024": 490000000.0,
+      "2025": 525000000.0
+    },
+    "sbc_by_year": {
+      "2023": 40000000.0,
+      "2024": 46000000.0,
+      "2025": 46000000.0
+    },
+    "falsification_conditions": "(1) 2026 하반기 실적에서 합산비율이 105%를 넘거나(현재 100.8%) 신규계약 감소가 추가로 확대되면 재검토. (2) is_insurer 교차검증(지속가능성장률 vs Realistic Growth) 괴리가 5%p를 넘거나 P/B가 외부평가(1.6배, '동종업계 대비 고평가')와 판정이 상충하면 최우선 재검토.",
+    "price_at_analysis": 171.69,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-03",
+      "n_covered": 18,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2008]",
+          "value": 3824000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2008-01-01~2008-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2009]",
+          "value": 3903000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2009-01-01~2009-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2010]",
+          "value": 3772000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2010-01-01~2010-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2011-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2011]",
+          "value": 3803000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2011-01-01~2011-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2012-02-29",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2012]",
+          "value": 4111000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2012-01-01~2012-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2013-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2013]",
+          "value": 4531000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2013-01-01~2013-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2014-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2014]",
+          "value": 4945000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2014-01-01~2014-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2015-02-27",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2015]",
+          "value": 5142000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2015-01-01~2015-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2016-02-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2016]",
+          "value": 5449000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2016-01-01~2016-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2017-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2017]",
+          "value": 5732000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2017-01-01~2017-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2018-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2018]",
+          "value": 5407000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2018-01-01~2018-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2019-02-22",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2019]",
+          "value": 7924000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2019-01-01~2019-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2020-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2020]",
+          "value": 7536000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-01-01~2020-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2021-02-25",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 9630000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-01-01~2021-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2022-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 6557000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-01-01~2022-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 10013000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-01-01~2023-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-02-26",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 11337000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-01-01~2024-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-02-24",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 12631000000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-01-01~2025-12-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-02-23",
+          "retrieval_date": "2026-09-03",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-03",
+    "filing_dates_by_year": {
+      "2008": "2011-02-25",
+      "2009": "2011-02-25",
+      "2010": "2011-02-25",
+      "2011": "2012-02-29",
+      "2012": "2013-02-27",
+      "2013": "2014-02-27",
+      "2014": "2015-02-27",
+      "2015": "2016-02-26",
+      "2016": "2017-02-24",
+      "2017": "2018-02-23",
+      "2018": "2019-02-22",
+      "2019": "2020-02-25",
+      "2020": "2021-02-25",
+      "2021": "2022-02-24",
+      "2022": "2023-02-23",
+      "2023": "2024-02-26",
+      "2024": "2025-02-24",
+      "2025": "2026-02-23"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.24425917108566075,
+    "revenue_cagr_5y": 0.1088157063187396,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": 0.09403336323667855,
+    "fcf_cagr_5y": 0.160179967894458,
+    "fcf0": 3092000000.0,
+    "fcf_by_year": {
+      "2008": 448000000.0,
+      "2009": 483000000.0,
+      "2010": 514000000.0,
+      "2011": 240000000.0,
+      "2012": 632000000.0,
+      "2013": 789000000.0,
+      "2014": 864000000.0,
+      "2015": 1054000000.0,
+      "2016": 1090000000.0,
+      "2017": 1036000000.0,
+      "2018": 1161000000.0,
+      "2019": 1184000000.0,
+      "2020": 1471000000.0,
+      "2021": 1966000000.0,
+      "2022": 2037000000.0,
+      "2023": 2034000000.0,
+      "2024": 2627000000.0,
+      "2025": 3092000000.0
+    },
+    "worst_yoy_revenue_growth": -0.3191069574247144,
+    "worst_yoy_year": 2022,
+    "operating_margins": [
+      0.3811007268951194,
+      -0.10568857709318286,
+      0.227304504144612,
+      0.252094910470142,
+      0.23592748000950042
+    ],
+    "net_debt_to_ebitda": -0.21253315649867374
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 14.0,
+      "margin_volatility": 20.0,
+      "leverage": 2.0,
+      "cyclicality": 20.0,
+      "competition_intensity": 11.399999999999999
+    },
+    "score": 67.4
+  },
+  "lynch": {
+    "auto_classified": "cyclical",
+    "auto_note": null,
+    "used": "cyclical",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.07022,
+    "r": 0.11772,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.05,
+    "realistic_growth": 0.15217096949973508,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.24425917108566075,
+        "5y": 0.1088157063187396,
+        "10y": 0.09403336323667855
+      },
+      "weights_used": [
+        0.5,
+        0.3,
+        0.2
+      ],
+      "base_growth_before_fcf_check": 0.17358097008578796,
+      "fcf_conservatism_applied": "FCF CAGR(16.02%) < Revenue 가중평균(17.36%) -> FCF CAGR 채택",
+      "base_growth_after_fcf_check": 0.160179967894458,
+      "structural_discount_pct": 0.05,
+      "discounted_growth": 0.15217096949973508,
+      "lynch_type": "cyclical",
+      "cap_applied": null,
+      "final_realistic_growth": 0.15217096949973508
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.0011611195388210357,
+      "two_stage": -0.015648651123046888,
+      "errors": {},
+      "divergence": 0.016809770661867923,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "PGR·ACGL·SIGI·RLI 선례와 동일하게 two_stage를 채택한다 - 18개년(2008~2025) 매출이 시장가치 반영 변동(특히 2022년 주식시장 급락)으로 진동하지만 순보험료 기반 장기추세는 꾸준히 성장해왔다는 점에서 다년 수렴 모델이 적절.",
+    "value": -0.015648651123046888
+  },
+  "expectation_gap": 0.16781962062278197,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.15217096949973508,
+      "g_bull": 0.2,
+      "g_bear": 0.07608548474986754,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.2
+    },
+    "returns": {
+      "bull": 0.7982818642742251,
+      "base": 0.5711860701428466,
+      "bear": 0.27152926674362754
+    },
+    "probabilities": {
+      "bull": 0.24779999999999996,
+      "base": 0.49999999999999994,
+      "bear": 0.25220000000000004
+    },
+    "probability_rationale": "DRS=67.4 (중립점 50 대비 편차 +0.35) 기준: p_bull=24.8%, p_base=50.0%, p_bear=25.2%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.5518869621113192
+  },
+  "rar": 0.8188233859218383,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.11772,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": -0.015648651123046888,
+    "implied_growth_without_drs": -0.0465791702270508,
+    "gap_with_drs": 0.16781962062278197,
+    "gap_without_drs": 0.19875013972678587,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.11772,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": -0.015648651123046888,
+      "implied_growth_without_drs": -0.0465791702270508,
+      "gap_with_drs": 0.16781962062278197,
+      "gap_without_drs": 0.19875013972678587,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": {
+    "roe_years_used": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "avg_roe": 0.12917329782725798,
+    "dividend_years_used": [
+      2023,
+      2024,
+      2025
+    ],
+    "payout_ratio": 0.22503063725490197,
+    "retention_ratio": 0.774969362745098,
+    "sustainable_growth": 0.10010534830087287,
+    "price_to_book": 1.66917018
+  },
+  "sbc_cross_check": {
+    "sbc0": 46000000.0,
+    "sbc_to_fcf_pct": 0.014877102199223804,
+    "fcf0_sbc_adjusted": 3046000000.0,
+    "implied_growth_sbc_adjusted": -0.013636589050292983,
+    "gap_sbc_adjusted": 0.16580755855002804,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

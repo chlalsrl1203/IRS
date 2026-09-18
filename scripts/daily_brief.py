@@ -50,6 +50,7 @@ from scripts.daily_monitor_ci import run_monitor  # noqa: E402
 
 LEDGER_DIR = "ledger"
 REPORTS = "reports"
+HOLDINGS_PATH = "portfolio/holdings.json"
 WEEKDAY_KR = ["월", "화", "수", "목", "금", "토", "일"]
 
 
@@ -135,6 +136,107 @@ def section_today(today):
                 f"{len(t['no_conditions'])}종목 (⚠️ 미기재는 '안전'이 아니라 "
                 f"'감시근거 없음')</sub>"]
     return out, len(need) + len(due)
+
+
+# ── ①-b 실제 보유 vs 시스템 목표 ────────────────────────────────────────
+def section_reconciliation():
+    """
+    보유 종목과 매수리스트를 나란히 놓는다.
+
+    지금까지 브리핑은 `holdings.json`을 **한 번도 읽지 않았다** — 즉 «무엇을
+    사야 하는가»만 있고 «지금 무엇을 들고 있는가»가 빠져 있어서, 둘의 차이를
+    사람이 매번 머리로 맞춰봐야 했다.
+
+    ⚠️ **차이를 «조치»로 번역하지 않는다.** 이 표에는 매도/매수 열이 없다.
+    이 프로젝트가 `engine/portfolio.py`(v3.82)·`engine/thesis.py`(v3.48)에서
+    구조로 못박은 것과 같은 경계다 — Gap을 넣으면 액션이 나오는 경로를 만들면
+    검증되지 않은 신호(실현수익률 관측 0건)가 곧바로 자본배분이 된다.
+    리밸런싱 여부는 사람이 정한다.
+
+    ⚠️ **목표에 없다 = 팔라가 아니다.** Stage 1/2 게이트는 «지금 새로 편입할
+    것인가»에 답하며, 이미 보유한 것을 청산하라는 뜻이 아니다(TTD를
+    2026-08-13에 전량 제외가 아니라 비중 축소로 처리한 것과 같은 구분).
+    """
+    out = ["## 📌 실제 보유 vs 시스템 목표"]
+
+    holdings = load_json(HOLDINGS_PATH)
+    bpath = _latest("buylist_")
+    buylist = load_json(bpath)
+    if not holdings or not buylist:
+        missing = []
+        if not holdings:
+            missing.append(f"`{HOLDINGS_PATH}`")
+        if not buylist:
+            missing.append("`reports/buylist_*.json`")
+        out += ["", f"{' · '.join(missing)}을 찾지 못해 대조를 건너뛴다."]
+        return out
+
+    total = holdings["total_market_value_krw"]
+    held = {p["ticker"]: p for p in holdings["positions"]}
+    held_w = {t: p["market_value_krw"] / total for t, p in held.items()}
+    rows = buylist if isinstance(buylist, list) else buylist.get("positions") or []
+    target_w = {r["ticker"]: r["weight_final"] for r in rows}
+
+    # 배제 사유는 파이프라인 진단 리포트가 이미 갖고 있다 — 다시 계산하지 않는다
+    diag = load_json(_latest("portfolio_pipeline_")) or {}
+    excl_reason = {}
+    for key in ("stage1_excluded", "g6_excluded"):
+        for r in diag.get(key, []) or []:
+            if key == "stage1_excluded":
+                excl_reason[r["ticker"]] = " / ".join(
+                    e.split(":")[0] for e in r.get("excluded_by", []))
+            else:
+                g = r.get("g6") or {}
+                excl_reason[r["ticker"]] = (
+                    f"G6 회사공시 대입 시 {g.get('grade_at_company_growth', '?')}등급")
+
+    judged = {d["meta"]["ticker"]: d for d in iter_ledgers()}
+
+    both = sorted(set(held_w) & set(target_w), key=lambda t: -held_w[t])
+    only_held = sorted(set(held_w) - set(target_w), key=lambda t: -held_w[t])
+    only_target = sorted(set(target_w) - set(held_w), key=lambda t: -target_w[t])
+
+    out += ["",
+            f"보유 **{len(held_w)}종목**(₩{total:,}) · 목표 **{len(target_w)}종목** "
+            f"· 겹침 **{len(both)}종목**",
+            f"겹치는 종목이 차지하는 비중 — 보유 기준 "
+            f"**{sum(held_w[t] for t in both) * 100:.1f}%** / 목표 기준 "
+            f"**{sum(target_w[t] for t in both) * 100:.1f}%**",
+            ""]
+
+    out += ["| 종목 | 보유 | 목표 | 차이 | 상태 |", "|---|---:|---:|---:|---|"]
+    for t in both:
+        d = held_w[t] - target_w[t]
+        out.append(f"| **{t}** | {held_w[t] * 100:.2f}% | {target_w[t] * 100:.2f}% "
+                   f"| {d * 100:+.2f}%p | 목표에 포함 |")
+    for t in only_held:
+        led = judged.get(t)
+        if led:
+            state = (f"{led['judgment_grade']}등급 · {led['judgment']}"
+                     + (f" · {excl_reason[t]}" if t in excl_reason else ""))
+        else:
+            state = "**판정 불가**(ledger 없음)"
+        out.append(f"| **{t}** | {held_w[t] * 100:.2f}% | — "
+                   f"| {held_w[t] * 100:+.2f}%p | {state} |")
+    for t in only_target:
+        out.append(f"| {t} | — | {target_w[t] * 100:.2f}% "
+                   f"| {-target_w[t] * 100:+.2f}%p | 미보유 |")
+
+    out += ["",
+            f"보유 중이나 목표 밖 **{sum(held_w[t] for t in only_held) * 100:.1f}%** · "
+            f"목표에 있으나 미보유 **{sum(target_w[t] for t in only_target) * 100:.1f}%**",
+            ""]
+    no_judgment = [t for t in only_held if t not in judged]
+    if no_judgment:
+        out.append(f"⚠️ **{', '.join(no_judgment)}는 판정 자체가 없다**(FCF-DCF "
+                   f"적용 불가로 ledger 미생성) — «문제 없음»이 아니라 «이 모델로는 "
+                   f"답할 수 없음»이라는 뜻이다.")
+    out.append("⚠️ **이 표에 매수/매도 열은 없다.** 목표에 없다는 것은 «지금 새로 "
+               "편입하지 않는다»는 뜻이지 «청산하라»가 아니다 — 리밸런싱 여부는 "
+               "사람이 정한다.")
+    out.append(f"<sub>보유 기준일 {holdings.get('as_of', '?')} · 목표 기준 파일 "
+               f"`{os.path.basename(bpath)}`</sub>")
+    return out
 
 
 # ── ② 해외주식 계좌 — 실제 금액이 붙은 매수표 ───────────────────────────
@@ -404,6 +506,7 @@ def build(today, capital, top_n):
              f"({WEEKDAY_KR[today.weekday()]})", ""]
     today_lines, n_need = section_today(today)
     lines += today_lines + [""]
+    lines += section_reconciliation() + [""]
     lines += section_new_candidates(today) + [""]
     lines += section_broad_screen() + [""]
     lines += section_research_queue() + [""]

@@ -1,0 +1,471 @@
+{
+  "meta": {
+    "ticker": "NXT",
+    "company_name": "Nextpower Inc.",
+    "analyzed_at": "2026-09-03T09:37:28.118029+00:00",
+    "engine_version": "v3.80",
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001852131, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $82.55)",
+      "WebSearch: NXT 관세 리스크·Q2 FY2026 실적발표, 태양광 트래커 시장 경쟁구도(2026-09-02 재인용)"
+    ],
+    "falsification_conditions": "美 ITC(투자세액공제) 정책이 유틸리티스케일 태양광에 불리하게 변경되거나, 관세 마진 역풍이 300bp를 크게 상회해 지속되거나, Array Technologies 대비 수주점유율이 뚜렷이 하락하면 이 판정을 재검토할 것.",
+    "price_at_analysis": 82.55,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_VALID",
+      "analysis_as_of": "2026-09-02",
+      "filing_dates_by_year": {
+        "2021": "2023-06-09",
+        "2022": "2023-06-09",
+        "2023": "2023-06-09",
+        "2024": "2024-05-28",
+        "2025": "2025-05-22",
+        "2026": "2026-05-19"
+      },
+      "violations": [],
+      "note": null
+    },
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 1195617000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-04-01~2021-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1457592000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-04-01~2022-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 1902137000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-04-01~2023-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 2499841000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-04-01~2024-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-05-28",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2959197000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-04-01~2025-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-05-22",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 3559390000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-04-01~2026-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-05-19",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(6개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(24.38%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[모델 괴리 경고] single_stage(6.36%)와 two_stage(9.67%)가 3.31%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25).",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "NXT",
+    "company_name": "Nextpower Inc.",
+    "revenue_by_year": {
+      "2021": 1195617000.0,
+      "2022": 1457592000.0,
+      "2023": 1902137000.0,
+      "2024": 2499841000.0,
+      "2025": 2959197000.0,
+      "2026": 3559390000.0
+    },
+    "operating_income_by_year": {
+      "2021": 158531000.0,
+      "2022": 65907000.0,
+      "2023": 168485000.0,
+      "2024": 587118000.0,
+      "2025": 639112000.0,
+      "2026": 697266000.0
+    },
+    "operating_cashflow_by_year": {
+      "2021": 94273000.0,
+      "2022": -147113000.0,
+      "2023": 107669000.0,
+      "2024": 428973000.0,
+      "2025": 655794000.0,
+      "2026": 562911000.0
+    },
+    "capex_by_year": {
+      "2021": 2463000.0,
+      "2022": 5917000.0,
+      "2023": 3183000.0,
+      "2024": 6160000.0,
+      "2025": 33921000.0,
+      "2026": 49277000.0
+    },
+    "market_cap": 12806960212.8,
+    "net_debt": -1094976000.0,
+    "ebitda": 727868000.0,
+    "risk_free_rate": 0.0475,
+    "competitor_threat_weights": [
+      0.18,
+      0.12
+    ],
+    "market_share_trend_pp_per_year": 0.2,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.4,
+    "subjective_input_basis": "competitor_threat_weights=[0.18(Array Technologies), 0.12(Arctech Solar)] - Array가 북미 최대 직접경쟁자(내구성·비용효율 강점), Arctech은 중국계 글로벌 3위권 - NXT·Array·Arctech 3사가 2025년 출하량의 55~60%를 점유하는 중간 집중도 시장. market_share_trend_pp_per_year=+0.2 - NXT가 시장선도 지위를 유지하며 관세대응(국내 철강조달 다각화)에도 선제적이라 완만한 양(+)값 반영(2026-09-02 WebSearch, 정량 점유율 추세는 미확보). demand_sensitivity_pct=0.40 - CLAUDE.md 업종앵커표 '자본재/데이터센터 인프라(설비투자 사이클)' 버킷(VRT, 앵커 0.45)에 근접하되 소폭 낮게 - 유틸리티스케일 태양광은 데이터센터보다 최종수요처가 다변화돼 있으나 정책(ITC 세액공제)·관세 리스크에 직접 노출돼 여전히 경기·정책민감도가 높음.",
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR이 default_terminal_growth(2.0~4.5%)보다 여전히 높고, YoY 성장률이 2024년 +31.4% 정점 이후 완만히 감속 중(2025 +18.4%, 2026 +20.3%)이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "margin_years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (CIK 0001852131, 조회 2026-09-02)",
+      "Alpha Vantage GLOBAL_QUOTE (2026-09-02 종가 $82.55)",
+      "WebSearch: NXT 관세 리스크·Q2 FY2026 실적발표, 태양광 트래커 시장 경쟁구도(2026-09-02 재인용)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": {
+      "2021": 0.0,
+      "2022": 0.0,
+      "2023": 1143000.0,
+      "2024": 306241000.0,
+      "2025": 509168000.0,
+      "2026": 585883000.0
+    },
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2021": 4306000.0,
+      "2022": 3048000.0,
+      "2023": 31994000.0,
+      "2024": 56783000.0,
+      "2025": 118880000.0,
+      "2026": 120298000.0
+    },
+    "falsification_conditions": "美 ITC(투자세액공제) 정책이 유틸리티스케일 태양광에 불리하게 변경되거나, 관세 마진 역풍이 300bp를 크게 상회해 지속되거나, Array Technologies 대비 수주점유율이 뚜렷이 하락하면 이 판정을 재검토할 것.",
+    "price_at_analysis": 82.55,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": {
+      "status": "PROVENANCE_RECORDED",
+      "retrieval_date": "2026-09-02",
+      "n_covered": 6,
+      "n_missing": 0,
+      "missing_fields": [],
+      "entries": [
+        {
+          "field_path": "revenue_by_year[2021]",
+          "value": 1195617000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2020-04-01~2021-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2022]",
+          "value": 1457592000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2021-04-01~2022-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2023]",
+          "value": 1902137000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2022-04-01~2023-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2023-06-09",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2024]",
+          "value": 2499841000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2023-04-01~2024-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2024-05-28",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2025]",
+          "value": 2959197000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2024-04-01~2025-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2025-05-22",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        },
+        {
+          "field_path": "revenue_by_year[2026]",
+          "value": 3559390000,
+          "unit": "currency_amount",
+          "currency": "USD",
+          "period": "2025-04-01~2026-03-31",
+          "source": "SEC XBRL us-gaap:Revenues",
+          "source_kind": "sec_xbrl",
+          "publication_date": "2026-05-19",
+          "retrieval_date": "2026-09-02",
+          "note": ""
+        }
+      ],
+      "note": "출처 기록은 값이 **맞는지**를 보증하지 않는다 - 어디서 왔는지만 말한다. 두 출처가 어긋나면 분석자가 1차 자료로 확정할 것."
+    },
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": "2026-09-02",
+    "filing_dates_by_year": {
+      "2021": "2023-06-09",
+      "2022": "2023-06-09",
+      "2023": "2023-06-09",
+      "2024": "2024-05-28",
+      "2025": "2025-05-22",
+      "2026": "2026-05-19"
+    }
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.23228528026844608,
+    "revenue_cagr_5y": 0.2438176032031829,
+    "cagr_5y_base_year": 2021,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 0.41108363556765815,
+    "fcf0": 513634000.0,
+    "fcf_by_year": {
+      "2021": 91810000.0,
+      "2022": -153030000.0,
+      "2023": 104486000.0,
+      "2024": 422813000.0,
+      "2025": 621873000.0,
+      "2026": 513634000.0
+    },
+    "worst_yoy_revenue_growth": 0.1837540867599179,
+    "worst_yoy_year": 2025,
+    "operating_margins": [
+      0.04521635684059737,
+      0.08857669032251621,
+      0.23486213723192795,
+      0.21597480667897406,
+      0.19589480219925323
+    ],
+    "net_debt_to_ebitda": -1.5043606807827794
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 4.0,
+      "margin_volatility": 14.0,
+      "leverage": 2.0,
+      "cyclicality": 5.6,
+      "competition_intensity": 3.6
+    },
+    "score": 29.200000000000003
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0475,
+    "erp": 0.05876000000000001,
+    "r": 0.10626000000000001,
+    "n": 12,
+    "g_terminal": 0.0375
+  },
+  "growth": {
+    "structural_discount_pct": 0.10576616146736842,
+    "realistic_growth": 0.21158458033600352,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.23228528026844608,
+        "5y": 0.2438176032031829,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.23660990136897236,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.23660990136897236,
+      "structural_discount_pct": 0.10576616146736842,
+      "discounted_growth": 0.21158458033600352,
+      "lynch_type": "fast_grower",
+      "cap_applied": null,
+      "final_realistic_growth": 0.21158458033600352
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.06360328816247596,
+      "two_stage": 0.09665756225585934,
+      "errors": {},
+      "divergence": 0.03305427409338338,
+      "divergence_warning": "[모델 괴리 경고] single_stage(6.36%)와 two_stage(9.67%)가 3.31%p 벌어져 있다. 어느 쪽을 쓰느냐에 따라 Expectation Gap 판정이 바뀔 수 있으므로, model_choice_reason에 선택 근거를 반드시 남길 것(v3.19). 과거 같은 종목 기록이 있으면 그 내재성장률과 대조해볼 것 - PH가 이 방법으로 모델선택 실수를 잡은 사례다(2026-07-25)."
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "trailing 매출 CAGR이 default_terminal_growth(2.0~4.5%)보다 여전히 높고, YoY 성장률이 2024년 +31.4% 정점 이후 완만히 감속 중(2025 +18.4%, 2026 +20.3%)이라 다년 수렴 경로(two_stage)가 적절하다고 판단.",
+    "value": 0.09665756225585934
+  },
+  "expectation_gap": 0.11492701808014419,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.21158458033600352,
+      "g_bull": 0.25,
+      "g_bear": 0.10579229016800176,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 0.5581703636364466,
+      "base": 0.39503730442770424,
+      "bear": 0.026628718554653874
+    },
+    "probabilities": {
+      "bull": 0.36239999999999994,
+      "base": 0.5,
+      "bear": 0.13760000000000003
+    },
+    "probability_rationale": "DRS=29.2 (중립점 50 대비 편차 -0.42) 기준: p_bull=36.2%, p_base=50.0%, p_bear=13.8%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.4034637036688207
+  },
+  "rar": 1.3817250125644542,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.10626000000000001,
+    "r_without_drs": 0.0975,
+    "implied_growth_with_drs": 0.09665756225585934,
+    "implied_growth_without_drs": 0.0793191909790039,
+    "gap_with_drs": 0.11492701808014419,
+    "gap_without_drs": 0.1322653893569996,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.10626000000000001,
+      "r_without_drs": 0.0975,
+      "implied_growth_with_drs": 0.09665756225585934,
+      "implied_growth_without_drs": 0.0793191909790039,
+      "gap_with_drs": 0.11492701808014419,
+      "gap_without_drs": 0.1322653893569996,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": 0,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 94,
+    "final": 94
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "A",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 120298000.0,
+    "sbc_to_fcf_pct": 0.2342095733537889,
+    "fcf0_sbc_adjusted": 393336000.0,
+    "implied_growth_sbc_adjusted": 0.1274816513061523,
+    "gap_sbc_adjusted": 0.08410292902985123,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": true
+  }
+}

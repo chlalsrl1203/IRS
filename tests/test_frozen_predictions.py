@@ -27,11 +27,38 @@ def test_predictions_exist_for_real():
     )
 
 
-def test_every_prediction_starts_open_with_no_prefilled_outcome():
+def test_open_predictions_have_no_prefilled_outcome():
+    """
+    OPEN 상태인 예측은 결과가 미리 채워져 있으면 안 된다. (2026-09-07: 해소는
+    이 모듈의 정상 수명주기다 - `resolve_prediction()`이 존재하는 이유가 바로
+    이것이라, "전부 OPEN이어야 한다"는 예전 단언은 해소가 실제로 시작되면
+    당연히 깨진다. 여기서는 아직 OPEN인 것들만 검사한다.)
+    """
     for p in PREDICTIONS:
-        assert p["status"] == "OPEN"
-        assert p["actual_value"] is None
-        assert p["forecast_error"] is None
+        if p["status"] == "OPEN":
+            assert p["actual_value"] is None
+            assert p["forecast_error"] is None
+
+
+def test_resolved_predictions_have_internally_consistent_forecast_error():
+    """
+    HIT/MISS로 해소된 예측은 저장된 forecast_error가 `forecast_error()`를
+    (actual_value, expected_low, expected_high)에 다시 적용한 값과 정확히
+    일치해야 하고, status는 그 오차가 0인지 아닌지와 일치해야 한다 - 손으로
+    잘못된 status를 적어 넣는 것을 막는다.
+    """
+    from engine.prediction_ledger import forecast_error
+
+    resolved = [p for p in PREDICTIONS if p["status"] in ("HIT", "MISS")]
+    assert resolved, "아직 해소된 예측이 0건이다"
+    for p in resolved:
+        err = forecast_error(
+            p["actual_value"], p["core"]["expected_low"], p["core"]["expected_high"]
+        )
+        assert p["forecast_error"] == pytest.approx(err, abs=1e-9), p["core"]["ticker"]
+        assert p["status"] == ("HIT" if err == 0.0 else "MISS"), p["core"]["ticker"]
+        assert p["actual_date"], p["core"]["ticker"]
+        assert p["resolution_note"], p["core"]["ticker"]
 
 
 def test_thesis_id_is_honest_placeholder_not_fabricated():
