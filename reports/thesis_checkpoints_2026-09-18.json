@@ -1,0 +1,177 @@
+{
+  "due": [],
+  "approaching": [],
+  "no_date": [
+    {
+      "ticker": "ACGL",
+      "thesis_id": "ACGL-2026-09-07",
+      "thesis_path": "thesis/ACGL_2026-09-07.json",
+      "condition_index": 0,
+      "condition": "재보험 ex-cat 컴바인드레이쇼가 세 분기 연속 전년比 악화되면 텔레매틱스/언더라이팅 규율 서사 재검토",
+      "check_by": null,
+      "linked_ledger": "ACGL_2026-09-05.json"
+    },
+    {
+      "ticker": "ACGL",
+      "thesis_id": "ACGL-2026-09-07",
+      "thesis_path": "thesis/ACGL_2026-09-07.json",
+      "condition_index": 1,
+      "condition": "단일 대재해로 분기 세전손실이 발생하면 재검토 (엔진 FCF가 이 리스크를 구조적으로 못 봄)",
+      "check_by": null,
+      "linked_ledger": "ACGL_2026-09-05.json"
+    },
+    {
+      "ticker": "ACGL",
+      "thesis_id": "ACGL-2026-09-07",
+      "thesis_path": "thesis/ACGL_2026-09-07.json",
+      "condition_index": 2,
+      "condition": "insurer_cross_check 괴리(RG vs 지속가능성장률)가 5%p를 넘으면 성장 추정 신뢰도 재검토",
+      "check_by": null,
+      "linked_ledger": "ACGL_2026-09-05.json"
+    },
+    {
+      "ticker": "DLO",
+      "thesis_id": "DLO-2026-09-07",
+      "thesis_path": "thesis/DLO_2026-09-07.json",
+      "condition_index": 0,
+      "condition": "Q3 2026 실적에서 총이익 성장률이 가이던스 하단(+25%)을 밑돌면 재검토",
+      "check_by": null,
+      "linked_ledger": "DLO_2026-09-04.json"
+    },
+    {
+      "ticker": "DLO",
+      "thesis_id": "DLO-2026-09-07",
+      "thesis_path": "thesis/DLO_2026-09-07.json",
+      "condition_index": 1,
+      "condition": "순 테이크레이트가 두 분기 연속 하락하면 구조적 경쟁 압력으로 재평가",
+      "check_by": null,
+      "linked_ledger": "DLO_2026-09-04.json"
+    },
+    {
+      "ticker": "DLO",
+      "thesis_id": "DLO-2026-09-07",
+      "thesis_path": "thesis/DLO_2026-09-07.json",
+      "condition_index": 2,
+      "condition": "NRR이 140% 아래로 떨어지면 land-and-expand 서사 재검토",
+      "check_by": null,
+      "linked_ledger": "DLO_2026-09-04.json"
+    },
+    {
+      "ticker": "DLO",
+      "thesis_id": "DLO-2026-09-07",
+      "thesis_path": "thesis/DLO_2026-09-07.json",
+      "condition_index": 3,
+      "condition": "FY2026 영업현금흐름이 다시 음수로 전환되면 재검토",
+      "check_by": null,
+      "linked_ledger": "DLO_2026-09-04.json"
+    },
+    {
+      "ticker": "NOW",
+      "thesis_id": "NOW-2026-09-18",
+      "thesis_path": "thesis/NOW_2026-09-18.json",
+      "condition_index": 1,
+      "condition": "cRPO 상수통화 성장률이 두 분기 연속 20% 아래로 떨어지면 - cRPO는 매출보다 먼저 움직이는 선행지표이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "NOW_2026-09-05.json"
+    },
+    {
+      "ticker": "NOW",
+      "thesis_id": "NOW-2026-09-18",
+      "thesis_path": "thesis/NOW_2026-09-18.json",
+      "condition_index": 2,
+      "condition": "비좌석(non-seat) 가격모델 신규계약 비중이 50%에서 후퇴하면 - 'AI가 좌석 수를 줄인다'는 위협에 대한 회사 대응이 실패하고 있다는 신호이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "NOW_2026-09-05.json"
+    },
+    {
+      "ticker": "NOW",
+      "thesis_id": "NOW-2026-09-18",
+      "thesis_path": "thesis/NOW_2026-09-18.json",
+      "condition_index": 3,
+      "condition": "ServiceNow AI ACV 성장이 정체되면 재검토",
+      "check_by": null,
+      "linked_ledger": "NOW_2026-09-05.json"
+    },
+    {
+      "ticker": "NOW",
+      "thesis_id": "NOW-2026-09-18",
+      "thesis_path": "thesis/NOW_2026-09-18.json",
+      "condition_index": 4,
+      "condition": "차입금이 Armis 인수 자금조달($1,491M->$5,435M) 이후 추가로 크게 늘면 - 연쇄 M&A 자금조달이 재무 유연성을 잠식하는 것이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "NOW_2026-09-05.json"
+    },
+    {
+      "ticker": "PGR",
+      "thesis_id": "PGR-2026-09-07",
+      "thesis_path": "thesis/PGR_2026-09-07.json",
+      "condition_index": 0,
+      "condition": "신규계약(PIF) 증가율이 한 자릿수 초반까지 추가 둔화되거나 GEICO/Allstate 대비 손해율 열위가 확대되면 텔레매틱스 모트 서사 재검토",
+      "check_by": null,
+      "linked_ledger": "PGR_2026-08-23.json"
+    },
+    {
+      "ticker": "PGR",
+      "thesis_id": "PGR-2026-09-07",
+      "thesis_path": "thesis/PGR_2026-09-07.json",
+      "condition_index": 1,
+      "condition": "상업용차 역발전 준비금이 $140M보다 유의미하게 확대되거나 개인용차 라인까지 번지면 재검토",
+      "check_by": null,
+      "linked_ledger": "PGR_2026-08-23.json"
+    },
+    {
+      "ticker": "PGR",
+      "thesis_id": "PGR-2026-09-07",
+      "thesis_path": "thesis/PGR_2026-09-07.json",
+      "condition_index": 2,
+      "condition": "컴바인드레이쇼가 90 이상으로 뛰면(수리비 인플레이션 재점화 신호) 재검토",
+      "check_by": null,
+      "linked_ledger": "PGR_2026-08-23.json"
+    },
+    {
+      "ticker": "PTC",
+      "thesis_id": "PTC-2026-09-10",
+      "thesis_path": "thesis/PTC_2026-09-10.json",
+      "condition_index": 2,
+      "condition": "FY2027 최초 가이던스가 ARR 기준 한자릿수 초반으로 제시되면 GAAP CAGR 기반 Realistic Growth(11.39%)를 그대로 신뢰하지 말고 재검토",
+      "check_by": null,
+      "linked_ledger": "PTC_2026-09-04.json"
+    },
+    {
+      "ticker": "PTC",
+      "thesis_id": "PTC-2026-09-10",
+      "thesis_path": "thesis/PTC_2026-09-10.json",
+      "condition_index": 3,
+      "condition": "이후 2개 분기 연속으로 GAAP 매출이 ARR 성장률 대비 5%p 이상 하회하는 패턴이 반복되면(이번처럼 일회성으로 설명되지 않으면) 라이선스 인식 타이밍이 아니라 실제 수요 둔화 가능성으로 재검토",
+      "check_by": null,
+      "linked_ledger": "PTC_2026-09-04.json"
+    },
+    {
+      "ticker": "VRT",
+      "thesis_id": "VRT-2026-09-18",
+      "thesis_path": "thesis/VRT_2026-09-18.json",
+      "condition_index": 1,
+      "condition": "FY2026 오가닉 성장이 가이던스 하단(+30%)을 밑돌면 - trailing CAGR을 크게 웃도는 성장 전제가 무너지는 것이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "VRT_2026-09-04.json"
+    },
+    {
+      "ticker": "VRT",
+      "thesis_id": "VRT-2026-09-18",
+      "thesis_path": "thesis/VRT_2026-09-18.json",
+      "condition_index": 2,
+      "condition": "하이퍼스케일러(Microsoft/Google/Amazon/Meta) 데이터센터 capex 가이던스가 하향되면 - demand_sensitivity 0.45의 근거가 되는 외생 수요원이 흔들리는 것이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "VRT_2026-09-04.json"
+    },
+    {
+      "ticker": "VRT",
+      "thesis_id": "VRT-2026-09-18",
+      "thesis_path": "thesis/VRT_2026-09-18.json",
+      "condition_index": 3,
+      "condition": "조정영업마진이 가이던스 하단(23.3%)을 밑돌면 - Schneider/Eaton과의 경쟁이 가격으로 번지고 있다는 신호이므로 재검토",
+      "check_by": null,
+      "linked_ledger": "VRT_2026-09-04.json"
+    }
+  ]
+}
