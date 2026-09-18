@@ -97,6 +97,23 @@ jobs:
           SEC_USER_AGENT: "IRS Research chlalsrl1203@gmail.com"
         run: python3 scripts/update_research_queue.py
 
+      # 실전 트랙레코드(engine/track_record.py) - **이 프로젝트의 가장 오래된
+      # 공백을 메우는 단계다.** CLAUDE.md 전체에 "실현결과와의 관계 증거가
+      # 0건"이 반복되고, growth_quality·accounting_quality·dilution이 전부
+      # 그 이유로 판정에 배선되지 않은 채 남아 있다.
+      #
+      # 여기서 쌓는 건 PIT 백테스트(v3.73~v3.78)와 다르다 - 그건 과거로
+      # 되돌아가 재구성한 **합성** 관측이고, 이건 우리가 그날 실제로 내린
+      # 판정(`price_at_analysis`)과 이후 실제 주가의 대조다. 한 번 재고
+      # 끝나면 의미가 없어서(2026-09-18 1차 측정이 일회성이었다) 주 1회
+      # 자동으로 스냅샷을 쌓는다.
+      #
+      # ⚠️ 이 단계는 ledger를 건드리지 않고 판정에 되먹임되지도 않는다.
+      # 스크리닝 본체가 실패해도 독립적으로 돌아야 하므로 `if: always()`.
+      - name: measure live track record
+        if: always()
+        run: python3 scripts/track_record_ci.py
+
       - name: post result to GitHub Issue
         if: always()
         env:
@@ -109,7 +126,8 @@ jobs:
         run: |
           git config user.name "irs-broad-screen[bot]"
           git config user.email "irs-broad-screen-bot@users.noreply.github.com"
-          git add reports/broad_screen/ reports/research_queue.json 2>/dev/null || true
+          git add reports/broad_screen/ reports/research_queue.json \
+                  reports/track_record/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 리포트 없음 - 커밋 건너뜀"
           else

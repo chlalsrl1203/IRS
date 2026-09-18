@@ -1,0 +1,86 @@
+{
+  "thesis": {
+    "ticker": "NOW",
+    "thesis_date": "2026-09-18",
+    "why_buy": "실보유 포지션(7.22%, 2026-09-17 기준 holdings.json)의 정기 재검토 - A등급(저평가 가능성, Gap +8.30%p) 클라우드 워크플로 자동화 플랫폼. FY2015-2025 매출 YoY가 38.4%->20.9%로 매끄럽게 감속하는 교과서적 수렴경로를 그리고 있어(M&A 단계상승 없는 유기적 감속), 모델선택 자의성이 VRT(모델괴리 10.88%p) 같은 종목보다 작다(모델괴리 5.35%p).",
+    "market_assumption": "구독형 좌석과금(seat-based) 모델이 AI로 인해 축소될 것이라는 서사, Microsoft(Power Platform+Copilot 번들)·Salesforce의 인접시장 경쟁 심화 우려가 밸류에이션에 일부 반영돼 있을 가능성이 있다.",
+    "irs_view": "회사 자체 선행지표(cRPO 상수통화 +21.5%YoY, 가이던스 2%p+ 초과 / ServiceNow AI ACV $10억 돌파)는 아직 이 우려를 뒷받침 하지 않는다 - 'AI가 좌석 수를 줄인다'는 서사가 서사 단계에 머물러 있다는 뜻이다. 다만 이 종목의 가장 중요한 취약점은 경쟁 서사가 아니라 **SBC**다 - SBC/FCF 42.7%로 실제 비용 차감 시 판정이 '저평가 가능성'->'적정가/경계선'으로 실제 뒤집힌다(2026-08-01 방법론 감사에서 WDAY가 이 경로로 뒤집힌 선례가 있음). 또한 FY2026부터 Armis($7.75B, 이미 종결)·Veza·Moveworks 인수가 연결에 들어와 GEN/BRO/ROP류 M&A CAGR 왜곡이 다음 분석부터는 실제로 발생할 것이다 - 지금 ledger(FY2015-2025 기준)가 깨끗하다는 사실이 다음 분석에도 그대로 이어진다는 뜻은 아니다.",
+    "key_drivers": [
+      "cRPO(선행지표) 상수통화 성장률 20%+ 유지",
+      "비좌석(non-seat) 가격모델 신규계약 비중 확대(현재 50%)",
+      "ServiceNow AI ACV 성장 지속($10억 돌파)"
+    ],
+    "expected_outcomes": [
+      "cRPO 상수통화 성장률이 두 분기 연속 20% 아래로 떨어지지 않음",
+      "non-seat 신규계약 비중이 50%에서 후퇴하지 않음",
+      "FY2026 10-K에서 구독매출 유기적 성장률이 연결 성장률 대비 3%p 이내로 근접(M&A 왜곡이 크지 않음을 확인)"
+    ],
+    "catalysts": [
+      "FY2026 10-K(2027-01경) - Armis/Veza/Moveworks 편입 이후 최초로 유기적/비유기적 성장 분리대조가 가능해지는 시점",
+      "분기별 cRPO·AI ACV 발표"
+    ],
+    "risks": [
+      "SBC/FCF 42.7% - 판정이 SBC 처리방식 하나로 실제 뒤집히는 종목(가장 중요한 리스크)",
+      "FY2026부터 M&A(Armis 등)로 CAGR 계산구간이 왜곡되기 시작 - GEN/BRO/ROP와 동일 패턴이 다음 분석부터 실제 발생",
+      "차입금이 Armis 인수 자금조달로 $1,491M->$5,435M 급증 - 추가 대형 M&A 시 재무 유연성 추가 잠식 가능",
+      "Microsoft/Salesforce의 번들링 경쟁이 아직 점유율 실측 증거는 없으나 서사 자체는 계속 진행 중"
+    ],
+    "invalidation_conditions": [
+      {
+        "condition": "FY2026 10-K(2027-01경)에서 회사 공시 구독매출 유기적 성장률이 연결 성장률보다 3%p 이상 낮으면 - M&A CAGR 왜곡이 실제로 발생한 것이므로 재검토",
+        "check_by": "2027-01-31",
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "cRPO 상수통화 성장률이 두 분기 연속 20% 아래로 떨어지면 - cRPO는 매출보다 먼저 움직이는 선행지표이므로 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "비좌석(non-seat) 가격모델 신규계약 비중이 50%에서 후퇴하면 - 'AI가 좌석 수를 줄인다'는 위협에 대한 회사 대응이 실패하고 있다는 신호이므로 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "ServiceNow AI ACV 성장이 정체되면 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      },
+      {
+        "condition": "차입금이 Armis 인수 자금조달($1,491M->$5,435M) 이후 추가로 크게 늘면 - 연쇄 M&A 자금조달이 재무 유연성을 잠식하는 것이므로 재검토",
+        "check_by": null,
+        "triggered": false,
+        "triggered_note": null
+      }
+    ],
+    "holding_horizon": "12개월 이상(FY2026 10-K에서 유기적성장 분리대조 확인 후 재평가)",
+    "linked_ledger": "NOW_2026-09-05.json",
+    "author_note": "이미 portfolio/holdings.json에 실보유 중(7.22%, 8종목 중 가장 작은 비중의 정식판정 보유종목). 확신 포트폴리오(2026-09-05)에는 NOW가 포함돼 있지 않다(A등급이나 quality_score 순위에서 상위 18위 밖). 2026-08-14에는 goodwill이 한 분기 만에 2배 급증(Q1'26 $4.54B->Q2'26 $9.84B)한 것만 보고 FRAMEWORK_MISMATCH로 잘못 배제한 이력이 있었으나, 2026-09-13 정식분석에서 실제 FY2015-2025 연차 매출 시계열에 단계상승이 전혀 없는 단조 감속임을 확인해 판정을 A등급으로 정정했다 - 분기 대차대조표만 보고 연차 손익의 오염을 추정한 것이 오류의 원인이었다(같은 프로젝트가 반복 겪은 유형).",
+    "stale_after": null,
+    "must_refresh_if": null,
+    "thesis_id": "NOW-2026-09-18"
+  },
+  "decisions": [
+    {
+      "thesis_id": "NOW-2026-09-18",
+      "decision_date": "2026-09-18",
+      "action": "HOLD",
+      "action_source": "analyst_recorded (엔진이 계산한 값이 아님)",
+      "gates": {
+        "signal_summary": "Gap +8.30%p(ledger 2026-09-05) -> +8.24%p(2026-09-16 가격재계산, 거의 불변). RAR +0.8547. Confidence 94(엔진 원값, 정성조사 미실시).",
+        "business_quality": "클라우드 워크플로 자동화 플랫폼. FY2015-2025 매출 YoY가 38.4%->20.9%로 매끄럽게 감속(M&A 단계상승 없음). RPO $29.0B/cRPO $13.2B 계약잔액 견조.",
+        "financial_quality": "⚠️ SBC/FCF 42.7% - SBC를 실제 비용으로 차감하면 판정이 '저평가 가능성'->'적정가/경계선'으로 뒤집힌다(Gap +8.30%p->+1.88%p). 이 종목의 재무품질 평가에서 가장 중요한 사실.",
+        "risk_assessment": "FY2026부터 Armis($7.75B)·Veza·Moveworks 인수가 연결돼 M&A CAGR 왜곡이 다음 분석부터 실제 발생할 전망. 차입금 $1,491M->$5,435M 급증. Microsoft/Salesforce 경쟁 서사는 아직 점유율 실측 증거 없음.",
+        "valuation_assessment": "모델괴리 5.35%p(single_stage 7.36% vs two_stage 12.71%)로 VRT보다는 작으나 SBC 처리방식에 판정이 뒤집히는 취약점이 더 크다 - Gap +8.30%p를 액면 그대로 신뢰하지 말 것.",
+        "portfolio_context": "실보유 7.22%(8종목 중 최소 비중) - 집중도 리스크 없음. 확신 포트폴리오에는 미포함."
+      },
+      "rationale": "실보유 포지션을 유지한다(HOLD). 회사 자체 선행지표(cRPO·AI ACV)가 아직 견조하고 반증조건 5개 중 어느 것도 발동하지 않았지만, SBC 차감 시 판정이 실제로 뒤집히는 종목이라 추가 매수 근거로 삼지 않는다. FY2026 10-K(2027-01경)에서 M&A 왜곡 여부를 반드시 재확인할 것 - 이 시점 이전까지는 지금의 '깨끗한 유기적 성장' 서사가 다음 분석에도 유효하다고 가정하지 말 것.",
+      "position_pct": 0.07224197450656582
+    }
+  ],
+  "evidence": []
+}
