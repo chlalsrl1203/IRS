@@ -1,0 +1,25 @@
+{
+  "ticker": "PGR",
+  "analyzed_at": "2026-08-23",
+  "market_cap_then": 125440000000.0,
+  "market_cap_now": 126458986000.0,
+  "market_cap_change_pct": 0.008123294005102144,
+  "gap_then": 0.1764221572875976,
+  "gap_now": 0.17531894683837887,
+  "gap_decay_pp": -0.001103210449218739,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.12749999999999995,
+  "realistic_growth_now": 0.12749999999999995,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-10",
+    "gap_prior": 0.17665428161621088,
+    "gap_move_pp": -0.0013353347778320146,
+    "judgment_changed": false
+  },
+  "date": "2026-09-14"
+}

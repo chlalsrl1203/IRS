@@ -1,0 +1,25 @@
+{
+  "ticker": "IDXX",
+  "analyzed_at": "2026-07-26",
+  "market_cap_then": 42930000000,
+  "market_cap_now": 39760830000.0,
+  "market_cap_change_pct": -0.0738218029350105,
+  "gap_then": 0.004138841871727902,
+  "gap_now": 0.006200402019562276,
+  "gap_decay_pp": 0.0020615601478343737,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.08242656553743928,
+  "realistic_growth_now": 0.08242656553743928,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-10",
+    "gap_prior": 0.005368733696998723,
+    "gap_move_pp": 0.0008316683225635529,
+    "judgment_changed": false
+  },
+  "date": "2026-09-14"
+}

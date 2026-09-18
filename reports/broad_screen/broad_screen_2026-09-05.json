@@ -1,0 +1,2617 @@
+{
+  "retrieved_at": "2026-09-05",
+  "universe_total": 10412,
+  "prefiltered_out": 1514,
+  "deduped_share_classes": 1784,
+  "attempted": 7114,
+  "sec_ok": 1418,
+  "sec_skipped": 5696,
+  "scored": 1418,
+  "passed": 259,
+  "skip_breakdown": [
+    {
+      "label": "연도 데이터 부족",
+      "count": 2927,
+      "infra_failure": false,
+      "sample": [
+        "AADX",
+        "AAGH",
+        "AAMI",
+        "AAPG",
+        "AAPI",
+        "AAQL",
+        "AARD",
+        "AAUAF",
+        "AAUC",
+        "ABAT"
+      ]
+    },
+    {
+      "label": "5년 CAGR 계산 불가(PODD/ONON/MU형 프레임워크 부적합)",
+      "count": 1209,
+      "infra_failure": false,
+      "sample": [
+        "AAL",
+        "AAME",
+        "AAOI",
+        "AAP",
+        "AASP",
+        "AAWH",
+        "ABCL",
+        "ABEO",
+        "ABG",
+        "ABIT"
+      ]
+    },
+    {
+      "label": "XBRL 재무제표 없음(ETF·펀드 등)",
+      "count": 828,
+      "infra_failure": false,
+      "sample": [
+        "ABCFF",
+        "ABVEF",
+        "ABXXF",
+        "ACMIF",
+        "ADDTF",
+        "ADOOY",
+        "ADYYF",
+        "AEBMF",
+        "AEGXF",
+        "AEHGS"
+      ]
+    },
+    {
+      "label": "시가총액 근사치(public_float) 미확보(20-F 외국발행사 등)",
+      "count": 494,
+      "infra_failure": false,
+      "sample": [
+        "AACG",
+        "ABBNY",
+        "ABEV",
+        "ACIU",
+        "ADAG",
+        "ADSE",
+        "ADTTF",
+        "AEG",
+        "AEHL",
+        "AEM"
+      ]
+    },
+    {
+      "label": "극단적 존속위험(자기자본·영업현금흐름 동시 마이너스)",
+      "count": 164,
+      "infra_failure": false,
+      "sample": [
+        "ACH",
+        "AGEN",
+        "AHRO",
+        "AIM",
+        "AITX",
+        "AIXN",
+        "AMC",
+        "AQB",
+        "AQST",
+        "ASPS"
+      ]
+    },
+    {
+      "label": "시가총액 근사치(public_float) 낡음(SEC 보고의무 축소·중단 추정)",
+      "count": 62,
+      "infra_failure": false,
+      "sample": [
+        "AATC",
+        "AD",
+        "ALC",
+        "ARTNA",
+        "ASML",
+        "ATDS",
+        "AXIM",
+        "BIO",
+        "BRQSF",
+        "BTCT"
+      ]
+    },
+    {
+      "label": "기타·미분류",
+      "count": 7,
+      "infra_failure": false,
+      "sample": [
+        "DDDX",
+        "EEFT",
+        "GPLB",
+        "LAKE",
+        "LGND",
+        "TCX",
+        "XPL"
+      ]
+    },
+    {
+      "label": "FCF 기준·최종연도 0 이하(모델 적용불가)",
+      "count": 5,
+      "infra_failure": false,
+      "sample": [
+        "ANG-PD",
+        "CTGG",
+        "QVCG",
+        "TVC",
+        "WNHK"
+      ]
+    }
+  ],
+  "passed_tickers": [
+    {
+      "ticker": "VATE",
+      "tier": "S",
+      "expectation_gap_est": 0.9309165216517967,
+      "market_cap": 27200000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +93.1%p가 코퍼스 최대(+24.4%p)의 3.8배 - 검증된 적 없는 구간",
+        "시총 $0.03B가 코퍼스 최소($3.74B)의 1/138 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OPEN",
+      "tier": "S",
+      "expectation_gap_est": 0.8097498304842445,
+      "market_cap": 339866979.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +81.0%p가 코퍼스 최대(+24.4%p)의 3.3배 - 검증된 적 없는 구간",
+        "시총 $0.34B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "JANL",
+      "tier": "S",
+      "expectation_gap_est": 0.7814787578309426,
+      "market_cap": 9450464.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +78.1%p가 코퍼스 최대(+24.4%p)의 3.2배 - 검증된 적 없는 구간",
+        "시총 $0.01B가 코퍼스 최소($3.74B)의 1/396 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SNEX",
+      "tier": "S",
+      "expectation_gap_est": 0.7170410095503809,
+      "market_cap": 2838700000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +71.7%p가 코퍼스 최대(+24.4%p)의 2.9배 - 검증된 적 없는 구간",
+        "시총 $2.84B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HTZ",
+      "tier": "S",
+      "expectation_gap_est": 0.709710753826342,
+      "market_cap": 799000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +71.0%p가 코퍼스 최대(+24.4%p)의 2.9배 - 검증된 적 없는 구간",
+        "시총 $0.80B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PGY",
+      "tier": "S",
+      "expectation_gap_est": 0.6999471305887348,
+      "market_cap": 1113790997.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +70.0%p가 코퍼스 최대(+24.4%p)의 2.9배 - 검증된 적 없는 구간",
+        "시총 $1.11B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "QSP",
+      "tier": "S",
+      "expectation_gap_est": 0.6899952051217287,
+      "market_cap": 890534719.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +69.0%p가 코퍼스 최대(+24.4%p)의 2.8배 - 검증된 적 없는 구간",
+        "시총 $0.89B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PR",
+      "tier": "S",
+      "expectation_gap_est": 0.6607154211694829,
+      "market_cap": 10503468331.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +66.1%p가 코퍼스 최대(+24.4%p)의 2.7배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "RM",
+      "tier": "S",
+      "expectation_gap_est": 0.6212837978570741,
+      "market_cap": 235369156.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +62.1%p가 코퍼스 최대(+24.4%p)의 2.5배 - 검증된 적 없는 구간",
+        "시총 $0.24B가 코퍼스 최소($3.74B)의 1/16 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EGY",
+      "tier": "S",
+      "expectation_gap_est": 0.6176855479786171,
+      "market_cap": 366000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +61.8%p가 코퍼스 최대(+24.4%p)의 2.5배 - 검증된 적 없는 구간",
+        "시총 $0.37B가 코퍼스 최소($3.74B)의 1/10 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PED",
+      "tier": "S",
+      "expectation_gap_est": 0.616487825207358,
+      "market_cap": 23070209.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +61.6%p가 코퍼스 최대(+24.4%p)의 2.5배 - 검증된 적 없는 구간",
+        "시총 $0.02B가 코퍼스 최소($3.74B)의 1/162 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "NOG",
+      "tier": "S",
+      "expectation_gap_est": 0.6050574085129066,
+      "market_cap": 2700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +60.5%p가 코퍼스 최대(+24.4%p)의 2.5배 - 검증된 적 없는 구간",
+        "시총 $2.70B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OWL",
+      "tier": "A",
+      "expectation_gap_est": 0.5575219969355846,
+      "market_cap": 12500000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +55.8%p가 코퍼스 최대(+24.4%p)의 2.3배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "KOS",
+      "tier": "S",
+      "expectation_gap_est": 0.5431614503479038,
+      "market_cap": 790254200.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +54.3%p가 코퍼스 최대(+24.4%p)의 2.2배 - 검증된 적 없는 구간",
+        "시총 $0.79B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GCT",
+      "tier": "S",
+      "expectation_gap_est": 0.5104331264678521,
+      "market_cap": 513000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +51.0%p가 코퍼스 최대(+24.4%p)의 2.1배 - 검증된 적 없는 구간",
+        "시총 $0.51B가 코퍼스 최소($3.74B)의 1/7 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SPFX",
+      "tier": "S",
+      "expectation_gap_est": 0.5098800409013378,
+      "market_cap": 3598424.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +51.0%p가 코퍼스 최대(+24.4%p)의 2.1배 - 검증된 적 없는 구간",
+        "시총 $0.00B가 코퍼스 최소($3.74B)의 1/1039 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "STGW",
+      "tier": "S",
+      "expectation_gap_est": 0.49559194281479924,
+      "market_cap": 389500000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +49.6%p가 코퍼스 최대(+24.4%p)의 2.0배 - 검증된 적 없는 구간",
+        "시총 $0.39B가 코퍼스 최소($3.74B)의 1/10 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HGTY",
+      "tier": "S",
+      "expectation_gap_est": 0.4955334417529541,
+      "market_cap": 309900000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +49.6%p가 코퍼스 최대(+24.4%p)의 2.0배 - 검증된 적 없는 구간",
+        "시총 $0.31B가 코퍼스 최소($3.74B)의 1/12 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "NRDS",
+      "tier": "S",
+      "expectation_gap_est": 0.44447737148766375,
+      "market_cap": 349000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +44.4%p가 코퍼스 최대(+24.4%p)의 1.8배 - 검증된 적 없는 구간",
+        "시총 $0.35B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GSAT",
+      "tier": "S",
+      "expectation_gap_est": 0.4363750288575501,
+      "market_cap": 1100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +43.6%p가 코퍼스 최대(+24.4%p)의 1.8배 - 검증된 적 없는 구간",
+        "시총 $1.10B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SND",
+      "tier": "S",
+      "expectation_gap_est": 0.4183810019985462,
+      "market_cap": 57119495.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +41.8%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.06B가 코퍼스 최소($3.74B)의 1/65 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "QRHC",
+      "tier": "S",
+      "expectation_gap_est": 0.41766876797608693,
+      "market_cap": 20761804.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +41.8%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.02B가 코퍼스 최소($3.74B)의 1/180 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "WLFC",
+      "tier": "S",
+      "expectation_gap_est": 0.4111562815508748,
+      "market_cap": 576900000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +41.1%p가 코퍼스 최대(+24.4%p)의 1.7배 - 검증된 적 없는 구간",
+        "시총 $0.58B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EVCM",
+      "tier": "S",
+      "expectation_gap_est": 0.38802036883504004,
+      "market_cap": 200100000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +38.8%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간",
+        "시총 $0.20B가 코퍼스 최소($3.74B)의 1/19 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MCY",
+      "tier": "S",
+      "expectation_gap_est": 0.38261351864793125,
+      "market_cap": 1789234305.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +38.3%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간",
+        "시총 $1.79B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HALO",
+      "tier": "S",
+      "expectation_gap_est": 0.381403129090842,
+      "market_cap": 4500000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +38.1%p가 코퍼스 최대(+24.4%p)의 1.6배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "MXC",
+      "tier": "S",
+      "expectation_gap_est": 0.3719391739563115,
+      "market_cap": 9540503.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +37.2%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간",
+        "시총 $0.01B가 코퍼스 최소($3.74B)의 1/392 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "COLL",
+      "tier": "S",
+      "expectation_gap_est": 0.363291486434721,
+      "market_cap": 926400000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +36.3%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간",
+        "시총 $0.93B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TRLV",
+      "tier": "S",
+      "expectation_gap_est": 0.3569020577399865,
+      "market_cap": 600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +35.7%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간",
+        "시총 $0.60B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FOUR",
+      "tier": "A",
+      "expectation_gap_est": 0.35496468155653693,
+      "market_cap": 6400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +35.5%p가 코퍼스 최대(+24.4%p)의 1.5배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "NTST",
+      "tier": "A",
+      "expectation_gap_est": 0.3530041858359401,
+      "market_cap": 1400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +35.3%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $1.40B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PLMR",
+      "tier": "A",
+      "expectation_gap_est": 0.34777662319999886,
+      "market_cap": 4034049965.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +34.8%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "QCRH",
+      "tier": "S",
+      "expectation_gap_est": 0.3372838907125322,
+      "market_cap": 1122163334.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +33.7%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $1.12B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FSBW",
+      "tier": "S",
+      "expectation_gap_est": 0.3343245928502452,
+      "market_cap": 259816442.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +33.4%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $0.26B가 코퍼스 최소($3.74B)의 1/14 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HCI",
+      "tier": "S",
+      "expectation_gap_est": 0.33405531364972224,
+      "market_cap": 1691271339.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +33.4%p가 코퍼스 최대(+24.4%p)의 1.4배 - 검증된 적 없는 구간",
+        "시총 $1.69B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MELI",
+      "tier": "A",
+      "expectation_gap_est": 0.32894669157216416,
+      "market_cap": 122884971142.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +32.9%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "ANIP",
+      "tier": "S",
+      "expectation_gap_est": 0.3205480899120393,
+      "market_cap": 1300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +32.1%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $1.30B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "VVX",
+      "tier": "S",
+      "expectation_gap_est": 0.3173676362521425,
+      "market_cap": 701960177.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +31.7%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $0.70B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SAH",
+      "tier": "S",
+      "expectation_gap_est": 0.31704728894546674,
+      "market_cap": 1600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +31.7%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $1.60B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PAYS",
+      "tier": "S",
+      "expectation_gap_est": 0.3132172193909726,
+      "market_cap": 276377168.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +31.3%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $0.28B가 코퍼스 최소($3.74B)의 1/14 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CSTL",
+      "tier": "B",
+      "expectation_gap_est": 0.3105715192567807,
+      "market_cap": 576000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +31.1%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $0.58B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RSVR",
+      "tier": "S",
+      "expectation_gap_est": 0.3051065911130819,
+      "market_cap": 163304371.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +30.5%p가 코퍼스 최대(+24.4%p)의 1.3배 - 검증된 적 없는 구간",
+        "시총 $0.16B가 코퍼스 최소($3.74B)의 1/23 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RSI",
+      "tier": "S",
+      "expectation_gap_est": 0.3042960122778769,
+      "market_cap": 1376213662.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +30.4%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $1.38B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DVN",
+      "tier": "S",
+      "expectation_gap_est": 0.3007203710833409,
+      "market_cap": 20200000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +30.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "IMMR",
+      "tier": "S",
+      "expectation_gap_est": 0.2992887831271902,
+      "market_cap": 166012564.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +29.9%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $0.17B가 코퍼스 최소($3.74B)의 1/23 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PAY",
+      "tier": "S",
+      "expectation_gap_est": 0.298026777170048,
+      "market_cap": 1353800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +29.8%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $1.35B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TASK",
+      "tier": "S",
+      "expectation_gap_est": 0.2943796190054043,
+      "market_cap": 289600000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +29.4%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $0.29B가 코퍼스 최소($3.74B)의 1/13 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "KNSL",
+      "tier": "A",
+      "expectation_gap_est": 0.2823043003522139,
+      "market_cap": 9978331145.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +28.2%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "VTS",
+      "tier": "S",
+      "expectation_gap_est": 0.2810809035730335,
+      "market_cap": 638000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +28.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간",
+        "시총 $0.64B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SCCO",
+      "tier": "S",
+      "expectation_gap_est": 0.28065158655324857,
+      "market_cap": 9019800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +28.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "PRTH",
+      "tier": "S",
+      "expectation_gap_est": 0.2771463803198371,
+      "market_cap": 241200000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +27.7%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.24B가 코퍼스 최소($3.74B)의 1/16 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DSP",
+      "tier": "S",
+      "expectation_gap_est": 0.2754080583150839,
+      "market_cap": 185100000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +27.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.19B가 코퍼스 최소($3.74B)의 1/20 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PANL",
+      "tier": "S",
+      "expectation_gap_est": 0.2751128815370475,
+      "market_cap": 139690000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +27.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.14B가 코퍼스 최소($3.74B)의 1/27 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GM",
+      "tier": "S",
+      "expectation_gap_est": 0.27461668330941313,
+      "market_cap": 47000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +27.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "GOLD",
+      "tier": "S",
+      "expectation_gap_est": 0.27443837599679244,
+      "market_cap": 488700000.0,
+      "note": "public_float FY2024 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +27.4%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.49B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PGNY",
+      "tier": "A",
+      "expectation_gap_est": 0.2663457216368322,
+      "market_cap": 1900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +26.6%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $1.90B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MBLY",
+      "tier": "S",
+      "expectation_gap_est": 0.2652809423431118,
+      "market_cap": 1840000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +26.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $1.84B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SACH",
+      "tier": "S",
+      "expectation_gap_est": 0.26493724666270035,
+      "market_cap": 54000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +26.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.05B가 코퍼스 최소($3.74B)의 1/69 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CLVT",
+      "tier": "S",
+      "expectation_gap_est": 0.264743576880066,
+      "market_cap": 1300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +26.5%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $1.30B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BOOM",
+      "tier": "S",
+      "expectation_gap_est": 0.2610248228325736,
+      "market_cap": 155821973.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +26.1%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $0.16B가 코퍼스 최소($3.74B)의 1/24 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BANC",
+      "tier": "S",
+      "expectation_gap_est": 0.25926044735239173,
+      "market_cap": 1900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +25.9%p가 코퍼스 최대(+24.4%p)의 1.1배 - 검증된 적 없는 구간",
+        "시총 $1.90B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GMED",
+      "tier": "A",
+      "expectation_gap_est": 0.2547644733969441,
+      "market_cap": 6600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +25.5%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간"
+      ]
+    },
+    {
+      "ticker": "FIVN",
+      "tier": "S",
+      "expectation_gap_est": 0.25129293404233505,
+      "market_cap": 1158500000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +25.1%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $1.16B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "IESC",
+      "tier": "S",
+      "expectation_gap_est": 0.2503630783586863,
+      "market_cap": 1378300000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +25.0%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $1.38B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PTEN",
+      "tier": "S",
+      "expectation_gap_est": 0.24967746408634459,
+      "market_cap": 2300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +25.0%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $2.30B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TH",
+      "tier": "S",
+      "expectation_gap_est": 0.2467886671234709,
+      "market_cap": 227771256.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +24.7%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $0.23B가 코퍼스 최소($3.74B)의 1/16 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DSGR",
+      "tier": "S",
+      "expectation_gap_est": 0.24588268737636443,
+      "market_cap": 258112845.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "Gap +24.6%p가 코퍼스 최대(+24.4%p)의 1.0배 - 검증된 적 없는 구간",
+        "시총 $0.26B가 코퍼스 최소($3.74B)의 1/14 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CROX",
+      "tier": "S",
+      "expectation_gap_est": 0.2397192728735001,
+      "market_cap": 4800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "DCBG",
+      "tier": "S",
+      "expectation_gap_est": 0.2384218033945264,
+      "market_cap": 1080000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.08B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PMTS",
+      "tier": "S",
+      "expectation_gap_est": 0.23694902452477185,
+      "market_cap": 148800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.15B가 코퍼스 최소($3.74B)의 1/25 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FA",
+      "tier": "S",
+      "expectation_gap_est": 0.23358848598992038,
+      "market_cap": 1331899011.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.33B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "IPAR",
+      "tier": "A",
+      "expectation_gap_est": 0.23025200753644026,
+      "market_cap": 2384600367.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.38B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "LNTH",
+      "tier": "B",
+      "expectation_gap_est": 0.22961490662296474,
+      "market_cap": 4274700000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BWMN",
+      "tier": "A",
+      "expectation_gap_est": 0.22749498206419258,
+      "market_cap": 408700000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.41B가 코퍼스 최소($3.74B)의 1/9 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "WSFS",
+      "tier": "S",
+      "expectation_gap_est": 0.22360018958970632,
+      "market_cap": 3065102095.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.07B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RNGR",
+      "tier": "S",
+      "expectation_gap_est": 0.2231263908572927,
+      "market_cap": 244200000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.24B가 코퍼스 최소($3.74B)의 1/15 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FRSH",
+      "tier": "A",
+      "expectation_gap_est": 0.22034923284482485,
+      "market_cap": 3080000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.08B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FET",
+      "tier": "S",
+      "expectation_gap_est": 0.2184223502799259,
+      "market_cap": 225500000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.23B가 코퍼스 최소($3.74B)의 1/17 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "IA",
+      "tier": "A",
+      "expectation_gap_est": 0.2161282048140851,
+      "market_cap": 81800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.08B가 코퍼스 최소($3.74B)의 1/46 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "ZETA",
+      "tier": "B",
+      "expectation_gap_est": 0.2142180119133616,
+      "market_cap": 3200000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.20B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EQT",
+      "tier": "A",
+      "expectation_gap_est": 0.21397977686203412,
+      "market_cap": 34700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ACGL",
+      "tier": "S",
+      "expectation_gap_est": 0.21394504000138595,
+      "market_cap": 33000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "SIGI",
+      "tier": "S",
+      "expectation_gap_est": 0.2135939476241476,
+      "market_cap": 5226605951.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "RES",
+      "tier": "S",
+      "expectation_gap_est": 0.2131889487291108,
+      "market_cap": 421394820.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.42B가 코퍼스 최소($3.74B)의 1/9 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BOTJ",
+      "tier": "S",
+      "expectation_gap_est": 0.211686528631568,
+      "market_cap": 55854000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.06B가 코퍼스 최소($3.74B)의 1/67 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GTBIF",
+      "tier": "S",
+      "expectation_gap_est": 0.21067427538728611,
+      "market_cap": 1161708000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.16B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GPOR",
+      "tier": "S",
+      "expectation_gap_est": 0.2096427188783035,
+      "market_cap": 3100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.10B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "AMPH",
+      "tier": "S",
+      "expectation_gap_est": 0.20920387455522782,
+      "market_cap": 632556518.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.63B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GTM",
+      "tier": "S",
+      "expectation_gap_est": 0.2085007797874614,
+      "market_cap": 2900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.90B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DH",
+      "tier": "S",
+      "expectation_gap_est": 0.2079851469579349,
+      "market_cap": 153800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.15B가 코퍼스 최소($3.74B)의 1/24 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DV",
+      "tier": "A",
+      "expectation_gap_est": 0.20707603605677175,
+      "market_cap": 2040086166.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.04B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OKTA",
+      "tier": "B",
+      "expectation_gap_est": 0.20647656178590862,
+      "market_cap": 16400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "LPG",
+      "tier": "S",
+      "expectation_gap_est": 0.20438493778033037,
+      "market_cap": 1093630707.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.09B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "QNST",
+      "tier": "S",
+      "expectation_gap_est": 0.20379333013157594,
+      "market_cap": 779144648.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.78B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OPXS",
+      "tier": "S",
+      "expectation_gap_est": 0.20151769854574447,
+      "market_cap": 25591141.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.03B가 코퍼스 최소($3.74B)의 1/146 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CDE",
+      "tier": "S",
+      "expectation_gap_est": 0.20128535250928078,
+      "market_cap": 5605534558.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "AGX",
+      "tier": "S",
+      "expectation_gap_est": 0.20084894160039257,
+      "market_cap": 2828180674.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.83B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GOGO",
+      "tier": "B",
+      "expectation_gap_est": 0.19779925068329618,
+      "market_cap": 1142289746.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.14B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HGV",
+      "tier": "B",
+      "expectation_gap_est": 0.19506220348020709,
+      "market_cap": 3607000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.61B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "YELP",
+      "tier": "S",
+      "expectation_gap_est": 0.19480433791186907,
+      "market_cap": 1423349104.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.42B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MEDP",
+      "tier": "A",
+      "expectation_gap_est": 0.19211680588068708,
+      "market_cap": 7000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "INSW",
+      "tier": "S",
+      "expectation_gap_est": 0.19028253356491356,
+      "market_cap": 1800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.80B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "COP",
+      "tier": "S",
+      "expectation_gap_est": 0.18864412973691466,
+      "market_cap": 112000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "RYAN",
+      "tier": "A",
+      "expectation_gap_est": 0.18834857981416114,
+      "market_cap": 8557552987.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CXM",
+      "tier": "S",
+      "expectation_gap_est": 0.18754342340138347,
+      "market_cap": 1100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.10B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "XPEL",
+      "tier": "A",
+      "expectation_gap_est": 0.1865945758133553,
+      "market_cap": 900884616.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.90B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FIX",
+      "tier": "B",
+      "expectation_gap_est": 0.18506462373227162,
+      "market_cap": 18640000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "LRN",
+      "tier": "S",
+      "expectation_gap_est": 0.18414432042550002,
+      "market_cap": 1974309000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.97B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CHDN",
+      "tier": "A",
+      "expectation_gap_est": 0.18035208526275656,
+      "market_cap": 6693961648.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "UPWK",
+      "tier": "S",
+      "expectation_gap_est": 0.17951412074903528,
+      "market_cap": 1657936950.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.66B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "VICI",
+      "tier": "A",
+      "expectation_gap_est": 0.17711512173476532,
+      "market_cap": 34400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "DINO",
+      "tier": "S",
+      "expectation_gap_est": 0.1747439049683896,
+      "market_cap": 7700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CNXC",
+      "tier": "S",
+      "expectation_gap_est": 0.17449729899045457,
+      "market_cap": 2948926137.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.95B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SHBI",
+      "tier": "S",
+      "expectation_gap_est": 0.17384759971541874,
+      "market_cap": 480100000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.48B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BUKS",
+      "tier": "S",
+      "expectation_gap_est": 0.17307147093428266,
+      "market_cap": 90745519.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.09B가 코퍼스 최소($3.74B)의 1/41 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "NBIX",
+      "tier": "A",
+      "expectation_gap_est": 0.1715948221696296,
+      "market_cap": 9520000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TCMD",
+      "tier": "S",
+      "expectation_gap_est": 0.17019297341870665,
+      "market_cap": 223030304.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.22B가 코퍼스 최소($3.74B)의 1/17 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FIGS",
+      "tier": "A",
+      "expectation_gap_est": 0.1693106087475545,
+      "market_cap": 512505774.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.51B가 코퍼스 최소($3.74B)의 1/7 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PFS",
+      "tier": "S",
+      "expectation_gap_est": 0.16810683045795968,
+      "market_cap": 2130000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.13B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PAYO",
+      "tier": "A",
+      "expectation_gap_est": 0.1680268455457474,
+      "market_cap": 2019068359.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.02B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EOG",
+      "tier": "S",
+      "expectation_gap_est": 0.16571444005529232,
+      "market_cap": 65231000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TRUP",
+      "tier": "B",
+      "expectation_gap_est": 0.16521168189868488,
+      "market_cap": 1324459301.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.32B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "NXT",
+      "tier": "B",
+      "expectation_gap_est": 0.16428217049736957,
+      "market_cap": 10800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PATH",
+      "tier": "A",
+      "expectation_gap_est": 0.1639658429220924,
+      "market_cap": 4800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "COF",
+      "tier": "S",
+      "expectation_gap_est": 0.1629655789055858,
+      "market_cap": 135200000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PCTY",
+      "tier": "A",
+      "expectation_gap_est": 0.16281099325393256,
+      "market_cap": 6600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PCRX",
+      "tier": "S",
+      "expectation_gap_est": 0.1627590887412957,
+      "market_cap": 757500000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.76B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "ORRF",
+      "tier": "S",
+      "expectation_gap_est": 0.16030878458643383,
+      "market_cap": 596200000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.60B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PUBM",
+      "tier": "S",
+      "expectation_gap_est": 0.15660891815115413,
+      "market_cap": 458300000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.46B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BFST",
+      "tier": "S",
+      "expectation_gap_est": 0.15603838732138686,
+      "market_cap": 697900000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.70B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "ASTH",
+      "tier": "A",
+      "expectation_gap_est": 0.15467458901048292,
+      "market_cap": 1100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.10B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EVER",
+      "tier": "S",
+      "expectation_gap_est": 0.15440867254554655,
+      "market_cap": 675800000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.68B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "USLM",
+      "tier": "A",
+      "expectation_gap_est": 0.1530502390393534,
+      "market_cap": 1066695434.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.07B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EXEL",
+      "tier": "A",
+      "expectation_gap_est": 0.15235917362733864,
+      "market_cap": 9400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "AZZ",
+      "tier": "S",
+      "expectation_gap_est": 0.1511858382110946,
+      "market_cap": 3332353625.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.33B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DGICA",
+      "tier": "S",
+      "expectation_gap_est": 0.15083522752383305,
+      "market_cap": 355484764.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.36B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GRBK",
+      "tier": "S",
+      "expectation_gap_est": 0.1497295039455463,
+      "market_cap": 1919559894.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.92B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "IDCC",
+      "tier": "A",
+      "expectation_gap_est": 0.14929339123835142,
+      "market_cap": 5717601306.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "MITK",
+      "tier": "S",
+      "expectation_gap_est": 0.1491171018569524,
+      "market_cap": 350011167.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.35B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "POWL",
+      "tier": "S",
+      "expectation_gap_est": 0.1475295170075905,
+      "market_cap": 1400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.40B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EXE",
+      "tier": "A",
+      "expectation_gap_est": 0.14744879217169815,
+      "market_cap": 19600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PINS",
+      "tier": "A",
+      "expectation_gap_est": 0.14456494309593018,
+      "market_cap": 18700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TNL",
+      "tier": "S",
+      "expectation_gap_est": 0.14441360483879773,
+      "market_cap": 3302014433.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.30B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CARG",
+      "tier": "S",
+      "expectation_gap_est": 0.14244355646564352,
+      "market_cap": 1739144042.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.74B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "XYZ",
+      "tier": "B",
+      "expectation_gap_est": 0.14159404811975915,
+      "market_cap": 39400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ROKU",
+      "tier": "B",
+      "expectation_gap_est": 0.141467277052827,
+      "market_cap": 9700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PGR",
+      "tier": "S",
+      "expectation_gap_est": 0.14079489005331994,
+      "market_cap": 155911082530.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "SCIA",
+      "tier": "S",
+      "expectation_gap_est": 0.14002353484059388,
+      "market_cap": 16201719.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.02B가 코퍼스 최소($3.74B)의 1/231 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TR",
+      "tier": "S",
+      "expectation_gap_est": 0.13955663033984342,
+      "market_cap": 550102000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.55B가 코퍼스 최소($3.74B)의 1/7 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PD",
+      "tier": "A",
+      "expectation_gap_est": 0.13915319884382726,
+      "market_cap": 1400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.40B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CNX",
+      "tier": "S",
+      "expectation_gap_est": 0.13896398651432446,
+      "market_cap": 3582679149.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.58B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GRC",
+      "tier": "S",
+      "expectation_gap_est": 0.13855142235188858,
+      "market_cap": 744600000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.74B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DRVN",
+      "tier": "A",
+      "expectation_gap_est": 0.13803584409581393,
+      "market_cap": 1000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.00B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "LQDT",
+      "tier": "A",
+      "expectation_gap_est": 0.1371166426965169,
+      "market_cap": 733900000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.73B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RICK",
+      "tier": "A",
+      "expectation_gap_est": 0.13646333414271183,
+      "market_cap": 347708768.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.35B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BKTI",
+      "tier": "S",
+      "expectation_gap_est": 0.13609663760744367,
+      "market_cap": 155879977.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.16B가 코퍼스 최소($3.74B)의 1/24 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "NEM",
+      "tier": "S",
+      "expectation_gap_est": 0.13447297521693094,
+      "market_cap": 64108664771.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "WSC",
+      "tier": "S",
+      "expectation_gap_est": 0.13237784390885435,
+      "market_cap": 4900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "NMIH",
+      "tier": "S",
+      "expectation_gap_est": 0.13217695212222316,
+      "market_cap": 2710628478.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.71B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "AMP",
+      "tier": "S",
+      "expectation_gap_est": 0.13151660698484371,
+      "market_cap": 50300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PRM",
+      "tier": "S",
+      "expectation_gap_est": 0.12894384952895155,
+      "market_cap": 1854719564.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.85B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CPF",
+      "tier": "S",
+      "expectation_gap_est": 0.12806527321709066,
+      "market_cap": 735757000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.74B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HLNE",
+      "tier": "A",
+      "expectation_gap_est": 0.1280491052028037,
+      "market_cap": 5470900000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "FIVE",
+      "tier": "B",
+      "expectation_gap_est": 0.12759331520645664,
+      "market_cap": 7261931467.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "EZPW",
+      "tier": "S",
+      "expectation_gap_est": 0.12712524376401108,
+      "market_cap": 682000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.68B가 코퍼스 최소($3.74B)의 1/5 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TW",
+      "tier": "A",
+      "expectation_gap_est": 0.12689392058499813,
+      "market_cap": 16900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "RLI",
+      "tier": "S",
+      "expectation_gap_est": 0.12658483721547287,
+      "market_cap": 5490497507.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "OVV",
+      "tier": "S",
+      "expectation_gap_est": 0.12347890085475224,
+      "market_cap": 9780270102.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "MYE",
+      "tier": "S",
+      "expectation_gap_est": 0.12320745989498555,
+      "market_cap": 457647016.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.46B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DOCU",
+      "tier": "A",
+      "expectation_gap_est": 0.12124396713194648,
+      "market_cap": 15100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CINF",
+      "tier": "S",
+      "expectation_gap_est": 0.12040684145294969,
+      "market_cap": 22846561651.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TENB",
+      "tier": "A",
+      "expectation_gap_est": 0.1197320124043218,
+      "market_cap": 4100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "GEN",
+      "tier": "A",
+      "expectation_gap_est": 0.11877453484854686,
+      "market_cap": 15555822937.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CF",
+      "tier": "S",
+      "expectation_gap_est": 0.11350296698501758,
+      "market_cap": 14796888341.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "MQ",
+      "tier": "A",
+      "expectation_gap_est": 0.11178679810471787,
+      "market_cap": 2300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.30B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HL",
+      "tier": "A",
+      "expectation_gap_est": 0.11077033783141893,
+      "market_cap": 3940331126.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ODC",
+      "tier": "S",
+      "expectation_gap_est": 0.11024657924861159,
+      "market_cap": 413766024.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.41B가 코퍼스 최소($3.74B)의 1/9 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CVSA",
+      "tier": "S",
+      "expectation_gap_est": 0.10982506181754265,
+      "market_cap": 3488231961.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.49B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "SKYW",
+      "tier": "A",
+      "expectation_gap_est": 0.10977266264739553,
+      "market_cap": 4156927217.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "SHOO",
+      "tier": "A",
+      "expectation_gap_est": 0.10854649807680081,
+      "market_cap": 1713156667.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.71B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HLX",
+      "tier": "S",
+      "expectation_gap_est": 0.10741755997940496,
+      "market_cap": 855200000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.86B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CVCO",
+      "tier": "A",
+      "expectation_gap_est": 0.10720671626523257,
+      "market_cap": 2963526058.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.96B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "UCB",
+      "tier": "A",
+      "expectation_gap_est": 0.10696808256925441,
+      "market_cap": 3601588221.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.60B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DAR",
+      "tier": "S",
+      "expectation_gap_est": 0.1065147823818495,
+      "market_cap": 5963190000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TEX",
+      "tier": "A",
+      "expectation_gap_est": 0.10610787790109204,
+      "market_cap": 2988000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.99B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "INTT",
+      "tier": "A",
+      "expectation_gap_est": 0.10484676428693161,
+      "market_cap": 85351987.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.09B가 코퍼스 최소($3.74B)의 1/44 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RMBS",
+      "tier": "B",
+      "expectation_gap_est": 0.10481380122179837,
+      "market_cap": 5200000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BYD",
+      "tier": "A",
+      "expectation_gap_est": 0.10304558843305997,
+      "market_cap": 4300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CNMD",
+      "tier": "S",
+      "expectation_gap_est": 0.10300982368527475,
+      "market_cap": 1200000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.20B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "RRR",
+      "tier": "S",
+      "expectation_gap_est": 0.10261376521316104,
+      "market_cap": 2600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.60B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PEBO",
+      "tier": "S",
+      "expectation_gap_est": 0.10236926737802304,
+      "market_cap": 1029478000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.03B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CRM",
+      "tier": "A",
+      "expectation_gap_est": 0.10098156251599227,
+      "market_cap": 191800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CHH",
+      "tier": "A",
+      "expectation_gap_est": 0.10026172746023211,
+      "market_cap": 3445513422.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.45B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "DECK",
+      "tier": "A",
+      "expectation_gap_est": 0.09825607205774288,
+      "market_cap": 14764483936.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "EXFY",
+      "tier": "S",
+      "expectation_gap_est": 0.09684222212077168,
+      "market_cap": 173000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.17B가 코퍼스 최소($3.74B)의 1/22 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "LZ",
+      "tier": "S",
+      "expectation_gap_est": 0.09613617865122281,
+      "market_cap": 1300000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.30B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "QLYS",
+      "tier": "A",
+      "expectation_gap_est": 0.09562227522196362,
+      "market_cap": 3714000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.71B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "BBW",
+      "tier": "B",
+      "expectation_gap_est": 0.09526545946859061,
+      "market_cap": 649500000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.65B가 코퍼스 최소($3.74B)의 1/6 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HBAN",
+      "tier": "A",
+      "expectation_gap_est": 0.09304850956187576,
+      "market_cap": 24100000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CNM",
+      "tier": "B",
+      "expectation_gap_est": 0.09076129172048425,
+      "market_cap": 11940000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "QCOM",
+      "tier": "A",
+      "expectation_gap_est": 0.0902102331368604,
+      "market_cap": 167900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CVX",
+      "tier": "A",
+      "expectation_gap_est": 0.08874717814850339,
+      "market_cap": 247400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "HAE",
+      "tier": "S",
+      "expectation_gap_est": 0.08755557345253313,
+      "market_cap": 2226588933.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.23B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "VCTR",
+      "tier": "S",
+      "expectation_gap_est": 0.0864658617162409,
+      "market_cap": 3500000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.50B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "AXP",
+      "tier": "A",
+      "expectation_gap_est": 0.08592139356485343,
+      "market_cap": 221800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BSY",
+      "tier": "A",
+      "expectation_gap_est": 0.08487667595100234,
+      "market_cap": 7600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "GLPI",
+      "tier": "B",
+      "expectation_gap_est": 0.08426082204693591,
+      "market_cap": 12700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "EAT",
+      "tier": "A",
+      "expectation_gap_est": 0.08393112590316726,
+      "market_cap": 6521752786.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BLZE",
+      "tier": "A",
+      "expectation_gap_est": 0.08321867201371526,
+      "market_cap": 240300000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.24B가 코퍼스 최소($3.74B)의 1/16 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "GHC",
+      "tier": "A",
+      "expectation_gap_est": 0.08252564582784822,
+      "market_cap": 3061000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.06B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MYRG",
+      "tier": "A",
+      "expectation_gap_est": 0.08186101590814399,
+      "market_cap": 2380000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.38B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CWCO",
+      "tier": "A",
+      "expectation_gap_est": 0.08082958091812807,
+      "market_cap": 449191481.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.45B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "IBP",
+      "tier": "A",
+      "expectation_gap_est": 0.08073237701935876,
+      "market_cap": 4123968168.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BL",
+      "tier": "B",
+      "expectation_gap_est": 0.07904208963022372,
+      "market_cap": 3239000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $3.24B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "APTV",
+      "tier": "A",
+      "expectation_gap_est": 0.07899990385744728,
+      "market_cap": 14783719749.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "COR",
+      "tier": "A",
+      "expectation_gap_est": 0.0786812992181047,
+      "market_cap": 37887695618.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "MLI",
+      "tier": "A",
+      "expectation_gap_est": 0.07852916662980422,
+      "market_cap": 8641564012.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ADBE",
+      "tier": "A",
+      "expectation_gap_est": 0.07831705788896728,
+      "market_cap": 144940000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "MKL",
+      "tier": "A",
+      "expectation_gap_est": 0.07747678086057852,
+      "market_cap": 24853000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "DGII",
+      "tier": "A",
+      "expectation_gap_est": 0.07717176263918113,
+      "market_cap": 1010000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.01B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OII",
+      "tier": "A",
+      "expectation_gap_est": 0.07629224889014088,
+      "market_cap": 2000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.00B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "FCFS",
+      "tier": "A",
+      "expectation_gap_est": 0.07626059644024262,
+      "market_cap": 5217000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ADI",
+      "tier": "B",
+      "expectation_gap_est": 0.07611879241422109,
+      "market_cap": 81121000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PRGS",
+      "tier": "A",
+      "expectation_gap_est": 0.07592383755751023,
+      "market_cap": 2605000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.60B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "MMS",
+      "tier": "A",
+      "expectation_gap_est": 0.07567552073973044,
+      "market_cap": 3801184315.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "DHI",
+      "tier": "A",
+      "expectation_gap_est": 0.07550892111129258,
+      "market_cap": 39000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CHWY",
+      "tier": "A",
+      "expectation_gap_est": 0.07438061075756518,
+      "market_cap": 8000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "QSR",
+      "tier": "A",
+      "expectation_gap_est": 0.07298435364211928,
+      "market_cap": 21428256686.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "OOMA",
+      "tier": "A",
+      "expectation_gap_est": 0.07262235260056296,
+      "market_cap": 256000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.26B가 코퍼스 최소($3.74B)의 1/15 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "HQY",
+      "tier": "A",
+      "expectation_gap_est": 0.07232970761735968,
+      "market_cap": 7000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CAH",
+      "tier": "A",
+      "expectation_gap_est": 0.07071996004702397,
+      "market_cap": 48192692777.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "BLDR",
+      "tier": "A",
+      "expectation_gap_est": 0.06998768401920451,
+      "market_cap": 12600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "URBN",
+      "tier": "A",
+      "expectation_gap_est": 0.06991760153594281,
+      "market_cap": 4829187910.0,
+      "note": "public_float FY2026 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CENX",
+      "tier": "A",
+      "expectation_gap_est": 0.06708067094906277,
+      "market_cap": 946000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.95B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "LWAY",
+      "tier": "B",
+      "expectation_gap_est": 0.06707466797502587,
+      "market_cap": 132499543.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.13B가 코퍼스 최소($3.74B)의 1/28 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "CERT",
+      "tier": "A",
+      "expectation_gap_est": 0.0666957266057871,
+      "market_cap": 1400000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.40B가 코퍼스 최소($3.74B)의 1/3 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "REGN",
+      "tier": "A",
+      "expectation_gap_est": 0.06643908100145982,
+      "market_cap": 54800000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CALX",
+      "tier": "B",
+      "expectation_gap_est": 0.06557643198054737,
+      "market_cap": 2101000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.10B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PATK",
+      "tier": "A",
+      "expectation_gap_est": 0.06445551937889017,
+      "market_cap": 2900000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $2.90B가 코퍼스 최소($3.74B)의 1/1 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "WLDN",
+      "tier": "A",
+      "expectation_gap_est": 0.06344460900913904,
+      "market_cap": 1000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.00B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "TTEK",
+      "tier": "B",
+      "expectation_gap_est": 0.05999480556621136,
+      "market_cap": 7600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "AVO",
+      "tier": "A",
+      "expectation_gap_est": 0.05891946989770939,
+      "market_cap": 496000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.50B가 코퍼스 최소($3.74B)의 1/8 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "EPR",
+      "tier": "B",
+      "expectation_gap_est": 0.05792896699778416,
+      "market_cap": 4458055841.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ALRM",
+      "tier": "A",
+      "expectation_gap_est": 0.057657746536138824,
+      "market_cap": 1858300000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $1.86B가 코퍼스 최소($3.74B)의 1/2 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "LFUS",
+      "tier": "A",
+      "expectation_gap_est": 0.05423260087130338,
+      "market_cap": 5591411587.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "STRL",
+      "tier": "B",
+      "expectation_gap_est": 0.05305016928730573,
+      "market_cap": 6830000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ERIE",
+      "tier": "A",
+      "expectation_gap_est": 0.05088928563462626,
+      "market_cap": 8700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "ULTA",
+      "tier": "B",
+      "expectation_gap_est": 0.047666539847283654,
+      "market_cap": 16866064000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "EME",
+      "tier": "A",
+      "expectation_gap_est": 0.046490996906985375,
+      "market_cap": 17258000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "CLFD",
+      "tier": "B",
+      "expectation_gap_est": 0.04606425205763917,
+      "market_cap": 347399785.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.35B가 코퍼스 최소($3.74B)의 1/11 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "PAYX",
+      "tier": "A",
+      "expectation_gap_est": 0.045346627501754715,
+      "market_cap": 35959981648.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "NYT",
+      "tier": "B",
+      "expectation_gap_est": 0.04086194011136619,
+      "market_cap": 9000000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "NATH",
+      "tier": "B",
+      "expectation_gap_est": 0.038465294590717944,
+      "market_cap": 310117000.0,
+      "note": "public_float FY2026 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.31B가 코퍼스 최소($3.74B)의 1/12 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    },
+    {
+      "ticker": "OSIS",
+      "tier": "B",
+      "expectation_gap_est": 0.03835118838580941,
+      "market_cap": 4020393452.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "LULU",
+      "tier": "B",
+      "expectation_gap_est": 0.03811350434280857,
+      "market_cap": 17576000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "WTS",
+      "tier": "B",
+      "expectation_gap_est": 0.037959823386795856,
+      "market_cap": 6695455530.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "TEAM",
+      "tier": "B",
+      "expectation_gap_est": 0.03747007330878171,
+      "market_cap": 27600000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "PSN",
+      "tier": "B",
+      "expectation_gap_est": 0.037096612222589614,
+      "market_cap": 7700000000.0,
+      "note": "public_float FY2025 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": []
+    },
+    {
+      "ticker": "RSSS",
+      "tier": "B",
+      "expectation_gap_est": 0.03510289620637267,
+      "market_cap": 125316583.0,
+      "note": "public_float FY2024 기준(근사치, 최대 ~18개월 낡을 수 있음)",
+      "out_of_validated_scope": [
+        "시총 $0.13B가 코퍼스 최소($3.74B)의 1/30 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ]
+    }
+  ]
+}
