@@ -114,6 +114,17 @@ jobs:
         if: always()
         run: python3 scripts/track_record_ci.py
 
+      # 공식 매수리스트(reports/buylist_*.json)의 **가중 트랙레코드**
+      # (engine/portfolio_track_record.py, v3.90) - 위 track_record.py가
+      # 재는 것은 종목별 T0(제각각)이고, 이건 "그 매수리스트를 발행일에
+      # 그 비중대로 샀다면 지금 얼마인가"라는 다른 질문에 답한다. 새 가격
+      # 조회/파싱 로직 0줄 - track_record.py의 함수를 그대로 재사용한다.
+      # 판정·사이징에 되먹임하지 않는다(병기, 자동판정 안 함) - 사용자가
+      # "필요할 때마다 갱신"을 요청한 대시보드가 읽는 원자료가 여기서 쌓인다.
+      - name: measure portfolio (buylist) weighted track record
+        if: always()
+        run: python3 -m scripts.portfolio_track_record_ci
+
       - name: post result to GitHub Issue
         if: always()
         env:
@@ -127,7 +138,8 @@ jobs:
           git config user.name "irs-broad-screen[bot]"
           git config user.email "irs-broad-screen-bot@users.noreply.github.com"
           git add reports/broad_screen/ reports/research_queue.json \
-                  reports/track_record/ 2>/dev/null || true
+                  reports/track_record/ reports/portfolio_track_record/ \
+                  2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 리포트 없음 - 커밋 건너뜀"
           else

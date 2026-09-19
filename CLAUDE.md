@@ -10528,3 +10528,79 @@ thesis 조건 23건 중 기한 도래 **0건**(가장 가까운 것이 2026-11-3
 `engine/` **무변경**이라 `ENGINE_VERSION`은 **v3.89 그대로**(v3.32 규칙:
 코드가 안 바뀌면 버전도 안 바뀐다). 테스트 1,225 → **1,231개 전부 통과**,
 baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
+
+## v3.90 — 매수리스트 가중 트랙레코드 + 대시보드 (2026-09-19, 사용자 요청
+"대쉬보드 만들어서 너가 짠 포트폴리오 수익률 계속 추적하는거 만들어봐")
+
+### 왜 engine/track_record.py(v3.89)로는 부족한가
+
+track_record.py는 **종목별** T0→현재 수익률을 잰다 - 각 ledger의
+`price_at_analysis`를 그 종목만의 T0로 쓴다(종목마다 T0가 제각각: ACGL은
+2026-09-05, PGR은 2026-08-23...). 그 개별 수익률을 매수리스트 비중으로
+가중평균해도 "이 포트폴리오를 실제로 샀다면 얼마인가"에는 답하지 못한다 -
+진짜 살 수 있는 포트폴리오는 **하나의 공통 진입일**에서 시작해야 한다.
+`engine/portfolio_track_record.py`가 재는 게 그거다: 매수리스트 발행일
+(`generated_at`)을 유일한 진입일로 삼아, 그날 그 비중대로 샀다면 지금
+얼마인지를 계산한다.
+
+**새 가격조회/파싱 로직 0줄** - `engine.track_record`의
+`fetch_daily_series`/`price_on_or_before`를 그대로 재사용한다(AST 테스트로
+재구현 금지 고정). 이 모듈이 추가하는 건 "여러 종목을 공통 진입일 기준으로
+비중가중 합산"뿐이다.
+
+### 매일의 궤적을 추가 네트워크 요청 없이 계산
+
+`snapshot()`이 이미 받아온 `series_cache`/`bseries`(각 종목·벤치마크의
+전체 일봉 시계열)를 재사용해 진입일부터 오늘까지 **매일**의 가중 포트폴리오
+지수(진입일=100)를 함께 낸다(`_daily_trajectory()`, `price_on_or_before`를
+날짜마다 재사용). 첫 스냅샷부터 두 점(진입/오늘)짜리 빈약한 선이 아니라
+실제 궤적을 보여주기 위함이다 - 실측(테스트)으로 요청 횟수가 늘지 않음을
+고정했다(종목 2개+벤치마크=정확히 3회).
+
+### 병기, 자동판정 안 함(v3.42 원칙) + 커버리지 정직성
+
+Gap·판정등급·Confidence·사이징 어디에도 되먹임되지 않는다(AST 테스트로
+`decide`/`judge`/`rebalance`류 공개 함수 부재를 고정). `ledger/`·
+`portfolio/holdings.json`·`watchlist.json`·`reports/buylist_*.json` 어디에도
+쓰지 않는다 - 전부 읽기만 한다(모듈 안에 쓰기모드 `open()` 자체가 없음을
+AST로 고정). 가격 미확보 종목은 0%로 취급하지 않고 `covered_weight`(실제
+가중합산에 들어간 비중) 안에서만 정규화한다 - 손실/실패 종목이 빠졌을 때
+포트폴리오가 실제보다 좋아 보이는 함정을 피한다.
+
+**`_is_dated_buylist()`**가 daily_brief.py의 2026-08-28 함정(접두어매칭이
+`buylist_boundary_review_2026-08-16.json` 같은 다른 스키마 리포트를 공식
+매수리스트로 잘못 고름)을 정규식으로 재발 방지한다.
+
+### 실측(2026-09-19, buylist_2026-09-06.json 18종목)
+
+발행일(2026-09-06, 실제 거래일 2026-09-04 금요일 종가) 이후 12일 경과 -
+**포트폴리오 -5.74% vs SPY -0.86%(알파 -4.88%p)**, 커버리지 18/18(100%).
+소프트웨어·플랫폼 섹터 전반 조정 국면과 겹친 초단기 관측이라
+`MEASUREMENT_STATUS=OBSERVATIONAL_NOT_INFERENTIAL`을 그대로 재사용해
+통계적 결론을 주장하지 않는다.
+
+### 배선 - GitHub Actions에 얹어 원자료를 계속 쌓는다
+
+`scripts/portfolio_track_record_ci.py`를 `broad_screen.yml`(주간 워크플로)의
+기존 `track_record_ci.py` 단계 바로 뒤에 추가했다 - `if: always()`로 본체
+스크리닝이 실패해도 독립 실행되고, `reports/portfolio_track_record/`만
+커밋 대상에 추가했다.
+
+### 대시보드는 정적 Artifact - "필요할 때마다 갱신"의 실제 의미
+
+`reports/portfolio_track_record/portfolio_track_record_<날짜>.json`을
+읽어 숫자를 손으로 옮기지 않고 그대로 렌더링하는 생성 스크립트로 HTML을
+만들어 claude.ai Artifact로 발행했다(https://claude.ai/artifact/E9eUnZr2zPSjurunJD2Tt6).
+GitHub Actions가 원자료(JSON)는 주기적으로 갱신하지만, **Artifact 페이지
+자체의 재발행은 이 세션이 해야 한다** - GitHub Actions는 claude.ai 페이지를
+직접 갱신할 수 없다. 따라서 "필요할 때마다 갱신"은 지금은 요청 시 수동
+재발행이고, 사용자가 원하면 예약된 세션 기상(Routine)으로 자동 재발행도
+가능하다(이번엔 배선하지 않음 - 사용자 요청이 없었다).
+
+### 검증
+
+테스트 1,231 → **1,252개 전부 통과**(신규 21). 34종목 골든재현 8지표
+불일치 0건, baseline fingerprint 불변. `ledger/`·`portfolio/holdings.json`·
+`watchlist.json`·공식 매수리스트 **0건 수정**. `ENGINE_VERSION` v3.89 →
+**v3.90**(신규 engine 모듈 - growth_quality/accounting_quality/dilution과
+동일하게 미배선이어도 상수를 올린다).
