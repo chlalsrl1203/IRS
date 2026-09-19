@@ -62,6 +62,13 @@ _DATED_BUYLIST_RE = re.compile(r"buylist_\d{4}-\d{2}-\d{2}\.json$")
 OUT_DIR = os.path.join("reports", "portfolio_track_record")
 BENCHMARK_TICKER = "SPY"
 
+# 대시보드(dashboard/portfolio_track_record.html)가 브라우저에서 직접
+# 읽어가는 고정 경로의 파일명. 날짜가 박힌 스냅샷만 있으면 페이지가 날짜를
+# 추측해야 하고, 주말·휴일·CI 실패로 그날 파일이 없으면 조용히 빈 화면이
+# 된다. 상수를 여기 두는 이유는 v3.35가 실측한 것과 같다 - 같은 문자열을
+# 스크립트·테스트·HTML에 각자 박아두면 한쪽만 고쳤을 때 조용히 어긋난다.
+LATEST_NAME = "latest.json"
+
 
 def _is_dated_buylist(path):
     """

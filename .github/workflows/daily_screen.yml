@@ -86,6 +86,23 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: python3 scripts/watchlist_ci.py --post
 
+      # 2026-09-19(v3.90): 공식 매수리스트의 **가중 트랙레코드**를 매일 갱신한다.
+      # broad_screen.yml(주 1회)에도 같은 단계가 있지만 그쪽만으로는 부족하다 -
+      # 이 스냅샷은 매일 바뀌는 **주가**가 입력이라(재무제표가 아니다) 주 1회면
+      # 최대 6일 묵은 값이 대시보드에 뜬다. 주간 스크리닝이 매일 돌 이유가
+      # 없는 것과 정확히 반대 이유다.
+      #
+      # 대시보드(dashboard/portfolio_track_record.html)가 여기서 쓰는
+      # reports/portfolio_track_record/latest.json을 브라우저에서 직접 읽으므로,
+      # 이 단계가 곧 대시보드의 갱신 경로다 - 페이지를 다시 발행할 필요가 없다.
+      #
+      # `if: always()` - 시세 출처(stockanalysis)만 쓰므로 Finviz·SEC·AV가
+      # 전부 죽어도 독립적으로 돌아야 한다. 판정·사이징에 되먹임하지 않는다
+      # (병기, 자동판정 안 함 - engine/portfolio_track_record.py 참고).
+      - name: measure portfolio (buylist) weighted track record
+        if: always()
+        run: python3 -m scripts.portfolio_track_record_ci
+
       # 2026-08-23(v3.65): 심층분석 스냅샷은 다음날 "전일 대비 변화"를 보려면
       # 이 checkout 안에 남아 있어야 하는데, 러너는 매번 새로 뜬다 - 커밋하지
       # 않으면 항상 prior=None이라 변화탐지가 영구히 작동하지 않는다.
@@ -118,11 +135,12 @@ jobs:
         run: |
           git config user.name "irs-daily-screen[bot]"
           git config user.email "irs-daily-screen-bot@users.noreply.github.com"
-          git add reports/deep_screen/ reports/watchlist/ reports/brief/ 2>/dev/null || true
+          git add reports/deep_screen/ reports/watchlist/ reports/brief/ \
+                  reports/portfolio_track_record/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 스냅샷 없음 - 커밋 건너뜀"
           else
-            git commit -m "reports: $(date -u +%Y-%m-%d) 자동 스냅샷(deep_screen/watchlist/brief)"
+            git commit -m "reports: $(date -u +%Y-%m-%d) 자동 스냅샷(deep_screen/watchlist/brief/portfolio)"
             git push
           fi
 

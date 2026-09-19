@@ -1,0 +1,298 @@
+{
+  "as_of": "2026-09-19",
+  "as_of_actual_latest_bar": "2026-09-18",
+  "measurement_status": "OBSERVATIONAL_NOT_INFERENTIAL - 실제 관측이지만 사전등록된 실험이 아니다. 관측기간이 포트폴리오 발행 이후일수뿐이라 벤치마크 대비 우위를 통계적으로 주장하지 않으며, 판정·사이징·Confidence 어디에도 되먹임되지 않는다.",
+  "return_definition": "배당조정 종가 기준, 매수리스트 발행일(inception_date) 공통진입 가중바스켓 수익률. 개별 종목의 track_record.py T0 수익률(종목마다 T0가 다름)과는 다른 값이다.",
+  "portfolio_version": {
+    "source_path": "reports/buylist_2026-09-06.json",
+    "generated_at": "2026-09-06",
+    "n_positions": 18
+  },
+  "inception_date": "2026-09-06",
+  "days_held": 12,
+  "n_positions": 18,
+  "n_covered": 18,
+  "covered_weight": 1.0000000000000004,
+  "uncovered_weight": 0.0,
+  "portfolio_return_pct": -5.739632738533267,
+  "benchmark": {
+    "ticker": "SPY",
+    "entry_date": "2026-09-04",
+    "entry_adj": 768.285,
+    "latest_date": "2026-09-18",
+    "latest_adj": 761.69,
+    "return_pct": -0.858405409450913
+  },
+  "alpha_vs_benchmark_pct": -4.881227329082353,
+  "rows": [
+    {
+      "ticker": "CINF",
+      "weight": 0.058793136308738135,
+      "grade": "S",
+      "cluster": "insurance_underwriting",
+      "entry_date": "2026-09-04",
+      "entry_adj": 171.1,
+      "latest_date": "2026-09-18",
+      "latest_adj": 169.0,
+      "return_pct": -1.2273524254821755,
+      "contribution_pct": -0.0721598984502339
+    },
+    {
+      "ticker": "TW",
+      "weight": 0.03599788687800856,
+      "grade": "A",
+      "cluster": "enterprise_software",
+      "entry_date": "2026-09-04",
+      "entry_adj": 106.2,
+      "latest_date": "2026-09-18",
+      "latest_adj": 103.97,
+      "return_pct": -2.0998116760828633,
+      "contribution_pct": -0.07558878318075248
+    },
+    {
+      "ticker": "SKYW",
+      "weight": 0.04032692815126773,
+      "grade": "A",
+      "cluster": "transportation",
+      "entry_date": "2026-09-04",
+      "entry_adj": 99.06,
+      "latest_date": "2026-09-18",
+      "latest_adj": 96.375,
+      "return_pct": -2.7104784978800756,
+      "contribution_pct": -0.1093052716395659
+    },
+    {
+      "ticker": "ACGL",
+      "weight": 0.09355757278473437,
+      "grade": "S",
+      "cluster": "insurance_underwriting",
+      "entry_date": "2026-09-04",
+      "entry_adj": 98.1,
+      "latest_date": "2026-09-18",
+      "latest_adj": 96.89,
+      "return_pct": -1.2334352701325102,
+      "contribution_pct": -0.11539721006068082
+    },
+    {
+      "ticker": "PGR",
+      "weight": 0.07075264529037385,
+      "grade": "S",
+      "cluster": "insurance_underwriting",
+      "entry_date": "2026-09-04",
+      "entry_adj": 218.95,
+      "latest_date": "2026-09-18",
+      "latest_adj": 213.48,
+      "return_pct": -2.4982872802009615,
+      "contribution_pct": -0.17676043376951145
+    },
+    {
+      "ticker": "NXT",
+      "weight": 0.03708433362251312,
+      "grade": "A",
+      "cluster": "industrial_energy_transition",
+      "entry_date": "2026-09-04",
+      "entry_adj": 84.5,
+      "latest_date": "2026-09-18",
+      "latest_adj": 80.47,
+      "return_pct": -4.76923076923077,
+      "contribution_pct": -0.17686374496890878
+    },
+    {
+      "ticker": "GEN",
+      "weight": 0.03341267707036114,
+      "grade": "A",
+      "cluster": "industrial_stalwart",
+      "entry_date": "2026-09-04",
+      "entry_adj": 30.65,
+      "latest_date": "2026-09-18",
+      "latest_adj": 29.01,
+      "return_pct": -5.350734094616627,
+      "contribution_pct": -0.17878235039279655
+    },
+    {
+      "ticker": "PDD",
+      "weight": 0.06476028117493131,
+      "grade": "S",
+      "cluster": "growth_platform",
+      "entry_date": "2026-09-04",
+      "entry_adj": 82.21,
+      "latest_date": "2026-09-18",
+      "latest_adj": 78.9,
+      "return_pct": -4.026274175890999,
+      "contribution_pct": -0.2607426477180659
+    },
+    {
+      "ticker": "ADBE",
+      "weight": 0.04054331958563335,
+      "grade": "A",
+      "cluster": "enterprise_software",
+      "entry_date": "2026-09-04",
+      "entry_adj": 266.51,
+      "latest_date": "2026-09-18",
+      "latest_adj": 248.92,
+      "return_pct": -6.600127574950287,
+      "contribution_pct": -0.2675910815771607
+    },
+    {
+      "ticker": "UBER",
+      "weight": 0.04508672687396626,
+      "grade": "A",
+      "cluster": "growth_platform",
+      "entry_date": "2026-09-04",
+      "entry_adj": 75.76,
+      "latest_date": "2026-09-18",
+      "latest_adj": 70.5,
+      "return_pct": -6.942977824709617,
+      "contribution_pct": -0.3130361448746869
+    },
+    {
+      "ticker": "NBIX",
+      "weight": 0.056999742788287844,
+      "grade": "A",
+      "cluster": "healthcare_lifesci",
+      "entry_date": "2026-09-04",
+      "entry_adj": 155.64,
+      "latest_date": "2026-09-18",
+      "latest_adj": 146.23,
+      "return_pct": -6.0460035980467675,
+      "contribution_pct": -0.3446206499857286
+    },
+    {
+      "ticker": "MNDY",
+      "weight": 0.05928096869760676,
+      "grade": "S",
+      "cluster": "growth_platform",
+      "entry_date": "2026-09-04",
+      "entry_adj": 91.07,
+      "latest_date": "2026-09-18",
+      "latest_adj": 85.13,
+      "return_pct": -6.522455254200066,
+      "contribution_pct": -0.38665746575577487
+    },
+    {
+      "ticker": "DECK",
+      "weight": 0.045125210879229674,
+      "grade": "A",
+      "cluster": "consumer_brand",
+      "entry_date": "2026-09-04",
+      "entry_adj": 85.81,
+      "latest_date": "2026-09-18",
+      "latest_adj": 78.43,
+      "return_pct": -8.60039622421629,
+      "contribution_pct": -0.38809469326269075
+    },
+    {
+      "ticker": "SIGI",
+      "weight": 0.06863684534399982,
+      "grade": "S",
+      "cluster": "insurance_underwriting",
+      "entry_date": "2026-09-04",
+      "entry_adj": 92.19,
+      "latest_date": "2026-09-18",
+      "latest_adj": 86.7,
+      "return_pct": -5.955092743247636,
+      "contribution_pct": -0.40873877962746363
+    },
+    {
+      "ticker": "SE",
+      "weight": 0.044901786818790985,
+      "grade": "A",
+      "cluster": "growth_platform",
+      "entry_date": "2026-09-04",
+      "entry_adj": 112.09,
+      "latest_date": "2026-09-18",
+      "latest_adj": 101.79,
+      "return_pct": -9.189044517798195,
+      "contribution_pct": -0.41260451800655457
+    },
+    {
+      "ticker": "DUOL",
+      "weight": 0.05945292234431796,
+      "grade": "S",
+      "cluster": "growth_platform",
+      "entry_date": "2026-09-04",
+      "entry_adj": 154.46,
+      "latest_date": "2026-09-18",
+      "latest_adj": 141.9,
+      "return_pct": -8.131555095170274,
+      "contribution_pct": -0.4834447136117013
+    },
+    {
+      "ticker": "DLO",
+      "weight": 0.09190976552839589,
+      "grade": "S",
+      "cluster": "financial_services_other",
+      "entry_date": "2026-09-04",
+      "entry_adj": 15.52,
+      "latest_date": "2026-09-18",
+      "latest_adj": 14.21,
+      "return_pct": -8.440721649484528,
+      "contribution_pct": -0.775784747694578
+    },
+    {
+      "ticker": "HLNE",
+      "weight": 0.053377249858843366,
+      "grade": "A",
+      "cluster": "financial_services_other",
+      "entry_date": "2026-09-04",
+      "entry_adj": 103.06,
+      "latest_date": "2026-09-18",
+      "latest_adj": 87.74,
+      "return_pct": -14.865127110421117,
+      "contribution_pct": -0.7934596039564142
+    }
+  ],
+  "errors": {},
+  "trajectory": [
+    {
+      "date": "2026-09-04",
+      "portfolio_index": 99.99999999999997,
+      "benchmark_index": 100.0
+    },
+    {
+      "date": "2026-09-08",
+      "portfolio_index": 97.29677032842551,
+      "benchmark_index": 99.45072466597684
+    },
+    {
+      "date": "2026-09-09",
+      "portfolio_index": 95.91354488271845,
+      "benchmark_index": 98.98852639320044
+    },
+    {
+      "date": "2026-09-10",
+      "portfolio_index": 96.35193267781713,
+      "benchmark_index": 98.39512680841095
+    },
+    {
+      "date": "2026-09-11",
+      "portfolio_index": 96.48261115246616,
+      "benchmark_index": 99.23387805306625
+    },
+    {
+      "date": "2026-09-14",
+      "portfolio_index": 98.39658319246274,
+      "benchmark_index": 98.79120378505374
+    },
+    {
+      "date": "2026-09-15",
+      "portfolio_index": 96.64078232730584,
+      "benchmark_index": 98.33798655446871
+    },
+    {
+      "date": "2026-09-16",
+      "portfolio_index": 95.81796669023788,
+      "benchmark_index": 97.90442348867933
+    },
+    {
+      "date": "2026-09-17",
+      "portfolio_index": 95.45097990346933,
+      "benchmark_index": 99.01455839955227
+    },
+    {
+      "date": "2026-09-18",
+      "portfolio_index": 94.2603672614667,
+      "benchmark_index": 99.14159459054909
+    }
+  ]
+}

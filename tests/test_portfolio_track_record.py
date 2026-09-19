@@ -432,13 +432,22 @@ def test_load_history_reads_snapshots_in_date_order(tmp_path):
 
 
 # ── CLI 스크립트: 산출물 경로 격리 ──────────────────────────────────────
-def test_ci_script_writes_exactly_once_and_only_into_its_own_out_dir():
+def test_ci_script_writes_only_into_its_own_out_dir():
     """
-    이 스크립트가 실제로 쓰기 모드로 여는 곳은 정확히 한 군데(자신의
-    `--out-dir`, 기본값 `reports/portfolio_track_record/`)여야 한다 -
+    이 스크립트가 쓰기 모드로 여는 곳은 **전부** 자신의 `--out-dir`
+    (기본값 `reports/portfolio_track_record/`) 아래여야 한다 -
     `ledger/`·`portfolio/holdings.json`·`watchlist.json`·공식 매수리스트
     (`reports/buylist_*.json`)에 쓰는 코드가 섞여 들어오면 이 테스트가
     잡는다.
+
+    ⚠️ 원래 이 테스트는 "쓰기 호출이 정확히 1곳"임을 단언했는데, 그건
+    지켜야 할 성질이 아니라 그 시점의 상태였다 - 2026-09-19에 대시보드용
+    고정 경로(`latest.json`)를 추가하자 정당한 두 번째 쓰기가 생기면서
+    실패했다. 개수가 아니라 **모든 쓰기 경로가 out_dir에서 조립됐는가**를
+    확인하도록 고쳤다(BRO model_choice_reason·test_every_prediction_
+    starts_open과 같은 처리 - 상태를 단언하던 테스트를 진짜 불변조건으로
+    다시 쓴다). 개수를 세지 않으므로 전보다 약해진 게 아니라, 새로 생기는
+    쓰기 하나하나를 전부 검사하므로 오히려 강해졌다.
     """
     src = (ROOT / "scripts" / "portfolio_track_record_ci.py").read_text(encoding="utf-8")
     tree = ast.parse(src)
@@ -460,17 +469,19 @@ def test_ci_script_writes_exactly_once_and_only_into_its_own_out_dir():
                     f"open() 경로에 금지된 대상이 있다: {path_src!r}")
             if any(isinstance(m, ast.Constant) and "w" in m.value for m in mode_args):
                 write_calls.append(node)
-    assert len(write_calls) == 1, "쓰기 호출이 정확히 1곳이어야 명확하다"
+    assert write_calls, "쓰기 호출이 하나도 없다 - 스냅샷을 저장하지 않는다"
 
     # 쓰기 호출은 지역변수(예: path)를 받는다 - 그 변수가 실제로 out_dir로
     # 조립됐는지 대입식까지 따라가서 확인한다(변수명만 보면 우회 가능).
-    path_arg_name = _open_path_source(write_calls[0])
-    assignments_to_path_var = [
-        ast.get_source_segment(src, n.value)
-        for n in ast.walk(tree)
-        if isinstance(n, ast.Assign)
-        and any(isinstance(t, ast.Name) and t.id == path_arg_name for t in n.targets)
-    ]
-    assert assignments_to_path_var and any(
-        "out_dir" in seg for seg in assignments_to_path_var
-    ), "유일한 쓰기 호출은 --out-dir 변수를 통해서만 경로를 받아야 한다"
+    for call in write_calls:
+        path_arg_name = _open_path_source(call)
+        assignments_to_path_var = [
+            ast.get_source_segment(src, n.value)
+            for n in ast.walk(tree)
+            if isinstance(n, ast.Assign)
+            and any(isinstance(t, ast.Name) and t.id == path_arg_name for t in n.targets)
+        ]
+        assert assignments_to_path_var and any(
+            "out_dir" in seg for seg in assignments_to_path_var
+        ), (f"쓰기 경로 {path_arg_name!r}가 --out-dir에서 조립되지 않았다: "
+            f"{assignments_to_path_var}")

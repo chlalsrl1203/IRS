@@ -1,0 +1,546 @@
+<!doctype html>
+<html lang="ko">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>포트폴리오 트랙레코드</title>
+<meta name="description" content="IRS 엔진이 구성한 공식 매수리스트의 발행일 이후 실제 가중 수익률을 공통 진입일 기준으로 추적합니다. 저장소의 최신 스냅샷을 페이지가 직접 읽어 매일 갱신됩니다.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  이 페이지는 **스스로 데이터를 가져온다.**
+
+  원자료: reports/portfolio_track_record/latest.json (public repo, raw.githubusercontent.com)
+  갱신  : GitHub Actions(.github/workflows/daily_screen.yml)가 평일 매일 그 파일을
+          새로 쓴다. 따라서 이 페이지를 다시 발행하지 않아도 매일 최신값이 뜬다.
+
+  ⚠️ 렌더링 로직을 파이썬과 자바스크립트에 **양쪽으로 두지 않았다.** 전에는
+  파이썬 생성기가 SVG·표를 만들어 HTML에 박아넣었는데, 그러면 페이지를 다시
+  발행해야만 숫자가 바뀌고(= 매일 갱신 불가) 같은 계산이 두 벌로 갈린다.
+  지금은 렌더러가 여기 하나뿐이고 파이썬은 JSON만 만든다.
+
+  ⚠️ 조회에 실패하면 **오래된 숫자를 보여주지 않는다.** 빌드 시점 스냅샷을
+  내장해두면 네트워크가 죽었을 때 낡은 값이 최신인 척 표시된다 - 이 프로젝트가
+  반복 경계해온 "데이터 없음을 안전으로 오독"의 화면판이다. 대신 실패 사실과
+  시도한 URL을 그대로 띄운다.
+-->
+
+<style>
+  :root {
+    --bg: #f2f4f8;
+    --surface: #ffffff;
+    --surface-alt: #eef1f7;
+    --border: #dde2ec;
+    --border-soft: #e7eaf1;
+    --text: #161b26;
+    --text-dim: #5b6577;
+    --text-faint: #8991a3;
+    --accent: #2f4b9e;
+    --accent-soft: #e5eaf7;
+    --pos: #197a53;
+    --neg: #ae3131;
+    --bench: #8992a6;
+    --shadow: 0 1px 2px rgba(22,27,38,.04), 0 8px 24px -12px rgba(22,27,38,.10);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #10131b; --surface: #171c28; --surface-alt: #1d2330;
+      --border: #2b3345; --border-soft: #242b3b;
+      --text: #e7eaf2; --text-dim: #9aa3ba; --text-faint: #707a91;
+      --accent: #8ba1ea; --accent-soft: #232b46;
+      --pos: #4fd39a; --neg: #f0847c; --bench: #7c869c;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.5);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #10131b; --surface: #171c28; --surface-alt: #1d2330;
+    --border: #2b3345; --border-soft: #242b3b;
+    --text: #e7eaf2; --text-dim: #9aa3ba; --text-faint: #707a91;
+    --accent: #8ba1ea; --accent-soft: #232b46;
+    --pos: #4fd39a; --neg: #f0847c; --bench: #7c869c;
+    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 28px -14px rgba(0,0,0,.5);
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Work Sans", -apple-system, "Segoe UI", sans-serif;
+    margin: 0;
+    padding-inline: 16px;
+    padding-block: 28px 48px;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; }
+
+  .num { font-variant-numeric: tabular-nums; font-family: "IBM Plex Mono", ui-monospace, monospace; }
+  .pos { color: var(--pos); }
+  .neg { color: var(--neg); }
+  .flat { color: var(--text-dim); }
+
+  header { border-bottom: 2px solid var(--text); padding-bottom: 14px; margin-bottom: 20px; }
+  .eyebrow {
+    font: 600 11px/1 "Work Sans", sans-serif;
+    letter-spacing: .09em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 6px;
+  }
+  h1 {
+    font: 600 30px/1.08 "Fraunces", Georgia, serif;
+    letter-spacing: -.01em; text-wrap: balance; margin: 0 0 8px;
+  }
+  .subline { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; margin: 0; }
+  .subline code, .footnote code, .meta-row code {
+    font-family: "IBM Plex Mono", monospace; font-size: 12px;
+    background: var(--surface-alt); padding: 1px 5px; border-radius: 4px; color: var(--text);
+  }
+
+  /* 상태 배너 - 로딩 / 실패 / 신선도 */
+  .banner {
+    border-radius: 10px; padding: 12px 14px; font-size: 12.5px; line-height: 1.55;
+    border: 1px solid var(--border); background: var(--surface-alt);
+    color: var(--text-dim); margin-bottom: 18px;
+  }
+  .banner.error { border-color: var(--neg); color: var(--neg); background: transparent; }
+  .banner b { color: var(--text); }
+  .banner.error b { color: var(--neg); }
+  .banner .url { word-break: break-all; font-family: "IBM Plex Mono", monospace; font-size: 11px; }
+
+  .meta-row {
+    display: flex; flex-wrap: wrap; gap: 6px 16px;
+    font-size: 12px; color: var(--text-dim); margin-bottom: 16px;
+  }
+  .meta-row b { color: var(--text); font-weight: 600; }
+
+  .stats {
+    display: grid; grid-template-columns: 1.3fr 1fr 1fr; gap: 1px;
+    background: var(--border); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 20px;
+  }
+  .stat { background: var(--surface); padding: 16px 16px 15px; display: flex; flex-direction: column; gap: 4px; }
+  .stat-label { font-size: 11px; letter-spacing: .04em; color: var(--text-faint); text-transform: uppercase; }
+  .stat-value { font: 600 30px/1 "Fraunces", Georgia, serif; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+  .stat-value.small { font-size: 22px; }
+  .stat-sub { font-size: 12px; color: var(--text-dim); }
+  @media (max-width: 520px) {
+    .stats { grid-template-columns: 1fr; }
+    .stat-value { font-size: 26px; }
+  }
+
+  .chart-card, .table-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 12px; box-shadow: var(--shadow); margin-bottom: 22px;
+  }
+  .chart-card { padding: 18px 18px 12px; }
+  .table-card { overflow: hidden; }
+  .chart-head, .table-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    flex-wrap: wrap; gap: 8px;
+  }
+  .chart-head { margin-bottom: 6px; }
+  .table-head { padding: 14px 18px 10px; }
+  .chart-title { font: 600 14px "Work Sans", sans-serif; }
+  .table-head h2 { font: 600 15px "Work Sans", sans-serif; margin: 0; }
+  .table-head .hint, .chart-foot { font-size: 11.5px; color: var(--text-faint); }
+  .chart-foot { margin: 6px 0 0; }
+  .legend { display: flex; gap: 14px; font-size: 12px; color: var(--text-dim); }
+  .legend-item { display: flex; align-items: center; gap: 5px; }
+  .legend-swatch { width: 14px; height: 3px; border-radius: 2px; display: inline-block; }
+
+  .chart-svg { width: 100%; height: auto; display: block; overflow: visible; }
+  .chart-line-port { stroke: var(--accent); stroke-width: 2.6; }
+  .chart-line-bench { stroke: var(--bench); stroke-width: 1.8; stroke-dasharray: 5 4; }
+  .chart-dot-port { fill: var(--accent); stroke: var(--surface); stroke-width: 2; }
+  .chart-dot-bench { fill: var(--bench); stroke: var(--surface); stroke-width: 2; }
+  .chart-baseline { stroke: var(--border); stroke-width: 1; stroke-dasharray: 3 3; }
+  .chart-tick { stroke: var(--border); stroke-width: 1; }
+  .chart-axis-label { font: 500 10.5px "IBM Plex Mono", monospace; fill: var(--text-faint); }
+  .chart-endpoint-label { font: 600 12px "IBM Plex Mono", monospace; }
+  .chart-endpoint-label.port { fill: var(--accent); }
+  .chart-endpoint-label.bench { fill: var(--bench); }
+
+  .table-scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; min-width: 480px; }
+  thead th {
+    text-align: left; font-size: 10.5px; letter-spacing: .05em; text-transform: uppercase;
+    color: var(--text-faint); font-weight: 600; padding: 8px 14px;
+    border-top: 1px solid var(--border-soft); border-bottom: 1px solid var(--border);
+    background: var(--surface-alt);
+  }
+  thead th.num, tbody td.num { text-align: right; }
+  tbody td { padding: 9px 14px; border-bottom: 1px solid var(--border-soft); font-size: 13px; vertical-align: middle; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr:hover td { background: var(--surface-alt); }
+
+  .cell-ticker { display: flex; flex-direction: column; gap: 1px; }
+  .ticker { font: 600 13px "IBM Plex Mono", monospace; }
+  .cluster { font-size: 10.5px; color: var(--text-faint); }
+  .grade-badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-width: 22px; height: 20px; padding: 0 6px; border-radius: 5px;
+    font: 700 11px "IBM Plex Mono", monospace;
+    background: var(--surface-alt); color: var(--text-dim); border: 1px solid var(--border);
+  }
+  .grade-S { background: var(--accent-soft); color: var(--accent); border-color: transparent; }
+  .grade-A { background: var(--surface-alt); color: var(--text); }
+
+  .cell-contrib { min-width: 128px; }
+  .contrib-track {
+    position: relative; height: 5px; background: var(--surface-alt);
+    border-radius: 3px; overflow: hidden; margin-bottom: 3px;
+  }
+  .contrib-bar { position: absolute; top: 0; bottom: 0; left: 0; border-radius: 3px; }
+  .contrib-bar.pos { background: var(--pos); }
+  .contrib-bar.neg { background: var(--neg); }
+  .contrib-value { font-size: 11.5px; }
+  .row-error td { color: var(--text-faint); font-style: italic; }
+
+  .footnote {
+    background: var(--surface-alt); border: 1px solid var(--border-soft);
+    border-radius: 10px; padding: 14px 16px;
+    font-size: 12px; line-height: 1.6; color: var(--text-dim);
+  }
+  .footnote strong { color: var(--text); }
+  .footnote + .footnote { margin-top: 10px; }
+  .skeleton { display: none; }
+  [hidden] { display: none !important; }
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="eyebrow">IRS · 매수리스트 트랙레코드</p>
+    <h1>발행일 이후 가중 수익률</h1>
+    <p class="subline">
+      공식 매수리스트를 발행일에 그 비중대로 샀다면 지금 얼마인지를 추적합니다.
+      종목별 개별 분석일이 아니라 <b>공통 진입일 하나</b>에서 시작하는 가중
+      바스켓 수익률입니다. 저장소의 최신 스냅샷을 이 페이지가 직접 읽으므로
+      <b>평일 매일 자동으로 갱신</b>됩니다.
+    </p>
+  </header>
+
+  <div id="banner" class="banner">데이터를 불러오는 중…</div>
+
+  <div id="content" hidden>
+    <div class="meta-row" id="meta"></div>
+
+    <div class="stats">
+      <div class="stat">
+        <span class="stat-label">포트폴리오 가중수익률</span>
+        <span class="stat-value" id="pf-return">—</span>
+        <span class="stat-sub" id="pf-sub"></span>
+      </div>
+      <div class="stat">
+        <span class="stat-label" id="bench-label">벤치마크</span>
+        <span class="stat-value small" id="bench-return">—</span>
+        <span class="stat-sub">같은 기간, 같은 진입일</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">벤치마크 대비</span>
+        <span class="stat-value small" id="alpha">—</span>
+        <span class="stat-sub" id="alpha-sub">알파(포트폴리오 − 벤치마크)</span>
+      </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-head">
+        <span class="chart-title">진입일 대비 누적수익률 추이</span>
+        <div class="legend">
+          <span class="legend-item"><span class="legend-swatch" style="background:var(--accent)"></span>포트폴리오</span>
+          <span class="legend-item"><span class="legend-swatch" style="background:var(--bench);opacity:.9"></span><span id="legend-bench">벤치마크</span></span>
+        </div>
+      </div>
+      <div id="chart"></div>
+      <p class="chart-foot">일별 거래일 기준(배당·분할조정 종가). 커버리지 미확보 비중은 매일 재정규화되어 0%로 취급되지 않습니다.</p>
+    </div>
+
+    <div class="table-card">
+      <div class="table-head">
+        <h2>종목별 기여도</h2>
+        <span class="hint">기여도 = 수익률 × 비중, 내림차순</span>
+      </div>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th>종목</th><th>등급</th>
+              <th class="num">비중</th><th class="num">수익률</th><th>기여도</th>
+            </tr>
+          </thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footnote"><strong>이 숫자를 읽는 법.</strong> <span id="return-def"></span></div>
+    <div class="footnote"><strong>인식론적 지위.</strong> <span id="measurement-status"></span></div>
+    <div class="footnote" style="margin-top:10px;">
+      원자료 <code id="source-url"></code> · 매수리스트 <code id="source-path"></code>.
+      <code>.github/workflows/daily_screen.yml</code>이 평일 매일 이 파일을 다시 쓰고,
+      이 페이지는 열 때마다 그 파일을 새로 읽습니다 — 페이지를 다시 발행할 필요가 없습니다.
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ── 원자료 위치 ──────────────────────────────────────────────
+  // 공개 저장소라 브라우저에서 바로 읽을 수 있다(raw.githubusercontent.com이
+  // Access-Control-Allow-Origin: * 를 보낸다 - 2026-09-19 실측 확인).
+  var DATA_URL = "https://raw.githubusercontent.com/chlalsrl1203/IRS/main/reports/portfolio_track_record/latest.json";
+  // raw는 max-age=300으로 캐시된다. 하루 한 번 바뀌는 값이라 문제될 건 없지만,
+  // 방금 갱신한 직후에 열었을 때 낡은 값을 보지 않도록 캐시를 우회한다.
+  var FETCH_URL = DATA_URL + "?t=" + Date.now();
+  // 이 날짜 수 이상 지난 스냅샷이면 "갱신이 멈췄을 수 있다"고 알린다.
+  // 평일만 도는 워크플로라 금요일 실행분을 월요일에 보면 3일이 정상이다.
+  var STALE_DAYS = 4;
+
+  var $ = function (id) { return document.getElementById(id); };
+
+  function signClass(v) { return v > 0 ? "pos" : (v < 0 ? "neg" : "flat"); }
+  function pct(v, digits) {
+    if (v === null || v === undefined || isNaN(v)) return "—";
+    return (v >= 0 ? "+" : "") + v.toFixed(digits === undefined ? 2 : digits) + "%";
+  }
+  function mmdd(iso) {
+    var p = String(iso).split("-");
+    return p.length === 3 ? (+p[1]) + "/" + (+p[2]) : iso;
+  }
+  function daysBetween(isoA, isoB) {
+    return Math.round((Date.parse(isoB) - Date.parse(isoA)) / 86400000);
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text !== undefined && text !== null) n.textContent = text;
+    return n;
+  }
+  function svgEl(tag, attrs, text) {
+    var n = document.createElementNS("http://www.w3.org/2000/svg", tag);
+    for (var k in attrs) { if (attrs.hasOwnProperty(k)) n.setAttribute(k, attrs[k]); }
+    if (text !== undefined) n.textContent = text;
+    return n;
+  }
+
+  // ── 차트 ────────────────────────────────────────────────────
+  function renderChart(trajectory) {
+    var host = $("chart");
+    host.textContent = "";
+    if (!trajectory || !trajectory.length) {
+      host.appendChild(el("p", "chart-foot", "추이 데이터가 없습니다."));
+      return;
+    }
+
+    var n = trajectory.length;
+    var pf = trajectory.map(function (p) { return p.portfolio_index - 100; });
+    var bh = trajectory.map(function (p) {
+      return (p.benchmark_index === null || p.benchmark_index === undefined)
+        ? null : p.benchmark_index - 100;
+    });
+
+    var vals = pf.concat(bh.filter(function (v) { return v !== null; })).concat([0]);
+    var vmin = Math.min.apply(null, vals), vmax = Math.max.apply(null, vals);
+    var span = vmax - vmin, pad = span > 0.01 ? span * 0.18 : 1;
+    vmin -= pad; vmax += pad;
+
+    // 오른쪽 여백(74px)은 끝점 라벨용이다. 라벨에 종목명을 붙이면(예:
+    // "포트폴리오 -5.74%") 한글 폭 때문에 뷰박스를 넘어가 잘린다 - 실측으로
+    // 확인하고 값만 쓰도록 고쳤다. 계열 구분은 범례가 이미 해준다.
+    var W = 640, H = 260, x0 = 46, x1 = W - 74, y0 = 18, y1 = H - 34;
+    var xf = function (i) { return n === 1 ? (x0 + x1) / 2 : x0 + (x1 - x0) * i / (n - 1); };
+    var yf = function (v) { return y0 + (y1 - y0) * (vmax - v) / (vmax - vmin); };
+    var pts = function (arr) {
+      return arr.map(function (v, i) { return v === null ? null : xf(i).toFixed(1) + "," + yf(v).toFixed(1); })
+                .filter(function (s) { return s !== null; }).join(" ");
+    };
+
+    var svg = svgEl("svg", {
+      viewBox: "0 0 " + W + " " + H, "class": "chart-svg", role: "img",
+      "aria-label": "포트폴리오와 벤치마크의 진입일 대비 수익률 추이"
+    });
+
+    var zeroY = yf(0);
+    svg.appendChild(svgEl("line", { x1: x0, y1: zeroY.toFixed(1), x2: x1, y2: zeroY.toFixed(1), "class": "chart-baseline" }));
+    svg.appendChild(svgEl("text", { x: x0 - 6, y: (zeroY + 4).toFixed(1), "class": "chart-axis-label", "text-anchor": "end" }, "0%"));
+
+    var nTicks = Math.min(n, 4), seen = {};
+    for (var t = 0; t < nTicks; t++) {
+      var idx = n === 1 ? 0 : Math.round(t * (n - 1) / (nTicks - 1));
+      if (seen[idx]) continue;
+      seen[idx] = true;
+      var x = xf(idx);
+      svg.appendChild(svgEl("line", { x1: x.toFixed(1), y1: y1, x2: x.toFixed(1), y2: y1 + 4, "class": "chart-tick" }));
+      svg.appendChild(svgEl("text", { x: x.toFixed(1), y: y1 + 18, "class": "chart-axis-label", "text-anchor": "middle" }, mmdd(trajectory[idx].date)));
+    }
+
+    var bhPts = pts(bh);
+    if (bhPts) svg.appendChild(svgEl("polyline", { points: bhPts, "class": "chart-line-bench", fill: "none" }));
+    svg.appendChild(svgEl("polyline", { points: pts(pf), "class": "chart-line-port", fill: "none" }));
+
+    var lastBh = bh[n - 1], bhY = null;
+    if (lastBh !== null && lastBh !== undefined) {
+      bhY = yf(lastBh);
+      svg.appendChild(svgEl("circle", { cx: xf(n - 1).toFixed(1), cy: bhY.toFixed(1), r: 3.5, "class": "chart-dot-bench" }));
+      svg.appendChild(svgEl("text", { x: (xf(n - 1) + 8).toFixed(1), y: (bhY + 4).toFixed(1), "class": "chart-endpoint-label bench" }, pct(lastBh)));
+    }
+    var pfY = yf(pf[n - 1]);
+    svg.appendChild(svgEl("circle", { cx: xf(n - 1).toFixed(1), cy: pfY.toFixed(1), r: 4, "class": "chart-dot-port" }));
+    var labelY = (bhY === null || Math.abs(pfY - bhY) > 14) ? pfY + 4 : pfY + 16;
+    svg.appendChild(svgEl("text", { x: (xf(n - 1) + 8).toFixed(1), y: labelY.toFixed(1), "class": "chart-endpoint-label port" }, pct(pf[n - 1])));
+
+    host.appendChild(svg);
+  }
+
+  // ── 종목 표 ─────────────────────────────────────────────────
+  function renderRows(rows) {
+    var body = $("rows");
+    body.textContent = "";
+    var maxAbs = 1;
+    rows.forEach(function (r) {
+      if (!r.error && Math.abs(r.contribution_pct) > maxAbs) maxAbs = Math.abs(r.contribution_pct);
+    });
+
+    rows.forEach(function (r) {
+      var tr = el("tr");
+      if (r.error) {
+        tr.className = "row-error";
+        var tdT = el("td"); tdT.appendChild(el("span", "ticker", r.ticker)); tr.appendChild(tdT);
+        tr.appendChild(el("td", null, r.grade || "—"));
+        tr.appendChild(el("td", "num", (r.weight * 100).toFixed(2) + "%"));
+        var tdE = el("td", "num", "미확보 — " + r.error);
+        tdE.setAttribute("colspan", "2");
+        tr.appendChild(tdE);
+        body.appendChild(tr);
+        return;
+      }
+
+      var sc = signClass(r.return_pct);
+
+      var tdTicker = el("td");
+      var box = el("div", "cell-ticker");
+      box.appendChild(el("span", "ticker", r.ticker));
+      if (r.cluster) box.appendChild(el("span", "cluster", r.cluster));
+      tdTicker.appendChild(box);
+      tr.appendChild(tdTicker);
+
+      var tdGrade = el("td");
+      tdGrade.appendChild(el("span", "grade-badge grade-" + (r.grade || "x"), r.grade || "?"));
+      tr.appendChild(tdGrade);
+
+      tr.appendChild(el("td", "num", (r.weight * 100).toFixed(2) + "%"));
+      tr.appendChild(el("td", "num " + sc, pct(r.return_pct)));
+
+      var tdC = el("td", "cell-contrib");
+      var track = el("div", "contrib-track");
+      var bar = el("div", "contrib-bar " + sc);
+      bar.style.width = Math.min(100, Math.abs(r.contribution_pct) / maxAbs * 100).toFixed(1) + "%";
+      track.appendChild(bar);
+      tdC.appendChild(track);
+      tdC.appendChild(el("span", "contrib-value num " + sc, pct(r.contribution_pct) + "p"));
+      tr.appendChild(tdC);
+
+      body.appendChild(tr);
+    });
+  }
+
+  // ── 신선도 배너 ─────────────────────────────────────────────
+  function freshnessBanner(snap) {
+    var b = $("banner");
+    var today = new Date().toISOString().slice(0, 10);
+    var age = daysBetween(snap.as_of, today);
+    b.className = "banner";
+    b.textContent = "";
+    var line = el("span");
+    line.appendChild(el("b", null, "갱신 " + snap.as_of));
+    line.appendChild(document.createTextNode(
+      " · 반영된 최신 종가 " + snap.as_of_actual_latest_bar +
+      " · 이 페이지는 열 때마다 저장소 최신 스냅샷을 직접 읽습니다."));
+    b.appendChild(line);
+    if (age > STALE_DAYS) {
+      b.className = "banner error";
+      b.appendChild(el("div", null,
+        "⚠ 스냅샷이 " + age + "일 지났습니다 — 자동 갱신(평일 매일)이 멈췄을 수 있습니다. " +
+        "GitHub Actions의 daily-screen 워크플로 실행 상태를 확인하세요."));
+    }
+  }
+
+  function renderError(err) {
+    var b = $("banner");
+    b.className = "banner error";
+    b.textContent = "";
+    b.appendChild(el("b", null, "데이터를 불러오지 못했습니다."));
+    b.appendChild(el("div", null, String(err)));
+    b.appendChild(el("div", null,
+      "오래된 숫자를 대신 보여주지 않습니다 — 낡은 값이 최신인 척 표시되는 것을 막기 위해서입니다."));
+    var u = el("div", "url", DATA_URL);
+    b.appendChild(u);
+    $("content").hidden = true;
+  }
+
+  function render(snap) {
+    freshnessBanner(snap);
+
+    var bench = snap.benchmark;
+    var benchTicker = bench ? bench.ticker : "벤치마크";
+
+    var meta = $("meta");
+    meta.textContent = "";
+    [["진입일", snap.inception_date + " 기준(거래일 기준가)"],
+     ["경과", snap.days_held + "일"],
+     ["최신 종가", snap.as_of_actual_latest_bar],
+     ["커버리지", snap.n_covered + "/" + snap.n_positions + "종목 (" +
+       (snap.covered_weight * 100).toFixed(1) + "%)"]
+    ].forEach(function (pair) {
+      var s = el("span");
+      s.appendChild(document.createTextNode(pair[0] + " "));
+      s.appendChild(el("b", null, pair[1]));
+      meta.appendChild(s);
+    });
+
+    var pfEl = $("pf-return");
+    pfEl.className = "stat-value " + signClass(snap.portfolio_return_pct);
+    pfEl.textContent = pct(snap.portfolio_return_pct);
+    $("pf-sub").textContent = "진입일 대비, " + snap.n_positions + "종목 비중가중";
+
+    $("bench-label").textContent = "벤치마크 (" + benchTicker + ")";
+    $("legend-bench").textContent = benchTicker;
+    var bEl = $("bench-return");
+    if (bench) {
+      bEl.className = "stat-value small " + signClass(bench.return_pct);
+      bEl.textContent = pct(bench.return_pct);
+    } else {
+      bEl.className = "stat-value small flat";
+      bEl.textContent = "미확보";
+    }
+
+    var aEl = $("alpha"), alpha = snap.alpha_vs_benchmark_pct;
+    if (alpha === null || alpha === undefined) {
+      aEl.className = "stat-value small flat";
+      aEl.textContent = "미확보";
+    } else {
+      aEl.className = "stat-value small " + signClass(alpha);
+      aEl.textContent = pct(alpha) + "p";
+    }
+    $("alpha-sub").textContent = "알파(포트폴리오 − " + benchTicker + ")";
+
+    renderChart(snap.trajectory);
+    renderRows(snap.rows || []);
+
+    $("return-def").textContent = snap.return_definition || "";
+    $("measurement-status").textContent = snap.measurement_status || "";
+    $("source-url").textContent = "reports/portfolio_track_record/latest.json";
+    $("source-path").textContent =
+      (snap.portfolio_version && snap.portfolio_version.source_path) || "—";
+
+    $("content").hidden = false;
+  }
+
+  fetch(FETCH_URL, { cache: "no-store" })
+    .then(function (res) {
+      if (!res.ok) throw new Error("HTTP " + res.status + " " + res.statusText);
+      return res.json();
+    })
+    .then(render)
+    .catch(renderError);
+})();
+</script>
+</html>
