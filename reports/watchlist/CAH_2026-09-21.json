@@ -1,0 +1,19 @@
+{
+  "ticker": "CAH",
+  "analyzed_at": "2026-09-06",
+  "market_cap_then": 57488068447.04,
+  "market_cap_now": 52417917000.0,
+  "market_cap_change_pct": -0.08819484780064923,
+  "gap_then": 0.04870001720147461,
+  "gap_now": 0.06020457195000977,
+  "gap_decay_pp": 0.011504554748535158,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": true,
+  "grade_then": "C",
+  "grade_now": "B",
+  "realistic_growth_then": 0.07246958659844725,
+  "realistic_growth_now": 0.07246958659844725,
+  "mode": "gap_decay",
+  "date": "2026-09-21"
+}

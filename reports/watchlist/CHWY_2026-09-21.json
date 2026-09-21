@@ -1,0 +1,19 @@
+{
+  "ticker": "CHWY",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 9914648000.0,
+  "market_cap_now": 8287740000.0,
+  "market_cap_change_pct": -0.16409135251196005,
+  "gap_then": 0.023697188576930775,
+  "gap_now": 0.04515447922634484,
+  "gap_decay_pp": 0.021457290649414068,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.08160085984157919,
+  "realistic_growth_now": 0.08160085984157919,
+  "mode": "gap_decay",
+  "date": "2026-09-21"
+}

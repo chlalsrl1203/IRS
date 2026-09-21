@@ -1,0 +1,19 @@
+{
+  "ticker": "WTS",
+  "analyzed_at": "2026-09-13",
+  "market_cap_then": 11885058026.38,
+  "market_cap_now": 11706101000.0,
+  "market_cap_change_pct": -0.01505731196118587,
+  "gap_then": -0.0008567575289279844,
+  "gap_now": -0.0003805913012176476,
+  "gap_decay_pp": 0.0004761662277103368,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.06974778303321212,
+  "realistic_growth_now": 0.06974778303321212,
+  "mode": "gap_decay",
+  "date": "2026-09-21"
+}

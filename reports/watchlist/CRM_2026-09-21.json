@@ -1,0 +1,20 @@
+{
+  "ticker": "CRM",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 217625890000.0,
+  "market_cap_now": 195808166000.0,
+  "market_cap_change_pct": -0.10025334761410964,
+  "gap_then": 0.06034346853950011,
+  "gap_now": 0.07468970972669431,
+  "gap_decay_pp": 0.0143462411871942,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "B",
+  "grade_now": "A",
+  "realistic_growth_then": 0.11092292105414853,
+  "realistic_growth_now": 0.11224540430677242,
+  "mode": "gap_decay",
+  "integrity_error": "Realistic Growth가 시총 변경만으로 움직였다(0.11092292105414853 -> 0.11224540430677242) - 계산 경로 버그",
+  "date": "2026-09-21"
+}

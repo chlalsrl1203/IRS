@@ -1,0 +1,25 @@
+{
+  "ticker": "ACGL",
+  "analyzed_at": "2026-09-05",
+  "market_cap_then": 33474577260.6,
+  "market_cap_now": 33061689000.0,
+  "market_cap_change_pct": -0.012334383116645808,
+  "gap_then": 0.24452910193896105,
+  "gap_now": 0.2463668323466759,
+  "gap_decay_pp": 0.0018377304077148438,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.157353923411129,
+  "realistic_growth_now": 0.157353923411129,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-17",
+    "gap_prior": 0.24843706855273057,
+    "gap_move_pp": -0.0020702362060546764,
+    "judgment_changed": false
+  },
+  "date": "2026-09-21"
+}
