@@ -1,0 +1,19 @@
+{
+  "ticker": "EME",
+  "analyzed_at": "2026-09-13",
+  "market_cap_then": 34536435091.02,
+  "market_cap_now": 33086396000.0,
+  "market_cap_change_pct": -0.041985777837187044,
+  "gap_then": 0.002824039826328964,
+  "gap_now": 0.007804699311192251,
+  "gap_decay_pp": 0.004980659484863287,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.11922380484097737,
+  "realistic_growth_now": 0.11922380484097737,
+  "mode": "gap_decay",
+  "date": "2026-09-22"
+}

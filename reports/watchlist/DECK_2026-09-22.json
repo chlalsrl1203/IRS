@@ -1,0 +1,19 @@
+{
+  "ticker": "DECK",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 11527002181.5,
+  "market_cap_now": 10680743000.0,
+  "market_cap_change_pct": -0.07341537445513668,
+  "gap_then": 0.13228701711181728,
+  "gap_now": 0.14195040822509852,
+  "gap_decay_pp": 0.009663391113281239,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.12682894826416102,
+  "realistic_growth_now": 0.12682894826416102,
+  "mode": "gap_decay",
+  "date": "2026-09-22"
+}
