@@ -1,0 +1,25 @@
+{
+  "ticker": "NBIX",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 15458984205.89,
+  "market_cap_now": 14633417000.0,
+  "market_cap_change_pct": -0.05340371624000051,
+  "gap_then": 0.14051410543895676,
+  "gap_now": 0.14694816458202314,
+  "gap_decay_pp": 0.006434059143066384,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.21442729818798018,
+  "realistic_growth_now": 0.21442729818798018,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-18",
+    "gap_prior": 0.142518919586906,
+    "gap_move_pp": 0.004429244995117154,
+    "judgment_changed": false
+  },
+  "date": "2026-09-23"
+}

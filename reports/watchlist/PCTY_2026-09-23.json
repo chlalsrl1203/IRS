@@ -1,0 +1,19 @@
+{
+  "ticker": "PCTY",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 8202606479.799999,
+  "market_cap_now": 7995958000.0,
+  "market_cap_change_pct": -0.025193026181238642,
+  "gap_then": 0.10780934544939036,
+  "gap_now": 0.11084889623064037,
+  "gap_decay_pp": 0.003039550781250011,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.1554743692531013,
+  "realistic_growth_now": 0.1554743692531013,
+  "mode": "gap_decay",
+  "date": "2026-09-23"
+}

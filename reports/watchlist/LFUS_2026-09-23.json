@@ -1,0 +1,25 @@
+{
+  "ticker": "LFUS",
+  "analyzed_at": "2026-09-09",
+  "market_cap_then": 10742400043.65,
+  "market_cap_now": 10401803000.0,
+  "market_cap_change_pct": -0.03170586109864082,
+  "gap_then": -0.0410740041216912,
+  "gap_now": -0.03991163726587895,
+  "gap_decay_pp": 0.0011623668558122524,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.037137923130594656,
+  "realistic_growth_now": 0.037137923130594656,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-18",
+    "gap_prior": -0.038662843073071516,
+    "gap_move_pp": -0.0012487941928074342,
+    "judgment_changed": false
+  },
+  "date": "2026-09-23"
+}
