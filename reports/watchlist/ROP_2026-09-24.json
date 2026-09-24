@@ -1,0 +1,25 @@
+{
+  "ticker": "ROP",
+  "analyzed_at": "2026-08-04",
+  "market_cap_then": 38770000000.0,
+  "market_cap_now": 35985084000.0,
+  "market_cap_change_pct": -0.07183172556100081,
+  "gap_then": 0.012357788085937522,
+  "gap_now": 0.021293716430664078,
+  "gap_decay_pp": 0.008935928344726556,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.055,
+  "realistic_growth_now": 0.055,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-16",
+    "gap_prior": 0.011567955017089855,
+    "gap_move_pp": 0.009725761413574223,
+    "judgment_changed": false
+  },
+  "date": "2026-09-24"
+}

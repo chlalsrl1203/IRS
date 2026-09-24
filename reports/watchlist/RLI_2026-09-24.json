@@ -1,0 +1,19 @@
+{
+  "ticker": "RLI",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 5813796363.900001,
+  "market_cap_now": 5217293000.0,
+  "market_cap_change_pct": -0.10260135143430704,
+  "gap_then": 0.07704845900034454,
+  "gap_now": 0.09123989576792267,
+  "gap_decay_pp": 0.014191436767578128,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.06725460524057891,
+  "realistic_growth_now": 0.06725460524057891,
+  "mode": "gap_decay",
+  "date": "2026-09-24"
+}

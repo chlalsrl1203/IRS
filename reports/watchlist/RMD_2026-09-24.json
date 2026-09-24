@@ -1,0 +1,25 @@
+{
+  "ticker": "RMD",
+  "analyzed_at": "2026-08-02",
+  "market_cap_then": 30080000000.0,
+  "market_cap_now": 32019683000.0,
+  "market_cap_change_pct": 0.06448414228723398,
+  "gap_then": 0.05889235066261829,
+  "gap_now": 0.05157022999611437,
+  "gap_decay_pp": -0.007322120666503923,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "B",
+  "realistic_growth_then": 0.11272020863380966,
+  "realistic_growth_now": 0.11272020863380966,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-16",
+    "gap_prior": 0.05103426503029404,
+    "gap_move_pp": 0.0005359649658203264,
+    "judgment_changed": false
+  },
+  "date": "2026-09-24"
+}

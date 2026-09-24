@@ -1,0 +1,19 @@
+{
+  "ticker": "SKYW",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 3687296799.9999995,
+  "market_cap_now": 3929426000.0,
+  "market_cap_change_pct": 0.06566577445026955,
+  "gap_then": 0.10292145444533088,
+  "gap_now": 0.094658057228534,
+  "gap_decay_pp": -0.008263397216796878,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.09346176816603399,
+  "realistic_growth_now": 0.09346176816603399,
+  "mode": "gap_decay",
+  "date": "2026-09-24"
+}
