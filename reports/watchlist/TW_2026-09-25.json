@@ -1,0 +1,19 @@
+{
+  "ticker": "TW",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 21839768009.04,
+  "market_cap_now": 21652513000.0,
+  "market_cap_change_pct": -0.00857403837634596,
+  "gap_then": 0.11156004145007234,
+  "gap_now": 0.11256788446765048,
+  "gap_decay_pp": 0.0010078430175781417,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.17523306085925203,
+  "realistic_growth_now": 0.17523306085925203,
+  "mode": "gap_decay",
+  "date": "2026-09-25"
+}

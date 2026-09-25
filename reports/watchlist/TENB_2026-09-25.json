@@ -1,0 +1,19 @@
+{
+  "ticker": "TENB",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 3775712355.5200005,
+  "market_cap_now": 3995154000.0,
+  "market_cap_change_pct": 0.058119269641709215,
+  "gap_then": 0.099036030826151,
+  "gap_now": 0.09227581506687367,
+  "gap_decay_pp": -0.006760215759277335,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.13292599206882677,
+  "realistic_growth_now": 0.13292599206882677,
+  "mode": "gap_decay",
+  "date": "2026-09-25"
+}

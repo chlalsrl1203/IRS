@@ -1,0 +1,25 @@
+{
+  "ticker": "ZTS",
+  "analyzed_at": "2026-07-25",
+  "market_cap_then": 31945181000,
+  "market_cap_now": 29590944000.0,
+  "market_cap_change_pct": -0.07369615467196755,
+  "gap_then": 0.020971515574735304,
+  "gap_now": 0.026436062489536588,
+  "gap_decay_pp": 0.005464546914801284,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": null,
+  "grade_now": "C",
+  "realistic_growth_then": 0.05620717910064688,
+  "realistic_growth_now": 0.05620717910064688,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-21",
+    "gap_prior": 0.026652955533814925,
+    "gap_move_pp": -0.0002168930442783372,
+    "judgment_changed": false
+  },
+  "date": "2026-09-25"
+}
