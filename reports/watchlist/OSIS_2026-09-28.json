@@ -1,0 +1,25 @@
+{
+  "ticker": "OSIS",
+  "analyzed_at": "2026-09-13",
+  "market_cap_then": 3251901703.14,
+  "market_cap_now": 3144394000.0,
+  "market_cap_change_pct": -0.033059948594446054,
+  "gap_then": 0.07060206432291147,
+  "gap_now": 0.07473185558267709,
+  "gap_decay_pp": 0.0041297912597656194,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.09436533946939582,
+  "realistic_growth_now": 0.09436533946939582,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-23",
+    "gap_prior": 0.07277739543863411,
+    "gap_move_pp": 0.001954460144042977,
+    "judgment_changed": false
+  },
+  "date": "2026-09-28"
+}

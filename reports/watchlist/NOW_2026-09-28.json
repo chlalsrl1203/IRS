@@ -1,0 +1,25 @@
+{
+  "ticker": "NOW",
+  "analyzed_at": "2026-09-05",
+  "market_cap_then": 146062840000.0,
+  "market_cap_now": 140212355000.0,
+  "market_cap_change_pct": -0.04005457514039845,
+  "gap_then": 0.08296327724967925,
+  "gap_now": 0.08768434658561677,
+  "gap_decay_pp": 0.004721069335937522,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.2100590719274136,
+  "realistic_growth_now": 0.2100590719274136,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-23",
+    "gap_prior": 0.08594274654899565,
+    "gap_move_pp": 0.0017416000366211187,
+    "judgment_changed": false
+  },
+  "date": "2026-09-28"
+}

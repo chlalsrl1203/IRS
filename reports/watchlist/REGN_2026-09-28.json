@@ -1,0 +1,25 @@
+{
+  "ticker": "REGN",
+  "analyzed_at": "2026-09-09",
+  "market_cap_then": 81953004751.01999,
+  "market_cap_now": 81132650000.0,
+  "market_cap_change_pct": -0.010010063127182445,
+  "gap_then": -0.014450973816474519,
+  "gap_now": -0.01323675567682607,
+  "gap_decay_pp": 0.0012142181396484486,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.07570214813176766,
+  "realistic_growth_now": 0.07570214813176766,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-24",
+    "gap_prior": -0.015640968628486226,
+    "gap_move_pp": 0.0024042129516601562,
+    "judgment_changed": false
+  },
+  "date": "2026-09-28"
+}

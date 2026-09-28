@@ -1,0 +1,25 @@
+{
+  "ticker": "PINS",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 11945013860.0,
+  "market_cap_now": 10586973000.0,
+  "market_cap_change_pct": -0.11369102421451693,
+  "gap_then": 0.1622094065462275,
+  "gap_now": 0.17784966533529,
+  "gap_decay_pp": 0.0156402587890625,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "S",
+  "grade_now": "S",
+  "realistic_growth_then": 0.1454857737337275,
+  "realistic_growth_now": 0.1454857737337275,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-24",
+    "gap_prior": 0.18000611369954783,
+    "gap_move_pp": -0.0021564483642578236,
+    "judgment_changed": false
+  },
+  "date": "2026-09-28"
+}

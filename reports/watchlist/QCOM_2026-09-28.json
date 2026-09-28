@@ -1,0 +1,26 @@
+{
+  "ticker": "QCOM",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 176998500000.0,
+  "market_cap_now": 215716184000.0,
+  "market_cap_change_pct": 0.2187458311793602,
+  "gap_then": 0.004414563404892963,
+  "gap_now": -0.020412914102971642,
+  "gap_decay_pp": -0.024827477507864605,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.04556980632481482,
+  "realistic_growth_now": 0.04504690950542677,
+  "mode": "gap_decay",
+  "integrity_error": "Realistic Growth가 시총 변경만으로 움직였다(0.04556980632481482 -> 0.04504690950542677) - 계산 경로 버그",
+  "change_vs_prior": {
+    "prior_date": "2026-09-24",
+    "gap_prior": -0.018160716837346665,
+    "gap_move_pp": -0.002252197265624978,
+    "judgment_changed": false
+  },
+  "date": "2026-09-28"
+}
