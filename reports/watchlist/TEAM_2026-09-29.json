@@ -1,0 +1,19 @@
+{
+  "ticker": "TEAM",
+  "analyzed_at": "2026-09-14",
+  "market_cap_then": 45489045055.5,
+  "market_cap_now": 47524282000.0,
+  "market_cap_change_pct": 0.044741254559572674,
+  "gap_then": -0.03923979658860746,
+  "gap_now": -0.04423972029466214,
+  "gap_decay_pp": -0.004999923706054676,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.0883614454768222,
+  "realistic_growth_now": 0.0883614454768222,
+  "mode": "gap_decay",
+  "date": "2026-09-29"
+}
