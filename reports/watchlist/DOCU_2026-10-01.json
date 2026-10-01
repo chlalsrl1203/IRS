@@ -1,0 +1,25 @@
+{
+  "ticker": "DOCU",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 12713642211.92,
+  "market_cap_now": 12518727000.0,
+  "market_cap_change_pct": -0.015331185876636733,
+  "gap_then": 0.08627269445104728,
+  "gap_now": 0.08819644628210196,
+  "gap_decay_pp": 0.0019237518310546847,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.10126674352331289,
+  "realistic_growth_now": 0.10126674352331289,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-22",
+    "gap_prior": 0.08437431035680899,
+    "gap_move_pp": 0.0038221359252929715,
+    "judgment_changed": false
+  },
+  "date": "2026-10-01"
+}
