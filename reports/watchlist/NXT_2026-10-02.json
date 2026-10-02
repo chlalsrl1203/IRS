@@ -1,0 +1,25 @@
+{
+  "ticker": "NXT",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 12806960212.8,
+  "market_cap_now": 11973037000.0,
+  "market_cap_change_pct": -0.06511484372119225,
+  "gap_then": 0.11492701808014419,
+  "gap_now": 0.12275191584625744,
+  "gap_decay_pp": 0.007824897766113253,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.21158458033600352,
+  "realistic_growth_now": 0.21158458033600352,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-28",
+    "gap_prior": 0.1184739235977223,
+    "gap_move_pp": 0.004277992248535145,
+    "judgment_changed": false
+  },
+  "date": "2026-10-02"
+}

@@ -1,0 +1,25 @@
+{
+  "ticker": "OKTA",
+  "analyzed_at": "2026-09-02",
+  "market_cap_then": 29759015440.0,
+  "market_cap_now": 36556804000.0,
+  "market_cap_change_pct": 0.2284278716715502,
+  "gap_then": 0.02798536305618546,
+  "gap_now": 0.003920154621126909,
+  "gap_decay_pp": -0.02406520843505855,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.17468431477737686,
+  "realistic_growth_now": 0.17468431477737686,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-28",
+    "gap_prior": 0.011972026874544878,
+    "gap_move_pp": -0.008051872253417969,
+    "judgment_changed": false
+  },
+  "date": "2026-10-02"
+}
