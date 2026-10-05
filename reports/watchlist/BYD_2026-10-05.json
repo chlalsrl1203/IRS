@@ -1,0 +1,25 @@
+{
+  "ticker": "BYD",
+  "analyzed_at": "2026-09-04",
+  "market_cap_then": 5651864655.06,
+  "market_cap_now": 4886077000.0,
+  "market_cap_change_pct": -0.13549292168106086,
+  "gap_then": -0.01883017098919107,
+  "gap_now": -0.0007879880668277758,
+  "gap_decay_pp": 0.018042182922363294,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.02626603567584799,
+  "realistic_growth_now": 0.02626603567584799,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-09-30",
+    "gap_prior": -0.0004715589286441793,
+    "gap_move_pp": -0.0003164291381835965,
+    "judgment_changed": false
+  },
+  "date": "2026-10-05"
+}
