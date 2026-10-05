@@ -10528,3 +10528,53 @@ thesis 조건 23건 중 기한 도래 **0건**(가장 가까운 것이 2026-11-3
 `engine/` **무변경**이라 `ENGINE_VERSION`은 **v3.89 그대로**(v3.32 규칙:
 코드가 안 바뀌면 버전도 안 바뀐다). 테스트 1,225 → **1,231개 전부 통과**,
 baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
+
+## v3.92 — 스코어카드 v2.1 코어 편입(B 해자·C 품질·D 경영진 하위지표, 미배선)
+(2026-10-05, 사용자 제공 `SCORECARD_V2_1_BRIEF.md`)
+
+`engine/scorecard_core.py` + `tests/test_scorecard_core.py`를 외부에서 받아 그대로
+넣었다. 이 모듈은 B(해자: ROIC-WACC 스프레드 AR(1) 수축 지속도)·C(QMJ 품질 요소)·
+D(자본배분·주주환원·지배구조·경영자효율 근사·정직성 가감)의 **하위지표와 모듈 내부
+가중합까지만** 낸다. 버전 태그는 별도 네임스페이스 `SCORECARD v2.1`.
+
+**v2.0 브리프는 폐기됐다** — 존재하지 않는 파일을 전제했고 이 저장소의 세 원칙
+(런타임 의존성 0개, 단일 종합점수 금지, accounting_quality.py와 중복 금지)을
+위반했다. v2.1은 셋 다 고쳤다: stdlib만(`math`), 모듈 간 합산 함수 없음(이름으로
+테스트 고정), A 모듈 삭제(기존 `accounting_quality.py` 사용). DART 수집기는
+P0-04 DEFER를 유지해 넣지 않았다.
+
+**배선 0건** — `engine/`·`scripts/` 어디서도 import하지 않는다. verdict·큐 연결은
+사람의 결정 사안이다(accounting_quality와 같은 질문: 성과 검증 0건).
+
+### 편입하며 고친 것(테스트만, 로직 무변경)
+
+- import 경로 2곳을 저장소 구조에 맞춤(`from engine import scorecard_core`,
+  금지-import 검사가 `S.__file__`을 열도록).
+- ⚠️ `test_duration_matches_hand_rolled_statsmodels_free_check`에 붙은
+  `skipUnless(HAVE_SCIPY)`를 뗐다. 이 테스트는 scipy를 전혀 쓰지 않는데 조건만
+  붙어 있어 **scipy 없는 CI에서 영영 실행되지 않을 상태**였다(조용히 무력화된
+  검증 도구 — R-001 fcf0 키 오타·PHASE 2 기본인자 바인딩과 같은 계열).
+- 결과: scipy 없는 환경 **25 통과 · 1 건너뜀**(scipy 오라클 대조만 남음). scipy를
+  임시로 깔아 1회 실행 시 **26 통과**(Acklam 분위수함수 scipy 대비 오차 1e-8 미만
+  확인) 후 제거 — 저장소 의존성에는 추가하지 않았다.
+
+### 버전 번호 — v3.90·v3.91은 결번
+
+v3.90(`portfolio_track_record.py`)·v3.91(대시보드 자가갱신)은 main에 병합되지
+않은 `backup-chain-a-2026-09-24` 브랜치에 이미 쓰인 번호다. 같은 번호에 다른
+내용을 넣으면 v3.12 가짜 버전 사건이 재발하므로 건너뛰고 v3.92로 올렸다. 그
+브랜치를 재이식하게 되면 그때 번호를 다시 정할 것.
+
+### 알려진 주의점(코드에 그대로 둔 것)
+
+- `FF_RHO_PRIOR = 0.62`는 Fama-French(2000) 연 38% 평균회귀에서 유도한 값이다.
+  같은 숫자를 성장 축소계수 근거로 썼다가 기각한 결정 #4와 계열이 같다 — 여기서는
+  **ROIC 스프레드 지속계수**라는 원래 용도에 쓰였으므로 결정 #4 위반은 아니지만,
+  한국·IRS 표본으로 재추정되기 전까지는 사전값일 뿐이다.
+- `managerial_efficiency_proxy`는 Demerjian 외(2012)의 DEA가 아니라 2단계 OLS
+  잔차다(코드가 스스로 명시). "MA-score"로 부르지 말 것.
+- 입력 필드(spread_series, roiic_5y, kcg_compliance 등)를 채우는 파이프라인은
+  아직 없다 — 지금은 합성 데이터로만 검증된 상태다.
+
+테스트 1,231 → **1,256 통과 · 1 건너뜀**. baseline fingerprint `f5709edf…`
+**불변**, `ledger/`·공식 판정 0건 수정. `ENGINE_VERSION` v3.89 → **v3.92**.
