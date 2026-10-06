@@ -302,3 +302,17 @@ def test_repo_qualitative_records_are_sealed_and_named_correctly():
         assert (rec["entity"], rec["as_of"]) == (m["ticker"], m["date"]), name
         Q.verify_record(rec)
         assert rec["affects_official_judgment"] is False
+
+
+def test_sparse_qsi_list_matches_threshold():
+    """QSI 봉인이 있다는 사실이 '정성조사가 표준화됐다'로 읽히지 않게 한다."""
+    import importlib
+    intake = importlib.import_module("scripts.qualitative_intake")
+    rep = intake.build_coverage()
+    by_entity = {r["entity"]: r for r in rep["sealed"]}
+    assert rep["sparse_qsi_threshold"] == intake.SPARSE_QSI
+    for t in rep["legacy_with_sparse_qsi"]:
+        assert by_entity[t]["answered_fraction"] < intake.SPARSE_QSI
+    for t, r in by_entity.items():
+        if r["answered_fraction"] >= intake.SPARSE_QSI:
+            assert t not in rep["legacy_with_sparse_qsi"]

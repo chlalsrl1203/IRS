@@ -10621,3 +10621,33 @@ v3.90(`portfolio_track_record.py`)·v3.91(대시보드 자가갱신)은 main에 
 
 테스트 1256 → **1280 통과**. baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
 `ENGINE_VERSION` v3.92 → **v3.93**.
+
+## QSI v1 확장 — 매수리스트 16종목 봉인 (2026-10-06, "파일럿 그만하고 계획대로 실행")
+
+파일럿(ACGL·DLO·PTC)에 이어 `reports/buylist_2026-09-06.json` 나머지 16종목(PGR·SIGI·PDD·DUOL·MNDY·
+CINF·NBIX·HLNE·DECK·UBER·SE·ADBE·SKYW·NXT·TW·GEN)을 `scripts/qsi_rollout_2026_10_06.py`로 봉인했다.
+`engine/` 무변경(`ENGINE_VERSION` v3.93 유지), ledger·thesis·holdings·매수리스트 0건 수정.
+
+**파일럿보다 엄격해진 점 — 사람이 옮겨 적는 경로를 없앴다.**
+- 모든 `quote`는 실행 시 SEC 원문을 내려받아 **글자 그대로 들어 있을 때만** 통과한다(없으면 즉시 예외).
+- SBC/FCF는 companyfacts SBC가 ledger의 `sbc_to_fcf_pct`에서 역산한 값과 0.5% 안에서 일치하는 연도만
+  인용한다(연도 어긋남 방지). 일치하는 해가 없으면 unknown(CINF) — ledger에 값이 없어도 unknown(PGR·GEN·PDD).
+- 3년 희석주식수는 `engine/dilution.py`의 정규화·점프 검출을 그대로 쓴다(분할·ADS 변경 오염 시 unknown, HLNE).
+- 준비금 발전(보험)은 `PriorYearClaimsAndClaimsAdjustmentExpense` 3개 연도 부호에서 자동 산출.
+- `cap.buyback_effect`는 매입 지출(SEC)과 3년 주식수 변화를 결합하되 분류선(±1%)을 **사전 고정**했다 —
+  검증된 값이 아니다. 매입 자금이 부채인지(`cap.debt_funded_buyback`)는 여전히 미확인.
+
+**커버리지는 낮고 그게 정상 출력이다**(답한 질문 9~45%, 대부분 14~18%). 내부자 매매·소송·재작성·경쟁 구도는
+이번에도 조회하지 않아 전부 unknown이다. `reports/qualitative_coverage.json`에 `legacy_with_sparse_qsi`를
+신설해 **QSI 봉인이 있다고 정성조사가 표준화된 것이 아니라는 사실**을 드러낸다 — 기존 풍부한 자유서술
+조사는 아직 `qualitative_overrides.json`에만 있다(소급 재작성 금지 원칙 유지).
+
+**조사 중 드러난 사실(판정 불변, 병기)**: SIGI·GEN·ADBE·SE는 CEO가 의장을 겸한다(SIGI는 선임독립이사로 균형,
+GEN은 FY26부터 합침 — 과거엔 분리). DUOL(20표)·HLNE(10표)·TW(Class B·D 10표)·SE(15표)·PDD(10표)는 차등의결권.
+SIGI의 3년 준비금 발전은 **adverse**(자동 산출, 10-K MD&A 문장으로는 미대조).
+`NBIX·UBER·NXT·TW·SE·PDD·MNDY`는 자사주 매입 지출이 있는데도 3년 희석주식수가 증가(`share_count_rising`).
+
+**검증 상태는 그대로 IMPLEMENTED_NOT_VALIDATED** — 이 입력이 더 나은 판단·성과로 이어진다는 증거는 0건이다.
+`price_at_analysis`는 이번 회차에 기록하지 않았다(None) — H-008 같은 실현수익률 검증의 전제가 아직 비어 있다.
+
+테스트 1280 → **1281 통과**.

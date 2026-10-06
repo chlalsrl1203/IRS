@@ -27,6 +27,7 @@ from engine import qualitative_input as Q  # noqa: E402
 
 OVERRIDES = os.path.join(ROOT, "portfolio", "qualitative_overrides.json")
 REPORT = os.path.join(ROOT, "reports", "qualitative_coverage.json")
+SPARSE_QSI = 0.5   # 답한 질문 비율이 이보다 낮으면 '희박' — 사전 고정, 결과를 보고 조정하지 않는다
 
 
 def cmd_checklist(lens_set: str) -> int:
@@ -78,13 +79,20 @@ def build_coverage(directory: str = None) -> dict:
             "price_at_analysis_recorded": rec["price_at_analysis"] is not None,
             "per_lens": c["per_lens"],
         })
-    legacy = []
+    legacy, with_legacy = [], set()
     if os.path.exists(OVERRIDES):
         with open(OVERRIDES, encoding="utf-8") as f:
-            legacy = sorted(set(json.load(f).get("overrides", {})) - tickers)
+            with_legacy = set(json.load(f).get("overrides", {}))
+        legacy = sorted(with_legacy - tickers)
+    # 레거시 자유서술이 있는 종목의 QSI 답한 비율이 낮으면, QSI 봉인이 있다는 사실이
+    # "정성조사가 표준화됐다"는 뜻이 아니다 — 풍부한 내용은 아직 자유서술에만 있다.
+    sparse = sorted(r["entity"] for r in sealed
+                    if r["entity"] in with_legacy and r["answered_fraction"] < SPARSE_QSI)
     return {
         "n_sealed_records": len(sealed), "sealed": sealed,
         "legacy_freeform_only": legacy,
+        "legacy_with_sparse_qsi": sparse,
+        "sparse_qsi_threshold": SPARSE_QSI,
         "legacy_note": ("자유서술 정성조사만 있고 QSI 봉인이 없는 종목. 소급 재작성하지 "
                         "않는다 — 새 조사부터 표준 입력으로 쌓는다."),
         "validation_status": Q.VALIDATION_STATUS,
