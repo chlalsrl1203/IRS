@@ -1,0 +1,25 @@
+{
+  "ticker": "ERIE",
+  "analyzed_at": "2026-09-11",
+  "market_cap_then": 12570484267.2,
+  "market_cap_now": 11560766000.0,
+  "market_cap_change_pct": -0.08032453211326518,
+  "gap_then": 0.021298187098920188,
+  "gap_now": 0.031141250453412386,
+  "gap_decay_pp": 0.009843063354492199,
+  "judgment_then": "적정가/경계선",
+  "judgment_now": "적정가/경계선",
+  "judgment_flipped": false,
+  "grade_then": "C",
+  "grade_now": "C",
+  "realistic_growth_then": 0.10659748824638111,
+  "realistic_growth_now": 0.10659748824638111,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-10-01",
+    "gap_prior": 0.030429427943646767,
+    "gap_move_pp": 0.0007118225097656194,
+    "judgment_changed": false
+  },
+  "date": "2026-10-06"
+}
