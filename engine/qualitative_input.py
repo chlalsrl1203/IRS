@@ -46,7 +46,8 @@ from engine.research_lenses import (LensError, LensFinding, Disqualifier,
 SCHEMA = "QSI_v1"
 QUALITATIVE_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "qualitative")
-FNAME_RE = re.compile(r"^(?P<ticker>[A-Z.]+)_(?P<date>\d{4}-\d{2}-\d{2})\.json$")
+FNAME_RE = re.compile(
+    r"^(?P<ticker>[A-Z.]+)_(?P<date>\d{4}-\d{2}-\d{2})(?:_r(?P<rev>\d+))?\.json$")
 
 ANSWER_STATUSES = ("answered", "unknown", "not_applicable")
 ANSWER_TYPES = ("bool", "enum", "number", "text")
@@ -111,6 +112,9 @@ QUESTION_BANK = (
        "최근 12개월 내부자 매매가 기회적(비정기·10b5-1 아님) 순매도/순매수인가?",
        "enum", ("opp_net_sell", "opp_net_buy", "routine_only", "none"),
        requires_primary=True, maps_to="opp_insider"),
+    _q("gov.cxo_turnover_24m", "governance",
+       "최근 24개월 CEO/CFO 이직을 공시한 8-K(Item 5.02)는 몇 건인가?", "number",
+       requires_primary=True),
     _q("gov.material_litigation", "governance",
        "회사 존속·성장 서사에 직결되는 진행 중 소송이 있는가?",
        "enum", ("none", "immaterial", "material"), requires_primary=True),
@@ -395,20 +399,63 @@ def verify_record(record: dict) -> dict:
     return {"ok": True, "entity": record["entity"], "as_of": record["as_of"]}
 
 
-def save_record(record: dict, directory: str = None) -> str:
+def _revision_paths(entity: str, directory: str) -> list:
+    """한 종목의 모든 기록 경로를 (as_of, revision) 순으로."""
+    found = []
+    for name in os.listdir(directory) if os.path.isdir(directory) else []:
+        m = FNAME_RE.match(name)
+        if m and m["ticker"] == entity:
+            found.append((m["date"], int(m["rev"] or 1), os.path.join(directory, name)))
+    return [p for _, _, p in sorted(found)]
+
+
+def latest_record(entity: str, directory: str = None):
+    """종목의 최신 봉인 레코드(없으면 None). 개정본이 있으면 가장 높은 revision."""
+    directory = directory or QUALITATIVE_DIR
+    paths = _revision_paths(entity, directory)
+    if not paths:
+        return None
+    with open(paths[-1], encoding="utf-8") as f:
+        return json.load(f)
+
+
+def save_record(record: dict, directory: str = None, supersedes: str = None) -> str:
     """
-    봉인 저장. **종목당 1건이 아니라 날짜별로 누적한다** — 정성 평가를 나중에 덮어쓰는
-    것을 막는 것이 목적이므로 과거 기록은 남겨야 한다. 같은 종목·같은 날짜 파일이
-    있으면 거부한다.
+    봉인 저장. **종목당 1건이 아니라 누적한다** — 정성 평가를 나중에 덮어쓰는 것을 막는 것이
+    목적이므로 과거 기록은 남겨야 한다. 같은 종목·같은 날짜 파일이 있으면 거부한다.
+
+    **개정본(`supersedes`)**: 같은 날짜에 새 사실을 확보했다면 기존 파일을 고치지 않고
+    `<T>_<날짜>_r2.json`을 새로 쌓는다. `supersedes`는 직전 최신 기록의 봉인 해시여야 하며
+    (사슬이 끊기면 거부), 개정본은 `revision`/`supersedes`를 **비봉인 필드**로 담는다 —
+    기존 해시·기존 파일은 한 글자도 바뀌지 않는다.
     """
     directory = directory or QUALITATIVE_DIR
     verify_record(record)
     os.makedirs(directory, exist_ok=True)
-    path = os.path.join(directory, f"{record['entity']}_{record['as_of']}.json")
+    base = os.path.join(directory, f"{record['entity']}_{record['as_of']}")
+    path = base + ".json"
     if os.path.exists(path):
-        raise FileExistsError(
-            f"{path}가 이미 있다. 봉인된 정성 평가는 수정할 수 없다 — "
-            f"다시 조사했다면 as_of를 새 날짜로 하여 새 기록을 만들 것.")
+        if supersedes is None:
+            raise FileExistsError(
+                f"{path}가 이미 있다. 봉인된 정성 평가는 수정할 수 없다 — "
+                f"새 사실이 있으면 supersedes로 개정본을 쌓거나 as_of를 새 날짜로 하여 "
+                f"새 기록을 만들 것.")
+    elif supersedes is not None and not _revision_paths(record["entity"], directory):
+        raise QualitativeInputError("supersedes를 줬는데 이 종목의 기존 기록이 없다")
+    if supersedes is not None:
+        prior = latest_record(record["entity"], directory)
+        if prior is None or prior["sealed_core_hash"] != supersedes:
+            raise QualitativeInputError(
+                "supersedes가 이 종목의 최신 기록 해시와 다르다 — 개정 사슬이 끊겼다")
+        if prior["sealed_core_hash"] == record["sealed_core_hash"]:
+            raise QualitativeInputError("개정본이 직전 기록과 내용이 같다 — 개정할 것이 없다")
+        revs = [int(FNAME_RE.match(os.path.basename(p))["rev"] or 1)
+                for p in _revision_paths(record["entity"], directory)
+                if FNAME_RE.match(os.path.basename(p))["date"] == record["as_of"]]
+        rev = (max(revs) + 1) if revs else 1
+        if rev > 1:
+            path = f"{base}_r{rev}.json"
+        record = {**record, "revision": rev, "supersedes": supersedes}
     with open(path, "w", encoding="utf-8") as f:
         json.dump(record, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")

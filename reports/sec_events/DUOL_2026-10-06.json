@@ -1,0 +1,120 @@
+{
+  "as_of": "2026-10-06",
+  "cik": "0001562088",
+  "cxo": {
+    "events": [
+      {
+        "accession": "0001628280-26-001730",
+        "filing_date": "2026-01-12",
+        "quote": "On January 8, 2026, Matthew Skaruppa tendered his resignation as Chief Financial Officer (\"CFO\") of the Company effective with his successor’s commencement of service and, on January 8, 2026, the Board of Directors (the “Board”) of the Company appointed Gillian Munson as the Company’s Chief Financial Officer and as principal financial officer and principal accounting officer, effective as of February 23, 2026 (the “Effective Date”), succeeding Mr.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026001730/duol-20260108.htm"
+      }
+    ],
+    "n_cxo_departure_filings": 1,
+    "n_item_502_filings": 3,
+    "status": "OK",
+    "window_since": "2024-10-06"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "같은 회계연도의 차입 발행·매입 값이 없다"
+  },
+  "insider": {
+    "accessions": [
+      "0001628280-26-063709",
+      "0001628280-26-063251",
+      "0001628280-26-062790",
+      "0001628280-26-062115",
+      "0001628280-26-061361",
+      "0001628280-26-058021",
+      "0001628280-26-058020",
+      "0001628280-26-058019",
+      "0001628280-26-056396",
+      "0001628280-26-048225",
+      "0001628280-26-048223",
+      "0001628280-26-048221",
+      "0001628280-26-048219",
+      "0001628280-26-044413",
+      "0001628280-26-041256",
+      "0001628280-26-041255",
+      "0001628280-26-041254",
+      "0001628280-26-041253",
+      "0001628280-26-041252",
+      "0001628280-26-041251",
+      "0001628280-26-041250",
+      "0001628280-26-039164",
+      "0001628280-26-039163",
+      "0001628280-26-036519",
+      "0001628280-26-036518",
+      "0001628280-26-036517",
+      "0001628280-26-034635",
+      "0001628280-26-034631",
+      "0001628280-26-021831",
+      "0001628280-26-018197",
+      "0001628280-26-014695",
+      "0001628280-26-013813",
+      "0001628280-26-009987",
+      "0001628280-26-009986",
+      "0001628280-26-009985",
+      "0001628280-26-009984",
+      "0001628280-26-009983",
+      "0001628280-26-009982",
+      "0001628280-25-059129",
+      "0001628280-25-056204",
+      "0001628280-25-056081",
+      "0001628280-25-055183",
+      "0001628280-25-055173",
+      "0001628280-25-053427",
+      "0001628280-25-053186",
+      "0001628280-25-053183",
+      "0001628280-25-053182",
+      "0001628280-25-053009",
+      "0001628280-25-050203",
+      "0001628280-25-045963",
+      "0001628280-25-045962",
+      "0001628280-25-044485",
+      "0001628280-25-044221"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 53,
+    "status": "OK",
+    "summary": {
+      "answer": "routine_only",
+      "discretionary_buy_usd": 498792.0,
+      "discretionary_net_by_owner": {
+        "Chen Stephen C.": -132229.12,
+        "Meese Robert": -701129.02,
+        "Shelton James H": 498792.0
+      },
+      "discretionary_net_usd": -334566.14,
+      "discretionary_sell_usd": 833358.14,
+      "floor_usd": 1000000,
+      "n_discretionary": 6,
+      "n_open_market": 108,
+      "n_routine_10b5_1": 102,
+      "routine_sell_usd": 36303587.77,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-06",
+      "2026-10-06"
+    ]
+  },
+  "litigation": {
+    "answer": "immaterial",
+    "filed": "2026-02-27",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+    "materiality_qualified": true,
+    "reason": "회사가 '중요한(material) 소송이 없다'고 한정해 진술 — 소송 존재 여부는 말하지 않는다",
+    "section_len": 60189
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-07"
+  },
+  "ticker": "DUOL"
+}

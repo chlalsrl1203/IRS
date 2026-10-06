@@ -196,7 +196,8 @@ def test_coverage_exposes_unknown_and_unasked():
     c = rec["coverage"]
     assert c["per_lens"]["governance"]["answered"] == 1
     assert c["per_lens"]["governance"]["unknown"] == 1
-    assert c["per_lens"]["governance"]["unasked"] == 4
+    n_gov = sum(1 for q in Q.bank_for("standard") if q.lens == "governance")
+    assert c["per_lens"]["governance"]["unasked"] == n_gov - 2     # 은행 크기에 고정하지 않는다
     assert c["answered_fraction"] < 0.1
     assert "capital_allocation" in c["unexamined_lenses"]
     assert "문제 없음" in c["note"]

@@ -63,10 +63,19 @@ def cmd_submit(path: str, directory: str = None) -> int:
 def build_coverage(directory: str = None) -> dict:
     directory = directory or Q.QUALITATIVE_DIR
     sealed, tickers = [], set()
+    latest = {}
+    n_files = 0
     for path in sorted(glob.glob(os.path.join(directory, "*.json"))):
         with open(path, encoding="utf-8") as f:
             rec = json.load(f)
-        Q.verify_record(rec)
+        Q.verify_record(rec)             # 과거 개정본도 전부 무결성 검증한다
+        n_files += 1
+        m = Q.FNAME_RE.match(os.path.basename(path))
+        key = (rec["as_of"], int(m["rev"] or 1))
+        if rec["entity"] not in latest or key > latest[rec["entity"]][0]:
+            latest[rec["entity"]] = (key, rec)
+    # 종목당 **최신본만** 현재 상태로 센다 — 개정본·과거 날짜를 모두 세면 같은 종목이 중복된다.
+    for _, rec in sorted(latest.values(), key=lambda kr: kr[1]["entity"]):
         tickers.add(rec["entity"])
         c = rec["coverage"]
         sealed.append({
@@ -89,7 +98,7 @@ def build_coverage(directory: str = None) -> dict:
     sparse = sorted(r["entity"] for r in sealed
                     if r["entity"] in with_legacy and r["answered_fraction"] < SPARSE_QSI)
     return {
-        "n_sealed_records": len(sealed), "sealed": sealed,
+        "n_sealed_records": len(sealed), "n_record_files": n_files, "sealed": sealed,
         "legacy_freeform_only": legacy,
         "legacy_with_sparse_qsi": sparse,
         "sparse_qsi_threshold": SPARSE_QSI,
