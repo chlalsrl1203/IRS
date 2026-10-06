@@ -1,0 +1,186 @@
+{
+  "legacy_freeform_only": [
+    "ADBE",
+    "CINF",
+    "DECK",
+    "DUOL",
+    "GEN",
+    "HLNE",
+    "MNDY",
+    "NBIX",
+    "NXT",
+    "PDD",
+    "PGR",
+    "SE",
+    "SIGI",
+    "SKYW",
+    "TW",
+    "UBER"
+  ],
+  "legacy_note": "자유서술 정성조사만 있고 QSI 봉인이 없는 종목. 소급 재작성하지 않는다 — 새 조사부터 표준 입력으로 쌓는다.",
+  "n_sealed_records": 3,
+  "sealed": [
+    {
+      "answered_fraction": 0.4545,
+      "as_of": "2026-10-06",
+      "entity": "ACGL",
+      "inversion_complete": true,
+      "lens_set": "insurance",
+      "n_answered": 5,
+      "n_questions": 11,
+      "per_lens": {
+        "catastrophe_risk": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 2,
+          "n_questions": 6,
+          "not_applicable": 0,
+          "unasked": 1,
+          "unknown": 3
+        },
+        "reserve_adequacy": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "underwriting_discipline": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "sealed_core_hash": "5691499ceaf4a02514182ebfe6d2beeadc951b2f1a6bf5be223a00d2ddd897d6",
+      "unexamined_lenses": [
+        "catastrophe_risk",
+        "underwriting_discipline"
+      ]
+    },
+    {
+      "answered_fraction": 0.1364,
+      "as_of": "2026-10-06",
+      "entity": "DLO",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 3,
+      "n_questions": 22,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 0,
+          "n_questions": 6,
+          "not_applicable": 0,
+          "unasked": 6,
+          "unknown": 0
+        },
+        "capital_allocation": {
+          "answered": 0,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 4,
+          "unknown": 0
+        },
+        "competitive_landscape": {
+          "answered": 0,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 4,
+          "unknown": 0
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 1,
+          "n_questions": 6,
+          "not_applicable": 0,
+          "unasked": 2,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "sealed_core_hash": "f8f5a366718c2dac18878346ee1be4c06d2d45c60f241c7aba761ca826b589e4",
+      "unexamined_lenses": [
+        "capital_allocation",
+        "accounting_quality",
+        "competitive_landscape"
+      ]
+    },
+    {
+      "answered_fraction": 0.1818,
+      "as_of": "2026-10-06",
+      "entity": "PTC",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 4,
+      "n_questions": 22,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 0,
+          "n_questions": 6,
+          "not_applicable": 0,
+          "unasked": 6,
+          "unknown": 0
+        },
+        "capital_allocation": {
+          "answered": 0,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 3,
+          "unknown": 1
+        },
+        "competitive_landscape": {
+          "answered": 0,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 4,
+          "unknown": 0
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 2,
+          "n_questions": 6,
+          "not_applicable": 0,
+          "unasked": 1,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "sealed_core_hash": "4a5f264eb03b3763c6256994a534ad96a3bee3838e4afd4690e4f290d50d4dc5",
+      "unexamined_lenses": [
+        "capital_allocation",
+        "accounting_quality",
+        "competitive_landscape"
+      ]
+    }
+  ],
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

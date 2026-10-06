@@ -10578,3 +10578,46 @@ v3.90(`portfolio_track_record.py`)·v3.91(대시보드 자가갱신)은 main에 
 
 테스트 1,231 → **1,256 통과 · 1 건너뜀**. baseline fingerprint `f5709edf…`
 **불변**, `ledger/`·공식 판정 0건 수정. `ENGINE_VERSION` v3.89 → **v3.92**.
+
+## v3.93 — 정성평가 표준입력(QSI v1) 신설 + 파일럿 3종목 (2026-10-06)
+
+정성 심층조사가 채팅 요약·자유서술로만 남던 것을 **고정 질문 은행 + 필수 인용 + `unknown` 1급 값**
+형식으로 받는다. 새 밸류에이션 로직 0줄, `run_analysis()`·`portfolio_pipeline`에 **미배선**
+(테스트로 고정). 구조는 `docs/QUALITATIVE_STANDARD_INPUT_BRIEF.md`.
+
+- `engine/qualitative_input.py`: 질문 은행(5축 + insurance/conglomerate 변형), 답·근거 검증,
+  봉인(`prediction_ledger.core_hash` 재사용), `scorecard_core` 입력 필드 파생(불리언만).
+  증거 계약은 `evidence.py`, 축은 `research_lenses.py`를 그대로 쓴다.
+- `scripts/qualitative_intake.py`: `checklist`/`submit`/`coverage`. 조사는 코드 밖에서 하고
+  코드는 형식·근거만 검증한다(네트워크·LLM 호출 없음, stdlib만).
+- `qualitative/<종목>_<날짜>.json`: **종목당 1건이 아니라 날짜별 누적**(봉인의 목적이 사후
+  수정 방지라 과거 기록을 남긴다). 같은 종목·날짜 덮어쓰기는 거부.
+
+**강제 규칙**: ① `answered`는 근거 주장 필수 ② `requires_primary` 질문(판정 경계를 움직일 수 있는
+사실)은 `VERIFIED_PRIMARY` 없으면 거부 — TYL SBC 3배 오류 형태 ③ `unknown`은 사유 필수, 모른다면서
+답·근거 첨부 불가 ④ `observed_date > as_of` 거부 ⑤ 종합점수·판정·자동 변경 함수 금지(AST 테스트).
+
+**scorecard 파생은 불리언 항목만 한다.** `roiic_5y`·`dollar_test_ratio`·업종 백분위 입력은 업종 내
+상대값이라 한 회사의 질문 답으로 만들 수 없다 — 억지로 채우지 않고 `not_derivable`로 남긴다.
+
+### 파일럿 결과 (ACGL·DLO·PTC, 형식 시험이며 조사가 옳다는 검증이 아니다)
+답한 질문 5/11 · 3/22 · 4/22. **낮은 커버리지가 정상 출력이다** — 이번 세션에서 직접 조회하지
+못한 항목(내부자 매매·소송·합산비율·경쟁 구도)은 추측하지 않고 `unknown`으로 남겼다.
+- 인용은 SEC 원문·companyfacts만 썼고 인용문 7개는 원문과 글자 일치를 작성 전에 확인했다.
+- **PTC 파일럿 중 발견**: 2026-10-05 Schneider Electric이 PTC를 **주당 $205 현금(약 $226억)에
+  인수**한다고 발표(8-K Item 1.01, 합병계약 10-04, 해지수수료 $7억, 종결은 주주·규제 승인 조건부).
+  `PENDING_ACQUISITION` Disqualifier로 기록했다. LNTH(피인수 예정)와 같은 사유로 이 엔진의
+  Implied Growth는 '시장의 성장 기대'를 뜻하지 않는다. **ledger·thesis·holdings는 건드리지 않았다**
+  — PTC는 보유 38.4% 최대 종목이라 처리 방식(thesis 갱신, 감시 방식)은 사용자 판단 사안이다.
+- **포맷이 드러낸 결함 후보 3건(미수정)**: ① `dil.sbc_to_fcf_pct` 분모가 ledger 파생값이라
+  '1차 확인'이 부분적이다. ② PTC `cap.buyback_effect`에서 과거 경량검증("자사주매입이 SBC의 6~7배")과
+  희석주식수(3년 +2.15%)가 모순인데, 현재는 `unknown`의 note 문장으로만 남고 기계가 모순을
+  탐지하지 못한다. ③ 20-F 발행사(DLO)는 `gov.insider_pattern`의 Form 4 경로가 없다.
+
+**기존 33종목 정성조사는 소급 재작성하지 않는다**(사후합리화). `reports/qualitative_coverage.json`이
+레거시 전용 종목(16종목)을 구분해 보여준다. `qualitative_overrides.json`은 수정하지 않았다.
+**검증 상태**: IMPLEMENTED_NOT_VALIDATED — 이 입력이 더 나은 판단이나 성과로 이어진다는 증거는 0건이며,
+봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.
+
+테스트 1256 → **1280 통과**. baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
+`ENGINE_VERSION` v3.92 → **v3.93**.
