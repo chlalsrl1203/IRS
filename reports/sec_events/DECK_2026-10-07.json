@@ -17,6 +17,276 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "domestic_extra": {
+    "cover": {
+      "answer": null,
+      "reason": "표지에서 발행주식수 기재를 찾지 못했다"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": null,
+      "reason": "차입 잔액 태그를 찾지 못했다(무차입이거나 미보고 — 구분할 수 없다)",
+      "tag": null
+    },
+    "ma": {
+      "answer": null,
+      "item_102_3y": [],
+      "reason": "인수 지출 값이 5개 연도 중 0개뿐이다",
+      "recent_8k_201": []
+    },
+    "no_dividend": null
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2023-03-31",
+          "filed": "2025-05-23",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3627286000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "rency fluctuation, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are now expected to be in the range of $3.50 billion to $3.53 billion",
+          "filed": "2023-02-02",
+          "fy": 2023,
+          "high": 3530000000.0,
+          "kind": "range",
+          "low": 3500000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052123000002/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "onomic conditions, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are expected to be in the range of $3.45 billion to $3.50 billion",
+          "filed": "2022-05-19",
+          "fy": 2023,
+          "high": 3500000000.0,
+          "kind": "range",
+          "low": 3450000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052122000013/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.036367428571428606,
+        "vs_initial_low_pct": 0.05138724637681169
+      },
+      {
+        "actual": {
+          "end": "2024-03-31",
+          "filed": "2026-05-22",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 4287763000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are now expected to be approximately $4.15 billion",
+          "filed": "2024-02-01",
+          "fy": 2024,
+          "high": 4150000000.0000005,
+          "kind": "point",
+          "low": 4150000000.0000005,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000003/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "rency fluctuation, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are expected to be approximately $3.950 billion",
+          "filed": "2023-05-25",
+          "fy": 2024,
+          "high": 3950000000.0,
+          "kind": "point",
+          "low": 3950000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052123000014/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.03319590361445779,
+        "vs_initial_low_pct": 0.08550962025316466
+      },
+      {
+        "actual": {
+          "end": "2025-03-31",
+          "filed": "2026-05-22",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 4985612000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "confidence, discretionary spending, and inflationary pressures; supply chain disruptions; and geopolitical tensions. • Net sales are now expected to increase approximately 15% to $4.9 billion",
+          "filed": "2025-01-30",
+          "fy": 2025,
+          "high": 4900000000.0,
+          "kind": "point",
+          "low": 4900000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052125000002/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are expected to increase approximately 10% to $4.7 billion",
+          "filed": "2024-05-23",
+          "fy": 2025,
+          "high": 4700000000.0,
+          "kind": "point",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000015/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.01747183673469377,
+        "vs_initial_low_pct": 0.0607685106382978
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": false,
+      "n_evaluated": 3,
+      "n_miss": 0,
+      "promise_kept_record": true,
+      "reason": "",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "ledger": [
+      {
+        "actual": {
+          "end": "2023-03-31",
+          "filed": "2025-05-23",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3627286000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "rency fluctuation, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are now expected to be in the range of $3.50 billion to $3.53 billion",
+          "filed": "2023-02-02",
+          "fy": 2023,
+          "high": 3530000000.0,
+          "kind": "range",
+          "low": 3500000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052123000002/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "onomic conditions, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are expected to be in the range of $3.45 billion to $3.50 billion",
+          "filed": "2022-05-19",
+          "fy": 2023,
+          "high": 3500000000.0,
+          "kind": "range",
+          "low": 3450000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052122000013/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.036367428571428606,
+        "vs_initial_low_pct": 0.05138724637681169
+      },
+      {
+        "actual": {
+          "end": "2024-03-31",
+          "filed": "2026-05-22",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 4287763000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are now expected to be approximately $4.15 billion",
+          "filed": "2024-02-01",
+          "fy": 2024,
+          "high": 4150000000.0000005,
+          "kind": "point",
+          "low": 4150000000.0000005,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000003/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "rency fluctuation, inflationary pressures, consumer confidence and discretionary spending; and geopolitical tensions. • Net sales are expected to be approximately $3.950 billion",
+          "filed": "2023-05-25",
+          "fy": 2024,
+          "high": 3950000000.0,
+          "kind": "point",
+          "low": 3950000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052123000014/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.03319590361445779,
+        "vs_initial_low_pct": 0.08550962025316466
+      },
+      {
+        "actual": {
+          "end": "2025-03-31",
+          "filed": "2026-05-22",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 4985612000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "confidence, discretionary spending, and inflationary pressures; supply chain disruptions; and geopolitical tensions. • Net sales are now expected to increase approximately 15% to $4.9 billion",
+          "filed": "2025-01-30",
+          "fy": 2025,
+          "high": 4900000000.0,
+          "kind": "point",
+          "low": 4900000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052125000002/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are expected to increase approximately 10% to $4.7 billion",
+          "filed": "2024-05-23",
+          "fy": 2025,
+          "high": 4700000000.0,
+          "kind": "point",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000015/deckex991pressrelease-3312.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.01747183673469377,
+        "vs_initial_low_pct": 0.0607685106382978
+      },
+      {
+        "actual": {
+          "end": "2026-03-31",
+          "filed": "2026-05-22",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 5472296000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "to global trade policy, including tariffs and trade restrictions; geopolitical tensions; and supply chain disruption. • Net sales are now expected to be in the range of $5.400 billion to $5.425 billion",
+          "filed": "2026-01-29",
+          "fy": 2026,
+          "high": 5425000000.0,
+          "kind": "range",
+          "low": 5400000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000002/deckex991pressrelease-1231.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "to global trade policy, including tariffs and trade restrictions; geopolitical tensions; and supply chain disruption. • Net sales are expected to be approximately $5.35 billion",
+          "filed": "2025-10-23",
+          "fy": 2026,
+          "high": 5350000000.0,
+          "kind": "point",
+          "low": 5350000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052125000041/deckex991pressrelease-9302.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "LATE_INITIAL",
+        "vs_final_low_pct": 0.013388148148148149,
+        "vs_initial_low_pct": 0.02285906542056071
+      }
+    ],
+    "n_releases": 18,
+    "n_with_guidance": 14,
+    "source_form": "8-K Item 2.02"
+  },
   "icfr": {
     "answer": "effective",
     "filed": "2026-05-22",

@@ -1,0 +1,869 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": false,
+      "claim_ids": [
+        "ADBE.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "ADBE.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": 0.1971,
+      "claim_ids": [
+        "ADBE.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0932,
+      "claim_ids": [
+        "ADBE.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "reduces_share_count",
+      "claim_ids": [
+        "ADBE.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "ADBE.COVER"
+      ],
+      "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "ADBE.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: ADBE.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "현금 인수 지출은 영업현금흐름의 7.0%로 작지만, 3년 내 중요 계약 해지 공시(8-K 1.02) ['2023-12-18']가 있다 — 해지된 거래의 가격 규율은 사람이 판단한다.",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사가 무배당을 직접 진술하고 최근 5년 주당배당 값이 없다: \"Dividends We do not anticipate paying any cash dividends in the foreseeable future.\" (ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003), https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm)",
+      "qid": "cap.dividend_predictable",
+      "status": "not_applicable"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "ADBE.DEBTBUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.debt_funded_buyback",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "ADBE.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "ADBE.GUIDANCE"
+      ],
+      "note": "GAAP 총매출 연간 가이던스만 본다(EPS·세그먼트·ARR 제외). 사전 고정 규칙",
+      "qid": "acc.guidance_miss_3y",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "ADBE.GUIDANCE"
+      ],
+      "note": "매출 가이던스 이행만 본다 — 자본배분 약속 등 다른 약속은 포함하지 않는다. 가이던스를 낮게 잡는 관행(sandbagging)이면 쉽게 True가 된다",
+      "qid": "acc.promise_kept_record",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.new_threat",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    },
+    {
+      "answer": 2,
+      "claim_ids": [
+        "ADBE.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.5065,
+      "claim_ids": [
+        "ADBE.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "lt_1pct",
+      "claim_ids": [
+        "ADBE.INSIDERGROUP"
+      ],
+      "note": "",
+      "qid": "gov.insider_group_ownership",
+      "status": "answered"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "ADBE.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "ADBE.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "ADBE.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "ADBE.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-07",
+  "claims": [
+    {
+      "claim_id": "ADBE.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE DEF 14A (filed 2026-02-27, acc 0000796343-26-000043)",
+            "location": "Directors table",
+            "observed_date": "2026-10-06",
+            "quote": "Chair of the Board and CEO, Adobe",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "독립 선임이사를 두는 규정은 별도로 존재(미대조)",
+          "summary": "의장과 CEO가 같은 사람이다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "의장과 CEO가 같은 사람이다"
+    },
+    {
+      "claim_id": "ADBE.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE DEF 14A (filed 2026-02-27, acc 0000796343-26-000043)",
+            "location": "Board responsibilities",
+            "observed_date": "2026-10-06",
+            "quote": "management development and succession planning for senior management, including the CEO position",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "이사회가 CEO 승계 계획을 검토한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "이사회가 CEO 승계 계획을 검토한다"
+    },
+    {
+      "claim_id": "ADBE.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "ShareBasedCompensation FY2025 = 1,942,000,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 1,942,000,000 / fcf0 9,852,000,000",
+          "value": 0.1971,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 19.7%다"
+    },
+    {
+      "claim_id": "ADBE.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 470,900,000 -> FY2025 427,000,000",
+          "value": -0.0932,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 -9.32%"
+    },
+    {
+      "claim_id": "ADBE.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 11,281,000,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 11,281,000,000; 3년 희석주식수 -9.32%",
+          "value": 11281000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 -9.32%다 → reduces_share_count"
+    },
+    {
+      "claim_id": "ADBE.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE Form 4 x70 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=796343&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 70건 집계 (재량 매수 $1,945,130 / 재량 매도 $50,773,009 / 10b5-1 매도 $0)",
+          "value": -48827878.97,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 21건: 재량 순 $-48,827,879, 10b5-1 정기 0건 → opp_net_sell"
+    },
+    {
+      "claim_id": "ADBE.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 8-K (2026-09-08, acc 0000796343-26-000144)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-06",
+            "quote": "Upon the Effective Date, Shantanu Narayen, the Company’s current Chair and Chief Executive Officer, will retire as the Company’s Chief Executive Officer and assume the position of Executive Chair of the Board.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-09-08 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "ADBE 8-K (2026-06-11, acc 0000796343-26-000109)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-06",
+            "quote": "On June 8, 2026, Daniel Durn notified the Company of his decision to resign as Chief Financial Officer and Executive Vice President, Finance, Technology, Security and Operations, effective June 15, 2026.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-06-11 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 2건(5.02 전체 8건)"
+    },
+    {
+      "claim_id": "ADBE.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "ADBE.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "ITEM 3. LEGAL PROCEEDINGS The material set forth in the section titled “Legal Proceedings” in Note 16 of our Notes to Consolidated Financial Statements is incorporated herein by reference.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "ADBE.DEBTBUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE companyfacts",
+            "location": "차입 발행/상환/자사주 매입 FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "net_debt_issuance",
+          "note": "순차입(발행−상환) ≥ 매입액의 50%면 부채 조달(사전 고정·비검증)",
+          "summary": "현금흐름표 차입 발행·상환·매입 지출(companyfacts)",
+          "value": 497000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "FY2025 순차입 497,000,000 vs 자사주 매입 11,281,000,000 → 부채 조달 아니다"
+    },
+    {
+      "claim_id": "ADBE.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "ADBE.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "ADBE.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "ADBE.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 8-K (2026-04-21, acc 0000796343-26-000101)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "advisory basis, the compensation of our named executive officers. Votes For Votes Against Abstentions Broker Non-Votes 148,837,167 144,993,886",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/adbe-20260415.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.5065,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-04-21 주총 보수 승인 투표 찬성 148,837,167 / 반대 144,993,886 → 찬성률 50.7%"
+    },
+    {
+      "claim_id": "ADBE.INSIDERGROUP",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE DEF 14A (filed 2026-02-27, acc 0000796343-26-000043)",
+            "location": "Security Ownership 표 — 'as a group' 행",
+            "observed_date": "2026-10-07",
+            "quote": "0,430 (20) * Daniel Rosensweig 19,934 (21) * All directors and current executive officers as a group (18 persons) 803,767 (22) *",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "insider_group_pct",
+          "note": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만",
+          "summary": "DEF 14A 지분표의 'as a group' 행",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "위임장(2026-02-27) 기준 임원·이사 합산 지분 구간 lt_1pct ('*' = 1% 미만 표기)"
+    },
+    {
+      "claim_id": "ADBE.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that, as of November 28, 2025, our internal control over financial reporting is effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "ADBE.GUIDANCE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 8-K Item 2.02 EX-99 (filed 2022-12-15)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "venue year-over-year growth rates in fiscal year 2023. The following table summarizes Adobe’s fiscal year 2023 targets: Total revenue $19.1 billion to $19.3 billion",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634322000225/adbeex991q422.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts Revenues (결산 2023-12-01, 공시 2026-01-15)",
+          "summary": "FY2023 최초 가이던스 19,100,000,000~19,300,000,000 (range, 2022-12-15) vs 실제 19,409,000,000 → MET",
+          "value": 0.0162,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "ADBE 8-K Item 2.02 EX-99 (filed 2023-12-13)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "ued in December at new rates for the next fiscal year. The following table summarizes Adobe’s fiscal year 2024 targets: Total revenue $21.30 billion to $21.50 billion",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000252/adbeex991q423.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts Revenues (결산 2024-11-29, 공시 2026-01-15)",
+          "summary": "FY2024 최초 가이던스 21,300,000,000~21,500,000,000 (range, 2023-12-13) vs 실제 21,505,000,000 → MET",
+          "value": 0.0096,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "ADBE 8-K Item 2.02 EX-99 (filed 2024-12-11)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "ued move to subscriptions from perpetual offerings. The following table summarizes Adobe’s fiscal year 2025 targets 1 : Total revenue $23.30 billion to $23.55 billion",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts Revenues (결산 2025-11-28, 공시 2026-01-15)",
+          "summary": "FY2025 최초 가이던스 23,300,000,000~23,550,000,000 (range, 2024-12-11) vs 실제 23,769,000,000 → MET",
+          "value": 0.0201,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 회계연도 [2023, 2024, 2025] 최초 연간 매출 가이던스 대비 미달 0회"
+    },
+    {
+      "claim_id": "ADBE.COVER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE 10-K (filed 2026-01-15, acc 0000796343-26-000003)",
+            "location": "Cover page (shares outstanding)",
+            "observed_date": "2026-10-07",
+            "quote": ". The determination of affiliate status for this calculation is not necessarily a conclusive determination for other purposes. As of January 9, 2026, 410.5 million shares of the registrant’s common stock, $0.0001 par value per share, were issued and outstanding.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)",
+          "summary": "10-K 표지 발행주식수 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K 표지: 보통주 단일 클래스만 발행"
+    },
+    {
+      "claim_id": "ADBE.DEBTBUYBACK_BAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ADBE companyfacts",
+            "location": "LongTermDebt FY2024~FY2025 / 자사주 매입 FY2025",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000796343.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "debt_change",
+          "note": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+          "summary": "대차대조표 차입 잔액(전년·당년)과 현금흐름표 매입 지출",
+          "value": 2081000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "FY2025 차입 잔액 변동 2,081,000,000 vs 자사주 매입 11,281,000,000 → 부채 조달 아니다"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.6207,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 18,
+    "n_primary_answered": 15,
+    "n_primary_required": 17,
+    "n_questions": 29,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 7,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "capital_allocation": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 7,
+        "n_questions": 9,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      }
+    },
+    "unexamined_lenses": [
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "ADBE",
+  "findings": [
+    {
+      "claim_ids": [
+        "ADBE.BUYBACK",
+        "ADBE.DEBTBUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인) / 자사주 매입 재원을 같은 연도 순차입과 비교(사전 고정 규칙)"
+    },
+    {
+      "claim_ids": [
+        "ADBE.SBC",
+        "ADBE.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "ADBE.CHAIR_SEPARATED",
+        "ADBE.CEO_SUCCESSION_POLICY",
+        "ADBE.INSIDER",
+        "ADBE.CXO",
+        "ADBE.LITIGATION",
+        "ADBE.SAYONPAY",
+        "ADBE.INSIDERGROUP"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음) / 임원·이사 합산 지분을 위임장 지분표에서 구간으로 집계(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "ADBE.RESTATE",
+        "ADBE.NT",
+        "ADBE.AUDITOR",
+        "ADBE.IMPAIR",
+        "ADBE.ICFR",
+        "ADBE.GUIDANCE"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음) / 최초 연간 매출 가이던스와 실제 매출을 대조(사전 고정 규칙, 판단 없음)"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "a81fa5aff3585a833c8b8a177a3390e9697128b0f006f2bf5825e52cff0fbca5",
+  "supersedes": "dc5d157d59a6aea26a6ce8c687f18aa33ff03c07842c86267fb8ab8959d6911d",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

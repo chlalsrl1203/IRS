@@ -1,0 +1,491 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "CINF.CHAIR_SEPARATED",
+        "CINF.CHAIR2"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "CINF.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "companyfacts SBC가 ledger SBC/FCF 역산값과 일치하는 연도가 없다 — 연도 정합을 증명하지 못해 인용하지 않는다",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": -0.0069,
+      "claim_ids": [
+        "CINF.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "favorable",
+      "claim_ids": [
+        "CINF.RESERVE"
+      ],
+      "note": "",
+      "qid": "res.reserve_development",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "CINF.COVER"
+      ],
+      "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "routine_only",
+      "claim_ids": [
+        "CINF.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: CINF.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cat.cat_exposure",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "uw.combined_ratio_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "CINF.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.9639,
+      "claim_ids": [
+        "CINF.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "1_to_5pct",
+      "claim_ids": [
+        "CINF.INSIDERGROUP"
+      ],
+      "note": "",
+      "qid": "gov.insider_group_ownership",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-07",
+  "claims": [
+    {
+      "claim_id": "CINF.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF DEF 14A (filed 2026-03-18, acc 0000020286-26-000015)",
+            "location": "Corporate Governance — Board Leadership",
+            "observed_date": "2026-10-06",
+            "quote": "the offices of chairman of the board and CEO would be split following the 2024 annual shareholders' meeting",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "2024년 결정 문장이다. 현재 직책은 같은 문서의 이사 표(Executive Chairman)로 보강",
+          "summary": "이사회가 의장·CEO를 분리하기로 결정했다(2024)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "이사회가 의장·CEO를 분리하기로 결정했다(2024)"
+    },
+    {
+      "claim_id": "CINF.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF DEF 14A (filed 2026-03-18, acc 0000020286-26-000015)",
+            "location": "Corporate Governance — Board Leadership",
+            "observed_date": "2026-10-06",
+            "quote": "is part of the succession planning process",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "분리 결정을 승계 계획 과정의 일부로 설명한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "분리 결정을 승계 계획 과정의 일부로 설명한다"
+    },
+    {
+      "claim_id": "CINF.CHAIR2",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF DEF 14A (filed 2026-03-18, acc 0000020286-26-000015)",
+            "location": "Director table",
+            "observed_date": "2026-10-06",
+            "quote": "Executive Chairman of the Board, Cincinnati Financial Corporation",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "현 의장은 Executive Chairman 직함의 이사다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "현 의장은 Executive Chairman 직함의 이사다"
+    },
+    {
+      "claim_id": "CINF.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF 10-K (filed 2026-02-23, acc 0000020286-26-000008)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 158,800,000 -> FY2025 157,700,000",
+          "value": -0.0069,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 -0.69%"
+    },
+    {
+      "claim_id": "CINF.RESERVE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF 10-K (filed 2026-02-23, acc 0000020286-26-000008)",
+            "location": "us-gaap:SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPriorYearClaimsAndClaimsAdjustmentExpense FY2023~FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "prior_year_claims_expense_usd",
+          "note": "부호 해석(음수=유리)은 보험회계 관행이며 10-K MD&A 문장으로는 대조하지 않았다",
+          "summary": "전기 손해액 조정 FY2023 -215M, FY2024 -236M, FY2025 -196M (음수 = 비용 감소 = 유리한 발전)",
+          "value": -196000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 연도 준비금 발전: favorable(부호가 연도마다 갈리면 neutral)"
+    },
+    {
+      "claim_id": "CINF.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF Form 4 x94 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=20286&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 94건 집계 (재량 매수 $511,128 / 재량 매도 $1,333,067 / 10b5-1 매도 $0)",
+          "value": -821939.56,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 5건: 재량 순 $-821,940, 10b5-1 정기 0건 → routine_only"
+    },
+    {
+      "claim_id": "CINF.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000020286.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 6건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 6건)"
+    },
+    {
+      "claim_id": "CINF.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF 10-K (filed 2026-02-23, acc 0000020286-26-000008)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "Item 3. Legal Proceedings 42",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "CINF.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF 8-K (2026-05-06, acc 0000020286-26-000030)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "Advisory Vote on Executive Compensation For Against Abstain 118,190,863 4,425,146",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000030/cinf-20260502.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9639,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-05-06 주총 보수 승인 투표 찬성 118,190,863 / 반대 4,425,146 → 찬성률 96.4%"
+    },
+    {
+      "claim_id": "CINF.INSIDERGROUP",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF DEF 14A (filed 2026-03-18, acc 0000020286-26-000015)",
+            "location": "Security Ownership 표 — 'as a group' 행",
+            "observed_date": "2026-10-07",
+            "quote": "Peter Wu, FCAS, ASA, MAAA, CSPA 1,803 — All directors and nondirector executive officers as a group (30 individuals) 4,584,495 (1)(2)(3)(4)(5)(6) 2.94",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "insider_group_pct",
+          "note": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만",
+          "summary": "DEF 14A 지분표의 'as a group' 행",
+          "value": 2.94,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "위임장(2026-03-18) 기준 임원·이사 합산 지분 구간 1_to_5pct (2.94%)"
+    },
+    {
+      "claim_id": "CINF.COVER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "CINF 10-K (filed 2026-02-23, acc 0000020286-26-000008)",
+            "location": "Cover page (shares outstanding)",
+            "observed_date": "2026-10-07",
+            "quote": "stock held by nonaffiliates of the Registrant based on the closing price of $148.92 per share as reported on Nasdaq Global Select Market on June 30, 2025, was $ 22,846,561,651 . As of February 17, 2026, there were 155,617,576 shares of common stock outstanding. Document Incorporated by Reference Portions of the definitive Proxy Statement for Cincinnati Financial Corporation’s A",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)",
+          "summary": "10-K 표지 발행주식수 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K 표지: 보통주 단일 클래스만 발행"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.6429,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 9,
+    "n_primary_answered": 8,
+    "n_primary_required": 11,
+    "n_questions": 14,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "catastrophe_risk": {
+        "answered": 0,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "dilution": {
+        "answered": 1,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "governance": {
+        "answered": 7,
+        "n_questions": 9,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "reserve_adequacy": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "underwriting_discipline": {
+        "answered": 0,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      }
+    },
+    "unexamined_lenses": [
+      "catastrophe_risk",
+      "underwriting_discipline"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "CINF",
+  "findings": [
+    {
+      "claim_ids": [
+        "CINF.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "CINF.CHAIR_SEPARATED",
+        "CINF.CEO_SUCCESSION_POLICY",
+        "CINF.CHAIR2",
+        "CINF.INSIDER",
+        "CINF.CXO",
+        "CINF.LITIGATION",
+        "CINF.SAYONPAY",
+        "CINF.INSIDERGROUP"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음) / 임원·이사 합산 지분을 위임장 지분표에서 구간으로 집계(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "CINF.RESERVE"
+      ],
+      "effect": "neutral",
+      "lens": "reserve_adequacy",
+      "summary": "3개 연도 전기 손해액 조정 부호를 확인"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "insurance",
+  "price_at_analysis": null,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "0d18e796665bfc9bcdef901767cbaf6785fa8faf227dcee19f9aa9fa69bd21ee",
+  "supersedes": "aa5233015f2151ced2096af4fcc47ec8ae356e8de2b2373025196f483533039b",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

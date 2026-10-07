@@ -24,6 +24,246 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "domestic_extra": {
+    "cover": {
+      "answer": null,
+      "excerpt": "on stock held by non-affiliates of the registrant was approximately $ 13,342,902,822 , based upon the closing price on that date of the common stock of $410.02. As of February 25, 2026, 40,594,239 shares of the registrant's Class A common stock were outstanding, and 6,356,052 shares of the registrant's Class B common stock were outstanding.",
+      "reason": "표지에 Class ['B'] 주식이 있다 — 의결권 차이는 정관·위임장을 읽어야 한다"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": null,
+      "reason": "차입 잔액 태그를 찾지 못했다(무차입이거나 미보고 — 구분할 수 없다)",
+      "tag": null
+    },
+    "ma": {
+      "acquisitions": 43745000.0,
+      "answer": "no_material_ma",
+      "item_102_3y": [],
+      "ocf": 889776000.0,
+      "ratio": 0.04916405926884969,
+      "recent_8k_201": [],
+      "rule": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "no_dividend": "We do not intend to pay dividends for the foreseeable future."
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2024-12-31",
+          "filed": "2026-02-27",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 748024000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "(in millions) Q4 2024 FY 2024 Bookings $244.5 - $247.5 $843.5 - $846.5 YoY Bookings Growth 28.0% - 29.6% 35.6% - 36.1% Revenues $202.5 - $205.5",
+          "filed": "2024-11-06",
+          "fy": 2024,
+          "high": 744000000.0,
+          "kind": "range",
+          "low": 741000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000248/q3fy24duolingo09-30x24shar.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "December 31, 2024. (in millions) Q1 24 FY 2024 Bookings $187 - $190 $790 - $802 YoY Bookings Growth 34% - 36% 27% - 29% Revenues $164 - $167 $71",
+          "filed": "2024-02-28",
+          "fy": 2024,
+          "high": 729500000.0,
+          "kind": "range",
+          "low": 717500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000048/q4fy23shareholderletter.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 5,
+        "status": "MET",
+        "vs_final_low_pct": 0.00947908232118766,
+        "vs_initial_low_pct": 0.04254216027874569
+      },
+      {
+        "actual": {
+          "end": "2025-12-31",
+          "filed": "2026-02-27",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 1037589000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "(in millions) Q4 2025 FY 2025 Bookings $329.5 - $335.5 $1,151 - $1,157 YoY Bookings Growth 21.3% - 23.5% 32.2% - 32.9% Revenues $273 - $277 $1,027.",
+          "filed": "2025-11-05",
+          "fy": 2025,
+          "high": 1031500000.0,
+          "kind": "range",
+          "low": 1027500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828025049514/q3fy25duolingo9-30x25share.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "025. (in millions) Q1 2025 FY 2025 Bookings $252 - $255 $1,082 - $1,098 YoY Bookings Growth 27.6% - 29.2% 24.3% - 26.1% Revenues $220.5 - $223.5",
+          "filed": "2025-02-27",
+          "fy": 2025,
+          "high": 978500000.0,
+          "kind": "range",
+          "low": 962500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208825000039/q4fy24duolingo12-31x24shar.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.00981897810218979,
+        "vs_initial_low_pct": 0.07801454545454556
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": false,
+      "n_evaluated": 2,
+      "n_miss": 0,
+      "promise_kept_record": true,
+      "reason": "",
+      "years": [
+        2024,
+        2025
+      ]
+    },
+    "ledger": [
+      {
+        "actual": {
+          "end": "2023-12-31",
+          "filed": "2026-02-27",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 531109000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "full year 2023. (in millions) Q4 2023 FY 2023 Bookings $167 - $170 $598 - $601 YoY Bookings Growth 32% - 35% 40% - 40% Revenues $145 - $148",
+          "filed": "2023-11-08",
+          "fy": 2023,
+          "high": 528000000.0,
+          "kind": "range",
+          "low": 525000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208823000219/q3fy23shareholderletter.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "full year 2023. (in millions) Q4 2023 FY 2023 Bookings $167 - $170 $598 - $601 YoY Bookings Growth 32% - 35% 40% - 40% Revenues $145 - $148",
+          "filed": "2023-11-08",
+          "fy": 2023,
+          "high": 528000000.0,
+          "kind": "range",
+          "low": 525000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208823000219/q3fy23shareholderletter.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 1,
+        "status": "LATE_INITIAL",
+        "vs_final_low_pct": 0.011636190476190578,
+        "vs_initial_low_pct": 0.011636190476190578
+      },
+      {
+        "actual": {
+          "end": "2024-12-31",
+          "filed": "2026-02-27",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 748024000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "(in millions) Q4 2024 FY 2024 Bookings $244.5 - $247.5 $843.5 - $846.5 YoY Bookings Growth 28.0% - 29.6% 35.6% - 36.1% Revenues $202.5 - $205.5",
+          "filed": "2024-11-06",
+          "fy": 2024,
+          "high": 744000000.0,
+          "kind": "range",
+          "low": 741000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000248/q3fy24duolingo09-30x24shar.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "December 31, 2024. (in millions) Q1 24 FY 2024 Bookings $187 - $190 $790 - $802 YoY Bookings Growth 34% - 36% 27% - 29% Revenues $164 - $167 $71",
+          "filed": "2024-02-28",
+          "fy": 2024,
+          "high": 729500000.0,
+          "kind": "range",
+          "low": 717500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000048/q4fy23shareholderletter.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 5,
+        "status": "MET",
+        "vs_final_low_pct": 0.00947908232118766,
+        "vs_initial_low_pct": 0.04254216027874569
+      },
+      {
+        "actual": {
+          "end": "2025-12-31",
+          "filed": "2026-02-27",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 1037589000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "(in millions) Q4 2025 FY 2025 Bookings $329.5 - $335.5 $1,151 - $1,157 YoY Bookings Growth 21.3% - 23.5% 32.2% - 32.9% Revenues $273 - $277 $1,027.",
+          "filed": "2025-11-05",
+          "fy": 2025,
+          "high": 1031500000.0,
+          "kind": "range",
+          "low": 1027500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828025049514/q3fy25duolingo9-30x25share.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "025. (in millions) Q1 2025 FY 2025 Bookings $252 - $255 $1,082 - $1,098 YoY Bookings Growth 27.6% - 29.2% 24.3% - 26.1% Revenues $220.5 - $223.5",
+          "filed": "2025-02-27",
+          "fy": 2025,
+          "high": 978500000.0,
+          "kind": "range",
+          "low": 962500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208825000039/q4fy24duolingo12-31x24shar.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.00981897810218979,
+        "vs_initial_low_pct": 0.07801454545454556
+      },
+      {
+        "actual": null,
+        "dropped": [],
+        "final": {
+          "excerpt": "December 31, 2026 (1) . (in millions) Q1 2026 FY 2026 Bookings $301.5 $1,274 - $1,298 YoY Bookings Growth 11% 10% - 12% Revenues $288.5 $1,197 -",
+          "filed": "2026-02-27",
+          "fy": 2026,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1197000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012513/q4fy25duolingo12-31x25shar.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "December 31, 2026 (1) . (in millions) Q1 2026 FY 2026 Bookings $301.5 $1,274 - $1,298 YoY Bookings Growth 11% 10% - 12% Revenues $288.5 $1,197 -",
+          "filed": "2026-02-26",
+          "fy": 2026,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1197000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012246/q4fy25duolingo12-31x25shar.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "PENDING"
+      }
+    ],
+    "n_releases": 22,
+    "n_with_guidance": 12,
+    "source_form": "8-K Item 2.02"
+  },
   "icfr": {
     "answer": "effective",
     "filed": "2026-02-27",

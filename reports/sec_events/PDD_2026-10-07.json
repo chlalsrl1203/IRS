@@ -14,6 +14,68 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "fpi": {
+    "icfr": {
+      "answer": "effective",
+      "excerpt": "concluded that our internal control over financial reporting was effective",
+      "rule": "경영진 결론 문장만(외부 감사인 의견과 별개)",
+      "scope": "Item 15"
+    },
+    "insider_group": {
+      "answer": "lt_1pct",
+      "excerpt": "un Xiao 7,524,000 0.1 Jun Liu 625,000 * Jiong Li — — All Directors and Executive Officers as a Group 50,737,152 0.9",
+      "pct": 0.9,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "item16f": [
+      {
+        "answer": 1,
+        "events": [
+          " As a result of the appointment, our previous independent re"
+        ],
+        "excerpt": "As a result of the appointment, our previous independent registered public accounting firm, Ernst & Young Hua Ming LLP, was dismissed as our independent registered public accounting firm on the same date.",
+        "filed": "2026-04-29"
+      },
+      {
+        "answer": 0,
+        "events": [],
+        "excerpt": "Item 16F. Change in Registrant’s Certifying Accountant Not applicable. 132 Table of Contents",
+        "filed": "2025-04-28"
+      }
+    ],
+    "listing_flags": {
+      "20f_amendments": [],
+      "n_20f_amendments": 0,
+      "n_nt": 0,
+      "nt": [],
+      "status": "OK",
+      "window": [
+        "2023-10-08",
+        "2026-10-07"
+      ]
+    },
+    "litigation": {
+      "answer": null,
+      "reason": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)"
+    },
+    "no_dividend": "Because we do not expect to pay dividends in the foreseeable future, you must rely on a price appreciation of our ADSs for return on your investment."
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 34,
+    "n_with_guidance": 0,
+    "reason": "6-K 34건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "6-K"
+  },
   "insider": {
     "reason": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
     "status": "UNAVAILABLE"

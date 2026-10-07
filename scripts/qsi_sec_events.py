@@ -17,6 +17,9 @@ QSI 개정본 — SEC 이벤트 수집으로 `unknown`을 채운다 (v3.94)
   gov.insider_group_ownership DEF 14A — 임원·이사 합산 지분 구간(모호하면 unknown)
   acc.icfr_conclusion     10-K Item 9A — 경영진의 ICFR 결론 문장만
   cap.dividend_predictable companyfacts — 5개 연속 연도 주당배당 양수·무감소일 때만 True
+  (v3.96 가이던스 원장)
+  acc.guidance_miss_3y / acc.promise_kept_record
+                          8-K 2.02 EX-99.x의 연간 총매출 가이던스 vs 10-K 실제 매출(engine/guidance_ledger.py)
 
 ⚠️ 이미 answered인 답은 건드리지 않는다. 확인하지 못하면 unknown을 유지하고 **사유를 구체화**한다.
 ⚠️ 판정·비중·ledger·thesis·holdings는 건드리지 않는다(병기).
@@ -35,6 +38,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 
 from engine import dilution as D  # noqa: E402
+from engine import guidance_ledger as GL  # noqa: E402
+from engine.data.providers.sec import METRIC_TAGS  # noqa: E402
 from engine import qualitative_input as Q  # noqa: E402
 from engine import sec_events as E  # noqa: E402
 from engine.filing_dates import (_http_json, _http_text, fetch_company_facts,  # noqa: E402
@@ -45,7 +50,10 @@ TARGET_QIDS = ("gov.insider_pattern", "gov.cxo_turnover_24m", "acc.restated_down
                "gov.material_litigation", "cap.debt_funded_buyback",
                "acc.late_filing_nt_3y", "acc.auditor_change_3y", "acc.material_impairment_3y",
                "gov.say_on_pay_support_pct", "gov.insider_group_ownership",
-               "acc.icfr_conclusion", "cap.dividend_predictable")
+               "acc.icfr_conclusion", "cap.dividend_predictable",
+               "acc.guidance_miss_3y", "acc.promise_kept_record")
+REVENUE_TAGS = [t.split(":")[-1] for t in METRIC_TAGS["revenue"]]
+GUIDANCE_LOOKBACK_DAYS = 1700     # 3개 회계연도의 '최초' 가이던스까지 거슬러 가려면 3년 창으로는 모자란다
 
 
 def _retry(fn, url):
@@ -355,7 +363,301 @@ def collect(ticker, as_of):
                         "claim_ids": [cid], "note": ""})
         findings.append({"lens": "capital_allocation", "effect": "neutral", "claim_ids": [cid],
                          "summary": "자사주 매입 재원을 같은 연도 순차입과 비교(사전 고정 규칙)"})
+    # --- 가이던스 원장(8-K 2.02 EX-99.x vs companyfacts 매출) ---------------------------------
+    g = collect_guidance(ticker, cik, as_of, facts)
+    report["guidance_ledger"] = g
+    if g["judge"] is None or g["judge"]["guidance_miss_3y"] is None:
+        why = g.get("reason") or g["judge"]["reason"]
+        unknown("acc.guidance_miss_3y", why)
+        unknown("acc.promise_kept_record", why)
+    else:
+        jd = g["judge"]
+        cid = f"{ticker}.GUIDANCE"
+        evs = []
+        for row in g["evaluated_rows"]:
+            ini = row["initial"]
+            evs.append(_ev(
+                f"FY{row['fy']} 최초 가이던스 {ini['low']:,.0f}~{ini['high']:,.0f} ({ini['kind']}, {ini['filed']}) "
+                f"vs 실제 {row['actual']['value']:,.0f} → {row['status']}",
+                _cit(f"{ticker} {g['source_form']} EX-99 (filed {ini['filed']})", "연간 매출 가이던스 문장",
+                     ini["url"], as_of, ini["excerpt"]),
+                metric="actual_vs_initial_low", value=round(row["vs_initial_low_pct"], 4),
+                note=f"실제값: companyfacts {row['actual']['tag']} (결산 {row['actual']['end']}, "
+                     f"공시 {row['actual']['filed']})"))
+        claims.append(_claim(cid,
+            f"최근 {jd['n_evaluated']}개 회계연도 {jd['years']} 최초 연간 매출 가이던스 대비 미달 {jd['n_miss']}회",
+            "HIGH", *evs))
+        answers.append({"qid": "acc.guidance_miss_3y", "status": "answered",
+                        "answer": jd["guidance_miss_3y"], "claim_ids": [cid],
+                        "note": "GAAP 총매출 연간 가이던스만 본다(EPS·세그먼트·ARR 제외). 사전 고정 규칙"})
+        if jd["promise_kept_record"] is None:
+            unknown("acc.promise_kept_record", jd["reason"])
+        else:
+            answers.append({"qid": "acc.promise_kept_record", "status": "answered",
+                            "answer": jd["promise_kept_record"], "claim_ids": [cid],
+                            "note": "매출 가이던스 이행만 본다 — 자본배분 약속 등 다른 약속은 포함하지 않는다. "
+                                    "가이던스를 낮게 잡는 관행(sandbagging)이면 쉽게 True가 된다"})
+        findings.append({"lens": "accounting_quality", "effect": "neutral", "claim_ids": [cid],
+                         "summary": "최초 연간 매출 가이던스와 실제 매출을 대조(사전 고정 규칙, 판단 없음)"})
+    # --- v3.96 외국 발행사(20-F) 경로 ------------------------------------------------------------
+    if E.is_foreign_private_issuer(listing["all_forms"]):
+        collect_fpi(ticker, cik, as_of, listing, claims, answers, findings, report)
+    else:
+        collect_domestic_extra(ticker, cik, as_of, listing, facts, k, claims, answers, findings, report)
     return claims, answers, findings, report
+
+
+ACQ_TAGS = ("PaymentsToAcquireBusinessesNetOfCashAcquired", "PaymentsToAcquireBusinessesGross",
+            "PaymentsToAcquireBusinessesAndInterestInAffiliates")
+OCF_TAGS = ("NetCashProvidedByUsedInOperatingActivities",
+            "NetCashProvidedByUsedInOperatingActivitiesContinuingOperations")
+
+
+def collect_domestic_extra(ticker, cik, as_of, listing, facts, k_rows, claims, answers, findings, report):
+    """v3.96 국내 발행사 기계 규칙: 표지 단일 클래스 / 무배당 진술 / 차입 잔액 대체 규칙 / M&A 강도."""
+    def unknown(qid, note):
+        answers.append({"qid": qid, "status": "unknown", "note": note})
+
+    extra = {}
+    report["domestic_extra"] = extra
+    cf_url = f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json"
+    body = url = doc = None
+    if k_rows:
+        row = sorted(k_rows, key=lambda r: r["filingDate"])[-1]
+        url = E.filing_url(cik, row)
+        body = E.normalize_text(fetch_text(url))
+        doc = f"{ticker} 10-K (filed {row['filingDate']}, acc {row['accessionNumber']})"
+    # 이중 주식 구조 — 10-K 표지
+    if body:
+        sc = E.single_class_from_cover(body)
+        extra["cover"] = sc
+        if sc.get("answer") is False and E.quote_in_text(sc["excerpt"], body):
+            cid = f"{ticker}.COVER"
+            claims.append(_claim(cid, "10-K 표지: 보통주 단일 클래스만 발행", "HIGH",
+                _ev("10-K 표지 발행주식수 문장", _cit(doc, "Cover page (shares outstanding)", url, as_of,
+                                                   sc["excerpt"]), note=sc["rule"])))
+            answers.append({"qid": "gov.dual_class", "status": "answered", "answer": False,
+                            "claim_ids": [cid], "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다"})
+        else:
+            unknown("gov.dual_class", sc.get("reason", "표지 확인 실패"))
+    # 무배당 진술 → 배당 예측가능성 해당 없음(주당배당 값이 없을 때만)
+    _, dps = _debt_series(facts, E.DIVIDEND_TAGS)
+    recent_div = {y: v for y, v in dps.items() if y >= int(as_of[:4]) - 5 and v and v > 0}
+    if body and not recent_div:
+        nd = E.no_dividend_statement(body)
+        extra["no_dividend"] = nd
+        if nd:
+            answers.append({"qid": "cap.dividend_predictable", "status": "not_applicable",
+                            "note": f"회사가 무배당을 직접 진술하고 최근 5년 주당배당 값이 없다: \"{nd}\" ({doc}, {url})"})
+    # 자사주 매입 재원 — 흐름 태그가 없을 때 차입 잔액으로
+    _, buy = _debt_series(facts, E.BUYBACK_TAGS)
+    debt_tag, debt = None, {}
+    for tg in E.DEBT_BALANCE_TAGS:
+        v = E.instant_values(facts, tg)
+        if v and max(v) >= int(as_of[:4]) - 2:
+            debt_tag, debt = tg, v
+            break
+    db = E.debt_funded_buyback_balance(buy, debt, min_fy=int(as_of[:4]) - 2) if debt else {
+        "answer": None, "reason": "차입 잔액 태그를 찾지 못했다(무차입이거나 미보고 — 구분할 수 없다)"}
+    extra["debt_funded_buyback_balance"] = db | {"tag": debt_tag}
+    if db["answer"] is not None:
+        cid = f"{ticker}.DEBTBUYBACK_BAL"
+        claims.append(_claim(cid,
+            f"FY{db['fy']} 차입 잔액 변동 {db['debt_change']:,.0f} vs 자사주 매입 {db['buyback']:,.0f} → "
+            f"부채 조달 {'맞다' if db['answer'] else '아니다'}", "HIGH",
+            _ev("대차대조표 차입 잔액(전년·당년)과 현금흐름표 매입 지출", _cit(f"{ticker} companyfacts",
+                f"{debt_tag} FY{db['fy'] - 1}~FY{db['fy']} / 자사주 매입 FY{db['fy']}", cf_url, as_of),
+                metric="debt_change", value=db["debt_change"], note=db["rule"])))
+        answers.append({"qid": "cap.debt_funded_buyback", "status": "answered", "answer": db["answer"],
+                        "claim_ids": [cid], "note": "차입 잔액 순변동 근사(흐름 태그 부재 시 대체 규칙)"})
+    # M&A 강도 — 최근 인수 완료 공시(8-K 2.01)가 결산 후에 있으면 보류
+    _, acq = _debt_series(facts, ACQ_TAGS)
+    _, ocf = _debt_series(facts, OCF_TAGS)
+    latest_fy = max(ocf) if ocf else None
+    if latest_fy is None:
+        unknown("cap.ma_discipline", "영업현금흐름 값이 없다")
+        return
+    ma = E.ma_intensity(acq, ocf, latest_fy)
+    fy_end = max((v[1] for v in GL.annual_revenue_actuals(facts, REVENUE_TAGS).values()), default=None)
+    recent_201 = [r["filingDate"] for r in E.rows_with_item(listing, "2.01", fy_end or as_of)] if fy_end else []
+    # 해지된 대형 거래(해지 수수료)는 현금 인수 지출에 잡히지 않는다(실측: ADBE-Figma 2023). 3년 창의
+    # 8-K Item 1.02(중요 계약 해지)가 있으면 규율을 단정하지 않는다 — 신용계약 해지도 섞여 보수적이다.
+    since3 = (datetime.date.fromisoformat(as_of) - datetime.timedelta(days=E.RESTATEMENT_WINDOW_DAYS)).isoformat()
+    item_102 = [r["filingDate"] for r in E.rows_with_item(listing, "1.02", since3)]
+    extra["ma"] = ma | {"recent_8k_201": recent_201, "item_102_3y": item_102}
+    if ma["answer"] == "no_material_ma" and not recent_201 and not item_102:
+        cid = f"{ticker}.MA"
+        claims.append(_claim(cid, f"FY{ma['years'][0]}~FY{ma['years'][-1]} 인수 현금지출 {ma['acquisitions']:,.0f} = "
+                                  f"영업현금흐름의 {ma['ratio']:.1%}", "MEDIUM",
+            _ev("현금흐름표 인수 지출·영업현금흐름(companyfacts)", _cit(f"{ticker} companyfacts",
+                f"사업 인수 지출 / 영업현금흐름 FY{ma['years'][0]}~FY{ma['years'][-1]}", cf_url, as_of),
+                metric="acquisitions_to_ocf_5y", value=round(ma["ratio"], 4), note=ma["rule"])))
+        answers.append({"qid": "cap.ma_discipline", "status": "answered", "answer": "no_material_ma",
+                        "claim_ids": [cid],
+                        "note": "현금 인수만 본다 — 주식 대가 인수·해지된 시도(해지 수수료)는 포함하지 않는다"})
+    else:
+        why = ma.get("reason") or ""
+        if recent_201:
+            why = f"결산 후 인수 완료 공시(8-K 2.01) {recent_201} — 최근 인수가 아직 연차 수치에 없다. " + why
+        if item_102 and ma["answer"] == "no_material_ma":
+            why = (f"현금 인수 지출은 영업현금흐름의 {ma['ratio']:.1%}로 작지만, 3년 내 중요 계약 해지 공시"
+                   f"(8-K 1.02) {item_102}가 있다 — 해지된 거래의 가격 규율은 사람이 판단한다. " + why)
+        unknown("cap.ma_discipline", why or "M&A 강도를 판정하지 못했다")
+
+
+def collect_fpi(ticker, cik, as_of, listing, claims, answers, findings, report):
+    """20-F 대응 항목으로 국내 발행사 질문을 채운다. 같은 qid의 앞선 unknown은 merge에서 뒤의 답이 이긴다."""
+    def unknown(qid, note):
+        answers.append({"qid": qid, "status": "unknown", "note": note})
+
+    fpi = {}
+    report["fpi"] = fpi
+    # 보수 승인 투표 — 제도 자체가 적용되지 않는다(규칙 기반 해당 없음).
+    answers.append({"qid": "gov.say_on_pay_support_pct", "status": "not_applicable",
+                    "note": E.SAY_ON_PAY_FPI_NOTE})
+    # NT 20-F · 20-F/A (목록 기반)
+    fl = E.fpi_listing_flags(listing, as_of)
+    fpi["listing_flags"] = fl
+    browse = (f"https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={int(cik)}"
+              "&type={t}&dateb=&owner=include&count=100")
+    if fl["status"] == "OK":
+        cid = f"{ticker}.FPI_NT"
+        claims.append(_claim(cid, f"최근 3년({fl['window'][0]}~{fl['window'][1]}) NT 20-F {fl['n_nt']}건", "HIGH",
+            _ev(f"제출 목록 3년 창에서 NT 20-F {fl['n_nt']}건", _cit(f"{ticker} EDGAR 제출 목록",
+                "form = NT 20-F", browse.format(t="NT+20-F"), as_of),
+                metric="nt_filings_3y", value=fl["n_nt"],
+                note="외국 발행사의 지연 제출 통지는 NT 20-F다(NT 10-K/10-Q 대응)")))
+        answers.append({"qid": "acc.late_filing_nt_3y", "status": "answered", "answer": fl["n_nt"],
+                        "claim_ids": [cid], "note": "NT 20-F 건수(외국 발행사)"})
+        if fl["n_20f_amendments"] == 0:
+            cid2 = f"{ticker}.FPI_RESTATE"
+            claims.append(_claim(cid2, "최근 3년 20-F/A(정정 제출) 0건", "MEDIUM",
+                _ev("제출 목록 3년 창에서 20-F/A 0건", _cit(f"{ticker} EDGAR 제출 목록", "form = 20-F/A",
+                    browse.format(t="20-F%2FA"), as_of), metric="amendments_3y", value=0,
+                    note="외국 발행사에는 8-K 4.02(비의존 공시)가 없어 국내 규칙보다 약한 근거다 — "
+                         "본 보고서 안의 재표시('little r')는 탐지하지 못한다")))
+            answers.append({"qid": "acc.restated_down_3y", "status": "answered", "answer": False,
+                            "claim_ids": [cid2], "note": "20-F/A 부재만 근거(4.02 대응 공시 없음)"})
+        else:
+            unknown("acc.restated_down_3y", f"20-F/A {fl['n_20f_amendments']}건 — 정정 사유는 사람이 읽어야 한다")
+    # 20-F 본문(최근 2건 — 16F는 각 보고서가 직전 2개 회계연도를 덮는다)
+    tf = sorted([r for r in listing["rows"] if r["form"] == "20-F"], key=lambda r: r["filingDate"],
+                reverse=True)[:2]
+    if not tf:
+        for q in ("acc.icfr_conclusion", "acc.auditor_change_3y", "gov.material_litigation"):
+            unknown(q, "최근 3년 창에 20-F가 없다")
+        return
+    docs = []
+    for r in tf:
+        url = E.filing_url(cik, r)
+        docs.append((r, url, E.normalize_text(fetch_text(url))))
+    r0, u0, b0 = docs[0]
+    doc0 = f"{ticker} 20-F (filed {r0['filingDate']}, acc {r0['accessionNumber']})"
+    # ICFR
+    ic = E.icfr_from_20f(b0)
+    fpi["icfr"] = ic
+    if ic.get("answer") and E.quote_in_text(ic["excerpt"], b0):
+        cid = f"{ticker}.FPI_ICFR"
+        claims.append(_claim(cid, f"20-F 경영진 결론: ICFR {ic['answer']}", "HIGH",
+            _ev("20-F Item 15 경영진 결론 문장", _cit(doc0, ic["scope"], u0, as_of, ic["excerpt"]),
+                note=ic["rule"])))
+        answers.append({"qid": "acc.icfr_conclusion", "status": "answered", "answer": ic["answer"],
+                        "claim_ids": [cid], "note": "경영진의 자기 평가다 — 독립 확인이 아니다"})
+    else:
+        unknown("acc.icfr_conclusion", ic.get("reason", "20-F ICFR 결론 확인 실패"))
+    # 감사인 변경(16F)
+    evs, total, seen, ok = [], 0, set(), True
+    for r, u, b in docs:
+        a = E.auditor_change_from_16f(b)
+        fpi.setdefault("item16f", []).append({"filed": r["filingDate"], **a})
+        if a.get("answer") is None or not E.quote_in_text(a["excerpt"], b):
+            ok = False
+            break
+        new = [e for e in a["events"] if e not in seen]
+        seen.update(a["events"])
+        total += len(new)
+        evs.append(_ev(f"20-F Item 16F (filed {r['filingDate']}): 사건 {a['answer']}건",
+                       _cit(f"{ticker} 20-F (filed {r['filingDate']}, acc {r['accessionNumber']})",
+                            "Item 16F. Change in Registrant’s Certifying Accountant", u, as_of, a["excerpt"]),
+                       metric="auditor_change_events", value=a["answer"]))
+    if ok and evs:
+        cid = f"{ticker}.FPI_16F"
+        claims.append(_claim(cid, f"최근 20-F {len(evs)}건의 Item 16F 감사인 변경 사건 {total}건", "HIGH", *evs))
+        answers.append({"qid": "acc.auditor_change_3y", "status": "answered", "answer": total,
+                        "claim_ids": [cid], "note": "20-F Item 16F(8-K 4.01 대응). 각 보고서는 직전 2개 회계연도를 덮는다 — "
+                                                     "동일 사건은 한 번만 센다. 정기 교체·계열 법인 간 이관도 포함된다"})
+    else:
+        unknown("acc.auditor_change_3y", "20-F Item 16F를 읽지 못했다")
+    # 소송(Item 8.A.7)
+    lt = E.litigation_from_20f(b0)
+    fpi["litigation"] = lt
+    if lt.get("answer") and E.quote_in_text(lt["excerpt"], b0):
+        cid = f"{ticker}.FPI_LIT"
+        claims.append(_claim(cid, f"20-F Legal Proceedings 회사 진술 → {lt['answer']}", "HIGH",
+            _ev("20-F 회사 자기 진술", _cit(doc0, "Item 8.A.7 Legal Proceedings", u0, as_of, lt["excerpt"]),
+                note=lt["reason"])))
+        answers.append({"qid": "gov.material_litigation", "status": "answered", "answer": lt["answer"],
+                        "claim_ids": [cid], "note": "회사 자기 진술만 — 심각도를 판단하지 않는다"})
+    else:
+        unknown("gov.material_litigation", lt["reason"])
+    # 임원·이사 합산 지분(Item 6.E/7.A)
+    ig = E.insider_group_from_proxy(b0)
+    fpi["insider_group"] = ig
+    if ig.get("answer") and E.quote_in_text(ig["excerpt"], b0):
+        cid = f"{ticker}.FPI_GROUP"
+        claims.append(_claim(cid, f"20-F 임원·이사 합산 지분 {ig.get('pct')}% → {ig['answer']}", "MEDIUM",
+            _ev("20-F 주요 주주표의 'as a group' 행", _cit(doc0, "Item 6.E / 7.A", u0, as_of, ig["excerpt"]),
+                metric="insider_group_pct", value=ig.get("pct"), note=ig.get("rule", ""))))
+        answers.append({"qid": "gov.insider_group_ownership", "status": "answered", "answer": ig["answer"],
+                        "claim_ids": [cid], "note": "20-F 기준"})
+    else:
+        unknown("gov.insider_group_ownership", ig.get("reason", "20-F 지분표 확인 실패"))
+    # 무배당 진술 → 배당 예측가능성 해당 없음
+    nd = E.no_dividend_statement(b0)
+    fpi["no_dividend"] = nd
+    if nd:
+        answers.append({"qid": "cap.dividend_predictable", "status": "not_applicable",
+                        "note": f"회사가 무배당을 직접 진술: \"{nd}\" ({doc0}, {u0})"})
+
+
+def collect_guidance(ticker, cik, as_of, facts):
+    """8-K 2.02 EX-99.x → 원장 → 판정. 네트워크 실패는 호출부로 올린다(조용히 '없음'이 되지 않게)."""
+    since = (datetime.date.fromisoformat(as_of) - datetime.timedelta(days=GUIDANCE_LOOKBACK_DAYS)).isoformat()
+    listing = E.list_filings(cik, since, fetch_json)
+    fpi = E.is_foreign_private_issuer(listing["all_forms"])
+    if not listing["covers_window"]:
+        return {"judge": None, "reason": "제출 목록이 가이던스 조회 창을 덮지 못했다"}
+    actuals = GL.annual_revenue_actuals(facts, REVENUE_TAGS)
+    if GL.label_ambiguous(actuals):
+        return {"judge": None, "reason": "결산일이 1월 초인 해가 있어 회계연도 라벨이 모호하다(v3.61) — 짝짓기 거부"}
+    releases = []
+    # 외국 발행사는 실적 보도자료를 6-K로 낸다(8-K 2.02 의무 없음). 6-K는 실적 외 공시도 섞여 있지만
+    # 가이던스 문장이 없는 문서는 추출 결과가 비므로 그대로 흘려보낸다.
+    rows = ([r for r in listing["rows"] if r["form"] == "6-K" and r["filingDate"] >= since] if fpi
+            else E.rows_with_item(listing, "2.02", since))
+    for row in rows:
+        acc = row["accessionNumber"]
+        idx = fetch_text(f"https://www.sec.gov/Archives/edgar/data/{int(cik)}/{acc.replace('-', '')}/"
+                         f"{acc}-index.htm")
+        found = {}
+        for url in GL.exhibit99_urls(idx):
+            body = E.normalize_text(fetch_text(url))
+            for gd in GL.extract_annual_revenue_guidance(body):
+                if gd["fy"] not in found and E.quote_in_text(gd["excerpt"], body):
+                    found[gd["fy"]] = dict(gd, url=url)
+        releases.append({"filed": row["filingDate"], "accession": acc, "url": None,
+                         "guidance": list(found.values())})
+    ledger = GL.build_ledger(releases, actuals)
+    jd = GL.judge(ledger, as_of)
+    evaluated = [r for r in ledger if r["fy"] in jd["years"]]
+    out = {"judge": jd, "ledger": ledger, "evaluated_rows": evaluated,
+           "source_form": "6-K" if fpi else "8-K Item 2.02",
+           "n_releases": len(releases), "n_with_guidance": sum(bool(r["guidance"]) for r in releases)}
+    if not any(r["guidance"] for r in releases):
+        src = "6-K" if fpi else "8-K 2.02 보도자료"
+        out["reason"] = (f"{src} {len(releases)}건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 "
+                         "(회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)")
+    return out
 
 
 def merge(prior, claims, answers, findings, as_of):

@@ -17,6 +17,50 @@
     "reason": "연속 5개 회계연도의 주당배당 값이 없다(최근 연도 FY2024 이후 필요)",
     "tag": "CommonStockDividendsPerShareDeclared"
   },
+  "domestic_extra": {
+    "cover": {
+      "answer": false,
+      "excerpt": "as reported by the Nasdaq Stock Market as of the last business day of the Registrant’s most recently completed second fiscal quarter, was approximately $ 33.0 billion. As of February 23, 2026, there were 355,803,320 of the registrant’s common shares outstanding.",
+      "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": null,
+      "reason": "차입 잔액 태그를 찾지 못했다(무차입이거나 미보고 — 구분할 수 없다)",
+      "tag": null
+    },
+    "ma": {
+      "acquisitions": -852000000.0,
+      "answer": "no_material_ma",
+      "item_102_3y": [],
+      "ocf": 25835000000.0,
+      "ratio": -0.032978517514999035,
+      "recent_8k_201": [],
+      "rule": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    }
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 19,
+    "n_with_guidance": 0,
+    "reason": "8-K 2.02 보도자료 19건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "8-K Item 2.02"
+  },
   "icfr": {
     "answer": null,
     "filed": "2026-02-26",

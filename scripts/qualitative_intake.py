@@ -78,7 +78,10 @@ def build_coverage(directory: str = None) -> dict:
     for _, rec in sorted(latest.values(), key=lambda kr: kr[1]["entity"]):
         tickers.add(rec["entity"])
         c = rec["coverage"]
+        n_na = sum(v.get("not_applicable", 0) for v in c["per_lens"].values())
         sealed.append({
+            "n_not_applicable": n_na,
+            "resolved_fraction": round((c["n_answered"] + n_na) / c["n_questions"], 4) if c["n_questions"] else None,
             "entity": rec["entity"], "as_of": rec["as_of"], "lens_set": rec["lens_set"],
             "sealed_core_hash": rec["sealed_core_hash"],
             "n_answered": c["n_answered"], "n_questions": c["n_questions"],
@@ -97,7 +100,16 @@ def build_coverage(directory: str = None) -> dict:
     # "정성조사가 표준화됐다"는 뜻이 아니다 — 풍부한 내용은 아직 자유서술에만 있다.
     sparse = sorted(r["entity"] for r in sealed
                     if r["entity"] in with_legacy and r["answered_fraction"] < SPARSE_QSI)
+    slots = sum(r["n_questions"] for r in sealed)
+    ans = sum(r["n_answered"] for r in sealed)
+    na = sum(r["n_not_applicable"] for r in sealed)
+    totals = {"slots": slots, "answered": ans, "not_applicable": na,
+              "answered_fraction": round(ans / slots, 4) if slots else None,
+              "resolved_fraction": round((ans + na) / slots, 4) if slots else None,
+              "note": ("answered와 not_applicable을 따로 센다. 해당 없음은 규칙(무배당 직접 진술, 외국 발행사의 "
+                       "보수 승인 투표 부재 등)으로만 주며 '모름'을 대신하지 않는다.")}
     return {
+        "totals": totals,
         "n_sealed_records": len(sealed), "n_record_files": n_files, "sealed": sealed,
         "legacy_freeform_only": legacy,
         "legacy_with_sparse_qsi": sparse,
@@ -114,6 +126,9 @@ def cmd_coverage() -> int:
     with open(REPORT, "w", encoding="utf-8") as f:
         json.dump(rep, f, ensure_ascii=False, indent=2, sort_keys=True)
         f.write("\n")
+    t = rep["totals"]
+    print(f"전체 {t['slots']}칸: 답함 {t['answered']} ({t['answered_fraction']:.1%}), 해당없음 {t['not_applicable']}, "
+          f"해결 {t['resolved_fraction']:.1%}")
     print(f"봉인 {rep['n_sealed_records']}건, 레거시 전용 {len(rep['legacy_freeform_only'])}종목"
           f" -> {os.path.relpath(REPORT, ROOT)}")
     return 0

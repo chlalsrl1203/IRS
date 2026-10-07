@@ -21,6 +21,56 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "domestic_extra": {
+    "cover": {
+      "answer": null,
+      "excerpt": "ng price of $134.79 as reported by the Nasdaq Stock Market, was approximately $ 5,470.9 million. As of May 19, 2026, there were 43,697,364 shares of the registrant’s Class A common stock and 11,836,450 shares of the registrant’s Class B common stock outstanding.",
+      "reason": "표지에 Class ['B'] 주식이 있다 — 의결권 차이는 정관·위임장을 읽어야 한다"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": true,
+      "buyback": 2000.0,
+      "debt_begin": 196159000.0,
+      "debt_change": 94144000.0,
+      "debt_end": 290303000.0,
+      "fy": 2025,
+      "rule": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+      "tag": "LongTermDebt"
+    },
+    "ma": {
+      "acquisitions": 11596000.0,
+      "answer": "no_material_ma",
+      "item_102_3y": [],
+      "ocf": 1242701000.0,
+      "ratio": 0.009331287252524944,
+      "recent_8k_201": [],
+      "rule": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "no_dividend": null
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 18,
+    "n_with_guidance": 0,
+    "reason": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "8-K Item 2.02"
+  },
   "icfr": {
     "answer": "effective",
     "filed": "2026-05-21",

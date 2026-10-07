@@ -14,6 +14,326 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "fpi": {
+    "icfr": {
+      "answer": "effective",
+      "excerpt": "concluded that, as of December 31, 2025, our internal control over financial reporting was effective",
+      "rule": "경영진 결론 문장만(외부 감사인 의견과 별개)",
+      "scope": "문서 전체(Item 15 머리 없음)"
+    },
+    "insider_group": {
+      "answer": null,
+      "reason": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다"
+    },
+    "item16f": [
+      {
+        "answer": 0,
+        "events": [],
+        "excerpt": "16F Change in Registrant’s Certifying Accountant N/A",
+        "filed": "2026-03-13"
+      },
+      {
+        "answer": 0,
+        "events": [],
+        "excerpt": "16F Change in Registrant’s Certifying Accountant N/A",
+        "filed": "2025-03-17"
+      }
+    ],
+    "listing_flags": {
+      "20f_amendments": [],
+      "n_20f_amendments": 0,
+      "n_nt": 0,
+      "nt": [],
+      "status": "OK",
+      "window": [
+        "2023-10-08",
+        "2026-10-07"
+      ]
+    },
+    "litigation": {
+      "answer": null,
+      "reason": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)"
+    },
+    "no_dividend": "Dividend Policy We have never declared or paid any dividends on our ordinary shares."
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2023-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 729695000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "e of $7 million to $9 million and operating margin of 4% to 5%. For the full year 2023, monday.com currently expects: ● Total revenue of $723 million to $725 million",
+          "filed": "2023-11-13",
+          "fy": 2023,
+          "high": 725000000.0,
+          "kind": "range",
+          "low": 723000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891323003627/exhibit_99-1.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "ion to $17 million and negative operating margin of 13% to 12%. For the full year 2023, monday.com currently expects: ● Total revenue of $688 million to $693 million",
+          "filed": "2023-02-13",
+          "fy": 2023,
+          "high": 693000000.0,
+          "kind": "range",
+          "low": 688000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891323000506/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.009260027662517212,
+        "vs_initial_low_pct": 0.060603197674418574
+      },
+      {
+        "actual": {
+          "end": "2024-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 971995000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "million to $66 million and free cash flow margin of 24% to 25%. For the full year 2024, monday.com currently expects: ● Total revenue of $964 million to $966 million",
+          "filed": "2024-11-12",
+          "fy": 2024,
+          "high": 966000000.0,
+          "kind": "range",
+          "low": 964000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891324003586/exhibit_99-1.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "million to $60 million and free cash flow margin of 27% to 29%. For the full year 2024, monday.com currently expects: ● Total revenue of $926 million to $932 million",
+          "filed": "2024-02-12",
+          "fy": 2024,
+          "high": 932000000.0,
+          "kind": "range",
+          "low": 926000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891324000445/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.008293568464730283,
+        "vs_initial_low_pct": 0.049670626349892055
+      },
+      {
+        "actual": {
+          "end": "2025-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 1231997000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "$36 million to $38 million and operating margin of 11% to 12%. For the full year 2025, monday.com currently expects: ● Total revenue of $1,226 million to $1,228 million",
+          "filed": "2025-11-10",
+          "fy": 2025,
+          "high": 1228000000.0,
+          "kind": "range",
+          "low": 1226000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891325003708/exhibit_99-1.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "f $25 million to $27 million and operating margin of 9% to 10%. For the full year 2025, monday.com currently expects: ● Total revenue of $1,208 million to $1,221 million",
+          "filed": "2025-02-10",
+          "fy": 2025,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1208000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891325000369/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.0048915171288743675,
+        "vs_initial_low_pct": 0.019865066225165595
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": false,
+      "n_evaluated": 3,
+      "n_miss": 0,
+      "promise_kept_record": true,
+      "reason": "",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "ledger": [
+      {
+        "actual": {
+          "end": "2022-12-31",
+          "filed": "2025-03-17",
+          "tag": "Revenues",
+          "value": 519029000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "2 million to $20 million and negative operating margin of 15% to 14%. For the full year 2022, monday.com now expects: ● Total revenue of $509 million to $511 million",
+          "filed": "2022-11-14",
+          "fy": 2022,
+          "high": 511000000.0,
+          "kind": "range",
+          "low": 509000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891322003976/exhibit_99-1.htm"
+        },
+        "fy": 2022,
+        "initial": {
+          "excerpt": "o 73%. ● Non-GAAP operating loss of $47 million to $45 million. For the full year 2022, monday.com currently expects: ● Total revenue of $470 million to $475 million",
+          "filed": "2022-02-23",
+          "fy": 2022,
+          "high": 475000000.0,
+          "kind": "range",
+          "low": 470000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891322000771/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.019703339882121806,
+        "vs_initial_low_pct": 0.10431702127659581
+      },
+      {
+        "actual": {
+          "end": "2023-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 729695000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "e of $7 million to $9 million and operating margin of 4% to 5%. For the full year 2023, monday.com currently expects: ● Total revenue of $723 million to $725 million",
+          "filed": "2023-11-13",
+          "fy": 2023,
+          "high": 725000000.0,
+          "kind": "range",
+          "low": 723000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891323003627/exhibit_99-1.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "ion to $17 million and negative operating margin of 13% to 12%. For the full year 2023, monday.com currently expects: ● Total revenue of $688 million to $693 million",
+          "filed": "2023-02-13",
+          "fy": 2023,
+          "high": 693000000.0,
+          "kind": "range",
+          "low": 688000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891323000506/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.009260027662517212,
+        "vs_initial_low_pct": 0.060603197674418574
+      },
+      {
+        "actual": {
+          "end": "2024-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 971995000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "million to $66 million and free cash flow margin of 24% to 25%. For the full year 2024, monday.com currently expects: ● Total revenue of $964 million to $966 million",
+          "filed": "2024-11-12",
+          "fy": 2024,
+          "high": 966000000.0,
+          "kind": "range",
+          "low": 964000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891324003586/exhibit_99-1.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "million to $60 million and free cash flow margin of 27% to 29%. For the full year 2024, monday.com currently expects: ● Total revenue of $926 million to $932 million",
+          "filed": "2024-02-12",
+          "fy": 2024,
+          "high": 932000000.0,
+          "kind": "range",
+          "low": 926000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891324000445/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.008293568464730283,
+        "vs_initial_low_pct": 0.049670626349892055
+      },
+      {
+        "actual": {
+          "end": "2025-12-31",
+          "filed": "2026-03-13",
+          "tag": "Revenues",
+          "value": 1231997000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "$36 million to $38 million and operating margin of 11% to 12%. For the full year 2025, monday.com currently expects: ● Total revenue of $1,226 million to $1,228 million",
+          "filed": "2025-11-10",
+          "fy": 2025,
+          "high": 1228000000.0,
+          "kind": "range",
+          "low": 1226000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891325003708/exhibit_99-1.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "f $25 million to $27 million and operating margin of 9% to 10%. For the full year 2025, monday.com currently expects: ● Total revenue of $1,208 million to $1,221 million",
+          "filed": "2025-02-10",
+          "fy": 2025,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1208000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891325000369/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.0048915171288743675,
+        "vs_initial_low_pct": 0.019865066225165595
+      },
+      {
+        "actual": null,
+        "dropped": [],
+        "final": {
+          "excerpt": "16%, assuming a negative FX impact of 100 to 200 basis points. For the full year 2026, monday.com currently expects: ● Total revenue of $1,466 million to $1,474 million",
+          "filed": "2026-08-10",
+          "fy": 2026,
+          "high": 1474000000.0,
+          "kind": "range",
+          "low": 1466000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "12%, assuming a negative FX impact of 100 to 200 basis points. For the full year 2026, monday.com currently expects: ● Total revenue of $1,452 million to $1,462 million",
+          "filed": "2026-02-09",
+          "fy": 2026,
+          "high": 1462000000.0,
+          "kind": "range",
+          "low": 1452000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000346/exhibit_99-1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 3,
+        "status": "PENDING"
+      }
+    ],
+    "n_releases": 37,
+    "n_with_guidance": 19,
+    "source_form": "6-K"
+  },
   "insider": {
     "reason": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
     "status": "UNAVAILABLE"

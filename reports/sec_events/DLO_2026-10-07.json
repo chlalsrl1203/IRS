@@ -14,6 +14,133 @@
     "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
     "tag": null
   },
+  "fpi": {
+    "icfr": {
+      "answer": "effective",
+      "excerpt": "concluded that the Company maintained effective internal control over financial reporting",
+      "rule": "경영진 결론 문장만(외부 감사인 의견과 별개)",
+      "scope": "Item 15"
+    },
+    "insider_group": {
+      "answer": null,
+      "reason": "'as a group' 지분 행을 찾지 못했다"
+    },
+    "item16f": [
+      {
+        "answer": 0,
+        "events": [],
+        "excerpt": "Item 16F. Change in Registrant’s Certifying Accountant. Not applicable.",
+        "filed": "2026-03-18"
+      },
+      {
+        "answer": 0,
+        "events": [],
+        "excerpt": "I tem 16F. Change in Registrant’s Certifying Accountant. Not applicable.",
+        "filed": "2025-04-24"
+      }
+    ],
+    "listing_flags": {
+      "20f_amendments": [],
+      "n_20f_amendments": 0,
+      "n_nt": 0,
+      "nt": [],
+      "status": "OK",
+      "window": [
+        "2023-10-08",
+        "2026-10-07"
+      ]
+    },
+    "litigation": {
+      "answer": null,
+      "reason": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)"
+    },
+    "no_dividend": null
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2023-12-31",
+          "filed": "2026-03-18",
+          "tag": "Revenue",
+          "value": 650351000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "new practice by the Company to provide quarterly guidance. Outlook full year 2023 • As outlook for the full year 2023, we expect our revenue to range between $620 million and $640 million",
+          "filed": "2023-04-05",
+          "fy": 2023,
+          "high": 640000000.0,
+          "kind": "range",
+          "low": 620000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017023011835/dlo-ex99_1.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "new practice by the Company to provide quarterly guidance. Outlook full year 2023 • As outlook for the full year 2023, we expect our revenue to range between $620 million and $640 million",
+          "filed": "2023-04-05",
+          "fy": 2023,
+          "high": 640000000.0,
+          "kind": "range",
+          "low": 620000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017023011835/dlo-ex99_1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 1,
+        "status": "MET",
+        "vs_final_low_pct": 0.04895322580645156,
+        "vs_initial_low_pct": 0.04895322580645156
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 1,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 1개 연도뿐이다(최소 2)",
+      "years": [
+        2023
+      ]
+    },
+    "ledger": [
+      {
+        "actual": {
+          "end": "2023-12-31",
+          "filed": "2026-03-18",
+          "tag": "Revenue",
+          "value": 650351000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "new practice by the Company to provide quarterly guidance. Outlook full year 2023 • As outlook for the full year 2023, we expect our revenue to range between $620 million and $640 million",
+          "filed": "2023-04-05",
+          "fy": 2023,
+          "high": 640000000.0,
+          "kind": "range",
+          "low": 620000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017023011835/dlo-ex99_1.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "new practice by the Company to provide quarterly guidance. Outlook full year 2023 • As outlook for the full year 2023, we expect our revenue to range between $620 million and $640 million",
+          "filed": "2023-04-05",
+          "fy": 2023,
+          "high": 640000000.0,
+          "kind": "range",
+          "low": 620000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017023011835/dlo-ex99_1.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 1,
+        "status": "MET",
+        "vs_final_low_pct": 0.04895322580645156,
+        "vs_initial_low_pct": 0.04895322580645156
+      }
+    ],
+    "n_releases": 46,
+    "n_with_guidance": 1,
+    "source_form": "6-K"
+  },
   "insider": {
     "reason": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
     "status": "UNAVAILABLE"

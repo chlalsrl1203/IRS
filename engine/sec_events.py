@@ -334,8 +334,9 @@ def collect_restatement(listing: dict, as_of: str) -> dict:
 # --- 소송(10-K Item 3) ---------------------------------------------------------------
 
 _NONE_STMT = re.compile(
-    r"(?:are|is|were)\s+not\s+(?:currently\s+)?(?:a\s+)?(?:party|subject)\s+to\s+"
-    r"(?:any|material)[^.]{0,120}(?:legal|litigation|proceeding)[^.]*\.", re.I)
+    r"(?:are|is|were)\s+(?:currently\s+)?not\s+(?:currently\s+)?(?:a\s+)?(?:party|subject)\s+to,?\s+"
+    # 'party to, nor are we aware of, any legal proceeding …' (실측: SE 20-F)
+    r"(?:nor\s+[^,.]{0,60},\s+)?(?:any|material)[^.]{0,120}(?:legal|litigation|proceeding)[^.]*\.", re.I)
 _MATERIAL_QUAL = re.compile(r"(material|adverse|significant|expected)", re.I)
 _NOTE_REF = re.compile(r"\b(Note\s+\d+|Commitments and Contingencies|Contingencies)\b", re.I)
 
@@ -589,7 +590,10 @@ def collect_insider_group(listing: dict, fetch_text, cik: str, as_of: str) -> di
 
 _ICFR = re.compile(
     r"concluded\s+that[^.]{0,200}?internal\s+control\s+over\s+financial\s+reporting"
-    r"[^.]{0,80}?\b(?:was|is|were)\s+(not\s+)?effective", re.I)
+    r"[^.]{0,80}?\b(?:was|is|were)\s+(not\s+)?effective"
+    # 'management concluded that the Company maintained effective internal control …' (실측: DLO 20-F)
+    r"|concluded\s+that\s+(?:the\s+Company|we|our\s+company)\s+(did\s+not\s+maintain|maintained)\s+"
+    r"effective\s+internal\s+control\s+over\s+financial\s+reporting", re.I)
 
 
 def _longest_section(body: str, start_pat: str, end_pat: str, cap: int = 60000) -> str:
@@ -602,6 +606,12 @@ def _longest_section(body: str, start_pat: str, end_pat: str, cap: int = 60000) 
     return best
 
 
+def _icfr_outcome(h) -> str:
+    if h.group(1) or (h.group(2) or "").lower().startswith("did not"):
+        return "ineffective"
+    return "effective"
+
+
 def icfr_from_10k(body: str) -> dict:
     """Item 9A에서 **경영진이 직접 내린 결론** 문장만. 위험요인의 가정문('if we identify…')은 읽지 않는다."""
     sec = _longest_section(body, r"Item\s+9A\s*[.:\-—–]?\s*Controls\s+and\s+Procedures",
@@ -611,7 +621,7 @@ def icfr_from_10k(body: str) -> dict:
     hits = list(_ICFR.finditer(sec))
     if not hits:
         return {"answer": None, "reason": "Item 9A에 경영진의 ICFR 결론 문장이 없다(Exhibit 참조일 수 있다)"}
-    outs = {("ineffective" if h.group(1) else "effective") for h in hits}
+    outs = {_icfr_outcome(h) for h in hits}
     if len(outs) > 1:
         return {"answer": None, "reason": "Item 9A에 effective/not effective 결론이 함께 있다 — 사람이 읽어야 한다"}
     return {"answer": outs.pop(), "excerpt": hits[0].group(0).strip(), "section_len": len(sec),
@@ -642,3 +652,213 @@ def dividend_predictable(dps: dict, min_fy: int, n: int = DIVIDEND_YEARS) -> dic
                 "reason": "주당배당이 감소한 연도가 있다 — 특별배당 후 정상화인지 삭감인지는 판단하지 않는다"}
     return {"answer": True, "years": years, "values": vals,
             "rule": f"최근 {n}개 연속 회계연도 주당배당이 모두 양수이고 감소 없음(사전 고정)"}
+
+
+# --- v3.96: 외국 발행사(20-F) 경로 -------------------------------------------------------------
+# 20-F 발행사는 8-K·Form 4·DEF 14A 의무가 없어서 v3.94/v3.95 수집기가 전부 UNAVAILABLE로 남겼다.
+# 같은 사실이 20-F 본문의 대응 항목에 있다:
+#   10-K Item 9A ↔ 20-F Item 15 / 8-K 4.01 ↔ 20-F Item 16F / 10-K Item 3 ↔ 20-F Item 8.A.7
+#   DEF 14A 지분표 ↔ 20-F Item 6.E·7.A / NT 10-K ↔ NT 20-F / 10-K/A ↔ 20-F/A
+# 보수 승인 투표는 외국 사적 발행사에 적용되지 않는다(미국 위임장 규칙 면제) — 해당 없음.
+
+FPI_NT_FORMS = ("NT 20-F", "NT 20-F/A")
+SAY_ON_PAY_FPI_NOTE = ("외국 사적 발행사(20-F)는 미국 위임장 규칙(Rule 14a-21 보수 승인 투표) 적용 대상이 아니다 — "
+                       "투표 자체가 존재하지 않는다")
+
+
+def icfr_from_20f(body: str) -> dict:
+    """20-F Item 15의 경영진 결론. Item 15 머리가 없는 교차참조형(실측: MNDY)은 문서 전체에서 찾되
+    결론이 서로 다르면 답하지 않는다."""
+    sec = _longest_section(body, r"Item\s+15\s*[.:\-—–]?\s*Controls\s+and\s+Procedures", r"Item\s+16")
+    scope = "Item 15"
+    hits = list(_ICFR.finditer(sec)) if sec else []
+    if not hits:
+        hits, scope = list(_ICFR.finditer(body)), "문서 전체(Item 15 머리 없음)"
+    if not hits:
+        return {"answer": None, "reason": "20-F에서 경영진의 ICFR 결론 문장을 찾지 못했다"}
+    outs = {_icfr_outcome(h) for h in hits}
+    if len(outs) > 1:
+        return {"answer": None, "reason": "effective/not effective 결론이 함께 있다 — 사람이 읽어야 한다"}
+    return {"answer": outs.pop(), "excerpt": hits[0].group(0).strip(), "scope": scope,
+            "rule": "경영진 결론 문장만(외부 감사인 의견과 별개)"}
+
+
+# 'I tem 16F'(실측: DLO 2025 20-F의 분리된 글자), 'Item' 없는 교차참조표 '16F Change … N/A'(실측: MNDY)
+_16F_HEAD = r"(?:I\s?tem\s+)?16F\s*[.:\-—–]?\s*Change\s+in\s+Registrant.s\s+Certifying\s+Accountant"
+_DISMISS = re.compile(r"[^.]{0,240}\b(dismissed|resigned|declined\s+to\s+stand)\b[^.]{0,200}\.", re.I)
+_DATE = re.compile(r"(January|February|March|April|May|June|July|August|September|October|November|December)"
+                   r"\s+\d{1,2},\s+(20\d\d)")
+
+
+def auditor_change_from_16f(body: str) -> dict:
+    """20-F Item 16F. 'Not applicable/None'이면 0, 해임·사임 문장이 있으면 그 사건들(날짜로 중복 제거).
+
+    목차 줄('Item 16F. Change … 138 Item 16G')은 본문이 아니다 — 가장 긴 절을 쓴다.
+    """
+    sec = _longest_section(body, _16F_HEAD, r"(?:I\s?tem\s+)?16G\b")
+    if not sec:
+        return {"answer": None, "reason": "Item 16F 절을 찾지 못했다"}
+    rest = re.sub(_16F_HEAD, "", sec, count=1, flags=re.I).strip(" .:\u2014\u2013-")
+    if re.match(r"(Not\s+applicable|None|N/A)\b", rest, re.I):
+        return {"answer": 0, "events": [], "excerpt": sec[:160].strip()}
+    events = {}
+    for m in _DISMISS.finditer(rest):
+        d = _DATE.search(m.group(0))
+        events.setdefault(d.group(0) if d else m.group(0)[:60], m.group(0).strip())
+    if not events:
+        return {"answer": None, "reason": "Item 16F에 내용이 있으나 해임·사임 문장을 읽지 못했다",
+                "excerpt": rest[:400]}
+    return {"answer": len(events), "events": sorted(events), "excerpt": next(iter(events.values()))}
+
+
+def litigation_from_20f(body: str) -> dict:
+    """20-F Item 8.A.7 'Legal Proceedings' — 10-K Item 3과 같은 규칙(회사 자기 진술만).
+
+    위험요인에도 'legal proceedings'가 수없이 나오므로, 그 표현 **바로 뒤 400자 안에서** 회사가
+    소송 부재를 진술한 경우만 본다.
+    """
+    for m in re.finditer(r"Legal\s+(?:and\s+\w+\s+)?Proceedings", body, re.I):
+        win = body[m.end(): m.end() + 400]
+        n = _NONE_STMT.search(win)
+        if n and not _NOTE_REF.search(win[:n.end()]):
+            qualified = bool(_MATERIAL_QUAL.search(n.group(0)))
+            return {"answer": "immaterial" if qualified else "none", "excerpt": n.group(0).strip(),
+                    "materiality_qualified": qualified,
+                    "reason": ("회사가 '중요한 소송이 없다'고 한정해 진술" if qualified
+                               else "회사가 해당 소송이 없다고 직접 진술")}
+    return {"answer": None, "reason": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 "
+                                      "(소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)"}
+
+
+_NO_DIVIDEND = re.compile(
+    r"[^.]{0,160}\b(?:(?:have|has)\s+never\s+(?:declared\s+or\s+)?paid\s+(?:any\s+)?(?:cash\s+)?dividends"
+    r"|(?:do|does)\s+not\s+(?:currently\s+)?(?:anticipate|expect|intend|plan)\s+(?:to\s+)?pay(?:ing)?\s+"
+    r"(?:any\s+)?(?:cash\s+)?dividends)[^.]{0,160}\.", re.I)
+
+
+def no_dividend_statement(body: str):
+    """회사가 무배당을 **직접** 진술한 문장(첫 번째). 없으면 None — 부재를 무배당으로 읽지 않는다."""
+    m = _NO_DIVIDEND.search(body)
+    return m.group(0).strip() if m else None
+
+
+def fpi_listing_flags(listing: dict, as_of: str) -> dict:
+    """외국 발행사의 목록 기반 적신호: NT 20-F 건수, 20-F/A(정정) 건수."""
+    if not listing["covers_window"]:
+        return {"status": UNAVAILABLE, "reason": "제출 목록이 3년 창을 덮지 못했다"}
+    since = (datetime.date.fromisoformat(as_of) - datetime.timedelta(days=FLAG_WINDOW_DAYS)).isoformat()
+    rows = [r for r in listing["rows"] if since <= r["filingDate"] <= as_of]
+    nt = [r for r in rows if r["form"] in FPI_NT_FORMS]
+    amend = [r for r in rows if r["form"] == "20-F/A"]
+    return {"status": "OK", "window": [since, as_of], "n_nt": len(nt), "nt": [r["filingDate"] for r in nt],
+            "n_20f_amendments": len(amend), "20f_amendments": [r["filingDate"] for r in amend]}
+
+
+# --- v3.96: 표지·자본배분 기계 규칙 ------------------------------------------------------------
+
+_COVER_ANCHOR = re.compile(r"Indicate\s+by\s+check\s+mark\s+whether\s+the\s+registrant\s+is\s+a\s+shell\s+company", re.I)
+_OUTSTANDING_SENT = re.compile(r"[^.]{0,250}\boutstanding\b[^.]{0,250}", re.I)
+_SHARE_WORD = re.compile(r"(common\s+stock|common\s+shares|ordinary\s+shares)", re.I)
+_CLASS = re.compile(r"\bClass\s+([B-Z])\b")
+_NO_CLASS = re.compile(r"no\s+shares\s+of\s+[^.]{0,60}?Class\s+([B-Z])\b", re.I)
+COVER_SPAN = 3000
+
+
+_COVER_END = re.compile(r"DOCUMENTS\s+INCORPORATED\s+BY\s+REFERENCE", re.I)
+
+
+def single_class_from_cover(body: str) -> dict:
+    """10-K 표지의 '발행주식수' 기재 — 양식이 **모든 보통주 클래스**의 발행주식수를 적게 한다.
+
+    표지 구간(쉘 회사 체크 ~ 'DOCUMENTS INCORPORATED BY REFERENCE')에서 클래스 B 이상이 언급되지
+    않으면 단일 클래스(False). 'no shares of … Class B … outstanding'처럼 0주로 명시된 클래스는 제외한다
+    (실측: NXT). 다른 클래스가 있으면 의결권 차이는 이 구간으로 알 수 없어 답하지 않는다.
+
+    ⚠️ 문장 단위로 자르지 않는다 — '$0.00001' 같은 액면가의 소수점이 문장을 끊어 클래스 표를 놓친다
+    (실측: TW는 Class A~D 4중 구조인데 첫 '문장'만 보면 단일 클래스로 오판한다).
+    """
+    m = _COVER_ANCHOR.search(body)
+    if not m:
+        return {"answer": None, "reason": "10-K 표지의 쉘 회사 체크 문장을 찾지 못했다"}
+    seg = body[m.end(): m.end() + COVER_SPAN]
+    e = _COVER_END.search(seg)
+    if e:
+        seg = seg[:e.start()]
+    o = None
+    for mm in re.finditer(r"\boutstanding\b", seg, re.I):
+        ctx = seg[max(0, mm.start() - 250): mm.end() + 120]
+        near = seg[max(0, mm.start() - 100): mm.end() + 100].lower()
+        if _SHARE_WORD.search(ctx) and "affiliate" not in near:
+            o = mm
+            break
+    if o is None:
+        return {"answer": None, "reason": "표지에서 발행주식수 기재를 찾지 못했다"}
+    excerpt = seg[max(0, o.start() - 250): o.end() + 120].strip()
+    classes = set(_CLASS.findall(seg)) - set(_NO_CLASS.findall(seg))
+    if classes:
+        return {"answer": None, "excerpt": excerpt,
+                "reason": f"표지에 Class {sorted(classes)} 주식이 있다 — 의결권 차이는 정관·위임장을 읽어야 한다"}
+    return {"answer": False, "excerpt": excerpt,
+            "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"}
+
+
+def instant_values(facts: dict, tag: str) -> dict:
+    """{결산 연도: 값} — 10-K/20-F의 시점(instant) 값, 같은 해는 최신 공시본."""
+    out = {}
+    for _tax, tagmap in (facts.get("facts") or {}).items():
+        node = tagmap.get(tag)
+        if not node:
+            continue
+        for _u, entries in (node.get("units") or {}).items():
+            for e in entries:
+                if e.get("form") in ("10-K", "10-K/A", "20-F", "20-F/A") and not e.get("start") and e.get("end") \
+                        and e.get("val") is not None:
+                    out.setdefault(int(e["end"][:4]), []).append((e["filed"], float(e["val"])))
+    return {y: sorted(v)[-1][1] for y, v in out.items()}
+
+
+DEBT_BALANCE_TAGS = ("LongTermDebt", "LongTermDebtNoncurrent", "DebtInstrumentCarryingAmount",
+                     "LongTermDebtAndCapitalLeaseObligations", "ConvertibleNotesPayable", "SeniorNotes",
+                     "DebtLongtermAndShorttermCombinedAmount")
+
+
+def debt_funded_buyback_balance(buyback: dict, debt: dict, min_fy: int) -> dict:
+    """현금흐름 차입 태그가 없을 때의 대체 규칙 — 같은 해 **차입 잔액 증가**와 매입액을 비교한다.
+
+    차입 잔액 증가 ≥ 매입액의 50% → 부채 조달(True). 잔액이 줄거나 거의 그대로면 False.
+    ⚠️ 잔액 변동은 신규 차입 − 상환의 순액이라 재원 추정이 흐름 규칙보다 거칠다(근사).
+    """
+    yrs = sorted(y for y, v in buyback.items() if v and v > 0 and y >= min_fy and y in debt and (y - 1) in debt)
+    if not yrs:
+        return {"answer": None, "reason": "매입이 있는 최근 연도의 차입 잔액(전년·당년)을 찾지 못했다"}
+    fy = yrs[-1]
+    delta = debt[fy] - debt[fy - 1]
+    return {"answer": delta >= DEBT_FUNDED_RATIO * buyback[fy], "fy": fy, "buyback": buyback[fy],
+            "debt_change": delta, "debt_begin": debt[fy - 1], "debt_end": debt[fy],
+            "rule": f"차입 잔액 증가 ≥ 매입액의 {DEBT_FUNDED_RATIO:.0%}이면 부채 조달(잔액 순변동 근사, 사전 고정)"}
+
+
+MA_WINDOW_YEARS = 5
+MA_IMMATERIAL_RATIO = 0.10     # 5년 인수 지출 합 / 5년 영업현금흐름 합(양수만) — 사전 고정·비검증
+
+
+def ma_intensity(acq: dict, ocf: dict, latest_fy: int) -> dict:
+    """최근 5개 회계연도 인수 지출 강도. 10% 미만이면 'no_material_ma', 아니면 규율은 사람이 판단한다.
+
+    ⚠️ 체결되지 않은 시도(해지 수수료)·주식 대가 인수(현금 지출 없음)는 포함하지 않는다.
+    """
+    yrs = list(range(latest_fy - MA_WINDOW_YEARS + 1, latest_fy + 1))
+    have = [y for y in yrs if y in acq]
+    if len(have) < MA_WINDOW_YEARS - 1:
+        return {"answer": None, "reason": f"인수 지출 값이 5개 연도 중 {len(have)}개뿐이다"}
+    a = sum(acq.get(y, 0.0) for y in yrs)
+    o = sum(v for y, v in ocf.items() if y in yrs and v > 0)
+    if o <= 0:
+        return {"answer": None, "reason": "같은 기간 영업현금흐름이 양수가 아니다"}
+    ratio = a / o
+    out = {"years": yrs, "acquisitions": a, "ocf": o, "ratio": ratio,
+           "rule": f"5년 인수 현금지출 ≤ 영업현금흐름의 {MA_IMMATERIAL_RATIO:.0%} → no_material_ma(사전 고정)"}
+    if ratio <= MA_IMMATERIAL_RATIO:
+        return out | {"answer": "no_material_ma"}
+    return out | {"answer": None,
+                  "reason": f"5년 인수 지출이 영업현금흐름의 {ratio:.0%} — 가격 규율은 사람이 판단해야 한다"}

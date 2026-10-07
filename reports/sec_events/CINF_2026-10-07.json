@@ -31,6 +31,48 @@
       2025
     ]
   },
+  "domestic_extra": {
+    "cover": {
+      "answer": false,
+      "excerpt": "stock held by nonaffiliates of the Registrant based on the closing price of $148.92 per share as reported on Nasdaq Global Select Market on June 30, 2025, was $ 22,846,561,651 . As of February 17, 2026, there were 155,617,576 shares of common stock outstanding. Document Incorporated by Reference Portions of the definitive Proxy Statement for Cincinnati Financial Corporation’s A",
+      "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": false,
+      "buyback": 205000000.0,
+      "debt_begin": 790000000.0,
+      "debt_change": 0.0,
+      "debt_end": 790000000.0,
+      "fy": 2025,
+      "rule": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+      "tag": "LongTermDebt"
+    },
+    "ma": {
+      "answer": null,
+      "item_102_3y": [
+        "2025-10-10",
+        "2024-09-13"
+      ],
+      "reason": "인수 지출 값이 5개 연도 중 0개뿐이다",
+      "recent_8k_201": []
+    }
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 22,
+    "n_with_guidance": 0,
+    "reason": "8-K 2.02 보도자료 22건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "8-K Item 2.02"
+  },
   "icfr": {
     "answer": null,
     "filed": "2026-02-23",
