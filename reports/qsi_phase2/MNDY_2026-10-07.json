@@ -1,0 +1,24 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": null,
+    "docs": [
+      "2026-03-13",
+      "2025-03-17"
+    ],
+    "reason": "올해·전년 위험요인 절을 모두 찾지 못했다"
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": 2.01,
+    "gm_end": 89.2,
+    "gm_start": 87.18,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "MNDY",
+  "unit": "USD"
+}

@@ -10811,3 +10811,33 @@ Item 15(ICFR) · Item 16F(감사인 변경) · Item 8.A.7(소송) · Item 6.E/7.
 
 **검증**: 테스트 1,337 → **1,371 통과**(신규 34) · `ledger/`·thesis·holdings·매수리스트 **0건 수정** ·
 기존 봉인 파일 0건 수정 · `ENGINE_VERSION` v3.95 → **v3.96**.
+
+## v3.97 — QSI 80% 계획 2단계: 경쟁 대리지표 · 불성실 공시 부재 규칙 (2026-10-07)
+
+경쟁 축 4문항(52칸)이 전부 비어 있던 것을 회사 공시만으로 계산하는 **대리지표**로 채웠다.
+`engine/competition_signals.py`(신규) + `scripts/qsi_phase2.py`. 판정·비중 미배선(테스트로 고정).
+**결과: 답함 235(47.9%) → 281(57.2%), 해결 59.7%.**
+
+- `cmp.pricing_power` — 매출총이익률 3년 추세·수준(사전 고정: −3%p 이하 eroding / +1%p 이상 또는 70% 이상
+  유지하며 매출 성장 → evidenced). **가격결정력 그 자체가 아니다** — NXT의 15%→33% 상승은 생산세액공제(45X)
+  영향이 커서 '가격 인상 증거'로 읽으면 틀린다. 노트에 고정 문구로 남겼다. eroding: DLO·GEN·PDD·SKYW.
+- `cmp.share_trend`·`cmp.lifecycle_shakeout_or_decline` — **회사가 연차보고서에서 직접 이름을 댄 SEC 공시
+  상장 경쟁사만** 비교군으로 쓴다(`data/peer_baskets.json`, 근거 원문 포함). 처음 SIC 업종코드를 검토했으나
+  NXT(태양광 트래커)가 '반도체', UBER·PDD·DLO가 '기타 사업서비스'로 묶여 버렸다. 4종목만 해당:
+  TW gaining(MKTX·BGC 대비 +4.3%p), NXT gaining(ARRY·SHLS가 역성장), PTC stable(ADSK), **UBER losing**
+  (LYFT·DASH·CART 합계 21.7% vs 17.7%). 거대 복합기업(Microsoft·Amazon·ICE)은 사업 매출을 분리할 수 없어 제외.
+  ⚠️ 결산월이 다른 회사는 연도 라벨이 아니라 **결산일**로 맞춘다 — 처음엔 NXT(3월)와 ARRY(12월)가 짝지어지지
+  않아 비교군이 통째로 빠졌다.
+- `cmp.new_threat` — 전년 대비 위험요인(10-K Item 1A / 20-F Item 3.D)에 **새로 추가된** 경쟁 문장
+  (단어 Jaccard < 0.5). 'Lazy Prices'(Cohen·Malloy·Nguyen, JF 2020)가 10-K 문장 변화의 정보성을 보였다 —
+  여기서는 회사가 스스로 새로 인정한 위협을 모으는 데만 쓴다. 실측: UBER는 Waymo·Zoox·Tesla 자율주행과
+  'AI 비서의 탈중개화'를 새로 적었고, ADBE는 'generative and agentic AI' 경쟁을 새로 적었다.
+  ⚠️ 함정 3건을 테스트로 고정: 'competent authorities'(SE), 인재 확보 '경쟁적 급여'(NBIX), 그리고
+  **시작 표지를 먼저 고르면 본문 중간의 상호참조('see Item 1A')부터 사업 설명까지 삼킨다**(NBIX) —
+  끝 표지마다 바로 앞의 시작 표지를 짝짓도록 고쳤다. 교차참조형 20-F(MNDY·DLO)는 절 경계를 못 찾아 unknown.
+- `acc.unfaithful_disclosure` — 3년 재작성 없음(기존 답) + 연차보고서에 확정적 제재·합의 진술(Wells notice,
+  동의 명령, 기소유예/불기소 합의) 없음 → False. 진술이 있으면 보류 — **UBER는 2016년 해킹 은폐 건의 DOJ
+  불기소 합의(2022)가 잡혀 보류**됐다(규칙이 거짓 청정 신호를 막은 사례).
+
+**검증**: 테스트 1,371 → **1,385 통과** · ledger·판정·매수리스트 0건 수정 · 기존 봉인 파일 0건 수정 ·
+`ENGINE_VERSION` v3.96 → **v3.97**.

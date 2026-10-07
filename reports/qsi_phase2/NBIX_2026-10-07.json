@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "Lower negotiated prices for AUSTEDO and AUSTEDO XR may increase competitive pressures on INGREZZA, including heightened pricing pressure and potential adverse effects on formulary coverage. 38 We were notified in January 2025 that INGREZZA qualifies for the small biotech exception, which provides an exemption from selection until 2027 (for initial price applicability year 2029, pursuant to which negotiated pricing would go into effect, if selected).",
+      "Increased development costs and extended development timelines could place us at a competitive disadvantage compared to companies operating in regions with more favorable trade relationships and could reduce investor confidence and negatively impact our business, results of operations, financial condition and growth prospects.",
+      "Any of the foregoing could harm our business and we cannot anticipate all of the ways in which the current economic climate and financial market conditions could adversely impact our business. 47 If we fail to obtain or maintain orphan drug designation or other regulatory exclusivity for some of our product candidates, our competitive position would be harmed."
+    ],
+    "docs": [
+      "2026-02-11",
+      "2025-02-10"
+    ],
+    "n_new_competition": 3,
+    "n_new_sentences": 106,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "Lower negotiated prices for AUSTEDO and AUSTEDO XR may increase competitive pressures on INGREZZA, including heightened pricing pressure and potential adverse effects on formulary coverage. 38 We were notified in January 2025 that INGREZZA qualifies for the small biotech exception, which provides an exemption from selection until 2027 (for initial price applicability year 2029, pursuant to which negotiated pricing would go into effect, if selected).",
+      "Increased development costs and extended development timelines could place us at a competitive disadvantage compared to companies operating in regions with more favorable trade relationships and could reduce investor confidence and negatively impact our business, results of operations, financial condition and growth prospects.",
+      "Any of the foregoing could harm our business and we cannot anticipate all of the ways in which the current economic climate and financial market conditions could adversely impact our business. 47 If we fail to obtain or maintain orphan drug designation or other regulatory exclusivity for some of our product candidates, our competitive position would be harmed."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": -0.26,
+    "gm_end": 98.18,
+    "gm_start": 98.44,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "NBIX",
+  "unit": "USD"
+}

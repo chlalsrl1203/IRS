@@ -1,0 +1,63 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "The solar tracker industry is currently fragmented and competition may increase further as the industry evolves or consolidates.",
+      "In addition, as we expand our product offerings and offer additional technologies and services, the size and number of competitors will continue to increase.",
+      "Non-renewable generation is typically available for dispatch at any time, as it is not dependent on the availability of intermittent resources such as sunlight, which may make such generation more attractive to certain customers or grid operators, particularly in markets that do not adequately compensate for intermittency or capacity attributes. 20 In addition, advancements in competing technologies, including improvements in energy storage, grid infrastructure or alternative renewable generation sources, could reduce the relative advantages of solar energy or alter customer preferences.",
+      "To the extent that our suppliers are disqualified from 45X eligibility as a result of FEOC restrictions, our cost of goods sold may increase and we may become less profitable and/or competitive.",
+      "Such use may result in unintended disclosure, loss of intellectual property protections, or incorporation of sensitive information into external training datasets, which could harm our competitive position and business."
+    ],
+    "docs": [
+      "2026-05-19",
+      "2025-05-22"
+    ],
+    "n_new_competition": 6,
+    "n_new_sentences": 174,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "The solar tracker industry is currently fragmented and competition may increase further as the industry evolves or consolidates.",
+      "In addition, as we expand our product offerings and offer additional technologies and services, the size and number of competitors will continue to increase.",
+      "Non-renewable generation is typically available for dispatch at any time, as it is not dependent on the availability of intermittent resources such as sunlight, which may make such generation more attractive to certain customers or grid operators, particularly in markets that do not adequately compensate for intermittency or capacity attributes. 20 In addition, advancements in competing technologies, including improvements in energy storage, grid infrastructure or alternative renewable generation sources, could reduce the relative advantages of solar energy or alter customer preferences.",
+      "To the extent that our suppliers are disqualified from 45X eligibility as a result of FEOC restrictions, our cost of goods sold may increase and we may become less profitable and/or competitive.",
+      "Such use may result in unintended disclosure, loss of intellectual property protections, or incorporation of sensitive information into external training datasets, which could harm our competitive position and business."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2026,
+    "fy_start": 2023,
+    "gm_change_pp": 17.51,
+    "gm_end": 32.59,
+    "gm_start": 15.09,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "relative_growth": {
+    "answer": "gaining",
+    "basket": {
+      "excluded": "Arctech·TrinaSolar(중국 상장), GameChange·PV Hardware(비상장)",
+      "peers": [
+        "ARRY",
+        "SHLS"
+      ],
+      "quote": "Our principal competitors are Arctech Solar, Array Technologies, GameChange Solar, PV Hardware, Shoals Technologies Group and TrinaSolar Co."
+    },
+    "basket_cagr_pct": 11.21,
+    "company_cagr_pct": 23.23,
+    "fy_end": 2026,
+    "fy_start": 2023,
+    "gap_pp": 26.84,
+    "lifecycle_decline": false,
+    "peer_cagr_pct": -3.61,
+    "peers_dropped": [],
+    "peers_used": [
+      "ARRY",
+      "SHLS"
+    ],
+    "rule": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)"
+  },
+  "ticker": "NXT",
+  "unit": "USD"
+}

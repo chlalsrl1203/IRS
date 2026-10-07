@@ -862,3 +862,19 @@ def ma_intensity(acq: dict, ocf: dict, latest_fy: int) -> dict:
         return out | {"answer": "no_material_ma"}
     return out | {"answer": None,
                   "reason": f"5년 인수 지출이 영업현금흐름의 {ratio:.0%} — 가격 규율은 사람이 판단해야 한다"}
+
+
+# --- v3.97: 불성실 공시(제재) 부재 규칙 ------------------------------------------------------------
+# 확정적 제재·합의 진술만 잡는다. 위험요인의 가정문('could be subject to enforcement')은 잡지 않는다.
+_ENFORCEMENT = re.compile(
+    r"[^.]{0,200}\b(received\s+a\s+Wells\s+notice|Wells\s+notice\s+(?:from|issued)|"
+    r"consented\s+to\s+(?:the\s+)?(?:entry|issuance)\s+of\s+(?:a|an)\s+(?:cease[- ]and[- ]desist\s+)?order|"
+    r"settled[^.]{0,60}(?:charges|proceedings|investigation)[^.]{0,60}(?:SEC|Securities\s+and\s+Exchange\s+Commission)|"
+    r"(?:SEC|Securities\s+and\s+Exchange\s+Commission)\s+(?:filed|instituted|brought)\s+[^.]{0,60}"
+    r"(?:complaint|proceedings?|action)\s+against\s+(?:us|the\s+Company)|"
+    r"(?:non|deferred)[- ]prosecution\s+agreement)[^.]{0,200}\.", re.I)
+
+
+def enforcement_statements(body: str) -> list:
+    """연차보고서의 확정적 규제 제재·합의 진술(사람이 읽어야 할 후보)."""
+    return [m.group(0).strip() for m in _ENFORCEMENT.finditer(body)]

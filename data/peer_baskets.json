@@ -1,0 +1,40 @@
+{
+  "_doc": "QSI 경쟁 축 비교군 — 회사가 최신 연차보고서에서 **직접 이름을 댄** 상장(SEC 공시) 경쟁사만. 비교군 선택은 사람의 판단이며 근거 원문을 함께 남긴다. 거대 복합기업(Microsoft·Alphabet·Amazon·ICE·CME 등)은 해당 사업의 매출을 분리할 수 없어 제외했다(전사 매출로 비교하면 의미가 없다). 사전 고정 — 결과를 보고 바꾸지 않는다.",
+  "as_of": "2026-10-07",
+  "baskets": {
+    "UBER": {
+      "peers": [
+        "LYFT",
+        "DASH",
+        "CART"
+      ],
+      "quote": "We also compete with other ridesharing companies for Drivers and Riders, including Bolt, Didi, Lyft, and Ola.",
+      "quote2": "competes with numerous companies in the meal, grocery and other delivery space in various regions for Drivers, consumers, and merchants, including DoorDash, Instacart, Gopuff, Rappi, Delivery Hero, Just Eat Takeaway, and Amazon.",
+      "excluded": "Bolt·Didi·Ola·Gopuff·Rappi(SEC 비공시), Delivery Hero·Just Eat Takeaway(해외 상장), Amazon(사업 분리 불가)"
+    },
+    "PTC": {
+      "peers": [
+        "ADSK"
+      ],
+      "quote": "For enterprise CAD and PLM solutions, we compete with large established companies including Autodesk, Dassault Systèmes SA, and Siemens AG.",
+      "excluded": "Dassault·Siemens(SEC 비공시), IBM·Oracle·SAP·Microsoft·Salesforce(사업 분리 불가)"
+    },
+    "TW": {
+      "peers": [
+        "MKTX",
+        "BGC"
+      ],
+      "quote": "Major competitors include TP ICAP, BGC Partners and Tradition.",
+      "quote2": "MarketAxess (RFQ-hub) and Bloomberg and others in the equities and ETF markets",
+      "excluded": "Bloomberg·Trumid·Tradition(비상장), TP ICAP·Euronext(해외), ICE·CME(사업 분리 불가)"
+    },
+    "NXT": {
+      "peers": [
+        "ARRY",
+        "SHLS"
+      ],
+      "quote": "Our principal competitors are Arctech Solar, Array Technologies, GameChange Solar, PV Hardware, Shoals Technologies Group and TrinaSolar Co.",
+      "excluded": "Arctech·TrinaSolar(중국 상장), GameChange·PV Hardware(비상장)"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [],
+    "docs": [
+      "2026-02-05",
+      "2025-02-07"
+    ],
+    "n_new_competition": 0,
+    "n_new_sentences": 43,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": []
+  },
+  "pricing_power": {
+    "answer": null,
+    "reason": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다"
+  },
+  "relative_growth": {
+    "answer": "gaining",
+    "basket": {
+      "excluded": "Bloomberg·Trumid·Tradition(비상장), TP ICAP·Euronext(해외), ICE·CME(사업 분리 불가)",
+      "peers": [
+        "MKTX",
+        "BGC"
+      ],
+      "quote": "Major competitors include TP ICAP, BGC Partners and Tradition.",
+      "quote2": "MarketAxess (RFQ-hub) and Bloomberg and others in the equities and ETF markets"
+    },
+    "basket_cagr_pct": 17.24,
+    "company_cagr_pct": 19.97,
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gap_pp": 4.3,
+    "lifecycle_decline": false,
+    "peer_cagr_pct": 15.67,
+    "peers_dropped": [],
+    "peers_used": [
+      "BGC",
+      "MKTX"
+    ],
+    "rule": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)"
+  },
+  "ticker": "TW",
+  "unit": "USD"
+}

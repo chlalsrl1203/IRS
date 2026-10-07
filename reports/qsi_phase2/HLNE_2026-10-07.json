@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel.",
+      "We cannot control how third parties evaluate or characterize our disclosures or practices, and adverse ratings or assessments could negatively affect our reputation or our ability to attract and retain clients and investors. 58 Risks Related to Our Industry The investment management business is intensely competitive."
+    ],
+    "docs": [
+      "2026-05-21",
+      "2025-05-30"
+    ],
+    "n_new_competition": 2,
+    "n_new_sentences": 117,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel.",
+      "We cannot control how third parties evaluate or characterize our disclosures or practices, and adverse ratings or assessments could negatively affect our reputation or our ability to attract and retain clients and investors. 58 Risks Related to Our Industry The investment management business is intensely competitive."
+    ]
+  },
+  "pricing_power": {
+    "answer": null,
+    "reason": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다"
+  },
+  "ticker": "HLNE",
+  "unit": "USD"
+}

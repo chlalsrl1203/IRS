@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "If we fail to manage these risks effectively, or if our new or improved solutions or products are not technologically competitive or do not achieve market acceptance, our business and operating results could be adversely affected.",
+      "We have experienced, and expect to continue to experience, significant competitive pressures.",
+      "Our cyber safety and financial wellness businesses compete with a broad range of companies, including established security software vendors, operating system and platform providers, companies who specialize in a niche segment of the cyber safety market and which are expanding their portfolios into competing cyber safety products, traditional banks and credit unions, licensed and non-bank digital financial service providers, specialty finance companies, digital wealth management and brokerage platforms, embedded finance providers, financial marketplaces, and other technology companies.",
+      "Many of these competitors have longer operating histories, greater brand recognition, larger customer bases, and significantly greater financial, technical, and marketing resources than we do.",
+      "They may be able to offer more competitive pricing or terms, bundle products more effectively, introduce new, enhanced, broader or more specialized offerings more quickly (including for free), or respond more rapidly to technological and consumer trends."
+    ],
+    "docs": [
+      "2026-05-21",
+      "2025-05-15"
+    ],
+    "n_new_competition": 12,
+    "n_new_sentences": 112,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "If we fail to manage these risks effectively, or if our new or improved solutions or products are not technologically competitive or do not achieve market acceptance, our business and operating results could be adversely affected.",
+      "We have experienced, and expect to continue to experience, significant competitive pressures.",
+      "Our cyber safety and financial wellness businesses compete with a broad range of companies, including established security software vendors, operating system and platform providers, companies who specialize in a niche segment of the cyber safety market and which are expanding their portfolios into competing cyber safety products, traditional banks and credit unions, licensed and non-bank digital financial service providers, specialty finance companies, digital wealth management and brokerage platforms, embedded finance providers, financial marketplaces, and other technology companies.",
+      "Many of these competitors have longer operating histories, greater brand recognition, larger customer bases, and significantly greater financial, technical, and marketing resources than we do.",
+      "They may be able to offer more competitive pricing or terms, bundle products more effectively, introduce new, enhanced, broader or more specialized offerings more quickly (including for free), or respond more rapidly to technological and consumer trends."
+    ]
+  },
+  "pricing_power": {
+    "answer": "eroding",
+    "fy_end": 2026,
+    "fy_start": 2023,
+    "gm_change_pp": -3.78,
+    "gm_end": 78.46,
+    "gm_start": 82.24,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "GEN",
+  "unit": "USD"
+}

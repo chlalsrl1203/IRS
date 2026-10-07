@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [],
+    "docs": [
+      "2026-02-17",
+      "2025-02-13"
+    ],
+    "n_new_competition": 0,
+    "n_new_sentences": 24,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": []
+  },
+  "pricing_power": {
+    "answer": "eroding",
+    "fy_end": 2020,
+    "fy_start": 2017,
+    "gm_change_pp": -7.32,
+    "gm_end": 5.12,
+    "gm_start": 12.43,
+    "revenue_growing": false,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "SKYW",
+  "unit": "USD"
+}
