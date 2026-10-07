@@ -1,0 +1,193 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000796343",
+  "cxo": {
+    "events": [
+      {
+        "accession": "0000796343-26-000144",
+        "filing_date": "2026-09-08",
+        "quote": "Upon the Effective Date, Shantanu Narayen, the Company’s current Chair and Chief Executive Officer, will retire as the Company’s Chief Executive Officer and assume the position of Executive Chair of the Board.",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm"
+      },
+      {
+        "accession": "0000796343-26-000109",
+        "filing_date": "2026-06-11",
+        "quote": "On June 8, 2026, Daniel Durn notified the Company of his decision to resign as Chief Financial Officer and Executive Vice President, Finance, Technology, Security and Operations, effective June 15, 2026.",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm"
+      }
+    ],
+    "n_cxo_departure_filings": 2,
+    "n_item_502_filings": 8,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": false,
+    "buyback": 11281000000.0,
+    "fy": 2025,
+    "net_debt_issuance": 497000000.0,
+    "repay_known": true,
+    "rule": "순차입(발행−상환) ≥ 매입액의 50%면 부채 조달(사전 고정·비검증)"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2026-01-15",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 3058
+  },
+  "insider": {
+    "accessions": [
+      "0001224154-26-000003",
+      "0000796343-26-000153",
+      "0000796343-26-000152",
+      "0000796343-26-000151",
+      "0000796343-26-000139",
+      "0000796343-26-000137",
+      "0000796343-26-000135",
+      "0000796343-26-000134",
+      "0000796343-26-000133",
+      "0000796343-26-000132",
+      "0000796343-26-000131",
+      "0000796343-26-000130",
+      "0000796343-26-000129",
+      "0002140626-26-000006",
+      "0000796343-26-000118",
+      "0002140626-26-000004",
+      "0001643724-26-000003",
+      "0000796343-26-000116",
+      "0000796343-26-000107",
+      "0000796343-26-000105",
+      "0000796343-26-000103",
+      "0000796343-26-000097",
+      "0000796343-26-000095",
+      "0000796343-26-000094",
+      "0000796343-26-000093",
+      "0000796343-26-000092",
+      "0000796343-26-000091",
+      "0000796343-26-000090",
+      "0000796343-26-000089",
+      "0000796343-26-000088",
+      "0000796343-26-000087",
+      "0000796343-26-000083",
+      "0000796343-26-000082",
+      "0000796343-26-000081",
+      "0000796343-26-000080",
+      "0000796343-26-000079",
+      "0000796343-26-000078",
+      "0000796343-26-000077",
+      "0000796343-26-000076",
+      "0000796343-26-000050",
+      "0000796343-26-000035",
+      "0000796343-26-000034",
+      "0000796343-26-000033",
+      "0000796343-26-000032",
+      "0000796343-26-000031",
+      "0000796343-26-000030",
+      "0000796343-26-000029",
+      "0000796343-26-000028",
+      "0000796343-26-000017",
+      "0000796343-26-000016",
+      "0000796343-26-000015",
+      "0000796343-26-000014",
+      "0000796343-26-000013",
+      "0000796343-26-000012",
+      "0000796343-26-000011",
+      "0000796343-25-000140",
+      "0000796343-25-000137",
+      "0000796343-25-000133",
+      "0000796343-25-000131",
+      "0000796343-25-000130",
+      "0000796343-25-000129",
+      "0000796343-25-000128",
+      "0000796343-25-000127",
+      "0000796343-25-000126",
+      "0000796343-25-000119",
+      "0000796343-25-000118",
+      "0000796343-25-000117",
+      "0000796343-25-000116",
+      "0000796343-25-000111",
+      "0000796343-25-000109"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 70,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 1945130.0,
+      "discretionary_net_by_owner": {
+        "Durn Daniel": -816678.12,
+        "Forusz Jillian": -346220.38,
+        "NARAYEN SHANTANU": -49610110.48,
+        "Ricks David A": 1945130.0
+      },
+      "discretionary_net_usd": -48827878.97,
+      "discretionary_sell_usd": 50773008.97,
+      "floor_usd": 1000000,
+      "n_discretionary": 21,
+      "n_open_market": 21,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0000796343-26-000043",
+    "filing_date": "2026-02-27",
+    "result": {
+      "answer": "lt_1pct",
+      "pct": null,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-01-15",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 189
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0000796343-26-000101",
+    "filing_date": "2026-04-21",
+    "n_item_507": 2,
+    "result": {
+      "against": 144993886,
+      "answer": 0.506539950357119,
+      "for": 148837167,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/adbe-20260415.htm"
+  },
+  "ticker": "ADBE"
+}

@@ -1,0 +1,147 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000947484",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 7,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "같은 회계연도의 차입 발행·매입 값이 없다"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "연속 5개 회계연도의 주당배당 값이 없다(최근 연도 FY2024 이후 필요)",
+    "tag": "CommonStockDividendsPerShareDeclared"
+  },
+  "icfr": {
+    "answer": null,
+    "filed": "2026-02-26",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+    "reason": "Item 9A에 경영진의 ICFR 결론 문장이 없다(Exhibit 참조일 수 있다)"
+  },
+  "insider": {
+    "accessions": [
+      "0001741826-26-000007",
+      "0001227099-26-000004",
+      "0001372455-26-000008",
+      "0001372455-26-000006",
+      "0002035025-26-000002",
+      "0001372455-26-000004",
+      "0001518326-26-000002",
+      "0001444790-26-000002",
+      "0001743252-26-000002",
+      "0001628280-26-032259",
+      "0001612789-26-000003",
+      "0001878085-26-000002",
+      "0001084943-26-000002",
+      "0001227099-26-000002",
+      "0001628280-26-029927",
+      "0001372455-26-000002",
+      "0001769539-26-000007",
+      "0001345284-26-000005",
+      "0001718249-26-000009",
+      "0001718249-26-000007",
+      "0001864958-26-000003",
+      "0001227095-26-000005",
+      "0001741826-26-000004",
+      "0001769539-26-000005",
+      "0001345284-26-000003",
+      "0001227095-26-000004",
+      "0001769539-26-000004",
+      "0001345284-26-000002",
+      "0001718249-26-000005",
+      "0001864958-26-000002",
+      "0001227095-26-000002",
+      "0001769539-26-000002",
+      "0001741826-26-000003",
+      "0001718249-26-000003",
+      "0001227099-25-000007",
+      "0001227095-25-000006",
+      "0001741826-25-000005",
+      "0001769539-25-000006",
+      "0001304230-25-000006"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 39,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 498650.5,
+      "discretionary_net_by_owner": {
+        "Gansberg David": -569266.45,
+        "Houston Daniel Joseph": 498650.5,
+        "Morin Francois": -1850524.61,
+        "PASQUESI JOHN M": -19970730.82,
+        "Papadopoulo Nicolas": -2112062.95,
+        "Posner Brian S": -144608.0,
+        "Rajeh Maamoun": -4558857.77
+      },
+      "discretionary_net_usd": -28707400.1,
+      "discretionary_sell_usd": 29206050.6,
+      "floor_usd": 1000000,
+      "n_discretionary": 12,
+      "n_open_market": 12,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0000947484-26-000038",
+    "filing_date": "2026-03-24",
+    "result": {
+      "answer": null,
+      "reason": "'as a group' 지분 행을 찾지 못했다"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": "immaterial",
+    "filed": "2026-02-26",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+    "materiality_qualified": true,
+    "reason": "회사가 '중요한(material) 소송이 없다'고 한정해 진술 — 소송 존재 여부는 말하지 않는다",
+    "section_len": 372
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0000947484-26-000063",
+    "filing_date": "2026-05-07",
+    "n_item_507": 2,
+    "result": {
+      "against": 17650116,
+      "answer": 0.9407472212400257,
+      "for": 280228167,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000063/acgl-20260505.htm"
+  },
+  "ticker": "ACGL"
+}

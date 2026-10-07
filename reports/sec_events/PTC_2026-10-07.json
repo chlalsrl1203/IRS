@@ -1,0 +1,142 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000857005",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 4,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "가장 최근 공통 회계연도가 FY2022로 낡았다(FY2024 이후 필요)"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2025-11-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 4028
+  },
+  "insider": {
+    "accessions": [
+      "0001714701-26-000005",
+      "0001436655-26-000003",
+      "0000857005-26-000003",
+      "0001389250-26-000004",
+      "0001654954-26-004735",
+      "0001654954-26-004635",
+      "0001714701-26-000003",
+      "0001627340-26-000002",
+      "0001252191-26-000002",
+      "0001252191-26-000001",
+      "0001627340-26-000001",
+      "0000857005-26-000001",
+      "0001714701-26-000001",
+      "0001193635-26-000001",
+      "0001751561-26-000001",
+      "0001394887-26-000001",
+      "0001202443-26-000002",
+      "0001436655-26-000001",
+      "0001525550-26-000002",
+      "0001389250-26-000002",
+      "0002035847-26-000005",
+      "0001777095-26-000001",
+      "0001777095-25-000007",
+      "0001777095-25-000005",
+      "0001252191-25-000005",
+      "0001671728-25-000007",
+      "0002007480-25-000006",
+      "0000857005-25-000013",
+      "0001389250-25-000003",
+      "0002007480-25-000004",
+      "0001671728-25-000005",
+      "0001252191-25-000004",
+      "0001777095-25-000004",
+      "0001389250-25-000002",
+      "0001777095-25-000003",
+      "0001671728-25-000004",
+      "0001252191-25-000003",
+      "0002007480-25-000003",
+      "0000857005-25-000008"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 39,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 0,
+      "discretionary_net_by_owner": {
+        "CHRISTENSON ALICE": -348560.16,
+        "Talvitie Kristian": -8707634.35
+      },
+      "discretionary_net_usd": -9056194.51,
+      "discretionary_sell_usd": 9056194.51,
+      "floor_usd": 1000000,
+      "n_discretionary": 4,
+      "n_open_market": 17,
+      "n_routine_10b5_1": 13,
+      "routine_sell_usd": 2826310.4,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0001104659-25-124170",
+    "filing_date": "2025-12-23",
+    "result": {
+      "answer": null,
+      "reason": "'as a group' 지분 행을 찾지 못했다"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2025-11-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 29
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0001193125-26-046516",
+    "filing_date": "2026-02-11",
+    "n_item_507": 2,
+    "result": {
+      "against": 8087505,
+      "answer": 0.923479554109038,
+      "for": 97603267,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526046516/ptc-20260211.htm"
+  },
+  "ticker": "PTC"
+}

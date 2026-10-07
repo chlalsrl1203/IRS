@@ -117,7 +117,10 @@ def filing_url(cik: str, row: dict, raw_xml: bool = False) -> str:
 
 def normalize_text(raw: str) -> str:
     raw = re.sub(r"(?is)<(script|style).*?</\1>", " ", raw)
-    return re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", raw))).strip()
+    text = html.unescape(re.sub(r"<[^>]+>", " ", raw))
+    # 폭 없는 공백·BOM은 \s가 아니라서 숫자 사이에 끼면 파싱이 조용히 깨진다(실측: SKYW 5.07 표).
+    text = re.sub(r"[\u200b\u200c\u200d\ufeff]", " ", text)
+    return re.sub(r"\s+", " ", text).strip()
 
 
 def quote_in_text(quote: str, body: str) -> bool:
@@ -394,3 +397,248 @@ def debt_funded_buyback(issue: dict, repay: dict, buyback: dict, min_fy: int = N
     return {"answer": bool(net > 0 and net >= DEBT_FUNDED_RATIO * spend), "fy": fy,
             "net_debt_issuance": net, "buyback": spend, "repay_known": fy in repay,
             "rule": f"순차입(발행−상환) ≥ 매입액의 {DEBT_FUNDED_RATIO:.0%}면 부채 조달(사전 고정·비검증)"}
+
+
+# =====================================================================================
+# v3.95 — 적신호 공시·거버넌스 확장 (QSI의 비어 있던 회계품질·거버넌스 칸을 1차 출처로)
+# =====================================================================================
+# 전부 **사실 집계**다. 좋고 나쁨은 판정하지 않는다. 규칙이 답하지 못하면 `None`이며,
+# 그 이유를 `reason`에 남긴다(조용히 청정 신호로 오독되지 않게).
+
+NT_FORMS = ("NT 10-K", "NT 10-Q", "NT 10-K/A", "NT 10-Q/A")
+FLAG_WINDOW_DAYS = RESTATEMENT_WINDOW_DAYS     # 3년 — 목록 조회 창과 동일(덮음 확인 재사용)
+
+INSIDER_GROUP_BANDS = ("lt_1pct", "1_to_5pct", "5_to_20pct", "gte_20pct")   # 사전 고정·비검증
+
+
+def collect_listing_flags(listing: dict, as_of: str) -> dict:
+    """제출 목록만으로 센다(본문을 읽지 않는다): NT 10-K/10-Q(지연 제출 통지)·
+    8-K Item 4.01(감사인 변경)·8-K Item 2.06(중대 손상 인식).
+
+    ⚠️ 건수는 **그 일이 있었다는 사실**이다. 4.01은 감사인 임기 만료·정기 교체도 포함하고
+    2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다 — 원인·심각도는 판단하지 않는다.
+    """
+    if is_foreign_private_issuer(listing["all_forms"]):
+        return {"status": UNAVAILABLE, "reason": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다"}
+    since = (datetime.date.fromisoformat(as_of) - datetime.timedelta(days=FLAG_WINDOW_DAYS)).isoformat()
+    if not listing["covers_window"]:
+        return {"status": UNAVAILABLE, "reason": "제출 목록이 3년 창을 덮지 못해 부재 판단 불가"}
+    nt = [r for r in listing["rows"] if r["form"] in NT_FORMS and r["filingDate"] >= since]
+    aud = rows_with_item(listing, "4.01", since)
+    imp = rows_with_item(listing, "2.06", since)
+    pick = lambda rs: [{"date": r["filingDate"], "accession": r["accessionNumber"], "form": r["form"]} for r in rs]
+    return {"status": "OK", "window_since": since,
+            "n_nt": len(nt), "nt": pick(nt),
+            "n_auditor_change": len(aud), "auditor_change": pick(aud),
+            "n_material_impairment": len(imp), "material_impairment": pick(imp)}
+
+
+# --- 보수 승인(say-on-pay) 투표: 8-K Item 5.07 -----------------------------------------
+
+_SOP_ANCHOR = re.compile(
+    r"(?:advisory|non-binding)\s*(?:\([^)]{0,30}\)\s*)?(?:vote|basis)?[^.]{0,200}?"
+    r"(?:executive\s+compensation|named\s+executive|compensation\s+of\s+(?:our|the\s+company))", re.I)
+_SOP_TABLE = re.compile(
+    r"(?:votes\s+)?for\s+(?:votes\s+)?against\s+(?:votes\s+)?abst(?:ain|ent)\w*\s+"
+    r"(?:broker\s+non[\s-]*votes?\s+)?([\d,]+)\s+([\d,]+)"
+    r"|votes\s+for(?:\s+approval)?\s+([\d,]+)\s+votes\s+against\s+([\d,]+)", re.I)
+SOP_WINDOW = 300     # 안건 문장 끝에서 표·서술까지의 최대 거리(사전 고정)
+_SOP_PROSE = re.compile(
+    r"([\d,]{4,})\s+(?:affirmative\s+votes|votes\s+for|shares\s+voted\s+for)[^.]{0,60}?"
+    r"([\d,]{3,})\s+(?:negative\s+votes|votes\s+against|shares\s+voted\s+against)", re.I)
+
+
+def say_on_pay_from_507(section: str) -> dict:
+    """8-K Item 5.07 절에서 보수 승인 투표 찬성·반대. 찬성률 = 찬성/(찬성+반대)(기권 제외, 통용 관행).
+
+    - '투표 빈도'(frequency) 안건은 보수 승인이 아니므로 제외한다.
+    - 표 형식과 서술 형식 둘 다 읽고, 어느 쪽도 못 읽으면 `None`(추측하지 않는다).
+    """
+    for m in _SOP_ANCHOR.finditer(section):
+        if "frequency" in section[m.start():m.end() + 120].lower():
+            continue
+        # 표는 그 안건 **바로 뒤**에 있어야 한다 — 멀리 있는 표는 다른 안건의 것일 수 있다(오연결 방지).
+        tail = section[m.end():m.end() + SOP_WINDOW]
+        t = _SOP_TABLE.search(tail)
+        p = _SOP_PROSE.search(tail)
+        hit = None
+        if t and (not p or t.start() <= p.start()):
+            hit = (t, t.group(1) or t.group(3), t.group(2) or t.group(4))
+        elif p:
+            hit = (p, p.group(1), p.group(2))
+        if not hit:
+            continue
+        try:
+            f, a = int(hit[1].replace(",", "")), int(hit[2].replace(",", ""))
+        except ValueError:
+            continue
+        if f + a <= 0:
+            continue
+        excerpt = section[m.start():m.end() + hit[0].end()]
+        return {"answer": f / (f + a), "for": f, "against": a, "excerpt": excerpt,
+                "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"}
+    return {"answer": None, "reason": "보수 승인(say-on-pay) 안건의 찬반 표를 읽지 못했다"}
+
+
+def collect_say_on_pay(listing: dict, fetch_text, cik: str, as_of: str) -> dict:
+    """최근 24개월 8-K Item 5.07 중 **가장 최근에 보수 승인 결과를 읽을 수 있는** 제출."""
+    if is_foreign_private_issuer(listing["all_forms"]):
+        return {"status": UNAVAILABLE, "reason": "20-F/6-K 발행사 — 8-K Item 5.07 의무가 없다"}
+    since = (datetime.date.fromisoformat(as_of) - datetime.timedelta(days=CXO_WINDOW_DAYS)).isoformat()
+    if not listing["covers_window"]:
+        return {"status": UNAVAILABLE, "reason": "제출 목록이 24개월 창을 덮지 못해 부재 판단 불가"}
+    rows = sorted(rows_with_item(listing, "5.07", since), key=lambda r: r["filingDate"], reverse=True)
+    if not rows:
+        return {"status": "OK", "n_item_507": 0, "result": None,
+                "reason": "24개월 내 8-K Item 5.07(주총 결과) 제출이 없다"}
+    for r in rows:
+        url = filing_url(cik, r)
+        try:
+            body = normalize_text(fetch_text(url))
+        except Exception as e:
+            return {"status": UNAVAILABLE, "reason": f"8-K 본문 읽기 실패({r['accessionNumber']}): {e}"}
+        res = say_on_pay_from_507(item_section(body, "5.07") or body)
+        if res["answer"] is not None and quote_in_text(res["excerpt"], body):
+            return {"status": "OK", "n_item_507": len(rows), "result": res,
+                    "filing_date": r["filingDate"], "accession": r["accessionNumber"], "url": url}
+    return {"status": "OK", "n_item_507": len(rows), "result": None,
+            "reason": "5.07 제출은 있으나 보수 승인 안건의 찬반을 읽지 못했다"}
+
+
+# --- 임원·이사 합산 지분: DEF 14A ---------------------------------------------------------
+
+_GROUP = re.compile(
+    r"as\s+a\s+group(?:\s*\(\s*(?:\d+|[a-z]+)\s+(?:persons?|individuals?|people|members)\s*\))?", re.I)
+_GTOK = re.compile(r"\s*(?:(?P<fn>\(\w{1,2}\))|(?P<star>\*)|(?P<pct>\d+(?:\.\d+)?)\s*%|(?P<num>\d[\d,]*(?:\.\d+)?))")
+
+
+def group_band(pct: float) -> str:
+    if pct < 1:
+        return "lt_1pct"
+    if pct < 5:
+        return "1_to_5pct"
+    if pct < 20:
+        return "5_to_20pct"
+    return "gte_20pct"
+
+
+def insider_group_from_proxy(body: str) -> dict:
+    """위임장 지분표의 'All directors and executive officers as a group' 행.
+
+    **모호하면 답하지 않는다** — 다중 클래스(주식 종류별 퍼센트가 여러 개)·형식 이탈은 `None`.
+    `*`(1% 미만 표기)는 `lt_1pct`. 퍼센트가 없는 행도 `None`.
+    """
+    found = []
+    for m in _GROUP.finditer(body):
+        pos, toks = m.end(), []
+        while len(toks) < 8:
+            t = _GTOK.match(body, pos)
+            if not t:
+                break
+            kind = t.lastgroup
+            if kind != "fn":
+                toks.append((kind, t.group(kind)))
+            pos = t.end()
+        if not toks or toks[0][0] != "num":
+            continue
+        rest = toks[1:]
+        if len(rest) == 1 and rest[0][0] == "star":
+            pct, label = None, "lt_1pct"
+        elif len(rest) == 1 and rest[0][0] == "pct":
+            pct = float(rest[0][1]); label = group_band(pct)
+        elif len(rest) == 1 and rest[0][0] == "num" and "." in rest[0][1] and float(rest[0][1]) <= 100:
+            pct = float(rest[0][1]); label = group_band(pct)
+        else:
+            found.append(("ambiguous", None, None))
+            continue
+        start = max(0, m.start() - 90)
+        found.append((label, pct, body[start:pos].strip()))
+    ok = {f[0] for f in found if f[0] != "ambiguous"}
+    if len(ok) == 1:
+        label = ok.pop()
+        hit = next(f for f in found if f[0] == label)
+        return {"answer": label, "pct": hit[1], "excerpt": hit[2],
+                "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"}
+    if len(ok) > 1:
+        return {"answer": None, "reason": "합산 지분 행이 서로 다른 구간을 가리킨다"}
+    return {"answer": None, "reason": ("합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다"
+                                     if found else "'as a group' 지분 행을 찾지 못했다")}
+
+
+def collect_insider_group(listing: dict, fetch_text, cik: str, as_of: str) -> dict:
+    if is_foreign_private_issuer(listing["all_forms"]):
+        return {"status": UNAVAILABLE, "reason": "20-F/6-K 발행사 — 미국 위임장(DEF 14A) 의무가 없다"}
+    rows = sorted([r for r in listing["rows"] if r["form"] == "DEF 14A"],
+                  key=lambda r: r["filingDate"], reverse=True)
+    if not rows:
+        return {"status": "OK", "result": None, "reason": "조회 창 안에 DEF 14A가 없다"}
+    r = rows[0]
+    url = filing_url(cik, r)
+    try:
+        body = normalize_text(fetch_text(url))
+    except Exception as e:
+        return {"status": UNAVAILABLE, "reason": f"DEF 14A 본문 읽기 실패({r['accessionNumber']}): {e}"}
+    res = insider_group_from_proxy(body)
+    if res.get("answer") and not quote_in_text(res["excerpt"], body):
+        res = {"answer": None, "reason": "추출한 행이 원문과 글자 일치하지 않아 폐기"}
+    return {"status": "OK", "result": res, "filing_date": r["filingDate"],
+            "accession": r["accessionNumber"], "url": url}
+
+
+# --- 내부통제(ICFR) 결론: 10-K Item 9A ----------------------------------------------------
+
+_ICFR = re.compile(
+    r"concluded\s+that[^.]{0,200}?internal\s+control\s+over\s+financial\s+reporting"
+    r"[^.]{0,80}?\b(?:was|is|were)\s+(not\s+)?effective", re.I)
+
+
+def _longest_section(body: str, start_pat: str, end_pat: str, cap: int = 60000) -> str:
+    best = ""
+    for m in re.finditer(start_pat, body, re.I):
+        nxt = re.search(end_pat, body[m.end():], re.I)
+        e = m.end() + nxt.start() if nxt else min(len(body), m.end() + cap)
+        if e - m.start() > len(best):
+            best = body[m.start():e]
+    return best
+
+
+def icfr_from_10k(body: str) -> dict:
+    """Item 9A에서 **경영진이 직접 내린 결론** 문장만. 위험요인의 가정문('if we identify…')은 읽지 않는다."""
+    sec = _longest_section(body, r"Item\s+9A\s*[.:\-—–]?\s*Controls\s+and\s+Procedures",
+                           r"Item\s+9B")
+    if not sec:
+        return {"answer": None, "reason": "Item 9A 절을 찾지 못했다"}
+    hits = list(_ICFR.finditer(sec))
+    if not hits:
+        return {"answer": None, "reason": "Item 9A에 경영진의 ICFR 결론 문장이 없다(Exhibit 참조일 수 있다)"}
+    outs = {("ineffective" if h.group(1) else "effective") for h in hits}
+    if len(outs) > 1:
+        return {"answer": None, "reason": "Item 9A에 effective/not effective 결론이 함께 있다 — 사람이 읽어야 한다"}
+    return {"answer": outs.pop(), "excerpt": hits[0].group(0).strip(), "section_len": len(sec),
+            "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만"}
+
+
+# --- 배당 예측가능성: companyfacts ----------------------------------------------------------
+
+DIVIDEND_TAGS = ("CommonStockDividendsPerShareDeclared", "CommonStockDividendsPerShareCashPaid")
+DIVIDEND_YEARS = 5
+
+
+def dividend_predictable(dps: dict, min_fy: int, n: int = DIVIDEND_YEARS) -> dict:
+    """최근 `n`개 연속 회계연도 주당배당이 모두 양수이고 **한 번도 줄지 않았으면** True.
+
+    ⚠️ **True만 단언한다.** 감소가 있어도 False로 답하지 않는다 — 특별배당 뒤 정상화가
+    '삭감'으로 읽힐 수 있어(실측 PGR: 연 변동 배당), 감소 연도를 사실로만 돌려주고 판단은 비운다.
+    """
+    years = sorted(dps)[-n:]
+    if len(years) < n or years[-1] < min_fy or years[-1] - years[0] != n - 1:
+        return {"answer": None, "reason": f"연속 {n}개 회계연도의 주당배당 값이 없다(최근 연도 FY{min_fy} 이후 필요)"}
+    vals = [dps[y] for y in years]
+    if any(v <= 0 for v in vals):
+        return {"answer": None, "reason": "주당배당이 0 이하인 연도가 있다"}
+    declines = [(years[i], vals[i - 1], vals[i]) for i in range(1, n) if vals[i] < vals[i - 1] - 1e-9]
+    if declines:
+        return {"answer": None, "declines": declines,
+                "reason": "주당배당이 감소한 연도가 있다 — 특별배당 후 정상화인지 삭감인지는 판단하지 않는다"}
+    return {"answer": True, "years": years, "values": vals,
+            "rule": f"최근 {n}개 연속 회계연도 주당배당이 모두 양수이고 감소 없음(사전 고정)"}

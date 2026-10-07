@@ -1,0 +1,306 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "DLO.DUAL"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "의장 선임 규정은 확인했으나 현 의장과 CEO의 겸직 여부를 직접 확인하지 못했다",
+      "qid": "gov.chair_separated",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+      "qid": "gov.insider_pattern",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "10-K가 없다(외국 발행사이거나 최근 제출 목록에 없음)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.0584,
+      "claim_ids": [
+        "DLO.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0364,
+      "claim_ids": [
+        "DLO.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "같은 회계연도의 차입 발행·매입 값이 없다",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — 8-K Item 4.02 의무가 없다",
+      "qid": "acc.restated_down_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — 8-K Item 5.07 의무가 없다",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — 미국 위임장(DEF 14A) 의무가 없다",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "10-K가 없다(외국 발행사이거나 최근 제출 목록에 없음)",
+      "qid": "acc.icfr_conclusion",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+      "qid": "acc.auditor_change_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+      "qid": "acc.material_impairment_3y",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-07",
+  "claims": [
+    {
+      "claim_id": "DLO.DUAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "Item 7 Major Shareholders — voting rights note",
+            "observed_date": "2026-10-06",
+            "quote": "holders of Class B common shares are entitled to five votes per share, whereas holders of our Class A common shares are entitled to one vote per share",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Class B 5표 vs Class A 1표(경제적 권리는 동일, 전환권·비례유지권만 상이)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 5표를 갖는 차등의결 구조다"
+    },
+    {
+      "claim_id": "DLO.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "ifrs-full:AdjustmentsForSharebasedPayments FY2025 = 24,136,000 USD",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001846832.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값(같은 20-F의 OCF 415,457,000 USD에서 capex 차감)",
+          "summary": "FY2025 SBC 24,136,000 USD / fcf0 413,175,000 USD",
+          "value": 0.0584,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF 대비 낮다(5.8%)"
+    },
+    {
+      "claim_id": "DLO.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "ifrs-full:AdjustedWeightedAverageShares FY2022·FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001846832.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "2021-10 IPO 이후라 FY2022 이후 구간은 상장 전 우선주 기준 문제가 없다",
+          "summary": "조정 가중평균주식수 FY2022 313,138,646 -> FY2025 301,742,797",
+          "value": -0.0364,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수가 줄었다(-3.64%)"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.1034,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 3,
+    "n_primary_answered": 3,
+    "n_primary_required": 17,
+    "n_questions": 29,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 0,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 5,
+        "unknown": 5
+      },
+      "capital_allocation": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 2,
+        "unknown": 2
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 4,
+        "unknown": 0
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 1,
+        "n_questions": 9,
+        "not_applicable": 0,
+        "unasked": 2,
+        "unknown": 6
+      }
+    },
+    "unexamined_lenses": [
+      "capital_allocation",
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "DLO",
+  "findings": [
+    {
+      "claim_ids": [
+        "DLO.DUAL"
+      ],
+      "effect": "weakens",
+      "lens": "governance",
+      "summary": "Class B 5표 구조로 창업자 의결권이 경제 지분보다 크다. 의장·소송은 미확인"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "capital_allocation",
+      "summary": "자사주·M&A 원문 미조회"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "accounting_quality",
+      "summary": "재작성·가이던스 이력 미조회"
+    },
+    {
+      "claim_ids": [
+        "DLO.SBC",
+        "DLO.SHARES"
+      ],
+      "effect": "strengthens",
+      "lens": "dilution",
+      "summary": "SBC/FCF 5.8%, 3년 주식수 -3.64%"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "competitive_landscape",
+      "summary": "경쟁 구도는 이번 파일럿에서 조사하지 않았다"
+    }
+  ],
+  "inversion": [
+    "테이크레이트가 이미 낮아 추가 압축 여지가 작고, 대형 가맹점 가격구간 이동이 반복되면 구조적 경쟁압력이다",
+    "신흥국 통화·자본통제·규제 리스크가 상시 존재한다"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": 14.52,
+  "revision": 1,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "807fa6dc212345b0aeeb7099ae1221ac333bfca46a69bc2d9d1b5acff13d01e4",
+  "supersedes": "c8aeb798cd1793b2bfeaf27d3743b1ab6cf8d09f9e5b9d1ac4d4ab1977f7ab7e",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

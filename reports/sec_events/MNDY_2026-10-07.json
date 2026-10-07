@@ -1,0 +1,40 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0001845338",
+  "cxo": {
+    "reason": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "같은 회계연도의 차입 발행·매입 값이 없다"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "insider": {
+    "reason": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "insider_group": {
+    "reason": "20-F/6-K 발행사 — 미국 위임장(DEF 14A) 의무가 없다",
+    "result": null,
+    "status": "UNAVAILABLE"
+  },
+  "listing_flags": {
+    "reason": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "restatement": {
+    "reason": "20-F/6-K 발행사 — 8-K Item 4.02 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "say_on_pay": {
+    "reason": "20-F/6-K 발행사 — 8-K Item 5.07 의무가 없다",
+    "result": null,
+    "status": "UNAVAILABLE"
+  },
+  "ticker": "MNDY"
+}

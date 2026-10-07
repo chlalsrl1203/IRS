@@ -10,6 +10,13 @@ QSI 개정본 — SEC 이벤트 수집으로 `unknown`을 채운다 (v3.94)
   acc.restated_down_3y    8-K Item 4.02·10-K/A 부재(존재하면 판단 보류)
   gov.material_litigation 10-K Item 3 — 회사 자기 진술만(없음=none, 중요성 한정=immaterial)
   cap.debt_funded_buyback 같은 연도 순차입 ≥ 매입액의 50%
+  (v3.95 확장)
+  acc.late_filing_nt_3y / acc.auditor_change_3y / acc.material_impairment_3y
+                          제출 목록의 NT 10-K·10-Q / 8-K 4.01 / 8-K 2.06 건수(본문을 읽지 않는다)
+  gov.say_on_pay_support_pct 8-K Item 5.07 — 보수 승인 투표 찬성/(찬성+반대)
+  gov.insider_group_ownership DEF 14A — 임원·이사 합산 지분 구간(모호하면 unknown)
+  acc.icfr_conclusion     10-K Item 9A — 경영진의 ICFR 결론 문장만
+  cap.dividend_predictable companyfacts — 5개 연속 연도 주당배당 양수·무감소일 때만 True
 
 ⚠️ 이미 answered인 답은 건드리지 않는다. 확인하지 못하면 unknown을 유지하고 **사유를 구체화**한다.
 ⚠️ 판정·비중·ledger·thesis·holdings는 건드리지 않는다(병기).
@@ -35,7 +42,10 @@ from engine.filing_dates import (_http_json, _http_text, fetch_company_facts,  #
 
 REPORT_DIR = os.path.join(ROOT, "reports", "sec_events")
 TARGET_QIDS = ("gov.insider_pattern", "gov.cxo_turnover_24m", "acc.restated_down_3y",
-               "gov.material_litigation", "cap.debt_funded_buyback")
+               "gov.material_litigation", "cap.debt_funded_buyback",
+               "acc.late_filing_nt_3y", "acc.auditor_change_3y", "acc.material_impairment_3y",
+               "gov.say_on_pay_support_pct", "gov.insider_group_ownership",
+               "acc.icfr_conclusion", "cap.dividend_predictable")
 
 
 def _retry(fn, url):
@@ -205,8 +215,125 @@ def collect(ticker, as_of):
         else:
             unknown("gov.material_litigation", lit.get("reason", "Item 3 확인 실패"))
 
-    # --- 자사주 매입 재원 ------------------------------------------------------------
+    # --- 적신호 공시(목록 기반): NT·감사인 변경·중대 손상 ---------------------------------------
+    fl = E.collect_listing_flags(listing, as_of)
+    report["listing_flags"] = fl
+    if fl["status"] == "OK":
+        for qid, key, label, cid_sfx in (
+                ("acc.late_filing_nt_3y", "nt", "정기보고서 지연 제출 통지(NT 10-K/10-Q)", "NT"),
+                ("acc.auditor_change_3y", "auditor_change", "감사인 변경 8-K(Item 4.01)", "AUDITOR"),
+                ("acc.material_impairment_3y", "material_impairment", "중대 손상 인식 8-K(Item 2.06)", "IMPAIR")):
+            n = fl["n_" + {"nt": "nt", "auditor_change": "auditor_change",
+                           "material_impairment": "material_impairment"}[key]]
+            cid = f"{ticker}.{cid_sfx}"
+            claims.append(_claim(cid, f"최근 3년 {label} {n}건 {[x['date'] for x in fl[key]]}", "HIGH",
+                _ev(f"제출 목록에서 {label} {n}건 (창 {fl['window_since']}~{as_of}, 목록이 창을 덮음 확인)",
+                    _cit(f"{ticker} submissions index", "filings.recent form·items 필드", index_url, as_of),
+                    metric=qid, value=n,
+                    note="건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다"
+                         + (" (4.01은 정기 감사인 교체·임기 만료도 포함)" if key == "auditor_change" else "")
+                         + (" (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)"
+                            if key == "material_impairment" else ""))))
+            answers.append({"qid": qid, "status": "answered", "answer": n,
+                            "claim_ids": [cid], "note": ""})
+        findings.append({"lens": "accounting_quality", "effect": "neutral",
+                         "claim_ids": [f"{ticker}.NT", f"{ticker}.AUDITOR", f"{ticker}.IMPAIR"],
+                         "summary": "적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음)"})
+    else:
+        for qid in ("acc.late_filing_nt_3y", "acc.auditor_change_3y", "acc.material_impairment_3y"):
+            unknown(qid, fl["reason"])
+
+    # --- 보수 승인 투표(8-K 5.07) -------------------------------------------------------------
+    sop = E.collect_say_on_pay(listing, fetch_text, cik, as_of)
+    report["say_on_pay"] = {k_: v for k_, v in sop.items() if k_ != "result"} | {
+        "result": ({k_: v for k_, v in sop["result"].items() if k_ != "excerpt"} if sop.get("result") else None)}
+    if sop["status"] == "OK" and sop.get("result"):
+        res = sop["result"]
+        cid = f"{ticker}.SAYONPAY"
+        claims.append(_claim(cid,
+            f"{sop['filing_date']} 주총 보수 승인 투표 찬성 {res['for']:,} / 반대 {res['against']:,} → "
+            f"찬성률 {res['answer']:.1%}", "HIGH",
+            _ev("8-K Item 5.07 보수 승인 안건 찬반",
+                _cit(f"{ticker} 8-K ({sop['filing_date']}, acc {sop['accession']})", "Item 5.07",
+                     sop["url"], as_of, res["excerpt"]),
+                metric="say_on_pay_support", value=round(res["answer"], 4), note=res["rule"])))
+        answers.append({"qid": "gov.say_on_pay_support_pct", "status": "answered",
+                        "answer": round(res["answer"], 4), "claim_ids": [cid], "note": ""})
+        findings.append({"lens": "governance", "effect": "neutral", "claim_ids": [cid],
+                         "summary": "주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"})
+    else:
+        unknown("gov.say_on_pay_support_pct",
+                sop.get("reason") or "보수 승인 결과를 읽지 못했다")
+
+    # --- 임원·이사 합산 지분(DEF 14A) ------------------------------------------------------------
+    ig = E.collect_insider_group(listing, fetch_text, cik, as_of)
+    report["insider_group"] = {k_: v for k_, v in ig.items() if k_ != "result"} | {
+        "result": ({k_: v for k_, v in ig["result"].items() if k_ != "excerpt"} if ig.get("result") else None)}
+    igr = ig.get("result") if ig["status"] == "OK" else None
+    if igr and igr.get("answer"):
+        cid = f"{ticker}.INSIDERGROUP"
+        claims.append(_claim(cid,
+            f"위임장({ig['filing_date']}) 기준 임원·이사 합산 지분 구간 {igr['answer']}"
+            + (f" ({igr['pct']}%)" if igr.get("pct") is not None else " ('*' = 1% 미만 표기)"), "MEDIUM",
+            _ev("DEF 14A 지분표의 'as a group' 행",
+                _cit(f"{ticker} DEF 14A (filed {ig['filing_date']}, acc {ig['accession']})",
+                     "Security Ownership 표 — 'as a group' 행", ig["url"], as_of, igr["excerpt"]),
+                metric="insider_group_pct", value=igr.get("pct"), note=igr["rule"])))
+        answers.append({"qid": "gov.insider_group_ownership", "status": "answered",
+                        "answer": igr["answer"], "claim_ids": [cid], "note": ""})
+        findings.append({"lens": "governance", "effect": "neutral", "claim_ids": [cid],
+                         "summary": "임원·이사 합산 지분을 위임장 지분표에서 구간으로 집계(판단 없음)"})
+    else:
+        unknown("gov.insider_group_ownership",
+                (ig.get("reason") if ig["status"] != "OK" else (igr or {}).get("reason") or ig.get("reason"))
+                or "합산 지분을 읽지 못했다")
+
+    # --- ICFR 결론(10-K Item 9A) ---------------------------------------------------------------
+    if not k:
+        unknown("acc.icfr_conclusion", "10-K가 없다(외국 발행사이거나 최근 제출 목록에 없음)")
+    else:
+        row = sorted(k, key=lambda r: r["filingDate"])[-1]
+        url = E.filing_url(cik, row)
+        body = E.normalize_text(fetch_text(url))
+        ic = E.icfr_from_10k(body)
+        report["icfr"] = {k_: v for k_, v in ic.items() if k_ != "excerpt"} | {
+            "form_url": url, "filed": row["filingDate"]}
+        if ic.get("answer") and E.quote_in_text(ic["excerpt"], body):
+            cid = f"{ticker}.ICFR"
+            doc = f"{ticker} 10-K (filed {row['filingDate']}, acc {row['accessionNumber']})"
+            claims.append(_claim(cid, f"10-K Item 9A 경영진 결론: ICFR {ic['answer']}", "HIGH",
+                _ev("Item 9A 경영진 결론 문장", _cit(doc, "Item 9A. Controls and Procedures", url, as_of,
+                                                    ic["excerpt"]),
+                    note=ic["rule"] + ". 경영진의 자기 평가이며 외부 감사인 의견과 별개다")))
+            answers.append({"qid": "acc.icfr_conclusion", "status": "answered", "answer": ic["answer"],
+                            "claim_ids": [cid], "note": "경영진의 자기 평가다 — 독립 확인이 아니다"})
+            findings.append({"lens": "accounting_quality", "effect": "neutral", "claim_ids": [cid],
+                             "summary": "10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음)"})
+        else:
+            unknown("acc.icfr_conclusion", ic.get("reason", "Item 9A 확인 실패"))
+
+    # --- 배당 예측가능성(companyfacts) ---------------------------------------------------------
     facts = fetch_company_facts(cik)
+    dtag, dps = _debt_series(facts, E.DIVIDEND_TAGS)
+    dv = E.dividend_predictable(dps, min_fy=int(as_of[:4]) - 2) if dps else {
+        "answer": None, "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)"}
+    report["dividend"] = dv | {"tag": dtag}
+    if dv["answer"] is True:
+        cid = f"{ticker}.DIVIDEND"
+        claims.append(_claim(cid, f"최근 {len(dv['years'])}개 연속 회계연도 주당배당 {dv['values']} — 감소 없음",
+            "MEDIUM", _ev("현금흐름·자본 관련 주당배당(companyfacts)",
+                _cit(f"{ticker} companyfacts", f"{dtag} FY{dv['years'][0]}~FY{dv['years'][-1]}",
+                     f"https://data.sec.gov/api/xbrl/companyfacts/CIK{cik}.json", as_of),
+                metric="dividends_per_share", value=dv["values"][-1], note=dv["rule"])))
+        answers.append({"qid": "cap.dividend_predictable", "status": "answered", "answer": True,
+                        "claim_ids": [cid], "note": ""})
+        findings.append({"lens": "capital_allocation", "effect": "neutral", "claim_ids": [cid],
+                         "summary": "배당이 5개 연속 연도 감소 없이 지급됨(companyfacts, 사전 고정 규칙)"})
+    else:
+        extra = f" 감소 연도: {dv['declines']}" if dv.get("declines") else ""
+        unknown("cap.dividend_predictable", dv["reason"] + extra)
+
+    # --- 자사주 매입 재원 ------------------------------------------------------------
     _, issue = _debt_series(facts, E.DEBT_ISSUE_TAGS)
     _, repay = _debt_series(facts, E.DEBT_REPAY_TAGS)
     _, buy = _debt_series(facts, E.BUYBACK_TAGS)

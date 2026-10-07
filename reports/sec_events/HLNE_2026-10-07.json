@@ -1,0 +1,140 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0001433642",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 1,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": false,
+    "buyback": 2000.0,
+    "fy": 2024,
+    "net_debt_issuance": -2500000.0,
+    "repay_known": true,
+    "rule": "순차입(발행−상환) ≥ 매입액의 50%면 부채 조달(사전 고정·비검증)"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2026-05-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 3523
+  },
+  "insider": {
+    "accessions": [
+      "0001698324-26-000007",
+      "0001987386-26-000005",
+      "0001972135-26-000005",
+      "0001207403-26-000002",
+      "0001338580-26-000003",
+      "0001288952-26-000011",
+      "0001698040-26-000006",
+      "0001433642-26-000024",
+      "0001433642-26-000023",
+      "0001433642-26-000022",
+      "0001698324-26-000004",
+      "0001972135-26-000003",
+      "0001987386-26-000003",
+      "0001698058-26-000004",
+      "0001698040-26-000004",
+      "0001698098-26-000005",
+      "0001433642-26-000021",
+      "0001433642-26-000013",
+      "0001698098-26-000003",
+      "0001433642-26-000012",
+      "0001433642-26-000011",
+      "0001698058-26-000002",
+      "0001433642-26-000010",
+      "0001628280-26-011070",
+      "0001628280-26-011067",
+      "0001628280-26-011063",
+      "0001628280-26-011059",
+      "0001698040-26-000002",
+      "0001433642-25-000119"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 29,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_buy",
+      "discretionary_buy_usd": 19511533.15,
+      "discretionary_net_by_owner": {
+        "BERKMAN DAVID J": 2154050.0,
+        "Delgado-Moreira Juan": 2032142.77,
+        "Giannini Mario L": 990010.4,
+        "Hirsch Erik R.": 988260.41,
+        "Kramer Andrea Anigati": 349392.61,
+        "Rogers Hartley R.": 12997676.96
+      },
+      "discretionary_net_usd": 19511533.15,
+      "discretionary_sell_usd": 0,
+      "floor_usd": 1000000,
+      "n_discretionary": 18,
+      "n_open_market": 18,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0001433642-26-000034",
+    "filing_date": "2026-07-23",
+    "result": {
+      "answer": null,
+      "reason": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-05-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 640
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0001433642-26-000045",
+    "filing_date": "2026-09-10",
+    "n_item_507": 2,
+    "result": {
+      "against": 18745336,
+      "answer": 0.8554327681142522,
+      "for": 110919843,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000045/hlne-20260910.htm"
+  },
+  "ticker": "HLNE"
+}
