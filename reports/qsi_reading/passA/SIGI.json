@@ -1,0 +1,47 @@
+{
+ "ticker": "SIGI",
+ "reader": "A",
+ "based_on_record": "b931918db54914aea73b583198bb14752e4d43a846275b617401e6f1eed58973",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "SIGI-3",
+   "quote": "Reviews periodically with the CEO the plans for succession of Selective’s CEO, other executive officers, and other key employees",
+   "reason": "위원회가 CEO 승계 계획을 정기 검토"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "SIGI-8",
+   "quote": "We expect any potential ultimate liability for ordinary routine legal proceedings incidental to our insurance business will not be material to our consolidated financial condition after considering estimated loss provisions.",
+   "reason": "통상 소송 부채가 중대하지 않을 것이라 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "합산 지분 행이 증거에 잘려 있어 읽을 수 없음"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "최근 회계연도 재해손실·재보험 방어 수치가 증거에 없음(2026 전망치 6포인트뿐)"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "answered",
+   "answer": 0.972,
+   "excerpt_id": "SIGI-19",
+   "quote": "Key Metrics: Combined ratio 97.2 % 103.0 (5.8) pts 96.5 % 6.5 pts",
+   "reason": "연결 GAAP 합산비율 97.2%"
+  }
+ ]
+}

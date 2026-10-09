@@ -1,0 +1,119 @@
+{
+ "ticker": "SE",
+ "reader": "B",
+ "based_on_record": "52a3a3d2e884163423d725340c7d0041ac81eaf534d623a0c397fecc94f5ca30",
+ "answers": [
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지배구조 절에 승계 언급이 발췌에 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "핵심 인물 의존 진술·승계 진술 모두 발췌에 없음"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "내부자 거래 증거 없음"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "임원 교체 공시 증거 없음"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "gte_20pct",
+   "excerpt_id": "SE-6",
+   "quote": "All directors and executive officers as a group (11) 194,113,807 45,527,793 36.9 68.2",
+   "reason": "임원·이사 합계 총 보통주 대비 경제적 지분 36.9%(의결권 68.2%는 미사용)"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "영업권 손상(2023)은 있으나 인수 연관·대형 거래 여부 불명"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자사주 매입 증거 없음(전환사채 환매만 있음)"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연간 가이던스 대비 실적 전체 이력을 발췌로 확인 불가"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 이행 이력을 확정할 수 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 하향·부정 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "일회성 조정표가 발췌에 없음"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Item 2.06류 중대 손상 공시 증거 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사 자체 점유율 추세 진술 없음(위험요인 가정문만)"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축 진술 없음"
+  }
+ ]
+}

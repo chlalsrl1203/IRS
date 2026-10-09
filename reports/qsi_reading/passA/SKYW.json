@@ -1,0 +1,103 @@
+{
+ "ticker": "SKYW",
+ "reader": "A",
+ "based_on_record": "31b91770197726552ede401ccc10f182e3fcd6bdfb42c3dd72b485f1cdcf3a2a",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "SKYW-3",
+   "quote": "The Board and the Compensation Committee monitor CEO succession and the Company’s compensation policies and related risks",
+   "reason": "이사회·보상위원회가 CEO 승계를 점검"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "SKYW-7",
+   "quote": "As of December 31, 2025, our management believed, after consultation with legal counsel, that the ultimate outcome of such legal matters was not likely to have a material adverse effect on our financial position, liquidity or results of operations.",
+   "reason": "경영진이 중대한 영향 없을 것으로 진술"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "5년 인수 규모 수치 근거 없음"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "SKYW-14",
+   "quote": "We have not paid a dividend since 2020. There can be no assurance that we will resume our past practice",
+   "reason": "2020년 이후 배당 중단"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "차입 잔액 0 아님, 재원 진술 없음"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 수치 근거 없음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 수치 근거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 없음"
+  },
+  {
+   "qid": "acc.icfr_conclusion",
+   "status": "answered",
+   "answer": "effective",
+   "excerpt_id": "SKYW-35",
+   "quote": "management believes that our internal control over financial reporting was effective as of December 31, 2025.",
+   "reason": "경영진 ICFR effective 결론"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 추세 진술 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축 진술 없음"
+  }
+ ]
+}

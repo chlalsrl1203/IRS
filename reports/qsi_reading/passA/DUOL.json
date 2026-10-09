@@ -1,0 +1,79 @@
+{
+ "ticker": "DUOL",
+ "reader": "A",
+ "based_on_record": "c8253dc8d1d07e6c61ccc520a761cc5209f5c4b465f8a43e92fac09eaf46f19a",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DUOL-4",
+   "quote": "Luis von Ahn, Ph.D. 47 President, Chief Executive Officer, Co-Founder, and Chairman of the Board 2011",
+   "reason": "현재 CEO von Ahn이 이사회 의장을 겸임"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DUOL-9",
+   "quote": "overseeing succession planning for key executives;",
+   "reason": "지명·거버넌스 위원회가 핵심 경영진 승계 계획을 감독한다고 진술(핵심 인물 의존은 DUOL-6에 명시)"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "5_to_20pct",
+   "excerpt_id": "DUOL-13",
+   "quote": "All executive officers and directors as a group (13 persons) (14) 519,763 1.3% 6,757,853 99.9% 76.0%",
+   "reason": "합계 Class A 519,763+Class B 6,757,853주를 표의 Class A 5% 보유자 주식수/비율(예 4,900,679=12.1%)로 환산한 전체 보통주 대비 약 15%이며 의결권 76%는 쓰지 않음"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "실제 매입 이력 없음 여부가 명시되지 않았고 희석주식수 표가 묶음에 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입이 없었다는 명시적 진술이 없어 not_applicable 요건 미충족"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향·선제 부정 공시 증거 없음(묶음의 가이던스 변경은 상향)"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연간 GAAP 영업이익과 일회성 조정표가 묶음에 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 점유율 추세를 수치·서술로 밝힌 문장이 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장·위축에 대한 회사의 사실 진술이 없고 시장 추정치의 불확실성 위험요인뿐"
+  }
+ ]
+}

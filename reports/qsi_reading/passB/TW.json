@@ -1,0 +1,95 @@
+{
+ "ticker": "TW",
+ "reader": "B",
+ "based_on_record": "309be0b74e3b76dad1aa0634fce972dcd9fb03d487ef3a29e929aa5d8a2ca976",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "TW-4",
+   "quote": "Jacques Aigrain has served as our independent Chairperson since July 2023. Ms. Madoff has served as our Lead Independent Director since February 2022. The Board currently believes that separating the roles of the Chairperson and the Chief Executive Officer is in the best interests",
+   "reason": "독립 의장 Aigrain이 별도 의장, 이사회가 의장-CEO 분리가 최선이라 진술"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "위험요인의 '승계 계획에 투자' 문구뿐, 이사회·위원회 책임 진술 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "특정 인물 의존 명시 없고 승계 계획 투자 언급이 있어 True/False 모두 어려움"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Item 3 본문이 증거 묶음에 없고 위험요인 가정문뿐"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "ICD 7.7억달러 등 인수는 있으나 손상·인수 후 성과 공시 증거 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "TW-61",
+   "quote": "$1.9 billion in cash and cash equivalents and an undrawn $500 million credit facility at September 30, 2025",
+   "reason": "미인출 신용한도와 현금 보유 상태에서 자사주 매입"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "비용·기타 가이던스만 있고 실제 대비 하단 미달 여부 확인 불가"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 대비 실제 결과 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "하향·부정 사실 선공시 증거 없음 — False 불가"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 금액이 증거 묶음에 없음"
+  },
+  {
+   "qid": "cmp.pricing_power",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "XBRL 태그 목록뿐 가격결정력 서술 없음"
+  }
+ ]
+}

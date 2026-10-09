@@ -1,0 +1,87 @@
+{
+ "ticker": "NXT",
+ "reader": "A",
+ "based_on_record": "62b8284aed9c79ed6cb9e3ffc31c470f6d458ab71df8b12e7ff8f5fc7dc17390",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "NXT-5",
+   "quote": "/s/ William D. Watkins Chairman of the Board May 19, 2026 William D. Watkins /s/ Julie Blunden Director",
+   "reason": "의장은 Watkins, CEO는 Shugar(NXT-2 'Board Member & CEO')로 분리"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "NXT-6",
+   "quote": "working with the Chief Executive Officer to plan for the succession of the Chief Executive Officer and other senior executive officers, including developing plans for interim or emergency succession",
+   "reason": "C&P 위원회가 CEO 및 경영진 승계 계획을 수립한다는 진술"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거 묶음에 Item 3 소송 진술이 없고 위험요인 가정문뿐"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "lt_1pct",
+   "excerpt_id": "NXT-13",
+   "quote": "All directors and executive officers as a group (13 persons) (9) 1,266,723 * * Indicates beneficial ownership of less than 1% of the outstanding shares of our Class A common stock",
+   "reason": "임원·이사 합계 1,266,723주, '*'는 1% 미만"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 지출은 확인되나 영업현금흐름 대비 10% 초과 여부와 인수 후 성과 공시가 묶음에 없어 분류 불가"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입 금액이 395천달러로 미미하고 차입 잔액 0 진술이 없음"
+  },
+  {
+   "qid": "acc.restated_down_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "표지 체크박스는 해당 10-K 한정이며 3년 범위 재작성 여부는 묶음으로 확인 불가"
+  },
+  {
+   "qid": "acc.unfaithful_disclosure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "제재·정정 관련 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향·선제 부정 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "NXT-42",
+   "quote": "GAAP operating income & margin $ 697,266 19.6% $ 639,112 21.6% Stock-based compensation expense 120,298 118,880 Intangible amortization 11,967 5,523 Acquisition related costs 10,330",
+   "reason": "SBC·무형상각 제외 일회성은 인수관련비용 10,330 = 영업이익의 약 1.5%로 10% 미만"
+  }
+ ]
+}

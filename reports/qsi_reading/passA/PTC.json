@@ -1,0 +1,71 @@
+{
+ "ticker": "PTC",
+ "reader": "A",
+ "based_on_record": "2dded83103598c111767480788918dc64f5b5171594b0fdfcc7c2afc44e41339",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "PTC-3",
+   "quote": "Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC.",
+   "reason": "거버넌스 위원회가 CEO 승계 계획 유지를 책임진다고 진술"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "PTC-6",
+   "quote": "we estimate that the range of possible outcomes for such matters is immaterial and we do not believe that resolving them will have a material adverse impact on our financial condition, results of operations or cash flows",
+   "reason": "경영진이 진행 중 소송의 결과 범위가 중대하지 않다고 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "발췌가 개별 임원 행에서 끊겨 'as a group' 합계 행이 묶음에 없음"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "묶음에 FY23~FY25 희석주식수만 있어 3년 전 대비 비교가 불완전하고 변화(+1.2%)가 경계값 근처"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "영업권 손상 없음은 확인되나 인수 후 성과 공시가 없고 인수 지출 비중 판단 근거가 부족"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "배당 지급 또는 무배당 정책에 대한 직접 진술이 묶음에 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "2024년 7월 ARR 가이던스 범위 조정이 하향인지 이전 범위가 묶음에 나타나지 않아 확정 불가"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "PTC-36",
+   "quote": "approximately $160 million of divestiture-related expense payments and cash taxes in FY’26 in connection with the closing of the transaction, which are not expected to recur in future years",
+   "reason": "FY26 일회성 처분 관련 지출 약 $160M은 FY26 FCF 가이던스 약 $850M(PTC-29)의 약 19%로 10% 이상"
+  }
+ ]
+}

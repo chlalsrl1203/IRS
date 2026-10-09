@@ -1,0 +1,127 @@
+{
+ "ticker": "MNDY",
+ "reader": "A",
+ "based_on_record": "394a70826e9871095600a7338ba24e6feeebf37772e8d54861ae56a733466c44",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "MNDY-1",
+   "quote": "Jeff Horing 62 Independent Director, Chairperson of the Board of Directors",
+   "reason": "독립이사 Horing이 의장, CEO는 공동 CEO(Mann·Zinman)로 분리"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지배구조 절의 CEO 승계 진술이 증거에 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "MNDY-6",
+   "quote": "Our success depends largely upon the continued services of our founders, Roy Mann and Eran Zinman, and other key employees.",
+   "reason": "창업자 이름 의존 명시, 증거 어디에도 CEO 승계 계획 언급 없음"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사로 내부자 매매 증거 없음"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "임원 교체 건수를 셀 증거 없음"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "MNDY-11",
+   "quote": "Although the outcome of any complex litigation is inherently uncertain, based on information presently known to management, we do not believe that any of these matters are likely to have a material impact on our financial condition, results, or operations.",
+   "reason": "증권 집단소송 초기 진행 중이나 회사가 중대한 영향 없다고 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "5_to_20pct",
+   "excerpt_id": "MNDY-15",
+   "quote": "All executive officers and directors as a group (12 persons) 7,137,194 13.9",
+   "reason": "임원·이사 합산 지분 13.9%"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "5년 인수 지출 규모·손상 여부 증거가 불완전"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "MNDY-18",
+   "quote": "In the fourth quarter of 2025, the Company repurchased 883,913 of its ordinary shares in the total amount of $135.0 million. All repurchases were made using cash resources.",
+   "reason": "매입 전액 보유 현금으로 집행, 장기차입 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 악재 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "MNDY-26",
+   "quote": "Restructuring charges 21,436 - Total operating expenses 616,891 523,041 Operating income (loss) 18,210 ( 1,755 )",
+   "reason": "구조조정비 2,144만 달러가 상반기 영업이익 1,821만 달러를 초과"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "8-K 2.06 해당 공시 체계 아님, 증거 없음"
+  },
+  {
+   "qid": "cmp.new_threat",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "새 위협을 특정한 문장 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 추세를 회사가 밝힌 문장 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 위축·성장을 직접 진술한 문장 불충분"
+  }
+ ]
+}

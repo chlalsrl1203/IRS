@@ -1,0 +1,55 @@
+{
+ "ticker": "PGR",
+ "reader": "B",
+ "based_on_record": "1fdaeca277f9059bf0acb33303c16e6b0e64486a07a902c669b51be21a0b5a47",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "PGR-2",
+   "quote": "Coordinates efforts relating to succession planning of executives and directors",
+   "reason": "지배구조위원회가 임원 승계 계획을 조율한다고 진술"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Item 3이 Note 12 참조뿐이라 소송 내용·중요성 진술이 증거에 없다"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "lt_1pct",
+   "excerpt_id": "PGR-6",
+   "quote": "Officers and Directors as a Group 1,869,942 * 241,556 2,111,498 * Less than 1% of Progressive’s outstanding common shares",
+   "reason": "임원·이사 전체 합계 행이 '*'(1% 미만)"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "SBC/FCF를 산출할 수치가 증거에 없다"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "answered",
+   "answer": "재해 재보험 한도는 플로리다 첫 사건 $2.2B, 플로리다 외 $2.0B(2026-01-08 기준 $70M 감액)이며 2025년 합산 XOL에서 회수된 손실은 없다; 연간 재해손실 금액은 증거에 없다.",
+   "excerpt_id": "PGR-13",
+   "quote": "$2.2 billion for a first event in Florida; and • $2.0 billion for a first event outside of Florida.",
+   "reason": "재보험 방어 수치만 확인, 손실 금액은 증거에 없음"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거의 96은 목표치이지 실제 GAAP 합산비율이 아니다"
+  }
+ ]
+}

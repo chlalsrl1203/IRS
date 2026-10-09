@@ -1,0 +1,79 @@
+{
+ "ticker": "UBER",
+ "reader": "A",
+ "based_on_record": "040c89cba8a0fa866cf19f435f9e0b447bfc27279417e134efc998ad3bccb381",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "UBER-2",
+   "quote": "Board oversight of management succession planning Board, committee, and individual director evaluation process",
+   "reason": "CEO 의존은 명시되나 이사회가 경영진 승계 계획을 감독한다는 진술이 있다"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "material",
+   "excerpt_id": "UBER-12",
+   "quote": "the costs associated with defending, settling, or resolving pending and future lawsuits (including demands for arbitration) relating to the classification of Drivers have been and may continue to be material to our business",
+   "reason": "회사가 기사 분류 소송 비용이 중대했고 계속 중대할 수 있다고 진술, 핵심 사업모델 겨냥"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "answered",
+   "answer": "undisciplined",
+   "excerpt_id": "UBER-15",
+   "quote": "In the fourth quarter of 2024, we recorded an expense of $ 236 million in other income (expense), net in our consolidated statement of operations for the settlement of a termination fee.",
+   "reason": "Foodpanda Taiwan 인수가 금지돼 해지 수수료 2.36억 달러 지급 — 루브릭상 undisciplined"
+  },
+  {
+   "qid": "acc.unfaithful_disclosure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "DOJ 불기소합의(2016 해킹 대응)가 있으나 공시 불성실 제재인지 루브릭 기준이 없어 판단 보류"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "분기 총예약액 가이던스는 있으나 증거 묶음에 3년치 실제치 대조가 부족"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 대비 실적 대조가 3년치 완결되지 않아 판단 보류"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향·자발적 악재 공시 증거 없음 — 루브릭상 False 불가"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "UBER-19",
+   "quote": "Legal, non-income tax, and regulatory reserve changes and settlements 1,123 564 Goodwill and asset impairments/loss on sale of assets, net 3 2 Acquisition, financing and divestitures related expenses 25 43 Loss on lease arrangement, net 2 2 Restructuring and related charges 25 9",
+   "reason": "일회성 합계 2025년 약 620(법적 564 포함) vs 영업이익 5,565 = 약 11% 이상(2024는 40% 초과)"
+  },
+  {
+   "qid": "cmp.pricing_power",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가격결정력 증거 문장 없음"
+  }
+ ]
+}

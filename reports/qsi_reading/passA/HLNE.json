@@ -1,0 +1,127 @@
+{
+ "ticker": "HLNE",
+ "reader": "A",
+ "based_on_record": "22669806cc64bf0cd6a17d7a6dfbc8600e657bd3f15678da96207d53310bfa00",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "HLNE-5",
+   "quote": "/s/ Hartley R. Rogers Executive Co-Chairman and Chairman of the Board of Directors Hartley R. Rogers /s/ Erik R. Hirsch Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Erik R. Hirsch /s/ Juan Delgado-Moreira Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Juan Delgado-Moreira",
+   "reason": "의장은 Rogers, CEO는 공동 CEO Hirsch·Delgado-Moreira로 의장은 CEO가 아님"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "묶음에 CEO 승계 관련 진술이 없고 지배구조 절 전체를 읽었다고 볼 수 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "의존이 특정 인물이 아닌 '선임 경영진 팀'으로 서술돼 루브릭 True 요건 불명확, 승계 언급 부재만으로 판단 보류"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "묶음에 Item 3 소송 진술이 없고 위험요인 가정문뿐"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "gte_20pct",
+   "excerpt_id": "HLNE-13",
+   "quote": "All current executive officers and directors as a group (13 persons) 3,289,081 8% 9,951,470 84 % 64 % 25 %",
+   "reason": "임원·이사 합계의 총 경제적 지분 25%(의결권 64%)"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "묶음에 3년 전 대비 희석주식수 표가 없고 FY24→FY26 2년 변화(+1.05%)는 경계값 근처"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "배당 지급 이력(5년)을 확인할 문장이 묶음에 없다"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연간 가이던스 제시·실적 비교 증거 없음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 제시 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향·선제 부정 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "묶음의 표에서 GAAP 영업이익·일회성 조정 합계를 확인할 수 없음"
+  },
+  {
+   "qid": "dil.net_share_change_3y_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "3년 전 희석주식수가 묶음에 없음(FY24~FY26 2년치만 존재)"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 점유율 추세를 수치로 밝힌 문장이 없음"
+  },
+  {
+   "qid": "cmp.pricing_power",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가격결정력 관련 증거가 묶음에 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "HLNE-36",
+   "quote": "The alternative investment industry has experienced significant and consistent growth, which we expect to continue",
+   "reason": "회사가 자신의 시장이 지속 성장 중이라고 진술"
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "ticker": "DLO",
+ "reader": "B",
+ "based_on_record": "9938a851b8229aee20ed7bc673819b5a606ff50275595cee71ada46cc91815db",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "현재 의장과 CEO가 누구인지 증거에 없다"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DLO-4",
+   "quote": "overseeing board‑level succession planning (including for the chair of the board and key committee chair roles)",
+   "reason": "지배구조 위원회 직무는 이사회·의장 승계만 언급하고 CEO 승계는 없다"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "DLO-5",
+   "quote": "We are dependent upon the ability and experience of our chief executive officer, our chief financial officer, our president and chief strategic officer, our chief operating officer and our chief technology officer",
+   "reason": "CEO 등 핵심 경영진 의존을 명시했으나 이사회의 CEO 승계 계획 진술은 증거에 없다"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사라 Form 4 근거가 증거에 없다"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사라 8-K 5.02 근거가 없다"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "소송에 대한 회사의 중요성 판단 진술이 증거에 없다"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "임원·이사 합계 행의 지분 %가 증거에 없다(Class B 합계만 있음)"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "주식수 표가 증거에 없다"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 규모·손상·성과 근거 부족"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "배당 정책이 새로 도입돼 5년 이상 이력 근거 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "차입 잔액 또는 무차입 진술 없음"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연도별 실제치와 최초 가이던스 대조 근거 부족"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연도별 실제치 대조 근거 부족"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "DLO-54",
+   "quote": "we have made the decision to discontinue mid-term guidance",
+   "reason": "2025-02 회사가 중기 가이던스를 자발적으로 철회(최근 3년 내)"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DLO-85",
+   "quote": "Other non-recurring costs (2) 124 1,571 1,663 Share-based payment non-cash charges, net of forfeitures 24,136 23,780 11,922 Offering expenses 739 — — Adjusted EBITDA 278,078",
+   "reason": "FY2025 비경상·상장비용은 수십~수백만 달러로 영업이익(약 $220M)의 10% 미만, 2026 Q1 세금 일회성 $4.4M도 소액"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사라 Item 2.06 대응 공시 근거 없음"
+  },
+  {
+   "qid": "cmp.new_threat",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "전년 대비 위험요인 비교 불가"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사의 점유율 변화 진술이 없다"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장·위축 진술 없음"
+  }
+ ]
+}

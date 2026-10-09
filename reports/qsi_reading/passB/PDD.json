@@ -1,0 +1,135 @@
+{
+ "ticker": "PDD",
+ "reader": "B",
+ "based_on_record": "9ff6b5566789a53af2cb2b40cab3be7645f455df5ed2eaebcc2b253739d977d8",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "PDD-1",
+   "quote": "Lei Chen 46 Co-Chairman of the Board of Directors and Co-Chief Executive Officer Jiazhen Zhao 42 Co-Chairman of the Board of Directors and Co-Chief Executive Officer",
+   "reason": "공동 의장 두 명이 모두 공동 CEO — 의장과 CEO가 분리되지 않음"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지배구조 절의 승계 진술이 발췌에 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "핵심 인물 의존·승계 진술 모두 없음"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "내부자 거래 증거 없음"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "임원 교체 공시 증거 없음(직책 이력은 과거 서술)"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "소송은 일반적 위험·제품안전 소송 언급뿐, 중요성 진술 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수·손상 사실 증거 없음(가정문만)"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자사주 매입 사실·자금 출처 증거 없음(정관 조항만)"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 범위 제시 증거 없음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스·약속 이행 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 하향·부정 공시 증거 없음(정기 실적 코멘트뿐)"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 수치가 발췌에 없음"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "중대 손상 공시 증거 없음(회계정책 서술뿐)"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "SBC·FCF 금액 수치가 발췌에 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사 점유율 추세 진술 없음(위험요인 가정문만)"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축 명시 진술 없음"
+  }
+ ]
+}
