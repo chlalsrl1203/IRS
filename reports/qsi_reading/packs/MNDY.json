@@ -1,0 +1,379 @@
+{
+ "ticker": "MNDY",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": true,
+ "based_on_record": "394a70826e9871095600a7338ba24e6feeebf37772e8d54861ae56a733466c44",
+ "targets": [
+  "gov.chair_separated",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.insider_pattern",
+  "gov.cxo_turnover_24m",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "acc.material_impairment_3y",
+  "cmp.new_threat",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.insider_pattern": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+  "gov.cxo_turnover_24m": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+  "gov.material_litigation": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_impairment_3y": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+  "cmp.new_threat": "올해·전년 위험요인 절을 모두 찾지 못했다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "MNDY-1",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": " Product and Technology Officer Casey George 54 Chief Revenue Officer Shiran Nawi 42 Chief People and Legal Officer Harris Beber 46 Chief Marketing Officer Adi Dar 54 Chief Customer Officer Non-Employee Directors Jeff Horing 62 Independent Director, Chairperson of the Board of Directors Aviad Eyal (1)(2) 55 Independent Director Avishai Abrahami 54 Independent Director Gili Iohan (2) 50 Independent Director Ronen Faier (1)(2) 55 Independent Director Petra Jenner 61 Independent Director (1) Serves as a member of our corporate responsibility and sustainability committee. (2) Serves as a member of our audit committee, compensation committee, and nominating and corporate"
+  },
+  {
+   "id": "MNDY-2",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "than the maximum number of directors stated in our amended and restated articles of association, until the next annual general meeting of our shareholders for the class of directors to which such director has been assigned by our board of directors. Chairperson of the Board Our amended and restated articles of association provide that the chairperson of the board of directors is appointed by the members of the board of directors from among them. Under the Companies Law, the chief executive officer of a public company, or a relative of the chief executive officer, may not serve as the chairperson of the board of directors, and the chairperson of the board of director"
+  },
+  {
+   "id": "MNDY-3",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ed for a period of five years following an initial public offering, and subsequently, for additional periods of up to three years. In addition, a person who is subordinated, directly or indirectly, to the chief executive officer may not serve as the chairperson of the board of directors; the chairperson of the board of directors may not be vested with authorities that are granted to persons who are subordinated to the chief executive officer; and the chairperson of the board of directors may not serve in any other position in the company or in a controlled subsidiary but may serve as a director or chairperson of a controlled subsidiary. Audit committee Under the Com"
+  },
+  {
+   "id": "MNDY-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ons and compliance with laws and regulations applicable to our global operations; • risks related to acquisitions, strategic investments, partnerships, or alliances; • risks associated with scrutiny related to environmental and social matters; • our dependence on founders and other key employees and ability to attract and retain highly skilled employees; • our ability to raise additional capital or generate cash flows necessary to expand our operations and invest in new technologies; • uncertain global economic conditions and inflation; • changes and competition in the market and software categories in which we participate; • our ability to introduce new products, features, integrations, capabilities, and enhancements; • the ability of our platform to interoperate with a variety of software applications; • our reliance on third-party application stores to dist"
+  },
+  {
+   "id": "MNDY-5",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "lute shareholder value, and harm our results of operations and financial condition. • We are subject to risks associated with scrutiny related to environmental and social matters. • We are subject to a series of risks related to climate change. • We depend on our founders and other key employees, and the loss of one or more of these employees could harm our business. • An inability to attract and retain other highly skilled employees could harm our business. • Our failure to raise additional capital or generate cash flows necessary to expand our operations and invest in new technologies in the future could reduce our ability to compete successfully and harm our results of operations. • Uncertain global economic conditions and inflation could materially adversely affect our business and results of operations. Risks related to our market and competitive landscap"
+  },
+  {
+   "id": "MNDY-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "torms, and floods, among others), which may be exacerbated by climate change, that may disrupt our or our third parties’ operations, increase expenditures, or otherwise adversely impact our business, financial condition, or results of operations. We depend on our founders and other key employees, and the loss of one or more of these employees could harm our business. Our success depends largely upon the continued services of our founders, Roy Mann and Eran Zinman, and other key employees. From time to time, there may be changes in our executive management team resulting from the hiring or departure of executives, which could disrupt our business. We do not have employment agreements with our executive officers or other key personnel that require them to continue to work for us for any specified period and, therefore, they could terminate their employment with "
+  },
+  {
+   "id": "MNDY-7",
+   "for": "gov.insider_pattern",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "in the amount of up to $870 million with no expiration date. The program does not obligate the Company to acquire a minimum amount of its ordinary shares. In the fourth quarter of 2025, the Company repurchased 883,913 of its ordinary shares in the total amount of $135.0 million. All repurchases were made using cash resources. As of December 31, 2025, $735.0 million remained of our share repurchase program. Cash Flows The following table presents the summary consolidated cash flow information for the periods presented: Year ended Decem"
+  },
+  {
+   "id": "MNDY-8",
+   "for": "gov.insider_pattern",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "gram does not require the purchase of any minimum dollar amount or number of shares and may be suspended, modified or discontinued at any time without prior notice. As of December 31, 2025, we have repurchased 883,913 ordinary shares for an aggregate amount of $135.0 million. Repurchases of our ordinary shares pursuant to our repurchase program could affect the market price of our ordinary shares and its volatility. Additionally, our repurchase program could diminish our cash reserves, which may impact our ability to finance fu"
+  },
+  {
+   "id": "MNDY-9",
+   "for": "gov.cxo_turnover_24m",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "for our day-to-day management. Our Co-Chief Executive Officers are appointed by, and serve at the discretion of our board of directors, subject to the employment agreement that we have entered into with each of them. All other executive officers are appointed by the Co-Chief Executive Officers, subject to applicable corporate approvals, and are subject to the terms of any applicable employment agreements that we may enter into with them. Under our amended and restated articles of association, the number of directors on our board of directors is no less than three and no more than 11 directors, and divided into three classes with staggered three-year terms. Each class of direct"
+  },
+  {
+   "id": "MNDY-10",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "and development 33 CRO Team 34 CCO Team 36 Marketing 36 Our competition 37 Intellectual property 37 Legal proceedings 38 monday.com corporate responsibility and sustainability 38 Privacy and security 39 Our facilities 40 monday.com for Nonprofits 42 The monday.com Foundation 42 Organizational structure 43 Part 2 - Directors and senior management 44 Senior management 45 Directors 48 Part 3 - Major Shareholders and Related Party Transactions 51 Major shareholders 51 Related Party Transactions 53 Agreements with Directors and Officers 54 Part 4 - Operating and Financial Review and Prospects 56 monday.com FY-25 overview in numbers 56 A. Operating Results 59 B. Liquidity and Capital Resources 69 C. Research and development, patents and licenses, etc. 71 D. Trend information 71 E. Critical Accounting Estimates 72 F. Recently Issued Accounting Pronouncements 75 G. Quantitative and Qualitative Disclosures About Market Risk 75 Part 5 - Consolidated Financial Statements and Additional Financial Information 77 Consolidated Financial Statements 77 Controls and procedures 77 Principal accountant fees and services 78 Legal Proceedings 78 Dividend Policy 79 Significant Changes 79 Taxation 79 Part 6 - Risk Factors 92 Risk factors summary 92 Risks related to our business and industry 97 Risks related to our market and competitive landscape 112 Risks related to third parties 114 Risks related to privacy, data, and cybersecurity 118 Risks related to taxation 128 Risks related to our proprietary and intellectual property rights 133 Risks related to operations as a public company and ordinary shares 138 Risks r"
+  },
+  {
+   "id": "MNDY-11",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ditional patent, trademark and design registration to the extent we believe it would be beneficial. Legal proceedings On March 10, 2026, an individual shareholder filed a putative class action asserting claims under Sections 10(b) and 20(a) of the Exchange Act concerning certain of the Company’s forward-looking earnings guidance. The case is pending in the U.S. District Court for the Southern District of New York and asserts claims against the Company and certain of its directors and officers. The case is currently in a preliminary stage. The Company believes the claims are without merit and intends to vigorously defend against them. In addition, from time to time, we may be involved in other legal or regulatory proceedings arising in the ordinary course of our business. Although the outcome of any complex litigation is inherently uncertain, based on information presently known to management, we do not believe that any of these matters are likely to have a material impact on our financial condition, results, or operations. monday.com corporate responsibility and sustainability The monday.com way Our culture is why we win and is more than a catchphrase or a poster on a wall. It is what we do. It is how we act. Our culture is the \"monday.com way.\" Transparency and trust. Radical transparency, data accessibility, and trust allow us to reduce complexity, ensure that we are all working towards the same goal, and increase accountability and ownership. Transparency is a tool that helps us harness our collective intelligence and eliminates politics and bureaucracy. Customer-centricity . We have ach"
+  },
+  {
+   "id": "MNDY-12",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "dit services provided by our auditors in 2025 and 2024 were approved in accordance with our policy. Legal Proceedings From time to time, we may be involved in legal or regulatory proceedings arising in the ordinary course of our business. We are currently not a party to Part 5 - Consolidated Financial Statements and Additional Financial Information 78 FY2025 20-F any material litigation, and we are not aware of any pending or threatened material legal or administrative proceedings against us. Regardless of the outcome, litigation can have an adverse impact on us because of defense and settlement costs, diversion of management resources and other factors. Dividend Policy We have never declared or paid any dividends on our ordinary shares. We do not anticipate paying any dividends in the foreseeable future. We currently intend to retain future earnings, if any, to finance operations and expand our business. Our board of directors has sole discretion over whether to pay dividends. If our board of directors decides to pay dividends, the form, frequency and amount will depend upon our future operations and earnings, capital requirements and surplus, general financial condition, contractual restrictions and other factors that our directors may deem relevant. Significant Changes No significant changes have occurred since December 31, 2025, except as otherwise disclosed in this annual report. Taxation The following description is not intended to constitute a complete analysis of all tax consequences relating to the acquisition, ownership and disposition of our ordinary shares. You should consult yo"
+  },
+  {
+   "id": "MNDY-13",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ted to legal and regulatory matters • Our business and financial results may be affected by various litigation and regulatory proceedings. • We are subject to anti-corruption, anti-bribery, anti-money laundering and similar laws, and non-compliance with such laws can subject us to criminal penalties or significant fines and harm our business and reputation. • We are subject to governmental export controls and economic sanctions laws that could impair our ability to compete in international markets and subject us to liability if we are not in full compliance with applicable laws. • Geopolitical conflicts may adversely affect our business and results of operations. Part 6 - Risk Factors 96 FY2025 20-F Risks related to our business and industry If we fail to effectively manage the scope and complexity of our business following years of rapid growth, we may be unable to execute our business plan or maintain high levels of service and customer satisfaction. In recent years, the rapid growth in the number of our employees, customers and offices has placed, and may continue to place, significant demands on our management and our operational and financial resources. Additionally, our organization’s structure, operations and scope are becoming more complex, requiring us to scale our operational, financial and management controls and reporting systems and procedures. As we continue to grow our business after years of rapid growth, we face challenges in integrating, developing, training, and motivating a growing employee base in our various offices around the world and maintaining our company culture. Moreove"
+  },
+  {
+   "id": "MNDY-14",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "re she oversees the company’s go-to-market strategy and growth in the region. Prior to Splunk, she held various executive positions of increasing responsibility during her six-year tenure at Salesforce and leadership roles with Microsoft, Checkpoint Software, and Pivotal. Based in Munich, she studied International Management at the Stanford Graduate School of Business in Singapore and holds a Master’s Degree in Business and IT. Part 2 - Directors and senior management 50 FY2025 20-F Part 3 - Major Shareholders and Related Party Transactions Major shareholders The following table sets forth information with respect to the beneficial ownership of our shares as of December 31, 2025, by: • each person or entity known by us to own beneficially more than 5% of our outstanding shares; • each of our directors and executive officers individually; and • all of our executive officers and directors as a group. The beneficial ownership of ordinary shares is determined in accordance with the SEC rules and generally includes any ordinary shares over which a person exercises sole or shared voting or investment power. For the purposes of the table below, we deem shares subject to options that are currently exercisable or exercisable within 60 days of December 31, 2025, and RSUs that shall vest within 60 da"
+  },
+  {
+   "id": "MNDY-15",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ddress is monday.com Ltd., 6 Yitzhak Sadeh Street, Tel Aviv, 6777506 Israel. A description of any material relationship our principal shareholders have had with us or any of our predecessors or affiliates since January 1, 2023 is included under “Related Party Transactions.” Part 3 - Major Shareholders and Related Party Transactions 51 FY2025 20-F Shares Beneficially Owned Name of Beneficial Owner Number % Principal Shareholders Capital World Investors (1) 3,286,461 6.4 WCM Investment Management, LLC (2) 3,761,924 7.4 Directors and Executive Officers Roy Mann (3) 4,932,613 9.6 Eran Zinman (4) 1,736,323 3.4 Eliran Glazer (5) 30,277 * Daniel Lereya (6) 67,747 * Shiran Nawi (7) 39,845 * Casey George – * Avishai Abrahami (8) 104,273 * Aviad Eyal (9) 210,177 * Jeff Horing (10) 5,454 * Ronen Faier (11) 4,773 * Gili Iohan (12) 4,773 * Petra Jenner (13) 939 * All executive officers and directors as a group (12 persons) 7,137,194 13.9 * Indicates ownership of less than 1%. (1) Based on the Schedule 13G filed by Capital World Investors with the SEC on February 13, 2026, Capital World Investors has sole voting power and sole dispositive power over 3,286,461 ordinary shares. (2) Based on the Schedule 13G/A filed by WCM Investment Management, LLC with the SEC on February 1, 2026, WCM Investment Manageme"
+  },
+  {
+   "id": "MNDY-16",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": " thousands of dollars). Derivatives designated as hedging instruments: Maturity in 2026 Foreign exchange contracts: NIS $ 188,088 Total $ 188,088 Interest rate risk We believe we have no significant exposure to interest rate risk, as we have no long-term loans. However, our future interest income may fall short of expectations due to changes in market interest rates. Part 4 - Operating and Financial Review and Prospects 76 FY2025 20-F Part 5 - Consolidated Financial Statements and Additional Financial Information Consolidated Financial Statements Starting at page 173, we have appended, as part of this annual report, our consolidated financial statemen"
+  },
+  {
+   "id": "MNDY-17",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "corporated and located in Israel, including risks related to conflicts in the region and escalations thereof; • our expectation not to pay dividends for the foreseeable future; • risks related to our repurchase program, including an inability to guarantee the amount of repurchases of our ordinary shares that will occur, if any, or that our repurchase program will enhance long-term shareholder value; • risks related to our Digital Lift Initiative and the monday.com Foundation; • risks related to legal and regulatory matters; and • other statements described in this annual report under “Part 1 - Who We Are,” “Part 4 - Operating and Financial Review and Prospects” and “Part 6 - Risk Factors,” as updated by subsequent reports filed with the U.S. Securities and Exchange Commission (“SEC”). You shou"
+  },
+  {
+   "id": "MNDY-18",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ad other purchase obligations of $73.2 million, with $55.7 million payable within 12 months. Share repurchase program: In addition to its contractual cash requirements, the Company authorized a share repurchase program in September 2025 in the amount of up to $870 million with no expiration date. The program does not obligate the Company to acquire a minimum amount of its ordinary shares. In the fourth quarter of 2025, the Company repurchased 883,913 of its ordinary shares in the total amount of $135.0 million. All repurchases were made using cash resources. As of December 31, 2025, $735.0 million remained of our share repurchase program. Cash Flows The following table presents the summary consolidated cash flow information for the periods presented: Yea"
+  },
+  {
+   "id": "MNDY-19",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "turities of marketable securities of $77.9 million. Financing Activities Cash used in financing activities for the year ended December 31, 2025 was $108.4 million and was primarily as a result of the repurchase and immediate retirement of our ordinary shares in the amount of $135.0 million and a $15.2 million repayment of tax advance relating to exercises of share options and RSUs, net, partially offset by proceeds of $41.9 million from the exercise of share options, purchases under the employee share purchase plan. Off-Balance Sheet Arrangements We do not have any off-balance sheet arrangements, as defined by applicable regulations of the SEC, that are reasonably likely to have a current or future material effect on our financial condition, results of operations, liquidi"
+  },
+  {
+   "id": "MNDY-20",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "vent, or make undesirable an acquisition of all or a significant portion of our shares or assets. • We do not expect to pay any dividends in the foreseeable future. • We cannot guarantee that we will repurchase any of our ordinary shares pursuant to our announced repurchase program or that our repurchase program will enhance long-term shareholder value. Part 6 - Risk Factors 95 FY2025 20-F Risks related to our incorporation and location in Israel • Conditions in Israel, including due to the war between Israel and Iran, and other conflicts in the region, could materially and adversely affect our business. • It may be difficult to enforce a U.S. judgment against us and our officers and directors named in this annual report, or to"
+  },
+  {
+   "id": "MNDY-21",
+   "for": "acc.voluntary_bad_news",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": ", profitability, or other measures of shareholder value — is in the best interest of the Company and its shareholders. 2026 Proxy Statement - 22 All KPIs will be approved annually by the Compensation Committee and Board of Directors. The target levels for any financial KPIs shall not be established below the Company’s publicly disclosed financial guidance. The Compensation Committee and Board of Directors believe the Policy establishes a direct and transparent link between executive pay and shareholder value. Executives are rewarded for creating value through measurable results, while sharing directly in the gains and losses experienced by shareholders. Principal Amendments The proposed amendments to the current Policy are limited in scope and do "
+  },
+  {
+   "id": "MNDY-22",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+   "text": "n-GAAP net income, non-GAAP net income per share, adjusted free cash flow, which is defined as free cash flow plus costs associated with the build-out of our corporate headquarters, and adjusted free cash flow margin. Certain of these non-GAAP financial measures exclude share-based compensation and restructuring costs. monday.com believes that these non-GAAP financial measures provide useful information to management and investors regarding certain financial and business trends relating to monday.com’s financial condition and results of operations. monday.com management uses these non-GAAP measures to compare monday.com performance to that of prior periods, for trend analysis and for budgeting and planning purposes. monday.com believes that the use of these non-GAAP financial measures provides an additional tool for investors to use in evaluating ongoing operating results and trends and in comparing monday.com financial results to the results of other software companies, many of which present simil"
+  },
+  {
+   "id": "MNDY-23",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+   "text": "the reporting date, including both deferred revenues and non-invoiced amounts expected to be billed and recognized in the next 12 months. Forward-Looking Statements: This press release contains “forward-looking statements” within the meaning of the “safe harbor” provisions of the Private Securities Litigation Reform Act of 1995, including but not limited to, statements regarding our financial outlook and market positioning. These forward-looking statements are made as of the date they were first issued and were based on current expectations, estimates, forecasts and projections as well as the beliefs and assumptions of management. Words such as “outlook,” “guidance,” “expect,” “anticipate,” “should,” “believe,” “hope,” “target,” “project,” “plan,” “goals,” “estimate,” “potential,” “predict,” “may,” “will,” “might,” “could,” “intend,” “shall” and variations of these terms or the negative of these terms and similar expressions are intended to identify these forward-looking statements. Forward-look"
+  },
+  {
+   "id": "MNDY-24",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+   "text": "ur sales efforts may require considerable time and expense and the use of differing sales strategies may extend our sales cycles; changes in sizes or types of business that purchase our platform and products; our ability to offer high-quality customer support and direct sales capabilities; that our restructuring plan may not achieve the expected benefits or that the costs may exceed our expectations; maintenance of corporate culture; risks related to international operations and compliance with laws and regulations applicable to our global operations; risks related to acquisitions, strategic investments, partnerships, or alliances; risks associated with scrutiny related to environmental and social matters; our dependence on founders and other key employees and ability to attract and retain highly skilled employees; our ability to raise additional capital or generate cash flows necessary to expand our operations and invest in new technologies; uncertain global economic conditions and inflation; chan"
+  },
+  {
+   "id": "MNDY-25",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-1.htm",
+   "text": " 299,014 $ 715,886 $ 581,264 Cost of revenue 42,661 31,173 80,785 59,978 Gross profit 321,960 267,841 635,101 521,286 Operating expenses: Research and development 99,307 87,039 191,327 156,424 Sales and marketing 162,402 152,590 327,797 294,310 General and administrative 40,359 39,763 76,331 72,307 Restructuring charges 21,436 — 21,436 — Total operating expenses 323,504 279,392 616,891 523,041 Operating income (loss) (1,544 ) (11,551 ) 18,210 (1,755 ) Financial income, net 6,960 14,102 17,336 31,749 Income before income taxes 5,416 2,551 35,546 29,994 Income tax expense (1,956 ) (978 ) (4,052 ) (996 ) Net income $ 3,460 $ 1,573 $ 31,494 $ 28,998 Net income per share attributable to ordinary shareholders, basic $ 0.08 $ 0.03 $ 0.69 $ 0.57 Net income per share attributable to ordinary shareholders, diluted $ 0.08 $ 0.03 $ 0.67 $ 0.55 Weighted-average ordinary shares used in calculating net income per ordinary share, basic 43,697,057 51,385,862 45,898,551 51,196,507 Weighted-average ordinary shares us"
+  },
+  {
+   "id": "MNDY-26",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-2.htm",
+   "text": "t share and per share data) Six months ended June 30, 2026 2025 (Unaudited) Revenue $ 715,886 $ 581,264 Cost of revenue 80,785 59,978 Gross profit 635,101 521,286 OPERATING EXPENSES Research and development 191,327 156,424 Sales and marketing 327,797 294,310 General and administrative 76,331 72,307 Restructuring charges 21,436 - Total operating expenses 616,891 523,041 Operating income (loss) 18,210 ( 1,755 ) Financial income, net 17,336 31,749 Income before income taxes 35,546 29,994 Income tax expense ( 4,052 ) ( 996 ) Net income $ 31,494 $ 28,998 Net income per share attributable to ordinary shareholders, basic $ 0.69 $ 0.57 Net income per share attributable to ordinary shareholders, diluted $ 0.67 $ 0.55 Weighted-average ordinary shares used in calculating net income per ordinary share, basic 45,898,551 51,196,507 Weighted-average ordinary shares used in calculating net income per ordinary share, diluted 46,752,399 53,149,561 The accompanying notes are an integral part of the consolidated finan"
+  },
+  {
+   "id": "MNDY-27",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-2.htm",
+   "text": " dollars in thousands Six months ended June 30, 2026 2025 (Unaudited) CASH FLOWS FROM OPERATING ACTIVITIES: Net income $ 31,494 $ 28,998 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 7,815 6,625 Share-based compensation 70,501 87,603 Restructuring charges 21,436 - Amortization of discount and accretion of interest on marketable securities ( 1,693 ) ( 95 ) Changes in operating assets and liabilities: Accounts receivable, net ( 2,336 ) ( 10,392 ) Prepaid expenses and other assets ( 47,251 ) ( 26,757 ) Deferred taxes 3,848 - Accounts payable 11,359 6,224 Accrued expenses and other liabilities 22,810 24,098 Deferred revenue 42,058 62,503 Net cash provided by operating activities 160,041 178,807 CASH FLOWS FROM INVESTING ACTIVITIES: Purchase of property and equipment ( 6,237 ) ( 9,571 ) Capitalized software development costs ( 1,590 ) ( 1,703 ) Acquisition of a business operation ( 13,200 ) - Purchase of securities of privately held compa"
+  },
+  {
+   "id": "MNDY-28",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-2.htm",
+   "text": "k purposes, in accordance with the initial recognition exception under ASC 740-10-25-3(e). d. Goodwill Goodwill represents the excess of the total consideration transferred over the fair value of net identifiable assets acquired in a business combination. Goodwill is not amortized but is tested for impairment annually as of December 31 of each fiscal year, or more frequently if events or circumstances indicate that the carrying value may not be recoverable. The Company operates as a single reporting unit. The Company first performs a qualitative assessment to determine whether it is more likely than not that the fair value of the reporting unit is less than its carrying value (\"Step 0\"). If Step 0 indicates that a quantitative test is required, the Company compares the fair value of the reporting unit to its carrying value. An impairment charge is recognized for the amount by which the carrying amount exceeds the reporting unit's fair value, not to exceed the total amount of goodwill. No goodwil"
+  },
+  {
+   "id": "MNDY-29",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003971/exhibit_99-2.htm",
+   "text": "historical experience, and relevant market information. Acquired technology is amortized over its estimated useful life of three years (unaudited) and amortization is included within cost of revenue in the consolidated statements of operations. The Company reviews finite-lived intangible assets for impairment whenever events or changes in circumstances indicate that the carrying amount of an asset may not be recoverable. f. Accounting Pronouncements Not Yet Effective I n December 2025, the Financial Accounting Standards Board (“FASB”) issued ASU 2025-11, Interim Reporting (Topic 270): Narrow-Scope Improvements (“ASU 2025-11”), to amend the guidance in “Interim Reporting” (Topic 270). The update provides clarifications intended to improve the consistency and usability of interim disclosure requirements, including a comprehensive listing of required interim disclosures and a new disclosure principle for reporting material events occurring after the most recent annual period. The amendments do not "
+  },
+  {
+   "id": "MNDY-30",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-07-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003514/exhibit_99-1.htm",
+   "text": " be counted at the Meeting unless properly revoked or changed. Shareholders who have not yet voted are encouraged to do so in the manner described in the Proxy Statement. Forward-Looking Statements This Supplement contains forward-looking statements within the meaning of the U.S. Private Securities Litigation Reform Act of 1995, including statements regarding the Company’s anticipated equity plan needs and future equity utilization. These statements are based on current expectations and assumptions and are subject to risks and uncertainties, including those described in the Company’s annual report on Form 20-F for the year ended December 31, 2025 and in the Company’s other filings with and submissions to the SEC. The Company undertakes no obligation to update any forward-looking statements, except as required by law."
+  },
+  {
+   "id": "MNDY-31",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": " this document contains forward-looking statements within the meaning of Section 27A of the U.S. Securities Act of 1933, as amended (“Securities Act”), Section 21E of the U.S. Securities Exchange Act of 1934, as amended (“Exchange Act”), and the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995. These forward-looking statements are subject to risks and uncertainties and include information about possible or assumed future results of our business, financial condition, results of operations, liquidity, plans and objectives. In some cases, you can identify forward-looking statements by terminology such as “may,” “might,” “will,” “could,” “would,” “should,” “expect,” “plan,” “anticipate,” “intend,” “seek” “believe,” “estimate,” “predict,” “potential,” “continue,” “contemplate,” “possible” or the negative of these terms or similar expressions. We have based these forward-looking statements largely on our current expectations and projections about future events and fi"
+  },
+  {
+   "id": "MNDY-32",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": "Board of Directors retainer and certain committee chair and member fees have been increased to align director compensation with prevailing market practice for the Company’s size and stage of development. • Equity Award Increases: The grant-date values of both the annual equity grant and the and the one-time welcome-grant have been increased, consistent with the same market-alignment objective. • Committee Renaming: The former “Environmental, Social and Corporate Governance Committee” has been renamed the “Corporate Responsibility and Sustainability Committee,” with conforming updates to the related chair and member fees. • Timing of the Annual Equity Grant: The annual equity grant is now tied to the Board of Directors’ approval of the Company’s second quarter financial statements and is made in the third quarter of the year, rather than in conjunction with management equity grants, providing a more predictable and governance-aligned grant cycle. • Clarifications: Clarifying text has been added"
+  },
+  {
+   "id": "MNDY-33",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": "ther geography, such Executive Officer may receive other similar, comparable or customary benefits as applicable in the relevant jurisdiction in which he or she is employed or additional payments to reflect adjustments in the cost of living. Such benefits may include reimbursement for out-of-pocket one-time payments and other ongoing expenses, such as a housing allowance, a car allowance, home leave visits, etc. 7.4 monday may offer additional benefits to its Executive Officers, which will be comparable to customary market practices, such as, but not limited to: cellular and land line phone benefits, 2026 Proxy Statement - B - 03 company car and travel benefits, reimbursement of business travel including a daily stipend when traveling and other business related expenses, insurances, other benefits (such as newspaper subscriptions, academic and professional studies), etc., provided, however, that such additional benefits shall be determined in accordance with monday’s policies and procedures. C"
+  },
+  {
+   "id": "MNDY-34",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": " - D - 01 Equity Awards 1. Each non-employee Board member will be entitled to receive restricted share units of the Company ( “ RSUs” ), as follows: a. an annual grant of time-based RSUs having a fair market value calculated as of the date of grant of $200,000 (the “Annual Equity Grant” ); and b. a one-time grant of time-based RSUs having a fair market value calculated as of the date of grant $400,000 (the “Welcome Equity Grant” ). c. The fair market value will be determined by multiplying the number of shares underlying the grant by the market price of monday’s ordinary shares on or around the time of the grant or according to other acceptable valuation practices at the time of grant, in each case, as determined by the Compensation Committee and the Board. 2. The Annual Equity Grant will be granted to the Board members once a year, upon the Board’s approval of the Company’s second quarter financial statements, and will be made in the third quarter of the year, unless otherwise determined by t"
+  },
+  {
+   "id": "MNDY-35",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": " to additional liabilities. Regulation of cookies and similar technologies, and any decline of cookies or similar online tracking technologies as a means to identify and potentially analyze the behavior of users, may lead to broader restrictions and impairments on our marketing and personalization activities and may negatively impact our ability to understand users and cater to their preferences. Additionally, the U.S. federal and various state governments have adopted or proposed limitations on, or requirements regarding, the collection, distribution, use, security and storage of personal data of individuals. The U.S. FTC and numerous state attorneys general are applying federal and state consumer protection laws to impose standards on the online co"
+  },
+  {
+   "id": "MNDY-36",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "necessary in the future to enforce our intellectual property rights and to protect our trade secrets. Such litigation could be costly, time consuming and distracting to management, may not ultimately be resolved in our favor, and could result in the impairment or loss of portions of our intellectual property. Furthermore, our efforts to enforce our intellectual property rights may be met with defenses, counterclaims, and countersuits attacking the validity and enforceability of our intellectual property rights. If we are unable to protect our intellectual property rights or prevent unauthorized use, infringement, or misappropriation thereof by third parties, the value of our intellectual property and intellectual property rights may be diminished, an"
+  },
+  {
+   "id": "MNDY-37",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "ompany transactions. F-15 187 MONDAY.COM AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS U.S. dollars in thousands NOTE 2: SIGNIFICANT ACCOUNTING POLICIES (cont.) The Company assesses its equity method investment for other-than-temporary impairment by considering factors as well as all relevant and available information including, but not limited to, current economic and market conditions, the operating performance of the affiliated company, including current earnings trends, and other affiliated company-specific information such as financing rounds. During 2025 and 2024, no impairment loss was recognized in the Company’s consolidated statements of operations. The net carrying value of the investment in the affiliated company amounted to "
+  },
+  {
+   "id": "MNDY-38",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "rations. Management evaluates the useful lives F-16 188 MONDAY.COM AND SUBSIDIARIES NOTES TO CONSOLIDATED FINANCIAL STATEMENTS U.S. dollars in thousands NOTE 2: SIGNIFICANT ACCOUNTING POLICIES (cont.) of these assets on an annual basis and tests for impairment whenever events or changes in circumstances occur that could impact the recoverability of these assets. J. Depreciation, Amortization and Impairment of Long-Lived Assets Long-lived assets with definite lives consist of property and equipment. Long-lived assets are amortized over their estimated useful lives which are as follows: Years Computers, software, patents and electronic equipment 3 - 5 Office furniture and equipment 10 - 14 Capitalized software development costs 3 - 6 Leasehold improvem"
+  },
+  {
+   "id": "MNDY-39",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "oducts 23 Key benefits to our customers 28 The components of our platform 29 Our technology and in-house tools 32 Our customers 33 Research and development 33 CRO Team 34 CCO Team 36 Marketing 36 Our competition 37 Intellectual property 37 Legal proceedings 38 monday.com corporate responsibility and sustainability 38 Privacy and security 39 Our facilities 40 monday.com for Nonprofits 42 The monday.com Foundation 42 Organizational structure 43 Part 2 - Directors and senior management 44 Senior management 45 Directors 48 Part 3 - Major Shareholders and Related Party Transactions 51 Major shareholders 51 Re"
+  },
+  {
+   "id": "MNDY-40",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "gal Proceedings 78 Dividend Policy 79 Significant Changes 79 Taxation 79 Part 6 - Risk Factors 92 Risk factors summary 92 Risks related to our business and industry 97 Risks related to our market and competitive landscape 112 Risks related to third parties 114 Risks related to privacy, data, and cybersecurity 118 Risks related to taxation 128 Risks related to our proprietary and intellectual property rights 133 Risks related to operations as a public company and ordinary shares 138 Risks related to our incorporation and location in Israel 142 Risks related to our Digital Lift Initiative and the monday.co"
+  },
+  {
+   "id": "MNDY-41",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "• our ability to raise additional capital or generate cash flows necessary to expand our operations and invest in new technologies; • uncertain global economic conditions and inflation; • changes and competition in the market and software categories in which we participate; • our ability to introduce new products, features, integrations, capabilities, and enhancements; • the ability of our platform to interoperate with a variety of software applications; • our reliance on third-party application stores to distribute our mobile application; • our successful strategic relationships with, and our dependence"
+  },
+  {
+   "id": "MNDY-42",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "full potential across all aspects of the business. This way, teams can leverage context-aware AI consistently across every workflow. Today, a unified platform is the foundation for building a durable competitive edge. mondayDB, the foundation of our platform, was natively built in a manner to deliver this context, and offers a unique competitive advantage in aiding this transformation. Organizations are increasing software spend to prioritize AI Organizations are increasing software budgets in order to prepare for the cost of organizational transformation with AI. AI that is built into the software that "
+  },
+  {
+   "id": "MNDY-43",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": " in ways to expand within our existing customer base through the development of additional products and monetization of AI capabilities. In 2025, we doubled-down on customer success resources for our largest clients. In parallel, we introduced a new segmentation of support for medium-sized clients that is AI-first, but human-supported. This is designed to ensure that all accounts, regardless of size, are receiving the support they need, and opportunities for account growth are identified and acted upon. For the definition of Net Dollar Retention Rate, see “Part 4 - Operating and Financial Review and "
+  },
+  {
+   "id": "MNDY-44",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "as it pertains to onboarding and training. For example, our Southeast Asia market was mostly partner-led until monday.com staff more recently planted roots in the region. Our broad ecosystem includes leading enterprise software companies and emerging startups, global systems integrators, and channel partners. As of December 31, 2025, we have 300 channel partners in ~50 countries and territories. With a wide array of vertical and industry expertise, our partners do more than just sell our products; they also provide professional services and extend our products with partner-led solutions and applicati"
+  },
+  {
+   "id": "MNDY-45",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "n find a partner that fits their specific needs based on geographical location and desired verticals through our services marketplace and partner directory. We have partnered with some of the world's leading tech companies, such as Amazon AWS, as well as with a broad set of independent software vendors, in order to increase in scope, deepen our products, and strengthen our ability to serve as the connective layer across organizations. We also have regional partnerships in order to strengthen our ability to move upmarket. We work together to help customers achieve digital transformation with deep, ent"
+  },
+  {
+   "id": "MNDY-46",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "LC (Jira). In the future, we will likely face increased competition from companies providing similar products to our platform. Our principal competitive factor is our open and modular infrastructure, leading in flexibility and adaptability, as well as our ability to scale our vertical and horizontal offerings as we continue to rapidly build end-to-end products and advanced AI capabilities. We believe our ability to compete successfully depends primarily on the following factors: ● our ability to introduce new and improve on existing features, products, and services in response to competition, user se"
+  },
+  {
+   "id": "MNDY-47",
+   "for": "cmp.share_trend",
+   "doc": "6-K filed 2026-07-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326003403/exhibit_99-1.htm",
+   "text": " (by way of example and not by way of limitation) revenues, operating income and cash flows, and may further include divisional or personal objectives which may include operational objectives, such as (by way of example and not by way of limitation) market share, initiation of new markets and operational efficiency, customer focused objectives, project milestones objectives and investment in human capital objectives, such as (by way of example and not by way of limitation) employee satisfaction, employee retention and employee training and leadership programs. The Company may also grant annual cash bonuse"
+  },
+  {
+   "id": "MNDY-48",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "20-F filed 2026-03-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1845338/000117891326000870/zk2634436.htm",
+   "text": "subscription models. Conditions in our market could also change rapidly and significantly due to technological advancements (including AI, gen AI and ML), partnering by our competitors, or continuing market consolidation, and it is uncertain how our market will evolve. New start-up companies that innovate and large competitors that are making significant investments in research and development may invent similar or superior products and technologies that compete with our products. These competitive pressures in our market or our failure to compete effectively may result in price reductions, fewer customers, reduc"
+  }
+ ]
+}

@@ -1,0 +1,258 @@
+{
+ "ticker": "ADBE",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "d7017a494b976656c50bfac2b9683a34135c5a75f06dbb03455d451065f5efce",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "cap.ma_discipline",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: ADBE.LITIGATION)",
+  "cap.ma_discipline": "현금 인수 지출은 영업현금흐름의 7.0%로 작지만, 3년 내 중요 계약 해지 공시(8-K 1.02) ['2023-12-18']가 있다 — 해지된 거래의 가격 규율은 사람이 판단한다.",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "ADBE-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": " Risks Related to the Operation of Our Business If we are unable to recruit and retain key personnel, our business may be harmed, and our hybrid work model may present challenges, which could adversely impact our business. Much of our future success depends on the continued service, availability and performance of our senior management and highly skilled personnel across all levels of our organization. Our senior management has acquired specialized knowledge and skills with respect to our business, and the loss of any of these individuals could harm our business, especially if we are not successful in developing adequate succession plans. Our efforts to attract, develop, integrate and retain highly skilled employees may be compounded by intensified restrictions on immigration or the availability of work visas. The technology industry has been and may continue to be subject to substantial and continuous competition for talen"
+  },
+  {
+   "id": "ADBE-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
+   "text": "other improprieties; • reviewing the board memberships of other entities held by members of the Board and approving board memberships of other entities for our executive officers; and • if requested by the Board, assisting the Board in reviewing and assessing performance, management development and succession planning for our senior management, including our CEO. The Governance and Sustainability Committee has the authority to obtain independent advice and assistance from internal or external legal, accounting and other advisors at Adobe’s expense. The members of our Governance and Sustainability Committee are all independent directors within the meaning of applicable Nasdaq listing standards. The Governance and Sustainability Committee operates pursuant to a written charter, a copy of which can be "
+  },
+  {
+   "id": "ADBE-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm",
+   "text": " as needed and to make decisions that are independent of our management. The Corporate Governance Guidelines set forth the practices our Board and its committees follow with respect to Board and committee composition and selection, meetings, CEO performance evaluation and management development and succession planning for senior management, including the CEO position. Pursuant to the Corporate Governance Guidelines, the CEO prepares, on a continuing basis, a short-term succession plan outlining temporary delegations of authority to certain officers of the Company if one or more members of senior management should unexpectedly become unable to perform his or her duties. A copy of our Corporate Governance Guidelines is available on our website at adobe.com/investor-relations/governance.html . Code of "
+  },
+  {
+   "id": "ADBE-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "nagement and highly skilled personnel across all levels of our organization. Our senior management has acquired specialized knowledge and skills with respect to our business, and the loss of any of these individuals could harm our business, especially if we are not successful in developing adequate succession plans. Our efforts to attract, develop, integrate and retain highly skilled employees may be compounded by intensified restrictions on immigration or the availability of work visas. The technology industry has been and may continue to be subject to substantial and continuous competition for talent, particularly with AI and cybersecurity backgrounds, and demand for cutting-edge or unique skill sets may continue to be highly competitive, both of which are heightened with hybrid or remote working arran"
+  },
+  {
+   "id": "ADBE-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "sk Factors 17 Item 1B. Unresolved Staff Comments 29 Item 1C. Cybersecurity 29 Item 2. Properties 30 Item 3. Legal Proceedings 30 Item 4. Mine Safety Disclosures 30 PART II Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 31 Item 6. [Reserved] 31 Item 7. Management's Discussion and Analysis of Financial Condition and Results of Operations 32 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 44 Item 8. Financial Statements and Supplementary Data 46 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 87 Item 9A. Controls and Procedures 87 Item 9B. Other Information 87 Item 9C. Disclosure Regarding Foreign Jurisdictions That Prevent Inspections 87 PART III Item 10. Directors, Executive Officers and Corporate Governance 88 Item 11. Executive Compensation 88 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 88 Item 13. Certain Relationships and Related Transactions, and Director Independence 88 Item 14. Principal Accountant Fees and Services 88 PART IV Item 15. Exhibits, Financial Statement Schedules 89 Item 16. Form 10-K Summary 91 Signatures 92 2 Table of Contents Forward-Looking Statements In addition to historical information, this Annual Report on Form 10-K contains “forward-looking statements” within the meaning of applicable securities laws, including statements related to our product development plans and new or enhanced offerings; our business, strategy, artificial intelligence (“AI”) and innovation momentum; our mark"
+  },
+  {
+   "id": "ADBE-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ion, results of operations and cash flows. We are, and may in the future become, subject to various legal proceedings (including class action lawsuits), claims, negotiations, regulatory inquiries, investigations, enforcement actions and other actions, including relating to antitrust, consumer protection, data privacy and security, employment practices, product liability and the validity or alleged infringement of third-party intellectual property rights, including patent rights, among others. Such activity has increased over time with evolving global regulatory and enforcement landscapes and as our solutions have become more available to, and used by, more enterprises and consumers worldwide. For example, there is an increase in regulatory activity in connection with federal and state consumer protection laws, including some suits which seek civil penalties. Any proceedings, actions, claims or inquiries initiated by or against us, whether successful or not, may be highly time consuming; result in costly litigation, damage awards, consent decrees, injunctive relief or increased costs of business; require us to change our business practices or products; result in negative publicity; require significant amounts of management time; result in the diversion of significant operational resources; or otherwise harm our business and financial results. Disputes and litigation can be complex and are typically costly and can be disruptive to our business operations by diverting the attention of management and key personnel. For example, third-party intellectual property disputes, including those initiat"
+  },
+  {
+   "id": "ADBE-7",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "dispute. For further information about specific litigation and proceedings, see the section titled “Legal Proceedings” contained in Part II, Item 8, Note 16 of our Notes to Consolidated Financial Statements of this report. We are subject to risks associated with compliance with laws and regulations globally, which may harm our business. We are a global company subject to varied and complex laws, regulations, government actions and customs, both domestically and internationally. These local, state, federal and international laws and regulations relate to a number of aspects of our business, including trade laws such as import and export controls, anti-boycott, economic sanctions and embargoes, data and transaction processing security, payment card industry data security standards, antitrust and competition, consumer protection, records management, user-generated content hosted on websites we operate, privacy practices, data residency and transfer, AI, corporate governance, employment practices, immigration, employee and third-party complaints, anti-corruption, conflicts of interest, securities regulations, sustainability and other regulatory requirements affecting trade and investment. The application of these laws and regulations to our business is often unclear and evolving, and may at times conflict. Further, we are subject to the U.S. Foreign Corrupt Practices Act and other anti-corruption and anti-bribery laws, which may conflict with local customs and practices in other foreign countries, particularly those with developing economies where it is common to engage in practices that would "
+  },
+  {
+   "id": "ADBE-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "Notes to Consolidated Financial Statements for further information regarding our lease obligations. ITEM 3. LEGAL PROCEEDINGS The material set forth in the section titled “Legal Proceedings” in Note 16 of our Notes to Consolidated Financial Statements is incorporated herein by reference. ITEM 4. MINE SAFETY DISCLOSURES Not applicable. 30 Table of Contents PART II ITEM 5. MARKET FOR REGISTRANT’S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES Market Information for Common Stock Our common stock is traded on the Nasdaq Global Select Market under the symbol “ADBE.” Stockholders According to the records of our transfer agent, there were 801 holders of record of our common stock on January 9, 2026. Because many of such shares are held by brokers and other institutions on behalf of stockholders, we are unable to estimate the total number of stockholders represented by these record holders. Dividends We do not anticipate paying any cash dividends in the foreseeable future. Issuer Purchases of Equity Securities Below is a summary of stock repurchases for the three months ended November 28, 2025. See Note 14 of our Notes to Consolidated Financial Statements for information regarding our stock repurchase programs. Period Total Number of Shares Repurchased Average Price Paid Per Share Total Number of Shares Purchased as Part of Publicly Announced Plans Approximate Dollar Value that May Yet be Purchased Under the Plans (1) (in millions, except average price per share) August 30—September 26, 2025 2.1 $ 353.68 2.1 $ 8,088 September 27—October 24, 2025 2.3 $ 345.96 2.3 $ 7,30"
+  },
+  {
+   "id": "ADBE-9",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "l 2024 included costs associated with the optimization of our leased facilities, primarily consisting of impairment charges for certain operating lease right-of-use assets and leasehold improvements. Acquisition Termination Fee During fiscal 2024, we incurred a $1 billion termination fee which resulted from termination of the Figma transaction. Non-Operating Income (Expense), Net (dollars in millions) 2025 2024 2023 % Change 2025-2024 Interest expense $ (263) $ (169) $ (113) 56 % % Investment gains (losses), net 43 48 16 ** Other income (expense), net 248 311 246 (20) % % Total non-operating income (expense), net $ 28 $ 190 $ 149 ** _________________________________________ (**) Percentage is not meaningful. Interest Expense Interest expense represents interest "
+  },
+  {
+   "id": "ADBE-10",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "lion and $ 254 million of capitalized contract acquisition costs into sales and marketing expense, respectively. We did not incur any impairment losses for all periods presented. Capitalized contract acquisition costs were $ 721 million and $ 717 million as of November 28, 2025 and November 29, 2024, of which $ 464 million was long-term and included in other assets in the Consolidated Balance Sheets for both periods. The remaining balance of the capitalized costs to obtain contracts was current and included in prepaid expenses and other current assets. Refund Liabilities We record refund liabilities for amounts that may be subject to future refunds, which include sales returns reserves and customer rebates and credits. Refund liabilities are included in accrued expenses and other current liabilities on the 61 Tab"
+  },
+  {
+   "id": "ADBE-11",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "financial condition, business performance or results of operations. If our goodwill or intangible assets become impaired, then we could be required to record a significant charge to earnings. We test goodwill for impairment at least annually. We review our goodwill and intangible assets for impairment when events or changes in circumstances indicate the carrying value may not be recoverable, including declines in stock price, market capitalization or reduced future cash flow estimates and slower growth rates in our industry. Depending on the results of our review, we may be required to record a significant charge to earnings in our consolidated financial statements during the period in which any impairment of our "
+  },
+  {
+   "id": "ADBE-12",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ecognized on a straight-line basis over the lease term. Goodwill, Intangibles and Other Long-Lived Assets Goodwill is assigned to one or more reporting units on the date of acquisition. We review our goodwill for impairment annually during our second quarter of each fiscal year and between annual tests if an event occurs or circumstances change that would more likely than not reduce the fair value of any one of our reporting units below its respective carrying amount. In performing our goodwill impairment test, we first perform a qualitative assessment, which requires that we consider events or circumstances including macroeconomic conditions, industry and market considerations, cost factors, overall financial per"
+  },
+  {
+   "id": "ADBE-13",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ssessing the totality of events or circumstances, we determine that it is more likely than not that the fair values of our reporting units are greater than the carrying amounts, then the quantitative goodwill impairment test is not performed. If the qualitative assessment indicates that the quantitative analysis should be performed, we then evaluate goodwill for impairment by comparing the fair value of each of our reporting units to its carrying value, including the associated goodwill. To determine the fair values, we use the equal weighting of the market approach based on comparable publicly traded companies in similar lines of businesses and the income approach based on estimated discounted future cash flo"
+  },
+  {
+   "id": "ADBE-14",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "8 $ 12,788 Acquisitions 14 — — 14 Foreign currency translation 3 52 — 55 Balances at November 28, 2025 $ 3,906 $ 8,553 $ 398 $ 12,857 During the second quarter of fiscal 2025, we completed our annual goodwill impairment test associated with our reporting units and, based on the qualitative assessment, determined there was no impairment of goodwill. We did not identify any events or changes in circumstances since the performance of our annual goodwill impairment test that would require us to perform another goodwill impairment test during the fiscal year. Other intangibles, net, as of November 28, 2025 and November 29, 2024 were as follows: (dollars in millions) 2025 2024 Gross Carrying Amount Accumulated Amort"
+  },
+  {
+   "id": "ADBE-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ons of $10.03 billion during fiscal 2025 increased by $1.98 billion, or 25%, compared to fiscal 2024. Fiscal 2024 cash flows from operations were adversely impacted by payment of the $1 billion Figma termination fee. • Remaining performance obligations of $22.52 billion as of November 28, 2025 increased by 13% from $19.96 billion as of November 29, 2024. Revenue (dollars in millions) 2025 2024 2023 % Change 2025-2024 Subscription $ 22,904 $ 20,521 $ 18,284 12 % % Percentage of total revenue 96 % % 95 % % 94 % % Product 325 386 460 (16) % % Percentage of total revenue 2 % % 2 % % 2 % % Services and other 540 598 665 (10) % % Percentage of total revenue 2 % % 3 % % 4 % % Total revenue $ 23,769 $ 21,505 $ 19,"
+  },
+  {
+   "id": "ADBE-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "es and marketing 6,488 5,764 5,351 13 % % Percentage of total revenue 27 % % 27 % % 28 % % General and administrative 1,573 1,529 1,413 3 % % Percentage of total revenue 7 % % 7 % % 7 % % Acquisition termination fee — 1,000 — ** Percentage of total revenue * 5 % % * Amortization of intangibles 157 169 168 (7) % % Percentage of total revenue 1 % % 1 % % 1 % % Total operating expenses $ 12,512 $ 12,406 $ 10,405 1 % % _________________________________________ (*) Percentage is less than 1%. (**) Percentage is not meaningful. Research and Development Research and development expenses consist primarily of compensation and contracted costs associated with software development, third-party hosting services and da"
+  },
+  {
+   "id": "ADBE-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ded costs associated with the optimization of our leased facilities, primarily consisting of impairment charges for certain operating lease right-of-use assets and leasehold improvements. Acquisition Termination Fee During fiscal 2024, we incurred a $1 billion termination fee which resulted from termination of the Figma transaction. Non-Operating Income (Expense), Net (dollars in millions) 2025 2024 2023 % Change 2025-2024 Interest expense $ (263) $ (169) $ (113) 56 % % Investment gains (losses), net 43 48 16 ** Other income (expense), net 248 311 246 (20) % % Total non-operating income (expense), net $ 28 $ 190 $ 149 ** _________________________________________ (**) Percentage is not meaningful. Interest "
+  },
+  {
+   "id": "ADBE-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ive tax rate 18 % % 20 % % 20 % % Our effective tax rate for fiscal 2025 decreased by approximately two percentage points compared to fiscal 2024, primarily due to the impact of the Figma acquisition termination fee incurred in the prior year, which was not deductible for financial statement purposes, partially offset by a net tax expense related to stock-based compensation recorded in fiscal 2025 as compared to a net tax benefit related to stock-based compensation recorded in the prior year. Our effective tax rate for fiscal 2025 was lower than the U.S. federal statutory tax rate of 21% primarily due to the net tax benefits from effects of non-U.S. operations and the U.S. federal research tax credit, part"
+  },
+  {
+   "id": "ADBE-19",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-09-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+   "text": "ems by us or third parties; security incidents; failure to effectively develop, manage and maintain our sales channels or critical third-party business relationships; risks associated with being a multinational corporation and adverse macroeconomic and geopolitical conditions; complex sales cycles; litigation, regulatory inquiries, investigations and other actions; changes in, and compliance with, global laws and regulations, including those related to information security and privacy; failure to protect our intellectual property; changes in tax regulations; complex government procurement processes; risks related to fluctuations in or the timing of revenue recognition from our subscription offerings; fluctuations in foreign currency exchange rates; impairment charges; our existing and future debt obligations; catastrophic events; and fluctuations in our stock price. Further information on these and other factors are discussed in the section titled “Risk Factors” in Adobe’s most recently filed An"
+  },
+  {
+   "id": "ADBE-20",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-09-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+   "text": "ntangibles and other assets, net (19) (21) Acquisitions, net of cash acquired — (17) Net cash used for investing activities (668) (279) Cash flows from financing activities: Repurchases of common stock (2,232) (2,057) Proceeds from treasury stock re-issuances, net of taxes paid related to net share settlement of equity awards 86 142 Repayment of debt (250) — Other financing activities, net (19) 39 Net cash used for financing activities (2,415) (1,876) Effect of exchange rate changes on cash and cash equivalents — 8 Net change in cash and cash equivalents (560) 51 Cash and cash equivalents at beginning of period 4,919 4,931 Cash and cash equivalents at end of period $ 4,359 $ 4,982 6 Non-GAAP Results The following table shows Adobe’s GAAP results reconciled to non-GAAP results included in this release. (In millions, except per share data) Three Months Ended August 28, 2026 August 29, 2025 May 29, 2026 Operating income: GAAP operating income $ 2,354 $ 2,173 $ 2,238 Stock-based and deferred compens"
+  },
+  {
+   "id": "ADBE-21",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-09-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+   "text": " 544 521 556 Impairment of goodwill — — 70 Amortization of intangibles 58 79 46 Acquisition-related expenses 18 — 5 Loss contingency — — 30 Non-GAAP operating income $ 2,974 $ 2,773 $ 2,945 Net income: GAAP net income $ 1,827 $ 1,772 $ 1,712 Stock-based and deferred compensation expense 544 521 556 Impairment of goodwill — — 70 Amortization of intangibles 58 79 46 Acquisition-related expenses 18 — 5 Loss contingency — — 30 Investment (gains) losses, net (21) (23) (18) Income tax adjustments (2) (97) (1) Non-GAAP net income $ 2,424 $ 2,252 $ 2,400 Diluted net income per share: GAAP diluted net income per share $ 4.62 $ 4.18 $ 4.25 Stock-based and deferred compensation expense 1.38 1.23 1.38 Impairment of goodwill — — 0.17 Amortization of intangibles 0.15 0.19 0.12 Acquisition-related expenses 0.04 — 0.01 Loss contingency — — 0.07 Investment (gains) losses, net (0.05) (0.05) (0.04) Income tax adjustments (0.01) (0.24) — Non-GAAP diluted net income per share $ 6.13 $ 5.31 $ 5.96 Shares used to comp"
+  },
+  {
+   "id": "ADBE-22",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-09-10",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm",
+   "text": "o non-GAAP financial targets and assumptions included in this release. (Shares in millions) Fourth Quarter Fiscal 2026 Low High Diluted net income per share: GAAP diluted net income per share $ 4.65 $ 4.70 Stock-based and deferred compensation expense 1.48 1.48 Amortization of intangibles 0.16 0.16 Acquisition-related expenses 0.08 0.08 Income tax adjustments (0.07) (0.07) Non-GAAP diluted net income per share $ 6.30 $ 6.35 Shares used to compute diluted net income per share 389 389 Fourth Quarter Fiscal 2026 Operating margin: GAAP operating margin 34.0 % Stock-based and deferred compensation expense 8.6 Amortization of intangibles 0.9 Acquisition-related expenses 0.5 Non-GAAP operating margin 44.0 % Fourth Quarter Fiscal 2026 Effective income tax rate: GAAP effective income tax rate 22.0 % Income tax adjustments (1.0) Stock-based and deferred compensation expense (3.0) Non-GAAP effective income tax rate (*) 18.0 % (*) Represents Adobe’s fixed long-term non-GAAP tax rate based on projections and currentl"
+  },
+  {
+   "id": "ADBE-23",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-06-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+   "text": "s • Adobe achieved record revenue of $6.62 billion in its second quarter of FY2026, which represents 13% year-over-year growth, or 11% in constant currency. • Diluted earnings per share was $4.25 on a GAAP basis and $5.96 on a non-GAAP basis. GAAP results reflect a $0.17 per share non-cash goodwill impairment charge related to the Publishing & Advertising reporting unit. • Total Adobe Annualized Recurring Revenue (“ARR”) exiting the quarter was $27.10 billion, including approximately $480 million from Semrush. • GAAP operating income in the second quarter was $2.24 billion and non-GAAP operating income was $2.95 billion. GAAP net income was $1.71 billion and non-GAAP net income was $2.40 billion. • Cash flows from operations were $2.17 billion. • Exiting the quarter, Remaining Performance Obligations (“RPO”) were $22.27 billion, and Current Remaining Performance Obligations (“cRPO”) were 67%. • Adobe repurchased approximately 8.5 million shares during the quarter. Second Quarter FY2026 Customer "
+  },
+  {
+   "id": "ADBE-24",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-06-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+   "text": "ems by us or third parties; security incidents; failure to effectively develop, manage and maintain our sales channels or critical third-party business relationships; risks associated with being a multinational corporation and adverse macroeconomic and geopolitical conditions; complex sales cycles; litigation, regulatory inquiries, investigations and other actions; changes in, and compliance with, global laws and regulations, including those related to information security and privacy; failure to protect our intellectual property; changes in tax regulations; complex government procurement processes; risks related to fluctuations in or the timing of revenue recognition from our subscription offerings; fluctuations in foreign currency exchange rates; 2 impairment charges; our existing and future debt obligations; catastrophic events; and fluctuations in our stock price. Further information on these and other factors are discussed in the section titled “Risk Factors” in Adobe’s most recently filed "
+  },
+  {
+   "id": "ADBE-25",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-06-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+   "text": " (In millions; unaudited) Three Months Ended May 29, 2026 May 30, 2025 Cash flows from operating activities: Net income $ 1,712 $ 1,691 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation, amortization and accretion 193 209 Stock-based compensation 534 481 Impairment of goodwill 70 — Other non-cash adjustments 77 (101) Changes in deferred revenue (223) (156) Changes in other operating assets and liabilities (198) 67 Net cash provided by operating activities 2,165 2,191 Cash flows from investing activities: Purchases, sales and maturities of short-term investments, net (140) (96) Purchases of property and equipment (58) (47) Purchases and sales of long-term investments, intangibles and other assets, net 44 (135) Acquisitions, net of cash acquired (1,560) — Net cash used for investing activities (1,714) (278) Cash flows from financing activities: Repurchases of common stock (2,111) (3,500) Taxes paid related to net share settlement of equity awards, net o"
+  },
+  {
+   "id": "ADBE-26",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-06-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm",
+   "text": "Adobe’s GAAP results reconciled to non-GAAP results included in this release. (In millions, except per share data) Three Months Ended May 29, 2026 May 30, 2025 February 27, 2026 Operating income: GAAP operating income $ 2,238 $ 2,109 $ 2,418 Stock-based and deferred compensation expense 556 482 514 Impairment of goodwill 70 — — Amortization of intangibles 46 83 39 Acquisition-related expenses 5 — 2 Loss contingency (*) 30 — 62 Non-GAAP operating income $ 2,945 $ 2,674 $ 3,035 Net income: GAAP net income $ 1,712 $ 1,691 $ 1,889 Stock-based and deferred compensation expense 556 482 514 Impairment of goodwill 70 — — Amortization of intangibles 46 83 39 Acquisition-related expenses 5 — 2 Loss contingency (*) 30 — 62 Investment (gains) losses, net (18) (2) (5) Income tax adjustments (1) (83) (13) Non-GAAP net income $ 2,400 $ 2,171 $ 2,488 Diluted net income per share: GAAP diluted net income per share $ 4.25 $ 3.94 $ 4.60 Stock-based and deferred compensation expense 1.38 1.12 1.25 Impairment of goo"
+  },
+  {
+   "id": "ADBE-27",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-03-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+   "text": "roperty and equipment (37) (26) Purchases and sales of long-term investments, intangibles and other assets, net (103) (57) Net cash provided by (used for) investing activities 474 (484) Cash flows from financing activities: Repurchases of common stock (2,478) (3,250) Taxes paid related to net share settlement of equity awards, net of proceeds from treasury stock re-issuances (39) (63) Proceeds from issuance of debt — 1,997 Repayment of debt — (1,500) Other financing activities, net (27) (25) Net cash used for financing activities (2,544) (2,841) Effect of exchange rate changes on cash and cash equivalents 13 (12) Net change in cash and cash equivalents 901 (855) Cash and cash equivalents at beginning of period 5,431 7,613 Cash and cash equivalents at end of period $ 6,332 $ 6,758 6 Non-GAAP Results The following table shows Adobe’s GAAP results reconciled to non-GAAP results included in this release. (In millions, except per share data) Three Months Ended February 27, 2026 February 28, 2025 Nove"
+  },
+  {
+   "id": "ADBE-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-03-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+   "text": "01 Amortization of intangibles 39 83 61 Acquisition-related expenses 2 — 1 Loss contingency (*) 62 — — Non-GAAP operating income $ 3,035 $ 2,715 $ 2,824 Net income: GAAP net income $ 1,889 $ 1,811 $ 1,856 Stock-based and deferred compensation expense 514 469 501 Amortization of intangibles 39 83 61 Acquisition-related expenses 2 — 1 Loss contingency (*) 62 — — Investment (gains) losses, net (5) (6) (12) Income tax adjustments (13) (133) (113) Non-GAAP net income $ 2,488 $ 2,224 $ 2,294 Diluted net income per share: GAAP diluted net income per share $ 4.60 $ 4.14 $ 4.45 Stock-based and deferred compensation expense 1.25 1.07 1.20 Amortization of intangibles 0.10 0.19 0.15 Loss contingency (*) 0.15 — — Investment (gains) losses, net (0.01) (0.01) (0.03) Income tax adjustments (0.03) (0.31) (0.27) Non-GAAP diluted net income per share $ 6.06 $ 5.08 $ 5.50 Shares used to compute diluted net income per share 411 438 417 The following table shows Adobe’s first quarter fiscal year 2026 GAAP tax rate reconciled "
+  },
+  {
+   "id": "ADBE-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-03-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000048/adbeex991q126.htm",
+   "text": "ate included in this release. First Quarter Fiscal 2026 Effective income tax rate: GAAP effective income tax rate 22.0 % Income tax adjustments (0.7) Stock-based and deferred compensation expense (3.0) Loss contingency (*) (0.3) Non-GAAP effective income tax rate (**) 18.0 % (*) Associated with the settlement of an outstanding litigation matter which reflects ongoing negotiations (**) Represents Adobe’s fixed long-term non-GAAP tax rate based on projections and currently available information for fiscal 2026 through fiscal 2028 7 Reconciliation of GAAP to Non-GAAP Financial Targets and Assumptions The following tables show Adobe's second quarter fiscal year 2026 financial targets and assumptions reconciled to non-GAAP financial targets and assumptions included in this release. (Shares in millions) Second Quarter Fiscal 2026 Low High Diluted net income per share: GAAP diluted net income per share $ 4.35 $ 4.40 Stock-based and deferred compensation expense 1.33 1.33 Amortization of intangibles 0.1"
+  },
+  {
+   "id": "ADBE-30",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "cipate the growing needs of our customers. In the artificial intelligence (“AI”) era, we are harnessing the power of AI across our solutions by bringing together our commercially safe first-party and leading partner AI models best suited for the job; deploying conversational and agentic capabilities across offerings; ensuring ubiquity on all surfaces; delivering trusted and secure solutions; and expanding our global presence. Adobe’s value proposition is to empower creative expression across multiple media types and channels, at scale, in a collaborative and secure environment, with an end-to-end int"
+  },
+  {
+   "id": "ADBE-31",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "ming or generating content across multiple media types and channels. With Acrobat Studio, which brings together Adobe Acrobat and Express to deliver more product value, we are evolving Acrobat from a leading document productivity app to an integrated destination for people to get insights faster, create standout content and collaborate more seamlessly. Our Acrobat solutions, from our freemium Acrobat Reader to Acrobat AI Assistant to our AI-powered productivity and creativity destination, Acrobat Studio, facilitate frictionless onboarding and scaled reach in serving the billions of potential users in"
+  },
+  {
+   "id": "ADBE-32",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "e professionals need AI-driven solutions that provide power and precision from ideation and creation to production and delivery. They want a powerful destination for creative expression and access to leading AI models. They require seamless collaboration capabilities, powerful ideation tools, conversational and agentic AI solutions and flexible access to web, mobile, and desktop applications to meet the growing demand for high-quality, personalized content in a fast-paced digital economy. As AI fundamentally transforms content production, distribution and monetization, our solutions accelerate creati"
+  },
+  {
+   "id": "ADBE-33",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-01-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+   "text": "the return on their investments in our cloud solutions and licensed products. Consulting Services We have a global professional services team dedicated to designing and implementing solutions for our largest customers. Our professional services team uses a comprehensive, customer-focused methodology that has been refined over years of capturing and analyzing best practices from numerous customer engagements across a diverse mix of solutions, industries and customer segments. Our customers continually seek to integrate across Adobe’s products and cloud solutions and engage our professional services te"
+  }
+ ]
+}

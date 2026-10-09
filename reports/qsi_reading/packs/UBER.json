@@ -1,0 +1,486 @@
+{
+ "ticker": "UBER",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "040c89cba8a0fa866cf19f435f9e0b447bfc27279417e134efc998ad3bccb381",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "cap.ma_discipline",
+  "acc.unfaithful_disclosure",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.pricing_power"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: UBER.LITIGATION)",
+  "cap.ma_discipline": "5년 인수 지출이 영업현금흐름의 15% — 가격 규율은 사람이 판단해야 한다",
+  "acc.unfaithful_disclosure": "연차보고서에 제재·합의 진술 1건 — 사람이 읽어야 한다: Additionally, in July 2022, we entered into a non-prosecution agreement with the DOJ concerning its investigation into our handling of the 2016 Breach.",
+  "acc.guidance_miss_3y": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.pricing_power": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다"
+ },
+ "excerpts": [
+  {
+   "id": "UBER-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ified executives and employees, or an inability to attract, retain, and motivate high-quality executives and employees required for the planned expansion of our business, may harm our operating results and impair our ability to grow. In addition, we depend on the continued services and performance of our key personnel, including our Chief Executive Officer Dara Khosrowshahi. We have entered into an employment agreement with Mr. Khosrowshahi, which is at-will and has no specific duration. Our failure to put in place adequate succession plans for senior and key management roles or the failure of key employees to successfully transition into new roles, for example, as a result of reductions in workforce, organizational changes and attrition, could have an adverse effect on our business and operating results. The unexpected or abrupt departure of one or more of our key personnel and the failure to effectively transfer knowledge and effect s"
+  },
+  {
+   "id": "UBER-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000130817926000125/uber014597-def14a.htm",
+   "text": "ed by the following practices: What We Do Independent chairperson Fully independent Audit, Compensation, and Nominating and Governance Committees that meet at least quarterly Annual elections for all directors Directors elected by majority vote in uncontested elections Board oversight of management succession planning Board, committee, and individual director evaluation process Stock ownership guidelines for directors and executive officers Incorporate performance metrics tied to our values into executive compensation, including goals related to safety and electrification Clawback Policy in our executive compensation program that exceeds the Securities and Exchange Commission (SEC) and New York Stock Exchange (NYSE) requirements Permit stockholders who own at least 25% of the aggregate voting power "
+  },
+  {
+   "id": "UBER-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000130817926000125/uber014597-def14a.htm",
+   "text": ", innovation and high growth, enterprise risk management, and technology innovation. The Board’s oversight focuses on three areas (with safety considerations embedded in each): Leadership Overseeing CEO and senior leadership performance (including progress toward and attainment of safety goals) and succession planning to support the Company’s long-term strategy. Strategy Overseeing management’s execution of the Company’s long-term strategy and ensuring that the Company remains strongly positioned in a dynamic regulatory and competitive environment (including investment in and development of new and enhanced safety tools on our platform). Risk Overseeing enterprise risk management, including compliance with applicable laws and mitigation of financial, legal, operational, and reputational risks (inclu"
+  },
+  {
+   "id": "UBER-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000130817926000125/uber014597-def14a.htm",
+   "text": "ectric vehicle miles, safety, the expansion of our membership program, and improvements to the Driver and Courier experience, among others. ● Retaining key talent and ensuring a strong executive team. We strive to have a long-term and enduring program for effective senior leadership development and succession at Uber. Our compensation program is designed to attract and retain a talented team of executives who possess and demonstrate the qualities that are critical to the success of our business. The achievement of this objective is evident in the promotion of Andrew Macdonald in 2025 to the role of President and Chief Operating Officer (COO) after holding various positions within the Company for more than 13 years, most recently as Senior Vice President, Mobility & Business Operations. Additionally,"
+  },
+  {
+   "id": "UBER-5",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000130817926000125/uber014597-def14a.htm",
+   "text": "ssional experiences and backgrounds. In furtherance of this, the Nominating and Governance Committee conducts self-evaluations annually in order to assess the Board’s and its committees’ composition, performance, and effectiveness. In addition, the Nominating and Governance Committee oversees Board succession planning and the recruitment of potential candidates, and considers the selection criteria outlined above in evaluating each potential candidate. 2026 Proxy Statement 27 Table of Contents Voting Agenda Proxy Statement Summary Board and Governance Matters Director Compensation Corporate Governance Board Structure & Operations Our corporate governance guidelines provide that the roles of chairperson of the Board and Chief Executive Officer (CEO) must be held by separate persons, and the chairpers"
+  },
+  {
+   "id": "UBER-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ness and productivity. Globally, Uber offers competitive benefits packages to our employees and their families. For additional discussion, see the risk factor titled “—Our business depends on retaining and attracting high-quality personnel, and continued attrition, future attrition, or unsuccessful succession planning could adversely affect our business.” included in Part I, Item 1A of this Annual Report on Form 10-K. Driver and Courier Well-Being In addition to employees discussed above, our business also depends on our ability to attract and engage Drivers, consumers, Merchants, Shippers, and Couriers, as well as contractors and consultants that support our global operations. In relation to those individuals who earn income on our platform, Uber is one of the largest open platforms for work in the worl"
+  },
+  {
+   "id": "UBER-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "rivers, consumers, merchants, Shippers, and Carriers, whether as a result of competition or other factors, our platform will become less appealing to platform users. • Our business depends on retaining and attracting high-quality personnel, and continued attrition, future attrition, or unsuccessful succession planning could adversely affect our business. • Maintaining and enhancing our brand and reputation is critical to our business prospects. We receive significant media coverage, including negative publicity regarding our brand and reputation, and while we have taken significant steps to rehabilitate our brand and reputation, failure to maintain and enhance our brand and reputation will cause our business to suffer. • We may fail to offer autonomous vehicle technologies on our platform at competitive "
+  },
+  {
+   "id": "UBER-8",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": " will be able to renew such agreements on favorable terms if at all, and we may not be successful in negotiating similar agreements with airports in all jurisdictions. Our business depends on retaining and attracting high-quality personnel, and continued attrition, future attrition, or unsuccessful succession planning could adversely affect our business. Our success depends in large part on our ability to attract and retain high-quality management, operations, engineering, and other personnel who are in high demand, are often subject to competing employment offers, and are attractive recruiting targets for our competitors. Our efforts to attract and retain high-quality personnel may be compounded by intensified restrictions on immigration or the availability of work visas. In addition, challenges related"
+  },
+  {
+   "id": "UBER-9",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ow. In addition, we depend on the continued services and performance of our key personnel, including our Chief Executive Officer Dara Khosrowshahi. We have entered into an employment agreement with Mr. Khosrowshahi, which is at-will and has no specific duration. Our failure to put in place adequate succession plans for senior and key management roles or the failure of key employees to successfully transition into new roles, for example, as a result of reductions in workforce, organizational changes and attrition, could have an adverse effect on our business and operating results. The unexpected or abrupt departure of one or more of our key personnel and the failure to effectively transfer knowledge and effect smooth key personnel transitions has had and may in the future have an adverse effect on our bus"
+  },
+  {
+   "id": "UBER-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "isk Factors 9 Item 1B. Unresolved Staff Comments 45 Item 1C. Cybersecurity 45 Item 2. Properties 46 Item 3. Legal Proceedings 46 Item 4. Mine Safety Disclosures 46 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 46 Item 6. [Reserved] 48 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 48 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 67 Item 8. Financial Statements and Supplementary Data 68 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 122 Item 9A. Controls and Procedures 123 Item 9B. Other Information 123 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 123 PART III Item 10. Directors, Executive Officers and Corporate Governance 123 Item 11. Executive Compensation 124 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 124 Item 13. Certain Relationships and Related Transactions, and Director Independence 124 Item 14. Principal Accounting Fees and Services 124 PART IV Item 15. Exhibits and Financial Statement Schedules 124 Item 16. Form 10-K Summary 124 Exhibit Index 125 Signatures 127 1 SPECIAL NOTE REGARDING FORWARD-LOOKING STATEMENTS This Annual Report on Form 10-K contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. All statements other than statements of historical facts contained in this Annual Report on Form 10-K, including statements regarding our future results of op"
+  },
+  {
+   "id": "UBER-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "s. See the section titled “Risk Factors” included in Part I, Item 1A and “Note 14 – Commitments and Contingencies” to our consolidated financial statements included in Part II, Item 8, “Financial Statements and Supplementary Data,” of this Annual Report on Form 10-K. Data Privacy and Protection Our technology platform, and the user data we collect and process to run our business, are an integral part of our business model and, as a result, our compliance with laws dealing with the collection and processing of personal data is core to our strategy to improve platform user experience and build trust. Regulators around the world have adopted or proposed requirements regarding the collection, use, transfer, security, storage, destruction, and other processing of personal data, and these laws are increasing in number, enforcement, fines, and other penalties. Two examples of such regulations that have significant implications for our business are the European Union’s General Data Protection Regulation (the “GDPR”), a law which went into effect in May 2018 and implemented more stringent requirements for processing personal data relating to individuals in the EU, and the California Consumer Privacy Act (the “CCPA”), which went into effect in January 2020 and established new consumer rights and data privacy and protection requirements for covered businesses. U.S. state, city, federal, and foreign regulators are expected to continue proposing and adopting significant laws impacting the processing of personal data and other data relating to individuals, such as the California Privacy Rights Act (“"
+  },
+  {
+   "id": "UBER-12",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "legislators and by government agencies in the United States and abroad. We are involved in numerous legal proceedings globally, including putative class and collective class action lawsuits, demands for arbitration, charges and claims before administrative agencies, and investigations or audits by labor, social security, and tax authorities that claim that Drivers should be treated as our employees (or as workers or quasi-employees where those statuses exist), rather than as independent contractors. We believe that Drivers are independent contractors because, among other things, they can choose whether, when, and where to provide services on our platform, are free to provide services on our competitors’ platforms, and provide a vehicle to perform services on our platform. Nevertheless, we may not be successful in defending the classification of Drivers in some or all jurisdictions. Furthermore, the costs associated with defending, settling, or resolving pending and future lawsuits (including demands for arbitration) relating to the classification of Drivers have been and may continue to be material to our business. In addition, more than 150,000 Drivers in the United States who have entered into arbitration agreements with us have filed (or expressed an intention to file) arbitration demands against us that assert similar classification claims. We have resolved the classification claims of a majority of these Drivers under individual settlement agreements. Furthermore, we are involved in numerous legal proceedings regarding the enforceability of arbitration agreements entered into with Driv"
+  },
+  {
+   "id": "UBER-13",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "uch proceedings, this could negatively impact the enforceability of arbitration agreements in other legal proceedings, which could have an adverse consequence on our business and financial condition. Changes to foreign, state, and local laws governing the definition or classification of independent contractors, or judicial decisions regarding independent contractor classification, could require classification of Drivers as employees (or workers or quasi-employees where those statuses exist) and/or representation of Drivers by labor unions. For example, California’s Assembly Bill 5 became effective as of January 1, 2020. Government authorities and private plaintiffs have brought litigation asserting that Assembly Bill 5 requires Drivers in California to be classified as employees. In November 2020, California voters approved Proposition 22, a California state ballot initiative that provides a framework for drivers that use platforms like ours for independent work. Proposition 22 went into effect in December 2020 and we expect that Drivers will be able to maintain their status as independent contractors under California law and that we and our competitors will be required to comply with the provisions of Proposition 22. Although our stipulation to dissolve the California Attorney General’s preliminary injunction was granted in April 2021, that litigation remains pending, and we also may face liability relating to periods before the effective date of Proposition 22. The California Supreme Court upheld the constitutionality of Proposition 22; however, legal challenges, including constitutional "
+  },
+  {
+   "id": "UBER-14",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ng Activities Net cash used in investing activities was $3.6 billion for the year ended December 31, 2025, primarily consisting of $21.4 billion in purchases of marketable securities, $815 million in acquisition of businesses, net of cash acquired, $676 million in purchases of non-marketable equity securities, $336 million in purchases of property and equipment, partially offset by proceeds from maturities and sales of marketable securities of $20.0 billion. Net cash used in investing activities was $3.2 billion for the year ended December 31, 2024, primarily consisting of $12.8 billion in purchases of marketable securities, $289 million in purchases of non-marketable equity securities, $242 million in purchases of property and equipment, partially offset by proceeds from maturities and sales of marketable securi"
+  },
+  {
+   "id": "UBER-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "the Middle East, Africa, and Asia Pacific (“APAC”, excluding China and Southeast Asia). Foodpanda Taiwan In May 2024, we entered into a definitive agreement with Delivery Hero SE (“Delivery Hero”) to acquire 100 % ownership interest in Delivery Hero’s Foodpanda delivery business in Taiwan (“Foodpanda Taiwan”) for approximately $ 950 million in cash, on a cash and debt free basis, subject to certain adjustments. In January 2025, the Taiwan Fair Trade Commission issued a decision prohibiting the transaction. In the fourth quarter of 2024, we recorded an expense of $ 236 million in other income (expense), net in our consolidated statement of operations for the settlement of a termination fee. In April 2025, we settled the termination fee in cash. Refer to Note 2 – Investments and Fair Value Measurement for further details on the Deli"
+  },
+  {
+   "id": "UBER-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "n agreement with Mubadala Investment Company to acquire Getir Perakende Lojistik A.Ş.'s (“Getir”) delivery portfolio in Türkiye. The transaction is structured to close in phases with the agreement to acquire 100 % of Getir’s food delivery business and a minority interest in its grocery delivery business at the outset, for $ 435 million in cash, on a cash and debt free basis, subject to certain adjustments. The transaction is subject to regulatory approval and other closing conditions, with the acquisition of the food delivery business expected to close in the second half of 2026. Schedule II - Valuation and Qualifying Accounts The table below details the activity of the allowance for doubtful accounts, deferred tax asset valuation allowance, and insurance reserves (in millions): Balance at Beginning of Period Additions (1), ("
+  },
+  {
+   "id": "UBER-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "r experience; • liability for pre-acquisition activities of the acquired company; • litigation or other claims or liabilities arising in connection with the acquisition or the acquired company; and • impairment charges associated with goodwill, long-lived assets, investments, and other acquired intangible assets. We have in the past and may in the future implement integration structures that do not fully integrate an acquired company’s operating functions. Such structures may delay the efficiencies that we expect to gain from the acquisition and our brand and reputation could be impacted by any damage or reputational harm to the acquired company’s brand. In addition, our acquisition of Careem has increased our risks under the U.S. Fo"
+  },
+  {
+   "id": "UBER-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "(vii) other income (expense), net, (viii) depreciation and amortization, (ix) stock-based compensation expense, (x) certain legal, non-income tax, and regulatory reserve changes and settlements, (xi) goodwill and asset impairments/loss on sale of assets, (xii) acquisition, financing and divestitures related expenses, (xiii) restructuring and related charges and (xiv) other items not indicative of our ongoing operating performance. We have included Adjusted EBITDA in this Annual Report on Form 10-K because it is a key measure used by our management team to evaluate our operating performance, generate future operating plans, and make strategic decisions, including those relating to operating expenses. Accordingly, we beli"
+  },
+  {
+   "id": "UBER-19",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "operations 2,799 5,565 Add (deduct): Depreciation and amortization 711 719 Stock-based compensation expense 1,796 1,826 Legal, non-income tax, and regulatory reserve changes and settlements 1,123 564 Goodwill and asset impairments/loss on sale of assets, net 3 2 Acquisition, financing and divestitures related expenses 25 43 Loss on lease arrangement, net 2 2 Restructuring and related charges 25 9 Adjusted EBITDA $ 6,484 $ 8,730 Constant Currency We compare the percent change in our current period results from the corresponding prior period using constant currency disclosure. We present constant currency growth rate information to provide a framework for assessing how our underlying revenue performed excluding the effect"
+  },
+  {
+   "id": "UBER-20",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ne appropriate estimates and assumptions. Changes in these estimates and assumptions could affect the calculation of the fair value of the investments and the determination of any impairment charges. Goodwill Impairment Assessment We review goodwill for impairment annually (in the fourth quarter) and whenever events or changes in circumstances indicate that goodwill might be impaired. We make certain judgments and assumptions to determine our reporting units and in allocating shared assets and liabilities to determine the carrying values for each of our reporting units. Determination of reporting units is based on a judgmental evaluation of the level at which our segment managers review financial results, evaluate performance, and allocate resources. Jud"
+  },
+  {
+   "id": "UBER-21",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "Freight with respect to freight brokerage. Additionally, if we are unable to obtain regulatory approval of any acquisitions, we may not ultimately consummate such acquisitions, may be required to pay termination fees or may consummate them only in jurisdictions where antitrust approval is obtained. Further, in order to obtain regulatory approval of acquisitions, we may be required to divest all or part of our or the target company’s operations or agree to other remedies. Any such remedies could result in additional competition in some or all markets. For all of these reasons, we may not be able to compete successfully against our current and future competitors. Our inability to compete effectively would ha"
+  },
+  {
+   "id": "UBER-22",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "realized gain (loss) on debt and equity securities, net, which consists primarily of gains (losses) from fair value adjustments relating to our marketable and non-marketable securities. • Acquisition termination fee. • Other, net. Provision for (Benefit from) Income Taxes We are subject to income taxes in the United States and foreign jurisdictions in which we do business. These foreign jurisdictions have different statutory tax rates than those in the United States. Additionally, certain of our foreign earnings may also be taxable in the United States. Accordingly, our effective tax rate will vary depending on the relative proportion of foreign to domestic income, and changes in tax laws. The income tax b"
+  },
+  {
+   "id": "UBER-23",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": " 31, % Change (In millions, except percentages) 2024 2025 Foreign currency exchange gains (losses), net (391) 89 ** Unrealized gain (loss) on debt and equity securities, net 1,832 (97) ** Acquisition termination fee (1) (236) — 100 % Other, net (77) (60) 22 % 55 Other income (expense), net $ 1,128 $ (68) ** Percentage of revenue 3 % — % (1) Refer to Note 1 – Description of Business and Summary of Significant Accounting Policies included in Part II, Item 8, “Financial Statements and Supplementary Data,” of this Annual Report on Form 10-K for further information on Foodpanda Taiwan. ** Percentage not meaningful. 2025 Compared to 2024 Unrealized gain (loss) on debt and equity securities, net decreased by $1.9"
+  },
+  {
+   "id": "UBER-24",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ance reserves primarily due to liabilities recorded during the period exceeding claims paid out, and accrued expenses and other liabilities, partially offset by the settlement of the Foodpanda Taiwan termination fee as described in Note 1 – Description of Business and Summary of Significant Accounting Policies to our consolidated financial statements included in Part II, Item 8, “Financial Statements and Supplementary Data,” of this Annual Report on Form 10-K, as well as an increase in accounts receivable and prepaid expenses and other assets primarily due to tax matters recorded as a receivable in other assets described in the Non-Income Tax Matters section below. Net cash provided by operating activities"
+  },
+  {
+   "id": "UBER-25",
+   "for": "acc.unfaithful_disclosure",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "ata security and privacy practices. In addition, in March 2022, Uber Technologies, Inc. and Uber B.V. were each fined €2.12 million by the Italian data protection authority for alleged privacy violations stemming from an investigation conducted in 2018. Additionally, in July 2022, we entered into a non-prosecution agreement with the DOJ concerning its investigation into our handling of the 2016 Breach. Failure to comply with these and other orders could result in substantial fines, enforcement actions, injunctive relief, and other penalties that may be costly or that may impact our business. We may also assume liabilities for breaches experienced by the companies we acquire as we expand our operations. For example, in April 2018, Careem publicly disclosed and notified relevant regulatory authorities that it had been subject to a data security incident that allowed access to certain personal information"
+  },
+  {
+   "id": "UBER-26",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": "h, cash equivalents, and short-term investments were $5.4 billion at the end of the second quarter. Outlook for Q3 2026 For Q3 2026, we anticipate: • Gross Bookings of $58.25 billion to $60.25 billion, representing growth of 18% to 22% YoY on a constant-currency basis. ◦ Our outlook assumes a roughly 1 percentage-point currency headwind to total reported YoY growth. • Non-GAAP EPS of $0.84 to $0.88, representing growth of 28% to 35% YoY. ◦ Our outlook translates to Adjusted EBITDA of $2.86 billion to $2.96 billion. 1 Financial and Operational Highlights for Second Quarter 2026 Three Months Ended June 30, (In millions, except percentages and per share amounts) 2025 2026 % Change % Change (Constant C"
+  },
+  {
+   "id": "UBER-27",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking Non-GAAP EPS and Adjusted EBITDA measures to the closest corresponding GAAP measures without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED"
+  },
+  {
+   "id": "UBER-28",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000019/uberq126earningspressrelea.htm",
+   "text": "sh, cash equivalents, and short-term investments were $6.1 billion at the end of the first quarter. Outlook for Q2 2026 For Q2 2026, we anticipate: • Gross Bookings of $56.25 billion to $57.75 billion, representing growth of 18% to 22% YoY on a constant-currency basis. ◦ Our outlook assumes a roughly 2 percentage-point currency tailwind to total reported YoY growth. • Non-GAAP EPS of $0.78 to $0.82, representing growth of 31% to 38% YoY. ◦ Our outlook translates to Adjusted EBITDA of $2.70 billion to $2.80 billion. 1 Financial and Operational Highlights for First Quarter 2026 Three Months Ended March 31, (In millions, except percentages) 2025 2026 % Change % Change (Constant Currency (1) ) Monthly "
+  },
+  {
+   "id": "UBER-29",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "th strong momentum, while remaining solidly on track to deliver on our three-year growth and profit outlook,” said Balaji Krishnamurthy, incoming CFO. “With large and growing free cash flows, over the coming years we will invest with discipline across a multitude of opportunities, including positioning Uber to win in an AV future.” Financial and Operational Highlights for Fourth Quarter 2025 • Trips during the quarter grew 22% year-over-year (“YoY”) to 3.8 billion, driven by Monthly Active Platform Consumers (“MAPCs\") growth of 18% YoY and monthly Trips per MAPC growth of 3% YoY. • Gross Bookings grew 22% YoY to $54.1 billion, and 22% on a constant currency basis. • Revenue grew 20% YoY to $14.4 bi"
+  },
+  {
+   "id": "UBER-30",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "h, cash equivalents, and short-term investments were $7.6 billion at the end of the fourth quarter. Outlook for Q1 2026 For Q1 2026, we anticipate: • Gross Bookings of $52.0 billion to $53.5 billion, representing growth of 17% to 21% YoY on a constant currency basis. ◦ Our outlook assumes a roughly 4 percentage-point currency tailwind to total reported YoY growth. • Non-GAAP EPS of $0.65 to $0.72, representing growth of 37% YoY at the midpoint. ◦ Our outlook translates to Adjusted EBITDA of $2.37 billion to $2.47 billion. 1 Financial and Operational Highlights for Fourth Quarter 2025 Three Months Ended December 31, (In millions, except percentages) 2024 2025 % Change % Change (Constant Currency (1)"
+  },
+  {
+   "id": "UBER-31",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking Non-GAAP EPS and Adjusted EBITDA measures to the closest corresponding GAAP measures without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 6 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED"
+  },
+  {
+   "id": "UBER-32",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": "third quarter. We intend to redeem our $1.2 billion Convertible Notes due December 2025 in Q4 2025. Outlook for Q4 2025 For Q4 2025, we anticipate: • Gross Bookings of $52.25 billion to $53.75 billion, representing growth of 17% to 21% YoY on a constant currency basis. ◦ Our outlook assumes a roughly 1 percentage-point currency tailwind to total reported YoY growth. • Adjusted EBITDA of $2.41 billion to $2.51 billion, which represents 31% to 36% YoY growth. 1 Financial and Operational Highlights for Third Quarter 2025 Three Months Ended September 30, (In millions, except percentages) 2024 2025 % Change % Change (Constant Currency (1) ) Monthly Active Platform Consumers (“MAPCs”) 161 189 17 % Trips "
+  },
+  {
+   "id": "UBER-33",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking non-GAAP Adjusted EBITDA measure to the closest corresponding GAAP measure without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE S"
+  },
+  {
+   "id": "UBER-34",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000020/uberq225earningspressrelea.htm",
+   "text": "quarter. • New share repurchase program authorized up to an additional $20 billion of common stock. Outlook for Q3 2025 For Q3 2025, we anticipate: • Gross Bookings of $48.25 billion to $49.75 billion, representing growth of 17% to 21% YoY on a constant currency basis. ◦ Our outlook assumes a neutral to modestly positive FX impact to total reported YoY growth. ◦ As a reminder, our outlook includes the contribution from the close of the Trendyol Go acquisition; excluding this, our growth outlook would be 16% to 20% YoY on a constant-currency basis (consistent with the prior quarter). • Adjusted EBITDA of $2.19 billion to $2.29 billion, which represents 30% to 36% YoY growth. (1) Trailing twelve mont"
+  },
+  {
+   "id": "UBER-35",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000012/uberq125earningspressrelea.htm",
+   "text": "sh, cash equivalents, and short-term investments were $6.0 billion at the end of the first quarter. Outlook for Q2 2025 For Q2 2025, we anticipate: • Gross Bookings of $45.75 billion to $47.25 billion, representing growth of 16% to 20% YoY on a constant currency basis. ◦ Our outlook assumes a roughly 1.5 percentage point currency headwind to total reported YoY growth (including a roughly 3 percentage point currency headwind to Mobility). • Adjusted EBITDA of $2.02 billion to $2.12 billion, which represents 29% to 35% YoY growth. 1 Financial and Operational Highlights for First Quarter 2025 Three Months Ended March 31, (In millions, except percentages) 2024 2025 % Change % Change (Constant Currency "
+  },
+  {
+   "id": "UBER-36",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000012/uberq125earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking non-GAAP Adjusted EBITDA measure to the closest corresponding GAAP measure without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, 4 but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE"
+  },
+  {
+   "id": "UBER-37",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000004/uberq424earningspressrelea.htm",
+   "text": " demand in both Mobility and Delivery helped us grow Gross Bookings faster than the high end of our guidance, and we closed out 2024 exceeding our three-year outlook for Gross Bookings, Adjusted EBITDA, and free cash flow,” said Prashanth Mahendra-Rajah, CFO. “We believe we remain undervalued despite these strong fundamentals, and plan to be active and opportunistic buyers of our stock.” Financial Highlights for Fourth Quarter 2024 • Gross Bookings grew 18% year-over-year (“YoY”) to $44.2 billion, or 21% on a constant currency basis, with Mobility Gross Bookings of $22.8 billion (+18% YoY or +24% YoY constant currency) and Delivery Gross Bookings of $20.1 billion (+18% YoY or +18% YoY constant curre"
+  },
+  {
+   "id": "UBER-38",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000004/uberq424earningspressrelea.htm",
+   "text": "lion at the end of the fourth quarter. We redeemed $2.0 billion of our outstanding debt in Q4 2024. Outlook for Q1 2025 For Q1 2025, we anticipate: • Gross Bookings of growth of 17% to 21% YoY on a constant currency basis. ◦ This translates to reported Gross Bookings of $42.0 billion to $43.5 billion as our outlook assumes a roughly 5.5 percentage point currency headwind to total reported YoY growth (including a roughly 7 and 4 percentage point currency headwind to Mobility and Delivery growth, respectively). • Adjusted EBITDA of $1.79 billion to $1.89 billion, which represents 30% to 37% YoY growth. 1 Financial and Operational Highlights for Fourth Quarter 2024 Three Months Ended December 31, (In "
+  },
+  {
+   "id": "UBER-39",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000004/uberq424earningspressrelea.htm",
+   "text": "ssist with customer service requests, providing support agents with summaries of customer comments, guidance on resolution steps, and personalized reply suggestions. Mobility • Focus on affordability: Launched UberX Share at 10 major airports in the US and internationally. Additionally, expanded Uber Shuttle service to LaGuardia Airport, adding a new stop from downtown Manhattan, and increased service during peak times. • Uber for Teens expansion: Expanded Uber for Teens to 26 new countries across the EMEA, APAC, and LatAm regions. Uber Teens is now live in over 50 countries, covering the vast majority of our global Trip volumes. Also launched Teen profiles, enabling teens to use their own payment m"
+  },
+  {
+   "id": "UBER-40",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000004/uberq424earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking non-GAAP Adjusted EBITDA measure to the closest corresponding GAAP measure without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 7 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE S"
+  },
+  {
+   "id": "UBER-41",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315124000033/uberq324earningspressrelea.htm",
+   "text": "the end of the third quarter. We expect to redeem $2.0 billion of our outstanding debt in Q4 2024 . Outlook for Q4 2024 For Q4 2024, we anticipate: • Gross Bookings of $42.75 billion to $44.25 billion, which represents 16% to 20% YoY growth on a constant currency basis. ◦ Trips YoY growth to be similar compared to Q3 2024. ◦ Our outlook assumes a roughly 2 percentage point currency headwind to total reported YoY growth, including a roughly 5 percentage point currency headwind to Mobility’s reported YoY growth. • Adjusted EBITDA of $1.78 billion to $1.88 billion, which represents 39% to 47% YoY growth. 1 Financial and Operational Highlights for Third Quarter 2024 Three Months Ended September 30, (In"
+  },
+  {
+   "id": "UBER-42",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315124000024/uberq224earningspressrelea.htm",
+   "text": "h, cash equivalents, and short-term investments were $6.3 billion at the end of the second quarter. Outlook for Q3 2024 For Q3 2024, we anticipate: • Gross Bookings of $40.25 billion to $41.75 billion, which represents 18% to 23% YoY growth on a constant currency basis. ◦ Our outlook assumes a roughly 4 percentage point currency headwind to total reported YoY growth, including a roughly 7 percentage point currency headwind to Mobility’s reported YoY growth. ◦ For perspective, recent strengthening of the US dollar versus other currencies represents an over $400 million expected headwind to Q3 Gross Bookings and is included in our outlook. • Adjusted EBITDA of $1.58 billion to $1.68 billion, which re"
+  },
+  {
+   "id": "UBER-43",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315124000024/uberq224earningspressrelea.htm",
+   "text": "s of Non-GAAP Measures” included at the end of this release. In regards to forward looking non-GAAP guidance, we are not able to reconcile the forward-looking non-GAAP Adjusted EBITDA measure to the closest corresponding GAAP measure without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 6 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE S"
+  },
+  {
+   "id": "UBER-44",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-05-08",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315124000017/uberq124earningspressrelea.htm",
+   "text": "sh, cash equivalents, and short-term investments were $5.8 billion at the end of the first quarter. Outlook for Q2 2024 For Q2 2024, we anticipate: • Gross Bookings of $38.75 billion to $40.25 billion, which represents 18% to 23% YoY growth on a constant currency basis. ◦ Our outlook assumes a roughly 3 percentage point currency headwind to total reported YoY growth, including a roughly 5 percentage point currency headwind to Mobility’s reported YoY growth. • Adjusted EBITDA of $1.45 billion to $1.53 billion, which represents 58% to 67% YoY growth. 1 Financial and Operational Highlights for First Quarter 2024 Three Months Ended March 31, (In millions, except percentages) 2023 2024 % Change % Change"
+  },
+  {
+   "id": "UBER-45",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315124000008/uberq423earningspressrelea.htm",
+   "text": "h, cash equivalents, and short-term investments were $5.4 billion at the end of the fourth quarter. Outlook for Q1 2024 For Q1 2024, we anticipate: • Gross Bookings of $37.0 billion to $38.5 billion • Adjusted EBITDA of $1.26 billion to $1.34 billion 1 Financial and Operational Highlights for Fourth Quarter 2023 Three Months Ended December 31, (In millions, except percentages) 2022 2023 % Change % Change (Constant Currency (1) ) Monthly Active Platform Consumers (“MAPCs”) 131 150 15 % Trips 2,104 2,601 24 % Gross Bookings $ 30,749 $ 37,575 22 % 21 % Revenue $ 8,607 $ 9,936 15 % 13 % Income (loss) from operations $ (142) $ 652 ** Net income attributable to Uber Technologies, Inc. (2) $ 595 $ 1,429 1"
+  },
+  {
+   "id": "UBER-46",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-11-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315123000036/uberq323earningspressrelea.htm",
+   "text": "ined investments in growth opportunities to support long-term value creation for all stakeholders.” Outlook for Q4 2023 For Q4 2023, we anticipate: • Gross Bookings of $36.5 billion to $37.5 billion • Adjusted EBITDA of $1.18 billion to $1.24 billion 1 Financial and Operational Highlights for Third Quarter 2023 Three Months Ended September 30, (In millions, except percentages) 2022 2023 % Change % Change (Constant Currency (1) ) Monthly Active Platform Consumers (“MAPCs”) 124 142 15 % Trips 1,953 2,441 25 % Gross Bookings $ 29,119 $ 35,281 21 % 20 % Revenue $ 8,343 $ 9,292 11 % 10 % Income (loss) from operations $ (495) $ 394 ** Net income (loss) attributable to Uber Technologies, Inc. (2) $ (1,206"
+  },
+  {
+   "id": "UBER-47",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": " able to reconcile the forward-looking Non-GAAP EPS and Adjusted EBITDA measures to the closest corresponding GAAP measures without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (In millions) (Unaudited) As of December 31, 2025 As of June 30, 2026 Assets Cash and cash equivalents $ 7,105 $ 4,870 Short-term investments 528 521 Restricted cash and cash equivalents 631 661 Accounts receivable, net 3,827 4,298 Prepaid expenses and other current assets 1,902 2,179 Total current assets 13,993 12,529 Restricted cash and cash equivalents 1,911 1,646 Restricted investments 8,874 9,486 I"
+  },
+  {
+   "id": "UBER-48",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": "m, or as substitutes for, financial information prepared in accordance with GAAP. Non-GAAP Operating Income We define Non-GAAP Operating Income as income from operations, excluding (i) amortization of acquired intangible assets, (ii) certain legal, non-income tax, and regulatory reserve changes and settlements, (iii) goodwill and asset impairments/loss on sale of assets, (iv) acquisition, financing and divestitures related expenses, (v) restructuring and related charges, and (vi) other items not indicative of our ongoing operating performance. • Amortization of acquired intangible assets. Management views amortization of acquired intangible assets as items arising from pre-acquisition activities determined at the time of an acquisition. While these intangible assets are continually evaluated for impairment, amortization of acquired intangible assets is a static expense, which is not typically affected by operations during any particular period and is not reflective of ongoing operating performan"
+  },
+  {
+   "id": "UBER-49",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": "though we exclude the amortization of acquired intangibles, management believes that it is important for investors to understand that such intangible assets were recorded as part of purchase accounting and contribute to revenue generation. • Legal, non-income tax, and regulatory reserve changes and settlements. Legal, non-income tax, and regulatory reserve changes and settlements are primarily related to certain significant legal proceedings or governmental investigations related to worker classification definitions, or tax agencies challenging our non-income tax positions. These matters have limited precedent, cover extended historical periods and are unpredictable in both magnitude and timing, therefore are distinct from normal, recurring legal, non-income tax and regulatory matters and related expenses incurred in our ongoing operating performance. Non-GAAP Net Income 9 Our Non-GAAP Net Income excludes the adjustments that are excluded from Non-GAAP Operating Income, as well as certain compon"
+  },
+  {
+   "id": "UBER-50",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000027/uberq226earningspressrelea.htm",
+   "text": "ime to time, we may exclude other gains, losses, benefits, or charges that are unpredictable, in both magnitude and timing, and items not indicative of our ongoing operating performance. These items include, but are not limited to: foreign currency exchange gain (losses), net, and unrealized (gain) loss on debt and equity securities, net. • Income tax effects. Primarily include the income tax effects of the adjustments excluded from Non-GAAP Net Income and exclude other income tax benefits or expenses that are unpredictable, in both magnitude and timing, and not indicative of the tax associated with our ongoing operating performance. Three Months Ended June 30, Six Months Ended June 30, 2025 2026 2025 2026 GAAP effective tax rate 9 % 26 % (9) % 27 % Total adjustments to GAAP provision for income taxes 12 % (2) % 31 % (3) % Non-GAAP effective tax rate 21 % 24 % 22 % 24 % • Adjustment to redeemable non-controlling interests. Primarily reflects changes in the carrying value of redeemable non-con"
+  },
+  {
+   "id": "UBER-51",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000019/uberq126earningspressrelea.htm",
+   "text": " able to reconcile the forward-looking Non-GAAP EPS and Adjusted EBITDA measures to the closest corresponding GAAP measures without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (In millions) (Unaudited) As of December 31, 2025 As of March 31, 2026 Assets Cash and cash equivalents $ 7,105 $ 5,558 Short-term investments 528 533 Restricted cash and cash equivalents 631 680 Accounts receivable, net 3,827 3,895 Prepaid expenses and other current assets 1,902 2,157 Total current assets 13,993 12,823 Restricted cash and cash equivalents 1,911 1,872 Restricted investments 8,874 9,026 "
+  },
+  {
+   "id": "UBER-52",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000019/uberq126earningspressrelea.htm",
+   "text": "ash flows from operating activities Net income including non-controlling interests $ 1,774 $ 282 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 178 191 Stock-based compensation 435 473 Deferred income taxes (412) 106 Unrealized (gain) loss on debt and equity securities, net (51) 1,474 Unrealized foreign currency transactions (51) 5 Other (27) 20 Change in assets and liabilities, net of impact of business acquisitions and disposals: Accounts receivable (123) (74) Prepaid expenses and other assets (497) (212) Operating lease right-of-use assets 43 62 Accounts payable 6 184 Accrued insurance reserves 675 443 Accrued expenses and other liabilities 430 (541) Operating lease liabilities (56) (62) Net cash provided by operating activities 2,324 2,351 Cash flows from investing activities Purchases of property and equipment (74) (65) Purchases of non-marketable equity securities (179) (332) Purchases of marketable securities (2,540) (6,7"
+  },
+  {
+   "id": "UBER-53",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000019/uberq126earningspressrelea.htm",
+   "text": "though we exclude the amortization of acquired intangibles, management believes that it is important for investors to understand that such intangible assets were recorded as part of purchase accounting and contribute to revenue generation. • Legal, non-income tax, and regulatory reserve changes and settlements. Legal, non-income tax, and regulatory reserve changes and settlements are primarily related to certain significant legal proceedings or governmental investigations related to worker classification definitions, or tax agencies challenging our non-income tax positions. These matters have limited precedent, cover extended historical periods and are unpredictable in both magnitude and timing, therefore are distinct from normal, recurring legal, non-income tax and regulatory matters and related expenses incurred in our ongoing operating performance. Non-GAAP Net Income Our Non-GAAP Net Income excludes the adjustments that are excluded from Non-GAAP Operating Income, as well as certain componen"
+  },
+  {
+   "id": "UBER-54",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": " able to reconcile the forward-looking Non-GAAP EPS and Adjusted EBITDA measures to the closest corresponding GAAP measures without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 6 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (In millions) (Unaudited) As of December 31, 2024 As of December 31, 2025 Assets Cash and cash equivalents $ 5,893 $ 7,105 Short-term investments 1,084 528 Restricted cash and cash equivalents 545 631 Accounts receivable, net 3,333 3,827 Prepaid expenses and other current assets 1,390 1,902 Total current assets 12,245 13,993 Restricted cash and cash equivalents 2,172 1,911 Restricted investments 7,019 8"
+  },
+  {
+   "id": "UBER-55",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "it from) income taxes, (iv) income (loss) from equity method investments, (v) interest expense, (vi) interest income, (vii) other income (expense), net, (viii) depreciation and amortization, (ix) stock-based compensation expense, (x) certain legal, non-income tax, and regulatory reserve changes and settlements, (xi) goodwill and asset impairments/loss on sale of assets, (xii) acquisition, financing and divestitures related expenses, (xiii) restructuring and related charges and (xiv) other items not indicative of our ongoing operating performance. • Legal, non-income tax, and regulatory reserve changes and settlements. Legal, non-income tax, and regulatory reserve changes and settlements are primarily related to certain significant legal proceedings or governmental investigations related to worker classification definitions, or tax agencies challenging our non-income tax positions. These matters have limited precedent, cover extended historical periods and are unpredictable in both magnitude and "
+  },
+  {
+   "id": "UBER-56",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "w capital expenditure requirements; • Adjusted EBITDA excludes stock-based compensation expense, which has been, and will continue to be for the foreseeable future, a significant recurring expense in our business and an important part of our compensation strategy; • Adjusted EBITDA excludes certain restructuring and related charges, part of which may be settled in cash; • Adjusted EBITDA excludes other items not indicative of our ongoing operating performance; • Adjusted EBITDA does not reflect period to period changes in taxes, income tax expense or the cash necessary to pay income taxes; • Adjusted EBITDA does not reflect the components of other income (expense), net, which primarily includes: foreign currency exchange gains (losses), net; and unrealized gain (loss) on debt and equity securities, net; and • Adjusted EBITDA excludes certain legal, non-income tax, and regulatory reserve changes and settlements that may reduce cash available to us. Non-GAAP Operating Income We define Non-GAAP Operat"
+  },
+  {
+   "id": "UBER-57",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000011/uberq425earningspressrelea.htm",
+   "text": "me as income from operations, excluding (i) amortization of acquired intangible assets, (ii) certain legal, non-income tax, and regulatory reserve changes and settlements, (iii) goodwill and asset impairments/loss on sale of assets, (iv) acquisition, financing and divestitures related expenses, (v) restructuring and related charges, and (vi) other items not indicative of our ongoing operating performance. • Amortization of acquired intangible assets. Management views amortization of acquired intangible assets as items arising from pre-acquisition activities determined at the time of an acquisition. While these intangible assets are continually evaluated for impairment, amortization of acquired intangible assets is a static expense, which is not typically affected by operations during any particular period and is not reflective of ongoing operating performance. Although we exclude the amortization of acquired intangibles, management believes that it is important for investors to understand that such"
+  },
+  {
+   "id": "UBER-58",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": "we are not able to reconcile the forward-looking non-GAAP Adjusted EBITDA measure to the closest corresponding GAAP measure without unreasonable efforts because we are unable to predict the ultimate outcome of certain significant items. These items include, but are not limited to, significant legal settlements, unrealized gains and losses on equity investments, tax and regulatory reserve changes, restructuring costs and acquisition and financing related impacts. Contacts Investors and analysts: investor@uber.com Media: press@uber.com 5 UBER TECHNOLOGIES, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (In millions) (Unaudited) As of December 31, 2024 As of September 30, 2025 Assets Cash and cash equivalents $ 5,893 $ 8,432 Short-term investments 1,084 654 Restricted cash and cash equivalents 545 477 Accounts receivable, net 3,333 3,773 Prepaid expenses and other current assets 1,390 1,803 Total current assets 12,245 15,139 Restricted cash and cash equivalents 2,172 2,574 Restricted investments 7,019 "
+  },
+  {
+   "id": "UBER-59",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": "e including non-controlling interests $ 2,599 $ 6,652 $ 2,944 $ 9,776 Adjustments to reconcile net income to net cash provided by operating activities: Depreciation and amortization 186 195 561 554 Stock-based compensation 438 465 1,377 1,375 Deferred income taxes 124 (4,167) 101 (4,492) Unrealized gain on debt and equity securities, net (1,664) (1,471) (1,276) (1,505) Unrealized foreign currency transactions (36) 22 173 (130) Other (7) (16) (94) 63 Change in assets and liabilities, net of impact of business acquisitions and disposals: Accounts receivable 196 (22) (388) (357) Prepaid expenses and other assets (234) (126) (664) (874) Operating lease right-of-use assets 44 46 137 135 Accounts payable 48 101 24 232 Accrued insurance reserves 789 592 2,161 2,079 Accrued expenses and other liabilities (256) 111 488 521 Operating lease liabilities (76) (54) (157) (161) Net cash provided by operating activities 2,151 2,328 5,387 7,216 Cash flows from investing activities Purchases of property and eq"
+  },
+  {
+   "id": "UBER-60",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": " tax, (iii) provision for (benefit from) income taxes, (iv) income (loss) from equity method investments, (v) interest expense, (vi) other income (expense), net, (vii) depreciation and amortization, (viii) stock-based compensation expense, (ix) certain legal, tax, and regulatory reserve changes and settlements, (x) goodwill and asset impairments/loss on sale of assets, (xi) acquisition, financing and divestitures related expenses, (xii) restructuring and related charges and (xiii) other items not indicative of our ongoing operating performance. We have included Adjusted EBITDA because it is a key measure used by our management team to evaluate our operating performance, generate future operating plans, and make strategic decisions, including those relating to operating expenses. Accordingly, we believe that Adjusted EBITDA provides useful information to investors and others in understanding and evaluating our operating results in the same manner as our management team and board of directors. In "
+  },
+  {
+   "id": "UBER-61",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315125000030/uberq325earningspressrelea.htm",
+   "text": "capital expenditure requirements; 9 • Adjusted EBITDA excludes stock-based compensation expense, which has been, and will continue to be for the foreseeable future, a significant recurring expense in our business and an important part of our compensation strategy; • Adjusted EBITDA excludes certain restructuring and related charges, part of which may be settled in cash; • Adjusted EBITDA excludes other items not indicative of our ongoing operating performance; • Adjusted EBITDA does not reflect period to period changes in taxes, income tax expense or the cash necessary to pay income taxes; • Adjusted EBITDA does not reflect the components of other income (expense), net, which primarily includes: interest income; foreign currency exchange gains (losses), net; and unrealized gain (loss) on debt and equity securities, net; and • Adjusted EBITDA excludes certain legal, tax, and regulatory reserve changes and settlements that may reduce cash available to us. Constant Currency We compare the percent chan"
+  },
+  {
+   "id": "UBER-62",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "sactions end-to-end while providing visibility and control of logistics networks. Freight connects Carriers with Shippers’ shipments available on our platform, and gives Carriers upfront, transparent pricing and the ability to book a shipment with the touch of a button. Freight serves Shippers ranging from small- and medium-sized businesses to global enterprises. By leveraging logistics solutions expertise and value-add solutions, Freight enables Shippers to create and tender shipments, secure capacity on demand with real-time pricing, and track those shipments from pickup to delivery. Freight operat"
+  },
+  {
+   "id": "UBER-63",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": " built proprietary marketplace, routing, and payments technologies. Marketplace technologies are the core of our deep technology advantage and include demand prediction, matching and dispatching, and pricing technologies. Our technologies make it extremely efficient to launch new businesses and operationalize existing ones. Operational Excellence Our regional on-the-ground operations teams use their extensive market-specific knowledge to rapidly launch and scale products in cities, support Drivers, consumers, Merchants, Shippers, and Carriers, and build and enhance relationships with cities and regul"
+  },
+  {
+   "id": "UBER-64",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "r for our consumers to unlock convenience—Uber One is our single cross-platform membership program that brings together the best of Uber. Uber One members have access to discounts, cash back, special pricing, priority service, and exclusive perks across our rides, delivery and grocery and retail offerings. Uber One is available in over 30 countries. Our Uber One membership program is designed to make utilizing our suite of products a seamless and rewarding experience for our consumers. As of December 31, 2025, Uber One member base reached 46 million. Advertising We are also utilizing our data and sca"
+  },
+  {
+   "id": "UBER-65",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1543151/000154315126000015/uber-20251231.htm",
+   "text": "re enforcing competition laws and are doing so with increased scrutiny, including governments in large markets such as the EU, the United States, Brazil, and India, particularly surrounding issues of pricing parity, price-fixing, and abuse of market power. In addition, governmental agencies and regulators may, among other things, prohibit future acquisitions, divestitures, or combinations we plan to make, impose significant fines or penalties, require divestiture of certain of our assets, or impose other restrictions that limit or require us to modify our operations, including limitations on our cont"
+  }
+ ]
+}

@@ -1,0 +1,177 @@
+{
+ "ticker": "CINF",
+ "as_of": "2026-10-07",
+ "lens_set": "insurance",
+ "foreign_private_issuer": false,
+ "based_on_record": "0d18e796665bfc9bcdef901767cbaf6785fa8faf227dcee19f9aa9fa69bd21ee",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "dil.sbc_to_fcf_pct",
+  "cat.cat_exposure",
+  "uw.combined_ratio_pct"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: CINF.LITIGATION)",
+  "dil.sbc_to_fcf_pct": "companyfacts SBC가 ledger SBC/FCF 역산값과 일치하는 연도가 없다 — 연도 정합을 증명하지 못해 인용하지 않는다",
+  "cat.cat_exposure": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "uw.combined_ratio_pct": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "CINF-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm",
+   "text": "e non-employee directors, led by the chair of the compensation committee. • Annual board and committee self-assessments. • Regular executive sessions of the non-employee directors at the board and committee level. • High degree of board interaction with management to ensure successful oversight and succession planning. • Responsive to shareholder feedback. • Mandatory retirement age for directors. Page 4 Shareholder Rights and Engagement • All directors are elected annually with a simple majority standard for all uncontested director elections and by plurality in contested director elections. • Common stock is the only class of shares outstanding. • No poison pill. • Simple majority voting standards. • Shareholders have the right to call a special meeting. • Regular engagement with shareholders to u"
+  },
+  {
+   "id": "CINF-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000015/cinf-20260316.htm",
+   "text": "ders' meeting in connection with the announced CEO transition. The company has no fixed policy with respect to the separation of the offices of the chairman of the board and CEO. The board believes that the separation or combination of the offices of the chairman of the board and CEO is part of the succession planning process and that it is in the best interests of the company to make this determination from time to time. Indeed, throughout the company's history, the board has chosen at times to combine or separate these roles based on the facts and circumstances then existing. When the chairman of the board is not an independent director, the board appoints a lead independent director. The company’s Corporate Governance Guidelines describe the authority and duties of the lead director. These includ"
+  },
+  {
+   "id": "CINF-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": ", or if we fail to provide adequate training or resources, or fail to provide a work environment that is attractive to associates, we could limit the success of executing our strategic plans and vital business functions. Additionally, loss of key personnel or an inability to successfully execute on succession plans could negatively impact growth, operating results, financial condition, essential business relationships, profitability, and other business operations. Cincinnati Financial Corporation - 2025 10-K - Page 40 Table of Contents I TEM 1 B . Unresolved Staff Comments None ITEM 1C. Cybersecurity Risk Management and Strategy As discussed further in Item 1, Regulation, Enterprise Risk Management, we manage cybersecurity as part of our overall enterprise risk programs . As part of this program to keep "
+  },
+  {
+   "id": "CINF-4",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "sk Factors 30 Item 1B. Unresolved Staff Comments 41 Item 1C. Cybersecurity 41 Item 2. Properties 42 Item 3. Legal Proceedings 42 Item 4. Mine Safety Disclosures 42 Part II 43 Item 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 43 Item 6. [Reserved] 44 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 45 Introduction 45 Executive Summary 46 Critical Accounting Estimates 49 Recent Accounting Pronouncements 56 Financial Results 57 Liquidity and Capital Resources 89 Safe Harbor Statement 106 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 109 Item 8. Financial Statements and Supplementary Data 115 Responsibility for Financial Statements 115 Management’s Annual Report on Internal Control Over Financial Reporting 116 Report of Independent Registered Public Accounting Firm (PCAOB ID No. 34 ) 117 Consolidated Balance Sheets 119 Consolidated Statements of Income 120 Consolidated Statements of Comprehensive Income 121 Consolidated Statements of Shareholders’ Equity 122 Consolidated Statements of Cash Flows 123 Notes to Consolidated Financial Statements 124 Cincinnati Financial Corporation - 2025 10-K - Page 3 Table of Contents Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 175 Item 9A. Controls and Procedures 175 Item 9B. Other Information 175 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 175 Part III 176 Item 10. Directors, Executive Officers and Corporate Governance 176 Item 11. Executive Compensatio"
+  },
+  {
+   "id": "CINF-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "tions. We also lease office space throughout the U.S. to support our insurance operations. I TEM 3. Legal Proceedings Neither the company nor any of our subsidiaries are involved in any litigation believed to be material other than ordinary, routine litigation incidental to the nature of our business. I TEM 4. Mine Safety Disclosures This item is not applicable to the company. Cincinnati Financial Corporation - 2025 10-K - Page 42 Table of Contents Part II I TEM 5. Market for the Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities Cincinnati Financial Corporation had 13,881 shareholders of record as of December 31, 2025. Our common shares are traded under the symbol CINF on Nasdaq. Cumulative Total Return As depicted in the graph below, the five-year total return on a $100 investment made December 31, 2020, assuming the reinvestment of all dividends, was 111.5% for Cincinnati Financial Corporation’s common stock compared with 96.2% for the S&P 500 Index and 121.7% for the S&P Composite 1500 Property & Casualty Insurance Index. The following graph depicts $100 invested on December 31, 2020, in stock or index, including reinvestment of dividends. The years shown represent each respective fiscal year ending December 31. Comparison of Five-Year Cumulative Total Return The S&P 500 Index includes a representative sample of 500 leading companies in a cross section of industries of the U.S. economy. At year-end 2025, the S&P Composite 1500 Property & Casualty Insurance Index included 32 companies. Cincinnati Financial Corporation - 2025 10-K - Page 43 T"
+  },
+  {
+   "id": "CINF-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "operations and cash flows. The company and its subsidiaries also are occasionally involved in other legal and regulatory proceedings, some of which assert claims for substantial amounts. These actions include, among others, putative class actions seeking certification of state or national classes. The company’s insurance subsidiaries also are occasionally parties to individual actions in which extra-contractual damages, punitive damages or penalties are sought, such as claims alleging bad faith handling of insurance claims or writing unauthorized coverage or claims alleging discrimination by former or current associates. On a quarterly basis, we review these outstanding matters. Under current accounting guidance, we establish accruals when it is probable that a covered loss has been incurred and we can reasonably estimate its potential exposure. The company accounts for such probable and estimable losses, if any, through the establishment of legal expense reserves. Based on our quarterly review, we believe that our accruals for probable and estimable losses are reasonable and that the amounts accrued do not have a material effect on our consolidated financial position, results of operations and cash flows. However, if any one or more of these matters results in a judgment against us or settlement for an amount that is significantly greater than the amount accrued, the resulting liability could have a material effect on the company’s consolidated financial position, results of operations and cash flows. Based on our most recent review, our estimate for any other matters for which the risk of loss is not pr"
+  },
+  {
+   "id": "CINF-7",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "r 31, 2025 2024 2023 Common Stock Beginning of year $ 397 $ 397 $ 397 Share-based awards — — — End of year 397 397 397 Paid-In Capital Beginning of year 1,502 1,437 1,392 Share-based awards 1 8 ( 3 ) Share-based compensation 46 46 40 Other 12 11 8 End of year 1,561 1,502 1,437 Retained Earnings Beginning of year 14,869 13,084 11,711 Net income 2,393 2,292 1,843 Dividends declared ( 543 ) ( 507 ) ( 470 ) End of year 16,719 14,869 13,084 Accumulated Other Comprehensive Income (Loss) Beginning of year ( 309 ) ( 435 ) ( 61"
+  },
+  {
+   "id": "CINF-8",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": " ) ( 309 ) ( 435 ) Treasury Stock Beginning of year ( 2,524 ) ( 2,385 ) ( 2,324 ) Share-based awards 14 18 11 Shares acquired - share repurchase authorization ( 205 ) ( 126 ) ( 67 ) Shares acquired - share-based compensation plans ( 19 ) ( 33 ) ( 8 ) Other 2 2 3 End of year ( 2,732 ) ( 2,524 ) ( 2,385 ) Total Shareholders' Equity $ 15,911 $ 13,935 $ 12,098 (In millions) Common Stock - Shares Outstanding Beginning of year 156.4 157.0 157.1 Share-based awards 0.4 0.7 0.4 Shares acquired - share repurchase authorization ("
+  },
+  {
+   "id": "CINF-9",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "$ 907 Supplemental Disclosures of Cash Flow Information Interest paid $ 53 $ 53 $ 54 Income taxes paid 220 395 136 Noncash Activities Equipment acquired under finance lease obligations $ 24 $ 19 $ 20 Share-based compensation 37 51 19 Other assets and other liabilities 113 103 77 Accompanying Notes are an integral part of these Consolidated Financial Statements. Cincinnati Financial Corporation - 2025 10-K - Page 123 Table of Contents Notes to Consolidated Financial Statements NOTE 1 – Summary of Significant Accounting "
+  },
+  {
+   "id": "CINF-10",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "eral components that are determined using the projected unit credit actuarial cost method. Refer to Note 13, Employee Retirement Benefits, for more information about our defined benefit pension plan. Share-Based Compensation We grant qualified and nonqualified share-based compensation under authorized plans. The stock options generally vest on a graded scale over three years following the date of grant and are exercisable over 10 -year periods. We grant service-based restricted stock units that cliff vest three years a"
+  },
+  {
+   "id": "CINF-11",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ease earnings. Unforeseen losses, or unintended coverages, the type and magnitude of which we cannot predict, may emerge. These additional losses could arise from changes in the legal environment, new or amended laws and regulations, climate change, catastrophic events, increases in loss severity or frequency, environmental claims, mass torts or other causes such as social inflation. Such future losses could be substantial. Elevated inflation in recent periods has significantly increased our loss costs in our auto and property businesses. It is possible that inflation could remain at high levels for a prolonged period or increase further, leading to additional increases in our loss costs. In addition, a significant portion of claims costs consists of medical "
+  },
+  {
+   "id": "CINF-12",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ance are exposed to numerous natural catastrophes, such as: • Hurricanes • Earthquakes • Landslides • Severe convective storms, tornadoes, windstorms, hailstorms and flooding • Wildfires • Winter storms On a worldwide basis, in the event of a severe catastrophic event or terrorist attack we may be exposed to material losses through our Cincinnati Re and Cincinnati Global operations. Due to the nature of these events, we are unable to precisely predict the frequency, severity or potential cost of catastrophe occurrences. The extent of losses from a catastrophe is a function of both the total amount of insured and reinsured exposure in the area affected by the event and the severity of the event. Our ability to appropriately manage catastrophe risk depends par"
+  },
+  {
+   "id": "CINF-13",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ange. Additionally, these models are recalibrated and changed over time, with more data availability and changing opinions regarding the effect of current or emerging loss patterns and conditions. See Item 7, Liquidity and Capital Resources, Modeled Catastrophe Loss Exposure, for a further discussion of the loss estimates derived from these models. According to these models, probable maximum loss estimates from a single hurricane event that combines the effects of property casualty insurance written on a direct basis by The Cincinnati Insurance Companies, the Cincinnati Re reinsurance portfolio and risks insured by Cincinnati Global include the following amounts, net of amounts recoverable through reinsurance ceded and income taxes, and including the effec"
+  },
+  {
+   "id": "CINF-14",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ay be adversely affected if we were required to sell securities prior to maturity or at unfavorable prices to pay an unusually high level of loss and loss expenses. Securities pricing might be even less favorable as a result of widespread losses and catastrophic events impacting a number of other companies and insurers. We also have been and may in the future be exposed to state guaranty fund assessments if other carriers in a state cannot meet their obligations to policyholders. We market our standard market property casualty insurance products in 46 states, but our business is concentrated in the Midwest and Southeast, with a growing presence in California and New York. Our geographic concentration links our performance to business, economic, environmental "
+  },
+  {
+   "id": "CINF-15",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "event and $987 million for a once-in-a-250-year event. See Item 7, Liquidity and Capital Resources, Modeled Catastrophe Loss Exposure, for a discussion of modeled losses considered in evaluating our risk mitigation strategy, which includes our ceded reinsurance program. The occurrence of terrorist attacks in the geographic areas we serve could result in substantially higher claims under our insurance policies than we have anticipated. Some of our insurance policies provide coverage for terrorism risk in all areas we serve, including Tier 1 and Tier 2 cities. We have exposure to small co-op utilities, water utilities, wholesale fuel distributors, small shopping malls and small colleges throughout our 46 active states. Because of the number of associates locate"
+  },
+  {
+   "id": "CINF-16",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": " global supply chain disruptions, implementation of tariffs, increasing interest rates, tightening credit markets and higher fuel costs. Cincinnati Financial Corporation - 2025 10-K - Page 34 Table of Contents Our ability to obtain or collect on our reinsurance protection could affect our business, financial condition, results of operations or cash flows. We buy property casualty and life reinsurance coverage to mitigate the liquidity risk and earnings volatility risk of an unexpected rise in claims severity or frequency from catastrophic events or a single large loss. The availability, amount and cost of reinsurance depend on market conditions and may vary significantly. If we were unable to obtain reinsurance on acceptable terms and in appropriate amounts, our"
+  },
+  {
+   "id": "CINF-17",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "334 million in 2025, an increase of $31 million in other written premiums, compared with 2024. In 2025, earned premiums for Cincinnati Global totaled $311 million. Other written premiums also include premiums ceded to reinsurers as part of our ceded reinsurance program. An increase in ceded premiums, other than Cincinnati Re and Cincinnati Global premiums, reduced net written premium growth by $58 million in 2025. Other written premiums for 2025 included a net unfavorable amount of $52 million for reinsurance treaty reinstatement premiums related to the California wildfires, including a favorable $12 million for Cincinnati Re and an unfavorable $64 million for our personal lines insurance segment. The table below analyzes premium revenue components and trends"
+  },
+  {
+   "id": "CINF-18",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": " 2025, was $435 million, excluding reinsurance recoveries from Cincinnati Re. Cincinnati Financial Corporation - 2025 10-K - Page 59 Table of Contents During 2025, there was no recovery from reinsurers for losses pertaining to the Cincinnati Re only reinsurance program effective June 1, 2025. For the program effective June 1, 2024, recoveries of $34 million were estimated for the 2025 California wildfires. See Item 7, Liquidity and Capital Resources, 2026 Reinsurance Ceded Programs, for a discussion of the Cincinnati Re only reinsurance program and other reinsurance coverage. The following table shows catastrophe losses incurred for the past two calendar years, net of reinsurance, as well as the effect of loss development on prior period catastrophe reserves."
+  },
+  {
+   "id": "CINF-19",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ive-year period 2021 through 2025, exceeding the 8.8% estimated growth rate for the property casualty insurance industry, with 2025 representing industry data reported through the first nine months of 2025. The industry’s growth rate excludes its mortgage and financial guaranty lines of business. • Combined ratio – We believe our underwriting philosophy and initiatives can drive performance to achieve our underwriting profitability target of a GAAP combined ratio over any five-year period that consistently averages within the range of 92% to 98% in the future. Our GAAP combined ratio averaged 93.9% over the five-year period 2021 through 2025, within the performance target range. Performance as measured by the combined ratio is discussed in Consolidated Property Casualty Insurance Results. Our statutory "
+  },
+  {
+   "id": "CINF-20",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ions (Dollars in millions) Years ended December 31, 2025-2024 2024-2023 2025 2024 2023 Change % Change % Consolidated property casualty data: Net written premiums $ 10,082 $ 9,243 $ 8,046 9 15 Earned premiums 9,653 8,568 7,645 13 12 Underwriting profit 501 580 401 (14) 45 Pt. Change Pt. Change GAAP combined ratio 94.9 % 93.4 % 94.9 % 1.5 (1.5) Statutory combined ratio 94.7 92.9 94.6 1.8 (1.7) Written premium to statutory surplus 1.0 1.0 1.1 0.0 (0.1) Property casualty net written premiums grew 9% and earned premiums grew 13% in 2025. The growth reflected average renewal price increases, premium growth initiatives and a higher level of insured exposures, including a contribution to net written premium growth of less than 1 percentage point from Cincinnati Re and Cincinnati Global in total. Growth in 2024"
+  },
+  {
+   "id": "CINF-21",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "ion increase in 2024, compared with 2023, included a $66 million increase in losses from catastrophe events and $27 million less benefit from net favorable reserve development on prior accident years before catastrophe losses. We measure property casualty underwriting profitability primarily by the combined ratio. Our combined ratio measures the percentage of each earned premium dollar spent on claims plus all expenses related to our property casualty operations, all on a pretax basis. A lower ratio indicates more favorable results and better underlying performance. A ratio below 100% represents an underwriting profit. Initiatives to improve our combined ratio are discussed in Item 1, Our Business and Our Strategy. In 2025, 2024 and 2023, favorable development on reserves for claims that occurred in pri"
+  },
+  {
+   "id": "CINF-22",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/20286/000002028626000008/cinf-20251231.htm",
+   "text": "Current accident year catastrophe losses 10.8 9.6 9.3 1.2 0.3 Prior accident years before catastrophe losses (1.3) (1.6) (2.2) 0.3 0.6 Prior accident years catastrophe losses (0.7) (1.1) (0.6) 0.4 (0.5) Loss and loss expenses 65.6 63.5 64.9 2.1 (1.4) Underwriting expenses 29.3 29.9 30.0 (0.6) (0.1) Combined ratio 94.9 % 93.4 % 94.9 % 1.5 (1.5) Combined ratio: 94.9 % 93.4 % 94.9 % 1.5 (1.5) Contribution from catastrophe losses and prior years reserve development 8.8 6.9 6.5 1.9 0.4 Combined ratio before catastrophe losses and prior years reserve development 86.1 % 86.5 % 88.4 % (0.4) (1.9) Performance highlights for consolidated property casualty operations include: • Premiums – Agency renewal written premiums increased $943 million or 13% in 2025, compared with 2024, and continued to contribute to growt"
+  }
+ ]
+}

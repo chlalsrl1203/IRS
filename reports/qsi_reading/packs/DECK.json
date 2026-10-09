@@ -1,0 +1,282 @@
+{
+ "ticker": "DECK",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "be4976350779af6d0e86270bd5c41800830043d2e4be9ab1b4b749acba5363cc",
+ "targets": [
+  "gov.dual_class",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "cap.dividend_predictable",
+  "cap.debt_funded_buyback",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.dual_class": "표지에서 발행주식수 기재를 찾지 못했다",
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: DECK.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "인수 지출 값이 5개 연도 중 0개뿐이다",
+  "cap.dividend_predictable": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "DECK-1",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "is reflected within the composition of our Board. A snapshot of our ten director nominees as of the date of this Proxy Statement is depicted in the charts below . Board Composition and Refreshment The Corporate Responsibility, Sustainability & Governance Committee has the primary oversight of Board succession planning and Board refreshment process. We are continuously evaluating the overall balance of our Board, including the balance between longer-tenured directors who bring great institutional knowledge and new directors who offer fresh external viewpoints. Our Board annually reviews its overall composition, the composition of its committees, and the Chair of each committee to align with the Company's long-term strategic needs. In May 2025, Ms. Davis was appointed as Chair of the Board. In connect"
+  },
+  {
+   "id": "DECK-2",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "as a member of the Audit & Risk Management Committee. Ms. Ibrahim was appointed as a member of the Corporate Responsibility, Sustainability & Governance Committee and stepped down as a member of the Audit & Risk Management Committee. 7 BOARD REFRESHMENT 4 New Directors Over Past 5 Years BOARD CHAIR SUCCESSION COMMITTEE CHAIR SUCCESSION May 2025 Cynthia (Cindy) L. Davis Appointed Chair of the Board May 2025 Victor Luis Appointed Talent & Compensation Committee Chair September 2021 Bonita C. Stewart Appointed Corporate Responsibility, Sustainability & Governance Committee Chair June 2020 Juan R. Figuereo Appointed Audit & Risk Management Committee Chair Board Structure Our Bylaws provide for the annual election of directors. Our Bylaws provide that our Board will consist of not less than one nor more "
+  },
+  {
+   "id": "DECK-3",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "rseeing ESG programs. u u u u Public Company Executive. Valuable to have experience in managing a public company at the executive officer/C-suite level. u u u u u u u u u Human Resources and Talent Management. Important to have experience in management strategies, belonging & inclusion initiatives, succession planning and organizational design initiatives. u u u u u u u u u Consent to Serve Each of the persons named above has consented to being named in this Proxy Statement and to serve as a director if elected, and our Board has no reason to believe any of the nominees will be unable or unwilling to serve as a director. If, however, any nominee withdraws or otherwise becomes unavailable to serve, our Board may decrease the size of our Board, or the proxies may be voted for the election of such othe"
+  },
+  {
+   "id": "DECK-4",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "Reviews and approves goals and objectives relevant to the compensation of our executives and evaluates performance in light of those goals and objectives. • Oversees our key human capital management strategies and programs. • Reviews our overall talent management strategy, including development and succession plans for our executives and management. • Determines and approves the compensation of our executives based, in part, on these evaluations, including each element of compensation. • Makes recommendations to our Board regarding any action that is required to be submitted to our stockholders for approval with respect to incentive compensation plans and equity-based plans. • Administers and approves our equity-based plans, and approves (or delegates authority to approve, below the executive level)"
+  },
+  {
+   "id": "DECK-5",
+   "for": "gov.ceo_succession_policy",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "lly dedicated to employee learning, connection, and development across the globe (Explore Week), and four global leadership development programs for leaders at varying levels (Voyagers, Trailblazers, Navigator, and Ascent). Further, our executive leadership team and Board commit substantial time to succession planning, evaluating the Table of Contents 11 bench strength of our leadership and supporting their career development while improving organizational performance. We are proud to offer a wide range of programs intended to support global employee development and retention. We have demonstrated a history of investing in our workforce by offering competitive salaries and wages. We provide tuition reimbursement for eligible US employees up to $5 thousand per calendar year. Further, to foster a stro"
+  },
+  {
+   "id": "DECK-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "lts of operations. In addition, a key customer may liquidate excess inventory through discounted channels, including unauthorized sellers, which could negatively impact brand perception and divert demand from our authorized distribution channels. We depend on qualified talent and, if we are unable to retain or hire executive officers, key employees, and skilled talent, we may not be able to achieve our strategic objectives, which could adversely affect our results of operations. To execute our growth plan, we must continue to attract and retain highly qualified talent, including executive officers and key employees. In addition, to develop new products and successfully operate and grow our key business processes, we rely on employees with specialized expertise across design, marketing, merchandising, sourcing, technology, operations, and support functions, including talent in areas such as data analytics, digital commerce"
+  },
+  {
+   "id": "DECK-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "lly dedicated to employee learning, connection, and development across the globe (Explore Week), and four global leadership development programs for leaders at varying levels (Voyagers, Trailblazers, Navigator, and Ascent). Further, our executive leadership team and Board commit substantial time to succession planning, evaluating the Table of Contents 11 bench strength of our leadership and supporting their career development while improving organizational performance. We are proud to offer a wide range of programs intended to support global employee development and retention. We have demonstrated a history of investing in our workforce by offering competitive salaries and wages. We provide tuition reimbursement for eligible US employees up to $5 thousand per calendar year. Further, to foster a stronger "
+  },
+  {
+   "id": "DECK-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "sk Factors 12 Item 1B. Unresolved Staff Comments 26 Item 1C. Cybersecurity 27 Item 2. Properties 28 Item 3. Legal Proceedings 29 Item 4. Mine Safety Disclosures * PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 30 Item 6. [Reserved] * Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 32 Item 7A. Quantitative and Qualitative Disclosures about Market Risk 44 Item 8. Financial Statements and Supplementary Data 46 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure * Item 9A. Controls and Procedures 46 Item 9B. Other Information 48 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections * PART III Item 10. Directors, Executive Officers, and Corporate Governance 49 Item 11. Executive Compensation 49 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 49 Item 13. Certain Relationships and Related Transactions, and Director Independence 49 Item 14. Principal Accountant Fees and Services 49 PART IV Item 15. Exhibits and Financial Statement Schedules 50 Signatures 53 Index to Consolidated Financial Statements and Financial Statement Schedules F- 1 Item 16. Form 10-K Summary * *Not applicable. Table of Contents 2 CAUTIONARY NOTE REGARDING FORWARD-LOOKING STATEMENTS This Annual Report on Form 10-K for our fiscal year ended March 31, 2026 ( Annual Report ), and the information and documents incorporated by reference within this Annual Report , contain “forward-looking statements”"
+  },
+  {
+   "id": "DECK-9",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "d risks associated with third-party service providers and interconnected systems; • the outcomes of legal proceedings, including the impact they may have on our business and intellectual property rights; • our interpretation of applicable global tax regulations and changes in global tax laws and audits that may impact our tax liability and effective tax rates; • our cash repatriation strategy regarding earnings of non- US subsidiaries and the resulting tax impacts; and • the value of long-lived assets and potential write-downs or impairment charges. Forward-looking statements represent management’s current expectations and predictions about trends affecting our business and industry and are based on information available at the time such statements are made. Although we do not make forward- looking statements unless we believe we have a reasonable basis for doing so, we cannot guarantee their accuracy or completeness. Forward-looking statements involve numerous known and unknown risks, uncertainties, and other factors that may cause our actual results, performance, or achievements to be materially different from any future results, performance or achievements predicted, assumed, or implied by the forward-looking statements. Some of the risks and uncertainties that may cause our actual results to materially differ from those expressed or implied by these forward-looking statements are described in Part I, Item 1A, “Risk Factors,” and Part II, Item 7, “Management’s Discussion and Analysis of Financial Condition and Results of Operations,” within this Annual Report , as well as in our other fi"
+  },
+  {
+   "id": "DECK-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "cussion and Analysis of Financial Condition and Results of Operations” and Note 8, “Commitments and Contingencies,” of our consolidated financial statements in Part IV within this Annual Report for further information on our purchase obligations. We require our independent manufacturers and designated suppliers to adopt our Ethical Supply Chain Supplier Code of Conduct ( Supplier Code of Conduct ), which requires them to comply with all local laws and regulations governing human rights, working conditions, anti-corruption, restricted substances, and environmental compliance, including animal welfare and conflict minerals, before we are willing to conduct business with them. Refer to the section titled “Environmental, Social, and Governance” below for further information. Inventory Management and Product Returns We have an extended design and manufacturing process, which involves product designs, the purchase of raw and other materials, inventory accumulation, the subsequent sale of finished product, and the collection of resulting accounts receivable. This production cycle results in significant liquidity requirements and working capital fluctuations throughout our fiscal year. Because the cycle typically involves long lead times, which requires us to make manufacturing decisions several months in advance of anticipated customer demand, it is challenging for us to accurately estimate and manage our inventory and working capital requirements. We manage our inventory levels by considering existing orders, as well as forecasted sales and budgets by brand for both the wholesale and DTC chan"
+  },
+  {
+   "id": "DECK-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "r industry, regarding changes in financial condition, results of operations or financial outlook; • legal proceedings, regulatory actions, and legislative changes impacting us, our competitors, or the industry in which we operate; • the declaration of stock or cash dividends, stock repurchases, or stock or reverse stock splits; • consumer confidence and discretionary spending levels; • broad market fluctuations in trading volume and market price of publicly traded securities; • general market, geopolitical, and macroeconomic conditions, including evolving international trade dynamics and recessionary conditions; and • trading activity in our stock by short-term or technical investors, including algorithmic trading, index funds, or other market participants whose investment decisions are not based on our fundamentals. In addition, the stock market in general has experienced extreme price and volume fluctuations. Accordingly, the price of our common stock is volatile and any investment in our stock is subject to risk of loss. These broad market and industry factors and other general macroeconomic conditions unrelated to our financial performance may also affect our common stock price, including in ways that are disproportionate to or not directly related to our operating performance. Anti-takeover provisions contained in our Amended and Restated Certificate of Incorporation (Certificate) and Amended and Restated Bylaws ( Bylaws ), as well as provisions of Delaware law, could impair or delay a takeover attempt. Our C ertificate and Bylaws contain provisions that could have the effect of render"
+  },
+  {
+   "id": "DECK-12",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "6 was, an officer or employee of our Company or any of its subsidiaries. None of our executive officers currently serves, or during the past year has served, as a member of the board of directors or compensation committee (or other committee serving a similar purpose) of any entity that has an executive officer serving on our Board or the Talent & Compensation Committee. In addition, none of the Talent & Compensation Committee members had any relationship, or participated in any transaction, with our Company during fiscal year 2026 that requires disclosure under SEC rules. We have entered into indemnification agreements with each of our directors, including each member of the Talent & Compensation Committee. Communications with Directors Stockholders and other interested parties may communicate with the Chair of our Board, the Chair of any Board committee, with our independent directors as a group, or with any individual director, by writing to any such person or group. Communications should be sent to the following address: Deckers Outdoor Corporation Attn.: Corporate Secretary 250 Coromar Drive Goleta, California 93117 Communications are distributed to our Board, or to any individual director, depending on the facts and circumstances described in the communication. Our Board has requeste"
+  },
+  {
+   "id": "DECK-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm",
+   "text": "ot use net income as a performance measure for purposes of determining executive compensation. 69 Compensation Actually Paid Versus Consolidated Operating Income The chart below illustrates the CAP to our PEOs and the average CAP to our Non-PEO NEOs in relation to our consolidated operating income over each of our last five fiscal years. Consolidated operating income is the financial performance measure that, in our assessment, represents the most important financial performance measure to link CAP to our performance. 70 SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT The following table sets forth, as of June 30, 2026 (except as specified in the footnotes following the table), certain information concerning the shares of our common stock beneficially owned by (i) each person who is an NEO, (ii) each director or director nominee, (iii) all executive officers and directors as a group (16 persons), and (iv) each person known to us to be the beneficial owner of more than 5% of our common stock. There were 136,725,491 shares of our common stock outstanding on June 30, 2026. Name and Address of Beneficial Owner (1) Amount and Nature of Beneficial Ownership (#) (2)(3) Percent of Common Stock (3) Named Executive Officers Stefano Caroti 187,984 * Steven J. Fasching 92,847 * Anne Spa"
+  },
+  {
+   "id": "DECK-14",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "the Teva brand. As of March 31, 2026 , and 2025 , the carrying value of the indefinite-lived intangible asset recorded within other intangible assets in the consolidated balance sheets was $ 15,454 . Goodwill and indefinite-lived intangible assets are not amortized and are assessed for impairment at least annually and if events or changes in circumstances indicate that the carrying value may not be recoverable. The Company performs its annual goodwill assessment at the reporting unit level (the wholesale channel of each of the HOKA brand and UGG brand) as of December 31st and performs its annual indefinite-lived intangible asset assessment for the Teva brand as of October 31st. When evaluating for impairment, t he Company first performs a qualitative assessment. If the qualitative asses"
+  },
+  {
+   "id": "DECK-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "31, 2026 , 2025 , and 2024 (amounts in thousands, except per share data) market-based valuation techniques. An impairment charge is recognized for the excess of the carrying value over fair value. No impairment losses were recorded for goodwill or indefinite-lived intangible assets during the years ended March 31, 2026 , 2025 , and 2024 . Accumulated goodwill impairment losses were $ 15,831 as of March 31, 2026 , and 2025 . Definite-Lived Intangible and Other Long-Lived Assets. Definite-lived intangible assets include definite-lived trademarks. As of March 31, 2026 , and 2025 , the definite-lived intangible asset net carrying value is immaterial . Other long-lived assets include operating lease assets and property and equipment (prima"
+  },
+  {
+   "id": "DECK-16",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "rding changes in financial condition, results of operations or financial outlook; • legal proceedings, regulatory actions, and legislative changes impacting us, our competitors, or the industry in which we operate; • the declaration of stock or cash dividends, stock repurchases, or stock or reverse stock splits; • consumer confidence and discretionary spending levels; • broad market fluctuations in trading volume and market price of publicly traded securities; • general market, geopolitical, and macroeconomic conditions, including evolving international trade dynamics and recessionary conditions; and • trading activity in our stock by short-term or t"
+  },
+  {
+   "id": "DECK-17",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "s & Luxury Goods Index for the five fiscal-year periods commencing March 3 1, 2021 , and ended March 31, 2026 . We use the S&P 500 Index as we believe it is the benchmark most relevant to measure our performance. Total return assumes reinvestment of dividends, although we have not declared or paid any cash dividends on our common stock since our inception . The data represented in the graph assumes one hundred dollars invested in our common stock and in each of the referenced indices on March 31, 2021 . The stock performance shown on the below graph is not necessarily indicative of future performance. In providing the information in the graph, we are"
+  },
+  {
+   "id": "DECK-18",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": " 2022 2023 2024 2025 2026 Deckers Outdoor Corporation $ 100.00 $ 82.86 $ 136.04 $ 284.80 $ 202.96 $ 181.66 S&P 500 Index 100.00 115.65 106.71 138.59 150.03 176.74 S&P 500 Apparel, Accessories & Luxury Goods Index 100.00 79.08 54.79 46.60 42.58 46.98 Dividend Policy We have not declared or paid any cash dividends on our common stock since our inception . Any future decision to declare cash dividends will be at the discretion of our Board and will depend on a number of factors, including our financial condition, operating results, liquidity position, capital allocation strategy, and other factors our Board considers to be relevant at the time. Our curr"
+  },
+  {
+   "id": "DECK-19",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": " do not exceed certain leverage ratios, and no event of default has occurred . W e are in compliance with these leverage ratios as of March 31, 2026 , and no event of default has occurred. W e currently do not anticipate declaring or paying any cash dividends in the foreseeable future. Stock Repurchase Program Our Board has approved a stock repurchase program which authorizes us to repurchase shares of our common stock in the open market or in privately negotiated transactions, subject to market conditions, applicable legal requirements, and other factors (collectively, the stock repurchase program ). Our Board last approved an authorization of $2,25"
+  },
+  {
+   "id": "DECK-20",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "tion of our brands, which allows a third-party to continue to sell products similar to our products or to sell counterfeit products, could lead to intensified competition and a reduction in our sales and adversely affect the value of our brands. Our revolving credit facility agreements expose us to certain risks. From time to time, we have financed our liquidity needs in part through borrowings under revolving credit facilities. We may be unable to renew, extend, or replace our revolving credit facilities on acceptable terms, or at all, when they mature, which could reduce our available liquidity. Our ability to borrow under our revolving credit facilities m"
+  },
+  {
+   "id": "DECK-21",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "venants could result in a default, allowing our lenders to accelerate the timing of payments, which could have a material adverse effect on our business, operations, financial condition, and liquidity. In addition, in some cases, a default under one revolving credit facility could result in a cross-default under other facilities. Certain of our revolving credit facility agreements bear interest at a rate that varies by currency. Any increases in interest rates applicable to our borrowings would increase our cost of borrowing, which would reduce our net income and liquidity. The tax laws applicable to our business are complex, and changes in tax laws or audit"
+  },
+  {
+   "id": "DECK-22",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": " the discretion of our Board and will depend on a number of factors, including our financial condition, operating results, liquidity position, capital allocation strategy, and other factors our Board considers to be relevant at the time. Our current revolving credit agreements allow us to declare and pay cash dividends, as long as we do not exceed certain leverage ratios, and no event of default has occurred . W e are in compliance with these leverage ratios as of March 31, 2026 , and no event of default has occurred. W e currently do not anticipate declaring or paying any cash dividends in the foreseeable future. Stock Repurchase Program Our Board has appro"
+  },
+  {
+   "id": "DECK-23",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "conomic or geopolitical landscape. If there are unexpected material impacts on our business in future periods, we may need to raise additional cash to fund our operations or pursue our business strategy, in which case we may seek to borrow under our revolving credit facilities, seek new or modified borrowing arrangements, or sell additional debt or equity securities. I ncurring Table of Contents 40 indebtedness under new or modified borrowing arrangements would subject us to debt service obligations and additional covenants that could restrict our operations and further encumber our assets . The sale of convertible debt or equity securities could result in a"
+  },
+  {
+   "id": "DECK-24",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "pliance with these leverage ratios as of March 31, 2026 , and no event of default has occurred. W e currently do not anticipate declaring or paying any cash dividends in the foreseeable future. Stock Repurchase Program Our Board has approved a stock repurchase program which authorizes us to repurchase shares of our common stock in the open market or in privately negotiated transactions, subject to market conditions, applicable legal requirements, and other factors (collectively, the stock repurchase program ). Our Board last approved an authorization of $2,250,000 on May 21, 2025 , to repurchase shares of our common stock under the same conditions as the prior stock repurchase program. Our stock repurchase program does not obligate us to acquire any amount of common stock and may be suspended at an"
+  },
+  {
+   "id": "DECK-25",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "nths ended March 31, 2026 , was as follows: Total Number of Shares Repurchased (1) (2) Weighted Average Price per Share Dollar Value of Shares Repurchased (2) (3) Dollar Value of Shares Remaining for Repurchase (2) January 1 - January 31, 2026 928,296 $ 102.34 $ 94,999 $ 1,716,214 February 1 - February 28, 2026 584,036 116.43 67,999 1,648,215 March 1 - March 31, 2026 964,893 102.20 98,613 1,549,602 Total 2,477,225 105.61 $ 261,612 1,549,602 (1) All share repurchases were made pursuant to our stock repurchase program in open-market transactions. (2) May not calculate on rounded amounts. (3) The dollar value of shares repurchased excludes the cost of broker commissions, excise taxes, and other costs. Subsequent to March 31, 2026 , through May 1, 2026 ,"
+  },
+  {
+   "id": "DECK-26",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": ",999 . As of May 1, 2026 , we had $1,433,603 remaining authorized for repurchases under the stock repurchase program . On May 20, 2026, our Board approved an additional authorization of $3,500,000 to repurchase shares of our common stock under the same conditions as the prior stock repurchase program, resulting in an aggregate remaining authorization of approximately $4,840,000 as of that date. Refer to the section titled “Liquidity” under Part II , Item 7, “Management’s Discussion and Analysis of Financial Condition and Results of Operations,” and Note 11, “Stockholders’ Equity,” of our consolidated financial statements in Part IV , within this Annual Report , for further information on our stock repurchase"
+  },
+  {
+   "id": "DECK-27",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": " and consider further opportunities to utilize our cash resources in a way that will profitably grow our business, meet our strategic objectives, and drive stockholder value, including by potentially repurchasing additional shares of our common stock. As of March 31, 2026 , the aggregate remaining approved amount under our stock repurchase program is $1,549,602 . Our stock repurchase program does not obligate us to acquire any amount of common stock and may be suspended at any time at our discretion. On May 20, 2026, our Board approved an additional authorization of $3,500,000 to repurchase shares of our common stock under the same conditions as the prior stock repurchase program, resulting in an aggregate remaining auth"
+  },
+  {
+   "id": "DECK-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000015/deckex991pressrelease-6302.htm",
+   "text": "nds into lifestyle market leaders attracting millions of loyal consumers globally. For more information, please visit www.deckers.com . Forward-Looking Statements This press release contains “forward-looking statements” within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995, which statements are subject to considerable risks and uncertainties. Forward-looking statements include all statements other than statements of historical fact contained in this press release, including statements regarding our projected financial results, including net sales, gross margin, SG&A expenses, operating margin, inventories, effective tax rate, and diluted earnings per share; the strength of our brands and demand for our products; our ability to drive future growth and profitability; our ability to achieve our financial outlook; our ability to execute on our long-term strategies, objectives, and opportunities; our ability to differentiate our company in a com"
+  },
+  {
+   "id": "DECK-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000007/deckex991pressrelease-3312.htm",
+   "text": "nds into lifestyle market leaders attracting millions of loyal consumers globally. For more information, please visit www.deckers.com . Forward-Looking Statements This press release contains “forward-looking statements” within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995, which statements are subject to considerable risks and uncertainties. Forward-looking statements include all statements other than statements of historical fact contained in this press release, including statements regarding our projected financial results, including net sales, gross margin, SG&A expenses, operating margin, inventories, effective tax rate, and diluted earnings per share; the strength of our brands and demand for our products; our ability to drive future growth and profitability; our ability to achieve our financial outlook, including our multi-year framework; our ability to execute on our long-term strategies, objectives, and opportunities; our ability t"
+  },
+  {
+   "id": "DECK-30",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000002/deckex991pressrelease-1231.htm",
+   "text": "nds into lifestyle market leaders attracting millions of loyal consumers globally. For more information, please visit www.deckers.com . Forward-Looking Statements This press release contains “forward-looking statements” within the meaning of the safe harbor provisions of the U.S. Private Securities Litigation Reform Act of 1995, which statements are subject to considerable risks and uncertainties. Forward-looking statements include all statements other than statements of historical fact contained in this press release, including statements regarding our projected financial results, including net sales, gross margin, SG&A expenses, operating margin, inventories, effective tax rate, and diluted earnings per share; consumer confidence and discretionary spending, including uncertainties associated with the global trade environment; the strength of our brands and demand for our products; our ability to drive future growth and profitability; our ability to achieve our financial outlook; our ability to"
+  },
+  {
+   "id": "DECK-31",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "ing campaigns, and investments in brand experiences, coupled with strategic marketplace presence have fueled both domestic and international sales growth of the HOKA brand, which has quickly become a leading brand within run and outdoor specialty wholesale accounts and is growing across its global marketplace. The HOKA brand’s product line includes running, trail, hiking, fitness, and lifestyle footwear offerings, as well as apparel and accessories. The UGG brand is one of the most iconic and recognized brands in our industry, which highlights our successful track record of building niche brands into"
+  },
+  {
+   "id": "DECK-32",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "e believe are the most relevant to our business, our operations, our stockholders, and the communities in which we operate. We are a member of the United Nations Global Compact ( UNGC ) , the world’s largest voluntary corporate sustainability initiative. This membership requires an annual statement of progress, which is reflected in our Corporate Responsibility and Sustainability Report ( Creating Change Report ). Our CALO identifies specific SDG s established by the UNGC , which we adopt to guide our ESG strategy. Our annual Creating Change Report for fiscal year 2026 , which will be published in ca"
+  },
+  {
+   "id": "DECK-33",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "crease the risk of delayed payments or defaults. We face intense competition from both established companies and newer entrants into the market, and our failure to compete effectively could cause our market share to decline, which could harm our reputation and have a material adverse effect on our financial condition and results of operations. The footwear, apparel, and accessories industry is highly competitive and subject to rapidly changing consumer preferences. If we are unable to compete effectively, we could experience a decline in market share, reduced demand for our products, pricing pressure, or "
+  },
+  {
+   "id": "DECK-34",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "materials, consumer demand for our products could decline and we may experience reputational damage. In addition, if our competitors introduce superior or more cost-effective innovations, we may lose market share or be required to increase promotional activity to remain competitive. Further, as our brands transition to suppliers with preferred materials , we may be subject to increased costs or supply constraints, which could reduce our sales and profitability and have a material adverse effect on our financial condition and results of operations. Our investments in research and development and new materi"
+  },
+  {
+   "id": "DECK-35",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-05-22",
+   "url": "https://www.sec.gov/Archives/edgar/data/910521/000162828026037664/deck-20260331.htm",
+   "text": "erate are highly competitive. Our competitors include fashion, casual, lifestyle, and athletic footwear companies, branded apparel companies, and retailers with their own private labels. Although the industry is fragmented, some of our competitors are larger and have substantially greater resources, and several sell products that compete directly with our products. In particular, we face competition from domestic and international competitors selling products designed to compete directly or indirectly with products similar to those of our HOKA brand and UGG brand. In addition, access to offshore manufacturing and t"
+  }
+ ]
+}

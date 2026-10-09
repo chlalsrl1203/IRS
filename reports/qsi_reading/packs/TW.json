@@ -1,0 +1,497 @@
+{
+ "ticker": "TW",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "309be0b74e3b76dad1aa0634fce972dcd9fb03d487ef3a29e929aa5d8a2ca976",
+ "targets": [
+  "gov.chair_separated",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.pricing_power"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: TW.LITIGATION)",
+  "cap.ma_discipline": "5년 인수 지출이 영업현금흐름의 28% — 가격 규율은 사람이 판단해야 한다",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.guidance_miss_3y": "8-K 2.02 보도자료 19건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "8-K 2.02 보도자료 19건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.pricing_power": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다"
+ },
+ "excerpts": [
+  {
+   "id": "TW-1",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm",
+   "text": "ng and Corporate Governance Committee OTHER CURRENT PUBLIC COMPANY BOARDS: Clearwater Analytics, LyondellBasell Industries N.V. KEY EXPERIENCE AND QUALIFICATIONS: • Significant investment, financial and leadership expertise Mr. Aigrain has served as Chairperson of the Board since July 2023 and Chair of the Compensation Committee since August 2022. Mr. Aigrain served as an advisor at Warburg Pincus LLC, a global private equity firm, from 2014 to December 2020. He previously spent nine years at Swiss Re, where he served as CEO from 2006 to 2009. Prior to Swiss Re, he spent 20 years in global leadership roles at JP Morgan Chase & Co. in New York, London and Paris. Mr. Aigrain currently serves as chairman of the board of LyondellBasell Industries N.V. and a director o"
+  },
+  {
+   "id": "TW-2",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm",
+   "text": "ion of Canada KEY EXPERIENCE AND QUALIFICATIONS: • Deep bench of knowledge and experience leading Goldman Sachs’ interest rate products and mortgages businesses • Significant service on boards and board committees Ms. Madoff has served as Tradeweb’s Lead Independent Director since February 2022 and Chair of the Nominating and Corporate Governance Committee since May 2023. Ms. Madoff is an Advisor to Goldman Sachs Group (“Goldman”), a multinational investment bank and financial services company. She has worked at Goldman for over 30 years in a variety of leadership roles and was most recently a Partner in the Global Markets Division leading the Interest Rate Products and Mortgages businesses. She has held additional leadership positions at Goldman, including Co-Chai"
+  },
+  {
+   "id": "TW-3",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm",
+   "text": "led company, we will take all action necessary to comply with applicable SEC rules and regulations and Nasdaq rules, subject to permitted “phase-in” periods under the Nasdaq rules. KEY GOVERNANCE PRACTICES • Majority independent Board. • Independent Board Chairperson. • Strong Lead Independent Director role. • Fully independent Board committees with independent Chairs. • Regular executive sessions where independent directors meet without management present. • Annual Board and Committee evaluation process that includes in-person feedback sessions. • Director overboarding policy. • Annual NEO and director affirmation of compliance with Code of Business Conduct and Ethics. • Stock ownership guidelines for senior management and non-employee directors. • R"
+  },
+  {
+   "id": "TW-4",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm",
+   "text": "“Chairperson”) and the Company’s Chief Executive Officer in the manner it considers to be in the best interests of the Company. Therefore, the 2026 PROXY STATEMENT 21 Table of Contents Corporate Governance Board does not have a policy on whether the roles of Chairperson and Chief Executive Officer should be separate or combined and, if it is to be separate, whether the Chairperson should be selected from the independent directors. Jacques Aigrain has served as our independent Chairperson since July 2023. Ms. Madoff has served as our Lead Independent Director since February 2022. The Board currently believes that separating the roles of the Chairperson and the Chief Executive Officer is in the best interests of the Company and its stockholders and represe"
+  },
+  {
+   "id": "TW-5",
+   "for": "gov.ceo_succession_policy",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " team or the inability to attract and retain qualified personnel could materially adversely impact our ability to operate or grow our business. The success of our business depends upon the skills, experience and efforts of our executive officers and other key personnel. Although we have invested in succession planning, the loss of key members of our senior management team or other key personnel could nevertheless have a material adverse effect on our business, financial condition and results of operations. Should we lose the services of a member of our senior management team or other key personnel, we may have to conduct a search for a qualified replacement. This search may be prolonged, and we may not be able to locate and hire a qualified replacement. Our business also depends on our ability to co"
+  },
+  {
+   "id": "TW-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "ty under the Tax Receivable Agreement. Failure to retain our senior management team or the inability to attract and retain qualified personnel could materially adversely impact our ability to operate or grow our business. The success of our business depends upon the skills, experience and efforts of our executive officers and other key personnel. Although we have invested in succession planning, the loss of key members of our senior management team or other key personnel could nevertheless have a material adverse effect on our business, financial condition and results of operations. Should we lose the services of a member of our senior management team or other key personnel, we may have to conduct a search for a qualified replacement. This search may be prolonged, and we may not be able to locate and hire a qualified replacement. Our business also depends on our ability to continue to attract, motivate and retain a large number of hi"
+  },
+  {
+   "id": "TW-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " team or the inability to attract and retain qualified personnel could materially adversely impact our ability to operate or grow our business. The success of our business depends upon the skills, experience and efforts of our executive officers and other key personnel. Although we have invested in succession planning, the loss of key members of our senior management team or other key personnel could nevertheless have a material adverse effect on our business, financial condition and results of operations. Should we lose the services of a member of our senior management team or other key personnel, we may have to conduct a search for a qualified replacement. This search may be prolonged, and we may not be able to locate and hire a qualified replacement. Our business also depends on our ability to continu"
+  },
+  {
+   "id": "TW-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "k Factors 33 Item 1B. Unresolved Staff Comments 66 Item 1C . Cybersecurity 66 Item 2. Properties 68 Item 3. Legal Proceedings 69 Item 4. Mine Safety Disclosures 69 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 70 Item 6. Reserved 72 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 73 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 99 Item 8. Financial Statements and Supplementary Data 102 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 158 Item 9A. Controls and Procedures 158 Item 9B. Other Information 159 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 164 PART III Item 10. Directors, Executive Officers and Corporate Governance 165 Item 11. Executive Compensation 165 Item 12. Securities Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 165 Item 13. Certain Relationships and Related Transactions, and Director Independence 165 Item 14. Principal Accountant Fees and Services 165 PART IV Item 15. Exhibits and Financial Statement Schedules 166 Item 16. Form 10-K Summary 169 2 Table of Contents INTRODUCTORY NOTE Basis of Presentation The financial statements and other disclosures contained in this Annual Report on Form 10-K include those of Tradeweb Markets Inc., which is the registrant, and those of its consolidating subsidiaries, including Tradeweb Markets LLC, which became the principal operating subsidiary of Tradeweb Markets Inc. on April 4, 2019 in"
+  },
+  {
+   "id": "TW-9",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " We have in the past been, are currently, and may from time to time in the future become subject to legal proceedings and claims relating to the intellectual property rights of others. The costs of supporting legal and dispute resolution proceedings are considerable, and there can be no assurance that a favorable outcome will be obtained. We may need to settle litigation and disputes on terms that are unfavorable to us, or we may be subject to an unfavorable judgment. The terms of any settlement or judgment may require us to cease some or all of our operations, pay substantial amounts to the other party and/or seek a license to continue practices found to be in violation of third-party intellectual property rights, which may not be available on reasonable terms and may significantly increase our operating expenses. A license may not be available to us at all, and we may be required to develop alternative non-infringing platforms, solutions, technologies or practices or discontinue use of such platforms, solutions, technologies or practices. Any development efforts could require significant effort and expense and, as result, our business, results of operations and financial condition could be materially adversely affected. 51 Table of Contents Our use of open source software could result in litigation or impose unanticipated restrictions on our ability to commercialize our platform and solutions. We use open source software in our technology, most often as small components within a larger solution. Open source code is also contained in some third-party software we rely on. The terms of many "
+  },
+  {
+   "id": "TW-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "rmal course of our business, we have been, and continue to be from time to time, a party to various legal and regulatory proceedings related to compliance with applicable laws, rules and regulations, including audits, examinations and investigations of our operations and activities. Legal and regulatory actions, from subpoenas and other requests for information to potential criminal investigations, may divert management’s attention, cause us to incur significant expenses, including fees for legal representation and costs for remediation efforts, and result in fines, penalties or other sanctions. We may also be required to change or cease aspects of our operations or activities if a legal or regulatory authority determines that we have failed to comply with any laws, rules or regulations applicable to our business and/or otherwise determines to prohibit any of our operations or activities or revoke any of our approvals. In addition, regardless of the outcome, such actions may result in substantial costs and negative publicity, which may damage our reputation and impair our ability to attract and retain clients. Firms in the financial services industry have experienced increased scrutiny in recent years, and there have been significant penalties, fines and other sanctions sought by governmental and regulatory authorities, including the SEC, the CFTC, the Department of Justice, state securities administrators and state attorneys general in the U.S., the FCA in the UK, the AFM in the Netherlands and other foreign regulators. Heightened regulatory oversight and enforcement environment may create uncertainty an"
+  },
+  {
+   "id": "TW-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "tters, breach of contract matters and other business and commercial matters. See Part I, Item 3. – “Legal Proceedings.” Many aspects of our business, and the businesses of our clients, involve substantial risks of liability. These risks include, among others, disputes over the terms of a trade and claims that a system failure or delay caused monetary loss to a client or that an unauthorized trade occurred. Although we carry insurance that may limit our risk of damages in some matters, we may still sustain uncovered losses or losses in excess of available insurance, and we could incur significant legal expenses defending claims, even those without merit. Due to the uncertain nature of the litigation process, it is not possible to predict with certainty the outcome of any particular litigation matter or claim, and we could in the future incur judgments or enter into settlements that could have a material adverse effect on our business, financial condition and results of operations. The ultimate outcome of litigation matters and claims against us may require us to change or cease certain operations and may result in higher operating costs. An adverse resolution of any litigation matter or claim could cause damage to our reputation and could have a material adverse effect on our business, financial condition and results of operations. Our stock price may be volatile and, in the past, companies that have experienced volatility in the market price of their stock have been subject to securities class action litigation. We may be the target of this type of litigation in the future. Litigation of th"
+  },
+  {
+   "id": "TW-12",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "received from the sale of Canton Coins. Net cash used in investing activities was $969.2 million for the year ended December 31, 2024, which consisted of $860.1 million of total net cash paid for the acquisitions of ICD and r8fin (net of cash acquired), $47.9 million of capitalized software development costs, $41.0 million of purchases of furniture, equipment, purchased software and leasehold improvements and $20.2 million of cash paid for investments. Financing Activities Net cash used in financing activities for the year ended December 31, 2025 was $307.5 million, which consisted of $104.2 million in share repurchases pursuant to our 2022 Share Repurchase Program, $102.3 million in cash dividends to our Class A and Class B common stockholders, $49.5 milli"
+  },
+  {
+   "id": "TW-13",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " both December 31, 2025 and 2024, cash in the amount of $ 1.0 million, has been segregated in the PAB reserve account, exceeding the requirements pursuant to SEC Rule 15c3-3. 124 Table of Contents 4. Acquisitions ICD On August 1, 2024, the Company completed its acquisition of ICD in exchange for total purchase consideration of $ 774.2 million. In connection with the acquisition closing, the Corporation was required to issue and sell $ 4.5 million of shares of its Class A common stock in reliance on Section 4(a)(2) of the Securities Act, to an equityholder of the ICD seller, who was also an employee of ICD and is currently an employee of the Company. These shares of Class A common stock were issued and sold as restricted stock (“RSAs”), subject to vesting and forfeiture terms, pursuant to the Tradeweb Markets Inc. 2019 Omnibus Equity"
+  },
+  {
+   "id": "TW-14",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "period. Of the $ 4.7 million in RSAs issued, $ 3.3 million was allocated to consideration transferred for the business combination, relating to the pre-combination service period completed before the acquisition date, and $ 1.3 million will be amortized into stock-based compensation expense over the two - year service period required subsequent to the acquisition date. Cash paid at closing, net of $ 23.3 million in cash acquired and net of $ 4.5 million in proceeds from the sale of RSAs, totaled $ 773.8 million. Of this amount, $ 770.9 million was determined to be the net cash consideration transferred for the business combination, $ 1.4 million was recorded as compensation expense during the year ended December 31, 2024, rel"
+  },
+  {
+   "id": "TW-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "l, serving corporate treasury professionals, complementing the Company’s previously existing focus on institutional, wholesale and retail clients. r8fin On January 19, 2024, the Company completed its acquisition of r8fin in exchange for total purchase consideration of $ 125.9 million, consisting of $ 89.2 million in cash paid at closing (net of cash acquired) and the issuance of 374,601 shares of Class A common stock of the Corporation valued as of the acquisition date at $ 36.7 million. r8fin provides a suite of algorithmic-based tools as well as a thin-client EMS trading application to facilitate futures and cash trades. Business Combinations The ICD and r8fin acquisitions were accounted for as business combinations and the Company utilized the assistance of a third-party"
+  },
+  {
+   "id": "TW-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "he inability to attract and retain qualified personnel could materially adversely impact our ability to operate or grow our business. • We could face damage to our reputation or brand. • We may incur impairment charges for our goodwill and other indefinite-lived intangible assets. • Cryptocurrency and other digital assets are an emerging asset class that carries unique risk, including the risk of financial loss. Risks Relating to our Growth Strategies and other Strategic Opportunities • We may fail to maintain our current level of business or execute our growth plan. • It is possible that our entry into new markets will not be successful, and potential new markets may not develop quickly or at all. • We may undertake acquisit"
+  },
+  {
+   "id": "TW-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "uisitions, divestitures or strategic alliances; • the timing of expenses related to the development or acquisition of platforms, solutions, technologies or businesses and potential future charges for impairment of goodwill from acquired companies; • new, or changes to existing, regulations that limit or affect our platform, solutions and technologies or which increase our regulatory compliance costs; and • the timing and magnitude of any adjustments in our consolidated financial statements driven by changes in the liability under the Tax Receivable Agreement. Failure to retain our senior management team or the inability to attract and retain qualified personnel could materially adversely impact our ability to ope"
+  },
+  {
+   "id": "TW-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "son formerly or currently associated with us cannot be completely eliminated or mitigated and may materially harm our reputation, business, financial condition and results of operations. We may incur impairment charges for our goodwill and other indefinite-lived intangible assets which would negatively impact our operating results. As of December 31, 2025, we had goodwill of $3.2 billion and indefinite-lived intangible assets of $0.3 billion. The carrying value of goodwill represents the fair value of an acquired business in excess of identifiable assets and liabilities as of the acquisition date. The carrying value of indefinite-lived intangible assets represents the fair value of licenses and trade names as of the acquisiti"
+  },
+  {
+   "id": "TW-19",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "e net assets at the acquisition date, including the ICD Acquisition, the r8fin Acquisition, the Yieldbroker Acquisition and the NFI Acquisition, which were all accounted for as business combinations. Goodwill is not amortized, but is tested for impairment annually on October 1st and between annual tests, whenever events or changes in circumstances indicate that the carrying amount may not be fully recoverable. Goodwill is tested at the reporting unit level, which is defined as an operating segment or one level below the operating segment. The Company consists of one reporting unit for goodwill impairment testing purposes. An impairment loss is recognized if the estimated fair value of a reporting unit is less than its net book value. Such loss i"
+  },
+  {
+   "id": "TW-20",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "ulation of our industry; • our ability to retain the services of our senior management team; • limitations on operating our business and incurring additional indebtedness as a result of covenant restrictions under our $500.0 million senior unsecured revolving credit facility (the “2023 Revolving Credit Facility”) with Citibank, N.A., as administrative agent, and the other lenders party thereto; 7 Table of Contents • our dependence on distributions from TWM LLC to fund our expected dividend payments and to pay our taxes and expenses, including payments under the tax receivable agreement (the “Tax Receivable Agreement”) entered into in connection with the IPO;"
+  },
+  {
+   "id": "TW-21",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "me or other tax returns. • Our compliance and risk management programs might not be effective. • We are exposed to litigation risk, including securities litigation risk. Risks Relating to our Indebtedness • The credit agreement that governs the 2023 Revolving Credit Facility imposes certain operating and financial restrictions on us and our restricted subsidiaries. • Any borrowings under the 2023 Revolving Credit Facility will subject us to interest rate risk. Risks Relating to our Organizational Structure and Governance • LSEG controls us and its interests may conflict with ours or yours. • We are a “controlled company” within the meaning of the corporate g"
+  },
+  {
+   "id": "TW-22",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "al adverse effect on our business, financial condition and results of operations. Any adverse determination in litigation could also subject us to significant liabilities. Risks Relating to our Indebtedness The credit agreement that governs the 2023 Revolving Credit Facility imposes certain operating and financial restrictions on us and our restricted subsidiaries, which may prevent us from capitalizing on business opportunities, and we may incur debt in the future that may include similar or additional restrictions. We are party to the 2023 Revolving Credit Facility, a $500.0 million senior unsecured revolving credit facility with a syndicate of banks. The "
+  },
+  {
+   "id": "TW-23",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " of (i) TWM LLC to merge or consolidate with other entities, (ii) the subsidiaries of TWM LLC to incur or guarantee indebtedness and (iii) TWM LLC and its subsidiaries to create or incur liens. In addition, the credit agreement that governs our 2023 Revolving Credit Facility requires us to maintain a maximum total net leverage ratio and a minimum cash interest coverage ratio. See Part II, Item 7. – “Management’s Discussion and Analysis of Financial Condition and Results of Operations – Liquidity and Capital Resources.” These covenants could affect our ability to finance our future operations or capital needs and otherwise conduct our business. Our ability to"
+  },
+  {
+   "id": "TW-24",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "or cause us to cease paying dividends altogether. The timing and amount of any share repurchases are subject to a number of uncertainties. On December 5, 2022, our board of directors approved a share repurchase program with an indefinite term under which we may purchase up to $300 million of Class A common stock (the “2022 Share Repurchase Program”). As of December 31, 2025, $74.0 million remained available for purchase under the 2022 Share Repurchase Program. On February 5, 2026, our board of directors authorized an additional share repurchase program with an indefinite term under which we may purchase up to $500 million of Class A common stock (the “2026 Share Repurchase Program”). Both share repurchase programs permit us to repurchase shares of Class A common stock fr"
+  },
+  {
+   "id": "TW-25",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " of market conditions, stock price and other factors. For example, the IRA imposes a 1% excise tax on the repurchase of stock by publicly traded U.S. corporations. The imposition of the excise tax on repurchases of our shares may increase the cost to us of making repurchases and may cause management to reduce the number of shares repurchased pursuant to our share repurchase programs. Additional considerations that could cause management to limit, suspend or delay future repurchases include unfavorable market conditions, the trading price of our Class A common stock, the nature and magnitude of other investment opportunities available to us from time to time and the allocation of available cash. In addition, repurchases of shares of our Class A common stock pursuant to our share repurchase programs could affect our stock"
+  },
+  {
+   "id": "TW-26",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": " the market liquidity for our Class A common stock. Our repurchases may also not enhance stockholder value because the stock price of our Class A common stock may decline below the prices at which we repurchased shares and short-term stock price fluctuations could reduce the effectiveness of our share repurchase programs. Additionally, our share repurchase programs could diminish our cash reserves, which may impact our ability to finance or pursue our business strategies. 65 Table of Contents The requirements of being a public company, including compliance with the reporting requirements of the Exchange Act and the requirements of the Sarbanes-Oxley Act and Nasdaq, may strain our resources, increase our costs"
+  },
+  {
+   "id": "TW-27",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "s Annual Report for information about securities authorized for issuance under our equity compensation plans. Issuer Purchases of Equity Securities During the three months ended December 31, 2025, we repurchased the following shares of Class A common stock: Period Total Number of Shares Purchased Average Price Paid per Share Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs (1) Approximate Dollar Value of Shares That May Yet Be Purchased Under the Plans or Programs (1) (in thousands) October 1, 2025 – October 31, 2025 — $ — — $ 179,898 November 1, 2025 – November 30, 2025 457,628 107.90 457,628 $ 130,521 December 1, 2025 – December 31, 2025 529,751 106.77 529,751 $ 73,961 Total 987,379 $ 107.29 987,379 (1) On December 5, 2022, we announced that o"
+  },
+  {
+   "id": "TW-28",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": "r 15, 2026 to stockholders of record as of September 1, 2026 OTHER MATTERS Unchanged Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million (trending towards the top half of the range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. "
+  },
+  {
+   "id": "TW-29",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2026 guidance and full-year 2026 revenue guidance related to the LSEG market data license agreement, any acquisitions, investments, partnerships and collaborations, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such "
+  },
+  {
+   "id": "TW-30",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000095/tw-2026xq1xex991.htm",
+   "text": "15, 2026 to stockholders of record as of June 1, 2026 Page | 3 OTHER MATTERS Updated Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million (trending towards the top half of the range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million The adjusted expense guidance has been revised to reflect the strong first quarter revenue growth coupled with our current expectations for the remainder of the year. Depreciation and amortization, assumed non-GAAP tax rate, exp"
+  },
+  {
+   "id": "TW-31",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000095/tw-2026xq1xex991.htm",
+   "text": "ance is unchanged from the guidance we provided last quarter. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2026 Sterling/US$ foreign exchange rate of 1.32. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss first quarter 2026 results starting at 9:30 AM EDT today, April 29, 2026. A live, audio webcast of the conference call along with related presentation materials will be available at https://investors.tradeweb.com/events-and-presentations . • To join the call vi"
+  },
+  {
+   "id": "TW-32",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000014/tw-2025xq4xex991.htm",
+   "text": "ayable on March 16, 2026 to stockholders of record as of March 2, 2026 OTHER MATTERS Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2026 Ster"
+  },
+  {
+   "id": "TW-33",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "mber 15, 2025 to stockholders of record as of December 1, 2025 OTHER MATTERS Updated Full-Year 2025 Guidance* • Adjusted Expenses: $1,000 - 1,025 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $176 million • Assumed non-GAAP tax rate: ~24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~$99 - 109 million • LSEG Market Data Contract Revenue: ~$92 million for the year ended December 31, 2025, including ~$22 million for 4Q25 The guidance has been revised to reflect a tighter adjusted expense range and an increase to the LSEG Market Data Contract Revenue given current expectations. Depreciation and amortization, assumed non-GAA"
+  },
+  {
+   "id": "TW-34",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "itures guidance is unchanged from the prior quarter guidance. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2025 Sterling/US$ foreign exchange rate of 1.28. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss third quarter 2025 results starting at 9:30 AM EDT today, October 30, 2025. A live, audio webcast of the conference call along with related presentation materials will be available at https://investors.tradeweb.com/events-and-presentations . • To join the call "
+  },
+  {
+   "id": "TW-35",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2025 guidance and full-year 2025 revenue guidance related to the LSEG market data license agreement, pending and completed acquisitions, partnerships and collaborations, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, "
+  },
+  {
+   "id": "TW-36",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000160/tw-2025xq2xex991.htm",
+   "text": "ber 16, 2025 to stockholders of record as of September 2, 2025 OTHER MATTERS Updated Full-Year 2025 Guidance* • Adjusted Expenses: $1,000 - 1,050 million (trending toward middle of range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $176 million • Assumed non-GAAP tax rate: ~24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~$99 - 109 million • LSEG Market Data Contract Revenue: ~$90 million The guidance has been revised to reflect higher adjusted expenses in light of strong business momentum and accelerated investments in future growth initiatives. Depreciation and amortization, assumed non-GAAP tax rate, expenditures and LSEG "
+  },
+  {
+   "id": "TW-37",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000160/tw-2025xq2xex991.htm",
+   "text": "evenue guidance is unchanged from the prior quarter guidance. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2025 Sterling/US$ foreign exchange rate of 1.28. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss second quarter 2025 results starting at 9:30 AM EDT today, July 30, 2025. A live, audio webcast of the conference call along with related presentation materials will be available at https://investors.tradeweb.com/events-and-presentations . • To join the call vi"
+  },
+  {
+   "id": "TW-38",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-04-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000107/tw-2025xq1xex991.htm",
+   "text": "n June 16, 2025 to stockholders of record as of June 2, 2025 OTHER MATTERS Unchanged Full-Year 2025 Guidance* • Adjusted Expenses: $970 - 1,030 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $176 million • Assumed non-GAAP tax rate: ~ 24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~ $99 - 109 million • LSEG Market Data Contract Revenue: ~$90 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2025 Sterli"
+  },
+  {
+   "id": "TW-39",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-04-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000107/tw-2025xq1xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2025 guidance and full-year 2025 revenue guidance related to the LSEG market data license agreement, pending and completed acquisitions, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking statements a"
+  },
+  {
+   "id": "TW-40",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000035/tw-2024xq4xex991.htm",
+   "text": "ayable on March 17, 2025 to stockholders of record as of March 3, 2025 OTHER MATTERS Full-Year 2025 Guidance* • Adjusted Expenses: $970 - 1,030 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $176 million • Assumed non-GAAP tax rate: ~24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~ $99 - 109 million • LSEG Market Data Contract Revenue: ~$90 million LSEG Market Data Contract Revenue guidance is unchanged from the prior quarter guidance. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in"
+  },
+  {
+   "id": "TW-41",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000189/tw-2024xq3xex991.htm",
+   "text": "mber 16, 2024 to stockholders of record as of December 2, 2024 OTHER MATTERS Updated Full-Year 2024 Guidance* • Adjusted Expenses: $855 - 875 million (trending toward middle of range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $158 million • Assumed non-GAAP tax rate: ~ 24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~ $77 - 85 million • LSEG Market Data Contract Revenue: ~$80 million (~$90 million in 2025) The guidance has been revised to reflect higher adjusted expenses in light of strong business momentum. Depreciation and amortization, assumed non-GAAP tax rate, expenditures and LSEG Market Data Contract Revenue guidance"
+  },
+  {
+   "id": "TW-42",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000189/tw-2024xq3xex991.htm",
+   "text": "ariety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2024 Sterling/US$ foreign exchange rate of 1.24 and includes completed M&A transactions. Guidance amounts for cash capital expenditures and capitalized software development excludes amounts paid at closing for acquisitions. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss third quarter 2024 results starting at 9:30 AM EDT today, October 30, 2024. A live, audio webcast of the conference call along with related presentation materials will be available at https://investors.tradeweb.com/events-and-presentations . • To join the call via audio webcast, clic"
+  },
+  {
+   "id": "TW-43",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000189/tw-2024xq3xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2024 guidance and full-year 2024 and 2025 revenue guidance related to the LSEG market data license agreement, pending and completed acquisitions, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking sta"
+  },
+  {
+   "id": "TW-44",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-07-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000155/tw-2024xq2xex991.htm",
+   "text": "ber 16, 2024 to stockholders of record as of September 3, 2024 OTHER MATTERS Updated Full-Year 2024 Guidance* • Adjusted Expenses: $830 - 860 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $158 million • Assumed non-GAAP tax rate: ~ 24.5% - 25.5% • Cash capital expenditures and capitalized software development: $77 - 85 million • LSEG Market Data Contract Revenue: ~$80 million (~$90 million in 2025) The guidance has been revised to reflect higher expenses and expenditures in light of strong business momentum, the anticipated closing of ICD during the third quarter of 2024 and recently announced management changes. Assumed non-GAAP tax rate and LSEG Mar"
+  },
+  {
+   "id": "TW-45",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-07-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000155/tw-2024xq2xex991.htm",
+   "text": "evenue guidance is unchanged from the prior quarter guidance. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2024 Sterling/US$ foreign exchange rate of 1.24 and includes completed M&A transactions as well as the expected closing of the ICD acquisition in the third quarter of 2024. Guidance amounts for cash capital expenditures and capitalized software development excludes amounts paid at closing for acquisitions. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss se"
+  },
+  {
+   "id": "TW-46",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-07-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000155/tw-2024xq2xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2024 guidance and full-year 2024 and 2025 revenue guidance related to the LSEG market data license agreement, pending acquisitions, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking statements are on"
+  },
+  {
+   "id": "TW-47",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-04-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000092/tw-2024xq1xex991.htm",
+   "text": " on June 17, 2024 to stockholders of record as of June 3, 2024 OTHER MATTERS Updated Full-Year 2024 Guidance* • Adjusted Expenses: $755 - 805 million (trending toward top end of range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $142 million • Assumed non-GAAP tax rate: ~ 24.5% - 25.5% • Cash costs of non-acquisition capital expenditures and capitalized software development: $75 - 83 million • LSEG Market Data Contract Revenue: ~$80 million (~$90 million in 2025) *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movem"
+  },
+  {
+   "id": "TW-48",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000022/tw-2023xq4xex991.htm",
+   "text": "ayable on March 15, 2024 to stockholders of record as of March 1, 2024 OTHER MATTERS Full-Year 2024 Guidance* • Adjusted Expenses: $755 - 805 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $142 million • Assumed non-GAAP tax rate: ~24.5 - 25.5% • Cash costs of non-acquisition capital expenditures and capitalized software development: $75 - 83 million • LSEG Market Data Contract Revenues: ~$80M (~$90M in 2025) *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance as"
+  },
+  {
+   "id": "TW-49",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873024000022/tw-2023xq4xex991.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2024 guidance and full-year 2024 and 2025 revenue guidance related to the LSEG market data license agreement, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking statements are only predictions and inv"
+  },
+  {
+   "id": "TW-50",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K/A filed 2023-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873023000171/tw-2023xq3xex9911.htm",
+   "text": "mber 15, 2023 to stockholders of record as of December 1, 2023 OTHER MATTERS Updated Full-Year 2023 Guidance* • Adjusted Expenses: $670 - 695 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $128 million • Assumed non-GAAP tax rate: ~24% - 25% • Cash costs of non-acquisition capital expenditures and capitalized software development: $56 - 63 million Full-Year 2024 & 2025 Revenue Guidance Related to the Refinitiv Market Data Contract • 2024 Revenues: ~ $80 million • 2025 Revenues: ~ $90 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including"
+  },
+  {
+   "id": "TW-51",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K/A filed 2023-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873023000171/tw-2023xq3xex9911.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our guidance, including full-year 2023 guidance, future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking statements are only predictions and involve known and unknown risks and uncertainties, many of which are beyond our control. These and"
+  },
+  {
+   "id": "TW-52",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K/A filed 2023-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873023000171/tw-2023xq3xex992newsreleas.htm",
+   "text": "s within the meaning of the federal securities laws. Statements related to, among other things, our outlook and future performance, the industry and markets in which we operate, our expectations, beliefs, plans, strategies, objectives, prospects and assumptions and future events are forward-looking statements. We have based these forward-looking statements on our current expectations, assumptions, estimates and projections. While we believe these expectations, assumptions, estimates and projections are reasonable, such forward-looking statements are only predictions and involve known and unknown risks and uncertainties, many of which are beyond our control. These and other important factors, includ"
+  },
+  {
+   "id": "TW-53",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": "s related to our Canton Coin holdings and a $3.7 million decrease in fair value of our investment in Canton Strategic Holdings. Other income in the second quarter of 2025 included $18.1 million in unrealized gains relating our Canton Coin holdings, partially offset by a $5.4 million loss due to the impairment of a minority equity investment. Other income (loss), net is excluded from all non-GAAP financial measures. RECENT HIGHLIGHTS July 2026 • Announced the completion of a landmark real-time transaction involving tokenized U.S. Treasuries on Tradeweb with the Canton Network. Page | 2 • Announced our multi-year partnership with professional golfer James Nicholas. • Participated in the Depository Trust & Clearing Corporation (DTCC)'s successful processing of U.S. Treasury transactions using tokenized assets held at The Depository Trust Company (DTC) - the largest tokenization production initiative to date. • Extended the distribution of our licensed Tradeweb FTSE Benchmark Closing Prices through "
+  },
+  {
+   "id": "TW-54",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": " stock and Class B common stock. The dividend will be payable on September 15, 2026 to stockholders of record as of September 1, 2026 OTHER MATTERS Unchanged Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million (trending towards the top half of the range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2026 Sterling/US$ foreign exchange rate of 1.32. Page | 3 CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss second quarter 2026 results starting at 9:30 AM EDT today, July 30, 2026"
+  },
+  {
+   "id": "TW-55",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": "plemental metric to evaluate our underlying operating performance over time by removing items that are not related to day-to-day operations or are non-cash expenses. We use Free Cash Flow to assess our liquidity in a way that considers the amount of cash generated from our core operations after non-acquisition related expenditures for capitalized software development costs and furniture, equipment and leasehold improvements. We present certain changes on a “constant currency” basis. Since our consolidated financial statements are presented in U.S. dollars, we must translate non-U.S. dollar revenues and expenses into U.S. dollars. Constant currency change, which is a non-GAAP financial measure, is defined as change excluding the effects of foreign currency fluctuations. Constant currency information is calculated by translating the current period and prior period’s results using the annual average exchange rates for the prior period. We use constant currency change as a supplemental metric to evaluate our"
+  },
+  {
+   "id": "TW-56",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000132/tw-2026xq2xex991.htm",
+   "text": "h Flow, you should be aware that in the future, we may incur expenses similar to the adjustments in the presentation of these non-GAAP financial measures. Our presentation of non-GAAP financial measures should not be construed as an inference that our future results will be unaffected by unusual or non-recurring items. In addition, the non-GAAP financial measures contained in this release may not be comparable to similarly titled measures used by other companies in our industry or across different industries. MARKET AND INDUSTRY DATA This release includes estimates regarding market and industry data that we prepared based on our management’s knowledge and experience in the markets in which we operate, together with information obtained from various sources, including publicly available information, industry reports and publications, surveys, our clients, trade and business organizations and other contacts in the markets in which we operate. In presenting this information, we have made certain assum"
+  },
+  {
+   "id": "TW-57",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000095/tw-2026xq1xex991.htm",
+   "text": "mon stock and Class B common stock. The dividend will be payable on June 15, 2026 to stockholders of record as of June 1, 2026 Page | 3 OTHER MATTERS Updated Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million (trending towards the top half of the range) • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million The adjusted expense guidance has been revised to reflect the strong first quarter revenue growth coupled with our current expectations for the remainder of the year. Depreciation and amortization, assumed non-GAAP tax rate, expenditures and LSEG Market Data Contract Revenue guidance is unchanged from the guidance we provided last quarter. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amount"
+  },
+  {
+   "id": "TW-58",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000014/tw-2025xq4xex991.htm",
+   "text": " of Class A common stock and Class B common stock, a 16.7% per share increase from prior year. This dividend will be payable on March 16, 2026 to stockholders of record as of March 2, 2026 OTHER MATTERS Full-Year 2026 Guidance* • Adjusted Expenses: $1,100 - 1,160 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $160 million • Assumed non-GAAP tax rate: ~23.5% - 24.5% • Cash capital expenditures and capitalized software development: ~$107 - 117 million • LSEG Market Data Contract Revenue: ~$105 million *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying certain amounts due to a variety of factors including the unpredictability in the movement of foreign currency rates. Expense guidance assumes an average 2026 Sterling/US$ foreign exchange rate of 1.32. CONFERENCE CALL Tradeweb Markets will hold a conference call to discuss fourth quarter and full year 2025 results starting at 9:30 AM EST today, February"
+  },
+  {
+   "id": "TW-59",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000014/tw-2025xq4xex991.htm",
+   "text": "metric to evaluate our underlying operating performance over time by removing items that are not related to day-to-day operations or are non-cash expenses. Page | 11 We use Free Cash Flow to assess our liquidity in a way that considers the amount of cash generated from our core operations after non-acquisition related expenditures for capitalized software development costs and furniture, equipment and leasehold improvements. We present certain changes on a “constant currency” basis. Since our consolidated financial statements are presented in U.S. dollars, we must translate non-U.S. dollar revenues and expenses into U.S. dollars. Constant currency change, which is a non-GAAP financial measure, is defined as change excluding the effects of foreign currency fluctuations. Constant currency information is calculated by translating the current period and prior period’s results using the annual average exchange rates for the prior period. We use constant currency change as a supplemental metric to evaluate our"
+  },
+  {
+   "id": "TW-60",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "more interconnected markets and 24/7 liquidity by working with the Canton Network to offer the first real-time, fully on-chain financing of U.S. Treasuries against USDC. Additionally, alongside other investors, we led Fnality’s Series C funding round, supporting the development of a next-gen global settlement network. These initiatives showcase the central role we play in the evolution of global markets – and our commitment to working closely with clients to build a more transparent global fixed income marketplace. As we look ahead to 2026, we’ll remain focused on leading initiatives that advance innovation and drive purposeful change.” SELECT FINANCIAL RESULTS 3Q25 3Q24 Change Constant Currency Change (1) ADV (US $bn) (Unaudited) (dollars in thousands, except per share amounts)(Unaudited) Asset Class Product 3Q25 3Q24 YoY GAAP Financial Measures Rates Cash $ 535 $ 497 7.6 % Total revenue $ 508,598 $ 448,915 13.3 % 11.3 % Derivatives 921 802 14.9 % Rates $ 274,497 $ 233,122 17.7 % 15.3 % Total 1"
+  },
+  {
+   "id": "TW-61",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "upgrade across 200+ validators and operators of its decentralized infrastructure to improve resiliency and reliability. • Passed Gate 1 approval for the Bank of England’s Digital Securities Sandbox, an initiative to support the use of Distributed Ledger Technology (DLT) in the issuance, trading and settlement of securities in the UK. • Enrico Bruni named in Financial News ’ Most Influential in European Finance 2025 list. CAPITAL MANAGEMENT • $1.9 billion in cash and cash equivalents and an undrawn $500 million credit facility at September 30, 2025 • Free cash flow for the trailing twelve months ended September 30, 2025 of $987.5 million, up 23.8% compared to prior year period. See “Non-GAAP Financial Measures” for additional information • Cash capital expenditures and capitalized software development during the third quarter of 2025 of $31.4 million • $15.0 million in cash proceeds received on sale of Canton Coins during the third quarter of 2025. 1.7 billion of Canton Coins held and valued at $"
+  },
+  {
+   "id": "TW-62",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm",
+   "text": "ash dividend of $0.12 per share of Class A common stock and Class B common stock. The dividend will be payable on December 15, 2025 to stockholders of record as of December 1, 2025 OTHER MATTERS Updated Full-Year 2025 Guidance* • Adjusted Expenses: $1,000 - 1,025 million • Acquisition and Refinitiv Transaction related depreciation and amortization expense: $176 million • Assumed non-GAAP tax rate: ~24.5% - 25.5% • Cash capital expenditures and capitalized software development: ~$99 - 109 million • LSEG Market Data Contract Revenue: ~$92 million for the year ended December 31, 2025, including ~$22 million for 4Q25 The guidance has been revised to reflect a tighter adjusted expense range and an increase to the LSEG Market Data Contract Revenue given current expectations. Depreciation and amortization, assumed non-GAAP tax rate and expenditures guidance is unchanged from the prior quarter guidance. *GAAP operating expenses and tax rate guidance are not provided due to the inherent difficulty in quantifying "
+  },
+  {
+   "id": "TW-63",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "ghMay2041Member 2025-09-30 0001758730 us-gaap:RevolvingCreditFacilityMember 2025-12-31 0001758730 us-gaap:RevolvingCreditFacilityMember 2024-12-31 0001758730 tw:TransactionFeeRevenueMember tw:VariablePricingMember 2025-01-01 2025-12-31 0001758730 tw:TransactionFeeRevenueMember us-gaap:FixedPriceContractMember 2025-01-01 2025-12-31 0001758730 tw:TransactionFeeRevenueMember tw:VariablePricingMember 2024-01-01 2024-12-31 0001758730 tw:TransactionFeeRevenueMember us-gaap:FixedPriceContractMember 2024-01-01 2024-12-31 0001758730 tw:TransactionFeeRevenueMember tw:VariablePricingMember 2023-01-01 2023-12-31"
+  },
+  {
+   "id": "TW-64",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "2025-01-01 2025-12-31 0001758730 tw:SubscriptionFeeAndMarketDataRevenueMember us-gaap:FixedPriceContractMember 2025-01-01 2025-12-31 0001758730 tw:SubscriptionFeeAndMarketDataRevenueMember tw:VariablePricingMember 2024-01-01 2024-12-31 0001758730 tw:SubscriptionFeeAndMarketDataRevenueMember us-gaap:FixedPriceContractMember 2024-01-01 2024-12-31 0001758730 tw:SubscriptionFeeAndMarketDataRevenueMember tw:VariablePricingMember 2023-01-01 2023-12-31 0001758730 tw:SubscriptionFeeAndMarketDataRevenueMember us-gaap:FixedPriceContractMember 2023-01-01 2023-12-31 0001758730 tw:MarketDataRevenueMember tw:Varia"
+  },
+  {
+   "id": "TW-65",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": "enueMember tw:VariablePricingMember 2024-01-01 2024-12-31 0001758730 tw:MarketDataRevenueMember us-gaap:FixedPriceContractMember 2024-01-01 2024-12-31 0001758730 tw:MarketDataRevenueMember tw:VariablePricingMember 2023-01-01 2023-12-31 0001758730 tw:MarketDataRevenueMember us-gaap:FixedPriceContractMember 2023-01-01 2023-12-31 0001758730 us-gaap:FinancialServiceOtherMember tw:VariablePricingMember 2025-01-01 2025-12-31 0001758730 us-gaap:FinancialServiceOtherMember us-gaap:FixedPriceContractMember 2025-01-01 2025-12-31 0001758730 us-gaap:FinancialServiceOtherMember tw:VariablePricingMember 2024-01-01"
+  },
+  {
+   "id": "TW-66",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm",
+   "text": ":FinancialServiceOtherMember tw:VariablePricingMember 2023-01-01 2023-12-31 0001758730 us-gaap:FinancialServiceOtherMember us-gaap:FixedPriceContractMember 2023-01-01 2023-12-31 0001758730 tw:VariablePricingMember 2025-01-01 2025-12-31 0001758730 us-gaap:FixedPriceContractMember 2025-01-01 2025-12-31 0001758730 tw:VariablePricingMember 2024-01-01 2024-12-31 0001758730 us-gaap:FixedPriceContractMember 2024-01-01 2024-12-31 0001758730 tw:VariablePricingMember 2023-01-01 2023-12-31 0001758730 us-gaap:FixedPriceContractMember 2023-01-01 2023-12-31 0001758730 tw:CantonCoinsMember us-gaap:FinancialServiceO"
+  }
+ ]
+}

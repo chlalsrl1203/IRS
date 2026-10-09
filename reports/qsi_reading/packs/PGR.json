@@ -1,0 +1,130 @@
+{
+ "ticker": "PGR",
+ "as_of": "2026-10-07",
+ "lens_set": "insurance",
+ "foreign_private_issuer": false,
+ "based_on_record": "1fdaeca277f9059bf0acb33303c16e6b0e64486a07a902c669b51be21a0b5a47",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "dil.sbc_to_fcf_pct",
+  "cat.cat_exposure",
+  "uw.combined_ratio_pct"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: PGR.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "dil.sbc_to_fcf_pct": "ledger에 SBC/FCF가 없어 대조 기준이 없다",
+  "cat.cat_exposure": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "uw.combined_ratio_pct": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "PGR-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm",
+   "text": "n plans & programs • Executive officer compensation • Clawback policy and various additional recoupment provisions • Director compensation • Work environment and talent management • Investment operations • Capital plan & structure • Strategic investments • Corporate governance • Board composition • Succession planning • Public policy activities • Stakeholder concerns • Sustainability matters, including climate risk • Use of technology in executing the company's business strategies • Data privacy • Cybersecurity • Artificial intelligence 6 SUSTAINABILITY HIGHLIGHTS Sustainability matters and corporate governance initiatives have been an integral part of our business. Our Core Values are a cornerstone of our business and, as such, are the tenets of these initiatives and have evolved naturally as we wo"
+  },
+  {
+   "id": "PGR-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm",
+   "text": "ions. Nominating and Governance Committee • Responsible for overseeing and addressing risks relating to the Board’s and the company’s corporate governance practices, stakeholder concerns, and environmental (including climate risk) and social factors that affect us. • Coordinates efforts relating to succession planning of executives and directors, assesses the qualifications and mix of backgrounds, experiences, perspectives, skills, and tenure among directors, and makes recommendations to the Board on potential candidates for election to the Board. • Monitors the risk allocation among the committees. Technology Committee • Oversees the company’s technology and information security risks. • Reviews the major risks arising from our technology, digital and data strategies (including with respect to arti"
+  },
+  {
+   "id": "PGR-3",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": " entities alleging that we are violating their rights. Such legal challenges could result in costly legal proceedings, substantial monetary damages, or expensive changes in our business processes and practices. Similarly, we may seek or obtain patent protection for innovations developed by us. However, we may not be able to obtain patents on these processes and practices, and defending our patents and other intellectual property rights against challenges, and enforcing and defending our rights, including, if necessary, through litigation, can be time consuming and expensive, and the results are inherently uncertain, which can further complicate business plans. - 22 - Our development and use of new technology, such as generative and agentic artificial intelligence, may present additional risks, may not be successful, and could have a material adverse effect on our business . We have developed, and used for many years, new technologies, including machine learning and other forms of artificial intelligence (AI), predictive models, algorithms and automated processes, and will in the future develop and use AI and other new technologies in our business. As with many technological innovations, the growing development and use of generative and agentic AI (Advanced AI) presents additional risks that may adversely affect our business. Advanced AI might produce or reveal datasets that are flawed or insufficient or contain biased information, which could result in unintentionally and unfairly discriminatory outcomes in our business processes. These deficiencies could also undermine the associated predi"
+  },
+  {
+   "id": "PGR-4",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "hroughout the U.S. These leases are generally short-term to medium-term leases of commercial space. ITEM 3. LEGAL PROCEEDINGS For discussion of legal proceedings, see Note 12 – Litigation in our Annual Report, which is incorporated herein by reference. ITEM 4. MINE SAFETY DISCLOSURES Not applicable. INFORMATION ABOUT OUR EXECUTIVE OFFICERS Incorporated by reference from information with respect to executive officers of The Progressive Corporation and its subsidiaries set forth in Part III, Item 10 of this Form 10-K, “Directors, Executive Officers and Corporate Governance.” - 29 - PART II ITEM 5. MARKET FOR REGISTRANT’S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES Market Information The Progressive Corporation’s Common Shares, $1.00 par value, are traded on the New York Stock Exchange (NYSE) under the symbol PGR. Holders We had 1,557 shareholders of record on January 31, 2026. Securities Authorized for Issuance Under Equity Compensation Plans See Part III, Item 12 of this Form 10-K, “Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters,” for information about securities authorized for issuance under our equity compensation plans. Performance Graph See the Performance Graph section in our Annual Report. Recent Sales of Unregistered Securities None. Purchase of Equity Securities ISSUER PURCHASES OF EQUITY SECURITIES 2025 Calendar Month Total Number of Shares Purchased Average Price Paid per Share Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs Maximum Number of Shares That May Yet Be Purc"
+  },
+  {
+   "id": "PGR-5",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm",
+   "text": "ver any shares. While the Vanguard Group Inc.’s quarterly Form 13F filings may reflect different share holdings, we are relying on the Schedule 13G, as amended, in accordance with SEC guidance. 2 Derived from the most recent Schedule 13G/A which was filed on July 17, 2025, as of June 30, 2025, BlackRock, Inc. and its subsidiaries have sole investment power over 42,063,844 shares, sole voting power over 37,413,895 shares, and does not have shared investment or voting power over any shares. 31 SECURITY OWNERSHIP OF DIRECTORS AND EXECUTIVE OFFICERS The following information summarizes the beneficial ownership of Progressive’s common shares as of January 31, 2026, by each current director of Progressive, each nominee for director, and each of the named executive officers (as identified in “Executive Compensation – Summary Compensation Table”) and all current directors and executive officers as a group. In addition, to provide a more complete picture of the economic interests of certain individuals in Progressive common shares, the final two columns include certain units held in our benefit and equity incentive plans that are equal in value to a share of our stock, but do not technically qualify as “beneficially owned” under the applicable regulations, also as of January 31, 2026. Name Total Co"
+  },
+  {
+   "id": "PGR-6",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm",
+   "text": "ecutive Officers and Directors as a Group 1,869,942 * 241,556 2,111,498 * Less than 1% of Progressive’s outstanding common shares. 32 1 Total Common Shares Beneficially Owned is comprised of the following: Name Common Shares Subject to Restricted Stock Awards a Beneficially Owned Common Share Equivalent Units b Other Common Shares Beneficially Owned c Karen B. Bailo — 10,997 35,865 Philip Bleser 739 21,325 — Stuart B. Burgdoerfer 802 — 11,426 Patrick K. Callahan — 11,819 19,434 Pamela J. Craig 781 5,538 7,749 Charles A. Davis 1,248 10,768 248,974 Roger N. Farah 1,301 110,212 — Lawton W. Fitt 1,986 108,820 9,389 Susan Patricia Griffith — 24,603 574,808 Devin C. Johnson 1,231 — 8,370 Jeffrey D. Kelly 707 — 27,741 John Murphy — 10,532 62,381 John P. Sauerland — 12,831 305,987 Barbara R. Snyder 1,143 12,641 9,554 Kahina Van Dyke 1,196 — 11,233 All 23 Current Executive Officers and Directors as a Group 11,134 363,506 1,495,302 a Represents common shares held pursuant to unvested restricted stock awards issued under the Amended and Restated 2017 Directors Equity Incentive Plan. The beneficial owner has sole voting power and no investment power with respect to these shares during the restriction period. b These units have been credited to the individual’s accounts under certain of our compensatio"
+  },
+  {
+   "id": "PGR-7",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": " business outside of the regulated programs discussed above. Personal Property Programs The property reinsurance program is designed to reduce overall risk while, to the extent of coverage purchased, protecting capital from the costs associated with catastrophic events. The program provides coverage for our personal property business and certain BOP product coverages. The program includes contracts that cover multi-year periods. The occurrence excess of loss (XOL) program, which is in place from June 1, 2025 through May 31, 2026, supports the goal of maintaining adequate capital and is comprised of privately placed reinsurance, reinsurance placed through catastrophe bond transactions, and coverage obtained through the FHCF. The 2025 occurrence XOL program has"
+  },
+  {
+   "id": "PGR-8",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": " coverage from May 31, 2026 through December 31, 2026 (i.e., the 2026 hurricane season) for $175 million of coverage. During 2025, our personal property business also had an aggregate XOL program structure with multiple layers providing coverage for catastrophe losses and ALAE. No losses were ceded under this aggregate XOL agreement during 2025. In January 2026, we entered into a new aggregate XOL for claims occurring in 2026. The layers for the aggregate XOL programs active in 2025 and 2026 provided coverage, as follows: Policy for claims occurring in the year ended December 31, 2026 2025 Coverage terms (millions) First Layer Second Layer Third Layer Modeled Loss First Layer Second Layer Retention $550 $550 $750 $665 $450 to $475 $525 Per occurrence event"
+  },
+  {
+   "id": "PGR-9",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "00 third-party repair shops. During 2025, we used independent claim adjusters opportunistically in our vehicle businesses to help support our claim employees in managing our claims inventory and to timely respond to our customers impacted by certain catastrophe events. While not intended to be a significant part of our claims handling model for these businesses, we may use independent adjusters from time to time. For our Personal Lines property business, we manage claims through a network of independent claim field adjusters and employee claim representatives who manage the overall claims process. As of December 31, 2025, we had about 1,270 claims employees to handle our personal property claims. Competitive Factors The insurance markets in which we operate "
+  },
+  {
+   "id": "PGR-10",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "vals on a timely basis • our ability to predict policyholder retention accurately • unanticipated court decisions, legislation, or regulatory actions • the frequency, severity, duration, and geographic location and scope of severe weather, and other catastrophe events, which may become more severe and less predictable as a result of climate change • our ability to understand the impact of ongoing changes in our claim settlement practices • changing vehicle usage and driving patterns, which may be influenced by epidemics, pandemics, other widespread health risks, or changes in oil and gas prices, among other factors, changes in residential occupancy patterns, and the ridesharing economy • advancements in vehicle or home technology or safety features, such as "
+  },
+  {
+   "id": "PGR-11",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "nes, and other severe weather events. See Item 1A, Risk Factors – II. Insurance Risks below for more information. To help mitigate these risks, we enter into reinsurance arrangements. See the “Reinsurance” section below for further discussion of our reinsurance programs. Our Personal Lines products are sold through both the agency and direct channels. Agency Distribution Channel • The agency personal vehicle business includes business written by our network of more tha n 40,000 independent insurance agencies located throughout the U.S., as well as brokerages in New York and California. T hese independent insurance agents and brokers have the ability to place business with Progressive for specified insurance coverages within prescribed underwriting guidelines,"
+  },
+  {
+   "id": "PGR-12",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "surance arrangements related to portions of our personal property and Commercial Lines businesses; we generally do not reinsure our personal vehicles business outside of the regulated programs discussed above. Personal Property Programs The property reinsurance program is designed to reduce overall risk while, to the extent of coverage purchased, protecting capital from the costs associated with catastrophic events. The program provides coverage for our personal property business and certain BOP product coverages. The program includes contracts that cover multi-year periods. The occurrence excess of loss (XOL) program, which is in place from June 1, 2025 through May 31, 2026, supports the goal of maintaining adequate capital and is comprised of privately plac"
+  },
+  {
+   "id": "PGR-13",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "ollows: • $2.2 billion for a first event in Florida; and • $2.0 billion for a first event outside of Florida. The coverage limits above were reduced by $70 million effective January 8, 2026, with the maturation of a catastrophe bond. Portions of the reinsurance coverage limits above only provide coverage for hurricanes and tropical storms as designated by the U.S. National Weather Service (named storms). - 5 - Coverage for a second event (and, potentially, for subsequent covered events) under the occurrence XOL program would depend on several factors, including the location and the extent of covered losses of the earlier events in the contract period. Portions of our program include reinstatement limits providing coverage for subsequent events. Some portions o"
+  },
+  {
+   "id": "PGR-14",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "er the occurrence XOL program that is currently in place or the occurrence XOL that was in place from June 1, 2024 through May 31, 2025. Included in the occurrence XOL, from June 1, 2025 through December 31, 2025, we had shared limit coverage in our reinsurance program that provided $175 million of coverage for named storms. This reinsurance arrangement can, depending on the circumstances, provide additional coverage for a significant covered event, or provide coverage for aggregate losses under our occurrence XOL retention. During 2025, no losses were ceded under this “hurricane season” coverage. We have renewed this coverage from May 31, 2026 through December 31, 2026 (i.e., the 2026 hurricane season) for $175 million of coverage. During 2025, our personal "
+  },
+  {
+   "id": "PGR-15",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-03-02",
+   "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm",
+   "text": "cquire or develop new products or enter new areas of business may not be successful and may create enhanced risks. We are making business decisions and undertaking certain investments and strategies in connection with our long-standing goal of growing as fast as we can, at or below a companywide 96 combined ratio on a calendar-year basis, as long as we can provide high-quality customer service. Our focus on achieving our underwriting profitability goal takes precedence over growth. Additionally, we have acquired and are developing, and may develop or acquire in the future, new insurance products, including those that insure risks that we have not previously insured, contain new coverages, or change coverage terms, as well as new non-insurance products and services. These new products and services may no"
+  }
+ ]
+}

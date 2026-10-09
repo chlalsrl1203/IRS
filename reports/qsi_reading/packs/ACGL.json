@@ -1,0 +1,182 @@
+{
+ "ticker": "ACGL",
+ "as_of": "2026-10-07",
+ "lens_set": "insurance",
+ "foreign_private_issuer": false,
+ "based_on_record": "596ab42ebe43a0f61922edd0c0b35d33e5d170ddbf2cdceff42c7e405fb09e96",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.insider_group_ownership",
+  "cat.cat_exposure",
+  "uw.combined_ratio_pct"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "미질문",
+  "gov.insider_group_ownership": "'as a group' 지분 행을 찾지 못했다",
+  "cat.cat_exposure": "대재해 노출·재보험 방어 원문을 조회하지 않았다",
+  "uw.combined_ratio_pct": "합산비율은 XBRL 태그가 없고 10-K MD&A 원문을 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "ACGL-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": "0 n n Founder and President of Point Rider Group Strong background in strategic and financial insights BOARD COMPOSITION AND REFRESHMENT Our Board represents a broad range of rich expertise, experience and perspectives, as well as a mix of tenure of service on the Board. We undertake a robust Board succession planning and refreshment process, which is informed by feedback from our Board evaluation and designed to refresh and enhance the skills on our Board. For example, since 2021 our comprehensive refreshment process has led to the following Board composition changes of non-employee directors: 8 | 2026 PROXY STATEMENT 2021 2024 2025 Francis Ebong Daniel J. Houston Alexander Moczarski n Extensive operational experience and technology management skills n Extensive experience in the financial services"
+  },
+  {
+   "id": "ACGL-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": " experience, the Board does not have a formal diversity policy. Board Refreshment. The Board is committed to effective refreshment that is reflective of the Company’s evolving strategy, and to having a diversity of perspectives, skills and experiences on our Board that align with our strategy. With succession planning and bench strength in mind, the Board first identifies desired skill sets to enhance the effectiveness of our Board and from time to time may retain a search firm to help identify and evaluate possible candidates through a comprehensive recruitment process. In its ongoing efforts to refresh Board composition, our Nominating and Governance Committee evaluates a broad pool of director candidates based upon the desired skills, qualities and attributes. For example, following this work, th"
+  },
+  {
+   "id": "ACGL-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": "e business and operations of the Company: Audit Committee Oversees management of financial reporting, compliance and operational risks. Compensation and Human Capital Committee Oversees the management of risks relating to the Company’s compensation plans and arrangements, retention of personnel and succession planning with regard to members of our Executive Leadership Team. Executive Committee Oversees and directs the business and affairs of the Company in intervals between meetings of the Board. Finance, Investment and Risk Committee Oversees risks relating to the financial, investment and other risk affairs of the Company. Nominating and Governance Committee Oversees risks associated with the composition of the Board, corporate governance, sustainability matters and succession planning relating to"
+  },
+  {
+   "id": "ACGL-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": "the compensation of our senior executives and has overall responsibility for approving, evaluating and making recommendations to the Board regarding our officer compensation plans, policies and programs. As part of its responsibilities, the Compensation and Human Capital Committee also oversees the succession planning process for our Executive Leadership Team (except for the CEO). In addition, the Compensation and Human Capital Committee reviews periodic updates from management on initiatives and progress in the area of human capital management. All Compensation and Human Capital Committee members are considered independent under the listing standards of Nasdaq governing the qualifications of the members of compensation committees. In addition, no executive officer of the Company served on any board"
+  },
+  {
+   "id": "ACGL-5",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": " of our business, we may enter into transactions, including insurance and reinsurance transactions and brokerage or other arrangements for the production of business, with entities in which companies or funds affiliated with beneficial owners of more than 5% of our issued and outstanding voting shares or directors (or their immediate family members) of Arch Capital may have an ownership or other interest. 2026 PROXY STATEMENT | 31 SHARE OWNERSHIP Security Ownership of Certain Beneficial Owners and Management Common Shares The following table sets forth information available to us as of March 9, 2026 with respect to the ownership of our voting shares by (1) each person known to us to be the beneficial owner of more than 5% of any class of our issued and outstanding voting shares, (2) each director and NEO of Arch Capital and (3) all of the directors and executive officers of Arch Capital as a group. Except as otherwise indicated, each person named below has sole investment and voting power with respect to the securities shown. Common Shares Name and Address of Beneficial Owner (A) Number of Common Shares Beneficially Owned (1) (B) Rule 13d-3 Percentage Ownership (1) The Vanguard Group (2) 100 Vanguard Blvd. Malvern, Pennsylvania 19355 40,754,642 11.4% BlackRock, Inc. (3) 50 Hudson Yards New"
+  },
+  {
+   "id": "ACGL-6",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": "2) In addition to securities beneficially owned by the directors and the NEOs reflected in the table, includes an aggregate of 360,373 common shares which are beneficially owned on March 9, 2026 by other executive officers, including restricted shares which were subject to vesting based solely on continued employment, common shares issuable upon exercise of stock options that were exercisable on that date or within 60 days thereof and performance restricted shares which were subject to forfeiture and reacquisition in the event that performance criteria were not met. 34 | 2026 PROXY STATEMENT Preferred Shares The following table sets forth information available to us as of March 9, 2026, with respect to the ownership of our non- cumulative preferred shares by (1) each director and NEO of Arch Capital who owns such shares and (2) all of the directors and executive officers of Arch Capital as a group. Except as otherwise indicated, each person named below has sole investment and voting power with respect to the securities shown. Our preferred shares are not convertible into common shares, and the holders of the preferred shares do not have any voting rights (except under certain limited circumstances). For a description of the terms of our preferred shares, please see note 21, “Shareholders’ "
+  },
+  {
+   "id": "ACGL-7",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": " Represents compensation reported in the Summary Compensation Table (“SCT”) for our CEO, Mr. Papadopoulo , who was appointed effective October 13, 2024. Refer to “Compensation—Executive Compensation Tables—Summary Compensation Table.” (2) The dollar amounts reported represent the amount of CAP, computed as required by Item 402(v) of Regulation S-K. The computations do not reflect the actual amount of compensation earned by or paid to Mr. Papadopoulo and Mr. Grandisson during the applicable year. Refer to the “ PEO SCT Total to CAP Reconciliation ” table below. The 2024 CAP was restated downward due to a calculation correction incorporating the 2024 Special Dividend. (3) Represents compensation reported in the SCT for our former CEO, Mr. Grandisson , who retired from the Company effective October 15, 2024. (4) The dollar amounts reported represent the average compensation of Non-PEO NEOs as a group as reported in the “Total” column of the SCT. For 2021 to 2023, this includes Messrs. Morin, Papadopoulo, Rajeh and Gansberg. For 2024 to 2025, this includes Messrs. Morin, Rajeh and Gansberg and Ms. Todd. Refer to “Compensation—Executive Compensation Tables—Summary Compensation Table.” (5) The dollar amounts reported represent the average amount of CAP to the Company’s Non-PEO NEOs as a group, c"
+  },
+  {
+   "id": "ACGL-8",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm",
+   "text": "ysis of the Information Presented in the Pay versus Performance Table As described in more detail in the section “Compensation —Compensation Discussion and Analysis,” the Company’s executive compensation program reflects a variable pay- for-performance philosophy. While the Company utilizes several performance measures to align executive compensation with Company performance, all of those Company measures are not presented in the Pay Versus Performance table. In accordance with Item 402(v) of Regulation S-K, the Company is providing the following descriptions of the relationships between information presented in the Pay Versus Performance table. CAP and Company Cumulative TSR As demonstrated by the following graph, the amount of CAP to Mr. Papadopoulo in 2025, Messrs. Papadopoulo and Grandisson in 2024 and Mr. Grandisson in prior years and the average amount of CAP to the Company’s NEOs as a group (excluding the CEO(s)) for the applicable years, strongly aligns with the Company’s cumulative TSR over the five years presented in the table. The alignment is because a significant portion of the CAP to Mr. Papadopoulo in 2025, Messrs. Papadopoulo and Grandisson in 2024 and Mr. Grandisson in prior years and to the other NEOs is comprised of equity awards. As described in more detail in the secti"
+  },
+  {
+   "id": "ACGL-9",
+   "for": "gov.insider_group_ownership",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "posal of personal information. For the purposes of PIPA, “personal information” means any information about an identified or identifiable individual (meaning a natural person), and “use” or “using” are very broadly defined and means carrying out any operation on personal information. Personal information used by an insurer in Bermuda would include (without limitation) information relating to policyholders, employees, consultants, service providers, officers, employees, consultants or any other third party of the insurer. Our Bermuda entities are subject to PIPA requirements. ARCH CAPITAL 20 2025 FORM 10-K Corporate Income Tax Act 2023 (the “Bermuda CIT Act”). On December 27, 2023, Bermuda enacted the Bermuda CIT Act. Entities subject to tax under the Bermuda CIT Act are the Bermuda constituent entities of multi-national groups. A multi-national group is defined under the Bermuda CIT Act as a group with entities in more than one jurisdiction with consolidated revenues of at least €750 million for two of the four previous fiscal years. If Bermuda constituent entities of a multi-national group are subject to tax under the Bermuda CIT Act, such tax is charged at a rate of 15% of the net income of such constituent entities (as determined in accordance with the Bermuda CIT Act, including after a"
+  },
+  {
+   "id": "ACGL-10",
+   "for": "gov.insider_group_ownership",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": " legislative gaps to the AISI. Climate Change Reporting. A mandatory climate-related risk disclosure regime has been introduced with the regime to be phased in for 3 groups of large Australian companies required to report under Chapter 2M of the Corporations Act 2001 (Cth) and the relevant commencement date of the reporting requirements determined by the Australian company (and its controlled entities) meeting certain criteria for each group of companies under the regime based on consolidated revenue, consolidated gross assets and number of employees. The regime is regulated by ASIC and includes new sustainability reporting requirements to be phased in over 3 years for the first annual reporting period beginning on or after January 1, 2025 for Group 1 companies, July 1, 2026 for Group 2 companies and July 1, 2027 for Group 3 companies. Our Australia mortgage operations will be reporting as a Group 2 company. Gibraltar General . The insurance industry is regulated by the Gibraltar Financial Services Commission (“GFSC”). We have two carriers, Alwyn Insurance Company Limited (“Alwyn Insurance”) and Southern Rock Insurance Company Limited (“SRICL”), which are authorized and regulated by the GFSC. SRICL is no longer authorized to enter into new contracts of insurance or renew existing contracts"
+  },
+  {
+   "id": "ACGL-11",
+   "for": "gov.insider_group_ownership",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "reflected in “Other investments” or “Short-term investments” in the Company's consolidated balance sheet depending on their terms. These agreements are recorded at their contracted resale amount plus accrued interest, other than those that are accounted for at fair value. In reverse repurchase transactions, the Company obtains an interest in the purchased assets that are received as collateral. The Company invests in limited partner interests and shares of limited liability companies. Such amounts are included in investments accounted for using the equity method and other investments. These investments can often have characteristics of a variable interest entity (“VIE”). A VIE refers to entities that have characteristics such as (i) insufficient equity at risk to allow the entity to finance its activities without additional financial support or (ii) instances where the equity investors, as a group, do not have the characteristic of a controlling financial interest. If the Company is determined to be the primary beneficiary, it is required to consolidate the VIE. The primary beneficiary is defined as the variable interest holder that is determined to have the controlling financial interest as a result of having both (i) the power to direct the activities of a VIE that most significantly imp"
+  },
+  {
+   "id": "ACGL-12",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "bilities related to business written by our insurance, reinsurance and mortgage subsidiaries; • the adequacy of the Company’s loss reserves; • severity and/or frequency of losses; • greater frequency or severity of unpredictable natural and man-made catastrophic events; • claims for natural catastrophic events or severe economic events in our insurance, reinsurance and mortgage businesses could cause large losses and substantial volatility in our results of operations; • availability to us of reinsurance to manage our net exposure and the cost of such reinsurance; • the failure of reinsurers, managing general agents, third party administrators or others to meet their obligations to us; • the timing of loss payments being faster or the receipt of reinsurance r"
+  },
+  {
+   "id": "ACGL-13",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "ims paying ability and underwriting philosophy of each reinsurer. See note 8, “Reinsurance,” to our consolidated financial statements in Item 8. For catastrophe-exposed insurance business, our insurance group seeks to limit the amount of exposure to catastrophic losses it assumes through a combination of managing aggregate limits, underwriting guidelines and reinsurance. For a discussion of our risk management policies, see “Management’s Discussion and Analysis of Financial Condition and Results of Operations—Summary of Critical Accounting Estimates—Ceded Reinsurance” and “Risk Factors—Risks Relating to Our Industry, Business and Operations—The failure of any of the loss limitation methods we employ could have a material adverse effect on our financial cond"
+  },
+  {
+   "id": "ACGL-14",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "Reinsurance,” to our consolidated financial statements in Item 8. For catastrophe exposed reinsurance business, our reinsurance group seeks to limit the amount of exposure it assumes from any one reinsured and the amount of the aggregate exposure to catastrophe losses from a single event in any one geographic zone. For a discussion of our risk management policies, see “Management’s Discussion and Analysis of Financial Condition and Results of Operations—Summary of Critical Accounting Estimates—Ceded Reinsurance” and “Risk Factors—Risks Relating to Our Industry, Business and Operations—The failure of any of the loss limitation methods we employ could have a material adverse effect on our financial condition or results of operations.” Claims Management. Clai"
+  },
+  {
+   "id": "ACGL-15",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "zing reinsurance, we have developed proprietary risk models that simulate the maximum loss resulting from severe economic events impacting the housing market. See “Management’s Discussion and Analysis of Financial Condition and Results of Operations—Catastrophic Events and Severe Economic Events.” Claims Management . With respect to our direct mortgage insurance business, the claims process generally begins with notification by the insured or servicer to us of a default on an insured loan. The insured is generally required to notify us of a default after the borrower misses two consecutive monthly payments. Borrowers default for a variety of reasons, including a reduction of income, unemployment, divorce, illness, inability to manage credit, rising interest r"
+  },
+  {
+   "id": "ACGL-16",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": " methods we employ could have a material adverse effect on our financial condition or results of operations.” Our mortgage group has ceded a portion of its premium through quota share and aggregate excess of loss reinsurance agreements which provide reinsurance coverage for delinquencies on portfolios of in-force policies issued between certain periods. See note 8, “Reinsurance,” to our consolidated financial statements in Item 8 for further details. Reinsurance arrangements do not relieve our mortgage group from its primary obligations to insured parties. Reinsurance recoverables are recorded as assets, predicated on the reinsurers’ ability to meet their obligations under the reinsurance agreements. If the reinsurers are unable to satisfy their obligations un"
+  },
+  {
+   "id": "ACGL-17",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "surance and reinsurance run-off market. Arch Re Bermuda and certain Arch co-investors invested $100 million and acquired approximately 25% of Premia as well as warrants to purchase additional common equity. Arch Re Bermuda is providing a quota share reinsurance treaty on certain business written by Premia, and subsidiaries of Arch Capital are providing certain administrative and support services to Premia, in each case pursuant to separate multi-year agreements. Arch has appointed two directors to serve on the seven person board of directors of Premia. In 2021, the Company completed the share purchase agreement with Natixis to purchase 29.5% of the common equity of Coface. This is a long-term, strategic investment in Coface, and fits with Arch’s efforts to d"
+  },
+  {
+   "id": "ACGL-18",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "policy risks. Our exposure in connection with a catastrophic event is determined by market capacity, pricing conditions, regulatory capital requirements, our perceptions of underlying risk and surplus preservation. There can be no assurance that our reinsurance coverage and other measures taken will be sufficient to mitigate losses resulting from one or more catastrophic events. As a result, the occurrence of one or more catastrophic events and the ARCH CAPITAL 49 2025 FORM 10-K continuation and worsening of recent trends could have an adverse effect on our results of operations and financial condition. Our insurance, reinsurance and mortgage subsidiaries are subject to supervision and regulation. Changes to existing regulation and supervisory standards, or fa"
+  },
+  {
+   "id": "ACGL-19",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "respective of the clarity and inclusiveness of policy language, there can be no assurance that a court or arbitration panel will not limit enforceability of policy language or otherwise issue a ruling adverse to us. Accordingly, while we believe our reinsurance programs, together with the coverage provided under the Terrorism Risk Insurance Act of 2002, as amended (“TRIA”) are sufficient to reasonably limit our net losses relating to potential future terrorist attacks, we can offer no assurance that our available capital will be adequate to cover losses when they materialize. To the extent that an act of terrorism is certified by the Secretary of the Treasury and aggregate industry insured losses resulting from the act of terrorism exceeds the prescribed prog"
+  },
+  {
+   "id": "ACGL-20",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "xpenses (4,764) (4,070) Acquisition expenses (1,496) (1,217) Other operating expenses (1,172) (995) Underwriting income $ 375 $ 345 8.7 Underwriting Ratios % Point Change Loss ratio 61.3 % 61.4 % (0.1) Acquisition expense ratio 19.3 % 18.4 % 0.9 Other operating expense ratio (2) 14.6 % 15.0 % (0.4) Combined ratio 95.2 % 94.8 % 0.4 (1) ‘Other underwriting income’ includes revenue earned from underwriting related activities covered under existing service contracts. (2) The ‘Other operating expense ratio’ for the 2025 period includes ‘Other underwriting income.’ See ‘Comments on Non-GAAP Financial Measures’ for further details. ARCH CAPITAL 75 2025 FORM 10-K The insurance segment consists of our insurance underwriting units which offer specialty product lines on a worldwide basis, as described in note 4, “"
+  },
+  {
+   "id": "ACGL-21",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "expenses (4,610) (4,327) Acquisition expenses (1,644) (1,432) Other operating expenses (469) (270) Underwriting income $ 1,558 $ 1,222 27.5 Underwriting Ratios % Point Change Loss ratio 56.8 % 59.7 % (2.9) Acquisition expense ratio 20.2 % 19.8 % 0.4 Other operating expense ratio (2) 3.8 % 3.7 % 0.1 Combined ratio 80.8 % 83.2 % (2.4) (1) ‘Other underwriting income’ includes revenue earned from underwriting related activities covered under existing service contracts. (2) The ‘Other operating expense ratio’ for the 2025 period includes ‘Other underwriting income.’ See ‘Comments on Non-GAAP Financial Measures’ for further details. The reinsurance segment consists of our reinsurance underwriting units which offer specialty product lines on a worldwide basis, as described in note 4, “Segment Information,” to "
+  },
+  {
+   "id": "ACGL-22",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "oss adjustment expenses 4 55 Acquisition expenses (13) (2) Other operating expenses (185) (207) Underwriting income $ 1,000 $ 1,094 (8.6) Underwriting Ratios % Point Change Loss ratio (0.4) % (4.4) % 4.0 Acquisition expense ratio 1.1 % 0.2 % 0.9 Other operating expense ratio (2) 13.9 % 16.8 % (2.9) Combined ratio 14.6 % 12.6 % 2.0 (1) ‘Other underwriting income’ includes revenue earned from underwriting related activities covered under existing service contracts. (2) The ‘Other operating expense ratio’ for the 2025 period includes ‘Other underwriting income.’ See ‘Comments on Non-GAAP Financial Measures’ for further details. Net Premiums Written . The following table sets forth our mortgage segment’s net premiums written by underwriting unit: Year Ended December 31, 2025 2024 U.S. primary mortgage insur"
+  },
+  {
+   "id": "ACGL-23",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm",
+   "text": "come (loss) available to Arch 4,399 Preferred dividends ( 40 ) Net income (loss) available to Arch common shareholders $ 4,359 Underwriting Ratios Loss ratio 61.3 % 56.8 % - 0.4 % 54.9 % Acquisition expense ratio 19.3 % 20.2 % 1.1 % 18.5 % Other operating expense ratio (5) 14.6 % 3.8 % 13.9 % 9.4 % Combined ratio 95.2 % 80.8 % 14.6 % 82.8 % Goodwill and intangible assets $ 793 $ 98 $ 331 $ 1,222 Total investable assets $ 47,369 Total assets 79,241 Total liabilities 55,035 (1) Certain assumed and ceded amounts related to intersegment transactions are included in individual segment results. Accordingly, the sum of such transactions for each segment does not agree to the total due to eliminations. (2) ‘Other underwriting income’ includes revenue earned from underwriting-related activities covered under exi"
+  }
+ ]
+}

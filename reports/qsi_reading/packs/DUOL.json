@@ -1,0 +1,220 @@
+{
+ "ticker": "DUOL",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "c8253dc8d1d07e6c61ccc520a761cc5209f5c4b465f8a43e92fac09eaf46f19a",
+ "targets": [
+  "gov.chair_separated",
+  "gov.key_person_no_succession",
+  "gov.insider_group_ownership",
+  "cap.buyback_effect",
+  "cap.debt_funded_buyback",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.buyback_effect": "최근 연차 자사주 매입 지출을 companyfacts에서 확인하지 못했다",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "DUOL-1",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "the Internet are posted at www.virtualshareholdermeeting.com/DUOL2026. On behalf of the Board of Directors and management, it is my pleasure to express our appreciation for your continued support. Luis von Ahn Co-Founder, Chief Executive Officer and Chairman of the Board Notice of Annual Meeting of Stockholders To be held on June 3, 2026 Notice is hereby given that the Annual Meeting of Stockholders of Duolingo, Inc., a Delaware corporation, will be held on Wednesday, June 3, 2026, at 11:00 a.m., Eastern Time. The Annual Meeting will be a completely virtual meeting, which will be conducted via live webcast. You will be able to attend the Annual Meeting online and submit your questions during the meeting by visiting www.virtualshareholdermeeting.com/DUOL2026 and"
+  },
+  {
+   "id": "DUOL-2",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "ic copy of our proxy materials, by completing, signing, dating and returning your proxy card or by Internet or telephone voting as described on your proxy card. By Order of the Board of Directors, Luis von Ahn Co-Founder, Chief Executive Officer and Chairman of the Board Important Notice Regarding the Availability of Proxy Materials for the Annual Stockholder Meeting: Our Proxy Statement and our Annual Report are available free of charge at www.proxyvote.com. DUOLINGO 2026 PROXY STATEMENT i TABLE OF CONTENTS Page GENERAL INFORMATION ABOUT THE ANNUAL MEETING AND VOTING 2 When and where will the Annual Meeting be held? 2 What are the purposes of the Annual Meeting? 2 Are there any matters to be voted on at the Annual Meeting that are not included in this Proxy St"
+  },
+  {
+   "id": "DUOL-3",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "nvestment matters. Class III Directors Whose Term Expire at the 2027 Annual Meeting of Stockholders Class III Directors Age Director Since Current Position with Duolingo Luis von Ahn, Ph.D. 47 2011 President, Chief Executive Officer, Co-Founder, and Chairman of the Board Sara Clemens 54 2021 Director Severin Hacker, Ph.D. 41 2011 Chief Technology Officer, Co-Founder and Director Luis von Ahn, Ph.D. has served as a member of our Board of Directors and as our Chief Executive Officer since August 2011, when he co-founded Duolingo with Dr. Hacker. Prior to founding Duolingo, he served as the Chief Executive Officer of reCAPTCHA, Inc., a fraud detection technology company, from 2007 until its acquisition by Google in 2009. Dr. von Ahn has served on the board of dire"
+  },
+  {
+   "id": "DUOL-4",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": " as of April 17, 2026. There are no family relationships between or among any of our executive officers or directors. Executive Officer Age Position In Current Position Since Luis von Ahn, Ph.D. 47 President, Chief Executive Officer, Co-Founder, and Chairman of the Board 2011 Severin Hacker, Ph.D. 41 Chief Technology Officer and Director 2011 Gillian Munson 55 Chief Financial Officer 2026 Natalie Glance, Ph.D. 58 Chief Engineering Officer 2022 Robert Meese 49 Chief Business Officer 2021 Stephen Chen 52 General Counsel 2020 See pages 12 and 13 of this Proxy Statement for the biographies of Luis von Ahn and Severin Hacker. Gillian Munson has served as our Chief Financial Officer since February 2026. She previously served on our Board of Directors from September 2"
+  },
+  {
+   "id": "DUOL-5",
+   "for": "gov.chair_separated",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "ast 50% of the voting power of our capital stock; • the requirement that a special meeting of stockholders may be called only by an officer of our company pursuant to a resolution adopted by a majority of our board of directors then in office or the chairperson of our board; and • advance notice procedures that stockholders must comply with in order to nominate candidates to our board of directors or to propose matters to be acted upon at a stockholders’ meeting, which may discourage or deter a potential acquiror from conducting a solicitation of proxies to elect the acquiror’s own slate of directors or otherwise attempting to obtain control of us. These provisions,"
+  },
+  {
+   "id": "DUOL-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "y media coverage of us to be negative, the price of our Class A common stock may be materially adversely affected. Any of the foregoing could materially adversely affect our business, financial condition and results of operations. Our future success depends on the continuing efforts of our key employees and our ability to attract and retain highly skilled personnel and senior management. We currently depend on the continued services and performance of our key personnel, including Luis von Ahn and Severin Hacker. If one or more of our executive officers or key employees were unable or unwilling to continue their employment with us, we might not be able to replace them easily, in a timely manner, or at all. The risk that competitors or other companies may poach our talent increases as we continue to build our brands and become more well-known. Our key personnel have been, and may continue to be, subject to poaching efforts by our competitors and other internet and high-growth "
+  },
+  {
+   "id": "DUOL-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "he loss of key personnel, including members of management as well as key engineering, product development, design and marketing personnel, could disrupt our operations and have a material adverse effect on our business. The success of our brand also depends on the commitment of our key personnel to our mission. To the extent that any of our key personnel act in a way that does not align with our mission, our reputation could be materially adversely affected. See “Our employees, consultants and third party providers could engage in misconduct that materially adversely affects us.” Our future success will depend upon our continued ability to identify, hire, develop, motivate, and retain highly skilled individuals across the globe, with the continued contributions of our senior management being especially critical to our success. Competition for well-qualified, highly skilled employees "
+  },
+  {
+   "id": "DUOL-8",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "cipal occupation • Term limits • Director responsibilities • Director compensation • Conflicts of interest • Board access to senior management • Board access to advisors • Board and committee self-evaluations • Board meetings • Meeting attendance by directors and non-directors • Meeting materials • Succession planning Board Leadership Structure Our Corporate Governance Guidelines provide our Board of Directors with flexibility to combine or separate the positions of Chairperson of the Board and Chief Executive Officer in accordance with its determination that utilizing one or the other structure would be in the best interests of the Company and its stockholders. If the Chairperson of the Board is a member of management or does not otherwise qualify as independent, our Corporate Governance Guidelines"
+  },
+  {
+   "id": "DUOL-9",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "ersons with sufficiently diverse and independent backgrounds; • recommending to our Board the persons to be nominated for election as directors and to each committee of the Board; DUOLINGO 2026 PROXY STATEMENT 26 • reviewing the structure and composition of the committees of the Board; • overseeing succession planning for key executives; • developing and recommending to our Board corporate governance guidelines, and reviewing and recommending to our Board proposed changes to our corporate governance guidelines from time to time; and • overseeing the annual evaluations of our Board, its committees and management. Our Nominating and Corporate Governance Committee currently consists of Amy Bohutinsky, Bing Gordon and Jim Shelton, with Ms. Bohutinsky serving as chair. Our Board has determined that each "
+  },
+  {
+   "id": "DUOL-10",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "vely manage remote work arrangements, our efficiency and ability to meet our forecasts and our ability to maintain our culture, employee morale, productivity and retention could suffer, and our business, financial condition and results of operations could be materially adversely affected. Effective succession planning is also important to our future success. If we fail to plan for the effective transfer of senior management knowledge and smooth transitions involving senior management, our ability to execute short and long term strategic, financial and operating goals, as well as our business, financial condition, and results of operations generally, could be materially adversely affected. 27 Table of Contents If the recognition by schools, governments, and other institutions of the value of technology-ba"
+  },
+  {
+   "id": "DUOL-11",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "the value of all unvested awards as of the end of the prior fiscal year. The valuation methodologies use to estimate fair values did not materially differ from those disclosed at the time of grant. The amounts deducted or added in calculating the equity award adjustments are as follows: DUOLINGO 2026 PROXY STATEMENT 50 Year Name of PEO Fair Value at End of Year of Outstanding and Unvested Equity Granted in a Current Year ($) Change in Fair Value of Outstanding and Unvested Equity Granted in Prior Year ($) Fair Value of Equity Vesting During the Year that was Granted in Current Year ($) Year over Year Change in Fair Value of Equity Awards Granted in Prior Years that Vested in the Year ($) Total Equity Award Adjustments ($) 2025 Luis von Ahn — ( 62,749,990 ) — 17,739,304 ( 45,010,686 ) (4) The dollar amounts reported in column (d) represent the average of the amounts reported for our NEOs as a group (excluding our PEO) in the “Total” column of the Summary Compensation Table in each applicable year. The names of each of the NEOs (excluding PEO) included for purposes of calculating the average amounts in each applicable year are as follows: (i) for 2022, 2023, 2024, and 2025, Matthew Skaruppa, Natalie Glance, Robert Meese and Stephen Chen; (ii) for 2021, Severin Hacker and Matthew Skaruppa. (5"
+  },
+  {
+   "id": "DUOL-12",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "shares of common stock as determined by our Board of Directors; provided, however, no more than 8,390,521 shares of our common stock may be issued under the ESPP. As of the date of this Proxy Statement, we have not commenced offering periods under the 2021 ESPP. In February 2025, the Board waived the automatic annual increases of shares available for issuance under the ESPP for 2026 and all applicable future periods. DUOLINGO 2026 PROXY STATEMENT 58 Stock Ownership Security Ownership of Certain Beneficial Owners and Management The following table sets forth information relating to the beneficial ownership of our common stock as of April 7, 2026 by: • each person, or group of affiliated persons, known by us to beneficially own more than 5% of our voting securities; • each of our current directors; • each of our named executive officers for 2025; and • all directors and executive officers as a group. The number of shares beneficially owned by each stockholder is determined under rules issued by the SEC. Under these rules, a person is deemed to be a “beneficial” owner of a security if that person has or shares voting power or investment power, which includes the power to dispose of or to direct the disposition of such security. Except as indicated in the footnotes below, we believe, based on "
+  },
+  {
+   "id": "DUOL-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm",
+   "text": "s Beneficially Owned Percentage Beneficially Owned Number of Shares Beneficially Owned Percentage Beneficially Owned Percentage of Voting Power Holders of More than 5%: Baillie Gifford & Co (2) 4,900,679 12.1% — —% 2.9% BlackRock, Inc. (3) 3,453,770 8.5% — —% 2.1% FMR LLC (4) 2,761,322 6.8% — —% 1.6% Capital World Investors (5) 2,343,620 5.8% — —% 1.4% DUOLINGO 2026 PROXY STATEMENT 59 Named Executive Officers and Directors: Luis von Ahn (6) — * 3,698,995 55.2% 40.0% Severin Hacker (7) 72 * 3,058,858 47.7% 35.8% Matthew Skaruppa (8) 9,845 * — —% * Natalie Glance (9) 157,966 * — —% * Robert Meese (10) 141,929 * — —% * Stephen Chen (11) 19,827 * — —% * Amy Bohutinsky (12) 30,148 * — —% * Sara Clemens 3,575 * — —% * Bing Gordon (13) 126,035 * — —% * John Lilly 6,525 * — —% * Bonnie Ross 322 * — —% * Mario Schlosser 581 * — —% * Jim Shelton 9,253 * — —% * All executive officers and directors as a group (13 persons) (14) 519,763 1.3% 6,757,853 99.9% 76.0% ___________________ * Represents less than 1%. (1) Each share of Class A common stock is entitled to one vote, and each share of Class B common stock is entitled to 20 votes and is convertible at any time into one share of Class A common stock. The figures in this table with respect to beneficial ownership of Class A common stock do not include"
+  },
+  {
+   "id": "DUOL-14",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "utstanding as of December 31, 2025. The estimated dilutive effect is calculated as the number of shares expected to be issued upon vesting or exercise, adjusted for the strike price proceeds that are received by the Company and assumed to be used to repurchase shares of Duolingo common stock. 111 Table of Contents 14. SUBSEQUENT EVENTS Duolingo’s Board of Directors has authorized a share repurchase program of up to $ 400 million. The program reflects the Company’s commitment to capital allocation, including returning capital to stockholders and managing dilution, while maintaining flexibility to invest in long-term growth. Repurchases under the program may be made from time to time in the open market, through privately negotiated transactions or otherwise. "
+  },
+  {
+   "id": "DUOL-15",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "dilutive effect is calculated as the number of shares expected to be issued upon vesting or exercise, adjusted for the strike price proceeds that are received by the Company and assumed to be used to repurchase shares of Duolingo common stock. 111 Table of Contents 14. SUBSEQUENT EVENTS Duolingo’s Board of Directors has authorized a share repurchase program of up to $ 400 million. The program reflects the Company’s commitment to capital allocation, including returning capital to stockholders and managing dilution, while maintaining flexibility to invest in long-term growth. Repurchases under the program may be made from time to time in the open market, through privately negotiated transactions or otherwise. "
+  },
+  {
+   "id": "DUOL-16",
+   "for": "acc.voluntary_bad_news",
+   "doc": "8-K filed 2025-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828025049514/q3fy25duolingo9-30x25share.htm",
+   "text": "om outside the US. So, every 1% change in the dollar versus our currency basket equates to about a $1 million impact on bookings for the remainder of the year. Gross margin We expect FY 2025 gross margin to decline about 80 basis points year-over-year. This is a 20 basis points improvement from the guidance we provided last quarter, which reflects lower-than-expected AI costs. Adjusted EBITDA Based on strong year-to-date top-line growth and continued cost discipline, we’re raising our full-year Adjusted EBITDA margin guidance to 29.0% at the midpoint, representing an expansion of about 330 basis points over last year and about 25 basis points above the midpoint of our previous guidance. This implies a full-year incremental margin of 37.9%, demon"
+  },
+  {
+   "id": "DUOL-17",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26xpres.htm",
+   "text": "rs a fun, engaging, and effective learning experience while remaining committed to its mission to develop the best education in the world and make it universally available. Forward-Looking Statements This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. We intend such forward-looking statements to be covered by the safe harbor provisions for forward-looking statements contained in Section 27A of the Securities Act of 1933, as amended (the “Securities Act”) and Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”). All statements other than statements of historical facts contained in this press release, including without limitation, statements regarding our business model and strategy and the expected benefits therefrom are forward-looking statements. Without limiting the generality of the foregoing, you can identify forward-looking statements because they contain words such as “may,” “will,"
+  },
+  {
+   "id": "DUOL-18",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26share.htm",
+   "text": "financial plan for the year remains on track: we are reaffirming our topline guidance and raising our Adjusted EBITDA outlook, reflecting stronger-than-expected profitability. User growth in Q2 We believe our user growth acceleration is due to three factors: product changes, marketing impact, and a one-time event to revive lost streaks. Since two of these are permanent, we expect DAU year-over-year growth throughout the rest of the year to remain above the 20% we had previously guided to. Product As a reminder, we continually improve the Duolingo app using a process we call The Green Machine . We test hundreds of changes to the product, measure the results, and double down on what works. Most of these changes are small on their own, but together they compound into meaningful product improvements. We apply the Green Machine mainly to optimize three things: user retention, learning outcomes, and monetization. Our strategy this year has been to prioritize the first two, while working on ways to m"
+  },
+  {
+   "id": "DUOL-19",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26share.htm",
+   "text": "n our mix and our performance creative output globally. We're still early, but we're already seeing this show up in top-of-funnel growth, and we're increasingly confident that performance marketing can become a meaningful and efficient driver of long-term growth. Streak Revival Streak Revival was a one-time event in June that allowed eligible learners to restore their longest-ever streak by opting in and completing three lessons. The response was incredible: 15.4 million learners revived their streaks , including nearly 8 million users who had no active streak when the event began. This became one of our most successful campaigns. It shows how much the streak matters to our learners, as well as how large the opportunity is to bring former learners back to Duolingo. DUOLINGO Q2 2026 5 Looking ahead Last quarter, we said it was too soon to know whether our strategy of teaching better and prioritizing user growth was working. While we’re still early in executing this strategy, these results reinf"
+  },
+  {
+   "id": "DUOL-20",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26share.htm",
+   "text": "ividing the difference between the constant-currency amount and the prior-year comparable period amount by the prior-year comparable period amount. DUOLINGO Q2 2026 13 Forward-looking statements This Shareholder Letter contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. We intend such forward-looking statements to be covered by the safe harbor provisions for forward-looking statements contained in Section 27A of the Securities Act of 1933, as amended (the “Securities Act”) and Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”). All statements other than statements of historical facts contained in this letter, including without limitation, statements regarding our business model and strategic priorities for growth, product enhancement, and monetization (including the expected benefits and efficacy of new products and product innovation for user growth and retention), projected bookings and daily active us"
+  },
+  {
+   "id": "DUOL-21",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026053299/q2fy26duolingo6-30x26share.htm",
+   "text": "ting activities: Net income $79,916 $76,618 Adjustments to reconcile net income to net cash provided by operating activities: Deferred income taxes — 21,293 Depreciation and amortization 7,030 8,438 Stock-based compensation expense 65,610 72,857 Accretion on marketable securities, net (1,017) (642) Impairment of capitalized software — 578 Changes in assets and liabilities: 44,767 59,889 Net cash provided by operating activities 196,306 239,031 Net cash used for investing activities (12,821) (8,469) Net cash provided by (used for) financing activities 6,955 (86,064) Net increase in cash, cash equivalents and restricted cash 190,440 144,498 Cash, cash equivalents and restricted cash - Beginning of period 788,526 1,039,124 Cash, cash equivalents and restricted cash - End of period $978,966 $1,183,622 DUOLINGO Q2 2026 17 appendix Revenue The table below provides revenues by product type: (in thousands) Q2 2025 Q2 2026 Change % Change Subscription $210,678 $258,035 $47,357 22 % Advertising 20,603 21,"
+  },
+  {
+   "id": "DUOL-22",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026029790/q1fy26duolingo3-31x26share.htm",
+   "text": "ng the difference between the constant currency amount and the prior year comparable period amount by the prior year comparable period amount. DUOLINGO Q1 / FY 2026 14 Forward-Looking Statements This Shareholder Letter contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. We intend such forward-looking statements to be covered by the safe harbor provisions for forward-looking statements contained in Section 27A of the Securities Act of 1933, as amended (the “Securities Act”) and Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”). All statements other than statements of historical facts contained in this letter, including without limitation, statements regarding our business model and strategic priorities for growth, product enhancement, and monetization, including the expected benefits and efficacy of new products and product innovation for user growth and retention, our share repurchase program, our use o"
+  },
+  {
+   "id": "DUOL-23",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "d conditions or pricing changes to our detriment, if we violate, or if a platform provider believes that we have violated, the terms and conditions of its platform, or if any of these platforms loses market share or falls out of favor or is unavailable for a prolonged period of time, our business will suffer. • We rely on third-party hosting and cloud computing providers, like Amazon Web Services (“AWS”) and Google Cloud, to operate certain aspects of our business. A significant portion of our product traffic is hosted by a limited number of vendors, and any failure, disruption or significant interruption"
+  },
+  {
+   "id": "DUOL-24",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "th and brand buzz, and supplemented by selective and targeted paid user acquisition. Our millions of learners complete nearly 2 billion exercises every day, creating what we believe to be the world's largest learning dataset. This data powers the high volume A/B testing and AI-driven systems that we use to continually improve how well we teach. According to an internal study, learners who completed five sections of Duolingo achieved proficiency comparable to five university semesters of language education. Independent studies corroborate this finding: Duolingo learners’ speaking skills were found to "
+  },
+  {
+   "id": "DUOL-25",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "eve rapid advances in Artificial Intelligence (“AI”) will fundamentally change the way people learn. As a technology company and global education platform, we believe we are well positioned to play a leading role in this innovation. AI plays an increasingly important role in how we provide effective learning experiences and generate content at scale. For example, Roleplay, Explain My Answer, and Video Call are all AI-powered learning features. While the use of AI enhances the learning experience and supports product innovation at scale, it also requires increased investment in computing infrastructur"
+  },
+  {
+   "id": "DUOL-26",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "olingo at first because it’s fun, and then over time also because they find that it works. Our expert-designed courses help learners build robust skills, and our AI technologies power personalization leading to superior learning outcomes. For more information, please visit https://www.duolingo.com/efficacy. • It's free. Every course on Duolingo is free to access. Learners can spend as much time learning as they want and complete any and every course without paying. This lowers barriers to start learning and to keep learning. 8 Table of Contents In a world where people are increasingly engaged in imme"
+  },
+  {
+   "id": "DUOL-27",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012494/duol-20251231.htm",
+   "text": "rable movements in foreign exchange rates and may introduce additional risks if we are unable to structure effective hedges with such instruments. Our estimates of market opportunity and forecasts of market growth may prove to be inaccurate, and even if the market in which we compete achieves the forecasted growth, our business could fail to grow at similar rates, if at all. Our market opportunity estimates and expectations about market growth that we use to manage our business and allocate resources are subject to significant uncertainty and are based on assumptions and estimates that may not prove to be "
+  }
+ ]
+}

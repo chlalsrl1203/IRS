@@ -1,0 +1,383 @@
+{
+ "ticker": "NXT",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "62b8284aed9c79ed6cb9e3ffc31c470f6d458ab71df8b12e7ff8f5fc7dc17390",
+ "targets": [
+  "gov.chair_separated",
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.restated_down_3y",
+  "acc.unfaithful_disclosure",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: NXT.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "5년 인수 지출이 영업현금흐름의 15% — 가격 규율은 사람이 판단해야 한다",
+  "cap.debt_funded_buyback": "해당 연도 매입 지출이 없다",
+  "acc.restated_down_3y": "재작성 관련 공시가 있다(NXT.RESTATE) — 하향 여부·원인은 본문을 사람이 읽어야 한다",
+  "acc.unfaithful_disclosure": "3년 재작성 여부가 확인되지 않아 '제재·정정 없음'을 단정하지 않는다",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "NXT-1",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "23 2026 Chair Howard Wenger 66 2024 2026 Directors with Continuing Terms Julie Blunden 60 2024 2027 Steven Mandel 38 2023 2027 Willy Shih 75 2023 2027 Chair Jeffrey Guldner 61 2024 2028 Monica Karuturi 47 2025 2028 Brandi Thomas 49 2023 2028 Chair * Chairperson of the Board A brief biography of each nominee and each other director is also set forth below, which includes information, as of the date of this Proxy Statement, regarding specific and particular experience, qualifications, attributes or skills of each director, including the nominees, that led the Nom Gov Committee and the Board to believe that the director should serve on the Board. Director Nominees Mark Menezes was appointed to our Board on June 17, 2025. Mr. Menezes has served as the President and CE"
+  },
+  {
+   "id": "NXT-2",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "WAS SELECTED TO SERVE AS A DIRECTOR ON OUR BOARD DUE TO HIS ROLE AS CHIEF EXECUTIVE OFFICER AND HIS EXTENSIVE MANAGEMENT EXPERIENCE IN THE SOLAR ENERGY INDUSTRY. Daniel Shugar Board Member & CEO Age: 63 Director Since: 2023 William Watkins served as Chairman of the Board of Imergy Power Systems, Inc. (“Imergy”), a leading innovator in cost-effective energy storage products, from January 2015 to August 2016 and as Chief Executive Officer from September 2013 to August 2016. Prior to his time at Imergy, Mr. Watkins was the Chairman of the Board of Bridgelux, Inc. from February 2013 to December 2013 and Chief Executive Officer from January 2010 to February 2013. Mr. Watkins also served as the Chief Executive Officer of Seagate Technology Holdings PLC from 2004 to J"
+  },
+  {
+   "id": "NXT-3",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "D ON HIS EXTENSIVE EXPERIENCE IN PRODUCT DEVELOPMENT AND MANUFACTURING. Willy Shih Board Member Age: 75 Director Since: 2023 Directors with Terms Continuing Until 2028 Jeffrey Guldner most recently served as President and Chief Executive Officer and Chairman of the Board of Directors of Pinnacle West Capital Corporation, a utility holding company, and Chief Executive Officer and Chairman of the Board of Directors of its primary subsidiary, Arizona Public Service Company (“APS”), an electric utility company, from November 2019 to March 2025. He also served as President of APS from August 2021 to May 2022. Mr. Guldner joined APS in 2004 and held several leadership positions at APS prior to his current roles. Prior to joining APS, Mr. Guldner was a partner in the "
+  },
+  {
+   "id": "NXT-4",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "company, from March 2012 to May 2018, continuing as an Executive Vice President until July 2018, and as Vice President of Corporate Finance and Corporate Development from June 2010 to March 2012. Mr. Boynton served as the Chief Executive Officer and Chairman of the Board of 8point3 Energy Partners, an owner / operator of solar energy generation projects, from March 2015 to June 2018 (acquired by Capital Dynamics in July 2018). Mr. Boynton served as the Chief Financial Officer of ServiceSource International, Inc., a global outsourced, customer success and growth solutions company, from April 2008 to May 2010. From March 2004 to April 2008, Mr. Boynton served as the Chief Financial Officer at Intelliden, a software company (acquired by IBM in January 2010). Prior"
+  },
+  {
+   "id": "NXT-5",
+   "for": "gov.chair_separated",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "26 Daniel Shugar /s/ Charles Boynton Chief Financial Officer (Principal Financial Officer) May 19, 2026 Charles Boynton /s/ David P. Bennett Chief Accounting Officer (Principal Accounting Officer) May 19, 2026 David P. Bennett /s/ William D. Watkins Chairman of the Board May 19, 2026 William D. Watkins /s/ Julie Blunden Director May 19, 2026 Julie Blunden /s/ Jeffrey B. Guldner Director May 19, 2026 Jeffrey B. Guldner /s/ Steven Mandel Director May 19, 2026 Steven Mandel /s/ Monica Karuturi Director May 19, 2026 Monica Karuturi /s/ Mark Menezes Director May 19, 2026 Mark Menezes /s/ Willy Shih Director May 19, 2026 Willy Shih /s/ Brandi Thomas Director May 19, 20"
+  },
+  {
+   "id": "NXT-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "h Code. The C&P Committee manages risk by reviewing and assessing risks arising from the Company’s employee compensation policies and practices and whether any such risks are reasonably likely to have a material adverse effect on the company; working with the Chief Executive Officer to plan for the succession of the Chief Executive Officer and other senior executive officers, including developing plans for interim or emergency succession; and overseeing the Company’s human capital management strategy. It is the responsibility of the committee chairs to report findings regarding material risk exposures to the Board as quickly as possible. Our Chief Executive Officer, Chief Financial Officer and Chief Legal and Compliance Officer & Secretary coordinate between the Board and management with regard to t"
+  },
+  {
+   "id": "NXT-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "rs, as well as any employment, severance, consulting, change in control, termination or separation agreements between the Company and our other officers; • administering our equity compensation plans; • overseeing our overall compensation policies and practices; • reviewing the Company’s management succession planning and developing plans for interim or emergency succession for executive officers; and • reviewing and approving the compensation committee report that the SEC requires in our annual proxy statement. Our C&P Committee operates under a written charter that satisfies the applicable rules of the SEC and the listing standards of the Nasdaq. The C&P Committee met four times in fiscal year 2026. The C&P Committee charter can be found in the Governance section of the Investors section of our we"
+  },
+  {
+   "id": "NXT-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "sk Factors 17 Item 1B. Unresolved Staff Comments 48 Item 1C. Cybersecurity 48 Item 2. Properties 47 Item 3. Legal Proceedings 47 Item 4. Mine Safety Disclosures 47 PART II Item 5 Market for Registrant ’ s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 47 Item 6. [Reserved] 48 Item 7. Management ’ s Discussion and Analysis of Financial Condition and Results of Operations 48 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 62 Item 8. Financial Statements and Supplementary Data 64 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 107 Item 9A. Controls and Procedures 107 Item 9B. Other Information 109 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 109 PART III Item 10. Directors, Executive Officers and Corporate Governance 110 Item 11. Executive Compensation 110 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 110 Item 13. Certain Relationships and Related Transactions, and Director Independence 110 Item 14. Principal Accountant Fees and Services 110 PART IV Item 15. Exhibits and Financial Statement Schedules 111 Item 16. Form 10-K Summary 111 Exhibit Index 111 Signatures 113 iii PART I FORWARD-LOOKING STATEMENTS Special note regarding forward-looking statements Certain statements included in this Annual Report on Form 10-K are “forward-looking statements” within the meaning of Section 21E of the Securities Exchange Act of 1934, as amended (the “Exchange Act”) and Section 27A of the Securities Act of 1933, as amended (th"
+  },
+  {
+   "id": "NXT-9",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": " accounting pronouncements; future regulatory approvals and the timing thereof; outstanding claims, legal proceedings, tax audits and assessments and other contingent liabilities; future tax rates, tax credits and other tax provisions; future foreign currency exchange rates and fluctuations in those rates; general economic and capital markets conditions; the anticipated timing of any of the foregoing; assumptions underlying any of the foregoing; and any other statements that address events or developments that we intend or believe will or may occur in the future. Terminology such as “will,” “may,” “should,” “could,” “would,” “believe,” “anticipate,” “intend,” “plan,” “expect,” “estimate,” “project,” “target,” “possible,” “potential,” “forecast” and “positioned” and similar references to future periods are intended to identify forward-looking statements, although not all forward-looking statements are accompanied by such words. Forward-looking statements are based on assumptions and assessments made by our management in light of their experience and perceptions of historical trends, current conditions, expected future developments and other factors they believe to be appropriate, and speak only to our expectations as of the date of this Annual Report on Form 10-K. Forward-looking statements involve known and unknown risks, uncertainties and other factors that may cause our actual results, performance or other events to be materially different from any future results, performance or other events expressed or implied by the forward-looking statements. Given these uncertainties, you should not "
+  },
+  {
+   "id": "NXT-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "e us to claims related to intellectual property, privacy, data protection, or other rights. Ongoing litigation and regulatory scrutiny in this area may require us to modify our use of AI technologies or limit certain applications. The legal and regulatory landscape governing AI is rapidly evolving and uncertain. New or changing laws and regulations, including the European Union’s Artificial Intelligence Act and similar frameworks in other jurisdictions, may impose additional requirements, restrict certain uses of AI, or increase compliance costs. We may be required to modify our products, services, or internal practices to comply with these requirements, and we may not be able to do so in a timely or cost-effective manner. We also face competitive risks if other companies develop or deploy AI technologies more effectively or more rapidly than we do, which could reduce demand for our products and services. The development, deployment, and operation of AI systems may require significant investment in technology, infrastructure, and personnel, and may increase our costs. As the use of AI continues to expand, it may introduce new or unanticipated ethical, technical, operational, legal, regulatory, and reputational risks. If we are unable to effectively manage these risks, it could adversely affect our business, financial condition, and results of operations. Electric utility industry policies and regulations may present technical, regulatory and economic barriers to the purchase and use of solar energy systems that could significantly reduce demand for our products or harm our ability to compete. Feder"
+  },
+  {
+   "id": "NXT-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "ent’s attention might be diverted from other business concerns. We are subject to risks relating to litigation and regulatory investigations and proceedings, which may have a material adverse effect on our business. From time to time, we are involved in various claims, suits, investigations and legal proceedings. Such legal claims or regulatory matters could involve matters relating to commercial disputes, government regulatory and compliance, intellectual property, antitrust, tax, employment or shareholder issues, workplace safety, product liability claims and other issues on a global basis. If we receive an adverse judgment in any such matter, we could be required to pay substantial damages and cease certain practices or activities. Regardless of the merits of the claims, litigation and other proceedings may be both time-consuming and disruptive to our business. The defense and ultimate outcome of any lawsuits or other legal proceedings may result in higher operating expenses and a decrease in operating margin, which could have a material adverse effect on our business, financial condition or results of operations. Any existing or future lawsuits could be time-consuming, result in significant expense and divert the attention and resources of our management and other key employees, as well as harm our reputation, business, financial condition or results of operations. Risks Related to Our Indebtedness and Financing Our indebtedness could adversely affect our financial flexibility, financial condition and our competitive position. We have entered into the New Credit Agreement (as defined in Note 9 "
+  },
+  {
+   "id": "NXT-12",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": " Mr. Menezes, Mr. Shih, Ms. Thomas was 3,692 shares. As of March 31, 2026, the number of non-employee director unvested RSUs held by Mr. Watkins was 4,652 shares. The unvested RSUs will vest in full on the business day immediately preceding the Annual Meeting (August 17, 2026). Nextpower Inc. 71 2026 Proxy Statement TABLE OF CONTENTS Security Ownership of Certain Beneficial Owners and Management The following table sets forth certain information known to us regarding the beneficial ownership of our Class A common stock as of June 5, 2026 by: • each person or group who is known by us to beneficially own 5% or more of our outstanding shares of our Class A common stock (including any securities convertible or exchangeable within 60 days into Class A common stock, as applicable); • each of our current NEOs and directors individually; and • all of our current executive officers and directors as a group. We have determined beneficial ownership in accordance with the rules of the SEC. Under such rules, beneficial ownership includes any shares over which the person or entity has sole or shared voting power or investment power as well as any shares that the person or entity has the right to acquire within 60 days of June 5, 2026, through the exercise or vesting of any option, warrant or other right"
+  },
+  {
+   "id": "NXT-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": "r with respect to all shares of Class A common stock that he, she or it beneficially owns, subject to applicable community property laws. As of June 5, 2026, there were no holders of our Class B common stock. Class A common stock beneficially owned (on a fully exchanged and converted basis) Name and address of beneficial owner Number of Shares Beneficially Owned (#) Percentage of Shares Beneficially Owned (%) BlackRock, Inc. (1) 20,403,744 13.48 FMR LLC (2) 20,240,838 13.37 Directors and Named Executive Officers Daniel Shugar (3) 627,532 * Howard Wenger (4) 272,496 * Bruce Ledesma (5) 160,049 * Nicholas (Marco) Miller (6) 76,903 * Charles Boynton 56,440 * Willy Shih (7) 46,264 * Brandi Thomas (7) 8,895 * William Watkins (8) 7,125 * Julie Blunden (7) 6,012 * Jeffrey Guldner (7) 4,169 * Monica Karuturi (7) 419 * Mark Menezes (7) 419 * Steven Mandel — — All directors and executive officers as a group (13 persons) (9) 1,266,723 * * Indicates beneficial ownership of less than 1% of the outstanding shares of our Class A common stock. Nextpower Inc. 72 2026 Proxy Statement TABLE OF CONTENTS SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT (1) Based on information reported by BlackRock, Inc. on Schedule 13G/A filed with the SEC on April 25, 2025. Of the shares of Class A common stock"
+  },
+  {
+   "id": "NXT-14",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm",
+   "text": " underlying stock options held by Mr. Ledesma that are exercisable within 60 days of June 5, 2026; and (ii) 20,326 shares of Class A common stock underlying RSUs held by Mr. Ledesma that are releasable within 60 days of June 5, 2026. (6) Includes (i) 40,939 shares of Class A common stock underlying stock options held by Mr. Miller that are exercisable within 60 days of June 5, 2026; and (ii) 15,244 shares of Class A common stock underlying RSUs held by Mr. Miller that are releasable within 60 days of June 5, 2026. (7) Does not include 3,692 shares underlying RSUs that vest on the business day immediately preceding the date of the Annual Meeting. (8) Does not include 4,652 shares underlying RSUs that vest on the business day immediately preceding the date of the Annual Meeting. (9) Includes (i) 330,923 shares of Class A common stock underlying stock options held by directors and officers as a group that are exercisable within 60 days of June 5, 2026; and (ii) 123,223 shares of Class A common stock underlying RSUs held by directors and officers as a group that are releasable within 60 days of June 5, 2026. Delinquent Section 16(a) Reports Section 16 of the Exchange Act of 1934 requires Nextpower’s directors, executive officers and any persons who own more than 10% of Nextpower’s Class A comm"
+  },
+  {
+   "id": "NXT-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "on, we acquired 100% of the ownership interest in Fracsun Inc., a market leader in solar panel soiling measurement and monitoring solutions. The aggregate cash consideration of the foregoing business acquisitions was approximately $116.8 million, net of cash acquired. Their aggregate total purchase price of $149.4 million includes $2.7 million of deferred consideration expected to be paid within a 12-month period, and $29.9 million of contingent earnout in aggregate (with a maximum possible consideration of $58.5 million). For further details on the acquisitions refer to Note 14 in the notes to the consolidated financial statements included elsewhere in this Annual Report on Form 10-K. On May 12, 2026, we announced we have entered into"
+  },
+  {
+   "id": "NXT-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "l year 2026 compared to fiscal year 2025 primarily due to the increase in GW delivered noted above, along with higher cost associated with the increase in headcount as a result of our recent business acquisitions also noted above, coupled with the impact from a $110.7 million increase in tariffs which increased to $130.4 million in fiscal year 2026 from $19.7 million in fiscal year 2025 , offset by the impact from the 45X Credit (refer to Note 13 in the notes to the consolidated financial statements included elsewhere in this Annual Report on Form 10-K). As noted in the overview, we recognize a reduction in cost of sales for the 45X Credit earned on components manufactured in the U.S. During fiscal year 2026 , we recognized approximately $379.9 million of reduction "
+  },
+  {
+   "id": "NXT-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "ganization in line with the growth in the global market, and the expansion of our supporting functions also required to support our current and planned growth, coupled with a $5.0 million increase in acquisition-related costs incurred in conjunction with our new business acquisitions, offset by a $6.5 million decrease in stock-based compensation expense incurred in conjunction with our 2022 equity incentive plan. 57 Research and development Research and developm ent expenses increased $41.5 million, or 52%, to $120.9 million for fiscal year 2026 from approximately $79.4 million during fiscal year 2025 driven by our continued investment in innovation, increasing our engineering team and supporting our new expanded product portfolio. Interest expense Interest expense decreased $10.5 million , or 80% ,"
+  },
+  {
+   "id": "NXT-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "ore deposits on higher bookings during the fiscal year. Net cash used in investing activities was approximately $186.9 million and directly attributable to the $117.2 million payment for all business acquisitions completed in fiscal year 2026 net of cash acquired, coupled with $49.3 million paid for the purchase of property and equipment, and $12.2 million of cash contributed to the Nextpower Arabia joint venture. Net cash used in financing activities was $47.2 million primarily resulting from a $27.4 million payment to Flex, TPG and the TPG Affiliates pursuant to the Tax Receivable Agreement, a $14.3 million payment of acquisition deferred purchase price, a $3.0 million tax distribution to our former non-controlling interest holders pursuant to the LLC Agreement and a $2.0 millio"
+  },
+  {
+   "id": "NXT-19",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": ", and the reported amounts of revenues and expenses during the reporting period. Actual results could differ materially from those estimates. Estimates are used in accounting for, among other things: impairment of goodwill, impairment of long-lived assets, allowance for credit losses, provision for excess or obsolete inventories, valuation of deferred tax assets, warranty reserves, contingencies, operation related accruals, fair values of awards granted under stock-based compensation plans and fair values of assets obtained and liabilities assumed in business combinations (including contingent earnout liabilities). We periodically review estimates and assumptions, and the effects of our revisions are reflected in"
+  },
+  {
+   "id": "NXT-20",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": ", and the reported amounts of revenues and expenses during the reporting period. Actual results could differ materially from those estimates. Estimates are used in accounting for, among other things: impairment of goodwill, impairment of long-lived assets, allowance for credit losses, provision for excess or obsolete inventories, valuation of deferred tax assets, warranty reserves, contingencies, operation-related accruals, fair values of awards granted under stock-based compensation plans and fair values of assets obtained and liabilities assumed in business combinations. Due to geopolitical conflicts (including the Russian invasion of Ukraine and the U.S.-Iran war), there has been and will continue to be uncert"
+  },
+  {
+   "id": "NXT-21",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "identifiable intangible assets, primarily customer relationships and acquired developed technology, are amortized over their estimated useful lives. Nextpower reviews identified intangible assets and goodwill for impairment whenever events or changes in circumstances indicate that the related carrying amounts may not be recoverable. Nextpower also tests goodwill at 79 NEXTPOWER Notes to the consolidated financial statements least annually for impairment at the beginning of its fourth fiscal quarter. Nextpower's Goodwill is not deductible for tax purposes. Refer to Note 5 for additional information about goodwill and other intangible assets. Other current assets Other current assets include short-term deposits and "
+  },
+  {
+   "id": "NXT-22",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": " of March 31, 2026 2025 (In thousands) Beginning balance $ 371,018 $ 265,153 Additions 117,932 103,565 Purchase accounting adjustments — 2,300 Ending balance $ 488,950 $ 371,018 The Company evaluates goodwill for impairment at the reporting unit level annually, and in certain circumstances, such as when there is a change in reporting units or whenever there are indications that goodwill might be impaired. The Company performed its annual goodwill impairment assessment on January 1 of each fiscal year , and assessed qualitative factors to determine whether it is more likely or not that the fair value of its reporting units is less than its carrying amount. The qualitative assessment required management to make vari"
+  },
+  {
+   "id": "NXT-23",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "s Annual Report on Form 10-K) . The obligations of the borrower and the LLC, under the New Credit Agreement and related loan documents are jointly and severally guaranteed by us and the LLC. To the extent that we incur indebtedness by drawing on our revolving credit facility, our level of indebtedness would increase the risk that we may be unable to generate cash sufficient to pay amounts due in respect of our indebtedness. Our indebtedness could have other important consequences to you and significant effects on our business. For example, it could: • increase our vulnerability to adverse changes in general economic, industry and competitive conditions; • re"
+  },
+  {
+   "id": "NXT-24",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "am and supporting our new expanded product portfolio. Interest expense Interest expense decreased $10.5 million , or 80% , to $2.6 million for fiscal year 2026 from $13.1 million during fiscal year 2025, primarily driven by the full repayment of the Term Loan under the Prior Credit Agreement in the fourth quarter of fiscal year 2025. Other income, net Other income, net was $19.2 million for fiscal year 2026, which primarily included $31.2 million interest income, partially offset by $7.1 million of unfavorable foreign currency exchange losses coupled with $5.8 million of debt extinguishment costs and transaction costs associated with our Prior Credit "
+  },
+  {
+   "id": "NXT-25",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "have been to fund our operations and invest in research and development and our cash flow generation and credit facilities have continued to provide adequate liquidity for our business. We enhanced our capital structure with a $1.0 billion unsecured revolving credit facility, expanding our total liquidity to approximately $2.0 billion as of March 31, 2026. Credit Facilities On September 8, 2025, we and the LLC, as the borrower, entered into a credit agreement (the “New Credit Agreement”), which replaced the prior credit agreement originally entered into by us on February 13, 2023 (as amended from time to time, the “Prior Credit Agreement”). The New Credit Ag"
+  },
+  {
+   "id": "NXT-26",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "e”). The initial maximum aggregate principal amount available under the New Revolving Credit Facility is $1.0 billion. Subject to the satisfaction of certain conditions, the LLC may request an increase in the aggregate amount available under the New Revolving Credit Facility of up to $250.0 million at any time. The New Revolving Credit Facility provides for sub-facilities for the issuances of letters of credit in an aggregate amount not to exceed $500.0 million and swingline loans not to exceed $150.0 million in the aggregate. The LLC may borrow, repay and re-borrow amounts under the New Credit Agreement from time to time until the Maturity Date. Voluntary p"
+  },
+  {
+   "id": "NXT-27",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "ansactions. All purchases were made in accordance with Rule 10b-18 under the Securities Exchange Act of 1934. 47 (2) On January 27, 2026, we announced that our Board of Directors authorized the share repurchase program which allows for the repurchase of up to $500.0 million of our outstanding shares of Class A common stock over a term of three years. For additional information, see Note 7 in our consolidated financial statements included elsewhere in this Annual Report on Form 10-K. ITEM 6. [RESERVED] ITEM 7. MANAGEMENT’S DISCUSSION AND ANALYSIS OF FINANCIAL CONDITION AND RESULTS OF OPERATIONS Unless the context requires otherwise, references in this Annual Report on Form 10-K to “Nextpower”, the “Company”, “we”, “us” and “our” shall mean, prior to the IPO"
+  },
+  {
+   "id": "NXT-28",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "e off-balance sheet arrangements do not adversely impact our liquidity or capital resources. 61 Share repurchase program On January 27, 2026, we announced that our board of directors approved a share repurchase program to repurchase up to an aggregate of $500.0 million of our outstanding shares of Class A common stock. As of March 31, 2026, approximately $499.6 million remained available for future share repurchases under the program. The share repurchase program has a term of three years and may be modified, suspended, or terminated at any time. The number of shares to be repurchased and the timing of repurchases will be determined by us at our discretion and will depend on a number of factors, including, but not limited to, stock price, trading volu"
+  },
+  {
+   "id": "NXT-29",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": " ) ( 6,017 ) — TRA payment ( 27,427 ) ( 15,520 ) — Distribution to former non-controlling interest holders ( 3,010 ) ( 6,112 ) ( 66,881 ) Payment of acquisition deferred purchase price ( 14,335 ) — — Repurchases of common stock ( 395 ) — — Net proceeds from issuance of Class A shares — — 552,009 Purchase of LLC common units from Yuma, Inc. — — ( 552,009 ) Net transfers to former parent — — ( 8,335 ) Other financing activities — — ( 3,051 ) Net cash used in financing activities ( 47,160 ) ( 177,649 ) ( 78,267 ) Net increase in cash and cash equivalents 328,873 292,049 344,046 Cash and cash equivalents beginning of period 766,103 474,054 130,008 Cash and cash equivalents end of period $ 1,094,976 $ 766,103 $ 474,054 The accompanying notes are an integral part of these consoli"
+  },
+  {
+   "id": "NXT-30",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "nsfer to the Company of 30,590,000 the LLC common units, a corresponding number of shares of the Company’s Class B common stock held by Yuma were canceled. • In connection with the IPO, the Company's repurchased all 100 shares of common stock previously issued to Yuma for an immaterial amount. 85 NEXTPOWER Notes to the consolidated financial statements On February 8, 2023, the Company amended and restated its certificate of incorporation to, among other things, authorize 900,000,000 shares of $ 0.0001 par value Class A common stock, 500,000,000 shares of $ 0.0001 par value Class B common stock, and 50,000,000 shares of par value $ 0.0001 preferred stock. On February 13, 2023, the members of the LLC entered into the T"
+  },
+  {
+   "id": "NXT-31",
+   "for": "acc.restated_down_3y",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "e Act, indicate by check mark whether the financial statements of the registrant included in the filing reflect the correction of an error to previously issued financial statements. ☐ Indicate by check mark whether any of those error corrections are restatements that required a recovery analysis of incentive-based compensation received by any of the registrant’s executive officers during the relevant recovery period pursuant to § 240.10D-1(b). ☐ Indicate by check mark whether the registrant is a shell company (as defined in Rule 12b-2 of the Exchange Act). Yes ☐ No ☒ The aggregate market value of the Class A common stock held by non-affiliates of the registrant, based on the closing price of a share of the registrant’s Class A common stock on September"
+  },
+  {
+   "id": "NXT-32",
+   "for": "acc.restated_down_3y",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "common stock. Provisions in our corporate charter documents and under Delaware law could make an acquisition of us more difficult and may prevent attempts by our stockholders to replace or remove our current management. Provisions in our amended and restated certificate of incorporation and our amended and restated bylaws may discourage, delay or prevent a merger, acquisition or other change in control of us that stockholders may consider favorable, including transactions in which stockholders might otherwise receive a premium for their shares. These provisions could also limit the price that investors might be willing to pay in the future for shares of our Class A common stock, thereby depressing the market price of our Class A common stock. In ad"
+  },
+  {
+   "id": "NXT-33",
+   "for": "acc.restated_down_3y",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": "ng or combining with us for a period of three years after the date of the transaction in which the person acquired in excess of 15% of our outstanding voting stock, unless the merger or combination is approved in a prescribed manner. Our amended and restated certificate of incorporation provides that the Court of Chancery of the State of Delaware is the sole and exclusive forum for substantially all disputes between us and our stockholders, which could limit our stockholders’ ability to obtain a favorable judicial forum for disputes with us or our directors, officers or employees. Our amended and restated certificate of incorporation specifies that, unless we consent in writing to the selection of an alternative forum, the Court of Chancery of the "
+  },
+  {
+   "id": "NXT-34",
+   "for": "acc.restated_down_3y",
+   "doc": "10-K filed 2026-05-19",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000017/nxt-20260331.htm",
+   "text": ". Notwithstanding the foregoing, the exclusive forum provision will not apply to any claim to enforce any liability or duty created by the Exchange Act or any other claim for which the U.S. federal courts have exclusive jurisdiction. Our amended and restated certificate of incorporation provides that the federal district courts of the United States of America will be the exclusive forum for resolving any complaint asserting a cause of action arising under the Securities Act. We believe this exclusive forum provision benefits us by providing increased consistency in the application of Delaware law by chancellors particularly experienced in resolving corporate disputes, efficient administration of cases on a more expedited schedule relative to other "
+  },
+  {
+   "id": "NXT-35",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000045/ex991_q127.htm",
+   "text": "outlook includes planned incremental costs of approximately $50 million related to the acceleration of our entry into the power conversion market. Adjusted EBITDA range of $870 million to $930 million excludes approximately $199 million for stock-based compensation, net intangible amortization, and acquisition related costs. Adjusted Diluted EPS range of $4.42 to $4.73 excludes approximately $1.05 for stock-based compensation, net intangible amortization, and acquisition related costs, net of impacts for tax. Q1 FY2027 Earnings Call July 30, 2026 2:00 p.m. PT / 5:00 p.m. ET Live webcast available on investors.nextpower.com We encourage you to review our Q1 FY27 Shareholder Letter, which, along with this press release, is available on the Nextpower Investor Relations website and includes important information for Nextpower shareholders that supplements and expands on the information in this press release. The webcast replay will be available on the Nextpower Investor Relations website following the conclu"
+  },
+  {
+   "id": "NXT-36",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000045/ex991_q127.htm",
+   "text": "p, Nextpower partners with customers worldwide to accelerate the deployment of reliable firm power needed for a rapidly electrifying world. Learn more at www.nextpower.com. Forward-Looking Statements This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including without limitation statements relating to: the trends for energy demand and future solar adoption; the demand for our products (including but not limited to trackers, foundations, eBOS, NX PowerMerge, our other products and our bundled solutions); the ability to grow our core tracker business, our bookings and backlog, including our ability to convert our backlog into revenue; our competitiveness and global market share; our expansion into energy storage solutions, data center power infrastructure and our ability to provide integrated solutions across solar, energy storage and data center applications; the expected benefits of the Prevalon, Apex/Zigor and other"
+  },
+  {
+   "id": "NXT-37",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000045/ex991_q127.htm",
+   "text": "238 Intangible amortization 1,985 1,958 1,159 Adjusted gross profit & margin $ 342,283 36.6% $ 303,865 34.5% $ 285,123 33.0% GAAP operating income & margin $ 190,907 20.4% $ 153,586 17.4% $ 186,230 21.5% Stock-based compensation expense 29,638 32,480 22,310 Intangible amortization 3,375 3,718 2,059 Acquisition related costs 4,148 6,276 1,079 Adjusted operating income & margin $ 228,068 24.4% $ 196,060 22.3% $ 211,678 24.5% GAAP net income & margin $ 165,355 17.7% $ 150,603 17.1% $ 157,183 18.2% Stock-based compensation expense 29,638 32,480 22,310 Intangible amortization 3,375 3,718 2,059 Adjustment for taxes (16,254) (32,719) (7,129) Acquisition related costs 4,148 6,276 1,079 Other — 1,385 — Adjusted net income & margin $ 186,262 19.9% $ 161,743 18.4% $ 175,502 20.3% GAAP net income & margin $ 165,355 17.7% $ 150,603 17.1% $ 157,183 18.2% Interest, net (9,159) (8,679) (5,371) Provision for income taxes 33,570 9,032 33,784 Depreciation expense 5,391 5,298 3,730 Intangible amortization 3,375 3,718 2,059 "
+  },
+  {
+   "id": "NXT-38",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000045/ex991_q127.htm",
+   "text": "fore excludes such charges when presenting non-GAAP financial measures. The Company believes that the assessment of its operations excluding these costs is relevant to its assessment of internal operations and comparisons to the performance of its competitors. Acquisition costs consist primarily of nonrecurring transaction costs, including integration and diligence activities. Adjustment for taxes relates to the tax effects of the various adjustments that we incorporate into non-GAAP measures to provide a more meaningful measure on non-GAAP net income and certain adjustments related to non-recurring settlements of tax contingencies or other non-recurring tax charges, when applicable. Other includes an immaterial amount of non-cash equity in loss for the Nextpower Arabia joint venture which is accounted for under the equity method investment accounting."
+  },
+  {
+   "id": "NXT-39",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000014/ex991_q426.htm",
+   "text": "outlook includes planned incremental costs of approximately $50 million related to the acceleration of our entry into the power conversion market. Adjusted EBITDA range of $825 million to $900 million excludes approximately $195 million for stock-based compensation, net intangible amortization, and acquisition related costs. Adjusted Diluted EPS range of $4.21 to $4.59 excludes approximately $1.02 for stock-based compensation, net intangible amortization, and acquisition related costs, net of impacts for tax. Q4 FY2026 Earnings Call May 12, 2026 2:00 p.m. PT / 5:00 p.m. ET Live webcast available on investors.nextpower.com We encourage you to review our Q4 FY26 Shareholder Letter, which, along with this press release, is available on the Nextpower Investor Relations website and includes important information for Nextpower shareholders that supplements and expands on the information in this press release. The webcast replay will be available on the Nextpower Investor Relations website following the conclus"
+  },
+  {
+   "id": "NXT-40",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000014/ex991_q426.htm",
+   "text": "ces to meet rapidly expanding global electricity demand. Nextpower partners with the world’s leading energy companies to power what’s next. Learn more at www.nextpower.com. Forward-Looking Statements This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including without limitation statements relating to the trends for energy demand and future solar adoption, the demand for our products (including our foundations, eBOS, NX PowerMerge and robotics solutions, our other products and our bundled solutions), the ability to grow our core tracker business, the benefits from our steel frame supply agreement, our bookings and backlog, including our ability to convert our backlog into revenue, our competitiveness and global market share, benefits of the proposed acquisition of power conversion assets and other recent acquisitions (including the benefits our customers may realize as a result of integrating these businesses and ass"
+  },
+  {
+   "id": "NXT-41",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000014/ex991_q426.htm",
+   "text": "2,582 Intangible amortization 1,958 1,976 880 Adjusted gross profit & margin $ 303,865 34.5% $ 294,959 32.4% $ 309,149 33.4% GAAP operating income & margin $ 153,586 17.4% $ 176,105 19.4% $ 195,307 21.1% Stock-based compensation expense 32,480 33,855 40,114 Intangible amortization 3,718 3,272 1,780 Acquisition related costs 6,276 398 643 Adjusted operating income & margin $ 196,060 22.3% $ 213,630 23.5% $ 237,844 25.7% GAAP net income & margin $ 150,603 17.1% $ 131,236 14.4% $ 157,814 17.1% Stock-based compensation expense 32,480 33,855 40,114 Intangible amortization 3,718 3,272 1,780 Adjustment for taxes (32,719) 857 (6,980) Acquisition related costs 6,276 398 643 Other 1,385 — — Adjusted net income & margin $ 161,743 18.4% $ 169,618 18.7% $ 193,371 20.9% GAAP net income & margin $ 150,603 17.1% $ 131,236 14.4% $ 157,814 17.1% Interest, net (8,679) (9,565) (6,544) Provision for income taxes 9,032 49,263 40,848 Depreciation expense 5,298 5,164 3,328 Intangible amortization 3,718 3,272 1,780 Stock-based c"
+  },
+  {
+   "id": "NXT-42",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000014/ex991_q426.htm",
+   "text": " Stock-based compensation expense 16,696 11,927 Intangible amortization 6,742 2,744 Adjusted gross profit & margin $ 1,183,533 33.3% $ 1,023,496 34.6% GAAP operating income & margin $ 697,266 19.6% $ 639,112 21.6% Stock-based compensation expense 120,298 118,880 Intangible amortization 11,967 5,523 Acquisition related costs 10,330 5,338 Adjusted operating income & margin $ 839,861 23.6% $ 768,853 26.0% GAAP net income & margin $ 585,883 16.5% $ 517,246 17.5% Stock-based compensation expense 120,298 118,880 Intangible amortization 11,967 5,523 Adjustment for taxes (42,411) (16,348) Acquisition related costs 10,330 5,338 Other 1,385 — Adjusted net income & margin $ 687,452 19.3% $ 630,639 21.3% GAAP net income & margin $ 585,883 16.5% $ 517,246 17.5% Interest, net (29,526) (9,246) Debt extinguishment cost 5,121 — Provision for income taxes 127,943 130,770 Depreciation expense 18,635 7,884 Intangible amortization 11,967 5,523 Stock-based compensation expense 120,298 118,880 Acquisition related costs 10,330 "
+  },
+  {
+   "id": "NXT-43",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000003/ex991_q326.htm",
+   "text": "on $499 to $529 million GAAP Diluted EPS $3.43 to $3.53 $3.26 to $3.46 Adjusted EBITDA $810 to $830 million $775 to $815 million Adjusted Diluted EPS $4.26 to $4.36 $4.04 to $4.25 Adjusted EBITDA range of $810 million to $830 million excludes approximately $142 million for stock-based compensation, acquisition related costs, and net intangible amortization. Adjusted Diluted EPS range of $4.26 to $4.36 excludes approximately $0.83 for stock-based compensation, acquisition related costs, and net intangible amortization, net of impacts for tax. Our outlook assumes the current U.S. policy environment remains intact, and in addition, that permitting processes and timelines will remain consistent with historical levels. We are monitoring potential regulatory actions which could impact project timing, investment decisions and our financial results. Q3 FY26 Earnings Call January 27, 2026 2:00 p.m. PT / 5:00 p.m. ET Live webcast available on investors.nextpower.com We encourage you to review our Q3 FY26 Sharehold"
+  },
+  {
+   "id": "NXT-44",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000003/ex991_q326.htm",
+   "text": "ces to meet rapidly expanding global electricity demand. Nextpower partners with the world’s leading energy companies to power what’s next. Learn more at www.nextpower.com. Forward-Looking Statements This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including without limitation statements relating to the trends for energy demand and future solar adoption, benefits of our recent acquisitions (including the benefits our customers may realize as a result of integrating these businesses into Nextpower’s), the demand for our products (including our eBOS solutions, our other products and our bundled solutions), our bookings and backlog, including our ability to convert our backlog into revenue, the anticipated benefits of our joint venture and expansion of our operations in the Middle East and North Africa markets, our competitiveness and global market share, the impacts to our business caused by the U.S. policy environme"
+  },
+  {
+   "id": "NXT-45",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000003/ex991_q326.htm",
+   "text": "3,084 Intangible amortization 1,976 1,649 880 Adjusted gross profit & margin $ 294,959 32.4% $ 299,586 33.1% $ 244,867 36.0% GAAP operating income & margin $ 176,105 19.4% $ 181,345 20.0% $ 150,236 22.1% Stock-based compensation expense 33,855 31,653 26,980 Intangible amortization 3,272 2,918 1,780 Acquisition related costs 398 2,577 1,038 Adjusted operating income & margin $ 213,630 23.5% $ 218,493 24.1% $ 180,034 26.5% GAAP net income & margin $ 131,236 14.4% $ 146,861 16.2% $ 117,374 17.3% Stock-based compensation expense 33,855 31,653 26,980 Intangible amortization 3,272 2,918 1,780 Adjustment for taxes 857 (3,420) 6,550 Acquisition related costs 398 2,577 1,038 Adjusted net income & margin $ 169,618 18.7% $ 180,589 19.9% $ 153,722 22.6% GAAP net income & margin $ 131,236 14.4% $ 146,861 16.2% $ 117,374 17.3% Interest, net (9,565) (5,911) (1,865) Debt extinguishment cost — 5,121 — Provision for income taxes 49,263 35,864 42,842 Depreciation expense 5,164 4,443 2,636 Intangible amortization 3,272 2,91"
+  },
+  {
+   "id": "NXT-46",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000003/ex991_q326.htm",
+   "text": "38 34.6% Stock-based compensation expense 12,166 9,345 Intangible amortization 4,784 1,864 Adjusted gross profit & margin $ 879,668 32.8% $ 714,347 35.1% GAAP operating income & margin $ 543,680 20.3% $ 443,805 21.8% Stock-based compensation expense 87,818 78,766 Intangible amortization 8,249 3,743 Acquisition related costs 4,054 4,695 Adjusted operating income & margin $ 643,801 24.0% $ 531,009 26.1% GAAP net income & margin $ 435,280 16.2% $ 359,432 17.7% Stock-based compensation expense 87,818 78,766 Intangible amortization 8,249 3,743 Adjustment for taxes (9,692) (9,368) Acquisition related costs 4,054 4,695 Adjusted net income & margin $ 525,709 19.6% $ 437,268 21.5% GAAP net income & margin $ 435,280 16.2% $ 359,432 17.7% Interest, net (20,847) (2,702) Debt extinguishment cost 5,121 — Provision for income taxes 118,911 89,922 Depreciation expense 13,337 4,556 Intangible amortization 8,249 3,743 Stock-based compensation expense 87,818 78,766 Acquisition related costs 4,054 4,695 Other tax related in"
+  },
+  {
+   "id": "NXT-47",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000061/ex991_q226.htm",
+   "text": "on $496 to $543 million GAAP Diluted EPS $3.26 to $3.46 $3.24 to $3.55 Adjusted EBITDA $775 to $815 million $750 to $810 million Adjusted Diluted EPS $4.04 to $4.25 $3.96 to $4.27 Adjusted EBITDA range of $775 million to $815 million excludes approximately $142 million for stock-based compensation, acquisition related costs, and net intangible amortization. Adjusted Diluted EPS range of $4.04 to $4.25 excludes approximately $0.78 for stock-based compensation, acquisition related costs, and net intangible amortization, net of impacts for tax. Our outlook assumes the current U.S. policy environment remains intact, and in addition, that permitting processes and timelines will remain consistent with historical levels. The Company is closely monitoring potential regulatory actions, which could impact project timing, investment decisions and our financial results. Q2 FY26 Earnings Call October 23, 2025 2:00 p.m. PT / 5:00 p.m. ET Live webcast available on investors.nextracker.com We encourage you to review our"
+  },
+  {
+   "id": "NXT-48",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000061/ex991_q226.htm",
+   "text": "ovative solutions that accelerate solar power plant construction, increase energy output, and enhance long-term reliability. For more information, visit www.nextracker.com. Forward-Looking Statements This press release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995, including statements relating to the trends for energy demand and future solar adoption, the expected benefit and duration of our advanced module frame supply agreement, benefits of our recent acquisitions (including the benefits our customers may realize as a result of integrating these businesses into Nextracker’s), the demand for our products, (including our eBOS solutions and our other tracker products), our bookings and backlog, including our ability to convert our backlog into revenue, the anticipated benefits of our joint venture agreement, including the anticipated expansion of our operations in the Middle East and North Africa markets, our competitiveness and gl"
+  },
+  {
+   "id": "NXT-49",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000061/ex991_q226.htm",
+   "text": "2,481 Intangible amortization 1,649 1,159 896 Adjusted gross profit & margin $ 299,586 33.1% $ 285,123 33.0% $ 228,172 35.9% GAAP operating income & margin $ 181,345 20.0% $ 186,230 21.5% $ 133,475 21.0% Stock-based compensation expense 31,653 22,310 29,885 Intangible amortization 2,918 2,059 1,875 Acquisition related costs 2,577 1,079 2,177 Adjusted operating income & margin $ 218,493 24.1% $ 211,678 24.5% $ 167,412 26.3% GAAP net income & margin $ 146,861 16.2% $ 157,183 18.2% $ 117,264 18.5% Stock-based compensation expense 31,653 22,310 29,885 Intangible amortization 2,918 2,059 1,875 Adjustment for taxes (3,420) (7,129) (6,274) Acquisition related costs 2,577 1,079 2,177 Adjusted net income & margin $ 180,589 19.9% $ 175,502 20.3% $ 144,927 22.8% GAAP net income & margin $ 146,861 16.2% $ 157,183 18.2% $ 117,264 18.5% Interest, net (5,911) (5,371) 455 Revolver extinguishment cost 5,121 — — Provision for income taxes 35,864 33,784 19,928 Depreciation expense 4,443 3,730 1,067 Intangible amortization "
+  },
+  {
+   "id": "NXT-50",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000061/ex991_q226.htm",
+   "text": "2,235 34.1% Stock-based compensation expense 7,315 6,261 Intangible amortization 2,808 984 Adjusted gross profit & margin $ 584,709 33.0% $ 469,480 34.6% GAAP operating income & margin $ 367,575 20.8% $ 293,569 21.7% Stock-based compensation expense 53,963 51,786 Intangible amortization 4,977 1,963 Acquisition related costs 3,656 3,657 Adjusted operating income & margin $ 430,171 24.3% $ 350,975 25.9% GAAP net income & margin $ 304,044 17.2% $ 242,058 17.9% Stock-based compensation expense 53,963 51,786 Intangible amortization 4,977 1,963 Adjustment for taxes (10,549) (15,918) Acquisition related costs 3,656 3,657 Adjusted net income & margin $ 356,091 20.1% $ 283,546 20.9% GAAP net income & margin $ 304,044 17.2% $ 242,058 17.9% Interest, net (11,282) (837) Revolver extinguishment cost 5,121 — Provision for income taxes 69,648 47,080 Depreciation expense 8,173 1,920 Intangible amortization 4,977 1,963 Stock-based compensation expense 53,963 51,786 Acquisition related costs 3,656 3,657 Adjusted EBITDA & "
+  }
+ ]
+}

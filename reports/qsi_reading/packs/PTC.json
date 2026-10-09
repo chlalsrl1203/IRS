@@ -1,0 +1,316 @@
+{
+ "ticker": "PTC",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "2dded83103598c111767480788918dc64f5b5171594b0fdfcc7c2afc44e41339",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.buyback_effect",
+  "cap.ma_discipline",
+  "cap.dividend_predictable",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "미질문",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: PTC.LITIGATION)",
+  "gov.insider_group_ownership": "'as a group' 지분 행을 찾지 못했다",
+  "cap.buyback_effect": "모순 미해소: 2026-08-04 경량검증은 '자사주매입이 SBC의 6~7배(anti-dilutive)'라 했으나 희석 가중평균 주식수는 3년 +2.15%다. 기본주식수·매입액 원문을 아직 대조하지 않았다",
+  "cap.ma_discipline": "5년 인수 지출이 영업현금흐름의 64% — 가격 규율은 사람이 판단해야 한다",
+  "cap.dividend_predictable": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+  "acc.voluntary_bad_news": "미질문",
+  "acc.material_one_time_items": "미질문"
+ },
+ "excerpts": [
+  {
+   "id": "PTC-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2025-12-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm",
+   "text": "eadership Financial Acumen Global Business Public Company Board Strategic Transactions Technology Industry Director Search Background: Mr. Pham was recommended to the Corporate Governance Committee by a third-party search firm given his Chief Financial Officer profile as part of our Audit Committee succession planning. 16 2026 PROXY STATEMENT TABLE OF CONTENTS 2025 Highlights Proxy Summary Corporate Governance Executive Compensation Auditor Matters PTC Stock Ownership Annual Meeting Information Other Governance Appendix A Board and Committee Meetings and Attendance at the Annual Meeting The Board and committees hold regularly scheduled meetings over the course of the year and hold additional meetings as necessary. The Board met nine times in 2025. All director nominees attended at least 95% of meeti"
+  },
+  {
+   "id": "PTC-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2025-12-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm",
+   "text": "ion and People Corporate Governance Cybersecurity Accounting & Financial Reporting Financial Condition & Debt Ethical Conduct & Compliance Related Party Transactions Executive Compensation Equity Compensation Programs Human Capital Management Corporate Governance Composition of Board Committees CEO Succession Planning Board and Director Evaluations Director Compensation AI Governance Sustainability Program and Initiatives Sustainability Risks & Opportunities Composition of the Board Board Refreshment Director Nominations Cybersecurity Data Privacy 2026 PROXY STATEMENT 19 TABLE OF CONTENTS 2025 Highlights Proxy Summary Corporate Governance Executive Compensation Auditor Matters PTC Stock Ownership Annual Meeting Information Other Governance Appendix A Committees of the Board The Board has four standi"
+  },
+  {
+   "id": "PTC-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2025-12-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm",
+   "text": "tions to the Board about the composition of committees of the Board. • Reviews and makes recommendations to the Board with respect to director compensation. • Develops and recommends policies and processes regarding corporate governance. • Facilitates Board and director evaluations. • Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC. • Oversees sustainability program and initiatives. • Oversees company management of environmental risks and opportunities. • Oversees company management of sustainability risks and initiatives not addressed by other committees or the Board. • Oversees the company’s community engagement and philanthropy initiatives. CYBERSECURITY COMMITTEE Meetings in 2025: 4 COMMITTEE MEMBERS Corinna Lathan, Chair Mark Benjamin Janice Chaffin Amar H"
+  },
+  {
+   "id": "PTC-4",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "isk Factors 7 Item 1B. Unresolved Staff Comments 17 Item 1C. Cybersecurity 17 Item 2. Properties 19 Item 3. Legal Proceedings 19 Item 4. Mine Safety Disclosures 19 PART II. Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 20 Item 6. Reserved 20 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 21 Item 7A. Quantitative and Qualitative Disclosures about Market Risk 37 Item 8. Financial Statements and Supplementary Data 39 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 39 Item 9A. Controls and Procedures 39 Item 9B. Other Information 40 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspection 41 PART III. Item 10. Directors, Executive Officers and Corporate Governance 42 Item 11. Executive Compensation 42 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 42 Item 13. Certain Relationships and Related Transactions, and Director Independence 42 Item 14. Principal Accounting Fees and Services 42 PART IV. Item 15. Exhibits and Financial Statement Schedules 43 Item 16. Form 10-K Summary 43 Exhibit Index 44 Signatures 46 APPENDIX A Report of Independent Registered Public Accounting Firm (PricewaterhouseCoopers LLP, Boston, MA, PCAOB ID: 238 ) F- 1 Consolidated Financial Statements F- 4 Notes to Consolidated Financial Statements F- 9 Table of Contents Cautionary Note About Forward-Looking Statements This Annual Report contains forward-looking statements within the meaning of Section"
+  },
+  {
+   "id": "PTC-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": ",254 157,568 Other liabilities 187,906 63,827 Total liabilities 2,790,943 3,169,144 Commitments and contingencies (Note 9) Stockholders’ equity: Preferred stock, $ 0.01 par value; 5,000 shares authorized; none issued — — Common stock, $ 0.01 par value; 500,000 shares authorized; 119,536 and 120,155 shares issued and outstanding at September 30, 2025 and September 30, 2024, respectively 1,195 1,202 Additional paid-in capital 1,822,590 1,965,307 Retained earnings 2,083,607 1,349,610 Accumulated other comprehensive loss ( 81,163 ) ( 101,721 ) Total stockholders’ equity 3,826,229 3,214,398 Total liabilities and stockholders’ equity $ 6,617,172 $ 6,383,542 The accompanying notes are an integral part of these consolidated financial statements. F- 4 Table of Contents PTC Inc. CONSOLIDATED STATEM ENTS OF OPERATIONS (in thousands, except per share data) Year ended September 30, 2025 2024 2023 Revenue: License $ 1,162,709 $ 806,871 $ 747,022 Support and cloud services 1,469,180 1,359,355 1,199,536 Total software revenue 2,631,889 2,166,226 1,946,558 Professional services 107,337 132,246 150,495 Total revenue 2,739,226 2,298,472 2,097,053 Cost of revenue: Cost of license revenue 46,913 46,850 53,200 Cost of support and cloud services revenue 291,812 274,599 245,027 Total cost of software revenue 338,725 321,449 298,227 Cost of professional services revenue 106,258 123,367 142,779 Total cost of revenue 444,983 444,816 441,006 Gross margin 2,294,243 1,853,656 1,656,047 Operating expenses: Sales and marketing 566,516 558,954 530,125 Research and development 457,693 433,047 394,370 General and adminis"
+  },
+  {
+   "id": "PTC-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": " was approximately 4.9 %, 5.4 % and 4.9 %, respectively. F- 29 Table of Contents 9. Commitments and Contingencies As of September 30, 2025 and 2024, we had letters of credit and bank guarantees outstanding of $ 15.6 million (of which $ 0.6 million was collateralized) and $ 15.6 million (of which $ 0.6 million was collateralized), respectively, primarily related to our corporate headquarters lease. Legal and Regulatory Matters With respect to legal proceedings and claims, we record an accrual for a contingency when it is probable that a liability has been incurred and the amount of the loss can be reasonably estimated. We are subject to legal proceedings and claims against us in the ordinary course of business. As of September 30, 2025, we estimate that the range of possible outcomes for such matters is immaterial and we do not believe that resolving them will have a material adverse impact on our financial condition, results of operations or cash flows. However, the results of legal proceedings cannot be predicted with certainty. Should any of these legal proceedings and claims be resolved against us, the operating results for a reporting period could be adversely affected. Guarantees and Indemnification Obligations We enter into standard indemnification agreements with our customers and business partners in the ordinary course of our business. Under such agreements, we typically indemnify, hold harmless, and agree to reimburse the indemnified party for losses suffered or incurred by the indemnified party, in connection with patent, copyright or other intellectual property infringement "
+  },
+  {
+   "id": "PTC-7",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2025-12-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm",
+   "text": "vestment adviser that has shared voting power over 150,203 of such shares, sole dispositive power over 13,037,186 of such shares and shared dispositive power over 498,045 of such shares. (5) As reported on Schedule 13G/A filed February 5, 2025, BlackRock, Inc. is a parent holding company that has beneficial ownership of the shares reported through its subsidiaries. BlackRock has sole voting power over 11,382,524 of such shares and sole dispositive power over all 12,258,557 shares. 2026 PROXY STATEMENT 63 TABLE OF CONTENTS 2025 Highlights Proxy Summary Corporate Governance Executive Compensation Auditor Matters PTC Stock Ownership Annual Meeting Information Other Governance Appendix A Stock Owned by Directors and Officers The following table shows the PTC common stock beneficially owned by PTC’s current directors, executive officers, and named executive officers, as well as those persons as a group, as of November 30, 2025. Director or Officer Name Number of Shares Beneficially Owned (1) (#) Percentage of Common Stock Outstanding (2) Mark Benjamin 9,683 * Robert Bernshteyn 1,765 * Janice Chaffin 41,976 * Amar Hanspal 8,816 * Michal Katz 3,375 * Paul Lacy (3) 53,893 * Corinna Lathan 7,604 * James Lico (4) — — Trac Pham (5) — — Neil Barua (6) 89,164 * Kristian Talvitie 67,335 * Robert Dahdah "
+  },
+  {
+   "id": "PTC-8",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": " flow grew 16% to $857 million in FY'25 compared to FY'24. Our cash flow growth is attributable to resilient top-line growth due to our subscription business model and operational discipline. In FY'25, we made net debt repayments of $553 million and repurchased $300 million of our outstanding shares. We ended FY’25 with cash and cash equivalents of $184 million and gross debt of $1.20 billion, which debt carried an aggregate weighted average interest rate of 4.9%. Revenue grew 19% (18% constant currency) in FY'25 compared to FY'24. Under ASC 606, the timing of revenue recognition for on-premises subscription revenue can vary significantly, impacting reported revenue, operating margin, and earnings per share. FY'25 revenue growth reflects the higher total value and longer average duration o"
+  },
+  {
+   "id": "PTC-9",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "nual Report. As of September 30, 2025, $25 million of our debt associated with the credit facility term loan was classified as current. In Q2'25, we redeemed the 2025 senior notes using a draw on our revolving credit facility and cash on hand. Share Repurchase Authorization Our Articles of Organization authorize us to issue up to 500 million shares of our common stock. Our Board of Directors has authorized us to repurchase up to $2 billion of our common stock in the period October 1, 2024 through September 30, 2027. We may use cash from operations and borrowings under our credit facility to make any such repurchases. All shares of our common stock repurchased are automatically restored to the status of authorized and unissued. In FY'25, we repurchased 1.65 million shares for $300 million. We did not repurchase any shares in FY'24. Our lon"
+  },
+  {
+   "id": "PTC-10",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "nt to meet our working capital and capital expenditure requirements through at least the next twelve months and to meet our known long-term capital requirements. We expect to use the net after-tax proceeds of the Kepware and ThingWorx divestiture to repurchase shares, in line with our long-term goal of returning excess cash to shareholders. Our expected uses and sources of cash could change, our cash position could be reduced, and we could incur additional debt obligations if we retire other debt, engage in strategic transactions, or repurchase shares, any of which could be commenced, suspended, or completed at any time. Any such repurchases or retirement of debt will depend on prevailing market conditions, our liquidity requirements, contractual restrictio"
+  },
+  {
+   "id": "PTC-11",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "Provision for income taxes 186,180 92,629 87,026 Net income $ 733,997 $ 376,333 $ 245,540 Earnings per share—Basic $ 6.12 $ 3.14 $ 2.07 Earnings per share—Diluted $ 6.08 $ 3.12 $ 2.06 Weighted-average shares outstanding—Basic 120,005 119,679 118,341 Weighted-average shares outstanding—Diluted 120,777 120,742 119,334 The accompanying notes are an integral part of these consolidated financial statements. F- 5 Table of Contents PTC Inc. CONSOLIDATED STATEMENTS OF C OMPREHENSIVE INCOME (in thousands) Year ended September 30, 2025 2024 2023 Net income $ 733,997 $ 376,333 $ 245,540 Other comprehensive income, net of tax: Hedge loss arising during the period, net of tax of $ 5.8 million, $ 5.3 million, and $ 2.5 million in 2025, 2024, and 2023, respectively ( 17,863 ) ( 16,315 ) ( 7,516 ) "
+  },
+  {
+   "id": "PTC-12",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "ed in Investing Activities Cash used in investing activities in FY'25 was driven by outflows from the settlement of net investment hedges. Cash used in investing activities in FY'24 was driven by the acquisition of pure-systems for $93 million. Cash Used in Financing Activities Cash used in financing activities in FY'25 included net payments of $553 million on our outstanding debt, including the redemption of our 2025 senior notes primarily using a draw on our credit facility, and the repurchase of $300 million of our common stock. Cash used in financing activities in FY'24 included $620 million paid to settle the ServiceMax deferred acquisition payment, partially offset by net borrowings of $46 million to fund that payment and the p"
+  },
+  {
+   "id": "PTC-13",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": " see Note 2. Summary of Significant Accounting Policies . Our material long-lived assets primarily resided in the United States in 2025, 2024 and 2023 . 5. Acqui sitions and Disposition of Businesses Acquisition and transaction-related costs were $ 9.1 million, $ 3.1 million and $ 18.7 million in 2025, 2024 and 2023, respectively. Acquisition and transaction-related costs include direct costs of potential and completed acquisitions (e.g., investment banker fees and professional fees, including legal and valuation services) and expenses related to acquisition integration activities (e.g., professional fees and severance). Other transactional charges include third-party costs related to unusual transactions, such as the divestiture of a portion of our "
+  },
+  {
+   "id": "PTC-14",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": " indebtedness, cash, and transaction expenses as set forth in the Share Purchase Agreement. The remaining installment of $ 650.0 million, of which $ 620.0 million represented the fair value as of the acquisition date and $ 30.0 million was imputed interest, was paid in October 2023. The fair value of the deferred acquisition payment was calculated based on our borrowing rate at the time of the acquisition. PTC borrowed $ 630 million under the revolving line of our credit facility and $ 500 million under the term loan of our credit facility to repay amounts under the prior credit facility and to pay the closing purchase price and transaction expenses related to the acquisition. ServiceMax had approximately 500 employees on the"
+  },
+  {
+   "id": "PTC-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "y from our reported results. Other Acquisitions In the third quarter of 2025, we acquired IncQuery Group GmbH pursuant to a Share Purchase Agreement. The purchase price was $ 7.9 million, net of cash acquired, of which $ 6.5 million was paid in the period and $ 1.4 million is contingent consideration that may be paid in 2027 to the extent earned. F- 21 Table of Contents PLM Services Business Disposition In 2022, we sold a portion of our PLM services business to ITC Infotech India Limited pursuant to a Strategic Partner Agreement dated as of April 20, 2022 by and between PTC and ITC Infotech. Consideration received from ITC Infotech for the sale was approximately $ 60.4 million, consisting of $ 32.5 million cash paid on clo"
+  },
+  {
+   "id": "PTC-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "cquired Intangible Assets and Long-lived Assets Goodwill is the amount by which the purchase price in a business acquisition exceeds the fair value of net identifiable assets on the date of purchase. Goodwill is evaluated for impairment annually as of the end of the third quarter, or more frequently if events or changes in circumstances indicate that the asset might be impaired. Factors we consider important, on an overall company basis that could trigger an impairment review include significant under-performance relative to historical or projected future operating results, significant changes in our use of the acquired assets or the strategy for our overall business, significant negative industry or economic trends, a signifi"
+  },
+  {
+   "id": "PTC-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "e or qualitative assessment. A quantitative assessment compares the fair value of the reporting unit to its carrying value. If the reporting unit’s carrying value exceeds its fair value, we record an impairment loss equal to the difference between the carrying value of goodwill and its estimated fair value. We estimate the fair values of our reporting unit using discounted cash flow valuation models. Those models require estimates of future revenues, profits, capital expenditures, working capital, terminal values based on revenue multiples, and discount rates for the reporting unit. We estimate these amounts by evaluating historical trends; current budgets and operating plans; and industry data. A qualitative assessment is designed to determine whether we believe it i"
+  },
+  {
+   "id": "PTC-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "acroeconomic factors, and a consideration of the fair value of the reporting unit at the last valuation date. F- 14 Table of Contents During the third fiscal quarter of 2025 , we completed our annual impairment test of goodwill, which was based on a qualitative assessment, and concluded that there was no impairment. Through September 30, 2025, there were no events or changes in circumstances that indicated that the carrying values of goodwill or acquired intangible assets may not be recoverable. Lon g-lived assets primarily include property and equipment, right-of-use lease assets, and acquired intangible assets with finite lives (including purchased software, customer lists and trademarks). Purchased software is amor"
+  },
+  {
+   "id": "PTC-19",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "illion related to tax reserves in foreign jurisdictions. In FY'24, the rate was impacted by a U.S. Tax Court ruling in Varian Medical Systems, Inc. v. Commissioner, issued on August 26, 2024. The ruling related to the U.S. taxation of deemed foreign dividends in the transition year of the Tax Act (our fiscal 2018). As a result, we recorded a $14 million benefit for additional foreign tax credits that became available to us. These benefits were offset by a tax expense of $5 million related to a tax reserve in a foreign jurisdiction. In FY'24, we requested consent from the IRS to change the accounting method for the treatment of certain deductions. In "
+  },
+  {
+   "id": "PTC-20",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "nior note indenture. As of September 30, 2025, the annual rate for borrowings outstanding under the credit facility was 5.6%. Our credit facility and our senior notes, including the financial and operating covenants and limitations on the payment of dividends, are described in Note 8. Debt of Notes to the Consolidated Financial Statements in this Annual Report. As of September 30, 2025, $25 million of our debt associated with the credit facility term loan was classified as current. In Q2'25, we redeemed the 2025 senior notes using a draw on our revolving credit facility and cash on hand. Share Repurchase Authorization Our Articles of Organization aut"
+  },
+  {
+   "id": "PTC-21",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "million related to tax reserves in foreign jurisdictions. In 2024, the rate was impacted by a U.S. Tax Court ruling in Varian Medical Systems, Inc. v. Commissioner, issued on August 26, 2024. The ruling related to the U.S. taxation of deemed foreign dividends in the transition year of the Tax Act (our fiscal 2018). As a result, we recorded a $ 14.4 million benefit for additional foreign tax credits that became available to us. These benefits were offset by a tax expense of $ 4.6 million related to a tax reserve in a foreign jurisdiction. Additionally in 2023, our results include tax expense of $ 21.8 million relating to an uncertain tax position rega"
+  },
+  {
+   "id": "PTC-22",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2025-11-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm",
+   "text": "ving credit facility is required, ranging from 0.175 % to 0.325 % per annum, based upon our total leverage ratio. The credit facility limits our ability to, among other things: incur additional indebtedness; incur liens or guarantee obligations; pay dividends and make other distributions; make investments and enter into joint ventures; dispose of assets; and engage in transactions with affiliates, except on an arms-length basis. Under the credit facility, PTC Inc. and its material domestic subsidiaries may not invest cash or property in, or loan amounts to, PTC Inc.’s foreign subsidiaries in aggregate amounts exceeding $ 100 million for purposes othe"
+  },
+  {
+   "id": "PTC-23",
+   "for": "acc.voluntary_bad_news",
+   "doc": "8-K filed 2024-07-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024088530/ptc-ex99_1.htm",
+   "text": " over year, driven by our differentiated product portfolio, the resilience of our subscription business model, operational discipline, and the actions we have taken over time to align our investments with market opportunities. Our Q3’24 free cash flow growth of 29% was also solid, although slightly below our guidance due to timing. Reflecting our year-to-date performance and our outlook for the fourth quarter, we are updating our FY’24 constant currency ARR guidance range to 11 to 12 percent growth and maintaining our FY’24 free cash flow guidance. We believe we have set our guidance appropriately,” said Kristian Talvitie, CFO. $ in millions FY’24 Previous Guidance FY’24 Guidance FY’24 YoY Growth Guidance Q4’"
+  },
+  {
+   "id": "PTC-24",
+   "for": "acc.voluntary_bad_news",
+   "doc": "8-K filed 2023-11-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023057416/ptc-ex99_1.htm",
+   "text": "Mid-Term Targets “Despite a challenging backdrop, our financial results in FY’23 were solid, driven by the resilience of our business model, consistent execution, operational discipline, and the actions we have taken to align our investments with our growth opportunities. Our Q4’23 ARR was slightly below the mid-point of our guidance range, as we had lower in-year starts and ended the year with more deferred ARR than we had modeled. At the start of FY’24, deferred ARR with contractually committed start dates over the next 12 months was approximately $20 million higher than at the start of FY’23. Given that, we are raising the low end of our previously communicated ARR growth range and establishing a FY’24 ARR guidance range o"
+  },
+  {
+   "id": "PTC-25",
+   "for": "acc.voluntary_bad_news",
+   "doc": "8-K filed 2023-11-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023057416/ptc-ex99_1.htm",
+   "text": " challenging backdrop, our financial results in FY’23 were solid, driven by the resilience of our business model, consistent execution, operational discipline, and the actions we have taken to align our investments with our growth opportunities. Our Q4’23 ARR was slightly below the mid-point of our guidance range, as we had lower in-year starts and ended the year with more deferred ARR than we had modeled. At the start of FY’24, deferred ARR with contractually committed start dates over the next 12 months was approximately $20 million higher than at the start of FY’23. Given that, we are raising the low end of our previously communicated ARR growth range and establishing a FY’24 ARR guidance range of 11% to 14%. We contin"
+  },
+  {
+   "id": "PTC-26",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526323617/ptc-ex99_1.htm",
+   "text": "EX-99.1 2 ptc-ex99_1.htm EX-99.1 EX-99.1 Ex 99.1 PTC Announces Third fiscal Quarter 2026 Results Strategic focus on Intelligent Product Lifecycle vision • Strong execution in Q3’26 across all key metrics o Constant currency ARR growth of 9.1% excluding divested businesses, exceeding the high end of our guidance range o Operating and free cash flow growth of 7% and 3%, respectively, both exceeding the high end of our guidance ranges • Raising FY'26 guidance for ARR, Revenue and EPS, reaffirming Cash Flow guidance • ~$525 million of shares repurchased in Q3’26, bringing FY'26 repurchases above the high-end of our target for the year BOSTON, MA, July 29, 2026 - PTC (NASDAQ: PTC) today reported financial results for its third fiscal quarter ended June 30, 2026. “PTC delivered strong financial execution in Q3’26. Customers increasingly recognize the importance of our Intelligent Product Lifecycle vision. This coincides with the go-to-market and produ"
+  },
+  {
+   "id": "PTC-27",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526323617/ptc-ex99_1.htm",
+   "text": "ablishes an intelligence layer to enable AI capabilities over our trusted solutions across CAD, PLM, ALM and SLM,” concluded Barua. Third Fiscal Quarter 2026 Key Operating and Financial Metrics 1 $ in millions, except per share amounts Q3’26 Q3'25 YoY Change Q3’26 Guidance As reported ARR excluding divested businesses 2 $2,412 $2,256 7% Constant currency ARR excluding divested businesses (FY'26 Plan FX rates 3 ) $2,448 $2,245 9.1% 8% to 9% growth Operating cash flow $261 $244 7% $255 to $260 Free cash flow $249 $242 3% $240 to $245 Revenue 4 $600 $644 (7%) 5 $580 to $640 Operating margin 4 28% 33% (480 bps) Non-GAAP operating margin 4 41% 44% (290 bps) Earnings per share 4 $1.03 $1.17 (12%) $0.68 to $1.25 Non-GAAP earnings per share 4 $1.58 $1.64 (4%) $1.24 to $1.78 1 The definitions of our operating and non-GAAP financial measures and reconciliations of non-GAAP financial measures to comparable GAAP measures are included below and in the reconciliation tables at the end of this press releas"
+  },
+  {
+   "id": "PTC-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526323617/ptc-ex99_1.htm",
+   "text": "d-to-period comparisons following the divestiture of those businesses in Q2’26. ARR was flat year over year on an as reported basis in Q3’26. 3 On a constant currency basis, using our FY’26 Plan foreign exchange rates (rates as of September 30, 2025) for all periods. Constant currency ARR excluding divested businesses excludes Kepware and ThingWorx ARR from Q3’25. 4 Revenue and, as a result, operating margin and earnings per share are impacted under ASC 606. 5 In Q3’26, revenue declined 8% year over year on a constant currency basis . 1 “Our Q3 results reflect a focused business model, as the company’s execution resulted in improved demand capture and customer adoption. Our strong financial performance in Q3 highlights the consistent commitment to excellence we strive for, resulting in our key metrics landing above the high end of our guidance. This performance to date and the visibility we have into our Q4 pipeline gives us confidence in raising the midpoint of our ARR guidance for the full"
+  },
+  {
+   "id": "PTC-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526323617/ptc-ex99_1.htm",
+   "text": " previously targeted for the quarter,” concluded DiRico. Full Fiscal Year 2026 and Fourth Fiscal Quarter Guidance $ in millions, except per share amounts % rounded to the nearest half Previous FY’26 Guidance FY’26 Guidance 3 FY’26 YoY Growth Guidance Q4’26 Guidance 5 Constant currency ARR excluding divested businesses (FY’26 Plan FX rates) 1 7.5% to 9.5% growth 9% to 9.5% growth 9% to 9.5% 9% to 9.5% growth Operating cash flow ~$880 ~$880 ~1% 4 ~$29 Free cash flow 2 ~$850 ~$850 ~(1)% 4 ~$15 Revenue $2,580 to $2,820 $2,690 to $2,750 (2)% to 0% 4 $630 to $690 Earnings per share $7.21 to $9.70 $8.46 to $9.18 39% to 51% 4 $0.94 to $1.70 Non-GAAP earnings per share 2 $6.65 to $8.90 $7.87 to $8.42 (1)% to 6% 4 $1.63 to $2.21 1 Excludes Kepware and ThingWorx ARR from FY’25 given the divestiture of those businesses in Q2’26. On a constant currency basis, using our FY’26 Plan foreign exchange rates (rates as of September 30, 2025) for all periods. 2 Refer to the GAAP to non-GAAP reconciliation tables"
+  },
+  {
+   "id": "PTC-30",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm",
+   "text": "EX-99.1 2 ptc-ex99_1.htm EX-99.1 EX-99.1 Ex 99.1 PTC Announces Second fiscal Quarter 2026 Results Strategic focus on Intelligent Product Lifecycle vision • Solid execution in Q2’26 o Constant currency ARR growth of 8.5% excluding divested businesses o Operating and free cash flow growth of 14% • ~$625 million of cash used for repurchases in Q2’26; targeting repurchases of ~$1.225 billion to ~$1.325 billion in FY’26; New $2 billion share repurchase authorization effective for FY'27-FY'28. BOSTON, MA, May 6, 2026 - PTC (NASDAQ: PTC) today reported financial results for its second fiscal quarter ended March 31, 2026. “PTC delivered solid financial results in Q2’26. Our go-to-market transformation continues to gain traction and our Intelligent Product Lifecycle vision is resonating with customers. The execution and momentum we’ve established over the past several quarters give us confidence that we are building a more durable,"
+  },
+  {
+   "id": "PTC-31",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm",
+   "text": " as a new intelligence layer over our systems to enable enterprise transformation,” concluded Barua. Second Fiscal Quarter 2026 Key Operating and Financial Metrics 1 $ in millions, except per share amounts % rounded to the nearest half Q2’26 Q2'25 YoY Change Q2’26 Guidance As reported ARR excluding divested businesses 2 $2,365 $2,136 11% Constant currency ARR excluding divested businesses (FY'26 Plan FX rates 3 ) $2,388 $2,200 8.5% 8% to 8.5% growth Operating cash flow $321 $281 14% $315 to $320 Free cash flow $318 $279 14% $310 to $315 Revenue 4 $774 $636 22% 5 $685 to $745 Operating margin 4 38% 35% 310 bps Non-GAAP operating margin 4 53% 47% 600 bps Earnings per share 4 $4.98 6 $1.35 7 270% $4.09 to $4.74 Non-GAAP earnings per share 4 $2.69 $1.79 50% $1.87 to $2.47 1 The definitions of our operating and non-GAAP financial measures and reconciliations of non-GAAP financial measures to comparable GAAP measures are included below and in the reconciliation tables at the end of this press rele"
+  },
+  {
+   "id": "PTC-32",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm",
+   "text": " those businesses in Q2'26. ARR grew 3% year over year on an as reported basis in Q2’26, reflecting the divestiture of Kepware and ThingWorx. 3 On a constant currency basis, using our FY’26 Plan foreign exchange rates (rates as of September 30, 2025) for all periods. Constant currency ARR excluding divested businesses excludes Kepware and ThingWorx ARR from Q2’25. 4 Revenue and, as a result, operating margin and earnings per share are impacted under ASC 606. 5 In Q2’26, revenue grew 15% year over year on a constant currency basis . 6 Q2’26 GAAP EPS included a $463 million gain on the sale of our Kepware and ThingWorx business, partially offset by $27 million of divestiture-related expenses and a $102 million tax impact. 7 Q2’25 GAAP EPS included a non-cash tax benefit of $4.2 million or $0.03, due to the release of a tax reserve related to prior years. 1 “We are pleased to report our first quarter as a more focused company, aligned to accelerate our Intelligent Product Lifecycle vision. Our "
+  },
+  {
+   "id": "PTC-33",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm",
+   "text": "extend through September 30, 2028,” said Jen DiRico, CFO. Full Fiscal Year 2026 and Third Fiscal Quarter Guidance $ in millions, except per share amounts % rounded to the nearest half Previous FY’26 Guidance FY’26 Guidance 3 FY’26 YoY Growth Guidance Q3’26 Guidance 5 Constant currency ARR excluding divested businesses (FY’26 Plan FX rates) 1 7.5% to 9.5% growth 7.5% to 9.5% growth 7.5% to 9.5% 8% to 9% growth Operating cash flow ~$880 ~$880 ~1% 4 $255 to $260 Free cash flow 2 ~$850 ~$850 ~(1)% 4 $240 to $245 Revenue $2,540 to $2,805 $2,580 to $2,820 (6)% to 3% 4 $580 to $640 Earnings per share $6.94 to $9.66 $7.21 to $9.70 19% to 60% 4 $0.68 to $1.25 Non-GAAP earnings per share 2 $6.36 to $8.84 $6.65 to $8.90 (16)% to 12% 4 $1.24 to $1.78 1 Excludes Kepware and ThingWorx ARR from Q2’25 given the divestiture of those businesses in Q2’26. On a constant currency basis, using our FY’26 Plan foreign exchange rates (rates as of September 30, 2025) for all periods. 2 Refer to the GAAP to non-GAAP r"
+  },
+  {
+   "id": "PTC-34",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm",
+   "text": " cash flow growth of 13% • Embedding AI across portfolio and building common AI infrastructure to drive customer adoption and value • Executing on our $2 billion share repurchase authorization: $200 million of repurchases in Q1’26; expect to use net after-tax proceeds from the Kepware and ThingWorx divestiture for incremental repurchases; targeting repurchases of ~$1.115 billion to ~$1.315 billion in FY’26 BOSTON, MA, February 4, 2026 - PTC (NASDAQ: PTC) today reported financial results for its first fiscal quarter ended December 31, 2025. “PTC delivered solid financial results in Q1’26, driven by large deal volume and competitive displacements. The continued progress we’re making with our go-to-market transformation is resulting in strong and strategic demand capture. This gives us greater confidence that we are building a more durable, multi-year growth engine,” said Neil Barua, President and CEO, PTC. “More broadly, our Intelligent Product Lifecycle vision is gaining momentum. As the prod"
+  },
+  {
+   "id": "PTC-35",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm",
+   "text": "eals. We will start to see our improved demand capture flow into ARR later this year, and are on track with our strategy to drive durable and predictable multi-year growth,” said Jen DiRico, CFO. 1 “We executed well on key initiatives in Q1’26: our go to market team continued to build momentum; the divestiture of Kepware and ThingWorx progressed; and we meaningfully reduced our share count, with $200 million of share repurchases under our $2 billion share repurchase authorization,” DiRico concluded. Full Fiscal Year 2026 and Second Fiscal Quarter Guidance $ in millions, except per share amounts % rounded to the nearest half Previous FY’26 Guidance FY’26 Guidance FY’26 YoY Growth Guidance Q2’26 Guidance Constant currency ARR (FY’26 Plan FX rates 1 ) 7% to 9% growth 7% to 9% growth 7% to 9% 7.5% to 8% growth Constant currency ARR excluding Kepware and ThingWorx (FY’26 Plan FX rates 1 ) 7.5% to 9.5% growth 7.5% to 9.5% growth 7.5% to 9.5% 8% to 8.5% growth Operating cash flow 2 ~$1,030 ~$1,030 "
+  },
+  {
+   "id": "PTC-36",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm",
+   "text": ".93 to $2.54 1 On a constant currency basis, using our FY’26 Plan foreign exchange rates (rates as of September 30, 2025) for all periods. 2 Guidance for cash flow, revenue, and EPS reflects our business as currently constituted and does not take into account the effect of the Kepware and ThingWorx divestiture, except for costs already incurred in Q1’26 and expected in Q2’26. We still expect approximately $160 million of divestiture-related expense payments and cash taxes in FY’26 in connection with the closing of the transaction, which are not expected to recur in future years. We will update our FY’26 guidance in conjunction with the closing of the transaction. 3 Cash flow guidance includes $10 million of outflows related to the Kepware and ThingWorx transaction already paid in Q1’26 and an additional approximately $5 million of outflows expected in Q2’26, which are not expected to recur in future years. 4 GAAP EPS guidance includes $11 million of expenses related to the Kepware and ThingW"
+  },
+  {
+   "id": "PTC-37",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm",
+   "text": " Free cash flow ~$1,000 $310 to $315 Reconciliation of EPS Guidance to Non-GAAP EPS Guidance FY’26 Guidance Q2’26 Guidance Earnings per share $4.42 to $6.93 $1.25 to $1.87 Stock-based compensation $2.18 to $1.93 $0.66 to $0.59 Amortization of acquired intangible assets ~$0.67 ~$0.17 Acquisition and transaction-related charges ~$0.17 ~$0.08 Non-operating charges ~$0.01 ~$0.00 Income tax adjustments ($0.76) to ($0.56) ($0.23) to ($0.17) Non-GAAP Earnings per share $6.69 to $9.15 $1.93 to $2.54 2 FY’26 financial guidance includes the following assumptions: • The guidance assumptions below reflect our business as currently constituted and do not take into account the effect of the Kepware and ThingWorx divestiture, except for costs already incurred in Q1’26 and expected in Q2’26. We still expect approximately $160 million of divestiture-related expense payments and cash taxes in FY’26 in connection with the closing of the transaction, which are not expected to recur in future years. We will update our FY’26 "
+  },
+  {
+   "id": "PTC-38",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525266865/ptc-ex99_1.htm",
+   "text": "scal year 2025 Results Posts record annual cash flow; Strategic focus positions company for durable growth • Solid execution in FY’25 o Constant currency ARR growth of 8.5% o Record operating and free cash flow, growth of 16% • Strategic focus on delivering Intelligent Product Lifecycle vision with divestiture of Kepware industrial connectivity and ThingWorx Internet of Things (IoT) businesses • Continuing to build a strong foundation for AI-driven and verticalized growth • Introducing FY’26 guidance for constant currency ARR growth of 7% to 9%, operating cash flow of approximately $1.03 billion, and free cash flow of approximately $1 billion (including Kepware and ThingWorx for the full year); to be updated when the divestiture is closed • Increasing share repurchases under our $2 billion authorization, with approximately $200 million expected in Q1’26 BOSTON, MA, November 5, 2025 - PTC (NASDAQ: PTC) today reported financial results for its fourth fiscal quarter and full fiscal year ended S"
+  },
+  {
+   "id": "PTC-39",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525266865/ptc-ex99_1.htm",
+   "text": "s operating model. We delivered 8.5% ARR growth and 16% cash flow growth while continuing to invest in executing our Intelligent Product Lifecycle vision. Our FY’26 ARR guidance reflects that same balance of growth and discipline, including the expected timing impact from ramp deals and the pending divestiture,” said Kristian Talvitie, CFO. “With leverage below 1x and approximately $1 billion of cash flow expected in FY’26, we have substantial capacity to invest for growth and return capital to shareholders. Our $2 billion authorization and planned $200 million share repurchase in Q1 underscore that confidence,” concluded Talvitie. At the midpoint, FY’26 guidance implies continued double-digit cash flow expansion and solid visibility as multi-year ramp contracts activate Full Fiscal Year 2026 and First Fiscal Quarter Guidance $ in millions, except per share amounts % rounded to the nearest half FY’25 Actual FY’26 Guidance FY’26 YoY Growth Guidance Q1’26 Guidance Constant currency ARR excludi"
+  },
+  {
+   "id": "PTC-40",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525266865/ptc-ex99_1.htm",
+   "text": " to $275 Capital expenditures ~$30 2 ~$5 Free cash flow ~$1,000 $265 to $270 1 Guidance for cash flow includes Kepware and ThingWorx for the full year. We will update our FY’26 guidance in conjunction with the closing of the Kepware and ThingWorx transaction. 2 Includes approximately $20 million of one-time capital expenditures related to moving a major R&D center to a new office. Reconciliation of EPS Guidance to Non-GAAP EPS Guidance 1 FY’26 Guidance Q1’26 Guidance Earnings per share $4.37 to $6.87 $0.73 to $1.31 Stock-based compensation $2.18 to $1.93 $0.54 to $0.46 Amortization of acquired intangibles ~$0.67 ~$0.17 Income tax adjustments ($0.73) to ($0.52) ($0.18) to ($0.12) Non-GAAP Earnings per share $6.49 to $8.95 $1.26 to $1.82 1 Guidance for EPS includes Kepware and ThingWorx for the full year. We will update our FY’26 guidance in conjunction with the closing of the Kepware and ThingWorx transaction. 3 FY’26 financial guidance includes the following assumptions: • We provide ARR guida"
+  },
+  {
+   "id": "PTC-41",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525266865/ptc-ex99_1.htm",
+   "text": " • Compared to FY’25, given our FY’26 ARR guidance range, FY’26 GAAP and non-GAAP operating expenses are expected to increase approximately 4%, primarily due to investments to drive future growth. • Capital expenditures are expected to be approximately $30 million, with approximately $20 million of one-time capital expenditures in FY’26 related to moving a major R&D center to a new office. • Cash interest payments are expected to be approximately $50 million to $70 million. • Cash tax payments are expected to be approximately $130 million to $150 million. • GAAP and non-GAAP tax rates are expected to be approximately 20% to 25%. • GAAP P&L results are expected to include the items below, totaling approximately $310 million to $340 million, as well as their related tax effects: • approximately $230 million to $260 million of stock-based compensation expense, and • approximately $80 million of intangible asset amortization expense. • We intend to repurchase between $150 million and $250 million "
+  }
+ ]
+}
