@@ -1,0 +1,175 @@
+{
+  "agreement_when_both_answered": 0.965,
+  "as_of": "2026-10-09",
+  "by_question": {
+    "acc.guidance_miss_3y": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 8
+    },
+    "acc.icfr_conclusion": {
+      "adopted": 1,
+      "agree": 1,
+      "both_answered": 1,
+      "n": 1
+    },
+    "acc.material_impairment_3y": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 4
+    },
+    "acc.material_one_time_items": {
+      "adopted": 6,
+      "agree": 6,
+      "both_answered": 6,
+      "n": 15
+    },
+    "acc.promise_kept_record": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 8
+    },
+    "acc.restated_down_3y": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 1
+    },
+    "acc.unfaithful_disclosure": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 2
+    },
+    "acc.voluntary_bad_news": {
+      "adopted": 1,
+      "agree": 1,
+      "both_answered": 1,
+      "n": 15
+    },
+    "cap.buyback_effect": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 4
+    },
+    "cap.debt_funded_buyback": {
+      "adopted": 2,
+      "agree": 2,
+      "both_answered": 2,
+      "n": 10
+    },
+    "cap.dividend_predictable": {
+      "adopted": 2,
+      "agree": 2,
+      "both_answered": 2,
+      "n": 5
+    },
+    "cap.ma_discipline": {
+      "adopted": 2,
+      "agree": 2,
+      "both_answered": 2,
+      "n": 13
+    },
+    "cat.cat_exposure": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 2,
+      "n": 4
+    },
+    "cmp.lifecycle_shakeout_or_decline": {
+      "adopted": 1,
+      "agree": 1,
+      "both_answered": 1,
+      "n": 11
+    },
+    "cmp.new_threat": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 2
+    },
+    "cmp.pricing_power": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 3
+    },
+    "cmp.share_trend": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 11
+    },
+    "dil.net_share_change_3y_pct": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 1
+    },
+    "dil.sbc_to_fcf_pct": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 4
+    },
+    "gov.ceo_succession_policy": {
+      "adopted": 2,
+      "agree": 2,
+      "both_answered": 2,
+      "n": 8
+    },
+    "gov.chair_separated": {
+      "adopted": 6,
+      "agree": 6,
+      "both_answered": 6,
+      "n": 7
+    },
+    "gov.cxo_turnover_24m": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 4
+    },
+    "gov.dual_class": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 1
+    },
+    "gov.insider_group_ownership": {
+      "adopted": 8,
+      "agree": 8,
+      "both_answered": 8,
+      "n": 13
+    },
+    "gov.insider_pattern": {
+      "adopted": 0,
+      "agree": 0,
+      "both_answered": 0,
+      "n": 4
+    },
+    "gov.key_person_no_succession": {
+      "adopted": 14,
+      "agree": 14,
+      "both_answered": 14,
+      "n": 19
+    },
+    "gov.material_litigation": {
+      "adopted": 7,
+      "agree": 7,
+      "both_answered": 7,
+      "n": 16
+    },
+    "uw.combined_ratio_pct": {
+      "adopted": 3,
+      "agree": 3,
+      "both_answered": 3,
+      "n": 4
+    }
+  },
+  "n_both_answered": 57
+}

@@ -1,0 +1,47 @@
+{
+ "ticker": "CINF",
+ "reader": "B",
+ "based_on_record": "0d18e796665bfc9bcdef901767cbaf6785fa8faf227dcee19f9aa9fa69bd21ee",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "CINF-1",
+   "quote": "High degree of board interaction with management to ensure successful oversight and succession planning.",
+   "reason": "이사회가 경영진과의 상호작용을 통해 승계계획을 감독한다고 진술, 특정 인물 의존 명시도 없음"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "CINF-5",
+   "quote": "Neither the company nor any of our subsidiaries are involved in any litigation believed to be material other than ordinary, routine litigation incidental to the nature of our business.",
+   "reason": "회사가 중대한 소송이 없다고(일상적 소송만) 진술"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "SBC(46백만달러)는 있으나 영업현금흐름·FCF 수치가 증거묶음에 없어 비율 산출 불가"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "answered",
+   "answer": "2025년 당해 사고연도 재해손실이 합산비율에 10.8포인트 기여했고, 재보험 회수 후(세후) 250년 빈도 단일 허리케인 추정최대손실은 9.87억달러다.",
+   "excerpt_id": "CINF-22",
+   "quote": "Current accident year catastrophe losses 10.8 9.6 9.3 1.2 0.3",
+   "reason": "2025 당해 재해손실 10.8pt(CINF-22), 재보험 차감 후 1-in-250 PML $987M(CINF-15)"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "answered",
+   "answer": 0.949,
+   "excerpt_id": "CINF-20",
+   "quote": "GAAP combined ratio 94.9 % 93.4 % 94.9 % 1.5 (1.5) Statutory combined ratio 94.7",
+   "reason": "연결 손해보험 GAAP 합산비율 2025년 94.9%"
+  }
+ ]
+}

@@ -1,0 +1,159 @@
+{
+ "ticker": "DLO",
+ "reader": "A",
+ "based_on_record": "9938a851b8229aee20ed7bc673819b5a606ff50275595cee71ada46cc91815db",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "의장 선임 절차만 있고 현 의장·CEO의 이름이 증거에 없어 겸직 여부 판단 불가"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DLO-4",
+   "quote": "overseeing board‑level succession planning (including for the chair of the board and key committee chair roles)",
+   "reason": "지배구조 절의 위원회 책무가 이사회(의장·위원장) 승계만 언급하고 CEO 승계는 언급하지 않음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "DLO-5",
+   "quote": "We are dependent upon the ability and experience of our chief executive officer, our chief financial officer, our president and chief strategic officer, our chief operating officer and our chief technology officer",
+   "reason": "CEO 등 직함별 핵심인물 의존을 명시했고, 증거 내 승계 언급은 이사회급 승계뿐이라 CEO 승계 계획 진술이 없음"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사로 내부자 매매 내역이 증거에 없음"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사로 8-K Item 5.02 공시가 없어 건수를 셀 수 없음"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "소송 관련 문장이 위험요인 가정문과 일부 사안 언급뿐이고 회사의 중대성 판단 진술이 없음"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Class B 보유자 합산 43.76%만 있고 '임원·이사 전체' 행 수치가 증거에 없음"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입 금액만 있고 3년 희석주식수 표가 증거에 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 금액·손상·통합 성과 수치가 증거에 없음"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정FCF 30% 배당 정책은 있으나 5년 감소 없는 지급 이력을 확인할 수 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "차입금 부재 진술이 없고 매입 재원 정보가 없음"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스는 여러 건 있으나 짝지을 실제 연간 실적이 증거에 부족함"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "최초 가이던스와 실제치를 짝지을 근거가 부족함"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "DLO-54",
+   "quote": "ity over a multi-year timeframe. For this reason, we have made the decision to discontinue mid-term guidance.",
+   "reason": "2025-02 실적발표에서 중기 가이던스를 스스로 철회함(최근 3년 내)"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DLO-85",
+   "quote": "Other operating loss 4,715 5,257 — Impairment loss / (gain) on financial assets 2,189 440 (3,136) Depreciation and amortization 26,260 17,177 12,225 Other non-recurring costs (2) 124 1,571 1,663",
+   "reason": "FY2025 일회성 항목(기타영업손실 4.7M+비경상 0.1M+공모비용 0.7M)이 영업이익 약 220M의 10% 미만"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "20-F 발행사로 8-K Item 2.06 공시가 없어 건수 확인 불가"
+  },
+  {
+   "qid": "cmp.new_threat",
+   "status": "answered",
+   "answer": "전자결제 시장에 비전통적 경쟁자의 진입과 암호화폐·블록체인 등 급격한 기술 변화가 위협으로 제시됨.",
+   "excerpt_id": "DLO-90",
+   "quote": "This market is characterized by rapid technological change, new product and service introductions, evolving industry standards, changing client needs and the entrance of non-traditional competitors.",
+   "reason": "회사가 비전통 경쟁자 진입과 기술변화를 시장 특성으로 서술"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 점유율 추세를 수치·서술로 밝힌 문장이 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DLO-53",
+   "quote": "our business thrives in fast-growing, dynamic markets with massive opportunities in digital payments across emerging markets",
+   "reason": "회사가 자신의 시장이 빠르게 성장한다고 진술"
+  }
+ ]
+}

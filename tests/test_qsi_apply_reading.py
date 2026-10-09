@@ -18,10 +18,20 @@ TICKER = "DECK"
 QID = "cap.dividend_predictable"
 
 
-def _setup(tmp_path, status_a, status_b, answer_a=None, answer_b=None):
+def _record_for(pack):
+    """묶음이 만들어진 시점의 기록(병합 이후에도 테스트가 저장소 상태에 끌려가지 않게)."""
+    for f in sorted(os.listdir(Q.QUALITATIVE_DIR)):
+        if f.startswith(f"{TICKER}_") and f.endswith(".json"):
+            rec = json.load(open(os.path.join(Q.QUALITATIVE_DIR, f), encoding="utf-8"))
+            if rec.get("sealed_core_hash") == pack["based_on_record"]:
+                return rec
+    pytest.fail("묶음의 based_on_record에 해당하는 기록 파일이 없다")
+
+
+def _setup(tmp_path, monkeypatch, status_a, status_b, answer_a=None, answer_b=None):
     pack = json.load(open(os.path.join(R.BASE, "packs", f"{TICKER}.json"), encoding="utf-8"))
-    if Q.latest_record(TICKER)["sealed_core_hash"] != pack["based_on_record"]:
-        pytest.skip("증거 묶음이 현재 기록과 다르다(이미 병합됨) — 회귀 대상 상태가 아님")
+    rec0 = _record_for(pack)
+    monkeypatch.setattr(R.Q, "latest_record", lambda t, *a, **k: rec0)
     ex = next(e for e in pack["excerpts"] if len(e["text"]) >= 60)
     quote = ex["text"][:60]
     for d in ("packs", "passA", "passB"):
@@ -43,7 +53,7 @@ def _setup(tmp_path, status_a, status_b, answer_a=None, answer_b=None):
 
 
 def test_agreed_not_applicable_merges_with_quote_in_note(tmp_path, monkeypatch):
-    quote = _setup(tmp_path, "not_applicable", "not_applicable")
+    quote = _setup(tmp_path, monkeypatch, "not_applicable", "not_applicable")
     monkeypatch.setattr(R, "BASE", str(tmp_path))
     prior, core, changed, stats = R.build(TICKER, "2026-10-09")
     rec = Q.build_record(core)          # 예전엔 여기서 QualitativeInputError
@@ -56,7 +66,7 @@ def test_agreed_not_applicable_merges_with_quote_in_note(tmp_path, monkeypatch):
 
 
 def test_disagreement_stays_unknown(tmp_path, monkeypatch):
-    _setup(tmp_path, "answered", "answered", True, False)
+    _setup(tmp_path, monkeypatch, "answered", "answered", True, False)
     monkeypatch.setattr(R, "BASE", str(tmp_path))
     _, core, _, stats = R.build(TICKER, "2026-10-09")
     a = next(x for x in Q.build_record(core)["answers"] if x["qid"] == QID)

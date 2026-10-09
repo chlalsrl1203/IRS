@@ -1,0 +1,79 @@
+{
+ "ticker": "DUOL",
+ "reader": "B",
+ "based_on_record": "c8253dc8d1d07e6c61ccc520a761cc5209f5c4b465f8a43e92fac09eaf46f19a",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DUOL-1",
+   "quote": "Luis von Ahn Co-Founder, Chief Executive Officer and Chairman of the Board",
+   "reason": "현 CEO가 이사회 의장을 겸임"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DUOL-9",
+   "quote": "overseeing succession planning for key executives;",
+   "reason": "지명·지배구조위원회가 핵심 경영진 승계계획을 감독(핵심인물 의존은 있으나 승계계획 존재)"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "5_to_20pct",
+   "excerpt_id": "DUOL-13",
+   "quote": "All executive officers and directors as a group (13 persons) (14) 519,763 1.3% 6,757,853 99.9% 76.0%",
+   "reason": "A주 519,763주(1.3%)+B주 6,757,853주(99.9%) 합산 시 전체 보통주(A 약 4,050만+B 약 676만) 대비 약 15.6%"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자사주 매입 프로그램은 후속사건으로 승인만 공시, 3년 희석주식수 표 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입 실행·차입 여부를 보여주는 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 상향만 있고 자발적 악재 공시 증거 없음 — 루브릭상 False 금지"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "GAAP-비GAAP 조정표가 없고 연간 일회성 항목 금액 확인 불가"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 점유율 추세를 스스로 밝힌 문장 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장 관련 문장은 위험요인 가정문뿐"
+  }
+ ]
+}

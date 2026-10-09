@@ -10841,3 +10841,29 @@ Item 15(ICFR) · Item 16F(감사인 변경) · Item 8.A.7(소송) · Item 6.E/7.
 
 **검증**: 테스트 1,371 → **1,385 통과** · ledger·판정·매수리스트 0건 수정 · 기존 봉인 파일 0건 수정 ·
 `ENGINE_VERSION` v3.96 → **v3.97**.
+
+## v3.98 — QSI 80% 계획 3단계: 독립 판독 2인 일치로만 채택 (2026-10-09)
+
+규칙으로 뽑을 수 없는 질문(승계·소송·내부자 지분·일회성 항목·자발적 악재 공시 등)을 **사람이 원문을
+읽고** 답하되, 두 판독자(A·B)가 같은 증거 묶음을 서로의 결과를 보지 않고 읽어 **status·answer가 같을 때만**
+채택했다. 루브릭(`docs/qsi_reading_rubric.md`)·작업지시(`docs/qsi_reading_protocol.md`)는 판독 전에 고정했고
+결과를 보고 바꾸지 않았다. 증거 묶음 19종목(`reports/qsi_reading/packs/`), 판독 원본(`passA/`·`passB/`),
+병합 `scripts/qsi_apply_reading.py`. 판정·비중·ledger 미배선.
+
+**결과: 답함 281(57.2%) → 335(68.2%), 해당없음 12 → 13, 해결 59.7% → 70.9%.** 판독 대상 198칸 중
+55칸 채택. 두 판독자가 모두 답한 57칸의 일치율 **96.5%**(`reports/qsi_reading/agreement.json`).
+인용은 전부 원문 발췌와 글자 단위로 대조했다(불일치 시 그 답은 버림).
+
+- **유일한 불일치 항목은 `cat.cat_exposure`(자유서술)였다** — 두 판독자가 같은 수치를 읽어도 문장이 달라
+  정확 일치 규칙으로는 원리적으로 채택될 수 없다. 사전 고정 규칙이라 결과를 보고 완화하지 않았다. 자유서술
+  문항을 채우려면 다음 루브릭 판에서 '핵심 수치 일치' 같은 규칙을 **판독 전에** 정할 것.
+- **병합 스크립트 버그 수정**: 두 판독이 `not_applicable`로 일치하면 claim을 붙여 넘겼는데,
+  `qualitative_input._validate_answer`가 not_applicable의 claim_ids를 거부해 병합 전체가 예외로 멈췄다.
+  `qsi_sec_events` 무배당 처리 관례대로 근거 인용을 note에 남기도록 고쳤다
+  (`tests/test_qsi_apply_reading.py`, 수정 전 실패 확인).
+- 판독 작업은 세션 한도로 두 세션에 나뉘었다. 2차 세션은 **빠진 판독 파일만**(A: DLO·NBIX, B: CINF·DUOL·SIGI)
+  새 판독 에이전트로 채웠고 상대편 폴더를 열지 않게 했다.
+- 판독자가 직접 짚은 약한 답: CINF `gov.key_person_no_succession`=False의 근거 문장이 CEO를 명시하지 않음,
+  DUOL `gov.insider_group_ownership`은 클래스별 지분에서 계산한 값. 둘 다 상대 판독과 일치할 때만 들어갔다.
+
+baseline fingerprint `f5709edf…` 불변, `ledger/`·매수리스트 0건 수정. `ENGINE_VERSION` v3.97 → **v3.98**.
