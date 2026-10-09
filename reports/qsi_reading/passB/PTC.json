@@ -1,0 +1,71 @@
+{
+ "ticker": "PTC",
+ "reader": "B",
+ "based_on_record": "2dded83103598c111767480788918dc64f5b5171594b0fdfcc7c2afc44e41339",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "PTC-3",
+   "quote": "Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC.",
+   "reason": "지배구조위원회가 CEO 승계 계획 유지를 책임진다고 진술"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "PTC-6",
+   "quote": "we estimate that the range of possible outcomes for such matters is immaterial and we do not believe that resolving them will have a material adverse impact",
+   "reason": "진행 중 소송·청구의 결과가 중대하지 않을 것이라고 회사가 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "'as a group' 합산 행이 증거에 없고 개별 임원 지분만 있음"
+  },
+  {
+   "qid": "cap.buyback_effect",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "FY2023~FY2025 2년 비교뿐이고 +1.2%로 경계값이라 3년 판단 불가"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 후 성과 공시와 손상 여부를 종합할 증거가 엇갈림(손상 없음, 일부 매각)"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "배당 지급 이력이나 무배당 정책의 직접 진술이 증거에 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "PTC-23",
+   "quote": "we are updating our FY’24 constant currency ARR guidance range to 11 to 12 percent growth and maintaining our FY’24 free cash flow guidance",
+   "reason": "PTC-24에서 FY24 ARR 가이던스 11~14%로 제시했고 이후 11~12%로 상단을 낮춤"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "PTC-32",
+   "quote": "Q2’26 GAAP EPS included a $463 million gain on the sale of our Kepware and ThingWorx business, partially offset by $27 million of divestiture-related expenses and a $102 million tax impact.",
+   "reason": "최근 4개 분기 중 처분이익 $463M 등 일회성이 FCF(약 $850M 가이던스)의 10%를 크게 초과"
+  }
+ ]
+}
