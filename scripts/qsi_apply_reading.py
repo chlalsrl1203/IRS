@@ -97,6 +97,13 @@ def build(ticker, as_of):
                 note += f" (A={va['status']}, B={vb['status']})"
             answers.append({"qid": qid, "status": "unknown", "answer": None, "claim_ids": [], "note": note})
             continue
+        if chosen["status"] == "not_applicable":
+            # 검증기는 not_applicable에 claim_ids를 허용하지 않는다(qualitative_input._validate_answer).
+            # qsi_sec_events의 무배당 처리와 같은 관례로 근거 인용을 note에 그대로 남긴다.
+            answers.append({"qid": qid, "status": "not_applicable", "answer": None, "claim_ids": [],
+                            "note": (f"3단계 독립 판독 2인 일치(해당 없음): \"{chosen['quote']}\" "
+                                     f"({chosen['doc']}, {chosen['url']})")})
+            continue
         cid = f"READ-{ticker}-{qid}"
         evs = []
         for v in (va, vb):
