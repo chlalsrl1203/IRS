@@ -1,0 +1,25 @@
+{
+  "ticker": "LULU",
+  "analyzed_at": "2026-09-13",
+  "market_cap_then": 10546837020.0,
+  "market_cap_now": 10457669000.0,
+  "market_cap_change_pct": -0.008454479748848942,
+  "gap_then": 0.08221093191778242,
+  "gap_now": 0.08326855673467695,
+  "gap_decay_pp": 0.0010576248168945312,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.0857418157068449,
+  "realistic_growth_now": 0.0857418157068449,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-10-02",
+    "gap_prior": 0.08100930227911055,
+    "gap_move_pp": 0.0022592544555664062,
+    "judgment_changed": false
+  },
+  "date": "2026-10-06"
+}

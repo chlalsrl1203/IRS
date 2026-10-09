@@ -1,0 +1,25 @@
+{
+  "ticker": "HLNE",
+  "analyzed_at": "2026-09-03",
+  "market_cap_then": 4471900067.72,
+  "market_cap_now": 5833601000.0,
+  "market_cap_change_pct": 0.30450164620388387,
+  "gap_then": 0.13309650164355719,
+  "gap_now": 0.10043658953418219,
+  "gap_decay_pp": -0.032659912109374994,
+  "judgment_then": "저평가 가능성",
+  "judgment_now": "저평가 가능성",
+  "judgment_flipped": false,
+  "grade_then": "A",
+  "grade_now": "A",
+  "realistic_growth_then": 0.12718448382129155,
+  "realistic_growth_now": 0.12718448382129155,
+  "mode": "gap_decay",
+  "change_vs_prior": {
+    "prior_date": "2026-10-01",
+    "gap_prior": 0.10207366686572517,
+    "gap_move_pp": -0.0016370773315429743,
+    "judgment_changed": false
+  },
+  "date": "2026-10-06"
+}
