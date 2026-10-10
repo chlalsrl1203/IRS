@@ -92,3 +92,15 @@ class IsolationTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class CandidateSourceTests(unittest.TestCase):
+    def test_watchlist_candidates_skip_official_and_excluded(self):
+        import json, tempfile
+        from scripts.auto_analysis_ci import watchlist_candidates
+        with tempfile.TemporaryDirectory() as d:
+            wl = os.path.join(d, "wl.json"); led = os.path.join(d, "led"); os.makedirs(led)
+            json.dump({"tickers": ["aaa", "BBB", "CCC", "AAA"]}, open(wl, "w"))
+            open(os.path.join(led, "BBB_2026-01-01.json"), "w").write("{}")
+            out = watchlist_candidates(wl, led, excluded={"CCC": {}})
+            self.assertEqual([e["ticker"] for e in out], ["AAA"])

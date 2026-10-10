@@ -37,7 +37,21 @@ def _days_since(date_str, today):
     return (datetime.date.fromisoformat(today) - datetime.date.fromisoformat(date_str)).days
 
 
-def pick_candidates(queue, today, limit, ledger_dir=AUTO_LEDGER_DIR, refused=None):
+def watchlist_candidates(path="watchlist.json", official_dir="ledger", excluded=None):
+    """사용자가 직접 지정한 종목 중 공식 ledger가 없는 것. 스크리닝 큐와 무관한 공급원."""
+    if not os.path.exists(path):
+        return []
+    tickers = [t.strip().upper() for t in json.load(open(path, encoding="utf-8")).get("tickers", [])]
+    out = []
+    for t in dict.fromkeys(tickers):
+        if glob.glob(os.path.join(official_dir, f"{t}_*.json")) or t in (excluded or {}):
+            continue
+        out.append({"ticker": t, "state": "QUEUED", "in_validated_scope": True,
+                    "market_cap": None, "latest_gap": None, "source": "watchlist"})
+    return out
+
+
+def pick_candidates(queue, today, limit, ledger_dir=AUTO_LEDGER_DIR, refused=None, extra=None):
     from engine.research_queue import priority_order
 
     refused = refused or {}
@@ -51,7 +65,7 @@ def pick_candidates(queue, today, limit, ledger_dir=AUTO_LEDGER_DIR, refused=Non
         except ValueError:
             pass
     out = []
-    for e in priority_order(list(queue["entries"].values())):
+    for e in list(extra or []) + priority_order(list(queue["entries"].values())):
         t = e["ticker"]
         if e.get("state") != "QUEUED" or not e.get("in_validated_scope"):
             continue
@@ -98,7 +112,10 @@ def run(today, limit, av_key=None, queue_path=QUEUE_PATH):
     os.makedirs(REPORT_DIR, exist_ok=True)
     queue = json.load(open(queue_path, encoding="utf-8"))
     refused = json.load(open(REFUSED_PATH, encoding="utf-8")) if os.path.exists(REFUSED_PATH) else {}
-    picked = pick_candidates(queue, today, limit, refused=refused)
+    excl = json.load(open("data/excluded_tickers.json", encoding="utf-8")).get("entries", {}) \
+        if os.path.exists("data/excluded_tickers.json") else {}
+    picked = pick_candidates(queue, today, limit, refused=refused,
+                             extra=watchlist_candidates(excluded=excl))
     log(f"[자동분석] 대상 {len(picked)}종목: {', '.join(e['ticker'] for e in picked)}")
     rows = []
     for e in picked:
@@ -113,6 +130,10 @@ def run(today, limit, av_key=None, queue_path=QUEUE_PATH):
                     mc, mc_src = live, "Alpha Vantage 실시간"
             except Exception as ex:  # noqa: BLE001
                 log(f"[자동분석] {t} 시총 조회 실패, 근사치 사용: {type(ex).__name__}")
+        if not mc:
+            rows.append({"ticker": t, "status": "NO_MARKET_CAP",
+                         "reason": "시가총액 없음 — ALPHA_VANTAGE_API_KEY가 필요(관심종목 경로)"})
+            continue
         try:
             series, facts, lim = fetch_series(t, today)
             if series is None:
