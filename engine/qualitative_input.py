@@ -124,6 +124,17 @@ QUESTION_BANK = (
     _q("gov.insider_group_ownership", "governance",
        "임원·이사 전체의 합산 지분(위임장 기준)이 어느 구간인가?",
        "enum", ("lt_1pct", "1_to_5pct", "5_to_20pct", "gte_20pct"), requires_primary=True),
+    # v4.00 — 위임장 PvP 표·Item 408 ecd inline XBRL (engine/ecd.py, 규칙은 수집 전 고정)
+    _q("gov.pay_measure_category", "governance",
+       "위임장 보수-성과(PvP) 표에서 회사가 고른 가장 중요한 보상 연계 재무지표는 어느 범주인가?",
+       "enum", ("return_on_capital", "shareholder_return", "cash_flow", "earnings",
+                "revenue_growth", "other"), requires_primary=True),
+    _q("gov.pvp_tsr_vs_peer", "governance",
+       "PvP 표 최근 연도 회사 누적 TSR / 회사가 고른 비교군 TSR − 1 (소수)", "number",
+       requires_primary=True),
+    _q("gov.trading_plan_adoptions_12m", "governance",
+       "최근 12개월 정기보고서(Item 408)가 공시한 임원·이사 매매계획 채택 건수", "number",
+       requires_primary=True),
     # --- capital_allocation -----------------------------------------------
     _q("cap.buyback_effect", "capital_allocation",
        "자사주 매입이 실제로 주식수를 줄이는가, SBC 희석만 상쇄하는가?",

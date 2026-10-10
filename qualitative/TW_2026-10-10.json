@@ -1,0 +1,984 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "TW.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0919,
+      "claim_ids": [
+        "TW.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0312,
+      "claim_ids": [
+        "TW.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "share_count_rising",
+      "claim_ids": [
+        "TW.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "READ-TW-gov.chair_separated"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.ceo_succession_policy",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "TW.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "TW.DIVIDEND"
+      ],
+      "note": "",
+      "qid": "cap.dividend_predictable",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-TW-cap.debt_funded_buyback"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "cap.debt_funded_buyback",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TW.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TW.NOENF",
+        "TW.RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": "전년 대비 새로 추가된 경쟁 관련 위험 문장 없음",
+      "claim_ids": [
+        "TW.NEWTHREAT"
+      ],
+      "note": "회사가 스스로 새로 인정한 위협만 모은다(문장 비교, 사람이 요약하지 않음). 엔진 경쟁자 가중치와 직접 대조하지는 않았다",
+      "qid": "cmp.new_threat",
+      "status": "answered"
+    },
+    {
+      "answer": "gaining",
+      "claim_ids": [
+        "TW.PEERS"
+      ],
+      "note": "시장점유율이 아니라 지명 경쟁사 묶음 대비 성장 격차",
+      "qid": "cmp.share_trend",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TW.PEERS"
+      ],
+      "note": "회사+지명 경쟁사 매출 합계 CAGR 17.24% — 생존 기업만 집계",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TW.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.9869,
+      "claim_ids": [
+        "TW.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "lt_1pct",
+      "claim_ids": [
+        "TW.INSIDERGROUP"
+      ],
+      "note": "",
+      "qid": "gov.insider_group_ownership",
+      "status": "answered"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "TW.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TW.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TW.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TW.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    },
+    {
+      "answer": "revenue_growth",
+      "claim_ids": [
+        "TW.PVP_MEASURE"
+      ],
+      "note": "",
+      "qid": "gov.pay_measure_category",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0951,
+      "claim_ids": [
+        "TW.PVP_TSR"
+      ],
+      "note": "",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "answered"
+    },
+    {
+      "answer": 9,
+      "claim_ids": [
+        "TW.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "TW.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW DEF 14A (filed 2026-03-26, acc 0001758730-26-000084)",
+            "location": "Proxy — voting rights",
+            "observed_date": "2026-10-06",
+            "quote": "Each share of Class B common stock and Class D common stock entitles its holder to 10 votes",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "Class C·D는 경제적 권리가 없는 의결권 전용 주식이다(2026-09-03 별도 확인)",
+          "summary": "Class B·D 주식이 10표를 갖는다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B·D 주식이 10표를 갖는다"
+    },
+    {
+      "claim_id": "TW.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05, acc 0001758730-26-000015)",
+            "location": "ShareBasedCompensation FY2025 = 103,537,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 103,537,000 / fcf0 1,127,094,000",
+          "value": 0.0919,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 9.2%다"
+    },
+    {
+      "claim_id": "TW.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05, acc 0001758730-26-000015)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 208,400,040 -> FY2025 214,898,240",
+          "value": 0.0312,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 +3.12%"
+    },
+    {
+      "claim_id": "TW.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05, acc 0001758730-26-000015)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 104,173,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 104,173,000; 3년 희석주식수 +3.12%",
+          "value": 104173000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 +3.12%다 → share_count_rising"
+    },
+    {
+      "claim_id": "TW.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW Form 4 x42 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1758730&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 42건 집계 (재량 매수 $0 / 재량 매도 $2,072,913 / 10b5-1 매도 $42,535,720)",
+          "value": -2072912.6,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 23건: 재량 순 $-2,072,913, 10b5-1 정기 22건 → opp_net_sell"
+    },
+    {
+      "claim_id": "TW.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 2건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 2건)"
+    },
+    {
+      "claim_id": "TW.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "TW.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05, acc 0001758730-26-000015)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "ITEM 3. LEGAL PROCEEDINGS. From time to time, we are subject to various claims, lawsuits and other legal proceedings, including reviews, investigations and proceedings by governmental and self-regulatory agencies regarding our business. Set forth below is a summary of our currently pending material legal proceeding. While the ultimate resolution of these matters cannot presently be determined, we do not believe that, taking into account any applicable insurance coverage, any of our pending legal proceedings, including the matter set forth below, could reasonably be expected to have a material adverse effect on our business, financial condition or results of operations. However, legal matters",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "TW.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "TW.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "TW.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "TW.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 8-K (2026-05-20, acc 0001758730-26-000116)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "Advisory Vote on Executive Compensation. The Company's stockholders approved, on an advisory basis, the compensation of the Company's named executive officers: Votes For Votes Against Abstentions Broker Non-Votes 1,124,762,301 14,904,331",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000116/tw-20260519.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9869,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-05-20 주총 보수 승인 투표 찬성 1,124,762,301 / 반대 14,904,331 → 찬성률 98.7%"
+    },
+    {
+      "claim_id": "TW.INSIDERGROUP",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW DEF 14A (filed 2026-03-26, acc 0001758730-26-000084)",
+            "location": "Security Ownership 표 — 'as a group' 행",
+            "observed_date": "2026-10-07",
+            "quote": "— * Rich Repetto — — — — — Rana Yared 1,323 * — — * All Executive Officers and Directors as a Group ( 17 persons) (14) 384,979 0.2 %",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "insider_group_pct",
+          "note": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만",
+          "summary": "DEF 14A 지분표의 'as a group' 행",
+          "value": 0.2,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "위임장(2026-03-26) 기준 임원·이사 합산 지분 구간 lt_1pct (0.2%)"
+    },
+    {
+      "claim_id": "TW.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05, acc 0001758730-26-000015)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that our internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "TW.DIVIDEND",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW companyfacts",
+            "location": "CommonStockDividendsPerShareDeclared FY2021~FY2025",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "dividends_per_share",
+          "note": "최근 5개 연속 회계연도 주당배당이 모두 양수이고 감소 없음(사전 고정)",
+          "summary": "현금흐름·자본 관련 주당배당(companyfacts)",
+          "value": 0.48,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 5개 연속 회계연도 주당배당 [0.32, 0.32, 0.36, 0.4, 0.48] — 감소 없음"
+    },
+    {
+      "claim_id": "TW.PEERS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 최신 연차보고서",
+            "location": "Competition",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "data/peer_baskets.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "근거 원문: Major competitors include TP ICAP, BGC Partners and Tradition. / 제외: Bloomberg·Trumid·Tradition(비상장), TP ICAP·Euronext(해외), ICE·CME(사업 분리 불가)",
+          "summary": "회사가 연차보고서에서 직접 지명한 경쟁사",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "companyfacts",
+            "location": "매출 FY 정렬",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001758730.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "growth_gap_pp",
+          "note": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)",
+          "summary": "회사·경쟁사 연차 매출(companyfacts, 결산일 기준 정렬)",
+          "value": 4.3,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "FY2022~FY2025 매출 CAGR 19.97% vs 지명 경쟁사 ['BGC', 'MKTX'] 합계 15.67% → gaining"
+    },
+    {
+      "claim_id": "TW.NEWTHREAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "new_competition_sentences",
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장. 비교 대상: 10-K (filed 2025-02-07)",
+          "summary": "전년 대비 새 위험요인 문장 43개 중 경쟁 관련 0개",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "전년 대비 새로 추가된 경쟁 관련 위험 문장 없음"
+    },
+    {
+      "claim_id": "TW.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-K (filed 2026-02-05)",
+            "location": "전문",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000015/tw-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "READ-TW-gov.chair_separated",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-03-26",
+            "location": "TW-4",
+            "observed_date": "2026-10-09",
+            "quote": "The Board currently believes that separating the roles of the Chairperson and the Chief Executive Officer is in the best interests of the Company and its stockholders",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "독립 의장 Aigrain이 CEO와 분리",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-03-26",
+            "location": "TW-4",
+            "observed_date": "2026-10-09",
+            "quote": "Jacques Aigrain has served as our independent Chairperson since July 2023. Ms. Madoff has served as our Lead Independent Director since February 2022. The Board currently believes that separating the roles of the Chairperson and the Chief Executive Officer is in the best interests",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "독립 의장 Aigrain이 별도 의장, 이사회가 의장-CEO 분리가 최선이라 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.chair_separated = True (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-TW-cap.debt_funded_buyback",
+      "evidence": [
+        {
+          "citation": {
+            "document": "8-K filed 2025-10-30",
+            "location": "TW-61",
+            "observed_date": "2026-10-09",
+            "quote": "$1.9 billion in cash and cash equivalents and an undrawn $500 million credit facility at September 30, 2025",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873025000171/tw-2025xq3xex991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "신용한도 미인출·현금 19억로 차입 없음, 자사주 매입은 TW-12에서 1.04억 달러 확인",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "cap.debt_funded_buyback = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "TW.PVP_MEASURE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW DEF 14A (2026-03-26, acc 0001758730-26-000084)",
+            "location": "ecd:CoSelectedMeasureName",
+            "observed_date": "2026-10-10",
+            "quote": "constant currency revenue change",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "engine/ecd.py MEASURE_RULES 순서대로 키워드 분류(사전 고정)",
+          "summary": "PvP 표 ecd:CoSelectedMeasureName",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "회사 선정 지표 'constant currency revenue change' → revenue_growth"
+    },
+    {
+      "claim_id": "TW.PVP_TSR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW DEF 14A (2026-03-26, acc 0001758730-26-000084)",
+            "location": "ecd TSR (2025-12-31)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "pvp_tsr_vs_peer",
+          "note": "같은 시점 $100 투자의 누적 가치 비율. 비교군은 회사가 고른 것",
+          "summary": "PvP 표 ecd:TotalShareholderRtnAmt / PeerGroupTotalShareholderRtnAmt",
+          "value": -0.0951,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2025-12-31 누적 TSR 175.73 vs 비교군 194.20 → -9.5%"
+    },
+    {
+      "claim_id": "TW.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TW 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000133/tw-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 9,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 9건, 해지 0건"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.7188,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 23,
+    "n_primary_answered": 18,
+    "n_primary_required": 20,
+    "n_questions": 32,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 6,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "capital_allocation": {
+        "answered": 3,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "competitive_landscape": {
+        "answered": 3,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 9,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      }
+    },
+    "unexamined_lenses": []
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "TW",
+  "findings": [
+    {
+      "claim_ids": [
+        "TW.BUYBACK",
+        "TW.DIVIDEND"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인) / 배당이 5개 연속 연도 감소 없이 지급됨(companyfacts, 사전 고정 규칙)"
+    },
+    {
+      "claim_ids": [
+        "TW.SBC",
+        "TW.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "TW.DUAL_CLASS",
+        "TW.INSIDER",
+        "TW.CXO",
+        "TW.LITIGATION",
+        "TW.SAYONPAY",
+        "TW.INSIDERGROUP"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음) / 임원·이사 합산 지분을 위임장 지분표에서 구간으로 집계(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "TW.RESTATE",
+        "TW.NT",
+        "TW.AUDITOR",
+        "TW.IMPAIR",
+        "TW.ICFR"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "TW.NEWTHREAT"
+      ],
+      "effect": "neutral",
+      "lens": "competitive_landscape",
+      "summary": "위험요인 연도별 비교로 새 경쟁 위협 문장을 모음(판단 없음)"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 1,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "5884c5a7f156e292f6a44e3936df7d92cd81df26daf38c5da9cb2ddd5b4d41ad",
+  "supersedes": "18b744b714dd8ae968402d9e5b2b709a6c487bd1560ab4f589b6cf62f1dcc86f",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

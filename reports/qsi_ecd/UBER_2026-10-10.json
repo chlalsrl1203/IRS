@@ -1,0 +1,75 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001543151",
+  "pvp": {
+    "accession": "0001308179-26-000125",
+    "filed": "2026-03-23",
+    "measure_category": "revenue_growth",
+    "measure_name": "Gross Bookings",
+    "n_years": 5,
+    "peer_tsr": 258.38,
+    "peer_tsr_text": "258.38",
+    "peo_cap_not_used": {
+      "2021-12-31": 4212154.0,
+      "2022-12-31": -8946037.0,
+      "2023-12-31": 109669788.0,
+      "2024-12-31": 74251272.0,
+      "2025-12-31": 66651137.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 160.22,
+    "tsr_text": "160.22",
+    "tsr_vs_peer": -0.379905565446242,
+    "url": "https://www.sec.gov/Archives/edgar/data/1543151/000130817926000125/uber014597-def14a.htm"
+  },
+  "ticker": "UBER",
+  "trading_plans": {
+    "answer": 1,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001543151-25-000033",
+        "adoptions": 1,
+        "filed": "2025-11-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Andrew Macdonald"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001543151-26-000015",
+        "adoptions": 0,
+        "filed": "2026-02-13",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Andrew Macdonald"
+        ],
+        "terminations": 1
+      },
+      {
+        "accession": "0001543151-26-000022",
+        "adoptions": 0,
+        "filed": "2026-05-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001543151-26-000032",
+        "adoptions": 0,
+        "filed": "2026-08-05",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 1
+  }
+}

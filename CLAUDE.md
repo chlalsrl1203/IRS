@@ -10897,3 +10897,32 @@ baseline fingerprint `f5709edf…` 불변, `ledger/`·매수리스트 0건 수�
 
 테스트 1,387 → **1,403 통과**(신규 `tests/test_fsds.py` 16, `test_dilution` 증거 검사에 FSDS 경로 추가) ·
 baseline fingerprint `f5709edf…` **불변** · `ledger/`·매수리스트·공식 판정 0건 수정 · `ENGINE_VERSION` v3.98 → **v3.99**.
+
+## v4.00 — 위임장 PvP·Item 408 ecd 파서 + 거버넌스 질문 3개 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ②. companyfacts에는 `ecd` 택소노미가 없지만(ADBE 실측) DEF 14A·
+10-Q·10-K 원문의 inline XBRL로 붙어 있어 `engine/ecd.py`가 stdlib `html.parser`로 읽는다(edgartools MIT는 태그
+목록만 참고). 수집기 `scripts/qsi_ecd.py` → 개정본(`qualitative/<T>_2026-10-10.json`), 원자료 `reports/qsi_ecd/`.
+판정·비중·ledger 미배선(테스트 고정). **주 버전 번호가 4로 올랐다** — `test_engine_version_comes_from_single_constant`의
+`startswith("v3.")`를 형식 검사(`v<주>.<두자리>`)로 바꿨다(리터럴 재유입 감시라는 원래 목적은 그대로).
+
+**새 질문 3개와 사전 고정 규칙**(수집 전 `engine/ecd.py` docstring에 고정, 결과를 보고 바꾸지 않았다):
+- `gov.pay_measure_category` — PvP 표 `ecd:CoSelectedMeasureName`을 키워드로 분류. 순서: return_on_capital →
+  shareholder_return → cash_flow → earnings → revenue_growth → other.
+- `gov.pvp_tsr_vs_peer` — 최근 연도 회사 누적 TSR / 회사가 고른 비교군 TSR − 1(개인·조정 축이 붙은 사실 제외).
+- `gov.trading_plan_adoptions_12m` — 12개월 정기보고서의 `ecd:TrdArrAdoptionDate` 수. 정기보고서 3건 미만이거나
+  한 건이라도 Item 408 ecd 블록이 없으면 unknown(채택 0건과 '블록 없음'을 구분 — 없음을 0으로 읽으면 거짓 청정).
+- 외국 발행사(DLO·MNDY·PDD·SE)는 세 질문 모두 not_applicable(제도 부재).
+- ⚠️ `PeoActuallyPaidCompAmt`(실지급 보수)는 답으로 쓰지 않는다 — 규정상 주가 변동이 섞여 TSR과 기계적으로 같이
+  움직여 "보수-성과 정렬" 주장의 근거로 쓰면 동어반복이 된다. 리포트에 병기만.
+
+**결과(19종목)**: 답함 335 → **379**(69.2%), 해당없음 13 → 25, 해결 **73.7%**(분모 491 → 548칸, 질문 3개 추가로).
+- 보상 지표: revenue_growth 6(ADBE·DUOL·GEN·NXT·TW·UBER) · earnings 3(DECK·HLNE·SKYW) · return_on_capital 1(ACGL) ·
+  cash_flow 1(PTC) · other 3. **보험 3사(CINF 'VCR'·PGR 'Combined ratio'·SIGI 'GAAP Combined Ratio')는 사전 규칙상
+  other** — 언더라이팅 지표 범주를 결과를 본 뒤 추가하지 않았다. NBIX는 회사 선정 지표 태그가 없어 unknown.
+- TSR 대 비교군: ADBE **−64.3%**, GEN −57.4%, UBER −38.0%, SIGI −25.8% / DECK +326.8%, NXT +200.0%, SKYW +79.1%.
+- 매매계획 채택(12개월): NBIX 16, PGR 10, TW 9, DUOL·NXT 6 / ACGL·CINF·HLNE·SIGI·SKYW 0.
+- 이 값들은 사실의 집계일 뿐 좋고 나쁨을 판단하지 않으며, 성과와의 관계 증거는 0건이다(`IMPLEMENTED_NOT_VALIDATED`).
+
+테스트 1,403 → **1,423 통과**(신규 `tests/test_ecd.py` 20) · baseline fingerprint `f5709edf…` **불변** ·
+`ledger/`·매수리스트·공식 판정 0건 수정 · 기존 봉인 파일 0건 수정(개정본만) · `ENGINE_VERSION` v3.99 → **v4.00**.

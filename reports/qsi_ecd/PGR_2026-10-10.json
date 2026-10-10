@@ -1,0 +1,85 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000080661",
+  "pvp": {
+    "accession": "0000080661-26-000099",
+    "filed": "2026-03-23",
+    "measure_category": "other",
+    "measure_name": "Combined ratio",
+    "n_years": 5,
+    "peer_tsr": 228.85,
+    "peer_tsr_text": "228.85",
+    "peo_cap_not_used": {
+      "2021-12-31": 26403691.0,
+      "2022-12-31": 48474661.0,
+      "2023-12-31": 49003116.0,
+      "2024-12-31": 61138966.0,
+      "2025-12-31": 25770278.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 254.12,
+    "tsr_text": "254.12",
+    "tsr_vs_peer": 0.11042167358531785,
+    "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm"
+  },
+  "ticker": "PGR",
+  "trading_plans": {
+    "answer": 10,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000080661-25-000129",
+        "adoptions": 2,
+        "filed": "2025-11-03",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "John P. Sauerland",
+          "Jonathan S. Bauer"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000080661-26-000086",
+        "adoptions": 3,
+        "filed": "2026-03-02",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Carl G. Joyce",
+          "Karen B. Bailo",
+          "Patrick K. Callahan"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000080661-26-000177",
+        "adoptions": 4,
+        "filed": "2026-05-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Andrew J. Quigg",
+          "John Murphy",
+          "Steven A. Broz",
+          "Susan Patricia Griffith"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000080661-26-000308",
+        "adoptions": 1,
+        "filed": "2026-08-03",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Lori Niederst"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

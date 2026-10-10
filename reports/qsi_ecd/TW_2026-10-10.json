@@ -1,0 +1,82 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001758730",
+  "pvp": {
+    "accession": "0001758730-26-000084",
+    "filed": "2026-03-26",
+    "measure_category": "revenue_growth",
+    "measure_name": "constant currency revenue change",
+    "n_years": 5,
+    "peer_tsr": 194.2,
+    "peer_tsr_text": "194.20",
+    "peo_cap_not_used": {
+      "2021-12-31": 110340110.0,
+      "2022-12-31": -6603081.0,
+      "2023-12-31": 25769303.0,
+      "2024-12-31": 41752621.0,
+      "2025-12-31": 4666150.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 175.73,
+    "tsr_text": "175.73",
+    "tsr_vs_peer": -0.09510813594232748,
+    "url": "https://www.sec.gov/Archives/edgar/data/1758730/000175873026000084/tw-20260323.htm"
+  },
+  "ticker": "TW",
+  "trading_plans": {
+    "answer": 9,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001758730-25-000172",
+        "adoptions": 0,
+        "filed": "2025-10-30",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001758730-26-000015",
+        "adoptions": 7,
+        "filed": "2026-02-05",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Amy Clack",
+          "Douglas Friedman",
+          "Justin Peterson",
+          "Sara Furber",
+          "Steven Berns",
+          "Troy Dixon",
+          "William Hult"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001758730-26-000096",
+        "adoptions": 0,
+        "filed": "2026-04-29",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001758730-26-000133",
+        "adoptions": 2,
+        "filed": "2026-07-30",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Douglas Friedman",
+          "Troy Dixon"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

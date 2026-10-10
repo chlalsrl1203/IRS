@@ -1,0 +1,80 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001562088",
+  "pvp": {
+    "accession": "0001628280-26-025728",
+    "filed": "2026-04-17",
+    "measure_category": "revenue_growth",
+    "measure_name": "bookings",
+    "n_years": 5,
+    "peer_tsr": 109.3,
+    "peer_tsr_text": "109.30",
+    "peo_cap_not_used": {
+      "2021-12-31": 78011817.0,
+      "2022-12-31": -31645908.0,
+      "2023-12-31": 139895921.0,
+      "2024-12-31": 129007495.0,
+      "2025-12-31": -44243186.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 126.25,
+    "tsr_text": "126.25",
+    "tsr_vs_peer": 0.15507776761207692,
+    "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026025728/duol-20260417.htm"
+  },
+  "ticker": "DUOL",
+  "trading_plans": {
+    "answer": 6,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001628280-25-049743",
+        "adoptions": 2,
+        "filed": "2025-11-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Dr. Severin Hacker",
+          "Natalie Glance"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001628280-26-012494",
+        "adoptions": 1,
+        "filed": "2026-02-27",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "William \"Bing\" Gordon"
+        ],
+        "terminations": 1
+      },
+      {
+        "accession": "0001628280-26-029976",
+        "adoptions": 0,
+        "filed": "2026-05-05",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001628280-26-053603",
+        "adoptions": 3,
+        "filed": "2026-08-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Dr. Luis von Ahn",
+          "Stephen Chen",
+          "William \"Bing\" Gordon"
+        ],
+        "terminations": 1
+      }
+    ],
+    "status": "OK",
+    "terminations": 2
+  }
+}

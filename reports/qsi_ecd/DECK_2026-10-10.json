@@ -1,0 +1,76 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000910521",
+  "pvp": {
+    "accession": "0000910521-26-000018",
+    "filed": "2026-07-24",
+    "measure_category": "earnings",
+    "measure_name": "consolidated operating income",
+    "n_years": 5,
+    "peer_tsr": 42.6,
+    "peer_tsr_text": "42.6",
+    "peo_cap_not_used": {
+      "2022-03-31": 6190970.0,
+      "2023-03-31": 21415165.0,
+      "2024-03-31": 30785255.0,
+      "2026-03-31": 10883281.0
+    },
+    "period_end": "2026-03-31",
+    "status": "OK",
+    "tsr": 181.8,
+    "tsr_text": "181.8",
+    "tsr_vs_peer": 3.267605633802817,
+    "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm"
+  },
+  "ticker": "DECK",
+  "trading_plans": {
+    "answer": 4,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000910521-25-000044",
+        "adoptions": 2,
+        "filed": "2025-10-31",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Stefano Caroti",
+          "Tom Garcia"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000910521-26-000005",
+        "adoptions": 0,
+        "filed": "2026-02-03",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001628280-26-037664",
+        "adoptions": 2,
+        "filed": "2026-05-22",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Bonita Stewart",
+          "Steven Fasching"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000910521-26-000022",
+        "adoptions": 0,
+        "filed": "2026-07-30",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

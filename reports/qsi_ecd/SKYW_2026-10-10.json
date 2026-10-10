@@ -1,0 +1,71 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000793733",
+  "pvp": {
+    "accession": "0001104659-26-034497",
+    "filed": "2026-03-25",
+    "measure_category": "earnings",
+    "measure_name": "adjusted EBITDA",
+    "n_years": 5,
+    "peer_tsr": 139.12,
+    "peer_tsr_text": "139.12",
+    "peo_cap_not_used": {
+      "2021-12-31": 5158789.0,
+      "2022-12-31": -917779.0,
+      "2023-12-31": 20110631.0,
+      "2024-12-31": 35902700.0,
+      "2025-12-31": 14269095.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 249.09,
+    "tsr_text": "249.09",
+    "tsr_vs_peer": 0.7904686601495112,
+    "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm"
+  },
+  "ticker": "SKYW",
+  "trading_plans": {
+    "answer": 0,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001104659-25-104919",
+        "adoptions": 0,
+        "filed": "2025-10-31",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001104659-26-016358",
+        "adoptions": 0,
+        "filed": "2026-02-17",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001104659-26-048542",
+        "adoptions": 0,
+        "filed": "2026-04-24",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001104659-26-086641",
+        "adoptions": 0,
+        "filed": "2026-07-24",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}
