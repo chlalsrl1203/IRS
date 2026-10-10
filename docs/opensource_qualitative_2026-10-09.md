@@ -101,3 +101,33 @@ SEC 직원이 10-K의 비GAAP 지표·수익인식·세그먼트를 지적한 �
   ADBE DEF 14A `0000796343-26-000043`, 10-Q `0000796343-26-000156`; companyfacts `CIK0000796343`.
 - Hoberg readme: `Readme_tnic3.txt`(gvkey, WRDS CIK 매핑 언급), `Readme_LifeCycleDatabase.txt`(1997~2019).
 - 미확인으로 남긴 것: FSDS `segments`의 과거 분기 커버리지, LM 마스터 사전 원문 약관, finBERT 라이선스.
+
+## 6. 구현 결과 (2026-10-10 추가 — §4 권고 ①~④ 실행 후)
+
+판정(§2)과 실제 구현을 대조한다. 상세는 CLAUDE.md의 v3.99~v4.02 절.
+
+| §4 권고 | 버전 | 판정대로 갔나 | 실측 결과 |
+|---|---|---|---|
+| ① SEC 재무제표 데이터셋 stdlib 리더 | v3.99 | REIMPLEMENT 그대로 | ERIE **회복**(EPS×희석주식수가 6년 모두 순이익 재현). **HLNE·RYAN은 회복 못함** — HLNE는 가중평균 주식수가 표준 태그로 공시되지 않고, RYAN은 비지배지분이 6년 내내 커서 거부. §1 ①의 "되살릴 수 있다"는 3종목 중 **1종목**만 참이었다 |
+| ② ecd 파서 | v4.00 | REIMPLEMENT 그대로 | 질문 3개, 44칸 채움. 보험사는 보상 지표가 '합산비율'이라 사전 분류상 other |
+| ③ 나쁜 소식 자발 공시 | v4.01 | 오픈소스 없음 → 규칙으로 | **새로 채운 칸 0개**(True만 단언하는 규칙, 국내 12종목 True 0건) |
+| ④ 의견서한 + 지분표 | v4.02 | REIMPLEMENT/ADAPT | 의견서한 질문 1개, 지분표 4칸 신규, 기존 답 14종목 회귀 일치 |
+
+해결률 70.9% → **75.1%**(답함 335 → 398, 분모 491 → 563 — 질문 4개 추가).
+
+### 판정과 어긋난 점 (정정)
+- **§1 ①의 낙관**: "ERIE·HLNE·RYAN 희석을 되살릴 수 있다"고 썼으나 1/3만 성립했다. 데이터가 SEC에 있다는 것과
+  그 데이터로 **주주 지분의 순변화를 증명할 수 있다**는 것은 다른 명제였다(Up-C 구조에선 상장 클래스 증가가 유닛 교환인지
+  희석인지 구분 불가).
+- **§4 ③의 기대**: 가장 빈 칸(14/15)을 채울 것처럼 적었으나 규칙이 True만 단언하도록 설계돼 채운 칸이 0개다. 채우지 못한
+  것이 규칙의 결함이 아니라 설계 의도(없음 ≠ 정직 이력 없음)의 결과임을 CLAUDE.md v4.01에 남겼다.
+- **GEN 세그먼트 대조 실패**: 이 대조가 필요했던 바로 그 종목(GEN)에서 공시 구성원 이름 체계가 바뀌어 자동 대조가 안 된다.
+
+### 여전히 비는 칸 (남은 한계)
+`acc.voluntary_bad_news` 거의 전부, `cmp.share_trend`·`cmp.lifecycle_shakeout_or_decline`(무료 경로 없음),
+`cap.ma_discipline`, `gov.material_litigation`, `cat.cat_exposure`(자유서술은 정확 일치 규칙상 채택 불가).
+이 정성 정보가 투자 성과와 관련 있다는 증거는 여전히 0건이다 — 전부 `IMPLEMENTED_NOT_VALIDATED`.
+
+### 재현
+`python -m scripts.fsds_extract <T...>` → `scripts.dilution_drag` / `scripts.fsds_segments` / `scripts.qsi_ecd` /
+`scripts.qsi_bad_news` / `scripts.qsi_disclosure_extras` (각 `--dry-run` 지원). 분기 zip 60~120MB는 `.cache/`(gitignore).
