@@ -315,7 +315,7 @@ def build_candidate(ticker, name, series, rf=DEFAULT_RISK_FREE_RATE):
     )
 
 
-def run(limit=None, retrieved_at=None, user_agent=None):
+def run(limit=None, retrieved_at=None, user_agent=None, workers=1):
     """
     전체 파이프라인. limit을 주면 유니버스 앞부분 N개만 처리한다(테스트/부분실행용,
     운영 자동화에서는 None으로 전체를 돈다).
@@ -340,19 +340,41 @@ def run(limit=None, retrieved_at=None, user_agent=None):
         log(f"[Stage1] limit={limit} 적용 -> {len(kept)}종목만 처리")
 
     skipped, candidates = {}, []
-    for i, row in enumerate(kept):
+
+    def _one(row):
         ticker, cik, name = row["ticker"], row["cik"], row["title"]
         try:
             series, lim = fetch_stage1_series(ticker, cik, retrieved_at, user_agent)
             if series is None:
-                skipped[ticker] = lim
-                continue
-            candidates.append(build_candidate(ticker, name, series))
+                return ticker, None, lim
+            return ticker, build_candidate(ticker, name, series), None
         except Exception as e:  # noqa: BLE001 - 종목 하나의 실패가 전체를 막지 않는다
-            skipped[ticker] = [repr(e)]
-        if (i + 1) % 500 == 0:
-            log(f"[Stage1] 진행 {i + 1}/{len(kept)} "
-                f"(후보 {len(candidates)}, 제외 {len(skipped)})")
+            return ticker, None, [repr(e)]
+
+    # workers>1이면 I/O 병렬화(결과 순서는 입력 순서를 유지). SEC 공정접근 한도(초당 10회)를
+    # 넘지 않도록 workers는 6 이하로 쓸 것 - 종목당 요청 1회, 종목당 ~1초.
+    if workers > 1:
+        from concurrent.futures import ThreadPoolExecutor
+        with ThreadPoolExecutor(max_workers=workers) as ex:
+            outcomes = ex.map(_one, kept)
+            for i, (ticker, cand, lim) in enumerate(outcomes):
+                if cand is None:
+                    skipped[ticker] = lim
+                else:
+                    candidates.append(cand)
+                if (i + 1) % 500 == 0:
+                    log(f"[Stage1] 진행 {i + 1}/{len(kept)} "
+                        f"(후보 {len(candidates)}, 제외 {len(skipped)})")
+    else:
+        for i, row in enumerate(kept):
+            ticker, cand, lim = _one(row)
+            if cand is None:
+                skipped[ticker] = lim
+            else:
+                candidates.append(cand)
+            if (i + 1) % 500 == 0:
+                log(f"[Stage1] 진행 {i + 1}/{len(kept)} "
+                    f"(후보 {len(candidates)}, 제외 {len(skipped)})")
 
     log(f"[Stage1] SEC 재무계산 완료: 성공 {len(candidates)} / 제외 {len(skipped)}")
     results = screen_all(candidates)
@@ -395,10 +417,12 @@ def main():
     ap = argparse.ArgumentParser(description="대규모 스크리닝(Stage 1, SEC 전용)")
     ap.add_argument("--limit", type=int, default=None,
                     help="유니버스 앞 N개만 처리(부분실행/테스트용)")
+    ap.add_argument("--workers", type=int, default=1,
+                    help="병렬 수(기본 1, SEC 한도상 6 이하)")
     ap.add_argument("--out", default=None, help="결과 JSON 저장 경로")
     args = ap.parse_args()
 
-    result = run(limit=args.limit)
+    result = run(limit=args.limit, workers=min(args.workers, 6))
     out_path = args.out or os.path.join(
         REPORTS_DIR, f"broad_screen_{result['retrieved_at']}.json")
     os.makedirs(os.path.dirname(out_path), exist_ok=True)
