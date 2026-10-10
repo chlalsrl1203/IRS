@@ -1,0 +1,205 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001671933",
+  "cxo": {
+    "events": [
+      {
+        "accession": "0001671933-26-000099",
+        "filing_date": "2026-09-15",
+        "quote": "Green no longer serves as the Company’s Chief Executive Officer.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000099/ttd-20260914.htm"
+      },
+      {
+        "accession": "0001671933-26-000025",
+        "filing_date": "2026-03-25",
+        "quote": "Kayyal’s prior separation from the Company in his position as the Company’s chief financial officer, the Company entered into a Separation Agreement and Release to pay Mr.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000025/ttd-20260319.htm"
+      },
+      {
+        "accession": "0001193125-26-021804",
+        "filing_date": "2026-01-26",
+        "quote": "Alexander Kayyal’s employment as the Company’s chief financial officer, principal financial officer and principal accounting officer was terminated effective as of January 24, 2026.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1671933/000119312526021804/d20637d8k.htm"
+      },
+      {
+        "accession": "0001671933-25-000122",
+        "filing_date": "2025-08-07",
+        "quote": "Schenkein will transition out of the position of chief financial officer effective as of August 21, 2025 as part of a plan to depart the Company by the end of the year.",
+        "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193325000122/ttd-20250803.htm"
+      }
+    ],
+    "n_cxo_departure_filings": 4,
+    "n_item_502_filings": 15,
+    "status": "OK",
+    "window_since": "2024-10-10"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "같은 회계연도의 차입 발행·매입 값이 없다"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "domestic_extra": {
+    "cover": {
+      "answer": null,
+      "excerpt": "r, was approximately $ 32,045,240,502 based on the closing sales price for the registrant’s Class A common stock, as reported on the Nasdaq Global Market. As of January 31, 2026, there were 432,868,418 shares of the registrant’s Class A common stock outstanding and 43,108,629 shares of the registrant’s Class B common stock outstanding.",
+      "reason": "표지에 Class ['B'] 주식이 있다 — 의결권 차이는 정관·위임장을 읽어야 한다"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": null,
+      "reason": "차입 잔액 태그를 찾지 못했다(무차입이거나 미보고 — 구분할 수 없다)",
+      "tag": null
+    },
+    "ma": {
+      "answer": null,
+      "item_102_3y": [],
+      "reason": "인수 지출 값이 5개 연도 중 3개뿐이다",
+      "recent_8k_201": []
+    },
+    "no_dividend": "Dividend Policy We have never declared or paid any cash dividends on our Class A or Class B common stock, and we do not anticipate paying any cash dividends in the foreseeable future."
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 20,
+    "n_with_guidance": 0,
+    "reason": "8-K 2.02 보도자료 20건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "8-K Item 2.02"
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2026-02-27",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 4054
+  },
+  "insider": {
+    "accessions": [
+      "0001671445-26-000010",
+      "0002109272-26-000010",
+      "0001826731-26-000010",
+      "0001867888-26-000008",
+      "0001776828-26-000010",
+      "0001867888-26-000006",
+      "0002109272-26-000008",
+      "0001826731-26-000008",
+      "0001671445-26-000008",
+      "0001534034-26-000003",
+      "0001776828-26-000008",
+      "0002140040-26-000004",
+      "0002008907-26-000010",
+      "0002008907-26-000008",
+      "0001867888-26-000004",
+      "0002008907-26-000006",
+      "0001826731-26-000006",
+      "0002109272-26-000006",
+      "0001671445-26-000006",
+      "0001699294-26-000010",
+      "0001857556-26-000002",
+      "0001903152-26-000003",
+      "0001699294-26-000008",
+      "0001589043-26-000004",
+      "0001903152-26-000001",
+      "0001206977-26-000004",
+      "0001206977-26-000002",
+      "0002008907-26-000004",
+      "0001867888-26-000002",
+      "0001826731-26-000004",
+      "0002109272-26-000004",
+      "0001671445-26-000004",
+      "0002008907-26-000002",
+      "0001826731-26-000002",
+      "0002109272-26-000002",
+      "0001671445-26-000002",
+      "0001671445-25-000010",
+      "0001867888-25-000006",
+      "0002008907-25-000008",
+      "0001826731-25-000011",
+      "0001671445-25-000008"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 41,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_buy",
+      "discretionary_buy_usd": 148101266.36,
+      "discretionary_net_by_owner": {
+        "FALBERG KATHRYN E": -4655112.6,
+        "Green Jeffrey Terry": 148101266.36,
+        "Jacobson Samantha": -1134816.34
+      },
+      "discretionary_net_usd": 142311337.42,
+      "discretionary_sell_usd": 5789928.94,
+      "floor_usd": 1000000,
+      "n_discretionary": 7,
+      "n_open_market": 7,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-10",
+      "2026-10-10"
+    ]
+  },
+  "insider_group": {
+    "accession": "0001671933-26-000102",
+    "filing_date": "2026-09-18",
+    "result": {
+      "answer": null,
+      "reason": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-11"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-02-27",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 252
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-11"
+  },
+  "say_on_pay": {
+    "accession": "0001671933-26-000055",
+    "filing_date": "2026-05-08",
+    "n_item_507": 4,
+    "result": {
+      "against": 172498666,
+      "answer": 0.7471030563015258,
+      "for": 509592084,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000055/ttd-20260504.htm"
+  },
+  "ticker": "TTD"
+}

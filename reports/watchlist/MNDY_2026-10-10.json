@@ -1,0 +1,20 @@
+{
+ "ticker": "MNDY",
+ "analyzed_at": "2026-08-02",
+ "market_cap_then": 3740000000.0,
+ "market_cap_now": 3817675272.5186453,
+ "market_cap_change_pct": 0.020768789443488034,
+ "gap_then": 0.23276233673095703,
+ "gap_now": 0.23019790649414062,
+ "gap_decay_pp": -0.0025644302368164062,
+ "judgment_then": "저평가 가능성",
+ "judgment_now": "저평가 가능성",
+ "judgment_flipped": false,
+ "grade_then": "S",
+ "grade_now": "S",
+ "realistic_growth_then": 0.25,
+ "realistic_growth_now": 0.25,
+ "price_now": 88.96,
+ "date": "2026-10-10",
+ "price_ref": "Alpha Vantage GLOBAL_QUOTE 2026-10-09 종가; 주식수는 2026-09-10 리포트 비율 역산"
+}

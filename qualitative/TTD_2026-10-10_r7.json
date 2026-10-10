@@ -1,0 +1,1020 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "TTD.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TTD.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": 0.6166,
+      "claim_ids": [
+        "TTD.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0127,
+      "claim_ids": [
+        "TTD.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "reduces_share_count",
+      "claim_ids": [
+        "TTD.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.ceo_succession_policy",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_buy",
+      "claim_ids": [
+        "TTD.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": 4,
+      "claim_ids": [
+        "TTD.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: TTD.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.7471,
+      "claim_ids": [
+        "TTD.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "ecd inline XBRL이 없다(PvP 공시 없음 또는 비표준)",
+      "qid": "gov.pay_measure_category",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "ecd inline XBRL이 없다(PvP 공시 없음 또는 비표준)",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "unknown"
+    },
+    {
+      "answer": 1,
+      "claim_ids": [
+        "TTD.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "인수 지출 값이 5개 연도 중 3개뿐이다",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사가 무배당을 직접 진술하고 최근 5년 주당배당 값이 없다: \"Dividend Policy We have never declared or paid any cash dividends on our Class A or Class B common stock, and we do not anticipate paying any cash dividends in the foreseeable future.\" (TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014), https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm)",
+      "qid": "cap.dividend_predictable",
+      "status": "not_applicable"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "같은 회계연도의 차입 발행·매입 값이 없다",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TTD.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TTD.NOENF",
+        "TTD.RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "8-K 2.02 보도자료 20건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "8-K 2.02 보도자료 20건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "비정기 가이던스 하향 규칙: 보도자료 15건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "TTD.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TTD.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TTD.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TTD.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "TTD.SEC_COMMENT_LETTERS"
+      ],
+      "note": "",
+      "qid": "acc.sec_comment_letters_3y",
+      "status": "answered"
+    },
+    {
+      "answer": "전년 대비 새로 추가된 경쟁 관련 위험 문장 6개: 「To the extent we fail to adopt such technologies effectively or as intended, experience delays in integrating these technologies into our operations or our competitors successfully implement improved AI technologies into their products or services, our ability to compete effectively could be harmed and our growth prospects and results of operations could be adversely affected.」 / 「Historically, some of our competitors have sought to differentiate themselves to prospective customers primarily on the basis of artificially low prices, which are enabled by inherent conflicts of interest and a lack of objectivity, and do not account for the overall value delivered to customers.」",
+      "claim_ids": [
+        "TTD.NEWTHREAT"
+      ],
+      "note": "회사가 스스로 새로 인정한 위협만 모은다(문장 비교, 사람이 요약하지 않음). 엔진 경쟁자 가중치와 직접 대조하지는 않았다",
+      "qid": "cmp.new_threat",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": "eroding",
+      "claim_ids": [
+        "TTD.GM"
+      ],
+      "note": "총이익률 대리지표 — 원가 하락·제품 믹스·보조금(예: 생산세액공제)으로도 움직인다. 가격 인상의 직접 증거가 아니다",
+      "qid": "cmp.pricing_power",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "TTD.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD DEF 14A (filed 2026-09-18, acc 0001671933-26-000102)",
+            "location": "Special meeting proxy — voting",
+            "observed_date": "2026-10-10",
+            "quote": "each share of Class B common stock is entitled to ten votes on each proposal",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "특별총회 위임장 문장이다. 경제적 권리 동일 여부는 직접 대조하지 않았다",
+          "summary": "Class B 주식이 주당 10표를 갖는다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 주당 10표를 갖는다"
+    },
+    {
+      "claim_id": "TTD.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD DEF 14A (filed 2026-09-18, acc 0001671933-26-000102)",
+            "location": "Special meeting proxy — signature",
+            "observed_date": "2026-10-10",
+            "quote": "Jeff T. Green Chairman and Chief Executive Officer",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Jeff Green이 의장과 CEO를 겸한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "Jeff Green이 의장과 CEO를 겸한다"
+    },
+    {
+      "claim_id": "TTD.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "ShareBasedCompensation FY2025 = 490,627,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 490,627,000 / fcf0 795,710,000",
+          "value": 0.6166,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 61.7%다"
+    },
+    {
+      "claim_id": "TTD.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 499,925,000 -> FY2025 493,551,000",
+          "value": -0.0127,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 -1.27%"
+    },
+    {
+      "claim_id": "TTD.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 1,380,422,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 1,380,422,000; 3년 희석주식수 -1.27%",
+          "value": 1380422000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 -1.27%다 → reduces_share_count"
+    },
+    {
+      "claim_id": "TTD.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD Form 4 x41 (2025-10-10~2026-10-10)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1671933&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 41건 집계 (재량 매수 $148,101,266 / 재량 매도 $5,789,929 / 10b5-1 매도 $0)",
+          "value": 142311337.42,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 7건: 재량 순 $142,311,337, 10b5-1 정기 0건 → opp_net_buy"
+    },
+    {
+      "claim_id": "TTD.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 8-K (2026-09-15, acc 0001671933-26-000099)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-10",
+            "quote": "Green no longer serves as the Company’s Chief Executive Officer.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000099/ttd-20260914.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-09-15 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD 8-K (2026-03-25, acc 0001671933-26-000025)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-10",
+            "quote": "Kayyal’s prior separation from the Company in his position as the Company’s chief financial officer, the Company entered into a Separation Agreement and Release to pay Mr.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000025/ttd-20260319.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-03-25 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD 8-K (2026-01-26, acc 0001193125-26-021804)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-10",
+            "quote": "Alexander Kayyal’s employment as the Company’s chief financial officer, principal financial officer and principal accounting officer was terminated effective as of January 24, 2026.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000119312526021804/d20637d8k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-01-26 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD 8-K (2025-08-07, acc 0001671933-25-000122)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-10",
+            "quote": "Schenkein will transition out of the position of chief financial officer effective as of August 21, 2025 as part of a plan to depart the Company by the end of the year.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193325000122/ttd-20250803.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2025-08-07 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 4건(5.02 전체 15건)"
+    },
+    {
+      "claim_id": "TTD.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001671933.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "TTD.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-10",
+            "quote": "Item 3. Legal Proceedings For a description of our pending legal proceedings, see “Commitments and Contingencies — Litigation” in Note 13 of the Notes to Consolidated Financial Statements included in Part II, Item 8 of this Annual Report on Form 10-K.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "TTD.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001671933.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "TTD.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001671933.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "TTD.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001671933.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "TTD.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 8-K (2026-05-08, acc 0001671933-26-000055)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-10",
+            "quote": "non-binding, advisory basis, the compensation paid to the Company’s named executive officers set forth in the Proxy Statement, by the following vote: For Against Abstain Broker Non-Votes 509,592,084 172,498,666",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000055/ttd-20260504.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.7471,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-05-08 주총 보수 승인 투표 찬성 509,592,084 / 반대 172,498,666 → 찬성률 74.7%"
+    },
+    {
+      "claim_id": "TTD.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-10",
+            "quote": "concluded that our internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "TTD.GM",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD companyfacts",
+            "location": "매출총이익률 FY2022~FY2025 (USD)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001671933.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "gross_margin_change_pp",
+          "note": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)",
+          "summary": "매출·매출총이익(또는 매출원가) 연차값(companyfacts)",
+          "value": -3.56,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "매출총이익률 FY2022 82.18% → FY2025 78.63% (-3.56%p) → eroding"
+    },
+    {
+      "claim_id": "TTD.NEWTHREAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-10",
+            "quote": "To the extent we fail to adopt such technologies effectively or as intended, experience delays in integrating these technologies into our operations or our competitors successfully implement improved AI technologies into their products or services, our ability to compete effectively could be harmed and our growth prospects and results of operations could be adversely affected.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-10",
+            "quote": "Historically, some of our competitors have sought to differentiate themselves to prospective customers primarily on the basis of artificially low prices, which are enabled by inherent conflicts of interest and a lack of objectivity, and do not account for the overall value delivered to customers.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "전년 대비 새로 추가된 경쟁 관련 위험 문장 6개: 「To the extent we fail to adopt such technologies effectively or as intended, experience delays in integrating these technologies into our operations or our competitors successfully implement improved AI technologies into their products or services, our ability to compete effectively could be harmed and our growth prospects and results of operations could be adversely affected.」 / 「Historically, some of our competitors have sought to differentiate themselves to prospective customers primarily on the basis of artificially low prices, which are enabled by inherent conflicts of interest and a lack of objectivity, and do not account for the overall value delivered to customers.」"
+    },
+    {
+      "claim_id": "TTD.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27)",
+            "location": "전문",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "TTD.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000086/ttd-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 1,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 1건, 해지 0건"
+    },
+    {
+      "claim_id": "TTD.SEC_COMMENT_LETTERS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD EDGAR 제출 목록",
+            "location": "form=UPLOAD",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1671933&type=UPLOAD&dateb=&owner=include&count=40"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "sec_comment_letters_3y",
+          "note": "등록신고서 검토·종결 서한 포함, 공개는 검토 종료 후 20일 이상 지연. 품질 판정 아님",
+          "summary": "EDGAR 제출 목록의 UPLOAD 건수",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2023-10-11~2026-10-10 SEC 의견서한(UPLOAD) 0건, 회사 답변(CORRESP) 0건"
+    },
+    {
+      "claim_id": "TTD.Q2GROWTH",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 8-K Ex.99.1 (2026 Q2 실적, 2026-08-06)",
+            "location": "Financial table",
+            "observed_date": "2026-10-10",
+            "quote": "Increase in revenue year over year 3 % 19 % 7 % 22 %",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/0001671933/000167193326000085/ttd-20260806x8kexx991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "revenue_growth_yoy",
+          "note": "[논거 방향: weakens] 회사 공시 표. 반증조건 (3) '미국 매출성장률 낮은 한자릿수 밑' 지표와는 범위가 다르다(전사)",
+          "summary": "Q2 매출 증가율 3% (전년 동기 19%)",
+          "value": 0.03,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD 8-K Ex.99.1 (2026 Q2 실적, 2026-08-06)",
+            "location": "2026 Financial Guidance",
+            "observed_date": "2026-10-10",
+            "quote": "Revenue at least $650 million",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/0001671933/000167193326000085/ttd-20260806x8kexx991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "q3_revenue_floor_usd",
+          "note": "[논거 방향: weakens] 전년 Q3 매출 대비 약 -12%(전년 값은 이 문서에 없고 외부 보도 기준)",
+          "summary": "Q3 2026 매출 가이던스 하한 $650M",
+          "value": 650000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Q2 2026 매출 +3%(전년 +19%)로 급감속, Q3 가이던스는 하한 $650M — 전년 동기 대비 역성장"
+    },
+    {
+      "claim_id": "TTD.REPRICE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD DEF 14A 특별총회 위임장 (2026-09-18)",
+            "location": "Proposal One",
+            "observed_date": "2026-10-10",
+            "quote": "up to 15,582,540 shares of our Class A common stock",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "options_repriced_shares",
+          "note": "[논거 방향: weakens] 주가 폭락 후 옵션을 현재가로 낮추는 것은 주주 입장에서 보상-성과 정렬을 약화시킨다는 것이 일반적 관점이나 이 문서는 '유지·유인 효과 복원'이라 설명한다",
+          "summary": "재가격 대상 옵션 규모",
+          "value": 15582540,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD DEF 14A 특별총회 위임장 (2026-09-18)",
+            "location": "Proposal One",
+            "observed_date": "2026-10-10",
+            "quote": "including our executive officers and employees",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "[논거 방향: weakens] ",
+          "summary": "대상에 임원 포함",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "TTD DEF 14A 특별총회 위임장 (2026-09-18)",
+            "location": "Proposal One",
+            "observed_date": "2026-10-10",
+            "quote": "Performance Options, ISOs, and awards held by our non-employee members of the board of directors remain ineligible",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "CEO 성과옵션이 제외된다는 점은 반대 증거 — 임원 일반은 포함",
+          "summary": "CEO Green의 성과옵션은 대상에서 제외",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "이사회가 임원 포함 임직원의 행사가 초과 스톡옵션 최대 15,582,540주를 현재 주가로 재가격하는 안건을 상정(2026-10-19 특별총회)"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.5455,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 18,
+    "n_primary_answered": 15,
+    "n_primary_required": 21,
+    "n_questions": 33,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 7,
+        "n_questions": 11,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "capital_allocation": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "competitive_landscape": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 6,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 6
+      }
+    },
+    "unexamined_lenses": []
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "TTD",
+  "findings": [
+    {
+      "claim_ids": [
+        "TTD.BUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인)"
+    },
+    {
+      "claim_ids": [
+        "TTD.SBC",
+        "TTD.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "TTD.DUAL_CLASS",
+        "TTD.CHAIR_SEPARATED",
+        "TTD.INSIDER",
+        "TTD.CXO",
+        "TTD.LITIGATION",
+        "TTD.SAYONPAY",
+        "TTD.REPRICE"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음) / 임원 포함 옵션 재가격 안건 상정(특별총회 10/19)"
+    },
+    {
+      "claim_ids": [
+        "TTD.RESTATE",
+        "TTD.NT",
+        "TTD.AUDITOR",
+        "TTD.IMPAIR",
+        "TTD.ICFR"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "TTD.NEWTHREAT",
+        "TTD.Q2GROWTH"
+      ],
+      "effect": "neutral",
+      "lens": "competitive_landscape",
+      "summary": "위험요인 연도별 비교로 새 경쟁 위협 문장을 모음(판단 없음) / Q2 매출 +3%, Q3 가이던스 역성장 — 반증조건 (3)(4)와 같은 방향의 실측"
+    }
+  ],
+  "inversion": [
+    "Amazon DSP 등 대형 플랫폼으로의 광고예산 이동이 지속돼 매출이 역성장(Q3 가이던스 하한이 전년 대비 -12%)하는 시나리오",
+    "옵션 재가격·성과옵션 신규 부여로 보상이 주가 하락과 분리돼 희석과 거버넌스 신뢰가 동시에 훼손되는 시나리오"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 7,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "73770e0922ce0addcfbf3e10da7fcc1d9b93d6a46c277271fad91b3e19e84e02",
+  "supersedes": "5d71123aad210a7cac5066c1142ce9c169eb36365ad9a3c989743b1ee40a0a58",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "as_of": "2026-10-10",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "AI technologies are complex and rapidly evolving, and we face significant potential disruption from other companies, particularly as internet companies utilize AI to introduce new methods of search and discovery for consumers and AI reduces barriers to entry to compete with our products and services, as well as an evolving regulatory landscape.",
+      "Traditional search engines compete with new methods of search, particularly those powered by AI, and as a result traditional search engines may provide less traffic to our platform, which could negatively impact our business and results of operations."
+    ],
+    "docs": [
+      "2026-02-12",
+      "2025-02-06"
+    ],
+    "n_new_competition": 2,
+    "n_new_sentences": 34,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "AI technologies are complex and rapidly evolving, and we face significant potential disruption from other companies, particularly as internet companies utilize AI to introduce new methods of search and discovery for consumers and AI reduces barriers to entry to compete with our products and services, as well as an evolving regulatory landscape.",
+      "Traditional search engines compete with new methods of search, particularly those powered by AI, and as a result traditional search engines may provide less traffic to our platform, which could negatively impact our business and results of operations."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": 4.28,
+    "gm_end": 80.07,
+    "gm_start": 75.79,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "PINS",
+  "unit": "USD"
+}

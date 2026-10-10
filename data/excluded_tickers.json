@@ -239,6 +239,11 @@
       "reason_category": "FRAMEWORK_MISMATCH",
       "excluded_at": "2026-09-16",
       "reason": "리튬 가격사이클 + v3.19 CAGR 가드 동시 발동. 매출이 FY2021 $3.33B -> FY2023 $9.62B(+189%) -> FY2025 $5.14B(-47%)로 요동치고(worst_yoy -44.1%), FCF가 최근 11년 중 7년 음수라 5년 CAGR 기준연도(FY2020 FCF -$52M)에서 `run_analysis()`가 ValueError로 실행을 거부한다. 회피 가능한 기준연도는 FY2016(+$537M)뿐인데 그건 리튬 사이클 국면을 임의로 고르는 것이라 근거가 없다 - AA/MP/CF/HL/NEM/CDE와 동일한 자본집약 원자재 업종 유형이며 경쟁구도 기반 주관 입력(demand_sensitivity·competitor_threat_weights) 자체가 이 업종에서 의미를 잃는다. `deep_screen` 참조 스크린(2026-09-16, 시총 $13.39B)은 FCF 5y CAGR을 건너뛰고 매출 가중평균만으로 계산해 Gap -7.56%p '과대평가 가능성'(D)을 내놓는다 - Realistic Growth가 **음수(-1.42%)**인데(3년 매출 CAGR -11.1%) 이는 사이클 고점(FY2023)에서 시작한 창의 산물이라 그대로 믿을 수 없다. DRS 72(cyclicality·margin_volatility 둘 다 만점 20.0). 긍정 신호 하나는 실측했다: FY2025 FCF가 +$692M으로 3년 만에 흑자 전환했고 capex가 $1.69B -> $0.59B로 급감(리튬 증설 규율)하며 OCF는 $0.70B -> $1.28B로 개선됐다. 재조사 조건: FCF 흑자가 3년 이상 이어져 5년 창 기준연도가 양수가 되고 사이클 저점이 창 경계에서 빠지면."
+    },
+    "SCCO": {
+      "reason_category": "FRAMEWORK_MISMATCH",
+      "reason": "구리 채굴업(원자재 가격사이클, CDE/NEM/HL 유형) + 지배주주(Grupo Mexico 약 88%) 때문에 SEC public_float 근사 시총이 $9B로 실제 약 $141B의 6%에 불과하다 - 2026-10-10 자동분석이 이 근사 시총으로 S등급(+28.3%p)을 냈으나 허위. 지배주주 보유 종목은 float 근사 시총을 쓸 수 없다.",
+      "excluded_at": "2026-10-10"
     }
   }
 }

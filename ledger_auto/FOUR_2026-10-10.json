@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "ticker": "FOUR",
+    "company_name": "FOUR",
+    "analyzed_at": "2026-10-10T10:12:22.844127+00:00",
+    "engine_version": "v4.03",
+    "data_sources": [
+      "SEC XBRL companyfacts (자동 수집, 2026-10-10)"
+    ],
+    "falsification_conditions": "다음 연차보고서의 매출 성장률이 Realistic Growth의 절반 미만이면 이 자동 분석을 폐기하고 재분석할 것. 자동 분석은 경쟁·규제 변화를 보지 못한다.",
+    "price_at_analysis": null,
+    "currency": "USD",
+    "point_in_time": {
+      "status": "PIT_UNKNOWN",
+      "analysis_as_of": null,
+      "filing_dates_by_year": null,
+      "violations": [],
+      "note": "analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다."
+    },
+    "provenance": {
+      "status": "PROVENANCE_UNKNOWN"
+    }
+  },
+  "data_limitations": [
+    "10년 CAGR 산출 불가(8개 연도만 확보). revenue_volatility_score와 structural_discount_rate에 5년 CAGR(40.37%)을 대체 입력했다. 3/5/10y 편차가 인위적으로 축소되므로 DRS의 revenue_volatility 항목과 구조적 할인율이 모두 실제보다 낮게(=관대하게) 나왔을 수 있다.",
+    "[PIT 미검증] analysis_as_of 또는 filing_dates_by_year가 없어 그 시점에 이 데이터가 공시돼 있었는지 검증할 수 없다. meta.analyzed_at은 코드를 실행한 시각일 뿐 공시 여부를 보증하지 않는다. 이 분석은 Historical Replay 대상이 될 수 없다(계약서 70절 조건 미충족). 새 분석부터 analysis_as_of와 filing_dates_by_year를 채워나갈 것.",
+    "[성장상한 바인딩] fast_grower 유형의 성장상한(25.00%)이 매출·FCF CAGR 기반 계산값을 덮어썼다 - Realistic Growth는 이 상한값 그대로이며 성장분석 자체는 결과에 기여하지 않는다. 이 종목의 Expectation Gap은 사실상 Implied Growth 단독으로 결정되므로, 다른 종목과 순위를 비교할 때 이 점을 감안할 것(상한 근거 자체가 코드/문서 어디에도 검증된 바 없음 - 2026-08-01 방법론 감사 M-1).",
+    "[규모 조건부 상한 적용] Realistic Growth를 25.00% -> 23.00%로 낮췄다. 매출규모 3000-4500 구간에서 실질 20% 이상을 10년간 유지한 기업이 1.2%(컷 1.0% 이상)라 명목 23.00%를 상한으로 둔다. 출처: Credit Suisse HOLT 1950-2015(소멸기업 포함). 이 상한은 린치 유형 캡을 대체하지 않고 함께 적용된 것이며, 컷(1.0%)은 검증된 값이 아니라 2026-08-23 사용자 승인으로 채택된 서술적 기준이다.",
+    "[데이터 완전성 미실측] data_completeness_pct가 기본값(0.9)이다 - Confidence에 자동 부여된 14점은 실제 데이터 완전성을 측정한 결과가 아니다(2026-08-15 감사 기준 ledger 34종목 전부가 이 기본값). 이 종목의 Confidence를 다른 종목과 비교할 때 이 항목은 판별력이 없다고 보고 나머지 항목으로 해석할 것."
+  ],
+  "inputs": {
+    "ticker": "FOUR",
+    "company_name": "FOUR",
+    "revenue_by_year": {
+      "2018": 560600000.0,
+      "2019": 731400000.0,
+      "2020": 766900000.0,
+      "2021": 1367500000.0,
+      "2022": 1993600000.0,
+      "2023": 2564800000.0,
+      "2024": 3330600000.0,
+      "2025": 4180000000.0
+    },
+    "operating_income_by_year": {
+      "2018": -13100000.0,
+      "2019": -4400000.0,
+      "2020": -57600000.0,
+      "2021": -49200000.0,
+      "2022": 94700000.0,
+      "2023": 114800000.0,
+      "2024": 247000000.0,
+      "2025": 351000000.0
+    },
+    "operating_cashflow_by_year": {
+      "2018": 25500000.0,
+      "2019": 26700000.0,
+      "2020": 23400000.0,
+      "2021": 29200000.0,
+      "2022": 275400000.0,
+      "2023": 388300000.0,
+      "2024": 500300000.0,
+      "2025": 634000000.0
+    },
+    "capex_by_year": {
+      "2018": 1600000.0,
+      "2019": 8200000.0,
+      "2020": 4800000.0,
+      "2021": 8200000.0,
+      "2022": 8000000.0,
+      "2023": 13700000.0,
+      "2024": 7100000.0,
+      "2025": 10000000.0
+    },
+    "market_cap": 6400000000.0,
+    "net_debt": 3582000000,
+    "ebitda": 783000000.0,
+    "risk_free_rate": 0.0447,
+    "competitor_threat_weights": [
+      0.2
+    ],
+    "market_share_trend_pp_per_year": 0.0,
+    "active_antitrust_or_regulatory_case": false,
+    "demand_sensitivity_pct": 0.15,
+    "subjective_input_basis": "AUTO(자동 생성, 정성조사 없음): 경쟁강도=중앙값 대체(competitor_threat_weights=[0.2], 점유율 추세 0); 수요민감도=0.15(ledger 중앙값); 반독점/규제 사건=False 가정. BSX·MEDP·NXT에서 이 대체값이 실제와 달라 등급이 어긋난 선례가 있으므로 사람의 정성 검토 전에는 참고용으로만 쓸 것.",
+    "model_used": "two_stage",
+    "model_choice_reason": "AUTO 규칙: Realistic Growth 23.00% − g_terminal 3.47% = +19.53%p >= 5%p 이므로 다단계(고성장 후 수렴). 비검증 휴리스틱이며 두 모델 결과가 모두 기록된다.",
+    "margin_years": [
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+    ],
+    "n_requested": 12,
+    "n_requested_reason": null,
+    "data_completeness_pct": 0.9,
+    "lynch_type_override": null,
+    "lynch_type_override_reason": null,
+    "data_sources": [
+      "SEC XBRL companyfacts (자동 수집, 2026-10-10)"
+    ],
+    "capex_classification": null,
+    "capex_classification_basis": null,
+    "cagr_base_year_override": null,
+    "cagr_base_year_override_reason": null,
+    "is_insurer": false,
+    "net_income_by_year": null,
+    "shareholders_equity_by_year": null,
+    "dividends_paid_by_year": null,
+    "sbc_by_year": {
+      "2019": 0.0,
+      "2020": 66200000.0,
+      "2021": 40800000.0,
+      "2022": 49600000.0,
+      "2023": 57400000.0,
+      "2024": 65500000.0,
+      "2025": 82000000.0
+    },
+    "falsification_conditions": "다음 연차보고서의 매출 성장률이 Realistic Growth의 절반 미만이면 이 자동 분석을 폐기하고 재분석할 것. 자동 분석은 경쟁·규제 변화를 보지 못한다.",
+    "price_at_analysis": null,
+    "currency": "USD",
+    "usd_fx_rate": null,
+    "provenance": null,
+    "realistic_growth_override": null,
+    "realistic_growth_override_reason": null,
+    "analysis_as_of": null,
+    "filing_dates_by_year": null
+  },
+  "derived": {
+    "revenue_cagr_3y": 0.27990996076956876,
+    "revenue_cagr_5y": 0.4037426936112758,
+    "cagr_5y_base_year": 2020,
+    "cagr_5y_span": 5,
+    "revenue_cagr_10y": null,
+    "fcf_cagr_5y": 1.0189907493656882,
+    "fcf0": 624000000.0,
+    "fcf_by_year": {
+      "2018": 23900000.0,
+      "2019": 18500000.0,
+      "2020": 18600000.0,
+      "2021": 21000000.0,
+      "2022": 267400000.0,
+      "2023": 374600000.0,
+      "2024": 493200000.0,
+      "2025": 624000000.0
+    },
+    "worst_yoy_revenue_growth": 0.048537052228602606,
+    "worst_yoy_year": 2020,
+    "operating_margins": [
+      -0.035978062157221206,
+      0.04750200642054574,
+      0.04475982532751092,
+      0.0741608118657299,
+      0.08397129186602871
+    ],
+    "net_debt_to_ebitda": 4.574712643678161
+  },
+  "drs": {
+    "components": {
+      "revenue_volatility": 14.0,
+      "margin_volatility": 8.0,
+      "leverage": 20.0,
+      "cyclicality": 8.6,
+      "competition_intensity": 2.4000000000000004
+    },
+    "score": 53.0
+  },
+  "lynch": {
+    "auto_classified": "fast_grower",
+    "auto_note": null,
+    "used": "fast_grower",
+    "override_reason": null,
+    "overridden_down": false
+  },
+  "discount_rate": {
+    "rf": 0.0447,
+    "erp": 0.0659,
+    "r": 0.1106,
+    "n": 12,
+    "g_terminal": 0.034699999999999995
+  },
+  "growth": {
+    "structural_discount_pct": 0.16191636642085352,
+    "realistic_growth": 0.22999999999999976,
+    "breakdown": {
+      "revenue_cagr_inputs": {
+        "3y": 0.27990996076956876,
+        "5y": 0.4037426936112758,
+        "10y": null
+      },
+      "weights_used": [
+        0.5,
+        0.3
+      ],
+      "base_growth_before_fcf_check": 0.32634723558520884,
+      "fcf_conservatism_applied": null,
+      "base_growth_after_fcf_check": 0.32634723558520884,
+      "structural_discount_pct": 0.16191636642085352,
+      "discounted_growth": 0.2735062770077616,
+      "lynch_type": "fast_grower",
+      "cap_applied": "상한 캡 적용(25.0%): 벗어나려면 별도 정당화 필요",
+      "final_realistic_growth": 0.25,
+      "size_conditioned_cap_applied": {
+        "cap_nominal": 0.22999999999999976,
+        "cap_real_pct": 20.0,
+        "size_class": "3000-4500",
+        "sales_2015_usd_mn": 3096.3,
+        "min_base_rate_pct": 1.0,
+        "base_rate_at_cap_pct": 1.2,
+        "horizon_years": 10,
+        "inflation_assumed": 0.025,
+        "note": "매출규모 3000-4500 구간에서 실질 20% 이상을 10년간 유지한 기업이 1.2%(컷 1.0% 이상)라 명목 23.00%를 상한으로 둔다"
+      },
+      "realistic_growth_before_size_cap": 0.25
+    },
+    "capex_adjustment": null
+  },
+  "implied_growth": {
+    "models": {
+      "single_stage": 0.01193621867881549,
+      "two_stage": -0.0011083602905273575,
+      "errors": {},
+      "divergence": 0.013044578969342847,
+      "divergence_warning": null
+    },
+    "model_used": "two_stage",
+    "model_choice_reason": "AUTO 규칙: Realistic Growth 23.00% − g_terminal 3.47% = +19.53%p >= 5%p 이므로 다단계(고성장 후 수렴). 비검증 휴리스틱이며 두 모델 결과가 모두 기록된다.",
+    "value": -0.0011083602905273575
+  },
+  "expectation_gap": 0.23110836029052712,
+  "scenarios": {
+    "growth_rates": {
+      "g_base": 0.22999999999999976,
+      "g_bull": 0.25,
+      "g_bear": 0.11499999999999988,
+      "bull_capped_at_base": false,
+      "lynch_type_cap_max": 0.25
+    },
+    "returns": {
+      "bull": 1.019130138992577,
+      "base": 0.9076624783740896,
+      "bear": 0.37406641967197696
+    },
+    "probabilities": {
+      "bull": 0.291,
+      "base": 0.5,
+      "bear": 0.20900000000000002
+    },
+    "probability_rationale": "DRS=53.0 (중립점 50 대비 편차 +0.06) 기준: p_bull=29.1%, p_base=50.0%, p_bear=20.9%. DRS가 높을수록(위험 클수록) Bear 확률이 커지고 Bull 확률이 작아지는 방향으로 자동 조정됨.",
+    "expected_return_decimal": 0.828577991345328
+  },
+  "rar": 1.5633547006515622,
+  "stalwart_bias": {
+    "flagged": false,
+    "note": null
+  },
+  "sensitivity_check": {
+    "r_with_drs": 0.1106,
+    "r_without_drs": 0.0947,
+    "implied_growth_with_drs": -0.0011083602905273575,
+    "implied_growth_without_drs": -0.026850318908691412,
+    "gap_with_drs": 0.23110836029052712,
+    "gap_without_drs": 0.25685031890869114,
+    "judgment_with_drs": "저평가 가능성",
+    "judgment_without_drs": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "confidence": {
+    "base": 50,
+    "sensitivity_check_result": {
+      "r_with_drs": 0.1106,
+      "r_without_drs": 0.0947,
+      "implied_growth_with_drs": -0.0011083602905273575,
+      "implied_growth_without_drs": -0.026850318908691412,
+      "gap_with_drs": 0.23110836029052712,
+      "gap_without_drs": 0.25685031890869114,
+      "judgment_with_drs": "저평가 가능성",
+      "judgment_without_drs": "저평가 가능성",
+      "judgment_flipped": false
+    },
+    "section_5_7_aligned": true,
+    "adjustments": {
+      "robustness_check_passed": 15,
+      "section_5_7_aligned": 15,
+      "data_completeness": 14,
+      "lynch_type_cap_applied": -5,
+      "stalwart_two_stage_bias_flagged": 0,
+      "realistic_growth_overridden": 0
+    },
+    "raw_score": 89,
+    "final": 89
+  },
+  "judgment": "저평가 가능성",
+  "judgment_grade": "S",
+  "insurer_cross_check": null,
+  "sbc_cross_check": {
+    "sbc0": 82000000.0,
+    "sbc_to_fcf_pct": 0.13141025641025642,
+    "fcf0_sbc_adjusted": 542000000.0,
+    "implied_growth_sbc_adjusted": 0.016794967651367176,
+    "gap_sbc_adjusted": 0.21320503234863258,
+    "judgment_sbc_adjusted": "저평가 가능성",
+    "judgment_flipped": false
+  },
+  "auto_analysis": {
+    "version": "auto-v1",
+    "official": false,
+    "qualitative_research": false,
+    "model_rule": {
+      "rg": 0.22999999999999976,
+      "g_terminal": 0.034699999999999995,
+      "margin": 0.05,
+      "chosen": "two_stage"
+    },
+    "assumptions": [
+      "경쟁강도=중앙값 대체(competitor_threat_weights=[0.2], 점유율 추세 0)",
+      "수요민감도=0.15(ledger 중앙값)",
+      "반독점/규제 사건=False 가정"
+    ],
+    "base_year_override": null,
+    "warning": "자동 생성 결과. 경쟁강도·수요민감도는 중앙값 대체이며 사람의 검토 전에는 공식 판정·매수리스트·thesis에 쓰지 않는다.",
+    "market_cap_source": "public_float 근사(낡을 수 있음)",
+    "market_cap_suspect": false
+  },
+  "prior_cross_check": {
+    "prior_ledger": null,
+    "warnings": [],
+    "checked": false
+  }
+}

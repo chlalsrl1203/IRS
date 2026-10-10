@@ -1,0 +1,79 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001506293",
+  "pvp": {
+    "accession": "0001506293-26-000058",
+    "filed": "2026-04-08",
+    "measure_category": "revenue_growth",
+    "measure_name": "revenue",
+    "n_years": 5,
+    "peer_tsr": 120.0,
+    "peer_tsr_text": "120",
+    "peo_cap_not_used": {},
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 39.0,
+    "tsr_text": "39",
+    "tsr_vs_peer": -0.675,
+    "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+  },
+  "ticker": "PINS",
+  "trading_plans": {
+    "answer": 9,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001506293-25-000229",
+        "adoptions": 2,
+        "filed": "2025-11-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Matthew Madriga",
+          "Matthew Madrigal",
+          "Wanji Walcott"
+        ],
+        "terminations": 2
+      },
+      {
+        "accession": "0001506293-26-000021",
+        "adoptions": 1,
+        "filed": "2026-02-12",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Gokul Rajaram"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001506293-26-000068",
+        "adoptions": 3,
+        "filed": "2026-05-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Andrea Acosta",
+          "Benjamin Silbermann",
+          "Wanji Walcott"
+        ],
+        "terminations": 1
+      },
+      {
+        "accession": "0001506293-26-000104",
+        "adoptions": 3,
+        "filed": "2026-08-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Julia Brau Donnelly",
+          "Lee Brown,",
+          "Matthew Madrigal"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 3
+  }
+}

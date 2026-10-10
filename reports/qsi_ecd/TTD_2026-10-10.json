@@ -1,0 +1,58 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001671933",
+  "pvp": {
+    "accession": "0001671933-26-000102",
+    "filed": "2026-09-18",
+    "reason": "ecd inline XBRL이 없다(PvP 공시 없음 또는 비표준)",
+    "status": "NO_ECD",
+    "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+  },
+  "ticker": "TTD",
+  "trading_plans": {
+    "answer": 1,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001671933-25-000144",
+        "adoptions": 0,
+        "filed": "2025-11-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001671933-26-000014",
+        "adoptions": 0,
+        "filed": "2026-02-27",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001671933-26-000054",
+        "adoptions": 1,
+        "filed": "2026-05-07",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Jay R. Grant"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001671933-26-000086",
+        "adoptions": 0,
+        "filed": "2026-08-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

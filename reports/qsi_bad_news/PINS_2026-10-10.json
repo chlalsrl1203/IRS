@@ -1,0 +1,143 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001506293",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 18,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0001506293-23-000219",
+      "filed": "2023-10-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-24-000017",
+      "filed": "2024-02-08",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-24-000077",
+      "filed": "2024-04-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-24-000141",
+      "filed": "2024-07-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-24-000180",
+      "filed": "2024-11-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-25-000020",
+      "filed": "2025-02-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-25-000106",
+      "filed": "2025-05-08",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-25-000195",
+      "filed": "2025-08-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-25-000218",
+      "filed": "2025-09-19",
+      "guidance": [],
+      "items": "5.02,7.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001506293-25-000228",
+      "filed": "2025-11-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-26-000005",
+      "filed": "2026-01-20",
+      "guidance": [],
+      "items": "7.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001506293-26-000012",
+      "filed": "2026-02-09",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001506293-26-000019",
+      "filed": "2026-02-12",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-26-000026",
+      "filed": "2026-02-18",
+      "guidance": [],
+      "items": "7.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001193125-26-086731",
+      "filed": "2026-03-03",
+      "guidance": [],
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001506293-26-000066",
+      "filed": "2026-05-04",
+      "guidance": [],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-26-000102",
+      "filed": "2026-08-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001506293-26-000139",
+      "filed": "2026-10-05",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 18건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "PINS"
+}

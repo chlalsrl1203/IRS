@@ -18,6 +18,7 @@ import time
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from engine.validated_scope import CORPUS_MARKET_CAP_MAX, CORPUS_MARKET_CAP_MIN
 from engine.auto_analysis import AutoAnalysisRefused, auto_analyze
 from engine.pipeline import save_ledger
 
@@ -27,6 +28,7 @@ REPORT_DIR = "reports/auto_analysis"
 REFUSED_PATH = os.path.join(REPORT_DIR, "refused.json")
 FRESH_DAYS, REFUSED_DAYS = 30, 90
 DEFAULT_LIMIT = 10
+SUSPECT_FCF_YIELD = 0.25   # engine의 스케일 이상 탐지 밴드 상한(ledger 실측 최대 17.95%)
 
 
 def log(m):
@@ -67,7 +69,14 @@ def pick_candidates(queue, today, limit, ledger_dir=AUTO_LEDGER_DIR, refused=Non
     out = []
     for e in list(extra or []) + priority_order(list(queue["entries"].values())):
         t = e["ticker"]
-        if e.get("state") != "QUEUED" or not e.get("in_validated_scope"):
+        if e.get("state") != "QUEUED":
+            continue
+        # 검증범위 안이거나, 시총만 범위 안인 Gap 이상치(스크린 Gap이 코퍼스 최대를 넘음)는 허용한다.
+        # 시총이 범위 밖인 초소형·초대형은 자동 분석 대상에서 제외(근사 시총 오차가 판정을 좌우).
+        mc = e.get("market_cap")
+        gap_only = (not e.get("in_validated_scope") and mc
+                    and CORPUS_MARKET_CAP_MIN <= mc <= CORPUS_MARKET_CAP_MAX)
+        if not (e.get("in_validated_scope") or gap_only):
             continue
         if t in fresh:
             continue
@@ -141,8 +150,13 @@ def run(today, limit, av_key=None, queue_path=QUEUE_PATH):
                 continue
             result = auto_analyze(t, t, series, mc, today, facts_json=facts)
             result["auto_analysis"]["market_cap_source"] = mc_src
+            fcf_yield = result["derived"]["fcf0"] / mc if mc else None
+            # 시총이 SEC public_float 근사인데 FCF수익률이 비현실적으로 높으면 시총이 틀린 것이다
+            # (지배주주 지분이 큰 회사는 float이 실제 시총의 일부 — SCCO $9B vs 실제 ~$141B).
+            suspect = bool(fcf_yield and fcf_yield > SUSPECT_FCF_YIELD and "근사" in mc_src)
+            result["auto_analysis"]["market_cap_suspect"] = suspect
             path = save_ledger(result, ledger_dir=AUTO_LEDGER_DIR, overwrite=True, cross_check=False)
-            rows.append({"ticker": t, "status": "OK", "path": path,
+            rows.append({"ticker": t, "status": "MARKET_CAP_SUSPECT" if suspect else "OK", "path": path,
                          "gap": result["expectation_gap"], "grade": result.get("judgment_grade"),
                          "judgment": result["judgment"], "market_cap_source": mc_src,
                          "screen_gap": e.get("latest_gap")})
@@ -160,6 +174,7 @@ def run(today, limit, av_key=None, queue_path=QUEUE_PATH):
 
 def format_body(s):
     ok = [r for r in s["rows"] if r["status"] == "OK"]
+    sus = [r for r in s["rows"] if r["status"] == "MARKET_CAP_SUSPECT"]
     lines = [f"## {s['date']} 자동 정식분석 (규칙 기반, 비공식)",
              "경쟁강도·수요민감도는 중앙값 대체이며 정성조사가 없다. **공식 판정·매수리스트와 무관**하다.", "",
              f"분석 {len(ok)} / 거부 {sum(r['status']=='REFUSED' for r in s['rows'])} / "
@@ -169,8 +184,11 @@ def format_body(s):
         for r in sorted(ok, key=lambda r: -r["gap"]):
             sg = f"{r['screen_gap']*100:+.1f}%p" if r.get("screen_gap") is not None else "-"
             lines.append(f"| {r['ticker']} | {r['grade']} | {r['gap']*100:+.2f}%p | {sg} | {r['market_cap_source']} |")
+    if sus:
+        lines += ["", "**시가총액 의심(FCF수익률 > 25%, 근사 시총이 틀렸을 가능성 — 등급을 믿지 말 것)**: "
+                  + ", ".join(f"{r['ticker']}({r['grade']} {r['gap']*100:+.1f}%p)" for r in sus)]
     for r in s["rows"]:
-        if r["status"] != "OK":
+        if r["status"] not in ("OK", "MARKET_CAP_SUSPECT"):
             lines.append(f"- {r['ticker']}: {r['status']} — {r.get('category','')} {r.get('reason','')}")
     return "\n".join(lines)
 

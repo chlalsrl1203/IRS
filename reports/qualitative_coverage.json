@@ -6,25 +6,25 @@
     "PDD",
     "SE"
   ],
-  "n_record_files": 150,
-  "n_sealed_records": 19,
+  "n_record_files": 174,
+  "n_sealed_records": 21,
   "sealed": [
     {
-      "answered_fraction": 0.9412,
+      "answered_fraction": 1.0,
       "as_of": "2026-10-10",
       "entity": "ACGL",
       "inversion_complete": true,
       "lens_set": "insurance",
-      "n_answered": 16,
+      "n_answered": 17,
       "n_not_applicable": 0,
       "n_questions": 17,
       "per_lens": {
         "catastrophe_risk": {
-          "answered": 0,
+          "answered": 1,
           "n_questions": 1,
           "not_applicable": 0,
           "unasked": 0,
-          "unknown": 1
+          "unknown": 0
         },
         "dilution": {
           "answered": 2,
@@ -56,8 +56,8 @@
         }
       },
       "price_at_analysis_recorded": true,
-      "resolved_fraction": 0.9412,
-      "sealed_core_hash": "580230c8f8c14d06adfe06f7f48a557a20f75a8426ab144ecfd683ba77a80ef3",
+      "resolved_fraction": 1.0,
+      "sealed_core_hash": "fe8e27ee7e03b702bf352ee5d00df8439d94a1890b8b1208d3bd96be1f5c40ce",
       "unexamined_lenses": [
         "catastrophe_risk",
         "underwriting_discipline"
@@ -115,21 +115,21 @@
       "unexamined_lenses": []
     },
     {
-      "answered_fraction": 0.8824,
+      "answered_fraction": 0.9412,
       "as_of": "2026-10-10",
       "entity": "CINF",
       "inversion_complete": true,
       "lens_set": "insurance",
-      "n_answered": 15,
+      "n_answered": 16,
       "n_not_applicable": 0,
       "n_questions": 17,
       "per_lens": {
         "catastrophe_risk": {
-          "answered": 0,
+          "answered": 1,
           "n_questions": 1,
           "not_applicable": 0,
           "unasked": 0,
-          "unknown": 1
+          "unknown": 0
         },
         "dilution": {
           "answered": 1,
@@ -161,12 +161,9 @@
         }
       },
       "price_at_analysis_recorded": false,
-      "resolved_fraction": 0.8824,
-      "sealed_core_hash": "3cbc76a47f787b4a8f46409885f988900370f07269fd9047a633e5b5f5225eae",
-      "unexamined_lenses": [
-        "catastrophe_risk",
-        "underwriting_discipline"
-      ]
+      "resolved_fraction": 0.9412,
+      "sealed_core_hash": "9f32a644e1028407dfc0281807d079688cf0499fa76ea56b76c6d65b6acb3578",
+      "unexamined_lenses": []
     },
     {
       "answered_fraction": 0.7273,
@@ -267,7 +264,7 @@
       },
       "price_at_analysis_recorded": true,
       "resolved_fraction": 0.5455,
-      "sealed_core_hash": "535a8d04dde1a718eddd63426ce4c4ba5deab490363210cbc748b29934e70fce",
+      "sealed_core_hash": "d9b690f65f2fbf7b9ce14d25129de0ca94d11de439e8e44908d99610943df486",
       "unexamined_lenses": [
         "capital_allocation",
         "accounting_quality",
@@ -322,7 +319,7 @@
       },
       "price_at_analysis_recorded": false,
       "resolved_fraction": 0.8182,
-      "sealed_core_hash": "936150c93dc2e8fe43feb7b0f131acd867a1d30b61a236ff4475fab32701a8c7",
+      "sealed_core_hash": "cfd76080ebc5e8d1d8a177e1653b8c8e811190c217dd1f8db9d518638b0ed452",
       "unexamined_lenses": [
         "capital_allocation"
       ]
@@ -477,10 +474,8 @@
       },
       "price_at_analysis_recorded": false,
       "resolved_fraction": 0.7273,
-      "sealed_core_hash": "1ca5e6cf83b57c9b54c0be291dbc8c267a22c99de993164b35d17d7dfa732e78",
-      "unexamined_lenses": [
-        "competitive_landscape"
-      ]
+      "sealed_core_hash": "7406c721c5c89ea18f53cf54f3834096c7af293e7bdcb45113ca945cdd643f90",
+      "unexamined_lenses": []
     },
     {
       "answered_fraction": 0.697,
@@ -632,7 +627,7 @@
       },
       "price_at_analysis_recorded": false,
       "resolved_fraction": 0.5455,
-      "sealed_core_hash": "1fc52cc22b9757f9380e81868f8c6d8251c002516ecdd3427d95a0ea88033933",
+      "sealed_core_hash": "f6dea4e5e9b0db06f22b382ebb5bde5b11457f3cb4d1cc6c3d52a7162ac70403",
       "unexamined_lenses": [
         "accounting_quality"
       ]
@@ -685,11 +680,61 @@
       },
       "price_at_analysis_recorded": false,
       "resolved_fraction": 0.7647,
-      "sealed_core_hash": "2a93813a90ce1cd543da38bbd8d8ff150d4a1f593845afb1b2a61bfb04f0a6ee",
+      "sealed_core_hash": "05ce54366a25cbef99365b63eb0e0290629ebf07da16ff582e24c4b9eb0417ca",
       "unexamined_lenses": [
-        "catastrophe_risk",
-        "underwriting_discipline"
+        "catastrophe_risk"
       ]
+    },
+    {
+      "answered_fraction": 0.6667,
+      "as_of": "2026-10-10",
+      "entity": "PINS",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 22,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 9,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.697,
+      "sealed_core_hash": "39c92fb9a0f54fe7b49c107ae9ceb4db363f5aafb5ad026d095180f30a21302a",
+      "unexamined_lenses": []
     },
     {
       "answered_fraction": 0.8788,
@@ -800,21 +845,21 @@
       ]
     },
     {
-      "answered_fraction": 0.9412,
+      "answered_fraction": 1.0,
       "as_of": "2026-10-10",
       "entity": "SIGI",
       "inversion_complete": true,
       "lens_set": "insurance",
-      "n_answered": 16,
+      "n_answered": 17,
       "n_not_applicable": 0,
       "n_questions": 17,
       "per_lens": {
         "catastrophe_risk": {
-          "answered": 0,
+          "answered": 1,
           "n_questions": 1,
           "not_applicable": 0,
           "unasked": 0,
-          "unknown": 1
+          "unknown": 0
         },
         "dilution": {
           "answered": 2,
@@ -846,12 +891,9 @@
         }
       },
       "price_at_analysis_recorded": false,
-      "resolved_fraction": 0.9412,
-      "sealed_core_hash": "659a0239435566c32f0688ebe03f38cb92df064d1709517424f442dc40c68de5",
-      "unexamined_lenses": [
-        "catastrophe_risk",
-        "underwriting_discipline"
-      ]
+      "resolved_fraction": 1.0,
+      "sealed_core_hash": "81dc341ab2f8ea67fa704d5ddcc13bdd8b313bff7c2a7ada86c2d19131319c71",
+      "unexamined_lenses": []
     },
     {
       "answered_fraction": 0.7576,
@@ -902,6 +944,57 @@
       "price_at_analysis_recorded": false,
       "resolved_fraction": 0.7576,
       "sealed_core_hash": "a11198c5ce826bbb6dd1a0e3e4cdc42c52919820088679c9e3ad59db093349ae",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.5758,
+      "as_of": "2026-10-10",
+      "entity": "TTD",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 19,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 7,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 5
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.6061,
+      "sealed_core_hash": "ddeb6bfd944c7e3f935730d29eeba3e60aeb00729c275e6c206652bd20e2ee55",
       "unexamined_lenses": []
     },
     {
@@ -1009,12 +1102,12 @@
   ],
   "sparse_qsi_threshold": 0.5,
   "totals": {
-    "answered": 398,
-    "answered_fraction": 0.7069,
-    "not_applicable": 25,
+    "answered": 442,
+    "answered_fraction": 0.7027,
+    "not_applicable": 27,
     "note": "answered와 not_applicable을 따로 센다. 해당 없음은 규칙(무배당 직접 진술, 외국 발행사의 보수 승인 투표 부재 등)으로만 주며 '모름'을 대신하지 않는다.",
-    "resolved_fraction": 0.7513,
-    "slots": 563
+    "resolved_fraction": 0.7456,
+    "slots": 629
   },
   "validation_status": {
     "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
