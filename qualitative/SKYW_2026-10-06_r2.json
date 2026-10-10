@@ -1,0 +1,508 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "SKYW.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "SKYW.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0479,
+      "claim_ids": [
+        "SKYW.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.1825,
+      "claim_ids": [
+        "SKYW.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "reduces_share_count",
+      "claim_ids": [
+        "SKYW.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.dual_class",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "SKYW.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: SKYW.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "가장 최근 공통 회계연도가 FY2020로 낡았다(FY2024 이후 필요)",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "SKYW.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.new_threat",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "SKYW.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-06",
+  "claims": [
+    {
+      "claim_id": "SKYW.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW DEF 14A (filed 2026-03-25, acc 0001104659-26-034497)",
+            "location": "Director nominees — James L. Welch",
+            "observed_date": "2026-10-06",
+            "quote": "Principal Occupation: Retired CEO of YRC Worldwide Inc.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "자사 CEO가 별도 인물임을 직접 확인한 문장은 아니다",
+          "summary": "의장(Welch)은 퇴직한 타사 CEO다 — 자사 임원이 아니다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "의장(Welch)은 퇴직한 타사 CEO다 — 자사 임원이 아니다"
+    },
+    {
+      "claim_id": "SKYW.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW DEF 14A (filed 2026-03-25, acc 0001104659-26-034497)",
+            "location": "CEO Evaluation and Management Succession",
+            "observed_date": "2026-10-06",
+            "quote": "as well as the Company’s long-term succession plans",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "위원회가 CEO 평가와 장기 승계 계획을 검토한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "위원회가 CEO 평가와 장기 승계 계획을 검토한다"
+    },
+    {
+      "claim_id": "SKYW.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW 10-K (filed 2026-02-17, acc 0001104659-26-016358)",
+            "location": "ShareBasedCompensation FY2025 = 18,729,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 18,729,000 / fcf0 391,380,000",
+          "value": 0.0479,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 4.8%다"
+    },
+    {
+      "claim_id": "SKYW.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW 10-K (filed 2026-02-17, acc 0001104659-26-016358)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 50,644,000 -> FY2025 41,403,000",
+          "value": -0.1825,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 -18.25%"
+    },
+    {
+      "claim_id": "SKYW.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW 10-K (filed 2026-02-17, acc 0001104659-26-016358)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2020 = 20,000,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2020 자사주 매입 20,000,000; 3년 희석주식수 -18.25%",
+          "value": 20000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 -18.25%다 → reduces_share_count"
+    },
+    {
+      "claim_id": "SKYW.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW Form 4 x26 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=793733&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 26건 집계 (재량 매수 $0 / 재량 매도 $16,349,151 / 10b5-1 매도 $0)",
+          "value": -16349151.33,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 13건: 재량 순 $-16,349,151, 10b5-1 정기 0건 → opp_net_sell"
+    },
+    {
+      "claim_id": "SKYW.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000793733.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 0건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 0건)"
+    },
+    {
+      "claim_id": "SKYW.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000793733.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "SKYW.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SKYW 10-K (filed 2026-02-17, acc 0001104659-26-016358)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "ITEM 3. LEGAL PROCEEDINGS We are subject to certain legal actions which we consider routine to our business activities. As of December 31, 2025, our management believed, after consultation with legal counsel, that the ultimate outcome of such legal matters was not likely to have a material adverse effect on our financial position, liquidity or results of operations. However, the ultimate resolution of these matters is inherently uncertain.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.3478,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 8,
+    "n_primary_answered": 7,
+    "n_primary_required": 11,
+    "n_questions": 23,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 1,
+        "n_questions": 6,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 5
+      },
+      "capital_allocation": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 4,
+        "n_questions": 7,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      }
+    },
+    "unexamined_lenses": [
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "SKYW",
+  "findings": [
+    {
+      "claim_ids": [
+        "SKYW.BUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인)"
+    },
+    {
+      "claim_ids": [
+        "SKYW.SBC",
+        "SKYW.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "SKYW.CHAIR_SEPARATED",
+        "SKYW.CEO_SUCCESSION_POLICY",
+        "SKYW.INSIDER",
+        "SKYW.CXO",
+        "SKYW.LITIGATION"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음)"
+    },
+    {
+      "claim_ids": [
+        "SKYW.RESTATE"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "ad3073034e37db61dd4a229d5669f2a20d204e3c93304c015ca1f7f527d83faa",
+  "supersedes": "daff068287e818938074763094b9cdb554bf2cecc6bf9a39194dcbb4ed47b573",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

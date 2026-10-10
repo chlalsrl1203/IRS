@@ -1,0 +1,547 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "ACGL.CHAIR"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "ACGL.SUCC"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "ACGL.COVER"
+      ],
+      "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "ACGL.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": "immaterial",
+      "claim_ids": [
+        "ACGL.LITIGATION"
+      ],
+      "note": "회사의 자기 진술이다 — 독립 확인이 아니다. 회사가 '중요한(material) 소송이 없다'고 한정해 진술 — 소송 존재 여부는 말하지 않는다",
+      "qid": "gov.material_litigation",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0242,
+      "claim_ids": [
+        "ACGL.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0045,
+      "claim_ids": [
+        "ACGL.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "favorable",
+      "claim_ids": [
+        "ACGL.RESERVE"
+      ],
+      "note": "",
+      "qid": "res.reserve_development",
+      "status": "answered"
+    },
+    {
+      "answer": 0.828,
+      "claim_ids": [
+        "READ-ACGL-uw.combined_ratio_pct"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "uw.combined_ratio_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cat.cat_exposure",
+      "status": "unknown"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "ACGL.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.9407,
+      "claim_ids": [
+        "ACGL.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-ACGL-gov.key_person_no_succession"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.key_person_no_succession",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-09",
+  "claims": [
+    {
+      "claim_id": "ACGL.CHAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL DEF 14A (filed 2026-03-24, acc 0000947484-26-000038)",
+            "location": "Corporate Governance — Board Leadership Structure",
+            "observed_date": "2026-10-06",
+            "quote": "The Board has determined that a split in the role of Chair of the Board and CEO is appropriate and in the best interests of the Company’s shareholders",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "이사회가 의장·CEO 분리를 결정했고 의장(Pasquesi)은 독립이사",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "이사회 의장과 CEO가 분리돼 있다"
+    },
+    {
+      "claim_id": "ACGL.SUCC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL DEF 14A (filed 2026-03-24, acc 0000947484-26-000038)",
+            "location": "Corporate Governance — succession planning",
+            "observed_date": "2026-10-06",
+            "quote": "Our Board has delegated primary oversight responsibility for succession planning for our CEO to our Nominating and Governance Committee",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "CEO 승계 감독 책임을 Nominating and Governance Committee에 위임",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "CEO 승계 계획을 이사회가 감독한다"
+    },
+    {
+      "claim_id": "ACGL.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 10-K FY2025 (filed 2026-02-26, acc 0000947484-26-000017)",
+            "location": "us-gaap:ShareBasedCompensation FY2025 = 148,000,000 USD",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000947484.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값(같은 10-K의 OCF 6,172,000,000 USD에서 capex 차감)",
+          "summary": "FY2025 SBC 148,000,000 USD / fcf0 6,128,000,000 USD",
+          "value": 0.0242,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF 대비 미미하다(2.4%)"
+    },
+    {
+      "claim_id": "ACGL.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 10-K FY2025 (filed 2026-02-26, acc 0000947484-26-000017)",
+            "location": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000947484.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "ACGL은 2022~2025 사이 주식분할이 없다(분할 보정 불필요)",
+          "summary": "가중평균 희석주식수 FY2022 377,600,000 -> FY2025 375,900,000",
+          "value": -0.0045,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수가 줄었다(-0.45%)"
+    },
+    {
+      "claim_id": "ACGL.RESERVE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 10-K FY2025 (filed 2026-02-26, acc 0000947484-26-000017)",
+            "location": "us-gaap:SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPriorYearClaimsAndClaimsAdjustmentExpense FY2023~FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000947484.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "prior_year_claims_expense_usd",
+          "note": "부호 해석(음수=유리)은 보험회계 관행이며 10-K MD&A 문장으로는 대조하지 않았다",
+          "summary": "전기 손해액 조정(prior-year claims expense) FY2023 -538M, FY2024 -507M, FY2025 -600M USD (음수 = 비용 감소 = 유리한 발전)",
+          "value": -600000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 연도 준비금 발전이 유리했다"
+    },
+    {
+      "claim_id": "ACGL.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL Form 4 x39 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=947484&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 39건 집계 (재량 매수 $498,650 / 재량 매도 $29,206,051 / 10b5-1 매도 $0)",
+          "value": -28707400.1,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 12건: 재량 순 $-28,707,400, 10b5-1 정기 0건 → opp_net_sell"
+    },
+    {
+      "claim_id": "ACGL.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000947484.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 7건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 7건)"
+    },
+    {
+      "claim_id": "ACGL.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 10-K (filed 2026-02-26, acc 0000947484-26-000017)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "were not a party to any litigation or arbitration which is expected by management to have a material adverse effect on our results of operations and financial condition and liquidity.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "ACGL.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 8-K (2026-05-07, acc 0000947484-26-000063)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "advisory vote to approve named executive officer compensation. The voting results were as follows: FOR AGAINST ABSTAIN BROKER NON-VOTES 280,228,167 17,650,116",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000063/acgl-20260505.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9407,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-05-07 주총 보수 승인 투표 찬성 280,228,167 / 반대 17,650,116 → 찬성률 94.1%"
+    },
+    {
+      "claim_id": "ACGL.COVER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "ACGL 10-K (filed 2026-02-26, acc 0000947484-26-000017)",
+            "location": "Cover page (shares outstanding)",
+            "observed_date": "2026-10-07",
+            "quote": "as reported by the Nasdaq Stock Market as of the last business day of the Registrant’s most recently completed second fiscal quarter, was approximately $ 33.0 billion. As of February 23, 2026, there were 355,803,320 of the registrant’s common shares outstanding.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)",
+          "summary": "10-K 표지 발행주식수 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K 표지: 보통주 단일 클래스만 발행"
+    },
+    {
+      "claim_id": "READ-ACGL-gov.key_person_no_succession",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-03-24",
+            "location": "ACGL-4",
+            "observed_date": "2026-10-09",
+            "quote": "the Compensation and Human Capital Committee also oversees the succession planning process for our Executive Leadership Team (except for the CEO)",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "보상위원회가 경영진 승계 계획 절차를 감독한다고 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.key_person_no_succession = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-ACGL-uw.combined_ratio_pct",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2026-02-26",
+            "location": "ACGL-23",
+            "observed_date": "2026-10-09",
+            "quote": "Combined ratio 95.2 % 80.8 % 14.6 % 82.8 %",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "세그먼트 표의 마지막(전사 합계) 열 합산비율 82.8% (영업권 합계 1,222로 합계 열 확인)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "10-K filed 2026-02-26",
+            "location": "ACGL-23",
+            "observed_date": "2026-10-09",
+            "quote": "Other operating expense ratio (5) 14.6 % 3.8 % 13.9 % 9.4 % Combined ratio 95.2 % 80.8 % 14.6 % 82.8 %",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000017/acgl-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "4열 중 앞 3열은 보험·재보험·모기지, 마지막 열은 영영권+무형자산 합(793+98+331=1,222)이 총계 열과 일치해 전사 수치로 판단",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "uw.combined_ratio_pct = 0.828 (독립 판독 2인 일치)"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.8571,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 12,
+    "n_primary_answered": 10,
+    "n_primary_required": 11,
+    "n_questions": 14,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "catastrophe_risk": {
+        "answered": 0,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 8,
+        "n_questions": 9,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "reserve_adequacy": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "underwriting_discipline": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      }
+    },
+    "unexamined_lenses": [
+      "catastrophe_risk",
+      "underwriting_discipline"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "ACGL",
+  "findings": [
+    {
+      "claim_ids": [
+        "ACGL.RESERVE"
+      ],
+      "effect": "strengthens",
+      "lens": "reserve_adequacy",
+      "summary": "3년 연속 유리한 준비금 발전(전기 손해액 -538M/-507M/-600M)"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "catastrophe_risk",
+      "summary": "대재해 노출 원문 미조회"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "underwriting_discipline",
+      "summary": "합산비율 원문 미조회"
+    },
+    {
+      "claim_ids": [
+        "ACGL.INSIDER",
+        "ACGL.CXO",
+        "ACGL.LITIGATION",
+        "ACGL.SAYONPAY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의장·CEO 분리와 승계 감독은 확인. 내부자 매매·소송·차등의결은 미확인이라 방향 판단 보류 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"
+    },
+    {
+      "claim_ids": [
+        "ACGL.SBC",
+        "ACGL.SHARES"
+      ],
+      "effect": "strengthens",
+      "lens": "dilution",
+      "summary": "SBC/FCF 2.4%, 3년 희석주식수 -0.45%"
+    }
+  ],
+  "inversion": [
+    "대재해 손실이 평활화된 FCF 가정을 깨뜨린다(엔진의 알려진 한계)",
+    "보험 플로트 성장이 유기적 성장으로 과대평가됐을 수 있다"
+  ],
+  "lens_set": "insurance",
+  "price_at_analysis": 94.36,
+  "revision": 1,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "12fe075a45775bf9c398f3555ae717a7b83ecef72df45b54571553cbc394e6e3",
+  "supersedes": "596ab42ebe43a0f61922edd0c0b35d33e5d170ddbf2cdceff42c7e405fb09e96",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

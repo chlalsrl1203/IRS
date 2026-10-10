@@ -1,0 +1,65 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001433642",
+  "pvp": {
+    "accession": "0001433642-26-000034",
+    "filed": "2026-07-23",
+    "measure_category": "earnings",
+    "measure_name": "Fee Related Earnings (“FRE”)",
+    "n_years": 5,
+    "peer_tsr": 127.88,
+    "peer_tsr_text": "127.88",
+    "peo_cap_not_used": {},
+    "period_end": "2026-03-31",
+    "status": "OK",
+    "tsr": 117.02,
+    "tsr_text": "117.02",
+    "tsr_vs_peer": -0.0849233656553019,
+    "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+  },
+  "ticker": "HLNE",
+  "trading_plans": {
+    "answer": 0,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001433642-25-000117",
+        "adoptions": 0,
+        "filed": "2025-11-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001433642-26-000007",
+        "adoptions": 0,
+        "filed": "2026-02-03",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001433642-26-000019",
+        "adoptions": 0,
+        "filed": "2026-05-21",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001433642-26-000042",
+        "adoptions": 0,
+        "filed": "2026-08-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

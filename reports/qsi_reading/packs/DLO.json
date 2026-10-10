@@ -1,0 +1,709 @@
+{
+ "ticker": "DLO",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": true,
+ "based_on_record": "9938a851b8229aee20ed7bc673819b5a606ff50275595cee71ada46cc91815db",
+ "targets": [
+  "gov.chair_separated",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.insider_pattern",
+  "gov.cxo_turnover_24m",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.buyback_effect",
+  "cap.ma_discipline",
+  "cap.dividend_predictable",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "acc.material_impairment_3y",
+  "cmp.new_threat",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "의장 선임 규정은 확인했으나 현 의장과 CEO의 겸직 여부를 직접 확인하지 못했다",
+  "gov.ceo_succession_policy": "미질문",
+  "gov.key_person_no_succession": "미질문",
+  "gov.insider_pattern": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+  "gov.cxo_turnover_24m": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+  "gov.material_litigation": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)",
+  "gov.insider_group_ownership": "'as a group' 지분 행을 찾지 못했다",
+  "cap.buyback_effect": "미질문",
+  "cap.ma_discipline": "미질문",
+  "cap.dividend_predictable": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.guidance_miss_3y": "실제값과 짝지은 최초 연간 매출 가이던스가 1개 연도뿐이다(최소 2)",
+  "acc.promise_kept_record": "실제값과 짝지은 최초 연간 매출 가이던스가 1개 연도뿐이다(최소 2)",
+  "acc.voluntary_bad_news": "미질문",
+  "acc.material_one_time_items": "미질문",
+  "acc.material_impairment_3y": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+  "cmp.new_threat": "올해·전년 위험요인 절을 모두 찾지 못했다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "미질문"
+ },
+ "excerpts": [
+  {
+   "id": "DLO-1",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "dic evaluations of senior management performance, in coordination with the Compensation Committee; and • monitoring and evaluating the orientation and ongoing training needs of directors, overseeing board‑level succession planning (including for the chair of the board and key committee chair roles) and periodically reviewing our corporate governance practices and making related recommendations to the board, including with respect to elections available to foreign private issuers to follow home‑country practice in lieu of Nasdaq corporate governance rules and associated disclosure obligations. The Nominating and Corporate Governance Committee meets as often as "
+  },
+  {
+   "id": "DLO-2",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "lso be passed by a unanimous written resolution signed by all the shareholders of our Company, as permitted by the Companies Act and our Articles of Association. Pursuant to dLocal’s Articles of Association, general meetings are to be chaired by the chairman of our board of directors or in his absence the vice-chairman of the board of directors. If the chairman or vice-chairman of our board of directors is absent, the directors present at the meeting shall appoint one of them to be chairman of the general meeting. If neither the chairman nor another director is present at the general meeting within 15 minutes after the time appointed for holding the meeting, the "
+  },
+  {
+   "id": "DLO-3",
+   "for": "gov.ceo_succession_policy",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": " intellectual capital. In order for us to successfully compete and grow, we must attract, recruit, develop and retain the necessary personnel who can provide the needed expertise across the entire spectrum of our intellectual capital needs. In addition, we must also develop our personnel to provide succession plans capable of maintaining continuity in the midst of the inevitable unpredictability of human capital. However, the market for qualified personnel is competitive, and we may not succeed in recruiting additional personnel or may fail to effectively replace current personnel who depart with qualified or effective successors, particularly in the technology business. We must continue to hire additional personnel to execute our strategic plans. Our effort to retain and develop personnel may also "
+  },
+  {
+   "id": "DLO-4",
+   "for": "gov.ceo_succession_policy",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "d any related recommendations to the board, and supporting the board’s oversight of periodic evaluations of senior management performance, in coordination with the Compensation Committee; and • monitoring and evaluating the orientation and ongoing training needs of directors, overseeing board‑level succession planning (including for the chair of the board and key committee chair roles) and periodically reviewing our corporate governance practices and making related recommendations to the board, including with respect to elections available to foreign private issuers to follow home‑country practice in lieu of Nasdaq corporate governance rules and associated disclosure obligations. The Nominating and Corporate Governance Committee meets as often as it determines appropriate to carry out its responsibi"
+  },
+  {
+   "id": "DLO-5",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "such open-source software in connection with our operations and solutions, which could disrupt and adversely affect our business. If we lose key personnel, our business, financial condition and results of operations may be adversely affected. We are dependent upon the ability and experience of our chief executive officer, our chief financial officer, our president and chief strategic officer, our chief operating officer and our chief technology officer, who have substantial experience with our operations, the rapidly changing payment processing industry, and emerging markets. It is possible that the loss of the services of one or a combination of our senior executives or key managers, including key executive officers, could have a material adverse effect on our business, financial condition, and results of operations. DLocal Limited 36 Table of Contents In a dynamic industry like ours, the ability to "
+  },
+  {
+   "id": "DLO-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": " intellectual capital. In order for us to successfully compete and grow, we must attract, recruit, develop and retain the necessary personnel who can provide the needed expertise across the entire spectrum of our intellectual capital needs. In addition, we must also develop our personnel to provide succession plans capable of maintaining continuity in the midst of the inevitable unpredictability of human capital. However, the market for qualified personnel is competitive, and we may not succeed in recruiting additional personnel or may fail to effectively replace current personnel who depart with qualified or effective successors, particularly in the technology business. We must continue to hire additional personnel to execute our strategic plans. Our effort to retain and develop personnel may also resul"
+  },
+  {
+   "id": "DLO-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "d any related recommendations to the board, and supporting the board’s oversight of periodic evaluations of senior management performance, in coordination with the Compensation Committee; and • monitoring and evaluating the orientation and ongoing training needs of directors, overseeing board‑level succession planning (including for the chair of the board and key committee chair roles) and periodically reviewing our corporate governance practices and making related recommendations to the board, including with respect to elections available to foreign private issuers to follow home‑country practice in lieu of Nasdaq corporate governance rules and associated disclosure obligations. The Nominating and Corporate Governance Committee meets as often as it determines appropriate to carry out its responsibilitie"
+  },
+  {
+   "id": "DLO-8",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "cable laws or policies governing our operations, we may face investigations, prosecutions and other legal proceedings and actions, which could result in civil penalties, administrative remedies and criminal sanctions. Any such government investigations, prosecutions or other legal proceedings or actions could adversely affect our business, performance, prospects, value, financial condition, and results of operations. We rely on manual processes in our operations to conduct our business. Currently, several of our functions are performed using a number of different information systems that are not fully integrated. In part because of this, we rely on certain manual processes and controls that are performed by individuals rather than automated systems. Accordingly, some of our treasury, accounting and business assurance operations, for instance, require us to perform many manual reconciliations, manual journal entries and other manual steps, which result in a higher risk of errors, including errors in the pay-out amount to the beneficiaries, duplicate payments to our merchants in settlement transactions and errors in our fees, foreign exchange rates, withholding and other tax calculations, which could involve material amounts. Manual processes also increase the probability of control deficiencies and material weaknesses. Until these systems are fully migrated and implemented with automated replacement systems, we must depend on existing technology platforms that require more manual or duplicate processing, as well as increased levels of manual controls and reconciliations of interfaces. If we "
+  },
+  {
+   "id": "DLO-9",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "produce the anticipated results, the inability to integrate an acquired company fully, or potential contingencies related to any acquisition, could harm our business. Although our core strategy focuses on organic growth, we may pursue strategic acquisitions, but there can be no assurance that we will be able to find suitable targets or that we will be able to complete acquisitions upon terms, including purchase price, that we find acceptable. DLocal Limited 33 Table of Contents We may from time to time acquire or invest in complementary companies or businesses, which may subject us to additional risks. The success of an acquisition or investment will depend on our ability to make accurate assumptions regarding the valuation, operations, growth potential, integration and other factors related to that business and the transaction structure. We cannot assure you that acquisitions or investments will produce the results that we expect at the time we enter into or complete a given transaction or that we may not be subject to additional contingencies, including additional tax liability, in respect of certain transactions. Furthermore, we may not effectively integrate these acquisitions with our current business, including their personnel, financial systems and operating procedures, or be able to retain their key customers, in each case, especially if they operate in different platforms. The costs of integrating any acquired business may harm our operating results. Moreover, unforeseen operating difficulties may arise and may result in the diversion of our capital and our management’s attentio"
+  },
+  {
+   "id": "DLO-10",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "public. See “ Item 8. Financial Information—Consolidated Statements and Other Financial Information—Legal proceedings. ” We could incur certain labor liabilities in connection with the outsourcing of certain of our operations to independent contractors and staffing companies, which could have an adverse effect on our business and results of operations. We outsource a number of activities related to our business to independent contractors and staffing companies in order to adapt to different market customs and practices and to maintain a flexible cost base. During 2025 and 2024, we hired certain employees that we had previously engaged as independent contractors. And while we have implemented policies regarding compliance with labor and social security obligations by our contractors, we cannot assure that our contractors will abide by their obligations or that local authorities in each market where we have operations will not impose additional labor related taxes or charges in connection with the contracts we have in force with such contractors, nor that contractors will not initiate legal actions to seek indemnification from us based on applicable labor laws and court ruling in the jurisdictions in which we engage independent contractors for a portion of our operations. In certain jurisdictions, we may be held jointly and severally liable with the staffing and payroll companies that we use. If we were to incur material labor liabilities in connection with outsourcing certain operations to independent contractors, such liabilities could have an adverse effect on our financial condition and o"
+  },
+  {
+   "id": "DLO-11",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ries do not seek financial penalties at this stage. As of the date of this filing, no provision for contingencies has been recorded for the aforementioned matters. Similar actions may occur in the future, including by central banks of other countries, and we may be unable to adequately address such restrictions. DLocal Limited 38 Table of Contents In addition, in Brazil (where revenue based on the country where the end users of our merchant customers executed their payments represented 19%, 20% and 24% of our Revenue in 2025, 2024 and 2023, respectively), recent economic and political instability has led to a negative perception of the Brazilian economy, which could adversely affect us given the significant concentration of our TPV transacted by our merchants in Brazil. Following the 2023 Brazilian election results, there were mass protests and demonstrations across Brazil by supporters of the former President of Brazil contesting the election results. On January 8, 2022, demonstrators invaded government buildings in Brasilia, including the Brazilian Congress and the Brazilian Federal Supreme Court, which led the Brazilian Federal Supreme Court to order the arrest of participants and some politicians and resulted in new investigations. As a result of past corruption allegations against the current President of Brazil and his political party’s involvement in the events that gave rise to the historic “Lava Jato” operation, his current presidency is subject to further political uncertainty. Although the incumbent administration has presented its priority initiatives for 2025 and 2026, ther"
+  },
+  {
+   "id": "DLO-12",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "economic intervention in Venezuela could have unforeseen impacts on the region, potentially affecting political and economic stability. As a company with significant operations in Latin America, we recognize that such developments could have an adverse effect on our business. • Credit rating downgrading of the countries in which we operate could reduce the trading price of our Class A common shares. Certain Risks Relating to our Class A Common Shares • An active trading market for our common shares may not be sustainable. If an active trading market is not maintained, investors may not be able to resell their shares at or above the price they paid and our ability to raise capital in the future may be impaired. • As of December 31, 2025, holders of our Class B common shares together own 43.76% of our outstanding common shares and 79.55% of corresponding voting rights, and have the power, as a group, to elect a majority of the members of our board of directors, which means that these shareholders, when acting in concert, have significant influence over matters requiring shareholder approval. This concentration of ownership and voting power limits your ability to influence corporate matters. • Our dual class capital structure means our shares cannot be included in certain indices. We cannot p"
+  },
+  {
+   "id": "DLO-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": " guidance is based on current management expectations and involve known and unknown risks, uncertainties and other factors that may cause our actual results, performance or achievements to be materially different from our projected results, performances or achievements expressed or implied by the guidance. Furthermore, except as required by law, we have no obligation to publicly update or revise our guidance to reflect events or circumstances arising after the date of this annual report. If our financial results for any period do not meet our guidance or the expectations of market participants, or if we revise or reduce any guidance for future periods, the market price of our Class A common shares could decline. As of December 31, 2025, holders of our Class B common shares together own 43.76% of our outstanding common shares and 79.55% of corresponding voting rights, and have the power, as a group, to elect a majority of the members of our board of directors, which means that these shareholders, when acting in concert, have significant influence over matters requiring shareholder approval. This concentration of ownership and voting power limits your ability to influence corporate matters. As of December 31, 2025, holders of our Class B common shares beneficially own 43.76% of our outstandi"
+  },
+  {
+   "id": "DLO-14",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "cers and/or entities affiliated with these individuals are disclosed in “ Item 7. Major Shareholders and Related Party Transactions—A. Major Shareholders. ” See “ Item 6. Directors, Senior Management and Employees—B. Compensation—Employee Share Incentive Plan ” for information on our incentive program. F. Disclosure of a registrant’s action to recover erroneously awarded compensation. Not applicable. DLocal Limited 99 Table of Contents Item 7. Major Shareholders and Related Party Transactions A. Major shareholders. The following table and accompanying footnotes present information relating to the beneficial ownership of our Class A common shares and Class B common shares by: • each person, or group of affiliated persons, known by us to own beneficially 5% or more of our outstanding shares; • each of our current executive officers and directors; and • all executive officers and directors as a group. The number of common shares beneficially owned by each entity, person, executive officer or director is determined in accordance with the rules of the SEC, and the information is not necessarily indicative of beneficial ownership for any other purpose. Under such rules, beneficial ownership includes any shares over which the individual has sole or shared voting power or investment power as well "
+  },
+  {
+   "id": "DLO-15",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "f directors upon reaching any age limit. The Articles of Association also provide that, while dLocal’s shares are admitted to trading on Nasdaq, the board of directors must always comply with the residency and citizenship requirements of the U.S. securities laws applicable to foreign private issuers. The Articles of Association provide that directors shall be appointed by an ordinary resolution of our shareholders, which requires the affirmative vote of a simple majority of the votes cast on the resolution by the shareholders entitled to vote who are present, in person or by proxy, at the meeting. Each director shall be appointed for such term as the resolution appointing him or her may determine or until his or her death, resignation or removal. Notwithstanding the foregoing, holders of Class B common shares, for so long as they hold Class B common shares, shall be entitled to appoint, as a group and at their sole discretion, at least a majority of the members of the board of directors, and shall be entitled at any time to remove, substitute or replace their appointed directors for any reason in their sole discretion. The board considers that the directors Francisco Fernandez de Ybarra del Rey, Nelson Mattos, William Pruett, Veronica Raffo and Hyman Bielsky are “independent” as that term "
+  },
+  {
+   "id": "DLO-16",
+   "for": "cap.buyback_effect",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ies and (iii) US$2.5 million increase in collections from share-options exercises, (iv) US$0.2 increase in principal and interest payments on lease liabilities, partially compensated by decrease in cash used driven by (iv) US$101 million decrease in repurchase of shares, (v) US$6 million decrease in finance expense paid related to derivative financial instruments, and (vi) US$1 million in net proceeds from financial liabilities. See “ Item 8. Financial Information—A. Consolidated Statements and Other Financial Information—Dividends Distribution Policy. ” Capital Expenditures For the years ended December 31, 2025 and 2024, we made capital expenditures of US$36.8 million and US$22.6 million, respectively. Total capital expenditures as a percentage of revenues we"
+  },
+  {
+   "id": "DLO-17",
+   "for": "cap.buyback_effect",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "nsfer is not to more than four joint holders. If the directors refuse to register a transfer, they are required, within two months after the date on which the instrument of transfer was lodged, to send to the transferee notice of such refusal. Share Repurchase The Companies Act and the Articles of Association permit dLocal to purchase its own shares, subject to certain restrictions. The board of directors may only exercise this power on behalf of dLocal, subject to the Companies Act, the Articles of Association and to any applicable requirements imposed from time to time by the SEC, the Nasdaq, or by any recognized stock exchange on which our securities are listed. Dividends and Capitalization of Profits We intend to pay annual cash dividends to the holders of our common shares in an amount equal to 30% of our adjusted free cash flow for t"
+  },
+  {
+   "id": "DLO-18",
+   "for": "cap.buyback_effect",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ed in July 2023. Buybacks were made from time to time in the open market and negotiated purchases. An aggregate amount of up to US$100 million in our Class A common shares could be repurchased under the 2023 Repurchase Program. We concluded the 2023 Repurchase Program on June 30, 2023, after having repurchased US$100 million of our Class A common shares. On May 14, 2024, our board of directors authorized a share repurchase program to purchase Class A common shares of up to US$200 million (the “2024 Repurchase Program”). The 2024 Repurchase Program was set to expire at the earliest of May 2025 or upon reaching the US$200 million dollar repurchase limit. The share repurchases could be made from time to time through open-market transactions, block trades, privately negotiated transactions or otherwise, and are subject to market and business condi"
+  },
+  {
+   "id": "DLO-19",
+   "for": "cap.buyback_effect",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ls of available liquidity, cash requirements for other purposes, regulatory considerations, and other relevant factors. No share repurchases were made under the 2024 Repurchase Program during 2025. On March 13, 2026, the Board authorized a new share repurchase program to purchase Class A common shares of up to US$ 300 million (the “2026 Repurchase Program”). The 2026 Repurchase Program will expire at the earliest of March 19, 2027 or upon reaching the US$ 300 million dollar repurchase limit. The share repurchases may be made from time to time through open market transactions, block trades, privately negotiated transactions or otherwise, and are subject to market and business conditions, levels of available liquidity, cash requirements for other purposes, regulatory considerations, and other "
+  },
+  {
+   "id": "DLO-20",
+   "for": "cap.dividend_predictable",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "elling shareholders 105 E. Dilution. 105 F. Expenses of the issue. 105 ITEM 10. ADDITIONAL INFORMATION. 105 A. Share capital. 105 B. Memorandum and articles of association. 105 C. Material contracts. 114 D. Exchange controls. 114 E. Taxation. 114 F. Dividends and paying agents. 118 G. Statement by experts. 118 H. Documents on display. 118 I. Subsidiary Information. 118 J. Annual report to security holders. 118 ITEM 11. QUANTITATIVE AND QUALITATIVE DISCLOSURES ABOUT MARKET RISK. 118 ITEM 12. DESCRIPTION OF SECURITIES OTHER THAN EQUITY SECURITIES. 118 A. Debt Securities. 118 B. Warrants and Rights. 118 C. Other Securities. 118 D. American Depositary Sh"
+  },
+  {
+   "id": "DLO-21",
+   "for": "cap.dividend_predictable",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ist of acquisitions of property, plant and equipment and additions of intangible assets. Management uses Adjusted Free Cash Flow as a measure for evaluating the Company's cash generation and the cash available for distribution to our shareholders as dividends pursuant to our dividend policy. Adjusted Free Cash Flow is not a financial measure recognized under IFRS and does not purport to be an alternative to cash generated from operating activities or as a measure of liquidity. Our presentation of Adjusted Free Cash Flow has limitations as an analytical tool, and you should not consider it in isolation or as a substitute for analysis of our liquidity "
+  },
+  {
+   "id": "DLO-22",
+   "for": "cap.dividend_predictable",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "will be subject to foreign exchange risk on such mismatch (see “— Exchange controls and other restrictions on the movement of capital out of certain jurisdictions or otherwise affecting our settlement transactions or our subsidiaries’ ability to pay dividends or make other payments to us may have a material adverse effect on our results of operations and financial condition. ”). Additionally, our working capital costs may be affected by interest and discount rates, especially in countries where payments can be made in installments and/or where we do not immediately receive the proceeds from transactions made with credit cards. Furthermore, in certain"
+  },
+  {
+   "id": "DLO-23",
+   "for": "cap.dividend_predictable",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "iness, financial condition and results of operations. See also “— Exchange controls and other restrictions on the movement of capital out of certain jurisdictions or otherwise affecting our settlement transactions or our subsidiaries’ ability to pay dividends or make other payments to us may have a material adverse effect on our results of operations and financial condition. ” We may not currently hold, or be able to obtain or maintain the relevant regulatory licenses, permissions or registrations to carry out our business in the various jurisdictions in which we operate, which may subject us to fines, penalties or force us to discontinue operations "
+  },
+  {
+   "id": "DLO-24",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ns from share-options exercises, (iv) US$0.2 increase in principal and interest payments on lease liabilities, partially compensated by decrease in cash used driven by (iv) US$101 million decrease in repurchase of shares, (v) US$6 million decrease in finance expense paid related to derivative financial instruments, and (vi) US$1 million in net proceeds from financial liabilities. See “ Item 8. Financial Information—A. Consolidated Statements and Other Financial Information—Dividends Distribution Policy. ” Capital Expenditures For the years ended December 31, 2025 and 2024, we made capital expenditures of US$36.8 million and US$22.6 million, respectively. Total capital expenditures as a percentage of revenues were 3% and 3% in 2025 and 2024 , respectively. These capital expenditures mainly include expenditures related t"
+  },
+  {
+   "id": "DLO-25",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "he directors refuse to register a transfer, they are required, within two months after the date on which the instrument of transfer was lodged, to send to the transferee notice of such refusal. Share Repurchase The Companies Act and the Articles of Association permit dLocal to purchase its own shares, subject to certain restrictions. The board of directors may only exercise this power on behalf of dLocal, subject to the Companies Act, the Articles of Association and to any applicable requirements imposed from time to time by the SEC, the Nasdaq, or by any recognized stock exchange on which our securities are listed. Dividends and Capitalization of Profits We intend to pay annual cash dividends to the holders of our common shares in an amount equal to 30% of our adjusted free cash flow for t"
+  },
+  {
+   "id": "DLO-26",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ime in the open market and negotiated purchases. An aggregate amount of up to US$100 million in our Class A common shares could be repurchased under the 2023 Repurchase Program. We concluded the 2023 Repurchase Program on June 30, 2023, after having repurchased US$100 million of our Class A common shares. On May 14, 2024, our board of directors authorized a share repurchase program to purchase Class A common shares of up to US$200 million (the “2024 Repurchase Program”). The 2024 Repurchase Program was set to expire at the earliest of May 2025 or upon reaching the US$200 million dollar repurchase limit. The share repurchases could be made from time to time through open-market transactions, block trades, privately negotiated transactions or otherwise, and are subject to market and business condi"
+  },
+  {
+   "id": "DLO-27",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ther purposes, regulatory considerations, and other relevant factors. No share repurchases were made under the 2024 Repurchase Program during 2025. On March 13, 2026, the Board authorized a new share repurchase program to purchase Class A common shares of up to US$ 300 million (the “2026 Repurchase Program”). The 2026 Repurchase Program will expire at the earliest of March 19, 2027 or upon reaching the US$ 300 million dollar repurchase limit. The share repurchases may be made from time to time through open market transactions, block trades, privately negotiated transactions or otherwise, and are subject to market and business conditions, levels of available liquidity, cash requirements for other purposes, regulatory considerations, and other relevant factors."
+  },
+  {
+   "id": "DLO-28",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": "). Adj. Free Cash Flow US$69 million (+41% year-over-year), Adj. FCF/Net income conversion of 125%. Guidance update: TPV guidance raised to 60–70% year-over-year and Gross profit to 25–30% year-over-year; Operating profit guidance maintained at 27.5–32.5% year-over-year. Montevideo, Uruguay, August 13, 2026 — DLocal Limited (“dLocal”, “we”, “us”, and “our”) (NASDAQ:DLO), the leading cross-border financial infrastructure platform connecting global merchants to emerging markets, today announced its financial results for the second quarter ended June 30, 2026. dLocal’s management team will host a conference call and audio webcast on August 13, 2026 at 5:00 p.m. Eastern Time. Please click here to pre-re"
+  },
+  {
+   "id": "DLO-29",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": "rd-looking statements convey dLocal’s current expectations or forecasts of future events, including guidance in respect of total payment volume, gross profit and operating profit. Forward-looking statements regarding dLocal and amounts stated as guidance involve known and unknown risks, uncertainties and other factors that may cause dLocal’s actual results, performance or achievements to be materially different from any future results, performances or achievements expressed or implied by the forward-looking statements. Certain of these risks and uncertainties are described in the “Risk Factors,” and “Cautionary Statement Regarding Forward-Looking Statements” sections of dLocal’s filings with the U.S"
+  },
+  {
+   "id": "DLO-30",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": "g statements to reflect circumstances or events after the date hereof. Starting in 2026, we provide guidance in respect of Operating Profit, which management believes is useful as a measure to compare our operating results to the operations of other companies in our industry, and to assess our operating performance independently of our capital structure, tax position, and non-cash depreciation and amortization charges. Investor Relations Contact: investor@dlocal.com Media Contact: media@dlocal.com This press release does not contain sufficient information to constitute an interim financial report as defined in International Accounting Standards 34, “Interim Financial Reporting” nor a financial state"
+  },
+  {
+   "id": "DLO-31",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "ception for some financial liabilities settled through electronic cash transfer; • Provides further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • add new disclosures for certain instruments with contractual terms that can change cash flows (such as some financial instruments with features linked to the achievement of environment, social and governance targets)/ and • update the disclosures for equity instruments designated at fair value through other comprehensive income (“FVTOCI”). The Group adopted these amendments on 1 January 2026. The adoption did not have a material impact on the Group’s financial statements. 2.3. Impac"
+  },
+  {
+   "id": "DLO-32",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "or the functional currency of a foreign operation, is not hyperinflationary. The amendments provide guidance on how such financial statements should be translated in these circumstances. The Group does not expect this amendment to have an impact on its operations or financial statements. 3. Accounting estimates and judgments Accounting estimates and judgments are continually evaluated and are based on historical experience and other factors, including expectations of future events that are believed to be reasonable under the circumstances. The accounting estimates and judgments adopted in these Unaudited Consolidated Condensed Interim Financial Statements are consistent with those of the previous fi"
+  },
+  {
+   "id": "DLO-33",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+   "text": "sted Free Cash Flow US$15 million, driven by temporary working capital effects, expected to revert. Guidance unchanged. Montevideo, Uruguay, May 14, 2026 — DLocal Limited (“dLocal”, “we”, “us”, and “our”) (NASDAQ:DLO), a leading cross-border financial infrastructure platform connecting global merchants to emerging markets, today announced its financial results for the first quarter ended March 31, 2026. dLocal’s management team will host a conference call and audio webcast on May 14, 2026 at 5:00 p.m. Eastern Time. Please click here to pre-register for the conference call and obtain your dial in number and passcode. The live conference call can be accessed via audio webcast at the investor relations"
+  },
+  {
+   "id": "DLO-34",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a991dlocal4q25_earningsres.htm",
+   "text": "Net income 55.6 29.7 87% 196.9 120.5 63% Net income margin 16% 15% 2p.p 18% 16% 2p.p Full year 2026 outlook For 2026, dLocal provides the following financial guidance: Metric 2025 2026 Guidance Key considerations TPV $40.8B 50% - 60% YoY ● Strong commercial traction with large merchants scaling across geographies ● Expansion deals with APMs ● Aggregation theory benefits create flywheel: pricing pressure downstream, FX liquidity and better data to aid conversion rates leads to more customer acquisition Gross Profit $403M 22.5% – 27.5% YoY ● Some structural volume-based discounting expected, which is a sign of scale and of our long-term merchant relationships Operating Profit $220M 27.5% – 32.5% YoY "
+  },
+  {
+   "id": "DLO-35",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a991dlocal4q25_earningsres.htm",
+   "text": "s but driving operating leverage improvements in 2H26 Consider the following in connection with our guidance: emerging markets remain volatile, reflecting the evolving global macroeconomic, currency and trade landscape and its potential impact on these economies. Our key exposures include the evolving Brazilian tax environment, Argentine FX, tariff sensitivity (particularly in Mexico), electoral uncertainty across the region, and broader FX risk across our emerging market footprint. Dividend payment and share repurchase program Following our dividend policy of 30% of the prior year's free cash flow, the Board of Directors declared a cash dividend of an aggregate of US$57.2 million, equivalent to app"
+  },
+  {
+   "id": "DLO-36",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a991dlocal4q25_earningsres.htm",
+   "text": "s to reflect circumstances or events after the date hereof. Beginning in 2026, we expect to provide guidance in respect of operating profit, which management believes is useful as a measure to compare our operating results to the operations of other companies in our industry, and to assess our operating performance independently of our capital structure, tax position, and non-cash depreciation and amortization charges. Investor Relations Contact: investor@dlocal.com Media Contact: media@dlocal.com This press release does not contain sufficient information to constitute an interim financial report as defined in International Accounting Standards 34, “Interim Financial Reporting” nor a financial state"
+  },
+  {
+   "id": "DLO-37",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a992dlocal_4q25xearnings.htm",
+   "text": "come margin 16% 15% 2p.p 18% 16% 2p.p 154Q25 Earnings Release / Financial highlights Full year 2026 outlook Metric 2025 2026 Guidance Key considerations TPV $40.8B 50% - 60% YoY ● Strong commercial traction with large merchants scaling across geographies ● Expansion deals with APMs ● Aggregation theory benefits create flywheel: pricing pressure downstream, FX liquidity and better data to aid conversion rates leads to more customer acquisition Gross Profit $403M 22.5% – 27.5% YoY ● Some structural volume-based discounting expected, which is a sign of scale and of our long-term merchant relationships Operating Profit1 $220M 27.5% – 32.5% YoY ● We will use Operating Profit a measure beginning in 2026 "
+  },
+  {
+   "id": "DLO-38",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a992dlocal_4q25xearnings.htm",
+   "text": "t driving operating leverage improvements in 2H26 For 2026, dLocal provides the following financial guidance: Consider the following in connection with our guidance: emerging markets remain volatile, reflecting the evolving global macroeconomic, currency and trade landscape and its potential impact on these economies. Our key exposures include the evolving Brazilian tax environment, Argentine FX, tariff sensitivity (particularly in Mexico), electoral uncertainty across the region, and broader FX risk across our emerging market footprint. 1Beginning in 2026, we expect to provide guidance in respect of Operating Profit, which management believes is useful as a measure to compare our operating results "
+  },
+  {
+   "id": "DLO-39",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a992dlocal_4q25xearnings.htm",
+   "text": "her entities. Finally, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. $ in thousands Three months ended on December 31 Year ended on December 31 2025 2024 2025 2024 Profit for the period 55,637 29,701 196,902 120,469 Income tax expense 8,915 11,090 31,752 30,550 Depreciation and amortization 9,527 4,888 26,259 17,177 Finance income and costs, net (3,376) 1,085 (12,943) (17,174) Share-based payment non-cash charges 6,365 6,339 24,136 23,780 Other operating loss¹ (584)"
+  },
+  {
+   "id": "DLO-40",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000110/a992dlocal_4q25xearnings.htm",
+   "text": "ign currency exchange rates, which may not be indicative of our core operating results and business outlook. The constant currency measures are not calculated in accordance with IFRS or any other generally accepted accounting principles and should not be considered as a measure of performance in isolation. Our calculation for constant currency may differ from similarly-titled measures presented by other companies and should not be considered in isolation or as a replacement for our measure of revenue for the period as presented in accordance with IFRS. As used by dLocal, constant currency measures were calculated as the aggregated value of current period TPV, revenue and gross profit multiplied by "
+  },
+  {
+   "id": "DLO-41",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000119312525277539/dlo-ex99_1.htm",
+   "text": "her entities. Finally, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. The table below presents a reconciliation of dLocal’s Adjusted EBITDA to net income: $ in thousands Three months ended September 30 Nine months ended September 30 2025 2024 2025 2024 Profit for the period 51,790 26,811 141,265 90,768 Income tax expense 9,388 2,286 22,838 19,460 Depreciation and amortization 6,129 4,438 16,731 12,289 Finance income and costs, net (6,383) 10,085 (9,566) (18,259) Shar"
+  },
+  {
+   "id": "DLO-42",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000119312525277539/dlo-ex99_1.htm",
+   "text": "rd-looking statements convey dLocal’s current expectations or forecasts of future events, including guidance in respect of total payment volume, revenue, gross profit and Adjusted EBITDA. Forward-looking statements regarding dLocal and amounts stated as guidance are based on current management expectations and involve known and unknown risks, uncertainties and other factors that may cause dLocal’s actual results, performance or achievements to be materially different from any future results, performances or achievements expressed or implied by the forward-looking statements. Certain of these risks and uncertainties are described in the “Risk Factors,” “Forward-Looking Statements” and “Cautionary Sta"
+  },
+  {
+   "id": "DLO-43",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000119312525277539/dlo-ex99_1.htm",
+   "text": "e hereof. In addition, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA, because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. Investor Relations Contact: investor@dlocal.com Media Contact: media@dlocal.com"
+  },
+  {
+   "id": "DLO-44",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000119312525277539/dlo-ex99_2.htm",
+   "text": "ception for some financial liabilities settled through electronic cash transfer; • Provides further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • New disclosures for certain instruments with contractual terms that can change cash flows and equity instruments designated at fair value through other comprehensive income (“FVTOCI”). IFRS 19 - Subsidiaries without Public Accountability: Disclosures and amendment (effective on January 1, 2027) On May 9, 2024, the IASB has issued a new IFRS Accounting Standard for subsidiaries. An eligible subsidiary applies the requirements in other IFRS Accounting Standards except for the disclosu"
+  },
+  {
+   "id": "DLO-45",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-09-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095010325011289/dp233999_ex9901.htm",
+   "text": "as that term is used in the regulations administered and enforced, together with any related public guidance issued, by the United States Treasury Department under U.S. Executive Order 14105 of August 9, 2023, or any similar law or regulation, as of the date of this Agreement, and as codified at 31 C.F.R. § 850.101 et seq. (the “Outbound Investment Rules”). Neither the Company nor any of its subsidiaries currently engages, or has any present intention to engage in the future, directly or indirectly, in (i) a “covered activity” or a “covered transaction,” as each such term is defined in the Outbound Investment Rules, (ii) any activity or transaction that would constitute a “covered activity” or a “co"
+  },
+  {
+   "id": "DLO-46",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-09-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095010325011289/dp233999_ex9901.htm",
+   "text": "nization shall have publicly announced that it has under surveillance or review, or has changed its outlook with respect to, its rating of any such debt securities or preferred shares or stock issued or guaranteed by the Company or any of its subsidiaries (other than an announcement with positive implications of a possible upgrading). (d) No Material Adverse Change. No event or condition of a type described in Section 3(i) hereof shall have occurred or shall exist, which event or condition is not described in the Pricing Disclosure Package (excluding any amendment or supplement thereto) and the Prospectus (excluding any amendment or supplement thereto) and the effect of which in the judgment of the"
+  },
+  {
+   "id": "DLO-47",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025108015/dlo-ex99_1.htm",
+   "text": "flow generation with US$48 million of FCF (free cash flow). Upward adjustment on our full-year 2025 guidance for TPV, Revenue, Gross Profit and Adjusted EBITDA. Montevideo, Uruguay, August 13, 2025 — DLocal Limited (“dLocal”, “we”, “us”, and “our”) (NASDAQ:DLO), a technology - first payments platform, today announced its financial results for the second quarter ended June 30, 2025. dLocal’s management team will host a conference call and audio webcast on August 13, 2025 at 5:00 p.m. Eastern Time. Please click here to pre-register for the conference call and obtain your dial in number and passcode. The live conference call can be accessed via audio webcast at the investor relations section of dLocal’"
+  },
+  {
+   "id": "DLO-48",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025108015/dlo-ex99_1.htm",
+   "text": "erscoring our ability to deliver strong growth while returning excess capital to shareholders. 2025 guidance update (year-over-year growth rates versus 2024): • TPV: 40%-50% YoY • Revenue: 30%-40% YoY • Gross profit: 27.5%-37.5% YoY • Adjusted EBITDA: 40%-50% YoY Our updated guidance reflects the strong performance in the first half of the year and the sustained momentum anticipated across our business. While we remain optimistic, we encourage careful consideration of the outlined risks: The evolving macroeconomic, currency and trade landscape globally and its potential impact on emerging markets. • The recent increase in tariffs in Mexico, along with potential trade barriers in other markets. • Shi"
+  },
+  {
+   "id": "DLO-49",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025108015/dlo-ex99_1.htm",
+   "text": "her entities. Finally, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. The table below presents a reconciliation of dLocal’s Adjusted EBITDA to net income: $ in thousands Three months ended June 30 Six months ended June 30 2025 2024 2025 2024 Profit for the period 42,808 46,239 89,475 63,957 Income tax expense 8,188 10,060 13,450 17,174 Depreciation and amortization 5,540 4,089 10,602 7,851 Finance income and costs, net 3,785 (28,045) (3,184) (28,344) Share-based paym"
+  },
+  {
+   "id": "DLO-50",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025108015/dlo-ex99_2.htm",
+   "text": "ception for some financial liabilities settled through electronic cash transfer; • Provides further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • New disclosures for certain instruments with contractual terms that can change cash flows and equity instruments designated at fair value through other comprehensive income (“FVTOCI”). IFRS 19 - Subsidiaries without Public Accountability: Disclosures (effective on January 1, 2027) On May 9, 2024, the IASB has issued a new IFRS Accounting Standard for subsidiaries. An eligible subsidiary applies the requirements in other IFRS Accounting Standards except for the disclosure requirement"
+  },
+  {
+   "id": "DLO-51",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025071516/dlo-ex99_1.htm",
+   "text": "her entities. Finally, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. The table below presents a reconciliation of dLocal’s Adjusted EBITDA to net income: $ in thousands Three months ended March 31 2025 2024 Profit for the period 46,667 17,718 Income tax expense 5,262 7,114 Depreciation and amortization 5,062 3,762 Finance income and costs, net (6,969) (299) Share-based payment non-cash charges 6,020 4,461 Other operating loss¹ 422 1,819 Impairment loss / (gain) on f"
+  },
+  {
+   "id": "DLO-52",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm",
+   "text": "investment for future growth with a healthy margin and free cash profile. Looking ahead to our 2025 guidance 5 , we expect a strong TPV growth of 35% - 45% year-over-year, with a revenue growth of 25% - 35% year-over-year that shows this sustained momentum of our top line. We see gross profit growth of 20% - 25% year-over-year, and Adjusted EBITDA growth between 20% and 30% year-over-year. Considering those assumptions, we should expect a net take rate compression while delivering high TPV growth even at our scale. Over the midterm, we will work to maintain strong TPV while recognizing that given the extremely strong levels of TPV retention we deliver, our larger merchants will continue to attain lo"
+  },
+  {
+   "id": "DLO-53",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm",
+   "text": "t towards higher take rate frontier markets, and new revenue streams through product launches. This guidance highlights that our combination of revenue growth, margin structure and free cash generation is not that common. There are not that many companies today who are as profitable as we are, growing revenues at the pace we are growing, and consistently generating free cash. As known, our business thrives in fast-growing, dynamic markets with massive opportunities in digital payments across emerging markets, driven by strong demand and long-term growth trends. However, these markets also bring volatility from macroeconomic shifts, regulatory changes, and currency fluctuations. While we are confiden"
+  },
+  {
+   "id": "DLO-54",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm",
+   "text": "ity over a multi-year timeframe. For this reason, we have made the decision to discontinue mid-term guidance. We will continue to focus on delivering strong operational execution so as to hit the annual targets we disclose. Looking ahead to 2025, we are confident in our ability to sustain momentum. Our investments in technology, product innovation, and market expansion position us well for growth. Despite the volatility of emerging markets, our disciplined scaling, local expertise, and commitment to delivering value to merchants will differentiate us. Our strategy focuses on capturing the potential of digital payments in high-growth regions, driving operational efficiencies, and reinforcing market l"
+  },
+  {
+   "id": "DLO-55",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm",
+   "text": "currency measures to reported results of Q4 2024 Earnings Presentation; 5 please see Full year 2025 outlook on slide 23 of Q4 2024 Earnings Presentation. Fourth quarter 2024 financial highlights ● Total Payment Volume (“TPV”) reached a record US$7.7 billion in the fourth quarter, up 51% year-over-year compared to US$5.1 billion in the fourth quarter of 2023 and up 18% compared to US$6.5 billion in the third quarter of 2024. In constant currencies 1 , TPV growth for the period would have been 81% year-over-year. ● Revenues amounted to US$204.5 million, up 9% year-over-year compared to US$188.0 million in the fourth quarter of 2023 and up 10% compared to US$185.8 million in the third quarter of 2024."
+  },
+  {
+   "id": "DLO-56",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-27",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_2.htm",
+   "text": "financial liabilities settled through an electronic cash transfer system; • clarify and add further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • add new disclosures for certain instruments with contractual terms that can change cash flows (such as some financial instruments with features linked to the achievement of environment, social and governance targets); and • update the disclosures for equity instruments designated at fair value through other comprehensive income (FVOCI). The Group does not expect these amendments to have a material impact on its operations or financial statements. (c) IFRS 18 Presentation and Disclos"
+  },
+  {
+   "id": "DLO-57",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-02-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025024484/dlo-ex99_1.htm",
+   "text": " partners, and employees. It looks forward to discussing its performance during FY24 and Q4’24, and outlook going forward during the next earnings call scheduled for February 27, 2025. About dLocal dLocal powers local payments in emerging markets connecting global enterprise merchants with billions of emerging market consumers across APAC, the Middle East, Latin America, and Africa. Through the “One dLocal” concept (one direct API, one platform, and one contract), global companies can accept payments, send pay-outs and settle funds globally without the need to manage separate pay-in and pay-out processors, set up numerous local entities, and integrate multiple acquirers and payment methods in each "
+  },
+  {
+   "id": "DLO-58",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-11-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024126375/dlo-ex99_1.htm",
+   "text": "EX amounting to $26 million, a cash conversion of practically 100% of Net Income. On that note, our guidance remains unchanged in light of our Q3 2024 results and what we have seen through Q4. However, it is important to reinforce that Q4 results are heavily weighted towards the next 3-4 weeks, given the expected seasonal lift in commerce volumes and Black Friday. In terms of technology and product development deployments during the quarter, we have launched our Smart Requests functionality, boosting our transaction performance, thereby improving conversion rate. We have also continued to develop increasingly advanced real-time cost calculation models to optimise processing costs, which also contrib"
+  },
+  {
+   "id": "DLO-59",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-11-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024126375/dlo-ex99_1.htm",
+   "text": "rd-looking statements convey dLocal’s current expectations or forecasts of future events, including guidance in respect of total payment volume, gross profit, Adjusted EBITDA, and Adjusted EBITDA over gross profit margin. Forward-looking statements regarding dLocal and amounts stated as guidance are based on current management expectations and involve known and unknown risks, uncertainties and other factors that may cause dLocal’s actual results, performance or achievements to be materially different from any future results, performances or achievements expressed or implied by the forward-looking statements. Certain of these risks and uncertainties are described in the “Risk Factors,” “Forward-Looki"
+  },
+  {
+   "id": "DLO-60",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-11-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024126375/dlo-ex99_1.htm",
+   "text": "e hereof. In addition, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA and Adjusted EBITDA over gross profit, which are forward-looking non-IFRS measures, because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. Exhibit 99.1 dLocal Limited Certain financial information Consolidated Condensed Interim Statements of Comprehensive Income for the three-month and nine-month periods ended September 30, 2024 and 2023 (In thousands of U.S. dollars, except per share amounts) Three months ended 30 of September Nine months ended 30 of "
+  },
+  {
+   "id": "DLO-61",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-11-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024126375/dlo-ex99_2.htm",
+   "text": "ception for some financial liabilities settled through electronic cash transfer; • Provides further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • New disclosures for certain instruments with contractual terms that can change cash flows and equity instruments designated at FVTOCI. IFRS 19 - Subsidiaries without Public Accountability: Disclosures (effective on January 1, 2027) On 9 May 2024, the IASB has issued a new IFRS Accounting Standard for subsidiaries. An eligible subsidiary applies the requirements in other IFRS Accounting Standards except for the disclosure requirements and instead applies the reduced disclosure requir"
+  },
+  {
+   "id": "DLO-62",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-09-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095010324013270/dp217693_ex9901.htm",
+   "text": " and vision have been instrumental in dLocal’s growth and success. We look forward to his continued guidance and support as a member of our Board of Directors.” About dLocal dLocal powers local payments in emerging markets, connecting global enterprise merchants with billions of emerging market consumers across Africa, Asia and Latin America. Through the “One dLocal” concept (one direct API, one platform, and one contract), international companies can accept payments, send pay-outs and settle funds globally without the need to manage separate pay-in and pay-out processors, set up numerous local entities, integrate multiple acquirers and payment methods in each market. For more information, please vi"
+  },
+  {
+   "id": "DLO-63",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-08-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024097048/dlo-ex99_1.htm",
+   "text": " and new commercial opportunities on a merchant-by-merchant basis, gets us to the following revised outlook for 2024: ● TPV of $24.5-26.5 billion; due to slower volume ramp-ups, pipeline volume even more skewed towards Tier 0 merchants, and weakening currencies in emerging markets ● Gross profit of $280-300 million; in addition to the reasons outlined above, driven by increased local-to-local flows, and ● Adjusted EBITDA of $180-200 million, supporting crucial long-term investments that enhance our value proposition and internal controls We continue to thrive across emerging markets, embracing their complexities and delivering simple, effective solutions to our merchants. Our focus remains on execu"
+  },
+  {
+   "id": "DLO-64",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-08-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024097048/dlo-ex99_1.htm",
+   "text": "her entities. Finally, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA and Adjusted EBITDA over gross profit, which are forward-looking non-IFRS measures, because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. The table below presents a reconciliation of dLocal’s Adjusted EBITDA and Adjusted EBITDA Margin to net income: $ in thousands Three months ended 30 of June Six months ended 30 of June 2024 2023 2024 2023 Profit for the period 46,239 44,791 63,957 80,241 Income tax expense 10,060 8,774 17,174 13,055 Depreciation and"
+  },
+  {
+   "id": "DLO-65",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-08-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024097048/dlo-ex99_1.htm",
+   "text": "e hereof. In addition, dLocal is unable to present a quantitative reconciliation of forward-looking guidance for Adjusted EBITDA and Adjusted EBITDA over gross profit, which are forward-looking non-IFRS measures, because dLocal cannot reliably predict certain of their necessary components, such as impairment gains/(losses) on financial assets, transaction costs, and inflation adjustment. Exhibit 99.1 dLocal Limited Certain financial information Consolidated Condensed Interim Statements of Comprehensive Income for the three-month and six-month periods ended June 30, 2024 and 2023 (In thousands of U.S. dollars, except per share amounts) Three months ended 30 of June Six months ended 30 of June 2024 20"
+  },
+  {
+   "id": "DLO-66",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-08-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024097048/dlo-ex99_2.htm",
+   "text": "ception for some financial liabilities settled through electronic cash transfer; • Provides further guidance for assessing whether a financial asset meets the solely payments of principal and interest (SPPI) criterion; • New disclosures for certain instruments with contractual terms that can change cash flows and equity instruments designated at FVTOCI. 3. Accounting estimates and judgments Accounting estimates and judgments are continually evaluated and are based on historical experience and other factors, including expectations of future events that are believed to be reasonable under the circumstances. The critical accounting estimates and judgments adopted on these Unaudited Consolidated Condens"
+  },
+  {
+   "id": "DLO-67",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024059799/dlo-ex99_1.htm",
+   "text": "ate sufficient future cash to carry out our ambitious strategic plan. Our actual performance versus guidance will hinge mainly on our own execution, but will be affected by a few exogenous variables: macroeconomic conditions, merchant go-live timing on signed contracts, and regulatory changes, and FX rates, to name a few. We manage and de-risk these variables as much as possible, but they still hold a level of unpredictability that is characteristic of emerging markets. That is simply the reality of our business. As we continue to gain scale and improve our diversification in terms of revenues and geographies, we believe these variables will impact to a lesser extent our results. With that context i"
+  },
+  {
+   "id": "DLO-68",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017024059799/dlo-ex99_1.htm",
+   "text": "tements convey dLocal’s current expectations or forecasts of future events, including in respect of guidance provided previously regarding our total payment volume, gross profit, Adjusted EBITDA, gross profit CAGR and Adjusted EBITDA over gross profit margin. Forward-looking statements regarding dLocal and our ability to achieve our guidance ranges are based on current management expectations and involve known and unknown risks, uncertainties and other factors that may cause dLocal’s actual results, performance or achievements to be materially different from any future results, performances or achievements expressed or implied by the forward-looking statements. Certain of these risks and uncertainti"
+  },
+  {
+   "id": "DLO-69",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": "2025, higher average salaries driven by the annual merit cycle and a limited number of senior strategic hires, and higher marketing spend concentrated in the first half around the World Cup campaign and large merchant events. The sequential decrease partly reflects the absence of the US$4.4 million non-recurring prior-year tax item recorded in OPEX in the first quarter of 2026. ● As a result, Operating profit was US$64.2 million, up 15% year-over-year and 22% quarter-over- quarter. The Operating Profit to Gross Profit ratio was 50%, up 6 p.p. quarter-over-quarter compared to 44% as reported in the first quarter of 2026 and down 6 p.p. year-over-year compared to 56% as reported in the second quarter of 2025. ● Net financial result was a US$2.3 million gain, compared to a net finance loss of US$3.8 million in the second quarter of 2025 and a net finance gain of US$5.2 million in the first quarter of 2026. ● Our effective income tax rate for the period was approximately 16%, in line with the second qu"
+  },
+  {
+   "id": "DLO-70",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": " services (272,514) (157,573) (489,692) (289,453) Gross profit 127,150 98,885 245,834 183,764 Technology and development expenses (13,298) (7,380) (25,422) (14,147) Sales and marketing expenses (9,892) (4,842) (19,811) (11,977) General and administrative expenses (36,460) (27,003) (79,117) (51,327) Impairment (loss)/gain on financial assets (1,430) (1,415) (2,210) (1,801) Other operating loss (1,909) (2,480) (2,341) (2,902) Operating profit 64,161 55,765 116,933 101,610 Finance income 5,067 11,110 15,824 23,338 Finance costs (2,757) (14,895) (8,355) (20,154) Inflation adjustment (1,483) (984) (2,869) (1,869) Other results 827 (4,769) 4,600 1,315 Profit before income tax 64,988 50,996 121,533 102,925 Income tax expense (10,213) (8,188) (24,822) (13,450) Profit for the period 54,775 42,808 96,711 89,475 Profit attributable to: Owners of the Group 54,638 42,810 96,612 89,440 Non-controlling interest 137 (2) 99 35 Profit for the period 54,775 42,808 96,711 89,475 Earnings per share (in USD) Basic Ea"
+  },
+  {
+   "id": "DLO-71",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/ex_991-dlocalxearningsxres.htm",
+   "text": "ncial assets at FVPL - (4,791) (167) (12,134) Amortization of Intangible assets 7,328 5,055 14,390 9,639 Depreciation and disposals of PP&E and right-of-use 608 485 1,261 1,188 Share-based payment expense, net of forfeitures 6,489 4,911 12,555 10,931 Other operating gain 1,909 2,480 2,341 2,902 Net Impairment loss/(gain) on financial assets 1,430 1,415 2,210 1,801 Inflation adjustment and other financial results 2,187 3,180 5,050 9,265 82,574 72,306 151,871 135,467 Changes in working capital Increase in Trade and other receivables (410,436) (13,046) (580,738) 8,036 Decrease / (Increase) in Other assets (4,265) 1,175 (18,544) 2,200 Increase / (Decrease) in Trade and Other payables 495,664 76,948 700,507 93,294 Increase / (Decrease) in Tax Liabilities (7,261) (2,928) 2,316 (1,963) Increase / (Decrease) in Provisions 298 1 326 44 Cash (used) / generated from operating activities 156,575 134,457 255,738 237,078 Income tax paid (16,052) (9,998) (22,434) (17,206) Net cash (used) / generated from opera"
+  },
+  {
+   "id": "DLO-72",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "2,514 ) ( 157,573 ) Gross profit 245,834 183,764 127,150 98,885 Technology and development expenses 7 ( 25,422 ) ( 14,147 ) ( 13,298 ) ( 7,380 ) Sales and marketing expenses 8 ( 19,811 ) ( 11,977 ) ( 9,892 ) ( 4,842 ) General and administrative expenses 8 ( 79,117 ) ( 51,327 ) ( 36,460 ) ( 27,003 ) Impairment (loss)/gain on financial assets 17 ( 2,210 ) ( 1,801 ) ( 1,430 ) ( 1,415 ) Other operating loss ( 2,341 ) ( 2,902 ) ( 1,909 ) ( 2,480 ) Operating profit 116,933 101,610 64,161 55,765 Finance income 11 15,824 23,338 5,067 11,110 Finance costs 11 ( 8,355 ) ( 20,154 ) ( 2,757 ) ( 14,895 ) Inflation adjustment 11 ( 2,869 ) ( 1,869 ) ( 1,483 ) ( 984 ) Other results 4,600 1,315 827 ( 4,769 ) Profit before income tax 121,533 102,925 64,988 50,996 Income tax expense 12 ( 24,822 ) ( 13,450 ) ( 10,213 ) ( 8,188 ) Profit for the period 96,711 89,475 54,775 42,808 Profit attributable to: Owners of the Group 96,612 89,440 54,638 42,810 Non-controlling interest 99 35 137 ( 2 ) Profit for the period 96,71"
+  },
+  {
+   "id": "DLO-73",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "financial instruments 3,632 3,591 Amortization of intangible assets 10 14,390 9,639 Depreciation and disposals of property, plant and equipment and right-of-use assets 10 1,261 1,188 Share-based payment expense, net of forfeitures 9 12,555 10,931 Net exchange differences ( 2,147 ) 13,908 Fair value gain on financial assets at FVPL 11 ( 167 ) ( 12,134 ) Other operating loss 2,341 2,902 Net Impairment loss/(gain) on financial assets 17 2,210 1,801 Inflation adjustment and other financial results 5,050 9,265 151,871 135,467 Changes in working capital (Increase)/Decrease in trade and other receivables ( 580,738 ) 8,036 (Increase)/Decrease in other assets ( 18,544 ) 2,200 Increase in trade and other payables 700,507 93,294 (Decrease) / Increase in tax liabilities 2,316 ( 1,963 ) Increase in provisions 326 44 Cash generated from operating activities 255,738 237,078 Income tax paid ( 22,434 ) ( 17,206 ) Net cash generated from operating activities 233,304 219,872 Cash flows from investing activities"
+  },
+  {
+   "id": "DLO-74",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "umber of in-network countries. The Group processes local payments in emerging markets through its network of acquirers and payments processors. Through its partnership with financial institutions, the Group expatriates/repatriates funds to/from developed economies where the merchant customers elect settlement in their preferred currency (mainly U.S. Dollar and Euro). These Unaudited Consolidated Condensed Interim Financial Statements include dLocal’s subsidiaries. The Group is licensed and regulated in the EU as an Electronic Money Issuer, or EMI, and Payment Institution, or PI, and registered as a Money Service Business with the Financial Crimes Enforcement Network of the U.S. Department of the Treasury, or FinCEN, and operates and may be licensed, where applicable, in many countries in emerging markets, primarily in the Americas, Asia and Africa. In December 2024, the Group achieved a significant advancement by obtaining a license in the United Kingdom as an Authorized Payment Institution (API"
+  },
+  {
+   "id": "DLO-75",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000031/dlo-20260630.htm",
+   "text": "tion is measured at fair value, which is calculated as the sum of the acquisition date fair value of the assets transferred to the Company, liabilities incurred by the Company to the former owners of the acquiree and the equity interest issued by the Company in exchange for control of the acquiree. Acquisition-related costs are recognized in profit or loss as incurred. At the acquisition date, the identifiable assets acquired and the liabilities assumed are recognized at their fair value, except that: 6 DLocal Limited Notes to the Unaudited Consolidated Condensed Interim Financial Statements At June 30, 2026 (All amounts in thousands of U.S. Dollars except share data, par value or as otherwise indicated) • deferred tax assets or liabilities, and assets or liabilities related to employee benefit arrangements are recognized and measured in accordance with IAS 12 - Income taxes and IAS 19 - Employee Benefits; and • Liabilities or equity instruments related to share-based payment arrangements of the acquiree"
+  },
+  {
+   "id": "DLO-76",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+   "text": "ff. • Net financial result was US$5.2 million gain, compared to a net finance gain of US$7.0 million in the first quarter of 2025 and a net finance gain of US$3.4 million in the fourth quarter of 2025. • Our effective income tax rate for the period was approximately 26% as reported, elevated by the non-recurring prior-period adjustment. Excluding the adjustment, the effective rate would have been approximately 16%, broadly in line with prior quarters. • Net income for the first quarter of 2026 was US$41.9 million, or US$0.14 per diluted share, down 10% compared to a profit of US$46.7 million, or US$0.16 per diluted share, for the first quarter of 2025 and down 25% compared to a profit of US$55.6 million, or US$0.18 per diluted share for the fourth quarter of 2025. Excluding the prior-periods tax adjustment, net income would have been US$51.6 million, or US$0.17 per diluted share, up 11% year-over-year. • Adjusted Free cash flow for the first quarter of 2026 amounted to US$14.7 million, down 63% yea"
+  },
+  {
+   "id": "DLO-77",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+   "text": ". The Company concluded that the out of period adjustment was not material to any previously reported annual or interim period. Management uses Operating Profit Excluding Prior Years Tax Adjustments as a measure for evaluating the Company's underlying operating performance by removing the effect of non-recurring, out-of-period tax assessments. Operating Profit Excluding Prior Years Tax Adjustments is not a financial measure recognized under IFRS and does not purport to be an alternative to operating profit as a measure of operating performance. Our presentation of Operating Profit Excluding Prior Periods Tax Adjustments has limitations as an analytical tool, and you should not consider it in isolation or as a substitute for analysis of our results as reported under IFRS. Exhibit 99.1 The table below presents a reconciliation of dLocal’s operating profit excluding prior years tax adjustments reconciliation: $ in thousands Three months ended on March 31 2026 2025 Operating profit 52,772 45,845 Prior "
+  },
+  {
+   "id": "DLO-78",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+   "text": "ating expenses. The Company concluded that the out of period adjustment was not material to any previously reported annual or interim period. Management uses Net Income Excluding Prior Years Tax Adjustments as a measure for evaluating the Company's underlying profitability by removing the effect of non-recurring, out-of-period tax assessments. Net Income Excluding Prior Years Tax Adjustments is not a financial measure recognized under IFRS and does not purport to be an alternative to profit for the period as a measure of profitability. Our presentation of Net Income Excluding Prior Periods Tax Adjustments has limitations as an analytical tool, and you should not consider it in isolation or as a substitute for analysis of our results as reported under IFRS. The table below presents a reconciliation of dLocal’s net income excluding prior years tax adjustments reconciliation: $ in thousands Three months ended on March 31 2026 2025 Net income (Profit for the period) 41,936 46,667 Prior years tax adjust"
+  },
+  {
+   "id": "DLO-79",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_991-dlocalearningsresul.htm",
+   "text": " months ended on March 31 2026 2025 Continuing operations Revenues 335,862 216,759 Cost of services (217,178) (131,880) Gross profit 118,684 84,879 Technology and development expenses (12,124) (6,767) Sales and marketing expenses (9,919) (7,135) General and administrative expenses (42,657) (24,324) Impairment (loss)/gain on financial assets (780) (386) Other operating loss (432) (422) Operating profit 52,772 45,845 Finance income 10,757 12,228 Finance costs (5,598) (5,259) Inflation adjustment (1,386) (885) Other results 3,773 6,084 Profit before income tax 56,545 51,929 Income tax expense (14,609) (5,262) Profit for the period 41,936 46,667 Profit attributable to: Owners of the Group 41,975 46,630 Non-controlling interest (39) 37 Profit for the period 41,936 46,667 Earnings per share (in USD) Basic Earnings per share 0.14 0.16 Diluted Earnings per share 0.14 0.15 Other comprehensive Income Items that are or may be reclassified to profit or loss: Exchange difference on translation on foreign ope"
+  },
+  {
+   "id": "DLO-80",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+   "text": "h 31, 2026 March 31, 2025 Continuing operations Revenues 6 335,862 216,759 Cost of services 6 (217,178) (131,880) Gross profit 118,684 84,879 Technology and development expenses 7 (12,124) (6,767) Sales and marketing expenses 8 (9,919) (7,135) General and administrative expenses 8 (42,657) (24,324) Impairment (loss)/gain on financial assets 17 (780) (386) Other operating loss (432) (422) Operating profit 52,772 45,845 Finance income 11 10,757 12,228 Finance costs 11 (5,598) (5,259) Inflation adjustment 11 (1,386) (885) Other results 3,773 6,084 Profit before income tax 56,545 51,929 Income tax expense 12 (14,609) (5,262) Profit for the period 41,936 46,667 Profit attributable to: Owners of the Group 41,975 46,630 Non-controlling interest (39) 37 Profit for the period 41,936 46,667 Earnings per share Basic Earnings per share 14 0.14 0.16 Diluted Earnings per share 14 0.14 0.15 Other comprehensive income Items that are or may be reclassified subsequently to profit or loss: Exchange difference on t"
+  },
+  {
+   "id": "DLO-81",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+   "text": "to derivative financial instruments 700 414 Amortization of intangible assets 10 7,062 4,584 Depreciation and disposals of property, plant and equipment and right-of-use assets 10 653 703 Share-based payment expense, net of forfeitures 9 6,066 6,020 Net exchange differences (2,616) 4,142 Fair value gain on financial assets at FVPL 11 (167) (7,343) Other operating loss 432 422 Net Impairment loss/(gain) on financial assets 17 780 386 Inflation adjustment and other financial results 2,862 6,083 69,296 63,158 Changes in working capital Increase in trade and other receivables (170,302) 21,082 Decrease in other assets (14,279) 1,025 Increase in trade and other payables 204,843 16,346 (Decrease) / Increase in tax liabilities 9,577 965 Increase in provisions 28 43 Cash generated from operating activities 99,163 102,619 Income tax paid (6,382) (7,208) Net cash generated from operating activities 92,781 95,411 Cash flows from investing activities Acquisitions of property, plant and equipment (522) (94"
+  },
+  {
+   "id": "DLO-82",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000184683226000019/ex_992-dloxfinancialxstate.htm",
+   "text": "tion is measured at fair value, which is calculated as the sum of the acquisition date fair value of the assets transferred to the Company, liabilities incurred by the Company to the former owners of the acquiree and the equity interest issued by the Company in exchange for control of the acquiree. Acquisition-related costs are recognized in profit or loss as incurred. At the acquisition date, the identifiable assets acquired and the liabilities assumed are recognized at their fair value, except that: • deferred tax assets or liabilities, and assets or liabilities related to employee benefit arrangements are recognized and measured in accordance with IAS 12 - Income taxes and IAS 19 - Employee Benefits; and 6 DLocal Limited Notes to the Unaudited Consolidated Condensed Interim Financial Statements At March 31, 2026 (All amounts in thousands of U.S. Dollars except share data, par value or as otherwise indicated) • Liabilities or equity instruments related to share-based payment arrangements of the acquire"
+  },
+  {
+   "id": "DLO-83",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "porting period before depreciation of property, plant and equipment, amortization of right-of-use assets and intangible assets. It also excludes adjustments applied to subsidiaries operating in hyperinflationary environments, other operating losses, impairment gain/loss on financial assets, secondary offering expenses, other non-recurring costs and share-based payment non-cash charges. We calculate Adjusted EBITDA Margin by dividing Adjusted EBITDA by our revenues. Although Adjusted EBITDA and Adjusted EBITDA Margin may be commonly viewed as non-IFRS measures in other contexts, pursuant to IFRS 8, (“Operating Segments”), Adjusted EBITDA and Adjusted EBITDA Margin are herein treated as IFRS measures in the manner in which we utilize these measures. Ne"
+  },
+  {
+   "id": "DLO-84",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": " and services and expand into new jurisdictions. Any perceived or actual breach of laws, regulations, and standards could result in investigations, regulatory inquiries, loss of licensure, litigation, fines, injunctions, negative customer sentiment, impairment of our existing or planned products and services, or otherwise materially and adversely impact our business. DLocal Limited 30 Table of Contents In addition, regulators may increase enforcement of these obligations, which may require us to make adjustments to our compliance program, including the procedures we use to verify the identity of our customers and to monitor our merchants’ transactions. Regulators may conduct audits of our compliance framework, which can include a review of all applic"
+  },
+  {
+   "id": "DLO-85",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "24 2023 Profit for the year (1) 196,902 120,469 149,086 Income tax expense 31,752 30,550 29,428 Inflation adjustment 4,204 6,655 12,537 Finance income (40,798) (66,875) (128,228) Finance costs 27,855 49,701 116,834 Other operating loss 4,715 5,257 — Impairment loss / (gain) on financial assets 2,189 440 (3,136) Depreciation and amortization 26,260 17,177 12,225 Other non-recurring costs (2) 124 1,571 1,663 Share-based payment non-cash charges, net of forfeitures 24,136 23,780 11,922 Offering expenses 739 — — Adjusted EBITDA 278,078 188,725 202,331 Revenues 1,093,587 745,974 650,351 Gross profit 402,756 294,673 276,859 Adjusted EBITDA 278,078 188,725 202,331 Profit for the year 196,902 120,469 149,086 Adjusted EBITDA Margin 25.4 % 25.3 % 31.1 % Profit"
+  },
+  {
+   "id": "DLO-86",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "as applicable, before depreciation of property, plant and equipment, amortization of right-of-use assets and intangible assets. It also excludes adjustments applied to subsidiaries operating in hyperinflationary environments, other operating losses, impairment gain/loss on financial assets, secondary offering expenses, other non-recurring costs and share-based payment non-cash charges. We calculate Adjusted EBITDA Margin as Adjusted EBITDA divided by consolidated revenue. For the year ended December 31, 2025, we recorded Adjusted EBITDA of US$278 million, equivalent to an Adjusted EBITDA Margin of 25.4%. For the year ended December 31, 2024, we recorded Adjusted EBITDA of US$189 million, equivalent to an Adjusted EBITDA Margin of 25.3%. For the year "
+  },
+  {
+   "id": "DLO-87",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "citly defined under IFRS Accounting Standards. Additionally, the way we calculate our operating segment’s performance measures may be different from the calculations used by other entities, including competitors, and therefore, our performance measures may not be comparable to those of other entities. See “ Item 5. Operating and Financial Review and Prospects ” for a reconciliation of our Adjusted EBITDA and Adjusted EBITDA Margin to our profit for the period. DLocal Limited 1 Table of Contents Special Note Regarding Non-IFRS Financial Measures In this Form 20-F, we report Adjusted Free Cash Flow, which "
+  },
+  {
+   "id": "DLO-88",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "nd include statements regarding our intent, belief or current expectations in connection with: • our ability to adapt to the rapid pace of technological changes in the payments processing industry; • competition in the payments processing industry; • our ability to implement our business strategy; • the reliability, performance, functionality and quality of our payments processing platform; • fluctuations in interest, inflation and exchange rates in any of the countries we serve or may serve in the future; • the availability of government authorizations or exemptions on terms and conditions and within pe"
+  },
+  {
+   "id": "DLO-89",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "dustry, including making the necessary investments to keep pace with such developments and change, the use of our services could decline, reducing our revenues. • Substantial and increasingly intense competition may harm our business. • We may not be able to successfully implement strategies to attract or retain merchants, expand our product portfolio or increase adoption of our payments processing platform, which would limit our growth. • We have a limited operating history with financial results that may not be indicative of future performance, and our revenue growth rate is likely to slow down as our "
+  },
+  {
+   "id": "DLO-90",
+   "for": "cmp.new_threat",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "ry, including making the necessary investments to keep pace with such developments and change, the use of our services could decline, reducing our revenues. The electronic payments market in which we compete is subject to rapid and significant changes. This market is characterized by rapid technological change, new product and service introductions, evolving industry standards, changing client needs and the entrance of non-traditional competitors. Rapid and significant technological changes continue to impact the industries in which we operate, including developments in cryptocurrencies and blockchai"
+  },
+  {
+   "id": "DLO-91",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "e NRR rate is a key metric used by management, and we believe it is useful for investors in order to assess our retention of existing customers and growth in revenues from our existing customer base. Market Share and Other Information This annual report contains data related to economic conditions in the markets in which we operate. The information contained in this annual report concerning economic conditions is based on publicly available information from third-party sources that we believe to be reasonable. Market data and certain industry forecast data used in this annual report were obtained from int"
+  },
+  {
+   "id": "DLO-92",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "nd Exchange Commission website) and industry publications. We obtained the information included in this annual report relating to the industry in which we operate, as well as the estimates concerning market shares, through internal research, and public information and publications on the industry prepared by official public sources. Industry publications generally state that the information they include has been obtained from sources believed to be reliable, but that the accuracy and completeness of such information is not guaranteed. Although we have no reason to believe any of this information or these "
+  },
+  {
+   "id": "DLO-93",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "e merchants could negatively impact our business and could lead to significant fluctuations in our operating and financial performance. While our merchant customer contracts, including those with our largest merchants, are generally of indefinite term, they are terminable upon relatively short written notice. Moreover, these contracts are not exclusive and do not prevent merchants from transacting with and sending all or substantial transaction volumes to our competitors. Merchants may seek price reductions when expanding or changing their services with us and/or when the merchants’ business experien"
+  },
+  {
+   "id": "DLO-94",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-03-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm",
+   "text": "al Limited 14 Table of Contents Furthermore, AI can create accuracy issues, unintended biases, intellectual property infringing content, and discriminatory outcomes. AI could produce inaccurate or misleading content or other discriminatory or unexpected results, such as hallucinations. Although we take measures to ensure the accuracy of AI generated data, our measures may not always be successful, and in some cases, we may need to rely on manual reporting of such inaccuracies. We rely on external providers of AI applications and we do not have access to detailed information regarding the implementati"
+  }
+ ]
+}

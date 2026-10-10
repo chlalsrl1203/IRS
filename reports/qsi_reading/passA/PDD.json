@@ -1,0 +1,135 @@
+{
+ "ticker": "PDD",
+ "reader": "A",
+ "based_on_record": "9ff6b5566789a53af2cb2b40cab3be7645f455df5ed2eaebcc2b253739d977d8",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "PDD-1",
+   "quote": "Lei Chen 46 Co-Chairman of the Board of Directors and Co-Chief Executive Officer Jiazhen Zhao 42 Co-Chairman of the Board of Directors and Co-Chief Executive Officer",
+   "reason": "공동 CEO 두 명이 공동 의장을 겸함"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지배구조 절 증거 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "핵심 인물 의존 진술 없음"
+  },
+  {
+   "qid": "gov.insider_pattern",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "내부자 거래 근거 없음"
+  },
+  {
+   "qid": "gov.cxo_turnover_24m",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "8-K 5.02 근거 없음"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가정문뿐이고 중요성 진술 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 실적 근거 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입·차입 근거 없음"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 수치 없음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 수치 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 없음"
+  },
+  {
+   "qid": "acc.material_impairment_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "2.06 근거 없음"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "SBC 금액 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 진술 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축 진술 없음"
+  }
+ ]
+}

@@ -1,0 +1,324 @@
+{
+ "ticker": "SKYW",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "31b91770197726552ede401ccc10f182e3fcd6bdfb42c3dd72b485f1cdcf3a2a",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "cap.ma_discipline",
+  "cap.dividend_predictable",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "acc.icfr_conclusion",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: SKYW.LITIGATION)",
+  "cap.ma_discipline": "인수 지출 값이 5개 연도 중 0개뿐이다",
+  "cap.dividend_predictable": "연속 5개 회계연도의 주당배당 값이 없다(최근 연도 FY2024 이후 필요)",
+  "cap.debt_funded_buyback": "가장 최근 공통 회계연도가 FY2020로 낡았다(FY2024 이후 필요)",
+  "acc.guidance_miss_3y": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.icfr_conclusion": "Item 9A에 경영진의 ICFR 결론 문장이 없다(Exhibit 참조일 수 있다)",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "SKYW-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ay lower their passenger ticket prices on routes that compete with our prorate or charter markets, which could negatively impact our prorate and charter revenue. Our business could be harmed if we lose the services of our key personnel. Our business depends upon the efforts of our president and chief executive officer, Russell A. Childs, and our other key management and operating personnel. We may have difficulty replacing management or other key personnel who cease to be employed by us and, therefore, the loss of the services of any of these individuals could harm our business. We do not maintain key-person insurance on any of our executive officers. We may experience credit losses in excess of our estimated credit loss reserves. Our financial results include estimated credit loss reserves associated with our accounts receivables, notes receivables and third-party debt guarantees. Our actual credi"
+  },
+  {
+   "id": "SKYW-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm",
+   "text": " the policies and principles set forth in the Compensation Committee’s charter and are intended to be consistent with rules established by The Nasdaq Global Select Market, including those relating to director independence and to compensation of Audit Committee members. CEO Evaluation and Management Succession The Nominating and Corporate Governance Committee conducts an annual review to assess the performance of the Company’s CEO. The Nominating and Corporate Governance Committee communicates the results of its review to the other directors in a meeting that is not attended by the CEO. The directors of the Company, excluding the CEO, review the Nominating and Corporate Governance Committee’s report to assess the CEO’s leadership in the long and short term, as well as the Company’s long-term successi"
+  },
+  {
+   "id": "SKYW-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm",
+   "text": "for the internal audit and includes management in its review of accounting and financial controls, assessment of business risks, legal and ethical compliance programs and related-party transactions. The Board and the Nominating and Corporate Governance Committee monitor the Company’s governance and succession risk by regular review with management and outside advisors. The Board and the Compensation Committee monitor CEO succession and the Company’s compensation policies and related risks by regular reviews with management and the Compensation Committee’s outside advisors. The Board and the Safety and Compliance Committee monitor management’s administration of airline flight operations safety and compliance with safety regulations. The Board also oversees the Company’s risk management strategy relat"
+  },
+  {
+   "id": "SKYW-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "regional airline industry. We compete against other airlines and businesses for labor in many highly skilled positions. If we are unable to hire, train and retain qualified employees at a reasonable cost, sustain employee engagement in our strategic vision, or if we are unsuccessful at implementing succession plans for our key staff, we may be unable to grow or sustain our business. Labor costs to recruit, incentivize and retain skilled employees may significantly increase in the future due to increased competition for the limited number of qualified industry personnel. Attrition rates that exceed our ability to hire and replace applicable workgroups could negatively impact our ability to generate revenue, negatively impact our operating results, increase our training and labor costs and our business pro"
+  },
+  {
+   "id": "SKYW-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "sk Factors 14 Item 1B. Unresolved Staff Comments 28 Item 1C. Cybersecurity 28 Item 2. Properties 30 Item 3. Legal Proceedings 30 Item 4. Mine Safety Disclosures 30 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 30 Item 6. [Reserved] 32 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 32 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 44 Item 8. Financial Statements and Supplementary Data 45 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 78 Item 9A. Controls and Procedures 78 Item 9B. Other Information 80 Item 9C. Disclosure Regarding Foreign Jurisdictions That Prevent Inspections 80 PART III Item 10. Directors, Executive Officers and Corporate Governance 80 Item 11. Executive Compensation 80 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 80 Item 13. Certain Relationships and Related Transactions 80 Item 14. Principal Accountant Fees and Services 80 PART IV Item 15. Exhibits and Financial Statement Schedules 81 Item 16. Form 10-K Summary 83 Signatures 85 2 Table of Contents PART I Unless otherwise indicated in this Report, “SkyWest,” “we,” “us,” “our” and similar terms refer to SkyWest, Inc., including SkyWest’s wholly-owned subsidiary SkyWest Airlines, Inc. “SkyWest Airlines” refers to our wholly-owned subsidiary SkyWest Airlines, Inc., \"SkyWest Leasing\" refers to our wholly-owned subsidiary SkyWest Leasing, Inc. and “SWC” refers to our wholly-owned subsidi"
+  },
+  {
+   "id": "SKYW-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " our financial condition and results of operations. We may become party to or otherwise involved in legal proceedings, claims and government inspections or investigations and other legal matters, arising in the ordinary course of our business or otherwise, including, but not limited to those related to injury or tort, environmental, employment and commercial legal issues. Legal proceedings can be complex and take many months, or even years, to reach resolution, with the final outcome depending on a number of variables, some of which are not within our control. Litigation is subject to significant uncertainty and may be expensive, time-consuming and disruptive to our operations. Although we will vigorously defend ourselves in such legal proceedings, their ultimate resolution and potential financial and other impacts on us are uncertain. If a legal proceeding is resolved against us, it could result in significant compensatory damages or injunctive relief that could materially adversely affect our financial condition, results of operations and cash flows. The adoption of new tax legislation or changes to existing tax laws and regulations could adversely affect our financial condition or results of operations. We are subject to tax laws and regulations of the U.S. federal, state and local governments as well as various non-U.S. jurisdictions. Potential changes in existing tax laws, including future regulatory guidance, may impact our effective tax rate and tax payments. There can be no assurance that changes in tax laws or regulations, both within the United States and the other jurisdictions i"
+  },
+  {
+   "id": "SKYW-7",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " in Milwaukee, Wisconsin; Oklahoma City, Oklahoma; Colorado Springs, Colorado; and Tucson, Arizona. ITEM 3. LEGAL PROCEEDINGS We are subject to certain legal actions which we consider routine to our business activities. As of December 31, 2025, our management believed, after consultation with legal counsel, that the ultimate outcome of such legal matters was not likely to have a material adverse effect on our financial position, liquidity or results of operations. However, the ultimate resolution of these matters is inherently uncertain. ITEM 4. MINE SAFETY DISCLOSURES The disclosure required by this item is not applicable. PART II ITEM 5. MARKET FOR REGISTRANT’S COMMON EQUITY, RELATED STOCKHOLDER MATTERS AND ISSUER PURCHASES OF EQUITY SECURITIES Market Information Our common stock is traded on The Nasdaq Global Select Market under the symbol “SKYW.” As of February 10, 2026, there were approximately 3,245 stockholders of record of our common stock. Securities held of record do not include shares held in securities position listings. The transfer agent for our common stock is Zions First National Bank, Salt Lake City, Utah. 30 Table of Contents Dividends We did not declare dividends for the years ended December 31, 2025 and 2024. Issuer Purchases of Equity Securities Our Board of Directors has adopted a stock repurchase program which authorizes us to repurchase shares of our common stock in the public market or in private transactions, from time to time, at prevailing prices. Our stock repurchase program adopted in May 2023 authorized the repurchase of up to $250.0 million of our common stock. In Ma"
+  },
+  {
+   "id": "SKYW-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ERATING LEASE LIABILITIES 62,314 67,264 OTHER LONG-TERM LIABILITIES 153,891 309,477 COMMITMENTS AND CONTINGENCIES (Note 5) STOCKHOLDERS’ EQUITY: Preferred stock, 5,000,000 shares authorized; none issued — — Common stock, no par value, 120,000,000 shares authorized; 84,270,723 and 83,638,680 shares issued as of December 31, 2025 and December 31, 2024, respectively 798,470 777,090 Retained earnings 3,022,507 2,594,173 Treasury stock, at cost, 44,399,241 and 43,310,324 shares as of December 31, 2025 and December 31, 2024, respectively ( 1,074,822 ) ( 962,650 ) Accumulated other comprehensive income 278 168 Total stockholders’ equity 2,746,433 2,408,781 Total liabilities and stockholders’ equity $ 7,386,249 $ 7,139,867 See accompanying notes to consolidated financial statements. 49 Table of Contents SKYWEST, INC. AND SUBSIDIARIES CONSOLIDATED STATEMENTS OF COMPREHENSIVE INCOME (In thousands, except per share amounts) Year Ended December 31, 2025 2024 2023 OPERATING REVENUES: Flying agreements $ 3,885,153 $ 3,412,798 $ 2,834,397 Lease, airport services and other 173,049 115,122 101,035 Total operating revenues 4,058,202 3,527,920 2,935,432 OPERATING EXPENSES: Salaries, wages and benefits 1,559,356 1,463,932 1,322,615 Aircraft maintenance, materials and repairs 943,779 712,642 673,453 Depreciation and amortization 364,497 383,880 383,115 Airport-related expenses 121,589 85,836 72,640 Aircraft fuel 120,368 87,409 85,913 Other operating expenses 330,767 299,564 293,627 Total operating expenses 3,440,356 3,033,263 2,831,363 OPERATING INCOME 617,846 494,657 104,069 OTHER INCOME (EXPENSE): Interes"
+  },
+  {
+   "id": "SKYW-9",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "lars between our investments in marketable securities and our cash accounts, the remaining increase in cash used in investing activities was primarily due to an increase of $267.3 million used in the acquisition of property and equipment and an increase of $57.8 million used for aircraft deposits for the year ended December 31, 2025, compared to the year ended December 31, 2024, primarily due to the acquisition of seven new E175 aircraft and spare engines in 2025. Cash Flows used in Financing Activities Our cash flows used in financing activities was $393.2 million for the year ended December 31, 2025, compared to cash used in financing activities of $384.8 million for the year ended December 31, 2024. Our financing cash flows are typically impacted by various"
+  },
+  {
+   "id": "SKYW-10",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " at December 31, 2025. Assuming a 6.2% discount rate, which is the average incremental borrowing rate 42 Table of Contents we anticipate we would have incurred on debt obtained over a similar term to acquire these assets, the present value of these lease obligations would have been equal to approximately $81.9 million at December 31, 2025. Long-term Debt Obligations As of December 31, 2025, we had $2.4 billion of long-term debt, which consisted of $2.2 billion of debt used to finance aircraft and spare engines and $200.6 million of unsecured debt payable to Treasury. The average effective interest rate on our debt obligations was approximately 4.3% at December 31, 2025. Under our capacity purchase agreements, our major airline partners compensate us for our costs of the aircraft on a monthly basis. The consi"
+  },
+  {
+   "id": "SKYW-11",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "e Options Price Outstanding at beginning of year 6,816 $ 14.78 Granted — — Exercised ( 3,848 ) 14.78 Cancelled ( 2,968 ) 14.78 Outstanding at end of year — $ — The total intrinsic value of options to acquire shares of the Company’s common stock that were exercised was $ 0.1 million for the year ended December 31, 2023. The Company did not have any option exercises for the years ended December 31, 2025 and 2024. Restricted Stock Units (“RSUs”) During the year ended December 31, 2025, the Company granted 25,359 restricted stock units to certain of the Company’s employees under the Restated 2019 Incentive Plan. The restricted stock units granted during the year ended December 31, 2025, have a three-year cliff-vesting period, during which the recipient must remain employed wi"
+  },
+  {
+   "id": "SKYW-12",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "t option was to reduce the Company’s investment risk in Eve. The Company was restricted from selling the shares underlying the warrant until May 2025, and the warrant expires in May 2032. The Company acquired the shares of common stock, warrant and put option (collectively the “Eve Investments”) for $ 10.0 million. The Company evaluated the Eve Investments under ASC Topic 321, “Investments – Equity Securities” and ASC Topic 815, “Derivatives and Hedging,” and recorded the Eve Investments based on their pro rata share of the consideration paid using the fair value of the Eve Investments on the acquisition date, with subsequent changes in the fair value reported in earnings. During the year ended December 31, 2023, the Company sold 600,411 shares of common stock of Eve for $ 5.0 million, which concurrently"
+  },
+  {
+   "id": "SKYW-13",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " no assurance future long-term fuel saving initiatives will materialize. In the event we pursue initiatives to reduce our carbon emissions, the cost could materially and adversely affect our business plans and results of operations. Risks Related to Dividends, Share Repurchases and Our Common Stock We cannot assure that we will resume dividend payments in the future and we cannot assure that we will continue stock repurchases in the future. Historically, we have paid dividends and repurchased shares of our common stock in varying amounts. From April 2020 through September 30, 2022, we were restricted from paying dividends and repurchasing shares of o"
+  },
+  {
+   "id": "SKYW-14",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "l Support Program Agreements and under a loan agreement with Treasury. During 2023, we resumed repurchasing shares of our common stock. We have not paid a dividend since 2020. There can be no assurance that we will resume our past practice of paying dividends on our common stock or that we will have the financial resources to pay such dividends. The future payment of dividends will depend upon our financial condition, alternative uses of the Company’s cash and results of operations and other factors deemed relevant by our board of directors. In May 2023, our board of directors approved a share repurchase program, pursuant to which we are authorized t"
+  },
+  {
+   "id": "SKYW-15",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " will approve additional share repurchase programs in the future or that we will have the financial resources to repurchase shares of common stock in the future. Repurchases of our common stock pursuant to our share repurchase program and any future dividends could affect our stock price and increase its volatility. Additionally, our share repurchase program and any future dividends may reduce our cash reserves, which may impact our ability to finance future growth and to pursue possible future strategic opportunities and acquisitions. Our common stock price may fluctuate significantly. Volatility in our common stock price may prevent holders from se"
+  },
+  {
+   "id": "SKYW-16",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " 3,245 stockholders of record of our common stock. Securities held of record do not include shares held in securities position listings. The transfer agent for our common stock is Zions First National Bank, Salt Lake City, Utah. 30 Table of Contents Dividends We did not declare dividends for the years ended December 31, 2025 and 2024. Issuer Purchases of Equity Securities Our Board of Directors has adopted a stock repurchase program which authorizes us to repurchase shares of our common stock in the public market or in private transactions, from time to time, at prevailing prices. Our stock repurchase program adopted in May 2023 authorized the repurc"
+  },
+  {
+   "id": "SKYW-17",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "n its investment in Aero Engines primarily consists of the Company’s portion of income or loss from Aero Engines’ engine lease agreements with third parties and the Company’s ownership percentage in Aero Engines’ engines book value. Aero Engines had no debt outstanding as of December 31, 2025. During the year ended December 31, 2025, the Company received a $ 12.0 million distribution from Aero Engines, reflected as a reduction to the Company’s investment balance in Aero Engines. As of December 31, 2025, the Company’s investment balance in Aero Engines was $ 12.8 million and was recorded in “Other Assets” on the Company’s consolidated balance sheet. "
+  },
+  {
+   "id": "SKYW-18",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " Common Stock We cannot assure that we will resume dividend payments in the future and we cannot assure that we will continue stock repurchases in the future. Historically, we have paid dividends and repurchased shares of our common stock in varying amounts. From April 2020 through September 30, 2022, we were restricted from paying dividends and repurchasing shares of our common stock under three Payroll Support Program Agreements and under a loan agreement with Treasury. During 2023, we resumed repurchasing shares of our common stock. We have not paid a dividend since 2020. There can be no assurance that we will resume our past practice of paying dividends on our common stock or that we will have the financi"
+  },
+  {
+   "id": "SKYW-19",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "financial condition, alternative uses of the Company’s cash and results of operations and other factors deemed relevant by our board of directors. In May 2023, our board of directors approved a share repurchase program, pursuant to which we are authorized to repurchase up to $250 million of our common stock and in May 2025, the Board approved a $250 million increase to the existing stock repurchase program. Under our repurchase program we are authorized to repurchase such shares of common stock at prevailing market prices in the open market, in privately negotiated transactions or by other means in accordance with federal securities laws. Depending on market conditions and other factors, such repurchases may commence or be suspended from time to time by management witho"
+  },
+  {
+   "id": "SKYW-20",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "epurchase program, will depend upon our financial condition and results of operations and other factors deemed relevant by our board of directors. There also can be no assurance that we will continue repurchasing shares of common stock under our current authorization, that our board of directors will approve additional share repurchase programs in the future or that we will have the financial resources to repurchase shares of common stock in the future. Repurchases of our common stock pursuant to our share repurchase program and any future dividends could affect our stock price and increase its volatility. Additionally, our share repurchase program and any future dividends may reduce our cash reserves, which m"
+  },
+  {
+   "id": "SKYW-21",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ity, Utah. 30 Table of Contents Dividends We did not declare dividends for the years ended December 31, 2025 and 2024. Issuer Purchases of Equity Securities Our Board of Directors has adopted a stock repurchase program which authorizes us to repurchase shares of our common stock in the public market or in private transactions, from time to time, at prevailing prices. Our stock repurchase program adopted in May 2023 authorized the repurchase of up to $250.0 million of our common stock. In May 2025, the Board approved a $250.0 million increase to the existing stock repurchase program. The following table summarizes the repurchases under our stock repurchase program during the three months ended December 31, 2025: Total Number of Shares Purchased Avera"
+  },
+  {
+   "id": "SKYW-22",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926086251/skyw-20260723xex99d1.htm",
+   "text": "ts, Chip Childs, President and Chief Executive Officer of SkyWest, said, “Our block hour production outlook remains solid, as we prepare to invest in owning and operating 34 more E175s through the end of 2028. We believe that the fleet initiatives and investments we continue to make create long-term value and cash flow that benefits our people, our customers, and our shareholders. I want to thank our team for their steady, good work through an unusually volatile quarter.” Financial Results Revenue was $1.1 billion in Q2 2026, up $68 million, or 7%, from $1.0 billion in Q2 2025. SkyWest’s Q2 2026 block hour production increased 5% compared to Q2 2025 and increased 9% compared to Q1 2026, which refle"
+  },
+  {
+   "id": "SKYW-23",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926086251/skyw-20260723xex99d1.htm",
+   "text": " future financial and operating results, plans, objectives, expectations, estimates, intentions and outlook, including the ability to generate long-term value and cash flow that benefits SkyWest and its customers, people and shareholders, and other statements that are not historical facts. All forward-looking statements included in this release are made as of the date hereof and are based on information available to SkyWest as of such date. SkyWest assumes no obligation to update any forward-looking statements unless required by law. Readers should note that many factors could affect the future operating and financial results of SkyWest and could cause actual results to vary materially from those e"
+  },
+  {
+   "id": "SKYW-24",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-04-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926047674/skyw-20260423xex99d1.htm",
+   "text": " future financial and operating results, plans, objectives, expectations, estimates, intentions and outlook, including the ability to generate long-term value for SkyWest and its customers and people, and other statements that are not historical facts. All forward-looking statements included in this release are made as of the date hereof and are based on information available to SkyWest as of such date. SkyWest assumes no obligation to update any forward-looking statements unless required by law. Readers should note that many factors could affect the future operating and financial results of SkyWest and could cause actual results to vary materially from those expressed in forward-looking statements"
+  },
+  {
+   "id": "SKYW-25",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-24",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000155837025009532/skyw-20250724xex99d1.htm",
+   "text": " future financial and operating results, plans, objectives, expectations, estimates, intentions and outlook, and other statements that are not historical facts. All forward-looking statements included in this release are made as of the date hereof and are based on information available to SkyWest as of such date. SkyWest assumes no obligation to update any forward-looking statements unless required by law. Readers should note that many factors could affect the future operating and financial results of SkyWest and could cause actual results to vary materially from those expressed in forward-looking statements set forth in this release. These factors include, but are not limited to: the challenges of"
+  },
+  {
+   "id": "SKYW-26",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-10-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000155837023016844/skyw-20231026xex99d1.htm",
+   "text": " future financial and operating results, plans, objectives, expectations, estimates, intentions and outlook, and other statements that are not historical facts. All forward-looking statements included in this release are made as of the date hereof and are based on information available to SkyWest as of such date. SkyWest assumes no obligation to update any forward-looking statements unless required by law. Readers should note that many factors could affect the future operating and financial results of SkyWest and could cause actual results to vary materially from those expressed in forward-looking statements set forth in this release. These factors include, but are not limited to, uncertainty regar"
+  },
+  {
+   "id": "SKYW-27",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926086251/skyw-20260723xex99d1.htm",
+   "text": " the second quarter 2026 results call, participation at investor conferences and investor presentations can be accessed at inc.skywest.com. Forward-Looking Statements In addition to historical information, this release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Words such as “forecasts,” “expects,” “intends,” “believes,” “anticipates,” “estimates,” “should,” “likely” and similar expressions identify forward-looking statements. Such statements include, but are not limited to, statements about the continued demand for our product, the effect of economic conditions on SkyWest’s business, financial condition and results of operations, SkyWest’s plans with respect to share repurchases, the timing of scheduled aircraft deliveries, including with respect to aircraft for which SkyWest holds firm delivery positions or purchase rights, the transition of the new E175 aircraft to replace existing aircraft in SkyWest’s fleet and the timing "
+  },
+  {
+   "id": "SKYW-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926086251/skyw-20260723xex99d1.htm",
+   "text": "uctuations in flight schedules, which are determined by the major airline partners for whom SkyWest conducts flight operations; variations in market and economic conditions; significant aircraft debt commitments; estimated useful life of long-lived assets, residual aircraft values and related asset impairments; labor relations and costs; the impact of global instability; rapidly fluctuating fuel costs and potential fuel shortages; the impact of weather-related, natural disasters and other air safety incidents on air travel and airline costs; aircraft deliveries; uncertainty regarding ongoing international hostilities, including those between Russia and Ukraine, Israel and Hamas, and Israel, the United States and Iran, and the related impacts on macroeconomic conditions and on the international operations of any of our major airline partners as a result of such conflicts; the availability of parts used in connection with maintenance and repairs of the aircraft; the availability of suitable replac"
+  },
+  {
+   "id": "SKYW-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-04-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926047674/skyw-20260423xex99d1.htm",
+   "text": "f the first quarter 2026 results call, participation at investor conferences and investor presentations can be accessed at inc.skywest.com. Forward-Looking Statements In addition to historical information, this release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Words such as “forecasts,” “expects,” “intends,” “believes,” “anticipates,” “estimates,” “should,” “likely” and similar expressions identify forward-looking statements. Such statements include, but are not limited to, statements about the continued demand for our product, the effect of economic conditions on SkyWest’s business, financial condition and results of operations, the timing of scheduled aircraft deliveries, including with respect to aircraft for which SkyWest holds firm delivery positions or purchase rights, the transition of the new E175 aircraft to replace existing aircraft in SkyWest’s fleet and the timing thereof, transition of SkyWest’s CRJ200 fleet to th"
+  },
+  {
+   "id": "SKYW-30",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926007962/skyw-20260129xex99d1.htm",
+   "text": " the fourth quarter 2025 results call, participation at investor conferences and investor presentations can be accessed at inc.skywest.com. Forward-Looking Statements In addition to historical information, this release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Words such as “forecasts,” “expects,” “intends,” “believes,” “anticipates,” “estimates,” “should,” “likely” and similar expressions identify forward-looking statements. Such statements include, but are not limited to, statements about the continued demand for our product, the effect of economic conditions on SkyWest’s business, financial condition and results of operations, the timing of scheduled aircraft deliveries, including with respect to aircraft for which SkyWest holds firm delivery positions or purchase rights, the transition of the new E175 aircraft to replace existing aircraft in SkyWest’s fleet and the timing thereof, fleet expansion and anticipated fleet size"
+  },
+  {
+   "id": "SKYW-31",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-01-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926007962/skyw-20260129xex99d1.htm",
+   "text": "uctuations in flight schedules, which are determined by the major airline partners for whom SkyWest conducts flight operations; variations in market and economic conditions; significant aircraft debt commitments; estimated useful life of long-lived assets, residual aircraft values and related asset impairments; labor relations and costs; the impact of global instability; rapidly fluctuating fuel costs and potential fuel shortages; the impact of weather-related, natural disasters and other air safety incidents on air travel and airline costs; aircraft deliveries; uncertainty regarding ongoing international hostilities, including those between Russia and Ukraine, Israel and Hamas, and Israel and Iran, and the related impacts on macroeconomic conditions and on the international operations of any of our major airline partners as a result of such conflicts; the availability of parts used in connection with maintenance and repairs of the aircraft; the availability of suitable replacement aircraft for "
+  },
+  {
+   "id": "SKYW-32",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465925104349/skyw-20251030xex99d1.htm",
+   "text": "f the third quarter 2025 results call, participation at investor conferences and investor presentations can be accessed at inc.skywest.com. Forward-Looking Statements In addition to historical information, this release contains forward-looking statements within the meaning of the Private Securities Litigation Reform Act of 1995. Words such as “forecasts,” “expects,” “intends,” “believes,” “anticipates,” “estimates,” “should,” “likely” and similar expressions identify forward-looking statements. Such statements include, but are not limited to, statements about the continued demand for our product, the effect of economic conditions on SkyWest’s business, financial condition and results of operations, the timing of scheduled aircraft deliveries, including with respect to aircraft for which SkyWest holds firm delivery positions or purchase rights, the transition of the new E175 aircraft to replace existing aircraft in SkyWest’s fleet and the timing thereof, fleet expansion and anticipated fleet size"
+  },
+  {
+   "id": "SKYW-33",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465925104349/skyw-20251030xex99d1.htm",
+   "text": "ations in flight schedules, which are determined by the major airline partners for whom SkyWest conducts flight operations; variations in market and economic conditions; significant aircraft lease and debt commitments; estimated useful life of long-lived assets, residual aircraft values and related impairment charges; labor relations and costs; the impact of global instability; rapidly fluctuating fuel costs and potential fuel shortages; the impact of weather-related, natural disasters and other air safety incidents on air travel and airline costs; aircraft deliveries; uncertainty regarding ongoing international hostilities, including those between Russia and Ukraine, Israel and Hamas, and Israel and Iran, and the related impacts on macroeconomic conditions and on the international operations of any of our major airline partners as a result of such conflicts; the availability of parts used in connection with maintenance and repairs of the aircraft; the availability of suitable replacement aircra"
+  },
+  {
+   "id": "SKYW-34",
+   "for": "acc.icfr_conclusion",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ntrol over financial reporting. Management’s Annual Report on Internal Control Over Financial Reporting Management is responsible for establishing and maintaining adequate internal control over financial reporting, as such term is defined in Rules 13a-15(f) and 15d-15(f) under the Exchange Act. Our internal control over financial reporting is designed to provide reasonable assurance regarding the reliability of financial reporting and the preparation of financial statements for external purposes in accordance with accounting principles generally accepted in the United States. Because of its inherent limitations, internal control over fi"
+  },
+  {
+   "id": "SKYW-35",
+   "for": "acc.icfr_conclusion",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "he effectiveness of our internal control over financial reporting as of December 31, 2025, using the criteria issued by the Committee of Sponsoring Organizations of the Treadway Commission (COSO) in Internal Control—Integrated Framework (2013). Based on that evaluation, management believes that our internal control over financial reporting was effective as of December 31, 2025. The effectiveness of our internal control over financial reporting as of December 31, 2025, has been audited by Ernst & Young LLP (“Ernst & Young”), the independent registered public accounting firm who also has audited our Consolidated Financial Statements includ"
+  },
+  {
+   "id": "SKYW-36",
+   "for": "acc.icfr_conclusion",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "l securities laws and the applicable rules and regulations of the Securities and Exchange Commission and the PCAOB. We conducted our audit in accordance with the standards of the PCAOB. Those standards require that we plan and perform the audit to obtain reasonable assurance about whether effective internal control over financial reporting was maintained in all material respects. Our audit included obtaining an understanding of internal control over financial reporting, assessing the risk that a material weakness exists, testing and evaluating the design and operating effectiveness of internal control based on the assessed risk, and perf"
+  },
+  {
+   "id": "SKYW-37",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": " to various code-share agreements described under the heading “Code-Share Agreements” below. Fleet SkyWest has been flying since 1972. During our long operating history, we have developed an industry-leading reputation for providing quality regional airline service. As of December 31, 2025, our fleet consisted of aircraft manufactured by Embraer S.A. (“Embraer”), including the E175 regional jet aircraft (“E175”), and aircraft manufactured by MHI RJ Aviation ULC, formerly known as Bombardier Aerospace (“Bombardier”), including the Canadair CRJ900 regional jet aircraft (“CRJ900”), the Canadair CRJ700 r"
+  },
+  {
+   "id": "SKYW-38",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ing cost structure, ability to finance new aircraft, certification to operate certain aircraft types and geographical infrastructure supporting markets and routes served. Our operations represent the largest regional airline operations in the United States. However, regional carriers owned by major airlines may have access to greater resources than we do through their parent companies. Generally, the airline industry is sensitive to changes in general economic conditions. Economic downturns, combined with competitive pressures, have contributed to a number of reorganizations, bankruptcies, liquidatio"
+  },
+  {
+   "id": "SKYW-39",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "e levels or if we fail to meet certain safety standards; ● subject to limitations imposed by the U.S. Bankruptcy Code, if either party becomes insolvent, fails to pay its debts when due, takes action leading to its cessation as a going concern, makes an assignment of substantially all of its assets, or ceases or suspends operations; or ● subject to limitations imposed by the U.S. Bankruptcy Code, if bankruptcy proceedings are commenced by or against either party and certain specified conditions are not satisfied. Delta Connection Agreement We and Delta are parties to a Delta Connection capacity purch"
+  },
+  {
+   "id": "SKYW-40",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "ject to any environmental cleanup orders or actions imposed by regulatory authorities. We are not aware of any active material environmental investigations related to our assets or properties. As the largest regional airline in the United States, we remain committed to working with our major airline partners to lower our environmental footprint while continuing to offer the best service to our customers and the communities we serve. Our largest source of emissions and environmental impact comes from utilizing jet fuel on flights operated under our code-share agreements with our major airline partners"
+  },
+  {
+   "id": "SKYW-41",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-02-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+   "text": "sses could negatively affect travel behavior and the industry; ● changes in consumer preferences, perceptions, spending patterns or demographic trends; ● changes in the competitive environment due to industry consolidation, new airlines entering the market, our major airline partners operating smaller sized aircraft that may reduce the demand for regional aircraft and other factors; ● actual or potential disruptions to U.S. air traffic control systems, caused by a government funding shutdown or otherwise; ● interference on aviation equipment from the deployment of 5G wireless telecommunications systems, or other fa"
+  }
+ ]
+}

@@ -1,0 +1,310 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "PGR.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PGR.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PGR.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "ledger에 SBC/FCF가 없어 대조 기준이 없다",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.0017,
+      "claim_ids": [
+        "PGR.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "neutral",
+      "claim_ids": [
+        "PGR.RESERVE"
+      ],
+      "note": "",
+      "qid": "res.reserve_development",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.insider_pattern",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cat.cat_exposure",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "uw.combined_ratio_pct",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-06",
+  "claims": [
+    {
+      "claim_id": "PGR.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PGR DEF 14A (filed 2026-03-23, acc 0000080661-26-000099)",
+            "location": "Proxy Summary — governance highlights",
+            "observed_date": "2026-10-06",
+            "quote": "Independent, experienced Chairperson",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "독립 의장이 이사회를 이끈다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "독립 의장이 이사회를 이끈다"
+    },
+    {
+      "claim_id": "PGR.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PGR DEF 14A (filed 2026-03-23, acc 0000080661-26-000099)",
+            "location": "Proxy Summary — shareholder rights",
+            "observed_date": "2026-10-06",
+            "quote": "Single class voting",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "단일 클래스 의결권",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "단일 클래스 의결권"
+    },
+    {
+      "claim_id": "PGR.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PGR DEF 14A (filed 2026-03-23, acc 0000080661-26-000099)",
+            "location": "Board committees — Nominating and Governance",
+            "observed_date": "2026-10-06",
+            "quote": "Coordinates efforts relating to succession planning of executives and directors",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000099/pgr-20260318.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "CEO를 명시하지 않고 '임원'으로 쓴다 — 약한 증거",
+          "summary": "후보 지명 위원회가 임원·이사 승계를 조율한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "후보 지명 위원회가 임원·이사 승계를 조율한다"
+    },
+    {
+      "claim_id": "PGR.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PGR 10-K (filed 2026-03-02, acc 0000080661-26-000086)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 587,100,000 -> FY2025 588,100,000",
+          "value": 0.0017,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 +0.17%"
+    },
+    {
+      "claim_id": "PGR.RESERVE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PGR 10-K (filed 2026-03-02, acc 0000080661-26-000086)",
+            "location": "us-gaap:SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPriorYearClaimsAndClaimsAdjustmentExpense FY2023~FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/80661/000008066126000086/pgr-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "prior_year_claims_expense_usd",
+          "note": "부호 해석(음수=유리)은 보험회계 관행이며 10-K MD&A 문장으로는 대조하지 않았다",
+          "summary": "전기 손해액 조정 FY2023 1,094M, FY2024 -416M, FY2025 -1,394M (음수 = 비용 감소 = 유리한 발전)",
+          "value": -1394000000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 연도 준비금 발전: neutral(부호가 연도마다 갈리면 neutral)"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.4545,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 5,
+    "n_primary_answered": 4,
+    "n_primary_required": 8,
+    "n_questions": 11,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "catastrophe_risk": {
+        "answered": 0,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "dilution": {
+        "answered": 1,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "governance": {
+        "answered": 3,
+        "n_questions": 6,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "reserve_adequacy": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "underwriting_discipline": {
+        "answered": 0,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      }
+    },
+    "unexamined_lenses": [
+      "catastrophe_risk",
+      "underwriting_discipline"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "PGR",
+  "findings": [
+    {
+      "claim_ids": [
+        "PGR.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "PGR.CHAIR_SEPARATED",
+        "PGR.DUAL_CLASS",
+        "PGR.CEO_SUCCESSION_POLICY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인"
+    },
+    {
+      "claim_ids": [
+        "PGR.RESERVE"
+      ],
+      "effect": "neutral",
+      "lens": "reserve_adequacy",
+      "summary": "3개 연도 전기 손해액 조정 부호를 확인"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "insurance",
+  "price_at_analysis": null,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "f3558c1bb88f9e0f4fc567264e856b8ea1b00f5d8f847055de89de8cd300a92b",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

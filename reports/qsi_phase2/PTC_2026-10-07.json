@@ -1,0 +1,53 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "If we inadvertently use open source software in a manner that triggers such disclosure obligations, we could be required to publicly disclose portions of our proprietary code, which could result in a loss of competitive advantage and intellectual property rights, which could adversely affect our business, financial condition, operating results, and prospects. 11 Table of Contents Intellectual property infringement claims could be asserted against us, which could be expensive to defend, could result in limitations on our use of the claimed intellectual property, and could adversely affect our business and prospects."
+    ],
+    "docs": [
+      "2025-11-21",
+      "2024-11-14"
+    ],
+    "n_new_competition": 1,
+    "n_new_sentences": 32,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "If we inadvertently use open source software in a manner that triggers such disclosure obligations, we could be required to publicly disclose portions of our proprietary code, which could result in a loss of competitive advantage and intellectual property rights, which could adversely affect our business, financial condition, operating results, and prospects. 11 Table of Contents Intellectual property infringement claims could be asserted against us, which could be expensive to defend, could result in limitations on our use of the claimed intellectual property, and could adversely affect our business and prospects."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": 3.72,
+    "gm_end": 83.76,
+    "gm_start": 80.04,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "relative_growth": {
+    "answer": "stable",
+    "basket": {
+      "excluded": "Dassault·Siemens(SEC 비공시), IBM·Oracle·SAP·Microsoft·Salesforce(사업 분리 불가)",
+      "peers": [
+        "ADSK"
+      ],
+      "quote": "For enterprise CAD and PLM solutions, we compete with large established companies including Autodesk, Dassault Systèmes SA, and Siemens AG."
+    },
+    "basket_cagr_pct": 12.75,
+    "company_cagr_pct": 12.32,
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gap_pp": -0.6,
+    "lifecycle_decline": false,
+    "peer_cagr_pct": 12.92,
+    "peers_dropped": [],
+    "peers_used": [
+      "ADSK"
+    ],
+    "rule": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)"
+  },
+  "ticker": "PTC",
+  "unit": "USD"
+}

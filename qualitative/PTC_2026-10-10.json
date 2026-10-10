@@ -1,0 +1,1148 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "PTC.CHAIR"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PTC.SUCC"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.COVER"
+      ],
+      "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "PTC.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": "immaterial",
+      "claim_ids": [
+        "READ-PTC-gov.material_litigation"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.material_litigation",
+      "status": "answered"
+    },
+    {
+      "answer": 0.2524,
+      "claim_ids": [
+        "PTC.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0215,
+      "claim_ids": [
+        "PTC.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.buyback_effect",
+      "status": "unknown"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PTC.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.DEBTBUYBACK_BAL"
+      ],
+      "note": "차입 잔액 순변동 근사(흐름 태그 부재 시 대체 규칙)",
+      "qid": "cap.debt_funded_buyback",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0.9235,
+      "claim_ids": [
+        "PTC.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "PTC.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PTC.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PTC.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PTC.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.GUIDANCE"
+      ],
+      "note": "GAAP 총매출 연간 가이던스만 본다(EPS·세그먼트·ARR 제외). 사전 고정 규칙",
+      "qid": "acc.guidance_miss_3y",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PTC.GUIDANCE"
+      ],
+      "note": "매출 가이던스 이행만 본다 — 자본배분 약속 등 다른 약속은 포함하지 않는다. 가이던스를 낮게 잡는 관행(sandbagging)이면 쉽게 True가 된다",
+      "qid": "acc.promise_kept_record",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.NOENF",
+        "PTC.RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": "전년 대비 새로 추가된 경쟁 관련 위험 문장 1개: 「If we inadvertently use open source software in a manner that triggers such disclosure obligations, we could be required to publicly disclose portions of our proprietary code, which could result in a loss of competitive advantage and intellectual property rights, which could adversely affect our business, financial condition, operating results, and prospects. 11 Table of Contents Intellectual property infringement claims could be asserted against us, which could be expensive to defend, could result in limitations on our use of the claimed intellectual property, and could adversely affect our business and prospects.」",
+      "claim_ids": [
+        "PTC.NEWTHREAT"
+      ],
+      "note": "회사가 스스로 새로 인정한 위협만 모은다(문장 비교, 사람이 요약하지 않음). 엔진 경쟁자 가중치와 직접 대조하지는 않았다",
+      "qid": "cmp.new_threat",
+      "status": "answered"
+    },
+    {
+      "answer": "stable",
+      "claim_ids": [
+        "PTC.PEERS"
+      ],
+      "note": "시장점유율이 아니라 지명 경쟁사 묶음 대비 성장 격차",
+      "qid": "cmp.share_trend",
+      "status": "answered"
+    },
+    {
+      "answer": "evidenced",
+      "claim_ids": [
+        "PTC.GM"
+      ],
+      "note": "총이익률 대리지표 — 원가 하락·제품 믹스·보조금(예: 생산세액공제)으로도 움직인다. 가격 인상의 직접 증거가 아니다",
+      "qid": "cmp.pricing_power",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.PEERS"
+      ],
+      "note": "회사+지명 경쟁사 매출 합계 CAGR 12.75% — 생존 기업만 집계",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-PTC-gov.key_person_no_succession"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.key_person_no_succession",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=answered)",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "READ-PTC-acc.material_one_time_items"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "acc.material_one_time_items",
+      "status": "answered"
+    },
+    {
+      "answer": "cash_flow",
+      "claim_ids": [
+        "PTC.PVP_MEASURE"
+      ],
+      "note": "",
+      "qid": "gov.pay_measure_category",
+      "status": "answered"
+    },
+    {
+      "answer": -0.1384,
+      "claim_ids": [
+        "PTC.PVP_TSR"
+      ],
+      "note": "",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "answered"
+    },
+    {
+      "answer": 4,
+      "claim_ids": [
+        "PTC.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "PTC.DEAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 8-K (filed 2026-10-05, acc 0001193125-26-413124, Items 1.01/7.01/9.01)",
+            "location": "Item 1.01 Agreement and Plan of Merger",
+            "observed_date": "2026-10-06",
+            "quote": "will be converted into the right to receive $205 in cash, without interest",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526413124/d174191d8k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "merger_consideration_usd",
+          "note": "해지수수료: 'the Company will be required to pay Schneider Electric a termination fee of $700 million'. 종결은 주주 승인·규제 승인 조건부",
+          "summary": "2026-10-04 합병계약 체결, 보통주당 $205 현금, 해지수수료 $700M",
+          "value": 205.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "PTC는 Schneider Electric의 확정 현금 인수 대상이다"
+    },
+    {
+      "claim_id": "PTC.CHAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (filed 2025-12-23, acc 0001104659-25-124170)",
+            "location": "Proposal 1 — Board Leadership Structure",
+            "observed_date": "2026-10-06",
+            "quote": "Our Board is led by an independent Chair.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "독립 이사회 의장(Janice Chaffin)이 이사회를 이끈다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "이사회 의장이 독립이사이며 CEO와 분리돼 있다"
+    },
+    {
+      "claim_id": "PTC.SUCC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (filed 2025-12-23, acc 0001104659-25-124170)",
+            "location": "Corporate Governance — Committee responsibilities",
+            "observed_date": "2026-10-06",
+            "quote": "Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Corporate Governance Committee의 책임에 CEO 승계 계획 유지가 포함",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "CEO 승계 계획이 유지되도록 위원회가 보장한다"
+    },
+    {
+      "claim_id": "PTC.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K FY2025 (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "us-gaap:ShareBasedCompensation FY2025 = 216,205,000 USD",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값(같은 10-K의 OCF 867,696,000 USD에서 capex 차감)",
+          "summary": "FY2025 SBC 216,205,000 USD / fcf0 856,688,000 USD",
+          "value": 0.2524,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC/FCF가 25%로 높은 편이다"
+    },
+    {
+      "claim_id": "PTC.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K FY2025 (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다. 기본주식수와 매입액은 확인하지 않았다",
+          "summary": "가중평균 희석주식수 FY2022 118,233,000 -> FY2025 120,777,000",
+          "value": 0.0215,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수가 늘었다(+2.15%)"
+    },
+    {
+      "claim_id": "PTC.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC Form 4 x38 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=857005&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 38건 집계 (재량 매수 $0 / 재량 매도 $9,056,195 / 10b5-1 매도 $2,483,748)",
+          "value": -9056194.51,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 16건: 재량 순 $-9,056,195, 10b5-1 정기 12건 → opp_net_sell"
+    },
+    {
+      "claim_id": "PTC.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 4건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 4건)"
+    },
+    {
+      "claim_id": "PTC.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "PTC.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "Item 3. Legal Proceedings 19",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "PTC.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "PTC.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "PTC.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "PTC.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 8-K (2026-02-11, acc 0001193125-26-046516)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "Advisory vote to approve the compensation of our named executive officers (Say-on-Pay). For Against Abstain Broker Non-Votes 97,603,267 8,087,505",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526046516/ptc-20260211.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9235,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-02-11 주총 보수 승인 투표 찬성 97,603,267 / 반대 8,087,505 → 찬성률 92.3%"
+    },
+    {
+      "claim_id": "PTC.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that, as of September 30, 2025, our internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "PTC.GUIDANCE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 8-K Item 2.02 EX-99 (filed 2023-02-01)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "- 25% $1,910 - $1,960 $1,790 - $1,810 Cash from Operations ~$585 ~37% ~$595 ~$205 Free Cash Flow ~$565 ~38% ~$575 ~$200 Revenue $2,050 - $2,130",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023001593/ptc-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts RevenueFromContractWithCustomerExcludingAssessedTax (결산 2023-09-30, 공시 2025-11-21)",
+          "summary": "FY2023 최초 가이던스 2,050,000,000~2,130,000,000 (range, 2023-02-01) vs 실제 2,097,053,000 → MET",
+          "value": 0.023,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "PTC 8-K Item 2.02 EX-99 (filed 2023-11-01)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "- $2,250 11% - 14% $1,995 - $2,010 Operating cash flow $611 ~$745 ~22% ~$185 2 Free cash flow 1 $587 ~$725 ~23% ~$180 2 Revenue $2,097 $2,270 -",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023057416/ptc-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts RevenueFromContractWithCustomerExcludingAssessedTax (결산 2024-09-30, 공시 2025-11-21)",
+          "summary": "FY2024 최초 가이던스 2,270,000,000~2,360,000,000 (range, 2023-11-01) vs 실제 2,298,472,000 → MET",
+          "value": 0.0125,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "PTC 8-K Item 2.02 EX-99 (filed 2024-11-06)",
+            "location": "연간 매출 가이던스 문장",
+            "observed_date": "2026-10-07",
+            "quote": "growth Operating cash flow $750 $850 to $865 2 13% to 15% ~$234 2 Free cash flow $736 $835 to $850 2 14% to 16% ~$230 2 Revenue $2,298 $2,505 to",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024122235/ptc-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "actual_vs_initial_low",
+          "note": "실제값: companyfacts RevenueFromContractWithCustomerExcludingAssessedTax (결산 2025-09-30, 공시 2025-11-21)",
+          "summary": "FY2025 최초 가이던스 2,505,000,000~2,605,000,000 (range, 2024-11-06) vs 실제 2,739,226,000 → MET",
+          "value": 0.0935,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 회계연도 [2023, 2024, 2025] 최초 연간 매출 가이던스 대비 미달 0회"
+    },
+    {
+      "claim_id": "PTC.COVER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "Cover page (shares outstanding)",
+            "observed_date": "2026-10-07",
+            "quote": "our voting stock held by non-affiliates was approximately $ 18,551,172,440 on March 31, 2025 based on the last reported sale price of our common stock on the Nasdaq Global Select Market on that date. There were 119,925,951 shares of our common stock outstanding on that day and 119,448,261 shares of our common stock outstanding on November 19, 2025.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)",
+          "summary": "10-K 표지 발행주식수 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K 표지: 보통주 단일 클래스만 발행"
+    },
+    {
+      "claim_id": "PTC.DEBTBUYBACK_BAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC companyfacts",
+            "location": "LongTermDebt FY2024~FY2025 / 자사주 매입 FY2025",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "debt_change",
+          "note": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+          "summary": "대차대조표 차입 잔액(전년·당년)과 현금흐름표 매입 지출",
+          "value": -54671000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "FY2025 차입 잔액 변동 -54,671,000 vs 자사주 매입 299,998,000 → 부채 조달 아니다"
+    },
+    {
+      "claim_id": "PTC.GM",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC companyfacts",
+            "location": "매출총이익률 FY2022~FY2025 (USD)",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "gross_margin_change_pp",
+          "note": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)",
+          "summary": "매출·매출총이익(또는 매출원가) 연차값(companyfacts)",
+          "value": 3.72,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "매출총이익률 FY2022 80.04% → FY2025 83.76% (+3.72%p) → evidenced"
+    },
+    {
+      "claim_id": "PTC.PEERS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 최신 연차보고서",
+            "location": "Competition",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "data/peer_baskets.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "근거 원문: For enterprise CAD and PLM solutions, we compete with large established companies including Autodesk, Dassault Systèmes SA, and Siemens AG. / 제외: Dassault·Siemens(SEC 비공시), IBM·Oracle·SAP·Microsoft·Salesforce(사업 분리 불가)",
+          "summary": "회사가 연차보고서에서 직접 지명한 경쟁사",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "companyfacts",
+            "location": "매출 FY 정렬",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "growth_gap_pp",
+          "note": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)",
+          "summary": "회사·경쟁사 연차 매출(companyfacts, 결산일 기준 정렬)",
+          "value": -0.6,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "FY2022~FY2025 매출 CAGR 12.32% vs 지명 경쟁사 ['ADSK'] 합계 12.92% → stable"
+    },
+    {
+      "claim_id": "PTC.NEWTHREAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-07",
+            "quote": "If we inadvertently use open source software in a manner that triggers such disclosure obligations, we could be required to publicly disclose portions of our proprietary code, which could result in a loss of competitive advantage and intellectual property rights, which could adversely affect our business, financial condition, operating results, and prospects. 11 Table of Contents Intellectual property infringement claims could be asserted against us, which could be expensive to defend, could result in limitations on our use of the claimed intellectual property, and could adversely affect our business and prospects.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "전년 대비 새로 추가된 경쟁 관련 위험 문장 1개: 「If we inadvertently use open source software in a manner that triggers such disclosure obligations, we could be required to publicly disclose portions of our proprietary code, which could result in a loss of competitive advantage and intellectual property rights, which could adversely affect our business, financial condition, operating results, and prospects. 11 Table of Contents Intellectual property infringement claims could be asserted against us, which could be expensive to defend, could result in limitations on our use of the claimed intellectual property, and could adversely affect our business and prospects.」"
+    },
+    {
+      "claim_id": "PTC.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21)",
+            "location": "전문",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "READ-PTC-gov.key_person_no_succession",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DEF 14A filed 2025-12-23",
+            "location": "PTC-3",
+            "observed_date": "2026-10-09",
+            "quote": "Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "거버넌스 위원회가 CEO 승계 계획 유지를 책임진다고 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.key_person_no_succession = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-PTC-gov.material_litigation",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2025-11-21",
+            "location": "PTC-6",
+            "observed_date": "2026-10-09",
+            "quote": "we estimate that the range of possible outcomes for such matters is immaterial and we do not believe that resolving them will have a material adverse impact on our financial condition, results of operations or cash flows",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "경영진이 진행 중 소송의 결과 범위가 중대하지 않다고 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "10-K filed 2025-11-21",
+            "location": "PTC-6",
+            "observed_date": "2026-10-09",
+            "quote": "we estimate that the range of possible outcomes for such matters is immaterial and we do not believe that resolving them will have a material adverse impact",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "진행 중 소송·청구의 결과가 중대하지 않을 것이라고 회사가 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.material_litigation = 'immaterial' (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-PTC-acc.material_one_time_items",
+      "evidence": [
+        {
+          "citation": {
+            "document": "8-K filed 2026-02-04",
+            "location": "PTC-36",
+            "observed_date": "2026-10-09",
+            "quote": "approximately $160 million of divestiture-related expense payments and cash taxes in FY’26 in connection with the closing of the transaction, which are not expected to recur in future years",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "FY26 일회성 처분 관련 지출 약 $160M은 FY26 FCF 가이던스 약 $850M(PTC-29)의 약 19%로 10% 이상",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "8-K filed 2026-05-06",
+            "location": "PTC-32",
+            "observed_date": "2026-10-09",
+            "quote": "Q2’26 GAAP EPS included a $463 million gain on the sale of our Kepware and ThingWorx business, partially offset by $27 million of divestiture-related expenses and a $102 million tax impact.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "최근 4개 분기 중 처분이익 $463M 등 일회성이 FCF(약 $850M 가이던스)의 10%를 크게 초과",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "acc.material_one_time_items = True (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "PTC.PVP_MEASURE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (2025-12-23, acc 0001104659-25-124170)",
+            "location": "ecd:CoSelectedMeasureName",
+            "observed_date": "2026-10-10",
+            "quote": "free cash flow",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "engine/ecd.py MEASURE_RULES 순서대로 키워드 분류(사전 고정)",
+          "summary": "PvP 표 ecd:CoSelectedMeasureName",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "회사 선정 지표 'free cash flow' → cash_flow"
+    },
+    {
+      "claim_id": "PTC.PVP_TSR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (2025-12-23, acc 0001104659-25-124170)",
+            "location": "ecd TSR (2025-09-30)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "pvp_tsr_vs_peer",
+          "note": "같은 시점 $100 투자의 누적 가치 비율. 비교군은 회사가 고른 것",
+          "summary": "PvP 표 ecd:TotalShareholderRtnAmt / PeerGroupTotalShareholderRtnAmt",
+          "value": -0.1384,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2025-09-30 누적 TSR 245.43 vs 비교군 284.85 → -13.8%"
+    },
+    {
+      "claim_id": "PTC.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526328444/ptc-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 4,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 4건, 해지 0건"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.8438,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 27,
+    "n_primary_answered": 18,
+    "n_primary_required": 20,
+    "n_questions": 32,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 9,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "capital_allocation": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "competitive_landscape": {
+        "answered": 4,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 11,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      }
+    },
+    "unexamined_lenses": [
+      "capital_allocation",
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [
+    {
+      "claim_ids": [
+        "PTC.DEAL"
+      ],
+      "code": "PENDING_ACQUISITION",
+      "statement": "확정된 현금 인수 대상이다. 주가는 독립적 성장 전망이 아니라 딜 조건·성사 확률을 반영하므로 Implied Growth 역산이 '시장의 성장 기대'를 뜻하지 않는다 (LNTH 제외와 같은 이유)"
+    }
+  ],
+  "entity": "PTC",
+  "findings": [
+    {
+      "claim_ids": [
+        "PTC.INSIDER",
+        "PTC.CXO",
+        "PTC.LITIGATION",
+        "PTC.SAYONPAY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "독립 의장과 CEO 승계 계획은 확인. 차등의결·내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "capital_allocation",
+      "summary": "자사주 효과에 모순이 있어 판단 보류(cap.buyback_effect 참조)"
+    },
+    {
+      "claim_ids": [
+        "PTC.RESTATE",
+        "PTC.NT",
+        "PTC.AUDITOR",
+        "PTC.IMPAIR",
+        "PTC.ICFR",
+        "PTC.GUIDANCE"
+      ],
+      "effect": "not_examined",
+      "lens": "accounting_quality",
+      "summary": "재작성·가이던스 이력 미조회 / 3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음) / 최초 연간 매출 가이던스와 실제 매출을 대조(사전 고정 규칙, 판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "PTC.SBC",
+        "PTC.SHARES"
+      ],
+      "effect": "weakens",
+      "lens": "dilution",
+      "summary": "SBC/FCF 25%이고 3년 희석주식수 +2.15%. 엔진은 희석을 모형화하지 않는다"
+    },
+    {
+      "claim_ids": [
+        "PTC.NEWTHREAT"
+      ],
+      "effect": "not_examined",
+      "lens": "competitive_landscape",
+      "summary": "경쟁 구도는 이번 파일럿에서 조사하지 않았다 / 위험요인 연도별 비교로 새 경쟁 위협 문장을 모음(판단 없음)"
+    }
+  ],
+  "inversion": [
+    "딜이 무산되면(주주 반대·규제 불허) 주가가 독립 가치로 되돌아가며 종전 GAAP-ARR 괴리·가이던스 리스크가 재부각된다",
+    "GAAP 매출·ARR 괴리가 반복되는 구조(ASC 606 라이선스 인식 타이밍)"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": 192.26,
+  "revision": 1,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "a63f86027fc46772f9855c1fd4c19bd711dcb24016ef899da5f6ce0dea1f3ebc",
+  "supersedes": "a58ede07c037f017c4979c07f00fbe3c6be54a02d9d5f877d7769768abb46964",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

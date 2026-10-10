@@ -1,0 +1,553 @@
+{
+ "ticker": "NBIX",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "54c52e0ed8682475065b3d62ab3c7738ce62fa513e8a53aac7e07cc45849b27d",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: NBIX.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "결산 후 인수 완료 공시(8-K 2.01) ['2026-05-18'] — 최근 인수가 아직 연차 수치에 없다.",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.guidance_miss_3y": "8-K 2.02 보도자료 19건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "8-K 2.02 보도자료 19건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "NBIX-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "mpensation for 2025 70 Role of Board in Risk Oversight 17 Director Compensation Table 71 Corporate Responsibility 17 Non-Employee Director Compensation for 2026 71 Risk Assessment Concerning Compensation Practices and Policies 17 Non-Employee Director Equity Ownership Guidelines 72 Role of Board in Succession Planning 17 Additional Information 72 Policy Regarding Board Member Attendance at the Company's Annual Meeting 17 Related Person Transactions 72 Report of the Audit Committee 18 Other Matters 72 Principal Accountant Fees and Services 19 Additional Information 72 Compensation Committee Report 20 Special Note Regarding Forward-Looking Statements 73 Proposal One: Election of Directors 21 Appendix A - 2025 Equity Incentive Plan Proposal Two: Advisory Vote on Compensation Paid to the Company's Named"
+  },
+  {
+   "id": "NBIX-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "sment, the Compensation Committee concluded that the Company’s compensation policies and practices are consistent with industry practices for similar biopharmaceutical companies and do not create risks that are reasonably likely to have a material adverse effect on the Company. Role of the Board in Succession Planning A key responsibility of the Board is succession planning for the CEO and other members of the executive management team. In consultation with the Company's CEO and Chief Human Resources Officer, the Compensation Committee oversees succession planning relating to the Company's executive officers. Succession planning for the Company's CEO is conducted by the full Board to ensure that development, retention and succession plans for the CEO align with the Company's short and long-term stra"
+  },
+  {
+   "id": "NBIX-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "ment talent, including the readiness of individuals to take on additional leadership roles and developmental opportunities needed to prepare senior leaders for greater levels of responsibility. The review and assessment conducted by the Board and its committees includes a review of both a long-term succession plan and an emergency succession plan. In support of the Company’s commitment to investing in its employees, high-potential leaders are provided with the opportunity to meet with Board members through formal presentations and at informal events. This engagement gives the Board insight into the Company’s talent and helps to facilitate a regular review and discussion of leadership development and succession planning at the Board and Committee level. Policy Regarding Board Member Attendance at the"
+  },
+  {
+   "id": "NBIX-4",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "sk Factors 20 Item 1B. Unresolved Staff Comments 52 Item 1C. Cybersecurity 52 Item 2. Properties 54 Item 3. Legal Proceedings 54 Item 4. Mine Safety Disclosures 54 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 55 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 56 Item 7A. Quantitative and Qualitative Disclosures about Market Risk 64 Item 8. Financial Statements and Supplementary Data 65 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 97 Item 9A. Controls and Procedures 97 Item 9B. Other Information 100 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 100 PART III Item 10. Directors, Executive Officers and Corporate Governance 101 Item 11. Executive Compensation 101 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 101 Item 13. Certain Relationships and Related Transactions, and Director Independence 101 Item 14. Principal Accou ntant Fees and Services 101 PART IV Item 15. Exhibits and Financial Statement Schedules 102 NEUROCRINE, the NEUROCRINE BIOSCIENCES Logo, YOU DESERVE BRAVE SCIENCE, INGREZZA, the INGREZZA Logo, CRENESSITY, the CRENESSITY Logo, and other Neurocrine Biosciences trademarks are the property of Neurocrine Biosciences, Inc. Any other brand names or trademarks appearing in this Annual Report on Form 10-K that are not the property of Neurocrine Biosciences, Inc. are the property of their respective holders. 2 Forward-Looking Statements "
+  },
+  {
+   "id": "NBIX-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "de secret protection and Note 15 to the consolidated financial statements f or a description of our legal proceedings related to intellectual property matters. 9 Competition The biotechnology and pharmaceutical industries are subject to rapid and intense technological change. We face, and will continue to face, competition in the development and marketing of our products and product candidates from academic institutions, government agencies, research institutions and biotechnology and pharmaceutical companies. Competition may also arise from, among other things, other drug development technologies, methods of preventing or reducing the incidence of disease, including vaccines, and new small molecule or other classes of therapeutic agents. Such developments by others (including the development of generic equivalents) may render our product candidates or technologies obsolete or noncompetitive. • INGREZZA competes with AUSTEDO (deutetrabenazine), marketed by Teva Pharmaceuticals Industries, for the treatment of TD in adults and chorea associated with Huntington's disease. A once-daily dosing of AUSTEDO (AUSTEDO XR) was introduced in February 2023. Additionally, there are a number of commercially available medicines used to treat TD off-label, such as XENAZINE (tetrabenazine) and generic equivalents, and various antipsychotic medications (e.g., clozapine), anticholinergics, benzodiazepines (off-label), and botulinum toxin. In addition, there are several programs in clinical development by other companies targeting Huntington's disease. • CRENESSITY competes with high dose corticosteroid monoth"
+  },
+  {
+   "id": "NBIX-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "additional alternative facilities will be available in the future on commercially reasonable terms. Item 3. Legal Proceedings For a description of our legal proceedings, see Note 15 to the consolidated financial statements, which is incorporated herein by reference. From time to time, we may become subject to other legal proceedings or claims arising in the ordinary course of our business. We currently believe that none of the claims or actions pending against us is likely to have, individually or in the aggregate, a material adverse effect on our business, financial condition, or results of operations. Given the unpredictability inherent in litigation, however, we cannot predict the outcome of these matters. Item 4. Mine Safety Disclosures None. 54 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities Our common stock is traded on the Nasdaq Global Select Market under the symbol “NBIX”. As of February 4, 2026, there were 35 stockholders of record of our common stock. The actual number of stockholders is greater than this number because certain stockholders who are beneficial owners hold our common stock in “street” name with brokers and other nominees. We have not paid any cash dividends on our common stock since inception and do not anticipate paying cash dividends in the foreseeable future. See Part III, Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters for information about our equity compensation plans which is incorporated by reference herein. We did not repurchase any "
+  },
+  {
+   "id": "NBIX-7",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "facility-based expenses (such as rent expense) and other overhead allocations. 95 15. Legal Matters Legal Proceedings In March 2025, we received a notice from Zydus Lifesciences Global FZE (Zydus FZE) that it had filed an abbreviated new drug application, or ANDA, with the FDA seeking approval of a generic version of INGREZZA SPRINKLE (valbenazine). The ANDA contained a Paragraph IV Patent Certification alleging that certain of our patents covering INGREZZA SPRINKLE are invalid and/or will not be infringed by Zydus FZE’s importation, manufacture, use or sale of the medicine for which the ANDA was submitted. We filed suit in the U.S. District Court for the District of Delaware in April 2025 against Zydus Pharmaceuticals (USA) Inc. and its affiliates Zydus FZE, Zydus Worldwide DMCC (entity subsequently dismissed), Zydus Lifesciences Limited, and Zydus Healthcare (USA) LLC (entity subsequently dismissed) (collectively, Zydus). The complaint alleged that by filing their ANDAs, Zydus infringed certain of our patents covering INGREZZA SPRINKLE and sought to prevent Zydus from selling a generic version of INGREZZA SPRINKLE. We also filed suit in the U.S. District Court for the District of New Jersey in April 2025 against Zydus on a similar factual basis seeking to prevent Zydus from selling a generic version of INGREZZA SPRINKLE and this case was dismissed in favor of continued prosecution of the Delaware proceeding against the same entities. From time to time, we may become subject to other legal proceedings or claims arising in the ordinary course of our business. We currently believe that none "
+  },
+  {
+   "id": "NBIX-8",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "siness days after the meeting, we intend to file a Form 8-K to publish preliminary results and, within four business days after the final results are known to us, file an amended Form 8-K to publish the final results. What proxy materials are available on the internet? The Proxy Statement and annual report to stockholders are available under the “Investors” tab on our corporate website at www.neurocrine.com, and at www.proxyvote.com. However, you can only vote your shares at www.proxyvote.com. Please have the control number on your proxy card available. 4 Back to Contents SECURITY OWNERSHIP OF CERTAIN BENEFICIAL OWNERS AND MANAGEMENT The following table sets forth certain information regarding the ownership of our common stock as of March 31, 2026 by (i) each director; (ii) each of the executive officers named in the Summary Compensation Table; (iii) our executive officers and directors as a group; and (iv) all those known by us to be beneficial owners of more than five percent of our common stock. Unless otherwise indicated in the footnotes to this table and subject to community property laws where applicable, we believe that each of the stockholders named in this table has sole voting and investment power with respect to the shares indicated as beneficially owned. Applicable percentages "
+  },
+  {
+   "id": "NBIX-9",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "nd Address of Beneficial Owner Number of Shares of Common Stock Percent of Common Stock Stockholders Owning Greater than 5%: BlackRock, Inc. (1) 12,052,271 12.0 % The Vanguard Group (2) 10,129,687 10.1 % Dodge & Cox (3) 5,534,624 5.5 % JPMorgan Chase & Co. (4) 5,198,084 5.2 % Directors and Named Executive Officers: Kyle W. Gano, Ph.D. (5) 635,601 * Matthew C. Abernethy (6) 397,068 * Eric Benevich (7) 320,717 * Sanjay Keswani, M.D. (8) 2,239 * Jude Onyia, Ph.D. (9) 178,111 * Eiry W. Roberts, M.D. (10) 285,507 * William H. Rastetter, Ph.D. (11) 122,832 * Kevin C. Gorman, Ph.D. (12) 1,572,104 1.5 % Gary A. Lyons (13) 194,793 * Johanna Mercier (14) 49,862 * George J. Morrow (15) 72,461 * Leslie V. Norwalk (16) 40,050 * Christine A. Poon (17) 23,200 * Richard F. Pops (18) 114,873 * Shalini Sharp (19) 48,222 * Stephen A. Sherwin, M.D. (20) 77,935 * All current executive officers and directors as a group (20 persons) (21) 4,768,380 4.6% * Represents beneficial ownership of less than one percent (1%) of the outstanding shares of the Company’s common stock as of March 31, 2026. (1) Based on Amendment No. 13 to Schedule 13G filed by BlackRock, Inc. (“BlackRock”) on April 28, 2025, reporting ownership as of March 31, 2025. According to such filing, BlackRock beneficially owns 12,052,271 shares of com"
+  },
+  {
+   "id": "NBIX-10",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "ion 162(m) of the Internal Revenue Code pursuant to the transition relief provided by the Tax Cuts and Jobs Act. For further information regarding the deduction limit under Section 162(m) of the Internal Revenue Code and such transition relief, please see the section entitled “Compensation Discussion and Analysis—Tax and Accounting Considerations—Internal Revenue Code Section 162(m).” 34 Back to Contents New Plan Benefits under the Amended 2025 Plan The following table sets forth certain information regarding future benefits under the Amended 2025 Plan. Name Position Number of Shares Kyle W. Gano, Ph.D. Chief Executive Officer (1) Matthew C. Abernethy Chief Financial Officer (1) Eric Benevich Chief Commercial Officer (1) Sanjay Keswani, M.D. Chief Medical Officer (1) Jude Onyia, Ph.D. Chief Scientific Officer (1) Eiry W. Roberts, M.D. Strategic Advisor (1) All current executive officers as a group (1) All current directors who are not executive officers as a group (2) All current employees, including current officers who are not executive officers, as a group (1) (1) Awards granted under the Amended 2025 Plan to our executive officers and other employees are discretionary and are not subject to set benefits or amounts under the terms of the Amended 2025 Plan, and the Board of Directors and"
+  },
+  {
+   "id": "NBIX-11",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-04-15",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm",
+   "text": "long-term equity awards that have performance-based vesting criteria or have value directly dependent on the Company’s stock price (or in the case of stock options, only have value if the Company's stock price increases), and annual cash incentives that are only earned if we achieve pre-established corporate goals. With respect to long-term equity awards, the Compensation Committee annually considers the appropriate mix of equity awards. The Compensation Committee believes that combining performance-based vesting equity awards with time-based vesting equity awards appropriately promotes a focus on delivering sustainable long-term value to our stockholders, while also supporting the long-term retention of our executive officers. 42 Back to Contents The graphics below illustrate the primary elements of compensation mix for our CEO and the aggregate 2025 compensation mix for the other NEOs as a group (excluding Dr. Keswani, who commenced employment with us in June 2025). The percentages in the chart below reflect the actual base salary earned, cash incentives paid, and the grant date fair value of equity awards granted, in each case as reported in our 2025 Summary Compensation Table. CEO 2025 Compensation Mix All Other NEOs 2025 Compensation Mix 43 Back to Contents Compensation Philosophy and"
+  },
+  {
+   "id": "NBIX-12",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "estment and your ability to sell your shares. There can be no assurance that any share repurchases will enhance long-term stockholder value. In October 2024, our Board of Directors authorized a share repurchase program to repurchase up to $300 million of our common stock and we subsequently entered into an accelerated share repurchase (ASR) transaction to repurchase the entirety of this authorized amount. The purchase period for this ASR transaction ended in February 2025 and an aggregate of 2.3 million shares were delivered to us at an average repurchase price of $131.83 per share. Additionally, in February 2025, our Board of Directors authorized a share repurchase program under which we may repurchase up to $500 million of our comm"
+  },
+  {
+   "id": "NBIX-13",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "s subsequent share repurchase authorization was in addition to the $300 million accelerated share repurchase program that was announced in October 2024 and completed in early February 2025. Our share repurchases may change from time to time, and we can provide no assurance that we will repurchase shares of our common stock at favorable prices, in particular amounts, or at all, and any repurchases may not enhance long-term stockholder value or prove to be the best use of our cash. If our Board of Directors authorizes any additional share repurchase programs, it could affect the trading price of our stock and increase volatility. Compliance with changing laws, regulations and standards relating to various aspects of our business, including corporate governance, workforce initiatives and public d"
+  },
+  {
+   "id": "NBIX-14",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "• Appointed Sanjay Keswani, M.D., as Chief Medical Officer (CMO) and member of our executive management team, effective June 2, 2025. • In February 2025, our Board of Directors authorized a new share repurchase program (the 2025 Repurchase Program) under which we may repurchase up to $500.0 million of our common stock, subject to market conditions. The 2025 Repurchase Program is in addition to the $300.0 million accelerated repurchase program (the 2024 Repurchase Program) that was announced in October 2024 and completed in February 2025. During 2025, we repurchased 1.5 million shares on the open market under the 2025 Repurchase Program and received an additional 0.3 million shares upon settlement of the 2024 Repurchase Program in February 2025. 56 • In January 2025, we received Ce"
+  },
+  {
+   "id": "NBIX-15",
+   "for": "cap.debt_funded_buyback",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": " the 2024 Repurchase Program and decreased cash payments associated with the convertible senior notes that matured in May 2024. For 2024 compared to 2023, the change reflected $300.0 million of share repurchases under the 2024 Repurchase Program, $308.8 million in cash payments to settle the convertible senior notes that matured in May 2024, and increased proceeds from issuances of our common stock. Material Cash Requirements In the pharmaceutical industry, it can take a significant amount of time and capital resources to successfully complete all stages of research and development and commercialize a product candidate, which ultimate length of time and spend required cannot be accurately estimated as it varies substantially according to the t"
+  },
+  {
+   "id": "NBIX-16",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "uarter 2026 Revenue Grew 39% Year-Over-Year to $959 Million INGREZZA ® (valbenazine) 2026 Net Sales Guidance Raised to $2.825 to $2.875 Billion Acquisition of Soleno Therapeutics Completed in May 2026 SAN DIEGO , July 30, 2026 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the second quarter ended June 30, 2026. “Our second quarter performance demonstrates the power of a strategy designed to compound over time,” said Kyle W. Gano, Ph.D., Chief Executive Officer of Neurocrine Biosciences. “As our commercial portfolio of first-in-class medicines continues to grow, so does our capacity to reinvest in innovation, advance a differentiated late-stage pipeline and p"
+  },
+  {
+   "id": "NBIX-17",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "tion volume growth in TRx and record NRx driven by strong patient demand. • INGREZZA full year 2026 guidance was increased from a range of $2.7 billion to $2.8 billion up to $2.825 billion to $2.875 billion. • CRENESSITY second-quarter 2026 net product sales were $184 million, driven by strong patient demand with approximately 80% reimbursement for dispensed prescriptions in the second quarter 2026. • VYKAT XR second-quarter 2026 net product sales were $54 million from May 18, 2026, the closing date of the Soleno acquisition. Unaudited pro-forma full quarter net product sales were $94 million. Recent Clinical and Corporate Developments • In May 2026, acquired Soleno Therapeutics for $53.00 per share"
+  },
+  {
+   "id": "NBIX-18",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "quivalents, and marketable securities totaling approximately $482 million. Full Year 2026 Financial Guidance (dollars in millions) Prior Updated INGREZZA Net Product Sales 1 $2,700 - $2,800 $2,825 - $2,875 GAAP R&D 2 $1,200 - $1,250 $1,275 - $1,325 Non-GAAP R&D 2, 3 $1,110 - $1,160 $1,140 - $1,190 IPR&D 4 $20 $23 GAAP SG&A 5 $1,375 - $1,400 $1,575 - $1,600 Non-GAAP SG&A 3, 5 $1,240 - $1,265 $1,325 - $1,350 GAAP Amortization of Acquired Intangible Assets 6 Not applicable $85 - $90 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of the Company’s pre-clini"
+  },
+  {
+   "id": "NBIX-19",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "ilestones related to our in-licensed product candidates. Development milestones are included in R&D guidance once achieved or deemed probable to achieve. 3. Non-GAAP guidance has been adjusted to exclude estimated non-cash stock-based compensation expense of approximately $115 million in R&D and $170 million in SG&A, including approximately $58 million related to the acceleration of vesting of equity awards for Soleno employees which vested in full upon the closing of the transaction, and acquisition, integration and divestiture-related expenses of approximately $95 million. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined perf"
+  },
+  {
+   "id": "NBIX-20",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": " Agonist, in Adults with Schizophrenia Reaffirmed 2026 Full-Year INGREZZA ® (valbenazine) Net Sales Guidance of $2.7 - $2.8 Billion SAN DIEGO , May 5, 2026 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the first quarter ended March 31, 2026. “Neurocrine’s strong first-quarter performance reflects continued momentum across our commercial portfolio, as we advance our growth strategy and diversify across therapeutic areas,” said Kyle W. Gano, Ph.D., Chief Executive Officer of Neurocrine Biosciences. “We delivered $811 million in net product sales, representing 44% year-over-year growth, driven by continued strong demand for INGREZZA and CRENESSITY ® (crinecerfo"
+  },
+  {
+   "id": "NBIX-21",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": "e found in Table 3 and Table 4 at the end of this news release. Reaffirmed Full-Year 2026 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,700 $ 2,800 GAAP R&D Expense 2 $ 1,200 $ 1,250 Non-GAAP R&D Expense 2, 3 $ 1,110 $ 1,160 GAAP and Non-GAAP IPR&D 4 $ 20 $ 20 GAAP SG&A Expense 5 $ 1,375 $ 1,400 Non-GAAP SG&A Expense 3, 5 $ 1,240 $ 1,265 Full-Year 2026 financial guidance excludes any post-close expenses from the announced acquisition of Soleno Therapeutics, anticipated to close in Q2 2026. 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the con"
+  },
+  {
+   "id": "NBIX-22",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": "ilestones related to our in-licensed product candidates. Development milestones are included in R&D guidance once achieved or deemed probable to achieve. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $90 million in R&D and $125 million in SG&A, divestiture-related expenses and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. IPR&D guidance represents completed collaboration and licensing arrangements. 5. SG&A guidance range reflects expense for"
+  },
+  {
+   "id": "NBIX-23",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": "ne Biosciences, Inc. Non-GAAP Financial Measures In addition to the financial results and financial guidance that are provided in accordance with accounting principles generally accepted in the United States (GAAP), this press release also contains the following Non-GAAP financial measures: Non-GAAP R&D expense, Non-GAAP SG&A expense, Non-GAAP operating income, Non-GAAP net income and net income per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financ"
+  },
+  {
+   "id": "NBIX-24",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+   "text": "-Year Growth of 29% and 22%, Respectively INGREZZA ® (valbenazine) Full Year 2026 Net Product Sales Guidance of $2.7 - $2.8 Billion SAN DIEGO , Feb. 11, 2026 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the fourth quarter ended December 31, 2025. “Our 2025 performance reflects the strength and durability of our commercial business and meaningful progress we are making transforming Neurocrine into a broader, more diversified biopharmaceutical company,” said Kyle W. Gano, Ph.D., Chief Executive Officer of Neurocrine Biosciences. “In 2026, we are focused on delivering strong, sustainable growth for INGREZZA and CRENESSITY ® (crinecerfont) while advancing our p"
+  },
+  {
+   "id": "NBIX-25",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+   "text": "sults can be found in Table 3 and Table 4 at the end of this news release. Full-Year 2026 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,700 $ 2,800 GAAP R&D Expense 2 $ 1,200 $ 1,250 Non-GAAP R&D Expense 2, 3 $ 1,110 $ 1,160 GAAP and Non-GAAP IPR&D 4 $ 20 $ 20 GAAP SG&A Expense 5 $ 1,375 $ 1,400 Non-GAAP SG&A Expense 3, 5 $ 1,240 $ 1,265 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of the Company’s pre-clinical and clinical portfolio including the Phase 3 programs for osavampator in MDD and direclidine in schizophre"
+  },
+  {
+   "id": "NBIX-26",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": "be found in Table 3 and Table 4 at the end of this news release. Reaffirmed Full Year 2025 INGREZZA Guidance and Updated Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,500 $ 2,550 GAAP R&D Expense 2 $ 1,000 $ 1,020 Non-GAAP R&D Expense 2, 3 $ 910 $ 930 GAAP SG&A Expense 4 $ 1,140 $ 1,160 Non-GAAP SG&A Expense 3, 4 $ 1,010 $ 1,030 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of the Company’s pre-clinical and clinical portfolio including the initiation of Phase 3 programs for osavampator in MDD and direclidine in schiz"
+  },
+  {
+   "id": "NBIX-27",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": " or deemed probable to achieve. Acquired in-process research and development expense is included in guidance once significant collaboration and licensing arrangements have been completed. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $90 million in R&D and $125 million in SG&A and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of "
+  },
+  {
+   "id": "NBIX-28",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": "ne Biosciences, Inc. Non-GAAP Financial Measures In addition to the financial results and financial guidance that are provided in accordance with accounting principles generally accepted in the United States (GAAP), this press release also contains the following Non-GAAP financial measures: Non-GAAP R&D expense, Non-GAAP SG&A expense, and Non-GAAP net income and net income per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financial measures exclude: n"
+  },
+  {
+   "id": "NBIX-29",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": " externally and to manage the Company's business and evaluate its performance. The Company provides guidance regarding combined R&D and SG&A expenses on both a GAAP and a Non-GAAP basis. A reconciliation of these GAAP financial results to Non-GAAP financial results is included in the attached financial information. Forward-Looking Statements In addition to historical facts, this press release contains forward-looking statements that involve a number of risks and uncertainties. These statements include, but are not limited to, statements related to: the benefits to be derived from our products and product candidates; the value our products and/or our product candidates may bring to patients; the cont"
+  },
+  {
+   "id": "NBIX-30",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000157/q2-2025xearningsrelease.htm",
+   "text": "lbenazine) Second-Quarter 2025 Net Product Sales of $624 Million and Narrows 2025 Net Product Sales Guidance to $2.5 - $2.55 Billion CRENESSITY ® (crinecerfont) Second-Quarter 2025 Net Product Sales of $53 Million with 664 Total New Patient Enrollment Start Forms SAN DIEGO , July 30, 2025 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the second quarter ended June 30, 2025, and updated its 2025 financial guidance. “As we begin our transition into a new chapter of growth and diversification for Neurocrine, we’re pleased with our second quarter commercial performance across tardive dyskinesia, Huntington’s chorea, and now, classic congenital adrenal hyperplasia"
+  },
+  {
+   "id": "NBIX-31",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000157/q2-2025xearningsrelease.htm",
+   "text": "ton’s disease Medicare beneficiaries to support long-term growth. • INGREZZA 2025 net product sales guidance narrowed from $2.5 - $2.6 billion to $2.5 - $2.55 billion reflecting double-digit volume growth partially offset by lower net price due to expanded access. • CRENESSITY net product sales for the second-quarter 2025 were $53 million and included 664 total new patient enrollment start forms reflecting strong patient demand with 76% reimbursement coverage for dispensed scripts. Through the first half of 2025, there were 1,077 total new patient enrollment forms. Recent Clinical and Corporate Developments • Initiated Phase 3 registrational program for NBI-’568, an oral muscarinic M4 selective orth"
+  },
+  {
+   "id": "NBIX-32",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000157/q2-2025xearningsrelease.htm",
+   "text": "n be found in Table 3 and Table 4 at the end of this news release. Updated Full Year 2025 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,500 $ 2,550 GAAP R&D Expense 2 $ 960 $ 1,010 Non-GAAP R&D Expense 2, 3 $ 890 $ 940 GAAP SG&A Expense 4 $ 1,135 $ 1,155 Non-GAAP SG&A Expense 3, 4 $ 980 $ 1,000 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of the Company’s pre-clinical and clinical portfolio including the initiation of Phase 3 programs for osavampator in MDD and NBI-568 in schizophrenia. R&D guidance includes $60 mil"
+  },
+  {
+   "id": "NBIX-33",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000157/q2-2025xearningsrelease.htm",
+   "text": " or deemed probable to achieve. Acquired in-process research and development expense is included in guidance once significant collaboration and licensing arrangements have been completed. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $85 million in R&D and $115 million in SG&A and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of "
+  },
+  {
+   "id": "NBIX-34",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000099/q1-2025xearningsrelease.htm",
+   "text": ".1 Neurocrine Biosciences Reports First Quarter 2025 Financial Results and Reaffirms 2025 Financial Guidance INGREZZA ® (valbenazine) First-Quarter 2025 Net Product Sales of $545 Million and Reaffirms 2025 Net Product Sales Guidance of $2.5 - $2.6 Billion CRENESSITY TM (crinecerfont) First-Quarter 2025 Net Product Sales of $14.5 Million with 413 Total Patient Enrollment Start Forms Initiated Phase 3 Registrational Programs for Osavampator in Major Depressive Disorder and NBI-’568 in Schizophrenia to Position for Next Phase of Growth SAN DIEGO , May 5, 2025 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the first quarter ended March 31, 2025, and reaffirms its"
+  },
+  {
+   "id": "NBIX-35",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000099/q1-2025xearningsrelease.htm",
+   "text": "ives us good momentum heading into the rest of the year. We are reaffirming 2025 INGREZZA net sales guidance of $2.5 to $2.6 billion,” said Kyle W. Gano, Ph.D., Chief Executive Officer of Neurocrine Biosciences. “For CRENESSITY, we are encouraged by the initial launch and the positive receptivity among the congenital adrenal hyperplasia community. The combination of INGREZZA and CRENESSITY provides a solid foundation for near- and long-term revenue growth.” “With registrational programs for osavampator and NBI-’568 ongoing, an advancing early-to-mid-stage pipeline, and a strong balance sheet, Neurocrine is well positioned to deliver sustained growth and innovation in neuroscience,” added Dr. Gano. F"
+  },
+  {
+   "id": "NBIX-36",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000099/q1-2025xearningsrelease.htm",
+   "text": "e found in Table 3 and Table 4 at the end of this news release. Reaffirmed Full Year 2025 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,500 $ 2,600 GAAP R&D Expense 2 $ 960 $ 1,010 Non-GAAP R&D Expense 2, 3 $ 890 $ 940 GAAP SG&A Expense 4 $ 1,110 $ 1,130 Non-GAAP SG&A Expense 3, 4 $ 955 $ 975 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of the Company’s pre-clinical and clinical portfolio including the initiation of Phase 3 programs for osavampator in MDD and NBI-568 in schizophrenia. R&D guidance includes $60 milli"
+  },
+  {
+   "id": "NBIX-37",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000099/q1-2025xearningsrelease.htm",
+   "text": " or deemed probable to achieve. Acquired in-process research and development expense is included in guidance once significant collaboration and licensing arrangements have been completed. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of $85 million in R&D and $115 million in SG&A and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of CRENESSITY. Co"
+  },
+  {
+   "id": "NBIX-38",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000034/q4-2024xearningsrelease.htm",
+   "text": "r-Year Growth of 23% and 26% Respectively INGREZZA ® (valbenazine) Full Year 2025 Net Product Sales Guidance of $2.5 - $2.6 Billion CRENESSITY TM (crinecerfont), a First-in-Class Treatment for Children and Adults with Classic Congenital Adrenal Hyperplasia, Approved and Launched in the United States Phase 3 Programs for Osavampator in Major Depressive Disorder and NBI-’568 in Schizophrenia Initiating in the First Half of 2025 SAN DIEGO , February 6, 2025 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the fourth quarter and full year ended December 31, 2024 and provided financial guidance for 2025. “I’m proud of the tremendous progress we made last year with t"
+  },
+  {
+   "id": "NBIX-39",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000034/q4-2024xearningsrelease.htm",
+   "text": "cts of patients' lives and antipsychotic adherence in real-world practice. Full Year 2025 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,500 $ 2,600 GAAP R&D Expense 2 $ 960 $ 1,010 Non-GAAP R&D Expense 2, 3 $ 890 $ 940 GAAP SG&A Expense 4 $ 1,110 $ 1,130 Non-GAAP SG&A Expense 3, 4 $ 955 $ 975 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. R&D guidance reflects the continued advancement of our pre-clinical and clinical portfolio including the initiation of our Phase 3 programs for osavampator in MDD and NBI-568 in schizophrenia. R&D guidance includes $60 million of "
+  },
+  {
+   "id": "NBIX-40",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2025-02-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000034/q4-2024xearningsrelease.htm",
+   "text": " or deemed probable to achieve. Acquired in-process research and development expense is included in guidance once significant collaboration and licensing arrangements have been completed. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of $70 million in R&D and $130 million in SG&A and vacated legacy campus facility costs. 4. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of CRENESSITY. Conference Call and Webcast Today at 4:30 PM Eastern Time Neurocrine Biosciences will hold a live conference call and webcast today at 4:30 p.m. Eastern Time (1:30 p.m. Pacific Time). Participants can acces"
+  },
+  {
+   "id": "NBIX-41",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000210/q3-2024xearningsrelease.htm",
+   "text": " Neurocrine Biosciences Reports Third Quarter 2024 Financial Results and Raises 2024 INGREZZA Sales Guidance INGREZZA ® (valbenazine) Third Quarter Net Product Sales of $613 Million Representing 26% Year-Over-Year Growth INGREZZA ® (valbenazine) 2024 Net Product Sales Guidance Raised to $2.30 - $2.32 Billion Board Authorizes $300 Million Share Repurchase Plan SAN DIEGO , October 30, 2024 – Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the third quarter ended September 30, 2024 and provided an update on its 2024 financial guidance. “With continued INGREZZA growth across the tardive dyskinesia and Huntington’s disease chorea indications, FDA Priority Review for "
+  },
+  {
+   "id": "NBIX-42",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000210/q3-2024xearningsrelease.htm",
+   "text": "during sleep. The termination is anticipated to be effective in January 2025. Raised 2024 Net Sales Guidance and Updated Expense Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,300 $ 2,320 GAAP R&D Expense 2 $ 700 $ 720 Non-GAAP R&D Expense 3 $ 635 $ 655 GAAP and Non-GAAP IPR&D 4 $ 10 $ 10 GAAP SG&A Expense 5 $ 970 $ 990 Non-GAAP SG&A Expense 3, 5 $ 825 $ 845 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. GAAP R&D guidance includes $71 million of expense for development milestones achieved or deemed probable to achieve under collaborations (Nxera Pharma UK Limited, Takeda Phar"
+  },
+  {
+   "id": "NBIX-43",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-10-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000210/q3-2024xearningsrelease.htm",
+   "text": "ilestone expenses are associated with our advancing pre-clinical and clinical pipeline. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of $65 million in R&D and $125 million in SG&A and vacated legacy campus facility costs, including office space impairment charges of approximately $20 million in SG&A. SG&A stock-based compensation includes an approximate $15 million charge to be recognized in the fourth quarter associated with the retirement of our CEO in October 2024. 4. Acquired in-process R&D (IPR&D) is included in guidance once significant collaboration and licensing arrangements have been completed. 5. SG&A guidance range reflects expense for ongoi"
+  },
+  {
+   "id": "NBIX-44",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-08-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000180/q2-2024xearningsrelease.htm",
+   "text": "Neurocrine Biosciences Reports Second Quarter 2024 Financial Results and Raises 2024 INGREZZA Sales Guidance INGREZZA ® (valbenazine) Second Quarter Net Product Sales of $580 Million Representing 32% Year-Over-Year Growth INGREZZA ® (valbenazine) 2024 Net Product Sales Guidance Raised to $2.25 - $2.3 Billion Top-Line Phase 2 Data Readouts for NBI-’568 and Luvadaxistat Remain On Track in Q3 SAN DIEGO, August 1, 2024 - Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the second quarter ended June 30, 2024 and provided an update on its 2024 financial guidance. “At Neurocrine, we are energized by the tremendous opportunity we see to help many more patients, and we ar"
+  },
+  {
+   "id": "NBIX-45",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-08-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000180/q2-2024xearningsrelease.htm",
+   "text": "ults with tardive dyskinesia and chorea associated with Huntington’s disease. Raised 2024 Net Sales Guidance and Updated Expense Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,250 $ 2,300 GAAP R&D Expense 2 $ 665 $ 695 Non-GAAP R&D Expense 3 $ 600 $ 630 GAAP and Non-GAAP IPR&D 4 $ 9 $ 9 GAAP SG&A Expense 5 $ 955 $ 975 Non-GAAP SG&A Expense 3, 5 $ 830 $ 850 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. GAAP R&D guidance includes $33 million of expense for development milestones in connection with our collaborations (Nxera, Voyager and Takeda) achieved or deemed probable to ac"
+  },
+  {
+   "id": "NBIX-46",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-08-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000180/q2-2024xearningsrelease.htm",
+   "text": "ilestone expenses are associated with our advancing pre-clinical and clinical pipeline. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $65 million in R&D and $110 million in SG&A and $14 million leased office space impairment charge in SG&A. 4. Acquired in-process R&D (IPR&D) is included in guidance once significant collaboration and licensing arrangements have been completed. 5. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth including the announced planned expansion of the psychiatry and long-term care sales teams and pre-launch commercial activities for crinecerfont. 2024 Pipeline Mil"
+  },
+  {
+   "id": "NBIX-47",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-05-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000116/q1-2024xearningsrelease.htm",
+   "text": "ial results for the first quarter ended March 31, 2024 and provided an update on its 2024 financial guidance. “Significant unmet need still exists for the many patients living with tardive dyskinesia as exemplified with INGREZZA’s first quarter year-over-year growth of 23%,” said Kevin Gorman, Ph.D., Chief Executive Officer of Neurocrine Biosciences. “With the recent New Drug Application submissions for crinecerfont, positive Phase 2 results for a potential first-in-class medication in NBI-’845 for major depressive disorder, and the deepest pipeline in our company’s history, Neurocrine Biosciences is well positioned to become a leader in neuroscience.” Financial Highlights Three Months Ended March 3"
+  },
+  {
+   "id": "NBIX-48",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-05-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000116/q1-2024xearningsrelease.htm",
+   "text": "ules, a new oral granules formulation of INGREZZA (valbenazine) capsules. Reaffirmed 2024 Net Sales Guidance and Updated Expense Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,100 $ 2,200 GAAP R&D Expense 2 $ 665 $ 695 Non-GAAP R&D Expense 3 $ 600 $ 630 GAAP and Non-GAAP IPR&D 4 $ 6 $ 6 GAAP SG&A Expense 5 $ 920 $ 940 Non-GAAP SG&A Expense 3, 5 $ 810 $ 830 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. GAAP R&D guidance includes approximately $34 million expense for development milestones in connection with our collaborations (Nxera, Voyager and Takeda) achieved in first quar"
+  },
+  {
+   "id": "NBIX-49",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-05-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000116/q1-2024xearningsrelease.htm",
+   "text": "ilestone expenses are associated with our advancing pre-clinical and clinical pipeline. 3. Non-GAAP guidance adjusted primarily to exclude estimated non-cash stock-based compensation expense of $65 million in R&D and $110 million in SG&A. 4. Acquired in-process R&D (IPR&D) is included in guidance once significant collaboration and licensing arrangements have been completed. 5. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth including the expanded indication to treat chorea associated with Huntington’s disease and pre-launch commercial activities for crinecerfont. • 2024 Expected Pipeline Milestones and Key Activities Program Indication Expected Mile"
+  },
+  {
+   "id": "NBIX-50",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-05-01",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000116/q1-2024xearningsrelease.htm",
+   "text": "ne Biosciences, Inc. Non-GAAP Financial Measures In addition to the financial results and financial guidance that are provided in accordance with accounting principles generally accepted in the United States (GAAP), this press release also contains the following non-GAAP financial measures: non-GAAP R&D expense, non-GAAP SG&A expense, and non-GAAP net income and net income per share. When preparing the non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these non-GAAP financial measures exclude: n"
+  },
+  {
+   "id": "NBIX-51",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000033/q4-2023xearningsrelease.htm",
+   "text": "r-Year Growth of 25% and 29% Respectively INGREZZA ® (valbenazine) Full Year 2024 Net Product Sales Guidance of $2.1 - $2.2 Billion Crinecerfont FDA Regulatory Submission Anticipated in the Second Quarter for the Treatment of Congenital Adrenal Hyperplasia in Adults and Pediatrics SAN DIEGO, Feb. 7, 2024 - Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the fourth quarter and full year ended December 31, 2023 and provided financial guidance for 2024. “I’m exceptionally proud of the progress we made with INGREZZA last year, helping more patients than ever before treat their tardive dyskinesia. In addition, the positive Phase 3 crinecerfont results for the treatme"
+  },
+  {
+   "id": "NBIX-52",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000033/q4-2023xearningsrelease.htm",
+   "text": " the treatment of Congenital Adrenal Hyperplasia in adults and pediatrics. Full Year 2024 Financial Guidance Range (in millions) Low High INGREZZA Net Product Sales 1 $ 2,100 $ 2,200 GAAP R&D Expense 2 $ 645 $ 675 Non-GAAP R&D Expense 3 $ 570 $ 600 GAAP SG&A Expense 4 $ 930 $ 950 Non-GAAP SG&A Expense 3, 4 $ 830 $ 850 1. INGREZZA sales guidance reflects expected net product sales of INGREZZA in tardive dyskinesia and chorea associated with Huntington’s disease. 2. GAAP R&D guidance includes expense for development milestones once determined achievement is deemed probable. Acquired in-process research and development expense is included in guidance once significant collaboration and licensing arrange"
+  },
+  {
+   "id": "NBIX-53",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2024-02-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447524000033/q4-2023xearningsrelease.htm",
+   "text": "d non-cash stock-based compensation expense of $75 million in R&D and $100 million in SG&A. 4. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth including the expanded indication to treat chorea associated with Huntington’s disease and pre-launch commercial activities for crinecerfont. 2024 Expected Pipeline Milestones and Key Activities Program Indication Expected Milestones / Key Activities Valbenazine * (Selective VMAT2 Inhibitor) Sprinkle Formulation for Tardive Dyskinesia / Chorea in Huntington’s Disease PDUFA April 30, 2024 Crinecerfont (CRF1 Receptor Antagonist) Congenital Adrenal Hyperplasia (Pediatric and Adult) Submitting New Drug Applicatio"
+  },
+  {
+   "id": "NBIX-54",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-10-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447523000072/q3-2023xearningsrelease.htm",
+   "text": " Neurocrine Biosciences Reports Third Quarter 2023 Financial Results and Raises 2023 INGREZZA Sales Guidance INGREZZA ® (valbenazine) Third Quarter Net Product Sales of $486 Million Representing 29% Year-Over-Year Growth INGREZZA ® (valbenazine) 2023 Net Product Sales Guidance Raised to $1.82 - $1.84 Billion Crinecerfont Adult and Pediatric CAHtalyst TM Studies Met Primary Endpoint and Key Secondary Endpoints for the Treatment of Congenital Adrenal Hyperplasia Analyst Day on December 5th Focused on R&D Portfolio and Strategy SAN DIEGO, Oct. 31, 2023 - Neurocrine Biosciences, Inc. (Nasdaq: NBIX) today announced its financial results for the third quarter ended September 30, 2023, raised 2023 net sale"
+  },
+  {
+   "id": "NBIX-55",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-10-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447523000072/q3-2023xearningsrelease.htm",
+   "text": "cy (21-OHD). The study met both its primary and key secondary endpoint. Updated 2023 INGREZZA Sales Guidance and Operating Expense Guidance: Range (in millions) Low High INGREZZA Net Product Sales 1 $ 1,820 $ 1,840 GAAP R&D Expense 2 $ 560 $ 570 Non-GAAP R&D Expense 3 $ 490 $ 500 GAAP and Non-GAAP IPR&D 4 $ 144 $ 144 GAAP SG&A Expense 5 $ 870 $ 890 Non-GAAP SG&A Expense 3 $ 740 $ 760 1. INGREZZA sales guidance for fiscal 2023 reflects expected sales of INGREZZA. 2. GAAP R&D guidance includes amounts for milestones that are probable of achievement or have been achieved. 3. Non-GAAP guidance adjusted primarily to exclude estimated non-cash stock-based compensation expense of $70 million in R&D and $12"
+  },
+  {
+   "id": "NBIX-56",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-10-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447523000072/q3-2023xearningsrelease.htm",
+   "text": "nd development once significant collaboration and licensing arrangements have been completed. IPR&D guidance includes $143.9 million associated with the new strategic collaboration with Voyager. 5. SG&A guidance range reflects increased spend following INGREZZA expanded indication to treat chorea associated with Huntington’s disease and positive Phase 3 results in CAH. Conference Call and Webcast Today at 8:00 AM Eastern Time Neurocrine Biosciences will hold a live conference call and webcast today at 8:00 a.m. Eastern Time (5:00 a.m. Pacific Time). Participants can access the live conference call by dialing 800-895-3361 (US) or 785-424-1062 (International) using the conference ID: NBIX. The webcast"
+  },
+  {
+   "id": "NBIX-57",
+   "for": "acc.guidance_miss_3y",
+   "doc": "8-K filed 2023-10-31",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447523000072/q3-2023xearningsrelease.htm",
+   "text": "ration with AbbVie ) Non-GAAP Financial Measures In addition to the financial results and financial guidance that are provided in accordance with accounting principles generally accepted in the United States (GAAP), this press release also contains the following non-GAAP financial measures: non-GAAP R&D expense, non-GAAP SG&A expense, and non-GAAP net income and net income per share. When preparing the non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these non-GAAP financial measures exclude: n"
+  },
+  {
+   "id": "NBIX-58",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "stock-based compensation expense of approximately $115 million in R&D and $170 million in SG&A, including approximately $58 million related to the acceleration of vesting of equity awards for Soleno employees which vested in full upon the closing of the transaction, and acquisition, integration and divestiture-related expenses of approximately $95 million. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. IPR&D guidance represents completed collaboration and licensing arrangements. 5. SG&A guidance reflects expense for ongoing commercial initiatives, including the recent expansion of our sales teams in Q1 2026, supporting INGREZZA growth and the launch of CRENESSITY and VYKAT XR. 6. In connection with the acquisition of Soleno, the Company recorded approximately $2.2 billion of intellectual property related to VYKAT XR to the balance she"
+  },
+  {
+   "id": "NBIX-59",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "expense), net, Non-GAAP net income and earnings per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financial measures exclude: non-cash stock-based compensation expense, amortization expense related to acquired intangible assets, amortization expense related to acquisition-date inventory fair value step-up, stock based compensation expense related to the acceleration of vesting of equity awards for Soleno employees, changes in fair value of equity investments, acquisition-related transaction and integration costs, gains on sales of businesses, net of transaction costs, other divestiture-related transaction costs, changes in foreign currency exchange rates and certain adjustments to income tax expense. These Non-GAAP financial measures are provided as "
+  },
+  {
+   "id": "NBIX-60",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "difficult, time-consuming or costly than expected, disruption from the acquisition, making it more difficult to conduct business as usual or maintain relationships with employees, customers, suppliers, other business partners or governmental entities, unknown or inestimable liabilities, the risk of litigation and/or regulatory actions related to the acquisition, and the degree and pace of market uptake of VYKAT XR; risks related to the development of our product candidates; risks associated with our dependence on third parties for development, manufacturing, and commercialization activities for our products and product candidates, and our ability to manage these third parties; risks that the FDA or other regulatory authorities may make adverse decisions regarding our products or product candidates; risks that development activities may not be initiated or completed on time or at all, or may be delayed for regulatory, manufacturing, or other reasons, may not be successful or replicate previous cl"
+  },
+  {
+   "id": "NBIX-61",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-07-30",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000035/q2-2026xearningsrelease.htm",
+   "text": "uding amortization of acquired intangible assets 23.2 10.3 36.9 18.5 Research and development 326.7 244.3 622.9 507.5 Acquired in-process research and development 1.5 — 22.7 0.1 Selling, general, and administrative 439.7 286.3 758.2 562.8 Amortization of acquired intangible assets 16.4 1.0 16.5 2.0 Gain on sale of business, net of transaction costs — — (28.6) — Total operating expenses 807.5 541.9 1,428.6 1,090.9 Operating income 151.5 145.6 344.9 169.2 Other income (expense): Interest expense (2.9) — (2.9) — Unrealized gain (loss) on equity investments 1.2 (6.7) 26.5 (37.3) Investment income and other, net 12.4 20.6 40.5 42.3 Total other income (expense), net 10.7 13.9 64.1 5.0 Income before provision for income taxes 162.2 159.5 409.0 174.2 Provision for income taxes 17.8 52.0 66.7 58.8 Net income $ 144.4 $ 107.5 $ 342.3 $ 115.4 Earnings per share, basic $ 1.43 $ 1.09 $ 3.40 $ 1.16 Earnings per share, diluted $ 1.39 $ 1.06 $ 3.30 $ 1.13 Weighted average common shares outstanding, basic 101."
+  },
+  {
+   "id": "NBIX-62",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": " related to our in-licensed product candidates. Development milestones are included in R&D guidance once achieved or deemed probable to achieve. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $90 million in R&D and $125 million in SG&A, divestiture-related expenses and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. IPR&D guidance represents completed collaboration and licensing arrangements. 5. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of CRENESSITY including expansion of sales teams. Conference Call and Webcast Today at 4:30 PM Eastern Time Neurocrine Biosciences will hold a live conference call and webcast today at 4:30 p.m. Eastern Time (1:30 p.m. Pacific Time)."
+  },
+  {
+   "id": "NBIX-63",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": "ting income, Non-GAAP net income and net income per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financial measures exclude: non-cash stock-based compensation expense, vacated legacy campus facility costs, net of sublease income, non-cash amortization expense related to acquired intangible assets, changes in fair value of equity investments, transaction and divestiture-related gains and/or expenses, changes in foreign currency exchange rates and certain adjustments to income tax expense. These Non-GAAP financial measures are provided as a complement to results provided in accordance with GAAP as management believes these Non-GAAP financial measures help indicate underlying trends in the Company's business, are important in comparing current results "
+  },
+  {
+   "id": "NBIX-64",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": ") 2026 2025 Revenues: Net product sales $ 811.0 $ 563.7 Collaboration revenues 3.5 8.9 Total revenues 814.5 572.6 Operating expenses: Cost of revenues 13.8 9.2 Research and development 296.2 263.2 Acquired in-process research and development 21.2 0.1 Selling, general, and administrative 318.5 276.5 Gain on sale of business, net of transaction costs (28.6) — Total operating expenses 621.1 549.0 Operating income 193.4 23.6 Other income (expense): Unrealized gain (loss) on equity investments 25.3 (30.6) Investment income and other, net 28.1 21.7 Total other income (expense), net 53.4 (8.9) Income before provision for income taxes 246.8 14.7 Provision for income taxes 48.9 6.8 Net income $ 197.9 $ 7.9 Earnings per share, basic $ 1.97 $ 0.08 Earnings per share, diluted $ 1.91 $ 0.08 Weighted average common shares outstanding, basic 100.5 99.7 Weighted average common shares outstanding, diluted 103.4 102.5 TABLE 2 NEUROCRINE BIOSCIENCES, INC. CONDENSED CONSOLIDATED BALANCE SHEETS (unaudited) (in mi"
+  },
+  {
+   "id": "NBIX-65",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000025/q1-2026xearningsrelease.htm",
+   "text": "3 NEUROCRINE BIOSCIENCES, INC. RECONCILIATION OF GAAP TO NON-GAAP FINANCIAL RESULTS (unaudited) Three Months Ended March 31, (in millions) 2026 2025 GAAP operating income 1 $ 193.4 $ 23.6 Adjustments: Stock-based compensation expense - R&D 24.2 23.0 Stock-based compensation expense - SG&A 33.0 29.8 Gain on sale of business, net of transaction costs 2 (28.6) — Amortization of acquired intangible assets 0.1 1.0 Other 3 4.3 1.4 Non-GAAP operating income 1 $ 226.4 $ 78.8 Three Months Ended March 31, (in millions, except per share data) 2026 2025 GAAP net income 1 $ 197.9 $ 7.9 Adjustments: Stock-based compensation expense - R&D 24.2 23.0 Stock-based compensation expense - SG&A 33.0 29.8 Amortization of acquired intangible assets 0.1 1.0 Changes in fair values of equity investments 4 (25.3) 30.6 Gain on sale of business, net of transaction costs 2 (28.6) — Other 3 4.3 1.4 Income tax effect related to reconciling items 5 (5.1) (22.2) Non-GAAP net income 1 $ 200.5 $ 71.5 Diluted earnings per share: "
+  },
+  {
+   "id": "NBIX-66",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+   "text": " related to our in-licensed product candidates. Development milestones are included in R&D guidance once achieved or deemed probable to achieve. 3. Non-GAAP guidance adjusted to exclude estimated non-cash stock-based compensation expense of approximately $90 million in R&D and $125 million in SG&A, divestiture-related expenses and vacated legacy campus facility costs. Non-cash stock-based compensation expense for performance-based equity awards is included in guidance once the predefined performance-based criteria for vesting is achieved or deemed probable to achieve. 4. IPR&D guidance represents completed collaboration and licensing arrangements. 5. SG&A guidance range reflects expense for ongoing commercial initiatives supporting INGREZZA growth and the launch of CRENESSITY including expansion of sales teams expected to be completed by the end of the first quarter of 2026. Conference Call and Webcast Today at 4:30 PM Eastern Time Neurocrine Biosciences will hold a live conference call and "
+  },
+  {
+   "id": "NBIX-67",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+   "text": "ting income, Non-GAAP net income and net income per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financial measures exclude: non-cash stock-based compensation expense, charges associated with convertible senior notes, vacated legacy campus facility costs, net of sublease income, non-cash amortization expense related to acquired intangible assets, changes in fair value of equity investments, transaction and divestiture-related expenses, changes in foreign currency exchange rates and certain adjustments to income tax expense. These Non-GAAP financial measures are provided as a complement to results provided in accordance with GAAP as management believes these Non-GAAP financial measures help indicate underlying trends in the Company's business, are im"
+  },
+  {
+   "id": "NBIX-68",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000006/q4-2025xearningsrelease.htm",
+   "text": "P $ 1.88 $ 1.69 $ 6.39 $ 6.33 1. Includes the following expenses: Three Months Ended December 31, Twelve Months Ended December 31, (in millions) 2025 2024 2025 2024 Milestones (R&D) $ 3.9 $ 0.3 $ 65.4 $ 71.7 Acquired in-process research and development (IPR&D) $ 17.0 $ 3.0 $ 17.4 $ 12.5 2. Reflects impairment charges and other costs associated with our vacated legacy campus facilities, net of sublease income, as we transition to occupy our new campus facility. 3. Reflects charges associated with the settlement of convertible senior notes conversions. 4. Reflects periodic fluctuations in the fair values of equity investments. 5. Estimated income tax effect of Non-GAAP reconciling items are calculated using applicable statutory tax rates, taking into consideration any valuation allowance and adjustments to exclude tax benefits or expenses primarily relating to charges associated with convertible senior notes and non-cash stock-based compensation. TABLE 4 NEUROCRINE BIOSCIENCES, INC. RECONCILIATION"
+  },
+  {
+   "id": "NBIX-69",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": "expense, and Non-GAAP net income and net income per share. When preparing the Non-GAAP financial results and guidance, the Company excludes certain GAAP items that management does not consider to be normal, including recurring cash operating expenses that might not meet the definition of unusual or non-recurring items. In particular, these Non-GAAP financial measures exclude: non-cash stock-based compensation expense, charges associated with convertible senior notes, vacated legacy campus facility costs, net of sublease income, non-cash amortization expense related to acquired intangible assets, changes in fair value of equity investments, changes in foreign currency exchange rates and certain adjustments to income tax expense. These Non-GAAP financial measures are provided as a complement to results provided in accordance with GAAP as management believes these Non-GAAP financial measures help indicate underlying trends in the Company's business, are important in comparing current results with prio"
+  },
+  {
+   "id": "NBIX-70",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-10-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447525000180/q3-2025xearningsrelease.htm",
+   "text": ".64 1. Includes the following expenses: Three Months Ended September 30, Nine Months Ended September 30, (in millions) 2025 2024 2025 2024 Milestones (R&D) $ 1.0 $ 38.8 $ 61.5 $ 71.4 Acquired in-process research and development (IPR&D) $ 0.3 $ 1.0 $ 0.4 $ 9.5 2. Reflects charges associated with the settlement of convertible senior notes conversions. 3. Reflects impairment charges and other costs associated with our vacated legacy campus facilities, net of sublease income, as we transition to occupy our new campus facility. 4. Reflects periodic fluctuations in the fair values of equity investments. 5. Estimated income tax effect of Non-GAAP reconciling items are calculated using applicable statutory tax rates, taking into consideration any valuation allowance and adjustments to exclude tax benefits or expenses relating to charges associated with convertible senior notes and non-cash stock-based compensation. TABLE 4 NEUROCRINE BIOSCIENCES, INC. RECONCILIATION OF GAAP TO NON-GAAP EXPENSES (unaudit"
+  },
+  {
+   "id": "NBIX-71",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": " peptide, administered as a subcutaneous injection, and is currently in Phase 1 development for the potential treatment of CAH. CAH is a rare genetic disorder in which cortisol synthesis is impaired, leading to life-threatening adrenal crises and excessive androgen levels from birth. Standard of care relies on supraphysiologic doses of glucocorticoids, which cause multiple well-established complications over time. CRF-1 receptor antagonism offers a novel therapeutic approach: by antagonizing CRF-1, NBIP-01435 aims to reduce the drive to produce excess androgens, thereby allowing more physiologic gluc"
+  },
+  {
+   "id": "NBIX-72",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": " that are placed on the market. Drugs may be promoted only for the approved indication(s) and in accordance with the provisions of the approved label. However, companies may share truthful and not misleading information that is otherwise consistent with a product’s FDA approved labeling. The FDA and other agencies actively enforce the laws and regulations prohibiting pre-approval promotion of investigational drugs, as well as the promotion of off-label uses of approved drugs, and a company may be subject to significant liability. Physicians may prescribe legally available products for uses that are n"
+  },
+  {
+   "id": "NBIX-73",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": "ng and promotion of medicinal products are subject to both EU and EU Member States’ laws governing promotion of medicinal products, interactions with physicians and other healthcare professionals, misleading and comparative advertising and unfair commercial practices. General requirements for advertising and promotion of medicinal products, such as direct-to-consumer advertising of prescription medicinal products are established in EU law. However, the details are governed by regulations in individual EU Member States and can differ from one country to another. Regulatory Framework in the UK The Medi"
+  },
+  {
+   "id": "NBIX-74",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-02-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000007/nbix-20251231.htm",
+   "text": ". The limitations that telehealth places on the ability to conduct a thorough physical examination may impact the ability of providers to screen for TD or chorea associated with Huntington’s disease, leading to fewer patients being diagnosed and/or treated. Outside the U.S., reimbursement and healthcare payment systems vary significantly by country, and many countries have instituted price ceilings on specific products and therapies. The EU provides options for EU Member States to restrict the range of medicinal products for which their national health insurance systems provide reimbursement and to c"
+  }
+ ]
+}

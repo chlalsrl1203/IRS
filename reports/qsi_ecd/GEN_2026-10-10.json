@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000849399",
+  "pvp": {
+    "accession": "0001140361-26-029830",
+    "filed": "2026-07-28",
+    "measure_category": "revenue_growth",
+    "measure_name": "Net Revenue Growth",
+    "n_years": 5,
+    "peer_tsr": 230.0,
+    "peer_tsr_text": "230",
+    "peo_cap_not_used": {
+      "2022-04-01": 20734811.0,
+      "2023-03-31": 5686393.0,
+      "2024-03-29": 29300356.0,
+      "2025-03-28": 33544036.0,
+      "2026-04-03": 33542362.0
+    },
+    "period_end": "2026-04-03",
+    "status": "OK",
+    "tsr": 98.0,
+    "tsr_text": "98",
+    "tsr_vs_peer": -0.5739130434782609,
+    "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm"
+  },
+  "ticker": "GEN",
+  "trading_plans": {
+    "answer": 1,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000849399-25-000092",
+        "adoptions": 0,
+        "filed": "2025-11-07",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000849399-26-000004",
+        "adoptions": 0,
+        "filed": "2026-02-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000849399-26-000017",
+        "adoptions": 0,
+        "filed": "2026-05-21",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000849399-26-000031",
+        "adoptions": 1,
+        "filed": "2026-08-07",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Bryan Ko"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

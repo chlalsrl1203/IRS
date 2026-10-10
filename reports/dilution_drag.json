@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-12",
+ "generated_at": "2026-10-10",
  "engine_module": "engine/dilution.py",
  "validation_status": {
   "dilution_drag": "IMPLEMENTED_NOT_VALIDATED"
@@ -15,8 +15,8 @@
   "note": "sbc_to_fcf_pct는 보상비용의 크기를, 희석 드래그는 주주 지분의 순변화(발행−자사주매입)를 잰다. 반례: VRT SBC 2.4%인데 드래그 −7.66%p, WDAY SBC 58.6%인데 −2.98%p."
  },
  "coverage": {
-  "measured": 65,
-  "total": 72,
+  "measured": 74,
+  "total": 80,
   "held_measured": 14,
   "held_total": 18,
   "held_unmeasured_weight": 0.20919547452328122
@@ -43,13 +43,12 @@
   },
   "NO_SHARE_DATA": {
    "tickers": [
-    "ERIE",
     "HLNE",
     "RYAN"
    ],
    "held_weight": 0.053377249858843366,
    "recoverable_from_companyfacts": false,
-   "cause": "다중클래스·Up-C 구조라 주식수가 클래스별 차원(dimension)으로 보고되는데 companyfacts는 무차원 사실만 담는다. 같은 캐시에 연차 매출은 정상적으로 들어 있어 캐시 누락이 아님을 확인했다."
+   "cause": "다중클래스·Up-C 구조라 주식수가 클래스별 차원(dimension)으로 보고되는데 companyfacts는 무차원 사실만 담는다. v3.99부터 SEC 재무제표 데이터셋(FSDS)의 클래스별 값으로 재시도하며, 여기 남은 종목은 그 경로로도 증명되지 않은 경우다(종목별 fsds_status 참고: NCI_PRESENT=Up-C라 유닛 교환과 희석 구분 불가, NO_CLASS_SHARES=가중평균 주식수가 표준 태그로 공시되지 않음)."
   },
   "MISSING_YEAR": {
    "tickers": [
@@ -68,7 +67,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -79,6 +77,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 410259455.0,
    "shares_end": 375900000.0,
@@ -97,7 +96,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -108,6 +106,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 485500000.0,
    "shares_end": 427000000.0,
@@ -126,7 +125,6 @@
    "end_year": 2025,
    "span": 6,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -137,6 +135,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 43509000.0,
    "shares_end": 32639000.0,
@@ -155,7 +154,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2021": 999.949533909608
@@ -170,6 +168,7 @@
      1
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 275800000.0,
    "shares_end": 313000000.0,
@@ -188,7 +187,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -199,6 +197,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1416700000.0,
    "shares_end": 1494500000.0,
@@ -217,7 +216,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -228,6 +226,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 299371129.0,
    "shares_end": 333089213.0,
@@ -246,7 +245,6 @@
    "end_year": 2025,
    "span": 6,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -257,6 +255,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 113947000.0,
    "shares_end": 81716000.0,
@@ -275,7 +274,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -286,6 +284,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 294000000.0,
    "shares_end": 237000000.0,
@@ -304,7 +303,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -315,6 +313,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "midpoint",
    "year_labeling_check": {
     "midpoint": [
@@ -346,7 +345,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -357,6 +355,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 407240000.0,
    "shares_end": 425800000.0,
@@ -375,7 +374,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -386,6 +384,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 162400000.0,
    "shares_end": 157700000.0,
@@ -404,7 +403,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -415,6 +413,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 204783000.0,
    "shares_end": 195214000.0,
@@ -433,7 +432,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -444,6 +442,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 930000000.0,
    "shares_end": 956000000.0,
@@ -462,7 +461,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -473,6 +471,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 68544000.0,
    "shares_end": 54208000.0,
@@ -491,7 +490,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2023": 5.9998126358390165,
@@ -506,6 +504,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 170431703.07904512,
    "shares_end": 145805000.0,
@@ -524,7 +523,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "AdjustedWeightedAverageShares",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -535,6 +533,7 @@
      0
     ]
    },
+   "share_tag": "AdjustedWeightedAverageShares",
    "year_labeling": "end_year",
    "shares_base": 284840000.0,
    "shares_end": 301742797.0,
@@ -553,7 +552,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -564,6 +562,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 185760000.0,
    "shares_end": 209118000.0,
@@ -582,7 +581,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -593,6 +591,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 85756000.0,
    "shares_end": 87579000.0,
@@ -639,7 +638,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -650,6 +648,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 46600000.0,
    "shares_end": 44800000.0,
@@ -662,21 +661,12 @@
    "sbc_to_fcf_pct": null
   },
   {
-   "ticker": "ERIE",
-   "status": "NO_SHARE_DATA",
-   "annual_revenue_years_in_facts": 20,
-   "detail": "주식수 태그 ('WeightedAverageNumberOfDilutedSharesOutstanding', 'AdjustedWeightedAverageShares') 어느 것도 연차 보고가 없다 — 같은 companyfacts에 연차 매출은 20건 있으므로 캐시 누락이 아니다(다중클래스·Up-C 종목은 클래스별 차원 데이터로 보고되는데 companyfacts는 무차원 사실만 담는다)",
-   "weight_final": null,
-   "sbc_to_fcf_pct": null
-  },
-  {
-   "ticker": "EXEL",
+   "ticker": "EME",
    "status": "OK",
-   "base_year": 2020,
+   "base_year": 2019,
    "end_year": 2025,
-   "span": 5,
+   "span": 6,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -687,6 +677,116 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 56519281.0,
+   "shares_end": 45145767.0,
+   "share_count_change_pct": -0.20123246083049073,
+   "fcf_cagr_total": 0.2530348176040369,
+   "fcf_cagr_per_share": 0.3008475524628882,
+   "dilution_drag": 0.04781273485885129,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "ERIE",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "basis": "fsds_as_converted_class",
+    "class": "CommonClassA",
+    "adopted": true,
+    "eps_checks": [
+     {
+      "class": "CommonClassA",
+      "fy": 2024,
+      "eps": 11.48,
+      "shares": 52306266.0,
+      "net_income": 600314000.0,
+      "rel_err": 0.0002697482983906596
+     },
+     {
+      "class": "CommonClassA",
+      "fy": 2025,
+      "eps": 10.69,
+      "shares": 52305424.0,
+      "net_income": 559335000.0,
+      "rel_err": 0.00033972027496953494
+     },
+     {
+      "class": "CommonClassA",
+      "fy": 2023,
+      "eps": 8.53,
+      "shares": 52299411.0,
+      "net_income": 446061000.0,
+      "rel_err": 0.0001187636444341944
+     },
+     {
+      "class": "CommonClassA",
+      "fy": 2020,
+      "eps": 5.61,
+      "shares": 52313360.0,
+      "net_income": 293304000.0,
+      "rel_err": 0.0005930693069307047
+     },
+     {
+      "class": "CommonClassA",
+      "fy": 2021,
+      "eps": 5.69,
+      "shares": 52307302.0,
+      "net_income": 297860000.0,
+      "rel_err": 0.0007770483448600318
+     },
+     {
+      "class": "CommonClassA",
+      "fy": 2022,
+      "eps": 5.71,
+      "shares": 52297990.0,
+      "net_income": 298569000.0,
+      "rel_err": 0.00017591545002981768
+     }
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding[ClassOfStock=CommonClassA]",
+   "source": "fsds:0001628280-26-010666,0000922621-23-000007",
+   "year_labeling": "end_year(verified_vs_ledger_revenue)",
+   "year_labeling_check": [
+    6,
+    0
+   ],
+   "shares_base": 52313360.0,
+   "shares_end": 52305424.0,
+   "share_count_change_pct": -0.00015170120978658108,
+   "fcf_cagr_total": 0.14742747089436659,
+   "fcf_cagr_per_share": 0.14746228729053978,
+   "dilution_drag": 3.481639617319843e-05,
+   "per_share_declined": false,
+   "companyfacts_status": "NO_SHARE_DATA",
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "EXEL",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "midpoint",
    "year_labeling_check": {
     "midpoint": [
@@ -718,7 +818,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -729,6 +828,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 56060039.0,
    "shares_end": 55436972.0,
@@ -747,7 +847,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -758,6 +857,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 36738000.0,
    "shares_end": 35413000.0,
@@ -776,7 +876,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -787,6 +886,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 600000000.0,
    "shares_end": 619000000.0,
@@ -805,7 +905,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -816,6 +915,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 82855392.0,
    "shares_end": 85911653.0,
@@ -830,8 +930,10 @@
   {
    "ticker": "HLNE",
    "status": "NO_SHARE_DATA",
-   "annual_revenue_years_in_facts": 10,
-   "detail": "주식수 태그 ('WeightedAverageNumberOfDilutedSharesOutstanding', 'AdjustedWeightedAverageShares') 어느 것도 연차 보고가 없다 — 같은 companyfacts에 연차 매출은 10건 있으므로 캐시 누락이 아니다(다중클래스·Up-C 종목은 클래스별 차원 데이터로 보고되는데 companyfacts는 무차원 사실만 담는다)",
+   "source": "fsds:0001433642-26-000019,0001433642-23-000051",
+   "fsds_status": "NO_CLASS_SHARES",
+   "detail": "FSDS 클래스 경로도 불가: 클래스별 희석 가중평균 주식수가 데이터셋에 없다",
+   "companyfacts_status": "NO_SHARE_DATA",
    "weight_final": 0.053377249858843366,
    "sbc_to_fcf_pct": null
   },
@@ -842,7 +944,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -853,6 +954,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 75679000.0,
    "shares_end": 87473000.0,
@@ -871,7 +973,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -882,6 +983,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 86722000.0,
    "shares_end": 81025000.0,
@@ -900,7 +1002,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -911,6 +1012,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 189000000.0,
    "shares_end": 173000000.0,
@@ -929,7 +1031,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2024": 9.999992657155236,
@@ -944,6 +1045,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1580050601.242701,
    "shares_end": 1337502000.0,
@@ -962,7 +1064,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -973,6 +1074,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "midpoint",
    "year_labeling_check": {
     "midpoint": [
@@ -998,13 +1100,12 @@
    "sbc_to_fcf_pct": null
   },
   {
-   "ticker": "MCK",
+   "ticker": "LULU",
    "status": "OK",
    "base_year": 2021,
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1015,6 +1116,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 130871000.0,
+   "shares_end": 119068000.0,
+   "share_count_change_pct": -0.09018804777223377,
+   "fcf_cagr_total": 0.09930078781039131,
+   "fcf_cagr_per_share": 0.12027904275848478,
+   "dilution_drag": 0.020978254948093467,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "MCK",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 160600000.0,
    "shares_end": 124100000.0,
@@ -1033,7 +1164,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1044,6 +1174,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 37708000.0,
    "shares_end": 29527000.0,
@@ -1062,7 +1193,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1073,6 +1203,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 63322000.0,
    "shares_end": 57921000.0,
@@ -1115,7 +1246,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2021": 2.0,
@@ -1130,6 +1260,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1069614000.0,
    "shares_end": 984451000.0,
@@ -1148,7 +1279,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1159,6 +1289,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 97800000.0,
    "shares_end": 102500000.0,
@@ -1177,7 +1308,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2023": 4.999990271947702,
@@ -1192,6 +1322,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1012388043.6654369,
    "shares_end": 1046691000.0,
@@ -1212,13 +1343,12 @@
    "sbc_to_fcf_pct": null
   },
   {
-   "ticker": "OKTA",
+   "ticker": "NYT",
    "status": "OK",
-   "base_year": 2021,
-   "end_year": 2026,
+   "base_year": 2020,
+   "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1229,6 +1359,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 168038000.0,
+   "shares_end": 164943000.0,
+   "share_count_change_pct": -0.018418452968971266,
+   "fcf_cagr_total": 0.15878286141811593,
+   "fcf_cagr_per_share": 0.16309927821222558,
+   "dilution_drag": 0.0043164167941096565,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "OKTA",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 127212000.0,
    "shares_end": 179290000.0,
@@ -1236,6 +1396,35 @@
    "fcf_cagr_total": 0.5009059570630001,
    "fcf_cagr_per_share": 0.40135408543143236,
    "dilution_drag": -0.09955187163156776,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "OSIS",
+   "status": "OK",
+   "base_year": 2021,
+   "end_year": 2026,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 18388000.0,
+   "shares_end": 17280000.0,
+   "share_count_change_pct": -0.06025668914509463,
+   "fcf_cagr_total": 0.14750531566806946,
+   "fcf_cagr_per_share": 0.16185747760751812,
+   "dilution_drag": 0.01435216193944866,
    "per_share_declined": false,
    "weight_final": null,
    "sbc_to_fcf_pct": null
@@ -1271,7 +1460,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1282,6 +1470,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 56305000.0,
    "shares_end": 54770000.0,
@@ -1300,7 +1489,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "adopted": true,
     "basis": "spliced_filings",
@@ -1313,6 +1501,7 @@
     ],
     "note": "공시본별 겹침 비율로 이어붙여 기준을 통일했다 — 공시본 하나가 통째로 다른 단위로 보고한 경우"
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 4768343300.0,
    "shares_end": 5929576000.0,
@@ -1331,7 +1520,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1342,6 +1530,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 587600000.0,
    "shares_end": 588100000.0,
@@ -1360,7 +1549,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1371,6 +1559,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 129805034.0,
    "shares_end": 130200000.0,
@@ -1389,7 +1578,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1400,6 +1588,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 596264000.0,
    "shares_end": 687771000.0,
@@ -1412,13 +1601,12 @@
    "sbc_to_fcf_pct": null
   },
   {
-   "ticker": "PTC",
+   "ticker": "PSN",
    "status": "OK",
    "base_year": 2020,
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1429,6 +1617,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 101205000.0,
+   "shares_end": 109693000.0,
+   "share_count_change_pct": 0.0838693740427845,
+   "fcf_cagr_total": 0.09974857160860973,
+   "fcf_cagr_per_share": 0.08217629766126922,
+   "dilution_drag": -0.01757227394734051,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "PTC",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 116267000.0,
    "shares_end": 120777000.0,
@@ -1447,7 +1665,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1458,6 +1675,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1149000000.0,
    "shares_end": 1105000000.0,
@@ -1476,7 +1694,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1487,6 +1704,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 115100000.0,
    "shares_end": 108600000.0,
@@ -1505,7 +1723,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2022": 2.0000218369218676,
@@ -1520,6 +1737,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 90752987.82925129,
    "shares_end": 92391000.0,
@@ -1538,7 +1756,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1549,6 +1766,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 113254000.0,
    "shares_end": 109235000.0,
@@ -1567,7 +1785,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1578,6 +1795,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 145652000.0,
    "shares_end": 147340000.0,
@@ -1596,7 +1814,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1607,6 +1824,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 123978000.0,
    "shares_end": 150912000.0,
@@ -1625,7 +1843,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1636,6 +1853,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 105700000.0,
    "shares_end": 108200000.0,
@@ -1650,8 +1868,10 @@
   {
    "ticker": "RYAN",
    "status": "NO_SHARE_DATA",
-   "annual_revenue_years_in_facts": 16,
-   "detail": "주식수 태그 ('WeightedAverageNumberOfDilutedSharesOutstanding', 'AdjustedWeightedAverageShares') 어느 것도 연차 보고가 없다 — 같은 companyfacts에 연차 매출은 16건 있으므로 캐시 누락이 아니다(다중클래스·Up-C 종목은 클래스별 차원 데이터로 보고되는데 companyfacts는 무차원 사실만 담는다)",
+   "source": "fsds:0001849253-26-000006,0000950170-23-005335",
+   "fsds_status": "NCI_PRESENT",
+   "detail": "FSDS 클래스 경로도 불가: 비지배지분 순이익이 순이익의 1%를 넘는 해 [2020, 2021, 2022, 2023, 2024, 2025] — Up-C·자회사 구조에서는 상장 클래스 주식수 증가가 유닛 교환(지분 이동)인지 희석인지 구분할 수 없다",
+   "companyfacts_status": "NO_SHARE_DATA",
    "weight_final": null,
    "sbc_to_fcf_pct": null
   },
@@ -1662,7 +1882,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1673,6 +1892,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 477264888.0,
    "shares_end": 638227141.0,
@@ -1691,7 +1911,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1702,6 +1921,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 60293000.0,
    "shares_end": 61058000.0,
@@ -1720,7 +1940,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1731,6 +1950,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 50195000.0,
    "shares_end": 41403000.0,
@@ -1749,7 +1969,6 @@
    "end_year": 2025,
    "span": 6,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2019": 8.0,
@@ -1765,6 +1984,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 641952112.0,
    "shares_end": 698378891.0,
@@ -1777,13 +1997,12 @@
    "sbc_to_fcf_pct": 0.16713297010749523
   },
   {
-   "ticker": "TENB",
+   "ticker": "TEAM",
    "status": "OK",
-   "base_year": 2020,
-   "end_year": 2025,
+   "base_year": 2021,
+   "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1794,6 +2013,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 249679000.0,
+   "shares_end": 260163000.0,
+   "share_count_change_pct": 0.04198991505092531,
+   "fcf_cagr_total": 0.10249663041567603,
+   "fcf_cagr_per_share": 0.09346419712288845,
+   "dilution_drag": -0.009032433292787578,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "TENB",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 101009000.0,
    "shares_end": 120124000.0,
@@ -1812,7 +2061,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {
      "2020": 10.000020413162407
@@ -1827,6 +2075,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 489881000.0,
    "shares_end": 493551000.0,
@@ -1845,7 +2094,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1856,6 +2104,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 188223032.0,
    "shares_end": 214898240.0,
@@ -1874,7 +2123,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1885,6 +2133,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 41526000.0,
    "shares_end": 43812000.0,
@@ -1903,7 +2152,6 @@
    "end_year": 2025,
    "span": 3,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1914,6 +2162,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 1974928000.0,
    "shares_end": 2119689000.0,
@@ -1926,13 +2175,12 @@
    "sbc_to_fcf_pct": 0.1870326743828741
   },
   {
-   "ticker": "URBN",
+   "ticker": "ULTA",
    "status": "OK",
    "base_year": 2020,
    "end_year": 2026,
    "span": 6,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1943,6 +2191,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 58105000.0,
+   "shares_end": 44991000.0,
+   "share_count_change_pct": -0.2256948627484726,
+   "fcf_cagr_total": 0.0487235580518508,
+   "fcf_cagr_per_share": 0.09439894856313091,
+   "dilution_drag": 0.04567539051128011,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "URBN",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2026,
+   "span": 6,
+   "window_source": "ledger",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 100588677.0,
    "shares_end": 91808357.0,
@@ -1961,7 +2239,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -1972,6 +2249,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 115300000.0,
    "shares_end": 93800000.0,
@@ -1990,7 +2268,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -2001,6 +2278,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 307076397.0,
    "shares_end": 390652824.0,
@@ -2019,7 +2297,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -2030,6 +2307,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 263687539.0,
    "shares_end": 257976741.0,
@@ -2048,7 +2326,6 @@
    "end_year": 2026,
    "span": 5,
    "window_source": "ledger",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -2059,6 +2336,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 237019000.0,
    "shares_end": 268117000.0,
@@ -2077,7 +2355,6 @@
    "end_year": 2025,
    "span": 5,
    "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -2088,6 +2365,7 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 425100000.0,
    "shares_end": 404200000.0,
@@ -2100,13 +2378,12 @@
    "sbc_to_fcf_pct": 0.060014204545454544
   },
   {
-   "ticker": "ZTS",
+   "ticker": "WTS",
    "status": "OK",
    "base_year": 2020,
    "end_year": 2025,
    "span": 5,
-   "window_source": "derived_and_verified",
-   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "window_source": "ledger",
    "normalization": {
     "restated_years": {},
     "factor": null,
@@ -2117,6 +2394,36 @@
      0
     ]
    },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+   "year_labeling": "end_year",
+   "shares_base": 34000000.0,
+   "shares_end": 33500000.0,
+   "share_count_change_pct": -0.014705882352941124,
+   "fcf_cagr_total": 0.1400629150303625,
+   "fcf_cagr_per_share": 0.14344595052869646,
+   "dilution_drag": 0.003383035498333964,
+   "per_share_declined": false,
+   "weight_final": null,
+   "sbc_to_fcf_pct": null
+  },
+  {
+   "ticker": "ZTS",
+   "status": "OK",
+   "base_year": 2020,
+   "end_year": 2025,
+   "span": 5,
+   "window_source": "derived_and_verified",
+   "normalization": {
+    "restated_years": {},
+    "factor": null,
+    "basis": "latest_filed",
+    "adopted": false,
+    "jumps_before_after": [
+     0,
+     0
+    ]
+   },
+   "share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
    "year_labeling": "end_year",
    "shares_base": 478569000.0,
    "shares_end": 443835000.0,

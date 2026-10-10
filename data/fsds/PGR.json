@@ -1,0 +1,811 @@
+{
+"cik": "80661",
+"quarters": [
+{
+"accession": "0000080661-26-000086",
+"filed": "2026-03-02",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000080661-23-000006",
+"filed": "2023-02-27",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 62109000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 588100000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 585500000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 6.58
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 4176000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 87671000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 11539000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 587500000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 587700000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 14.4
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 3903000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 11308000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 586300000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 19.23
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 8763000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 584900000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 8480000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 3903000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 11308000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 11308000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 75372000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 3903000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 8480000000.0
+},
+{
+"adsh": "0000080661-26-000086",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 8480000000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 3350900000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 587100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 9.66
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "FeesAndOtherRevenues"
+},
+"tag": "Revenues",
+"value": 691800000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "AgencyChannel"
+},
+"tag": "Revenues",
+"value": 15789500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "NonInsuranceServiceBusiness"
+},
+"tag": "Revenues",
+"value": 226400000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherIndemnity",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 7700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 721500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "NonInsuranceServiceBusiness"
+},
+"tag": "Revenues",
+"value": 271400000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 958200000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "DirectChannel"
+},
+"tag": "Revenues",
+"value": 20135500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 587600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 5704600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 587100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 584400000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PropertySegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 2270000000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 32620100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "NetIncomeLoss",
+"value": 5704600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"IncomeStatementLocation": "InvestmentIncome"
+},
+"tag": "Revenues",
+"value": 2566600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 721500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 584900000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 584500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 44368700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CommercialLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 9088300000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"IncomeStatementLocation": "InvestmentIncome"
+},
+"tag": "Revenues",
+"value": -651900000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 47702000000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherIndemnity",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 2700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 5704600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "DirectChannel"
+},
+"tag": "Revenues",
+"value": 16830600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherIndemnity",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 0.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"IncomeStatementLocation": "InvestmentIncome"
+},
+"tag": "Revenues",
+"value": 2370100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 3350900000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "AgencyChannel"
+},
+"tag": "Revenues",
+"value": 17744700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 3350900000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CommercialLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 4875800000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 5.66
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "FeesAndOtherRevenues"
+},
+"tag": "Revenues",
+"value": 722100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "NonInsuranceServiceBusiness"
+},
+"tag": "Revenues",
+"value": 299300000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 5887400000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PropertySegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 1765700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CommercialLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 6945200000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 35373300000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 721500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.18
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "DirectChannel"
+},
+"tag": "Revenues",
+"value": 18492300000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ParentCompany"
+},
+"tag": "Revenues",
+"value": 3526400000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 49610700000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 37880200000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems",
+"ProductOrService": "FeesAndOtherRevenues"
+},
+"tag": "Revenues",
+"value": 603500000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 39261600000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 42658100000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PersonalLinesSegment",
+"ProductOrService": "UnderwritingOperations",
+"Subsegments": "AgencyChannel"
+},
+"tag": "Revenues",
+"value": 16881000000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 49241200000.0
+},
+{
+"adsh": "0000080661-23-000006",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PropertySegment",
+"ConsolidationItems": "OperatingSegments",
+"ProductOrService": "UnderwritingOperations"
+},
+"tag": "Revenues",
+"value": 2042500000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000080661-23-000006": {
+"adsh": "0000080661-23-000006",
+"cik": "80661",
+"filed": "20230227",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "PROGRESSIVE CORP/OH/",
+"period": "20221231"
+},
+"0000080661-26-000086": {
+"adsh": "0000080661-26-000086",
+"cik": "80661",
+"filed": "20260302",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "PROGRESSIVE CORP/OH/",
+"period": "20251231"
+}
+},
+"ticker": "PGR"
+}

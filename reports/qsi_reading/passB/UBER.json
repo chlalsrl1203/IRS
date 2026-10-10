@@ -1,0 +1,79 @@
+{
+ "ticker": "UBER",
+ "reader": "B",
+ "based_on_record": "040c89cba8a0fa866cf19f435f9e0b447bfc27279417e134efc998ad3bccb381",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "UBER-3",
+   "quote": "Leadership Overseeing CEO and senior leadership performance (including progress toward and attainment of safety goals) and succession planning to support the Company’s long-term strategy.",
+   "reason": "이사회가 CEO·경영진 승계 계획을 감독한다고 명시"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "material",
+   "excerpt_id": "UBER-12",
+   "quote": "the costs associated with defending, settling, or resolving pending and future lawsuits (including demands for arbitration) relating to the classification of Drivers have been and may continue to be material to our business.",
+   "reason": "기사 분류 소송 비용이 사업에 중대할 수 있다고 회사가 진술"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "answered",
+   "answer": "undisciplined",
+   "excerpt_id": "UBER-15",
+   "quote": "In January 2025, the Taiwan Fair Trade Commission issued a decision prohibiting the transaction. In the fourth quarter of 2024, we recorded an expense of $ 236 million in other income (expense), net in our consolidated statement of operations for the settlement of a termination fee. In April 2025, we settled the termination fee in cash.",
+   "reason": "Foodpanda Taiwan 인수 무산으로 해지 수수료 2.36억 달러 지급"
+  },
+  {
+   "qid": "acc.unfaithful_disclosure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "DOJ 불기소 합의가 공시 관련 제재인지 증거 묶음으로 확정 불가"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "분기 GB·EBITDA 가이던스 대비 실제가 전 기간 확인되지 않음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 대비 전 기간 이행 여부 확인 불가"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향 증거 없음 — 루브릭상 False 불가"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "UBER-19",
+   "quote": "Legal, non-income tax, and regulatory reserve changes and settlements 1,123 564 Goodwill and asset impairments/loss on sale of assets, net 3 2 Acquisition, financing and divestitures related expenses 25 43 Loss on lease arrangement, net 2 2 Restructuring and related charges 25 9",
+   "reason": "조정표상 법률·세금 충당 등 일회성 합계가 영업이익의 10% 이상"
+  },
+  {
+   "qid": "cmp.pricing_power",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가격결정력을 직접 보여주는 문장 없음"
+  }
+ ]
+}

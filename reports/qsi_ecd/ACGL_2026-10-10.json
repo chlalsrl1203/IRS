@@ -1,0 +1,65 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000947484",
+  "pvp": {
+    "accession": "0000947484-26-000038",
+    "filed": "2026-03-24",
+    "measure_category": "return_on_capital",
+    "measure_name": "Operating ROE",
+    "n_years": 5,
+    "peer_tsr": 234.32,
+    "peer_tsr_text": "234.32",
+    "peo_cap_not_used": {},
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 279.66,
+    "tsr_text": "279.66",
+    "tsr_vs_peer": 0.19349607374530575,
+    "url": "https://www.sec.gov/Archives/edgar/data/947484/000094748426000038/acgl-20260324.htm"
+  },
+  "ticker": "ACGL",
+  "trading_plans": {
+    "answer": 0,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000947484-25-000085",
+        "adoptions": 0,
+        "filed": "2025-11-06",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000947484-26-000017",
+        "adoptions": 0,
+        "filed": "2026-02-26",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000947484-26-000058",
+        "adoptions": 0,
+        "filed": "2026-05-05",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000947484-26-000124",
+        "adoptions": 0,
+        "filed": "2026-08-04",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

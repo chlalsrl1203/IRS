@@ -1,0 +1,103 @@
+{
+ "ticker": "DECK",
+ "reader": "A",
+ "based_on_record": "be4976350779af6d0e86270bd5c41800830043d2e4be9ab1b4b749acba5363cc",
+ "answers": [
+  {
+   "qid": "gov.dual_class",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "이중 주식 구조 관련 문장 없음"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "DECK-4",
+   "quote": "Reviews our overall talent management strategy, including development and succession plans for our executives and management.",
+   "reason": "위원회가 경영진 승계 계획을 검토"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "DECK-4",
+   "quote": "Reviews our overall talent management strategy, including development and succession plans for our executives and management.",
+   "reason": "위원회가 경영진 승계 계획을 검토하므로 False"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "소송 진술 없음"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "임원·이사 합계 지분 행이 발췌에 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "5년 인수 규모 근거 없음"
+  },
+  {
+   "qid": "cap.dividend_predictable",
+   "status": "not_applicable",
+   "answer": null,
+   "excerpt_id": "DECK-18",
+   "quote": "We have not declared or paid any cash dividends on our common stock since our inception",
+   "reason": "무배당 진술"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "차입 잔액 0 진술 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 진술 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축 진술 없음"
+  }
+ ]
+}

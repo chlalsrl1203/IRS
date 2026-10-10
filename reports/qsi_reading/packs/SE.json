@@ -1,0 +1,321 @@
+{
+ "ticker": "SE",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": true,
+ "based_on_record": "52a3a3d2e884163423d725340c7d0041ac81eaf534d623a0c397fecc94f5ca30",
+ "targets": [
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.insider_pattern",
+  "gov.cxo_turnover_24m",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "acc.material_impairment_3y",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.insider_pattern": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+  "gov.cxo_turnover_24m": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cap.debt_funded_buyback": "해당 연도 매입 지출이 없다",
+  "acc.guidance_miss_3y": "6-K 27건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "6-K 27건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_impairment_3y": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "SE-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ers, to the Central Provident Fund for our executive officers who are employed by our Singapore subsidiaries and are Singapore citizens or permanent residents as prescribed under the Singapore Central Provident Fund Act. The contribution rates vary, depending on the age of the executive officers, and whether such executive officer is a Singapore citizen or permanent resident. Share Incentive Plan We maintain a share incentive plan in order to attract, motivate, retain and reward talent, provide additional incentives to our officers, employees, directors and other eligible persons, and promote the success of our business and the interests of our shareholders. 116 Table of Contents 2009 Share Incentive Plan We adopted the 2009 Plan to promote the success of our business and the interests of our shareholders by providing additional incentives to attract, motivate, retain and reward our "
+  },
+  {
+   "id": "SE-2",
+   "for": "gov.insider_pattern",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ment in our ADSs will likely depend entirely on any future price appreciation of our ADSs. There is no guarantee that our ADSs will appreciate in value or even maintain the price at which the holders purchased our ADSs. Holders of ADSs may not realize a return on their investment in our ADSs and may even lose their entire investment in our ADSs. Our memorandum and articles of association contain anti-takeover provisions and a dual-class voting structure that could have a material adverse effect on the rights of h"
+  },
+  {
+   "id": "SE-3",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ffset our expenses. As a result, our banking business as a whole has been loss-making and may not become profitable in the near term or at all. 29 Table of Contents Furthermore, disruptions to the banking system and the surrounding speculation and uncertainty related to liquidity, solvency and capitalization of other industry players may negatively impact the industry’s reputation and lead to a level of distrust towards banks, especially in relation to new entrants or smaller scale players like us, which could adversely affect our banking business’ ability to access additional funds and attract more customer deposits. In April 2025, our Singapore digital bank became the parent bank of our Philippines bank and they have since been considered part of the same banking group. Banking groups are generally subject to additional regulatory requirements arising from being collectively regulated as a group and are required under regulatory requirements to comply with capital and financial reporting requirements on a consolidated group basis, and implement group oversight by the parent bank over the banking group’s regional operations. Any operational, reputational, financial or compliance issues that may affect one bank may also consequentially have adverse effects on the other bank in the banking "
+  },
+  {
+   "id": "SE-4",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ee, partner, agent or otherwise carry on any business in direct competition with us, (ii) solicit or entice away any of our customer, client, representative or agent, or (iii) employ, solicit or entice away or attempt to employ, solicit or entice away any of our officers, managers, consultants or employees. We have entered into indemnification agreements with our directors and executive officers, pursuant to which we will agree to indemnify our directors and executive officers against certain liabilities and expenses incurred by such persons in connection with claims made by reason of their being such a director or executive officer. B. Compensation Compensation of Directors and Executive Officers For the year ended December 31, 2025, we paid and accrued fees and compensation in cash (excluding equity-based awards) of approximately US$3.13 million to our directors and executive officers as a group. In addition, a total of 50,345 restricted share units were granted to our directors and executive officers in 2025, among which 30,345 restricted share units had fully vested within the year of 2025 and therefore do not show in the table below regarding the outstanding awards to our directors and executive officers as of December 31, 2025. For more information on share incentive grants to our di"
+  },
+  {
+   "id": "SE-5",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": " 800,000 (1) 120.0 April 17, 2022 April 17, 2032 5,000 (2) — May 15, 2023 — Silvio Savarese 7,500 (2) — August 12, 2024 — Chris Zhimin Feng 3,000,000 (1) 15.0 February 28, 2018 February 28, 2028 4,000,000 (1) 15.0 February 28, 2019 February 28, 2029 2,400,000 (1) 120.0 April 17, 2022 April 17, 2032 600,000 (2) — April 30, 2024 — Tony Tianyu Hou 1,200,000 (1) 15.0 February 28, 2018 February 28, 2028 500,000 (1) 120.0 April 17, 2022 April 17, 2032 200,000 (2) — July 31, 2023 — Terry Feng Zhao 300,000 (1) 15.0 January 31, 2019 January 31, 2029 3,000,000 (1) 120.0 April 17, 2022 April 17, 2032 Yanjun Wang 900,000 (1) 15.0 February 28, 2018 February 28, 2028 750,000 (1) 120.0 April 17, 2022 April 17, 2032 300,000 (2) — July 31, 2023 — David Jingye Chen 1,150,000 (1) 15.0 February 28, 2018 February 28, 2028 2,000,000 (1) 120.0 April 17, 2022 April 17, 2032 All directors and executive officers as a group 40,760,000 (1) Represents options to purchase Class A ordinary shares. (2) Represents unvested restricted shares units for Class A ordinary shares. 118 Table of Contents C. Board Practice Our board of directors consists of seven directors, three of whom are independent. A director is not required to hold any shares in our company to qualify to serve as a director. A director who is in any way, wh"
+  },
+  {
+   "id": "SE-6",
+   "for": "gov.insider_group_ownership",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "0 days, including through the exercise of any option, warrant or other right or the conversion of any other security. These shares, however, are not included in the computation of the percentage ownership of any other person. Class A Ordinary Shares Class B Ordinary Shares Percentage of Total Class A and Class B Ordinary Shares† Percentage of Total Voting Power Held †† Directors and Executive Officers: (1) Forrest Xiaodong Li (2) 58,550,224 45,527,793 16.0 57.6 Gang Ye (3) 26,133,071 — 4.2 1.5 David Heng Chen Seng 174,904 — * * Khoon Hua Kuok (4) 1,709,406 — 0.3 0.1 Jessica Sin Yin Tan 2,500 — * * David Y Ma (5) 2,260,892 — 0.4 * Silvio Savarese 2,500 — * * Chris Zhimin Feng (6) 10,303,969 — 1.7 — Tony Tianyu Hou (7) 3,624,681 — 0.6 * Terry Feng Zhao (8) 4,540,128 — 0.7 0.1 Yanjun Wang (9) 2,702,842 — 0.4 * David Jingye Chen (10) 12,058,574 — 2.0 0.7 All directors and executive officers as a group (11) 194,113,807 45,527,793 36.9 68.2 Principal Shareholders: Tencent entities (12) 104,264,743 — 17.0 — Blue Dolphins Venture Inc (13) — 45,527,793 7.4 54.6 Baillie Gifford & Co (14) 40,954,549 — 6.7 3.3 WCM Investment Management, LLC (15) 33,742,269 — 5.5 2.7 * Represents less than 0.1%. † For each person and group included in this column, percentage ownership is calculated by dividing the numb"
+  },
+  {
+   "id": "SE-7",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ntributions, which could limit other potential uses for our cash; ● investments and acquisitions could result in increased leverage, dilutive issuances of equity securities, adverse tax consequences, goodwill impairment charges, investment impairment charges or write-offs, and amortization expenses for other intangible assets; ● if we incur debt to fund any investments or acquisitions, such debt may subject us to material restrictions on our ability to conduct our business, including financial maintenance covenants; ● we may need to issue new shares as acquisition consideration or to raise additional capital to fund the acquisition consideration, which may dilute our existing investors’ interest in us; ● we may assume unknown material liabi"
+  },
+  {
+   "id": "SE-8",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": ". Operating Income and Expenses Our operating expenses consist of sales and marketing expenses, general and administrative expenses, provision for credit losses, research and development expenses and impairment of goodwill, net of other operating income. The table below sets forth our operating expenses, both in absolute amount and as a percentage of total revenue, for the periods indicated. For the Year Ended December 31, 2023 2024 2025 US$ Percentage of Total Revenue US$ Percentage of Total Revenue US$ Percentage of Total Revenue (thousands, except for percentages) Other operating income (221,021 ) (1.7 ) (180,443 ) (1.1 ) (121,328 ) (0.5 ) Sales and marketing expenses 2,779,223 21.3 3,472,686 20.6 4,492,203 19"
+  },
+  {
+   "id": "SE-9",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "rative expenses 1,134,724 8.7 1,267,706 7.6 1,357,791 5.9 Provision for credit losses 633,942 4.8 776,937 4.6 1,372,616 6.0 Research and development expenses 1,164,126 8.9 1,206,050 7.2 1,157,149 5.0 Impairment of goodwill 117,875 0.9 - - - - Total operating expenses 5,608,869 42.9 6,542,936 38.9 8,258,431 36.0 Other Operating Income Our other operating income consists primarily of rebates from e-commerce-related logistic services provided by third parties. Sales and Marketing Expenses Our sales and marketing expenses consist primarily of online and offline advertising expenses, sales incentives, and staff compensation and welfare expenses, which include share-based compensation for our employees engaged in sales"
+  },
+  {
+   "id": "SE-10",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "lude share-based compensation for our employees engaged in product development functions. We believe developing our platforms and content is extremely important to achieving our strategic objectives. Impairment of Goodwill We test goodwill for impairment at least annually and evaluate whether it is more likely than not that the fair value of a reporting unit is less than its carrying amount. Goodwill impairment is recognized as the excess of goodwill allocated to the reporting unit’s carrying amount over its fair value, not to exceed the total amount of goodwill allocated to the reporting unit. Results of Operations The table below sets forth a summary of our consolidated results of operations for the periods indicated, both in a"
+  },
+  {
+   "id": "SE-11",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "6,883 38,977 2,380,371 3,156,750 Non-current Finance lease liabilities 9,012 33,767 Others 62,666 74,533 71,678 108,300 12. BORROWINGS Bank borrowings As of December 31, 2024 and 2025, the Company had nil outstanding balance and $ 400,000 of undrawn revolving credit facilities. Secured borrowings Sale proceeds from transfers of loans receivable that do not qualify for sale accounting are reported as secured borrowings. As of December 31, 2024 and 2025, $ 80,615 and $ 116,910 , respectively, remained outstanding. Net cash flows from these transfers are presented in “Proceeds from (repayments of) secured borrowings, net” in the consolidated statements of cash "
+  },
+  {
+   "id": "SE-12",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": " an increase in bank customer deposits of US$389.3 million, as well as net proceeds from other funding sources related to the credit business of US$223.8 million, partially offset by the cash used in repurchase of convertible notes of US$204.6 million and repayment of bank borrowings of US$49.0 million. Material Cash Requirements Our material cash requirements as of December 31, 2025 and any subsequent interim period mainly include our convertible notes obligations, capital expenditures, other short-term working capital commitments, bank customer deposits, and other contractual cash obligations. We believe that our cash and cash equivalents, together with cash generated from operating and short-term investments, will be sufficient to"
+  },
+  {
+   "id": "SE-13",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ental change adjustments. Upon conversion, we have the right, at our option, to pay or deliver, either cash, ADSs, or a combination of cash and ADSs to converting holders. During fiscal year 2025, we repurchased US$432.3 million aggregate of principal amount of our 2026 convertible notes. As of March 31, 2026, approximately US$996.7 million aggregate of principal amount of our 2026 convertible notes remained outstanding. For further information, refer to Note 13 – Convertible Notes in the accompanying notes to consolidated financial statements included in “Item 17. Financial Statements.” Capital Expenditures Our capital expenditures amounted to US$258.3 million, US$321.6 million and US$524.5 million in 2023, 20"
+  },
+  {
+   "id": "SE-14",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": " least 14 calendar days prior to the specified time and place of payment. The ordinary shares that have been called upon and remain unpaid on the specified time are subject to forfeiture. Redemption, Repurchase and Surrender of Ordinary Shares We may issue shares on terms that such shares are subject to redemption, at our option or at the option of the holders thereof, on such terms and in such manner as may be determined, before the issue of such shares, by our board of directors. Our company may also repurchase any of our shares (including any redeemable shares) provided that the manner and terms of such purchase have been approved by our board of directors or are otherwise authorized by our Ninth Amended and Restated Memorandum and Articles of Association. Under the Companies"
+  },
+  {
+   "id": "SE-15",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "serve) if the company can, immediately following such payment, pay its debts as they fall due in the ordinary course of business. In addition, under the Companies Act no such share may be redeemed or repurchased (a) unless it is fully paid up, (b) if such redemption or repurchase would result in there being no shares issued and outstanding, or (c) if the company has commenced liquidation. In addition, our company may accept the surrender of any fully paid share for no consideration. Variations of Rights of Shares The rights attached to any class of shares may, unless otherwise provided by the terms of issue of the shares of or the rights attaching to that class, be materially adversely varied only with the written consent of the holders of a majority of the issued shares of that class or with the sanction o"
+  },
+  {
+   "id": "SE-16",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+   "text": "” “aim,” “future,” “intend,” “plan,” “believe,” “estimate,” “likely to,” “potential,” “confident,” “guidance,” and similar statements. Among other things, statements that are not historical facts, including statements about Sea’s beliefs and expectations, the business, financial and market outlook, and projections from its management in this announcement, as well as Sea’s strategic and operational plans, contain forward-looking statements. Sea may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exchange Commission (the “SEC”), in its annual report to shareholders, in press releases, and other written materials, and in oral statements made by it"
+  },
+  {
+   "id": "SE-17",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+   "text": "s in the markets where it operates, including segments within those industries; expected changes or guidance in its revenue, costs or expenditures; its ability to continue to source, develop and offer new and attractive online games and to offer other engaging Garena content; the expected growth of its Shopee, Monee and Garena businesses; its expectations regarding growth in its user base, level of engagement, and monetization; its ability to continue to develop new technologies and/or upgrade its existing technologies; growth and trends of its markets and competition in its industries; government policies and regulations relating to its industries, including the effects of any government orders or "
+  },
+  {
+   "id": "SE-18",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526219378/d78490dex991.htm",
+   "text": "our Shopee ecosystem and our ability to execute our strategies. We are on track to deliver our 2026 guidance: to grow Shopee’s annual GMV by around 25% year-on-year, with full year adjusted EBITDA no lower than 2025 in absolute dollar terms.” On Monee, Mr. Li said, “Monee continues to grow healthily while maintaining stable asset quality. Expansion into more user segments, off-Shopee use cases, and early markets like Brazil are giving us a much larger addressable opportunity across our portfolio. We remain confident that Monee will be a significant long-term profit contributor for Sea.” On Garena, Mr. Li said, “Garena had a stellar start to 2026, delivering its best quarter since 2021. This performa"
+  },
+  {
+   "id": "SE-19",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526088151/d106475dex991.htm",
+   "text": "and healthy profits.” In particular, Mr. Li commented on Shopee’s achievements in 2025 and its 2026 outlook, “The strong set of 2025 results is a validation of the effectiveness of our strategic choices for Shopee. We believe our strong growth momentum and healthy profitability will continue into the year ahead. For 2026, we aim to grow Shopee’s annual GMV by around 25% year-on-year, with its full year adjusted EBITDA no lower than that of 2025 in absolute dollar terms. We believe this is the right strategy to optimize Shopee’s long-term profitability.” Fourth Quarter 2025 Business Highlights ◾ Shopee ○ Gross orders totaled 4.0 billion for the quarter, increasing by 30.5% year-on-year. ○ GMV was US"
+  },
+  {
+   "id": "SE-20",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-03-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526088151/d106475dex991.htm",
+   "text": "s in the markets where it operates, including segments within those industries; expected changes or guidance in its revenue, costs or expenditures; its ability to continue to source, develop and offer new and attractive online games and to offer other engaging Garena content; the expected growth of its Garena, Shopee and Monee businesses; its expectations regarding growth in its user base, level of engagement, and monetization; its ability to continue to develop new technologies and/or upgrade its existing technologies; growth and trends of its markets and competition in its industries; government policies and regulations relating to its industries, including the effects of any government orders or "
+  },
+  {
+   "id": "SE-21",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312525275616/d75589dex991.htm",
+   "text": "s in the markets where it operates, including segments within those industries; expected changes or guidance in its revenue, costs or expenditures; its ability to continue to source, develop and offer new and attractive online games and to offer other engaging digital entertainment content; the expected growth of its digital entertainment, e-commerce and digital financial services businesses; its expectations regarding growth in its user base, level of engagement, and monetization; its ability to continue to develop new technologies and/or upgrade its existing technologies; growth and trends of its markets and competition in its industries; government policies and regulations relating to its industr"
+  },
+  {
+   "id": "SE-22",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-08-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312525178935/d411448dex991.htm",
+   "text": "ndaries of future game experiences by embracing AI. Given all of this, we are raising our full-year guidance for Garena, and expect bookings to grow more than 30% in 2025, year-on-year.” Second Quarter 2025 Highlights ◾ Group ○ Total GAAP revenue was US$5.3 billion, up 38.2% year-on-year. ○ Total gross profit was US$2.4 billion, up 52.1% year-on-year. ○ Total net income was US$414.2 million, as compared to total net income of US$79.9 million for the second quarter of 2024. ○ Total adjusted EBITDA 1 was US$829.2 million, as compared to US$448.5 million for the second quarter of 2024. 1 ◾ E-commerce ○ Gross orders totaled 3.3 billion for the quarter, increasing by 28.6% year-on-year. ○ GMV was US$29.8"
+  },
+  {
+   "id": "SE-23",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-05-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312525118807/d80392dex991.htm",
+   "text": " three businesses. Our strong start to the year gives us more confidence of achieving our full-year guidance.” said Forrest Li, Sea’s Chairman and Chief Executive Officer. On e-commerce, he said, “Shopee has delivered a record-high GMV and gross order volume in the first quarter. We sustained market leadership with improved profitability across both Asia and Brazil. Our strong execution of our operational priorities – enhancing price competitiveness, improving service quality, and strengthening our content ecosystem – has continued to make Shopee competitive and differentiated.” On digital financial services, Mr. Li shared that SeaMoney had been rebranded to Monee . “We chose the name Monee because "
+  },
+  {
+   "id": "SE-24",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-03-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312525045576/d930776dex991.htm",
+   "text": "at 2024 with all three businesses going back to strong, double-digit growth, exceeding our original guidance. It was also our second consecutive year of annual positive profit, with all three of our businesses recording positive adjusted EBITDA,” said Forrest Li, Sea’s Chairman and Chief Executive Officer. On e-commerce, he said, “GMV grew 28% year-on-year to surpass US$100 billion, and we achieved adjusted EBITDA profitability in both Asia and Brazil. We remain confident about our ability to continue delivering profitable growth in 2025 and expect Shopee’s full year 2025 GMV growth to be around 20%, with improving profitability.” Regarding digital financial services, Mr. Li shared, “We delivered ex"
+  },
+  {
+   "id": "SE-25",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-11-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000110465924116768/tm2428140d1_ex99-1.htm",
+   "text": "erring to the growth of our three businesses, he said, “Shopee is on track to deliver our full year guidance of mid-twenties year-on-year GMV growth. SeaMoney’s loan book grew by over 70% year-on-year this quarter, while maintaining a stable NPL ratio. And for Garena, we now expect Free Fire’s full year bookings to grow over 30% year-on-year.” On profitability, Mr. Li said, “I am very proud that we also improved our profitability while getting back to high growth. This quarter, Shopee achieved positive adjusted EBITDA, in both Asia and Brazil. As we continue to focus on delivering growth, we expect Shopee to remain profitable going forward.” Third Quarter 2024 Highlights § Group o Total GAAP revenue"
+  },
+  {
+   "id": "SE-26",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-08-13",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000110465924088947/tm2421549d1_ex99-1.htm",
+   "text": "igher profitability,” said Forrest Li, Sea’s Chairman and Chief Executive Officer. On Shopee’s 2024 outlook, he said “With the strong results delivered in the first half and our outlook for the rest of the year, we expect that Shopee will become adjusted EBITDA positive from the third quarter. We are also revising up our guidance for Shopee’s 2024 full year GMV growth to mid-20%.” On digital entertainment, Mr. Li said, “Garena delivered a strong quarter, with more than 20% year-on-year growth in bookings, mainly contributed by Free Fire.” On Free Fire, Mr. Li said, “I am very proud to share that, every single day throughout Q2, Free Fire had more than 100 million daily active players. This reinforc"
+  },
+  {
+   "id": "SE-27",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-05-14",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312524138204/d838689dex991.htm",
+   "text": "rst quarter have given us a strong start to 2024, and we are well on-track to deliver our full-year guidance.” First Quarter 2024 Highlights ◾ Group ○ Total GAAP revenue was US$3.7 billion, up 22.8% year-on-year. ○ Total gross profit was US$1.6 billion, up 9.7% year-on-year. ○ Total net loss was US$23.0 million, as compared to total net income of US$87.3 million for the first quarter of 2023. ○ Total adjusted EBITDA 1 was US$401.1 million, as compared to US$507.2 million for the first quarter of 2023. ○ As of March 31, 2024, cash, cash equivalents, short-term investments, and other treasury investments 2 were US$8.6 billion, representing a net change of US$(12.3) million from December 31, 2023. This"
+  },
+  {
+   "id": "SE-28",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2024-03-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000110465924030484/tm247857d1_ex99-1.htm",
+   "text": "s in the markets where it operates, including segments within those industries; expected changes or guidance in its revenue, costs or expenditures; its ability to continue to source, develop and offer new and attractive online games and to offer other engaging digital entertainment content; the expected growth of its digital entertainment, e-commerce and digital financial services businesses; its expectations regarding growth in its user base, level of engagement, and monetization; its ability to continue to develop new technologies and/or upgrade its existing technologies; its expectations regarding the use of proceeds from its financing activities, including its follow-on equity offerings and conv"
+  },
+  {
+   "id": "SE-29",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+   "text": "n Southeast Asia with a growing presence in Latin America. Garena is a leading global online games developer and publisher. 8 Forward-Looking Statements This announcement contains forward-looking statements. These statements are made under the “safe harbor” provisions of the U.S. Private Securities Litigation Reform Act of 1995. These forward-looking statements can be identified by terminology such as “may,” “could,” “will,” “expect,” “anticipate,” “aim,” “future,” “intend,” “plan,” “believe,” “estimate,” “likely to,” “potential,” “confident,” “guidance,” and similar statements. Among other things, statements that are not historical facts, including statements about Sea’s beliefs and expectations, the business, financial and market outlook, and projections from its management in this announcement, as well as Sea’s strategic and operational plans, contain forward-looking statements. Sea may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exc"
+  },
+  {
+   "id": "SE-30",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-11",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526344596/d120948dex991.htm",
+   "text": "for credit losses (605,673 ) (1,020,659 ) Research and development expenses (593,286 ) (610,829 ) Total operating expenses (3,701,880 ) (5,452,152 ) Operating income 944,123 1,243,316 Interest income 179,082 135,766 Interest expense (18,055 ) (2,961 ) Investment (loss) gain, net (1,237 ) 32,663 Net gain on debt extinguishment 15,688 898 Foreign exchange loss (2,971 ) (39,041 ) Income before income tax and share of results of equity investees 1,116,630 1,370,641 Income tax expense (280,371 ) (464,603 ) Share of results of equity investees (11,230 ) (9,700 ) Net income 825,029 896,338 Net income attributable to non-controlling interests (16,007 ) (27,613 ) Net income attributable to Sea Limited’s ordinary shareholders 809,022 868,725 Earnings per share: Basic 1.37 1.42 Diluted 1.30 1.37 Weighted average shares used in earnings per share computation: Basic 591,566,401 611,472,396 Diluted 636,229,639 634,487,453 12 UNAUDITED INTERIM CONDENSED CONSOLIDATED BALANCE SHEETS Amounts expressed in thous"
+  },
+  {
+   "id": "SE-31",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526219378/d78490dex991.htm",
+   "text": "n Southeast Asia with a growing presence in Latin America. Garena is a leading global online games developer and publisher. 9 Forward-Looking Statements This announcement contains forward-looking statements. These statements are made under the “safe harbor” provisions of the U.S. Private Securities Litigation Reform Act of 1995. These forward-looking statements can be identified by terminology such as “may,” “could,” “will,” “expect,” “anticipate,” “aim,” “future,” “intend,” “plan,” “believe,” “estimate,” “likely to,” “potential,” “confident,” “guidance,” and similar statements. Among other things, statements that are not historical facts, including statements about Sea’s beliefs and expectations, the business, financial and market outlook, and projections from its management in this announcement, as well as Sea’s strategic and operational plans, contain forward-looking statements. Sea may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exc"
+  },
+  {
+   "id": "SE-32",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-05-12",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312526219378/d78490dex991.htm",
+   "text": "rovision for credit losses (281,944 ) (465,504 ) Research and development expenses (295,858 ) (296,669 ) Total operating expenses (1,779,789 ) (2,552,595 ) Operating income 456,404 592,987 Interest income 88,823 67,143 Interest expense (9,081 ) (1,639 ) Investment (loss) gain, net (522 ) 22,690 Net gain on debt extinguishment 10,602 898 Foreign exchange loss (614 ) (27,304 ) Income before income tax and share of results of equity investees 545,612 654,775 Income tax expense (136,315 ) (213,999 ) Share of results of equity investees 1,528 (2,554 ) Net income 410,825 438,222 Net income attributable to non-controlling interests (7,775 ) (10,285 ) Net income attributable to Sea Limited’s ordinary shareholders 403,050 427,937 Earnings per share: Basic 0.68 0.70 Diluted 0.65 0.67 Weighted average shares used in earnings per share computation: Basic 590,286,824 611,583,932 Diluted 634,637,711 636,172,778 13 UNAUDITED INTERIM CONDENSED CONSOLIDATED BALANCE SHEETS Amounts expressed in thousands of US "
+  },
+  {
+   "id": "SE-33",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "amounts of cash or significant capital contributions, which could limit other potential uses for our cash; ● investments and acquisitions could result in increased leverage, dilutive issuances of equity securities, adverse tax consequences, goodwill impairment charges, investment impairment charges or write-offs, and amortization expenses for other intangible assets; ● if we incur debt to fund any investments or acquisitions, such debt may subject us to material restrictions on our ability to conduct our business, including financial maintenance covenants; ● we may need to issue new shares as acquisition consideration or to raise additional capital to fund the acquisition consideration, which may dilute our existing investors’ interest in us; ● we ma"
+  },
+  {
+   "id": "SE-34",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "If we fail to accurately predict demand for such services, or accurately adjust our operations in response to evolving business needs and economic and regulatory conditions, such as increases in fuel or energy costs, we may suffer increased costs or impairment charges. Any such adjustments may also not achieve their desired or expected results. The development of our logistics and fulfillment capabilities may also become increasingly complex and challenging to operate as they expand, and we may not be able to acquire land, land use rights, set up warehouses, or lease suitable facilities to directly handle delivery of products to our customers, on commercially acceptable terms or at all. In addition, the classification of certain types of contingent w"
+  },
+  {
+   "id": "SE-35",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "ins compared to our digital entertainment business. Operating Income and Expenses Our operating expenses consist of sales and marketing expenses, general and administrative expenses, provision for credit losses, research and development expenses and impairment of goodwill, net of other operating income. The table below sets forth our operating expenses, both in absolute amount and as a percentage of total revenue, for the periods indicated. For the Year Ended December 31, 2023 2024 2025 US$ Percentage of Total Revenue US$ Percentage of Total Revenue US$ Percentage of Total Revenue (thousands, except for percentages) Other operating income (221,021 ) (1.7 ) (180,443 ) (1.1 ) (121,328 ) (0.5 ) Sales and marketing expenses 2,779,223 21.3 3,472,686 20.6 "
+  },
+  {
+   "id": "SE-36",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "action-by-transaction basis, was less than 10% of total revenue in 2025. General and Administrative Expenses Our general and administrative expenses consist primarily of facilities and other overhead expenses, depreciation and amortization expenses, impairment losses, external professional service expenses, and staff compensation and welfare expenses, which include share-based compensation for our employees engaged in general and administrative functions. 98 Table of Contents Provision for Credit Losses Our provision for credit losses relates primarily to our credit business. Our provision for credit losses could increase with the growth of our lending activity and loans receivable or if the credit environment worsens. Changes in our lending activity"
+  },
+  {
+   "id": "SE-37",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "egistrant as specified in its charter) _______________________ N/A (Translation of Registrant’s name into English) Cayman Islands (Jurisdiction of incorporation or organization) 1 Fusionopolis Place, #17-10 , Galaxis Singapore 138522 (Address of principal executive offices) Yanjun Wang, Esq. Sea Limited 1 Fusionopolis Place, #17-10 , Galaxis Singapore 138522 Tel: + 65 6270-8100 E-mail: secnotice@sea.com (Name, Telephone, E-mail and/or Facsimile number and Address of Company Contact Person) Securities registered or to be registered pursuant to Section 12(b) of the Act: Title of each class Trading"
+  },
+  {
+   "id": "SE-38",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "on rates, and the availability of support and other platform services. We also compete to attract and retain content creators for e-commerce. As e-commerce is evolving in our markets, competition for market share is particularly intense. Our competitors may also consolidate or be acquired by other competitors, allowing them to obtain greater market share, gain access to greater resources and gain real advantages over us. In addition, we may face increasing competition from social media and social-commerce platforms, online and app-based search engines through which products and services may be researched "
+  },
+  {
+   "id": "SE-39",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "opy our proprietary intellectual property at large scale and for a low cost. AI systems could be used to generate huge volumes of derivative works that imitate or replicate our intellectual property, leading to unauthorized content that competes with our products, dilutes our brand value, and undermines our ability to monetize our intellectual property effectively. Such unauthorized use of AI to generate content similar to our intellectual property may reduce consumer demand for our products, as third parties may access or create AI-generated alternatives that offer comparable experiences without req"
+  },
+  {
+   "id": "SE-40",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-17",
+   "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm",
+   "text": "rofitability of our e-commerce business. Our investments and future investments in new markets may not generate sufficient user engagement or revenues to justify continued investment. We may not gain market share in such new markets or turn profitable. We face risks related to logistics and fulfillment. We rely on our own logistics operations as well as third-party logistics service providers to deliver Shopee’s orders. Interruptions or failures in such logistics services could prevent the timely or successful delivery of Shopee’s orders. These interruptions or failures may be due to unforeseen events tha"
+  }
+ ]
+}

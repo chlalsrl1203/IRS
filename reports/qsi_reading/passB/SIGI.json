@@ -1,0 +1,47 @@
+{
+ "ticker": "SIGI",
+ "reader": "B",
+ "based_on_record": "b931918db54914aea73b583198bb14752e4d43a846275b617401e6f1eed58973",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "SIGI-3",
+   "quote": "Reviews periodically with the CEO the plans for succession of Selective’s CEO, other executive officers, and other key employees, including plans for succession in the event of an emergency",
+   "reason": "위원회가 CEO·경영진 승계계획을 정기 검토"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "SIGI-8",
+   "quote": "We expect any potential ultimate liability for ordinary routine legal proceedings incidental to our insurance business will not be material to our consolidated financial condition after considering estimated loss provisions.",
+   "reason": "일상적 소송의 최종 책임이 중대하지 않을 것이라는 회사 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지분표의 임원·이사 합계 행이 증거묶음에 없음"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "2025년 실제 재해손실 금액·재보험 한도 수치 없음(2026 가이던스 6pt만 존재)"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "answered",
+   "answer": 0.972,
+   "excerpt_id": "SIGI-21",
+   "quote": "Dividends to policyholders ratio 0.1 0.1 — 0.2 (0.1) Combined ratio 97.2 103.0 (5.8) 96.5 6.5",
+   "reason": "2025년 합산비율 97.2%(손해율 66.3+사업비율 30.8+배당비율 0.1)"
+  }
+ ]
+}

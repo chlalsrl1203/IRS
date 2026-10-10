@@ -1,0 +1,21 @@
+{
+  "as_of": "2026-10-06",
+  "cik": "0001846832",
+  "cxo": {
+    "reason": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "같은 회계연도의 차입 발행·매입 값이 없다"
+  },
+  "insider": {
+    "reason": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "restatement": {
+    "reason": "20-F/6-K 발행사 — 8-K Item 4.02 의무가 없다",
+    "status": "UNAVAILABLE"
+  },
+  "ticker": "DLO"
+}

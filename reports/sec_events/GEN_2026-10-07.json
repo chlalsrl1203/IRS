@@ -1,0 +1,458 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000849399",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 3,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "가장 최근 공통 회계연도가 FY2015로 낡았다(FY2024 이후 필요)"
+  },
+  "dividend": {
+    "answer": true,
+    "rule": "최근 5개 연속 회계연도 주당배당이 모두 양수이고 감소 없음(사전 고정)",
+    "tag": "CommonStockDividendsPerShareDeclared",
+    "values": [
+      0.5,
+      0.5,
+      0.5,
+      0.5,
+      0.5
+    ],
+    "years": [
+      2022,
+      2023,
+      2024,
+      2025,
+      2026
+    ]
+  },
+  "domestic_extra": {
+    "cover": {
+      "answer": false,
+      "excerpt": "of such date because such persons may be deemed to be affiliates. This determination of possible affiliate status is not a conclusive determination for any other purposes. The number of shares of Gen Digital common stock, $0.01 par value per share, outstanding as of May 18, 2026 was 602,433,854 shares.",
+      "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": false,
+      "buyback": 634000000.0,
+      "debt_begin": 8259000000.0,
+      "debt_change": -63000000.0,
+      "debt_end": 8196000000.0,
+      "fy": 2026,
+      "rule": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+      "tag": "LongTermDebt"
+    },
+    "ma": {
+      "acquisitions": 7702000000.0,
+      "answer": null,
+      "item_102_3y": [],
+      "ocf": 6561000000.0,
+      "ratio": 1.1739064167047706,
+      "reason": "5년 인수 지출이 영업현금흐름의 117% — 가격 규율은 사람이 판단해야 한다",
+      "recent_8k_201": [],
+      "rule": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+      "years": [
+        2022,
+        2023,
+        2024,
+        2025,
+        2026
+      ]
+    }
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2024-03-29",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3800000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "70 million • Q4 FY24 EPS expected to be in the range of $0.52 to $0.54 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.805 to $3.815 billion",
+          "filed": "2024-02-01",
+          "fy": 2024,
+          "high": 3815000000.0,
+          "kind": "range",
+          "low": 3805000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000006/ex9901q3fy24.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "million • Q2 FY24 EPS expected to be in the range of $0.46 to $0.48 1 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.8 to $3.85 billion",
+          "filed": "2023-08-03",
+          "fy": 2024,
+          "high": 3850000000.0,
+          "kind": "range",
+          "low": 3800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939923000016/ex9901q1fy24.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 3,
+        "status": "MET",
+        "vs_final_low_pct": -0.0013140604467805073,
+        "vs_initial_low_pct": 0.0
+      },
+      {
+        "actual": {
+          "end": "2025-03-28",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3935000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "05 million • EPS expected to be in the range of $0.57 to $0.59 Strengthened Fiscal Year 2025 Non-GAAP Annual Guidance • Revenue now expected to be in the range of $3,915 to $3,930 million",
+          "filed": "2025-01-30",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3915000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000003/ex9901q3fy25.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "n to $970 million • Q1 FY25 EPS expected to be in the range of $0.52 to $0.54 Non-GAAP Fiscal Year 2025 Guidance • FY25 Revenue expected to be in the range of $3,890 million to $3,930 million",
+          "filed": "2024-05-09",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3890000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000022/ex9901q4fy24.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.005108556832694733,
+        "vs_initial_low_pct": 0.011568123393316254
+      },
+      {
+        "actual": {
+          "end": "2026-04-03",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 5000000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "6 billion • Q4 FY26 EPS expected to be in the range of $0.64 to $0.66 Raising Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4.955 billion to $4.975 billion",
+          "filed": "2026-02-05",
+          "fy": 2026,
+          "high": 4975000000.0,
+          "kind": "range",
+          "low": 4955000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "to $1,210 million • Q1 FY26 EPS expected to be in the range of $0.59 to $0.61 Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4,700 million to $4,800 million",
+          "filed": "2025-05-06",
+          "fy": 2026,
+          "high": 4800000000.0,
+          "kind": "range",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000025/ex9901q4fy25.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.00908173562058523,
+        "vs_initial_low_pct": 0.06382978723404253
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": false,
+      "n_evaluated": 3,
+      "n_miss": 0,
+      "promise_kept_record": true,
+      "reason": "",
+      "years": [
+        2024,
+        2025,
+        2026
+      ]
+    },
+    "ledger": [
+      {
+        "actual": null,
+        "dropped": [
+          {
+            "excerpt": "ness objectives, leveraging our multiple growth levers and continued operational discipline.” Fiscal 2023 Q1 Guidance • Non-GAAP Revenue is expected to be in the range of $705 to $715 million",
+            "filed": "2022-05-05",
+            "fy": 2023,
+            "high": 715000000.0,
+            "kind": "range",
+            "low": 705000000.0,
+            "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939922000010/ex9901q4fy22.htm"
+          },
+          {
+            "excerpt": "to the integration planning and quickly setting the foundation of the company for growth.” 1 Fiscal 2023 Q2 Guidance • Non-GAAP Revenue expected to be in the range of $695 million to $705 million",
+            "filed": "2022-08-04",
+            "fy": 2023,
+            "high": 705000000.0,
+            "kind": "range",
+            "low": 695000000.0,
+            "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939922000016/ex9901q1fy23.htm"
+          }
+        ],
+        "fy": 2023,
+        "n_dropped": 2,
+        "reason": "모든 가이던스 항목이 실제값과 30% 넘게 어긋남 — 짝짓기 오류로 보고 제외",
+        "status": "MISMATCH"
+      },
+      {
+        "actual": {
+          "end": "2024-03-29",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3800000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "70 million • Q4 FY24 EPS expected to be in the range of $0.52 to $0.54 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.805 to $3.815 billion",
+          "filed": "2024-02-01",
+          "fy": 2024,
+          "high": 3815000000.0,
+          "kind": "range",
+          "low": 3805000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000006/ex9901q3fy24.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "million • Q2 FY24 EPS expected to be in the range of $0.46 to $0.48 1 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.8 to $3.85 billion",
+          "filed": "2023-08-03",
+          "fy": 2024,
+          "high": 3850000000.0,
+          "kind": "range",
+          "low": 3800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939923000016/ex9901q1fy24.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 3,
+        "status": "MET",
+        "vs_final_low_pct": -0.0013140604467805073,
+        "vs_initial_low_pct": 0.0
+      },
+      {
+        "actual": {
+          "end": "2025-03-28",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 3935000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "05 million • EPS expected to be in the range of $0.57 to $0.59 Strengthened Fiscal Year 2025 Non-GAAP Annual Guidance • Revenue now expected to be in the range of $3,915 to $3,930 million",
+          "filed": "2025-01-30",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3915000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000003/ex9901q3fy25.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "n to $970 million • Q1 FY25 EPS expected to be in the range of $0.52 to $0.54 Non-GAAP Fiscal Year 2025 Guidance • FY25 Revenue expected to be in the range of $3,890 million to $3,930 million",
+          "filed": "2024-05-09",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3890000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000022/ex9901q4fy24.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.005108556832694733,
+        "vs_initial_low_pct": 0.011568123393316254
+      },
+      {
+        "actual": {
+          "end": "2026-04-03",
+          "filed": "2026-05-21",
+          "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+          "value": 5000000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "6 billion • Q4 FY26 EPS expected to be in the range of $0.64 to $0.66 Raising Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4.955 billion to $4.975 billion",
+          "filed": "2026-02-05",
+          "fy": 2026,
+          "high": 4975000000.0,
+          "kind": "range",
+          "low": 4955000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "to $1,210 million • Q1 FY26 EPS expected to be in the range of $0.59 to $0.61 Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4,700 million to $4,800 million",
+          "filed": "2025-05-06",
+          "fy": 2026,
+          "high": 4800000000.0,
+          "kind": "range",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000025/ex9901q4fy25.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.00908173562058523,
+        "vs_initial_low_pct": 0.06382978723404253
+      },
+      {
+        "actual": null,
+        "dropped": [],
+        "final": {
+          "excerpt": "50 billion • Q2 FY27 EPS expected to be in the range of $0.71 to $0.73 Raises Non-GAAP Fiscal Year 2027 Guidance • FY27 Revenue expected to be in the range of $5.375 billion to $5.475 billion",
+          "filed": "2026-08-06",
+          "fy": 2027,
+          "high": 5475000000.0,
+          "kind": "range",
+          "low": 5375000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm"
+        },
+        "fy": 2027,
+        "initial": {
+          "excerpt": "to $1,325 million • Q1 FY27 EPS expected to be in the range of $0.68 to $0.70 Non-GAAP Fiscal Year 2027 Guidance • FY27 Revenue expected to be in the range of $5,325 million to $5,425 million",
+          "filed": "2026-05-07",
+          "fy": 2027,
+          "high": 5425000000.0,
+          "kind": "range",
+          "low": 5325000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000014/ex9901q4fy26.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "PENDING"
+      }
+    ],
+    "n_releases": 18,
+    "n_with_guidance": 15,
+    "source_form": "8-K Item 2.02"
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2026-05-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 7151
+  },
+  "insider": {
+    "accessions": [
+      "0000849399-26-000069",
+      "0000849399-26-000068",
+      "0000849399-26-000067",
+      "0000849399-26-000066",
+      "0000849399-26-000065",
+      "0000849399-26-000064",
+      "0000849399-26-000063",
+      "0000849399-26-000062",
+      "0000849399-26-000050",
+      "0000849399-26-000048",
+      "0000849399-26-000046",
+      "0000849399-26-000042",
+      "0000849399-26-000040",
+      "0000849399-26-000036",
+      "0001628280-26-058007",
+      "0001628280-26-056252",
+      "0000849399-26-000023",
+      "0001628280-26-041329",
+      "0000849399-26-000020",
+      "0001628280-26-034249",
+      "0001628280-26-034248",
+      "0001628280-26-034247",
+      "0001628280-26-030812",
+      "0001628280-26-030807",
+      "0001628280-26-030805",
+      "0000849399-26-000009",
+      "0001628280-26-009915",
+      "0000849399-26-000007",
+      "0000849399-26-000005",
+      "0000849399-25-000095",
+      "0001628280-25-054977",
+      "0001628280-25-052419",
+      "0001628280-25-048870"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 33,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 216864.0,
+      "discretionary_net_by_owner": {
+        "Chrystal John C": 216864.0,
+        "DERSE NATALIE MARIE": -18754.28,
+        "Vlcek Ondrej": -20156034.55,
+        "Witteveen Travis Michael": -894904.4
+      },
+      "discretionary_net_usd": -20852829.23,
+      "discretionary_sell_usd": 21069693.23,
+      "floor_usd": 1000000,
+      "n_discretionary": 11,
+      "n_open_market": 12,
+      "n_routine_10b5_1": 1,
+      "routine_sell_usd": 866450.9,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0001140361-26-029830",
+    "filing_date": "2026-07-28",
+    "result": {
+      "answer": null,
+      "reason": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-05-21",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 288
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0000849399-26-000053",
+    "filing_date": "2026-09-11",
+    "n_item_507": 2,
+    "result": {
+      "against": 307097626,
+      "answer": 0.4060025743324038,
+      "for": 209903985,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000053/gen-20260909.htm"
+  },
+  "ticker": "GEN"
+}

@@ -1,0 +1,1149 @@
+{
+"cik": "796343",
+"quarters": [
+{
+"accession": "0000796343-26-000003",
+"filed": "2026-01-15",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000796343-23-000007",
+"filed": "2023-01-17",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 5428000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 18169000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 1392000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 22798000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 5428000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 7130000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 4893000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 11654000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 4864000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 275000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 20521000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 17649000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 11.82
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 4331000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "CreativeProfessionalsAndMarketers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 13425000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "Revenues",
+"value": 460000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 17389000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "BusinessProfessionalsAndConsumers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 6495000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 106000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 427000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 12.36
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "BusinessProfessionalsAndConsumers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 4744000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 2874000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 21505000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 23769000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 256000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 1591000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 12529000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 22904000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 441000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 7130000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 15547000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "BusinessProfessionalsAndConsumers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 5662000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "CreativeProfessionalsAndMarketers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 14749000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 110000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 12891000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceOther"
+},
+"tag": "Revenues",
+"value": 598000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 5864000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 459100000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 457100000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 447100000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 5560000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 10460000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 18284000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 5366000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 5554000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 5409000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"MajorCustomers": "CreativeProfessionalsAndMarketers",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 16303000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "Revenues",
+"value": 325000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 14216000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 13838000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 1194000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 11499000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "Revenues",
+"value": 386000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 14120000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 6289000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 413000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 16.7
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 5560000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 19409000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 300000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 115000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 4881000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20231130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceOther"
+},
+"tag": "Revenues",
+"value": 665000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 15864000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMediaAndDigitalExperience",
+"ProductOrService": "SubscriptionRevenue"
+},
+"tag": "Revenues",
+"value": 20411000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 3060000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 3360000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceOther"
+},
+"tag": "Revenues",
+"value": 540000000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20241130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 449700000.0
+},
+{
+"adsh": "0000796343-26-000003",
+"ddate": "20251130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 426200000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 8996000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 4422000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 4756000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 15785000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 7454000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 8104000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 3125000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 510000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 4593000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 9233000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 481000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 470900000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4756000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 11520000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 17606000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4822000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 9217000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 6745000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.1
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 2762000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 1034000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 892000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 2014000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 5260000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"Geographical": "Americas"
+},
+"tag": "Revenues",
+"value": 10251000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalMedia"
+},
+"tag": "Revenues",
+"value": 12842000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 5260000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 342000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.02
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 462000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 480900000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 4822000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DigitalExperience"
+},
+"tag": "Revenues",
+"value": 3867000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 12868000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 3400000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 485500000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 475000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"Geographical": "EMEA"
+},
+"tag": "Revenues",
+"value": 4252000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "PublishingAndAdvertising"
+},
+"tag": "Revenues",
+"value": 398000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 477300000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherAmericas"
+},
+"tag": "Revenues",
+"value": 709000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20201130",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.83
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20211130",
+"qtrs": 4,
+"segments": {
+"Geographical": "AsiaPacific"
+},
+"tag": "Revenues",
+"value": 2537000000.0
+},
+{
+"adsh": "0000796343-23-000007",
+"ddate": "20221130",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 469500000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000796343-23-000007": {
+"adsh": "0000796343-23-000007",
+"cik": "796343",
+"filed": "20230117",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "ADOBE INC.",
+"period": "20221130"
+},
+"0000796343-26-000003": {
+"adsh": "0000796343-26-000003",
+"cik": "796343",
+"filed": "20260115",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "ADOBE INC.",
+"period": "20251130"
+}
+},
+"ticker": "ADBE"
+}

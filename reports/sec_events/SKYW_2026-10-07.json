@@ -1,0 +1,167 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000793733",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 0,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "가장 최근 공통 회계연도가 FY2020로 낡았다(FY2024 이후 필요)"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "연속 5개 회계연도의 주당배당 값이 없다(최근 연도 FY2024 이후 필요)",
+    "tag": "CommonStockDividendsPerShareDeclared"
+  },
+  "domestic_extra": {
+    "cover": {
+      "answer": false,
+      "excerpt": "liates (based upon the closing sale price of the registrant’s common stock on The Nasdaq Global Select Market) on June 30, 2025 was approximately $ 4,156,927,217 . As of February 10 2026, there were 40,406,672 shares of the registrant’s common stock outstanding.",
+      "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": null,
+      "reason": "매입이 있는 최근 연도의 차입 잔액(전년·당년)을 찾지 못했다",
+      "tag": "LongTermDebtNoncurrent"
+    },
+    "ma": {
+      "answer": null,
+      "item_102_3y": [],
+      "reason": "인수 지출 값이 5개 연도 중 0개뿐이다",
+      "recent_8k_201": []
+    },
+    "no_dividend": null
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [],
+    "judge": {
+      "guidance_miss_3y": null,
+      "n_evaluated": 0,
+      "n_miss": 0,
+      "promise_kept_record": null,
+      "reason": "실제값과 짝지은 최초 연간 매출 가이던스가 0개 연도뿐이다(최소 2)",
+      "years": []
+    },
+    "ledger": [],
+    "n_releases": 18,
+    "n_with_guidance": 0,
+    "reason": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+    "source_form": "8-K Item 2.02"
+  },
+  "icfr": {
+    "answer": null,
+    "filed": "2026-02-17",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+    "reason": "Item 9A에 경영진의 ICFR 결론 문장이 없다(Exhibit 참조일 수 있다)"
+  },
+  "insider": {
+    "accessions": [
+      "0001608311-26-000005",
+      "0001831880-26-000003",
+      "0001110499-26-000003",
+      "0001393687-26-000005",
+      "0001178218-26-000004",
+      "0001186757-26-000001",
+      "0001546254-26-000001",
+      "0001064299-26-000003",
+      "0001233289-26-000001",
+      "0001656600-26-000002",
+      "0001393687-26-000004",
+      "0001608311-26-000004",
+      "0001608311-26-000003",
+      "0001393687-26-000003",
+      "0001110499-26-000002",
+      "0001608311-26-000002",
+      "0001521262-26-000002",
+      "0001831880-26-000002",
+      "0001831880-26-000001",
+      "0001521262-26-000001",
+      "0001608311-26-000001",
+      "0001110499-26-000001",
+      "0002054609-26-000001",
+      "0001393687-26-000002",
+      "0001064299-25-000004",
+      "0001546254-25-000004"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 26,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 0,
+      "discretionary_net_by_owner": {
+        "Childs Russell A": -5717344.2,
+        "Madden Meredith Siegfried": -503413.78,
+        "SIMMONS ROBERT J": -2762130.88,
+        "Steel Wade J": -5442089.21,
+        "Wooley Greg": -1924173.25
+      },
+      "discretionary_net_usd": -16349151.33,
+      "discretionary_sell_usd": 16349151.33,
+      "floor_usd": 1000000,
+      "n_discretionary": 13,
+      "n_open_market": 13,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0001104659-26-034497",
+    "filing_date": "2026-03-25",
+    "result": {
+      "answer": "1_to_5pct",
+      "pct": 1.5,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926034497/skyw-20260505xdef14a.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-02-17",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926016358/skyw-20251231x10k.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 444
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0001104659-26-057092",
+    "filing_date": "2026-05-07",
+    "n_item_507": 2,
+    "result": {
+      "against": 622058,
+      "answer": 0.9824092773078636,
+      "for": 34740787,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/793733/000110465926057092/skyw-20260505x8k.htm"
+  },
+  "ticker": "SKYW"
+}

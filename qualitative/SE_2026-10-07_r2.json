@@ -1,0 +1,585 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "SE.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "SE.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": 0.1386,
+      "claim_ids": [
+        "SE.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.1435,
+      "claim_ids": [
+        "SE.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "share_count_rising",
+      "claim_ids": [
+        "SE.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.ceo_succession_policy",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+      "qid": "gov.insider_pattern",
+      "status": "unknown"
+    },
+    {
+      "answer": "immaterial",
+      "claim_ids": [
+        "SE.FPI_LIT"
+      ],
+      "note": "회사 자기 진술만 — 심각도를 판단하지 않는다",
+      "qid": "gov.material_litigation",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사가 무배당을 직접 진술: \"Because we do not expect to pay dividends in the foreseeable future, holders of ADSs must rely on price appreciation of our ADSs for return on their investment.\" (SE 20-F (filed 2026-04-17, acc 0001140361-26-015366), https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm)",
+      "qid": "cap.dividend_predictable",
+      "status": "not_applicable"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "해당 연도 매입 지출이 없다",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "SE.FPI_RESTATE"
+      ],
+      "note": "20-F/A 부재만 근거(4.02 대응 공시 없음)",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "6-K 27건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "6-K 27건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.new_threat",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "외국 사적 발행사(20-F)는 미국 위임장 규칙(Rule 14a-21 보수 승인 투표) 적용 대상이 아니다 — 투표 자체가 존재하지 않는다",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "not_applicable"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "SE.FPI_ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "SE.FPI_NT"
+      ],
+      "note": "NT 20-F 건수(외국 발행사)",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "SE.FPI_16F"
+      ],
+      "note": "20-F Item 16F(8-K 4.01 대응). 각 보고서는 직전 2개 회계연도를 덮는다 — 동일 사건은 한 번만 센다. 정기 교체·계열 법인 간 이관도 포함된다",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+      "qid": "acc.material_impairment_3y",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-07",
+  "claims": [
+    {
+      "claim_id": "SE.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "Item 7 Major Shareholders",
+            "observed_date": "2026-10-06",
+            "quote": "holders of Class B ordinary shares are entitled to 15 votes per share",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "창업자 Forrest Li가 총 의결권의 약 57.6%를 갖는다고 같은 문서가 서술",
+          "summary": "Class B 주식이 15표를 갖고 창업자가 전량 보유한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 15표를 갖고 창업자가 전량 보유한다"
+    },
+    {
+      "claim_id": "SE.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "Item 3 Risk Factors — controlled structure",
+            "observed_date": "2026-10-06",
+            "quote": "our founder, Chairman and Chief Executive Officer",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "창업자가 의장과 CEO를 겸한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "창업자가 의장과 CEO를 겸한다"
+    },
+    {
+      "claim_id": "SE.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "ShareBasedCompensation FY2025 = 624,995,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 624,995,000 / fcf0 4,510,714,000",
+          "value": 0.1386,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 13.9%다"
+    },
+    {
+      "claim_id": "SE.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 558,119,948 -> FY2025 638,227,141",
+          "value": 0.1435,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 +14.35%"
+    },
+    {
+      "claim_id": "SE.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 14,027,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 14,027,000; 3년 희석주식수 +14.35%",
+          "value": 14027000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 +14.35%다 → share_count_rising"
+    },
+    {
+      "claim_id": "SE.FPI_NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE EDGAR 제출 목록",
+            "location": "form = NT 20-F",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1703399&type=NT+20-F&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "nt_filings_3y",
+          "note": "외국 발행사의 지연 제출 통지는 NT 20-F다(NT 10-K/10-Q 대응)",
+          "summary": "제출 목록 3년 창에서 NT 20-F 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년(2023-10-08~2026-10-07) NT 20-F 0건"
+    },
+    {
+      "claim_id": "SE.FPI_RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE EDGAR 제출 목록",
+            "location": "form = 20-F/A",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1703399&type=20-F%2FA&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "amendments_3y",
+          "note": "외국 발행사에는 8-K 4.02(비의존 공시)가 없어 국내 규칙보다 약한 근거다 — 본 보고서 안의 재표시('little r')는 탐지하지 못한다",
+          "summary": "제출 목록 3년 창에서 20-F/A 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 3년 20-F/A(정정 제출) 0건"
+    },
+    {
+      "claim_id": "SE.FPI_ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "Item 15",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that our internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장만(외부 감사인 의견과 별개)",
+          "summary": "20-F Item 15 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "20-F 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "SE.FPI_16F",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "Item 16F. Change in Registrant’s Certifying Accountant",
+            "observed_date": "2026-10-07",
+            "quote": "ITEM 16F. CHANGE IN REGISTRANT’S CERTIFYING ACCOUNTANT Not applicable. 146 Table of Contents",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "auditor_change_events",
+          "note": "",
+          "summary": "20-F Item 16F (filed 2026-04-17): 사건 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2025-04-17, acc 0001193125-25-084311)",
+            "location": "Item 16F. Change in Registrant’s Certifying Accountant",
+            "observed_date": "2026-10-07",
+            "quote": "ITEM 16F. CHANGE IN REGISTRANT’S CERTIFYING ACCOUNTANT Not applicable.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000119312525084311/d940352d20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "auditor_change_events",
+          "note": "",
+          "summary": "20-F Item 16F (filed 2025-04-17): 사건 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 20-F 2건의 Item 16F 감사인 변경 사건 0건"
+    },
+    {
+      "claim_id": "SE.FPI_LIT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SE 20-F (filed 2026-04-17, acc 0001140361-26-015366)",
+            "location": "Item 8.A.7 Legal Proceedings",
+            "observed_date": "2026-10-07",
+            "quote": "are not a party to, nor are we aware of, any legal proceeding, investigation or claim which, in the opinion of our management, is likely to have any material adverse effect on our business, financial condition or results of operations.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1703399/000114036126015366/ef20067274_20f.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "회사가 '중요한 소송이 없다'고 한정해 진술",
+          "summary": "20-F 회사 자기 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "20-F Legal Proceedings 회사 진술 → immaterial"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.3448,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 10,
+    "n_primary_answered": 10,
+    "n_primary_required": 17,
+    "n_questions": 29,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 4,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 6
+      },
+      "capital_allocation": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 3,
+        "n_questions": 9,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 5
+      }
+    },
+    "unexamined_lenses": [
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "SE",
+  "findings": [
+    {
+      "claim_ids": [
+        "SE.BUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인)"
+    },
+    {
+      "claim_ids": [
+        "SE.SBC",
+        "SE.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "SE.DUAL_CLASS",
+        "SE.CHAIR_SEPARATED"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "1ede535615515c287e2b4f41d8a338a3c37c75ca7f4bbf262cf308a5239bf844",
+  "supersedes": "dbbb1c6eb1230d1256b6c6be26c049cab003bf61ed91ba0026e187ccfe54f27b",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

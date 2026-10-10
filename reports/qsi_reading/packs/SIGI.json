@@ -1,0 +1,170 @@
+{
+ "ticker": "SIGI",
+ "as_of": "2026-10-07",
+ "lens_set": "insurance",
+ "foreign_private_issuer": false,
+ "based_on_record": "b931918db54914aea73b583198bb14752e4d43a846275b617401e6f1eed58973",
+ "targets": [
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cat.cat_exposure",
+  "uw.combined_ratio_pct"
+ ],
+ "prior_unknown_notes": {
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: SIGI.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cat.cat_exposure": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "uw.combined_ratio_pct": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "SIGI-1",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm",
+   "text": "s at PricewaterhouseCoopers LLP, most recently serving as a senior partner, primarily in the insurance and asset management industries. He has extensive experience in finance and insurance, financial management, public company governance and disclosure, corporate transactions, strategic leadership, succession planning, and cybersecurity. For these reasons, the Board believes Mr. Scheid is qualified to serve as a director. Page 15 Board Recommendation THE BOARD UNANIMOUSLY RECOMMENDS THAT STOCKHOLDERS VOTE “ FOR ” EACH OF THE DIRECTOR NOMINEES. SECURITY OWNERSHIP OF MANAGEMENT AND CERTAIN BENEFICIAL OWNERS Security Ownership of Management and the Board The following table shows, as of February 19, 2026: ◾ The number of shares of Selective common stock beneficially owned by each director, director nom"
+  },
+  {
+   "id": "SIGI-2",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm",
+   "text": "es are to: (i) oversee and review Selective’s executive officer and non-employee director compensation plans and practices, including incentive compensation and equity-based plans; (ii) review the performance of management in achieving corporate goals and objectives; (iii) review matters related to succession planning and professional development for executive officers; (iv) assure that Selective’s executive officers are compensated effectively consistent with Selective’s financial performance, strategy, competitive practices, and regulatory requirements; and (v) assist with Board oversight of the Company’s strategies relating to human capital management (“HCM”), which includes employee health and safety. Specifically, the Compensation and Human Capital Committee: ◾ Reviews Selective’s compensation "
+  },
+  {
+   "id": "SIGI-3",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm",
+   "text": "s of any advisory vote on the frequency of say-on-pay votes (“say-on-frequency” votes). ◾ Provides recommendations to the Board on compensation-related proposals to be considered at Selective’s annual meeting, including the say-on-pay vote and the say-on-frequency vote. ◾ Reviews matters related to succession planning and professional development for executive officers. ◾ Reviews periodically with the CEO the plans for succession of Selective’s CEO, other executive officers, and other key employees, including plans for succession in the event of an emergency, and makes recommendations to the Board with respect to the selection of appropriate individuals to succeed to these positions. ◾ Reviews periodic updates from management on initiatives and progress in the area of HCM. ◾ Assesses the independenc"
+  },
+  {
+   "id": "SIGI-4",
+   "for": "gov.key_person_no_succession",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm",
+   "text": "esses the adequacy of Selective’s Corporate Governance Guidelines and recommends changes to the Board. ◾ Recommends to the Board the directors to serve as members of the Board committees, chairpersons of the committees, and Lead Independent Director. ◾ Advises the Board regarding Board composition, succession, procedures, and committees. ◾ Reviews and updates Selective’s Code of Conduct and reviews conflicts of interest or other issues that may arise under the Code of Conduct involving Selective’s officers or directors. ◾ Monitors Selective’s compliance with the SEC’s employee conflict of interest requirements. ◾ Oversees the self-evaluations of the Board and its committees. ◾ Oversees the Company’s corporate sustainability and social responsibility initiatives and strategies. ◾ Makes a recommendati"
+  },
+  {
+   "id": "SIGI-5",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "sk Factors 23 Item 1B. Unresolved Staff Comments 33 Item 1C. Cybersecurity 33 Item 2. Properties 35 Item 3. Legal Proceedings 35 Item 4. Mine Safety Disclosures 35 PART II Item 5. Market For Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 35 Item 6. Reserved 37 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 37 Forward-looking Statements 37 Introduction 37 Critical Accounting Policies and Estimates 38 Financial Highlights of Results for Years Ended December 31, 2025, 2024, and 2023 46 Results of Operations and Related Information by Segment 48 Income Taxes 63 Liquidity and Capital Resources 64 Item 7A. Quantitative and Qualitative Disclosures About Market Risk 68 Item 8. Financial Statements and Supplementary Data 75 Consolidated Balance Sheets as of December 31, 2025 and 2024 77 Consolidated Statements of Income for the Years Ended December 31, 2025, 2024, and 2023 78 Consolidated Statements of Comprehensive Income for the Years Ended December 31, 202 5 , 202 4 , and 202 3 79 Consolidated Statements of Stockholders’ Equity for the Years Ended December 31, 202 5 , 202 4 , and 202 3 80 Consolidated Statements of Cash Flows for the Years Ended December 31, 2025, 2024, and 2023 81 Notes to Consolidated Financial Statements 82 Item 9. Changes in and Disagreements With Accountants on Accounting and Financial Disclosure 139 Item 9A. Controls and Procedures 139 Item 9B. Other Information 141 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 141 PART III Item 10. Directors, Executive O"
+  },
+  {
+   "id": "SIGI-6",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "discuss these risks further below in the Risk Factor entitled, \" We are engaged in ordinary routine legal proceedings incidental to our insurance operations that are inherently unpredictable and could impact our reputation and/or have a material adverse effect on our consolidated results of operations or cash flows in particular quarterly or annual periods.\" For further discussion on our loss and loss expense reserves, please see the \"Critical Accounting Policies and Estimates\" section of Item 7. \"Management’s Discussion and Analysis of Financial Condition and Results of Operations.\" and Note 2. \"Summary of Significant Accounting Policies\" in Item 8. \"Financial Statements and Supplementary Data.\" of this Form 10-K. Our ability to reduce our risk exposure depends on the availability and cost of reinsurance. We transfer a significant portion of our underwriting risk to third parties through reinsurance, primarily in the form of annual contracts that reimburse us for losses exceeding specified thresholds on a per-loss or aggregate basis. Typically, our reinsurance coverages align with the coverages in our primary insurance policies, including coverages for catastrophes. Historically, commercial property and homeowners losses have accounted for most of our catastrophe-related reinsurance claims. We determine the amount of reinsurance we purchase by analyzing historical losses and outputs from various modeling software programs that analyze our Insurance Subsidiaries' risks, particularly for catastrophes. Insufficient reinsurance could have a material adverse effect on our results of operations,"
+  },
+  {
+   "id": "SIGI-7",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "ing ongoing audit requirements and significant legal liability. We are engaged in ordinary, routine legal proceedings incidental to our insurance operations that are inherently unpredictable and could impact our reputation and/or have a material adverse effect on our consolidated results of operations or cash flows in particular quarterly or annual periods. We are engaged in ordinary routine legal proceedings incidental to our insurance operations that include: • Indemnity or defense of third-party suits brought against our insureds; • Defense of actions brought against us by our insureds who disagree with our coverage decisions, some of which allege bad faith claims handling and seek extra-contractual damages, punitive damages, or other penalties; • Actions we file, primarily for declaratory judgment, seeking confirmation that we have made appropriate coverage decisions under our insurance contracts; • Actions brought against competitors or us by plaintiffs alleging improper business practices and sometimes seeking class status. Such actions historically have included issues and allegations, without limitation, related to (i) unfairly discriminatory underwriting practices, including the impact of credit score usage, (ii) managed care practices, such as provider reimbursement, and (iii) automobile claims practices; and • Actions we file against third parties and other insurers for subrogation and recovery of other amounts we paid on our insureds' behalf. Some of our legal proceedings may receive media attention due to their perceived newsworthiness and/or their relationship to various broad"
+  },
+  {
+   "id": "SIGI-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "d negatively impact our reputation. We expect any potential ultimate liability for ordinary routine legal proceedings incidental to our insurance business will not be material to our consolidated financial condition after considering estimated loss provisions. Litigation outcomes are inherently unpredictable, even with meritorious defenses. The same is true with case-specific litigation duration, as state dockets are often overcrowded. Generally, the longer a case is in litigation, the more expensive it can become. Because the amounts sought in specific actions are large or indeterminate, any adverse outcomes could have a material adverse effect on our consolidated results of operations or cash flows in particular quarterly or annual periods. We have no material litigation risks related to climate change. 31 Table of Contents Risks Related to Our Corporate Structure and Governance We are a holding company, and our ability to declare dividends to our shareholders, pay indebtedness, and enter into affiliate transactions may be limited because our Insurance Subsidiaries are regulated. Restrictions on our Insurance Subsidiaries' ability to pay dividends, make loans or advances to the Parent, or enter transactions with affiliates may materially affect our ability to pay dividends on our preferred and common stock or repay our indebtedness. Based on these restrictions, there is a maximum ordinary annual dividend the Insurance Subsidiaries can provide to the Parent. Our Insurance Subsidiaries' ability to pay dividends or make loans or advances is subject to the approval or review by our domiciliar"
+  },
+  {
+   "id": "SIGI-9",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm",
+   "text": "nior partner, primarily in the insurance and asset management industries. He has extensive experience in finance and insurance, financial management, public company governance and disclosure, corporate transactions, strategic leadership, succession planning, and cybersecurity. For these reasons, the Board believes Mr. Scheid is qualified to serve as a director. Page 15 Board Recommendation THE BOARD UNANIMOUSLY RECOMMENDS THAT STOCKHOLDERS VOTE “ FOR ” EACH OF THE DIRECTOR NOMINEES. SECURITY OWNERSHIP OF MANAGEMENT AND CERTAIN BENEFICIAL OWNERS Security Ownership of Management and the Board The following table shows, as of February 19, 2026: ◾ The number of shares of Selective common stock beneficially owned by each director, director nominee, and the named executive officers; and ◾ The number of shares of Selective common stock beneficially owned by our directors and executive officers as a group. None of the directors, director nominees, or named executive officers held any stock options exercisable or any restricted stock units that vest within 60 days of February 19, 2026. Except as indicated by footnote, the persons named below have sole voting and investment power with respect to all shares shown as beneficially owned by them, subject to community property laws where applicable. The "
+  },
+  {
+   "id": "SIGI-10",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "les including credit and market risk; • Underwriting risk, which is the risk our insured losses exceed our expectations, and includes: ◦ Losses from inadequate loss reserves; ◦ Larger than expected non-catastrophe current accident year losses; and ◦ Catastrophe losses that exceed our expectations or our reinsurance treaty limits. 18 Table of Contents • Liquidity risk, which is the risk we will be unable to meet our contractual obligations as they become due because we cannot liquidate assets or obtain adequate funding without incurring unacceptable investment losses or borrowing costs; • Other risks, which include a broad range of risks, many difficult to quantify, like talent/human capital; market conditions; operational, economic, legal, regulatory, repu"
+  },
+  {
+   "id": "SIGI-11",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "bination of Black, Latin, Asian, and all other ethnicities at year-end 2025, compared to 24% at year-end 2024. Environmental Our Insurance Subsidiaries protect individuals and businesses against the financial impact of covered losses, including from catastrophic events. Climate change increases the unpredictability of weather-related loss frequency and severity, posing a long-term risk to our customers’ businesses and lives – and our profitability. We aim to mitigate climate change impact by (i) prudently overseeing and managing catastrophe risk exposure, (ii) providing our customers with responsive claims handling, risk management services, and proactive weather alerts, (iii) preparing for the continuing transition to clean energy, and (iv) reducing our carb"
+  },
+  {
+   "id": "SIGI-12",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "ocietal preferences and public sentiment. Due to our business risk profile and geographic concentration in the Northeast and Mid-Atlantic states, hurricane peril is our most significant natural catastrophe exposure, driving the \"tail\" of our modeled catastrophe loss distribution. This risk has influenced our decision to diversify our underwriting portfolio geographically and establish rigorous coastal property exposure guidelines. We seek to manage our exposure to other non-hurricane perils, such as severe convective storms, winter storms, flooding, and wildfires. We do not write crop insurance, have minimal exposure to private flood, and have a limited percentage of our geographic exposures in the Western U.S., all limiting our exposures to other weather-"
+  },
+  {
+   "id": "SIGI-13",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "ld transitions to a low-carbon economy, the value of these assets could be at greater risk. Other In addition to mitigating insurance operations and investment risk, we: • Have robust plans to ensure operational continuity if we suffer unforeseen or catastrophic events. We have business continuity plans in place for our key data processing facility (Disaster Recovery Plan), the leadership team (Executive Crisis Management Plan), and significant operational areas. We review, update, and test these plans at least annually. Our tests include \"tabletop\" exercises and planned hands-on tests. • Track our Scope 1 and Scope 2 greenhouse gas (\"GHG\") emissions, which are low relative to entities in other industries because we are an insurance holding company. Our Scope"
+  },
+  {
+   "id": "SIGI-14",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "sk, which is the risk our insured losses exceed our expectations, and includes: ◦ Losses from inadequate loss reserves; ◦ Larger than expected non-catastrophe current accident year losses; and ◦ Catastrophe losses that exceed our expectations or our reinsurance treaty limits. 18 Table of Contents • Liquidity risk, which is the risk we will be unable to meet our contractual obligations as they become due because we cannot liquidate assets or obtain adequate funding without incurring unacceptable investment losses or borrowing costs; • Other risks, which include a broad range of risks, many difficult to quantify, like talent/human capital; market conditions; operational, economic, legal, regulatory, reputational, and strategic risks; and the risks of fraud, hu"
+  },
+  {
+   "id": "SIGI-15",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "included in TRIPRA, such as Commercial Automobile. TRIPRA has never covered personal lines of business. Our Standard Personal Lines homeowner policies exclude nuclear losses but not biological, chemical, or conventional terrorism losses. Our current reinsurance programs cover some losses from conventional foreign and domestic terrorism acts but not NBCR events. 24 Table of Contents An increase in natural or man-made catastrophe losses, including a systemic cyber-attack that results in an aggregation of property and/or casualty cyber losses, will reduce our net income and stockholders’ equity and could have a material adverse effect on our liquidity, financial strength, and debt ratings. The closer a catastrophe occurs to the end of a reporting period, the mor"
+  },
+  {
+   "id": "SIGI-16",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "r those we determine implicate one of our or a predecessor's policy, we (i) have investigated or are investigating facts, (ii) have evaluated policy terms, (iii) believe we have appropriate coverage defenses to most of these claims and/or sufficient reinsurance protections, and (iv) have considered these factors in establishing our reserves, which we believe provide a reasonable estimate of the aggregate ultimate net exposure for 25 Table of Contents these claims. We face related litigation risks because policyholders and claimants may challenge our coverage positions. We discuss these risks further below in the Risk Factor entitled, \" We are engaged in ordinary routine legal proceedings incidental to our insurance operations that are inherently unpredictable an"
+  },
+  {
+   "id": "SIGI-17",
+   "for": "cat.cat_exposure",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": ". We transfer a significant portion of our underwriting risk to third parties through reinsurance, primarily in the form of annual contracts that reimburse us for losses exceeding specified thresholds on a per-loss or aggregate basis. Typically, our reinsurance coverages align with the coverages in our primary insurance policies, including coverages for catastrophes. Historically, commercial property and homeowners losses have accounted for most of our catastrophe-related reinsurance claims. We determine the amount of reinsurance we purchase by analyzing historical losses and outputs from various modeling software programs that analyze our Insurance Subsidiaries' risks, particularly for catastrophes. Insufficient reinsurance could have a material adverse effec"
+  },
+  {
+   "id": "SIGI-18",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": "d as an important financial measure by us, analysts, and investors because the timing of realized investment gains and losses on securities in any given period is largely discretionary. In addition, net realized and unrealized investment gains and losses could distort the analysis of trends. We use combined ratio as the key performance measure to assess the underwriting profitability of our insurance operations. The combined ratio is the sum of (i) the loss and loss expense ratio, which is the ratio of net loss and loss expense incurred to NPE, (ii) the expense ratio, which is the ratio of underwriting expenses to NPE, and (iii) the dividend ratio, which is the ratio of policyholder dividends to NPE. A combined ratio under 100% indicates an underwriting profit, and one over 100% indicates an underwritin"
+  },
+  {
+   "id": "SIGI-19",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": ",535 17 After-tax underwriting income (loss) 107,352 (104,745) (202) 104,911 (200) Net income (loss) before income tax 589,597 258,034 128 458,412 (44) Net income (loss) 466,411 207,012 125 365,238 (43) Net income (loss) available to common stockholders 457,211 197,812 131 356,038 (44) Key Metrics: Combined ratio 97.2 % 103.0 (5.8) pts 96.5 % 6.5 pts Invested assets per dollar of common stockholders' equity $ 3.32 3.31 — % $ 3.16 5 % Annualized after-tax yield on investment portfolio 4.0 % 4.0 — pts 3.7 % 0.3 pts Return on common equity (\"ROE\") 14.4 7.0 7.4 14.3 (7.3) Net premiums written to statutory surplus ratio $ 1.36 1.60 (15) % $ 1.51 6 % Per Common Share Amounts: Diluted net income (loss) per share $ 7.49 3.23 132 % $ 5.84 (45) % Book value per share 56.74 47.99 18 45.42 6 Dividends declared per "
+  },
+  {
+   "id": "SIGI-20",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": ". In 2025, these expansion states produced $430 million in premium, representing approximately 9% of total NPW and approximately 1% marginal total premium growth. We expect to write new business in Montana and Wyoming by the end of 2026. For 2026, our full-year expectations are as follows: • A GAAP combined ratio of 96.5% to 97.5%, including net catastrophe losses of 6 points. Our combined ratio estimate assumes no prior year casualty reserve development, as we record our best estimate each quarter. We do not make assumptions about future reserve development; • After-tax net investment income of $465 million; • An overall effective tax rate of 21.5%; and • Weighted average shares of 61 million on a fully diluted basis. We do not make assumptions about future share repurchases under our existing authoriz"
+  },
+  {
+   "id": "SIGI-21",
+   "for": "uw.combined_ratio_pct",
+   "doc": "10-K filed 2026-02-09",
+   "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+   "text": ",196 4,376,447 9 3,827,606 14 Less: Loss and loss expense incurred 3,157,726 3,164,484 — 2,484,285 27 Net underwriting expenses incurred 1,470,940 1,338,047 10 1,203,767 11 Dividends to policyholders 3,642 6,504 (44) 6,755 (4) Underwriting income (loss) $ 135,888 (132,588) (202) % $ 132,799 (200) % Combined Ratios: Loss and loss expense ratio 66.3 % 72.3 (6.0) pts 64.9 % 7.4 pts Underwriting expense ratio 30.8 30.6 0.2 31.4 (0.8) Dividends to policyholders ratio 0.1 0.1 — 0.2 (0.1) Combined ratio 97.2 103.0 (5.8) 96.5 6.5 The NPW growth of 5% in 2025 compared to 2024 included: ($ in millions) 2025 2024 Direct new business premiums $ 956.0 994.3 Renewal pure price increases 9.5 % 9.5 Our NPW growth in 2025 also benefited from exposure growth on renewal policies. The impacts of exposure growth and renewal"
+  }
+ ]
+}

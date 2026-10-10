@@ -1,0 +1,957 @@
+{
+"cik": "1849253",
+"quarters": [
+{
+"accession": "0001849253-26-000006",
+"filed": "2026-02-13",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000950170-23-005335",
+"filed": "2023-03-01",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 0.52
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 0.47
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 94665000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 63399000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 133443000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "UnderwritingManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1024000000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 2077549000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 129603426.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 61037000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 94665000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2026596000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2864242000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 114359968.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "WholesaleBrokerage"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1319056000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"RelatedPartyTransaction": "RyanReServicesAgreements",
+"RelatedPartyTransactionsByRelatedParty": "RelatedParty"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1500000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "WholesaleBrokerage"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1489077000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "WholesaleBrokerage"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1600427000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "Revenues",
+"value": 2515710000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2391980000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 61037000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 194480000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 229913000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2994582000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "BindingAuthorities"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 370155000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 2515710000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 133443000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 63399000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "UnderwritingManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 646215000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2994582000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 123730000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 3051126000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 120781234.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 125411089.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 136456313.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassX"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 0.71
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 63399000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 135248000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 150758000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "BindingAuthorities"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 275961000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "UnderwritingManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 431579000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"RelatedPartyTransaction": "ClaimsManagementAgreementWithVelocitySpecialtyInsuranceCompany",
+"RelatedPartyTransactionsByRelatedParty": "RelatedParty"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 300000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"RelatedPartyTransaction": "RyanReServicesAgreements",
+"RelatedPartyTransactionsByRelatedParty": "RelatedParty"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1600000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 54970000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2022579000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 186884000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 132891487.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 138246414.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 134508885.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 61037000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 135248000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 214157000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2026596000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2455671000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"RelatedPartyTransaction": "RyanReServicesAgreements",
+"RelatedPartyTransactionsByRelatedParty": "RelatedParty"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1500000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 125745139.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 127266889.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassX"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 94665000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 150758000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2455671000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "BindingAuthorities"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 320379000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "Revenues",
+"value": 2077549000.0
+},
+{
+"adsh": "0001849253-26-000006",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportingSegment"
+},
+"tag": "Revenues",
+"value": 3051126000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "MemberUnits"
+},
+"tag": "ProfitLoss",
+"value": 68104000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 0.52
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 61052000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 102205000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": -0.07
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 108616420.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 70513000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassX"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 61052000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 2409000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest",
+"SubsidiarySaleOfStock": "SubsequentToOrganizationalTransactions"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": -11691000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 56632000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 65873000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 109894548.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1018274000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 163257000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 147214275.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 112437825.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 105730008.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 105730008.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 102205000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 2409000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 265750444.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassX"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings",
+"SubsidiarySaleOfStock": "SubsequentToOrganizationalTransactions"
+},
+"tag": "NetIncomeLoss",
+"value": -7064000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1432771000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest",
+"Ownership": "NewLLC",
+"SubsidiarySaleOfStock": "OrganizationalTransaction"
+},
+"tag": "ProfitLoss",
+"value": 2450000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"SubsidiarySaleOfStock": "SubsequentToOrganizationalTransactions"
+},
+"tag": "ProfitLoss",
+"value": -18755000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": -9241000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 149162107.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1725193000.0
+},
+{
+"adsh": "0000950170-23-005335",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 68104000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000950170-23-005335": {
+"adsh": "0000950170-23-005335",
+"cik": "1849253",
+"filed": "20230301",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "RYAN SPECIALTY HOLDINGS, INC.",
+"period": "20221231"
+},
+"0001849253-26-000006": {
+"adsh": "0001849253-26-000006",
+"cik": "1849253",
+"filed": "20260213",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "RYAN SPECIALTY HOLDINGS, INC.",
+"period": "20251231"
+}
+},
+"ticker": "RYAN"
+}

@@ -1,0 +1,71 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000230557",
+  "pvp": {
+    "accession": "0001104659-26-034953",
+    "filed": "2026-03-26",
+    "measure_category": "other",
+    "measure_name": "GAAP Comb- ined Ratio",
+    "n_years": 5,
+    "peer_tsr": 181.29,
+    "peer_tsr_text": "181.29",
+    "peo_cap_not_used": {
+      "2021-12-31": 7471943.0,
+      "2022-12-31": 7100961.0,
+      "2023-12-31": 7598807.0,
+      "2024-12-31": 5813139.0,
+      "2025-12-31": 6114097.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 134.47,
+    "tsr_text": "134.47",
+    "tsr_vs_peer": -0.25826024601467257,
+    "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+  },
+  "ticker": "SIGI",
+  "trading_plans": {
+    "answer": 0,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000230557-25-000025",
+        "adoptions": 0,
+        "filed": "2025-10-24",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000230557-26-000006",
+        "adoptions": 0,
+        "filed": "2026-02-09",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000230557-26-000011",
+        "adoptions": 0,
+        "filed": "2026-04-24",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000230557-26-000020",
+        "adoptions": 0,
+        "filed": "2026-07-24",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

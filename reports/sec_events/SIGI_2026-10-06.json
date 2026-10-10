@@ -1,0 +1,82 @@
+{
+  "as_of": "2026-10-06",
+  "cik": "0000230557",
+  "cxo": {
+    "events": [],
+    "n_cxo_departure_filings": 0,
+    "n_item_502_filings": 5,
+    "status": "OK",
+    "window_since": "2024-10-06"
+  },
+  "debt_funded_buyback": {
+    "answer": null,
+    "reason": "가장 최근 공통 회계연도가 FY2015로 낡았다(FY2024 이후 필요)"
+  },
+  "insider": {
+    "accessions": [
+      "0001225208-26-006824",
+      "0001225208-26-004827",
+      "0001225208-26-004825",
+      "0001225208-26-004823",
+      "0001225208-26-004822",
+      "0001225208-26-004820",
+      "0001225208-26-004818",
+      "0001225208-26-004816",
+      "0001225208-26-004813",
+      "0001225208-26-004815",
+      "0001225208-26-004812",
+      "0001225208-26-004814",
+      "0001225208-26-001945",
+      "0001225208-26-001592",
+      "0001225208-26-001591",
+      "0001225208-26-001590",
+      "0001225208-26-001589",
+      "0001225208-26-001588",
+      "0001225208-26-001155",
+      "0001225208-26-001153",
+      "0001225208-25-009433",
+      "0001225208-25-008736"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 22,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 256544.73,
+      "discretionary_net_by_owner": {
+        "Bacus Lisa R": 50886.0,
+        "Brennan Patrick Sean": 205658.73,
+        "Harnett Anthony D.": -174387.14,
+        "Lanza Michael H": -1608155.82
+      },
+      "discretionary_net_usd": -1525998.23,
+      "discretionary_sell_usd": 1782542.96,
+      "floor_usd": 1000000,
+      "n_discretionary": 5,
+      "n_open_market": 5,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-06",
+      "2026-10-06"
+    ]
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-02-09",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 688
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-07"
+  },
+  "ticker": "SIGI"
+}

@@ -1,0 +1,95 @@
+{
+ "ticker": "TW",
+ "reader": "A",
+ "based_on_record": "309be0b74e3b76dad1aa0634fce972dcd9fb03d487ef3a29e929aa5d8a2ca976",
+ "answers": [
+  {
+   "qid": "gov.chair_separated",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "TW-4",
+   "quote": "The Board currently believes that separating the roles of the Chairperson and the Chief Executive Officer is in the best interests of the Company and its stockholders",
+   "reason": "독립 의장 Aigrain이 CEO와 분리"
+  },
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "지배구조 절에 이사회 CEO 승계 진술이 증거에 없음 — 10-K의 승계 투자 언급만 존재"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "승계에 투자했다는 회사 진술은 있으나 이사회 CEO 승계 진술은 아니라 판단 보류"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Legal Proceedings 본문 없이 위험요인 가정문만 있음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "인수 사실만 있고 손상·성과 공시 증거 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "TW-61",
+   "quote": "$1.9 billion in cash and cash equivalents and an undrawn $500 million credit facility at September 30, 2025",
+   "reason": "신용한도 미인출·현금 19억로 차입 없음, 자사주 매입은 TW-12에서 1.04억 달러 확인"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "비용 가이던스만 있고 실제치 대조 증거 없음"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "비용 가이던스 실제치 대조 증거 없음"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 악재 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "조정표 금액이 증거에 없음"
+  },
+  {
+   "qid": "cmp.pricing_power",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가격결정력 증거 문장 없음"
+  }
+ ]
+}

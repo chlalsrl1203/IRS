@@ -1,0 +1,709 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "DLO.DUAL"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.chair_separated",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.insider_pattern",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.0584,
+      "claim_ids": [
+        "DLO.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0364,
+      "claim_ids": [
+        "DLO.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "DLO.FPI_RESTATE"
+      ],
+      "note": "20-F/A 부재만 근거(4.02 대응 공시 없음)",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "외국 사적 발행사(20-F)는 미국 위임장 규칙(Rule 14a-21 보수 승인 투표) 적용 대상이 아니다 — 투표 자체가 존재하지 않는다",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "not_applicable"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "DLO.FPI_ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "DLO.FPI_NT"
+      ],
+      "note": "NT 20-F 건수(외국 발행사)",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "DLO.FPI_16F"
+      ],
+      "note": "20-F Item 16F(8-K 4.01 대응). 각 보고서는 직전 2개 회계연도를 덮는다 — 동일 사건은 한 번만 센다. 정기 교체·계열 법인 간 이관도 포함된다",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.material_impairment_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "DLO.NOENF",
+        "DLO.FPI_RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=answered, B=unknown)",
+      "qid": "cmp.new_threat",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": "eroding",
+      "claim_ids": [
+        "DLO.GM"
+      ],
+      "note": "총이익률 대리지표 — 원가 하락·제품 믹스·보조금(예: 생산세액공제)으로도 움직인다. 가격 인상의 직접 증거가 아니다",
+      "qid": "cmp.pricing_power",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-DLO-gov.ceo_succession_policy"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "READ-DLO-gov.key_person_no_succession"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.key_person_no_succession",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.buyback_effect",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "READ-DLO-acc.voluntary_bad_news"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "acc.voluntary_bad_news",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-DLO-acc.material_one_time_items"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "acc.material_one_time_items",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=answered, B=unknown)",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-09",
+  "claims": [
+    {
+      "claim_id": "DLO.DUAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "Item 7 Major Shareholders — voting rights note",
+            "observed_date": "2026-10-06",
+            "quote": "holders of Class B common shares are entitled to five votes per share, whereas holders of our Class A common shares are entitled to one vote per share",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Class B 5표 vs Class A 1표(경제적 권리는 동일, 전환권·비례유지권만 상이)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 5표를 갖는 차등의결 구조다"
+    },
+    {
+      "claim_id": "DLO.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "ifrs-full:AdjustmentsForSharebasedPayments FY2025 = 24,136,000 USD",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001846832.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값(같은 20-F의 OCF 415,457,000 USD에서 capex 차감)",
+          "summary": "FY2025 SBC 24,136,000 USD / fcf0 413,175,000 USD",
+          "value": 0.0584,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF 대비 낮다(5.8%)"
+    },
+    {
+      "claim_id": "DLO.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F FY2025 (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "ifrs-full:AdjustedWeightedAverageShares FY2022·FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001846832.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "2021-10 IPO 이후라 FY2022 이후 구간은 상장 전 우선주 기준 문제가 없다",
+          "summary": "조정 가중평균주식수 FY2022 313,138,646 -> FY2025 301,742,797",
+          "value": -0.0364,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수가 줄었다(-3.64%)"
+    },
+    {
+      "claim_id": "DLO.FPI_NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO EDGAR 제출 목록",
+            "location": "form = NT 20-F",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1846832&type=NT+20-F&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "nt_filings_3y",
+          "note": "외국 발행사의 지연 제출 통지는 NT 20-F다(NT 10-K/10-Q 대응)",
+          "summary": "제출 목록 3년 창에서 NT 20-F 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년(2023-10-08~2026-10-07) NT 20-F 0건"
+    },
+    {
+      "claim_id": "DLO.FPI_RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO EDGAR 제출 목록",
+            "location": "form = 20-F/A",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1846832&type=20-F%2FA&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "amendments_3y",
+          "note": "외국 발행사에는 8-K 4.02(비의존 공시)가 없어 국내 규칙보다 약한 근거다 — 본 보고서 안의 재표시('little r')는 탐지하지 못한다",
+          "summary": "제출 목록 3년 창에서 20-F/A 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 3년 20-F/A(정정 제출) 0건"
+    },
+    {
+      "claim_id": "DLO.FPI_ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "Item 15",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that the Company maintained effective internal control over financial reporting",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장만(외부 감사인 의견과 별개)",
+          "summary": "20-F Item 15 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "20-F 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "DLO.FPI_16F",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F (filed 2026-03-18, acc 0002070979-26-000113)",
+            "location": "Item 16F. Change in Registrant’s Certifying Accountant",
+            "observed_date": "2026-10-07",
+            "quote": "Item 16F. Change in Registrant’s Certifying Accountant. Not applicable.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "auditor_change_events",
+          "note": "",
+          "summary": "20-F Item 16F (filed 2026-03-18): 사건 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "DLO 20-F (filed 2025-04-24, acc 0000950170-25-058197)",
+            "location": "Item 16F. Change in Registrant’s Certifying Accountant",
+            "observed_date": "2026-10-07",
+            "quote": "I tem 16F. Change in Registrant’s Certifying Accountant. Not applicable.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025058197/dlo-20241231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "auditor_change_events",
+          "note": "",
+          "summary": "20-F Item 16F (filed 2025-04-24): 사건 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 20-F 2건의 Item 16F 감사인 변경 사건 0건"
+    },
+    {
+      "claim_id": "DLO.GM",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO companyfacts",
+            "location": "매출총이익률 FY2022~FY2025 (USD)",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001846832.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "gross_margin_change_pp",
+          "note": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)",
+          "summary": "매출·매출총이익(또는 매출원가) 연차값(companyfacts)",
+          "value": -11.43,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "매출총이익률 FY2022 48.26% → FY2025 36.83% (-11.43%p) → eroding"
+    },
+    {
+      "claim_id": "DLO.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DLO 20-F (filed 2026-03-18)",
+            "location": "전문",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "READ-DLO-gov.ceo_succession_policy",
+      "evidence": [
+        {
+          "citation": {
+            "document": "20-F filed 2026-03-18",
+            "location": "DLO-4",
+            "observed_date": "2026-10-09",
+            "quote": "overseeing board‑level succession planning (including for the chair of the board and key committee chair roles)",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "지배구조 절의 위원회 책무가 이사회(의장·위원장) 승계만 언급하고 CEO 승계는 언급하지 않음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.ceo_succession_policy = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-DLO-gov.key_person_no_succession",
+      "evidence": [
+        {
+          "citation": {
+            "document": "20-F filed 2026-03-18",
+            "location": "DLO-5",
+            "observed_date": "2026-10-09",
+            "quote": "We are dependent upon the ability and experience of our chief executive officer, our chief financial officer, our president and chief strategic officer, our chief operating officer and our chief technology officer",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "CEO 등 직함별 핵심인물 의존을 명시했고, 증거 내 승계 언급은 이사회급 승계뿐이라 CEO 승계 계획 진술이 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.key_person_no_succession = True (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-DLO-acc.voluntary_bad_news",
+      "evidence": [
+        {
+          "citation": {
+            "document": "6-K filed 2025-02-27",
+            "location": "DLO-54",
+            "observed_date": "2026-10-09",
+            "quote": "ity over a multi-year timeframe. For this reason, we have made the decision to discontinue mid-term guidance.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "2025-02 실적발표에서 중기 가이던스를 스스로 철회함(최근 3년 내)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "6-K filed 2025-02-27",
+            "location": "DLO-54",
+            "observed_date": "2026-10-09",
+            "quote": "we have made the decision to discontinue mid-term guidance",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000095017025029045/dlo-ex99_1.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "2025-02 회사가 중기 가이던스를 자발적으로 철회(최근 3년 내)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "acc.voluntary_bad_news = True (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-DLO-acc.material_one_time_items",
+      "evidence": [
+        {
+          "citation": {
+            "document": "20-F filed 2026-03-18",
+            "location": "DLO-85",
+            "observed_date": "2026-10-09",
+            "quote": "Other operating loss 4,715 5,257 — Impairment loss / (gain) on financial assets 2,189 440 (3,136) Depreciation and amortization 26,260 17,177 12,225 Other non-recurring costs (2) 124 1,571 1,663",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "FY2025 일회성 항목(기타영업손실 4.7M+비경상 0.1M+공모비용 0.7M)이 영업이익 약 220M의 10% 미만",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "20-F filed 2026-03-18",
+            "location": "DLO-85",
+            "observed_date": "2026-10-09",
+            "quote": "Other non-recurring costs (2) 124 1,571 1,663 Share-based payment non-cash charges, net of forfeitures 24,136 23,780 11,922 Offering expenses 739 — — Adjusted EBITDA 278,078",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1846832/000207097926000113/dlo-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "FY2025 비경상·상장비용은 수십~수백만 달러로 영업이익(약 $220M)의 10% 미만, 2026 Q1 세금 일회성 $4.4M도 소액",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "acc.material_one_time_items = False (독립 판독 2인 일치)"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.4483,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 13,
+    "n_primary_answered": 8,
+    "n_primary_required": 17,
+    "n_questions": 29,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 7,
+        "n_questions": 10,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "capital_allocation": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "competitive_landscape": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 3,
+        "n_questions": 9,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 5
+      }
+    },
+    "unexamined_lenses": [
+      "capital_allocation",
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "DLO",
+  "findings": [
+    {
+      "claim_ids": [
+        "DLO.DUAL"
+      ],
+      "effect": "weakens",
+      "lens": "governance",
+      "summary": "Class B 5표 구조로 창업자 의결권이 경제 지분보다 크다. 의장·소송은 미확인"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "capital_allocation",
+      "summary": "자사주·M&A 원문 미조회"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "accounting_quality",
+      "summary": "재작성·가이던스 이력 미조회"
+    },
+    {
+      "claim_ids": [
+        "DLO.SBC",
+        "DLO.SHARES"
+      ],
+      "effect": "strengthens",
+      "lens": "dilution",
+      "summary": "SBC/FCF 5.8%, 3년 주식수 -3.64%"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "competitive_landscape",
+      "summary": "경쟁 구도는 이번 파일럿에서 조사하지 않았다"
+    }
+  ],
+  "inversion": [
+    "테이크레이트가 이미 낮아 추가 압축 여지가 작고, 대형 가맹점 가격구간 이동이 반복되면 구조적 경쟁압력이다",
+    "신흥국 통화·자본통제·규제 리스크가 상시 존재한다"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": 14.52,
+  "revision": 1,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "db9d2a8504521793151a51f79f4f2a348e97cdc8c7f3d0aa1aacd5665179afe2",
+  "supersedes": "9938a851b8229aee20ed7bc673819b5a606ff50275595cee71ada46cc91815db",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

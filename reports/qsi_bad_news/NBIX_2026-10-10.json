@@ -1,0 +1,157 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000914475",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 20,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0000914475-23-000072",
+      "filed": "2023-10-31",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-23-000075",
+      "filed": "2023-11-09",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-23-000078",
+      "filed": "2023-11-13",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-24-000033",
+      "filed": "2024-02-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-24-000116",
+      "filed": "2024-05-01",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-24-000180",
+      "filed": "2024-08-01",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-24-000199",
+      "filed": "2024-08-28",
+      "guidance": [],
+      "items": "7.01,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-24-000210",
+      "filed": "2024-10-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-24-000214",
+      "filed": "2024-11-01",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-24-000229",
+      "filed": "2024-12-20",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-25-000006",
+      "filed": "2025-01-27",
+      "guidance": [],
+      "items": "1.01,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-25-000034",
+      "filed": "2025-02-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-25-000081",
+      "filed": "2025-04-04",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-25-000099",
+      "filed": "2025-05-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-25-000157",
+      "filed": "2025-07-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-25-000180",
+      "filed": "2025-10-28",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-26-000006",
+      "filed": "2026-02-11",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000914475-26-000025",
+      "filed": "2026-05-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-26-228013",
+      "filed": "2026-05-18",
+      "guidance": [],
+      "items": "1.01,2.01,2.03,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000914475-26-000035",
+      "filed": "2026-07-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 20건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "NBIX"
+}

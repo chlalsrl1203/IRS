@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000857005",
+  "pvp": {
+    "accession": "0001104659-25-124170",
+    "filed": "2025-12-23",
+    "measure_category": "cash_flow",
+    "measure_name": "free cash flow",
+    "n_years": 5,
+    "peer_tsr": 284.85,
+    "peer_tsr_text": "284.85",
+    "peo_cap_not_used": {},
+    "period_end": "2025-09-30",
+    "status": "OK",
+    "tsr": 245.43,
+    "tsr_text": "245.43",
+    "tsr_vs_peer": -0.13838862559241716,
+    "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+  },
+  "ticker": "PTC",
+  "trading_plans": {
+    "answer": 4,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001193125-25-291326",
+        "adoptions": 2,
+        "filed": "2025-11-21",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [
+          "Aaron von Staats",
+          "Kristian Talvitie"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001193125-26-039347",
+        "adoptions": 1,
+        "filed": "2026-02-05",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Corinna Lathan"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001193125-26-209869",
+        "adoptions": 0,
+        "filed": "2026-05-07",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001193125-26-328444",
+        "adoptions": 1,
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Corinna Lathan",
+          "Neil Barua"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

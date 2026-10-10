@@ -1,0 +1,984 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "HLNE.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": 0.1214,
+      "claim_ids": [
+        "HLNE.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.buyback_effect",
+      "status": "unknown"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "READ-HLNE-gov.chair_separated"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.ceo_succession_policy",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_buy",
+      "claim_ids": [
+        "HLNE.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": "no_material_ma",
+      "claim_ids": [
+        "HLNE.MA"
+      ],
+      "note": "현금 인수만 본다 — 주식 대가 인수·해지된 시도(해지 수수료)는 포함하지 않는다",
+      "qid": "cap.ma_discipline",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "HLNE.DEBTBUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.debt_funded_buyback",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "HLNE.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "HLNE.NOENF",
+        "HLNE.RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": "전년 대비 새로 추가된 경쟁 관련 위험 문장 2개: 「We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel.」 / 「We cannot control how third parties evaluate or characterize our disclosures or practices, and adverse ratings or assessments could negatively affect our reputation or our ability to attract and retain clients and investors. 58 Risks Related to Our Industry The investment management business is intensely competitive.」",
+      "claim_ids": [
+        "HLNE.NEWTHREAT"
+      ],
+      "note": "회사가 스스로 새로 인정한 위협만 모은다(문장 비교, 사람이 요약하지 않음). 엔진 경쟁자 가중치와 직접 대조하지는 않았다",
+      "qid": "cmp.new_threat",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "3단계 판독 미채택: 한쪽 이상 unknown (A=unknown, B=unknown)",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-HLNE-cmp.lifecycle_shakeout_or_decline"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "HLNE.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.8554,
+      "claim_ids": [
+        "HLNE.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "gte_20pct",
+      "claim_ids": [
+        "READ-HLNE-gov.insider_group_ownership"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.insider_group_ownership",
+      "status": "answered"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "HLNE.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "HLNE.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "HLNE.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "HLNE.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    },
+    {
+      "answer": "earnings",
+      "claim_ids": [
+        "HLNE.PVP_MEASURE"
+      ],
+      "note": "",
+      "qid": "gov.pay_measure_category",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0849,
+      "claim_ids": [
+        "HLNE.PVP_TSR"
+      ],
+      "note": "",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "HLNE.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    },
+    {
+      "answer": 2,
+      "claim_ids": [
+        "HLNE.SEC_COMMENT_LETTERS"
+      ],
+      "note": "",
+      "qid": "acc.sec_comment_letters_3y",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "HLNE.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE DEF 14A (filed 2026-07-23, acc 0001433642-26-000034)",
+            "location": "Proxy — voting rights",
+            "observed_date": "2026-10-06",
+            "quote": "each share of Class B common stock is entitled to ten votes per share",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "일몰(Sunset) 조항이 있으나 아직 발동하지 않았다고 문서가 명시한다",
+          "summary": "Class B 주식이 10표를 갖는다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 10표를 갖는다"
+    },
+    {
+      "claim_id": "HLNE.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21, acc 0001433642-26-000019)",
+            "location": "ShareBasedCompensation FY2026 = 50,867,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2026 SBC 50,867,000 / fcf0 419,073,000",
+          "value": 0.1214,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 12.1%다"
+    },
+    {
+      "claim_id": "HLNE.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE Form 4 x29 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1433642&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 29건 집계 (재량 매수 $19,511,533 / 재량 매도 $0 / 10b5-1 매도 $0)",
+          "value": 19511533.15,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 18건: 재량 순 $19,511,533, 10b5-1 정기 0건 → opp_net_buy"
+    },
+    {
+      "claim_id": "HLNE.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 1건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 1건)"
+    },
+    {
+      "claim_id": "HLNE.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "HLNE.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21, acc 0001433642-26-000019)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "Item 3. Legal Proceedings In the ordinary course of business, we may be subject to various legal, regulatory and/or administrative proceedings from time to time. Although there can be no assurance of the outcome of such proceedings, our management does not believe it is probable that any pending or, to our knowledge, threatened legal proceeding or claim would individually or in the aggregate materially affect our consolidated financial statements. See “Financial Statements and Supplementary Data — Notes to Consolidated Financial Statements — Note 16 . Commitments and Contingencies — Litigation” in Part II, Item 8 of this Form 10-K.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "HLNE.DEBTBUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE companyfacts",
+            "location": "차입 발행/상환/자사주 매입 FY2024",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "net_debt_issuance",
+          "note": "순차입(발행−상환) ≥ 매입액의 50%면 부채 조달(사전 고정·비검증)",
+          "summary": "현금흐름표 차입 발행·상환·매입 지출(companyfacts)",
+          "value": -2500000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "FY2024 순차입 -2,500,000 vs 자사주 매입 2,000 → 부채 조달 아니다"
+    },
+    {
+      "claim_id": "HLNE.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "HLNE.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "HLNE.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-08~2026-10-07, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "HLNE.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 8-K (2026-09-10, acc 0001433642-26-000045)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "advisory basis, named executive officer compensation, as set forth below. Votes For Votes Against Abstentions Broker Non-Votes 110,919,843 18,745,336",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000045/hlne-20260910.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.8554,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-09-10 주총 보수 승인 투표 찬성 110,919,843 / 반대 18,745,336 → 찬성률 85.5%"
+    },
+    {
+      "claim_id": "HLNE.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21, acc 0001433642-26-000019)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-07",
+            "quote": "concluded that our internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "HLNE.DEBTBUYBACK_BAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE companyfacts",
+            "location": "LongTermDebt FY2024~FY2025 / 자사주 매입 FY2025",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "debt_change",
+          "note": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+          "summary": "대차대조표 차입 잔액(전년·당년)과 현금흐름표 매입 지출",
+          "value": 94144000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "FY2025 차입 잔액 변동 94,144,000 vs 자사주 매입 2,000 → 부채 조달 맞다"
+    },
+    {
+      "claim_id": "HLNE.MA",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE companyfacts",
+            "location": "사업 인수 지출 / 영업현금흐름 FY2022~FY2026",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001433642.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acquisitions_to_ocf_5y",
+          "note": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+          "summary": "현금흐름표 인수 지출·영업현금흐름(companyfacts)",
+          "value": 0.0093,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "FY2022~FY2026 인수 현금지출 11,596,000 = 영업현금흐름의 0.9%"
+    },
+    {
+      "claim_id": "HLNE.NEWTHREAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-07",
+            "quote": "We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-07",
+            "quote": "We cannot control how third parties evaluate or characterize our disclosures or practices, and adverse ratings or assessments could negatively affect our reputation or our ability to attract and retain clients and investors. 58 Risks Related to Our Industry The investment management business is intensely competitive.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "전년 대비 새로 추가된 경쟁 관련 위험 문장 2개: 「We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel.」 / 「We cannot control how third parties evaluate or characterize our disclosures or practices, and adverse ratings or assessments could negatively affect our reputation or our ability to attract and retain clients and investors. 58 Risks Related to Our Industry The investment management business is intensely competitive.」"
+    },
+    {
+      "claim_id": "HLNE.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-K (filed 2026-05-21)",
+            "location": "전문",
+            "observed_date": "2026-10-07",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "READ-HLNE-gov.chair_separated",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2026-05-21",
+            "location": "HLNE-5",
+            "observed_date": "2026-10-09",
+            "quote": "/s/ Hartley R. Rogers Executive Co-Chairman and Chairman of the Board of Directors Hartley R. Rogers /s/ Erik R. Hirsch Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Erik R. Hirsch /s/ Juan Delgado-Moreira Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Juan Delgado-Moreira",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "의장은 Rogers, CEO는 공동 CEO Hirsch·Delgado-Moreira로 의장은 CEO가 아님",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "10-K filed 2026-05-21",
+            "location": "HLNE-5",
+            "observed_date": "2026-10-09",
+            "quote": "/s/ Hartley R. Rogers Executive Co-Chairman and Chairman of the Board of Directors Hartley R. Rogers /s/ Erik R. Hirsch Co-Chief Executive Officer and Director (Co-Principal Executive Officer)",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "Rogers가 의장, Hirsch·Delgado-Moreira가 공동 CEO — 의장과 CEO 분리",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.chair_separated = True (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-HLNE-gov.insider_group_ownership",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-07-23",
+            "location": "HLNE-13",
+            "observed_date": "2026-10-09",
+            "quote": "All current executive officers and directors as a group (13 persons) 3,289,081 8% 9,951,470 84 % 64 % 25 %",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "임원·이사 합계의 총 경제적 지분 25%(의결권 64%)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.insider_group_ownership = 'gte_20pct' (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-HLNE-cmp.lifecycle_shakeout_or_decline",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2026-05-21",
+            "location": "HLNE-36",
+            "observed_date": "2026-10-09",
+            "quote": "The alternative investment industry has experienced significant and consistent growth, which we expect to continue",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "회사가 자신의 시장이 지속 성장 중이라고 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "cmp.lifecycle_shakeout_or_decline = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "HLNE.PVP_MEASURE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE DEF 14A (2026-07-23, acc 0001433642-26-000034)",
+            "location": "ecd:CoSelectedMeasureName",
+            "observed_date": "2026-10-10",
+            "quote": "Fee Related Earnings (“FRE”)",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "engine/ecd.py MEASURE_RULES 순서대로 키워드 분류(사전 고정)",
+          "summary": "PvP 표 ecd:CoSelectedMeasureName",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "회사 선정 지표 'Fee Related Earnings (“FRE”)' → earnings"
+    },
+    {
+      "claim_id": "HLNE.PVP_TSR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE DEF 14A (2026-07-23, acc 0001433642-26-000034)",
+            "location": "ecd TSR (2026-03-31)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "pvp_tsr_vs_peer",
+          "note": "같은 시점 $100 투자의 누적 가치 비율. 비교군은 회사가 고른 것",
+          "summary": "PvP 표 ecd:TotalShareholderRtnAmt / PeerGroupTotalShareholderRtnAmt",
+          "value": -0.0849,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2026-03-31 누적 TSR 117.02 vs 비교군 127.88 → -8.5%"
+    },
+    {
+      "claim_id": "HLNE.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000042/hlne-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 0건, 해지 0건"
+    },
+    {
+      "claim_id": "HLNE.SEC_COMMENT_LETTERS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "HLNE EDGAR 제출 목록",
+            "location": "form=UPLOAD",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1433642&type=UPLOAD&dateb=&owner=include&count=40"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "sec_comment_letters_3y",
+          "note": "등록신고서 검토·종결 서한 포함, 공개는 검토 종료 후 20일 이상 지연. 품질 판정 아님",
+          "summary": "EDGAR 제출 목록의 UPLOAD 건수",
+          "value": 2,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2023-10-11~2026-10-10 SEC 의견서한(UPLOAD) 2건, 회사 답변(CORRESP) 1건"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.6364,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 21,
+    "n_primary_answered": 17,
+    "n_primary_required": 21,
+    "n_questions": 33,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 7,
+        "n_questions": 11,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "capital_allocation": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "competitive_landscape": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "dilution": {
+        "answered": 1,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "governance": {
+        "answered": 9,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      }
+    },
+    "unexamined_lenses": []
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "HLNE",
+  "findings": [
+    {
+      "claim_ids": [
+        "HLNE.SBC"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "HLNE.DUAL_CLASS",
+        "HLNE.INSIDER",
+        "HLNE.CXO",
+        "HLNE.LITIGATION",
+        "HLNE.SAYONPAY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"
+    },
+    {
+      "claim_ids": [
+        "HLNE.RESTATE",
+        "HLNE.NT",
+        "HLNE.AUDITOR",
+        "HLNE.IMPAIR",
+        "HLNE.ICFR"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "HLNE.DEBTBUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 재원을 같은 연도 순차입과 비교(사전 고정 규칙)"
+    },
+    {
+      "claim_ids": [
+        "HLNE.NEWTHREAT"
+      ],
+      "effect": "neutral",
+      "lens": "competitive_landscape",
+      "summary": "위험요인 연도별 비교로 새 경쟁 위협 문장을 모음(판단 없음)"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "02119627331cb51f9b49590317b3b8f8488f4e2908d646053575f52755b8d0f9",
+  "supersedes": "22df8d6ad9c470461a030ef9a33545ba9b145353cbd256dd439e517548a17ad8",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

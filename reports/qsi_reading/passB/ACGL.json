@@ -1,0 +1,39 @@
+{
+ "ticker": "ACGL",
+ "reader": "B",
+ "based_on_record": "596ab42ebe43a0f61922edd0c0b35d33e5d170ddbf2cdceff42c7e405fb09e96",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ACGL-4",
+   "quote": "the Compensation and Human Capital Committee also oversees the succession planning process for our Executive Leadership Team (except for the CEO)",
+   "reason": "위원회가 경영진(ELT) 승계 계획 절차를 감독한다고 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "보통주 표의 임원·이사 합계(as a group) 행이 증거에 없다(ACGL-6은 우선주 표 도입부)"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "재해손실 금액이나 재보험 한도·보유액 수치가 증거에 없고 정성적 서술뿐이다"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "answered",
+   "answer": 0.828,
+   "excerpt_id": "ACGL-23",
+   "quote": "Other operating expense ratio (5) 14.6 % 3.8 % 13.9 % 9.4 % Combined ratio 95.2 % 80.8 % 14.6 % 82.8 %",
+   "reason": "4열 중 앞 3열은 보험·재보험·모기지, 마지막 열은 영영권+무형자산 합(793+98+331=1,222)이 총계 열과 일치해 전사 수치로 판단"
+  }
+ ]
+}

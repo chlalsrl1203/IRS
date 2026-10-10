@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "Our numerous competitors include companies of various sizes and both public and private companies, including large, global companies and smaller companies with more specialized focuses, new entrants, and AI or cloud-native companies.",
+      "Our competitors include companies with significant sales and research and development resources, broad brand awareness, long operating histories or access to large customer bases.",
+      "Our competitors may deploy technical, marketing and financial resources more easily and effectively.",
+      "Our competitors or other third parties may develop AI solutions more rapidly or successfully, including but not limited to different data training strategies or proprietary access to data and, as a result, other AI solutions may achieve greater and faster adoption.",
+      "For example, we face increasing competition from companies offering generative and agentic AI solutions, including but not limited to prompt-based and multi-modal creation and editing, document productivity and understanding, ad distribution and creation, and purpose-built AI agents."
+    ],
+    "docs": [
+      "2026-01-15",
+      "2025-01-13"
+    ],
+    "n_new_competition": 5,
+    "n_new_sentences": 31,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "Our numerous competitors include companies of various sizes and both public and private companies, including large, global companies and smaller companies with more specialized focuses, new entrants, and AI or cloud-native companies.",
+      "Our competitors include companies with significant sales and research and development resources, broad brand awareness, long operating histories or access to large customer bases.",
+      "Our competitors may deploy technical, marketing and financial resources more easily and effectively.",
+      "Our competitors or other third parties may develop AI solutions more rapidly or successfully, including but not limited to different data training strategies or proprietary access to data and, as a result, other AI solutions may achieve greater and faster adoption.",
+      "For example, we face increasing competition from companies offering generative and agentic AI solutions, including but not limited to prompt-based and multi-modal creation and editing, document productivity and understanding, ad distribution and creation, and purpose-built AI agents."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": 1.56,
+    "gm_end": 89.27,
+    "gm_start": 87.7,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "ADBE",
+  "unit": "USD"
+}

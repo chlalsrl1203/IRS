@@ -1,0 +1,95 @@
+{
+ "ticker": "NBIX",
+ "reader": "A",
+ "based_on_record": "54c52e0ed8682475065b3d62ab3c7738ce62fa513e8a53aac7e07cc45849b27d",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "NBIX-2",
+   "quote": "A key responsibility of the Board is succession planning for the CEO and other members of the executive management team.",
+   "reason": "이사회가 CEO·경영진 승계 계획을 책임진다고 명시 — 루브릭상 False"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "NBIX-6",
+   "quote": "We currently believe that none of the claims or actions pending against us is likely to have, individually or in the aggregate, a material adverse effect on our business, financial condition, or results of operations.",
+   "reason": "회사가 진행 중 소송(Zydus ANDA 특허소송 등)이 중대한 영향이 없을 것이라 진술"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "1_to_5pct",
+   "excerpt_id": "NBIX-9",
+   "quote": "All current executive officers and directors as a group (20 persons) (21) 4,768,380 4.6%",
+   "reason": "임원·이사 전체 합산 4.6% — 1~5% 구간"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Soleno 인수(2026-05)는 있으나 손상·통합 성과·5년 현금 인수 규모를 판단할 근거가 묶음에 없음"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "2025 자사주 매입은 확인되나 차입금 없음 진술이나 매입 재원 정보가 없음"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "INGREZZA 매출 가이던스는 있으나 연간 실제 실적치가 묶음에 없어 하단 미달 여부 판정 불가"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 대비 실제 실적치가 묶음에 없어 약속 이행 여부 판정 불가"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "answered",
+   "answer": true,
+   "excerpt_id": "NBIX-31",
+   "quote": "INGREZZA 2025 net product sales guidance narrowed from $2.5 - $2.6 billion to $2.5 - $2.55 billion reflecting double-digit volume growth partially offset by lower net price due to expanded access.",
+   "reason": "2025년 INGREZZA 가이던스 상단을 스스로 낮춤(중간값 하향) — 최근 3년 내 자발적 하향"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "최근 회계연도/최근 4개 분기 전체의 GAAP↔비GAAP 조정 금액을 묶음에서 모두 확인할 수 없음"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 스스로 점유율 추세를 밝힌 문장이 묶음에 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 시장 성장/위축을 진술한 문장이 묶음에 없음"
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001852131",
+  "pvp": {
+    "accession": "0001852131-26-000038",
+    "filed": "2026-07-07",
+    "measure_category": "revenue_growth",
+    "measure_name": "Revenue",
+    "n_years": 4,
+    "peer_tsr": 132.0,
+    "peer_tsr_text": "132",
+    "peo_cap_not_used": {
+      "2023-03-31": 12042936.0,
+      "2024-03-31": 22608078.0,
+      "2025-03-31": 34592657.0,
+      "2026-03-31": 64419952.0
+    },
+    "period_end": "2026-03-31",
+    "status": "OK",
+    "tsr": 396.0,
+    "tsr_text": "396",
+    "tsr_vs_peer": 2.0,
+    "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000038/nxt-20260702.htm"
+  },
+  "ticker": "NXT",
+  "trading_plans": {
+    "answer": 6,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0001852131-25-000064",
+        "adoptions": 3,
+        "filed": "2025-10-30",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Dan Shugar",
+          "Dave Bennett",
+          "Howard Wenger"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0001852131-26-000006",
+        "adoptions": 3,
+        "filed": "2026-01-30",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Dan Shugar",
+          "Dave Bennett",
+          "Nicholas (Marco) Miller"
+        ],
+        "terminations": 1
+      },
+      {
+        "accession": "0001852131-26-000017",
+        "adoptions": 0,
+        "filed": "2026-05-19",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0001852131-26-000048",
+        "adoptions": 0,
+        "filed": "2026-08-03",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 1
+  }
+}

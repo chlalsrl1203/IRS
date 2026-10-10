@@ -1,0 +1,255 @@
+{
+ "ticker": "PDD",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": true,
+ "based_on_record": "9ff6b5566789a53af2cb2b40cab3be7645f455df5ed2eaebcc2b253739d977d8",
+ "targets": [
+  "gov.chair_separated",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.insider_pattern",
+  "gov.cxo_turnover_24m",
+  "gov.material_litigation",
+  "cap.ma_discipline",
+  "cap.debt_funded_buyback",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "acc.material_impairment_3y",
+  "dil.sbc_to_fcf_pct",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.insider_pattern": "20-F/6-K 발행사 — Section 16 Form 4 의무가 없다",
+  "gov.cxo_turnover_24m": "20-F/6-K 발행사 — 8-K Item 5.02 의무가 없다",
+  "gov.material_litigation": "Legal Proceedings 절에서 회사의 소송 부재 진술을 찾지 못했다 (소송을 기술하거나 주석 참조일 수 있다 — 심각도는 사람이 판단한다)",
+  "cap.ma_discipline": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "cap.debt_funded_buyback": "같은 회계연도의 차입 발행·매입 값이 없다",
+  "acc.guidance_miss_3y": "6-K 34건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "6-K 34건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_impairment_3y": "20-F/6-K 발행사 — NT 10-K·8-K 의무가 없다",
+  "dil.sbc_to_fcf_pct": "ledger에 SBC/FCF가 없어 대조 기준이 없다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "PDD-1",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": " 75% of the partners. Directors and Executive Officers The following table sets forth information regarding our directors and executive officers as of the date of this annual report. Directors and Executive Officers Age Position/Title Lei Chen 46 Co-Chairman of the Board of Directors and Co-Chief Executive Officer Jiazhen Zhao 42 Co-Chairman of the Board of Directors and Co-Chief Executive Officer Anthony Kam Ping Leung 65 Independent Director Haifeng Lin 49 Director Ivonne M.C.M. Rietjens 67 Independent Director George Yong-Boon Yeo 71 Independent Director Jun Liu 43 Vice President of Finance Junyun Xiao 46 Senior Vice President of Operation Zhenwei Zheng 42 Sen"
+  },
+  {
+   "id": "PDD-2",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "ber of our company and has served as our co-chairman of the board of directors and co-chief executive officer since December 2025. He has served as our director since July 2020, and co-chief executive officer since April 2023. Mr. Chen served as our chairman of the board of directors from March 2021 to December 2025, as our chief executive officer from July 2020 to April 2023, as our chief technology officer from 2016 to 2020 and as our director from February 2017 to July 2018. Prior to joining our company, Mr. Chen served as chief technology officer of Xinyoudi Studio since 2011. Mr. Chen’s prior working experience includes internships with Google (Nasdaq: GOOG)"
+  },
+  {
+   "id": "PDD-3",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "earning. Mr. Chen received his bachelor’s degree in computer science from Tsinghua University and his doctoral degree in computer science from University of Wisconsin-Madison. Jiazhen Zhao is a founding member of our company and has served as our co-chairman of the board of directors and co-chief executive officer since December 2025. He has served as our director and co-chief executive officer since April 2023. Mr. Jiazhen Zhao served as a senior vice president from 2018 to 2023. Mr. Zhao has held several leadership roles across our company. He started our Duo Duo Grocery business and led the operations of a few key product categories in the Pinduoduo platform, "
+  },
+  {
+   "id": "PDD-4",
+   "for": "gov.chair_separated",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "egistrant hereby certifies that it meets all of the requirements for filing on Form 20-F and that it has duly caused and authorized the undersigned to sign this annual report on its behalf. PDD Holdings Inc. By: /s/ Lei Chen Name: Lei Chen Title: Co-Chairman of the Board of Directors and Co-Chief Executive Officer By: /s/ Jiazhen Zhao Name: Jiazhen Zhao Title: Co-Chairman of the Board of Directors and Co-Chief Executive Officer Date: April 29, 2026 142 Table of Contents PDD HOLDINGS INC. Index to Consolidated Financial Statements Contents Page(s) Reports of Independent Registered Public Accounting Firm (PCAOB ID: 1409 ) F-2 – F-4 Report of Independent Registered "
+  },
+  {
+   "id": "PDD-5",
+   "for": "gov.insider_pattern",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "investment in our ADSs will likely depend entirely upon any future price appreciation of our ADSs. There is no guarantee that our ADSs will appreciate in value or even maintain the price at which you purchased the ADSs. You may not realize a return on your investment in our ADSs and you may even lose your entire investment in our ADSs. 65 Table of Contents Our memorandum and articles of association contain anti-takeover provisions that could have a material adverse effect on the rights of holders of our ordinary "
+  },
+  {
+   "id": "PDD-6",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": " be able to successfully enforce our contractual rights and may need to initiate costly and lengthy legal proceedings to protect our rights. Additionally, while we are a platform that does not control merchants, we nevertheless frequently receive and respond to inquiries and demands related to merchants from regulators around the globe, and we expect to continue to receive more such inquiries and demands in the future. If our policies are violated by merchants, or if our policies and practices or responses to such conduct are perceived as or found to be inadequate by regulators, it could subject us to governmental inquiries, investigations, enforcement actions, civil or criminal liabilities, fines or penalties, or require us to change our policies and practices in ways that could lower our revenue, increase our costs, make our platform less user-friendly, all of which could adversely impact our business. 23 Table of Contents Our controls over fraud and policy violations are essential to maintaining user trust, but they may not be sufficient to keep up with the rapidly evolving techniques used by those engaging in fraudulent activity on our platforms. The increasing sophistication of these techniques has made fraud by sellers and buyers more difficult to combat and has amplified its impact. We take action against sellers whom we believe may have violated our policies or engaged in fraud. The volume of enforcement actions against sellers has fluctuated over time and may rise again in the future. Furthermore, our actions may be insufficient, untimely, or ineffective in ensuring a positive purc"
+  },
+  {
+   "id": "PDD-7",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "e products sold on our platforms and sustain personal injury or property damage may bring claims or legal proceedings against us, even though we are neither the seller nor the manufacturer of the products in question. We have been, and may continue to be, involved in product safety lawsuits filed by consumers on both the Pinduoduo and Temu platforms. Although we would have legal recourse against the manufacturer of such products under the applicable law, attempting to enforce our rights against the manufacturer may be expensive, time-consuming and ultimately futile. Also, operators of e-commerce platforms may be subject to certain provisions of consumer protection laws even where the operator is not the manufacturer, provider or retailer of the products or services purchased by the consumer. In addition, if we do not take appropriate remedial actions against merchants on our platforms for their actions that we know, or should have known, would infringe upon the rights and interests of consumers, we may be held jointly liable for infringement alongside the merchants. For example, if the operator of the Pinduoduo platform fails to provide a consumer with the real name, address and contact details of the merchant that sold the defective product on the Pinduoduo platform, the operator of the Pinduoduo platform may be liable to compensate such consumer for damages suffered by him or her. Moreover, consumer protection laws in China provide that a platform will be held liable for failing to meet any undertaking that it made to consumers with regard to products listed on it, and the Pinduoduo platf"
+  },
+  {
+   "id": "PDD-8",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "ial practices. We may continue to face similar investigations or enforcement actions, or claims and legal proceedings (including putative class actions) in jurisdictions where we operate concerning various aspects of our business, such as user acquisition and retention strategies, pricing and discounting practices, product listings, third-party merchant conduct, or the collection or use of consumer data. Any such proceedings, regardless of their outcome, could have an adverse effect on us because of legal costs, disruptions to our operations, diversion of management resources, negative publicity, and other factors. 26 Table of Contents We may experience fluctuations in our tax obligations and effective tax rate. We are subject to a variety of taxes and tax collection obligations in multiple jurisdictions. We may recognize additional tax expense and be subject to additional tax liabilities, including other liabilities for tax collection obligations due to changes in laws, regulations, administrative practices, principles, and interpretations related to tax, including changes to the global tax framework, competition, and other laws and accounting rules in various jurisdictions. Such changes could come about as a result of economic, political, and other conditions. An increasing number of jurisdictions are considering or have adopted laws or administrative practices that impose new tax measures relating to online services and e-commerce, including revenue-based taxes, such as digital service taxes or online sales tax. These include new obligations to withhold or collect sales, consumption, val"
+  },
+  {
+   "id": "PDD-9",
+   "for": "gov.material_litigation",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "ving” and “Item 8. Financial Information—A. Consolidated Statements and Other Financial Information—Legal Proceedings.” We cannot assure you that we will not receive such notice of warning or be subject to penalties or other disciplinary actions in the future. The interpretation and implementation of current and any future laws and regulations applicable to online retail and related businesses may substantially impact our business and financial condition. New laws and regulations may be adopted from time to time that require additional licenses and permits other than those we currently have, and to address new issues that arise from time to time. Interpretations of existing laws and regulations could also change, resulting in us being subject to licensing requirements that we believe we are not currently subject to. If any governmental authority considers us operating without proper approvals, licenses, filings, registrations or permits or promulgates new laws and regulations that require additional approvals, filings, registrations or licenses or impose additional restrictions on the operation of any part of our business, it has the power to, among other things, levy fines, confiscate our income, revoke our business licenses, require us to discontinue the relevant part of our business or impose restrictions on the affected portion of our business. Any of these and other regulatory actions by the governmental authorities, including issuance of official notices, change of policies, promulgation of regulations and imposition of sanctions, may adversely affect our business. In addition, if we "
+  },
+  {
+   "id": "PDD-10",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "s. The investments and acquired assets or businesses may not generate anticipated synergies with our business or achieve anticipated financial growth. They could result in significant investments and goodwill impairment charges and amortization expenses for other intangible assets, which would adversely affect our financial condition and operating results. Undetected programming errors or flaws could negatively affect user experience, damage our reputation or even cause direct loss to us, which would materially and adversely affect our results of operations. Our platforms and internal systems rely on software that is highly technical and complex. In addition, our platforms and internal systems depend on the ab"
+  },
+  {
+   "id": "PDD-11",
+   "for": "cap.ma_discipline",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "moving the cost and accumulated depreciation from the asset and accumulated depreciation accounts with any resulting gain or loss reflected in the consolidated statements of comprehensive income. (j) Impairment of long-lived assets other than goodwill The Group evaluates its long-lived assets for impairment whenever events or changes in circumstances, such as a significant adverse change to market conditions that will impact the future use of the assets, indicate that the carrying amount of an asset may not be fully recoverable. When these events occur, the Group evaluates the recoverability of long-lived assets by comparing the carrying amounts of the assets to the future undiscounted cash flows expected to result from the use of the assets"
+  },
+  {
+   "id": "PDD-12",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "n a notice served to such shareholders at least 14 calendar days prior to the specified time of payment. The shares that have been called upon and remain unpaid are subject to forfeiture. Redemption, Repurchase and Surrender of Shares . We may issue shares on terms that such shares are subject to redemption, at our option or at the option of the holders of these shares, on such terms and in such manner as may be determined by our board of directors, or by the shareholders by special resolutions. Our company may also repurchase any of our shares on such terms and in such manner as have been approved by our board of directors or by an ordinary resolution of our shareholders. Under the Companies Act, the redemption or repurchas"
+  },
+  {
+   "id": "PDD-13",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "apital if our company can, immediately following such payment, pay its debts as they fall due in the ordinary course of business. In addition, under the Companies Act no such share may be redeemed or repurchased (a) unless it is fully paid up, (b) if such redemption or repurchase would result in there being no shares outstanding or (c) if our company has commenced liquidation. In addition, our company may accept the surrender of any fully paid share for no consideration. Variations of Rights of Shares . If at any time, our share capital is divided into different classes of shares, the rights attached to any class of shares may only be materially and adversely varied with the consent in writing of the holders of two-thirds of the issued shares of that class or with the sanction of a resolution passed at a se"
+  },
+  {
+   "id": "PDD-14",
+   "for": "cap.debt_funded_buyback",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "cted Shares’’). In the event that employment relationship is terminated with the Company, voluntarily or involuntarily, within the three-year lock-up periods, the Company may, at its sole discretion, repurchase the Restricted Shares at the employee’s exercise price. The Group determined the substance of the lock up periods to be additional implicit service periods of three years , thereby extending the vesting terms of the options to be seven years in total. The RSUs granted under the 2018 Plan vest over a period of four years with 25 % vesting on each anniversary from the date of grant, or with 50 % of the RSUs vesting on the second anniversary and 25 % on each of the third and fourth anniversary from the date of grant. F"
+  },
+  {
+   "id": "PDD-15",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2026-08-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_ex99-1.htm",
+   "text": "“confident,” “potential,” “continue” or other similar expressions. Among other things, the business outlook and quotations from management in this announcement, as well as the Company’s strategic and operational plans, contain forward-looking statements. The Company may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exchange Commission (the “SEC”), in its annual report to shareholders, in press releases and other written materials and in oral statements made by its officers, directors or employees to third parties. Statements that are not historical facts, including but not limited to statements about the Company’s beliefs and expectations, a"
+  },
+  {
+   "id": "PDD-16",
+   "for": "acc.guidance_miss_3y",
+   "doc": "6-K filed 2025-11-18",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465925113490/tm2531580d1_ex99-1.htm",
+   "text": "l responsibility and continue our journey that serves the greater public interest and the long-term outlook of the entire ecommerce ecosystem.” “In an increasingly competitive environment, we remain steadfast in taking a long-term focus,” said Mr. Jiazhen Zhao, Executive Director and Co-Chief Executive Officer of PDD Holdings. “As a public platform, we will continue to invest in merchant support initiatives, driving industry upgrades and the sustainable development of the platform in the long run.” “In the third quarter, revenues growth continued to moderate, reflecting the ongoing evolution of the competitive landscape and external uncertainties,” said Ms. Jun Liu, VP of Finance of PDD Holdings. “"
+  },
+  {
+   "id": "PDD-17",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-08-25",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926100534/tm2623874d1_ex99-1.htm",
+   "text": "“Reconciliation of Non-GAAP Measures to the Most Directly Comparable GAAP Measures” set forth at the end of this press release. 4 Safe Harbor Statements This announcement contains forward-looking statements. These statements are made under the “safe harbor” provisions of the U.S. Private Securities Litigation Reform Act of 1995. These forward-looking statements can be identified by terminology such as “will,” “expects,” “anticipates,” “aims,” “future,” “intends,” “plans,” “believes,” “estimates,” “confident,” “potential,” “continue” or other similar expressions. Among other things, the business outlook and quotations from management in this announcement, as well as the Company’s strategic and operational plans, contain forward-looking statements. The Company may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exchange Commission (the “SEC”), in its annual report to shareholders, in press releases and other written materials and in oral stat"
+  },
+  {
+   "id": "PDD-18",
+   "for": "acc.material_one_time_items",
+   "doc": "6-K filed 2026-03-26",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926034813/tm269789d1_ex99-1.htm",
+   "text": "“Reconciliation of Non-GAAP Measures to the Most Directly Comparable GAAP Measures” set forth at the end of this press release. 5 Safe Harbor Statements This announcement contains forward-looking statements. These statements are made under the “safe harbor” provisions of the U.S. Private Securities Litigation Reform Act of 1995. These forward-looking statements can be identified by terminology such as “will,” “expects,” “anticipates,” “aims,” “future,” “intends,” “plans,” “believes,” “estimates,” “confident,” “potential,” “continue” or other similar expressions. Among other things, the business outlook and quotations from management in this announcement, as well as the Company’s strategic and operational plans, contain forward-looking statements. The Company may also make written or oral forward-looking statements in its periodic reports to the U.S. Securities and Exchange Commission (the “SEC”), in its annual report to shareholders, in press releases and other written materials and in oral stat"
+  },
+  {
+   "id": "PDD-19",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "ffected by our investments or acquisitions. The investments and acquired assets or businesses may not generate anticipated synergies with our business or achieve anticipated financial growth. They could result in significant investments and goodwill impairment charges and amortization expenses for other intangible assets, which would adversely affect our financial condition and operating results. Undetected programming errors or flaws could negatively affect user experience, damage our reputation or even cause direct loss to us, which would materially and adversely affect our results of operations. Our platforms and internal systems rely on software that is highly technical and complex. In addition, our platforms and internal systems depend on the ab"
+  },
+  {
+   "id": "PDD-20",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "xpenses during the reporting periods. Significant accounting estimates reflected in the Group’s consolidated financial statements include, but are not limited to allowance for doubtful accounts arising from expected credit losses, economic lives and impairment of long-lived assets, commitments and contingencies, valuation of short-term and long-term investments, valuation allowance for deferred tax assets, uncertain tax position, valuation for share-based compensation and incremental borrowing rates for operating lease liabilities. Changes in facts and circumstances may result in revised estimates. Actual results could differ from those estimates, and as such, differences may be material to the consolidated financial statements. (d) Foreign currency "
+  },
+  {
+   "id": "PDD-21",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "the date of investment, the Group subsequently adjusts the carrying amount of the investments to recognize the Group’s proportionate share of each equity investees’ profits or loss into earnings. The Group evaluates the equity method investments for impairment under ASC 323-10. An impairment loss on the equity method investments is recognized in earnings when the decline in value is determined to be other-than-temporary. Other debt investments primarily consist of loan investments, which are accounted for at amortized cost. Interest income on loan investments is recognized over the life of the loan and is recorded on an accrual basis in “Interest and investment income, net” in the consolidated statements of comprehensive income. The Group enters into"
+  },
+  {
+   "id": "PDD-22",
+   "for": "acc.material_impairment_3y",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": ", sales and disposals of assets are recorded by removing the cost and accumulated depreciation from the asset and accumulated depreciation accounts with any resulting gain or loss reflected in the consolidated statements of comprehensive income. (j) Impairment of long-lived assets other than goodwill The Group evaluates its long-lived assets for impairment whenever events or changes in circumstances, such as a significant adverse change to market conditions that will impact the future use of the assets, indicate that the carrying amount of an asset may not be fully recoverable. When these events occur, the Group evaluates the recoverability of long-lived assets by comparing the carrying amounts of the assets to the future undiscounted cash flows expe"
+  },
+  {
+   "id": "PDD-23",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "e from time to time due to seasonality. 38 Table of Contents We have granted and may continue to grant options and other types of awards under our share incentive plans, which may result in increased share-based compensation expenses. We adopted a global share incentive plan in 2015 (the “2015 Plan”) and a share incentive plan in 2018 (the “2018 Plan”) for the purpose of granting share-based compensation awards to employees, directors and consultants to incentivize their performance and align their interests with ours."
+  },
+  {
+   "id": "PDD-24",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "age from 1.0% to 3.0% effective from the fiscal year beginning January 1, 2022. See “Item 6. Directors, Senior Management and Employees—B. Compensation” for further details. We recognized substantial share-based compensation expenses in our consolidated financial statements in connection with these grants, and may continue to incur such expenses in the future. We believe the granting of share-based compensation is of significant importance to our ability to attract and retain key personnel and employees, and we will co"
+  },
+  {
+   "id": "PDD-25",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": ", lock-up period, exercise price or other key terms applicable to the grants under our currently effective share incentive plans from time to time. If we choose to do so, our expenses associated with share-based compensation may increase, which may have an adverse effect on our results of operations. If we fail to implement and maintain an effective system of internal control over financial reporting, our ability to accurately and timely report our financial results or prevent fraud may be adversely affected, and inves"
+  },
+  {
+   "id": "PDD-26",
+   "for": "dil.sbc_to_fcf_pct",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": ", such as costs and expenses attributable to fulfillment fees, merchant support services, bandwidth and server costs, amortizations, depreciation and maintenance costs, payroll, employee benefits and share-based compensation expenses, call center, surcharges and other expenses directly attributable to the online platform services. In addition, we have invested significantly in marketing activities to promote our brand and our products and services. Our sales and marketing expenses increased from RMB82,188.9 million in "
+  },
+  {
+   "id": "PDD-27",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "of the end of 2025, Temu was serving consumers in various countries and regions, including the United States, Japan, Germany, the United Kingdom, France, Canada and Italy, which are among the world’s largest economies. Although at an early stage of development, Temu aspires to become a global online platform dedicated to providing quality products to consumers at attractive prices. In partnership with a global network of logistics vendors and fulfillment partners, Temu empowers merchants with value-added services that enable a broader market reach. Both Pinduoduo and Temu enable merchants to provide "
+  },
+  {
+   "id": "PDD-28",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "d parties or any disruptions or malfunctions of the e-waybill systems could severely harm our business and prospects. ● We face intense competition, and if we fail to compete effectively, we may lose market share, buyers and merchants. ● Our business is subject to complex and evolving laws and regulations regarding privacy and data protection in the countries and regions where we have operations. These laws and regulations can be complex and stringent, and many are subject to change and evolving interpretation, which may result in claims, changes to our data and other business practices, regulatory invest"
+  },
+  {
+   "id": "PDD-29",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": " brand, customer experience, and financial performance could be materially and adversely affected. 18 Table of Contents We face intense competition, and if we fail to compete effectively, we may lose market share, buyers and merchants. The e-commerce industry is intensely competitive. We compete to attract, engage and retain buyers, merchants, and other participants on our platforms. Our current or potential competitors include (i) major e-commerce operators, (ii) major traditional and brick-and-mortar retailers, (iii) retail companies focused on specific product categories, and (iv) major internet compan"
+  },
+  {
+   "id": "PDD-30",
+   "for": "cmp.share_trend",
+   "doc": "20-F filed 2026-04-29",
+   "url": "https://www.sec.gov/Archives/edgar/data/1737806/000110465926050727/pdd-20251231x20f.htm",
+   "text": "uyers may prefer them over our business model. In addition, new and enhanced technologies may increase the competition in the market we operate in. Increased competition may reduce our profitability, market share, user base and brand recognition. There can be no assurance that we will be able to compete successfully against current or future competitors, and such competitive pressures may have a material and adverse effect on our business, financial condition and results of operations. Our competitors or other third parties have integrated, and may continue to integrate, artificial intelligence solutions "
+  }
+ ]
+}

@@ -1,0 +1,435 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "PTC.CHAIR"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PTC.SUCC"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "프록시에서 단일 클래스 여부를 직접 확인하지 못했다",
+      "qid": "gov.dual_class",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "PTC.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: PTC.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.2524,
+      "claim_ids": [
+        "PTC.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0215,
+      "claim_ids": [
+        "PTC.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "모순 미해소: 2026-08-04 경량검증은 '자사주매입이 SBC의 6~7배(anti-dilutive)'라 했으나 희석 가중평균 주식수는 3년 +2.15%다. 기본주식수·매입액 원문을 아직 대조하지 않았다",
+      "qid": "cap.buyback_effect",
+      "status": "unknown"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PTC.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "가장 최근 공통 회계연도가 FY2022로 낡았다(FY2024 이후 필요)",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PTC.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-06",
+  "claims": [
+    {
+      "claim_id": "PTC.DEAL",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 8-K (filed 2026-10-05, acc 0001193125-26-413124, Items 1.01/7.01/9.01)",
+            "location": "Item 1.01 Agreement and Plan of Merger",
+            "observed_date": "2026-10-06",
+            "quote": "will be converted into the right to receive $205 in cash, without interest",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526413124/d174191d8k.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "merger_consideration_usd",
+          "note": "해지수수료: 'the Company will be required to pay Schneider Electric a termination fee of $700 million'. 종결은 주주 승인·규제 승인 조건부",
+          "summary": "2026-10-04 합병계약 체결, 보통주당 $205 현금, 해지수수료 $700M",
+          "value": 205.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "PTC는 Schneider Electric의 확정 현금 인수 대상이다"
+    },
+    {
+      "claim_id": "PTC.CHAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (filed 2025-12-23, acc 0001104659-25-124170)",
+            "location": "Proposal 1 — Board Leadership Structure",
+            "observed_date": "2026-10-06",
+            "quote": "Our Board is led by an independent Chair.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "독립 이사회 의장(Janice Chaffin)이 이사회를 이끈다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "이사회 의장이 독립이사이며 CEO와 분리돼 있다"
+    },
+    {
+      "claim_id": "PTC.SUCC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC DEF 14A (filed 2025-12-23, acc 0001104659-25-124170)",
+            "location": "Corporate Governance — Committee responsibilities",
+            "observed_date": "2026-10-06",
+            "quote": "Ensures a CEO succession plan is maintained to ensure continuity of leadership for PTC.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Corporate Governance Committee의 책임에 CEO 승계 계획 유지가 포함",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "CEO 승계 계획이 유지되도록 위원회가 보장한다"
+    },
+    {
+      "claim_id": "PTC.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K FY2025 (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "us-gaap:ShareBasedCompensation FY2025 = 216,205,000 USD",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값(같은 10-K의 OCF 867,696,000 USD에서 capex 차감)",
+          "summary": "FY2025 SBC 216,205,000 USD / fcf0 856,688,000 USD",
+          "value": 0.2524,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC/FCF가 25%로 높은 편이다"
+    },
+    {
+      "claim_id": "PTC.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K FY2025 (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "us-gaap:WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다. 기본주식수와 매입액은 확인하지 않았다",
+          "summary": "가중평균 희석주식수 FY2022 118,233,000 -> FY2025 120,777,000",
+          "value": 0.0215,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수가 늘었다(+2.15%)"
+    },
+    {
+      "claim_id": "PTC.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC Form 4 x38 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=857005&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 38건 집계 (재량 매수 $0 / 재량 매도 $9,056,195 / 10b5-1 매도 $2,483,748)",
+          "value": -9056194.51,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 16건: 재량 순 $-9,056,195, 10b5-1 정기 12건 → opp_net_sell"
+    },
+    {
+      "claim_id": "PTC.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 4건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 4건)"
+    },
+    {
+      "claim_id": "PTC.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000857005.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "PTC.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PTC 10-K (filed 2025-11-21, acc 0001193125-25-291326)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "Item 3. Legal Proceedings 19",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525291326/ptc-20250930.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.3043,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 7,
+    "n_primary_answered": 6,
+    "n_primary_required": 11,
+    "n_questions": 23,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 1,
+        "n_questions": 6,
+        "not_applicable": 0,
+        "unasked": 5,
+        "unknown": 0
+      },
+      "capital_allocation": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 2,
+        "unknown": 2
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 4,
+        "unknown": 0
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 4,
+        "n_questions": 7,
+        "not_applicable": 0,
+        "unasked": 1,
+        "unknown": 2
+      }
+    },
+    "unexamined_lenses": [
+      "capital_allocation",
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [
+    {
+      "claim_ids": [
+        "PTC.DEAL"
+      ],
+      "code": "PENDING_ACQUISITION",
+      "statement": "확정된 현금 인수 대상이다. 주가는 독립적 성장 전망이 아니라 딜 조건·성사 확률을 반영하므로 Implied Growth 역산이 '시장의 성장 기대'를 뜻하지 않는다 (LNTH 제외와 같은 이유)"
+    }
+  ],
+  "entity": "PTC",
+  "findings": [
+    {
+      "claim_ids": [
+        "PTC.INSIDER",
+        "PTC.CXO",
+        "PTC.LITIGATION"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "독립 의장과 CEO 승계 계획은 확인. 차등의결·내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음)"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "capital_allocation",
+      "summary": "자사주 효과에 모순이 있어 판단 보류(cap.buyback_effect 참조)"
+    },
+    {
+      "claim_ids": [
+        "PTC.RESTATE"
+      ],
+      "effect": "not_examined",
+      "lens": "accounting_quality",
+      "summary": "재작성·가이던스 이력 미조회 / 3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지"
+    },
+    {
+      "claim_ids": [
+        "PTC.SBC",
+        "PTC.SHARES"
+      ],
+      "effect": "weakens",
+      "lens": "dilution",
+      "summary": "SBC/FCF 25%이고 3년 희석주식수 +2.15%. 엔진은 희석을 모형화하지 않는다"
+    },
+    {
+      "claim_ids": [],
+      "effect": "not_examined",
+      "lens": "competitive_landscape",
+      "summary": "경쟁 구도는 이번 파일럿에서 조사하지 않았다"
+    }
+  ],
+  "inversion": [
+    "딜이 무산되면(주주 반대·규제 불허) 주가가 독립 가치로 되돌아가며 종전 GAAP-ARR 괴리·가이던스 리스크가 재부각된다",
+    "GAAP 매출·ARR 괴리가 반복되는 구조(ASC 606 라이선스 인식 타이밍)"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": 192.26,
+  "revision": 2,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "7d68e065c279f07411fb562faa11117e02c47191c9692918933026084fb2e600",
+  "supersedes": "4a5f264eb03b3763c6256994a534ad96a3bee3838e4afd4690e4f290d50d4dc5",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "More generally, any unfavorable future actions or escalations by countries which we operate in, such as the imposition of tariffs, quotas, embargoes, safeguards, customs restrictions, capital controls and other restrictions, may affect the demand for our products and services, impact the competitive position of our services, increase our and merchants’ costs, prevent merchants on our platforms from being able to sell products overseas or cause delays in the shipment and delivery of products to our buyers, any of which could affect our business and financial condition.",
+      "Our classification as a Very Large Online Platform under the EU Digital Services Act (DSA), as well as the possibility of a future categorization as a Gatekeeper under the EU Digital Markets Act or the Undertaking of Paramount Significance for Competition Across Markets under S19a of the Gesetz gegen Wettbewerbsbeschränkungen (German Competition Act - GWB) could add to our obligations and existing compliance requirements (without prejudice of other applicable and equivalent European and national rules).",
+      "The Digital Markets, Competition and Consumers Act 2024 (DMCCA) also places additional obligations with respect to consumer compliance in the UK."
+    ],
+    "docs": [
+      "2026-04-29",
+      "2025-04-28"
+    ],
+    "n_new_competition": 3,
+    "n_new_sentences": 49,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "More generally, any unfavorable future actions or escalations by countries which we operate in, such as the imposition of tariffs, quotas, embargoes, safeguards, customs restrictions, capital controls and other restrictions, may affect the demand for our products and services, impact the competitive position of our services, increase our and merchants’ costs, prevent merchants on our platforms from being able to sell products overseas or cause delays in the shipment and delivery of products to our buyers, any of which could affect our business and financial condition.",
+      "Our classification as a Very Large Online Platform under the EU Digital Services Act (DSA), as well as the possibility of a future categorization as a Gatekeeper under the EU Digital Markets Act or the Undertaking of Paramount Significance for Competition Across Markets under S19a of the Gesetz gegen Wettbewerbsbeschränkungen (German Competition Act - GWB) could add to our obligations and existing compliance requirements (without prejudice of other applicable and equivalent European and national rules).",
+      "The Digital Markets, Competition and Consumers Act 2024 (DMCCA) also places additional obligations with respect to consumer compliance in the UK."
+    ]
+  },
+  "pricing_power": {
+    "answer": "eroding",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": -19.62,
+    "gm_end": 56.28,
+    "gm_start": 75.9,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "PDD",
+  "unit": "USD"
+}

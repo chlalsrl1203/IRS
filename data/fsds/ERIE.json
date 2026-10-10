@@ -1,0 +1,1360 @@
+{
+"cik": "922621",
+"quarters": [
+{
+"accession": "0001628280-26-010666",
+"filed": "2026-02-23",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000922621-23-000007",
+"filed": "2023-03-01",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 8.53
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26059000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26059000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ManagementFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2962429000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 874691000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 806336000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2894074000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2894074000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4067258000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3131806000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46188981.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "NetIncomeLoss",
+"value": 446061000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2442073000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3795115000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3795115000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 806336000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 68355000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 68355000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 46189068.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 446061000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 11.48
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 446061000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 737139000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"LeaseContractualTerm": "A2021LeaseIndemnityAsLessor",
+"ProductOrService": "ServiceAgreement",
+"RelatedPartyTransactionsByRelatedParty": "ErieInsuranceExchange"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2900000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 836639000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 46189068.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 1437.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 10.69
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 737139000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ManagementFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3205864000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"LeaseContractualTerm": "A2021LeaseIndemnityAsLessor",
+"ProductOrService": "ServiceAgreement",
+"RelatedPartyTransactionsByRelatedParty": "ErieInsuranceExchange"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3000000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52306266.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 600314000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "NetIncomeLoss",
+"value": 600314000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3268940000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3268940000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 63669000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26350000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26350000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 74058000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 74058000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52305424.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 1801.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 559335000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations"
+},
+"tag": "NetIncomeLoss",
+"value": 559335000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 559335000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ManagementFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2505742000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 800808000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 63669000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 806336000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4067258000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 910697000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 836639000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52299411.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46189044.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46189024.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 1933.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 600314000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"LeaseContractualTerm": "A2021LeaseIndemnityAsLessor",
+"ProductOrService": "ServiceAgreement",
+"RelatedPartyTransactionsByRelatedParty": "ErieInsuranceExchange"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2600000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 737139000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2442073000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 836639000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ManagementOperations",
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24755000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3131806000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24755000.0
+},
+{
+"adsh": "0001628280-26-010666",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 25797000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 298569000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46188916.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 46189068.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 297860000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 638483000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 46189068.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24042000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 59463000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 5.61
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 959.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2087846000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 58323000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46188659.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 2,
+"segments": {
+"ProductOrService": "ServiceAgreement",
+"RelatedPartyTransactionsByRelatedParty": "ErieInsuranceExchange"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 200000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2840124000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1913166000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 5.69
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 945.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2087846000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 293304000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 696769000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 5.71
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52313360.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 638483000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 58286000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 58323000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1913166000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 609435000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement",
+"RelatedPartyTransactionsByRelatedParty": "ErieInsuranceExchange"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2200000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52307302.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 293304000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 46188806.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2536489000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 668268000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 298569000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ServiceAgreement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 25687000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 59463000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2633977000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 609435000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 297860000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesReimbursements"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 668268000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 726591000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 962.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 2542.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices",
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1841794000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServicesManagementFee",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 58286000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AdministrativeServices",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 668898000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "PolicyIssuanceandRenewalServices"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1841794000.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 52297990.0
+},
+{
+"adsh": "0000922621-23-000007",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 2542.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000922621-23-000007": {
+"adsh": "0000922621-23-000007",
+"cik": "922621",
+"filed": "20230301",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "ERIE INDEMNITY CO",
+"period": "20221231"
+},
+"0001628280-26-010666": {
+"adsh": "0001628280-26-010666",
+"cik": "922621",
+"filed": "20260223",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "ERIE INDEMNITY CO",
+"period": "20251231"
+}
+},
+"ticker": "ERIE"
+}

@@ -1,0 +1,63 @@
+{
+ "ticker": "ADBE",
+ "reader": "B",
+ "based_on_record": "d7017a494b976656c50bfac2b9683a34135c5a75f06dbb03455d451065f5efce",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ADBE-3",
+   "quote": "CEO performance evaluation and management development and succession planning for senior management, including the CEO position",
+   "reason": "이사회 지침이 CEO 포함 경영진 승계 계획을 규정"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "소송 서술은 일반적 위험요인과 Note 16 참조뿐 — 개별 소송 내용 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "answered",
+   "answer": "undisciplined",
+   "excerpt_id": "ADBE-9",
+   "quote": "During fiscal 2024, we incurred a $1 billion termination fee which resulted from termination of the Figma transaction.",
+   "reason": "대형 거래 해지로 $10억 해지 수수료 지급 — 루브릭상 undisciplined"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 하향·부정 공시 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ADBE-21",
+   "quote": "Impairment of goodwill — — 70 Amortization of intangibles 58 79 46 Acquisition-related expenses 18 — 5 Loss contingency — — 30",
+   "reason": "최근 분기 일회성(손상 70·우발손실 30·인수비용 18 등)이 GAAP 영업이익 2,2~2,4B 대비 10% 미만"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사 자체 점유율 진술 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장/위축에 대한 명시적 진술 없음"
+  }
+ ]
+}

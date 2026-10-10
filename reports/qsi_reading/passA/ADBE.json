@@ -1,0 +1,63 @@
+{
+ "ticker": "ADBE",
+ "reader": "A",
+ "based_on_record": "d7017a494b976656c50bfac2b9683a34135c5a75f06dbb03455d451065f5efce",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ADBE-3",
+   "quote": "management development and succession planning for senior management, including the CEO position.",
+   "reason": "이사회 지배구조 지침이 CEO 승계 계획을 다룸"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Note 16 참조뿐이고 중요성 진술 없음"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "answered",
+   "answer": "undisciplined",
+   "excerpt_id": "ADBE-9",
+   "quote": "During fiscal 2024, we incurred a $1 billion termination fee which resulted from termination of the Figma transaction.",
+   "reason": "대형 거래 해지 수수료 $10억"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 하향 증거 없음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ADBE-21",
+   "quote": "Impairment of goodwill — — 70 Amortization of intangibles 58 79 46 Acquisition-related expenses 18 — 5 Loss contingency — — 30 Non-GAAP operating income $ 2,974 $ 2,773 $ 2,945",
+   "reason": "일회성 항목이 분기 GAAP 영업이익의 5% 미만"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 진술 없음"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "ADBE-32",
+   "quote": "meet the growing demand for high-quality, personalized content in a fast-paced digital economy",
+   "reason": "회사가 수요 성장 진술"
+  }
+ ]
+}

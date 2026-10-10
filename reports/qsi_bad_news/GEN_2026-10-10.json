@@ -1,0 +1,267 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000849399",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 19,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0000849399-23-000027",
+      "filed": "2023-11-07",
+      "guidance": [
+        {
+          "excerpt": "60 million • Q3 FY24 EPS expected to be in the range of $0.49 to $0.51 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.810 to $3.835 billion",
+          "fy": 2024,
+          "high": 3835000000.0,
+          "kind": "range",
+          "low": 3810000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939923000027/ex9901q2fy24.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-24-000004",
+      "filed": "2024-01-22",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-24-000006",
+      "filed": "2024-02-01",
+      "guidance": [
+        {
+          "excerpt": "70 million • Q4 FY24 EPS expected to be in the range of $0.52 to $0.54 Fiscal Year 2024 Non-GAAP Annual Guidance • FY24 Revenue expected to be in the range of $3.805 to $3.815 billion",
+          "fy": 2024,
+          "high": 3815000000.0,
+          "kind": "range",
+          "low": 3805000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000006/ex9901q3fy24.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-24-000022",
+      "filed": "2024-05-09",
+      "guidance": [
+        {
+          "excerpt": "n to $970 million • Q1 FY25 EPS expected to be in the range of $0.52 to $0.54 Non-GAAP Fiscal Year 2025 Guidance • FY25 Revenue expected to be in the range of $3,890 million to $3,930 million",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3890000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000022/ex9901q4fy24.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-24-000040",
+      "filed": "2024-08-01",
+      "guidance": [
+        {
+          "excerpt": "$975 million • EPS expected to be in the range of $0.53 to $0.55 Re-affirm Fiscal Year 2025 Non-GAAP Annual Guidance • Revenue expected to be in the range of $3,890 to $3,930 million",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3890000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000040/ex9901q1fy25.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-24-000079",
+      "filed": "2024-10-30",
+      "guidance": [
+        {
+          "excerpt": "of $980 to $990 million • EPS expected to be in the range of $0.54 to $0.56 Fiscal Year 2025 Non-GAAP Annual Guidance • Revenue now expected to be in the range of $3,905 to $3,930 million",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3905000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939924000079/ex9901q2fy25.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001140361-24-048857",
+      "filed": "2024-12-10",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-25-000003",
+      "filed": "2025-01-30",
+      "guidance": [
+        {
+          "excerpt": "05 million • EPS expected to be in the range of $0.57 to $0.59 Strengthened Fiscal Year 2025 Non-GAAP Annual Guidance • Revenue now expected to be in the range of $3,915 to $3,930 million",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3915000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000003/ex9901q3fy25.htm"
+        }
+      ],
+      "items": "2.02",
+      "scheduled": true
+    },
+    {
+      "accession": "0001140361-25-003647",
+      "filed": "2025-02-10",
+      "guidance": [
+        {
+          "excerpt": "bly burdensome to forecast. Strengthening FY25 Non-GAAP Guidance Q4 FY25 REVENUE $990M - $1,005M EPS $0.57 - $0.59 FY25 REVENUE $3,915M - $3,930M",
+          "fy": 2025,
+          "high": 3930000000.0,
+          "kind": "range",
+          "low": 3915000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036125003647/ny20039778x7_ex99-1.htm"
+        }
+      ],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-25-000025",
+      "filed": "2025-05-06",
+      "guidance": [
+        {
+          "excerpt": "to $1,210 million • Q1 FY26 EPS expected to be in the range of $0.59 to $0.61 Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4,700 million to $4,800 million",
+          "fy": 2026,
+          "high": 4800000000.0,
+          "kind": "range",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000025/ex9901q4fy25.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-25-000035",
+      "filed": "2025-05-16",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-25-000054",
+      "filed": "2025-07-22",
+      "guidance": [],
+      "items": "5.02,7.01,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-25-000057",
+      "filed": "2025-08-07",
+      "guidance": [
+        {
+          "excerpt": "0 million • Q2 FY26 EPS expected to be in the range of $0.60 to $0.62 Raising Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4,800 million to $4,900 million",
+          "fy": 2026,
+          "high": 4900000000.0,
+          "kind": "range",
+          "low": 4800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000057/ex9901q1fy26.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-25-000087",
+      "filed": "2025-11-06",
+      "guidance": [
+        {
+          "excerpt": "4 billion • Q3 FY26 EPS expected to be in the range of $0.62 to $0.64 Raising Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4.92 billion to $4.97 billion",
+          "fy": 2026,
+          "high": 4970000000.0,
+          "kind": "range",
+          "low": 4920000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000087/ex9901q2fy26.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-26-000002",
+      "filed": "2026-02-05",
+      "guidance": [
+        {
+          "excerpt": "6 billion • Q4 FY26 EPS expected to be in the range of $0.64 to $0.66 Raising Non-GAAP Fiscal Year 2026 Guidance • FY26 Revenue expected to be in the range of $4.955 billion to $4.975 billion",
+          "fy": 2026,
+          "high": 4975000000.0,
+          "kind": "range",
+          "low": 4955000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-26-000014",
+      "filed": "2026-05-07",
+      "guidance": [
+        {
+          "excerpt": "to $1,325 million • Q1 FY27 EPS expected to be in the range of $0.68 to $0.70 Non-GAAP Fiscal Year 2027 Guidance • FY27 Revenue expected to be in the range of $5,325 million to $5,425 million",
+          "fy": 2027,
+          "high": 5425000000.0,
+          "kind": "range",
+          "low": 5325000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000014/ex9901q4fy26.htm"
+        }
+      ],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-26-000028",
+      "filed": "2026-08-06",
+      "guidance": [
+        {
+          "excerpt": "50 billion • Q2 FY27 EPS expected to be in the range of $0.71 to $0.73 Raises Non-GAAP Fiscal Year 2027 Guidance • FY27 Revenue expected to be in the range of $5.375 billion to $5.475 billion",
+          "fy": 2027,
+          "high": 5475000000.0,
+          "kind": "range",
+          "low": 5375000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000849399-26-000071",
+      "filed": "2026-09-28",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000849399-26-000079",
+      "filed": "2026-10-09",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "창 안에서 연간 매출 가이던스 하향이 없었다 — 나쁜 소식이 없었을 수 있어 '선제 공시 이력 없음'으로 단정하지 않는다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "GEN"
+}

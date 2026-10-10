@@ -1,0 +1,3566 @@
+{
+"cik": "882835",
+"quarters": [
+{
+"accession": "0000882835-26-000009",
+"filed": "2026-02-24",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000882835-23-000016",
+"filed": "2023-02-27",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6177800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1039500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 263400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1551500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3868300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 634400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2880000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1695300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 288300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 769600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 71100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 108000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 106100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 12.89
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1549300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1536300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 594800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2454300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1669200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 495100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6063300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 678200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 46100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 108200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 107400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4645100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1475600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 135200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1070100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 135700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1818700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 46100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 106900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1384200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 1549300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 17300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 453200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 353900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 270300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1695300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 74100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 118400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 7902500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3282200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 522600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1772600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4482900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 107400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 107100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 107300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 106600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 1536300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3186900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3186900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1439400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 136500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 18800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1532700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3511100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3868300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3868300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1669200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4483000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4483000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1600800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1818700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1772600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 813900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 833100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 106600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 14.35
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1439400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 90500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 732800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1475600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1475600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5370000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4483000000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1600800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 310500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 541400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 125500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3186900000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1551500000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 254600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5304400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 401200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 7039200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 624200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1600800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1154600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 291700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 106600000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 107300000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 14.2
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 1384200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 137800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1439400000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1532700000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 75100000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3976200000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6872800000.0
+},
+{
+"adsh": "0000882835-26-000009",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6129900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 126500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 81900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 7500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1340600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 268800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 837500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 141200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 721400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1243300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1243300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 104600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Exports"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 180000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 150900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4022400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 119200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 55500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 104100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 370400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4833800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 709000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 59800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 56200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 106100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1378500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 105500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1234700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1310800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 68600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 949700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2366700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 286200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 289900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 277900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5371800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 843800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.06
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 95900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1189800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 105700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210331",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.73
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 37700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4186700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 50700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1256600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 379800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 123600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1964700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 64800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 82200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4544700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1160800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 37100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.82
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 106500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 235500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5371800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 8600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 18.94
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1223800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 37500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 286300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 42.55
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2861600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 35100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 10900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 775900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 327000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1223800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 596600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 300300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.69
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1353800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 949700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 73300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1234700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3599100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 810100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 7800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 81600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2639500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1069400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 124200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 64000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 85200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2553300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -137700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Exports"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 179900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 111400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 222300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4105600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 81100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 637800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1279800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4833800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.71
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 45600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 105500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Exports"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 191800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 249500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -163000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1708000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 18.06
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2639500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1160800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2366700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 728200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 13200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 105300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1785800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 12200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1928400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -200800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 43400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 106800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -137700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 73600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 63700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 198100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 205500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 180700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 43700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 287800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.52
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 88700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2639500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1069400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 61700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 117700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 2020500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 12000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1785800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 57800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 65700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1223800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 161800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 106100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 981400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 4544700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 432700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -200800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3466200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1167200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4031200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1378500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 8.98
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1340600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1251500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1167200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 469500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "CA"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 51200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1353800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 136800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "GeographyEliminations"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": -163000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "ProductRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 1152600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1152600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 360900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 273900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1430900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 81100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 181300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 86300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1232100000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 806500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 125300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4665700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 707400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 339000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 105900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 761600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 547300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1350300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelatedReoccurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 246200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1378500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 569300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 45000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 340200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 424600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210331",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1155300000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4022400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210331",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 289000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1785800000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2366700000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 241200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "RestOfWorld"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 248200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 289500000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 10900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1069400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NetworkSoftwareAndSystemsSegment",
+"Geographical": "Europe"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 59200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedNonRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 684900000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"Geographical": "Asia"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 49400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 757000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2939400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TechnologyEnabledProductsSegment",
+"ProductOrService": "SoftwareRelated"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6400000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ApplicationSoftwareSegment",
+"ProductOrService": "SoftwareRelatedRecurring"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1946000000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"MajorCustomers": "BetweenGeographicalAreas"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3384600000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.7
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "ReportableGeographicalComponents",
+"Geographical": "US",
+"MajorCustomers": "UnaffiliatedCustomers"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4610200000.0
+},
+{
+"adsh": "0000882835-23-000016",
+"ddate": "20201231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 104900000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000882835-23-000016": {
+"adsh": "0000882835-23-000016",
+"cik": "882835",
+"filed": "20230227",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "ROPER TECHNOLOGIES INC",
+"period": "20221231"
+},
+"0000882835-26-000009": {
+"adsh": "0000882835-26-000009",
+"cik": "882835",
+"filed": "20260224",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "ROPER TECHNOLOGIES INC",
+"period": "20251231"
+}
+},
+"ticker": "ROP"
+}

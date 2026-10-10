@@ -1,0 +1,47 @@
+{
+ "ticker": "CINF",
+ "reader": "A",
+ "based_on_record": "0d18e796665bfc9bcdef901767cbaf6785fa8faf227dcee19f9aa9fa69bd21ee",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "CINF-2",
+   "quote": "The board believes that the separation or combination of the offices of the chairman of the board and CEO is part of the succession planning process",
+   "reason": "이사회가 CEO 승계 계획 과정을 운영하고 CEO 교체를 발표"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "CINF-5",
+   "quote": "Neither the company nor any of our subsidiaries are involved in any litigation believed to be material other than ordinary, routine litigation incidental to the nature of our business.",
+   "reason": "중대한 소송 없고 통상 소송뿐이라고 진술"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "FCF(영업현금흐름-자본지출) 값이 증거에 없어 비율 산출 불가"
+  },
+  {
+   "qid": "cat.cat_exposure",
+   "status": "answered",
+   "answer": "2025년 현재사고연도 재해손실이 합산비율에 10.8포인트 기여(전년 9.6), 재해·준비금 발전 합산 기여 8.8포인트이며, 250년 빈도 사건 손실 추정 9.87억 달러·2025 캘리포니아 산불 재보험 회수 추정 3,400만 달러.",
+   "excerpt_id": "CINF-22",
+   "quote": "Current accident year catastrophe losses 10.8 9.6 9.3 1.2 0.3",
+   "reason": "합산비율 표의 재해손실 포인트 기반, 보조 수치는 CINF-15·CINF-18"
+  },
+  {
+   "qid": "uw.combined_ratio_pct",
+   "status": "answered",
+   "answer": 0.949,
+   "excerpt_id": "CINF-20",
+   "quote": "GAAP combined ratio 94.9 % 93.4 % 94.9 % 1.5 (1.5)",
+   "reason": "연결 손해보험 GAAP 합산비율 94.9%"
+  }
+ ]
+}

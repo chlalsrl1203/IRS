@@ -1,0 +1,301 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000857005",
+  "cuts": [
+    {
+      "accession": "0000950170-25-014439",
+      "change_pct": -0.02935420743639927,
+      "excerpt": "h flow $850 to $865 2 $850 to $865 2 13% to 15% ~$274 2 Free cash flow $835 to $850 2 $835 to $850 2 14% to 16% ~$270 2 Revenue $2,505 to $2,605",
+      "filed": "2025-02-05",
+      "fy": 2025,
+      "items": "2.02,9.01",
+      "new": {
+        "high": 2530000000.0,
+        "low": 2430000000.0
+      },
+      "prev": {
+        "filed": "2024-11-06",
+        "high": 2605000000.0,
+        "low": 2505000000.0
+      },
+      "scheduled": true,
+      "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017025014439/ptc-ex99_1.htm"
+    },
+    {
+      "accession": "0001193125-26-208904",
+      "change_pct": -0.048085485307212794,
+      "excerpt": "5% 8% to 9% growth Operating cash flow ~$880 ~$880 ~1% 4 $255 to $260 Free cash flow 2 ~$850 ~$850 ~(1)% 4 $240 to $245 Revenue $2,540 to $2,805",
+      "filed": "2026-05-06",
+      "fy": 2026,
+      "items": "2.02,7.01,9.01",
+      "new": {
+        "high": 2805000000.0,
+        "low": 2540000000.0
+      },
+      "prev": {
+        "filed": "2026-03-16",
+        "high": 2940000000.0,
+        "low": 2675000000.0
+      },
+      "scheduled": true,
+      "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm"
+    }
+  ],
+  "n_periodic": 12,
+  "n_releases": 14,
+  "n_scheduled": 11,
+  "releases": [
+    {
+      "accession": "0000950170-23-057416",
+      "filed": "2023-11-01",
+      "guidance": [
+        {
+          "excerpt": "- $2,250 11% - 14% $1,995 - $2,010 Operating cash flow $611 ~$745 ~22% ~$185 2 Free cash flow 1 $587 ~$725 ~23% ~$180 2 Revenue $2,097 $2,270 -",
+          "fy": 2024,
+          "high": 2360000000.0,
+          "kind": "range",
+          "low": 2270000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017023057416/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-24-009371",
+      "filed": "2024-01-31",
+      "guidance": [
+        {
+          "excerpt": "190 - $2,250 11% - 14% $2,050 - $2,065 Operating cash flow ~$745 ~$745 ~22% ~$245 Free cash flow ~$725 ~$725 ~23% ~$240 Revenue $2,270 - $2,360",
+          "fy": 2024,
+          "high": 2360000000.0,
+          "kind": "range",
+          "low": 2270000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024009371/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-24-051256",
+      "filed": "2024-05-01",
+      "guidance": [
+        {
+          "excerpt": "200 - $2,240 11% - 13% $2,115 - $2,130 Operating cash flow ~$745 ~$745 ~22% ~$225 Free cash flow ~$725 ~$725 ~23% ~$220 Revenue $2,270 - $2,360",
+          "fy": 2024,
+          "high": 2360000000.0,
+          "kind": "range",
+          "low": 2270000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024051256/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-24-088530",
+      "filed": "2024-07-31",
+      "guidance": [
+        {
+          "excerpt": "2,200 - $2,220 11% - 12% $2,200 - $2,220 Operating cash flow ~$745 ~$740 ~21% ~$88 Free cash flow ~$725 ~$725 ~23% ~$83 Revenue $2,270 - $2,340",
+          "fy": 2024,
+          "high": 2340000000.0,
+          "kind": "range",
+          "low": 2270000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024088530/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-24-122235",
+      "filed": "2024-11-06",
+      "guidance": [
+        {
+          "excerpt": "growth Operating cash flow $750 $850 to $865 2 13% to 15% ~$234 2 Free cash flow $736 $835 to $850 2 14% to 16% ~$230 2 Revenue $2,298 $2,505 to",
+          "fy": 2025,
+          "high": 2605000000.0,
+          "kind": "range",
+          "low": 2505000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017024122235/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,7.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-25-014439",
+      "filed": "2025-02-05",
+      "guidance": [
+        {
+          "excerpt": "h flow $850 to $865 2 $850 to $865 2 13% to 15% ~$274 2 Free cash flow $835 to $850 2 $835 to $850 2 14% to 16% ~$270 2 Revenue $2,505 to $2,605",
+          "fy": 2025,
+          "high": 2530000000.0,
+          "kind": "range",
+          "low": 2430000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017025014439/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950170-25-100205",
+      "filed": "2025-07-30",
+      "guidance": [
+        {
+          "excerpt": "% to 9% growth Operating cash flow $855 to $865 ~$860 ~15% $93 to $98 Free cash flow $840 to $850 ~$850 ~16% $90 to $95 Revenue $2,445 to $2,565",
+          "fy": 2025,
+          "high": 2630000000.0,
+          "kind": "range",
+          "low": 2570000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017025100205/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-25-266865",
+      "filed": "2025-11-05",
+      "guidance": [
+        {
+          "excerpt": "growth Operating cash flow $868 2 ~$1,030 3 ~19% 3 $270 to $275 3 Free cash flow $857 2 ~$1,000 3 ~17% 3 $265 to $270 3 Revenue $2,739 $2,650 to $2,915",
+          "fy": 2026,
+          "high": 2915000000.0,
+          "kind": "range",
+          "low": 2650000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312525266865/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-25-308126",
+      "filed": "2025-12-04",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001193125-26-037588",
+      "filed": "2026-02-04",
+      "guidance": [
+        {
+          "excerpt": "h Operating cash flow 2 ~$1,030 ~$1,030 3 ~19% $315 to $320 3 Free cash flow 2 ~$1,000 ~$1,000 3, 5 ~17% $310 to $315 3 Revenue 2 $2,650 to $2,915",
+          "fy": 2026,
+          "high": 2915000000.0,
+          "kind": "range",
+          "low": 2650000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526037588/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-26-107315",
+      "filed": "2026-03-16",
+      "guidance": [
+        {
+          "excerpt": "Operating cash flow ~$1,030 ~$880 $315 to $320 $315 to $320 Free cash flow 2 ~$1,000 ~$850 4 $310 to $315 $310 to $315 Revenue $2,675 to $2,940",
+          "fy": 2026,
+          "high": 2940000000.0,
+          "kind": "range",
+          "low": 2675000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526107315/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001193125-26-208904",
+      "filed": "2026-05-06",
+      "guidance": [
+        {
+          "excerpt": "5% 8% to 9% growth Operating cash flow ~$880 ~$880 ~1% 4 $255 to $260 Free cash flow 2 ~$850 ~$850 ~(1)% 4 $240 to $245 Revenue $2,540 to $2,805",
+          "fy": 2026,
+          "high": 2805000000.0,
+          "kind": "range",
+          "low": 2540000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,7.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-26-323617",
+      "filed": "2026-07-29",
+      "guidance": [
+        {
+          "excerpt": "rowth 9% to 9.5% 9% to 9.5% growth Operating cash flow ~$880 ~$880 ~1% 4 ~$29 Free cash flow 2 ~$850 ~$850 ~(1)% 4 ~$15 Revenue $2,580 to $2,820",
+          "fy": 2026,
+          "high": 2820000000.0,
+          "kind": "range",
+          "low": 2580000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526323617/ptc-ex99_1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-26-413124",
+      "filed": "2026-10-05",
+      "guidance": [],
+      "items": "1.01,7.01,9.01",
+      "scheduled": false
+    }
+  ],
+  "result": {
+    "cuts": [
+      {
+        "accession": "0000950170-25-014439",
+        "change_pct": -0.02935420743639927,
+        "excerpt": "h flow $850 to $865 2 $850 to $865 2 13% to 15% ~$274 2 Free cash flow $835 to $850 2 $835 to $850 2 14% to 16% ~$270 2 Revenue $2,505 to $2,605",
+        "filed": "2025-02-05",
+        "fy": 2025,
+        "items": "2.02,9.01",
+        "new": {
+          "high": 2530000000.0,
+          "low": 2430000000.0
+        },
+        "prev": {
+          "filed": "2024-11-06",
+          "high": 2605000000.0,
+          "low": 2505000000.0
+        },
+        "scheduled": true,
+        "url": "https://www.sec.gov/Archives/edgar/data/857005/000095017025014439/ptc-ex99_1.htm"
+      },
+      {
+        "accession": "0001193125-26-208904",
+        "change_pct": -0.048085485307212794,
+        "excerpt": "5% 8% to 9% growth Operating cash flow ~$880 ~$880 ~1% 4 $255 to $260 Free cash flow 2 ~$850 ~$850 ~(1)% 4 $240 to $245 Revenue $2,540 to $2,805",
+        "filed": "2026-05-06",
+        "fy": 2026,
+        "items": "2.02,7.01,9.01",
+        "new": {
+          "high": 2805000000.0,
+          "low": 2540000000.0
+        },
+        "prev": {
+          "filed": "2026-03-16",
+          "high": 2940000000.0,
+          "low": 2675000000.0
+        },
+        "scheduled": true,
+        "url": "https://www.sec.gov/Archives/edgar/data/857005/000119312526208904/ptc-ex99_1.htm"
+      }
+    ],
+    "reason": "가이던스 하향 2건이 모두 정기 실적 발표에서 나왔다 — 선제 공시할 만한 사건이었는지 판단할 수 없다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "PTC"
+}

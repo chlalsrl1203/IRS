@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "Competition in our markets is influenced by factors such as Table of Contents 14 brand recognition, product innovation and performance, pricing, speed‑to‑market, marketing effectiveness, use of data analytics and AI , access to manufacturing capacity, and control of distribution channels.",
+      "Our competitors include both established global brands and newer market entrants, including competitors whose broader product assortments and higher sales volumes may be more important to certain customers.",
+      "We believe that the growth and visibility of our HOKA brand and UGG brand have attracted competitors specifically targeting the categories in which we operate.",
+      "Barriers to entry have been reduced by access to offshore manufacturing and evolving technologies, allowing competitors to develop and scale products more quickly and at lower cost.",
+      "Some of our competitors also have substantially greater financial, technological, manufacturing, marketing, and distribution resources than we do, as well as broader brand awareness, which may enable them to compete more effectively on price, accelerate product development, leverage advanced data analytics or AI , adapt to technological changes, and withstand periods of excess inventory or reduced consumer demand."
+    ],
+    "docs": [
+      "2026-05-22",
+      "2025-05-23"
+    ],
+    "n_new_competition": 13,
+    "n_new_sentences": 119,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "Competition in our markets is influenced by factors such as Table of Contents 14 brand recognition, product innovation and performance, pricing, speed‑to‑market, marketing effectiveness, use of data analytics and AI , access to manufacturing capacity, and control of distribution channels.",
+      "Our competitors include both established global brands and newer market entrants, including competitors whose broader product assortments and higher sales volumes may be more important to certain customers.",
+      "We believe that the growth and visibility of our HOKA brand and UGG brand have attracted competitors specifically targeting the categories in which we operate.",
+      "Barriers to entry have been reduced by access to offshore manufacturing and evolving technologies, allowing competitors to develop and scale products more quickly and at lower cost.",
+      "Some of our competitors also have substantially greater financial, technological, manufacturing, marketing, and distribution resources than we do, as well as broader brand awareness, which may enable them to compete more effectively on price, accelerate product development, leverage advanced data analytics or AI , adapt to technological changes, and withstand periods of excess inventory or reduced consumer demand."
+    ]
+  },
+  "pricing_power": {
+    "answer": "evidenced",
+    "fy_end": 2026,
+    "fy_start": 2023,
+    "gm_change_pp": 7.38,
+    "gm_end": 57.7,
+    "gm_start": 50.32,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "DECK",
+  "unit": "USD"
+}

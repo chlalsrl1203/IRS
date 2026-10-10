@@ -1,0 +1,323 @@
+{
+ "ticker": "HLNE",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "22669806cc64bf0cd6a17d7a6dfbc8600e657bd3f15678da96207d53310bfa00",
+ "targets": [
+  "gov.chair_separated",
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.buyback_effect",
+  "cap.dividend_predictable",
+  "acc.guidance_miss_3y",
+  "acc.promise_kept_record",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "dil.net_share_change_3y_pct",
+  "cmp.share_trend",
+  "cmp.pricing_power",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.chair_separated": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: HLNE.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.buyback_effect": "3년 주식수 변화를 확인하지 못해 판단하지 않는다",
+  "cap.dividend_predictable": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+  "acc.guidance_miss_3y": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.promise_kept_record": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "dil.net_share_change_3y_pct": "companyfacts에 연차 희석주식수가 없다(다중클래스는 차원 데이터라 무차원 사실에 안 담긴다)",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.pricing_power": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "HLNE-1",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm",
+   "text": "gers Mr. Rogers is our Executive Co-Chairman and serves as Chairman of our board and Chair of our board’s compensation committee. He is also a member of various HLA investment committees. Prior to serving as our Executive Co-Chairman, Mr. Rogers was Chairman of the board of HLA. Prior to joining the firm in 2003, he was a Managing Director and investment committee member of DLJ Merchant Banking Partners III, a $5.3 billion private equity fund, from 2001 to 2002. Before that, he was a Managing Director in the Private Equity Division of Credit Suisse First Boston (“CSFB”) from 1997 to 2001. Prior to joining CSFB in 1997, Mr. Rogers was a Managing Director of Morgan Stanley, where his responsibilities included serving as President of the general partners of the Pr"
+  },
+  {
+   "id": "HLNE-2",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm",
+   "text": "for the defense and intelligence community; Dispel, LLC, a company that builds communication networks for operational technology; and SHY Therapeutics, a biotechnology company developing cancer and infectious disease therapeutics, where he serves as Executive Chairman. He is also a director of AgNovos, a biotechnology company developing osteoporosis therapeutics. In addition, Mr. Schmertzler currently serves as a Charter Trustee of Phillips Academy Andover. Mr. Schmertzler’s prior investment and corporate finance experience includes serving, from 2012 to 2020, as a post-bankruptcy independent director of Lehman Commercial Paper, Inc., the largest post-bankruptcy Lehman subsidiary. Earlier in his career, from 1997 to 2014, Mr. Schmertzler was a Managing Di"
+  },
+  {
+   "id": "HLNE-3",
+   "for": "gov.chair_separated",
+   "doc": "DEF 14A filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm",
+   "text": "pendent directors in setting agendas and establishing 18 priorities and procedures for the work of our board of directors. Our board of directors recognizes that, depending on the circumstances, other leadership models, such as combining the role of Chairman of the board of directors with the role of the Chief Executive Officer, might be appropriate. Accordingly, our board may periodically review its leadership structure. Our board of directors believes its administration of its risk oversight function has not affected its leadership structure. The size of our board of directors and the relationship between management and non-employee directors put each director in a position to influence agendas, flow of information and other matters. Our board of directors ho"
+  },
+  {
+   "id": "HLNE-4",
+   "for": "gov.chair_separated",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": " or special meeting and not by written consent, except that action by written consent will be allowed for as long as we are a controlled company; • specify that special meetings of our stockholders can be called only by our board of directors or the chairman of our board of directors; • establish an advance notice procedure for stockholder proposals to be brought before an annual meeting, including proposed nominations of persons for election to our board of directors; • authorize our board of directors to issue, without further action by the stockholders, up to 10,000,000 shares of undesignated preferred stock; and • reflect two classes of common stock, as discu"
+  },
+  {
+   "id": "HLNE-5",
+   "for": "gov.chair_separated",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "he Securities Exchange Act of 1934, this report has been signed below by the following persons on behalf of the registrant and in the capacities indicated on this 21st day of May, 2026. Signature Title /s/ Hartley R. Rogers Executive Co-Chairman and Chairman of the Board of Directors Hartley R. Rogers /s/ Erik R. Hirsch Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Erik R. Hirsch /s/ Juan Delgado-Moreira Co-Chief Executive Officer and Director (Co-Principal Executive Officer) Juan Delgado-Moreira /s/ Jeffrey Armbrister Chief Financial Officer and Treasurer (Principal Financial Officer) Jeffrey Armbrister /s/ Drew T. Carl Chief Accountin"
+  },
+  {
+   "id": "HLNE-6",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "onals, on the one hand, and the Class A stockholders of Hamilton Lane Incorporated, on the other hand. Our ability to retain our senior management team and attract additional qualified investment professionals is critical to our success. Our success depends on our ability to retain our senior management team and to recruit and retain additional qualified investment, sales and other professionals. However, we may not be successful in our efforts, as the market for investment professionals is extremely competitive. The individuals that comprise our senior management team possess substantial experience and expertise and, in many cases, have significant relationships with certain of our clients. Accordingly, the loss or prolonged absence of any one of our senior management team or other key personnel could adversely affect certain client relationships, reduce our productivity or limit our ability to "
+  },
+  {
+   "id": "HLNE-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ies, which, in turn, could have a material adverse effect on our business, financial condition and results of operations. In addition, the governing agreements of our specialized funds typically require the suspension of the investment period if, 35 depending on the fund, between two and ten designated members of our senior management team either cease to devote sufficient professional time to or cease to be employed by HLA, often called a “key person event,” or in connection with certain other events. Senior managing directors have left the firm in the past and others may do so in the future. While we cannot predict the impact that the departure of any single senior managing director will have on our ability to achieve our investment objectives, any change to our senior management team could materially and adversely affect our business, financial condition and results of operations. In order to retain and attract qualified inv"
+  },
+  {
+   "id": "HLNE-8",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "sk Factors 32 Item 1B. Unresolved Staff Comments 76 Item 1C. Cybersecurity 76 Item 2. Properties 79 Item 3. Legal Proceedings 79 Item 4. Mine Safety Disclosures 79 PART II Item 5. Market for Registrant's Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 80 Item 6. [Reserved] 82 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 83 Item 7A. Quantitative and Qualitative Disclosures about Market Risk 112 Item 8. Consolidated Financial Statements and Supplementary Data 115 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 159 Item 9A. Controls and Procedures 159 Item 9B. Other Information 159 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 160 PART III Item 10. Directors, Executive Officers and Corporate Governance 161 Item 11. Executive Compensation 161 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 161 Item 13. Certain Relationships and Related Transactions, and Director Independence 161 Item 14. Principal Accountant Fees and Services 161 PART IV Item 15. Exhibits and Financial Statement Schedules 162 Item 16. Form 10-K Summary 162 Signatures 168 l This Annual Report on Form 10-K (“Form 10-K”) includes certain information regarding the historical performance of our specialized funds and customized separate accounts. An investment in shares of our Class A common stock is not an investment in our specialized funds or customized separate accounts. In considering the performance information relating t"
+  },
+  {
+   "id": "HLNE-9",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": " with which we are not familiar, or from which we are currently exempt, which may lead to increased litigation and regulatory risk. For example, we have recently undertaken business initiatives to reach an increasing number of retail investors in the United States and around the world, including by offering tokenized access to certain of our funds, launching additional evergreen funds, introducing daily-priced interval funds, and establishing new vehicles intended for EEA retail investors and Asia-Pacific investors. These initiatives, as well as our tokenization and digital-distribution initiatives, exposes us to greater levels of risk, including heightened litigation, regulatory enforcement and reputational risks, while also increasing our compliance burden and requiring more complex administration and accounting operations. In addition, distribution of retail products, including through tokenization and digital distribution, whether directly or through market intermediaries, can be complex and could expose us to allegations of improper conduct and/or actions by regulators within and outside the United States with respect to, among other things, product suitability, investor classification, compliance with securities laws, conflicts of interest or the adequacy of disclosure. To the extent distribution of our retail or other products is through new channels and markets, including through an increasing number of distributors with whom we engage, we may not be able to effectively monitor or control the manner of their distribution, which could result in claims that products distributed through such c"
+  },
+  {
+   "id": "HLNE-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "e the increasing complexity of operations and regulatory compliance, thereby increasing the risk of litigation and regulatory enforcement actions being brought against us. Our initiatives to expand our retail investor base, including outside of the United States, requires the investment of significant time, effort and resources, including the hiring of additional personnel, upfront costs in connection with distribution through wirehouses, the implementation of new operational, technological, compliance systems and processes and the development of valuation and liquidity-management frameworks tailored to registered funds and daily-priced products. There is no assurance that our efforts to further grow the assets we manage on behalf of retail investors will be successful. Further, in light of the August 2025 Executive Order on Democratizing Access to Alternative Assets for 401(k) Investors, there may be significant future opportunity for the alternative asset management industry to increase the distribution of products to retail investors through 401(k) accounts. We are likely to face significant competition in addressing such opportunity, which could require us to spend substantial time, effort and resources, and may not ultimately be successful in increasing distribution of our products in this channel. In addition, such expansions increase various risks including the potential for litigation and regulatory scrutiny, oversight or disclosure requirements. We have and will continue to provide resources to foster the development of new product offerings and business strategies by our investment profes"
+  },
+  {
+   "id": "HLNE-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "o other types of businesses. In recent years, the volume of claims and amount of damages claimed in litigation and regulatory proceedings against financial advisors has been increasing. Our asset management and advisory activities may subject us to the risk of significant legal liabilities to our clients and third parties, including our clients’ 55 stockholders or beneficiaries, under securities or other laws and regulations for materially false or misleading statements made in connection with securities and other transactions. In our investment management business, we make investment decisions on behalf of our clients, or make investment recommendations to our clients, that could result in substantial losses. Any such losses also may subject us to the risk of legal and regulatory liabilities or actions alleging negligent misconduct, fraud, breach of fiduciary duty or breach of contract. These risks often may be difficult to assess or quantify, and their existence and magnitude often remain unknown for substantial periods of time. From time to time, we have been and may in the future be subject to legal action and incur significant legal expenses in defending such litigation. In addition, negative publicity and press speculation about us, our investment activities or the private markets in general, whether or not based in truth, or litigation or regulatory action against us or any third-party managers recommended by us or involving us may tarnish our reputation, harm our ability to attract and retain clients, introduce volatility into the price of our Class A common stock and materially adversely a"
+  },
+  {
+   "id": "HLNE-12",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm",
+   "text": "iples (“GAAP”) pertaining to equity-based compensation. See “Compensation and Benefits” in Note 2, “Summary of Significant Accounting Policies” to our consolidated financial statements included in Item 8 of our 2026 Form 10-K. As of March 31, 2026, Mr. Berkman had no shares of restricted stock outstanding, Dr. Graves had 333 shares of restricted stock outstanding, Mr. Sexton had 1,331 shares of restricted stock outstanding and Ms. Varon had 666 shares of restricted stock outstanding. 23 OWNERSHIP OF COMMON STOCK The following table sets forth information regarding the beneficial ownership of Hamilton Lane Incorporated Class A common stock and Class B common stock by: • each person known to us to beneficially own more than 5% of our Class A common stock or our Class B common stock; • each of our directors; • each of our named executive officers; and • all directors and executive officers as a group. Except as otherwise noted, this information is given as of July 13, 2026, the record date for the Annual Meeting. Mr. Schmertzler was appointed to the board of directors effective July 22, 2026, and the table below reflects his ownership of securities as of July 13, 2026. As described in “Certain Relationships and Related-Party and Other Transactions—The Reorganization—Exchange Agreement,” each "
+  },
+  {
+   "id": "HLNE-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-23",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000034/hlne-20260723.htm",
+   "text": "sons listed in the table is: c/o Hamilton Lane Incorporated, 110 Washington Street, Suite 1300, Conshohocken, PA 19428. Common stock owned % of total voting power % total economic interest in HLA Class A Class B Name of Beneficial Owner Number % Number % Named Executive Officers and Directors : Mario L. Giannini 105,723 * 1,312,331 (1) 11 % 8 % 3 % Erik R. Hirsch 649,727 * 809,781 (2) 7 % 5 % 3 % Juan Delgado-Moreira 1,920,134 5 % — * 1 % 4 % Jeffrey B. Armbrister 32,383 * — * * * Andrea Anigati Kramer 303,179 * 135,970 (3) * 1 % * Lydia A. Gavalis 41,906 * — * * * Drew T. Carl 3,202 * — * * * Hartley R. Rogers 149,222 * 6,510,922 (4) 55 % 40 % 12 % Leslie F. Varon 9,658 * — * * * O. Griffith Sexton 22,266 * 582,466 (5) 5 % 4 % 1 % David J. Berkman 50,000 * — * * * R. Vann Graves 1,681 * — * * * Michael Schmertzler — * 600,000 (6) 5 % 4 % 1 % All current executive officers and directors as a group (13 persons) 3,289,081 8% 9,951,470 84 % 64 % 25 % Other 5% Beneficial Owners: HLA Investments, LLC (7) — * 8,128,907 69 % 50 % 15 % HL Management Investors, LLC (8) 444,339 1 % 1,951,548 16 % 12 % 4 % BlackRock, Inc. (9) 3,980,037 10 % — * 2 % 7 % Kayne Anderson Rudnick Investment Management, LLC (10) 3,415,380 8 % — * 2 % 6 % * Represents beneficial ownership of less than 1%. (1) This consists "
+  },
+  {
+   "id": "HLNE-14",
+   "for": "gov.insider_group_ownership",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "nce awards and (c) incentive fee compensation, which consists of carried interest and performance fee allocations as detailed below. Equity-based awards issued are measured at fair value at the date of grant. The fair value of the restricted stock grant is based on the closing stock price on the trading day before the date of grant less the present value of expected future dividends. The fair value of the performance awards are based on a Monte-Carlo simulation valuation model at the date of grant. Expense related to employee equity-based compensation is recorded using the straight-line method over the vesting period. See Note 10 for more information regarding accounting for equity-based awards. Incentive fee compensation expense includes compensation directly related to incentive fees. Certain employees of the Company are granted allocations or profit-sharing interests and are thereby, as a group, entitled to a 25 % portion of the incentive fees earned by the Company from certain Funds and certain managed accounts, subject to vesting. Amounts payable pursuant to these arrangements are recorded as compensation expense when they have become probable and reasonably estimable. Incentive fee compensation may be expensed before the related incentive fee revenue is recognized. Non-Operating Gain"
+  },
+  {
+   "id": "HLNE-15",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ap:SeniorNotesMember 2025-03-31 0001433642 us-gaap:CommonClassAMember 2023-03-31 0001433642 us-gaap:CommonClassBMember 2023-03-31 0001433642 us-gaap:CommonClassAMember 2024-03-31 0001433642 us-gaap:CommonClassBMember 2024-03-31 0001433642 hlne:SharesRepurchasesMember us-gaap:CommonClassAMember 2026-01-01 2026-03-31 0001433642 hlne:SharesRepurchasesMember us-gaap:CommonClassAMember 2026-03-12 2026-03-12 0001433642 hlne:ExcessDistributionOfRequiredTaxDistributionsMember 2025-04-01 2026-03-31 0001433642 hlne:ExcessDistributionOfRequiredTaxDistributionsMember 2024-04-01 2025-03-31 0001433642 hlne:ExcessDistributionOfRequiredTaxDistributionsMember 2023-04-01 2024-03-31 0001433642 us-gaap:CommonClassAMember hlne:September2025OfferingMember 2025-09-01 2025-09-30 0001433642 us-gaap:CommonClassAMember hlne:September2025OfferingMember 20"
+  },
+  {
+   "id": "HLNE-16",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "86.93 $ 135.02 $ 178.55 $ 117.02 S&P 500 100.00 115.63 106.67 138.53 149.08 172.23 Dow Jones US Asset Managers Index 100.00 106.70 93.61 120.24 132.05 127.88 81 Issuer Purchases of Equity Securities The following table provides information about our repurchase activity with respect to shares of our Class A common stock for the quarter ended March 31, 2026: Period Total Number of Shares Purchased Average Price Paid per Share Total Number of Shares Purchased as Part of Publicly Announced Plans or Programs (2) Maximum Approximate Dollar Value of Shares that May Yet Be Purchased Under the Plans or Programs (2) January 1-31, 2026 — $ — — $ 50,000,000 February 1-28, 2026 92,950 $ 107.56 92,950 $ 40,000,000 March 1-31, 2026 (1) 144,958 $ 94.90 106,050 $ 30,000,000 Total 237,908 199,000 $ "
+  },
+  {
+   "id": "HLNE-17",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "hheld on the vesting of restricted stock granted under the Amended and Restated Hamilton Lane Incorporated 2017 Equity Incentive Plan (the “2017 Equity Plan”). (2) On November 6, 2018, we announced that our board of directors authorized a program to repurchase, in the aggregate, up to 6% of the outstanding shares of our Class A common stock as of the date of the authorization, not to exceed $50 million (the “Stock Repurchase Program”). Our board of directors re-approved the Stock Repurchase Program in December 2024. The authorization provides us the flexibility to repurchase shares in the open market or in privately negotiated transactions from time to time, based on market conditions and other factors, and expires 12 months after the date of the first acquisition under the authorization, which occurred"
+  },
+  {
+   "id": "HLNE-18",
+   "for": "cap.buyback_effect",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ty to keep pace with the evolution and practical application of these technologies, invest appropriately in our systems and workflows, and adapt our operating model as the use of AI across the workplace continues to expand. Recent Transactions Stock Repurchases In November 2018, we authorized a program to repurchase up to 6% of the outstanding shares of our Class A common stock, not to exceed $50 million (the “Stock Repurchase Program”). Our board of directors periodically reviews the Stock Repurchase Program, and on May 21, 2026, we announced that our board of directors had approved an increase in the authorization under the Stock Repurchase Program to permit us to purchase up to $100 million of our Class A common stock, net of amounts already repurchased under the pre-existing authorization, with no share count or duration under the limit"
+  },
+  {
+   "id": "HLNE-19",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ersely affect our fundraising, our business and the investments made by our funds or accounts; and our only material asset is our interest in Hamilton Lane Advisors, L.L.C., and we are accordingly dependent upon distributions from such entity to pay dividends, taxes and other expenses. The foregoing list of factors is not exhaustive and should be read in conjunction with the other cautionary statements that are included herein and in our other periodic filings. For more information regarding these risks and uncertainties as well as additional risks that we face, you should refer to the “Summary of Risk Factors” below and the more detailed discussion "
+  },
+  {
+   "id": "HLNE-20",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "elated matters. We are subject to risks related to our organizational structure, including risks related to: • our status as a “controlled company” within the meaning of the Nasdaq listing standards; • our dependence on distributions from HLA to pay dividends, taxes and other expenses; • challenges by regulators with respect to our tax treatment; • our obligations to make distributions to current and former members of HLA; • potential conflicts of interest between members of management who hold most of their economic interest in HLA through other entities and holders of our Class A common stock; • the disparity in voting rights between the classes of"
+  },
+  {
+   "id": "HLNE-21",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "t outside investors, members of management and significant employee owners. There is no trading market for our Class B common stock. Economic Rights Holders of Class A common stock are entitled to full economic rights, including the right to receive dividends when and if declared by our board of directors, subject to any statutory or contractual restrictions on the payment of dividends and to any restrictions on the payment of dividends imposed by the terms of any outstanding preferred stock. Holders of Class B common stock are entitled to receive only the par value of the Class B common stock upon exchange of the corresponding Class B unit pursuant "
+  },
+  {
+   "id": "HLNE-22",
+   "for": "cap.dividend_predictable",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "onomic conditions or business plan variances, to take advantage of new business opportunities, or to make necessary capital expenditures. Any portion of our cash flow required for debt service will not be available for our operations, distributions, dividends, stock repurchases or other purposes. Any substantial decrease in net operating cash flows or any substantial increase in expenses could make it difficult for us to meet our debt service requirements or force us to modify our operations. Further, there is no guarantee that we will be able to obtain new borrowings or refinance existing borrowings on favorable terms when they mature. Our level of "
+  },
+  {
+   "id": "HLNE-23",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000039/combinedexhibit991.htm",
+   "text": "ps://www.linkedin.com/company/hamilton-lane/ . Forward-Looking Statements Some of the statements in this release may constitute “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. Words such as “will,” “expect,” “believe,” “estimate,” “continue,” “anticipate,” “intend,” “plan” and similar expressions, or the negative version of these words or other comparable words, are intended to identify these forward-looking statements. Forward-looking statements discuss management’s current expectations and projections relating to our financial position, results of operations, plans, objectives, future performance and business. All forward-looking statements are subject to known and unknown risks, uncertainties and other important factors that may cause actual results to be materially different, including, risks relating to: the historical performance of our "
+  },
+  {
+   "id": "HLNE-24",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000039/combinedexhibit991.htm",
+   "text": "ees 9,439 11,109 3,035 (68) % (73) % Interest expense (3,856) (3,579) (3,497) (9) % (2) % Interest income 2,794 2,989 3,180 14 % 6 % Non-operating gain (loss), net 447 (629) (595) (233) % (5) % Consolidated Funds and Partnerships: Equity in income (loss) of investees 871 (346) (369) (142) % 7 % Net gain on investments 8,539 37,603 20,812 144 % (45) % Interest income 240 448 930 288 % 108 % Total other income (expense) 18,474 47,595 23,496 27 % (51) % Income before income taxes 95,449 129,842 149,967 57 % 15 % Income tax expense 18,379 15,594 25,083 36 % 61 % Net income 77,070 114,248 124,884 62 % 9 % Less: Income attributable to non-controlling interests in Consolidated Funds and Partnerships 1,604 24,185 13,635 750 % (44) % Less: Income attributable to non-controlling interests in Hamilton Lane Advisors, L.L.C. 21,721 23,890 30,788 42 % 29 % Net income attributable to Hamilton Lane Incorporated $53,745 $66,173 $80,461 50 % 22 % Basic earnings per share of Class A common stock $1.30 $1.58 $1."
+  },
+  {
+   "id": "HLNE-25",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000039/combinedexhibit991.htm",
+   "text": " and amortization 2,528 2,528 Change in deferred income taxes 6,555 8,846 Change in payable to related parties pursuant to tax receivable agreement — (1,951) Equity-based compensation 12,799 12,907 Change in customer incentive asset — 1,077 Equity in income of investees (9,439) (3,035) Net realized loss on sale of investments — 391 Fair value adjustment of other investments (413) — Proceeds received from Funds 10,141 8,049 Non-cash lease expense 2,734 2,318 Other 321 197 Changes in operating assets and liabilities 35,455 (63,779) Consolidated Funds and Partnerships (8,819) (15,282) Net cash provided by operating activities $128,932 $77,150 Investing activities Purchase of furniture, fixtures and equipment $(1,344) $(1,801) Distributions received from Funds 2,355 23,591 Contributions to Funds (13,202) (29,534) Consolidated Funds and Partnerships (81,616) (139,182) Net cash used in investing activities $(93,807) $(146,926) Financing activities Repayments of long-term debt $(1,875) $(4,375) Shar"
+  },
+  {
+   "id": "HLNE-26",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000039/combinedexhibit991.htm",
+   "text": "nefits. Terms 23Hamilton Lane | Global Leader in the Private Markets Some of the statements in this presentation may constitute “forward-looking statements” within the meaning of Section 27A of the Securities Act of 1933, Section 21E of the Securities Exchange Act of 1934 and the Private Securities Litigation Reform Act of 1995. Words such as “will,” “expect,” “believe,” “estimate,” “continue,” “anticipate,” “intend,” “plan” and similar expressions, or the negative version of these words or other comparable words, are intended to identify these forward-looking statements. Forward-looking statements discuss management’s current expectations and projections relating to our financial position, results of operations, plans, objectives, future performance and business. All forward-looking statements are subject to known and unknown risks, uncertainties and other important factors that may cause actual results to be materially different, including, risks relating to: the historical performance of our "
+  },
+  {
+   "id": "HLNE-27",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000016/combinedexhibit991.htm",
+   "text": "% Interest expense (3,815) (3,579) (6) % (13,332) (14,952) 12 % Interest income 2,942 2,989 2 % 7,874 11,083 41 % Non-operating (loss) gain, net (3,271) (629) (81) % 8,434 2,466 (71) % Consolidated Funds and Partnerships: Equity in (loss) income of investees (623) (346) (44) % 1,613 1,509 (6) % Net gain on investments 5,294 37,603 610 % 11,915 83,750 603 % Interest expense — — N/A — — N/A Interest income 60 448 646 % 205 2,201 974 % Total other income (expense) 4,230 47,595 1,025 % 45,725 137,980 202 % Income before income taxes 88,258 129,842 47 % 362,277 462,923 28 % Income tax expense 14,954 15,594 4 % 48,509 75,203 55 % Net income 73,304 114,248 56 % 313,768 387,720 24 % Less: Income attributable to non-controlling interests in Consolidated Funds and Partnerships 616 24,185 3,826 % 3,508 44,166 1,159 % Less: Income attributable to non-controlling interests in Hamilton Lane Advisors, L.L.C. 22,189 23,890 8 % 92,843 94,374 2 % Net income attributable to Hamilton Lane Incorporated $ 50,499 $"
+  },
+  {
+   "id": "HLNE-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000004/combinedexhibit991.htm",
+   "text": "(3) % 25,373 40,815 61 % Interest expense (3,866) (3,688) (5) % (9,517) (11,374) 20 % Interest income 2,761 2,656 (4) % 4,933 8,093 64 % Non-operating gain, net 453 2,613 477 % 11,705 3,095 (74) % Consolidated Funds and Partnerships: Equity in income of investees 351 433 23 % 2,236 1,855 (17) % Net gain on investments 3,082 19,681 539 % 6,621 46,147 597 % Interest income 37 1,042 2,716 % 145 1,753 1,109 % Total other income (expense) 14,429 34,044 136 % 41,496 90,384 118 % Income before income taxes 90,151 120,050 33 % 274,018 333,080 22 % Income tax expense 12,696 27,253 115 % 33,555 59,609 78 % Net income 77,455 92,797 20 % 240,463 273,471 14 % Less: Income attributable to non-controlling interests in Partnerships 94 124 32 % 827 506 (39) % Less: Income attributable to non-controlling interests in Hamilton Lane Advisors, L.L.C. 23,159 23,426 1 % 70,654 70,483 0 % Less: Income attributable to non-controlling interests in Consolidated Funds 1,230 10,875 784 % 2,064 19,475 844 % Net income att"
+  },
+  {
+   "id": "HLNE-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-03",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000004/combinedexhibit991.htm",
+   "text": "operating activities: Depreciation and amortization 7,065 7,475 Change in deferred income taxes 6,886 26,094 Change in payable to related parties pursuant to tax receivable agreement (1,397) (4,195) Equity-based compensation 19,681 38,180 Equity in income of investees (25,373) (40,815) Net realized gain on sale of investments (654) — Fair value adjustment of other investments (9,852) (413) Proceeds received from Funds 39,463 24,429 Non-cash lease expense 6,608 7,125 Other 582 2,580 Changes in operating assets and liabilities 2,059 25,028 Consolidated Funds and Partnerships (23,992) (37,015) Net cash provided by operating activities $261,539 $321,944 Investing activities Purchase of furniture, fixtures and equipment $(8,713) $(4,098) Purchase of investments and convertible notes (5,794) (8,000) Proceeds from sale of investments 6,948 — Net proceeds from sale of Consolidated Fund — 22,135 Proceeds from sale of intangible assets 1,786 — Distributions received from Funds 16,481 9,068 Contribution"
+  },
+  {
+   "id": "HLNE-30",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-04",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364225000114/combined991.htm",
+   "text": " 215 % 13,762 29,508 114 % Interest expense (2,704) (3,830) 42 % (5,651) (7,687) 36 % Interest income 1,406 2,643 88 % 2,171 5,438 150 % Non-operating gain, net 1,437 35 (98) % 11,251 482 (96) % Consolidated Funds and Partnerships: Equity in income of investees 957 551 (42) % 1,884 1,421 (25) % Net gain on investments 2,342 17,927 665 % 3,539 26,466 648 % Interest income 92 472 413 % 108 711 558 % Total other income (expense) 9,902 37,867 282 % 27,064 56,339 108 % Income before income taxes 77,094 117,582 53 % 183,867 213,029 16 % Income tax expense 1,172 13,978 1,093 % 20,859 32,356 55 % Net income 75,922 103,604 36 % 163,008 180,673 11 % Less: Income attributable to non-controlling interests in Partnerships 388 240 (38) % 733 383 (48) % Less: Income attributable to non-controlling interests in Hamilton Lane Advisors, L.L.C. 19,850 25,337 28 % 47,495 47,057 (1) % Less: Income attributable to non-controlling interests in Consolidated Funds 702 7,138 917 % 834 8,599 931 % Net income attributab"
+  },
+  {
+   "id": "HLNE-31",
+   "for": "dil.net_share_change_3y_pct",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "income divided by adjusted shares outstanding. Adjusted net income is income before taxes fully taxed at our estimated statutory tax rate and excludes any impact of changes in carrying amount of our redeemable NCI. Adjusted shares outstanding for the years ended March 31, 2026 and 2024 are equal to weighted-average shares of Class A common stock outstanding - diluted. We believe adjusted net income and non-GAAP EPS are useful to investors because they enable them to better evaluate total and per-share operating performance across reporting periods. The following table shows a reconciliation of adjusted net income to net income attributable to Hamilton Lane Incorporated and adjusted shares outstanding to weighted-average shares of Class A common stock outstanding for fiscal 2026, 2025, and 2024: Year Ended March 31, 2026 2025 2024 (in thousands, except share and per-share amounts) Net income attributable to Hamilton Lane Incorporated $ 249,180 $ 217,417 $ "
+  },
+  {
+   "id": "HLNE-32",
+   "for": "dil.net_share_change_3y_pct",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": " Income attributable to non-controlling interests in Hamilton Lane Advisors, L.L.C. 94,374 92,843 80,835 Income tax expense 75,203 48,509 54,454 Adjusted pre-tax net income 418,757 358,769 276,147 Adjusted income taxes (1) (97,570) (85,028) (64,618) Adjusted net income $ 321,187 $ 273,741 $ 211,529 Weighted-average shares of Class A common stock outstanding - diluted 54,469,393 40,307,818 53,902,467 Exchange of Class B and Class C units in HLA (2) — 14,016,324 — Adjusted shares outstanding (2) 54,469,393 54,324,142 53,902,467 Non-GAAP EPS $ 5.90 $ 5.04 $ 3.92 (1) For the years ended March 31, 2026, 2025, and 2024, represents corporate income taxes at our estimated statutory tax rate of 23.3%, 23.7%, and 23.4% respectively, applied to adjusted pre-tax income. The estimated statutory tax rates are based on federal statutory tax rate of 21.0% and a combined state income tax rate of 2.3%, 2.7%, and 2.4%, respectively. (2) Assumes the full exchange of Class B "
+  },
+  {
+   "id": "HLNE-33",
+   "for": "dil.net_share_change_3y_pct",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ive shares and adjusted for the incremental income tax expense related to the additional allocated income. Net income (loss) recorded by HLI on a standalone basis will determine if the Class B and Class C units are dilutive or antidilutive in each respective period. The following table presents the weighted-average Performance Awards and the Warrant shares excluded from diluted EPS that would have been antidilutive or for which the market or performance conditions have not been achieved as of the period reported: Year Ended March 31, 2026 2025 2024 Performance Awards 1,346,727 774,359 528,282 Warrant Shares 99,726 — — Outstanding Class B and C units of HLA — 14,016,324 — 14. Related-Party Transactions The Company considers its employees, directors, and equity method investments to be related parties. Revenue and Receivables The Company has investment management agreements with various specialized funds and customized separate accounts that it manages. The Company ea"
+  },
+  {
+   "id": "HLNE-34",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "nd guidelines, the screening and recommending of investments, the monitoring of and reporting on investments, and investment manager review and due diligence. Our advisory clients include some of the largest and most sophisticated private markets investors in the world. We had approximately $905 billion of AUA as of March 31, 2026. 7 • Distribution Management : We offer distribution management services to our clients through active portfolio management to enhance the realized value of publicly traded stock they receive as distributions in-kind from private equity funds. • Reporting, Monitoring, Data "
+  },
+  {
+   "id": "HLNE-35",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "sis. Our client and investor base is broadly diversified by type, size and geography. Our client base ranges from those seeking to make an initial investment in private markets to some of the world’s largest and most sophisticated investors in the asset class. As we offer a highly customized, flexible service, we are equipped to provide investment services to institutional clients of all sizes and with different needs, internal resources and investment objectives. Our clients include prominent institutional investors in the United States, Canada, Europe, the Middle East, Asia, Australia and Latin Ame"
+  },
+  {
+   "id": "HLNE-36",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "s. Business Strategy The alternative investment industry has experienced significant and consistent growth, which we expect to continue and contribute to our future growth in the long term. Given our leading market position and strong reputation for investing and client service, our objective is to continue to leverage the following strategic advantages to exceed the industry growth rate. Leverage our market leading position as one of the largest allocators of primary capital to the world’s leading fund managers. Given the size and scale of the assets we manage and advise on, we are viewed as a cruci"
+  },
+  {
+   "id": "HLNE-37",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "dustry better and put our balance sheet capital behind them to form mutually beneficial partnerships. We view the implementation of technology into our workflows as critical to maintaining our market-leading position in private markets. Given this status, we are often a sought-after partner for technology-oriented businesses that are developing cutting-edge and innovative solutions that will help grow and improve the industry. We identify and develop strategic partnerships with, and/or opportunistically seek minority stakes in, these companies, and often are either a client of these companies or shar"
+  },
+  {
+   "id": "HLNE-38",
+   "for": "cmp.pricing_power",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ts in an active market. • Level 2: Values are determined using quoted prices for similar financial instruments and valuation models whose inputs are observable. • Level 3: Values are determined using pricing models that use significant inputs that are primarily unobservable, discounted cash flow methodologies or similar techniques, as well as instruments for which the determination of fair value requires significant management judgment or estimation. The Company uses these levels of hierarchy to measure the fair value of certain financial instruments on a recurring basis, such as for investments; on "
+  },
+  {
+   "id": "HLNE-39",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "h in the long term. Given our leading market position and strong reputation for investing and client service, our objective is to continue to leverage the following strategic advantages to exceed the industry growth rate. Leverage our market leading position as one of the largest allocators of primary capital to the world’s leading fund managers. Given the size and scale of the assets we manage and advise on, we are viewed as a crucial partner to the world’s leading private markets fund managers. We believe we are one of the largest allocators of primary capital to these fund managers and as such, have estab"
+  },
+  {
+   "id": "HLNE-40",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/1433642/000143364226000019/hlne-20260331.htm",
+   "text": "ontinued access to a broad set of private market information on an ongoing basis, as well as our ability to maintain our investment scale, considering the evolving competitive landscape and potential industry consolidation. • Our ability to continue to expand globally . We believe that many institutional investors outside the United States are currently underinvested in private markets asset classes and that capturing capital inflows into private capital investing from non-U.S. global markets represents a significant growth opportunity for us. Our ability to continue to expand globally is dependent on our ability t"
+  }
+ ]
+}

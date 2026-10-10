@@ -1,0 +1,937 @@
+{
+"cik": "947484",
+"quarters": [
+{
+"accession": "0000947484-26-000017",
+"filed": "2026-02-26",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000947484-23-000015",
+"filed": "2023-02-24",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 11.6
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": 20000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 4312000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 4399000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 381800000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 11.62
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 4443000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": -81000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4399000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": -1000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 592000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 4312000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 4399000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 12951000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 21594000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 17440000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 19160000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 13634000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": 2000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 19929000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 378800000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 372500000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": -400000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4312000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": -1000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 4442000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 11.19
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 4312000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 7766000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": -7000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 375900000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 4443000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 4442000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 11891000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": 1000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 4399000000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 368700000.0
+},
+{
+"adsh": "0000947484-26-000017",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 368400000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.8
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 60190000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 5.23
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 403062179.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1405521000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 2150261000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 368612197.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 0.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 9249980000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 2156849000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 60190000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.32
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 7438000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 1482423000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 5490000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 64631000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": 426187000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 8508509000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": 116068000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 1405521000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 2239462000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": 1524000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 11785949000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 82613000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 1449214000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 1465711000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 400345936.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 391748715.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 1398083000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetUnrealizedInvestmentGainLoss",
+"ReclassificationOutOfAccumulatedOtherComprehensiveIncome": "ReclassificationOutOfAccumulatedOtherComprehensiveIncome"
+},
+"tag": "NetIncomeLoss",
+"value": -247799000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 2147915000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 410259455.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": 2087000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 4106069000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 5490000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 6931035000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 5762098000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 0.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 8934000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 9614808000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 82613000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 2239462000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 1482423000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1476933000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "Revenues",
+"value": -2057000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "CorporateAndOther",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 89201000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 1401080000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "NetIncomeLoss",
+"value": 1476933000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UnderwritingSegments",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "ProfitLoss",
+"value": 1482423000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 1465711000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 377609767.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "Parent"
+},
+"tag": "NetIncomeLoss",
+"value": 2156849000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "ProfitLoss",
+"value": 8547343000.0
+},
+{
+"adsh": "0000947484-23-000015",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "EquityMethodInvestmentNonconsolidatedInvesteeOrGroupOfInvestees"
+},
+"tag": "Revenues",
+"value": 12305082000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000947484-23-000015": {
+"adsh": "0000947484-23-000015",
+"cik": "947484",
+"filed": "20230224",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "ARCH CAPITAL GROUP LTD.",
+"period": "20221231"
+},
+"0000947484-26-000017": {
+"adsh": "0000947484-26-000017",
+"cik": "947484",
+"filed": "20260226",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "ARCH CAPITAL GROUP LTD.",
+"period": "20251231"
+}
+},
+"ticker": "ACGL"
+}

@@ -1,0 +1,89 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000914475",
+  "pvp": {
+    "accession": "0000914475-26-000015",
+    "filed": "2026-04-15",
+    "measure_category": null,
+    "measure_name": null,
+    "n_years": 5,
+    "peer_tsr": 124.75,
+    "peer_tsr_text": "124.75",
+    "peo_cap_not_used": {
+      "2025-12-31": 6021068.0
+    },
+    "period_end": "2025-12-31",
+    "status": "OK",
+    "tsr": 147.97,
+    "tsr_text": "147.97",
+    "tsr_vs_peer": 0.18613226452905818,
+    "url": "https://www.sec.gov/Archives/edgar/data/914475/000091447526000015/nbix-20260415.htm"
+  },
+  "ticker": "NBIX",
+  "trading_plans": {
+    "answer": 16,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000914475-25-000181",
+        "adoptions": 5,
+        "filed": "2025-10-28",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Eric Benevich",
+          "Gary Lyons",
+          "George Morrow",
+          "Leslie Norwalk",
+          "William Rastetter"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000914475-26-000007",
+        "adoptions": 0,
+        "filed": "2026-02-11",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000914475-26-000026",
+        "adoptions": 8,
+        "filed": "2026-05-05",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Darin Lippoldt",
+          "David Boyer",
+          "Eric Benevich",
+          "Ingrid Delaet",
+          "Jude Onyia",
+          "Julie Cooke",
+          "Kevin Gorman",
+          "Kyle Gano",
+          "Matthew Abernethy",
+          "Richard Pops",
+          "Stephen Sherwin"
+        ],
+        "terminations": 27
+      },
+      {
+        "accession": "0000914475-26-000037",
+        "adoptions": 3,
+        "filed": "2026-07-31",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Eric Benevich",
+          "George Morrow",
+          "Matthew Abernethy"
+        ],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 27
+  }
+}

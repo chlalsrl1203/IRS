@@ -1,0 +1,87 @@
+{
+ "ticker": "GEN",
+ "reader": "B",
+ "based_on_record": "67557911af2a8737157694a0bcb84b18ae1008de323558f44a4df9b063144a63",
+ "answers": [
+  {
+   "qid": "gov.ceo_succession_policy",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "'succession planning'은 인적자본 일반 서술이고 CEO 승계 책임 진술은 발췌에 없음"
+  },
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "특정 인물 의존 진술이 없고 승계 유무도 단정 불가"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "Note 18 참조뿐이라 소송의 중대성을 증거만으로 판단할 수 없음"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "5_to_20pct",
+   "excerpt_id": "GEN-14",
+   "quote": "All Current Directors and Executive Officers as a Group (11 Persons) 58,192,040 9.7%",
+   "reason": "임원·이사 합계 9.7% — 단일 보통주 클래스"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "MoneyLion 인수 후 성과 공시와 손상 이력을 증거만으로 종합 판단하기 어려움"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "자발적 하향 증거 없음 — False 쓰지 않음"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연간 비GAAP 조정표가 없고 4분기 G&A 대규모 음수의 원인이 증거에 설명되지 않음"
+  },
+  {
+   "qid": "dil.sbc_to_fcf_pct",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "증거에 영업현금흐름·FCF 금액이 없어 비율 계산 불가"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "점유율 추세를 회사가 직접 진술한 문장 없음, 위험요인 가정문뿐"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장·위축에 대한 회사의 직접 진술 없음, 가정문뿐"
+  }
+ ]
+}

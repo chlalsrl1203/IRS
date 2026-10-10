@@ -1,0 +1,108 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000793733",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 13,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0001558370-23-016844",
+      "filed": "2023-10-26",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-24-000690",
+      "filed": "2024-02-01",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-24-005758",
+      "filed": "2024-04-25",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-24-010174",
+      "filed": "2024-07-25",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-24-014050",
+      "filed": "2024-10-31",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-25-000539",
+      "filed": "2025-01-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-25-005406",
+      "filed": "2025-04-24",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001558370-25-006596",
+      "filed": "2025-05-07",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001558370-25-009532",
+      "filed": "2025-07-24",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001104659-25-104349",
+      "filed": "2025-10-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001104659-26-007962",
+      "filed": "2026-01-29",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001104659-26-047674",
+      "filed": "2026-04-23",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001104659-26-086251",
+      "filed": "2026-07-23",
+      "guidance": [],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 13건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "SKYW"
+}

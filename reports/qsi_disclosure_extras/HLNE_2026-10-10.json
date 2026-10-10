@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001433642",
+  "comment_letters": {
+    "answer": 2,
+    "corresp_topics": {
+      "2024-02-28": []
+    },
+    "n_corresp": 1,
+    "status": "OK",
+    "upload_dates": [
+      "2024-02-05",
+      "2024-03-04"
+    ]
+  },
+  "since": "2023-10-11",
+  "ticker": "HLNE"
+}

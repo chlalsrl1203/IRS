@@ -1,0 +1,95 @@
+{
+ "ticker": "NBIX",
+ "reader": "B",
+ "based_on_record": "54c52e0ed8682475065b3d62ab3c7738ce62fa513e8a53aac7e07cc45849b27d",
+ "answers": [
+  {
+   "qid": "gov.key_person_no_succession",
+   "status": "answered",
+   "answer": false,
+   "excerpt_id": "NBIX-2",
+   "quote": "Succession planning for the Company's CEO is conducted by the full Board",
+   "reason": "이사회가 CEO 승계 계획을 수행한다고 진술"
+  },
+  {
+   "qid": "gov.material_litigation",
+   "status": "answered",
+   "answer": "immaterial",
+   "excerpt_id": "NBIX-6",
+   "quote": "We currently believe that none of the claims or actions pending against us is likely to have, individually or in the aggregate, a material adverse effect on our business, financial condition, or results of operations.",
+   "reason": "진행 중 소송이 중대한 영향을 주지 않을 것이라고 회사가 진술(Zydus ANDA 소송 포함 맥락)"
+  },
+  {
+   "qid": "gov.insider_group_ownership",
+   "status": "answered",
+   "answer": "1_to_5pct",
+   "excerpt_id": "NBIX-9",
+   "quote": "All current executive officers and directors as a group (20 persons) (21) 4,768,380 4.6%",
+   "reason": "임원·이사 전체 합계 4.6%"
+  },
+  {
+   "qid": "cap.ma_discipline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "최근 5년 인수 후 성과·손상·해지 여부를 판단할 증거가 없다(Soleno 인수는 2026-05 종결로 성과 공시 전)"
+  },
+  {
+   "qid": "cap.debt_funded_buyback",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "매입 연도에 차입금이 없다는 진술이나 차입 발행 값이 증거에 없다"
+  },
+  {
+   "qid": "acc.guidance_miss_3y",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "연간 가이던스는 있으나 해당 연도의 실제 INGREZZA 연간 매출이 증거에 없어 하단 미달 여부를 판정할 수 없다"
+  },
+  {
+   "qid": "acc.promise_kept_record",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "가이던스 실제치 대조 불가(실제 연간 실적이 증거에 없음)"
+  },
+  {
+   "qid": "acc.voluntary_bad_news",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "2025년 가이던스 상단 축소(narrowing)는 하향 철회로 보기 모호하며 그 밖의 선제 악재 공시 증거가 없다"
+  },
+  {
+   "qid": "acc.material_one_time_items",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "최근 회계연도·4개 분기 합계 GAAP 영업이익이 증거에 없어 10% 기준 대비 계산 불가(2026 Q1 매각이익 28.6은 분기 영업이익 193.4의 14.8%이나 판정 창과 다름)"
+  },
+  {
+   "qid": "cmp.share_trend",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "회사가 스스로 점유율 추세를 서술한 문장이 없다(경쟁 제품 나열뿐)"
+  },
+  {
+   "qid": "cmp.lifecycle_shakeout_or_decline",
+   "status": "unknown",
+   "answer": null,
+   "excerpt_id": null,
+   "quote": null,
+   "reason": "시장 성장·위축에 대한 회사의 직접 진술이 증거에 없다"
+  }
+ ]
+}

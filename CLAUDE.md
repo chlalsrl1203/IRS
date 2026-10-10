@@ -10528,3 +10528,442 @@ thesis 조건 23건 중 기한 도래 **0건**(가장 가까운 것이 2026-11-3
 `engine/` **무변경**이라 `ENGINE_VERSION`은 **v3.89 그대로**(v3.32 규칙:
 코드가 안 바뀌면 버전도 안 바뀐다). 테스트 1,225 → **1,231개 전부 통과**,
 baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
+
+## v3.92 — 스코어카드 v2.1 코어 편입(B 해자·C 품질·D 경영진 하위지표, 미배선)
+(2026-10-05, 사용자 제공 `SCORECARD_V2_1_BRIEF.md`)
+
+`engine/scorecard_core.py` + `tests/test_scorecard_core.py`를 외부에서 받아 그대로
+넣었다. 이 모듈은 B(해자: ROIC-WACC 스프레드 AR(1) 수축 지속도)·C(QMJ 품질 요소)·
+D(자본배분·주주환원·지배구조·경영자효율 근사·정직성 가감)의 **하위지표와 모듈 내부
+가중합까지만** 낸다. 버전 태그는 별도 네임스페이스 `SCORECARD v2.1`.
+
+**v2.0 브리프는 폐기됐다** — 존재하지 않는 파일을 전제했고 이 저장소의 세 원칙
+(런타임 의존성 0개, 단일 종합점수 금지, accounting_quality.py와 중복 금지)을
+위반했다. v2.1은 셋 다 고쳤다: stdlib만(`math`), 모듈 간 합산 함수 없음(이름으로
+테스트 고정), A 모듈 삭제(기존 `accounting_quality.py` 사용). DART 수집기는
+P0-04 DEFER를 유지해 넣지 않았다.
+
+**배선 0건** — `engine/`·`scripts/` 어디서도 import하지 않는다. verdict·큐 연결은
+사람의 결정 사안이다(accounting_quality와 같은 질문: 성과 검증 0건).
+
+### 편입하며 고친 것(테스트만, 로직 무변경)
+
+- import 경로 2곳을 저장소 구조에 맞춤(`from engine import scorecard_core`,
+  금지-import 검사가 `S.__file__`을 열도록).
+- ⚠️ `test_duration_matches_hand_rolled_statsmodels_free_check`에 붙은
+  `skipUnless(HAVE_SCIPY)`를 뗐다. 이 테스트는 scipy를 전혀 쓰지 않는데 조건만
+  붙어 있어 **scipy 없는 CI에서 영영 실행되지 않을 상태**였다(조용히 무력화된
+  검증 도구 — R-001 fcf0 키 오타·PHASE 2 기본인자 바인딩과 같은 계열).
+- 결과: scipy 없는 환경 **25 통과 · 1 건너뜀**(scipy 오라클 대조만 남음). scipy를
+  임시로 깔아 1회 실행 시 **26 통과**(Acklam 분위수함수 scipy 대비 오차 1e-8 미만
+  확인) 후 제거 — 저장소 의존성에는 추가하지 않았다.
+
+### 버전 번호 — v3.90·v3.91은 결번
+
+v3.90(`portfolio_track_record.py`)·v3.91(대시보드 자가갱신)은 main에 병합되지
+않은 `backup-chain-a-2026-09-24` 브랜치에 이미 쓰인 번호다. 같은 번호에 다른
+내용을 넣으면 v3.12 가짜 버전 사건이 재발하므로 건너뛰고 v3.92로 올렸다. 그
+브랜치를 재이식하게 되면 그때 번호를 다시 정할 것.
+
+### 알려진 주의점(코드에 그대로 둔 것)
+
+- `FF_RHO_PRIOR = 0.62`는 Fama-French(2000) 연 38% 평균회귀에서 유도한 값이다.
+  같은 숫자를 성장 축소계수 근거로 썼다가 기각한 결정 #4와 계열이 같다 — 여기서는
+  **ROIC 스프레드 지속계수**라는 원래 용도에 쓰였으므로 결정 #4 위반은 아니지만,
+  한국·IRS 표본으로 재추정되기 전까지는 사전값일 뿐이다.
+- `managerial_efficiency_proxy`는 Demerjian 외(2012)의 DEA가 아니라 2단계 OLS
+  잔차다(코드가 스스로 명시). "MA-score"로 부르지 말 것.
+- 입력 필드(spread_series, roiic_5y, kcg_compliance 등)를 채우는 파이프라인은
+  아직 없다 — 지금은 합성 데이터로만 검증된 상태다.
+
+테스트 1,231 → **1,256 통과 · 1 건너뜀**. baseline fingerprint `f5709edf…`
+**불변**, `ledger/`·공식 판정 0건 수정. `ENGINE_VERSION` v3.89 → **v3.92**.
+
+## v3.93 — 정성평가 표준입력(QSI v1) 신설 + 파일럿 3종목 (2026-10-06)
+
+정성 심층조사가 채팅 요약·자유서술로만 남던 것을 **고정 질문 은행 + 필수 인용 + `unknown` 1급 값**
+형식으로 받는다. 새 밸류에이션 로직 0줄, `run_analysis()`·`portfolio_pipeline`에 **미배선**
+(테스트로 고정). 구조는 `docs/QUALITATIVE_STANDARD_INPUT_BRIEF.md`.
+
+- `engine/qualitative_input.py`: 질문 은행(5축 + insurance/conglomerate 변형), 답·근거 검증,
+  봉인(`prediction_ledger.core_hash` 재사용), `scorecard_core` 입력 필드 파생(불리언만).
+  증거 계약은 `evidence.py`, 축은 `research_lenses.py`를 그대로 쓴다.
+- `scripts/qualitative_intake.py`: `checklist`/`submit`/`coverage`. 조사는 코드 밖에서 하고
+  코드는 형식·근거만 검증한다(네트워크·LLM 호출 없음, stdlib만).
+- `qualitative/<종목>_<날짜>.json`: **종목당 1건이 아니라 날짜별 누적**(봉인의 목적이 사후
+  수정 방지라 과거 기록을 남긴다). 같은 종목·날짜 덮어쓰기는 거부.
+
+**강제 규칙**: ① `answered`는 근거 주장 필수 ② `requires_primary` 질문(판정 경계를 움직일 수 있는
+사실)은 `VERIFIED_PRIMARY` 없으면 거부 — TYL SBC 3배 오류 형태 ③ `unknown`은 사유 필수, 모른다면서
+답·근거 첨부 불가 ④ `observed_date > as_of` 거부 ⑤ 종합점수·판정·자동 변경 함수 금지(AST 테스트).
+
+**scorecard 파생은 불리언 항목만 한다.** `roiic_5y`·`dollar_test_ratio`·업종 백분위 입력은 업종 내
+상대값이라 한 회사의 질문 답으로 만들 수 없다 — 억지로 채우지 않고 `not_derivable`로 남긴다.
+
+### 파일럿 결과 (ACGL·DLO·PTC, 형식 시험이며 조사가 옳다는 검증이 아니다)
+답한 질문 5/11 · 3/22 · 4/22. **낮은 커버리지가 정상 출력이다** — 이번 세션에서 직접 조회하지
+못한 항목(내부자 매매·소송·합산비율·경쟁 구도)은 추측하지 않고 `unknown`으로 남겼다.
+- 인용은 SEC 원문·companyfacts만 썼고 인용문 7개는 원문과 글자 일치를 작성 전에 확인했다.
+- **PTC 파일럿 중 발견**: 2026-10-05 Schneider Electric이 PTC를 **주당 $205 현금(약 $226억)에
+  인수**한다고 발표(8-K Item 1.01, 합병계약 10-04, 해지수수료 $7억, 종결은 주주·규제 승인 조건부).
+  `PENDING_ACQUISITION` Disqualifier로 기록했다. LNTH(피인수 예정)와 같은 사유로 이 엔진의
+  Implied Growth는 '시장의 성장 기대'를 뜻하지 않는다. **ledger·thesis·holdings는 건드리지 않았다**
+  — PTC는 보유 38.4% 최대 종목이라 처리 방식(thesis 갱신, 감시 방식)은 사용자 판단 사안이다.
+- **포맷이 드러낸 결함 후보 3건(미수정)**: ① `dil.sbc_to_fcf_pct` 분모가 ledger 파생값이라
+  '1차 확인'이 부분적이다. ② PTC `cap.buyback_effect`에서 과거 경량검증("자사주매입이 SBC의 6~7배")과
+  희석주식수(3년 +2.15%)가 모순인데, 현재는 `unknown`의 note 문장으로만 남고 기계가 모순을
+  탐지하지 못한다. ③ 20-F 발행사(DLO)는 `gov.insider_pattern`의 Form 4 경로가 없다.
+
+**기존 33종목 정성조사는 소급 재작성하지 않는다**(사후합리화). `reports/qualitative_coverage.json`이
+레거시 전용 종목(16종목)을 구분해 보여준다. `qualitative_overrides.json`은 수정하지 않았다.
+**검증 상태**: IMPLEMENTED_NOT_VALIDATED — 이 입력이 더 나은 판단이나 성과로 이어진다는 증거는 0건이며,
+봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.
+
+테스트 1256 → **1280 통과**. baseline fingerprint `f5709edf…` 불변, `ledger/`·공식 판정 0건 수정.
+`ENGINE_VERSION` v3.92 → **v3.93**.
+
+## QSI v1 확장 — 매수리스트 16종목 봉인 (2026-10-06, "파일럿 그만하고 계획대로 실행")
+
+파일럿(ACGL·DLO·PTC)에 이어 `reports/buylist_2026-09-06.json` 나머지 16종목(PGR·SIGI·PDD·DUOL·MNDY·
+CINF·NBIX·HLNE·DECK·UBER·SE·ADBE·SKYW·NXT·TW·GEN)을 `scripts/qsi_rollout_2026_10_06.py`로 봉인했다.
+`engine/` 무변경(`ENGINE_VERSION` v3.93 유지), ledger·thesis·holdings·매수리스트 0건 수정.
+
+**파일럿보다 엄격해진 점 — 사람이 옮겨 적는 경로를 없앴다.**
+- 모든 `quote`는 실행 시 SEC 원문을 내려받아 **글자 그대로 들어 있을 때만** 통과한다(없으면 즉시 예외).
+- SBC/FCF는 companyfacts SBC가 ledger의 `sbc_to_fcf_pct`에서 역산한 값과 0.5% 안에서 일치하는 연도만
+  인용한다(연도 어긋남 방지). 일치하는 해가 없으면 unknown(CINF) — ledger에 값이 없어도 unknown(PGR·GEN·PDD).
+- 3년 희석주식수는 `engine/dilution.py`의 정규화·점프 검출을 그대로 쓴다(분할·ADS 변경 오염 시 unknown, HLNE).
+- 준비금 발전(보험)은 `PriorYearClaimsAndClaimsAdjustmentExpense` 3개 연도 부호에서 자동 산출.
+- `cap.buyback_effect`는 매입 지출(SEC)과 3년 주식수 변화를 결합하되 분류선(±1%)을 **사전 고정**했다 —
+  검증된 값이 아니다. 매입 자금이 부채인지(`cap.debt_funded_buyback`)는 여전히 미확인.
+
+**커버리지는 낮고 그게 정상 출력이다**(답한 질문 9~45%, 대부분 14~18%). 내부자 매매·소송·재작성·경쟁 구도는
+이번에도 조회하지 않아 전부 unknown이다. `reports/qualitative_coverage.json`에 `legacy_with_sparse_qsi`를
+신설해 **QSI 봉인이 있다고 정성조사가 표준화된 것이 아니라는 사실**을 드러낸다 — 기존 풍부한 자유서술
+조사는 아직 `qualitative_overrides.json`에만 있다(소급 재작성 금지 원칙 유지).
+
+**조사 중 드러난 사실(판정 불변, 병기)**: SIGI·GEN·ADBE·SE는 CEO가 의장을 겸한다(SIGI는 선임독립이사로 균형,
+GEN은 FY26부터 합침 — 과거엔 분리). DUOL(20표)·HLNE(10표)·TW(Class B·D 10표)·SE(15표)·PDD(10표)는 차등의결권.
+SIGI의 3년 준비금 발전은 **adverse**(자동 산출, 10-K MD&A 문장으로는 미대조).
+`NBIX·UBER·NXT·TW·SE·PDD·MNDY`는 자사주 매입 지출이 있는데도 3년 희석주식수가 증가(`share_count_rising`).
+
+**검증 상태는 그대로 IMPLEMENTED_NOT_VALIDATED** — 이 입력이 더 나은 판단·성과로 이어진다는 증거는 0건이다.
+`price_at_analysis`는 이번 회차에 기록하지 않았다(None) — H-008 같은 실현수익률 검증의 전제가 아직 비어 있다.
+
+테스트 1280 → **1281 통과**.
+
+## v3.94 — SEC 이벤트 수집기: QSI의 `unknown`을 1차 출처로 채우다 (2026-10-06,
+"정성분석의 알맹이를 어떻게 채울 수 있을까?" → "실행해")
+
+QSI v1이 답한 질문 9~45%에 머문 이유는 판단이 어려워서가 아니라 **수집 경로가 없어서**였다.
+내부자 매매·임원 교체·재작성·소송은 판단 이전에 SEC가 공시한 사실이다. `engine/sec_events.py`
+(순수 파서 + 주입된 fetcher, stdlib만)와 `scripts/qsi_sec_events.py`가 그 사실을 규칙대로 뽑는다.
+**좋고 나쁨은 판정하지 않는다**(§31). `run_analysis()`·`portfolio_pipeline`에 **미배선**(테스트로 고정).
+
+**채우는 질문과 사전 고정 규칙(검증된 값이 아니며 결과를 보고 조정하지 않는다):**
+| 질문 | 출처 | 규칙 |
+|---|---|---|
+| `gov.insider_pattern` | Form 4 | 공개시장 P/S만, 10b5-1(체크박스·각주) 제외, 재량 순거래액 ≥ $1M이면 기회적 |
+| `gov.cxo_turnover_24m`(신규) | 8-K Item 5.02 | 직책+이직 동사가 같은 문장인 8-K 건수 |
+| `acc.restated_down_3y` | 8-K 4.02·10-K/A | 둘 다 없으면 False, 있으면 판단 보류(unknown+주장) |
+| `gov.material_litigation` | 10-K Item 3 | 회사 자기 진술만(없음=none, **중요성 한정=immaterial**) |
+| `cap.debt_funded_buyback` | companyfacts | 같은 연도 순차입 ≥ 매입액의 50% |
+
+**개정본(revision) 신설.** 같은 날짜 기록은 덮어쓰기 금지라 새 사실을 못 얹었다. `save_record(...,
+supersedes=<직전 해시>)`가 기존 파일을 건드리지 않고 `<T>_<날짜>_r2.json`을 쌓는다(사슬이 끊기거나
+내용이 같으면 거부). `revision`/`supersedes`는 **비봉인 필드**라 기존 해시가 불변이다.
+coverage는 종목별 **최신본만** 센다(`n_record_files`와 `n_sealed_records` 분리).
+
+**결과(19종목 전수, 개정본 15건):** 평균 답한 비율 약 14~18% → **34.2%**(최소 13.0%, 최대 66.7%).
+채운 것은 쉬운 칸이 아니라 지금까지 전부 `unknown`이던 거버넌스·회계품질 축이다.
+- **ADBE**: CEO Narayen이 CEO직에서 은퇴(2026-09-08 8-K, Executive Chair로 전환)·CFO Durn 사임(06-08),
+  재량 순매도 $48.8M. **HLNE**: 경영진 6명이 주가 $129→$76 하락 중 재량 **순매수 $19.5M**(원 QSI에 없던 신호).
+  **UBER**: CFO 사임, 재량 순매수 $12.2M. GEN·SKYW·PTC·ACGL 재량 순매도 $9~29M.
+- 이 값들은 **사실의 집계**일 뿐이다. 임원 매도가 약세 신호인지는 판단하지 않았고, 공식 판정·Confidence에
+  반영하지 않았다.
+
+**수집 중 실데이터가 드러낸 결함 4건 — 전부 테스트로 고정:**
+1. **타 발행사 Form 4 혼입.** 제출 목록에는 회사가 *다른 회사 지분을 거래했다고 낸* Form 4도 섞인다.
+   UBER에서 타사 지분 $11억 매도가 "내부자 순매도"로 잡혔다. 발행사 CIK가 일치하는 거래만 쓰자
+   **UBER 판정이 순매도 → 순매수로 뒤집혔다**(오염이 실제 답을 바꿨다).
+2. **소송 '없음'의 과대해석.** ACGL의 "중요한 악영향이 예상되는 소송이 없다"를 `none`으로 답했다 —
+   소송이 없다는 뜻이 아니다. 중요성 한정이 있으면 `immaterial`.
+3. **20-F 발행사 오판.** DLO·MNDY·PDD·SE는 20-F 발행사인데 자발적·제3자 Form 4가 5~200건 섞여 있어
+   "국내 발행사"로 오판했고, 7건으로 "정기 거래만"이라 답하는 **거짓 청정 신호**가 나왔다.
+   '20-F/40-F는 있고 10-K는 없음'으로 판별하고, 4종목은 `UNAVAILABLE`+사유로 남겼다.
+4. **낡은 연도 값 선택.** 자사주 재원 비교가 2009년 값을 집었다(첫 태그 선택). 가장 최근 연도의
+   태그를 고르고 FY(as_of−2) 이전이면 unknown.
+결함 2~3은 **이미 저장된 개정본을 낳은 뒤** 발견했다 — 커밋된 적 없는 해당 r2 파일만 삭제하고
+수정한 규칙으로 다시 수집했다(커밋된 봉인 기록은 한 건도 건드리지 않았다).
+
+**이 모듈이 하지 않는 것·한계:** 파생증권 거래·'little r' 재작성은 탐지하지 못한다. 소송은 심각도를
+판단하지 않으며 대부분 'Note 참조'라 unknown으로 남는다(19종목 중 2종목만 답). 자사주 재원은 태그가
+없어 19종목 중 3종목만 답했다. 20-F 발행사 4종목은 이 경로로는 채울 수 없다(Form 4·8-K 의무 없음).
+가이던스 이행 이력·경쟁/해자 질문은 이번에도 비어 있다. **검증 상태는 그대로
+IMPLEMENTED_NOT_VALIDATED** — 이 사실들이 더 나은 판단이나 성과로 이어진다는 증거는 0건이다.
+
+`reports/sec_events/<T>_<날짜>.json`에 접수번호·종목별 순거래액·인용 원문을 남긴다(재현용).
+`ENGINE_VERSION` v3.93 → **v3.94**. 테스트 1281 → **1314**(신규 33 + 기존 1건을 은행 크기에
+고정하지 않도록 수정), baseline fingerprint `f5709edf…` 불변, `ledger/`·thesis·holdings·매수리스트 0건 수정.
+
+## v3.95 — QSI 적신호·거버넌스 확장: 비어 있던 회계품질·거버넌스 칸을 1차 출처로 (2026-10-07,
+"QSI를 완성도 높고 전문성 있게 발전시킬 방안" → A안 실행)
+
+v3.94가 채운 것은 내부자 매매·임원 교체 등 "쉬운 칸"이었고, 회계품질 5문항 중 4개와 거버넌스 상당수는
+여전히 `unknown`이었다. 이번에 **SEC가 공시한 사실이라 판단 없이 뽑을 수 있는 것**을 질문 6개 + 기존 1개로
+채웠다. 새 밸류에이션 로직 0줄, `run_analysis()`·`portfolio_pipeline` **미배선**(v3.94 경계 그대로).
+
+| 질문 | 출처 | 사전 고정 규칙(비검증) |
+|---|---|---|
+| `acc.late_filing_nt_3y` | 제출 목록 | NT 10-K/10-Q 건수 |
+| `acc.auditor_change_3y` | 제출 목록 | 8-K Item 4.01 건수(정기 교체 포함) |
+| `acc.material_impairment_3y` | 제출 목록 | 8-K Item 2.06 건수(회사가 '중요'하다고 결론낸 것만 공시됨) |
+| `gov.say_on_pay_support_pct` | 8-K 5.07 | 찬성/(찬성+반대), 기권 제외. 표 3형식+서술 1형식 |
+| `gov.insider_group_ownership` | DEF 14A | 임원·이사 합산 지분 구간(`*`=1% 미만). 모호하면 unknown |
+| `acc.icfr_conclusion` | 10-K 9A | 경영진 결론 문장만(위험요인 가정문 제외) |
+| `cap.dividend_predictable` | companyfacts | 5개 연속 연도 양수·무감소일 때 **True만** 단언 |
+
+### 실데이터가 드러낸 것 (그리고 고친 것)
+- **GEN의 2026-09 보수 승인 투표는 부결**(찬성 40.6%, 209.9M vs 307.1M, 회사 8-K가 "not approved"라 명시).
+  **ADBE는 50.7%**로 간신히 통과. 둘 다 이 칸이 비어 있어 지금까지 아무도 몰랐던 사실이다.
+  반면 PGR 96.1%·SIGI 98.4%·TW 98.7% 등 나머지는 높은 찬성률. **좋고 나쁨은 판단하지 않고 사실만 병기**한다.
+- **파서 실패 3건을 실문서에서 잡았다**: ① DUOL `advisory (non-binding) basis` 삽입형 ② SKYW `Votes for approval N
+  Votes against N` 형식 + **숫자 사이의 U+200B(폭 없는 공백)** — `\s`가 못 잡아 조용히 읽기를 깨뜨렸다
+  (`normalize_text`가 이제 제거) ③ UBER는 본문에 `Item 5.07` 표기 자체가 없어 전체 본문을 쓴다.
+  최초 구현은 `abstain`과 `abstentions`의 철자(abstent-)를 몰라 ADBE·GEN 표를 **전부 놓쳤다**.
+- **오연결 방지**: 안건 문장 뒤 300자 안의 표만 그 안건의 것으로 본다(`SOP_WINDOW`). UBER의 안건 *목록* 뒤
+  멀리 있는 표는 다른 안건 것이라 연결하지 않는다(테스트로 고정).
+- **M&A 규율을 XBRL로 재려던 계획은 접었다.** `GoodwillImpairmentLoss`는 대부분 최근 연도 태그가 끊겨(ADBE는
+  2017에서 멈춤) "0"과 "미보고"를 구분할 수 없다 → 거짓 정밀도. 대신 8-K 2.06 건수를 쓴다.
+
+### ⚠️ "전부 0건"을 청정 신호로 읽지 않았다 — 양성 대조군으로 탐지기를 검증
+국내 발행사 15종목이 NT·4.01·2.06 모두 0건이었다. 탐지기가 못 보는 것일 수 있어 **실제로 사건이 있었던 회사**로
+검증했다: **SMCI → NT 10-K 3건(2024-08-30·11-13, 2025-02-11), 감사인 변경 8-K 2건(2024-10-30·11-18)** —
+정확히 잡힌다. **2.06은 실데이터에서 양성 사례를 찾지 못했다**(13종목 조회, 전부 0건 — 희귀한 공시). 메커니즘은
+4.01·4.02·5.02·5.07과 동일한 `rows_with_item`이라 같은 코드 경로로 신뢰하되, 2.06의 실데이터 양성 검증은 **미완**이다.
+
+### 한계 (정직하게)
+- **20-F 발행사 4종목(DLO·MNDY·PDD·SE)은 이 경로로 새로 채워지지 않는다**(Form 4·8-K·DEF 14A 의무 없음). 커버리지 최하위가
+  그대로다(10~17%). 근본 해결은 다른 출처(20-F Item 15/16, 6-K)가 필요하다.
+- 내부자 합산 지분은 15종목 중 **5종목만** 답했다(다중 클래스·비표준 행은 unknown). 배당은 4종목만(True만 단언).
+- 보험사(ACGL·CINF·PGR·SIGI)는 `accounting_quality` 축이 없어(research_lenses 계약) ICFR·NT 질문이 적용되지 않는다.
+- **분모가 바뀌었다**(질문 23→29개). 종목 평균 답한 비율은 40.7%(중앙 44.8%)지만 v3.94의 34.2%와 단순 비교는 아니다 —
+  종목당 답한 수는 3~7개 늘었다(합 189/491).
+- 규칙·임계값(NT 건수, 구간 경계, 5년·무감소)은 전부 **사전 고정이며 검증된 값이 아니다**. 이 사실들이 더 나은
+  판단이나 성과로 이어진다는 증거는 여전히 **0건**이다(`IMPLEMENTED_NOT_VALIDATED`).
+
+**검증**: 테스트 1,314 → **1,337 통과**(신규 23, 전부 실문서에서 마주친 형식을 입력으로 삼음) · baseline
+fingerprint `f5709edf…` **불변** · `ledger/`·thesis·holdings·매수리스트 **0건 수정** · 기존 봉인 파일 **0건 수정**(개정본만
+추가) · `ENGINE_VERSION` v3.94 → **v3.95**.
+
+## v3.96 — QSI 80% 계획 1단계: 가이던스 원장 · 20-F 경로 · 표지/자본배분 규칙 (2026-10-07,
+사용자 "정성분석을 80% 수준까지 끌어올리고 싶다 — 무슨 방법을 써서라도")
+
+빈칸의 절반 이상이 판단이 어려워서가 아니라 **수집 경로가 없어서** 비어 있었다는 진단에서 출발했다.
+1단계는 판단 없이 1차 출처로 채울 수 있는 것만 했다. `run_analysis()`·`portfolio_pipeline` **미배선**
+(v3.94 경계 그대로, 테스트로 고정). 기존 봉인 파일은 한 건도 수정하지 않았다(개정본만 추가).
+
+**결과(19종목, 491칸): 답함 189(38.5%) → 235(47.9%), 해당 없음 0 → 12, 해결 50.3%.**
+`reports/qualitative_coverage.json`에 `totals`를 신설해 답함/해당없음/해결을 **따로** 센다 —
+해당 없음은 규칙(무배당 직접 진술, 외국 발행사의 보수 승인 투표 부재)으로만 주며 '모름'을 대신하지 않는다.
+
+### ① 가이던스 원장 — `engine/guidance_ledger.py`(신규)
+8-K 2.02(외국 발행사는 6-K)의 **모든 EX-99.x**에서 연간 GAAP 총매출 가이던스(범위 또는 '약 $X')를 뽑아
+companyfacts 실제 매출과 짝짓는다. `acc.guidance_miss_3y`·`acc.promise_kept_record`가 19종목 중 0 → 7종목
+(ADBE·PTC·DECK·DUOL·GEN·NXT·MNDY) 답함. **7종목 전부 최근 3년 최초 가이던스 하단을 미달한 해가 0번이다** —
+이건 경영진 정직성의 증거라기보다 가이던스를 낮게 잡는 관행(sandbagging)일 수 있어, `promise_kept_record`
+노트에 그 한계를 고정 문구로 남겼다(판정에 쓰지 않는다).
+실데이터가 드러낸 함정(전부 테스트로 고정):
+- **DUOL 표 머리 'Q4 2025 FY 2025'** — 첫 범위는 분기 열이다. 처음엔 분기 가이던스를 연간으로 읽었고
+  ±30% 짝짓기 안전장치가 그 해를 통째로 버려 오답 대신 빈칸이 됐다. 열 번호를 읽도록 고쳤다.
+- **NBIX 'INGREZZA® Net Sales Guidance'** — 제품 매출을 총매출로 읽을 뻔했다(실제와 16% 차이라 안전장치도
+  못 잡는다). 상표 기호 근처 매출 표현은 버린다.
+- **DECK** — 'Outlook for the Twelve Month Period Ending …' 제목과 수치 사이에 긴 면책 문단이 있고 점 추정을 쓴다.
+- **최초 가이던스가 회계연도 시작 150일 뒤에 처음 나오면 평가하지 않는다**(`LATE_INITIAL`) — DECK FY2026은
+  관세 불확실성으로 5월에 연간 가이던스를 내지 않았다. 연중 처음 낸 숫자로 '약속을 지켰다'고 하면 관대해진다.
+- 결산일이 1월 초인 해가 있으면 짝짓기 자체를 거부한다(v3.61 회계연도 라벨 문제 — ±30% 안전장치가 못 잡는다).
+
+### ② 외국 발행사 20-F 경로(DLO·MNDY·PDD·SE)
+8-K·Form 4·DEF 14A 의무가 없어 v3.94/v3.95에서 전부 UNAVAILABLE이던 칸을 20-F 대응 항목으로 채웠다:
+Item 15(ICFR) · Item 16F(감사인 변경) · Item 8.A.7(소송) · Item 6.E/7.A(임원 지분) · NT 20-F · 20-F/A ·
+무배당 직접 진술. 보수 승인 투표는 **제도 자체가 적용되지 않아** not_applicable. 4종목 답 15 → 35.
+- **PDD는 2025-07-23 감사인을 교체했다**(EY Hua Ming → EY Hong Kong, Item 16F) — 지금까지 이 칸이 비어 있어
+  몰랐던 사실이다. 좋고 나쁨은 판단하지 않는다.
+- 20-F/A 부재로 `acc.restated_down_3y=False`를 주되, 8-K 4.02 대응 공시가 없어 국내 규칙보다 약한 근거라고
+  노트에 명시했다.
+
+### ③ 국내 표지·자본배분 기계 규칙
+- `gov.dual_class` — 10-K **표지**(양식상 모든 보통주 클래스의 발행주식수를 적어야 한다)에 Class B 이상이
+  없으면 False. ⚠️ 초판은 문장 단위로 잘라 **TW(Class A~D 4중 구조)를 단일 클래스로 오판**했다 — 액면가
+  '$0.00001'의 소수점이 문장을 끊었다. 표지 구간 전체를 보도록 고쳤다(TW는 기존 답이 있어 merge가 덮지 않아
+  실제 피해는 없었다).
+- `cap.debt_funded_buyback` — 현금흐름 차입 태그가 없을 때 **차입 잔액 순변동**으로 대체(근사, 노트 명시).
+- `cap.ma_discipline` — 5년 현금 인수 지출 ≤ 영업현금흐름 10%면 `no_material_ma`. 단 결산 후 8-K 2.01(인수
+  완료)이나 3년 내 8-K 1.02(중요 계약 해지)가 있으면 보류 — **ADBE는 Figma($200억 시도, 해지 수수료 $10억)가
+  현금 인수 지출에 안 잡혀 'M&A 없음'으로 나왔고**, 이 가드가 그 오답을 막는다. NBIX는 결산 후 Soleno 인수로 보류.
+- 무배당 직접 진술 + 최근 5년 주당배당 값 없음 → `cap.dividend_predictable` not_applicable.
+
+### 남은 것(다음 단계)
+경쟁·해자 4문항(52칸)은 여전히 비어 있다 — 2단계(동종업계 패널, 10-K 위험요인 연도별 비교) 대상이다.
+일회성 항목·불성실 공시·나쁜 소식 자발 공개·핵심인물 승계·의장 분리는 회사 문서를 읽고 판단해야 해
+3단계(원문 인용 필수 + 독립 이중 판독)로 남겼다. 규칙·임계값은 전부 사전 고정이며 검증된 값이 아니다
+(`IMPLEMENTED_NOT_VALIDATED`).
+
+**검증**: 테스트 1,337 → **1,371 통과**(신규 34) · `ledger/`·thesis·holdings·매수리스트 **0건 수정** ·
+기존 봉인 파일 0건 수정 · `ENGINE_VERSION` v3.95 → **v3.96**.
+
+## v3.97 — QSI 80% 계획 2단계: 경쟁 대리지표 · 불성실 공시 부재 규칙 (2026-10-07)
+
+경쟁 축 4문항(52칸)이 전부 비어 있던 것을 회사 공시만으로 계산하는 **대리지표**로 채웠다.
+`engine/competition_signals.py`(신규) + `scripts/qsi_phase2.py`. 판정·비중 미배선(테스트로 고정).
+**결과: 답함 235(47.9%) → 281(57.2%), 해결 59.7%.**
+
+- `cmp.pricing_power` — 매출총이익률 3년 추세·수준(사전 고정: −3%p 이하 eroding / +1%p 이상 또는 70% 이상
+  유지하며 매출 성장 → evidenced). **가격결정력 그 자체가 아니다** — NXT의 15%→33% 상승은 생산세액공제(45X)
+  영향이 커서 '가격 인상 증거'로 읽으면 틀린다. 노트에 고정 문구로 남겼다. eroding: DLO·GEN·PDD·SKYW.
+- `cmp.share_trend`·`cmp.lifecycle_shakeout_or_decline` — **회사가 연차보고서에서 직접 이름을 댄 SEC 공시
+  상장 경쟁사만** 비교군으로 쓴다(`data/peer_baskets.json`, 근거 원문 포함). 처음 SIC 업종코드를 검토했으나
+  NXT(태양광 트래커)가 '반도체', UBER·PDD·DLO가 '기타 사업서비스'로 묶여 버렸다. 4종목만 해당:
+  TW gaining(MKTX·BGC 대비 +4.3%p), NXT gaining(ARRY·SHLS가 역성장), PTC stable(ADSK), **UBER losing**
+  (LYFT·DASH·CART 합계 21.7% vs 17.7%). 거대 복합기업(Microsoft·Amazon·ICE)은 사업 매출을 분리할 수 없어 제외.
+  ⚠️ 결산월이 다른 회사는 연도 라벨이 아니라 **결산일**로 맞춘다 — 처음엔 NXT(3월)와 ARRY(12월)가 짝지어지지
+  않아 비교군이 통째로 빠졌다.
+- `cmp.new_threat` — 전년 대비 위험요인(10-K Item 1A / 20-F Item 3.D)에 **새로 추가된** 경쟁 문장
+  (단어 Jaccard < 0.5). 'Lazy Prices'(Cohen·Malloy·Nguyen, JF 2020)가 10-K 문장 변화의 정보성을 보였다 —
+  여기서는 회사가 스스로 새로 인정한 위협을 모으는 데만 쓴다. 실측: UBER는 Waymo·Zoox·Tesla 자율주행과
+  'AI 비서의 탈중개화'를 새로 적었고, ADBE는 'generative and agentic AI' 경쟁을 새로 적었다.
+  ⚠️ 함정 3건을 테스트로 고정: 'competent authorities'(SE), 인재 확보 '경쟁적 급여'(NBIX), 그리고
+  **시작 표지를 먼저 고르면 본문 중간의 상호참조('see Item 1A')부터 사업 설명까지 삼킨다**(NBIX) —
+  끝 표지마다 바로 앞의 시작 표지를 짝짓도록 고쳤다. 교차참조형 20-F(MNDY·DLO)는 절 경계를 못 찾아 unknown.
+- `acc.unfaithful_disclosure` — 3년 재작성 없음(기존 답) + 연차보고서에 확정적 제재·합의 진술(Wells notice,
+  동의 명령, 기소유예/불기소 합의) 없음 → False. 진술이 있으면 보류 — **UBER는 2016년 해킹 은폐 건의 DOJ
+  불기소 합의(2022)가 잡혀 보류**됐다(규칙이 거짓 청정 신호를 막은 사례).
+
+**검증**: 테스트 1,371 → **1,385 통과** · ledger·판정·매수리스트 0건 수정 · 기존 봉인 파일 0건 수정 ·
+`ENGINE_VERSION` v3.96 → **v3.97**.
+
+## v3.98 — QSI 80% 계획 3단계: 독립 판독 2인 일치로만 채택 (2026-10-09)
+
+규칙으로 뽑을 수 없는 질문(승계·소송·내부자 지분·일회성 항목·자발적 악재 공시 등)을 **사람이 원문을
+읽고** 답하되, 두 판독자(A·B)가 같은 증거 묶음을 서로의 결과를 보지 않고 읽어 **status·answer가 같을 때만**
+채택했다. 루브릭(`docs/qsi_reading_rubric.md`)·작업지시(`docs/qsi_reading_protocol.md`)는 판독 전에 고정했고
+결과를 보고 바꾸지 않았다. 증거 묶음 19종목(`reports/qsi_reading/packs/`), 판독 원본(`passA/`·`passB/`),
+병합 `scripts/qsi_apply_reading.py`. 판정·비중·ledger 미배선.
+
+**결과: 답함 281(57.2%) → 335(68.2%), 해당없음 12 → 13, 해결 59.7% → 70.9%.** 판독 대상 198칸 중
+55칸 채택. 두 판독자가 모두 답한 57칸의 일치율 **96.5%**(`reports/qsi_reading/agreement.json`).
+인용은 전부 원문 발췌와 글자 단위로 대조했다(불일치 시 그 답은 버림).
+
+- **유일한 불일치 항목은 `cat.cat_exposure`(자유서술)였다** — 두 판독자가 같은 수치를 읽어도 문장이 달라
+  정확 일치 규칙으로는 원리적으로 채택될 수 없다. 사전 고정 규칙이라 결과를 보고 완화하지 않았다. 자유서술
+  문항을 채우려면 다음 루브릭 판에서 '핵심 수치 일치' 같은 규칙을 **판독 전에** 정할 것.
+- **병합 스크립트 버그 수정**: 두 판독이 `not_applicable`로 일치하면 claim을 붙여 넘겼는데,
+  `qualitative_input._validate_answer`가 not_applicable의 claim_ids를 거부해 병합 전체가 예외로 멈췄다.
+  `qsi_sec_events` 무배당 처리 관례대로 근거 인용을 note에 남기도록 고쳤다
+  (`tests/test_qsi_apply_reading.py`, 수정 전 실패 확인).
+- 판독 작업은 세션 한도로 두 세션에 나뉘었다. 2차 세션은 **빠진 판독 파일만**(A: DLO·NBIX, B: CINF·DUOL·SIGI)
+  새 판독 에이전트로 채웠고 상대편 폴더를 열지 않게 했다.
+- 판독자가 직접 짚은 약한 답: CINF `gov.key_person_no_succession`=False의 근거 문장이 CEO를 명시하지 않음,
+  DUOL `gov.insider_group_ownership`은 클래스별 지분에서 계산한 값. 둘 다 상대 판독과 일치할 때만 들어갔다.
+
+baseline fingerprint `f5709edf…` 불변, `ledger/`·매수리스트 0건 수정. `ENGINE_VERSION` v3.97 → **v3.98**.
+
+## v3.99 — SEC 재무제표 데이터셋(FSDS) stdlib 리더: 다중클래스 희석 · 세그먼트 매출 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ①. companyfacts는 **무차원 사실만** 담아 클래스별·세그먼트별
+값이 통째로 빠진다 — v3.85가 ERIE·HLNE·RYAN 희석을 "원리적으로 못 가져온다"고 쓴 것은 companyfacts에
+한해서만 참이었다. SEC 분기 Financial Statement Data Sets의 `num.txt` `segments` 열(2023q1 실측 포함)을
+`engine/fsds.py`가 stdlib(`zipfile`+`csv`)로 읽는다. 참조 구현 secfsdstools(Apache-2.0)는 pandas 등 8개
+의존이라 코드는 가져오지 않았다. 판정·비중·`run_analysis()` **미배선**(테스트 고정).
+
+- `scripts/fsds_extract.py T...`: 종목마다 최신 연차보고서 + 3년 전 연차보고서(연속 6년)의 분기 zip을
+  `.cache/fsds/`(gitignore)에 받고 대상 행만 `data/fsds/<T>.json`에 남긴다(재현용, 커밋).
+- **클래스 채택 규칙(사전 고정)**: `EPS_diluted[class] × 희석주식수[class] ≈ 회사 전체 NetIncomeLoss`(1% 이내)가
+  **모든 연도에서** 성립하는 클래스가 정확히 하나일 때만 그 클래스의 희석주식수를 "전환가정 총주식수"로 쓴다.
+  비지배지분 순이익이 순이익의 1%를 넘는 해가 있으면 거부(Up-C에선 상장 클래스 증가가 유닛 교환인지 희석인지
+  구분 불가). 추가로 FSDS 연차 매출이 ledger 연도 키를 재현해야 한다(0.5% 이내, 불일치 0, 일치 3+).
+  가드·점프검사·계산은 companyfacts 경로와 **같은 함수**(`dilution._drag_from_shares`)를 탄다.
+- **결과(희석 드래그)**: ERIE **회복**(Class A 희석 52.31M→52.31M, 6년 모두 EPS 대조 오차 0.1% 안, 드래그 ≈ 0 —
+  Class A 희석 = 기본 46.19M + Class B 2,542×2,400 전환이 실측 일치). HLNE는 가중평균 주식수가 표준 태그로
+  공시되지 않아(`NO_CLASS_SHARES`), RYAN은 비지배지분이 6년 내내 커서(`NCI_PRESENT`, 게다가 2021-07 IPO가 창
+  안) **보수적으로 측정 불가 유지**. 기존 72종목 값은 전부 불변(diff 확인), 신규 ledger 8종목 포함 측정 74/80.
+- **세그먼트 매출 대조**(`scripts/fsds_segments.py` → `reports/fsds_segments.json`, 진단 전용): 단일 축
+  (BusinessSegments·ProductOrService)만, 구성원 합이 양 끝 연도 모두 연결 매출의 1% 안일 때만 성장 기여도를 낸다.
+  매수리스트 18종목+GEN·ROP·BRO 중 가산적 분해가 나온 것은 ADBE·ERIE·NBIX·NXT·ROP·RYAN·SE·SKYW·TW·UBER.
+  ⚠️ **GEN은 대조 실패** — 두 연차보고서 사이에 구성원 이름 체계가 바뀌어(CyberSafety/LifeLock → Subscription)
+  공통 연도가 없다. 이 리포트가 만들어진 계기가 GEN인데 GEN에서 자동 대조가 안 된다는 사실을 그대로 남긴다.
+  QSI 답(`cap.ma_discipline` 등)에 쓰지 않는다.
+- 한계: 분기 zip이 60~120MB라 종목당 ~40초. `segments` 열의 2023년 이전 분기 커버리지는 미확인.
+
+테스트 1,387 → **1,403 통과**(신규 `tests/test_fsds.py` 16, `test_dilution` 증거 검사에 FSDS 경로 추가) ·
+baseline fingerprint `f5709edf…` **불변** · `ledger/`·매수리스트·공식 판정 0건 수정 · `ENGINE_VERSION` v3.98 → **v3.99**.
+
+## v4.00 — 위임장 PvP·Item 408 ecd 파서 + 거버넌스 질문 3개 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ②. companyfacts에는 `ecd` 택소노미가 없지만(ADBE 실측) DEF 14A·
+10-Q·10-K 원문의 inline XBRL로 붙어 있어 `engine/ecd.py`가 stdlib `html.parser`로 읽는다(edgartools MIT는 태그
+목록만 참고). 수집기 `scripts/qsi_ecd.py` → 개정본(`qualitative/<T>_2026-10-10.json`), 원자료 `reports/qsi_ecd/`.
+판정·비중·ledger 미배선(테스트 고정). **주 버전 번호가 4로 올랐다** — `test_engine_version_comes_from_single_constant`의
+`startswith("v3.")`를 형식 검사(`v<주>.<두자리>`)로 바꿨다(리터럴 재유입 감시라는 원래 목적은 그대로).
+
+**새 질문 3개와 사전 고정 규칙**(수집 전 `engine/ecd.py` docstring에 고정, 결과를 보고 바꾸지 않았다):
+- `gov.pay_measure_category` — PvP 표 `ecd:CoSelectedMeasureName`을 키워드로 분류. 순서: return_on_capital →
+  shareholder_return → cash_flow → earnings → revenue_growth → other.
+- `gov.pvp_tsr_vs_peer` — 최근 연도 회사 누적 TSR / 회사가 고른 비교군 TSR − 1(개인·조정 축이 붙은 사실 제외).
+- `gov.trading_plan_adoptions_12m` — 12개월 정기보고서의 `ecd:TrdArrAdoptionDate` 수. 정기보고서 3건 미만이거나
+  한 건이라도 Item 408 ecd 블록이 없으면 unknown(채택 0건과 '블록 없음'을 구분 — 없음을 0으로 읽으면 거짓 청정).
+- 외국 발행사(DLO·MNDY·PDD·SE)는 세 질문 모두 not_applicable(제도 부재).
+- ⚠️ `PeoActuallyPaidCompAmt`(실지급 보수)는 답으로 쓰지 않는다 — 규정상 주가 변동이 섞여 TSR과 기계적으로 같이
+  움직여 "보수-성과 정렬" 주장의 근거로 쓰면 동어반복이 된다. 리포트에 병기만.
+
+**결과(19종목)**: 답함 335 → **379**(69.2%), 해당없음 13 → 25, 해결 **73.7%**(분모 491 → 548칸, 질문 3개 추가로).
+- 보상 지표: revenue_growth 6(ADBE·DUOL·GEN·NXT·TW·UBER) · earnings 3(DECK·HLNE·SKYW) · return_on_capital 1(ACGL) ·
+  cash_flow 1(PTC) · other 3. **보험 3사(CINF 'VCR'·PGR 'Combined ratio'·SIGI 'GAAP Combined Ratio')는 사전 규칙상
+  other** — 언더라이팅 지표 범주를 결과를 본 뒤 추가하지 않았다. NBIX는 회사 선정 지표 태그가 없어 unknown.
+- TSR 대 비교군: ADBE **−64.3%**, GEN −57.4%, UBER −38.0%, SIGI −25.8% / DECK +326.8%, NXT +200.0%, SKYW +79.1%.
+- 매매계획 채택(12개월): NBIX 16, PGR 10, TW 9, DUOL·NXT 6 / ACGL·CINF·HLNE·SIGI·SKYW 0.
+- 이 값들은 사실의 집계일 뿐 좋고 나쁨을 판단하지 않으며, 성과와의 관계 증거는 0건이다(`IMPLEMENTED_NOT_VALIDATED`).
+
+테스트 1,403 → **1,423 통과**(신규 `tests/test_ecd.py` 20) · baseline fingerprint `f5709edf…` **불변** ·
+`ledger/`·매수리스트·공식 판정 0건 수정 · 기존 봉인 파일 0건 수정(개정본만) · `ENGINE_VERSION` v3.99 → **v4.00**.
+
+## v4.01 — "나쁜 소식 자발 공시" 규칙: 비정기 가이던스 하향 (2026-10-10) — 새로 채운 칸 0개
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ③. `acc.voluntary_bad_news`(15칸 중 14칸 미응답)를 다루는 오픈소스는
+없었다. `engine/bad_news.py`가 기존 두 경로(제출 목록 + `guidance_ledger` 가이던스 추출)만으로 좁은 사건 하나를 잡는다.
+수집기 `scripts/qsi_bad_news.py`, 원자료 `reports/qsi_bad_news/`. 판정·비중·ledger 미배선(테스트 고정).
+
+**사전 고정 규칙**: 정기 실적 발표 = 각 10-Q·10-K 제출 직전 45일 안의 가장 늦은 Item 2.02 8-K. 그 밖의 2.02·7.01·8.01은
+비정기. 같은 회계연도 연간 매출 가이던스 중간값이 직전 제시보다 1% 넘게 낮아지면 하향. **비정기 보도자료의 하향이 1건
+이상일 때만 True** — 하향이 정기 발표에서만 있었거나 아예 없으면 unknown(하향이 없던 회사를 "선제 공시 이력 없음"으로
+쓰면 나쁜 소식이 없던 회사를 정직성에서 깎는 꼴이다). True만 단언하는 구조(`cap.dividend_predictable`과 같다).
+
+**결과: 국내 발행사 12종목 중 True 0건 — 새로 채운 칸 없음.** 그래서 개정본을 쓰지 않았다(사유 문구만 바뀌는 개정본은
+기록 소음이다). 내역: 가이던스 하향 없음 5(ADBE·DECK·DUOL·GEN·NXT) / 가이던스를 읽지 못함 5(HLNE·NBIX·SKYW·TW·UBER) /
+**PTC는 하향 2건을 잡았으나 둘 다 정기 발표**(FY2025 −2.9% 2025-02-05, FY2026 −4.8% 2026-05-06) / 외국 발행사 4종목 미적용 /
+보험 3사는 회계품질 축 없음. PTC 사례가 탐지기가 실제로 하향을 잡는다는 양성 대조다.
+
+⚠️ 알려진 한계 두 가지: ① **하향의 원인을 구분하지 않는다** — PTC FY2026 하향은 Kepware·ThingWorx 매각 반영으로 보이는데
+"나쁜 소식"이 아니다. 지금은 True가 0건이라 영향이 없지만, True가 나오면 판독으로 원인을 확인할 것(결과를 본 뒤 규칙을
+바꾸지 않으려고 코드에 예외를 넣지 않았다). ② 가이던스 없는 실적 사전경고는 방향을 기계적으로 읽을 수 없어 잡지 못한다.
+
+테스트 1,423 → **1,430 통과**(신규 `tests/test_bad_news.py` 7) · baseline 불변 · 기존 봉인 0건 수정 · `ENGINE_VERSION` v4.00 → **v4.01**.
+
+## v4.02 — SEC 의견서한 건수 질문 + 위임장 지분표 파서 개선 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ④. 수집기 `scripts/qsi_disclosure_extras.py`(원자료
+`reports/qsi_disclosure_extras/`), 판정·비중·ledger 미배선.
+
+- **새 질문 `acc.sec_comment_letters_3y`**(`engine/comment_letters.py`): 3년 창 안 EDGAR `UPLOAD`(SEC 직원 서한) 건수.
+  제출 목록이 창을 덮지 못하면 0으로 쓰지 않는다. ⚠️ 등록신고서 검토·종결 서한이 섞인 **사실의 건수**이며 품질 판정이
+  아니다. 회사 답변서(CORRESP, HTML) 주제 키워드는 리포트에 병기만. 결과: PDD·SE 5, GEN 3, HLNE·MNDY 2, 나머지 국내 0
+  (보험 3사는 회계품질 축이 없어 미적용). 주제 예: GEN 2024-01 비GAAP·수익인식·세그먼트, SE 2024-01 손상·법인세.
+- **지분표 파서 개선**(`sec_events.insider_group_from_proxy`, edgartools의 표 행 선택 방식만 참고): ① 'as a group' 없이
+  인원수 괄호로 끝나는 합산 행 인식(실측 ACGL·PTC) ② 우선주·예탁증서 표 앞 400자 문맥이면 그 행 제외(ACGL Series F/G)
+  ③ 합산 행 뒤 다음 행·각주 토큰('5% Stockholders', '* Less than 1%')은 버리되 **세 번째 토큰이 주식수면 다중 클래스로
+  보고 거부**(HLNE 계속 거부). 회귀 검증: 기존 답 있던 14종목에서 새 파서 결과가 기록과 **전부 일치하거나 None**(DUOL·
+  HLNE·PGR은 기존 답이 판독 경로에서 왔고 파서는 전에도 None). 새로 채움: ACGL 1_to_5pct(3.3%)·DECK lt_1pct(0.4%)·
+  PTC lt_1pct·SIGI 1_to_5pct(1.0%). DLO(외국 발행사)는 그대로 unknown.
+
+**결과(19종목)**: 답함 379 → **398**(70.7%), 해결 73.7% → **75.1%**(분모 548 → 563, 질문 1개 추가).
+테스트 1,430 → **1,438 통과** · baseline 불변 · 기존 봉인 0건 수정(개정본 17건) · `ENGINE_VERSION` v4.01 → **v4.02**.

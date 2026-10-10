@@ -1072,7 +1072,9 @@ def test_engine_version_comes_from_single_constant():
     result = run_analysis(cdns_inputs())
     assert result["meta"]["engine_version"] == ENGINE_VERSION
     # 리터럴이 다시 기어들어오면 이 assert가 잡는다.
-    assert ENGINE_VERSION.startswith("v3.")
+    # (v4.00부터 주 번호가 4로 올라 형식만 검사한다 — "v<주>.<부>" 두 자리 부번호)
+    import re
+    assert re.fullmatch(r"v\d+\.\d{2}", ENGINE_VERSION), ENGINE_VERSION
 
 
 def test_judgment_uses_single_shared_rule_everywhere():

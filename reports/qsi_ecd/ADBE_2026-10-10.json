@@ -1,0 +1,73 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000796343",
+  "pvp": {
+    "accession": "0000796343-26-000043",
+    "filed": "2026-02-27",
+    "measure_category": "revenue_growth",
+    "measure_name": "Revenue",
+    "n_years": 5,
+    "peer_tsr": 187.96,
+    "peer_tsr_text": "187.96",
+    "peo_cap_not_used": {
+      "2021-12-03": 104746141.0,
+      "2022-12-02": -95281472.0,
+      "2023-12-01": 127736069.0,
+      "2024-11-29": 10104834.0,
+      "2025-11-28": -17392652.0
+    },
+    "period_end": "2025-11-28",
+    "status": "OK",
+    "tsr": 67.11,
+    "tsr_text": "67.11",
+    "tsr_vs_peer": -0.6429559480740583,
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+  },
+  "ticker": "ADBE",
+  "trading_plans": {
+    "answer": 1,
+    "n_reports": 4,
+    "reports": [
+      {
+        "accession": "0000796343-26-000003",
+        "adoptions": 0,
+        "filed": "2026-01-15",
+        "form": "10-K",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000796343-26-000056",
+        "adoptions": 1,
+        "filed": "2026-03-25",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [
+          "Anil Chakravarthy"
+        ],
+        "terminations": 0
+      },
+      {
+        "accession": "0000796343-26-000112",
+        "adoptions": 0,
+        "filed": "2026-06-15",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      },
+      {
+        "accession": "0000796343-26-000156",
+        "adoptions": 0,
+        "filed": "2026-09-22",
+        "form": "10-Q",
+        "has_block": true,
+        "individuals": [],
+        "terminations": 0
+      }
+    ],
+    "status": "OK",
+    "terminations": 0
+  }
+}

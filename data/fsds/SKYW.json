@@ -1,0 +1,1059 @@
+{
+"cik": "793733",
+"quarters": [
+{
+"accession": "0001104659-26-016358",
+"filed": "2026-02-17",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0001558370-23-001442",
+"filed": "2023-02-16",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 0.77
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 322962000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 543258000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2834397000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 101035000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 303134000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 242743000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 43940000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 83639000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 322962000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2935432000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 180218000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 40314000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 82840000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2392174000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 236676000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 173049000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 610413000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 44599000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 82593000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 428334000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 428334000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 1976743000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 3527920000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2415598000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 3412798000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 101035000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 30182000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 173049000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 41403000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 34342000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 381389000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 115122000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 3415066000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 441262000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 3885153000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 41547000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 7.77
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.35
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 34342000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 322962000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 35061000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2905339000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 457390000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 4058202000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 74176000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2590735000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 84271000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 428334000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 34342000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 296047000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 622581000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 115122000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 643136000.0
+},
+{
+"adsh": "0001104659-26-016358",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 40262000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 17664000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 3004925000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 50644000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 50753000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "TreasuryStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": -31956000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 521059000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 504529000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 105088000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 512607000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 1265923000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 72953000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "TreasuryStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": -31994000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 50195000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2028308000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 82593000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 98415000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 39324000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": -0.17
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"CumulativeEffectPeriodOfAdoption": "CumulativeEffectPeriodOfAdoptionAdjustedBalance",
+"EquityComponents": "TreasuryStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": -31420000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.44
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 349336000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 526018000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 25804000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkywestLeasing"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 490344000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2713491000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2492318000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 82336000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"CumulativeEffectPeriodOfAdoption": "CumulativeEffectPeriodOfAdoptionAdjustedBalance",
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 81743000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 1636762000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2615076000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServicesAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 66305000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 50195000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 527173000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 50548000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 1678219000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.2
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2060801000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 82095000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 50348000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 111910000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 105088000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "TreasuryStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": -31914000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "FlyingAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2899837000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 66305000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LeaseAirportServiceAndOther"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 98415000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": -8515000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 409684000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "AirportCustomerServiceAndOtherRevenue"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 31885000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProrateAgreements"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 268860000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "TreasuryStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": -31420000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SkyWestAirlines"
+},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2192432000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 81743000.0
+},
+{
+"adsh": "0001558370-23-001442",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+"value": 2127106000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0001104659-26-016358": {
+"adsh": "0001104659-26-016358",
+"cik": "793733",
+"filed": "20260217",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "SKYWEST INC",
+"period": "20251231"
+},
+"0001558370-23-001442": {
+"adsh": "0001558370-23-001442",
+"cik": "793733",
+"filed": "20230216",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "SKYWEST INC",
+"period": "20221231"
+}
+},
+"ticker": "SKYW"
+}

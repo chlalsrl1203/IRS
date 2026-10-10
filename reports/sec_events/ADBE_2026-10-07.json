@@ -1,0 +1,474 @@
+{
+  "as_of": "2026-10-07",
+  "cik": "0000796343",
+  "cxo": {
+    "events": [
+      {
+        "accession": "0000796343-26-000144",
+        "filing_date": "2026-09-08",
+        "quote": "Upon the Effective Date, Shantanu Narayen, the Company’s current Chair and Chief Executive Officer, will retire as the Company’s Chief Executive Officer and assume the position of Executive Chair of the Board.",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000144/adbe-20260902.htm"
+      },
+      {
+        "accession": "0000796343-26-000109",
+        "filing_date": "2026-06-11",
+        "quote": "On June 8, 2026, Daniel Durn notified the Company of his decision to resign as Chief Financial Officer and Executive Vice President, Finance, Technology, Security and Operations, effective June 15, 2026.",
+        "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbe-20260608.htm"
+      }
+    ],
+    "n_cxo_departure_filings": 2,
+    "n_item_502_filings": 8,
+    "status": "OK",
+    "window_since": "2024-10-07"
+  },
+  "debt_funded_buyback": {
+    "answer": false,
+    "buyback": 11281000000.0,
+    "fy": 2025,
+    "net_debt_issuance": 497000000.0,
+    "repay_known": true,
+    "rule": "순차입(발행−상환) ≥ 매입액의 50%면 부채 조달(사전 고정·비검증)"
+  },
+  "dividend": {
+    "answer": null,
+    "reason": "주당배당 태그 값이 없다(무배당이거나 미보고 — 구분할 수 없다)",
+    "tag": null
+  },
+  "domestic_extra": {
+    "cover": {
+      "answer": false,
+      "excerpt": ". The determination of affiliate status for this calculation is not necessarily a conclusive determination for other purposes. As of January 9, 2026, 410.5 million shares of the registrant’s common stock, $0.0001 par value per share, were issued and outstanding.",
+      "rule": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)"
+    },
+    "debt_funded_buyback_balance": {
+      "answer": false,
+      "buyback": 11281000000.0,
+      "debt_begin": 4129000000.0,
+      "debt_change": 2081000000.0,
+      "debt_end": 6210000000.0,
+      "fy": 2025,
+      "rule": "차입 잔액 증가 ≥ 매입액의 50%이면 부채 조달(잔액 순변동 근사, 사전 고정)",
+      "tag": "LongTermDebt"
+    },
+    "ma": {
+      "acquisitions": 2825000000.0,
+      "answer": "no_material_ma",
+      "item_102_3y": [
+        "2023-12-18"
+      ],
+      "ocf": 40457000000.0,
+      "ratio": 0.06982722396618632,
+      "recent_8k_201": [],
+      "rule": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+      "years": [
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "no_dividend": "Dividends We do not anticipate paying any cash dividends in the foreseeable future."
+  },
+  "guidance_ledger": {
+    "evaluated_rows": [
+      {
+        "actual": {
+          "end": "2023-12-01",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 19409000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "GAAP: $2.82 to $2.88 Non-GAAP: $3.95 to $4.00 The following table summarizes Adobe’s updated fiscal year 2023 targets: Total revenue $19.25 billion to $19.35 billion",
+          "filed": "2023-06-15",
+          "fy": 2023,
+          "high": 19350000000.0,
+          "kind": "range",
+          "low": 19250000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "venue year-over-year growth rates in fiscal year 2023. The following table summarizes Adobe’s fiscal year 2023 targets: Total revenue $19.1 billion to $19.3 billion",
+          "filed": "2022-12-15",
+          "fy": 2023,
+          "high": 19300000000.0,
+          "kind": "range",
+          "low": 19100000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634322000225/adbeex991q422.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "MET",
+        "vs_final_low_pct": 0.00825974025974019,
+        "vs_initial_low_pct": 0.01617801047120415
+      },
+      {
+        "actual": {
+          "end": "2024-11-29",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 21505000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "GAAP: $3.45 to $3.50 Non-GAAP: $4.50 to $4.55 The following table summarizes Adobe’s updated fiscal year 2024 targets: Total revenue $21.40 billion to $21.50 billion",
+          "filed": "2024-06-13",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21400000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000140/adbeex991q224.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "ued in December at new rates for the next fiscal year. The following table summarizes Adobe’s fiscal year 2024 targets: Total revenue $21.30 billion to $21.50 billion",
+          "filed": "2023-12-13",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000252/adbeex991q423.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "MET",
+        "vs_final_low_pct": 0.00490654205607477,
+        "vs_initial_low_pct": 0.009624413145539856
+      },
+      {
+        "actual": {
+          "end": "2025-11-28",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 23769000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions 2 : Total revenue $23.65 billion to $23.70 billion",
+          "filed": "2025-09-11",
+          "fy": 2025,
+          "high": 23700000000.0,
+          "kind": "range",
+          "low": 23650000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "ued move to subscriptions from perpetual offerings. The following table summarizes Adobe’s fiscal year 2025 targets 1 : Total revenue $23.30 billion to $23.55 billion",
+          "filed": "2024-12-11",
+          "fy": 2025,
+          "high": 23550000000.0,
+          "kind": "range",
+          "low": 23300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.005031712473573036,
+        "vs_initial_low_pct": 0.02012875536480685
+      }
+    ],
+    "judge": {
+      "guidance_miss_3y": false,
+      "n_evaluated": 3,
+      "n_miss": 0,
+      "promise_kept_record": true,
+      "reason": "",
+      "years": [
+        2023,
+        2024,
+        2025
+      ]
+    },
+    "ledger": [
+      {
+        "actual": {
+          "end": "2023-12-01",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 19409000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "GAAP: $2.82 to $2.88 Non-GAAP: $3.95 to $4.00 The following table summarizes Adobe’s updated fiscal year 2023 targets: Total revenue $19.25 billion to $19.35 billion",
+          "filed": "2023-06-15",
+          "fy": 2023,
+          "high": 19350000000.0,
+          "kind": "range",
+          "low": 19250000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000133/adbeex991q223.htm"
+        },
+        "fy": 2023,
+        "initial": {
+          "excerpt": "venue year-over-year growth rates in fiscal year 2023. The following table summarizes Adobe’s fiscal year 2023 targets: Total revenue $19.1 billion to $19.3 billion",
+          "filed": "2022-12-15",
+          "fy": 2023,
+          "high": 19300000000.0,
+          "kind": "range",
+          "low": 19100000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634322000225/adbeex991q422.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "MET",
+        "vs_final_low_pct": 0.00825974025974019,
+        "vs_initial_low_pct": 0.01617801047120415
+      },
+      {
+        "actual": {
+          "end": "2024-11-29",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 21505000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "GAAP: $3.45 to $3.50 Non-GAAP: $4.50 to $4.55 The following table summarizes Adobe’s updated fiscal year 2024 targets: Total revenue $21.40 billion to $21.50 billion",
+          "filed": "2024-06-13",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21400000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000140/adbeex991q224.htm"
+        },
+        "fy": 2024,
+        "initial": {
+          "excerpt": "ued in December at new rates for the next fiscal year. The following table summarizes Adobe’s fiscal year 2024 targets: Total revenue $21.30 billion to $21.50 billion",
+          "filed": "2023-12-13",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000252/adbeex991q423.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 2,
+        "status": "MET",
+        "vs_final_low_pct": 0.00490654205607477,
+        "vs_initial_low_pct": 0.009624413145539856
+      },
+      {
+        "actual": {
+          "end": "2025-11-28",
+          "filed": "2026-01-15",
+          "tag": "Revenues",
+          "value": 23769000000.0
+        },
+        "dropped": [],
+        "final": {
+          "excerpt": "following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions 2 : Total revenue $23.65 billion to $23.70 billion",
+          "filed": "2025-09-11",
+          "fy": 2025,
+          "high": 23700000000.0,
+          "kind": "range",
+          "low": 23650000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm"
+        },
+        "fy": 2025,
+        "initial": {
+          "excerpt": "ued move to subscriptions from perpetual offerings. The following table summarizes Adobe’s fiscal year 2025 targets 1 : Total revenue $23.30 billion to $23.55 billion",
+          "filed": "2024-12-11",
+          "fy": 2025,
+          "high": 23550000000.0,
+          "kind": "range",
+          "low": 23300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 4,
+        "status": "MET",
+        "vs_final_low_pct": 0.005031712473573036,
+        "vs_initial_low_pct": 0.02012875536480685
+      },
+      {
+        "actual": null,
+        "dropped": [],
+        "final": {
+          "excerpt": "d share count of ~389 million for fourth quarter FY2026. The following table summarizes Adobe’s updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion",
+          "filed": "2026-09-10",
+          "fy": 2026,
+          "high": 26626000000.0,
+          "kind": "range",
+          "low": 26576000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        },
+        "fy": 2026,
+        "initial": {
+          "excerpt": "regulatory approvals and other customary closing conditions. The following table summarizes Adobe’s FY2026 targets 1 : Total revenue $25.90 billion to $26.10 billion",
+          "filed": "2025-12-10",
+          "fy": 2026,
+          "high": 26100000000.0,
+          "kind": "range",
+          "low": 25900000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+        },
+        "n_dropped": 0,
+        "n_updates": 3,
+        "status": "PENDING"
+      }
+    ],
+    "n_releases": 19,
+    "n_with_guidance": 11,
+    "source_form": "8-K Item 2.02"
+  },
+  "icfr": {
+    "answer": "effective",
+    "filed": "2026-01-15",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "rule": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만",
+    "section_len": 3058
+  },
+  "insider": {
+    "accessions": [
+      "0001224154-26-000003",
+      "0000796343-26-000153",
+      "0000796343-26-000152",
+      "0000796343-26-000151",
+      "0000796343-26-000139",
+      "0000796343-26-000137",
+      "0000796343-26-000135",
+      "0000796343-26-000134",
+      "0000796343-26-000133",
+      "0000796343-26-000132",
+      "0000796343-26-000131",
+      "0000796343-26-000130",
+      "0000796343-26-000129",
+      "0002140626-26-000006",
+      "0000796343-26-000118",
+      "0002140626-26-000004",
+      "0001643724-26-000003",
+      "0000796343-26-000116",
+      "0000796343-26-000107",
+      "0000796343-26-000105",
+      "0000796343-26-000103",
+      "0000796343-26-000097",
+      "0000796343-26-000095",
+      "0000796343-26-000094",
+      "0000796343-26-000093",
+      "0000796343-26-000092",
+      "0000796343-26-000091",
+      "0000796343-26-000090",
+      "0000796343-26-000089",
+      "0000796343-26-000088",
+      "0000796343-26-000087",
+      "0000796343-26-000083",
+      "0000796343-26-000082",
+      "0000796343-26-000081",
+      "0000796343-26-000080",
+      "0000796343-26-000079",
+      "0000796343-26-000078",
+      "0000796343-26-000077",
+      "0000796343-26-000076",
+      "0000796343-26-000050",
+      "0000796343-26-000035",
+      "0000796343-26-000034",
+      "0000796343-26-000033",
+      "0000796343-26-000032",
+      "0000796343-26-000031",
+      "0000796343-26-000030",
+      "0000796343-26-000029",
+      "0000796343-26-000028",
+      "0000796343-26-000017",
+      "0000796343-26-000016",
+      "0000796343-26-000015",
+      "0000796343-26-000014",
+      "0000796343-26-000013",
+      "0000796343-26-000012",
+      "0000796343-26-000011",
+      "0000796343-25-000140",
+      "0000796343-25-000137",
+      "0000796343-25-000133",
+      "0000796343-25-000131",
+      "0000796343-25-000130",
+      "0000796343-25-000129",
+      "0000796343-25-000128",
+      "0000796343-25-000127",
+      "0000796343-25-000126",
+      "0000796343-25-000119",
+      "0000796343-25-000118",
+      "0000796343-25-000117",
+      "0000796343-25-000116",
+      "0000796343-25-000111",
+      "0000796343-25-000109"
+    ],
+    "excluded_other_issuer_transactions": 0,
+    "n_form4_filings": 70,
+    "status": "OK",
+    "summary": {
+      "answer": "opp_net_sell",
+      "discretionary_buy_usd": 1945130.0,
+      "discretionary_net_by_owner": {
+        "Durn Daniel": -816678.12,
+        "Forusz Jillian": -346220.38,
+        "NARAYEN SHANTANU": -49610110.48,
+        "Ricks David A": 1945130.0
+      },
+      "discretionary_net_usd": -48827878.97,
+      "discretionary_sell_usd": 50773008.97,
+      "floor_usd": 1000000,
+      "n_discretionary": 21,
+      "n_open_market": 21,
+      "n_routine_10b5_1": 0,
+      "routine_sell_usd": 0,
+      "rule": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증)"
+    },
+    "window": [
+      "2025-10-07",
+      "2026-10-07"
+    ]
+  },
+  "insider_group": {
+    "accession": "0000796343-26-000043",
+    "filing_date": "2026-02-27",
+    "result": {
+      "answer": "lt_1pct",
+      "pct": null,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000043/adbe-20260227.htm"
+  },
+  "listing_flags": {
+    "auditor_change": [],
+    "material_impairment": [],
+    "n_auditor_change": 0,
+    "n_material_impairment": 0,
+    "n_nt": 0,
+    "nt": [],
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "litigation": {
+    "answer": null,
+    "filed": "2026-01-15",
+    "form_url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000003/adbe-20251128.htm",
+    "reason": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다",
+    "section_len": 189
+  },
+  "restatement": {
+    "10k_amendments": [],
+    "item_402": [],
+    "n_10k_amendments": 0,
+    "n_item_402": 0,
+    "status": "OK",
+    "window_since": "2023-10-08"
+  },
+  "say_on_pay": {
+    "accession": "0000796343-26-000101",
+    "filing_date": "2026-04-21",
+    "n_item_507": 2,
+    "result": {
+      "against": 144993886,
+      "answer": 0.506539950357119,
+      "for": 148837167,
+      "rule": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000101/adbe-20260415.htm"
+  },
+  "ticker": "ADBE"
+}

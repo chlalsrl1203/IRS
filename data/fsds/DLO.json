@@ -1,0 +1,819 @@
+{
+"cik": "1846832",
+"quarters": [
+{
+"accession": "0002070979-26-000113",
+"filed": "2026-03-18",
+"form": "20-F",
+"quarter": "2026q1"
+},
+{
+"accession": "0000950170-23-011942",
+"filed": "2023-04-05",
+"form": "20-F",
+"quarter": "2023q2"
+}
+],
+"rows": [
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 650351000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 562183000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegmentOtherCountries"
+},
+"tag": "Revenue",
+"value": 89840000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 196801000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 183036000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 196801000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "EG"
+},
+"tag": "Revenue",
+"value": 36662000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 745974000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "EG"
+},
+"tag": "Revenue",
+"value": 93951000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 161091000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 874140000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 157670000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 141721000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": 101000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 158997000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 149249000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "EG"
+},
+"tag": "Revenue",
+"value": 59737000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 116835000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 85454000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 219447000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegmentOtherCountries"
+},
+"tag": "Revenue",
+"value": 159710000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 322826000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 149086000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 120469000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 120416000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": 53000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 196902000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegmentOtherCountries"
+},
+"tag": "Revenue",
+"value": 121008000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "NonLatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 183791000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 175521000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 1093587000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 148964000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": 122000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 148964000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 120416000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 75128000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 492681000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 151959000.0
+},
+{
+"adsh": "0002070979-26-000113",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 207187000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 84025000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 93124000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 77876000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 63294000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 77876000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 77853000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "CL"
+},
+"tag": "Revenue",
+"value": 36497000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"RetrospectiveApplicationAndRetrospectiveRestatement": "PreviouslyStated"
+},
+"tag": "Revenue",
+"value": 104143000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 28184000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 68000000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 77577000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "CL"
+},
+"tag": "Revenue",
+"value": 13834000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AsiaAndAfricaSegment"
+},
+"tag": "Revenue",
+"value": 11019000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 28187000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "CL"
+},
+"tag": "Revenue",
+"value": 52464000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AsiaAndAfricaSegment"
+},
+"tag": "Revenue",
+"value": 73565000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 108683000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 33376000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "RestOfCountries"
+},
+"tag": "Revenue",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 223602000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "RestOfCountries"
+},
+"tag": "Revenue",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "LatinAmericanSegment"
+},
+"tag": "Revenue",
+"value": 345360000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 16185000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": -23000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 418925000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 50165000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "BR"
+},
+"tag": "Revenue",
+"value": 59698000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 16589000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 28184000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 108697000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "RestOfCountries"
+},
+"tag": "Revenue",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AsiaAndAfricaSegment"
+},
+"tag": "Revenue",
+"value": 20518000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "OtherCountries"
+},
+"tag": "Revenue",
+"value": 43866000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 244120000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"RetrospectiveApplicationAndRetrospectiveRestatement": "PreviouslyStated"
+},
+"tag": "Revenue",
+"value": 244120000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "AR"
+},
+"tag": "Revenue",
+"value": 33179000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": 14000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "EquityAttributableToOwnersOfParent"
+},
+"tag": "ProfitLoss",
+"value": 108683000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenue",
+"value": 104143000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ComponentsOfEquity": "NoncontrollingInterests"
+},
+"tag": "ProfitLoss",
+"value": 3000.0
+},
+{
+"adsh": "0000950170-23-011942",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"GeographicalAreas": "MX"
+},
+"tag": "Revenue",
+"value": 13337000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000950170-23-011942": {
+"adsh": "0000950170-23-011942",
+"cik": "1846832",
+"filed": "20230405",
+"form": "20-F",
+"fp": "FY",
+"fy": "2022",
+"name": "DLOCAL LTD",
+"period": "20221231"
+},
+"0002070979-26-000113": {
+"adsh": "0002070979-26-000113",
+"cik": "1846832",
+"filed": "20260318",
+"form": "20-F",
+"fp": "FY",
+"fy": "2025",
+"name": "DLOCAL LTD",
+"period": "20251231"
+}
+},
+"ticker": "DLO"
+}

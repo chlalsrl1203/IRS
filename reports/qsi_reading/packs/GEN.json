@@ -1,0 +1,320 @@
+{
+ "ticker": "GEN",
+ "as_of": "2026-10-07",
+ "lens_set": "standard",
+ "foreign_private_issuer": false,
+ "based_on_record": "67557911af2a8737157694a0bcb84b18ae1008de323558f44a4df9b063144a63",
+ "targets": [
+  "gov.ceo_succession_policy",
+  "gov.key_person_no_succession",
+  "gov.material_litigation",
+  "gov.insider_group_ownership",
+  "cap.ma_discipline",
+  "acc.voluntary_bad_news",
+  "acc.material_one_time_items",
+  "dil.sbc_to_fcf_pct",
+  "cmp.share_trend",
+  "cmp.lifecycle_shakeout_or_decline"
+ ],
+ "prior_unknown_notes": {
+  "gov.ceo_succession_policy": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.key_person_no_succession": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "gov.material_litigation": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: GEN.LITIGATION)",
+  "gov.insider_group_ownership": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+  "cap.ma_discipline": "5년 인수 지출이 영업현금흐름의 117% — 가격 규율은 사람이 판단해야 한다",
+  "acc.voluntary_bad_news": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "acc.material_one_time_items": "이번 회차에서 1차 출처를 조회하지 않았다",
+  "dil.sbc_to_fcf_pct": "ledger에 SBC/FCF가 없어 대조 기준이 없다",
+  "cmp.share_trend": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+  "cmp.lifecycle_shakeout_or_decline": "이번 회차에서 1차 출처를 조회하지 않았다"
+ },
+ "excerpts": [
+  {
+   "id": "GEN-1",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": " Board’s Role in Risk Oversight 15 Board’s Role in Oversight of Company Strategy 16 Board’s Role in Political Activity 16 Information Security and Risk Oversight 16 Board’s Role in Oversight of Human Capital Management 17 Responsible Business 17 Board Structure and Meetings 17 Executive Sessions 18 Succession Planning 18 Attendance of Board Members at Annual Meetings 18 THE BOARD AND ITS COMMITTEES 19 Audit Committee 20 Compensation and Leadership Development Committee 21 Nominating and Governance Committee 22 DIRECTOR NOMINATIONS AND COMMUNICATION WITH DIRECTORS 23 Criteria for Nomination to the Board 23 Process for Identifying and Evaluating Nominees 24 Stockholder Director Nominee Submission Procedures 25 Contacting the Board of Directors 25 PROPOSAL NO. 1 ELECTION OF DIRECTORS 26 Nominees for Di"
+  },
+  {
+   "id": "GEN-2",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": " The Company’s Bylaws provide that the number of members of the Board is determined by the Board. Our Board currently consists of nine members. Based on the assessment of the Nominating and Governance Committee, the Board expects to remain approximately the same size as of the Annual Meeting. Board Succession Planning and Refreshment Our Nominating and Corporate Governance Committee plays an important role in Board succession planning. The Nominating and Corporate Governance Committee considers the critical needs of the Company regularly, and is responsible for establishing the criteria and determining the desired qualifications, expertise, and characteristics of the Board, with the goal of developing a diverse portfolio of perspectives, backgrounds, experiences, knowledge and skills on the Board. T"
+  },
+  {
+   "id": "GEN-3",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": " the Board, with the recommendation of the Nominating and Governance Committee, determines that there are special circumstances that lead the Board to conclude that continued service of such Director is in the best interests of the Company and its stockholders. We believe that our approach to Board succession planning and refreshment plays an important role in addressing Board effectiveness. Five of our current Board members (approximately 56% of the Board) have been appointed in the last five years. 14 | Gen™ 2026 Proxy TABLE OF CONTENTS Corporate Governance Board’s Role in Risk Oversight The Board executes its risk management responsibility directly and through its committees, which currently consist of the Audit Committee, the Compensation and Leadership Development Committee and the Nominating a"
+  },
+  {
+   "id": "GEN-4",
+   "for": "gov.ceo_succession_policy",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": "n and Leadership Development Committee, provides oversight of our human capital strategies. We work closely with the Compensation and Leadership Development Committee on matters including executive compensation, overall reward strategy, talent management, talent acquisition, leadership development, succession planning, retention, and employee engagement. Our Chief Human Resources Officer provides quarterly reports to the full Board on human capital strategy, programs, and key performance metrics at both the enterprise and organizational levels, enabling the Board to monitor progress and provide strategic guidance on workforce-related matters material to our long-term success. Responsible Business Practices Our commitment to being a responsible business supports our Company’s Purpose and Mission. The"
+  },
+  {
+   "id": "GEN-5",
+   "for": "gov.ceo_succession_policy",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "tors, through its Compensation and Leadership Development Committee, provides oversight of our human capital management strategies. We work closely with the Committee on matters including executive compensation, overall reward strategy, talent management, talent acquisition, leadership development, succession planning, retention, and employee engagement. Intellectual Property Our intellectual property (IP) is an important and vital asset that enables us to develop, market, and sell our software products and services and enhance our competitive position. We are a leader among consumer cyber safety and secure financial wellness solutions in pursuing patents and currently have a portfolio of over 1,000 U.S. and international patents issued with many additional patents pending. We protect our intellectu"
+  },
+  {
+   "id": "GEN-6",
+   "for": "gov.ceo_succession_policy",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "by market conditions, our business and operating results could be adversely affected. We have experienced, and may in the future experience, departures of key personnel, including significant changes to our executive leadership team. The loss of any key employee or the failure to effectively manage succession planning and knowledge transfer could disrupt our operations, including adversely affecting the timeliness of product releases, delaying product development, impairing execution of strategic company initiatives, expending resources to train new hires, or adversely affecting our internal control over financial reporting and our results of operations. If we are unable to attract, retain, motivate and appropriately manage qualified employees, or adjust staffing levels in response to changing busin"
+  },
+  {
+   "id": "GEN-7",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "tors, through its Compensation and Leadership Development Committee, provides oversight of our human capital management strategies. We work closely with the Committee on matters including executive compensation, overall reward strategy, talent management, talent acquisition, leadership development, succession planning, retention, and employee engagement. Intellectual Property Our intellectual property (IP) is an important and vital asset that enables us to develop, market, and sell our software products and services and enhance our competitive position. We are a leader among consumer cyber safety and secure financial wellness solutions in pursuing patents and currently have a portfolio of over 1,000 U.S. and international patents issued with many additional patents pending. We protect our intellectual pr"
+  },
+  {
+   "id": "GEN-8",
+   "for": "gov.key_person_no_succession",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "by market conditions, our business and operating results could be adversely affected. We have experienced, and may in the future experience, departures of key personnel, including significant changes to our executive leadership team. The loss of any key employee or the failure to effectively manage succession planning and knowledge transfer could disrupt our operations, including adversely affecting the timeliness of product releases, delaying product development, impairing execution of strategic company initiatives, expending resources to train new hires, or adversely affecting our internal control over financial reporting and our results of operations. If we are unable to attract, retain, motivate and appropriately manage qualified employees, or adjust staffing levels in response to changing business c"
+  },
+  {
+   "id": "GEN-9",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "sk Factors 12 Item 1B. Unresolved Staff Comments 30 Item 1C. Cybersecurity 31 Item 2. Properties 31 Item 3. Legal Proceedings 31 Item 4. Mine Safety Disclosures 31 PART II Item 5. Market for Registrant’s Common Equity, Related Stockholder Matters and Issuer Purchases of Equity Securities 32 Item 6. [Reserved] 32 Item 7. Management’s Discussion and Analysis of Financial Condition and Results of Operations 33 Item 7A. Quantitative and Qualitative Disclosures about Market Risk 40 Item 8. Financial Statements and Supplementary Data 42 Item 9. Changes in and Disagreements with Accountants on Accounting and Financial Disclosure 42 Item 9A. Controls and Procedures 42 Item 9B. Other Information 43 Item 9C. Disclosure Regarding Foreign Jurisdictions that Prevent Inspections 43 PART III Item 10. Directors, Executive Officers and Corporate Governance 44 Item 11. Executive Compensation 44 Item 12. Security Ownership of Certain Beneficial Owners and Management and Related Stockholder Matters 44 Item 13. Certain Relationships and Related Transactions, and Director Independence 44 Item 14. Principal Accountant Fees and Services 44 PART IV Item 15. Exhibits and Financial Statement Schedules 45 Item 16. Form 10-K Summary 89 Signatures 90 “Gen,” “we,” “us,” “our,” and “the Company” refer to Gen Digital Inc. and all of its subsidiaries. Gen, Norton, Avast, LifeLock, MoneyLion, Avira, AVG, ReputationDefender, CCleaner and all related trademarks, service marks and trade names are trademarks or registered trademarks of Gen or other respective owners that have granted Gen the right to use such marks. Other names may be t"
+  },
+  {
+   "id": "GEN-10",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "ow and in “Management’s Discussion and Analysis of Financial Condition and Results of Operations,” “Legal Proceedings,” “Quantitative and Qualitative Disclosures About Market Risk” and “Controls and Procedures.” The list is not exhaustive, and you should carefully consider these risks and uncertainties before investing in our common stock. RISKS RELATED TO OUR BUSINESS STRATEGY AND INDUSTRY If we are unable to develop new and enhanced solutions and products, or continually improve the performance, features, and reliability of our existing solutions and products, our business and operating results could be adversely affected. Our future success depends on our ability to effectively respond to evolving consumer threats, technological advancements, competitive developments and industry changes, by developing or introducing new and enhanced solutions and products on a timely basis. We have incurred, and will continue to incur, significant research and development expenses, including investments in AI, to drive organic growth and reduce reliance on third-party technologies. If these investments do not produce the anticipated benefits, or if such benefits are delayed, our operating results could be adversely affected. We must continually address the challenges of dynamic and accelerating market trends and competitive developments. The development and integration of new technologies — including generative AI (“Gen AI”) and machine learning — is complex, time-consuming, and subject to significant risks. New technologies may contain errors, vulnerabilities, or unintended outputs, including incorrect"
+  },
+  {
+   "id": "GEN-11",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "luding purchased intangible assets, could change as a result of such assessments and decisions. Our loss contingencies have and may continue to include liabilities for contracts that we cannot cancel, reschedule or adjust with suppliers. Further, our estimates relating to the liabilities for excess facilities are affected by changes in real estate market conditions. Additionally, we are required to evaluate goodwill impairment on an annual basis and between annual evaluations in certain circumstances. Goodwill impairment evaluations have previously and may result in a charge to earnings. RISKS RELATED TO OUR OPERATIONS Our international operations involve risks that could increase our expenses, adversely affect our operating results and require increased time and attention from management. We derive a significant portion of our revenues from customers located outside of the United States, and we have substantial operations outside of the United States, including engineering, finance, sales and customer support. Our international operations are subject to risks in addition to those faced by our domestic operations, including: • Difficulties staffing, managing, and coordinating the activities of our geographically dispersed and culturally diverse operations; • Potential loss of proprietary information due to misappropriation or laws that may be less protective of our intellectual property rights than U.S. laws or that may not be adequately enforced; • Requirements of foreign laws and other governmental controls, including tariffs, trade barriers and labor restrictions, and related laws that"
+  },
+  {
+   "id": "GEN-12",
+   "for": "gov.material_litigation",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "r institutions with licensures we do not have to facilitate offerings. For a discussion of specific legal and regulatory proceedings, inquiries and investigations to which we are currently subject, see Note 18 of the Notes to the Consolidated Financial Statements included in this Annual Report on Form 10-K. The legal and regulatory regimes governing certain of our products and services are uncertain and evolving. Changes in the laws, regulations and enforcement priorities applicable to our business, including reexamination of current enforcement practices, could have a material and adverse impact on our business, financial condition, results of operations and cash flows. For example, the CFPB may adopt new model disclosures and regulations governing consumer financial services, including regulations defining unfair, deceptive or abusive acts or practices, and they could also issue advisory opinions or other similar soft tools to complement its rulemaking authority that could subject us to new or differing legal and regulatory requirements, which could materially and adversely affect our business. The CFPB’s authority to change or interpret regulations adopted in the past by other regulators, or to rescind or alter past regulatory guidance, could increase our compliance costs and litigation exposure. If the CFPB or other similar regulatory bodies adopt, or customer advocacy groups are able to generate widespread support for, positions that are detrimental to our business, then our business, financial condition and results of operations could be harmed. We and/or our third-party partners may not be able to "
+  },
+  {
+   "id": "GEN-13",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": "Marketing Officer. Earlier in his career, Mr. Witteveen held executive and senior sales and marketing leadership positions with AVG Technologies, F-Secure, Axent Technologies/Raptor Technologies and FTP Software. Mr. Witteveen holds a bachelor’s degree in International Business and Finance from Northeastern University. Gen™ 2026 Proxy | 39 TABLE OF CONTENTS Security Ownership of Certain Beneficial Owners and Management The following table sets forth information, as of July 14, 2026, with respect to the beneficial ownership of Gen common stock by (i) each stockholder known by Gen to be the beneficial owner of more than 5% of Gen common stock, (ii) each current member of the Board or director nominee, (iii) the named executive officers of Gen included in the Summary Compensation Table appearing on page 70 of this Proxy Statement and (iv) all current executive officers and directors of Gen as a group. Beneficial ownership is determined under the rules of the SEC and generally includes voting or investment power with respect to securities. Unless otherwise indicated below, the persons and entities named in the table have sole voting and sole investment power with respect to all shares beneficially owned, subject to community property laws where applicable. Percentage ownership is based on 598,"
+  },
+  {
+   "id": "GEN-14",
+   "for": "gov.insider_group_ownership",
+   "doc": "DEF 14A filed 2026-07-28",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000114036126029830/ny20070898x1_def14a.htm",
+   "text": "C with the SEC on May 1, 2026. (3) Based solely on a Schedule 13G filed by FMR LLC with the SEC on November 5, 2025. FMR LLC also reported total share count of 44,797,978 shares in a Form 13F filed with the SEC on May 15, 2026. (4) Based solely on a Schedule 13G filed by Vanguard Portfolio Management LLC with the SEC on May 1, 2026. 40 | Gen™ 2026 Proxy TABLE OF CONTENTS Security Ownership of Certain Beneficial Owners and Management Security Ownership of Executive Officers and Directors Shares Beneficially Owned Name Number Percent Pavel Baudis (1) 49,840,928 8.3% Ondrej Vlcek (2) 4,234,724 * Vincent Pilette (3) 2,740,551 * Bryan S. Ko 560,986 * Natalie M. Derse 441,343 * Susan P. Barsamian (4) 99,885 * Eric K. Brandt (5) 78,930 * Sherrese M. Smith (6) 73,458 * Emily Heath (7) 67,202 * Nora M. Denzel (8) 34,860 * John C. Chrystal (9) 19,173 * All Current Directors and Executive Officers as a Group (11 Persons) 58,192,040 9.7% * Less than 1% (1) Includes 8,822 shares issuable upon the settlement of RSUs vesting on September 9, 2026 and 49,816,185 shares beneficially owned by PaBa Software s.r.o., of which Mr. Baudis is the sole owner and is deemed to have sole voting and dispositive power. (2) Includes 9,246 shares issuable upon the settlement of RSUs vesting on September 1, 2026 and Septem"
+  },
+  {
+   "id": "GEN-15",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "1 $ 1,006 • Net revenues increased $1,065 million, primarily due to higher sales in both our Cyber Safety Platform products and Trust-Based Solutions, including an increase of $823 million due to the acquisition of MoneyLion, and an increase of $87 million due to the favorable impact from the additional week in the first quarter of fiscal 2026. • Operating income (loss) increased $510 million, primarily due to increased net revenues described above and decreased legal costs related to ongoing litigation. This is partially offset by an increase in marketing costs, payment processing fees, amortization of intangible assets and compensation related expenses. • Net income (loss) increased $330 million and net income per share increased $0.54, primari"
+  },
+  {
+   "id": "GEN-16",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "down of our Instacash Advances balance, which is included in Accounts receivable, net in our Consolidated Balance Sheets. Note 4. Business Combinations Fiscal 2025 acquisition On January 28, 2025, we acquired all of the outstanding shares of a technology-enabled personal finance education and recommendation platform for an aggregate purchase price of $ 84 million, net of $ 1 million cash acquired. The net purchase price was primarily allocated to goodwill and intangible assets of $ 52 million and $ 32 million, respectively. Fiscal 2026 MoneyLion acquisition On December 10, 2024, we entered into a definitive agreement to acquire MoneyLion. We completed the acquisition of MoneyLion on April 17, 2025. MoneyLion extends our identity solutions into offering comprehensive financial wellness through MoneyLion’s full-featured personal finance platform that incl"
+  },
+  {
+   "id": "GEN-17",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "r Gen share) if our average volume-weighted average share price reaches at least $ 37.50 per share over 30 consecutive trading days from December 10, 2024 until April 17, 2027. As of the close of the acquisition, we issued 12 million CVRs representing a fair value of approximately $ 73 million. Refer to Note 14 for further discussion on the CVRs. Additionally, all outstanding and unvested RSUs and PSUs were assumed and converted into 4 million service-based RSUs of Gen’s common stock. The conversion was calculated by multiplying the total number of unvested RSUs and PSUs by an equity conversion ratio of 3.48 . All converted RSUs will vest in accordance with the vesting period set forth in the original award agreement assuming continued service by the recipients through such date. The"
+  },
+  {
+   "id": "GEN-18",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "efore, represents purchase consideration and $ 71 million will be recognized as stock-compensation expense over the requisite service period. Consideration transferred The total consideration for the acquisition of MoneyLion was approximately $ 951 million, net of cash acquired, and consisted of the following: (In millions) April 17, 2025 Cash consideration for outstanding MoneyLion common shares $ 935 Fair value of assumed and converted equity awards 21 Fair value of CVRs 73 Total consideration 1,029 Less cash acquired 78 Net consideration transferred $ 951 Fair value of assets acquired and liabilities assumed Our final allocation of the aggregate purchase price for the acquisition as of April 17, 2025 was as follows: (In millions) April 17, 202"
+  },
+  {
+   "id": "GEN-19",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "ractWithCustomerLiabilityCurrent http://fasb.org/us-gaap/2025#ContractWithCustomerLiabilityNoncurrent http://fasb.org/us-gaap/2025#ContractWithCustomerLiabilityNoncurrent http://fasb.org/us-gaap/2025#ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill http://fasb.org/us-gaap/2025#ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill http://fasb.org/us-gaap/2025#ImpairmentOfIntangibleAssetsIndefinitelivedExcludingGoodwill P1Y P3Y iso4217:USD xbrli:shares iso4217:USD xbrli:shares gen:option xbrli:pure gen:segment gen:seniorNote gen:purchasePeriod gen:patent gen:coinventor gen:multiplier iso4217:CZK 0000849399 2025-03-29 2026-04-03 0000849399 us-gaap:CommonStockMember 2025-03-29 2026-04-03 0000849399 gen:ContingentValueRightsMember 2025-"
+  },
+  {
+   "id": "GEN-20",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": " or adjust with suppliers. Further, our estimates relating to the liabilities for excess facilities are affected by changes in real estate market conditions. Additionally, we are required to evaluate goodwill impairment on an annual basis and between annual evaluations in certain circumstances. Goodwill impairment evaluations have previously and may result in a charge to earnings. RISKS RELATED TO OUR OPERATIONS Our international operations involve risks that could increase our expenses, adversely affect our operating results and require increased time and attention from management. We derive a significant portion of our revenues from customers located outside of the United States, and we have substantial oper"
+  },
+  {
+   "id": "GEN-21",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "eeds the fair value of net tangible and intangible assets acquired. Goodwill is allocated to our reporting units, which are an operating segment or one level below an operating segment. We perform an impairment assessment of goodwill at the reporting unit level at least annually in the fourth quarter of each fiscal year, or more frequently if events or changes in circumstances indicate that the asset may be impaired. The accounting guidance gives us the option to perform a qualitative assessment to determine whether further impairment testing is necessary. The qualitative assessment considers events and circumstances that might indicate that a reporting unit’s fair value is less than its carrying amount. If it is determined"
+  },
+  {
+   "id": "GEN-22",
+   "for": "cap.ma_discipline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "d. In fiscal 2026, based on our qualitative assessments, we concluded that it is more likely than not that the fair values are more than their carrying values. Accordingly, there was no indication of impairment of goodwill, and further quantitative testing was not required. Long-lived assets In connection with our acquisitions, we generally recognize assets for customer relationships, developed technology, finite-lived trade names, other intangibles and indefinite-lived trade names. Finite-lived intangible assets are carried at cost less accumulated amortization. Such amortization is provided on a straight-line basis over the estimated useful lives of the respective assets, generally from 1 to 10 years. Amortizat"
+  },
+  {
+   "id": "GEN-23",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm",
+   "text": "er materially from results expressed or implied in this press release. Such risk factors include, but are not limited to, those related to: the consummation of or anticipated impacts of acquisitions (including our ability to achieve synergies and associated cost savings from any such acquisitions); divestitures, restructurings, stock repurchases, financings, debt repayments and investment activities; the outcome or impact of pending litigation, claims or disputes; difficulties in executing the operating model for the consumer Cyber Safety business; lower than anticipated returns from our investments in direct customer acquisition; difficulties in retaining our existing customers and converting existing non-paying customers to paying customers; difficulties and delays in reducing run rate expenses and monetizing underutilized assets; the successful development of new products and upgrades and the degree to which these new products and upgrades gain market acceptance; our ability to maintain o"
+  },
+  {
+   "id": "GEN-24",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm",
+   "text": "cept per share amounts) Three Months Ended July 3, 2026 July 4, 2025 Net revenues $ 1,336 $ 1,257 Cost of revenues 307 267 Gross profit 1,029 990 Operating expenses: Sales and marketing 300 297 Research and development 118 109 General and administrative 80 74 Amortization of intangible assets 56 54 Restructuring and other costs 32 10 Total operating expenses 586 544 Operating income (loss) 443 446 Interest expense (124) (156) Other income (expense), net 4 10 Income (loss) before income taxes 323 300 Income tax expense (benefit) 108 165 Net income (loss) $ 215 $ 135 Net income (loss) per share - basic $ 0.36 $ 0.22 Net income (loss) per share - diluted $ 0.36 $ 0.22 Weighted-average shares outstanding: Basic 599 617 Diluted 603 624 6 GEN DIGITAL INC. Condensed Consolidated Statements of Cash Flows (Unaudited, in millions) Three Months Ended July 3, 2026 July 4, 2025 OPERATING ACTIVITIES: Net income (loss) $ 215 $ 135 Adjustments: Amortization and depreciation 123 123 Stock-based compensation expense"
+  },
+  {
+   "id": "GEN-25",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm",
+   "text": "lion. 7 GEN DIGITAL INC. Reconciliation of Selected GAAP Measures to Non-GAAP Measures (1) (2) (Unaudited, in millions, except per share amounts) Three Months Ended July 3, 2026 July 4, 2025 Operating income (loss) $ 443 $ 446 Stock-based compensation 50 66 Amortization of intangible assets 119 119 Restructuring and other costs 32 10 Acquisition and integration costs 1 5 Litigation costs 23 5 Other — (1) Operating income (loss) (Non-GAAP) 668 650 Extra week — (44) MoneyLion stub period — 8 Adjusted operating income (loss) (Non-GAAP) (3) $ 668 $ 614 Operating margin 33.2 % 35.5 % Operating margin (Non-GAAP) 50.0 % 51.7 % Net income (loss) $ 215 $ 135 Adjustments to net income (loss): Stock-based compensation 50 66 Amortization of intangible assets 119 119 Restructuring and other costs 32 10 Acquisition and integration costs 1 5 Litigation costs 23 5 Other — (3) Non-cash interest expense 5 7 Loss (gain) on sale of properties and nonfinancial assets — 1 Total adjustments to GAAP income (loss) before i"
+  },
+  {
+   "id": "GEN-26",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-08-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000028/ex9901q1fy27.htm",
+   "text": ") (Non-GAAP) 431 398 Extra week — (30) MoneyLion stub period — 8 Adjusted net income (loss) (Non-GAAP) (3) $ 431 $ 376 Diluted net income (loss) per share $ 0.36 $ 0.22 Adjustments to diluted net income (loss) per share: Stock-based compensation 0.08 0.11 Amortization of intangible assets 0.20 0.19 Restructuring and other costs 0.05 0.02 Acquisition and integration costs 0.00 0.01 Litigation costs 0.04 0.01 Other — (0.00) Non-cash interest expense 0.01 0.01 Loss (gain) on sale of properties and nonfinancial assets — 0.00 Total adjustments to GAAP income (loss) before income taxes 0.38 0.34 Adjustment to GAAP provision for income taxes (0.02) 0.08 Total adjustment to income (loss), net of taxes 0.36 0.42 Diluted net income (loss) per share (Non-GAAP) 0.71 0.64 Extra week — (0.05) MoneyLion stub period — 0.01 Adjusted diluted net income (loss) per share (Non-GAAP) (3) $ 0.71 $ 0.60 Diluted weighted-average shares outstanding 603 624 Diluted weighted-average shares outstanding (Non-GAAP) 603 624 8 Thr"
+  },
+  {
+   "id": "GEN-27",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000014/ex9901q4fy26.htm",
+   "text": "venues $ 1,283 $ 1,010 $ 5,000 $ 3,935 Cost of revenues 276 199 1,077 776 Gross profit 1,007 811 3,923 3,159 Operating expenses: Sales and marketing 327 196 1,228 745 Research and development 104 81 409 329 General and administrative (291) 67 (87) 291 Amortization of intangible assets 54 44 218 174 Restructuring and other costs 10 3 35 7 Impairment of intangible assets — 3 — 3 Total operating expenses 204 394 1,803 1,549 Operating income (loss) 803 417 2,120 1,610 Interest expense (130) (135) (569) (578) Other income (expense), net (4) 5 (40) (3) Income (loss) before income taxes 669 287 1,511 1,029 Income tax expense (benefit) 157 145 538 386 Net income (loss) $ 512 $ 142 $ 973 $ 643 Net income (loss) per share - basic $ 0.85 $ 0.23 $ 1.59 $ 1.04 Net income (loss) per share - diluted $ 0.84 $ 0.23 $ 1.57 $ 1.03 Weighted-average shares outstanding: Basic 602 616 612 617 Diluted 609 624 619 624 6 GEN DIGITAL INC. Condensed Consolidated Statements of Cash Flows (Unaudited, in millions) Three Months E"
+  },
+  {
+   "id": "GEN-28",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000014/ex9901q4fy26.htm",
+   "text": "ded April 3, 2026 March 28, 2025 April 3, 2026 March 28, 2025 OPERATING ACTIVITIES: Net income (loss) $ 512 $ 142 $ 973 $ 643 Adjustments: Amortization and depreciation 119 104 493 419 Impairments and write-offs of current and long-lived assets — 5 — 7 Stock-based compensation expense 62 36 237 133 Loss on sale of Instacash Advances 59 — 205 — Deferred income taxes 92 18 92 (32) Loss on extinguishment of debt 9 — 9 — Gain on sale of nonfinancial assets — — (15) — Non-cash operating lease expense 5 5 18 16 Change in fair value and impairment of non-marketable equity investments — — 79 30 Foreign currency remeasurement loss (gain) (32) 12 54 (2) Legal contract dispute cost (1) — 24 — 66 Other 12 3 47 13 Changes in operating assets and liabilities, net of acquisitions: Accounts receivable, net 7 (19) (32) (53) Accounts payable 4 (9) (48) 26 Accrued compensation and benefits (3) 11 8 27 Contract liabilities 75 63 74 36 Income taxes payable 17 56 (96) (80) Instacash Advances held for sale, net (57"
+  },
+  {
+   "id": "GEN-29",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-05-07",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000014/ex9901q4fy26.htm",
+   "text": "restricted cash 1 29 4 9 Change in cash, cash equivalents and restricted cash (208) 123 (595) 160 Beginning cash, cash equivalents and restricted cash 619 883 1,006 846 Ending cash, cash equivalents and restricted cash $ 411 $ 1,006 $ 411 $ 1,006 7 (1) During fiscal 2025, in connection with a legal settlement terminating our agreement with an Avast e-commerce partner that acted as payment processor and merchant of record for a subset of customers, we released our claims to $66 million of outstanding accounts receivable (net of fees payable) in exchange for the transfer of the related customer information to us. The $66 million was charged off as general and administrative expense and is reflected as a non-cash item within the change in accounts receivable in operating activities for fiscal 2025. No comparable activity occurred in fiscal 2026 or fiscal 2024. (2) Issuance costs paid for issuance of debt for the three months ended April 3, 2026 and March 28, 2025 was $7 million and $9 million, resp"
+  },
+  {
+   "id": "GEN-30",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm",
+   "text": "er materially from results expressed or implied in this press release. Such risk factors include, but are not limited to, those related to: the consummation of or anticipated impacts of acquisitions (including our ability to achieve synergies and associated cost savings from any such acquisitions); divestitures, restructurings, stock repurchases, financings, debt repayments and investment 2 activities; the outcome or impact of pending litigation, claims or disputes; difficulties in executing the operating model for the consumer Cyber Safety business; lower than anticipated returns from our investments in direct customer acquisition; difficulties in retaining our existing customers and converting existing non-paying customers to paying customers; difficulties and delays in reducing run rate expenses and monetizing underutilized assets; the successful development of new products and upgrades and the degree to which these new products and upgrades gain market acceptance; our ability to maintain"
+  },
+  {
+   "id": "GEN-31",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm",
+   "text": " 2024 Net revenues $ 1,240 $ 986 $ 3,717 $ 2,925 Cost of revenues 268 193 801 577 Gross profit 972 793 2,916 2,348 Operating expenses: Sales and marketing 307 182 901 549 Research and development 96 84 305 248 General and administrative 70 108 204 224 Amortization of intangible assets 55 43 164 130 Restructuring and other costs 11 2 25 4 Total operating expenses 539 419 1,599 1,155 Operating income (loss) 433 374 1,317 1,193 Interest expense (137) (141) (439) (443) Other income (expense), net 13 (25) (36) (8) Income (loss) before income taxes 309 208 842 742 Income tax expense (benefit) 117 49 381 241 Net income (loss) $ 192 $ 159 $ 461 $ 501 Net income (loss) per share - basic $ 0.31 $ 0.26 $ 0.75 $ 0.81 Net income (loss) per share - diluted $ 0.31 $ 0.26 $ 0.74 $ 0.80 Weighted-average shares outstanding: Basic 611 616 615 618 Diluted 618 623 622 624 5 GEN DIGITAL INC. Condensed Consolidated Statements of Cash Flows (Unaudited, in millions) Three Months Ended Nine Months Ended January 2, 2026 Dece"
+  },
+  {
+   "id": "GEN-32",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm",
+   "text": " Net income (loss) $ 192 $ 159 $ 461 $ 501 Adjustments: Amortization and depreciation 126 104 374 315 Impairments and write-offs of current and long-lived assets — (1) — 2 Stock-based compensation expense 53 33 175 97 Loss on sale of Instacash Advances 55 — 146 — Deferred income taxes 6 (13) — (50) Gain on sale of nonfinancial assets (15) — (15) — Loss on sale of property (1) — — — Non-cash operating lease expense 4 4 13 11 Change in fair value and impairment of non-marketable equity investments 10 30 79 30 Legal contract dispute cost — 42 — 42 Foreign currency remeasurement loss (gain) (3) (28) 86 (14) Other 14 16 35 10 Changes in operating assets and liabilities, net of acquisitions: Accounts receivable, net (63) (36) (66) (34) Accounts payable 5 6 (52) 35 Accrued compensation and benefits 20 21 11 16 Contract liabilities 71 44 (1) (27) Income taxes payable 51 33 (113) (136) Instacash Advances held for sale, net (57) — (148) — Other assets 7 11 72 75 Other liabilities 66 (99) 9 (125) Net ca"
+  },
+  {
+   "id": "GEN-33",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2026-02-05",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000002/ex9901q3fy26.htm",
+   "text": " GEN DIGITAL INC. Reconciliation of Selected GAAP Measures to Non-GAAP Measures (1) (2) (Unaudited, in millions, except per share amounts) Three Months Ended January 2, 2026 December 27, 2024 Operating income (loss) $ 433 $ 374 Stock-based compensation 52 33 Amortization of intangible assets 122 99 Restructuring and other costs 11 2 Acquisition and integration costs 2 6 Litigation costs 10 21 Legal contract dispute cost — 42 Other (1) — Operating income (loss) (Non-GAAP) $ 629 $ 577 Operating margin 34.9 % 37.9 % Operating margin (Non-GAAP) 50.7 % 58.5 % Net income (loss) $ 192 $ 159 Adjustments to net income (loss): Stock-based compensation 52 33 Amortization of intangible assets 122 99 Restructuring and other costs 11 2 Acquisition and integration costs 2 6 Litigation costs 10 21 Legal contract dispute cost — 42 Other — 1 Non-cash interest expense 6 7 Change in fair value and impairment of non-marketable equity investments 10 30 Loss (gain) on sale of properties and nonfinancial assets (16) — Tot"
+  },
+  {
+   "id": "GEN-34",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000087/ex9901q2fy26.htm",
+   "text": ", 2024 Net revenues $ 1,220 $ 974 $ 2,477 $ 1,939 Cost of revenues 266 194 533 384 Gross profit 954 780 1,944 1,555 Operating expenses: Sales and marketing 297 184 594 367 Research and development 100 83 209 164 General and administrative 60 64 134 116 Amortization of intangible assets 55 44 109 87 Restructuring and other costs 4 3 14 2 Total operating expenses 516 378 1,060 736 Operating income (loss) 438 402 884 819 Interest expense (146) (149) (302) (302) Other income (expense), net (59) 5 (49) 17 Income (loss) before income taxes 233 258 533 534 Income tax expense (benefit) 99 97 264 192 Net income (loss) $ 134 $ 161 $ 269 $ 342 Net income (loss) per share - basic $ 0.22 $ 0.26 $ 0.44 $ 0.55 Net income (loss) per share - diluted $ 0.21 $ 0.26 $ 0.43 $ 0.55 Weighted-average shares outstanding: Basic 616 616 617 618 Diluted 624 622 624 624 5 GEN DIGITAL INC. Condensed Consolidated Statements of Cash Flows (Unaudited, in millions) Three Months Ended Six Months Ended October 3, 2025 September 27, 2"
+  },
+  {
+   "id": "GEN-35",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000087/ex9901q2fy26.htm",
+   "text": "et income (loss) $ 134 $ 161 $ 269 $ 342 Adjustments: Amortization and depreciation 125 105 248 211 Impairments and write-offs of current and long-lived assets — 3 — 3 Stock-based compensation expense 56 33 122 64 Loss on sale of Instacash Advances 55 — 91 — Deferred income taxes (17) (27) (6) (37) Loss on sale of property — — 1 — Non-cash operating lease expense 5 4 9 7 Change in fair value and impairment of non-marketable equity investments 69 — 69 — Foreign currency remeasurement loss (gain) 3 22 89 14 Other 11 (12) 21 (6) Changes in operating assets and liabilities, net of acquisitions: Accounts receivable, net (13) (7) (3) 2 Accounts payable (9) 12 (57) 29 Accrued compensation and benefits 12 16 (9) (5) Contract liabilities (3) (15) (72) (71) Income taxes payable (225) (250) (164) (169) Instacash Advances held for sale, net (44) — (91) — Other assets 7 47 65 64 Other liabilities (50) 66 (57) (26) Net cash provided by (used in) operating activities 116 158 525 422 INVESTING ACTIVITIES: Pu"
+  },
+  {
+   "id": "GEN-36",
+   "for": "acc.material_one_time_items",
+   "doc": "8-K filed 2025-11-06",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939925000087/ex9901q2fy26.htm",
+   "text": "EN DIGITAL INC. Reconciliation of Selected GAAP Measures to Non-GAAP Measures (1) (2) (Unaudited, in millions, except per share amounts) Three Months Ended October 3, 2025 September 27, 2024 Operating income (loss) $ 438 $ 402 Stock-based compensation 55 33 Amortization of intangible assets 121 102 Restructuring and other costs 4 3 Acquisition and integration costs 2 2 Litigation costs 2 25 Other 1 — Operating income (loss) (Non-GAAP) $ 623 $ 567 Operating margin 35.9 % 41.3 % Operating margin (Non-GAAP) 51.1 % 58.2 % Net income (loss) $ 134 $ 161 Adjustments to net income (loss): Stock-based compensation 55 33 Amortization of intangible assets 121 102 Restructuring and other costs 4 3 Acquisition and integration costs 2 2 Litigation costs 2 25 Other 3 1 Non-cash interest expense 7 6 Change in fair value and impairment of non-marketable equity investments 69 — Total adjustments to GAAP income (loss) before income taxes 263 172 Adjustment to GAAP provision for income taxes (10) 3 Total adjustment to"
+  },
+  {
+   "id": "GEN-37",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "ur business and operating results could be adversely affected. • We operate in a highly competitive and dynamic environment, and if we are unable to compete effectively, we could experience a loss in market share and a reduction in revenue. • Issues in the development and deployment of AI, including generative AI and emerging AI-enabled cyber threats, could expose us to regulatory, privacy, IP, cybersecurity, operational and reputational risks. • Our acquisitions and divestitures create special risks and challenges that could adversely affect our financial results. • Our revenue and operating results depe"
+  },
+  {
+   "id": "GEN-38",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "hird-party offers from our partners, providing convenient access to an expansive breadth of financial solutions that enable customers to borrow, spend, save and achieve better financial outcomes. Our leading marketplace solutions provide valuable distribution, acquisition, growth, and monetization channels for our partners. This purpose-built platform helps consumers navigate all of their financial inflection points, combining our deep first-party product expertise, engaging content, marketplaces, innovative technology, data and AI capabilities to create the ultimate marketplace solution, Engine by G"
+  },
+  {
+   "id": "GEN-39",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "anization that is comprised of our dedicated team of threat and security researchers, supported by advanced systems to innovate security technology and threat intelligence. We have one of the world’s largest consumer cyber safety networks. Leveraging our capabilities, our global threat response team handles a wide variety of attacks, including social engineering attacks, file-based attacks, web and network-based attacks, privacy and data exfiltration attacks, identity theft attacks, algorithmic manipulation attacks, and more. Our differentiated approach is powered by our global scale and visibility, "
+  },
+  {
+   "id": "GEN-40",
+   "for": "cmp.share_trend",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "actors” – Risks Related to Our Business Strategy and Industry – “We operate in a highly competitive and dynamic environment, and if we are unable to compete effectively, we could experience a loss in market share and a reduction in revenue” and “We may need to change our pricing models to compete successfully,” in Item 1A included in this Annual Report on Form 10-K. Seasonality As is typical for many consumer technology companies, portions of our business are impacted by seasonality. However, we believe the net impact on our business is limited. Seasonal behavior in orders primarily reflects consumer spen"
+  },
+  {
+   "id": "GEN-41",
+   "for": "cmp.lifecycle_shakeout_or_decline",
+   "doc": "10-K filed 2026-05-21",
+   "url": "https://www.sec.gov/Archives/edgar/data/849399/000084939926000017/gen-20260403.htm",
+   "text": "artners have in the past replaced, and may in the future replace, our solutions with competing or internally developed offerings, promote competing products more favorably, or limit interoperability. Industry consolidation, vertical integration, and the introduction of new or alternative technologies may further intensify competition. We cannot be sure that we will accurately predict how the markets in which we compete or intend to compete will evolve. Failure on our part to anticipate changes in our markets and to develop solutions and enhancements that meet the demands of those markets or to effectively compete a"
+  }
+ ]
+}

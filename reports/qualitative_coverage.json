@@ -1,0 +1,1023 @@
+{
+  "legacy_freeform_only": [],
+  "legacy_note": "자유서술 정성조사만 있고 QSI 봉인이 없는 종목. 소급 재작성하지 않는다 — 새 조사부터 표준 입력으로 쌓는다.",
+  "legacy_with_sparse_qsi": [
+    "DLO",
+    "PDD",
+    "SE"
+  ],
+  "n_record_files": 150,
+  "n_sealed_records": 19,
+  "sealed": [
+    {
+      "answered_fraction": 0.9412,
+      "as_of": "2026-10-10",
+      "entity": "ACGL",
+      "inversion_complete": true,
+      "lens_set": "insurance",
+      "n_answered": 16,
+      "n_not_applicable": 0,
+      "n_questions": 17,
+      "per_lens": {
+        "catastrophe_risk": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "reserve_adequacy": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "underwriting_discipline": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "resolved_fraction": 0.9412,
+      "sealed_core_hash": "580230c8f8c14d06adfe06f7f48a557a20f75a8426ab144ecfd683ba77a80ef3",
+      "unexamined_lenses": [
+        "catastrophe_risk",
+        "underwriting_discipline"
+      ]
+    },
+    {
+      "answered_fraction": 0.8485,
+      "as_of": "2026-10-10",
+      "entity": "ADBE",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 28,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 10,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "capital_allocation": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 11,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.8788,
+      "sealed_core_hash": "ce4f16d91473170e00416d1e1b98ce6167c2f7124d253face697c61d65d960dc",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.8824,
+      "as_of": "2026-10-10",
+      "entity": "CINF",
+      "inversion_complete": true,
+      "lens_set": "insurance",
+      "n_answered": 15,
+      "n_not_applicable": 0,
+      "n_questions": 17,
+      "per_lens": {
+        "catastrophe_risk": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 1,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "reserve_adequacy": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "underwriting_discipline": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.8824,
+      "sealed_core_hash": "3cbc76a47f787b4a8f46409885f988900370f07269fd9047a633e5b5f5225eae",
+      "unexamined_lenses": [
+        "catastrophe_risk",
+        "underwriting_discipline"
+      ]
+    },
+    {
+      "answered_fraction": 0.7273,
+      "as_of": "2026-10-10",
+      "entity": "DECK",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 24,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 9,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 10,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7576,
+      "sealed_core_hash": "d760ffbb9371a050f6e03d38807b21ca6a0ae2cd5a2b41dffe6f0ad120fc442d",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.4242,
+      "as_of": "2026-10-10",
+      "entity": "DLO",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 14,
+      "n_not_applicable": 4,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 8,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        },
+        "capital_allocation": {
+          "answered": 0,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "competitive_landscape": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 3,
+          "n_questions": 12,
+          "not_applicable": 4,
+          "unasked": 0,
+          "unknown": 5
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "resolved_fraction": 0.5455,
+      "sealed_core_hash": "535a8d04dde1a718eddd63426ce4c4ba5deab490363210cbc748b29934e70fce",
+      "unexamined_lenses": [
+        "capital_allocation",
+        "accounting_quality",
+        "competitive_landscape"
+      ]
+    },
+    {
+      "answered_fraction": 0.7879,
+      "as_of": "2026-10-10",
+      "entity": "DUOL",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 26,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 9,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.8182,
+      "sealed_core_hash": "936150c93dc2e8fe43feb7b0f131acd867a1d30b61a236ff4475fab32701a8c7",
+      "unexamined_lenses": [
+        "capital_allocation"
+      ]
+    },
+    {
+      "answered_fraction": 0.7273,
+      "as_of": "2026-10-10",
+      "entity": "GEN",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 24,
+      "n_not_applicable": 0,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 9,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "capital_allocation": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 1,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "governance": {
+          "answered": 9,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7273,
+      "sealed_core_hash": "eda30f568301ec4daf47b6eb397ceb2baabb5dbcf7f54d28ef89fc4ef067ca2b",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.6364,
+      "as_of": "2026-10-10",
+      "entity": "HLNE",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 21,
+      "n_not_applicable": 0,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 1,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "governance": {
+          "answered": 9,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.6364,
+      "sealed_core_hash": "02119627331cb51f9b49590317b3b8f8488f4e2908d646053575f52755b8d0f9",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.5758,
+      "as_of": "2026-10-10",
+      "entity": "MNDY",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 19,
+      "n_not_applicable": 5,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 9,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "capital_allocation": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "competitive_landscape": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 5,
+          "n_questions": 12,
+          "not_applicable": 4,
+          "unasked": 0,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7273,
+      "sealed_core_hash": "1ca5e6cf83b57c9b54c0be291dbc8c267a22c99de993164b35d17d7dfa732e78",
+      "unexamined_lenses": [
+        "competitive_landscape"
+      ]
+    },
+    {
+      "answered_fraction": 0.697,
+      "as_of": "2026-10-10",
+      "entity": "NBIX",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 23,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 11,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7273,
+      "sealed_core_hash": "e6e7d6a0df7bbcb4c7d8d89bad5c699b0c3cd554e816c7a37f53c8ff53ed4a85",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.7879,
+      "as_of": "2026-10-10",
+      "entity": "NXT",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 26,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 8,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 4,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 11,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.8182,
+      "sealed_core_hash": "be6733ed9c01edc4ca66b2a1d423b943d505322bfa02b5f57a43c8d25f3ec989",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.3939,
+      "as_of": "2026-10-10",
+      "entity": "PDD",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 13,
+      "n_not_applicable": 5,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 6,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 5
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 1,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "governance": {
+          "answered": 3,
+          "n_questions": 12,
+          "not_applicable": 4,
+          "unasked": 0,
+          "unknown": 5
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.5455,
+      "sealed_core_hash": "1fc52cc22b9757f9380e81868f8c6d8251c002516ecdd3427d95a0ea88033933",
+      "unexamined_lenses": [
+        "accounting_quality"
+      ]
+    },
+    {
+      "answered_fraction": 0.7647,
+      "as_of": "2026-10-10",
+      "entity": "PGR",
+      "inversion_complete": true,
+      "lens_set": "insurance",
+      "n_answered": 13,
+      "n_not_applicable": 0,
+      "n_questions": 17,
+      "per_lens": {
+        "catastrophe_risk": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 1,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "governance": {
+          "answered": 11,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "reserve_adequacy": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "underwriting_discipline": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7647,
+      "sealed_core_hash": "2a93813a90ce1cd543da38bbd8d8ff150d4a1f593845afb1b2a61bfb04f0a6ee",
+      "unexamined_lenses": [
+        "catastrophe_risk",
+        "underwriting_discipline"
+      ]
+    },
+    {
+      "answered_fraction": 0.8788,
+      "as_of": "2026-10-10",
+      "entity": "PTC",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 29,
+      "n_not_applicable": 0,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 10,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        },
+        "competitive_landscape": {
+          "answered": 4,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": true,
+      "resolved_fraction": 0.8788,
+      "sealed_core_hash": "bf013a1c241f6200fd222c3183a30b51c4cea0a1ce56e67e96dcee6e57f99a2a",
+      "unexamined_lenses": [
+        "capital_allocation",
+        "accounting_quality",
+        "competitive_landscape"
+      ]
+    },
+    {
+      "answered_fraction": 0.4545,
+      "as_of": "2026-10-10",
+      "entity": "SE",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 15,
+      "n_not_applicable": 5,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 6,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 5
+        },
+        "capital_allocation": {
+          "answered": 1,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 4,
+          "n_questions": 12,
+          "not_applicable": 4,
+          "unasked": 0,
+          "unknown": 4
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.6061,
+      "sealed_core_hash": "849f08f673e35f197506207600ee7fd431bea5bc1de978bad458e74c8bc579dc",
+      "unexamined_lenses": [
+        "accounting_quality"
+      ]
+    },
+    {
+      "answered_fraction": 0.9412,
+      "as_of": "2026-10-10",
+      "entity": "SIGI",
+      "inversion_complete": true,
+      "lens_set": "insurance",
+      "n_answered": 16,
+      "n_not_applicable": 0,
+      "n_questions": 17,
+      "per_lens": {
+        "catastrophe_risk": {
+          "answered": 0,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "reserve_adequacy": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "underwriting_discipline": {
+          "answered": 1,
+          "n_questions": 1,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.9412,
+      "sealed_core_hash": "659a0239435566c32f0688ebe03f38cb92df064d1709517424f442dc40c68de5",
+      "unexamined_lenses": [
+        "catastrophe_risk",
+        "underwriting_discipline"
+      ]
+    },
+    {
+      "answered_fraction": 0.7576,
+      "as_of": "2026-10-10",
+      "entity": "SKYW",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 25,
+      "n_not_applicable": 0,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "competitive_landscape": {
+          "answered": 2,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 2
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7576,
+      "sealed_core_hash": "a11198c5ce826bbb6dd1a0e3e4cdc42c52919820088679c9e3ad59db093349ae",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.7273,
+      "as_of": "2026-10-10",
+      "entity": "TW",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 24,
+      "n_not_applicable": 0,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "competitive_landscape": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 9,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 3
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.7273,
+      "sealed_core_hash": "27eb98bd066082812028fedaf948fe25595fffeb1ff50518ebe97d8f7115ccd1",
+      "unexamined_lenses": []
+    },
+    {
+      "answered_fraction": 0.8182,
+      "as_of": "2026-10-10",
+      "entity": "UBER",
+      "inversion_complete": true,
+      "lens_set": "standard",
+      "n_answered": 27,
+      "n_not_applicable": 1,
+      "n_questions": 33,
+      "per_lens": {
+        "accounting_quality": {
+          "answered": 7,
+          "n_questions": 11,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 4
+        },
+        "capital_allocation": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 1,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "competitive_landscape": {
+          "answered": 3,
+          "n_questions": 4,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 1
+        },
+        "dilution": {
+          "answered": 2,
+          "n_questions": 2,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        },
+        "governance": {
+          "answered": 12,
+          "n_questions": 12,
+          "not_applicable": 0,
+          "unasked": 0,
+          "unknown": 0
+        }
+      },
+      "price_at_analysis_recorded": false,
+      "resolved_fraction": 0.8485,
+      "sealed_core_hash": "a3316ebcfbe4cef4e1bb883c76d562e675592f8620f0e2ea601786c4dd019048",
+      "unexamined_lenses": []
+    }
+  ],
+  "sparse_qsi_threshold": 0.5,
+  "totals": {
+    "answered": 398,
+    "answered_fraction": 0.7069,
+    "not_applicable": 25,
+    "note": "answered와 not_applicable을 따로 센다. 해당 없음은 규칙(무배당 직접 진술, 외국 발행사의 보수 승인 투표 부재 등)으로만 주며 '모름'을 대신하지 않는다.",
+    "resolved_fraction": 0.7513,
+    "slots": 563
+  },
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

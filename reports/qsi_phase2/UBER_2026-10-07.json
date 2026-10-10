@@ -1,0 +1,58 @@
+{
+  "as_of": "2026-10-07",
+  "enforcement": [
+    "Additionally, in July 2022, we entered into a non-prosecution agreement with the DOJ concerning its investigation into our handling of the 2016 Breach."
+  ],
+  "new_competition": {
+    "answer": [
+      "There are also a number of companies developing and introducing autonomous vehicles and technologies 12 that either are competing with us or may compete with us in the future, including Alphabet (Waymo), Amazon (Zoox), and Tesla.",
+      "In addition, changes in or increased enforcement efforts pursuant to certain laws and regulations, including immigration and labor and employment laws, or laws that require us to make changes to our platform that decrease accessibility, including removing access to our platform, or flexibility provided to Drivers in certain jurisdictions, may result in a decrease in the pool of Drivers, which may result in increased competition for Drivers or higher costs of attracting and maintaining Drivers.",
+      "For example, shifts in consumer behavior, including the use of new or emerging technologies, such as AI-enabled platforms and digital assistants, may disintermediate our relationship with consumers by controlling how our products are accessed, presented or selected, which could redirect demand to competitors and adversely affect our demand and growth."
+    ],
+    "docs": [
+      "2026-02-13",
+      "2025-02-14"
+    ],
+    "n_new_competition": 3,
+    "n_new_sentences": 22,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "There are also a number of companies developing and introducing autonomous vehicles and technologies 12 that either are competing with us or may compete with us in the future, including Alphabet (Waymo), Amazon (Zoox), and Tesla.",
+      "In addition, changes in or increased enforcement efforts pursuant to certain laws and regulations, including immigration and labor and employment laws, or laws that require us to make changes to our platform that decrease accessibility, including removing access to our platform, or flexibility provided to Drivers in certain jurisdictions, may result in a decrease in the pool of Drivers, which may result in increased competition for Drivers or higher costs of attracting and maintaining Drivers.",
+      "For example, shifts in consumer behavior, including the use of new or emerging technologies, such as AI-enabled platforms and digital assistants, may disintermediate our relationship with consumers by controlling how our products are accessed, presented or selected, which could redirect demand to competitors and adversely affect our demand and growth."
+    ]
+  },
+  "pricing_power": {
+    "answer": null,
+    "reason": "매출총이익(또는 매출원가) 값이 없다 — 금융업 등 원가 구조가 다른 업종일 수 있다"
+  },
+  "relative_growth": {
+    "answer": "losing",
+    "basket": {
+      "excluded": "Bolt·Didi·Ola·Gopuff·Rappi(SEC 비공시), Delivery Hero·Just Eat Takeaway(해외 상장), Amazon(사업 분리 불가)",
+      "peers": [
+        "LYFT",
+        "DASH",
+        "CART"
+      ],
+      "quote": "We also compete with other ridesharing companies for Drivers and Riders, including Bolt, Didi, Lyft, and Ola.",
+      "quote2": "competes with numerous companies in the meal, grocery and other delivery space in various regions for Drivers, consumers, and merchants, including DoorDash, Instacart, Gopuff, Rappi, Delivery Hero, Just Eat Takeaway, and Amazon."
+    },
+    "basket_cagr_pct": 18.91,
+    "company_cagr_pct": 17.73,
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gap_pp": -4.0,
+    "lifecycle_decline": false,
+    "peer_cagr_pct": 21.73,
+    "peers_dropped": [],
+    "peers_used": [
+      "CART",
+      "DASH",
+      "LYFT"
+    ],
+    "rule": "3년 매출 CAGR − 지명 경쟁사 합계 CAGR ≥ +3.0%p → gaining, ≤ −3.0%p → losing, 그 밖 stable. 회사+경쟁사 합계 CAGR < 0.0% → 쇠퇴, ≥ 3.0% → 쇠퇴 아님 (사전 고정 · 생존 경쟁사만 — 퇴출 기업이 빠져 쇠퇴를 과소평가한다)"
+  },
+  "ticker": "UBER",
+  "unit": "USD"
+}
