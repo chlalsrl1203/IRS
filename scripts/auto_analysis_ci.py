@@ -156,12 +156,12 @@ def format_body(s):
 
 def main():
     today = os.environ.get("IRS_TODAY") or datetime.date.today().isoformat()
-    limit = int(os.environ.get("IRS_AUTO_LIMIT", DEFAULT_LIMIT))
+    limit = int(os.environ.get("IRS_AUTO_LIMIT") or DEFAULT_LIMIT)
     s = run(today, limit, os.environ.get("ALPHA_VANTAGE_API_KEY"))
     log(format_body(s))
     if "--post" in sys.argv:
         import issue_reporting as IR
-        IR.report("broad", today, format_body(s), urgency_key="routine", log=log)
+        IR.report("daily", today, format_body(s), urgency_key="routine", log=log)
 
 
 if __name__ == "__main__":

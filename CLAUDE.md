@@ -10981,7 +10981,7 @@ baseline fingerprint `f5709edf…` **불변** · `ledger/`·매수리스트·공
 - **공식과 격리**: 결과는 `ledger_auto/`에만 저장, `auto_analysis.official=False` 표시. 매수리스트·포트폴리오·
   thesis는 읽지 않는다(`tests/test_auto_analysis.py`가 `ledger_auto` 문자열 참조 금지로 고정).
 - 실행: `scripts/auto_analysis_ci.py`(큐 상위 N종목, 30일 내 재분석 생략, 거부 종목 90일 재시도 안 함),
-  `broad_screen.yml`에 주 1회 배선. `ALPHA_VANTAGE_API_KEY`가 없으면 시총은 낡은 public_float 근사(리포트에 표시).
+  `auto_analysis.yml`로 평일 매일(스크리닝과 분리, 하루 최대 10종목). `ALPHA_VANTAGE_API_KEY`가 없으면 시총은 낡은 public_float 근사(리포트에 표시).
 - **공식 ledger 80건 대조(오프라인, 낙관적 상한)**: 분석 63 / 거부 12 / 보험 건너뜀 5. 판정 일치 **58/63(92%)**,
   등급 일치 **43/63(68%)**, |Gap 오차| 중앙값 0.46%p·p90 5.4%p. 공식 입력에 이미 사람의 override가 반영된
   시계열이라 실제 신규 종목에서는 이보다 낮을 것이다. BSX·MEDP·NXT류 경쟁강도 대체 오차는 구조적으로 남는다.
