@@ -1,0 +1,267 @@
+{
+ "ACGL": {
+  "gap_now": 0.248406169504879,
+  "grade_now": "S",
+  "range_min": 0.20905381704330017,
+  "range_max": 0.2804385639140587,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.024151436031331592,
+  "gap_sbc_now": 0.2447776294658165,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.157353923411129,
+  "base_rate_pct": 9.7,
+  "tier": "UNCOMMON",
+  "size_class": "12000-25000",
+  "peer_median_real": 2.65
+ },
+ "CINF": {
+  "gap_now": 0.1745136513845007,
+  "grade_now": "S",
+  "range_min": 0.1420526771489502,
+  "range_max": 0.20023615504661008,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.014877102199223804,
+  "gap_sbc_now": 0.17248156215110227,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.15217096949973508,
+  "base_rate_pct": 9.5,
+  "tier": "UNCOMMON",
+  "size_class": "7000-12000",
+  "peer_median_real": 3.11
+ },
+ "DLO": {
+  "gap_now": 0.2397714614868164,
+  "grade_now": "S",
+  "range_min": 0.21604499816894532,
+  "range_max": 0.2699274063110352,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.05841592545531554,
+  "gap_sbc_now": 0.23210716247558597,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.25,
+  "base_rate_pct": 3.5,
+  "tier": "RARE",
+  "size_class": "700-1250",
+  "peer_median_real": 5.84
+ },
+ "DUOL": {
+  "gap_now": 0.18648052215576172,
+  "grade_now": "S",
+  "range_min": 0.16401462554931645,
+  "range_max": 0.22575302124023439,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.3717256245824622,
+  "gap_sbc_now": 0.13175926208496097,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.25,
+  "base_rate_pct": 3.5,
+  "tier": "RARE",
+  "size_class": "700-1250",
+  "peer_median_real": 5.84
+ },
+ "MNDY": {
+  "gap_now": 0.23019790649414062,
+  "grade_now": "S",
+  "range_min": 0.20963592529296876,
+  "range_max": 0.26593017578125,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.5711837935863595,
+  "gap_sbc_now": 0.1286848068237305,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.25,
+  "base_rate_pct": 3.5,
+  "tier": "RARE",
+  "size_class": "700-1250",
+  "peer_median_real": 5.84
+ },
+ "PDD": {
+  "gap_now": 0.21780105590820287,
+  "grade_now": "S",
+  "range_min": 0.1885184282337621,
+  "range_max": 0.2563138580322263,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": null,
+  "gap_sbc_now": null,
+  "judg_sbc_now": null,
+  "rg": 0.17874999999999974,
+  "base_rate_pct": 7.3,
+  "tier": "UNCOMMON",
+  "size_class": "25000+",
+  "peer_median_real": 1.95
+ },
+ "PGR": {
+  "gap_now": 0.1753694915771484,
+  "grade_now": "S",
+  "range_min": 0.14366134604598985,
+  "range_max": 0.21229480743408197,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": null,
+  "gap_sbc_now": null,
+  "judg_sbc_now": null,
+  "rg": 0.12749999999999995,
+  "base_rate_pct": 3.9,
+  "tier": "RARE",
+  "size_class": "50000+",
+  "peer_median_real": 1.18
+ },
+ "PINS": {
+  "gap_now": 0.16112755840169626,
+  "grade_now": "S",
+  "range_min": 0.13375909560361357,
+  "range_max": 0.199364557913415,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.7033075616128907,
+  "gap_sbc_now": 0.015482416800133764,
+  "judg_sbc_now": "적정가/경계선",
+  "rg": 0.1454857737337275,
+  "base_rate_pct": 13.1,
+  "tier": "UNCOMMON",
+  "size_class": "3000-4500",
+  "peer_median_real": 3.94
+ },
+ "SIGI": {
+  "gap_now": 0.24935428619384764,
+  "grade_now": "S",
+  "range_min": 0.20141558413049748,
+  "range_max": 0.2726601791381836,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.019345563306396578,
+  "gap_sbc_now": 0.24622509002685544,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.12,
+  "base_rate_pct": 41.2,
+  "tier": "COMMON",
+  "size_class": "3000-4500",
+  "peer_median_real": 3.94
+ },
+ "TTD": {
+  "gap_now": 0.22261161937746363,
+  "grade_now": "S",
+  "range_min": 0.14657398907714259,
+  "range_max": 0.20579834117922144,
+  "robust": true,
+  "judgments": [
+   "저평가 가능성"
+  ],
+  "flip_drivers": [],
+  "sbc_pct": 0.6165902150280881,
+  "gap_sbc_now": 0.10222282543215111,
+  "judg_sbc_now": "저평가 가능성",
+  "rg": 0.16703987255129174,
+  "base_rate_pct": 16.1,
+  "tier": "UNCOMMON",
+  "size_class": "2000-3000",
+  "peer_median_real": 4.34
+ },
+ "_scenario_observed_growth": {
+  "note": "참조용. 1분기/1개년 관측은 realistic_growth_override 자격이 없다(KEYS 기준). IG는 시총과 FCF0에서만 나오므로 성장 가정과 독립",
+  "rows": {
+   "DUOL": {
+    "obs": "FY26 매출 가이던스 +16%",
+    "obs_growth": 0.16,
+    "implied_growth": 0.06351947784423828,
+    "gap_obs": 0.09648052215576172,
+    "grade_obs": "A"
+   },
+   "MNDY": {
+    "obs": "Q3 매출 가이던스 +16.5%",
+    "obs_growth": 0.165,
+    "implied_growth": 0.019802093505859375,
+    "gap_obs": 0.14519790649414063,
+    "grade_obs": "A"
+   },
+   "TTD": {
+    "obs": "Q3 가이던스 -12% / Q2 +3%",
+    "obs_growth": 0.0,
+    "implied_growth": -0.055571746826171886,
+    "gap_obs": 0.055571746826171886,
+    "grade_obs": "B"
+   },
+   "DLO": {
+    "obs": "총이익 가이던스 25-30% 하단",
+    "obs_growth": 0.25,
+    "implied_growth": 0.010228538513183588,
+    "gap_obs": 0.2397714614868164,
+    "grade_obs": "S"
+   },
+   "PGR": {
+    "obs": "8월 순보험료 +6%",
+    "obs_growth": 0.06,
+    "implied_growth": -0.047869491577148454,
+    "gap_obs": 0.10786949157714845,
+    "grade_obs": "A"
+   },
+   "CINF": {
+    "obs": "Q2 순보험료 +3%",
+    "obs_growth": 0.03,
+    "implied_growth": -0.022342681884765625,
+    "gap_obs": 0.052342681884765624,
+    "grade_obs": "B"
+   },
+   "SIGI": {
+    "obs": "Q2 순보험료 -5%",
+    "obs_growth": -0.05,
+    "implied_growth": -0.12935428619384765,
+    "gap_obs": 0.07935428619384764,
+    "grade_obs": "A"
+   },
+   "PDD": {
+    "obs": "Q2 매출 +8%",
+    "obs_growth": 0.08,
+    "implied_growth": -0.039051055908203125,
+    "gap_obs": 0.11905105590820313,
+    "grade_obs": "A"
+   },
+   "PINS": {
+    "obs": "Q3 매출 성장 13-15% 가이던스(중간 14%)",
+    "obs_growth": 0.14,
+    "implied_growth": -0.015641784667968756,
+    "gap_obs": 0.15564178466796877,
+    "grade_obs": "S"
+   },
+   "ACGL": {
+    "obs": "Q2 재보험 NPW -10.4%(그룹 NPW 약 0%)",
+    "obs_growth": 0.0,
+    "implied_growth": -0.09105224609375001,
+    "gap_obs": 0.09105224609375001,
+    "grade_obs": "A"
+   }
+  }
+ }
+}

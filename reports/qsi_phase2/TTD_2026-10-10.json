@@ -1,0 +1,39 @@
+{
+  "as_of": "2026-10-10",
+  "enforcement": [],
+  "new_competition": {
+    "answer": [
+      "To the extent we fail to adopt such technologies effectively or as intended, experience delays in integrating these technologies into our operations or our competitors successfully implement improved AI technologies into their products or services, our ability to compete effectively could be harmed and our growth prospects and results of operations could be adversely affected.",
+      "Historically, some of our competitors have sought to differentiate themselves to prospective customers primarily on the basis of artificially low prices, which are enabled by inherent conflicts of interest and a lack of objectivity, and do not account for the overall value delivered to customers.",
+      "Our future success depends upon our continued ability to distinguish our offerings from competitors based on the value we provide our clients, including superior price discovery with respect to advertising opportunities, without the conflicts of interest and lack of objectivity that come with also selling advertising inventory.",
+      "They may perceive other offerings as competitive purely on the basis of price and results that are self-reported by such competitors.",
+      "Furthermore, our current and potential competitors may have significantly more financial, technical, marketing, and other resources than we have, which may allow them to devote greater resources to the development, promotion, sale and support of their products and services."
+    ],
+    "docs": [
+      "2026-02-27",
+      "2025-02-21"
+    ],
+    "n_new_competition": 6,
+    "n_new_sentences": 53,
+    "rule": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+    "sentences": [
+      "To the extent we fail to adopt such technologies effectively or as intended, experience delays in integrating these technologies into our operations or our competitors successfully implement improved AI technologies into their products or services, our ability to compete effectively could be harmed and our growth prospects and results of operations could be adversely affected.",
+      "Historically, some of our competitors have sought to differentiate themselves to prospective customers primarily on the basis of artificially low prices, which are enabled by inherent conflicts of interest and a lack of objectivity, and do not account for the overall value delivered to customers.",
+      "Our future success depends upon our continued ability to distinguish our offerings from competitors based on the value we provide our clients, including superior price discovery with respect to advertising opportunities, without the conflicts of interest and lack of objectivity that come with also selling advertising inventory.",
+      "They may perceive other offerings as competitive purely on the basis of price and results that are self-reported by such competitors.",
+      "Furthermore, our current and potential competitors may have significantly more financial, technical, marketing, and other resources than we have, which may allow them to devote greater resources to the development, promotion, sale and support of their products and services."
+    ]
+  },
+  "pricing_power": {
+    "answer": "eroding",
+    "fy_end": 2025,
+    "fy_start": 2022,
+    "gm_change_pp": -3.56,
+    "gm_end": 78.63,
+    "gm_start": 82.18,
+    "revenue_growing": true,
+    "rule": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)"
+  },
+  "ticker": "TTD",
+  "unit": "USD"
+}

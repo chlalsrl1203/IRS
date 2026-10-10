@@ -1,0 +1,972 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "PINS.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PINS.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "PINS.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": 0.7033,
+      "claim_ids": [
+        "PINS.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0331,
+      "claim_ids": [
+        "PINS.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "share_count_rising",
+      "claim_ids": [
+        "PINS.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "PINS.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": 1,
+      "claim_ids": [
+        "PINS.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사 서술이 Note 참조이거나 소송을 기술한다 — 심각도는 사람이 판단한다 (발췌: PINS.LITIGATION)",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": 0.9614,
+      "claim_ids": [
+        "PINS.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "합산 지분 행이 다중 클래스·비표준 형식이라 단일 퍼센트를 읽을 수 없다",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": "revenue_growth",
+      "claim_ids": [
+        "PINS.PVP_MEASURE"
+      ],
+      "note": "",
+      "qid": "gov.pay_measure_category",
+      "status": "answered"
+    },
+    {
+      "answer": -0.675,
+      "claim_ids": [
+        "PINS.PVP_TSR"
+      ],
+      "note": "",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "answered"
+    },
+    {
+      "answer": 9,
+      "claim_ids": [
+        "PINS.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    },
+    {
+      "answer": "no_material_ma",
+      "claim_ids": [
+        "PINS.MA"
+      ],
+      "note": "현금 인수만 본다 — 주식 대가 인수·해지된 시도(해지 수수료)는 포함하지 않는다",
+      "qid": "cap.ma_discipline",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "회사가 무배당을 직접 진술하고 최근 5년 주당배당 값이 없다: \"Dividend policy We have never declared or paid dividends on our capital stock and do not intend to pay any dividends in the foreseeable future.\" (PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021), https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm)",
+      "qid": "cap.dividend_predictable",
+      "status": "not_applicable"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "같은 회계연도의 차입 발행·매입 값이 없다",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PINS.RESTATE"
+      ],
+      "note": "",
+      "qid": "acc.restated_down_3y",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "PINS.NOENF",
+        "PINS.RESTATE"
+      ],
+      "note": "공시된 제재·정정의 부재 — 비공개 조사까지 배제하지는 않는다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "8-K 2.02 보도자료 18건에서 연간 총매출 범위·'약 $X' 가이던스를 찾지 못했다 (회사가 제시하지 않았거나 형식을 읽지 못함 — 둘을 구분하지 않는다)",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "비정기 가이던스 하향 규칙: 보도자료 18건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": "effective",
+      "claim_ids": [
+        "PINS.ICFR"
+      ],
+      "note": "경영진의 자기 평가다 — 독립 확인이 아니다",
+      "qid": "acc.icfr_conclusion",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PINS.NT"
+      ],
+      "note": "",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PINS.AUDITOR"
+      ],
+      "note": "",
+      "qid": "acc.auditor_change_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PINS.IMPAIR"
+      ],
+      "note": "",
+      "qid": "acc.material_impairment_3y",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "PINS.SEC_COMMENT_LETTERS"
+      ],
+      "note": "",
+      "qid": "acc.sec_comment_letters_3y",
+      "status": "answered"
+    },
+    {
+      "answer": "전년 대비 새로 추가된 경쟁 관련 위험 문장 2개: 「AI technologies are complex and rapidly evolving, and we face significant potential disruption from other companies, particularly as internet companies utilize AI to introduce new methods of search and discovery for consumers and AI reduces barriers to entry to compete with our products and services, as well as an evolving regulatory landscape.」 / 「Traditional search engines compete with new methods of search, particularly those powered by AI, and as a result traditional search engines may provide less traffic to our platform, which could negatively impact our business and results of operations.」",
+      "claim_ids": [
+        "PINS.NEWTHREAT"
+      ],
+      "note": "회사가 스스로 새로 인정한 위협만 모은다(문장 비교, 사람이 요약하지 않음). 엔진 경쟁자 가중치와 직접 대조하지는 않았다",
+      "qid": "cmp.new_threat",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "연차보고서가 SEC 공시 상장 경쟁사를 개별 지명하지 않았거나 지명된 회사가 거대 복합기업이라 비교군을 만들 수 없다(data/peer_baskets.json)",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": "evidenced",
+      "claim_ids": [
+        "PINS.GM"
+      ],
+      "note": "총이익률 대리지표 — 원가 하락·제품 믹스·보조금(예: 생산세액공제)으로도 움직인다. 가격 인상의 직접 증거가 아니다",
+      "qid": "cmp.pricing_power",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "PINS.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS DEF 14A (filed 2026-04-08, acc 0001506293-26-000058)",
+            "location": "Proxy — voting rights",
+            "observed_date": "2026-10-10",
+            "quote": "each share of our Class B common stock entitled to 20 votes per share",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "경제적 권리는 동일(투표권만 상이)로 보이나 문서에서 직접 대조하지 않았다",
+          "summary": "Class B 주식이 주당 20표를 갖는다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 주당 20표를 갖는다"
+    },
+    {
+      "claim_id": "PINS.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS DEF 14A (filed 2026-04-08, acc 0001506293-26-000058)",
+            "location": "Board leadership",
+            "observed_date": "2026-10-10",
+            "quote": "Benjamin Silbermann Non-Executive Chair",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "공동창업자가 비상임 의장 — 독립이사 여부와는 별개(선임 독립이사는 Andrea Wishom)",
+          "summary": "의장은 CEO와 다른 비상임(Non-Executive) 의장이다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "의장은 CEO와 다른 비상임(Non-Executive) 의장이다"
+    },
+    {
+      "claim_id": "PINS.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS DEF 14A (filed 2026-04-08, acc 0001506293-26-000058)",
+            "location": "Governance highlights",
+            "observed_date": "2026-10-10",
+            "quote": "annual review of succession plans for key officers",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "CEO를 명시하지 않고 '핵심 임원'으로 쓴다 — 약한 증거",
+          "summary": "핵심 임원 승계 계획을 매년 검토한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "핵심 임원 승계 계획을 매년 검토한다"
+    },
+    {
+      "claim_id": "PINS.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021)",
+            "location": "ShareBasedCompensation FY2025 = 880,463,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 880,463,000 / fcf0 1,251,889,000",
+          "value": 0.7033,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 70.3%다"
+    },
+    {
+      "claim_id": "PINS.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 665,732,000 -> FY2025 687,771,000",
+          "value": 0.0331,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 +3.31%"
+    },
+    {
+      "claim_id": "PINS.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 927,013,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 927,013,000; 3년 희석주식수 +3.31%",
+          "value": 927013000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 +3.31%다 → share_count_rising"
+    },
+    {
+      "claim_id": "PINS.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS Form 4 x89 (2025-10-10~2026-10-10)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1506293&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 89건 집계 (재량 매수 $0 / 재량 매도 $1,425,350 / 10b5-1 매도 $40,438,117)",
+          "value": -1425350.11,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 57건: 재량 순 $-1,425,350, 10b5-1 정기 55건 → opp_net_sell"
+    },
+    {
+      "claim_id": "PINS.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 8-K (2026-08-28, acc 0001506293-26-000117)",
+            "location": "Item 5.02",
+            "observed_date": "2026-10-10",
+            "quote": "Departure of Julia Brau Donnelly as Chief Financial Officer On August 26, 2026, Julia Brau Donnelly, the Company's Chief Financial Officer, submitted her resignation to Pinterest, Inc.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000117/pins-20260826.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "2026-08-28 8-K Item 5.02",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 1건(5.02 전체 8건)"
+    },
+    {
+      "claim_id": "PINS.RESTATE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS submissions index",
+            "location": "filings.recent items·form 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "'little r' 재작성(이전 연도 수치만 조용히 수정)은 8-K 4.02가 없어 탐지하지 못한다",
+          "summary": "제출 목록에 4.02·10-K/A 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 8-K Item 4.02(비신뢰 통지)와 10-K/A가 없다"
+    },
+    {
+      "claim_id": "PINS.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-10",
+            "quote": "Item 3. Legal proceedings We are currently involved in, and may in the future be involved in, actual and threatened legal proceedings, claims, investigations and government inquiries arising in the ordinary course of our business, including legal proceedings, claims, investigations and government inquiries involving intellectual property, data privacy and data protection, privacy and other torts, illegal or objectionable content, consumer protection, securities, corporate governance, employment, workplace culture, contractual rights, civil rights infringement, false or misleading advertising or other legal claims relating to content or information that is provided to us or published or made",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "PINS.NT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.late_filing_nt_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다",
+          "summary": "제출 목록에서 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 정기보고서 지연 제출 통지(NT 10-K/10-Q) 0건 []"
+    },
+    {
+      "claim_id": "PINS.AUDITOR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.auditor_change_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (4.01은 정기 감사인 교체·임기 만료도 포함)",
+          "summary": "제출 목록에서 감사인 변경 8-K(Item 4.01) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 감사인 변경 8-K(Item 4.01) 0건 []"
+    },
+    {
+      "claim_id": "PINS.IMPAIR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS submissions index",
+            "location": "filings.recent form·items 필드",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acc.material_impairment_3y",
+          "note": "건수는 그 공시가 있었다는 사실이다. 원인·심각도는 판단하지 않는다 (2.06은 회사가 스스로 '중요'하다고 결론낸 손상만 공시된다)",
+          "summary": "제출 목록에서 중대 손상 인식 8-K(Item 2.06) 0건 (창 2023-10-11~2026-10-10, 목록이 창을 덮음 확인)",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 중대 손상 인식 8-K(Item 2.06) 0건 []"
+    },
+    {
+      "claim_id": "PINS.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 8-K (2026-05-26, acc 0001506293-26-000074)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-10",
+            "quote": "non-binding advisory basis, the compensation of the Company's named executive officers For Against Abstain Broker Non-Votes 1,872,585,095 75,176,625",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000074/pins-20260521.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9614,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-05-26 주총 보수 승인 투표 찬성 1,872,585,095 / 반대 75,176,625 → 찬성률 96.1%"
+    },
+    {
+      "claim_id": "PINS.ICFR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12, acc 0001506293-26-000021)",
+            "location": "Item 9A. Controls and Procedures",
+            "observed_date": "2026-10-10",
+            "quote": "concluded that its internal control over financial reporting was effective",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "경영진 결론 문장('concluded that … internal control … was/is (not) effective')만. 경영진의 자기 평가이며 외부 감사인 의견과 별개다",
+          "summary": "Item 9A 경영진 결론 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K Item 9A 경영진 결론: ICFR effective"
+    },
+    {
+      "claim_id": "PINS.MA",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS companyfacts",
+            "location": "사업 인수 지출 / 영업현금흐름 FY2021~FY2025",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "acquisitions_to_ocf_5y",
+          "note": "5년 인수 현금지출 ≤ 영업현금흐름의 10% → no_material_ma(사전 고정)",
+          "summary": "현금흐름표 인수 지출·영업현금흐름(companyfacts)",
+          "value": 0.0301,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "FY2021~FY2025 인수 현금지출 122,973,000 = 영업현금흐름의 3.0%"
+    },
+    {
+      "claim_id": "PINS.GM",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS companyfacts",
+            "location": "매출총이익률 FY2022~FY2025 (USD)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0001506293.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "gross_margin_change_pp",
+          "note": "3년 총이익률 변화 ≤ -3.0%p → eroding / 변화 ≥ +1.0%p 또는 70% 이상을 -1.0%p 이내로 유지하면서 매출 성장 → evidenced / 그 밖 → unevidenced (사전 고정 · 대리지표)",
+          "summary": "매출·매출총이익(또는 매출원가) 연차값(companyfacts)",
+          "value": 4.28,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "매출총이익률 FY2022 75.79% → FY2025 80.07% (+4.28%p) → evidenced"
+    },
+    {
+      "claim_id": "PINS.NEWTHREAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-10",
+            "quote": "AI technologies are complex and rapidly evolving, and we face significant potential disruption from other companies, particularly as internet companies utilize AI to introduce new methods of search and discovery for consumers and AI reduces barriers to entry to compete with our products and services, as well as an evolving regulatory landscape.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12)",
+            "location": "Risk Factors",
+            "observed_date": "2026-10-10",
+            "quote": "Traditional search engines compete with new methods of search, particularly those powered by AI, and as a result traditional search engines may provide less traffic to our platform, which could negatively impact our business and results of operations.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "전년 위험요인 어떤 문장과도 단어 Jaccard < 0.5이고 경쟁 어휘를 포함한 문장",
+          "summary": "전년 대비 새로 추가된 위험요인 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "전년 대비 새로 추가된 경쟁 관련 위험 문장 2개: 「AI technologies are complex and rapidly evolving, and we face significant potential disruption from other companies, particularly as internet companies utilize AI to introduce new methods of search and discovery for consumers and AI reduces barriers to entry to compete with our products and services, as well as an evolving regulatory landscape.」 / 「Traditional search engines compete with new methods of search, particularly those powered by AI, and as a result traditional search engines may provide less traffic to our platform, which could negatively impact our business and results of operations.」"
+    },
+    {
+      "claim_id": "PINS.NOENF",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-K (filed 2026-02-12)",
+            "location": "전문",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000021/pins-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "enforcement_statements",
+          "note": "중요한 제재는 법적 절차(Item 103/8.A.7) 공시 대상이다. 위험요인의 가정문은 세지 않는다",
+          "summary": "연차보고서 전문 검색 — 확정적 제재·합의 진술 0건",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 연차보고서에 SEC 제재·합의(Wells notice, 동의 명령, 기소유예 등) 진술 없음, 3년 재작성 없음"
+    },
+    {
+      "claim_id": "PINS.PVP_MEASURE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS DEF 14A (2026-04-08, acc 0001506293-26-000058)",
+            "location": "ecd:CoSelectedMeasureName",
+            "observed_date": "2026-10-10",
+            "quote": "revenue",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "engine/ecd.py MEASURE_RULES 순서대로 키워드 분류(사전 고정)",
+          "summary": "PvP 표 ecd:CoSelectedMeasureName",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "회사 선정 지표 'revenue' → revenue_growth"
+    },
+    {
+      "claim_id": "PINS.PVP_TSR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS DEF 14A (2026-04-08, acc 0001506293-26-000058)",
+            "location": "ecd TSR (2025-12-31)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000058/pins-20260407.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "pvp_tsr_vs_peer",
+          "note": "같은 시점 $100 투자의 누적 가치 비율. 비교군은 회사가 고른 것",
+          "summary": "PvP 표 ecd:TotalShareholderRtnAmt / PeerGroupTotalShareholderRtnAmt",
+          "value": -0.675,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2025-12-31 누적 TSR 39.00 vs 비교군 120.00 → -67.5%"
+    },
+    {
+      "claim_id": "PINS.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1506293/000150629326000104/pins-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 9,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 9건, 해지 3건"
+    },
+    {
+      "claim_id": "PINS.SEC_COMMENT_LETTERS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "PINS EDGAR 제출 목록",
+            "location": "form=UPLOAD",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=1506293&type=UPLOAD&dateb=&owner=include&count=40"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "sec_comment_letters_3y",
+          "note": "등록신고서 검토·종결 서한 포함, 공개는 검토 종료 후 20일 이상 지연. 품질 판정 아님",
+          "summary": "EDGAR 제출 목록의 UPLOAD 건수",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2023-10-11~2026-10-10 SEC 의견서한(UPLOAD) 0건, 회사 답변(CORRESP) 0건"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.6667,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 22,
+    "n_primary_answered": 17,
+    "n_primary_required": 21,
+    "n_questions": 33,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 7,
+        "n_questions": 11,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "capital_allocation": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 1,
+        "unasked": 0,
+        "unknown": 1
+      },
+      "competitive_landscape": {
+        "answered": 2,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 2
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 9,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      }
+    },
+    "unexamined_lenses": []
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "PINS",
+  "findings": [
+    {
+      "claim_ids": [
+        "PINS.BUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인)"
+    },
+    {
+      "claim_ids": [
+        "PINS.SBC",
+        "PINS.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "PINS.DUAL_CLASS",
+        "PINS.CHAIR_SEPARATED",
+        "PINS.CEO_SUCCESSION_POLICY",
+        "PINS.INSIDER",
+        "PINS.CXO",
+        "PINS.LITIGATION",
+        "PINS.SAYONPAY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"
+    },
+    {
+      "claim_ids": [
+        "PINS.RESTATE",
+        "PINS.NT",
+        "PINS.AUDITOR",
+        "PINS.IMPAIR",
+        "PINS.ICFR"
+      ],
+      "effect": "neutral",
+      "lens": "accounting_quality",
+      "summary": "3년 내 재작성 공시(8-K 4.02·10-K/A) 없음 — little r은 미탐지 / 적신호 공시(NT·감사인 변경·중대 손상) 건수를 제출 목록에서 집계(원인 판단 없음) / 10-K Item 9A 경영진의 ICFR 결론 문장을 인용(판단 없음)"
+    },
+    {
+      "claim_ids": [
+        "PINS.NEWTHREAT"
+      ],
+      "effect": "neutral",
+      "lens": "competitive_landscape",
+      "summary": "위험요인 연도별 비교로 새 경쟁 위협 문장을 모음(판단 없음)"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "revision": 6,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "a21b9c14b4b0c4179cca6b57d5f4961df4436f0d9da2a2e55dbc46ade337132b",
+  "supersedes": "e932919b6010974d0710b3026b3fa1f08069632e8691712aed63ab519d7abe5e",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

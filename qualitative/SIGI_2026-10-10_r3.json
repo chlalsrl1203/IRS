@@ -1,0 +1,782 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": false,
+      "claim_ids": [
+        "SIGI.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": true,
+      "claim_ids": [
+        "SIGI.CEO_SUCCESSION_POLICY"
+      ],
+      "note": "",
+      "qid": "gov.ceo_succession_policy",
+      "status": "answered"
+    },
+    {
+      "answer": 0.0193,
+      "claim_ids": [
+        "SIGI.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0.003,
+      "claim_ids": [
+        "SIGI.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "adverse",
+      "claim_ids": [
+        "SIGI.RESERVE"
+      ],
+      "note": "",
+      "qid": "res.reserve_development",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "SIGI.COVER"
+      ],
+      "note": "표지 기준 — 우선주의 의결권은 별도로 보지 않았다",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "READ-SIGI-gov.key_person_no_succession"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.key_person_no_succession",
+      "status": "answered"
+    },
+    {
+      "answer": "opp_net_sell",
+      "claim_ids": [
+        "SIGI.INSIDER"
+      ],
+      "note": "",
+      "qid": "gov.insider_pattern",
+      "status": "answered"
+    },
+    {
+      "answer": "immaterial",
+      "claim_ids": [
+        "READ-SIGI-gov.material_litigation"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "gov.material_litigation",
+      "status": "answered"
+    },
+    {
+      "answer": "Q2 재해손실 5.6pt(합산비율 98.0% 중). 연간 노출·재보험 프로그램은 대조하지 않았다",
+      "claim_ids": [
+        "SIGI.Q2CAT"
+      ],
+      "note": "분기 사실만 1차 확인",
+      "qid": "cat.cat_exposure",
+      "status": "answered"
+    },
+    {
+      "answer": 0.972,
+      "claim_ids": [
+        "READ-SIGI-uw.combined_ratio_pct"
+      ],
+      "note": "3단계 독립 판독 2인 일치 · 인용은 원문 발췌와 글자 일치 확인",
+      "qid": "uw.combined_ratio_pct",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "SIGI.CXO"
+      ],
+      "note": "",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "answered"
+    },
+    {
+      "answer": 0.9842,
+      "claim_ids": [
+        "SIGI.SAYONPAY"
+      ],
+      "note": "",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "1_to_5pct",
+      "claim_ids": [
+        "SIGI.INSIDERGROUP"
+      ],
+      "note": "",
+      "qid": "gov.insider_group_ownership",
+      "status": "answered"
+    },
+    {
+      "answer": "other",
+      "claim_ids": [
+        "SIGI.PVP_MEASURE"
+      ],
+      "note": "",
+      "qid": "gov.pay_measure_category",
+      "status": "answered"
+    },
+    {
+      "answer": -0.2583,
+      "claim_ids": [
+        "SIGI.PVP_TSR"
+      ],
+      "note": "",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "answered"
+    },
+    {
+      "answer": 0,
+      "claim_ids": [
+        "SIGI.TRADING_PLANS"
+      ],
+      "note": "",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "answered"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "SIGI.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI DEF 14A (filed 2026-03-26, acc 0001104659-26-034953)",
+            "location": "Board Leadership Structure",
+            "observed_date": "2026-10-06",
+            "quote": "for Mr. Marchioni to serve as both CEO and Board Chairperson",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "CEO가 이사회 의장을 겸한다(선임 독립이사가 균형)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "CEO가 이사회 의장을 겸한다(선임 독립이사가 균형)"
+    },
+    {
+      "claim_id": "SIGI.CEO_SUCCESSION_POLICY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI DEF 14A (filed 2026-03-26, acc 0001104659-26-034953)",
+            "location": "Compensation Committee responsibilities",
+            "observed_date": "2026-10-06",
+            "quote": "review matters related to succession planning and professional development for executive officers",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "CEO를 명시하지 않고 '임원'으로 쓴다 — 약한 증거",
+          "summary": "보상 위원회가 임원 승계 계획을 검토한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "보상 위원회가 임원 승계 계획을 검토한다"
+    },
+    {
+      "claim_id": "SIGI.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-K (filed 2026-02-09, acc 0000230557-26-000006)",
+            "location": "ShareBasedCompensation FY2025 = 23,104,000 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 23,104,000 / fcf0 1,194,279,000",
+          "value": 0.0193,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 1.9%다"
+    },
+    {
+      "claim_id": "SIGI.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-K (filed 2026-02-09, acc 0000230557-26-000006)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "contradicts",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 60,875,000 -> FY2025 61,058,000",
+          "value": 0.003,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 +0.30%"
+    },
+    {
+      "claim_id": "SIGI.RESERVE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-K (filed 2026-02-09, acc 0000230557-26-000006)",
+            "location": "us-gaap:SupplementalInformationForPropertyCasualtyInsuranceUnderwritersPriorYearClaimsAndClaimsAdjustmentExpense FY2023~FY2025 (companyfacts)",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "prior_year_claims_expense_usd",
+          "note": "부호 해석(음수=유리)은 보험회계 관행이며 10-K MD&A 문장으로는 대조하지 않았다",
+          "summary": "전기 손해액 조정 FY2023 10M, FY2024 285M, FY2025 77M (음수 = 비용 감소 = 유리한 발전)",
+          "value": 77471000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3개 연도 준비금 발전: adverse(부호가 연도마다 갈리면 neutral)"
+    },
+    {
+      "claim_id": "SIGI.INSIDER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI Form 4 x22 (2025-10-06~2026-10-06)",
+            "location": "nonDerivativeTransaction, 거래코드 P/S, aff10b5One·각주 10b5-1",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=230557&type=4&dateb=&owner=include&count=100"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "discretionary_net_usd",
+          "note": "공개시장 P/S만, 10b5-1 표시(체크박스·각주) 제외, 재량 순거래액 절댓값이 $1,000,000 미만이면 기회적으로 보지 않는다(사전 고정·비검증). 파생증권 거래와 옵션행사(M)·세금원천(F)은 제외. 접수번호 목록은 reports/sec_events에 있다",
+          "summary": "Form 4 22건 집계 (재량 매수 $256,545 / 재량 매도 $1,782,543 / 10b5-1 매도 $0)",
+          "value": -1525998.23,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 12개월 공개시장 거래 5건: 재량 순 $-1,525,998, 10b5-1 정기 0건 → opp_net_sell"
+    },
+    {
+      "claim_id": "SIGI.CXO",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI submissions index",
+            "location": "filings.recent items 필드",
+            "observed_date": "2026-10-06",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://data.sec.gov/submissions/CIK0000230557.json"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "제출 목록이 24개월 창을 덮는지 확인했다. 본문에서 직책+이직 동사가 같은 문장에 있는 경우만 센다",
+          "summary": "24개월 8-K Item 5.02 5건 중 CEO/CFO 이직 문장 없음",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 24개월 CEO/CFO 이직 공시 8-K는 0건(5.02 전체 5건)"
+    },
+    {
+      "claim_id": "SIGI.LITIGATION",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-K (filed 2026-02-09, acc 0000230557-26-000006)",
+            "location": "Item 3. Legal Proceedings",
+            "observed_date": "2026-10-06",
+            "quote": "Item 3. Legal Proceedings. We are routinely engaged in legal proceedings incidental to our insurance operations that have inherently unpredictable outcomes and could have a material adverse effect on our consolidated results of operations or cash flows in particular quarterly or annual periods. For additional information regarding our legal risks, refer to Item 1A. \"Risk Factors.\" and Note 21. \"Litigation\" included in Item 8. \"Financial Statements and Supplementary Data.\" of this Form 10-K. As of December 31, 2025, we have no material pending legal proceedings that could have a material adverse effect on our consolidated financial condition, results of operations, or cash flows.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "",
+          "summary": "Item 3 Legal Proceedings 발췌",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "10-K Item 3 서술을 그대로 인용한다"
+    },
+    {
+      "claim_id": "SIGI.SAYONPAY",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 8-K (2026-04-30, acc 0000230557-26-000013)",
+            "location": "Item 5.07",
+            "observed_date": "2026-10-07",
+            "quote": "advisory basis, the 2025 compensation of the Company's named executive officers as disclosed in the Proxy Statement, as follows: For Against Abstain Broker Non-Votes 47,882,612 768,525",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000013/sigi-20260429.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "say_on_pay_support",
+          "note": "찬성/(찬성+반대), 기권·브로커 무투표 제외(사전 고정)",
+          "summary": "8-K Item 5.07 보수 승인 안건 찬반",
+          "value": 0.9842,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "2026-04-30 주총 보수 승인 투표 찬성 47,882,612 / 반대 768,525 → 찬성률 98.4%"
+    },
+    {
+      "claim_id": "SIGI.COVER",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-K (filed 2026-02-09, acc 0000230557-26-000006)",
+            "location": "Cover page (shares outstanding)",
+            "observed_date": "2026-10-07",
+            "quote": "o The aggregate market value of the voting company common stock held by non-affiliates of the registrant, based on the closing price on the Nasdaq Global Select Market, was $ 5,226,605,951 on June 30, 2025. As of January 30, 2026, the registrant had outstanding 60,081,960 shares of common stock.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "10-K 표지 구간에 보통주 클래스 B 이상이 없다(양식상 모든 클래스를 적어야 한다)",
+          "summary": "10-K 표지 발행주식수 문장",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "10-K 표지: 보통주 단일 클래스만 발행"
+    },
+    {
+      "claim_id": "READ-SIGI-gov.key_person_no_succession",
+      "evidence": [
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-03-26",
+            "location": "SIGI-3",
+            "observed_date": "2026-10-09",
+            "quote": "Reviews periodically with the CEO the plans for succession of Selective’s CEO, other executive officers, and other key employees",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "위원회가 CEO 승계 계획을 정기 검토",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "DEF 14A filed 2026-03-26",
+            "location": "SIGI-3",
+            "observed_date": "2026-10-09",
+            "quote": "Reviews periodically with the CEO the plans for succession of Selective’s CEO, other executive officers, and other key employees, including plans for succession in the event of an emergency",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "위원회가 CEO·경영진 승계계획을 정기 검토",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.key_person_no_succession = False (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-SIGI-gov.material_litigation",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2026-02-09",
+            "location": "SIGI-8",
+            "observed_date": "2026-10-09",
+            "quote": "We expect any potential ultimate liability for ordinary routine legal proceedings incidental to our insurance business will not be material to our consolidated financial condition after considering estimated loss provisions.",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "통상 소송 부채가 중대하지 않을 것이라 진술",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "gov.material_litigation = 'immaterial' (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "READ-SIGI-uw.combined_ratio_pct",
+      "evidence": [
+        {
+          "citation": {
+            "document": "10-K filed 2026-02-09",
+            "location": "SIGI-19",
+            "observed_date": "2026-10-09",
+            "quote": "Key Metrics: Combined ratio 97.2 % 103.0 (5.8) pts 96.5 % 6.5 pts",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "연결 GAAP 합산비율 97.2%",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "10-K filed 2026-02-09",
+            "location": "SIGI-21",
+            "observed_date": "2026-10-09",
+            "quote": "Dividends to policyholders ratio 0.1 0.1 — 0.2 (0.1) Combined ratio 97.2 103.0 (5.8) 96.5 6.5",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000006/sigi-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "독립 판독자 인용 · 원문 대조 통과",
+          "summary": "2025년 합산비율 97.2%(손해율 66.3+사업비율 30.8+배당비율 0.1)",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "uw.combined_ratio_pct = 0.972 (독립 판독 2인 일치)"
+    },
+    {
+      "claim_id": "SIGI.PVP_MEASURE",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI DEF 14A (2026-03-26, acc 0001104659-26-034953)",
+            "location": "ecd:CoSelectedMeasureName",
+            "observed_date": "2026-10-10",
+            "quote": "GAAP Comb- ined Ratio",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": null,
+          "note": "engine/ecd.py MEASURE_RULES 순서대로 키워드 분류(사전 고정)",
+          "summary": "PvP 표 ecd:CoSelectedMeasureName",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "회사 선정 지표 'GAAP Comb- ined Ratio' → other"
+    },
+    {
+      "claim_id": "SIGI.PVP_TSR",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI DEF 14A (2026-03-26, acc 0001104659-26-034953)",
+            "location": "ecd TSR (2025-12-31)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "pvp_tsr_vs_peer",
+          "note": "같은 시점 $100 투자의 누적 가치 비율. 비교군은 회사가 고른 것",
+          "summary": "PvP 표 ecd:TotalShareholderRtnAmt / PeerGroupTotalShareholderRtnAmt",
+          "value": -0.2583,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "2025-12-31 누적 TSR 134.47 vs 비교군 181.29 → -25.8%"
+    },
+    {
+      "claim_id": "SIGI.TRADING_PLANS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 10-Q 외 3건",
+            "location": "Item 408 (ecd)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000020/sigi-20260630.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "trading_plan_adoptions_12m",
+          "note": "채택은 10b5-1·비10b5-1 합계. 매도 신호인지 판단하지 않는다",
+          "summary": "ecd:TrdArrAdoptionDate 사실 수 집계",
+          "value": 0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "최근 12개월 정기보고서 4건의 Item 408: 매매계획 채택 0건, 해지 0건"
+    },
+    {
+      "claim_id": "SIGI.INSIDERGROUP",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI DEF 14A (filed 2026-03-26, acc 0001104659-26-034953)",
+            "location": "Security Ownership 표 — 합산 행",
+            "observed_date": "2026-10-10",
+            "quote": "ampson, Kate E. R. 1,447 * Scheid, John S. 30,057 * All directors and executive officers, as a group (17 persons) 490,429 1% *",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "insider_group_pct",
+          "note": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만",
+          "summary": "DEF 14A 지분표의 임원·이사 합산 행(v4.02 파서)",
+          "value": 1.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "위임장(2026-03-26) 기준 임원·이사 합산 지분 구간 1_to_5pct (1.0%)"
+    },
+    {
+      "claim_id": "SIGI.Q2CAT",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 8-K Ex.99.1 (2026 Q2 실적, 2026-07-23)",
+            "location": "Highlights",
+            "observed_date": "2026-10-10",
+            "quote": "Catastrophe losses were 5.6 points",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000018/q22026pressreleaseexh991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "neutral",
+          "metric": "cat_points_q2",
+          "note": "",
+          "summary": "재해손실",
+          "value": 5.6,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Q2 재해손실 5.6pt, 전기 신탁준비금 발전 없음"
+    },
+    {
+      "claim_id": "SIGI.UW",
+      "evidence": [
+        {
+          "citation": {
+            "document": "SIGI 8-K Ex.99.1 (2026 Q2 실적, 2026-07-23)",
+            "location": "Highlights",
+            "observed_date": "2026-10-10",
+            "quote": "The GAAP combined ratio was 98.0%, compared to 100.2% in the second quarter of 2025",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000018/q22026pressreleaseexh991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "combined_ratio_q2",
+          "note": "[논거 방향: strengthens] ",
+          "summary": "합산비율 개선",
+          "value": 0.98,
+          "verification": "VERIFIED_PRIMARY"
+        },
+        {
+          "citation": {
+            "document": "SIGI 8-K Ex.99.1 (2026 Q2 실적, 2026-07-23)",
+            "location": "Highlights",
+            "observed_date": "2026-10-10",
+            "quote": "NPW decreased 5% from a year ago",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/230557/000023055726000018/q22026pressreleaseexh991.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "[논거 방향: weakens] 반증조건 (1)은 NPW 역성장 추가 확대 — 이후 분기 데이터 필요",
+          "summary": "순보험료 감소",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Q2 합산비율 98.0%(전년 100.2%)로 개선, 순보험료(NPW) -5%"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 1.0,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 17,
+    "n_primary_answered": 14,
+    "n_primary_required": 14,
+    "n_questions": 17,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "catastrophe_risk": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 12,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "reserve_adequacy": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "underwriting_discipline": {
+        "answered": 1,
+        "n_questions": 1,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      }
+    },
+    "unexamined_lenses": []
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "SIGI",
+  "findings": [
+    {
+      "claim_ids": [
+        "SIGI.SBC",
+        "SIGI.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "SIGI.CHAIR_SEPARATED",
+        "SIGI.CEO_SUCCESSION_POLICY",
+        "SIGI.INSIDER",
+        "SIGI.CXO",
+        "SIGI.LITIGATION",
+        "SIGI.SAYONPAY"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인 / 내부자 공개시장 거래를 Form 4로 집계(규칙 적용, 좋고 나쁨은 판단하지 않음) / CEO/CFO 이직 공시 건수(8-K 5.02 문장 규칙, 사유·후임 적절성은 판단하지 않음) / 10-K Item 3 서술 인용(심각도는 판단하지 않음) / 주총 보수 승인(say-on-pay) 찬성률을 8-K 5.07에서 집계(좋고 나쁨은 판단하지 않음)"
+    },
+    {
+      "claim_ids": [
+        "SIGI.RESERVE"
+      ],
+      "effect": "neutral",
+      "lens": "reserve_adequacy",
+      "summary": "3개 연도 전기 손해액 조정 부호를 확인"
+    },
+    {
+      "claim_ids": [
+        "SIGI.Q2CAT"
+      ],
+      "effect": "neutral",
+      "lens": "catastrophe_risk",
+      "summary": "Q2 재해손실 5.6pt"
+    },
+    {
+      "claim_ids": [
+        "SIGI.UW"
+      ],
+      "effect": "neutral",
+      "lens": "underwriting_discipline",
+      "summary": "합산비율은 개선(98.0%), 순보험료는 -5% — 수익성 방어와 규모 축소가 같이 나타난다"
+    }
+  ],
+  "inversion": [
+    "순보험료 역성장이 확대되며 규모의 경제와 투자수익 기반이 줄어드는 시나리오(반증조건 (1))"
+  ],
+  "lens_set": "insurance",
+  "price_at_analysis": null,
+  "revision": 3,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "81dc341ab2f8ea67fa704d5ddcc13bdd8b313bff7c2a7ada86c2d19131319c71",
+  "supersedes": "659a0239435566c32f0688ebe03f38cb92df064d1709517424f442dc40c68de5",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}

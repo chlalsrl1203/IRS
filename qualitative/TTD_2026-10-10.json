@@ -1,0 +1,464 @@
+{
+  "affects_official_judgment": false,
+  "answers": [
+    {
+      "answer": true,
+      "claim_ids": [
+        "TTD.DUAL_CLASS"
+      ],
+      "note": "",
+      "qid": "gov.dual_class",
+      "status": "answered"
+    },
+    {
+      "answer": false,
+      "claim_ids": [
+        "TTD.CHAIR_SEPARATED"
+      ],
+      "note": "",
+      "qid": "gov.chair_separated",
+      "status": "answered"
+    },
+    {
+      "answer": 0.6166,
+      "claim_ids": [
+        "TTD.SBC"
+      ],
+      "note": "",
+      "qid": "dil.sbc_to_fcf_pct",
+      "status": "answered"
+    },
+    {
+      "answer": -0.0127,
+      "claim_ids": [
+        "TTD.SHARES"
+      ],
+      "note": "",
+      "qid": "dil.net_share_change_3y_pct",
+      "status": "answered"
+    },
+    {
+      "answer": "reduces_share_count",
+      "claim_ids": [
+        "TTD.BUYBACK"
+      ],
+      "note": "",
+      "qid": "cap.buyback_effect",
+      "status": "answered"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.ceo_succession_policy",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.key_person_no_succession",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.insider_pattern",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.cxo_turnover_24m",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.material_litigation",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.say_on_pay_support_pct",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.insider_group_ownership",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.pay_measure_category",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.pvp_tsr_vs_peer",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "gov.trading_plan_adoptions_12m",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.ma_discipline",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.dividend_predictable",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cap.debt_funded_buyback",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.restated_down_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.unfaithful_disclosure",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.guidance_miss_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.promise_kept_record",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.voluntary_bad_news",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_one_time_items",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.icfr_conclusion",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.late_filing_nt_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.auditor_change_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.material_impairment_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "acc.sec_comment_letters_3y",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.new_threat",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.share_trend",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.pricing_power",
+      "status": "unknown"
+    },
+    {
+      "answer": null,
+      "claim_ids": [],
+      "note": "이번 회차에서 1차 출처를 조회하지 않았다",
+      "qid": "cmp.lifecycle_shakeout_or_decline",
+      "status": "unknown"
+    }
+  ],
+  "as_of": "2026-10-10",
+  "claims": [
+    {
+      "claim_id": "TTD.DUAL_CLASS",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD DEF 14A (filed 2026-09-18, acc 0001671933-26-000102)",
+            "location": "Special meeting proxy — voting",
+            "observed_date": "2026-10-10",
+            "quote": "each share of Class B common stock is entitled to ten votes on each proposal",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "특별총회 위임장 문장이다. 경제적 권리 동일 여부는 직접 대조하지 않았다",
+          "summary": "Class B 주식이 주당 10표를 갖는다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "Class B 주식이 주당 10표를 갖는다"
+    },
+    {
+      "claim_id": "TTD.CHAIR_SEPARATED",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD DEF 14A (filed 2026-09-18, acc 0001671933-26-000102)",
+            "location": "Special meeting proxy — signature",
+            "observed_date": "2026-10-10",
+            "quote": "Jeff T. Green Chairman and Chief Executive Officer",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000102/a2026specialmeetingdefinit.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": null,
+          "note": "",
+          "summary": "Jeff Green이 의장과 CEO를 겸한다",
+          "value": null,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "MEDIUM",
+      "statement": "Jeff Green이 의장과 CEO를 겸한다"
+    },
+    {
+      "claim_id": "TTD.SBC",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "ShareBasedCompensation FY2025 = 490,627,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "SBC/FCF",
+          "note": "분모 fcf0는 IRS ledger 값. 분자는 companyfacts에서 직접 읽었고 ledger의 sbc_to_fcf_pct 역산값과 0.5% 안에서 일치하는 연도다",
+          "summary": "FY2025 SBC 490,627,000 / fcf0 795,710,000",
+          "value": 0.6166,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "SBC가 FCF의 61.7%다"
+    },
+    {
+      "claim_id": "TTD.SHARES",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "WeightedAverageNumberOfDilutedSharesOutstanding FY2022·FY2025 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "net_share_change_3y",
+          "note": "분할 정규화: 불필요. 희석 가중평균은 주가에 따라 변하는 희석 증권 효과를 포함한다",
+          "summary": "가중평균 희석주식수 FY2022 499,925,000 -> FY2025 493,551,000",
+          "value": -0.0127,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "최근 3년 희석주식수 변화 -1.27%"
+    },
+    {
+      "claim_id": "TTD.BUYBACK",
+      "evidence": [
+        {
+          "citation": {
+            "document": "TTD 10-K (filed 2026-02-27, acc 0001671933-26-000014)",
+            "location": "PaymentsForRepurchaseOfCommonStock FY2025 = 1,380,422,000 (companyfacts)",
+            "observed_date": "2026-10-10",
+            "quote": "",
+            "source_key": "sec_edgar",
+            "url": "https://www.sec.gov/Archives/edgar/data/1671933/000167193326000014/ttd-20251231.htm"
+          },
+          "confidence": "HIGH",
+          "direction": "supports",
+          "metric": "buyback_spend",
+          "note": "분류 규칙: 변화 ≥ +1% 증가, ≤ -1% 감소, 그 안쪽은 상쇄에 그침. 임계값은 사전 고정이며 검증된 값이 아니다. 매입 자금의 출처(부채 여부)는 확인하지 않았다",
+          "summary": "FY2025 자사주 매입 1,380,422,000; 3년 희석주식수 -1.27%",
+          "value": 1380422000.0,
+          "verification": "VERIFIED_PRIMARY"
+        }
+      ],
+      "materiality": "HIGH",
+      "statement": "자사주 매입 지출이 있으나 3년 주식수 변화는 -1.27%다 → reduces_share_count"
+    }
+  ],
+  "confidence_recommendation": null,
+  "coverage": {
+    "answered_fraction": 0.1515,
+    "gaps": [],
+    "inversion_complete": true,
+    "material_without_primary": [],
+    "n_answered": 5,
+    "n_primary_answered": 5,
+    "n_primary_required": 21,
+    "n_questions": 33,
+    "note": "answered_fraction이 낮다는 것은 '문제 없음'이 아니라 '확인 못함'이다.",
+    "per_lens": {
+      "accounting_quality": {
+        "answered": 0,
+        "n_questions": 11,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 11
+      },
+      "capital_allocation": {
+        "answered": 1,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 3
+      },
+      "competitive_landscape": {
+        "answered": 0,
+        "n_questions": 4,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 4
+      },
+      "dilution": {
+        "answered": 2,
+        "n_questions": 2,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 0
+      },
+      "governance": {
+        "answered": 2,
+        "n_questions": 12,
+        "not_applicable": 0,
+        "unasked": 0,
+        "unknown": 10
+      }
+    },
+    "unexamined_lenses": [
+      "accounting_quality",
+      "competitive_landscape"
+    ]
+  },
+  "currency": "USD",
+  "disqualifiers": [],
+  "entity": "TTD",
+  "findings": [
+    {
+      "claim_ids": [
+        "TTD.BUYBACK"
+      ],
+      "effect": "neutral",
+      "lens": "capital_allocation",
+      "summary": "자사주 매입 지출과 3년 주식수 변화를 결합(자금 출처·M&A 규율은 미확인)"
+    },
+    {
+      "claim_ids": [
+        "TTD.SBC",
+        "TTD.SHARES"
+      ],
+      "effect": "neutral",
+      "lens": "dilution",
+      "summary": "SBC/FCF와 3년 희석주식수를 SEC 원자료로 확인(방향 판단은 수치 참조)"
+    },
+    {
+      "claim_ids": [
+        "TTD.DUAL_CLASS",
+        "TTD.CHAIR_SEPARATED"
+      ],
+      "effect": "neutral",
+      "lens": "governance",
+      "summary": "의결권 구조·의장 분리·승계 감독만 확인. 내부자·소송은 미확인"
+    }
+  ],
+  "inversion": [
+    "이번 회차는 지배구조·희석 사실 확인에 한정했다 — 사업 붕괴 시나리오는 미조사"
+  ],
+  "lens_set": "standard",
+  "price_at_analysis": null,
+  "schema": "QSI_v1",
+  "sealed_core_hash": "9bd031e9e97cc461c73b1357129963d8802b4af6baa5bbff0237f68483d5d506",
+  "validation_status": {
+    "qualitative_input": "IMPLEMENTED_NOT_VALIDATED — 질문 은행과 형식 계약은 테스트로 고정돼 있으나, 이 입력이 더 나은 판단이나 투자 성과로 이어진다는 증거는 0건이다. 봉인은 사후 수정을 막을 뿐 평가가 옳다는 보증이 아니다.",
+    "question_bank": "ECONOMICALLY_SUPPORTED — 축은 이 저장소가 33종목에 실제로 적용한 5축이다. 개별 질문은 그 조사에서 반복적으로 물었던 것을 고정한 시작점이며 검증된 체크리스트가 아니다."
+  }
+}
