@@ -1,0 +1,26 @@
+{
+ "date": "2026-10-10",
+ "official": false,
+ "rows": [
+  {
+   "ticker": "BLDR",
+   "status": "OK",
+   "path": "ledger_auto/BLDR_2026-10-10.json",
+   "gap": -0.04080666811519637,
+   "grade": "C",
+   "judgment": "적정가/경계선",
+   "market_cap_source": "public_float 근사(낡을 수 있음)",
+   "screen_gap": 0.06998768401920451
+  },
+  {
+   "ticker": "INTU",
+   "status": "OK",
+   "path": "ledger_auto/INTU_2026-10-10.json",
+   "gap": 0.063033105964754,
+   "grade": "B",
+   "judgment": "저평가 가능성",
+   "market_cap_source": "public_float 근사(낡을 수 있음)",
+   "screen_gap": 0.11397470559017783
+  }
+ ]
+}

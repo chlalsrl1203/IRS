@@ -1,0 +1,52 @@
+name: auto-analysis
+
+# v4.03 - 규칙 기반 자동 정식분석(engine/auto_analysis.py). Claude·API 비용 0.
+# 스크리닝과 분리해 평일 매일 돈다. 하루 최대 10종목, 30일 내 분석한 종목은 건너뛰므로
+# 매일 새 종목만 처리된다. 결과는 ledger_auto/에만 저장(공식 ledger와 격리).
+# 대상은 reports/research_queue.json(주간 스크리닝이 갱신)의 미분석·검증범위 안 종목이다.
+
+on:
+  schedule:
+    - cron: "30 22 * * 0-4"   # 일~목 22:30 UTC = 월~금 07:30 KST
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "분석할 종목 수(기본 10)"
+        required: false
+        default: ""
+
+permissions:
+  issues: write
+  contents: write
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: install deps (게시 단계 전용)
+        run: pip install requests
+      - name: auto analysis (rule-based, unofficial)
+        env:
+          SEC_USER_AGENT: "IRS Research chlalsrl1203@gmail.com"
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          IRS_AUTO_LIMIT: ${{ github.event.inputs.limit }}
+        run: python3 scripts/auto_analysis_ci.py --post
+      - name: commit results
+        if: always()
+        run: |
+          git config user.name "irs-auto-analysis[bot]"
+          git config user.email "irs-auto-analysis-bot@users.noreply.github.com"
+          git add ledger_auto/ reports/auto_analysis/ 2>/dev/null || true
+          if git diff --cached --quiet; then
+            echo "새 결과 없음"
+          else
+            git commit -m "auto-analysis: $(date -u +%Y-%m-%d) 규칙 기반 자동 정식분석"
+            git pull --rebase origin ${{ github.ref_name }} && git push
+          fi
