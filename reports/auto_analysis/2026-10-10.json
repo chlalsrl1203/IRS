@@ -1,5 +1,26 @@
 {
  "date": "2026-10-10",
  "official": false,
- "rows": []
+ "rows": [
+  {
+   "ticker": "FOUR",
+   "status": "OK",
+   "path": "ledger_auto/FOUR_2026-10-10.json",
+   "gap": 0.23110836029052712,
+   "grade": "S",
+   "judgment": "저평가 가능성",
+   "market_cap_source": "public_float 근사(낡을 수 있음)",
+   "screen_gap": 0.35496468155653693
+  },
+  {
+   "ticker": "GM",
+   "status": "MARKET_CAP_SUSPECT",
+   "path": "ledger_auto/GM_2026-10-10.json",
+   "gap": 0.23510406861663025,
+   "grade": "S",
+   "judgment": "저평가 가능성",
+   "market_cap_source": "public_float 근사(낡을 수 있음)",
+   "screen_gap": 0.27461668330941313
+  }
+ ]
 }

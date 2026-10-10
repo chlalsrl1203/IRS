@@ -1,1 +1,42 @@
-{}
+{
+ "PR": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "2023년 매출 YoY +46.4% > 30% — 3년 창 안 단계상승 (M&A와 진짜 고성장을 코드가 구분 못 하고 3년 창은 override 불가)"
+ },
+ "OWL": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "최근 5개년 중 영업이익 보고가 4년 미만 — 금융·보험·REIT 유형으로 추정"
+ },
+ "HALO": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "2025년 매출 YoY +37.6% > 30% — 3년 창 안 단계상승 (M&A와 진짜 고성장을 코드가 구분 못 하고 3년 창은 override 불가)"
+ },
+ "PLMR": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "최근 5개년 중 영업이익 보고가 4년 미만 — 금융·보험·REIT 유형으로 추정"
+ },
+ "MELI": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "2024년 매출 YoY +44.3% > 30% — 3년 창 안 단계상승 (M&A와 진짜 고성장을 코드가 구분 못 하고 3년 창은 override 불가)"
+ },
+ "DVN": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "최근 5개년 중 영업이익 보고가 4년 미만 — 금융·보험·REIT 유형으로 추정"
+ },
+ "KNSL": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "최근 5개년 중 영업이익 보고가 4년 미만 — 금융·보험·REIT 유형으로 추정"
+ },
+ "GMED": {
+  "date": "2026-10-10",
+  "category": "FRAMEWORK_MISMATCH",
+  "reason": "2023년 매출 YoY +53.3% > 30% — 3년 창 안 단계상승 (M&A와 진짜 고성장을 코드가 구분 못 하고 3년 창은 override 불가)"
+ }
+}
