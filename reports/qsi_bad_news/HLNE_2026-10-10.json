@@ -1,0 +1,129 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001433642",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 16,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0001433642-23-000096",
+      "filed": "2023-11-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-24-000007",
+      "filed": "2024-02-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-24-000022",
+      "filed": "2024-03-07",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001433642-24-000061",
+      "filed": "2024-05-23",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-24-000082",
+      "filed": "2024-08-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-24-000113",
+      "filed": "2024-11-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-25-000007",
+      "filed": "2025-02-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-25-000023",
+      "filed": "2025-02-12",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001433642-25-000046",
+      "filed": "2025-05-29",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-25-000069",
+      "filed": "2025-08-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-25-000087",
+      "filed": "2025-09-04",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001433642-25-000114",
+      "filed": "2025-11-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-26-000004",
+      "filed": "2026-02-03",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-26-000009",
+      "filed": "2026-02-20",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001433642-26-000016",
+      "filed": "2026-05-21",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001433642-26-000039",
+      "filed": "2026-08-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 16건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "HLNE"
+}

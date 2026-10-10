@@ -1,0 +1,274 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001852131",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 20,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0000950103-23-015351",
+      "filed": "2023-10-25",
+      "guidance": [
+        {
+          "excerpt": "profile, and we are excited to pursue the market opportunities ahead.” FY2024 Annual Guidance Raised Mid-Point of FY24 Revenue Range and Raised FY24 Adjusted EBITDA Range • Revenue: $2.3 billion to $2.4 billion",
+          "fy": 2024,
+          "high": 2400000000.0,
+          "kind": "range",
+          "low": 2300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000095010323015351/dp201772_ex9901.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950103-23-015352",
+      "filed": "2023-10-25",
+      "guidance": [],
+      "items": "7.01,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000950103-23-017622",
+      "filed": "2023-12-18",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000950103-24-001501",
+      "filed": "2024-01-31",
+      "guidance": [
+        {
+          "excerpt": "are well positioned as the global leader in trackers, and we’re just getting started.” Raised FY2024 Annual Guidance • Revenue: $2.425 billion to $2.475 billion",
+          "fy": 2024,
+          "high": 2475000000.0,
+          "kind": "range",
+          "low": 2425000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000095010324001501/dp206047_ex9901.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950103-24-003920",
+      "filed": "2024-03-18",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001628280-24-023261",
+      "filed": "2024-05-14",
+      "guidance": [
+        {
+          "excerpt": "erating its position as the number one source of new power generation in the U.S. and abroad.” FY2025 Annual Guidance • Revenue: $2.8 billion to $2.9 billion",
+          "fy": 2025,
+          "high": 2900000000.0,
+          "kind": "range",
+          "low": 2800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000162828024023261/ex991_q424.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000950103-24-008565",
+      "filed": "2024-06-20",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001852131-24-000010",
+      "filed": "2024-08-01",
+      "guidance": [
+        {
+          "excerpt": "quidity of over $1.4 billion.” FY2025 Annual Outlook Nextracker reaffirmed its full-year fiscal year 2025 outlook: FY25 Outlook Revenue $2.8 billion to $2.9 billion",
+          "fy": 2025,
+          "high": 2900000000.0,
+          "kind": "range",
+          "low": 2800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213124000010/ex991_q125.htm"
+        }
+      ],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-24-000022",
+      "filed": "2024-10-30",
+      "guidance": [
+        {
+          "excerpt": "tal cash and cash equivalents, bringing our total liquidity to over $1.5 billion.” FY2025 Annual Outlook Reaffirms FY25 revenue outlook and raises FY25 profit outlook Updated Outlook Previous Outlook Revenue $2.8 to $2.9 billion",
+          "fy": 2025,
+          "high": 2900000000.0,
+          "kind": "range",
+          "low": 2800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213124000022/ex991_q225.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-25-000003",
+      "filed": "2025-01-28",
+      "guidance": [
+        {
+          "excerpt": "year-to-date, ending the quarter with over $693 million in cash and equivalents.” FY2025 Annual Outlook Reaffirms FY25 revenue outlook and raises FY25 profit outlook Updated Outlook Previous Outlook Revenue $2.8 to $2.9 billion",
+          "fy": 2025,
+          "high": 2900000000.0,
+          "kind": "range",
+          "low": 2800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000003/ex991_q325.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-25-000014",
+      "filed": "2025-02-19",
+      "guidance": [],
+      "items": "1.01,2.03,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001852131-25-000017",
+      "filed": "2025-05-14",
+      "guidance": [
+        {
+          "excerpt": "nitiatives to expand our platform to better serve our customers and extend our market leadership,” said Boynton. FY2026 Annual Outlook Revenue $3.2 to $3.4 billion",
+          "fy": 2026,
+          "high": 3400000000.0,
+          "kind": "range",
+          "low": 3200000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000017/ex991_q425.htm"
+        }
+      ],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-25-000047",
+      "filed": "2025-07-29",
+      "guidance": [
+        {
+          "excerpt": "rscores the strength of our business model and ability to deliver profitable growth.” FY2026 Annual Outlook Raised FY26 revenue and profitability ranges Updated Outlook Previous Outlook Revenue $3.2 to $3.45 billion",
+          "fy": 2026,
+          "high": 3450000000.0,
+          "kind": "range",
+          "low": 3200000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000047/ex991_q126.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-25-000061",
+      "filed": "2025-10-23",
+      "guidance": [
+        {
+          "excerpt": "Markets Day on November 12, where we will share more about the opportunities ahead.” FY2026 Annual Outlook Raised FY26 revenue and profitability ranges Updated Outlook Previous Outlook Revenue $3.275 to $3.475 billion",
+          "fy": 2026,
+          "high": 3475000000.0,
+          "kind": "range",
+          "low": 3275000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213125000061/ex991_q226.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-25-000069",
+      "filed": "2025-11-12",
+      "guidance": [],
+      "items": "5.03,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001852131-26-000003",
+      "filed": "2026-01-27",
+      "guidance": [
+        {
+          "excerpt": "be no assurance that any shares will be purchased under the share repurchase program. FY2026 Annual Outlook Raised FY26 revenue and profitability ranges Updated Outlook Previous Outlook Revenue $3.425 to $3.500 billion",
+          "fy": 2026,
+          "high": 3500000000.0,
+          "kind": "range",
+          "low": 3425000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000003/ex991_q326.htm"
+        }
+      ],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-26-000014",
+      "filed": "2026-05-12",
+      "guidance": [
+        {
+          "excerpt": "intaining a strong balance sheet and delivering consistent, long-term shareholder value.” FY2027 Annual Outlook Updated Outlook Previous Outlook Revenue $3.8 to $4.1 billion",
+          "fy": 2027,
+          "high": 4099999999.9999995,
+          "kind": "range",
+          "low": 3800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000014/ex991_q426.htm"
+        }
+      ],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001852131-26-000020",
+      "filed": "2026-05-28",
+      "guidance": [
+        {
+          "excerpt": "ts fiscal year 2027 outlook, which assumes the successful closing of the transaction. Nextpower now expects fiscal 2027 revenue of approximately $4.0 billion to $4.4 billion",
+          "fy": 2027,
+          "high": 4400000000.0,
+          "kind": "range",
+          "low": 4000000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000020/projectpreviewpressrelease.htm"
+        }
+      ],
+      "items": "3.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001852131-26-000026",
+      "filed": "2026-06-22",
+      "guidance": [],
+      "items": "3.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001852131-26-000045",
+      "filed": "2026-07-30",
+      "guidance": [
+        {
+          "excerpt": "our core business, deepen customer relationships, and drive long-term profitable growth.” FY2027 Annual Outlook Updated Outlook Previous Outlook Revenue $4.1 to $4.4 billion",
+          "fy": 2027,
+          "high": 4400000000.0,
+          "kind": "range",
+          "low": 4099999999.9999995,
+          "url": "https://www.sec.gov/Archives/edgar/data/1852131/000185213126000045/ex991_q127.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "창 안에서 연간 매출 가이던스 하향이 없었다 — 나쁜 소식이 없었을 수 있어 '선제 공시 이력 없음'으로 단정하지 않는다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "NXT"
+}

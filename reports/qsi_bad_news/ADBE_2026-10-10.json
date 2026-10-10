@@ -1,0 +1,203 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000796343",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 15,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0000796343-23-000252",
+      "filed": "2023-12-13",
+      "guidance": [
+        {
+          "excerpt": "ued in December at new rates for the next fiscal year. The following table summarizes Adobe’s fiscal year 2024 targets: Total revenue $21.30 billion to $21.50 billion",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634323000252/adbeex991q423.htm"
+        }
+      ],
+      "items": "2.02,5.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-23-000254",
+      "filed": "2023-12-18",
+      "guidance": [],
+      "items": "1.01,1.02,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000796343-24-000057",
+      "filed": "2024-03-14",
+      "guidance": [],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-24-000140",
+      "filed": "2024-06-13",
+      "guidance": [
+        {
+          "excerpt": "GAAP: $3.45 to $3.50 Non-GAAP: $4.50 to $4.55 The following table summarizes Adobe’s updated fiscal year 2024 targets: Total revenue $21.40 billion to $21.50 billion",
+          "fy": 2024,
+          "high": 21500000000.0,
+          "kind": "range",
+          "low": 21400000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000140/adbeex991q224.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-24-000200",
+      "filed": "2024-09-12",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-24-000250",
+      "filed": "2024-12-11",
+      "guidance": [
+        {
+          "excerpt": "ued move to subscriptions from perpetual offerings. The following table summarizes Adobe’s fiscal year 2025 targets 1 : Total revenue $23.30 billion to $23.55 billion",
+          "fy": 2025,
+          "high": 23550000000.0,
+          "kind": "range",
+          "low": 23300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634324000250/adbeex991q424.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-25-000052",
+      "filed": "2025-03-12",
+      "guidance": [
+        {
+          "excerpt": "25. The following table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions 2 : Total revenue $23.30 billion to $23.55 billion",
+          "fy": 2025,
+          "high": 23550000000.0,
+          "kind": "range",
+          "low": 23300000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000052/adbeex991q125.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-25-000064",
+      "filed": "2025-06-12",
+      "guidance": [
+        {
+          "excerpt": "following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions 2 : Total revenue $23.50 billion to $23.60 billion",
+          "fy": 2025,
+          "high": 23600000000.0,
+          "kind": "range",
+          "low": 23500000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000064/adbeex991q225.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-25-000102",
+      "filed": "2025-09-11",
+      "guidance": [
+        {
+          "excerpt": "following updated table summarizes Adobe’s fiscal year 2025 targets, which assumes current macroeconomic conditions 2 : Total revenue $23.65 billion to $23.70 billion",
+          "fy": 2025,
+          "high": 23700000000.0,
+          "kind": "range",
+          "low": 23650000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000102/adbeex991q325.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-25-000135",
+      "filed": "2025-12-10",
+      "guidance": [
+        {
+          "excerpt": "regulatory approvals and other customary closing conditions. The following table summarizes Adobe’s FY2026 targets 1 : Total revenue $25.90 billion to $26.10 billion",
+          "fy": 2026,
+          "high": 26100000000.0,
+          "kind": "range",
+          "low": 25900000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634325000135/adbeex991q425.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-26-000048",
+      "filed": "2026-03-12",
+      "guidance": [],
+      "items": "2.02,5.02,7.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-26-000101",
+      "filed": "2026-04-21",
+      "guidance": [],
+      "items": "5.02,5.07,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000796343-26-000109",
+      "filed": "2026-06-11",
+      "guidance": [
+        {
+          "excerpt": "ed share count of ~395 million for third quarter FY2026. The following table summarizes Adobe’s updated FY2026 targets: Total revenue $26.50 billion to $26.60 billion",
+          "fy": 2026,
+          "high": 26600000000.0,
+          "kind": "range",
+          "low": 26500000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000109/adbeex991q226.htm"
+        }
+      ],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000796343-26-000144",
+      "filed": "2026-09-08",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000796343-26-000147",
+      "filed": "2026-09-10",
+      "guidance": [
+        {
+          "excerpt": "d share count of ~389 million for fourth quarter FY2026. The following table summarizes Adobe’s updated FY2026 targets: Total revenue $26.576 billion to $26.626 billion",
+          "fy": 2026,
+          "high": 26626000000.0,
+          "kind": "range",
+          "low": 26576000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/796343/000079634326000147/adbeex991q326.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "창 안에서 연간 매출 가이던스 하향이 없었다 — 나쁜 소식이 없었을 수 있어 '선제 공시 이력 없음'으로 단정하지 않는다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "ADBE"
+}

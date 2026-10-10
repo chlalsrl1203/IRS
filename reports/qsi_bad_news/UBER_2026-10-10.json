@@ -1,0 +1,192 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001543151",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 25,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0001552781-23-000420",
+      "filed": "2023-11-03",
+      "guidance": [],
+      "items": "5.03,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-23-000036",
+      "filed": "2023-11-07",
+      "guidance": [],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-23-000469",
+      "filed": "2023-11-24",
+      "guidance": [],
+      "items": "1.01,2.03,3.02,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-24-000008",
+      "filed": "2024-02-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-24-000039",
+      "filed": "2024-02-14",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-24-000017",
+      "filed": "2024-05-08",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-24-000318",
+      "filed": "2024-05-14",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001552781-24-000415",
+      "filed": "2024-08-02",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-24-000024",
+      "filed": "2024-08-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-24-000524",
+      "filed": "2024-09-09",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-24-000033",
+      "filed": "2024-10-31",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001543151-25-000004",
+      "filed": "2025-02-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-25-000160",
+      "filed": "2025-05-06",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-25-000012",
+      "filed": "2025-05-07",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-25-000191",
+      "filed": "2025-05-20",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-25-000020",
+      "filed": "2025-08-06",
+      "guidance": [],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-25-000287",
+      "filed": "2025-09-11",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-25-000030",
+      "filed": "2025-11-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001543151-26-000005",
+      "filed": "2026-01-12",
+      "guidance": [],
+      "items": "8.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-26-000011",
+      "filed": "2026-02-04",
+      "guidance": [],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-26-000043",
+      "filed": "2026-02-09",
+      "guidance": [],
+      "items": "7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-26-000019",
+      "filed": "2026-05-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-26-000382",
+      "filed": "2026-07-16",
+      "guidance": [],
+      "items": "1.01,2.03,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001543151-26-000027",
+      "filed": "2026-08-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001552781-26-000486",
+      "filed": "2026-09-15",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 25건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "UBER"
+}

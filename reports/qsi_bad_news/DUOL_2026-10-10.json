@@ -1,0 +1,251 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001562088",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 18,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0001562088-23-000219",
+      "filed": "2023-11-08",
+      "guidance": [
+        {
+          "excerpt": "full year 2023. (in millions) Q4 2023 FY 2023 Bookings $167 - $170 $598 - $601 YoY Bookings Growth 32% - 35% 40% - 40% Revenues $145 - $148",
+          "fy": 2023,
+          "high": 528000000.0,
+          "kind": "range",
+          "low": 525000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208823000219/q3fy23shareholderletter.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-24-000048",
+      "filed": "2024-02-28",
+      "guidance": [
+        {
+          "excerpt": "December 31, 2024. (in millions) Q1 24 FY 2024 Bookings $187 - $190 $790 - $802 YoY Bookings Growth 34% - 36% 27% - 29% Revenues $164 - $167 $71",
+          "fy": 2024,
+          "high": 729500000.0,
+          "kind": "range",
+          "low": 717500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000048/q4fy23shareholderletter.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-24-000110",
+      "filed": "2024-05-08",
+      "guidance": [
+        {
+          "excerpt": "1, 2024. (in millions) Q2 2024 FY 2024 Bookings $179.0 - $181.5 $808.5 - $817.5 YoY Bookings Growth 30% - 32% 30% - 31% Revenues $175.0 - $177.5",
+          "fy": 2024,
+          "high": 735500000.0,
+          "kind": "range",
+          "low": 726500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000110/q1fy24shareholderletter.htm"
+        }
+      ],
+      "items": "2.02,5.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-24-000117",
+      "filed": "2024-05-10",
+      "guidance": [
+        {
+          "excerpt": "1, 2024. (in millions) Q2 2024 FY 2024 Bookings $179.0 - $181.5 $808.5 - $817.5 YoY Bookings Growth 30% - 32% 30% - 31% Revenues $175.0 - $177.5",
+          "fy": 2024,
+          "high": 735500000.0,
+          "kind": "range",
+          "low": 726500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000117/q1fy24shareholderletter1.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001562088-24-000203",
+      "filed": "2024-08-07",
+      "guidance": [
+        {
+          "excerpt": "(in millions) Q3 2024 FY 2024 Bookings $194.5 - $197.5 $820.5 - $827.5 YoY Bookings Growth 26.6% - 28.6% 31.9% - 33.0% Revenues $186.7 - $189.7",
+          "fy": 2024,
+          "high": 738300000.0,
+          "kind": "range",
+          "low": 731300000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000203/q2fy24duolingo06-30x24shar.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-24-000248",
+      "filed": "2024-11-06",
+      "guidance": [
+        {
+          "excerpt": "(in millions) Q4 2024 FY 2024 Bookings $244.5 - $247.5 $843.5 - $846.5 YoY Bookings Growth 28.0% - 29.6% 35.6% - 36.1% Revenues $202.5 - $205.5",
+          "fy": 2024,
+          "high": 744000000.0,
+          "kind": "range",
+          "low": 741000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208824000248/q3fy24duolingo09-30x24shar.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-24-000276",
+      "filed": "2024-12-09",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001562088-25-000039",
+      "filed": "2025-02-27",
+      "guidance": [
+        {
+          "excerpt": "025. (in millions) Q1 2025 FY 2025 Bookings $252 - $255 $1,082 - $1,098 YoY Bookings Growth 27.6% - 29.2% 24.3% - 26.1% Revenues $220.5 - $223.5",
+          "fy": 2025,
+          "high": 978500000.0,
+          "kind": "range",
+          "low": 962500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208825000039/q4fy24duolingo12-31x24shar.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-25-000098",
+      "filed": "2025-05-01",
+      "guidance": [
+        {
+          "excerpt": "millions) Q2 2025 FY 2025 Bookings $243.5 - $246.5 $1,117.5 - $1,126.5 YoY Bookings Growth 28.1% - 29.7% 28.4% - 29.4% Revenues $238.5 - $2",
+          "fy": 2025,
+          "high": 996000000.0,
+          "kind": "range",
+          "low": 987000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208825000098/q1fy25duolingo3-31x25share.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001562088-25-000165",
+      "filed": "2025-08-06",
+      "guidance": [
+        {
+          "excerpt": "(in millions) Q3 2025 FY 2025 Bookings $268.5 - $272.5 $1,149 - $1,157 YoY Bookings Growth 27.0% - 28.9% 32.0% - 32.9% Revenues $257 - $261 $1,",
+          "fy": 2025,
+          "high": 1019000000.0,
+          "kind": "range",
+          "low": 1011000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000156208825000165/q2fy25duolingo6-30x25share.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001628280-25-049514",
+      "filed": "2025-11-05",
+      "guidance": [
+        {
+          "excerpt": "(in millions) Q4 2025 FY 2025 Bookings $329.5 - $335.5 $1,151 - $1,157 YoY Bookings Growth 21.3% - 23.5% 32.2% - 32.9% Revenues $273 - $277 $1,027.",
+          "fy": 2025,
+          "high": 1031500000.0,
+          "kind": "range",
+          "low": 1027500000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828025049514/q3fy25duolingo9-30x25share.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001628280-26-001730",
+      "filed": "2026-01-12",
+      "guidance": [],
+      "items": "2.02,5.02,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001628280-26-012246",
+      "filed": "2026-02-26",
+      "guidance": [
+        {
+          "excerpt": "December 31, 2026 (1) . (in millions) Q1 2026 FY 2026 Bookings $301.5 $1,274 - $1,298 YoY Bookings Growth 11% 10% - 12% Revenues $288.5 $1,197 -",
+          "fy": 2026,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1197000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012246/q4fy25duolingo12-31x25shar.htm"
+        }
+      ],
+      "items": "2.02,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001628280-26-012513",
+      "filed": "2026-02-27",
+      "guidance": [
+        {
+          "excerpt": "December 31, 2026 (1) . (in millions) Q1 2026 FY 2026 Bookings $301.5 $1,274 - $1,298 YoY Bookings Growth 11% 10% - 12% Revenues $288.5 $1,197 -",
+          "fy": 2026,
+          "high": 1221000000.0,
+          "kind": "range",
+          "low": 1197000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/1562088/000162828026012513/q4fy25duolingo12-31x25shar.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001628280-26-029790",
+      "filed": "2026-05-04",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001628280-26-053299",
+      "filed": "2026-08-05",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001628280-26-055015",
+      "filed": "2026-08-10",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001628280-26-057818",
+      "filed": "2026-08-19",
+      "guidance": [],
+      "items": "7.01",
+      "scheduled": false
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "창 안에서 연간 매출 가이던스 하향이 없었다 — 나쁜 소식이 없었을 수 있어 '선제 공시 이력 없음'으로 단정하지 않는다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "DUOL"
+}

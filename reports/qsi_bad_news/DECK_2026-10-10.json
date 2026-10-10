@@ -1,0 +1,187 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000910521",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 14,
+  "n_scheduled": 12,
+  "releases": [
+    {
+      "accession": "0000910521-23-000039",
+      "filed": "2023-10-26",
+      "guidance": [
+        {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are now expected to be approximately $4.025 billion",
+          "fy": 2024,
+          "high": 4025000000.0000005,
+          "kind": "point",
+          "low": 4025000000.0000005,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052123000039/deckex991pressrelease-9302.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-24-000003",
+      "filed": "2024-02-01",
+      "guidance": [
+        {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are now expected to be approximately $4.15 billion",
+          "fy": 2024,
+          "high": 4150000000.0000005,
+          "kind": "point",
+          "low": 4150000000.0000005,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000003/deckex991pressrelease-1231.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-24-000015",
+      "filed": "2024-05-23",
+      "guidance": [
+        {
+          "excerpt": "foreign currency fluctuation; geopolitical tensions; and supply chain disruptions, constraints and related expenses. • Net sales are expected to increase approximately 10% to $4.7 billion",
+          "fy": 2025,
+          "high": 4700000000.0,
+          "kind": "point",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000015/deckex991pressrelease-3312.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-24-000021",
+      "filed": "2024-07-12",
+      "guidance": [],
+      "items": "8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000910521-24-000037",
+      "filed": "2024-07-25",
+      "guidance": [
+        {
+          "excerpt": "ding, inflationary pressures, and foreign currency fluctuations; supply chain disruptions; and geopolitical tensions. • Net sales are still expected to increase approximately 10% to $4.7 billion",
+          "fy": 2025,
+          "high": 4700000000.0,
+          "kind": "point",
+          "low": 4700000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000037/deckex991pressrelease-6302.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-24-000048",
+      "filed": "2024-09-13",
+      "guidance": [],
+      "items": "5.02,5.03,5.07,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0000910521-24-000056",
+      "filed": "2024-10-24",
+      "guidance": [
+        {
+          "excerpt": "ding, inflationary pressures, and foreign currency fluctuations; supply chain disruptions; and geopolitical tensions. • Net sales are now expected to increase approximately 12% to $4.8 billion",
+          "fy": 2025,
+          "high": 4800000000.0,
+          "kind": "point",
+          "low": 4800000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052124000056/deckex991pressrelease-9302.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-25-000002",
+      "filed": "2025-01-30",
+      "guidance": [
+        {
+          "excerpt": "confidence, discretionary spending, and inflationary pressures; supply chain disruptions; and geopolitical tensions. • Net sales are now expected to increase approximately 15% to $4.9 billion",
+          "fy": 2025,
+          "high": 4900000000.0,
+          "kind": "point",
+          "low": 4900000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052125000002/deckex991pressrelease-1231.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-25-000013",
+      "filed": "2025-05-22",
+      "guidance": [],
+      "items": "2.02,5.02,7.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-25-000028",
+      "filed": "2025-07-24",
+      "guidance": [],
+      "items": "2.02,7.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-25-000041",
+      "filed": "2025-10-23",
+      "guidance": [
+        {
+          "excerpt": "to global trade policy, including tariffs and trade restrictions; geopolitical tensions; and supply chain disruption. • Net sales are expected to be approximately $5.35 billion",
+          "fy": 2026,
+          "high": 5350000000.0,
+          "kind": "point",
+          "low": 5350000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052125000041/deckex991pressrelease-9302.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-26-000002",
+      "filed": "2026-01-29",
+      "guidance": [
+        {
+          "excerpt": "to global trade policy, including tariffs and trade restrictions; geopolitical tensions; and supply chain disruption. • Net sales are now expected to be in the range of $5.400 billion to $5.425 billion",
+          "fy": 2026,
+          "high": 5425000000.0,
+          "kind": "range",
+          "low": 5400000000.0,
+          "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000002/deckex991pressrelease-1231.htm"
+        }
+      ],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-26-000007",
+      "filed": "2026-05-21",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0000910521-26-000015",
+      "filed": "2026-07-23",
+      "guidance": [],
+      "items": "2.02",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "창 안에서 연간 매출 가이던스 하향이 없었다 — 나쁜 소식이 없었을 수 있어 '선제 공시 이력 없음'으로 단정하지 않는다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "DECK"
+}

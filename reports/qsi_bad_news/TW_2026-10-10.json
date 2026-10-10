@@ -1,0 +1,157 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001758730",
+  "cuts": [],
+  "n_periodic": 12,
+  "n_releases": 20,
+  "n_scheduled": 13,
+  "releases": [
+    {
+      "accession": "0001758730-23-000171",
+      "filed": "2023-10-26",
+      "guidance": [],
+      "items": "1.01,2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-23-000168",
+      "filed": "2023-10-26",
+      "guidance": [],
+      "items": "1.01,2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-24-000022",
+      "filed": "2024-02-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-24-000051",
+      "filed": "2024-03-12",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001193125-24-089086",
+      "filed": "2024-04-08",
+      "guidance": [],
+      "items": "1.01,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-24-000092",
+      "filed": "2024-04-25",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-24-000148",
+      "filed": "2024-06-20",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-24-000155",
+      "filed": "2024-07-25",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001193125-24-191545",
+      "filed": "2024-08-01",
+      "guidance": [],
+      "items": "7.01,8.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-24-000183",
+      "filed": "2024-09-19",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-24-000189",
+      "filed": "2024-10-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-24-000200",
+      "filed": "2024-12-17",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-25-000035",
+      "filed": "2025-02-06",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-25-000043",
+      "filed": "2025-03-07",
+      "guidance": [],
+      "items": "5.02,7.01,9.01",
+      "scheduled": false
+    },
+    {
+      "accession": "0001758730-25-000107",
+      "filed": "2025-04-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-25-000160",
+      "filed": "2025-07-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-25-000171",
+      "filed": "2025-10-30",
+      "guidance": [],
+      "items": "1.01,2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-26-000014",
+      "filed": "2026-02-05",
+      "guidance": [],
+      "items": "2.02,8.01,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-26-000095",
+      "filed": "2026-04-29",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    },
+    {
+      "accession": "0001758730-26-000132",
+      "filed": "2026-07-30",
+      "guidance": [],
+      "items": "2.02,9.01",
+      "scheduled": true
+    }
+  ],
+  "result": {
+    "cuts": [],
+    "reason": "보도자료 20건에서 연간 매출 가이던스를 읽지 못했다(미제시 또는 형식 상이). 가이던스 없는 실적 사전경고는 이 규칙이 잡지 못한다",
+    "status": "unknown"
+  },
+  "since": "2023-10-11",
+  "ticker": "TW"
+}
