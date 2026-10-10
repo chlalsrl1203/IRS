@@ -1,0 +1,1091 @@
+{
+"cik": "79282",
+"quarters": [
+{
+"accession": "0001193125-26-046984",
+"filed": "2026-02-12",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000950170-23-004717",
+"filed": "2023-02-27",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.05
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.46
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 871000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1054000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 871000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 1002000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 1067000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 433000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 2729000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 871000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 2508000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 4805000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": 60000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": 60000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 4745000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 545000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherInternationalCountries"
+},
+"tag": "Revenues",
+"value": 665000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 5902000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 5815000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 244000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 5059000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 283000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": 87000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 285000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 993000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 4222000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 94000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 3730000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 120000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SpecialtyDistribution",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 2409000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 599000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 286000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 13000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 1054000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 4140000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 3406000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 286000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 336000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.16
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 13000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherInternationalCountries"
+},
+"tag": "Revenues",
+"value": 527000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": 87000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "ProfitLoss",
+"value": 993000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 4257000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SpecialtyDistribution",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 1714000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": 35000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": 35000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 336000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 9000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "NoncontrollingInterest"
+},
+"tag": "ProfitLoss",
+"value": 9000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SpecialtyDistribution",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 2016000000.0
+},
+{
+"adsh": "0001193125-26-046984",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherInternationalCountries"
+},
+"tag": "Revenues",
+"value": 843000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 12700000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 2613400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NationalPrograms",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 610600000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 2084300000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 671800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 282496000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 3332800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NationalPrograms",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 859500000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.69
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": 4300000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 283200000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "WholesaleBrokerage",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 403400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": 3200000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 283004000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2973400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 15500000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.37
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "Services",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 174000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "IE"
+},
+"tag": "Revenues",
+"value": 0.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.07
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "CorporateNonSegment"
+},
+"tag": "Revenues",
+"value": -700000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 671800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "WholesaleBrokerage",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 352800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "EnglandBermudaCaymanIslandsAndIrelandOperations"
+},
+"tag": "Revenues",
+"value": 240600000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 480500000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 480500000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "Revenues",
+"value": 21300000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 1767900000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "RetailSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 1472800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 3573400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 587100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "IE"
+},
+"tag": "Revenues",
+"value": 34100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "Revenues",
+"value": 23600000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 3051400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 283221000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 587100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "WholesaleBrokerage",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 453400000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "Services",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 171900000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2578300000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 8900000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "CA"
+},
+"tag": "Revenues",
+"value": 16200000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 6200000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "IE"
+},
+"tag": "Revenues",
+"value": 38100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "EnglandBermudaCaymanIslandsAndIrelandOperations"
+},
+"tag": "Revenues",
+"value": 78000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": 3200000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 587100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": -700000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "Revenues",
+"value": 170000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ConsolidationItems": "MaterialReconcilingItems"
+},
+"tag": "Revenues",
+"value": 4300000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "EnglandBermudaCaymanIslandsAndIrelandOperations"
+},
+"tag": "Revenues",
+"value": 35100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20191231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 281655000000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 671800000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "Services",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 178900000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherCountry"
+},
+"tag": "Revenues",
+"value": 7100000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "NationalPrograms",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "Revenues",
+"value": 701900000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 282500000.0
+},
+{
+"adsh": "0000950170-23-004717",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 480500000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000950170-23-004717": {
+"adsh": "0000950170-23-004717",
+"cik": "79282",
+"filed": "20230227",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "BROWN & BROWN, INC.",
+"period": "20221231"
+},
+"0001193125-26-046984": {
+"adsh": "0001193125-26-046984",
+"cik": "79282",
+"filed": "20260212",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "BROWN & BROWN, INC.",
+"period": "20251231"
+}
+},
+"ticker": "BRO"
+}

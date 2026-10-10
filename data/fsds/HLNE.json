@@ -1,0 +1,1720 @@
+{
+"cik": "1433642",
+"quarters": [
+{
+"accession": "0001433642-26-000019",
+"filed": "2026-05-21",
+"form": "10-K",
+"quarter": "2026q2"
+},
+{
+"accession": "0001433642-23-000051",
+"filed": "2023-05-25",
+"form": "10-K",
+"quarter": "2023q2"
+}
+],
+"rows": [
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 43497538.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 12178412.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 43697484.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 11836450.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 3.69
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 5.41
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 5.92
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 140858000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 140858000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 217417000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 217417000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 249180000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 249180000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 5514000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 80835000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 3508000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 92843000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 44166000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 94374000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 227207000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": 2894158000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 313768000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": 2074232000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 387720000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": 4855043000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 553842000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 101906000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 329142000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 224700000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 97860000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 11918000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueIncludingConsolidatedVIEs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 101906000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 89988000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 451936000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 350792000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24229000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 128826000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5054000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 8104000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24711000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 261012000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 712963000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 198296000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 803000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 803000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 398355000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 314608000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 193657000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 16204000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueIncludingConsolidatedVIEs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 199099000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 182092000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 513864000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 412952000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 22806000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 134400000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2619000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 9581000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 29244000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 315214000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 758993000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 170575000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFundsAndPartnerships",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4202000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4202000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 448639000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 310354000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 168731000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24282000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueIncludingConsolidatedVIEs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 174777000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 146293000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 584216000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 481400000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 20473000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 141535000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2170000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 9867000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 35766000.0
+},
+{
+"adsh": "0001433642-26-000019",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 374405000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20200331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 22049727.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 371874000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 118212000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 11134000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 2.81
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 187185000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 69720000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 13241000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 36290183.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 341635000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 48133000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2155000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 209977000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 43742000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 154578000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 53691000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 71027000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 21057000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 93963000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 145986000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6948000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 148023000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 149931000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 109120000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20200331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 29842784.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 3.01
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": 7438736000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 109120000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3184000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 30332000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 52191000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5558000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 289444000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 16033359.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": -428224000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24972000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 270710000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 17801000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedEntityExcludingVariableInterestEntitiesVIE",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 31134000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26439000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6701000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherForeignCountries"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 189669000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "PartnershipsOfSubsidiary"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 376000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 150079000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "PartnershipsOfSubsidiary"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 986000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 117763000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 156879000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6948000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 314228000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueAdvisory"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24785000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer2"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 5617000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 98022000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 15409507.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 247253000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 37280697.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFunds"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2560000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 528753000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFunds"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 435000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"EquityMethodInvestmentNonconsolidatedInvestee": "Partnerships"
+},
+"tag": "ProfitLoss",
+"value": 3419906000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 145986000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 207954000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer2"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 1293000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 164676000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 16739846.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherForeignCountries"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 320799000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "EarningsPerShareDiluted",
+"value": 3.98
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "ConsolidatedFunds"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 21057000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 103229000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer2"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 4343000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 31719000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "VariableInterestEntityPrimaryBeneficiary",
+"ProductOrService": "IncentiveFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5558000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 168785000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 23327000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 47962000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IncentiveFeeRevenueCustomizedSeparateAccounts"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 17893000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 38611919.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"Geographical": "OtherForeignCountries"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 176959000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueDistributionManagement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 10466000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "PartnershipsOfSubsidiary"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": -250000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueReportingAndOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24792000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueSpecializedFunds"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 196268000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5706000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 367919000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ManagementAndAdvisoryFeeRevenue",
+"RelatedPartyTransactionsByRelatedParty": "PartnershipsOfSubsidiary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 199422000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "NetIncomeLoss",
+"value": 98022000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConsolidatedEntities": "SubsidiaryIssuer"
+},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 96548000.0
+},
+{
+"adsh": "0001433642-23-000051",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 178250000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0001433642-23-000051": {
+"adsh": "0001433642-23-000051",
+"cik": "1433642",
+"filed": "20230525",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "HAMILTON LANE INC",
+"period": "20230331"
+},
+"0001433642-26-000019": {
+"adsh": "0001433642-26-000019",
+"cik": "1433642",
+"filed": "20260521",
+"form": "10-K",
+"fp": "FY",
+"fy": "2026",
+"name": "HAMILTON LANE INC",
+"period": "20260331"
+}
+},
+"ticker": "HLNE"
+}

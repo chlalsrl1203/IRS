@@ -398,6 +398,12 @@ def test_recovered_tickers_carry_their_evidence():
         norm = r["normalization"]
         if norm.get("basis") == "spliced_filings":
             assert norm["filing_ratios"], r["ticker"]
+        elif norm.get("basis") == "fsds_as_converted_class":
+            # FSDS 클래스 경로(v3.99) -> 어느 클래스를, 어떤 EPS 대조로 채택했는지
+            assert norm["class"], r["ticker"]
+            assert norm["eps_checks"], r["ticker"]
+            assert r["source"].startswith("fsds:"), r["ticker"]
+            assert r["year_labeling_check"][1] == 0, r["ticker"]
         else:
             assert norm["factor"] > 1.0, r["ticker"]
             assert norm["restated_years"], r["ticker"]

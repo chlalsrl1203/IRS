@@ -1,0 +1,1666 @@
+{
+ "generated_at": "2026-10-10",
+ "engine_module": "engine/fsds.py",
+ "validation_status": "IMPLEMENTED_NOT_VALIDATED",
+ "affects_official_judgment": false,
+ "rule": "구성원 합이 양 끝 연도 모두 연결 매출의 1% 안일 때만 성장 기여도를 낸다. 판정·QSI 답에 쓰지 않는 진단 리포트.",
+ "results": [
+  {
+   "ticker": "ACGL",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 8508509000.0,
+    "2021": 9249980000.0,
+    "2022": 9614808000.0,
+    "2023": 13634000000.0,
+    "2024": 17440000000.0,
+    "2025": 19929000000.0
+   },
+   "source": [
+    "0000947484-26-000017",
+    "0000947484-23-000015"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "ADBE",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 12868000000.0,
+    "2021": 15785000000.0,
+    "2022": 17606000000.0,
+    "2023": 19409000000.0,
+    "2024": 21505000000.0,
+    "2025": 23769000000.0
+   },
+   "source": [
+    "0000796343-26-000003",
+    "0000796343-23-000007"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "Revenues",
+     "members": {
+      "DigitalExperience": {
+       "2020": 3125000000.0,
+       "2021": 3867000000.0,
+       "2022": 4422000000.0,
+       "2023": 4893000000.0,
+       "2024": 5366000000.0,
+       "2025": 5864000000.0
+      },
+      "DigitalMedia": {
+       "2020": 9233000000.0,
+       "2021": 11520000000.0,
+       "2022": 12842000000.0,
+       "2023": 14216000000.0,
+       "2024": 15864000000.0,
+       "2025": 17649000000.0
+      },
+      "PublishingAndAdvertising": {
+       "2020": 510000000.0,
+       "2021": 398000000.0,
+       "2022": 342000000.0,
+       "2023": 300000000.0,
+       "2024": 275000000.0,
+       "2025": 256000000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.13057654594156753,
+     "by_member": {
+      "DigitalExperience": {
+       "share_last": 0.2467078968404224,
+       "cagr": 0.1341455366623352,
+       "contribution_to_growth": 0.2512613521695257
+      },
+      "DigitalMedia": {
+       "share_last": 0.7425217720560394,
+       "cagr": 0.13834906065228725,
+       "contribution_to_growth": 0.7720392624529859
+      },
+      "PublishingAndAdvertising": {
+       "share_last": 0.010770331103538222,
+       "cagr": -0.12876772047007534,
+       "contribution_to_growth": -0.023300614622511696
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "Revenues",
+     "members": {
+      "Product": {
+       "2023": 460000000.0,
+       "2024": 386000000.0,
+       "2025": 325000000.0
+      },
+      "ServiceOther": {
+       "2023": 665000000.0,
+       "2024": 598000000.0,
+       "2025": 540000000.0
+      },
+      "SubscriptionRevenue": {
+       "2023": 18284000000.0,
+       "2024": 20521000000.0,
+       "2025": 22904000000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.10663365867426688,
+     "by_member": {
+      "Product": {
+       "share_last": 0.013673271908788759,
+       "cagr": -0.15945152481820846,
+       "contribution_to_growth": -0.03096330275229358
+      },
+      "ServiceOther": {
+       "share_last": 0.022718667171525937,
+       "cagr": -0.09887288622083401,
+       "contribution_to_growth": -0.028669724770642203
+      },
+      "SubscriptionRevenue": {
+       "share_last": 0.9636080609196853,
+       "cagr": 0.11923185209511322,
+       "contribution_to_growth": 1.0596330275229358
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "BRO",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 2613400000.0,
+    "2021": 3051400000.0,
+    "2022": 3573400000.0,
+    "2023": 4257000000.0,
+    "2024": 4805000000.0,
+    "2025": 5902000000.0
+   },
+   "source": [
+    "0001193125-26-046984",
+    "0000950170-23-004717"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "CINF",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 7536000000.0,
+    "2021": 9630000000.0,
+    "2022": 6557000000.0,
+    "2023": 10013000000.0,
+    "2024": 11337000000.0,
+    "2025": 12631000000.0
+   },
+   "source": [
+    "0000020286-26-000008",
+    "0000020286-23-000008"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "DECK",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2021": 2545641000.0,
+    "2022": 3150339000.0,
+    "2023": 3627286000.0,
+    "2024": 4287763000.0,
+    "2025": 4985612000.0,
+    "2026": 5472296000.0
+   },
+   "source": [
+    "0001628280-26-037664",
+    "0000910521-23-000016"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "DLO",
+   "consolidated_tag": "Revenue",
+   "consolidated": {
+    "2020": 104143000.0,
+    "2021": 244120000.0,
+    "2022": 418925000.0,
+    "2023": 650351000.0,
+    "2024": 745974000.0,
+    "2025": 1093587000.0
+   },
+   "source": [
+    "0002070979-26-000113",
+    "0000950170-23-011942"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "DUOL",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 161696000.0,
+    "2021": 250772000.0,
+    "2022": 369495000.0,
+    "2023": 531109000.0,
+    "2024": 748024000.0,
+    "2025": 1037589000.0
+   },
+   "source": [
+    "0001628280-26-012494",
+    "0001562088-23-000052"
+   ],
+   "axes": {
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "Advertising": {
+       "2023": 49858000.0,
+       "2024": 54907000.0,
+       "2025": 79725000.0
+      },
+      "EnglishTest": {
+       "2023": 41212000.0,
+       "2024": 45640000.0,
+       "2025": 42006000.0
+      },
+      "IAPs": {
+       "2023": 34673000.0,
+       "2024": 38653000.0,
+       "2025": 40479000.0
+      },
+      "LicenseAndService": {
+       "2023": 404684000.0,
+       "2024": 607531000.0,
+       "2025": 873442000.0
+      },
+      "ProductAndServiceOther": {
+       "2023": 126425000.0,
+       "2024": 140493000.0,
+       "2025": 164147000.0
+      },
+      "ProductAndServiceOtherMiscellaneous": {
+       "2023": 682000.0,
+       "2024": 1293000.0,
+       "2025": 1937000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.238039649111576,
+      1.158200404977308
+     ],
+     "additive": false,
+     "consolidated_cagr": 0.39772215462544525,
+     "by_member": {
+      "Advertising": {
+       "share_last": 0.07683678219410577,
+       "cagr": 0.2645320388299086
+      },
+      "EnglishTest": {
+       "share_last": 0.04048423797862159,
+       "cagr": 0.00958715975193547
+      },
+      "IAPs": {
+       "share_last": 0.03901255699511078,
+       "cagr": 0.08048608383978828
+      },
+      "LicenseAndService": {
+       "share_last": 0.8417995950226921,
+       "cagr": 0.469125911771447
+      },
+      "ProductAndServiceOther": {
+       "share_last": 0.15820040497730797,
+       "cagr": 0.13946238654637688
+      },
+      "ProductAndServiceOtherMiscellaneous": {
+       "share_last": 0.0018668278094698383,
+       "cagr": 0.6852821582984787
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    }
+   }
+  },
+  {
+   "ticker": "ERIE",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 2536489000.0,
+    "2021": 2633977000.0,
+    "2022": 2840124000.0,
+    "2023": 3268940000.0,
+    "2024": 3795115000.0,
+    "2025": 4067258000.0
+   },
+   "source": [
+    "0001628280-26-010666",
+    "0000922621-23-000007"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "ManagementOperations": {
+       "2023": 3268940000.0,
+       "2024": 3795115000.0,
+       "2025": 4067258000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.11544301012490266,
+     "by_member": {
+      "ManagementOperations": {
+       "share_last": 1.0,
+       "cagr": 0.11544301012490266,
+       "contribution_to_growth": 1.0
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "AdministrativeServicesManagementFee": {
+       "2020": 59463000.0,
+       "2021": 58286000.0,
+       "2022": 58323000.0,
+       "2023": 63669000.0,
+       "2024": 68355000.0,
+       "2025": 74058000.0
+      },
+      "AdministrativeServicesReimbursements": {
+       "2020": 609435000.0,
+       "2021": 638483000.0,
+       "2022": 668268000.0,
+       "2023": 737139000.0,
+       "2024": 806336000.0,
+       "2025": 836639000.0
+      },
+      "PolicyIssuanceandRenewalServices": {
+       "2020": 1841794000.0,
+       "2021": 1913166000.0,
+       "2022": 2087846000.0,
+       "2023": 2442073000.0,
+       "2024": 2894074000.0,
+       "2025": 3131806000.0
+      },
+      "ServiceAgreement": {
+       "2020": 25797000.0,
+       "2021": 24042000.0,
+       "2022": 25687000.0,
+       "2023": 26059000.0,
+       "2024": 26350000.0,
+       "2025": 24755000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.0990406294397781,
+     "by_member": {
+      "AdministrativeServicesManagementFee": {
+       "share_last": 0.01820833593541398,
+       "cagr": 0.04487667063524725,
+       "contribution_to_growth": 0.009534423547903048
+      },
+      "AdministrativeServicesReimbursements": {
+       "share_last": 0.2057009906920092,
+       "cagr": 0.0654231831931229,
+       "contribution_to_growth": 0.1484247459936803
+      },
+      "PolicyIssuanceandRenewalServices": {
+       "share_last": 0.7700042633144983,
+       "cagr": 0.1120152921511044,
+       "contribution_to_growth": 0.8427215340786233
+      },
+      "ServiceAgreement": {
+       "share_last": 0.00608641005807844,
+       "cagr": -0.008212237278155121,
+       "contribution_to_growth": -0.0006807036202065759
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "GEN",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2021": 2551000000.0,
+    "2022": 2796000000.0,
+    "2023": 3338000000.0,
+    "2024": 3800000000.0,
+    "2025": 3935000000.0,
+    "2026": 5000000000.0
+   },
+   "source": [
+    "0000849399-26-000017",
+    "0000849399-23-000014"
+   ],
+   "axes": {
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "CoreConsumerSecurity": {
+       "2021": 1504000000.0,
+       "2022": 1623000000.0,
+       "2023": 2029000000.0
+      },
+      "CyberSafetyRevenues": {
+       "2021": 2542000000.0,
+       "2022": 2750000000.0,
+       "2023": 3273000000.0
+      },
+      "Legacy": {
+       "2021": 9000000.0,
+       "2022": 46000000.0,
+       "2023": 65000000.0
+      },
+      "LifeLockIdentityAndFraudProtection": {
+       "2021": 1038000000.0,
+       "2022": 1127000000.0,
+       "2023": 1244000000.0
+      },
+      "NetInterestIncomeOnNotesReceivable": {
+       "2024": 0.0,
+       "2025": 0.0,
+       "2026": 18000000.0
+      },
+      "SubscriptionAndServiceRevenue": {
+       "2024": 3800000000.0,
+       "2025": 3935000000.0,
+       "2026": 4982000000.0
+      }
+     },
+     "common_years": [],
+     "note": "구성원과 연결 매출이 함께 있는 연도가 2개 미만"
+    }
+   }
+  },
+  {
+   "ticker": "HLNE",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2021": 341635000.0,
+    "2022": 367919000.0,
+    "2023": 528753000.0,
+    "2024": 553842000.0,
+    "2025": 712963000.0,
+    "2026": 758993000.0
+   },
+   "source": [
+    "0001433642-26-000019",
+    "0001433642-23-000051"
+   ],
+   "axes": {
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "IncentiveFeeRevenue": {
+       "2021": 52191000.0,
+       "2022": 53691000.0,
+       "2023": 156879000.0
+      },
+      "IncentiveFeeRevenueCustomizedSeparateAccounts": {
+       "2021": 17893000.0,
+       "2022": 17801000.0,
+       "2023": 31719000.0,
+       "2024": 11918000.0,
+       "2025": 16204000.0,
+       "2026": 24282000.0
+      },
+      "IncentiveFeeRevenueIncludingConsolidatedVIEs": {
+       "2024": 101906000.0,
+       "2025": 199099000.0,
+       "2026": 174777000.0
+      },
+      "IncentiveFeeRevenueSpecializedFunds": {
+       "2024": 89988000.0,
+       "2025": 182092000.0,
+       "2026": 146293000.0
+      },
+      "ManagementAndAdvisoryFeeRevenue": {
+       "2021": 289444000.0,
+       "2022": 314228000.0,
+       "2023": 371874000.0,
+       "2024": 451936000.0,
+       "2025": 513864000.0,
+       "2026": 584216000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueAdvisory": {
+       "2021": 26439000.0,
+       "2022": 24972000.0,
+       "2023": 24785000.0,
+       "2024": 24229000.0,
+       "2025": 22806000.0,
+       "2026": 20473000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueCustomizedSeparateAccounts": {
+       "2021": 93963000.0,
+       "2022": 103229000.0,
+       "2023": 117763000.0,
+       "2024": 128826000.0,
+       "2025": 134400000.0,
+       "2026": 141535000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueDistributionManagement": {
+       "2021": 6701000.0,
+       "2022": 10466000.0,
+       "2023": 2560000.0,
+       "2024": 5054000.0,
+       "2025": 2619000.0,
+       "2026": 2170000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueFundReimbursementRevenue": {
+       "2021": 3184000.0,
+       "2022": 2155000.0,
+       "2023": 5706000.0,
+       "2024": 8104000.0,
+       "2025": 9581000.0,
+       "2026": 9867000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueReportingAndOther": {
+       "2021": 11134000.0,
+       "2022": 23327000.0,
+       "2023": 24792000.0,
+       "2024": 24711000.0,
+       "2025": 29244000.0,
+       "2026": 35766000.0
+      },
+      "ManagementAndAdvisoryFeeRevenueSpecializedFunds": {
+       "2021": 148023000.0,
+       "2022": 150079000.0,
+       "2023": 196268000.0,
+       "2024": 261012000.0,
+       "2025": 315214000.0,
+       "2026": 374405000.0
+      }
+     },
+     "common_years": [],
+     "note": "구성원과 연결 매출이 함께 있는 연도가 2개 미만"
+    }
+   }
+  },
+  {
+   "ticker": "MNDY",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 161123000.0,
+    "2021": 308150000.0,
+    "2022": 519029000.0,
+    "2023": 729695000.0,
+    "2024": 971995000.0,
+    "2025": 1231997000.0
+   },
+   "source": [
+    "0001178913-26-000870",
+    "0001178913-23-000966"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "NBIX",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 1045900000.0,
+    "2021": 1133500000.0,
+    "2022": 1488700000.0,
+    "2023": 1887100000.0,
+    "2024": 2355300000.0,
+    "2025": 2860500000.0
+   },
+   "source": [
+    "0000914475-26-000007",
+    "0000914475-23-000011"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "ReportableSegment": {
+       "2023": 1887100000.0,
+       "2024": 2355300000.0,
+       "2025": 2860500000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.2311855756459975,
+     "by_member": {
+      "ReportableSegment": {
+       "share_last": 1.0,
+       "cagr": 0.2311855756459975,
+       "contribution_to_growth": 1.0
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "CollaborationRevenue": {
+       "2020": 51800000.0,
+       "2021": 43400000.0,
+       "2022": 47800000.0,
+       "2023": 26500000.0,
+       "2024": 24700000.0,
+       "2025": 26600000.0
+      },
+      "Product": {
+       "2020": 994100000.0,
+       "2021": 1090100000.0,
+       "2022": 1440900000.0,
+       "2023": 1860600000.0,
+       "2024": 2330600000.0,
+       "2025": 2833900000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.22289834661156127,
+     "by_member": {
+      "CollaborationRevenue": {
+       "share_last": 0.009299073588533473,
+       "cagr": -0.12479382052455523,
+       "contribution_to_growth": -0.013887358095448032
+      },
+      "Product": {
+       "share_last": 0.9907009264114666,
+       "cagr": 0.23307896574334896,
+       "contribution_to_growth": 1.013887358095448
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "NXT",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2021": 1195617000.0,
+    "2022": 1457592000.0,
+    "2023": 1902137000.0,
+    "2024": 2499841000.0,
+    "2025": 2959197000.0,
+    "2026": 3559390000.0
+   },
+   "source": [
+    "0001852131-26-000017",
+    "0001193125-23-163921"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "Revenues",
+     "members": {
+      "ReportableSegment": {
+       "2024": 2499841000.0,
+       "2025": 2959197000.0,
+       "2026": 3559390000.0
+      }
+     },
+     "common_years": [
+      2024,
+      2025,
+      2026
+     ],
+     "first_year": 2024,
+     "last_year": 2026,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.19325041656854336,
+     "by_member": {
+      "ReportableSegment": {
+       "share_last": 1.0,
+       "cagr": 0.19325041656854336,
+       "contribution_to_growth": 1.0
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "PDD",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 59491865000.0,
+    "2021": 93949939000.0,
+    "2022": 18929071000.0,
+    "2023": 247639205000.0,
+    "2024": 393836097000.0,
+    "2025": 431845713000.0
+   },
+   "source": [
+    "0001104659-26-050727",
+    "0001104659-23-049927"
+   ],
+   "axes": {
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "MerchandiseSales": {
+       "2020": 5750671000.0,
+       "2021": 7246088000.0,
+       "2022": 209171000.0
+      },
+      "OnlineMarketingServicesAndOthers": {
+       "2020": 47953779000.0,
+       "2021": 72563402000.0,
+       "2022": 14893279000.0,
+       "2023": 153540553000.0,
+       "2024": 197934192000.0,
+       "2025": 217783028000.0
+      },
+      "TransactionServices": {
+       "2020": 5787415000.0,
+       "2021": 14140449000.0,
+       "2022": 27626494000.0,
+       "2023": 94098652000.0,
+       "2024": 195901905000.0,
+       "2025": 214062685000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      1.0,
+      2.257318597410301
+     ],
+     "additive": false,
+     "consolidated_cagr": -0.4359262908380387,
+     "by_member": {
+      "MerchandiseSales": {
+       "share_last": 0.011050251752978264,
+       "cagr": -0.8092820915356371
+      },
+      "OnlineMarketingServicesAndOthers": {
+       "share_last": 0.7867939741997904,
+       "cagr": -0.44270679994110596
+      },
+      "TransactionServices": {
+       "share_last": 1.4594743714575322,
+       "cagr": 1.184844706915793
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    }
+   }
+  },
+  {
+   "ticker": "PGR",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 42658100000.0,
+    "2021": 47702000000.0,
+    "2022": 49610700000.0,
+    "2023": 62109000000.0,
+    "2024": 75372000000.0,
+    "2025": 87671000000.0
+   },
+   "source": [
+    "0000080661-26-000086",
+    "0000080661-23-000006"
+   ],
+   "axes": {},
+   "note": "단일 축 세그먼트 매출이 데이터셋에 없다(단일 부문 기업이거나 공시 형식 상이)"
+  },
+  {
+   "ticker": "ROP",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 4022400000.0,
+    "2021": 4833800000.0,
+    "2022": 5371800000.0,
+    "2023": 6177800000.0,
+    "2024": 7039200000.0,
+    "2025": 7902500000.0
+   },
+   "source": [
+    "0000882835-26-000009",
+    "0000882835-23-000016"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "ApplicationSoftwareSegment": {
+       "2020": 1785800000.0,
+       "2021": 2366700000.0,
+       "2022": 2639500000.0,
+       "2023": 3186900000.0,
+       "2024": 3868300000.0,
+       "2025": 4483000000.0
+      },
+      "NetworkSoftwareAndSystemsSegment": {
+       "2020": 1069400000.0,
+       "2021": 1223800000.0,
+       "2022": 1378500000.0,
+       "2023": 1439400000.0,
+       "2024": 1475600000.0,
+       "2025": 1600800000.0
+      },
+      "TechnologyEnabledProductsSegment": {
+       "2020": 1167200000.0,
+       "2021": 1243300000.0,
+       "2022": 1353800000.0,
+       "2023": 1551500000.0,
+       "2024": 1695300000.0,
+       "2025": 1818700000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.1446055560688868,
+     "by_member": {
+      "ApplicationSoftwareSegment": {
+       "share_last": 0.5672888326478962,
+       "cagr": 0.20211823225239622,
+       "contribution_to_growth": 0.6951367232803278
+      },
+      "NetworkSoftwareAndSystemsSegment": {
+       "share_last": 0.20256880733944954,
+       "cagr": 0.08402520235370536,
+       "contribution_to_growth": 0.13695523311254865
+      },
+      "TechnologyEnabledProductsSegment": {
+       "share_last": 0.23014236001265423,
+       "cagr": 0.09275589389807526,
+       "contribution_to_growth": 0.16790804360712352
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "Exports": {
+       "2020": 180000000.0,
+       "2021": 179900000.0,
+       "2022": 191800000.0
+      },
+      "ProductRevenue": {
+       "2020": 1160800000.0,
+       "2021": 1234700000.0,
+       "2022": 1340600000.0,
+       "2023": 1532700000.0,
+       "2024": 1669200000.0,
+       "2025": 1772600000.0
+      },
+      "SoftwareRelated": {
+       "2020": 2861600000.0,
+       "2021": 3599100000.0,
+       "2022": 4031200000.0,
+       "2023": 4645100000.0,
+       "2024": 5370000000.0,
+       "2025": 6129900000.0
+      },
+      "SoftwareRelatedNonRecurring": {
+       "2020": 596600000.0,
+       "2021": 684900000.0,
+       "2022": 721400000.0,
+       "2023": 732800000.0,
+       "2024": 769600000.0,
+       "2025": 813900000.0
+      },
+      "SoftwareRelatedRecurring": {
+       "2020": 1964700000.0,
+       "2021": 2553300000.0,
+       "2022": 2939400000.0,
+       "2023": 3511100000.0,
+       "2024": 3976200000.0,
+       "2025": 4482900000.0
+      },
+      "SoftwareRelatedReoccurring": {
+       "2020": 300300000.0,
+       "2021": 360900000.0,
+       "2022": 370400000.0,
+       "2023": 401200000.0,
+       "2024": 624200000.0,
+       "2025": 833100000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      1.7561654733492442,
+      1.7861424475967087
+     ],
+     "additive": false,
+     "consolidated_cagr": 0.15562596041360255,
+     "by_member": {
+      "Exports": {
+       "share_last": 0.03570497784727652,
+       "cagr": 0.03225750448013476
+      },
+      "ProductRevenue": {
+       "share_last": 0.2495625302505678,
+       "cagr": 0.07465956335912627
+      },
+      "SoftwareRelated": {
+       "share_last": 0.7504374697494323,
+       "cagr": 0.18689611721785315
+      },
+      "SoftwareRelatedNonRecurring": {
+       "share_last": 0.13429390520868237,
+       "cagr": 0.09962965758557552
+      },
+      "SoftwareRelatedRecurring": {
+       "share_last": 0.5471908857366246,
+       "cagr": 0.22315423220757102
+      },
+      "SoftwareRelatedReoccurring": {
+       "share_last": 0.06895267880412524,
+       "cagr": 0.11060039322576931
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    }
+   }
+  },
+  {
+   "ticker": "RYAN",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2023": 2026596000.0,
+    "2024": 2455671000.0,
+    "2025": 2994582000.0
+   },
+   "source": [
+    "0001849253-26-000006",
+    "0000950170-23-005335"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "ReportingSegment": {
+       "2023": 2026596000.0,
+       "2024": 2455671000.0,
+       "2025": 2994582000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.21558271032928333,
+     "by_member": {
+      "ReportingSegment": {
+       "share_last": 1.0,
+       "cagr": 0.21558271032928333,
+       "contribution_to_growth": 1.0
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "BindingAuthorities": {
+       "2023": 275961000.0,
+       "2024": 320379000.0,
+       "2025": 370155000.0
+      },
+      "UnderwritingManagement": {
+       "2023": 431579000.0,
+       "2024": 646215000.0,
+       "2025": 1024000000.0
+      },
+      "WholesaleBrokerage": {
+       "2023": 1319056000.0,
+       "2024": 1489077000.0,
+       "2025": 1600427000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.21558271032928333,
+     "by_member": {
+      "BindingAuthorities": {
+       "share_last": 0.12360823647507399,
+       "cagr": 0.15815838304932361,
+       "contribution_to_growth": 0.09730925860497983
+      },
+      "UnderwritingManagement": {
+       "share_last": 0.3419508966526881,
+       "cagr": 0.5403514655680786,
+       "contribution_to_growth": 0.6120140167316469
+      },
+      "WholesaleBrokerage": {
+       "share_last": 0.5344408668722379,
+       "cagr": 0.10150460696735886,
+       "contribution_to_growth": 0.29067672466337324
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "SE",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 4375664000.0,
+    "2021": 9955190000.0,
+    "2022": 12449705000.0
+   },
+   "source": [
+    "0001140361-26-015366",
+    "0001140361-23-017021"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "AllOtherSegments": {
+       "2020": 131758000.0,
+       "2021": 42444000.0,
+       "2022": 61869000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      0.03011154421363249,
+      0.004969515341929789
+     ],
+     "additive": false,
+     "consolidated_cagr": 0.6867765218879571,
+     "by_member": {
+      "AllOtherSegments": {
+       "share_last": 0.004969515341929789,
+       "cagr": -0.31475156666888526
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "DigitalEntertainment": {
+       "2020": 2015972000.0,
+       "2021": 4320013000.0,
+       "2022": 3877163000.0
+      },
+      "ECommerceAndOtherServices": {
+       "2020": 1777330000.0,
+       "2021": 4564617000.0,
+       "2022": 7463173000.0
+      },
+      "Product": {
+       "2020": 582362000.0,
+       "2021": 1070560000.0,
+       "2022": 1109369000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.6867765218879571,
+     "by_member": {
+      "DigitalEntertainment": {
+       "share_last": 0.31142609403194693,
+       "cagr": 0.38680302998129235,
+       "contribution_to_growth": 0.23051542591869426
+      },
+      "ECommerceAndOtherServices": {
+       "share_last": 0.5994658507972679,
+       "cagr": 1.049168723876365,
+       "contribution_to_growth": 0.7042127975322394
+      },
+      "Product": {
+       "share_last": 0.08910805517078517,
+       "cagr": 0.38019833291863003,
+       "contribution_to_growth": 0.06527177654906632
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "SIGI",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 2922274000.0,
+    "2021": 3379164000.0,
+    "2022": 3558062000.0,
+    "2023": 4232106000.0,
+    "2024": 4861664000.0,
+    "2025": 5336928000.0
+   },
+   "source": [
+    "0000230557-26-000006",
+    "0000230557-23-000006"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "Revenues",
+     "members": {
+      "ESLines": {
+       "2020": 239490000.0,
+       "2021": 279809000.0,
+       "2022": 334156000.0
+      },
+      "StandardCommercialLines": {
+       "2020": 2158696000.0,
+       "2021": 2459941000.0,
+       "2022": 2749338000.0
+      },
+      "StandardPersonalLines": {
+       "2020": 301198000.0,
+       "2021": 295226000.0,
+       "2022": 301221000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      0.9237272069627968,
+      0.9512805004522125
+     ],
+     "additive": false,
+     "consolidated_cagr": 0.10343381452983369,
+     "by_member": {
+      "ESLines": {
+       "share_last": 0.09391517067437273,
+       "cagr": 0.1812204028681479
+      },
+      "StandardCommercialLines": {
+       "share_last": 0.7727066026393019,
+       "cagr": 0.12854355258130012
+      },
+      "StandardPersonalLines": {
+       "share_last": 0.08465872713853778,
+       "cagr": 3.8180135553345096e-05
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    }
+   }
+  },
+  {
+   "ticker": "SKYW",
+   "consolidated_tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+   "consolidated": {
+    "2020": 2127106000.0,
+    "2021": 2713491000.0,
+    "2022": 3004925000.0,
+    "2023": 2935432000.0,
+    "2024": 3527920000.0,
+    "2025": 4058202000.0
+   },
+   "source": [
+    "0001104659-26-016358",
+    "0001558370-23-001442"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+     "members": {
+      "SkyWestAirlines": {
+       "2020": 1636762000.0,
+       "2021": 2192432000.0,
+       "2022": 2492318000.0,
+       "2023": 2392174000.0,
+       "2024": 2905339000.0,
+       "2025": 3415066000.0
+      },
+      "SkywestLeasing": {
+       "2020": 490344000.0,
+       "2021": 521059000.0,
+       "2022": 512607000.0,
+       "2023": 543258000.0,
+       "2024": 622581000.0,
+       "2025": 643136000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.13791259799985234,
+     "by_member": {
+      "SkyWestAirlines": {
+       "share_last": 0.8415219350835665,
+       "cagr": 0.15846445659999397,
+       "contribution_to_growth": 0.9208780920264968
+      },
+      "SkywestLeasing": {
+       "share_last": 0.15847806491643343,
+       "cagr": 0.055748300383500204,
+       "contribution_to_growth": 0.07912190797350313
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerIncludingAssessedTax",
+     "members": {
+      "AirportCustomerServiceAndOtherRevenue": {
+       "2020": 25804000.0,
+       "2021": 31885000.0,
+       "2022": 39324000.0,
+       "2023": 35061000.0,
+       "2024": 30182000.0,
+       "2025": 74176000.0
+      },
+      "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue": {
+       "2020": 526018000.0,
+       "2021": 527173000.0,
+       "2022": 504529000.0,
+       "2023": 296047000.0,
+       "2024": 303134000.0,
+       "2025": 441262000.0
+      },
+      "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent": {
+       "2020": 1265923000.0,
+       "2021": 1678219000.0,
+       "2022": 2028308000.0,
+       "2023": 1976743000.0,
+       "2024": 2415598000.0,
+       "2025": 2590735000.0
+      },
+      "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue": {
+       "2022": 17664000.0,
+       "2023": 180218000.0,
+       "2024": 236676000.0,
+       "2025": 242743000.0
+      },
+      "FlyingAgreements": {
+       "2020": 2060801000.0,
+       "2021": 2615076000.0,
+       "2022": 2899837000.0,
+       "2023": 2834397000.0,
+       "2024": 3412798000.0,
+       "2025": 3885153000.0
+      },
+      "LeaseAirportServiceAndOther": {
+       "2020": 66305000.0,
+       "2021": 98415000.0,
+       "2022": 105088000.0,
+       "2023": 101035000.0,
+       "2024": 115122000.0,
+       "2025": 173049000.0
+      },
+      "LeaseAirportServicesAndOther": {
+       "2020": 66305000.0,
+       "2021": 98415000.0,
+       "2022": 105088000.0,
+       "2023": 101035000.0,
+       "2024": 115122000.0,
+       "2025": 173049000.0
+      },
+      "ProrateAgreements": {
+       "2020": 268860000.0,
+       "2021": 409684000.0,
+       "2022": 349336000.0,
+       "2023": 381389000.0,
+       "2024": 457390000.0,
+       "2025": 610413000.0
+      }
+     },
+     "common_years": [
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2022,
+     "last_year": 2025,
+     "sum_ratio": [
+      2.0130865163024034,
+      2.0182780453018356
+     ],
+     "additive": false,
+     "consolidated_cagr": 0.10535048945299885,
+     "by_member": {
+      "AirportCustomerServiceAndOtherRevenue": {
+       "share_last": 0.01827804530183564,
+       "cagr": 0.23557346866851825
+      },
+      "CapacityPurchaseAgreementsFixedAircraftLeaseRevenue": {
+       "share_last": 0.10873337502667438,
+       "cagr": -0.043679501353575456
+      },
+      "CapacityPurchaseAgreementsFlightOperationsRevenueNonLeaseComponent": {
+       "share_last": 0.638394786656751,
+       "cagr": 0.08499989522315277
+      },
+      "CapacityPurchaseAgreementsVariableAircraftLeaseRevenue": {
+       "share_last": 0.05981540593592926,
+       "cagr": 1.395259398790337
+      },
+      "FlyingAgreements": {
+       "share_last": 0.9573582093744963,
+       "cagr": 0.10241432134774153
+      },
+      "LeaseAirportServiceAndOther": {
+       "share_last": 0.04264179062550361,
+       "cagr": 0.18087879048752775
+      },
+      "LeaseAirportServicesAndOther": {
+       "share_last": 0.04264179062550361,
+       "cagr": 0.18087879048752775
+      },
+      "ProrateAgreements": {
+       "share_last": 0.1504146417551418,
+       "cagr": 0.2044630377798895
+      }
+     },
+     "note": "구성원 합이 연결 매출과 맞지 않는다(계층 구성원 혼재 또는 일부만 공시) — 성장 기여도를 계산하지 않았다"
+    }
+   }
+  },
+  {
+   "ticker": "TW",
+   "consolidated_tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+   "consolidated": {
+    "2020": 892659000.0,
+    "2021": 1076447000.0,
+    "2022": 1188781000.0,
+    "2023": 1338219000.0,
+    "2024": 1725949000.0,
+    "2025": 2052429000.0
+   },
+   "source": [
+    "0001758730-26-000015",
+    "0001758730-23-000047"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "ReportableSegment": {
+       "2023": 1338219000.0,
+       "2024": 1725949000.0,
+       "2025": 2052429000.0
+      }
+     },
+     "common_years": [
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2023,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.2384271810953087,
+     "by_member": {
+      "ReportableSegment": {
+       "share_last": 1.0,
+       "cagr": 0.2384271810953087,
+       "contribution_to_growth": 1.0
+      }
+     }
+    },
+    "ProductOrService": {
+     "tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+     "members": {
+      "FinancialServiceOther": {
+       "2020": 9007000.0,
+       "2021": 10484000.0,
+       "2022": 9869000.0,
+       "2023": 11567000.0,
+       "2024": 13598000.0,
+       "2025": 24788000.0
+      },
+      "MarketDataRevenue": {
+       "2020": 59706000.0,
+       "2021": 61161000.0,
+       "2022": 62721000.0,
+       "2023": 64336000.0,
+       "2024": 82145000.0,
+       "2025": 93197000.0
+      },
+      "SubscriptionFeeRevenue": {
+       "2020": 142358000.0,
+       "2021": 158448000.0,
+       "2022": 165922000.0,
+       "2023": 183972000.0,
+       "2024": 206659000.0,
+       "2025": 234017000.0
+      },
+      "TransactionFeeRevenue": {
+       "2020": 681588000.0,
+       "2021": 846354000.0,
+       "2022": 950269000.0,
+       "2023": 1078344000.0,
+       "2024": 1423547000.0,
+       "2025": 1700427000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022,
+      2023,
+      2024,
+      2025
+     ],
+     "first_year": 2020,
+     "last_year": 2025,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.18118115889565,
+     "by_member": {
+      "FinancialServiceOther": {
+       "share_last": 0.012077397074393316,
+       "cagr": 0.22442521600693066,
+       "contribution_to_growth": 0.013607008286125698
+      },
+      "MarketDataRevenue": {
+       "share_last": 0.04540814810159085,
+       "cagr": 0.09314252960620117,
+       "contribution_to_growth": 0.028877277391206876
+      },
+      "SubscriptionFeeRevenue": {
+       "share_last": 0.11401953490230356,
+       "cagr": 0.10451878356243638,
+       "contribution_to_growth": 0.0790320494580822
+      },
+      "TransactionFeeRevenue": {
+       "share_last": 0.8284949199217123,
+       "cagr": 0.20062452756511107,
+       "contribution_to_growth": 0.8784836648645852
+      }
+     }
+    }
+   }
+  },
+  {
+   "ticker": "UBER",
+   "consolidated_tag": "Revenues",
+   "consolidated": {
+    "2020": 11139000000.0,
+    "2021": 17455000000.0,
+    "2022": 31877000000.0,
+    "2023": 37281000000.0,
+    "2024": 43978000000.0,
+    "2025": 52017000000.0
+   },
+   "source": [
+    "0001543151-26-000015",
+    "0001543151-23-000010"
+   ],
+   "axes": {
+    "BusinessSegments": {
+     "tag": "Revenues",
+     "members": {
+      "AllOther": {
+       "2020": 135000000.0,
+       "2021": 8000000.0,
+       "2022": 0.0
+      },
+      "Delivery": {
+       "2020": 3904000000.0,
+       "2021": 8362000000.0,
+       "2022": 10901000000.0
+      },
+      "Freight": {
+       "2020": 1011000000.0,
+       "2021": 2132000000.0,
+       "2022": 6947000000.0
+      },
+      "Mobility": {
+       "2020": 6089000000.0,
+       "2021": 6953000000.0,
+       "2022": 14029000000.0
+      }
+     },
+     "common_years": [
+      2020,
+      2021,
+      2022
+     ],
+     "first_year": 2020,
+     "last_year": 2022,
+     "sum_ratio": [
+      1.0,
+      1.0
+     ],
+     "additive": true,
+     "consolidated_cagr": 0.6916698894856435,
+     "by_member": {
+      "AllOther": {
+       "share_last": 0.0,
+       "contribution_to_growth": -0.0065097887935191435
+      },
+      "Delivery": {
+       "share_last": 0.3419706998776547,
+       "cagr": 0.6710069851027838,
+       "contribution_to_growth": 0.33739994213521074
+      },
+      "Freight": {
+       "share_last": 0.2179314239106566,
+       "cagr": 1.6213382920079922,
+       "contribution_to_growth": 0.28623782428392325
+      },
+      "Mobility": {
+       "share_last": 0.44009787621168867,
+       "cagr": 0.5178902473787539,
+       "contribution_to_growth": 0.38287202237438517
+      }
+     }
+    }
+   }
+  }
+ ]
+}

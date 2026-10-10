@@ -1,0 +1,741 @@
+{
+"cik": "914475",
+"quarters": [
+{
+"accession": "0000914475-26-000007",
+"filed": "2026-02-11",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0000914475-23-000011",
+"filed": "2023-02-09",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "NetIncomeLoss",
+"value": 341300000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1836000000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1860600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2355300000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2833900000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 102500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.29
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 249700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 478600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "CRENESSITYNetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 301200000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.47
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1887100000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2860500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 4.67
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 249700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "OtherIncome"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 51100000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "CRENESSITYNetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 301200000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 100400000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 100100000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "NetIncomeLoss",
+"value": 478600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 478600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1887100000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "CRENESSITYNetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 0.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2313500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "OtherIncome"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 40100000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2330600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2310000000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 341300000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2860500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2513700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 99400000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1840000000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2355300000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "CRENESSITYNetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 103700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 99500000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "NetIncomeLoss",
+"value": 249700000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 341300000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment",
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "OtherIncome"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 45600000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ResearchAndDevelopmentArrangementContractToPerformForOthersByType": "INGREZZANetProductSales"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2510000000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 101000000.0
+},
+{
+"adsh": "0000914475-26-000007",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 97700000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"CounterpartyName": "MitsubishiTanabePharmaCorporation",
+"TypeOfArrangement": "CollaborativeArrangement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 20000000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 51800000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 98900000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"CounterpartyName": "AbbVieInc",
+"ProductOrService": "Royalty",
+"TypeOfArrangement": "CollaborativeArrangement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 19200000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 154500000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 47800000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 89600000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 96500000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 4.16
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 94900000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 95800000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.56
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 97900000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1090100000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"CounterpartyName": "AbbVieInc",
+"ProductOrService": "Royalty",
+"TypeOfArrangement": "CollaborativeArrangement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 21200000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1133500000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1440900000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"CounterpartyName": "AbbVieInc",
+"ProductOrService": "Royalty",
+"TypeOfArrangement": "CollaborativeArrangement"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 22300000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "CollaborationRevenue"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 43400000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 93100000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 154500000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 89600000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 407300000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 97800000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1488700000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 94600000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 0.92
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 407300000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1045900000.0
+},
+{
+"adsh": "0000914475-23-000011",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Product"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 994100000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000914475-23-000011": {
+"adsh": "0000914475-23-000011",
+"cik": "914475",
+"filed": "20230209",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "NEUROCRINE BIOSCIENCES INC",
+"period": "20221231"
+},
+"0000914475-26-000007": {
+"adsh": "0000914475-26-000007",
+"cik": "914475",
+"filed": "20260211",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "NEUROCRINE BIOSCIENCES INC",
+"period": "20251231"
+}
+},
+"ticker": "NBIX"
+}

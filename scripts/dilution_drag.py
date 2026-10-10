@@ -15,12 +15,16 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
+from engine import fsds  # noqa: E402
 from engine.dilution import (  # noqa: E402
     DRAG_MATERIAL_PCT,
+    STATUS_NO_SHARES,
     STATUS_OK,
     VALIDATION_STATUS,
     dilution_drag,
+    dilution_drag_from_fsds,
 )
+from scripts.fsds_extract import load_extract  # noqa: E402
 from scripts.sbc_harvest_2026_08_21 import _cached_facts, _load_ledgers  # noqa: E402
 
 OUT_PATH = "reports/dilution_drag.json"
@@ -38,8 +42,11 @@ RESIDUAL_CAUSE = {
     "NO_SHARE_DATA": {
         "recoverable_from_companyfacts": False,
         "cause": ("다중클래스·Up-C 구조라 주식수가 클래스별 차원(dimension)으로 "
-                  "보고되는데 companyfacts는 무차원 사실만 담는다. 같은 캐시에 "
-                  "연차 매출은 정상적으로 들어 있어 캐시 누락이 아님을 확인했다."),
+                  "보고되는데 companyfacts는 무차원 사실만 담는다. v3.99부터 SEC "
+                  "재무제표 데이터셋(FSDS)의 클래스별 값으로 재시도하며, 여기 남은 "
+                  "종목은 그 경로로도 증명되지 않은 경우다(종목별 fsds_status 참고: "
+                  "NCI_PRESENT=Up-C라 유닛 교환과 희석 구분 불가, NO_CLASS_SHARES="
+                  "가중평균 주식수가 표준 태그로 공시되지 않음)."),
     },
     "MISSING_YEAR": {
         "recoverable_from_companyfacts": False,
@@ -66,6 +73,26 @@ def latest_buylist(folder="reports"):
     return {r["ticker"]: r["weight_final"] for r in rows}, cands[-1]
 
 
+def fsds_fallback(ticker, ledger, cf_result):
+    """companyfacts에 주식수가 없을 때 FSDS 클래스 경로로 재시도(v3.99).
+
+    추출본(`data/fsds/<T>.json`)이 없으면 원래 결과를 그대로 둔다 — 네트워크로
+    새로 받지 않는다(재현성: 무엇을 근거로 계산했는지가 저장소에 남아야 한다).
+    """
+    x = load_extract(ticker)
+    if x is None:
+        return cf_result
+    subs, rows = x["submissions"], x["rows"]
+    ac = fsds.as_converted_share_series(subs, rows, x["cik"])
+    rev = fsds.consolidated_revenue(subs, rows, x["cik"])["by_year"]
+    src = "fsds:" + ",".join(q["accession"] for q in x["quarters"])
+    out = dilution_drag_from_fsds(ticker, ledger, ac, rev, src)
+    out["companyfacts_status"] = cf_result["status"]
+    if out["status"] != STATUS_OK:
+        out["fsds_status"] = ac.get("status")
+    return out
+
+
 def load_sbc(path=SBC_PATH):
     try:
         doc = json.load(open(path, encoding="utf-8"))
@@ -80,7 +107,12 @@ def main():
     buy, buy_file = latest_buylist()
     sbc = load_sbc()
 
-    rows = [dilution_drag(t, d, _cached_facts(t)) for t, (_fn, d) in sorted(ledgers.items())]
+    rows = []
+    for t, (_fn, d) in sorted(ledgers.items()):
+        r = dilution_drag(t, d, _cached_facts(t))
+        if r["status"] == STATUS_NO_SHARES:
+            r = fsds_fallback(t, d, r)
+        rows.append(r)
     for r in rows:
         r["weight_final"] = buy.get(r["ticker"])
         r["sbc_to_fcf_pct"] = sbc.get(r["ticker"])

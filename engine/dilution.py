@@ -459,6 +459,23 @@ def dilution_drag(ticker, ledger, facts):
     if missing:
         return {"ticker": ticker, "status": STATUS_MISSING_YEAR, "share_tag": used_tag,
                 "detail": f"주식수 또는 FCF 미확보 연도 {missing}"}
+    shares, meta = consistent_share_series(per_year, base, end)
+    extra = {"share_tag": used_tag, "year_labeling": labeling,
+             **({"year_labeling_check": labeling_meta} if labeling == "midpoint" else {})}
+    return _drag_from_shares(ticker, base, end, span, how, fcf, shares, meta, extra)
+
+
+def _drag_from_shares(ticker, base, end, span, how, fcf, shares, meta, extra):
+    """주식수 시계열이 정해진 뒤의 공통 경로(가드·점프검사·계산).
+
+    companyfacts 경로와 FSDS 클래스 경로(v3.99)가 **같은 가드**를 거치도록 한 곳에 둔다
+    — 두 경로가 따로 가드를 가지면 언젠가 갈린다.
+    """
+    used_tag = extra.get("share_tag")
+    missing = [y for y in (base, end) if y not in shares or y not in fcf]
+    if missing:
+        return {"ticker": ticker, "status": STATUS_MISSING_YEAR, "share_tag": used_tag,
+                "detail": f"주식수 또는 FCF 미확보 연도 {missing}"}
     if fcf[base] <= 0:
         return {"ticker": ticker, "status": STATUS_BASE_NONPOSITIVE,
                 "detail": f"기준연도 FCF <= 0 ({fcf[base]:,.0f}) - CAGR 정의불가"}
@@ -468,7 +485,6 @@ def dilution_drag(ticker, ledger, facts):
         return {"ticker": ticker, "status": STATUS_END_NONPOSITIVE,
                 "detail": f"종료연도 FCF <= 0 ({fcf[end]:,.0f}) - CAGR 정의불가"}
 
-    shares, meta = consistent_share_series(per_year, base, end)
     jumps = structural_jumps(shares, base, end)
     if jumps:
         return {"ticker": ticker, "status": STATUS_JUMP, "share_tag": used_tag,
@@ -482,12 +498,63 @@ def dilution_drag(ticker, ledger, facts):
     return {
         "ticker": ticker, "status": STATUS_OK,
         "base_year": base, "end_year": end, "span": span,
-        "window_source": how, "share_tag": used_tag, "normalization": meta,
-        "year_labeling": labeling,
-        **({"year_labeling_check": labeling_meta} if labeling == "midpoint" else {}),
+        "window_source": how, "normalization": meta, **extra,
         "shares_base": shares[base], "shares_end": shares[end],
         "share_count_change_pct": shares[end] / shares[base] - 1,
         "fcf_cagr_total": total, "fcf_cagr_per_share": per,
         "dilution_drag": per - total,
         "per_share_declined": per < 0 <= total,
     }
+
+
+# FSDS 경로가 연도 라벨을 증명하는 데 쓰는 허용오차. 같은 SEC 원자료라면 정확히
+# 일치해야 하지만 ledger 일부는 벤더 값이라(P0-07) 반올림 차이를 허용한다. 한 해 밀린
+# 라벨은 성장률만큼(보통 수 %) 어긋나므로 이 폭으로 걸러진다. ⚠️ 사전 고정값.
+FSDS_LABEL_TOL = 0.005
+FSDS_LABEL_MIN_MATCHES = 3
+
+
+def verify_fsds_labeling(ledger, fsds_revenue_by_year):
+    """FSDS 연차 매출(결산일 연도 라벨)이 ledger 매출 연도 키를 재현하는가 -> (일치, 불일치)."""
+    want = {int(k): v for k, v in
+            ((ledger.get("inputs") or {}).get("revenue_by_year") or {}).items()}
+    hits = misses = 0
+    for y, v in fsds_revenue_by_year.items():
+        if y in want and want[y]:
+            if abs(v / want[y] - 1.0) <= FSDS_LABEL_TOL:
+                hits += 1
+            else:
+                misses += 1
+    return hits, misses
+
+
+def dilution_drag_from_fsds(ticker, ledger, as_converted, fsds_revenue_by_year, source):
+    """companyfacts에 무차원 주식수가 없는 다중클래스 종목의 대체 경로(v3.99).
+
+    `as_converted`는 `engine.fsds.as_converted_share_series()` 결과다 — 회사 자신의
+    EPS로 "이 클래스의 희석 주식수가 회사 전체의 분모"임이 증명된 경우에만 OK다.
+    여기서는 추가로 연도 라벨이 ledger를 재현하는지 확인한 뒤, companyfacts 경로와
+    **같은 가드**(`_drag_from_shares`)를 태운다.
+    """
+    base, span, how, fcf = resolve_cagr_window(ledger)
+    if base is None:
+        return {"ticker": ticker, "status": STATUS_NO_WINDOW, "detail": how}
+    end = base + span
+    if as_converted.get("status") != "OK":
+        return {"ticker": ticker, "status": STATUS_NO_SHARES, "source": source,
+                "fsds_status": as_converted.get("status"),
+                "detail": "FSDS 클래스 경로도 불가: " + as_converted.get("detail", "")}
+    hits, misses = verify_fsds_labeling(ledger, fsds_revenue_by_year)
+    if misses or hits < FSDS_LABEL_MIN_MATCHES:
+        return {"ticker": ticker, "status": STATUS_FY_COLLISION, "source": source,
+                "labeling_check": [hits, misses],
+                "detail": (f"FSDS 연차 매출이 ledger 연도 키를 재현하지 못한다(일치 {hits}, "
+                           f"불일치 {misses}) — 어느 해 값인지 특정 불가")}
+    shares = as_converted["series"]
+    meta = {"basis": "fsds_as_converted_class", "class": as_converted["class"],
+            "adopted": True, "eps_checks": as_converted.get("checks")}
+    extra = {"share_tag": "WeightedAverageNumberOfDilutedSharesOutstanding"
+             f"[ClassOfStock={as_converted['class']}]",
+             "source": source, "year_labeling": "end_year(verified_vs_ledger_revenue)",
+             "year_labeling_check": [hits, misses]}
+    return _drag_from_shares(ticker, base, end, span, how, fcf, shares, meta, extra)

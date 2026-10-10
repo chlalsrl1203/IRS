@@ -1,0 +1,1126 @@
+{
+"cik": "910521",
+"quarters": [
+{
+"accession": "0001628280-26-037664",
+"filed": "2026-05-22",
+"form": "10-K",
+"quarter": "2026q2"
+},
+{
+"accession": "0000910521-23-000016",
+"filed": "2023-05-26",
+"form": "10-K",
+"quarter": "2023q2"
+}
+],
+"rows": [
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 157054000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 153554000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 150201000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 150201000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 139978000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 139978000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 4.86
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 6.33
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 7.02
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 759563000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 759563000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 966091000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 966091000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1024071000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 1024071000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4287763000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1806740000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherBrandsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 241891000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2239132000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1105057000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1855456000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2432307000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1424089000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2863674000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 4985612000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2233090000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherBrandsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 221171000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2531351000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1376782000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2129747000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2855865000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1798903000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3186709000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 5472296000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2587330000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherBrandsSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 146208000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGBrandSegment",
+"ConsolidationItems": "OperatingSegments"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2738758000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1748061000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2264189000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3208107000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2280778000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3191518000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 156285000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 152670000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 145805000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 155225000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 151992000.0
+},
+{
+"adsh": "0001628280-26-037664",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 145498000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 26176000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 611897000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 516822000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TevaWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 129094000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 27789000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 26982000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 744213000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TevaWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 149111000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.8
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DirecttoConsumer",
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1213600000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 382575000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "TevaWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 105928000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DirecttoConsumer",
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1066730000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SanukWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 26566000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1187752000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1175789000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 628674000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1088082000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SanukWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 30316000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 382575000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 8.42
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 516822000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 102063000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.46
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.71
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 91787000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 53653000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "CurrencyConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 832632000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1004356000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.66
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210930",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 721902000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "UGGWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 871799000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3627286000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 68819000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 925877000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 982546000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "SanukWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 27678000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 48124000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 278662000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 26686000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 13.47
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 27508000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 2545641000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.66
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 60573000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 16.26
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "HokaBrandSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 405243000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 10.48
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "DirecttoConsumer",
+"ContractWithCustomerSalesChannel": "SalesChannelDirectlyToConsumer"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1466611000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 2.51
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 101524000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 784164000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20211231",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 232943000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 28055000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 44849000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20221231",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1345640000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 451949000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220630",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 614461000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 791571000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 3150339000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210630",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 504678000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 26504000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "OtherWholesaleSegment",
+"ContractWithCustomerSalesChannel": "SalesChannelThroughIntermediary"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 69375000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 19.37
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220930",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 875614000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 1,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 736007000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 451949000.0
+},
+{
+"adsh": "0000910521-23-000016",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 28406000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0000910521-23-000016": {
+"adsh": "0000910521-23-000016",
+"cik": "910521",
+"filed": "20230526",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "DECKERS OUTDOOR CORP",
+"period": "20230331"
+},
+"0001628280-26-037664": {
+"adsh": "0001628280-26-037664",
+"cik": "910521",
+"filed": "20260522",
+"form": "10-K",
+"fp": "FY",
+"fy": "2026",
+"name": "DECKERS OUTDOOR CORP",
+"period": "20260331"
+}
+},
+"ticker": "DECK"
+}

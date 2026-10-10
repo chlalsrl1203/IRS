@@ -1,0 +1,870 @@
+{
+"cik": "1562088",
+"quarters": [
+{
+"accession": "0001628280-26-012494",
+"filed": "2026-02-27",
+"form": "10-K",
+"quarter": "2026q1"
+},
+{
+"accession": "0001562088-23-000052",
+"filed": "2023-03-01",
+"form": "10-K",
+"quarter": "2023q1"
+}
+],
+"rows": [
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 44936000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 1.88
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 88574000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 414065000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 531109000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IAPs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 40479000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 6206000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 88574000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 79725000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 42526000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 40368000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 0.35
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOtherMiscellaneous"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1937000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 6260000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 292350000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 645375000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 42006000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": 16067000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "ClassAAndClassBCommonStock"
+},
+"tag": "NetIncomeLoss",
+"value": 88574000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 311539000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 392214000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 8.57
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "ClassAAndClassBCommonStock"
+},
+"tag": "NetIncomeLoss",
+"value": 414065000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 49858000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 404684000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"Geographical": "NonUs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 436485000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 54907000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 45640000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 607531000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 140493000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1037589000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 873442000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 40361000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 38730000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 16067000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 41212000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOtherMiscellaneous"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 682000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IAPs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 38653000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOtherMiscellaneous"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1293000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 164147000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 0,
+"segments": {
+"EquityComponents": "CommonStock"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 46628000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ClassOfStock": "ClassAAndClassBCommonStock"
+},
+"tag": "NetIncomeLoss",
+"value": 16067000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20251231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 414065000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 238759000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "IAPs"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 34673000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20231231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 126425000.0
+},
+{
+"adsh": "0001628280-26-012494",
+"ddate": "20241231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 748024000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": -15776000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 31539000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 161696000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "AllCountriesMinusUSAAndUK"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 169636000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 117501000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 168320000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 44731000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 6915000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 21627.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 180698000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 27043000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": -59574000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 32718000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20210630",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB",
+"TitleOfIndividual": "Founders"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 6930000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": -60135000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 109163000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "LicenseAndService",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 273507000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 24658000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 25163000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "EnglishTest",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 15155000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"Geographical": "AllCountriesMinusUSAAndUK"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 116446000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 369495000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": -2.57
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "AllCountriesMinusUSAAndUK"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 75473000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 31899000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": -15776000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": -1.24
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "GB"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 15245000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 8462000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": -59574000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "RetainedEarnings"
+},
+"tag": "NetIncomeLoss",
+"value": -60135000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 250772000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 16645000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 18539000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "ProductAndServiceOther",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 1997000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20201231",
+"qtrs": 4,
+"segments": {
+"Geographical": "US"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 70978000.0
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20221231",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": -1.51
+},
+{
+"adsh": "0001562088-23-000052",
+"ddate": "20211231",
+"qtrs": 4,
+"segments": {
+"ProductOrService": "Advertising",
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "RevenueFromContractWithCustomerExcludingAssessedTax",
+"value": 38501000.0
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0001562088-23-000052": {
+"adsh": "0001562088-23-000052",
+"cik": "1562088",
+"filed": "20230301",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "DUOLINGO, INC.",
+"period": "20221231"
+},
+"0001628280-26-012494": {
+"adsh": "0001628280-26-012494",
+"cik": "1562088",
+"filed": "20260227",
+"form": "10-K",
+"fp": "FY",
+"fy": "2025",
+"name": "DUOLINGO, INC.",
+"period": "20251231"
+}
+},
+"ticker": "DUOL"
+}

@@ -10867,3 +10867,33 @@ Item 15(ICFR) · Item 16F(감사인 변경) · Item 8.A.7(소송) · Item 6.E/7.
   DUOL `gov.insider_group_ownership`은 클래스별 지분에서 계산한 값. 둘 다 상대 판독과 일치할 때만 들어갔다.
 
 baseline fingerprint `f5709edf…` 불변, `ledger/`·매수리스트 0건 수정. `ENGINE_VERSION` v3.97 → **v3.98**.
+
+## v3.99 — SEC 재무제표 데이터셋(FSDS) stdlib 리더: 다중클래스 희석 · 세그먼트 매출 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ①. companyfacts는 **무차원 사실만** 담아 클래스별·세그먼트별
+값이 통째로 빠진다 — v3.85가 ERIE·HLNE·RYAN 희석을 "원리적으로 못 가져온다"고 쓴 것은 companyfacts에
+한해서만 참이었다. SEC 분기 Financial Statement Data Sets의 `num.txt` `segments` 열(2023q1 실측 포함)을
+`engine/fsds.py`가 stdlib(`zipfile`+`csv`)로 읽는다. 참조 구현 secfsdstools(Apache-2.0)는 pandas 등 8개
+의존이라 코드는 가져오지 않았다. 판정·비중·`run_analysis()` **미배선**(테스트 고정).
+
+- `scripts/fsds_extract.py T...`: 종목마다 최신 연차보고서 + 3년 전 연차보고서(연속 6년)의 분기 zip을
+  `.cache/fsds/`(gitignore)에 받고 대상 행만 `data/fsds/<T>.json`에 남긴다(재현용, 커밋).
+- **클래스 채택 규칙(사전 고정)**: `EPS_diluted[class] × 희석주식수[class] ≈ 회사 전체 NetIncomeLoss`(1% 이내)가
+  **모든 연도에서** 성립하는 클래스가 정확히 하나일 때만 그 클래스의 희석주식수를 "전환가정 총주식수"로 쓴다.
+  비지배지분 순이익이 순이익의 1%를 넘는 해가 있으면 거부(Up-C에선 상장 클래스 증가가 유닛 교환인지 희석인지
+  구분 불가). 추가로 FSDS 연차 매출이 ledger 연도 키를 재현해야 한다(0.5% 이내, 불일치 0, 일치 3+).
+  가드·점프검사·계산은 companyfacts 경로와 **같은 함수**(`dilution._drag_from_shares`)를 탄다.
+- **결과(희석 드래그)**: ERIE **회복**(Class A 희석 52.31M→52.31M, 6년 모두 EPS 대조 오차 0.1% 안, 드래그 ≈ 0 —
+  Class A 희석 = 기본 46.19M + Class B 2,542×2,400 전환이 실측 일치). HLNE는 가중평균 주식수가 표준 태그로
+  공시되지 않아(`NO_CLASS_SHARES`), RYAN은 비지배지분이 6년 내내 커서(`NCI_PRESENT`, 게다가 2021-07 IPO가 창
+  안) **보수적으로 측정 불가 유지**. 기존 72종목 값은 전부 불변(diff 확인), 신규 ledger 8종목 포함 측정 74/80.
+- **세그먼트 매출 대조**(`scripts/fsds_segments.py` → `reports/fsds_segments.json`, 진단 전용): 단일 축
+  (BusinessSegments·ProductOrService)만, 구성원 합이 양 끝 연도 모두 연결 매출의 1% 안일 때만 성장 기여도를 낸다.
+  매수리스트 18종목+GEN·ROP·BRO 중 가산적 분해가 나온 것은 ADBE·ERIE·NBIX·NXT·ROP·RYAN·SE·SKYW·TW·UBER.
+  ⚠️ **GEN은 대조 실패** — 두 연차보고서 사이에 구성원 이름 체계가 바뀌어(CyberSafety/LifeLock → Subscription)
+  공통 연도가 없다. 이 리포트가 만들어진 계기가 GEN인데 GEN에서 자동 대조가 안 된다는 사실을 그대로 남긴다.
+  QSI 답(`cap.ma_discipline` 등)에 쓰지 않는다.
+- 한계: 분기 zip이 60~120MB라 종목당 ~40초. `segments` 열의 2023년 이전 분기 커버리지는 미확인.
+
+테스트 1,387 → **1,403 통과**(신규 `tests/test_fsds.py` 16, `test_dilution` 증거 검사에 FSDS 경로 추가) ·
+baseline fingerprint `f5709edf…` **불변** · `ledger/`·매수리스트·공식 판정 0건 수정 · `ENGINE_VERSION` v3.98 → **v3.99**.

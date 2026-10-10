@@ -1,0 +1,901 @@
+{
+"cik": "1852131",
+"quarters": [
+{
+"accession": "0001852131-26-000017",
+"filed": "2026-05-19",
+"form": "10-K",
+"quarter": "2026q2"
+},
+{
+"accession": "0001193125-23-163921",
+"filed": "2023-06-09",
+"form": "10-K",
+"quarter": "2023q2"
+}
+],
+"rows": [
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20230630",
+"qtrs": 0,
+"segments": {},
+"tag": "CommonStockSharesOutstanding",
+"value": 62053870.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20230630",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB",
+"LegalEntity": "FlexLtd"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 74432619.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20230630",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB",
+"LegalEntity": "TPGRise"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 8140341.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20231231",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB",
+"LegalEntity": "FlexLtd"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 74432619.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 145648231.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 149391483.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.37
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.47
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 3.84
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 306241000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 509168000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 585883000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 189974000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 8078000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLossAttributableToNoncontrollingInterest",
+"value": 0.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 496215000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "ProfitLoss",
+"value": 496215000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 517246000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "ProfitLoss",
+"value": 517246000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 585883000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "ProfitLoss",
+"value": 585883000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 2499841000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "Revenues",
+"value": 2499841000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 281272000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 797230000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 1702611000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 35268000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 2464573000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 2959197000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "Revenues",
+"value": 2959197000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 0.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 927594000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2031603000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 77037000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 2882160000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 3559390000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"BusinessSegments": "ReportableSegment"
+},
+"tag": "Revenues",
+"value": 3559390000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 0.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 828691000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 2730699000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 442012000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 3117378000.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 147284330.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 149275950.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 152710033.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20240331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 77067639.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20250331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 143539344.0
+},
+{
+"adsh": "0001852131-26-000017",
+"ddate": "20260331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 147976256.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 145851637.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 66397000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 904946000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 121333000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 1298596000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1457592000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk"
+},
+"tag": "Revenues",
+"value": 1902137000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetParentInvestment"
+},
+"tag": "NetIncomeLoss",
+"value": 124348000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 127924000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"EquityComponents": "AccumulatedNetParentInvestment"
+},
+"tag": "NetIncomeLoss",
+"value": 50913000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 50913000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 188368000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1195617000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 1851621000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 295846000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 0.02
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 1329668000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 0.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk"
+},
+"tag": "Revenues",
+"value": 1457592000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 45886065.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 0.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "Revenues",
+"value": 1902137000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 552646000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassB"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 98204522.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 1143000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20220331",
+"qtrs": 4,
+"segments": {},
+"tag": "NetIncomeLoss",
+"value": 0.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk"
+},
+"tag": "Revenues",
+"value": 1195617000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 0,
+"segments": {
+"ClassOfStock": "CommonClassA"
+},
+"tag": "CommonStockSharesOutstanding",
+"value": 45886065.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredAtPointInTime"
+},
+"tag": "Revenues",
+"value": 50516000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "WeightedAverageNumberOfDilutedSharesOutstanding",
+"value": 145851637.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {},
+"tag": "WeightedAverageNumberOfSharesOutstandingBasic",
+"value": 45886065.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "BR"
+},
+"tag": "Revenues",
+"value": 14440000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"TimingOfTransferOfGoodOrService": "TransferredOverTime"
+},
+"tag": "Revenues",
+"value": 1129220000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {},
+"tag": "ProfitLoss",
+"value": 124348000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "US"
+},
+"tag": "Revenues",
+"value": 900927000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 603541000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20210331",
+"qtrs": 4,
+"segments": {
+"ConcentrationRiskByBenchmark": "SalesRevenueNet",
+"ConcentrationRiskByType": "GeographicConcentrationRisk",
+"Geographical": "NonUs"
+},
+"tag": "Revenues",
+"value": 294690000.0
+},
+{
+"adsh": "0001193125-23-163921",
+"ddate": "20230331",
+"qtrs": 1,
+"segments": {},
+"tag": "EarningsPerShareDiluted",
+"value": 0.02
+}
+],
+"source": "SEC Financial Statement Data Sets",
+"submissions": {
+"0001193125-23-163921": {
+"adsh": "0001193125-23-163921",
+"cik": "1852131",
+"filed": "20230609",
+"form": "10-K",
+"fp": "FY",
+"fy": "2022",
+"name": "NEXTRACKER INC.",
+"period": "20230331"
+},
+"0001852131-26-000017": {
+"adsh": "0001852131-26-000017",
+"cik": "1852131",
+"filed": "20260519",
+"form": "10-K",
+"fp": "FY",
+"fy": "2026",
+"name": "NEXTPOWER INC.",
+"period": "20260331"
+}
+},
+"ticker": "NXT"
+}
