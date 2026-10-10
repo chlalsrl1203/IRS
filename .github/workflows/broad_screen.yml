@@ -97,6 +97,19 @@ jobs:
           SEC_USER_AGENT: "IRS Research chlalsrl1203@gmail.com"
         run: python3 scripts/update_research_queue.py
 
+      # 자동 정식분석(engine/auto_analysis.py, v4.03) - 큐 상위 종목을 **규칙 기반으로**
+      # run_analysis()에 통과시킨다. Claude·API 비용 0. 결과는 ledger_auto/에만 저장되고
+      # 공식 ledger·매수리스트·thesis와 섞이지 않는다(테스트로 고정). ALPHA_VANTAGE_API_KEY가
+      # 없으면 시총이 낡은 public_float 근사라 리포트에 그렇게 표시된다.
+      - name: auto analysis (rule-based, unofficial)
+        if: always()
+        env:
+          SEC_USER_AGENT: "IRS Research chlalsrl1203@gmail.com"
+          ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+        run: python3 scripts/auto_analysis_ci.py --post
+
       # 실전 트랙레코드(engine/track_record.py) - **이 프로젝트의 가장 오래된
       # 공백을 메우는 단계다.** CLAUDE.md 전체에 "실현결과와의 관계 증거가
       # 0건"이 반복되고, growth_quality·accounting_quality·dilution이 전부
@@ -127,7 +140,7 @@ jobs:
           git config user.name "irs-broad-screen[bot]"
           git config user.email "irs-broad-screen-bot@users.noreply.github.com"
           git add reports/broad_screen/ reports/research_queue.json \
-                  reports/track_record/ 2>/dev/null || true
+                  reports/track_record/ ledger_auto/ reports/auto_analysis/ 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "새 리포트 없음 - 커밋 건너뜀"
           else

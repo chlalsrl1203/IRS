@@ -1,0 +1,723 @@
+{
+ "n_ledgers": 80,
+ "n_ok": 63,
+ "n_refused": 12,
+ "n_skipped_insurer": 5,
+ "n_error": 0,
+ "judgment_match": 58,
+ "grade_match": 43,
+ "abs_gap_error_median": 0.004611396789550776,
+ "abs_gap_error_p90": 0.05435906513146374,
+ "rows": [
+  {
+   "ticker": "ACGL",
+   "status": "SKIP_INSURER"
+  },
+  {
+   "ticker": "ADBE",
+   "status": "OK",
+   "official_gap": 0.1047055537089488,
+   "auto_gap": 0.10931695049849957,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "BKNG",
+   "status": "OK",
+   "official_gap": 0.05981018711677141,
+   "auto_gap": 0.06568405796638078,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": null,
+   "auto_grade": "B"
+  },
+  {
+   "ticker": "BRO",
+   "status": "OK",
+   "official_gap": 0.07427728925631566,
+   "auto_gap": 0.107839789055824,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "BSX",
+   "status": "OK",
+   "official_gap": 0.058652919654472085,
+   "auto_gap": 0.06433720004997992,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "B",
+   "auto_grade": "B"
+  },
+  {
+   "ticker": "BSY",
+   "status": "OK",
+   "official_gap": 0.05695494807794302,
+   "auto_gap": 0.05358289305605858,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": null,
+   "auto_grade": "B"
+  },
+  {
+   "ticker": "BYD",
+   "status": "OK",
+   "official_gap": -0.01883017098919107,
+   "auto_gap": -0.016211546310470643,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "CAH",
+   "status": "OK",
+   "official_gap": 0.04870001720147461,
+   "auto_gap": 0.0495830190899227,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "CDNS",
+   "status": "OK",
+   "official_gap": 0.032879560479090325,
+   "auto_gap": -0.06936233520507812,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "과대평가 가능성",
+   "official_grade": null,
+   "auto_grade": "D"
+  },
+  {
+   "ticker": "CHWY",
+   "status": "OK",
+   "official_gap": 0.023697188576930775,
+   "auto_gap": 0.03743053598699726,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "CINF",
+   "status": "SKIP_INSURER"
+  },
+  {
+   "ticker": "COR",
+   "status": "OK",
+   "official_gap": 0.030971756573969778,
+   "auto_gap": 0.036484757062251044,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "CRM",
+   "status": "OK",
+   "official_gap": 0.06034346853950011,
+   "auto_gap": 0.07270747458198057,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "B",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "CROX",
+   "status": "OK",
+   "official_gap": 0.09889103376656783,
+   "auto_gap": 0.12687575931594297,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "DECK",
+   "status": "OK",
+   "official_gap": 0.13228701711181728,
+   "auto_gap": 0.13621424794677822,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "DLO",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "DOCU",
+   "status": "OK",
+   "official_gap": 0.08627269445104728,
+   "auto_gap": 0.08908660588903555,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "DSGX",
+   "status": "OK",
+   "official_gap": 0.04248310348930688,
+   "auto_gap": 0.045005190586474814,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "DUOL",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "EAT",
+   "status": "OK",
+   "official_gap": 0.042236736293024255,
+   "auto_gap": 0.045194843287653164,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "EME",
+   "status": "OK",
+   "official_gap": 0.002824039826328964,
+   "auto_gap": -0.0330444661620133,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "ERIE",
+   "status": "OK",
+   "official_gap": 0.021298187098920188,
+   "auto_gap": 0.02710892470878347,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "EXEL",
+   "status": "OK",
+   "official_gap": 0.06981948371437001,
+   "auto_gap": 0.0712581967881005,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "B",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "FIVE",
+   "status": "OK",
+   "official_gap": 0.031087848588149752,
+   "auto_gap": 0.03181817237965369,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "FIX",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "GEN",
+   "status": "OK",
+   "official_gap": 0.12182151794433595,
+   "auto_gap": 0.12851516723632814,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "GWRE",
+   "status": "OK",
+   "official_gap": 0.0315386804982906,
+   "auto_gap": -0.056224418423909836,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "과대평가 가능성",
+   "official_grade": "C",
+   "auto_grade": "D"
+  },
+  {
+   "ticker": "HLNE",
+   "status": "OK",
+   "official_gap": 0.13309650164355719,
+   "auto_gap": 0.1346027348588892,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "HQY",
+   "status": "OK",
+   "official_gap": 0.05048133850097658,
+   "auto_gap": 0.05896408081054688,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "B",
+   "auto_grade": "B"
+  },
+  {
+   "ticker": "IDXX",
+   "status": "OK",
+   "official_gap": 0.004138841871727902,
+   "auto_gap": 0.006715395572243321,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "KEYS",
+   "status": "OK",
+   "official_gap": -0.14364213252736793,
+   "auto_gap": -0.06501156116109436,
+   "official_judgment": "과대평가 가능성",
+   "auto_judgment": "과대평가 가능성",
+   "official_grade": null,
+   "auto_grade": "D"
+  },
+  {
+   "ticker": "KLAC",
+   "status": "OK",
+   "official_gap": 0.008613438964066245,
+   "auto_gap": -0.11113467614408488,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "과대평가 가능성",
+   "official_grade": null,
+   "auto_grade": "D"
+  },
+  {
+   "ticker": "LFUS",
+   "status": "OK",
+   "official_gap": -0.0410740041216912,
+   "auto_gap": -0.03685770577662056,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "LULU",
+   "status": "OK",
+   "official_gap": 0.08221093191778242,
+   "auto_gap": 0.08250161184942303,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "MCK",
+   "status": "OK",
+   "official_gap": -0.0001648937621887142,
+   "auto_gap": 0.016223361797384664,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "MEDP",
+   "status": "OK",
+   "official_gap": 0.09795899541169606,
+   "auto_gap": 0.0993988528946062,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "MMS",
+   "status": "OK",
+   "official_gap": 0.09740317333848487,
+   "auto_gap": 0.07675332985355195,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "MNDY",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "MNST",
+   "status": "OK",
+   "official_gap": -0.006418685378330832,
+   "auto_gap": -0.0030706703207522834,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "NBIX",
+   "status": "OK",
+   "official_gap": 0.14051410543895676,
+   "auto_gap": 0.14131862509227705,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "NOW",
+   "status": "OK",
+   "official_gap": 0.08296327724967925,
+   "auto_gap": 0.08765173092399565,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "NXT",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "NYT",
+   "status": "OK",
+   "official_gap": 0.016768037842941452,
+   "auto_gap": 0.01541698965314714,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "OKTA",
+   "status": "OK",
+   "official_gap": 0.02798536305618546,
+   "auto_gap": 0.03437231068802146,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "OSIS",
+   "status": "OK",
+   "official_gap": 0.07060206432291147,
+   "auto_gap": 0.07304347057291144,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "PATH",
+   "status": "OK",
+   "official_gap": 0.035622025029947185,
+   "auto_gap": 0.04156608630924408,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "PCTY",
+   "status": "OK",
+   "official_gap": 0.10780934544939036,
+   "auto_gap": 0.10988148900407788,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "PDD",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "PGR",
+   "status": "SKIP_INSURER"
+  },
+  {
+   "ticker": "PH",
+   "status": "OK",
+   "official_gap": -0.08585815370238321,
+   "auto_gap": -0.010595659233825966,
+   "official_judgment": "과대평가 가능성",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "PINS",
+   "status": "OK",
+   "official_gap": 0.1622094065462275,
+   "auto_gap": 0.16419266765462595,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "S",
+   "auto_grade": "S"
+  },
+  {
+   "ticker": "PSN",
+   "status": "OK",
+   "official_gap": 0.08150607884890695,
+   "auto_gap": 0.08180705846316477,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "PTC",
+   "status": "OK",
+   "official_gap": 0.040768922270243035,
+   "auto_gap": 0.048338426054422706,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "QCOM",
+   "status": "OK",
+   "official_gap": 0.004414563404892963,
+   "auto_gap": 0.010705052520522826,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "REGN",
+   "status": "OK",
+   "official_gap": -0.014450973816474519,
+   "auto_gap": 0.01680539151383182,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "RLI",
+   "status": "SKIP_INSURER"
+  },
+  {
+   "ticker": "RMBS",
+   "status": "OK",
+   "official_gap": 0.019965811147359458,
+   "auto_gap": 0.02073676146474228,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "RMD",
+   "status": "OK",
+   "official_gap": 0.05889235066261829,
+   "auto_gap": 0.058344941605001074,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": null,
+   "auto_grade": "B"
+  },
+  {
+   "ticker": "ROKU",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "ROP",
+   "status": "OK",
+   "official_gap": 0.012357788085937522,
+   "auto_gap": 0.08295680999755861,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "C",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "RYAN",
+   "status": "OK",
+   "official_gap": 0.1376697121870132,
+   "auto_gap": 0.1485107003461929,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "SE",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "SIGI",
+   "status": "SKIP_INSURER"
+  },
+  {
+   "ticker": "SKYW",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "TCOM",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "TEAM",
+   "status": "OK",
+   "official_gap": -0.03923979658860746,
+   "auto_gap": -0.04292193312425199,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "TENB",
+   "status": "REFUSED",
+   "category": "FRAMEWORK_MISMATCH"
+  },
+  {
+   "ticker": "TTD",
+   "status": "OK",
+   "official_gap": 0.1700962080005105,
+   "auto_gap": 0.1746198667529519,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "S",
+   "auto_grade": "S"
+  },
+  {
+   "ticker": "TW",
+   "status": "OK",
+   "official_gap": 0.11156004145007234,
+   "auto_gap": 0.1128749675975333,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "TYL",
+   "status": "OK",
+   "official_gap": 0.0277231870438982,
+   "auto_gap": 0.029931133821241934,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "UBER",
+   "status": "REFUSED",
+   "category": "FCF_NONPOSITIVE"
+  },
+  {
+   "ticker": "ULTA",
+   "status": "OK",
+   "official_gap": -0.014825823167882064,
+   "auto_gap": -0.01601171184789702,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "URBN",
+   "status": "OK",
+   "official_gap": -0.01905480813221093,
+   "auto_gap": 0.013747820112952988,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "VRSN",
+   "status": "OK",
+   "official_gap": -0.009719340999338522,
+   "auto_gap": -0.008341191558754957,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "VRT",
+   "status": "OK",
+   "official_gap": -0.01241755911955486,
+   "auto_gap": -0.0030906243051017357,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "WCN",
+   "status": "OK",
+   "official_gap": 0.0100359824109255,
+   "auto_gap": -0.04432308272053824,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "WDAY",
+   "status": "OK",
+   "official_gap": 0.11417055453507202,
+   "auto_gap": 0.11717996920792358,
+   "official_judgment": "저평가 가능성",
+   "auto_judgment": "저평가 가능성",
+   "official_grade": "A",
+   "auto_grade": "A"
+  },
+  {
+   "ticker": "WM",
+   "status": "OK",
+   "official_gap": 0.0008904206704897916,
+   "auto_gap": 0.007243802102506469,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "WTS",
+   "status": "OK",
+   "official_gap": -0.0008567575289279844,
+   "auto_gap": -0.003866528160779467,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": "C",
+   "auto_grade": "C"
+  },
+  {
+   "ticker": "ZTS",
+   "status": "OK",
+   "official_gap": 0.020971515574735304,
+   "auto_gap": 0.026403324919789313,
+   "official_judgment": "적정가/경계선",
+   "auto_judgment": "적정가/경계선",
+   "official_grade": null,
+   "auto_grade": "C"
+  }
+ ]
+}
