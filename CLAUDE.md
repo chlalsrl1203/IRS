@@ -10948,3 +10948,22 @@ baseline fingerprint `f5709edf…` **불변** · `ledger/`·매수리스트·공
 바꾸지 않으려고 코드에 예외를 넣지 않았다). ② 가이던스 없는 실적 사전경고는 방향을 기계적으로 읽을 수 없어 잡지 못한다.
 
 테스트 1,423 → **1,430 통과**(신규 `tests/test_bad_news.py` 7) · baseline 불변 · 기존 봉인 0건 수정 · `ENGINE_VERSION` v4.00 → **v4.01**.
+
+## v4.02 — SEC 의견서한 건수 질문 + 위임장 지분표 파서 개선 (2026-10-10)
+
+`docs/opensource_qualitative_2026-10-09.md` §4 ④. 수집기 `scripts/qsi_disclosure_extras.py`(원자료
+`reports/qsi_disclosure_extras/`), 판정·비중·ledger 미배선.
+
+- **새 질문 `acc.sec_comment_letters_3y`**(`engine/comment_letters.py`): 3년 창 안 EDGAR `UPLOAD`(SEC 직원 서한) 건수.
+  제출 목록이 창을 덮지 못하면 0으로 쓰지 않는다. ⚠️ 등록신고서 검토·종결 서한이 섞인 **사실의 건수**이며 품질 판정이
+  아니다. 회사 답변서(CORRESP, HTML) 주제 키워드는 리포트에 병기만. 결과: PDD·SE 5, GEN 3, HLNE·MNDY 2, 나머지 국내 0
+  (보험 3사는 회계품질 축이 없어 미적용). 주제 예: GEN 2024-01 비GAAP·수익인식·세그먼트, SE 2024-01 손상·법인세.
+- **지분표 파서 개선**(`sec_events.insider_group_from_proxy`, edgartools의 표 행 선택 방식만 참고): ① 'as a group' 없이
+  인원수 괄호로 끝나는 합산 행 인식(실측 ACGL·PTC) ② 우선주·예탁증서 표 앞 400자 문맥이면 그 행 제외(ACGL Series F/G)
+  ③ 합산 행 뒤 다음 행·각주 토큰('5% Stockholders', '* Less than 1%')은 버리되 **세 번째 토큰이 주식수면 다중 클래스로
+  보고 거부**(HLNE 계속 거부). 회귀 검증: 기존 답 있던 14종목에서 새 파서 결과가 기록과 **전부 일치하거나 None**(DUOL·
+  HLNE·PGR은 기존 답이 판독 경로에서 왔고 파서는 전에도 None). 새로 채움: ACGL 1_to_5pct(3.3%)·DECK lt_1pct(0.4%)·
+  PTC lt_1pct·SIGI 1_to_5pct(1.0%). DLO(외국 발행사)는 그대로 unknown.
+
+**결과(19종목)**: 답함 379 → **398**(70.7%), 해결 73.7% → **75.1%**(분모 548 → 563, 질문 1개 추가).
+테스트 1,430 → **1,438 통과** · baseline 불변 · 기존 봉인 0건 수정(개정본 17건) · `ENGINE_VERSION` v4.01 → **v4.02**.

@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000230557",
+  "insider_group": {
+    "accession": "0001104659-26-034953",
+    "filing_date": "2026-03-26",
+    "result": {
+      "answer": "1_to_5pct",
+      "excerpt": "ampson, Kate E. R. 1,447 * Scheid, John S. 30,057 * All directors and executive officers, as a group (17 persons) 490,429 1% *",
+      "pct": 1.0,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/230557/000110465926034953/tm261551d2_def14a.htm"
+  },
+  "since": "2023-10-11",
+  "ticker": "SIGI"
+}

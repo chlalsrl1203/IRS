@@ -1,0 +1,25 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000910521",
+  "comment_letters": {
+    "answer": 0,
+    "corresp_topics": {},
+    "n_corresp": 0,
+    "status": "OK",
+    "upload_dates": []
+  },
+  "insider_group": {
+    "accession": "0000910521-26-000018",
+    "filing_date": "2026-07-24",
+    "result": {
+      "answer": "lt_1pct",
+      "excerpt": "Shanahan 13,197 (7) * Bonita C. Stewart 36,108 (8) * All Directors and Executive Officers as a Group (16 persons) 549,704 0.4 % 5%",
+      "pct": 0.4,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/910521/000091052126000018/deck-20260724.htm"
+  },
+  "since": "2023-10-11",
+  "ticker": "DECK"
+}

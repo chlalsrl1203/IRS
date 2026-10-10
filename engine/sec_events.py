@@ -508,8 +508,15 @@ def collect_say_on_pay(listing: dict, fetch_text, cik: str, as_of: str) -> dict:
 
 # --- 임원·이사 합산 지분: DEF 14A ---------------------------------------------------------
 
+_PERSONS = r"\(\s*(?:\d+|[a-z]+)\s+(?:persons?|individuals?|people|members)\s*\)"
 _GROUP = re.compile(
-    r"as\s+a\s+group(?:\s*\(\s*(?:\d+|[a-z]+)\s+(?:persons?|individuals?|people|members)\s*\))?", re.I)
+    r"as\s+a\s+group(?:\s*" + _PERSONS + r")?"
+    # v4.02: 'as a group' 없이 쓰는 행(실측: ACGL 'All directors and executive officers (17 persons) (22)',
+    # PTC 'All directors and executive officers ( 15 persons)') — 인원수 괄호가 있을 때만 행으로 본다.
+    r"|all\s+(?:of\s+(?:the|our)\s+)?(?:current\s+)?(?:directors|executive\s+officers)\s*,?\s+and\s+"
+    r"(?:current\s+)?(?:executive\s+officers|directors)\s*" + _PERSONS, re.I)
+# 우선주·예탁증서 표의 같은 이름 행은 보통주 지분이 아니다(실측: ACGL Series F/G 우선주 표).
+_PREFERRED_CTX = re.compile(r"preferred\s+(?:shares?|stock)|depositary", re.I)
 _GTOK = re.compile(r"\s*(?:(?P<fn>\(\w{1,2}\))|(?P<star>\*)|(?P<pct>\d+(?:\.\d+)?)\s*%|(?P<num>\d[\d,]*(?:\.\d+)?))")
 
 
@@ -531,6 +538,8 @@ def insider_group_from_proxy(body: str) -> dict:
     """
     found = []
     for m in _GROUP.finditer(body):
+        if _PREFERRED_CTX.search(body[max(0, m.start() - 400):m.start()]):
+            continue
         pos, toks = m.end(), []
         while len(toks) < 8:
             t = _GTOK.match(body, pos)
@@ -543,6 +552,10 @@ def insider_group_from_proxy(body: str) -> dict:
         if not toks or toks[0][0] != "num":
             continue
         rest = toks[1:]
+        # v4.02: 행 뒤에 이어지는 다음 행·각주의 '*'·'5%'까지 토큰으로 잡히면(실측: DECK '0.4 % 5% Stockholders',
+        # SIGI '1% * Less than 1%') 첫 값만 본다. 단 세 번째 토큰이 **주식수**면 클래스가 둘 이상인 행이다.
+        if len(rest) >= 2 and rest[1][0] != "num" and rest[0][0] in ("pct", "star"):
+            rest = rest[:1]
         if len(rest) == 1 and rest[0][0] == "star":
             pct, label = None, "lt_1pct"
         elif len(rest) == 1 and rest[0][0] == "pct":

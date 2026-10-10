@@ -1,0 +1,34 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001703399",
+  "comment_letters": {
+    "answer": 5,
+    "corresp_topics": {
+      "2023-12-08": [],
+      "2024-01-12": [
+        "impairment",
+        "income_tax",
+        "revenue_recognition",
+        "segments"
+      ],
+      "2024-02-08": [
+        "revenue_recognition",
+        "segments"
+      ],
+      "2025-07-18": [
+        "segments"
+      ]
+    },
+    "n_corresp": 4,
+    "status": "OK",
+    "upload_dates": [
+      "2023-12-05",
+      "2024-01-26",
+      "2024-02-13",
+      "2025-07-07",
+      "2025-07-29"
+    ]
+  },
+  "since": "2023-10-11",
+  "ticker": "SE"
+}

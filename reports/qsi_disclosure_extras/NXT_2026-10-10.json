@@ -1,0 +1,17 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001852131",
+  "comment_letters": {
+    "answer": 0,
+    "corresp_topics": {
+      "2023-10-25": [
+        "registration"
+      ]
+    },
+    "n_corresp": 1,
+    "status": "OK",
+    "upload_dates": []
+  },
+  "since": "2023-10-11",
+  "ticker": "NXT"
+}

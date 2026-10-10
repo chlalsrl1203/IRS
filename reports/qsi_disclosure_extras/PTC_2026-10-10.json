@@ -1,0 +1,25 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000857005",
+  "comment_letters": {
+    "answer": 0,
+    "corresp_topics": {},
+    "n_corresp": 0,
+    "status": "OK",
+    "upload_dates": []
+  },
+  "insider_group": {
+    "accession": "0001104659-25-124170",
+    "filing_date": "2025-12-23",
+    "result": {
+      "answer": "lt_1pct",
+      "excerpt": "rt Dahdah 6,178 * Catherine Kniker 26,302 * Jon Stevenson 436 * Aaron von Staats 28,789 * All directors and executive officers ( 15 persons) 345,136 * *",
+      "pct": null,
+      "rule": "임원·이사 합산 지분 퍼센트를 구간으로(사전 고정). '*'는 1% 미만"
+    },
+    "status": "OK",
+    "url": "https://www.sec.gov/Archives/edgar/data/857005/000110465925124170/tm2526581-1_def14a.htm"
+  },
+  "since": "2023-10-11",
+  "ticker": "PTC"
+}

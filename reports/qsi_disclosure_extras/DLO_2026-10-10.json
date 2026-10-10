@@ -1,0 +1,18 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001846832",
+  "comment_letters": {
+    "answer": 0,
+    "corresp_topics": {},
+    "n_corresp": 0,
+    "status": "OK",
+    "upload_dates": []
+  },
+  "insider_group": {
+    "reason": "20-F/6-K 발행사 — 미국 위임장(DEF 14A) 의무가 없다",
+    "result": null,
+    "status": "UNAVAILABLE"
+  },
+  "since": "2023-10-11",
+  "ticker": "DLO"
+}

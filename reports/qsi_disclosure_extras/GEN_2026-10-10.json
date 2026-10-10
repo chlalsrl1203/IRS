@@ -1,0 +1,27 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0000849399",
+  "comment_letters": {
+    "answer": 3,
+    "corresp_topics": {
+      "2024-01-19": [
+        "mdna",
+        "non_gaap",
+        "revenue_recognition",
+        "segments"
+      ],
+      "2025-03-03": [
+        "registration"
+      ]
+    },
+    "n_corresp": 2,
+    "status": "OK",
+    "upload_dates": [
+      "2024-01-04",
+      "2024-01-26",
+      "2025-02-07"
+    ]
+  },
+  "since": "2023-10-11",
+  "ticker": "GEN"
+}

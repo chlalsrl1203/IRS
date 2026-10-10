@@ -1,0 +1,32 @@
+{
+  "as_of": "2026-10-10",
+  "cik": "0001737806",
+  "comment_letters": {
+    "answer": 5,
+    "corresp_topics": {
+      "2023-11-07": [],
+      "2024-08-29": [],
+      "2024-09-30": [
+        "income_tax",
+        "revenue_recognition",
+        "segments"
+      ],
+      "2025-01-03": [],
+      "2025-01-28": [
+        "income_tax",
+        "segments"
+      ]
+    },
+    "n_corresp": 5,
+    "status": "OK",
+    "upload_dates": [
+      "2023-11-03",
+      "2023-11-07",
+      "2024-08-27",
+      "2025-01-02",
+      "2025-02-24"
+    ]
+  },
+  "since": "2023-10-11",
+  "ticker": "PDD"
+}

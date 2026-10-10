@@ -176,6 +176,10 @@ QUESTION_BANK = (
     _q("acc.material_impairment_3y", "accounting_quality",
        "최근 3년 회사가 '중대한 손상 인식'을 공시한 8-K(Item 2.06)는 몇 건인가?", "number",
        requires_primary=True),
+    # v4.02 — SEC 직원 의견서한(UPLOAD) 건수. 공개는 검토 종료 후 최소 20일 지연된다.
+    _q("acc.sec_comment_letters_3y", "accounting_quality",
+       "최근 3년 SEC 직원이 회사에 보낸 의견서한(EDGAR 'UPLOAD')은 몇 건인가?", "number",
+       requires_primary=True),
     # --- dilution ---------------------------------------------------------
     _q("dil.sbc_to_fcf_pct", "dilution", "SBC/FCF 비율(소수, 0.6=60%)", "number",
        requires_primary=True),

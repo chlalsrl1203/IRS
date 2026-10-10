@@ -218,3 +218,37 @@ def test_new_functions_have_no_verdict_names():
     names = [n.name for n in ast.walk(tree) if isinstance(n, ast.FunctionDef)]
     for n in names:
         assert not any(b in n.lower() for b in banned), n
+
+
+# v4.02 지분표 파서 개선 — 실측 행 형식 그대로 ------------------------------------------
+def test_insider_group_row_without_as_a_group_acgl_ptc():
+    r = E.insider_group_from_proxy(
+        "Christine Todd (21) 251,580 * All directors and executive officers (17 persons) (22) 11,618,680 3.3% "
+        "* Denotes beneficial ownership of less than 1%")
+    assert r["answer"] == "1_to_5pct" and r["pct"] == 3.3
+    r = E.insider_group_from_proxy(
+        "Aaron von Staats 28,789 * All directors and executive officers ( 15 persons) 345,136 * * Less than 1%.")
+    assert r["answer"] == "lt_1pct"
+
+
+def test_insider_group_ignores_preferred_share_tables():
+    body = ("All directors and executive officers (17 persons) (22) 11,618,680 3.3% * Denotes ... "
+            "Number of Series G Preferred Shares Beneficially Owned Percentage of Class Owned Brian S. Posner 5,000 * "
+            "All directors and executive officers (17 persons) 5,000 * * Denotes")
+    r = E.insider_group_from_proxy(body)
+    assert r["answer"] == "1_to_5pct"
+
+
+def test_insider_group_trailing_next_row_tokens_deck_sigi():
+    r = E.insider_group_from_proxy(
+        "All Directors and Executive Officers as a Group (16 persons) 549,704 0.4 % 5% Stockholders BlackRock")
+    assert r["answer"] == "lt_1pct" and r["pct"] == 0.4
+    r = E.insider_group_from_proxy(
+        "All directors and executive officers, as a group (17 persons) 490,429 1% * Less than 1% of the common")
+    assert r["answer"] == "1_to_5pct"
+
+
+def test_insider_group_narrative_sentence_is_not_a_row():
+    r = E.insider_group_from_proxy(
+        "and (3) all of the directors and executive officers of Arch Capital as a group. Except as otherwise")
+    assert r["answer"] is None
