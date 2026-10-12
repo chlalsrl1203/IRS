@@ -1,0 +1,16 @@
+{
+ "date": "2026-10-12",
+ "official": false,
+ "rows": [
+  {
+   "ticker": "SCCO",
+   "status": "MARKET_CAP_SUSPECT",
+   "path": "ledger_auto/SCCO_2026-10-12.json",
+   "gap": 0.2827623042953293,
+   "grade": "S",
+   "judgment": "저평가 가능성",
+   "market_cap_source": "public_float 근사(낡을 수 있음)",
+   "screen_gap": 0.28065158655324857
+  }
+ ]
+}
