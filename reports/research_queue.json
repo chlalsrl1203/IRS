@@ -1,37 +1,39 @@
 {
-  "updated_at": "2026-10-10",
-  "latest_run": "2026-10-10",
-  "source": "broad_screen_2026-10-10.json",
+  "updated_at": "2026-10-17",
+  "latest_run": "2026-10-17",
+  "source": "broad_screen_2026-10-17.json",
   "persistence": {
-    "n_runs": 5,
+    "n_runs": 6,
     "runs": [
       "2026-08-30",
       "2026-09-19",
       "2026-09-26",
       "2026-10-03",
-      "2026-10-10"
+      "2026-10-10",
+      "2026-10-17"
     ],
     "discriminating": true
   },
   "counts": {
     "total": 265,
-    "QUEUED": 178,
+    "QUEUED": 177,
     "ANALYZED": 50,
-    "EXCLUDED": 37
+    "EXCLUDED": 38
   },
   "next_to_research": [
     {
       "ticker": "BLDR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06998768401920451,
       "tier": "A",
       "market_cap": 12600000000.0,
@@ -41,19 +43,20 @@
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 미분석 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 미분석 · 6회 연속통과"
     },
     {
       "ticker": "INTU",
       "first_seen": "2026-09-19",
-      "times_seen": 4,
+      "times_seen": 5,
       "runs_seen": [
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11397470559017783,
       "tier": "B",
       "market_cap": 135600000000.0,
@@ -62,22 +65,23 @@
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 미분석 · 4회 연속통과"
+      "priority_reason": "검증범위 안 · 미분석 · 5회 연속통과"
     }
   ],
   "entries": {
     "BLDR": {
       "ticker": "BLDR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06998768401920451,
       "tier": "A",
       "market_cap": 12600000000.0,
@@ -87,19 +91,20 @@
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 미분석 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 미분석 · 6회 연속통과"
     },
     "INTU": {
       "ticker": "INTU",
       "first_seen": "2026-09-19",
-      "times_seen": 4,
+      "times_seen": 5,
       "runs_seen": [
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11397470559017783,
       "tier": "B",
       "market_cap": 135600000000.0,
@@ -108,20 +113,21 @@
       "state": "QUEUED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 미분석 · 4회 연속통과"
+      "priority_reason": "검증범위 안 · 미분석 · 5회 연속통과"
     },
     "CROX": {
       "ticker": "CROX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2397192728735001,
       "tier": "S",
       "market_cap": 4800000000.0,
@@ -131,20 +137,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "LNTH": {
       "ticker": "LNTH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.22961490662296474,
       "tier": "B",
       "market_cap": 4274700000.0,
@@ -154,7 +161,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "PENDING_ACQUISITION",
         "reason": "2026-08-03 Curium이 확정 인수계약 체결($102.50/주 현금+최대 $12.00/주 CVR, 2027년 상반기 종결 예정). 주가가 회사 성장전망이 아니라 딜 조건·성사확률을 반영한다.",
@@ -164,15 +171,16 @@
     "EQT": {
       "ticker": "EQT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.21397977686203412,
       "tier": "A",
       "market_cap": 34700000000.0,
@@ -182,7 +190,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "Equitrans Midstream 인수(2024-07 완료)가 5y CAGR 구간에 걸리고, 천연가스 E&P 자체가 극심한 원자재 가격사이클(2018~2021 4개년 연속 영업손실 후 2022 급등) 노출.",
@@ -192,15 +200,16 @@
     "ACGL": {
       "ticker": "ACGL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.21394504000138595,
       "tier": "S",
       "market_cap": 33000000000.0,
@@ -210,20 +219,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "SIGI": {
       "ticker": "SIGI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2135939476241476,
       "tier": "S",
       "market_cap": 5226605951.0,
@@ -233,20 +243,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "OKTA": {
       "ticker": "OKTA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20647656178590862,
       "tier": "B",
       "market_cap": 16400000000.0,
@@ -256,20 +267,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CDE": {
       "ticker": "CDE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20128535250928078,
       "tier": "S",
       "market_cap": 5605534558.0,
@@ -279,7 +291,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "SilverCrest Metals 인수(2025-02 종결)로 매출 +96.4%YoY 단계상승 + 은/금 채굴업 자체의 극심한 가격사이클.",
@@ -289,15 +301,16 @@
     "MEDP": {
       "ticker": "MEDP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.19211680588068708,
       "tier": "A",
       "market_cap": 7000000000.0,
@@ -307,20 +320,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "COP": {
       "ticker": "COP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18864412973691466,
       "tier": "S",
       "market_cap": 112000000000.0,
@@ -330,7 +344,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "원유 E&P, 극심한 가격사이클(2014 $55.5B->2015 $30.9B, -44%).",
@@ -340,15 +354,16 @@
     "RYAN": {
       "ticker": "RYAN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18834857981416114,
       "tier": "A",
       "market_cap": 8557552987.0,
@@ -358,20 +373,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "FIX": {
       "ticker": "FIX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18506462373227162,
       "tier": "B",
       "market_cap": 18640000000.0,
@@ -381,20 +397,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CHDN": {
       "ticker": "CHDN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18035208526275656,
       "tier": "A",
       "market_cap": 6693961648.0,
@@ -404,7 +421,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "COVID 저점(2020)이 기본 5y 기준연도에 걸리고, Peninsula Pacific Entertainment 인수(2022-11)가 3y CAGR 시작연도 자체에 걸려 override로도 못 피한다. 상시적 볼트온 M&A 전략이라 오가닉 분리 공시도 없다.",
@@ -414,15 +431,16 @@
     "VICI": {
       "ticker": "VICI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17711512173476532,
       "tier": "A",
       "market_cap": 34400000000.0,
@@ -432,7 +450,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "카지노 트리플넷리스 REIT - capex가 거의 0(임차인이 유지보수 부담)이라 FCF=OCF-capex가 실제 배분가능현금을 측정하지 못한다. REIT은 P/FFO·AFFO가 표준이지 FCF-DCF가 아니다.",
@@ -442,15 +460,16 @@
     "DINO": {
       "ticker": "DINO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1747439049683896,
       "tier": "S",
       "market_cap": 7700000000.0,
@@ -460,7 +479,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "정유업, 극심한 가격사이클(2020 $11.2B->2022 $38.2B, +242%).",
@@ -470,15 +489,16 @@
     "NBIX": {
       "ticker": "NBIX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1715948221696296,
       "tier": "A",
       "market_cap": 9520000000.0,
@@ -488,20 +508,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "EOG": {
       "ticker": "EOG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16571444005529232,
       "tier": "S",
       "market_cap": 65231000000.0,
@@ -511,7 +532,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "원유 E&P, 전형적 boom/bust 패턴(예: 2014 $18.0B->2015 $8.8B, -51%).",
@@ -521,15 +542,16 @@
     "NXT": {
       "ticker": "NXT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16428217049736957,
       "tier": "B",
       "market_cap": 10800000000.0,
@@ -539,20 +561,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "PATH": {
       "ticker": "PATH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1639658429220924,
       "tier": "A",
       "market_cap": 4800000000.0,
@@ -562,20 +585,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "COF": {
       "ticker": "COF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1629655789055858,
       "tier": "S",
       "market_cap": 135200000000.0,
@@ -585,7 +609,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "은행/예금취급기관 - operating_income 표준 태그 자체가 없고, 예금을 전부 부채로 잡으면 레버리지 지표가 무의미해진다.",
@@ -595,15 +619,16 @@
     "PCTY": {
       "ticker": "PCTY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16281099325393256,
       "tier": "A",
       "market_cap": 6600000000.0,
@@ -613,20 +638,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "EXEL": {
       "ticker": "EXEL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15235917362733864,
       "tier": "A",
       "market_cap": 9400000000.0,
@@ -636,20 +662,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "IDCC": {
       "ticker": "IDCC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14929339123835142,
       "tier": "A",
       "market_cap": 5717601306.0,
@@ -659,7 +686,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "특허 라이선싱 매출이 소급인식·중재타이밍으로 연도별 극심하게 등락(예: 2024 $869M->2025 $834M, Q2 실적의 40%가 일회성 캐치업). 회사 자체 ARR 지표가 더 안정적이나 과거 이력 재구성 불가.",
@@ -669,15 +696,16 @@
     "EXE": {
       "ticker": "EXE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14744879217169815,
       "tier": "A",
       "market_cap": 19600000000.0,
@@ -687,7 +715,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "천연가스 E&P(舊 Chesapeake Energy) - 자본집약 원자재 업종, 이미 확정된 패턴과 동일.",
@@ -697,15 +725,16 @@
     "PINS": {
       "ticker": "PINS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14456494309593018,
       "tier": "A",
       "market_cap": 18700000000.0,
@@ -715,20 +744,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "XYZ": {
       "ticker": "XYZ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14159404811975915,
       "tier": "B",
       "market_cap": 39400000000.0,
@@ -738,7 +768,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "Block Cash App이 비트코인 거래를 총액(gross) 기준으로 매출 인식(2026 Q2 마진 약 3.8%) - 회사 자체 핵심지표는 총이익인데 이 엔진의 revenue_by_year 스키마는 그 대안지표를 담을 필드가 없다.",
@@ -748,15 +778,16 @@
     "ROKU": {
       "ticker": "ROKU",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.141467277052827,
       "tier": "B",
       "market_cap": 9700000000.0,
@@ -766,20 +797,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "PGR": {
       "ticker": "PGR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14079489005331994,
       "tier": "S",
       "market_cap": 155911082530.0,
@@ -789,20 +821,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "NEM": {
       "ticker": "NEM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13447297521693094,
       "tier": "S",
       "market_cap": 64108664771.0,
@@ -812,7 +845,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "금광업, CDE와 동일한 귀금속 가격사이클 노출.",
@@ -822,15 +855,16 @@
     "WSC": {
       "ticker": "WSC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13237784390885435,
       "tier": "S",
       "market_cap": 4900000000.0,
@@ -840,7 +874,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "WillScot+Mobile Mini 동등합병(2020-07)이 5y CAGR 기본 기준연도에 걸리고, 회사 스스로 매출증가가 '합병+유기적성장 둘 다'에 기인한다고 명시해 분리 불가능함을 인정. 상시적 볼트온 M&A(McGrath 2024 발표 등) 지속.",
@@ -850,15 +884,16 @@
     "AMP": {
       "ticker": "AMP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13151660698484371,
       "tier": "S",
       "market_cap": 50300000000.0,
@@ -868,7 +903,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "자산관리+연금·보장성보험 다각화 금융지주 - operating_income 미확보(COF와 동일 패턴), is_insurer 경로는 순수 손해보험사 전제라 적용 근거 부족.",
@@ -878,15 +913,16 @@
     "HLNE": {
       "ticker": "HLNE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1280491052028037,
       "tier": "A",
       "market_cap": 5470900000.0,
@@ -896,20 +932,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "FIVE": {
       "ticker": "FIVE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12759331520645664,
       "tier": "B",
       "market_cap": 7261931467.0,
@@ -919,20 +956,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "TW": {
       "ticker": "TW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12689392058499813,
       "tier": "A",
       "market_cap": 16900000000.0,
@@ -942,20 +980,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "RLI": {
       "ticker": "RLI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12658483721547287,
       "tier": "S",
       "market_cap": 5490497507.0,
@@ -965,20 +1004,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "OVV": {
       "ticker": "OVV",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12347890085475224,
       "tier": "S",
       "market_cap": 9780270102.0,
@@ -988,7 +1028,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "원자재(원유·천연가스) 가격사이클 + Permian/Montney 대규모 인수(2023~2024)가 5y CAGR 구간에 이중으로 걸림.",
@@ -998,15 +1038,16 @@
     "DOCU": {
       "ticker": "DOCU",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12124396713194648,
       "tier": "A",
       "market_cap": 15100000000.0,
@@ -1016,20 +1057,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CINF": {
       "ticker": "CINF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12040684145294969,
       "tier": "S",
       "market_cap": 22846561651.0,
@@ -1039,20 +1081,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "TENB": {
       "ticker": "TENB",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1197320124043218,
       "tier": "A",
       "market_cap": 4100000000.0,
@@ -1062,20 +1105,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "GEN": {
       "ticker": "GEN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11877453484854686,
       "tier": "A",
       "market_cap": 15555822937.0,
@@ -1085,20 +1129,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CF": {
       "ticker": "CF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11350296698501758,
       "tier": "S",
       "market_cap": 14796888341.0,
@@ -1108,7 +1153,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "질소비료 생산 - 천연가스 원가·농산물 사이클에 직결(2020 $4.12B->2022 $11.19B, +172%).",
@@ -1118,15 +1163,16 @@
     "HL": {
       "ticker": "HL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11077033783141893,
       "tier": "A",
       "market_cap": 3940331126.0,
@@ -1136,7 +1182,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "은 생산업체, Alexco Resource 인수(2022)가 5y CAGR 구간에 걸린 귀금속 가격사이클.",
@@ -1146,15 +1192,16 @@
     "SKYW": {
       "ticker": "SKYW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10977266264739553,
       "tier": "A",
       "market_cap": 4156927217.0,
@@ -1164,20 +1211,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "DAR": {
       "ticker": "DAR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1065147823818495,
       "tier": "S",
       "market_cap": 5963190000.0,
@@ -1187,7 +1235,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "재생디젤 합작사(DGD)가 연방 세액공제 정책전환(blenders->Section 45Z)으로 EBITDA -64%(2025) - 시장가격이 아니라 입법·행정 정책리스크가 주된 변동요인인 신규 하위유형. 과거 VION Ingredients 인수(2012)도 CAGR 구간에 걸림.",
@@ -1197,15 +1245,16 @@
     "RMBS": {
       "ticker": "RMBS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10481380122179837,
       "tier": "B",
       "market_cap": 5200000000.0,
@@ -1215,20 +1264,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "BYD": {
       "ticker": "BYD",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10304558843305997,
       "tier": "A",
       "market_cap": 4300000000.0,
@@ -1238,20 +1288,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CRM": {
       "ticker": "CRM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10098156251599227,
       "tier": "A",
       "market_cap": 191800000000.0,
@@ -1261,20 +1312,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "DECK": {
       "ticker": "DECK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09825607205774288,
       "tier": "A",
       "market_cap": 14764483936.0,
@@ -1284,20 +1336,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "HBAN": {
       "ticker": "HBAN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09304850956187576,
       "tier": "A",
       "market_cap": 24100000000.0,
@@ -1307,7 +1360,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "은행지주 - operating_income 전무.",
@@ -1317,15 +1370,16 @@
     "CNM": {
       "ticker": "CNM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09076129172048425,
       "tier": "B",
       "market_cap": 11940000000.0,
@@ -1335,7 +1389,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "2021~2023년 M&A 롤업 단계상승(3y CAGR 4.76% vs 5y 16.0%) + 최근 오가닉 볼륨 실제 감소(Q1 2026 -1%YoY).",
@@ -1345,15 +1399,16 @@
     "QCOM": {
       "ticker": "QCOM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.0902102331368604,
       "tier": "A",
       "market_cap": 167900000000.0,
@@ -1363,20 +1418,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CVX": {
       "ticker": "CVX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08874717814850339,
       "tier": "A",
       "market_cap": 247400000000.0,
@@ -1386,7 +1442,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "원유 가격사이클(2020 $945억 저점->2022 $2,357억 정점).",
@@ -1396,15 +1452,16 @@
     "AXP": {
       "ticker": "AXP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08592139356485343,
       "tier": "A",
       "market_cap": 221800000000.0,
@@ -1414,7 +1471,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "카드발급/대출기관 - operating_income 전무.",
@@ -1424,15 +1481,16 @@
     "BSY": {
       "ticker": "BSY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08487667595100234,
       "tier": "A",
       "market_cap": 7600000000.0,
@@ -1442,20 +1500,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "GLPI": {
       "ticker": "GLPI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08426082204693591,
       "tier": "B",
       "market_cap": 12700000000.0,
@@ -1465,7 +1524,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "카지노 REIT, VICI와 동일한 트리플넷리스 구조적 부적합(capex 거의 0).",
@@ -1475,15 +1534,16 @@
     "EAT": {
       "ticker": "EAT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08393112590316726,
       "tier": "A",
       "market_cap": 6521752786.0,
@@ -1493,20 +1553,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "IBP": {
       "ticker": "IBP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08073237701935876,
       "tier": "A",
       "market_cap": 4123968168.0,
@@ -1516,7 +1577,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "M&A롤업(2021->2022 +35.6%) + 최근 오가닉 실제악화(Q1 2026 residential -6.1%YoY).",
@@ -1526,15 +1587,16 @@
     "APTV": {
       "ticker": "APTV",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07899990385744728,
       "tier": "A",
       "market_cap": 14783719749.0,
@@ -1544,7 +1606,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "진행중 기업분할 - Electrical Distribution Systems 사업부를 'Versigent'로 2026-04-01까지 스핀오프 예정. 현재 연결재무제표로 DCF하면 곧 존재하지 않을 회사를 평가하는 셈.",
@@ -1554,15 +1616,16 @@
     "COR": {
       "ticker": "COR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.0786812992181047,
       "tier": "A",
       "market_cap": 37887695618.0,
@@ -1572,20 +1635,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "MLI": {
       "ticker": "MLI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07852916662980422,
       "tier": "A",
       "market_cap": 8641564012.0,
@@ -1595,7 +1659,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "구리가격 사이클성(2021 매출+57.2%/영업이익+167%, 2021 구리가격 급등과 정확히 일치).",
@@ -1605,15 +1669,16 @@
     "ADBE": {
       "ticker": "ADBE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07831705788896728,
       "tier": "A",
       "market_cap": 144940000000.0,
@@ -1623,20 +1688,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "MKL": {
       "ticker": "MKL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07747678086057852,
       "tier": "A",
       "market_cap": 24853000000.0,
@@ -1646,7 +1712,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "매출 태그 불연속(2023년 Markel Corp->Markel Group 재편) + 순이익이 투자포트폴리오 시가평가 변동에 좌우(2018·2022 적자) - 보험+Ventures+대규모 투자포트폴리오 복합 콘글로머리트라 is_insurer 경로로도 단순처리 불가.",
@@ -1656,15 +1722,16 @@
     "FCFS": {
       "ticker": "FCFS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07626059644024262,
       "tier": "A",
       "market_cap": 5217000000.0,
@@ -1674,7 +1741,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "은행지주(First Citizens BancShares) - operating_income 전무.",
@@ -1684,15 +1751,16 @@
     "ADI": {
       "ticker": "ADI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07611879241422109,
       "tier": "B",
       "market_cap": 81121000000.0,
@@ -1702,7 +1770,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "Linear Technology(2017)·Maxim Integrated(2021->2022) 두 차례 M&A 단계상승 + 반도체 사이클성(FY2023->24 -23.4%) 복합.",
@@ -1712,15 +1780,16 @@
     "MMS": {
       "ticker": "MMS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07567552073973044,
       "tier": "A",
       "market_cap": 3801184315.0,
@@ -1730,20 +1799,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "DHI": {
       "ticker": "DHI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07550892111129258,
       "tier": "A",
       "market_cap": 39000000000.0,
@@ -1753,7 +1823,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "reason_category": "FRAMEWORK_MISMATCH",
         "reason": "주택건설업 - 금리환경에 업종 전체가 동시에 눌리는 매크로 현상, 개별종목 미스프라이싱 탐지라는 스크리닝 목적과 안 맞음.",
@@ -1763,15 +1833,16 @@
     "CHWY": {
       "ticker": "CHWY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07438061075756518,
       "tier": "A",
       "market_cap": 8000000000.0,
@@ -1781,20 +1852,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "QSR": {
       "ticker": "QSR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07298435364211928,
       "tier": "A",
       "market_cap": 21428256686.0,
@@ -1804,7 +1876,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "name": "Restaurant Brands International",
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1815,15 +1887,16 @@
     "HQY": {
       "ticker": "HQY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07232970761735968,
       "tier": "A",
       "market_cap": 7000000000.0,
@@ -1833,20 +1906,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "CAH": {
       "ticker": "CAH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07071996004702397,
       "tier": "A",
       "market_cap": 48192692777.0,
@@ -1856,20 +1930,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "URBN": {
       "ticker": "URBN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06991760153594281,
       "tier": "A",
       "market_cap": 4829187910.0,
@@ -1879,20 +1954,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "REGN": {
       "ticker": "REGN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06643908100145982,
       "tier": "A",
       "market_cap": 54800000000.0,
@@ -1902,20 +1978,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "TTEK": {
       "ticker": "TTEK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05999480556621136,
       "tier": "B",
       "market_cap": 7600000000.0,
@@ -1925,7 +2002,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "name": "Tetra Tech, Inc.",
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1936,15 +2013,16 @@
     "EPR": {
       "ticker": "EPR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05792896699778416,
       "tier": "B",
       "market_cap": 4458055841.0,
@@ -1954,7 +2032,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "name": "EPR Properties",
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -1965,15 +2043,16 @@
     "LFUS": {
       "ticker": "LFUS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05423260087130338,
       "tier": "A",
       "market_cap": 5591411587.0,
@@ -1983,20 +2062,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "STRL": {
       "ticker": "STRL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05305016928730573,
       "tier": "B",
       "market_cap": 6830000000.0,
@@ -2006,7 +2086,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "name": "Sterling Infrastructure",
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -2017,15 +2097,16 @@
     "ERIE": {
       "ticker": "ERIE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05088928563462626,
       "tier": "A",
       "market_cap": 8700000000.0,
@@ -2035,20 +2116,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "ULTA": {
       "ticker": "ULTA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.047666539847283654,
       "tier": "B",
       "market_cap": 16866064000.0,
@@ -2058,20 +2140,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "EME": {
       "ticker": "EME",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.046490996906985375,
       "tier": "A",
       "market_cap": 17258000000.0,
@@ -2081,20 +2164,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "PAYX": {
       "ticker": "PAYX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.045346627501754715,
       "tier": "A",
       "market_cap": 35959981648.0,
@@ -2104,7 +2188,7 @@
       "state": "EXCLUDED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 제외됨 · 5회 연속통과",
+      "priority_reason": "검증범위 안 · 제외됨 · 6회 연속통과",
       "exclusion_reason": {
         "name": "Paychex, Inc.",
         "reason_category": "FRAMEWORK_MISMATCH",
@@ -2115,15 +2199,16 @@
     "NYT": {
       "ticker": "NYT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.04086194011136619,
       "tier": "B",
       "market_cap": 9000000000.0,
@@ -2133,20 +2218,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "OSIS": {
       "ticker": "OSIS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.03835118838580941,
       "tier": "B",
       "market_cap": 4020393452.0,
@@ -2156,20 +2242,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "LULU": {
       "ticker": "LULU",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.03811350434280857,
       "tier": "B",
       "market_cap": 17576000000.0,
@@ -2179,20 +2266,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "WTS": {
       "ticker": "WTS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.037959823386795856,
       "tier": "B",
       "market_cap": 6695455530.0,
@@ -2202,20 +2290,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "TEAM": {
       "ticker": "TEAM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.03747007330878171,
       "tier": "B",
       "market_cap": 27600000000.0,
@@ -2225,20 +2314,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "PSN": {
       "ticker": "PSN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.037096612222589614,
       "tier": "B",
       "market_cap": 7700000000.0,
@@ -2248,19 +2338,20 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 6회 연속통과"
     },
     "GWRE": {
       "ticker": "GWRE",
       "first_seen": "2026-09-19",
-      "times_seen": 4,
+      "times_seen": 5,
       "runs_seen": [
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07956072010962222,
       "tier": "B",
       "market_cap": 7400000000.0,
@@ -2269,20 +2360,21 @@
       "state": "ANALYZED",
       "in_validated_scope": true,
       "days_since_seen": 0,
-      "priority_reason": "검증범위 안 · 분석완료 · 4회 연속통과"
+      "priority_reason": "검증범위 안 · 분석완료 · 5회 연속통과"
     },
     "VATE": {
       "ticker": "VATE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.9309165216517967,
       "tier": "S",
       "market_cap": 27200000.0,
@@ -2295,20 +2387,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "OPEN": {
       "ticker": "OPEN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.8097498304842445,
       "tier": "S",
       "market_cap": 339866979.0,
@@ -2321,20 +2414,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "JANL": {
       "ticker": "JANL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.7814787578309426,
       "tier": "S",
       "market_cap": 9450464.0,
@@ -2347,20 +2441,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SNEX": {
       "ticker": "SNEX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.7170410095503809,
       "tier": "S",
       "market_cap": 2838700000.0,
@@ -2373,20 +2468,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HTZ": {
       "ticker": "HTZ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.709710753826342,
       "tier": "S",
       "market_cap": 799000000.0,
@@ -2399,20 +2495,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PGY": {
       "ticker": "PGY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6999471305887348,
       "tier": "S",
       "market_cap": 1113790997.0,
@@ -2425,20 +2522,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "QSP": {
       "ticker": "QSP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6899952051217287,
       "tier": "S",
       "market_cap": 890534719.0,
@@ -2451,20 +2549,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PR": {
       "ticker": "PR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6607154211694829,
       "tier": "S",
       "market_cap": 10503468331.0,
@@ -2476,20 +2575,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RM": {
       "ticker": "RM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6212837978570741,
       "tier": "S",
       "market_cap": 235369156.0,
@@ -2502,20 +2602,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "EGY": {
       "ticker": "EGY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6176855479786171,
       "tier": "S",
       "market_cap": 366000000.0,
@@ -2528,20 +2629,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PED": {
       "ticker": "PED",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.616487825207358,
       "tier": "S",
       "market_cap": 23070209.0,
@@ -2554,20 +2656,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "NOG": {
       "ticker": "NOG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.6050574085129066,
       "tier": "S",
       "market_cap": 2700000000.0,
@@ -2580,20 +2683,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "OWL": {
       "ticker": "OWL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.5575219969355846,
       "tier": "A",
       "market_cap": 12500000000.0,
@@ -2605,20 +2709,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "KOS": {
       "ticker": "KOS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.5431614503479038,
       "tier": "S",
       "market_cap": 790254200.0,
@@ -2631,20 +2736,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GCT": {
       "ticker": "GCT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.5104331264678521,
       "tier": "S",
       "market_cap": 513000000.0,
@@ -2657,20 +2763,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SPFX": {
       "ticker": "SPFX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.5098800409013378,
       "tier": "S",
       "market_cap": 3598424.0,
@@ -2683,20 +2790,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "STGW": {
       "ticker": "STGW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.49559194281479924,
       "tier": "S",
       "market_cap": 389500000.0,
@@ -2709,20 +2817,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HGTY": {
       "ticker": "HGTY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.4955334417529541,
       "tier": "S",
       "market_cap": 309900000.0,
@@ -2735,20 +2844,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "NRDS": {
       "ticker": "NRDS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.44447737148766375,
       "tier": "S",
       "market_cap": 349000000.0,
@@ -2761,20 +2871,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GSAT": {
       "ticker": "GSAT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.4363750288575501,
       "tier": "S",
       "market_cap": 1100000000.0,
@@ -2787,20 +2898,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SND": {
       "ticker": "SND",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.4183810019985462,
       "tier": "S",
       "market_cap": 57119495.0,
@@ -2813,20 +2925,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "QRHC": {
       "ticker": "QRHC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.41766876797608693,
       "tier": "S",
       "market_cap": 20761804.0,
@@ -2839,20 +2952,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "WLFC": {
       "ticker": "WLFC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.4111562815508748,
       "tier": "S",
       "market_cap": 576900000.0,
@@ -2865,20 +2979,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "EVCM": {
       "ticker": "EVCM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.38802036883504004,
       "tier": "S",
       "market_cap": 200100000.0,
@@ -2891,20 +3006,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MCY": {
       "ticker": "MCY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.38261351864793125,
       "tier": "S",
       "market_cap": 1789234305.0,
@@ -2917,20 +3033,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HALO": {
       "ticker": "HALO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.381403129090842,
       "tier": "S",
       "market_cap": 4500000000.0,
@@ -2942,20 +3059,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MXC": {
       "ticker": "MXC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3719391739563115,
       "tier": "S",
       "market_cap": 9540503.0,
@@ -2968,20 +3086,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "COLL": {
       "ticker": "COLL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.363291486434721,
       "tier": "S",
       "market_cap": 926400000.0,
@@ -2994,20 +3113,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TRLV": {
       "ticker": "TRLV",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3569020577399865,
       "tier": "S",
       "market_cap": 600000000.0,
@@ -3020,20 +3140,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FOUR": {
       "ticker": "FOUR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.35496468155653693,
       "tier": "A",
       "market_cap": 6400000000.0,
@@ -3045,20 +3166,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "NTST": {
       "ticker": "NTST",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3530041858359401,
       "tier": "A",
       "market_cap": 1400000000.0,
@@ -3071,20 +3193,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PLMR": {
       "ticker": "PLMR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.34777662319999886,
       "tier": "A",
       "market_cap": 4034049965.0,
@@ -3096,20 +3219,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "QCRH": {
       "ticker": "QCRH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3372838907125322,
       "tier": "S",
       "market_cap": 1122163334.0,
@@ -3122,20 +3246,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FSBW": {
       "ticker": "FSBW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3343245928502452,
       "tier": "S",
       "market_cap": 259816442.0,
@@ -3148,20 +3273,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HCI": {
       "ticker": "HCI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.33405531364972224,
       "tier": "S",
       "market_cap": 1691271339.0,
@@ -3174,20 +3300,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MELI": {
       "ticker": "MELI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.32894669157216416,
       "tier": "A",
       "market_cap": 122884971142.0,
@@ -3199,20 +3326,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "ANIP": {
       "ticker": "ANIP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3205480899120393,
       "tier": "S",
       "market_cap": 1300000000.0,
@@ -3225,20 +3353,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "VVX": {
       "ticker": "VVX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3173676362521425,
       "tier": "S",
       "market_cap": 701960177.0,
@@ -3251,20 +3380,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SAH": {
       "ticker": "SAH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.31704728894546674,
       "tier": "S",
       "market_cap": 1600000000.0,
@@ -3277,20 +3407,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PAYS": {
       "ticker": "PAYS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3132172193909726,
       "tier": "S",
       "market_cap": 276377168.0,
@@ -3303,20 +3434,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CSTL": {
       "ticker": "CSTL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3105715192567807,
       "tier": "B",
       "market_cap": 576000000.0,
@@ -3329,20 +3461,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RSVR": {
       "ticker": "RSVR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3051065911130819,
       "tier": "S",
       "market_cap": 163304371.0,
@@ -3355,20 +3488,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RSI": {
       "ticker": "RSI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3042960122778769,
       "tier": "S",
       "market_cap": 1376213662.0,
@@ -3381,20 +3515,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DVN": {
       "ticker": "DVN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.3007203710833409,
       "tier": "S",
       "market_cap": 20200000000.0,
@@ -3406,20 +3541,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "IMMR": {
       "ticker": "IMMR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2992887831271902,
       "tier": "S",
       "market_cap": 166012564.0,
@@ -3432,20 +3568,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PAY": {
       "ticker": "PAY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.298026777170048,
       "tier": "S",
       "market_cap": 1353800000.0,
@@ -3458,20 +3595,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TASK": {
       "ticker": "TASK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2943796190054043,
       "tier": "S",
       "market_cap": 289600000.0,
@@ -3484,20 +3622,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "KNSL": {
       "ticker": "KNSL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2823043003522139,
       "tier": "A",
       "market_cap": 9978331145.0,
@@ -3509,20 +3648,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "VTS": {
       "ticker": "VTS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2810809035730335,
       "tier": "S",
       "market_cap": 638000000.0,
@@ -3535,45 +3675,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
-    },
-    "SCCO": {
-      "ticker": "SCCO",
-      "first_seen": "2026-08-30",
-      "times_seen": 5,
-      "runs_seen": [
-        "2026-08-30",
-        "2026-09-19",
-        "2026-09-26",
-        "2026-10-03",
-        "2026-10-10"
-      ],
-      "last_seen": "2026-10-10",
-      "latest_gap": 0.28065158655324857,
-      "tier": "S",
-      "market_cap": 9019800000.0,
-      "scope_recomputed": true,
-      "out_of_validated_scope": [
-        "Gap +28.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
-      ],
-      "best_gap": 0.28065158655324857,
-      "state": "QUEUED",
-      "in_validated_scope": false,
-      "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PRTH": {
       "ticker": "PRTH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2771463803198371,
       "tier": "S",
       "market_cap": 241200000.0,
@@ -3586,20 +3702,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DSP": {
       "ticker": "DSP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2754080583150839,
       "tier": "S",
       "market_cap": 185100000.0,
@@ -3612,20 +3729,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PANL": {
       "ticker": "PANL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2751128815370475,
       "tier": "S",
       "market_cap": 139690000.0,
@@ -3638,20 +3756,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GM": {
       "ticker": "GM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.27461668330941313,
       "tier": "S",
       "market_cap": 47000000000.0,
@@ -3663,20 +3782,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PGNY": {
       "ticker": "PGNY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2663457216368322,
       "tier": "A",
       "market_cap": 1900000000.0,
@@ -3689,20 +3809,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MBLY": {
       "ticker": "MBLY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2652809423431118,
       "tier": "S",
       "market_cap": 1840000000.0,
@@ -3715,20 +3836,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SACH": {
       "ticker": "SACH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.26493724666270035,
       "tier": "S",
       "market_cap": 54000000.0,
@@ -3741,20 +3863,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CLVT": {
       "ticker": "CLVT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.264743576880066,
       "tier": "S",
       "market_cap": 1300000000.0,
@@ -3767,20 +3890,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BOOM": {
       "ticker": "BOOM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2610248228325736,
       "tier": "S",
       "market_cap": 155821973.0,
@@ -3793,20 +3917,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BANC": {
       "ticker": "BANC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.25926044735239173,
       "tier": "S",
       "market_cap": 1900000000.0,
@@ -3819,20 +3944,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GMED": {
       "ticker": "GMED",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2547644733969441,
       "tier": "A",
       "market_cap": 6600000000.0,
@@ -3844,20 +3970,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FIVN": {
       "ticker": "FIVN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.25129293404233505,
       "tier": "S",
       "market_cap": 1158500000.0,
@@ -3870,20 +3997,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "IESC": {
       "ticker": "IESC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2503630783586863,
       "tier": "S",
       "market_cap": 1378300000.0,
@@ -3896,20 +4024,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PTEN": {
       "ticker": "PTEN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.24967746408634459,
       "tier": "S",
       "market_cap": 2300000000.0,
@@ -3922,20 +4051,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TH": {
       "ticker": "TH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2467886671234709,
       "tier": "S",
       "market_cap": 227771256.0,
@@ -3948,20 +4078,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DSGR": {
       "ticker": "DSGR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.24588268737636443,
       "tier": "S",
       "market_cap": 258112845.0,
@@ -3974,20 +4105,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DCBG": {
       "ticker": "DCBG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2384218033945264,
       "tier": "S",
       "market_cap": 1080000000.0,
@@ -3999,20 +4131,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PMTS": {
       "ticker": "PMTS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.23694902452477185,
       "tier": "S",
       "market_cap": 148800000.0,
@@ -4024,20 +4157,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FA": {
       "ticker": "FA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.23358848598992038,
       "tier": "S",
       "market_cap": 1331899011.0,
@@ -4049,20 +4183,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "IPAR": {
       "ticker": "IPAR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.23025200753644026,
       "tier": "A",
       "market_cap": 2384600367.0,
@@ -4074,20 +4209,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BWMN": {
       "ticker": "BWMN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.22749498206419258,
       "tier": "A",
       "market_cap": 408700000.0,
@@ -4099,20 +4235,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "WSFS": {
       "ticker": "WSFS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.22360018958970632,
       "tier": "S",
       "market_cap": 3065102095.0,
@@ -4124,20 +4261,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RNGR": {
       "ticker": "RNGR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2231263908572927,
       "tier": "S",
       "market_cap": 244200000.0,
@@ -4149,20 +4287,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FRSH": {
       "ticker": "FRSH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.22034923284482485,
       "tier": "A",
       "market_cap": 3080000000.0,
@@ -4174,20 +4313,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FET": {
       "ticker": "FET",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2184223502799259,
       "tier": "S",
       "market_cap": 225500000.0,
@@ -4199,20 +4339,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "IA": {
       "ticker": "IA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2161282048140851,
       "tier": "A",
       "market_cap": 81800000.0,
@@ -4224,20 +4365,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "ZETA": {
       "ticker": "ZETA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2142180119133616,
       "tier": "B",
       "market_cap": 3200000000.0,
@@ -4249,20 +4391,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RES": {
       "ticker": "RES",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2131889487291108,
       "tier": "S",
       "market_cap": 421394820.0,
@@ -4274,20 +4417,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BOTJ": {
       "ticker": "BOTJ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.211686528631568,
       "tier": "S",
       "market_cap": 55854000.0,
@@ -4299,20 +4443,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GTBIF": {
       "ticker": "GTBIF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.21067427538728611,
       "tier": "S",
       "market_cap": 1161708000.0,
@@ -4324,20 +4469,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GPOR": {
       "ticker": "GPOR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2096427188783035,
       "tier": "S",
       "market_cap": 3100000000.0,
@@ -4349,20 +4495,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "AMPH": {
       "ticker": "AMPH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20920387455522782,
       "tier": "S",
       "market_cap": 632556518.0,
@@ -4374,20 +4521,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GTM": {
       "ticker": "GTM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2085007797874614,
       "tier": "S",
       "market_cap": 2900000000.0,
@@ -4399,20 +4547,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DH": {
       "ticker": "DH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.2079851469579349,
       "tier": "S",
       "market_cap": 153800000.0,
@@ -4424,20 +4573,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DV": {
       "ticker": "DV",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20707603605677175,
       "tier": "A",
       "market_cap": 2040086166.0,
@@ -4449,20 +4599,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "LPG": {
       "ticker": "LPG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20438493778033037,
       "tier": "S",
       "market_cap": 1093630707.0,
@@ -4474,20 +4625,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "QNST": {
       "ticker": "QNST",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20379333013157594,
       "tier": "S",
       "market_cap": 779144648.0,
@@ -4499,20 +4651,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "OPXS": {
       "ticker": "OPXS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20151769854574447,
       "tier": "S",
       "market_cap": 25591141.0,
@@ -4524,20 +4677,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "AGX": {
       "ticker": "AGX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.20084894160039257,
       "tier": "S",
       "market_cap": 2828180674.0,
@@ -4549,20 +4703,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GOGO": {
       "ticker": "GOGO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.19779925068329618,
       "tier": "B",
       "market_cap": 1142289746.0,
@@ -4574,20 +4729,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HGV": {
       "ticker": "HGV",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.19506220348020709,
       "tier": "B",
       "market_cap": 3607000000.0,
@@ -4599,20 +4755,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "YELP": {
       "ticker": "YELP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.19480433791186907,
       "tier": "S",
       "market_cap": 1423349104.0,
@@ -4624,20 +4781,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "INSW": {
       "ticker": "INSW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.19028253356491356,
       "tier": "S",
       "market_cap": 1800000000.0,
@@ -4649,20 +4807,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CXM": {
       "ticker": "CXM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18754342340138347,
       "tier": "S",
       "market_cap": 1100000000.0,
@@ -4674,20 +4833,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "XPEL": {
       "ticker": "XPEL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1865945758133553,
       "tier": "A",
       "market_cap": 900884616.0,
@@ -4699,20 +4859,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "LRN": {
       "ticker": "LRN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.18414432042550002,
       "tier": "S",
       "market_cap": 1974309000.0,
@@ -4724,20 +4885,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "UPWK": {
       "ticker": "UPWK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17951412074903528,
       "tier": "S",
       "market_cap": 1657936950.0,
@@ -4749,20 +4911,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CNXC": {
       "ticker": "CNXC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17449729899045457,
       "tier": "S",
       "market_cap": 2948926137.0,
@@ -4774,20 +4937,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SHBI": {
       "ticker": "SHBI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17384759971541874,
       "tier": "S",
       "market_cap": 480100000.0,
@@ -4799,20 +4963,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BUKS": {
       "ticker": "BUKS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17307147093428266,
       "tier": "S",
       "market_cap": 90745519.0,
@@ -4824,20 +4989,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TCMD": {
       "ticker": "TCMD",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.17019297341870665,
       "tier": "S",
       "market_cap": 223030304.0,
@@ -4849,20 +5015,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "FIGS": {
       "ticker": "FIGS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1693106087475545,
       "tier": "A",
       "market_cap": 512505774.0,
@@ -4874,20 +5041,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PFS": {
       "ticker": "PFS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16810683045795968,
       "tier": "S",
       "market_cap": 2130000000.0,
@@ -4899,20 +5067,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PAYO": {
       "ticker": "PAYO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1680268455457474,
       "tier": "A",
       "market_cap": 2019068359.0,
@@ -4924,20 +5093,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TRUP": {
       "ticker": "TRUP",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16521168189868488,
       "tier": "B",
       "market_cap": 1324459301.0,
@@ -4949,20 +5119,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PCRX": {
       "ticker": "PCRX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1627590887412957,
       "tier": "S",
       "market_cap": 757500000.0,
@@ -4974,20 +5145,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "ORRF": {
       "ticker": "ORRF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.16030878458643383,
       "tier": "S",
       "market_cap": 596200000.0,
@@ -4999,20 +5171,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PUBM": {
       "ticker": "PUBM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15660891815115413,
       "tier": "S",
       "market_cap": 458300000.0,
@@ -5024,20 +5197,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BFST": {
       "ticker": "BFST",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15603838732138686,
       "tier": "S",
       "market_cap": 697900000.0,
@@ -5049,20 +5223,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "ASTH": {
       "ticker": "ASTH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15467458901048292,
       "tier": "A",
       "market_cap": 1100000000.0,
@@ -5074,20 +5249,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "EVER": {
       "ticker": "EVER",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15440867254554655,
       "tier": "S",
       "market_cap": 675800000.0,
@@ -5099,20 +5275,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "USLM": {
       "ticker": "USLM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1530502390393534,
       "tier": "A",
       "market_cap": 1066695434.0,
@@ -5124,20 +5301,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "AZZ": {
       "ticker": "AZZ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1511858382110946,
       "tier": "S",
       "market_cap": 3332353625.0,
@@ -5149,20 +5327,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DGICA": {
       "ticker": "DGICA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.15083522752383305,
       "tier": "S",
       "market_cap": 355484764.0,
@@ -5174,20 +5353,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GRBK": {
       "ticker": "GRBK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1497295039455463,
       "tier": "S",
       "market_cap": 1919559894.0,
@@ -5199,20 +5379,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MITK": {
       "ticker": "MITK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1491171018569524,
       "tier": "S",
       "market_cap": 350011167.0,
@@ -5224,20 +5405,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "POWL": {
       "ticker": "POWL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1475295170075905,
       "tier": "S",
       "market_cap": 1400000000.0,
@@ -5249,20 +5431,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TNL": {
       "ticker": "TNL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14441360483879773,
       "tier": "S",
       "market_cap": 3302014433.0,
@@ -5274,20 +5457,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CARG": {
       "ticker": "CARG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14244355646564352,
       "tier": "S",
       "market_cap": 1739144042.0,
@@ -5299,20 +5483,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SCIA": {
       "ticker": "SCIA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.14002353484059388,
       "tier": "S",
       "market_cap": 16201719.0,
@@ -5324,20 +5509,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TR": {
       "ticker": "TR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13955663033984342,
       "tier": "S",
       "market_cap": 550102000.0,
@@ -5349,20 +5535,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PD": {
       "ticker": "PD",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13915319884382726,
       "tier": "A",
       "market_cap": 1400000000.0,
@@ -5374,20 +5561,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CNX": {
       "ticker": "CNX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13896398651432446,
       "tier": "S",
       "market_cap": 3582679149.0,
@@ -5399,20 +5587,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GRC": {
       "ticker": "GRC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13855142235188858,
       "tier": "S",
       "market_cap": 744600000.0,
@@ -5424,20 +5613,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DRVN": {
       "ticker": "DRVN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13803584409581393,
       "tier": "A",
       "market_cap": 1000000000.0,
@@ -5449,20 +5639,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "LQDT": {
       "ticker": "LQDT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.1371166426965169,
       "tier": "A",
       "market_cap": 733900000.0,
@@ -5474,20 +5665,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RICK": {
       "ticker": "RICK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13646333414271183,
       "tier": "A",
       "market_cap": 347708768.0,
@@ -5499,20 +5691,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BKTI": {
       "ticker": "BKTI",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13609663760744367,
       "tier": "S",
       "market_cap": 155879977.0,
@@ -5524,20 +5717,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "NMIH": {
       "ticker": "NMIH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.13217695212222316,
       "tier": "S",
       "market_cap": 2710628478.0,
@@ -5549,20 +5743,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PRM": {
       "ticker": "PRM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12894384952895155,
       "tier": "S",
       "market_cap": 1854719564.0,
@@ -5574,20 +5769,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CPF": {
       "ticker": "CPF",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12806527321709066,
       "tier": "S",
       "market_cap": 735757000.0,
@@ -5599,20 +5795,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "EZPW": {
       "ticker": "EZPW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12712524376401108,
       "tier": "S",
       "market_cap": 682000000.0,
@@ -5624,20 +5821,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MYE": {
       "ticker": "MYE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.12320745989498555,
       "tier": "S",
       "market_cap": 457647016.0,
@@ -5649,20 +5847,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MQ": {
       "ticker": "MQ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.11178679810471787,
       "tier": "A",
       "market_cap": 2300000000.0,
@@ -5674,20 +5873,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CVSA": {
       "ticker": "CVSA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10982506181754265,
       "tier": "S",
       "market_cap": 3488231961.0,
@@ -5699,20 +5899,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "SHOO": {
       "ticker": "SHOO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10854649807680081,
       "tier": "A",
       "market_cap": 1713156667.0,
@@ -5724,20 +5925,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CVCO": {
       "ticker": "CVCO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10720671626523257,
       "tier": "A",
       "market_cap": 2963526058.0,
@@ -5749,20 +5951,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "UCB": {
       "ticker": "UCB",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10696808256925441,
       "tier": "A",
       "market_cap": 3601588221.0,
@@ -5774,20 +5977,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "TEX": {
       "ticker": "TEX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10610787790109204,
       "tier": "A",
       "market_cap": 2988000000.0,
@@ -5799,20 +6003,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "INTT": {
       "ticker": "INTT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10484676428693161,
       "tier": "A",
       "market_cap": 85351987.0,
@@ -5824,20 +6029,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CNMD": {
       "ticker": "CNMD",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10300982368527475,
       "tier": "S",
       "market_cap": 1200000000.0,
@@ -5849,20 +6055,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "RRR": {
       "ticker": "RRR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10261376521316104,
       "tier": "S",
       "market_cap": 2600000000.0,
@@ -5874,20 +6081,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PEBO": {
       "ticker": "PEBO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10236926737802304,
       "tier": "S",
       "market_cap": 1029478000.0,
@@ -5899,20 +6107,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CHH": {
       "ticker": "CHH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.10026172746023211,
       "tier": "A",
       "market_cap": 3445513422.0,
@@ -5924,20 +6133,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "EXFY": {
       "ticker": "EXFY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09684222212077168,
       "tier": "S",
       "market_cap": 173000000.0,
@@ -5949,20 +6159,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "LZ": {
       "ticker": "LZ",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09613617865122281,
       "tier": "S",
       "market_cap": 1300000000.0,
@@ -5974,20 +6185,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "QLYS": {
       "ticker": "QLYS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09562227522196362,
       "tier": "A",
       "market_cap": 3714000000.0,
@@ -5999,20 +6211,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BBW": {
       "ticker": "BBW",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.09526545946859061,
       "tier": "B",
       "market_cap": 649500000.0,
@@ -6024,20 +6237,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "HAE": {
       "ticker": "HAE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08755557345253313,
       "tier": "S",
       "market_cap": 2226588933.0,
@@ -6049,20 +6263,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "VCTR": {
       "ticker": "VCTR",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.0864658617162409,
       "tier": "S",
       "market_cap": 3500000000.0,
@@ -6074,20 +6289,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BLZE": {
       "ticker": "BLZE",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08321867201371526,
       "tier": "A",
       "market_cap": 240300000.0,
@@ -6099,20 +6315,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "GHC": {
       "ticker": "GHC",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08252564582784822,
       "tier": "A",
       "market_cap": 3061000000.0,
@@ -6124,20 +6341,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "MYRG": {
       "ticker": "MYRG",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08186101590814399,
       "tier": "A",
       "market_cap": 2380000000.0,
@@ -6149,20 +6367,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CWCO": {
       "ticker": "CWCO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.08082958091812807,
       "tier": "A",
       "market_cap": 449191481.0,
@@ -6174,20 +6393,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "BL": {
       "ticker": "BL",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07904208963022372,
       "tier": "B",
       "market_cap": 3239000000.0,
@@ -6199,20 +6419,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "DGII": {
       "ticker": "DGII",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07717176263918113,
       "tier": "A",
       "market_cap": 1010000000.0,
@@ -6224,20 +6445,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "OII": {
       "ticker": "OII",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07629224889014088,
       "tier": "A",
       "market_cap": 2000000000.0,
@@ -6249,20 +6471,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PRGS": {
       "ticker": "PRGS",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07592383755751023,
       "tier": "A",
       "market_cap": 2605000000.0,
@@ -6274,20 +6497,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "OOMA": {
       "ticker": "OOMA",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.07262235260056296,
       "tier": "A",
       "market_cap": 256000000.0,
@@ -6299,20 +6523,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CENX": {
       "ticker": "CENX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06708067094906277,
       "tier": "A",
       "market_cap": 946000000.0,
@@ -6324,20 +6549,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "LWAY": {
       "ticker": "LWAY",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06707466797502587,
       "tier": "B",
       "market_cap": 132499543.0,
@@ -6349,20 +6575,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CERT": {
       "ticker": "CERT",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.0666957266057871,
       "tier": "A",
       "market_cap": 1400000000.0,
@@ -6374,20 +6601,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CALX": {
       "ticker": "CALX",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06557643198054737,
       "tier": "B",
       "market_cap": 2101000000.0,
@@ -6399,20 +6627,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "PATK": {
       "ticker": "PATK",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06445551937889017,
       "tier": "A",
       "market_cap": 2900000000.0,
@@ -6424,20 +6653,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "WLDN": {
       "ticker": "WLDN",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.06344460900913904,
       "tier": "A",
       "market_cap": 1000000000.0,
@@ -6449,20 +6679,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "AVO": {
       "ticker": "AVO",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.05891946989770939,
       "tier": "A",
       "market_cap": 496000000.0,
@@ -6474,20 +6705,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "ALRM": {
       "ticker": "ALRM",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.057657746536138824,
       "tier": "A",
       "market_cap": 1858300000.0,
@@ -6499,20 +6731,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "CLFD": {
       "ticker": "CLFD",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.04606425205763917,
       "tier": "B",
       "market_cap": 347399785.0,
@@ -6524,20 +6757,21 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 5회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
     },
     "NATH": {
       "ticker": "NATH",
       "first_seen": "2026-08-30",
-      "times_seen": 5,
+      "times_seen": 6,
       "runs_seen": [
         "2026-08-30",
         "2026-09-19",
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.038465294590717944,
       "tier": "B",
       "market_cap": 310117000.0,
@@ -6546,6 +6780,30 @@
         "시총 $0.31B가 코퍼스 최소($3.74B)의 1/12 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
       ],
       "best_gap": 0.038465294590717944,
+      "state": "QUEUED",
+      "in_validated_scope": false,
+      "days_since_seen": 0,
+      "priority_reason": "범위 밖 · 미분석 · 6회 연속통과"
+    },
+    "HOS": {
+      "ticker": "HOS",
+      "first_seen": "2026-09-19",
+      "times_seen": 5,
+      "runs_seen": [
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "last_seen": "2026-10-17",
+      "latest_gap": 0.10741755997940496,
+      "tier": "S",
+      "market_cap": 855200000.0,
+      "out_of_validated_scope": [
+        "시총 $0.86B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
+      ],
+      "best_gap": 0.10741755997940496,
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
@@ -6572,42 +6830,20 @@
       "best_gap": 0.11024657924861159,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 7,
-      "priority_reason": "범위 밖 · 미분석 · 4회 연속통과"
-    },
-    "HOS": {
-      "ticker": "HOS",
-      "first_seen": "2026-09-19",
-      "times_seen": 4,
-      "runs_seen": [
-        "2026-09-19",
-        "2026-09-26",
-        "2026-10-03",
-        "2026-10-10"
-      ],
-      "last_seen": "2026-10-10",
-      "latest_gap": 0.10741755997940496,
-      "tier": "S",
-      "market_cap": 855200000.0,
-      "out_of_validated_scope": [
-        "시총 $0.86B가 코퍼스 최소($3.74B)의 1/4 - estimate_drs의 중앙값 대체가 이 규모에서 검증된 적 없다"
-      ],
-      "best_gap": 0.10741755997940496,
-      "state": "QUEUED",
-      "in_validated_scope": false,
-      "days_since_seen": 0,
+      "days_since_seen": 14,
       "priority_reason": "범위 밖 · 미분석 · 4회 연속통과"
     },
     "TRT": {
       "ticker": "TRT",
       "first_seen": "2026-09-26",
-      "times_seen": 3,
+      "times_seen": 4,
       "runs_seen": [
         "2026-09-26",
         "2026-10-03",
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.0724681500207181,
       "tier": "B",
       "market_cap": 32329000.0,
@@ -6618,7 +6854,7 @@
       "state": "QUEUED",
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 미분석 · 3회 연속통과"
+      "priority_reason": "범위 밖 · 미분석 · 4회 연속통과"
     },
     "GOLD": {
       "ticker": "GOLD",
@@ -6639,7 +6875,7 @@
       "best_gap": 0.27443837599679244,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 41,
+      "days_since_seen": 48,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "ISSC": {
@@ -6660,7 +6896,7 @@
       "best_gap": 0.2161282048140851,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 41,
+      "days_since_seen": 48,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "HLX": {
@@ -6681,7 +6917,7 @@
       "best_gap": 0.10741755997940496,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 41,
+      "days_since_seen": 48,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
     },
     "RSSS": {
@@ -6702,17 +6938,49 @@
       "best_gap": 0.03510289620637267,
       "state": "QUEUED",
       "in_validated_scope": false,
-      "days_since_seen": 41,
+      "days_since_seen": 48,
       "priority_reason": "범위 밖 · 미분석 · 1회 연속통과"
+    },
+    "SCCO": {
+      "ticker": "SCCO",
+      "first_seen": "2026-08-30",
+      "times_seen": 6,
+      "runs_seen": [
+        "2026-08-30",
+        "2026-09-19",
+        "2026-09-26",
+        "2026-10-03",
+        "2026-10-10",
+        "2026-10-17"
+      ],
+      "last_seen": "2026-10-17",
+      "latest_gap": 0.28065158655324857,
+      "tier": "S",
+      "market_cap": 9019800000.0,
+      "scope_recomputed": true,
+      "out_of_validated_scope": [
+        "Gap +28.1%p가 코퍼스 최대(+24.4%p)의 1.2배 - 검증된 적 없는 구간"
+      ],
+      "best_gap": 0.28065158655324857,
+      "state": "EXCLUDED",
+      "in_validated_scope": false,
+      "days_since_seen": 0,
+      "priority_reason": "범위 밖 · 제외됨 · 6회 연속통과",
+      "exclusion_reason": {
+        "reason_category": "FRAMEWORK_MISMATCH",
+        "reason": "구리 채굴업(원자재 가격사이클, CDE/NEM/HL 유형) + 지배주주(Grupo Mexico 약 88%) 때문에 SEC public_float 근사 시총이 $9B로 실제 약 $141B의 6%에 불과하다 - 2026-10-10 자동분석이 이 근사 시총으로 S등급(+28.3%p)을 냈으나 허위. 지배주주 보유 종목은 float 근사 시총을 쓸 수 없다.",
+        "excluded_at": "2026-10-10"
+      }
     },
     "MU": {
       "ticker": "MU",
       "first_seen": "2026-10-10",
-      "times_seen": 1,
+      "times_seen": 2,
       "runs_seen": [
-        "2026-10-10"
+        "2026-10-10",
+        "2026-10-17"
       ],
-      "last_seen": "2026-10-10",
+      "last_seen": "2026-10-17",
       "latest_gap": 0.37518063946647495,
       "tier": "S",
       "market_cap": 368100000000.0,
@@ -6729,7 +6997,7 @@
       },
       "in_validated_scope": false,
       "days_since_seen": 0,
-      "priority_reason": "범위 밖 · 제외됨 · 1회 연속통과"
+      "priority_reason": "범위 밖 · 제외됨 · 2회 연속통과"
     }
   },
   "notes": [
